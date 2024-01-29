@@ -13,7 +13,7 @@ src/
   shopify/
     README.md
     categories/
-      apparel_accessories.yml
+      aa_apparel_accessories.yml
       ...
     attributes.yml
     attribute_values.yml
@@ -26,7 +26,7 @@ dist/
     txt/
       categories.txt
       categories/
-        aa_apparel_and_accessories.txt
+        aa_apparel_accessories.txt
         ...
 
 # helper methods to generate dist
