@@ -10,29 +10,22 @@ Organized into a few key folders, which are important to understand how to consu
 # Source (of truth) files to make PRs against
 # DO NOT use this folder for integration
 src/
-  shopify/
-    README.md
-    categories/
-      aa_apparel_accessories.yml
-      ...
-    attributes.yml
-    attribute_values.yml
+  categories/
+    aa_apparel_accessories.yml
     ...
 
 # Distribution files for stable output. Do not modify directly.
 # DO USE this folder for integration
 dist/
-  shopify/
-    txt/
-      categories.txt
-      categories/
-        aa_apparel_accessories.txt
-        ...
+  txt/
+    categories.txt
+    categories/
+      aa_apparel_accessories.txt
+      ...
 
 # helper methods to generate dist
 bin/
 ```
-
 
 ## Releases
 
