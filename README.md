@@ -13,7 +13,7 @@ src/
   shopify/
     README.md
     categories/
-      aa_apparel_and_accessories.yml
+      apparel_accessories.yml
       ...
     attributes.yml
     attribute_values.yml
