@@ -7,7 +7,7 @@ Shopify's standardized and public product taxonomy used across our systems. Stan
 Organized into a few key folders, which are important to understand how to consume and contribute:
 
 ```
-# likely to change regularly
+# Mastering source files to make PRs against
 # DO NOT use this folder for integration
 src/
   shopify/
@@ -19,7 +19,7 @@ src/
     attribute_values.yml
     ...
 
-# stable output
+# Distribution files for stable output. Do not modify directly.
 # DO USE this folder for integration
 dist/
   shopify/
