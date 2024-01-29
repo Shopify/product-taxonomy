@@ -7,7 +7,7 @@ Shopify's standardized and public product taxonomy used across our systems. Stan
 Organized into a few key folders, which are important to understand how to consume and contribute:
 
 ```
-# Mastering source files to make PRs against
+# Source (of truth) files to make PRs against
 # DO NOT use this folder for integration
 src/
   shopify/
