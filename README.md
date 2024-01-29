@@ -6,9 +6,33 @@ Shopify's standardized and public product taxonomy used across our systems. Stan
 
 Organized into a few key folders, which are important to understand how to consume and contribute:
 
-- `src` is likely to change regularly and is NOT a stable shape to integrate against. See nested `README` files.
-- `dist` is the stable output. Split by owners and output formats.
-- `bin` helper methods to generate `dist`.
+```
+# likely to change regularly
+# DO NOT use this folder for integration
+src/
+  shopify/
+    README.md
+    categories/
+      aa_apparel_and_accessories.yml
+      ...
+    attributes.yml
+    attribute_values.yml
+    ...
+
+# stable output
+# DO USE this folder for integration
+dist/
+  shopify/
+    txt/
+      categories.txt
+      categories/
+        aa_apparel_and_accessories.txt
+        ...
+
+# helper methods to generate dist
+bin/
+```
+
 
 ## Releases
 
