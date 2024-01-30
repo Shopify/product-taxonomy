@@ -18,13 +18,13 @@ class GenerateDist
       end
 
       categories.each do |filename, data|
-        File.open("dist/txt/categories/#{filename}.txt", 'w') do |file|
+        File.open("dist/categories/#{filename}.txt", 'w') do |file|
           file.write("# Shopify #{humanize(filename)} Product Taxonomy: #{Date.today} \n")
           file.write(data.join("\n"))
         end
       end
 
-      File.open("dist/txt/categories.txt", "w") do |file|
+      File.open("dist/categories.txt", "w") do |file|
         file.write("# Shopify Product Taxonomy: #{Date.today} \n")
         file.write(categories.values.flatten.join("\n"))
       end
