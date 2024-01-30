@@ -17,16 +17,16 @@ class GenerateDist
 
   def generate_category_txt
     categories_as_text = @categories.transform_values { |c| c.map { category_to_text(_1) } }
-
+    header_version = "#{Date.today} (#{VERSION})" 
     categories_as_text.each do |filename, data|
       File.open("dist/categories/#{filename}.txt", 'w') do |file|
-        file.write("# Shopify #{humanize(filename)} Product Taxonomy: #{Date.today} (#{VERSION})\n")
+        file.write("# Shopify #{humanize(filename.sub(/.*?_/, ""))} Product Taxonomy: #{header_version}\n")
         file.write(data.join("\n"))
       end
     end
 
     File.open("dist/categories.txt", "w") do |file|
-      file.write("# Shopify Product Taxonomy: #{Date.today} (#{VERSION})\n")
+      file.write("# Shopify Product Taxonomy: #{header_version})\n")
       file.write(categories_as_text.values.flatten.join("\n"))
     end
   end
