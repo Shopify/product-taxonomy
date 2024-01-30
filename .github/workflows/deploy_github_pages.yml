@@ -2,20 +2,25 @@ name: Run generate_data script and deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
+
+  workflow_dispatch:
 
 permissions:
-  id-token: write
   contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   generate_data:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
@@ -29,12 +34,23 @@ jobs:
 
     - name: Run generate_data script
       run: bin/generate_data
+    - name: Upload data
+      uses: actions/upload-artifact@v4
+      with:
+        name: data
+        path: docs/_data
 
   build:
     runs-on: ubuntu-latest
+    needs: generate_data
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Download data
+        uses: actions/download-artifact@v4
+        with:
+          name: data
+          path: docs/_data
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Build with Jekyll
@@ -49,8 +65,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    needs: generate_data
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
