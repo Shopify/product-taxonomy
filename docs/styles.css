@@ -3,21 +3,26 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
   font-size: 0.875rem;
 }
+p {
+  max-width: 1000px;
+}
+
 .header-links {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-bottom: 1rem;
   padding-left: 0;
-}
-
-p {
-  max-width: 1000px;
+  margin-left: 0;
 }
 
 .header-links li {
   list-style-type: none;
   margin: 0 0.5rem;
+}
+
+.header-links li:first-child {
+  margin-left: 0;
 }
 
 .sibling-list {
