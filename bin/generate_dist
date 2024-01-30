@@ -1,35 +1,65 @@
 #!/usr/bin/env ruby
 
-require 'yaml'
 require 'date'
+require 'json'
+require 'yaml'
+
+VERSION = File.read("VERSION").strip
 
 class GenerateDist
-  class << self
-    def humanize(string)
-      string.split("_").map(&:capitalize).join(" ")
-    end
-
-    def generate_category_txt
-      categories = {}
-      Dir.glob('data/categories/*.yml').each do |file|
-        file_name = File.basename(file, ".yml")
-        data = YAML.load_file(file)
-        categories[file_name] = data.map{ "#{_1["public_id"]} : #{_1["fully_qualified_type"]}"}
-      end
-
-      categories.each do |filename, data|
-        File.open("dist/categories/#{filename}.txt", 'w') do |file|
-          file.write("# Shopify #{humanize(filename)} Product Taxonomy: #{Date.today} \n")
-          file.write(data.join("\n"))
-        end
-      end
-
-      File.open("dist/categories.txt", "w") do |file|
-        file.write("# Shopify Product Taxonomy: #{Date.today} \n")
-        file.write(categories.values.flatten.join("\n"))
-      end
+  def initialize
+    @categories = Dir.glob("data/categories/*.yml").each_with_object({}) do |file, hash|
+      file_name = File.basename(file, ".yml")
+      data = YAML.load_file(file)
+      hash[file_name] = data
     end
   end
-end
 
-GenerateDist.generate_category_txt
+  def generate_category_txt
+    categories_as_text = @categories.transform_values { |c| c.map { category_to_text(_1) } }
+
+    categories_as_text.each do |filename, data|
+      File.open("dist/categories/#{filename}.txt", 'w') do |file|
+        file.write("# Shopify #{humanize(filename)} Product Taxonomy: #{Date.today} (#{VERSION})\n")
+        file.write(data.join("\n"))
+      end
+    end
+
+    File.open("dist/categories.txt", "w") do |file|
+      file.write("# Shopify Product Taxonomy: #{Date.today} (#{VERSION})\n")
+      file.write(categories_as_text.values.flatten.join("\n"))
+    end
+  end
+
+  def generate_category_json
+    output = {
+      version: VERSION,
+      verticals: @categories.map do |vertical_id, categories|
+        vertical = categories.first
+        {
+          name: vertical["name"],
+          prefix: vertical["public_id"].downcase,
+          categories: categories
+        }
+      end
+    }
+    File.open("dist/categories.json", "w") do |file|
+      file.write(JSON.pretty_generate(output))
+    end
+  end
+
+  private
+
+  def humanize(string)
+    string.split("_").map(&:capitalize).join(" ")
+  end
+
+  def category_to_text(category)
+    "#{category["public_id"]} : #{category["fully_qualified_type"]}"
+  end
+end
+  
+dist = GenerateDist.new
+
+dist.generate_category_txt
+dist.generate_category_json
