@@ -2,11 +2,12 @@
 
 require 'yaml'
 
+# TODO: Rename me to GenerateDocsData or something
 class GenerateData
   class << self
     def generate_pages_data
       sibling_groups = {}
-      Dir.glob('src/categories/*.yml').each do |file|
+      Dir.glob('data/categories/*.yml').each do |file|
         file_name = File.basename(file, ".yml")
         data = YAML.load_file(file)
         data.each do |item|
