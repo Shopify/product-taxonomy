@@ -1,8 +1,9 @@
-# Shopify's Standard Product Taxonomy in _Early Access Preview_
+# Shopify's Standard Product Taxonomy ([v0.0.1](./VERSION))
 
 Shopify's public product taxonomy serves as an open-source, standardized, and global classification of products sold on Shopify. Composed of product categories, attributes, and attribute values, the taxonomy is leveraged across Shopify and is integrated with numerous marketplaces. To learn more, and to request early access on your Shopify store, refer to our [help docs](https://help.shopify.com/manual/products/details/product-category).
 
 ## Currently Supported Verticals
+
 Three taxonomy verticals are currently available for preview:
 * Apparel & Accessories
 * Home & Garden
@@ -11,31 +12,39 @@ Three taxonomy verticals are currently available for preview:
 As new verticals are made available in the coming weeks, they will be added to this repository.
 
 ## Organization
-This github repository includes both the source code for defining the taxonomy, as well as distribution files for consuming the taxonomy. We welcome public input to evolve and adjust this taxonomy. All requested changes will be reviewed regularily and when appropriate, approved for the next version update. 
 
-#### Overview:
-**Distribution files**: Used to consume the taxonomy. These are packaged as simple txt for easy parsing and review. More file formats will be made available in the coming weeks. 
+This github repository includes both the source code for defining the taxonomy, as well as distribution files for consuming the taxonomy. We welcome public input to evolve and adjust this taxonomy. Requested changes will be reviewed and considered for subsequent version updates.
 
-**Source files**: Used to manage source code. These are stored in yaml format. When proposing adjustments to Shopify product taxonomy, submit changes using these files. 
+### Distribution files
+
+Used to consume the taxonomy. These are packaged in multiple formats for easy parsing and review.
+
+Current formats:
+- `txt`
+
+Coming soon:
+- `json`
+- `jsonl`
+- `parquet`
+
+### Source files
+
+Used to manage and update the taxonomy itself, along with necessary files to generate published formats reliably. When proposing adjustments to Shopify's product taxonomy, submit changes to these files.
+
 
 ```
-# Distribution files - Use this folder for integration.
-dist/
-  txt/
-    categories.txt
-    categories/
-      aa_apparel_accessories.txt
-      ...
-
-# helper methods to generate dist
+# Helper commands for generation
 bin/
 
-# Source (of truth) files - Use these files to submit PRs for changes to the taxonomy.
+# Source-code for generation itself
+lib/
+
+# Source (of truth) taxonomy files
+# Use these files to submit PRs for changes to the taxonomy
 src/
   categories/
     aa_apparel_accessories.yml
     ...
-
 ```
 
 ## Releases
