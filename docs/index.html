@@ -1,0 +1,38 @@
+---
+# Shopify Taxonomies Github Page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify Taxonomies</title>
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@3.14.1/dist/js-yaml.min.js"></script>
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Shopify Taxonomy</h1>
+  <h2 class="container_title">Categories</h2>
+  <div class="scroll_container">
+    {% for sibling_group in site.data.sibling_groups %}
+      {% for categories in sibling_group[1] %}
+        {% assign depth = sibling_group[0] %}
+        {% assign parent_id = categories[0] %}
+        {% assign node_type = categories[1].first.node_type %}
+        <div class="sibling-list {{node_type}}" node_depth="{{depth}}" parent_id="{{parent_id}}">
+          <h3>Level {{depth | plus: 1}}</h3>
+          <ul>
+          {% for category in categories[1] %}
+            <li class="accordion-item" node_id="{{ category.id }}" ancestor_ids="{{ category.ancestor_ids}}">{{category.name}}</li>
+          {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</body>
+</html>
