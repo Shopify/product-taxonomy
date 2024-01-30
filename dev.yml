@@ -5,6 +5,9 @@ type: ruby
 up:
   - ruby: 3.3.0
   - bundler
-  - generate_data
+  - custom:
+      name: Generate Pages Data
+      met?: test -f docs/_data/sibling_groups.yml
+      meet: bin/generate_docs
 
 commands:
