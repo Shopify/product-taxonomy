@@ -2,6 +2,8 @@
 
 Shopify's public product taxonomy serves as an open-source, standardized, and global classification of products sold on Shopify. Composed of product categories, attributes, and attribute values, the taxonomy is leveraged across Shopify and is integrated with numerous marketplaces. To learn more, and to request early access on your Shopify store, refer to our [help docs](https://help.shopify.com/manual/products/details/product-category).
 
+[Browse the taxonomy](https://product-taxonomy.product-taxonomy-p7qq.tyler-rowsell.us.spin.dev/?categoryId=AA-1-1-2-1)
+
 ## Currently Supported Verticals
 
 Three taxonomy verticals are currently available for preview:
