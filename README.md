@@ -27,7 +27,7 @@ Coming soon:
 - `jsonl`
 - `parquet`
 
-### Source files
+### Source & Data files
 
 Used to manage and update the taxonomy itself, along with necessary files to generate published formats reliably. When proposing adjustments to Shopify's product taxonomy, submit changes to these files.
 
@@ -37,11 +37,11 @@ Used to manage and update the taxonomy itself, along with necessary files to gen
 bin/
 
 # Source-code for generation itself
-lib/
-
-# Source (of truth) taxonomy files
-# Use these files to submit PRs for changes to the taxonomy
 src/
+
+# Source-of-truth for the taxonomy
+# Use these files to submit PRs for changes to the taxonomy
+data/
   categories/
     aa_apparel_accessories.yml
     ...

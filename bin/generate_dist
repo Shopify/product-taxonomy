@@ -11,7 +11,7 @@ class GenerateDist
 
     def generate_category_txt
       categories = {}
-      Dir.glob('src/categories/*.yml').each do |file|
+      Dir.glob('data/categories/*.yml').each do |file|
         file_name = File.basename(file, ".yml")
         data = YAML.load_file(file)
         categories[file_name] = data.map{ "#{_1["public_id"]} : #{_1["fully_qualified_type"]}"}
