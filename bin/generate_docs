@@ -2,8 +2,7 @@
 
 require 'yaml'
 
-# TODO: Rename me to GenerateDocsData or something
-class GenerateData
+class GenerateDocs
   class << self
     def generate_pages_data
       sibling_groups = {}
@@ -38,4 +37,4 @@ class GenerateData
   end
 end
 
-GenerateData.generate_pages_data
+GenerateDocs.generate_pages_data
