@@ -7,7 +7,7 @@ const getQueryParam = (param) => {
   return urlParams.get(param);
 }
 
-const toggleExpanded = () => {
+const toggleExpandedCategories = () => {
   document.querySelectorAll(".sibling-list").forEach(list => {
     const parentId = list.getAttribute('parent_id');
     const depth = list.getAttribute('node_depth') - 1;
@@ -19,7 +19,7 @@ const toggleExpanded = () => {
   });
 };
 
-const toggleSelected = () => {
+const toggleSelectedCategory = () => {
   document.querySelectorAll(".accordion-item").forEach(item => {
     const nodeId = item.getAttribute('node_id');
     if (Object.values(selectedNodes).includes(nodeId)) {
@@ -30,6 +30,41 @@ const toggleSelected = () => {
   });
 }
 
+const toggleVisibleCategory = () => {
+  document.querySelectorAll(".category-container").forEach(item => {
+    const nodeId = item.getAttribute('id');
+    if (selectedNode === nodeId) {
+      item.classList.add("active");
+    } else {
+      item.classList.remove("active");
+    }
+  });
+}
+
+const toggleVisibleAttributes = () => {
+  document.querySelector('.secondary-container').classList.remove('active');
+  if(!selectedNode) return;
+  document.querySelector('.secondary-container').classList.add('active');
+
+  const documentNode = document.querySelector(`.accordion-item[node_id="${selectedNode}"]`);
+  const attributeIds = documentNode.getAttribute('attribute_ids');
+  const attributeList = attributeIds.split(',');
+
+  document.querySelectorAll(".attribute-container").forEach(attribute => {
+    const attributeId = attribute.getAttribute('id');
+    if (attributeList.includes(attributeId)) {
+      attribute.classList.add("active");
+    } else {
+      attribute.classList.remove("active");
+    }
+  });
+}
+
+const toggleAttributeSelected = (event) => {
+  const attributeElement = event.currentTarget.parentNode;
+  attributeElement.classList.toggle("selected");
+}
+
 const setNodeQueryParam = (nodeId) => {
   const url = new URL(window.location);
   if (nodeId != null) {
@@ -38,6 +73,13 @@ const setNodeQueryParam = (nodeId) => {
     url.searchParams.delete(nodeQueryParamKey);
   }
   window.history.pushState({}, '', url);
+}
+
+const renderPage = () => {
+  toggleExpandedCategories();
+  toggleSelectedCategory();
+  toggleVisibleAttributes();
+  toggleVisibleCategory();
 }
 
 const toggleNode = (event) => {
@@ -57,13 +99,15 @@ const toggleNode = (event) => {
   });
 
   setNodeQueryParam(selectedNode);
-  toggleExpanded();
-  toggleSelected();
+  renderPage();
 }
 
 const setupListeners = () => {
   document.querySelectorAll('.accordion-item').forEach(item => {
     item.addEventListener('click', toggleNode);
+  });
+  document.querySelectorAll('.attribute-title').forEach(attribute => {
+    attribute.addEventListener('click', toggleAttributeSelected);
   });
 };
 
@@ -88,6 +132,5 @@ const setInitialNode = () => {
 document.addEventListener('DOMContentLoaded', () => {
   setInitialNode();
   setupListeners();
-  toggleExpanded();
-  toggleSelected();
+  renderPage();
 });
