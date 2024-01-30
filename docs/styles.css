@@ -25,6 +25,83 @@ p {
   margin-left: 0;
 }
 
+.page-container {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 250px);
+}
+
+.primary-container {
+  flex-basis: 70%;
+  margin-right: 2rem;
+}
+
+.secondary-container {
+  flex-basis: 30%;
+  border: 1px solid #c7c7c7;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  display: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+.secondary-container.active {
+  display: block;
+}
+
+.category-container {
+  display: none;
+  margin: -1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #c7c7c7;
+  min-height: 100px;
+}
+
+.category-container.active {
+  display: block;
+}
+
+.attributes-container {
+  overflow-y: auto;
+  max-height: calc(100% - 100px - 2rem);
+}
+.attribute-container {
+  display: none;
+}
+
+.attribute-container.active {
+  display: block;
+}
+
+.attribute-container.selected .values-container {
+  display: block;
+}
+
+.attribute-container .attribute-title {
+  cursor: pointer;
+}
+
+.attribute-container .right-arrow{
+  display: inline-block;
+}
+
+.attribute-container .down-arrow{
+  display: none;
+}
+
+.attribute-container.selected .down-arrow {
+  display: inline-block;
+}
+
+.attribute-container.selected .right-arrow {
+  display: none;
+}
+
+.values-container {
+  display: none;
+}
+
 .sibling-list {
   display: none;
 }
