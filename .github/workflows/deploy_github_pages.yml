@@ -5,13 +5,13 @@ on:
     branches:
       - main
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   generate_data:
     runs-on: ubuntu-latest
-
-  permissions:
-    id-token: write
-    contents: read
 
     steps:
     - name: Checkout code
