@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+
+class GenerateData
+  class << self
+    def generate_pages_data
+      sibling_groups = {}
+      Dir.glob('src/shopify/categories/*.yml').each do |file|
+        file_name = File.basename(file, ".yml")
+        data = YAML.load_file(file)
+        data.each do |item|
+          depth = item["fully_qualified_type"].split('>').size - 1
+          parent_id = item["parent_id"] || "root"
+
+          data_item = {
+            "id" => item["public_id"],
+            "name" => item["name"],
+            "depth" => depth,
+            "parent_id" => parent_id,
+            "node_type" => depth == 0 ? "root" : "leaf",
+            "ancestor_ids" => item["ancestor_ids"].join(","),
+          }
+
+          sibling_groups[depth] ||= {}
+          sibling_groups[depth][parent_id] ||= []
+          sibling_groups[depth][parent_id] << data_item
+        end
+      end
+
+      File.open("docs/_data/sibling_groups.yml", "w") do |file|
+        file.write(sibling_groups.to_yaml(line_width: 1000))
+      end
+    end
+  end
+end
+
+GenerateData.generate_pages_data
