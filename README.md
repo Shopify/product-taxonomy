@@ -3,13 +3,32 @@
 Shopify's public product taxonomy serves as an open-source, standardized, and global classification of products sold on Shopify. Composed of product categories, attributes, and attribute values, the taxonomy is leveraged across Shopify and is integrated with numerous marketplaces. To learn more, visit our [help docs](https://help.shopify.com/manual/products/details/product-type); to request early access, fill out the form [here](http://shopify.com/editions/winter2024#new-taxonomy).
 
 
-## Currently Supported Verticals
+[Browse Shopify's product taxonomy](https://refactored-broccoli-1wvy2wl.pages.github.io/)
 
-Three taxonomy verticals are currently available for preview:
-* Apparel & Accessories
-* Food, Beverages, & Tobacco
-* Home & Garden
-* Sporting Goods
+## Supported Verticals
+
+| Vertical | Status |
+|----------|----------|
+| Apparel & Accessories | ✅ | 
+| Food, Beverages, & Tobacco | ✅ |
+| Home & Garden | ✅ |
+| Sporting Goods | ✅ |
+| Furniture | Coming soon [next] | 
+| Health & Beauty | Coming soon [next] |
+| Animals & Pet supplies | Coming soon |
+| Electronics | Coming soon |
+| Media | Coming soon |
+| Arts & Entertainmen | Coming soon |
+| Vehicles & parts | Coming soon |
+| Toys & games | Coming soon |
+| Luggage & bags | Coming soon |
+| Software | Coming soon |
+| Cameras & optics | Coming soon |
+| Hardware | Coming soon |
+| Baby & toddler | Coming soon |
+| Business & industrial | Coming soon |
+| Office supplies | Coming soon |
+| Services | Coming soon |
 
 As new verticals are made available in the coming weeks, they will be added to this repository.
 
