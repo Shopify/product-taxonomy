@@ -21,7 +21,7 @@ class GenerateDist
   end
 
   def generate_category_txt
-    categories_as_text = @category_trees.flat_map { _1.map(&:to_s) }
+    categories_as_text = @category_trees.flat_map { _1.map(&:serialize_as_txt) }
     header_version = "#{Date.today} (#{VERSION})"
 
     File.open("dist/categories.txt", "w") do |file|
@@ -38,19 +38,13 @@ class GenerateDist
         {
           name: vertical_root.name,
           prefix: vertical_root.id.downcase,
-          categories: tree.map(&:to_h),
+          categories: tree.map(&:serialize_as_hash),
         }
       end
     }
     File.open("dist/categories.json", "w") do |file|
       file.write(JSON.pretty_generate(output))
     end
-  end
-
-  private
-
-  def category_to_text(category)
-    "#{category["public_id"]} : #{category["fully_qualified_type"]}"
   end
 end
 

@@ -1,13 +1,10 @@
 class Category
   include Comparable
 
-  attr_reader(
-    :id,
-    :name,
-    :level,
-  )
-
   @@nodes = {}
+  @@largest_gid = 0
+
+  attr_reader(:id, :name, :level)
 
   class << self
     def find(id)
@@ -26,7 +23,7 @@ class Category
       new(
         id: json["public_id"],
         name: json["name"],
-        level: json["level"],
+        level: json["level"] - 1,
         parent: json["parent_id"],
         children: json["children_ids"],
         attributes: json["attribute_ids"],
@@ -35,7 +32,7 @@ class Category
   end
 
   # allow ids passing for delayed instantiation
-  def initialize(id:, name:, level: 1, parent: nil, children: [], attributes: [])
+  def initialize(id:, name:, level: 0, parent: nil, children: [], attributes: [])
     @id = id
     @name = name
     @level = level
@@ -56,6 +53,7 @@ class Category
     @attribute_ids = attributes
 
     @@nodes[id] = self
+    @@largest_gid = [@@largest_gid, gid.size].max
   end
 
   def parent
@@ -67,7 +65,13 @@ class Category
   end
 
   def attributes
-    @attribute_ids
+    @attributes ||= @attribute_ids.map do |id|
+      # for now, good enough...
+      {
+        id:,
+        gid: "gid://shopify/Taxonomy/Attribute/#{id}",
+      }
+    end
   end
 
   def gid
@@ -121,19 +125,30 @@ class Category
 
   def to_h
     {
-      fully_qualified_type: fully_qualified_type,
-      public_id: id,
-      name: name,
-      parent_id: parent&.id,
-      level: level,
-      children_ids: children.map(&:id),
-      ancestor_ids: ancestors.map(&:id),
-      attribute_ids: attributes,
+      id: gid,
+      name:,
     }
   end
 
   def to_s
-    "#{id} : #{fully_qualified_type}"
+    "#{fully_qualified_type} (#{id})"
+  end
+
+  def serialize_as_hash
+    {
+      fully_qualified_type:,
+      id: gid,
+      name:,
+      parent_id: parent&.gid,
+      level:,
+      children: children.map(&:to_h),
+      ancestors: ancestors.map(&:to_h),
+      attribute_ids: attributes.map { _1[:gid] },
+    }
+  end
+
+  def serialize_as_txt
+    "#{gid.ljust(@@largest_gid)} : #{fully_qualified_type}"
   end
 
   def <=>(other)
@@ -146,7 +161,7 @@ class Category
 
   def parent=(parent)
     @parent = parent
-    @level = (parent&.level || 0) + 1
+    @level = parent ? parent.level + 1 : 0
     remove_instance_variable(:@ancestors) if defined?(@ancestors)
     remove_instance_variable(:@descendants) if defined?(@descendants)
   end
