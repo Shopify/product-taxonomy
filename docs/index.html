@@ -1,0 +1,96 @@
+---
+# Shopify Taxonomies Github Page
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify Standard Product Taxonomy</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@3.14.1/dist/js-yaml.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <div class="page-container">
+      <div class="header-container container">
+        <h1>Shopify Standard Product Taxonomy (v0.0.1)</h1>
+        <p>
+          Shopify's public product taxonomy serves as an open-source, standardized, and global classification of
+          products sold on Shopify. Composed of product categories, attributes, and attribute values, the taxonomy is
+          leveraged across Shopify and is integrated with numerous marketplaces. To learn more, visit our
+          <a
+          href="https://help.shopify.com/manual/products/details/product-type"
+          >help docs</a
+          >; to request early access, fill out the form
+          <a href="http://shopify.com/editions/winter2024#new-taxonomy">here</a>.
+          </p>
+        <ul class="header-links">
+          <li><a href="https://github.com/Shopify/product-taxonomy">GitHub Repo</a></li>
+          <li><a href="https://help.shopify.com/manual/products/details/product-type">Help Docs</a></li>
+        </ul>
+      </div>
+      <div class="content-container container">
+        <div class="primary-container">
+          <h2 class="container_title">Categories</h2>
+          {% for sibling_group in site.data.sibling_groups %}
+            {% for categories in sibling_group[1] %}
+              {% assign depth = sibling_group[0] %}
+              {% assign parent_id = categories[0] %}
+              {% assign node_type = categories[1].first.node_type %}
+              <div class="sibling-list {{node_type}}" node_depth="{{depth}}" parent_id="{{parent_id}}">
+                <h3>Level {{ depth | plus: 1 }}</h3>
+                <ul>
+                  {% for category in categories[1] %}
+                    <li
+                      class="accordion-item"
+                      node_id="{{ category.id }}"
+                      ancestor_ids="{{ category.ancestor_ids }}"
+                      attribute_ids="{{ category.attribute_ids }}"
+                    >
+                      {{ category.name }}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endfor %}
+          {% endfor %}
+        </div>
+        <div class="secondary-container">
+          {% for sibling_group in site.data.sibling_groups %}
+            {% for categories in sibling_group[1] %}
+              {% for category in categories[1] %}
+                <div class="category-container" id="{{category.id}}">
+                  <h3 class="title">{{ category.name }}</h3>
+                  <span class="id id--large">ID: {{ category.id }}</span>
+                  <p>{{ category.fully_qualified_type }}</p>
+                </div>
+              {% endfor %}
+            {% endfor %}
+          {% endfor %}
+          <div class="attributes-container">
+            {% for attribute in site.data.attributes %}
+              <div class="attribute-container" id="{{ attribute.id }}">
+                <h4 class="title attribute-title">
+                  <span class="id">ID: {{ attribute.id }}</span>{{ attribute.name }}
+                  <span class="arrow right-arrow">&rarr;</span>
+                  <span class="arrow down-arrow">&darr;</span>
+                </h4>
+                <div class="values-container">
+                  <ul>
+                    {% for value in attribute.values %}
+                      <li>
+                        <span class="id">ID: {{ value.id }}</span>{{ value.name }}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

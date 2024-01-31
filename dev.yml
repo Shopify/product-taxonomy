@@ -1,0 +1,14 @@
+name: product-taxonomy
+
+type: ruby
+
+up:
+  - ruby: 3.3.0
+  - bundler
+  - custom:
+      name: Generate Pages Data
+      met?: test -f docs/_data/sibling_groups.yml
+      meet: bin/generate_docs
+      down: bin/clean_docs
+
+commands:

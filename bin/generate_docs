@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require 'fileutils'
+
+class GenerateDocs
+  class << self
+    def generate_pages_data
+      sibling_groups = {}
+      Dir.glob('data/categories/*.yml').each do |file|
+        file_name = File.basename(file, ".yml")
+        data = YAML.load_file(file)
+        data.each do |item|
+          depth = item["level"] - 1
+          parent_id = item["ancestor_ids"].first || "root"
+
+          data_item = {
+            "id" => item["id"],
+            "name" => item["name"],
+            "fully_qualified_type" => item["fully_qualified_type"],
+            "depth" => depth,
+            "parent_id" => parent_id,
+            "node_type" => depth == 0 ? "root" : "leaf",
+            "ancestor_ids" => item["ancestor_ids"].join(","),
+            "attribute_ids" => item["attribute_ids"].join(","),
+          }
+
+          sibling_groups[depth] ||= {}
+          sibling_groups[depth][parent_id] ||= []
+          sibling_groups[depth][parent_id] << data_item
+        end
+      end
+      raise "No data found in data/categories/*.yml files. Please check the data." if sibling_groups.empty?
+
+      Dir.mkdir('docs/_data') unless Dir.exist?('docs/_data')
+      File.open("docs/_data/sibling_groups.yml", "w") do |file|
+        file.write(sibling_groups.to_yaml(line_width: 1000))
+      end
+
+      FileUtils.cp('data/attributes/attributes.yml', 'docs/_data/attributes.yml')
+    end
+  end
+end
+
+GenerateDocs.generate_pages_data
