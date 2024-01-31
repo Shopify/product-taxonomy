@@ -131,7 +131,7 @@ class Category
   end
 
   def to_s
-    "id=#{id} full_name=#{fully_qualified_type} level=#{level} children=#{children.size}"
+    "#{fully_qualified_type} (#{id})"
   end
 
   def serialize_as_hash
