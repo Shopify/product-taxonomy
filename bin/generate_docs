@@ -12,10 +12,10 @@ class GenerateDocs
         data = YAML.load_file(file)
         data.each do |item|
           depth = item["level"] - 1
-          parent_id = item["parent_id"] || "root"
+          parent_id = item["ancestor_ids"].first || "root"
 
           data_item = {
-            "id" => item["public_id"],
+            "id" => item["id"],
             "name" => item["name"],
             "fully_qualified_type" => item["fully_qualified_type"],
             "depth" => depth,
