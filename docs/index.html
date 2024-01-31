@@ -48,9 +48,7 @@
           {% for category in categories[1] %}
             <div class="category-container" id="{{category.id}}">
               <h3 class="title"><span class="id id--large">ID: {{category.id}}</span>{{category.name}}</h3>
-              <ul>
-                <li>{{ category.fully_qualified_type }}</li>
-              </ul>
+              <p>{{ category.fully_qualified_type }}</p>
             </div>
           {% endfor %}
         {% endfor %}
