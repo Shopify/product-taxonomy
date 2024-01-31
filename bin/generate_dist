@@ -38,7 +38,7 @@ class GenerateDist
         {
           name: vertical_root.name,
           prefix: vertical_root.id.downcase,
-          categories: tree.map(&:to_h),
+          categories: tree.map(&:to_full_hash),
         }
       end
     }
