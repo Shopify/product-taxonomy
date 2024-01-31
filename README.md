@@ -7,6 +7,8 @@ Shopify's public product taxonomy serves as an open-source, standardized, and gl
 
 ## Supported Verticals
 
+Verticals will be regularly released to this repository, with all 20 published by the end of February, 2024. The following table shows the current status of each vertical.
+
 | Vertical | Status |
 |----------|----------|
 | Apparel & Accessories | ✅ |
@@ -18,7 +20,7 @@ Shopify's public product taxonomy serves as an open-source, standardized, and gl
 | Animals & Pet supplies | Coming soon |
 | Electronics | Coming soon |
 | Media | Coming soon |
-| Arts & Entertainmen | Coming soon |
+| Arts & Entertainment | Coming soon |
 | Vehicles & parts | Coming soon |
 | Toys & games | Coming soon |
 | Luggage & bags | Coming soon |
@@ -29,8 +31,6 @@ Shopify's public product taxonomy serves as an open-source, standardized, and gl
 | Business & industrial | Coming soon |
 | Office supplies | Coming soon |
 | Services | Coming soon |
-
-As new verticals are made available in the coming weeks, they will be added to this repository.
 
 ## Organization
 
