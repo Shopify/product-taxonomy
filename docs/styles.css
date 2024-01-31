@@ -29,21 +29,46 @@ p {
 .page-container {
   display: flex;
   flex-direction: row;
-  height: calc(100vh - 250px);
+  flex-wrap: wrap;
+  max-height: 100vh;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  border: 1px solid #c7c7c7;
+  border-radius: 1rem;
+}
+
+.header-container {
+  padding: 1rem;
+  border-bottom: 1px solid #c7c7c7;
+  width: 100%;
+}
+.header-container h1{
+  margin-bottom: 0;
+}
+
+.content-container.container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  max-height: calc(100vh - 350px);
+  border-top: none;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: -2rem;
 }
 
 .primary-container {
   flex-basis: 70%;
-  margin-right: 2rem;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-bottom: 2rem;
 }
 
 .secondary-container {
+  border-left: 1px solid #c7c7c7;
   flex-basis: 30%;
-  border: 1px solid #c7c7c7;
-  padding: 1rem;
-  margin-bottom: 2rem;
   display: none;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  margin-top: -1rem;
+  margin-right: -1rem;
 }
 
 .secondary-container.active {
@@ -54,7 +79,6 @@ p {
 
 .category-container {
   display: none;
-  margin: -1rem;
   margin-bottom: 1rem;
   padding: 1rem;
   border-bottom: 1px solid #c7c7c7;
@@ -93,7 +117,9 @@ p {
 
 .attributes-container {
   overflow-y: auto;
-  max-height: calc(100% - 100px - 2rem);
+  max-height: calc(100% - 100px - 5rem);
+  padding: 1rem;
+  padding-top: 0;
 }
 
 .attribute-container {
@@ -143,6 +169,7 @@ p {
 
 .sibling-list {
   display: none;
+  margin-left: 0.25rem;
 }
 
 .sibling-list.root,
