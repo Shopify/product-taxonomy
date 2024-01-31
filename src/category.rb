@@ -119,7 +119,7 @@ class Category
     @descendants = Set[children] + children.flat_map(&:descendants)
   end
 
-  def fully_qualified_type
+  def full_name
     ancestors.to_a.reverse.map(&:name).push(name).join(" > ")
   end
 
@@ -131,24 +131,26 @@ class Category
   end
 
   def to_s
-    "#{fully_qualified_type} (#{id})"
+    "#{full_name} (#{gid})"
   end
 
   def serialize_as_hash
     {
-      fully_qualified_type:,
       id: gid,
-      name:,
-      parent_id: parent&.gid,
       level:,
+      name:,
+      full_name:,
+      parent_id: parent&.gid,
+      attributes: attributes.map do |attr|
+        { id: attr[:gid] }
+      end,
       children: children.map(&:to_h),
       ancestors: ancestors.map(&:to_h),
-      attribute_ids: attributes.map { _1[:gid] },
     }
   end
 
   def serialize_as_txt
-    "#{gid.ljust(@@largest_gid)} : #{fully_qualified_type}"
+    "#{gid.ljust(@@largest_gid)} : #{full_name}"
   end
 
   def <=>(other)
