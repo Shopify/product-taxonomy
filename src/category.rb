@@ -26,7 +26,7 @@ class Category
       new(
         id: json["public_id"],
         name: json["name"],
-        level: json["level"],
+        level: json["level"] - 1,
         parent: json["parent_id"],
         children: json["children_ids"],
         attributes: json["attribute_ids"],
@@ -35,7 +35,7 @@ class Category
   end
 
   # allow ids passing for delayed instantiation
-  def initialize(id:, name:, level: 1, parent: nil, children: [], attributes: [])
+  def initialize(id:, name:, level: 0, parent: nil, children: [], attributes: [])
     @id = id
     @name = name
     @level = level
@@ -152,7 +152,7 @@ class Category
 
   def parent=(parent)
     @parent = parent
-    @level = (parent&.level || 0) + 1
+    @level = parent ? parent.level + 1 : 0
     remove_instance_variable(:@ancestors) if defined?(@ancestors)
     remove_instance_variable(:@descendants) if defined?(@descendants)
   end
