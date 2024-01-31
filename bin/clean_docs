@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require 'fileutils'
+
+class CleanDocs
+  class << self
+    def delete_files
+      Dir.glob('docs/_data/*').each do |file|
+        File.delete(file)
+      end
+    end
+  end
+end
+
+CleanDocs.delete_files
