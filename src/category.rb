@@ -23,41 +23,32 @@ class Category
       new(
         id: json["public_id"],
         name: json["name"],
-        level: json["level"] - 1,
-        parent: json["parent_id"],
-        children: json["children_ids"],
-        attributes: json["attribute_ids"],
+        level: json["level"] - 1, # source files are 1-based
+        parent_id: json["parent_id"],
+        children_ids: json["children_ids"],
+        attribute_ids: json["attribute_ids"],
       )
     end
   end
 
-  # allow ids passing for delayed instantiation
-  def initialize(id:, name:, level: 0, parent: nil, children: [], attributes: [])
+  # tree is parsed into @@nodes before interaction, therefore is static
+  def initialize(id:, name:, level: 0, parent_id: nil, children_ids: [], attribute_ids: [])
     @id = id
     @name = name
     @level = level
 
-    if parent.is_a?(self.class)
-      @parent = parent
-    else
-      @parent_id = parent
-    end
-
-    if children.all? { _1.is_a?(self.class) }
-      @children = children
-    else
-      @children_ids = children
-    end
-
-    # TODO: model attributes
-    @attribute_ids = attributes
+    @parent_id = parent_id
+    @children_ids = children_ids
+    @attribute_ids = attribute_ids
 
     @@nodes[id] = self
     @@largest_gid = [@@largest_gid, gid.size].max
   end
 
   def parent
-    @parent ||= self.class.find!(@parent_id)
+    return @parent if defined?(@parent)
+
+    @parent = self.class.find!(@parent_id)
   end
 
   def children
@@ -78,49 +69,24 @@ class Category
     "gid://shopify/Taxonomy/Category/#{id.downcase}"
   end
 
-  def root
-    root = self
-    root = root.parent until root.root?
-    root
-  end
-
-  def root?
-    parent.nil?
-  end
-
-  def leaf?
-    children.empty?
-  end
-
-  def add(child)
-    raise ArgumentError, "nil children not allowed" if child.nil?
-    raise ArgumentError, "cannot add root as child" if child == root
-    raise ArgumentError, "cannot add self as child" if child == self
-    raise ArgumentError, "cannot add an ancestor as child" if ancestors.include?(child)
-
-    child.parent = self
-    children << child
-    child
+  def full_name
+    @full_name ||= ancestors.reverse.map(&:name).push(name).join(" > ")
   end
 
   def ancestors
     return @ancestors if defined?(@ancestors)
 
     @ancestors = if parent.nil?
-      Set[]
+      []
     else
-      Set[parent] + parent.ancestors
+      [parent] + parent.ancestors
     end
   end
 
   def descendants
     return @descendants if defined?(@descendants)
 
-    @descendants = Set[children] + children.flat_map(&:descendants)
-  end
-
-  def full_name
-    ancestors.to_a.reverse.map(&:name).push(name).join(" > ")
+    @descendants = children + children.flat_map(&:descendants)
   end
 
   def to_h
@@ -132,6 +98,12 @@ class Category
 
   def to_s
     "#{full_name} (#{gid})"
+  end
+
+  def <=>(other)
+    return nil if other.nil? || !other.is_a?(self.class)
+
+    id <=> other.id
   end
 
   def serialize_as_hash
@@ -151,12 +123,6 @@ class Category
 
   def serialize_as_txt
     "#{gid.ljust(@@largest_gid)} : #{full_name}"
-  end
-
-  def <=>(other)
-    return nil if other.nil? || !other.is_a?(self.class)
-
-    id <=> other.id
   end
 
   protected
