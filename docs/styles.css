@@ -58,8 +58,33 @@ p {
   min-height: 100px;
 }
 
+.category-container li {
+  list-style-type: none;
+  margin: 0.25rem 0;
+}
+
 .category-container.active {
   display: block;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.id {
+  font-size: 0.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  background-color: #000000;
+  padding: 0.2rem;
+  margin: 0.15rem;
+  border-radius: 0.25rem;
+}
+
+.id--large {
+  font-size: 0.75rem;
+  margin-right: 0.25rem;
 }
 
 .attributes-container {
@@ -100,6 +125,11 @@ p {
 
 .values-container {
   display: none;
+}
+
+.values-container li {
+  list-style-type: none;
+  margin: 0.25rem 0;
 }
 
 .sibling-list {

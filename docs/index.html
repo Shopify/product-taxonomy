@@ -47,10 +47,9 @@
         {% for categories in sibling_group[1] %}
           {% for category in categories[1] %}
             <div class="category-container" id="{{category.id}}">
-              <h3>{{category.name}}</h3>
+              <h3 class="title"><span class="id id--large">ID: {{category.id}}</span>{{category.name}}</h3>
               <ul>
-                <li>ID: {{ category.id }}</li>
-                <li>Full Name: {{ category.fully_qualified_type }}</li>
+                <li>{{ category.fully_qualified_type }}</li>
               </ul>
             </div>
           {% endfor %}
@@ -59,16 +58,18 @@
       <div class="attributes-container">
         {% for attribute in site.data.attributes %}
           <div class="attribute-container" id="{{ attribute.id }}">
-            <h4 class="attribute-title">
-              {{ attribute.name }}
+            <h4 class="title attribute-title">
+              <span class="id">ID: {{ attribute.id }}</span>{{ attribute.name }}
               <span class="right-arrow">&rarr;</span>
               <span class="down-arrow">&darr;</span>
             </h4>
-            <ul class="values-container">
-              {% for value in attribute.values %}
-                <li>{{ value.name }}</li>
-              {% endfor %}
-            </ul>
+            <div class="values-container">
+              <ul>
+                {% for value in attribute.values %}
+                  <li><span class="id">ID: {{ value.id }}</span>{{ value.name }}</li>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
         {% endfor %}
       </div>
