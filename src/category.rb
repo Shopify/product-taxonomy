@@ -29,12 +29,13 @@ class Category
         level: json["level"],
         parent: json["parent_id"],
         children: json["children_ids"],
+        attributes: json["attribute_ids"],
       )
     end
   end
 
   # allow ids passing for delayed instantiation
-  def initialize(id:, name:, level: 1, parent: nil, children: [])
+  def initialize(id:, name:, level: 1, parent: nil, children: [], attributes: [])
     @id = id
     @name = name
     @level = level
@@ -51,6 +52,9 @@ class Category
       @children_ids = children
     end
 
+    # TODO: model attributes
+    @attribute_ids = attributes
+
     @@nodes[id] = self
   end
 
@@ -60,6 +64,10 @@ class Category
 
   def children
     @children ||= @children_ids.map { self.class.find!(_1) }
+  end
+
+  def attributes
+    @attribute_ids
   end
 
   def gid
@@ -113,13 +121,14 @@ class Category
 
   def to_h
     {
-      id: id,
-      name: name,
       fully_qualified_type: fully_qualified_type,
-      depth: level,
+      public_id: id,
+      name: name,
       parent_id: parent&.id,
+      level: level,
       children_ids: children.map(&:id),
-      ancestors_ids: ancestors.map(&:id),
+      ancestor_ids: ancestors.map(&:id),
+      attribute_ids: attributes,
     }
   end
 

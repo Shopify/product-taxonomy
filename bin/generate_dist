@@ -33,12 +33,12 @@ class GenerateDist
   def generate_category_json
     output = {
       version: VERSION,
-      verticals: @verticals.map do |vertical_id, categories|
-        vertical = categories.first
+      verticals: @category_trees.map do |tree|
+        vertical_root = tree.first
         {
-          name: vertical["name"],
-          prefix: vertical["public_id"].downcase,
-          categories: categories
+          name: vertical_root.name,
+          prefix: vertical_root.id.downcase,
+          categories: tree.map(&:to_h),
         }
       end
     }
