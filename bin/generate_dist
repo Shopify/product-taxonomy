@@ -18,6 +18,7 @@ class GenerateDist
     @category_trees = @verticals.map do |_, categories|
       categories.map { |category| Category.from_json(category) }
     end
+    @attributes = YAML.load_file("data/attributes/attributes.yml")
   end
 
   def generate_category_txt
@@ -46,9 +47,30 @@ class GenerateDist
       file.write(JSON.pretty_generate(output))
     end
   end
+
+  def generate_attributes_json
+    attributes_json = @attributes.map do |attribute|
+      attribute_gid = "gid://shopify/Taxonomy/Attribute/#{attribute["id"]}"
+      {
+        id: attribute_gid,
+        name: attribute["name"],
+        values: attribute["values"].map do |value|
+          {
+            id: "#{attribute_gid}/#{value["id"].split("-").last}",
+            name: value["name"],
+          }
+        end
+      }
+    end
+    File.open("dist/attributes.json", "w") do |file|
+      file.write(JSON.pretty_generate(attributes_json))
+    end
+  end
 end
 
 dist = GenerateDist.new
 
 dist.generate_category_txt
 dist.generate_category_json
+dist.generate_attributes_json
+
