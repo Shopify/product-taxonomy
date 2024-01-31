@@ -15,10 +15,11 @@ class GenerateDist
       data = YAML.load_file(file)
       hash[file_name] = data
     end
-    @category_trees = @verticals.map do |_, categories|
-      categories.map { |category| Category.from_json(category) }
-    end
     @attributes = YAML.load_file("data/attributes/attributes.yml")
+    attribute_names_by_id = @attributes.map { [_1["id"], _1["name"]] }.to_h
+    @category_trees = @verticals.map do |_, categories|
+      categories.map { |category| Category.from_json(category, attribute_names_by_id) }
+    end
   end
 
   def generate_category_txt
