@@ -1,13 +1,10 @@
 class Category
   include Comparable
 
-  attr_reader(
-    :id,
-    :name,
-    :level,
-  )
-
   @@nodes = {}
+  @@largest_gid = 0
+
+  attr_reader(:id, :name, :level)
 
   class << self
     def find(id)
@@ -56,6 +53,7 @@ class Category
     @attribute_ids = attributes
 
     @@nodes[id] = self
+    @@largest_gid = [@@largest_gid, gid.size].max
   end
 
   def parent
@@ -132,7 +130,11 @@ class Category
     }
   end
 
-  def to_full_hash
+  def to_s
+    "id=#{id} full_name=#{fully_qualified_type} level=#{level} children=#{children.size}"
+  end
+
+  def serialize_as_hash
     {
       fully_qualified_type:,
       id: gid,
@@ -145,8 +147,8 @@ class Category
     }
   end
 
-  def to_s
-    "#{gid} : #{fully_qualified_type}"
+  def serialize_as_txt
+    "#{gid.ljust(@@largest_gid)} : #{fully_qualified_type}"
   end
 
   def <=>(other)
