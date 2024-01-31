@@ -3,6 +3,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
   font-size: 0.875rem;
 }
+
 p {
   max-width: 1000px;
 }
@@ -47,6 +48,8 @@ p {
 
 .secondary-container.active {
   display: block;
+  height: 100%;
+  overflow: hidden;
 }
 
 .category-container {
@@ -92,6 +95,7 @@ p {
   overflow-y: auto;
   max-height: calc(100% - 100px - 2rem);
 }
+
 .attribute-container {
   display: none;
 }
@@ -112,11 +116,11 @@ p {
   margin-left: 0.25rem;
 }
 
-.attribute-container .right-arrow{
+.attribute-container .right-arrow {
   display: inline-block;
 }
 
-.attribute-container .down-arrow{
+.attribute-container .down-arrow {
   display: none;
 }
 
@@ -164,7 +168,8 @@ p {
   transition: background-color 0.3s ease;
 }
 
-.accordion-item.selected , .accordion-item:hover{
+.accordion-item.selected,
+.accordion-item:hover {
   background-color: #303030;
   color: #ffffff;
 }
