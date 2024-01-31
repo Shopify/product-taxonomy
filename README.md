@@ -1,4 +1,4 @@
-# Shopify's Standard Product Taxonomy ([v0.0.1](./VERSION))
+# Shopify's Standard Product Taxonomy ([v0.0.1](./VERSION) - PREVIEW)
 
 Shopify's public product taxonomy serves as an open-source, standardized, and global classification of products sold on Shopify. Composed of product categories, attributes, and attribute values, the taxonomy is leveraged across Shopify and is integrated with numerous marketplaces. To learn more, visit our [help docs](https://help.shopify.com/manual/products/details/product-type); to request early access, fill out the form [here](http://shopify.com/editions/winter2024#new-taxonomy).
 
