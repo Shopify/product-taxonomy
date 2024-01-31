@@ -22,9 +22,9 @@ Used to consume the taxonomy. These are packaged in multiple formats for easy pa
 
 Current formats:
 - `txt`
+- `json`
 
 Coming soon:
-- `json`
 - `jsonl`
 - `parquet`
 
