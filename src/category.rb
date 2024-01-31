@@ -19,7 +19,7 @@ class Category
       find(id) || raise(ArgumentError, "no category with id #{id}")
     end
 
-    def from_json(json)
+    def from_json(json, attribute_names_by_id)
       new(
         id: json["id"],
         name: json["name"],
@@ -27,12 +27,13 @@ class Category
         parent: json["parent_id"],
         children: json["children_ids"],
         attributes: json["attribute_ids"],
+        attribute_names_by_id: attribute_names_by_id,
       )
     end
   end
 
   # allow ids passing for delayed instantiation
-  def initialize(id:, name:, level: 0, parent: nil, children: [], attributes: [])
+  def initialize(id:, name:, level: 0, parent: nil, children: [], attributes: [], attribute_names_by_id: nil)
     @id = id
     @name = name
     @level = level
@@ -51,6 +52,7 @@ class Category
 
     # TODO: model attributes
     @attribute_ids = attributes
+    @attribute_names_by_id = attribute_names_by_id
 
     @@nodes[id] = self
     @@largest_gid = [@@largest_gid, gid.size].max
@@ -70,6 +72,7 @@ class Category
       {
         id:,
         gid: "gid://shopify/Taxonomy/Attribute/#{id}",
+        name: @attribute_names_by_id[id],
       }
     end
   end
@@ -141,9 +144,7 @@ class Category
       name:,
       full_name:,
       parent_id: parent&.gid,
-      attributes: attributes.map do |attr|
-        { id: attr[:gid] }
-      end,
+      attributes: attributes.map { { id: _1[:gid], name: _1[:name] } },
       children: children.map(&:to_h),
       ancestors: ancestors.map(&:to_h),
     }
