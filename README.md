@@ -7,6 +7,7 @@ Shopify's public product taxonomy serves as an open-source, standardized, and gl
 
 Three taxonomy verticals are currently available for preview:
 * Apparel & Accessories
+* Food, Beverages, & Tobacco
 * Home & Garden
 * Sporting Goods
 
