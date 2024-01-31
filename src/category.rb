@@ -21,7 +21,7 @@ class Category
 
     def from_json(json)
       new(
-        id: json["public_id"],
+        id: json["id"],
         name: json["name"],
         level: json["level"] - 1,
         parent: json["parent_id"],
