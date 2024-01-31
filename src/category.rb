@@ -67,7 +67,13 @@ class Category
   end
 
   def attributes
-    @attribute_ids
+    @attributes ||= @attribute_ids.map do |id|
+      # for now, good enough...
+      {
+        id: id,
+        gid: "gid://shopify/Taxonomy/Attribute/#{id}",
+      }
+    end
   end
 
   def gid
@@ -122,18 +128,18 @@ class Category
   def to_h
     {
       fully_qualified_type: fully_qualified_type,
-      public_id: id,
+      public_id: gid,
       name: name,
-      parent_id: parent&.id,
+      parent_id: parent&.gid,
       level: level,
-      children_ids: children.map(&:id),
-      ancestor_ids: ancestors.map(&:id),
-      attribute_ids: attributes,
+      children_ids: children.map(&:gid),
+      ancestor_ids: ancestors.map(&:gid),
+      attribute_ids: attributes.map { _1[:gid] },
     }
   end
 
   def to_s
-    "#{id} : #{fully_qualified_type}"
+    "#{gid} : #{fully_qualified_type}"
   end
 
   def <=>(other)
