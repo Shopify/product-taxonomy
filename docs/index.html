@@ -47,7 +47,8 @@
         {% for categories in sibling_group[1] %}
           {% for category in categories[1] %}
             <div class="category-container" id="{{category.id}}">
-              <h3 class="title"><span class="id id--large">ID: {{category.id}}</span>{{category.name}}</h3>
+              <h3 class="title">{{category.name}}</h3>
+              <span class="id id--large">ID: {{category.id}}</span>
               <p>{{ category.fully_qualified_type }}</p>
             </div>
           {% endfor %}
@@ -58,8 +59,8 @@
           <div class="attribute-container" id="{{ attribute.id }}">
             <h4 class="title attribute-title">
               <span class="id">ID: {{ attribute.id }}</span>{{ attribute.name }}
-              <span class="right-arrow">&rarr;</span>
-              <span class="down-arrow">&darr;</span>
+              <span class="arrow right-arrow">&rarr;</span>
+              <span class="arrow down-arrow">&darr;</span>
             </h4>
             <div class="values-container">
               <ul>
