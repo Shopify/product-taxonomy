@@ -25,19 +25,7 @@ module Serializers
     end
 
     def attributes
-      output = taxonomy.attributes.map do |attribute|
-        attribute_gid = "gid://shopify/Taxonomy/Attribute/#{attribute["id"]}"
-        {
-          id: attribute_gid,
-          name: attribute["name"],
-          values: attribute["values"].map do |value|
-            {
-              id: "#{attribute_gid}/#{value["id"].split("-").last}",
-              name: value["name"],
-            }
-          end
-        }
-      end
+      output = taxonomy.attributes.map(&:serialize_as_hash)
       ::JSON.pretty_generate(output)
     end
   end

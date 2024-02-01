@@ -78,7 +78,7 @@ class Category
   end
 
   def gid
-    "gid://shopify/Taxonomy/Category/#{id.downcase}"
+    @gid ||= "gid://shopify/Taxonomy/Category/#{id.downcase}"
   end
 
   def root
