@@ -19,7 +19,7 @@
 - [🧭 Getting started](#-getting-started)
   - [🧩 How to integrate with the taxonomy: `dist/`](#-how-to-integrate-with-the-taxonomy-dist)
   - [🧑🏼‍🏫 How to make changes to the taxonomy: `data/`](#-how-to-make-changes-to-the-taxonomy-data)
-  - [👩🏼‍💻 How to evolve the system: `src/`](#-how-to-evolve-the-system-src)
+  - [👩🏼‍💻 How to evolve the system: `dev/`](#-how-to-evolve-the-system-dev)
 - [📅 Releases](#-releases)
 - [📜 License](#-license)
 
@@ -73,9 +73,9 @@ We're working on a variety of formats to make it easy to integrate with your sys
 
 Everything comes from the source-of-truth in `data/`. This is where you can submit PRs to change the taxonomy itself.
 
-### 👩🏼‍💻 How to evolve the system: `src/`
+### 👩🏼‍💻 How to evolve the system: `dev/`
 
-Dive deep by hopping straight into `src/` to see how the taxonomy is generated and maintained. This is where the magic happens.
+Dive deep by hopping straight into `dev/` to see how the taxonomy is generated and maintained. This is where the magic happens.
 
 ## 📅 Releases
 

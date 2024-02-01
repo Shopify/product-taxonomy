@@ -3,10 +3,12 @@
 require 'yaml'
 require 'fileutils'
 
+require_relative '../application'
+
 class CleanDocs
   class << self
     def delete_files
-      Dir.glob('docs/_data/*').each do |file|
+      Dir.glob(Application.from_root('docs/_data/*')).each do |file|
         File.delete(file)
       end
     end
