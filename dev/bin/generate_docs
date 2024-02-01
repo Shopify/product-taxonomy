@@ -3,11 +3,13 @@
 require 'yaml'
 require 'fileutils'
 
+require_relative '../application'
+
 class GenerateDocs
   class << self
     def generate_pages_data
       sibling_groups = {}
-      Dir.glob('data/categories/*.yml').each do |file|
+      Dir.glob(Application.from_root('data/categories/*.yml')).each do |file|
         file_name = File.basename(file, ".yml")
         data = YAML.load_file(file)
         data.each do |item|
@@ -32,12 +34,15 @@ class GenerateDocs
       end
       raise "No data found in data/categories/*.yml files. Please check the data." if sibling_groups.empty?
 
-      Dir.mkdir('docs/_data') unless Dir.exist?('docs/_data')
-      File.open("docs/_data/sibling_groups.yml", "w") do |file|
+      Dir.mkdir(Application.from_root('docs/_data')) unless Dir.exist?(Application.from_root('docs/_data'))
+      File.open(Application.from_root("docs/_data/sibling_groups.yml"), "w") do |file|
         file.write(sibling_groups.to_yaml(line_width: 1000))
       end
 
-      FileUtils.cp('data/attributes/attributes.yml', 'docs/_data/attributes.yml')
+      FileUtils.cp(
+        Application.from_root('data/attributes/attributes.yml'),
+        Application.from_root('docs/_data/attributes.yml')
+      )
     end
   end
 end

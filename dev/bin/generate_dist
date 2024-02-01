@@ -4,18 +4,19 @@ require 'date'
 require 'json'
 require 'yaml'
 
+require_relative '../application'
 require_relative '../src/category'
 
-VERSION = File.read("VERSION").strip
+VERSION = File.read(Application.from_root("VERSION")).strip
 
 class GenerateDist
   def initialize
-    @verticals = Dir.glob("data/categories/*.yml").each_with_object({}) do |file, hash|
+    @verticals = Dir.glob(Application.from_root("data/categories/*.yml")).each_with_object({}) do |file, hash|
       file_name = File.basename(file, ".yml")
       data = YAML.load_file(file)
       hash[file_name] = data
     end
-    @attributes = YAML.load_file("data/attributes/attributes.yml")
+    @attributes = YAML.load_file(Application.from_root("data/attributes/attributes.yml"))
     attribute_names_by_id = @attributes.map { [_1["id"], _1["name"]] }.to_h
     @category_trees = @verticals.map do |_, categories|
       categories.map { |category| Category.from_json(category, attribute_names_by_id) }
@@ -26,7 +27,7 @@ class GenerateDist
     categories_as_text = @category_trees.flat_map { _1.map(&:serialize_as_txt) }
     header_version = "#{Date.today} (#{VERSION})"
 
-    File.open("dist/categories.txt", "w") do |file|
+    File.open(Application.from_root("dist/categories.txt"), "w") do |file|
       file.write("# Shopify Product Taxonomy: #{header_version}\n")
       file.write(categories_as_text.join("\n"))
     end
@@ -44,7 +45,7 @@ class GenerateDist
         }
       end
     }
-    File.open("dist/categories.json", "w") do |file|
+    File.open(Application.from_root("dist/categories.json"), "w") do |file|
       file.write(JSON.pretty_generate(output))
     end
   end
@@ -63,7 +64,7 @@ class GenerateDist
         end
       }
     end
-    File.open("dist/attributes.json", "w") do |file|
+    File.open(Application.from_root("dist/attributes.json"), "w") do |file|
       file.write(JSON.pretty_generate(attributes_json))
     end
   end
@@ -74,4 +75,3 @@ dist = GenerateDist.new
 dist.generate_category_txt
 dist.generate_category_json
 dist.generate_attributes_json
-

@@ -1,77 +1,86 @@
-# Shopify's Standard Product Taxonomy ([v0.0.1](./VERSION) - PREVIEW)
+<p align="center"><img src="./docs/assets/img/header.png" /></p>
 
-Shopify's public product taxonomy serves as an open-source, standardized, and global classification of products sold on Shopify. Composed of product categories, attributes, and attribute values, the taxonomy is leveraged across Shopify and is integrated with numerous marketplaces. To learn more, visit our [help docs](https://help.shopify.com/en/manual/products/details/product-category); to request early access, fill out the form [here](http://shopify.com/editions/winter2024#new-taxonomy).
+<!-- omit in toc -->
+<h1 align="center">Shopify's Standard Product Taxonomy <img src="https://img.shields.io/badge/preview-orange.svg" alt="Preview"> <a href="./VERSION"><img src="https://img.shields.io/badge/version-v0.0.1-blue.svg" alt="Version"></a></h1>
 
+> **🌍 Global Standard**: Our open-source, standardized product taxonomy establishes a universal language for product classification. Comprehensive and already empowering merchants on Shopify.
 
-[Browse Shopify's product taxonomy](https://shopify.github.io/product-taxonomy/?categoryId=sg-4-17-2-17)
+> **👩🏼‍💻 Integration Friendly**: With a stable structure and diverse formats our taxonomy is designed for effortless integration into any system.
 
-## Supported Verticals
+> **🚀 Industry Benchmark**: Spanning 20 essential verticals <em>(soon)</em>, our taxonomy encompasses categories, attributes, and values, all thoughtfully integrated within Shopify and numerous marketplaces.
+
+<p align="right"><em>Learn more on <a href="https://help.shopify.com/manual/products/details/product-category">help.shopify.com</a></em></p>
+
+<!-- omit in toc -->
+## 🗂️ Table of Contents
+
+- [🕹️ Interactive explorer](#️-interactive-explorer)
+- [📚 Taxonomy overview](#-taxonomy-overview)
+- [🧭 Getting started](#-getting-started)
+  - [🧩 How to integrate with the taxonomy: `dist/`](#-how-to-integrate-with-the-taxonomy-dist)
+  - [🧑🏼‍🏫 How to make changes to the taxonomy: `data/`](#-how-to-make-changes-to-the-taxonomy-data)
+  - [👩🏼‍💻 How to evolve the system: `dev/`](#-how-to-evolve-the-system-dev)
+- [📅 Releases](#-releases)
+- [📜 License](#-license)
+
+## 🕹️ Interactive explorer
+
+Ready to dive in? [Explore our taxonomy interactively](https://shopify.github.io/product-taxonomy/?categoryId=sg-4-17-2-17) to visualize and discover what's published.
+
+## 📚 Taxonomy overview
 
 Verticals will be regularly released to this repository, with all 20 published by the end of February, 2024. The following table shows the current status of each vertical.
 
 | Vertical | Status |
 |----------|----------|
-| Apparel & Accessories | ✅ |
-| Food, Beverages, & Tobacco | ✅ |
-| Home & Garden | ✅ |
-| Sporting Goods | ✅ |
-| Furniture | Coming soon [next] |
-| Health & Beauty | Coming soon [next] |
-| Animals & Pet supplies | Coming soon |
-| Electronics | Coming soon |
-| Media | Coming soon |
-| Arts & Entertainment | Coming soon |
-| Vehicles & parts | Coming soon |
-| Toys & games | Coming soon |
-| Luggage & bags | Coming soon |
-| Software | Coming soon |
-| Cameras & optics | Coming soon |
-| Hardware | Coming soon |
-| Baby & toddler | Coming soon |
-| Business & industrial | Coming soon |
-| Office supplies | Coming soon |
-| Services | Coming soon |
+| Apparel & Accessories | ✅ done |
+| Food, Beverages, & Tobacco | ✅ done |
+| Home & Garden | ✅ done |
+| Sporting Goods | ✅ done |
+| Furniture | 🚀 next |
+| Health & Beauty | 🚀 next |
+| Animals & Pet supplies | 🕑 soon |
+| Electronics | 🕑 soon |
+| Media | 🕑 soon |
+| Arts & Entertainment | 🕑 soon |
+| Vehicles & parts | 🕑 soon |
+| Toys & games | 🕑 soon |
+| Luggage & bags | 🕑 soon |
+| Software | 🕑 soon |
+| Cameras & optics | 🕑 soon |
+| Hardware | 🕑 soon |
+| Baby & toddler | 🕑 soon |
+| Business & industrial | 🕑 soon |
+| Office supplies | 🕑 soon |
+| Services | 🕑 soon |
 
-## Organization
+## 🧭 Getting started
 
-This github repository includes both the source code for defining the taxonomy, as well as distribution files for consuming the taxonomy. We welcome public input to evolve and adjust this taxonomy. Requested changes will be reviewed and considered for subsequent version updates.
+This repository is the home of Shopify's Standard Product Taxonomy. It houses the source-of-truth data, the distribution files for implementation, and the source code that makes this all sing.
 
-### Distribution files
+We've structured it to be as user-friendly as possible, whether you're looking to integrate the taxonomy into your own system, suggest changes, or delve into how it's developed and maintained.
 
-Used to consume the taxonomy. These are packaged in multiple formats for easy parsing and review.
+### 🧩 How to integrate with the taxonomy: `dist/`
 
-Current formats:
-- `txt`
-- `json`
+Dive straight into `dist/` to find the files you need and integrate this taxonomy into your system.
 
-Coming soon:
-- `jsonl`
-- `parquet`
+We're working on a variety of formats to make it easy to integrate with your systems. Today we have `txt` and `json` formats, and we're working on more. If you have a specific format you'd like to see, please open an issue and let us know!
 
-### Source & Data files
-
-Used to manage and update the taxonomy itself, along with necessary files to generate published formats reliably. When proposing adjustments to Shopify's product taxonomy, submit changes to these files.
+### 🧑🏼‍🏫 How to make changes to the taxonomy: `data/`
 
 
-```
-# Helper commands for generation
-bin/
+> **🔵 Note**: While we are in preview we are not actively seeking PRs.
 
-# Source-code for generation itself
-src/
+Everything comes from the source-of-truth in `data/`. This is where you can submit PRs to change the taxonomy itself.
 
-# Source-of-truth for the taxonomy
-# Use these files to submit PRs for changes to the taxonomy
-data/
-  categories/
-    aa_apparel_accessories.yml
-    ...
-```
+### 👩🏼‍💻 How to evolve the system: `dev/`
 
-## Releases
+Dive deep by hopping straight into `dev/` to see how the taxonomy is generated and maintained. This is where the magic happens.
 
-Releases will be managed on Github and will generally follow [semver](https://semver.org/). The current version can always be found in [`VERSION`](./VERSION).
+## 📅 Releases
 
-## License
+We'll manage releases on Github and generally follow [semver](https://semver.org/). You can always find the current version in [`VERSION`](./VERSION).
 
-Shopify's Product Taxonomy is released under the [MIT License](./LICENSE).
+## 📜 License
+
+Shopify's Product Taxonomy is released under the [MIT License](./LICENSE). So go ahead, explore, play, and build something awesome!
