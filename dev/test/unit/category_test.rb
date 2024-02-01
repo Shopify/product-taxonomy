@@ -1,5 +1,6 @@
 require_relative '../test_helper'
-require_relative Application.from_src('/category')
+
+require_relative Application.from_src('category')
 
 class CategoryTest < Minitest::Test
   def test_initialize

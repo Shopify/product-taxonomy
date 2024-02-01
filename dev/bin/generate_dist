@@ -1,77 +1,29 @@
 #!/usr/bin/env ruby
 
-require 'date'
-require 'json'
 require 'yaml'
 
 require_relative '../application'
-require_relative '../src/category'
+require_relative '../src/taxonomy'
+require_relative '../src/serializers/text'
+require_relative '../src/serializers/json'
 
-VERSION = File.read(Application.from_root("VERSION")).strip
+vertical_data = Dir.glob(Application.from_root("data/categories/*.yml")).map { YAML.load_file(_1) }
+attribute_data = YAML.load_file(Application.from_root("data/attributes/attributes.yml"))
+taxonomy = Taxonomy.new(vertical_data:, attribute_data:)
+version = File.read(Application.from_root("VERSION")).strip
 
-class GenerateDist
-  def initialize
-    @verticals = Dir.glob(Application.from_root("data/categories/*.yml")).each_with_object({}) do |file, hash|
-      file_name = File.basename(file, ".yml")
-      data = YAML.load_file(file)
-      hash[file_name] = data
-    end
-    @attributes = YAML.load_file(Application.from_root("data/attributes/attributes.yml"))
-    attribute_names_by_id = @attributes.map { [_1["id"], _1["name"]] }.to_h
-    @category_trees = @verticals.map do |_, categories|
-      categories.map { |category| Category.from_json(category, attribute_names_by_id) }
-    end
-  end
-
-  def generate_category_txt
-    categories_as_text = @category_trees.flat_map { _1.map(&:serialize_as_txt) }
-    header_version = "#{Date.today} (#{VERSION})"
-
-    File.open(Application.from_root("dist/categories.txt"), "w") do |file|
-      file.write("# Shopify Product Taxonomy: #{header_version}\n")
-      file.write(categories_as_text.join("\n"))
-    end
-  end
-
-  def generate_category_json
-    output = {
-      version: VERSION,
-      verticals: @category_trees.map do |tree|
-        vertical_root = tree.first
-        {
-          name: vertical_root.name,
-          prefix: vertical_root.id.downcase,
-          categories: tree.map(&:serialize_as_hash),
-        }
-      end
-    }
-    File.open(Application.from_root("dist/categories.json"), "w") do |file|
-      file.write(JSON.pretty_generate(output))
-    end
-  end
-
-  def generate_attributes_json
-    attributes_json = @attributes.map do |attribute|
-      attribute_gid = "gid://shopify/Taxonomy/Attribute/#{attribute["id"]}"
-      {
-        id: attribute_gid,
-        name: attribute["name"],
-        values: attribute["values"].map do |value|
-          {
-            id: "#{attribute_gid}/#{value["id"].split("-").last}",
-            name: value["name"],
-          }
-        end
-      }
-    end
-    File.open(Application.from_root("dist/attributes.json"), "w") do |file|
-      file.write(JSON.pretty_generate(attributes_json))
-    end
-  end
+text_serializer = Serializers::Text.new(taxonomy, version)
+File.open(Application.from_root("dist/categories.txt"), "w") do |file|
+  file.write(text_serializer.categories)
 end
 
-dist = GenerateDist.new
-
-dist.generate_category_txt
-dist.generate_category_json
-dist.generate_attributes_json
+json_serializer = Serializers::JSON.new(taxonomy, version)
+File.open(Application.from_root("dist/taxonomy.json"), "w") do |file|
+  file.write(json_serializer.taxonomy)
+end
+File.open(Application.from_root("dist/categories.json"), "w") do |file|
+  file.write(json_serializer.categories)
+end
+File.open(Application.from_root("dist/attributes.json"), "w") do |file|
+  file.write(json_serializer.attributes)
+end

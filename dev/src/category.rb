@@ -1,25 +1,23 @@
+require_relative 'attribute'
+require_relative 'storage/memory'
+
 class Category
   include Comparable
 
-  @@nodes = {}
   @@largest_gid = 0
 
   attr_reader(:id, :name, :level)
 
   class << self
     def find(id)
-      return if id.nil? || id.empty?
-
-      @@nodes[id]
+      Storage::Memory.find(self, id)
     end
 
     def find!(id)
-      return if id.nil? || id.empty?
-
-      find(id) || raise(ArgumentError, "no category with id #{id}")
+      Storage::Memory.find!(self, id)
     end
 
-    def from_json(json, attribute_names_by_id)
+    def from_json(json)
       new(
         id: json["id"],
         name: json["name"],
@@ -27,14 +25,13 @@ class Category
         parent: json["parent_id"],
         children: json["children_ids"],
         attributes: json["attribute_ids"],
-        attribute_names_by_id: attribute_names_by_id,
       )
     end
   end
 
   # allow ids passing for delayed instantiation
-  def initialize(id:, name:, level: 0, parent: nil, children: [], attributes: [], attribute_names_by_id: nil)
-    @id = id
+  def initialize(id:, name:, level: 0, parent: nil, children: [], attributes: [])
+    @id = id.to_s
     @name = name
     @level = level
 
@@ -47,14 +44,16 @@ class Category
     if children.all? { _1.is_a?(self.class) }
       @children = children
     else
-      @children_ids = children
+      @children_ids = children || []
     end
 
-    # TODO: model attributes
-    @attribute_ids = attributes
-    @attribute_names_by_id = attribute_names_by_id
+    if attributes.all? { _1.is_a?(Attribute) }
+      @attributes = attributes
+    else
+      @attribute_ids = attributes || []
+    end
 
-    @@nodes[id] = self
+    Storage::Memory.save(self.class, id, self)
     @@largest_gid = [@@largest_gid, gid.size].max
   end
 
@@ -67,18 +66,11 @@ class Category
   end
 
   def attributes
-    @attributes ||= @attribute_ids.map do |id|
-      # for now, good enough...
-      {
-        id:,
-        gid: "gid://shopify/Taxonomy/Attribute/#{id}",
-        name: @attribute_names_by_id[id],
-      }
-    end
+    @attributes ||= @attribute_ids.map { Attribute.find!(_1) }
   end
 
   def gid
-    "gid://shopify/Taxonomy/Category/#{id.downcase}"
+    @gid ||= "gid://shopify/Taxonomy/Category/#{id.downcase}"
   end
 
   def root
@@ -150,7 +142,7 @@ class Category
       name:,
       full_name:,
       parent_id: parent&.gid,
-      attributes: attributes.map { { id: _1[:gid], name: _1[:name] } },
+      attributes: attributes.map(&:to_h),
       children: children.map(&:to_h),
       ancestors: ancestors.map(&:to_h),
     }
