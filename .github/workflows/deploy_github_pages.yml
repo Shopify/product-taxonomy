@@ -28,6 +28,7 @@ jobs:
         ruby-version: 3.2.2
 
     - name: Install dependencies
+      working-directory: ./dev
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
