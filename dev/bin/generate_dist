@@ -7,26 +7,22 @@ require_relative '../src/taxonomy'
 require_relative '../src/serializers/text'
 require_relative '../src/serializers/json'
 
-VERSION = File.read(Application.from_root("VERSION")).strip
-
 vertical_data = Dir.glob(Application.from_root("data/categories/*.yml"))
-  .each_with_object({}) do |file, hash|
-    file_name = File.basename(file, ".yml")
-    data = YAML.load_file(file)
-    hash[file_name] = data
-  end
+.each_with_object({}) do |file, hash|
+  file_name = File.basename(file, ".yml")
+  data = YAML.load_file(file)
+  hash[file_name] = data
+end
 attribute_data = YAML.load_file(Application.from_root("data/attributes/attributes.yml"))
+taxonomy = Taxonomy.new(vertical_data:, attribute_data:)
+version = File.read(Application.from_root("VERSION")).strip
 
-taxonomy = Taxonomy.new(
-  vertical_data:,
-  attribute_data:
-)
-
+text_serializer = Serializers::Text.new(taxonomy, version)
 File.open(Application.from_root("dist/categories.txt"), "w") do |file|
-  file.write(Serializers::Text.new(taxonomy, VERSION).categories)
+  file.write(text_serializer.categories)
 end
 
-json_serializer = Serializers::JSON.new(taxonomy, VERSION)
+json_serializer = Serializers::JSON.new(taxonomy, version)
 File.open(Application.from_root("dist/categories.json"), "w") do |file|
   file.write(json_serializer.categories)
 end
