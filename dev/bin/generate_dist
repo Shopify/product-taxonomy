@@ -7,12 +7,7 @@ require_relative '../src/taxonomy'
 require_relative '../src/serializers/text'
 require_relative '../src/serializers/json'
 
-vertical_data = Dir.glob(Application.from_root("data/categories/*.yml"))
-.each_with_object({}) do |file, hash|
-  file_name = File.basename(file, ".yml")
-  data = YAML.load_file(file)
-  hash[file_name] = data
-end
+vertical_data = Dir.glob(Application.from_root("data/categories/*.yml")).map { YAML.load_file(_1) }
 attribute_data = YAML.load_file(Application.from_root("data/attributes/attributes.yml"))
 taxonomy = Taxonomy.new(vertical_data:, attribute_data:)
 version = File.read(Application.from_root("VERSION")).strip

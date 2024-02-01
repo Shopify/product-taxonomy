@@ -11,7 +11,7 @@ class AttributeValue
   attr_reader :id, :name
 
   def initialize(id:, name:)
-    @id = id
+    @id = id.to_s
     @name = name
   end
 

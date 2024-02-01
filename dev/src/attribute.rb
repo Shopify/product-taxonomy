@@ -1,17 +1,15 @@
+require_relative 'storage/memory'
+
 class Attribute
   @@nodes = {}
 
   class << self
     def find(id)
-      return if id.nil? || id.empty?
-
-      @@nodes[id]
+      Storage::Memory.find(self, id)
     end
 
     def find!(id)
-      return if id.nil? || id.empty?
-
-      find(id) || raise(ArgumentError, "no category with id #{id}")
+      Storage::Memory.find!(self, id)
     end
 
     def from_json(json)
@@ -26,11 +24,11 @@ class Attribute
   attr_reader :id, :name, :values
 
   def initialize(id:, name:, values: [])
-    @id = id
+    @id = id.to_s
     @name = name
     @values = values
 
-    @@nodes[id] = self
+    Storage::Memory.save(self.class, id, self)
   end
 
   def gid

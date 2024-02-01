@@ -1,5 +1,3 @@
-require 'date'
-
 module Serializers
   class Text
     attr_reader :taxonomy, :version
