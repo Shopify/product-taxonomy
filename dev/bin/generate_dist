@@ -18,6 +18,9 @@ File.open(Application.from_root("dist/categories.txt"), "w") do |file|
 end
 
 json_serializer = Serializers::JSON.new(taxonomy, version)
+File.open(Application.from_root("dist/taxonomy.json"), "w") do |file|
+  file.write(json_serializer.taxonomy)
+end
 File.open(Application.from_root("dist/categories.json"), "w") do |file|
   file.write(json_serializer.categories)
 end
