@@ -10,30 +10,30 @@ require_relative '../src/category'
 VERSION = File.read(Application.from_root("VERSION")).strip
 
 class GenerateDist
-  def initialize
-    @verticals = Dir.glob(Application.from_root("data/categories/*.yml")).each_with_object({}) do |file, hash|
+  def initialize(vertical_sources:, attribute_source:)
+    @verticals = vertical_sources.each_with_object({}) do |file, hash|
       file_name = File.basename(file, ".yml")
       data = YAML.load_file(file)
       hash[file_name] = data
     end
-    @attributes = YAML.load_file(Application.from_root("data/attributes/attributes.yml"))
+    @attributes = YAML.load_file(attribute_source)
     attribute_names_by_id = @attributes.map { [_1["id"], _1["name"]] }.to_h
     @category_trees = @verticals.map do |_, categories|
       categories.map { |category| Category.from_json(category, attribute_names_by_id) }
     end
   end
 
-  def generate_category_txt
+  def generate_category_txt(target_file:)
     categories_as_text = @category_trees.flat_map { _1.map(&:serialize_as_txt) }
     header_version = "#{Date.today} (#{VERSION})"
 
-    File.open(Application.from_root("dist/categories.txt"), "w") do |file|
+    File.open(target_file, "w") do |file|
       file.write("# Shopify Product Taxonomy: #{header_version}\n")
       file.write(categories_as_text.join("\n"))
     end
   end
 
-  def generate_category_json
+  def generate_category_json(target_file:)
     output = {
       version: VERSION,
       verticals: @category_trees.map do |tree|
@@ -45,12 +45,12 @@ class GenerateDist
         }
       end
     }
-    File.open(Application.from_root("dist/categories.json"), "w") do |file|
+    File.open(target_file, "w") do |file|
       file.write(JSON.pretty_generate(output))
     end
   end
 
-  def generate_attributes_json
+  def generate_attributes_json(target_file:)
     attributes_json = @attributes.map do |attribute|
       attribute_gid = "gid://shopify/Taxonomy/Attribute/#{attribute["id"]}"
       {
@@ -64,14 +64,18 @@ class GenerateDist
         end
       }
     end
-    File.open(Application.from_root("dist/attributes.json"), "w") do |file|
+    File.open(target_file, "w") do |file|
       file.write(JSON.pretty_generate(attributes_json))
     end
   end
 end
 
-dist = GenerateDist.new
+dist = GenerateDist.new(
+  vertical_sources: Dir.glob(Application.from_root("data/categories/*.yml")),
+  attribute_source: Application.from_root("data/attributes/attributes.yml")
+)
 
-dist.generate_category_txt
-dist.generate_category_json
-dist.generate_attributes_json
+dist.generate_category_txt(target_file: Application.from_root("dist/categories.txt"))
+
+dist.generate_category_json(target_file: Application.from_root("dist/categories.json"))
+dist.generate_attributes_json(target_file: Application.from_root("dist/attributes.json"))
