@@ -119,7 +119,9 @@ class Category
   def descendants
     return @descendants if defined?(@descendants)
 
-    @descendants = Set[children] + children.flat_map(&:descendants)
+    @descendants = children.reduce(children.to_set) do |set, child|
+      set + child.descendants
+    end
   end
 
   def full_name
@@ -135,6 +137,10 @@ class Category
 
   def to_s
     "#{full_name} (#{gid})"
+  end
+
+  def inspect
+    "#<#{self.class} id=#{id} name=#{name} parent=#{parent.id} children=#{children.map(&:id)}>"
   end
 
   def serialize_as_hash

@@ -1,0 +1,8 @@
+require 'minitest/test_task'
+
+task default: %w[test]
+
+Minitest::TestTask.create :test do |t|
+  t.test_globs = ["test/unit/**/*_test.rb"]
+  t.warning = false
+end

@@ -10,5 +10,9 @@ class Application
     def from_root(*paths)
       File.join(ROOT, *paths)
     end
+
+    def from_src(*paths)
+      from_root('dev', 'src', *paths)
+    end
   end
 end
