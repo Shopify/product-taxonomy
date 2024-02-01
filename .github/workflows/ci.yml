@@ -1,0 +1,32 @@
+name: Run Minitest
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.3.0
+
+    - name: Install dependencies
+      working-directory: ./dev
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+
+    - name: Run tests
+      working-directory: ./dev
+      run: bin/rake test
