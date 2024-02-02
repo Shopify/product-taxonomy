@@ -1,3 +1,11 @@
+## 0.0.3 (Feb 2, 2024)
+
+Adds the next vertical.
+
+#### 📚 Taxonomy
+
+- Adds `Furniture` vertical
+
 ## 0.0.2 (Feb 2, 2024)
 
 Sort output and improve the developer experience.
