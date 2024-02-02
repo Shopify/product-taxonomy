@@ -35,6 +35,9 @@ class AttributeValue
   def <=>(other)
     return nil if other.nil? || !other.is_a?(self.class)
 
+    return 1 if name == 'Other'
+    return -1 if other.name == 'Other'
+
     name <=> other.name
   end
 end
