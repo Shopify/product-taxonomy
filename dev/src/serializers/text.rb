@@ -7,7 +7,7 @@ module Serializers
 
     def categories
       header = "# Shopify Product Taxonomy: #{@version}"
-      @taxonomy.categories.map(&:serialize_as_txt).unshift(header).join("\n")
+      @taxonomy.all_categories.map(&:serialize_as_txt).unshift(header).join("\n")
     end
   end
 end
