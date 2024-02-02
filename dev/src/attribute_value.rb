@@ -1,4 +1,8 @@
 class AttributeValue
+  include Comparable
+
+  attr_reader :id, :name
+
   class << self
     def from_json(json)
       new(
@@ -7,8 +11,6 @@ class AttributeValue
       )
     end
   end
-
-  attr_reader :id, :name
 
   def initialize(id:, name:)
     @id = id.to_s
@@ -24,5 +26,15 @@ class AttributeValue
       id: gid,
       name:,
     }
+  end
+
+  def inspect
+    "#<#{self.class} id=`#{id}` name=`#{name}`>"
+  end
+
+  def <=>(other)
+    return nil if other.nil? || !other.is_a?(self.class)
+
+    name <=> other.name
   end
 end

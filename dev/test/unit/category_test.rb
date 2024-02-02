@@ -3,6 +3,10 @@ require_relative '../test_helper'
 require_relative Application.from_src('category')
 
 class CategoryTest < Minitest::Test
+  def teardown
+    Storage::Memory.clear!
+  end
+
   def test_initialize
     assert_equal 't', category.id
     assert_equal 'gid://shopify/Taxonomy/Category/t', category.gid
@@ -43,29 +47,55 @@ class CategoryTest < Minitest::Test
     assert_equal category, child_category.root
   end
 
-  def test_ancestors
+  def test_ancestors_are_ordered
     child_category = Category.new(id: 't-7', name: 'Child')
     category.add(child_category)
 
     grandchild_category = Category.new(id: 't-7-1', name: 'Grandchild')
     child_category.add(grandchild_category)
 
-    assert_equal Set[category, child_category], grandchild_category.ancestors
+    assert_equal [child_category, category], grandchild_category.ancestors
   end
 
-  def test_descendants
-    child_category = Category.new(id: 't-8', name: 'Child')
+  def test_ancestors_and_self_includes_self
+    child_category = Category.new(id: 't-7', name: 'Child')
     category.add(child_category)
 
-    grandchild_category = Category.new(id: 't-8-1', name: 'Grandchild')
+    grandchild_category = Category.new(id: 't-7-1', name: 'Grandchild')
     child_category.add(grandchild_category)
 
-    assert_equal Set[child_category, grandchild_category], category.descendants
+    assert_equal [grandchild_category, child_category, category], grandchild_category.ancestors_and_self
   end
 
-  def test_comparison
-    category1 = Category.new(id: 't-13', name: 'Category 1')
-    category2 = Category.new(id: 't-14', name: 'Category 2')
+  def test_descendants_are_depth_first
+    l2_category = Category.new(id: 't-8', name: 'Child')
+    category.add(l2_category)
+
+    l3_category = Category.new(id: 't-8-1', name: 'Grandchild')
+    l2_category.add(l3_category)
+
+    l3_sibling = Category.new(id: 't-8-2', name: 'Alpha Grandchild')
+    l2_category.add(l3_sibling)
+
+    l4_category = Category.new(id: 't-8-1-1', name: 'Great Grandchild')
+    l3_sibling.add(l4_category)
+
+    assert_equal [l2_category, l3_sibling, l4_category, l3_category], category.descendants
+  end
+
+  def test_descendants_and_self_includes_self
+    child_category = Category.new(id: 't-7', name: 'Child')
+    category.add(child_category)
+
+    grandchild_category = Category.new(id: 't-7-1', name: 'Grandchild')
+    child_category.add(grandchild_category)
+
+    assert_equal [category, child_category, grandchild_category], category.descendants_and_self
+  end
+
+  def test_comparison_by_name
+    category1 = Category.new(id: 't-14', name: 'Cat')
+    category2 = Category.new(id: 't-13', name: 'Dog')
 
     assert_equal (-1), category1 <=> category2
     assert_equal 1, category2 <=> category1

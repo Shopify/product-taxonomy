@@ -42,13 +42,13 @@ class Category
     end
 
     if children.all? { _1.is_a?(self.class) }
-      @children = children
+      @children = children.sort
     else
       @children_ids = children || []
     end
 
     if attributes.all? { _1.is_a?(Attribute) }
-      @attributes = attributes
+      @attributes = attributes.sort
     else
       @attribute_ids = attributes || []
     end
@@ -62,11 +62,11 @@ class Category
   end
 
   def children
-    @children ||= @children_ids.map { self.class.find!(_1) }
+    @children ||= @children_ids.map { self.class.find!(_1) }.sort!
   end
 
   def attributes
-    @attributes ||= @attribute_ids.map { Attribute.find!(_1) }
+    @attributes ||= @attribute_ids.map { Attribute.find!(_1) }.sort!
   end
 
   def gid
@@ -95,6 +95,7 @@ class Category
 
     child.parent = self
     children << child
+    children.sort!
     child
   end
 
@@ -102,18 +103,25 @@ class Category
     return @ancestors if defined?(@ancestors)
 
     @ancestors = if parent.nil?
-      Set[]
+      []
     else
-      Set[parent] + parent.ancestors
+      [parent] + parent.ancestors
     end
   end
 
+  def ancestors_and_self
+    [self] + ancestors
+  end
+
+  # depth-first given that matches how we want to use this
   def descendants
     return @descendants if defined?(@descendants)
 
-    @descendants = children.reduce(children.to_set) do |set, child|
-      set + child.descendants
-    end
+    @descendants = children.flat_map { |child| [child] + child.descendants }
+  end
+
+  def descendants_and_self
+    [self] + descendants
   end
 
   def full_name
@@ -132,7 +140,7 @@ class Category
   end
 
   def inspect
-    "#<#{self.class} id=#{id} name=#{name} parent=#{parent.id} children=#{children.map(&:id)}>"
+    "#<#{self.class} id=`#{id}` name=`#{name}` parent=`#{parent&.id}` children=`#{children.size}`>"
   end
 
   def serialize_as_hash
@@ -155,7 +163,7 @@ class Category
   def <=>(other)
     return nil if other.nil? || !other.is_a?(self.class)
 
-    id <=> other.id
+    name <=> other.name
   end
 
   protected

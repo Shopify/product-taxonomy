@@ -1,7 +1,9 @@
 require_relative 'storage/memory'
 
 class Attribute
-  @@nodes = {}
+  include Comparable
+
+  attr_reader :id, :name, :values
 
   class << self
     def find(id)
@@ -21,8 +23,6 @@ class Attribute
     end
   end
 
-  attr_reader :id, :name, :values
-
   def initialize(id:, name:, values: [])
     @id = id.to_s
     @name = name
@@ -37,6 +37,8 @@ class Attribute
 
   def add_value(value)
     values << value
+    values.sort!
+    values
   end
 
   def to_h
@@ -46,11 +48,21 @@ class Attribute
     }
   end
 
+  def inspect
+    "#<#{self.class} id=`#{id}` name=`#{name}` values=`#{values.map(&:id)}`>"
+  end
+
   def serialize_as_hash
     {
       id: gid,
       name:,
       values: values.map(&:to_h),
     }
+  end
+
+  def <=>(other)
+    return nil if other.nil? || !other.is_a?(self.class)
+
+    name <=> other.name
   end
 end
