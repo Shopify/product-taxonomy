@@ -8,7 +8,7 @@ class Taxonomy
   attr_reader :verticals, :attributes
 
   def initialize(vertical_data:, attribute_data:)
-    @attributes = attribute_data.map { Attribute.from_json(_1) }
+    @attributes = attribute_data.map { Attribute.from_json(_1) }.sort
     @verticals = vertical_data.map do |vertical|
       # load data into memory
       vertical.each { Category.from_json(_1) }
