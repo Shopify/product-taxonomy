@@ -29,6 +29,10 @@ module Storage
 
         find(klass, id) || raise(ArgumentError, "#{klass} <#{id}> not found")
       end
+
+      def keys(klass)
+        @@data[klass]&.keys || []
+      end
     end
   end
 end
