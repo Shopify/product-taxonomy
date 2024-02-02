@@ -1,4 +1,5 @@
-require "minitest/autorun"
-require "minitest/pride"
+require 'minitest/autorun'
+require 'minitest/pride'
+require 'byebug'
 
-require_relative "../application"
+require_relative '../application'

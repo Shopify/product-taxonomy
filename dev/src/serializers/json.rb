@@ -10,12 +10,11 @@ module Serializers
     def taxonomy
       output = {
         version: @version,
-        verticals: @taxonomy.verticals.map do |vertical|
-          root = vertical.first
+        verticals: @taxonomy.verticals.map do |vertical_root|
           {
-            name: root.name,
-            prefix: root.id.downcase,
-            categories: vertical.map(&:serialize_as_hash),
+            name: vertical_root.name,
+            prefix: vertical_root.id.downcase,
+            categories: vertical_root.descendants_and_self.map(&:serialize_as_hash),
           }
         end,
         attributes: @taxonomy.attributes.map(&:serialize_as_hash),
@@ -26,12 +25,11 @@ module Serializers
     def categories
       output = {
         version: @version,
-        verticals: @taxonomy.verticals.map do |vertical|
-          root = vertical.first
+        verticals: @taxonomy.verticals.map do |vertical_root|
           {
-            name: root.name,
-            prefix: root.id.downcase,
-            categories: vertical.map(&:serialize_as_hash),
+            name: vertical_root.name,
+            prefix: vertical_root.id.downcase,
+            categories: vertical_root.descendants_and_self.map(&:serialize_as_hash),
           }
         end
       }
