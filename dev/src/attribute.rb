@@ -26,7 +26,7 @@ class Attribute
   def initialize(id:, name:, values: [])
     @id = id.to_s
     @name = name
-    @values = values
+    @values = values.sort
 
     Storage::Memory.save(self.class, id, self)
   end
