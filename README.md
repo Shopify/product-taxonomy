@@ -1,7 +1,7 @@
 <p align="center"><img src="./docs/assets/img/header.png" /></p>
 
 <!-- omit in toc -->
-<h1 align="center">Shopify's Standard Product Taxonomy <img src="https://img.shields.io/badge/preview-orange.svg" alt="Preview"> <a href="./VERSION"><img src="https://img.shields.io/badge/version-v0.0.3-blue.svg" alt="Version"></a></h1>
+<h1 align="center">Shopify's Standard Product Taxonomy <img src="https://img.shields.io/badge/preview-orange.svg" alt="Preview"> <a href="./VERSION"><img src="https://img.shields.io/badge/version-v0.1.0-blue.svg" alt="Version"></a></h1>
 
 > **🌍 Global Standard**: Our open-source, standardized product taxonomy establishes a universal language for product classification. Comprehensive and already empowering merchants on Shopify.
 
@@ -75,7 +75,7 @@ Everything comes from the source-of-truth in `data/`. This is where you can subm
 
 ### 👩🏼‍💻 How to evolve the system: `dev/`
 
-Dive deep by hopping straight into `dev/` to see how the taxonomy is generated and maintained. This is where the magic happens.
+Dive deep by hopping straight into `dev/` to see how the taxonomy is generated and maintained. This is where the magic happens. Schema validation is handled by `cue` via `dev/bin/vet_schema`.
 
 ## 📅 Releases
 

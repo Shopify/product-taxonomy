@@ -1,3 +1,15 @@
+## 0.1.0 (Feb 6, 2024)
+
+Structure CHANGED for `dist/attributes.json`. Adds schema validation.
+
+#### 📚 Taxonomy
+
+- Attribute distribution JSON is now normative, with top-level `attributes` and `version` keys
+
+#### 💅🏼 Enhancement
+
+- `cue` added to validate `dist/` while providing a clear spec of the distribution files
+
 ## 0.0.3 (Feb 2, 2024)
 
 Adds the next vertical.
