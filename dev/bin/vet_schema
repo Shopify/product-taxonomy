@@ -1,7 +1,0 @@
-#!/bin/sh
-
-SCRIPT_DIR=$(dirname "$0")
-ROOT_DIR=$(realpath "$SCRIPT_DIR/../../")
-
-cue vet $ROOT_DIR/schema/schema.cue $ROOT_DIR/dist/categories.json
-echo "cue returned: $?"

@@ -1,0 +1,37 @@
+#!/bin/sh
+
+SCRIPT_DIR=$(dirname "$0")
+ROOT_DIR=$(realpath "$SCRIPT_DIR/../../")
+SCHEMA_DIR="$ROOT_DIR"/schema
+DIST_DIR="$ROOT_DIR"/dist
+
+vet_dist_file() {
+  file="$1"
+  cue_target="${2:-*.cue}"
+  echo "→ Validating $file with $cue_target..."
+  cue vet "$SCHEMA_DIR"/$cue_target "$DIST_DIR"/"$file"
+  if [ $? -ne 0 ]; then
+    echo "⨯ Failed to validate. Stopping."
+    exit 1
+  fi
+}
+
+import_dist_to_cue() {
+  file="$1"
+  out_file="$2"
+  echo "→ Writing $out_file from $file for import..."
+  cue import "$DIST_DIR"/"$file" -p shopify -f -o "$SCHEMA_DIR"/"$out_file"
+  if [ $? -ne 0 ]; then
+    echo "⨯ Failed to import. Stopping."
+    exit 1
+  fi
+}
+
+vet_dist_file attributes.json
+import_dist_to_cue attributes.json attribute_data.cue # allows attribute cross-checks in categories.cue
+
+vet_dist_file categories.json
+vet_dist_file taxonomy.json
+
+echo "✔️ All files validated successfully"
+exit 0
