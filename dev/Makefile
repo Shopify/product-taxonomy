@@ -1,0 +1,45 @@
+.DEFAULT_GOAL := default
+
+###############################################################################
+# FORMATTING HELPERS
+# Used throughout the makefile for pretty printing and toggling verbose output
+
+ifeq ($(VERBOSE),1)
+  V=
+	VPIPE=
+else
+	V=@
+	VPIPE= >/dev/null
+endif
+
+FMT      = printf "\e[%sm>> %-21s\e[0;1m →\e[1;32m %s\e[0m\n"
+GENERATE = $(FMT) "1;34" # bold blue
+NUKE     = $(FMT) "1;31" # bold red
+ADVISORY = printf "\e[%sm!! %-21s\e[0;1m\n" "1;31" # bold red text with a !! prefix
+
+# Inputs
+CATEGORIES_DATA = $(shell find ../data/categories)
+ATTRIBUTES_DATA = $(shell find ../data/attributes)
+
+# Targets
+
+# Note, this is only because bin/generate_docs generates multiple files
+# and would probably generate more in the future. Make isn't great at targeting
+# arbitrary numbers of outputs, so we'll use a sentinel instead.
+DOCS_GENERATED_SENTINEL = tmp/.docs_generated_sentinel
+GENERATED_DOCS_PATH = ../docs/_data
+
+$(DOCS_GENERATED_SENTINEL): $(CATEGORIES_DATA) $(ATTRIBUTES_DATA)
+	@$(GENERATE) "Building Docs" "../docs/_data/*.yml"
+	$(V)./bin/generate_docs
+	$(V)touch $@
+
+default: $(DOCS_GENERATED_SENTINEL)
+.PHONY: default
+
+clean:
+	@$(NUKE) "Cleaning Generated Docs" $(GENERATED_DOCS_PATH)
+	$(V)rm -f $(DOCS_GENERATED_SENTINEL)
+	$(V)rm -rf $(GENERATED_DOCS_PATH)
+.PHONY: clean
+
