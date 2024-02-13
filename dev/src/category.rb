@@ -6,7 +6,7 @@ class Category
 
   @@largest_gid = 0
 
-  attr_reader(:id, :name, :level)
+  attr_reader(:id, :name)
 
   class << self
     def find(id)
@@ -21,7 +21,6 @@ class Category
       new(
         id: json["id"],
         name: json["name"],
-        level: json["level"] - 1,
         parent: json["parent_id"],
         children: json["children_ids"],
         attributes: json["attribute_ids"],
@@ -30,10 +29,9 @@ class Category
   end
 
   # allow ids passing for delayed instantiation
-  def initialize(id:, name:, level: 0, parent: nil, children: [], attributes: [])
+  def initialize(id:, name:, parent: nil, children: [], attributes: [])
     @id = id.to_s
     @name = name
-    @level = level
 
     if parent.is_a?(self.class)
       @parent = parent
@@ -71,6 +69,10 @@ class Category
 
   def gid
     @gid ||= "gid://shopify/Taxonomy/Category/#{id.downcase}"
+  end
+
+  def level
+    ancestors.size
   end
 
   def root
@@ -170,7 +172,6 @@ class Category
 
   def parent=(parent)
     @parent = parent
-    @level = parent ? parent.level + 1 : 0
     remove_instance_variable(:@ancestors) if defined?(@ancestors)
     remove_instance_variable(:@descendants) if defined?(@descendants)
   end
