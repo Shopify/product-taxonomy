@@ -9,3 +9,13 @@ type: ruby
 up:
   - ruby: 3.3.0
   - bundler
+  - custom:
+      name: "Remove old cue version"
+      # Cue versions prior to 0.7.0 won't work but our homebrew integration
+      # doesn't give us a great way to force an upgrade.
+      met?: '! ( cue version 2>/dev/null | grep -E "cue version v0\.[123456]\." )'
+      meet: brew uninstall cue
+  - packages:
+    - cue
+
+
