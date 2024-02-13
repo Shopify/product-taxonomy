@@ -75,7 +75,9 @@ Everything comes from the source-of-truth in `data/`. This is where you can subm
 
 ### 👩🏼‍💻 How to evolve the system: `dev/`
 
-Dive deep by hopping straight into `dev/` to see how the taxonomy is generated and maintained. This is where the magic happens. Schema validation is handled by `cue` via `dev/bin/verify_dist_files`.
+Dive deep by hopping straight into `dev/` to see how the taxonomy is generated and maintained. This is where the magic happens.
+
+For more information, see the [dev readme](./dev/README.md)
 
 ## 📅 Releases
 
