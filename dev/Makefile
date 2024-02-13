@@ -21,6 +21,9 @@ ADVISORY = printf "\e[%sm!! %-21s\e[0;1m\n" "1;31" # bold red text with a !! pre
 CATEGORIES_DATA = $(shell find ../data/categories)
 ATTRIBUTES_DATA = $(shell find ../data/attributes)
 
+CATEGORIES_JSON = ../dist/categories.json
+ATTRIBUTES_JSON = ../dist/attributes.json
+
 # Targets
 
 # Note, this is only because bin/generate_docs generates multiple files
@@ -29,20 +32,39 @@ ATTRIBUTES_DATA = $(shell find ../data/attributes)
 DOCS_GENERATED_SENTINEL = tmp/.docs_generated_sentinel
 GENERATED_DOCS_PATH = ../docs/_data
 
-$(DOCS_GENERATED_SENTINEL): $(CATEGORIES_DATA) $(ATTRIBUTES_DATA)
-	@$(GENERATE) "Building Docs" "../docs/_data/*.yml"
-	$(V)./bin/generate_docs
-	$(V)touch $@
+# CUE imports needed for schema validation
+ATTRIBUTES_DATA_CUE = ../schema/attributes_data.cue
+CATEGORIES_DATA_CUE = ../schema/categories_data.cue
 
-default: $(DOCS_GENERATED_SENTINEL)
+default: $(DOCS_GENERATED_SENTINEL) \
+	$(CATEGORIES_DATA_CUE) \
+	$(ATTRIBUTES_DATA_CUE)
 .PHONY: default
 
 clean:
 	@$(NUKE) "Cleaning Generated Docs" $(GENERATED_DOCS_PATH)
 	$(V)rm -f $(DOCS_GENERATED_SENTINEL)
 	$(V)rm -rf $(GENERATED_DOCS_PATH)
+	@$(NUKE) "Cleaning attribute data cuefiles" $(ATTRIBUTES_DATA_CUE)
+	$(V)rm -f $(ATTRIBUTES_DATA_CUE)
+	@$(NUKE) "Cleaning category data cuefiles" $(CATEGORIES_DATA_CUE)
+	$(V)rm -f $(CATEGORIES_DATA_CUE)
 .PHONY: clean
 
 test:
 	bin/rake test $@
 .PHONY: test
+
+$(DOCS_GENERATED_SENTINEL): $(CATEGORIES_DATA) $(ATTRIBUTES_DATA)
+	@$(GENERATE) "Building Docs" "../docs/_data/*.yml"
+	$(V)./bin/generate_docs
+	$(V)touch $@
+
+# TODO: These two targets can be done together
+$(CATEGORIES_DATA_CUE): $(CATEGORIES_JSON)
+	@$(GENERATE) "Importing $(CATEGORIES_JSON)" $(CATEGORIES_DATA_CUE)
+	$(V)cue import $(CATEGORIES_JSON) -p product_taxonomy -f -o $(CATEGORIES_DATA_CUE)
+
+$(ATTRIBUTES_DATA_CUE): $(ATTRIBUTES_JSON)
+	@$(GENERATE) "Importing $(ATTRIBUTES_JSON)" $(ATTRIBUTES_DATA_CUE)
+	$(V)cue import $(ATTRIBUTES_JSON) -p product_taxonomy -f -o $(ATTRIBUTES_DATA_CUE)
