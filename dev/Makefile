@@ -43,3 +43,6 @@ clean:
 	$(V)rm -rf $(GENERATED_DOCS_PATH)
 .PHONY: clean
 
+test:
+	bin/rake test $@
+.PHONY: test

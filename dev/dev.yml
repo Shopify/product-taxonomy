@@ -9,11 +9,3 @@ type: ruby
 up:
   - ruby: 3.3.0
   - bundler
-
-commands:
-  test:
-    syntax:
-      argument: file
-      optional: args...
-    desc: 'run tests related to changes'
-    run: bin/rake test $@
