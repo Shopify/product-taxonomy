@@ -27,17 +27,11 @@ jobs:
         gem install bundler
         bundle install --jobs 4 --retry 3
 
-    - name: Run tests
-      working-directory: ./dev
-      run: bin/rake test
-
     - name: Set up Cue
       uses: cue-lang/setup-cue@v1.0.0
       with:
         version: 'v0.7.0'
 
-    - name: Verify generation output
+    - name: Run tests
       working-directory: ./dev
-      run: |
-        bin/generate_dist
-        bin/verify_dist_files
+      run: make test
