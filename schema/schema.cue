@@ -1,7 +1,6 @@
 package product_taxonomy
 
-#attribute_gid_regex:       "^gid://shopify/Taxonomy/Attribute/\\d+$"
-#attribute_value_gid_regex: "^gid://shopify/Taxonomy/Attribute/\\d+/\\d+$"
+#attribute_gid_regex: "^gid://shopify/Taxonomy/Attribute/\\d+$"
 
 #category_gid_pattern: "^gid://shopify/Taxonomy/Category/[a-zA-Z]{2}(-\\d+)*$"
 
@@ -18,11 +17,13 @@ version!: string & =~"^\\d+.\\d+.\\d+$"
 // Present in attributes.json / attributes_data.cue
 attributes!: [
 	...{
-		id!:   string & =~#attribute_gid_regex
-		name!: string
+		id!:      string & =~#attribute_gid_regex
+		_attr_id: id
+		name!:    string
 		values!: [
 			...{
-				id!:   string & =~#attribute_value_gid_regex
+				// TODO: Consider this for categories somehow
+				id!:   =~"^\(_attr_id)/\\d+$"
 				name!: string
 			},
 		]
