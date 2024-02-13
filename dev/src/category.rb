@@ -21,7 +21,6 @@ class Category
       new(
         id: json["id"],
         name: json["name"],
-        parent: json["parent_id"],
         children: json["children_ids"],
         attributes: json["attribute_ids"],
       )
@@ -33,7 +32,7 @@ class Category
     @id = id.to_s
     @name = name
 
-    if parent.is_a?(self.class)
+    if parent.is_a?(self.class) || parent.nil?
       @parent = parent
     else
       @parent_id = parent
@@ -42,13 +41,13 @@ class Category
     if children.all? { _1.is_a?(self.class) }
       @children = children.sort
     else
-      @children_ids = children || []
+      @children_ids = children
     end
 
     if attributes.all? { _1.is_a?(Attribute) }
       @attributes = attributes.sort
     else
-      @attribute_ids = attributes || []
+      @attribute_ids = attributes
     end
 
     Storage::Memory.save(self.class, id, self)
@@ -60,11 +59,18 @@ class Category
   end
 
   def children
-    @children ||= @children_ids.map { self.class.find!(_1) }.sort!
+    @children ||= @children_ids
+      .map { self.class.find!(_1) }
+      .uniq
+      .sort
+      .each { _1.parent = self }
   end
 
   def attributes
-    @attributes ||= @attribute_ids.map { Attribute.find!(_1) }.sort!
+    @attributes ||= @attribute_ids
+      .map { Attribute.find!(_1) }
+      .uniq
+      .sort
   end
 
   def gid
@@ -97,7 +103,7 @@ class Category
 
     child.parent = self
     children << child
-    children.sort!
+    children.sort!.uniq!
     child
   end
 
