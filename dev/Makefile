@@ -58,10 +58,13 @@ clean:
 	$(V)rm -rf $(GENERATED_DIST_PATH)/*
 .PHONY: clean
 
-test: vet_schema
-	@$(RUN_CMD) "Running Tests"
-	$(V)bin/rake test $@
+test: vet_schema tests_only
 .PHONY: test
+
+tests_only:
+	@$(RUN_CMD) "Running Tests"
+	$(V)bin/rake test $(filter-out $@,$(MAKECMDGOALS))
+.PHONY: tests_only
 
 vet_schema: $(CATEGORIES_DATA_CUE) $(ATTRIBUTES_DATA_CUE)
 	@$(RUN_CMD) "Validating Schema"

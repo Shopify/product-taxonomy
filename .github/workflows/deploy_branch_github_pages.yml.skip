@@ -1,7 +1,7 @@
-name: Deploy GitHub page
+name: GitHub page for branch
 
 on:
-  push:
+  pull_request:
     branches:
       - main
   workflow_dispatch:
@@ -61,6 +61,12 @@ jobs:
           name: data
           path: docs/_data
 
+      - name: Copy site to PR directory
+        run: |
+          rm -rf docs/pr/${{ github.event.pull_request.number }}
+          mkdir -p docs/pr/${{ github.event.pull_request.number }}
+          rsync -av --progress --exclude pr docs/ docs/pr/${{ github.event.pull_request.number }}
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
@@ -73,6 +79,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
+  # Doesn't work with current branch protection
   deploy:
     environment:
       name: github-pages
@@ -83,3 +90,21 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  cleanup:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: 'gh-pages'
+
+      - name: Remove PR site
+        run: |
+          rm -rf ./pr/${{ github.event.pull_request.number }}
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Remove site for PR #${{ github.event.pull_request.number }}"
+          git push
