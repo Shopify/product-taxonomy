@@ -6,7 +6,7 @@ class Category
 
   @@largest_gid = 0
 
-  attr_reader(:id, :name, :level)
+  attr_reader(:id, :name)
 
   class << self
     def find(id)
@@ -21,8 +21,6 @@ class Category
       new(
         id: json["id"],
         name: json["name"],
-        level: json["level"] - 1,
-        parent: json["parent_id"],
         children: json["children_ids"],
         attributes: json["attribute_ids"],
       )
@@ -30,12 +28,11 @@ class Category
   end
 
   # allow ids passing for delayed instantiation
-  def initialize(id:, name:, level: 0, parent: nil, children: [], attributes: [])
+  def initialize(id:, name:, parent: nil, children: [], attributes: [])
     @id = id.to_s
     @name = name
-    @level = level
 
-    if parent.is_a?(self.class)
+    if parent.is_a?(self.class) || parent.nil?
       @parent = parent
     else
       @parent_id = parent
@@ -44,13 +41,13 @@ class Category
     if children.all? { _1.is_a?(self.class) }
       @children = children.sort
     else
-      @children_ids = children || []
+      @children_ids = children
     end
 
     if attributes.all? { _1.is_a?(Attribute) }
       @attributes = attributes.sort
     else
-      @attribute_ids = attributes || []
+      @attribute_ids = attributes
     end
 
     Storage::Memory.save(self.class, id, self)
@@ -62,21 +59,30 @@ class Category
   end
 
   def children
-    @children ||= @children_ids.map { self.class.find!(_1) }.sort!
+    @children ||= @children_ids
+      .map { self.class.find!(_1) }
+      .uniq
+      .sort
+      .each { _1.parent = self }
   end
 
   def attributes
-    @attributes ||= @attribute_ids.map { Attribute.find!(_1) }.sort!
+    @attributes ||= @attribute_ids
+      .map { Attribute.find!(_1) }
+      .uniq
+      .sort
   end
 
   def gid
     @gid ||= "gid://shopify/Taxonomy/Category/#{id.downcase}"
   end
 
+  def level
+    ancestors.size
+  end
+
   def root
-    root = self
-    root = root.parent until root.root?
-    root
+    ancestors.last || self
   end
 
   def root?
@@ -95,7 +101,7 @@ class Category
 
     child.parent = self
     children << child
-    children.sort!
+    children.sort!.uniq!
     child
   end
 
@@ -170,7 +176,6 @@ class Category
 
   def parent=(parent)
     @parent = parent
-    @level = parent ? parent.level + 1 : 0
     remove_instance_variable(:@ancestors) if defined?(@ancestors)
     remove_instance_variable(:@descendants) if defined?(@descendants)
   end
