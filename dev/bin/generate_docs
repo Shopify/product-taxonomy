@@ -4,32 +4,33 @@ require 'yaml'
 require 'fileutils'
 
 require_relative '../application'
+require_relative '../src/taxonomy'
 
 class GenerateDocs
   class << self
     def generate_pages_data
+      vertical_data = Dir.glob(Application.from_root("data/categories/*.yml")).map { YAML.load_file(_1) }
+      attribute_data = YAML.load_file(Application.from_root("data/attributes/attributes.yml"))
+      taxonomy = Taxonomy.new(vertical_data:, attribute_data:)
       sibling_groups = {}
-      Dir.glob(Application.from_root('data/categories/*.yml')).each do |file|
-        file_name = File.basename(file, ".yml")
-        data = YAML.load_file(file)
-        data.each do |item|
-          depth = item["level"] - 1
-          parent_id = item["ancestor_ids"].first || "root"
+      taxonomy.verticals.each do |root|
+        root.descendants_and_self.each do |category|
+          parent_id = category.parent&.id || "root"
 
           data_item = {
-            "id" => item["id"],
-            "name" => item["name"],
-            "fully_qualified_type" => item["fully_qualified_type"],
-            "depth" => depth,
+            "id" => category.id,
+            "name" => category.name,
+            "fully_qualified_type" => category.full_name,
+            "depth" => category.level,
             "parent_id" => parent_id,
-            "node_type" => depth == 0 ? "root" : "leaf",
-            "ancestor_ids" => item["ancestor_ids"].join(","),
-            "attribute_ids" => item["attribute_ids"].join(","),
+            "node_type" => category.root? ? "root" : "leaf",
+            "ancestor_ids" => category.ancestors.map(&:id).join(","),
+            "attribute_ids" => category.attributes.map(&:id).join(","),
           }
 
-          sibling_groups[depth] ||= {}
-          sibling_groups[depth][parent_id] ||= []
-          sibling_groups[depth][parent_id] << data_item
+          sibling_groups[category.level] ||= {}
+          sibling_groups[category.level][parent_id] ||= []
+          sibling_groups[category.level][parent_id] << data_item
         end
       end
       raise "No data found in data/categories/*.yml files. Please check the data." if sibling_groups.empty?
