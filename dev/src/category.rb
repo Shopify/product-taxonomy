@@ -82,9 +82,7 @@ class Category
   end
 
   def root
-    root = self
-    root = root.parent until root.root?
-    root
+    ancestors.last || self
   end
 
   def root?
