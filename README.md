@@ -1,7 +1,7 @@
 <p align="center"><img src="./docs/assets/img/header.png" /></p>
 
 <!-- omit in toc -->
-<h1 align="center">Shopify's Standard Product Taxonomy <img src="https://img.shields.io/badge/preview-orange.svg" alt="Preview"> <a href="./VERSION"><img src="https://img.shields.io/badge/version-v0.1.0-blue.svg" alt="Version"></a></h1>
+<h1 align="center">Shopify's Standard Product Taxonomy <img src="https://img.shields.io/badge/preview-orange.svg" alt="Preview"> <a href="./VERSION"><img src="https://img.shields.io/badge/version-v0.2.0-blue.svg" alt="Version"></a></h1>
 
 > **🌍 Global Standard**: Our open-source, standardized product taxonomy establishes a universal language for product classification. Comprehensive and already empowering merchants on Shopify.
 
@@ -38,7 +38,7 @@ Verticals will be regularly released to this repository, with all 20 published b
 | Home & Garden | ✅ done |
 | Sporting Goods | ✅ done |
 | Furniture | ✅ done |
-| Health & Beauty | 🚀 next |
+| Health & Beauty | ✅ done |
 | Animals & Pet supplies | 🕑 soon |
 | Electronics | 🕑 soon |
 | Media | 🕑 soon |

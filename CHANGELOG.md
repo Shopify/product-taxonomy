@@ -1,3 +1,12 @@
+## 0.2.0 (Feb 14, 2024)
+
+Adds the next vertical.
+
+#### 📚 Taxonomy
+
+- Adds `Health & Beauty` vertical
+- Adds `Uncategorized` category
+
 ## 0.1.0 (Feb 6, 2024)
 
 Structure CHANGED for `dist/attributes.json`. Adds schema validation.
