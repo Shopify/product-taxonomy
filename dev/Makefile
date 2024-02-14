@@ -40,9 +40,9 @@ CATEGORIES_DATA_CUE = ../schema/categories_data.cue
 CATEGORIES_JSON = ../dist/categories.json
 ATTRIBUTES_JSON = ../dist/attributes.json
 
-default: $(DOCS_GENERATED_SENTINEL) \
-	$(CATEGORIES_DATA_CUE) \
-	$(ATTRIBUTES_DATA_CUE)
+default: $(CATEGORIES_DATA_CUE) \
+	$(ATTRIBUTES_DATA_CUE) \
+	$(DOCS_GENERATED_SENTINEL)
 .PHONY: default
 
 clean:
