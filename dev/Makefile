@@ -58,6 +58,11 @@ clean:
 	$(V)rm -rf $(GENERATED_DIST_PATH)/*
 .PHONY: clean
 
+server:
+	@$(RUN_CMD) "Running Server"
+	$(V)bundle exec jekyll serve --source ../docs --destination ../_site
+.PHONY: server
+
 test: vet_schema tests_only
 .PHONY: test
 
