@@ -59,7 +59,7 @@
               {% for category in categories[1] %}
                 <div class="category-container" id="{{category.id}}">
                   <h3 class="title">{{ category.name }}</h3>
-                  <span class="id id--large">ID: {{ category.id }}</span>
+                  <span class="id id--large">{{ category.id }}</span>
                   <p>{{ category.fully_qualified_type }}</p>
                 </div>
               {% endfor %}
@@ -69,7 +69,8 @@
             {% for attribute in site.data.attributes %}
               <div class="attribute-container" id="{{ attribute.id }}">
                 <h4 class="title attribute-title">
-                  <span class="id">ID: {{ attribute.id }}</span>{{ attribute.name }}
+                  {{ attribute.name }}
+                  <span class="id">{{ attribute.id }}</span>
                   <span class="arrow right-arrow">&rarr;</span>
                   <span class="arrow down-arrow">&darr;</span>
                 </h4>
@@ -77,7 +78,8 @@
                   <ul>
                     {% for value in attribute.values %}
                       <li>
-                        <span class="id">ID: {{ value.id }}</span>{{ value.name }}
+                        {{ value.name }}
+                        <span class="id">{{ value.id }}</span>
                       </li>
                     {% endfor %}
                   </ul>
