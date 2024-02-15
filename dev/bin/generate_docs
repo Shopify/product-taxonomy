@@ -1,49 +1,53 @@
 #!/usr/bin/env ruby
 
 require 'yaml'
+require 'json'
 require 'fileutils'
 
 require_relative '../application'
-require_relative '../src/taxonomy'
 
 class GenerateDocs
   class << self
     def generate_pages_data
-      vertical_data = Dir.glob(Application.from_root("data/categories/*.yml")).map { YAML.load_file(_1) }
-      attribute_data = YAML.load_file(Application.from_root("data/attributes/attributes.yml"))
-      taxonomy = Taxonomy.new(vertical_data:, attribute_data:)
-      sibling_groups = {}
-      taxonomy.verticals.each do |root|
-        root.descendants_and_self.each do |category|
-          parent_id = category.parent&.id || "root"
+      category_data = JSON.load_file(Application.from_root("dist/categories.json"))
 
-          data_item = {
-            "id" => category.id,
-            "name" => category.name,
-            "fully_qualified_type" => category.full_name,
-            "depth" => category.level,
+      sibling_groups = {}
+      category_data['verticals'].each do |vertical|
+        vertical['categories'].each do |category|
+          parent_id = category.fetch('parent_id')
+          parent_id = 'root' if parent_id.nil? || parent_id.empty?
+          node_depth = category.fetch('level')
+
+          mapped_category = {
+            "id" => category.fetch('id'),
+            "name" => category.fetch('name'),
+            "fully_qualified_type" => category.fetch('full_name'),
+            "depth" => node_depth,
             "parent_id" => parent_id,
-            "node_type" => category.root? ? "root" : "leaf",
-            "ancestor_ids" => category.ancestors.map(&:id).join(","),
-            "attribute_ids" => category.attributes.map(&:id).join(","),
+            "node_type" => node_depth.zero? ? 'root' : 'leaf',
+            "ancestor_ids" => category.fetch('ancestors').map { _1.fetch('id') }.join(','),
+            "attribute_ids" => category.fetch('attributes').map { _1.fetch('id') }.join(','),
           }
 
-          sibling_groups[category.level] ||= {}
-          sibling_groups[category.level][parent_id] ||= []
-          sibling_groups[category.level][parent_id] << data_item
+          sibling_groups[node_depth] ||= {}
+          sibling_groups[node_depth][parent_id] ||= []
+          sibling_groups[node_depth][parent_id] << mapped_category
         end
       end
-      raise "No data found in data/categories/*.yml files. Please check the data." if sibling_groups.empty?
+      fail if sibling_groups.empty?
 
       FileUtils.mkdir_p(Application.from_root('docs/_data'))
+
+      puts "Writing sibling_groups.yml..."
       File.open(Application.from_root("docs/_data/sibling_groups.yml"), "w") do |file|
         file.write(sibling_groups.to_yaml(line_width: 1000))
       end
 
-      FileUtils.cp(
-        Application.from_root('data/attributes/attributes.yml'),
-        Application.from_root('docs/_data/attributes.yml')
-      )
+      puts "Writing attributes.yml..."
+      attribute_data = JSON.load_file(Application.from_root("dist/attributes.json"))
+      File.open(Application.from_root("docs/_data/attributes.yml"), "w") do |file|
+        file.write(attribute_data.fetch('attributes').to_yaml(line_width: 1000))
+      end
     end
   end
 end

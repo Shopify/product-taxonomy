@@ -1,11 +1,24 @@
 body {
   margin: 2rem;
-  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
-  font-size: 0.875rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 13px;
+  color: rgba(48, 48, 48, 1)
 }
 
 p {
   max-width: 1000px;
+}
+
+a {
+  color: rgba(0, 91, 211, 1);
+}
+
+a:hover {
+  color: rgba(0, 66, 153, 1);
+}
+
+a:active {
+  color: rgba(0, 46, 106, 1);
 }
 
 .header-links {
@@ -102,17 +115,18 @@ p {
 }
 
 .id {
-  font-size: 0.5rem;
-  color: #ffffff;
+  font-size: 10px;
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
   margin-bottom: 0.5rem;
-  background-color: #000000;
+  color: rgba(0, 58, 90, 1);
+  background-color: rgba(234, 244, 255, 1);
   padding: 0.2rem;
   margin: 0.15rem;
   border-radius: 0.25rem;
 }
 
 .id--large {
-  font-size: 0.75rem;
+  font-size: 12px;
   margin-right: 0.25rem;
   margin-left: 0;
 }
@@ -138,6 +152,7 @@ p {
 
 .attribute-container .attribute-title {
   cursor: pointer;
+  margin: 0.5rem 0 0;
 }
 
 .attribute-container .arrow {
@@ -164,8 +179,13 @@ p {
   display: none;
 }
 
+.values-container ul {
+  padding-inline-start: 20px;
+  margin-top: 0;
+}
+
 .values-container li {
-  list-style-type: none;
+  list-style-type: circle;
   margin: 0.25rem 0;
 }
 
@@ -192,15 +212,19 @@ p {
   padding: 0.125rem 0.375rem;
   margin: 0.25rem;
   border-radius: 0.5rem;
-  background-color: #f5f5f5;
+  background-color: rgba(241, 241, 241, 1);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-.accordion-item.selected,
-.accordion-item:hover {
-  background-color: #303030;
-  color: #ffffff;
+.accordion-item.selected {
+  background-color: rgba(48, 48, 48, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.accordion-item:hover, .accordion-item:active {
+  background-color: rgba(26, 26, 26, 1);
+  color: rgba(255, 255, 255, 1);
 }
 
 .accordion-content {
