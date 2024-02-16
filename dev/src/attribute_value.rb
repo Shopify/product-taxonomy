@@ -1,19 +1,21 @@
 class AttributeValue
   include Comparable
 
-  attr_reader :id, :name
+  attr_reader :id, :handle, :name
 
   class << self
     def from_json(json)
       new(
         id: json["id"],
+        handle: json["handle"],
         name: json["name"],
       )
     end
   end
 
-  def initialize(id:, name:)
+  def initialize(id:, handle:, name:)
     @id = id.to_s
+    @handle = handle
     @name = name
   end
 
@@ -29,7 +31,7 @@ class AttributeValue
   end
 
   def inspect
-    "#<#{self.class} id=`#{id}` name=`#{name}`>"
+    "#<#{self.class} id=`#{id}` handle=`#{handle}` name=`#{name}`>"
   end
 
   def <=>(other)

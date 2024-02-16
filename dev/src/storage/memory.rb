@@ -1,4 +1,5 @@
 module Storage
+  # TODO: Just replace with sqlite + ActiveRecord
   class Memory
     @@data = {}
 

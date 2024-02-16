@@ -22,7 +22,7 @@ class Category
         id: json["id"],
         name: json["name"],
         children: json["children_ids"],
-        attributes: json["attribute_ids"],
+        attributes: json["attribute_handles"],
       )
     end
   end
@@ -38,13 +38,13 @@ class Category
       @parent_id = parent
     end
 
-    if children.all? { _1.is_a?(self.class) }
+    if children.all? { _1.is_a?(self.class) } || children.empty?
       @children = children.sort
     else
       @children_ids = children
     end
 
-    if attributes.all? { _1.is_a?(Attribute) }
+    if attributes.all? { _1.is_a?(Attribute) } || attributes.empty?
       @attributes = attributes.sort
     else
       @attribute_ids = attributes
@@ -68,7 +68,7 @@ class Category
 
   def attributes
     @attributes ||= @attribute_ids
-      .map { Attribute.find!(_1) }
+      .map { Attribute.find_or_unknown(_1) }
       .uniq
       .sort
   end
