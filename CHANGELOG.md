@@ -1,3 +1,14 @@
+## 0.3.0 (Feb 21, 2024)
+
+Adds electronics and simplifies existing verticals.
+
+#### 📚 Taxonomy
+
+- Adds `Electronics` vertical
+- Simplifies `Food, Beverages, & Tobacco` vertical
+- Simplifies `Health & Beauty` vertical
+- Simplifies `Sporting Goods` vertical
+
 ## 0.2.0 (Feb 14, 2024)
 
 Adds the next vertical.

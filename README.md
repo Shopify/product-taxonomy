@@ -1,7 +1,7 @@
 <p align="center"><img src="./docs/assets/img/header.png" /></p>
 
 <!-- omit in toc -->
-<h1 align="center">Shopify's Standard Product Taxonomy <img src="https://img.shields.io/badge/preview-orange.svg" alt="Preview"> <a href="./VERSION"><img src="https://img.shields.io/badge/version-v0.2.0-blue.svg" alt="Version"></a></h1>
+<h1 align="center">Shopify's Standard Product Taxonomy <img src="https://img.shields.io/badge/preview-orange.svg" alt="Preview"> <a href="./VERSION"><img src="https://img.shields.io/badge/version-v0.3.0-blue.svg" alt="Version"></a></h1>
 
 > **🌍 Global Standard**: Our open-source, standardized product taxonomy establishes a universal language for product classification. Comprehensive and already empowering merchants on Shopify.
 
@@ -39,8 +39,8 @@ Verticals will be regularly released to this repository, with all 20 published b
 | Sporting Goods | ✅ done |
 | Furniture | ✅ done |
 | Health & Beauty | ✅ done |
-| Animals & Pet supplies | 🕑 soon |
-| Electronics | 🕑 soon |
+| Animals & Pet supplies | ⏭️ next |
+| Electronics | ✅ done |
 | Media | 🕑 soon |
 | Arts & Entertainment | 🕑 soon |
 | Vehicles & parts | 🕑 soon |
@@ -49,7 +49,7 @@ Verticals will be regularly released to this repository, with all 20 published b
 | Software | 🕑 soon |
 | Cameras & optics | 🕑 soon |
 | Hardware | 🕑 soon |
-| Baby & toddler | 🕑 soon |
+| Baby & toddler | ⏭️ next |
 | Business & industrial | 🕑 soon |
 | Office supplies | 🕑 soon |
 | Services | 🕑 soon |
