@@ -1,5 +1,5 @@
+require_relative '../application'
+Bundler.require(:test)
+
 require 'minitest/autorun'
 require 'minitest/pride'
-require 'byebug'
-
-require_relative '../application'
