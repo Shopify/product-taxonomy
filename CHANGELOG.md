@@ -1,3 +1,16 @@
+## 0.3.0 (Feb 21, 2024)
+
+Adds 3 more verticals and simplifies 3 existing ones.
+
+#### 📚 Taxonomy
+
+- Adds `Animals & Pet supplies` vertical
+- Adds `Baby & Toddler` vertical
+- Adds `Electronics` vertical
+- Simplifies `Food, Beverages, & Tobacco` vertical
+- Simplifies `Health & Beauty` vertical
+- Simplifies `Sporting Goods` vertical
+
 ## 0.2.0 (Feb 14, 2024)
 
 Adds the next vertical.
