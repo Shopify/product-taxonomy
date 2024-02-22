@@ -1,6 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'activerecord', '~> 7.1'
 gem 'byebug'
 gem 'jekyll', '~> 4.3'
-gem 'minitest', '~> 5.21'
 gem 'rake', '~> 13.1'
+gem 'sqlite3', '~> 1.7'
+
+group :test do
+  gem 'minitest', '~> 5.21'
+end

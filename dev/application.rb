@@ -1,3 +1,16 @@
+require 'bundler/setup'
+Bundler.require(:default)
+
+require_relative 'db/schema'
+require_relative 'db/seed'
+
+require_relative 'app/models/application_record'
+require_relative 'app/models/category'
+require_relative 'app/models/property'
+require_relative 'app/models/property_value'
+require_relative 'app/serializers/json'
+require_relative 'app/serializers/text'
+
 class Application
   ROOT = File.expand_path('..', __dir__)
   private_constant :ROOT
@@ -5,14 +18,6 @@ class Application
   class << self
     def root
       ROOT
-    end
-
-    def from_root(*paths)
-      File.join(ROOT, *paths)
-    end
-
-    def from_src(*paths)
-      from_root('dev', 'src', *paths)
     end
   end
 end

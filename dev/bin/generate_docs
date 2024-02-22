@@ -9,7 +9,7 @@ require_relative '../application'
 class GenerateDocs
   class << self
     def generate_pages_data
-      category_data = JSON.load_file(Application.from_root("dist/categories.json"))
+      category_data = JSON.load_file("#{Application.root}/dist/categories.json")
 
       sibling_groups = {}
       category_data['verticals'].each do |vertical|
@@ -36,16 +36,16 @@ class GenerateDocs
       end
       fail if sibling_groups.empty?
 
-      FileUtils.mkdir_p(Application.from_root('docs/_data'))
+      FileUtils.mkdir_p("#{Application.root}/docs/_data")
 
       puts "Writing sibling_groups.yml..."
-      File.open(Application.from_root("docs/_data/sibling_groups.yml"), "w") do |file|
+      File.open("#{Application.root}/docs/_data/sibling_groups.yml", "w") do |file|
         file.write(sibling_groups.to_yaml(line_width: 1000))
       end
 
       puts "Writing attributes.yml..."
-      attribute_data = JSON.load_file(Application.from_root("dist/attributes.json"))
-      File.open(Application.from_root("docs/_data/attributes.yml"), "w") do |file|
+      attribute_data = JSON.load_file("#{Application.root}/dist/attributes.json")
+      File.open("#{Application.root}/docs/_data/attributes.yml", "w") do |file|
         file.write(attribute_data.fetch('attributes').to_yaml(line_width: 1000))
       end
     end

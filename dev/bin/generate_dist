@@ -1,29 +1,40 @@
 #!/usr/bin/env ruby
 
 require 'yaml'
-
 require_relative '../application'
-require_relative '../src/taxonomy'
-require_relative '../src/serializers/text'
-require_relative '../src/serializers/json'
 
-vertical_data = Dir.glob(Application.from_root("data/categories/*.yml")).map { YAML.load_file(_1) }
-attribute_data = YAML.load_file(Application.from_root("data/attributes/attributes.yml"))
-taxonomy = Taxonomy.new(vertical_data:, attribute_data:)
-version = File.read(Application.from_root("VERSION")).strip
+attributes_data = YAML.load_file("#{Application.root}/data/attributes/attributes.yml")
+DB::Seed.attributes_from(attributes_data)
 
-text_serializer = Serializers::Text.new(taxonomy, version)
-File.open(Application.from_root("dist/categories.txt"), "w") do |file|
+category_files = Dir.glob("#{Application.root}/data/categories/*.yml")
+verticals_data = category_files.map { YAML.load_file(_1) }
+DB::Seed.categories_from(verticals_data)
+
+version = File.read("#{Application.root}/VERSION").strip
+
+text_serializer = Serializers::Text.new(
+  verticals: Category.verticals,
+  version:,
+)
+File.open("#{Application.root}/dist/categories.txt", "w") do |file|
   file.write(text_serializer.categories)
+  file.write("\n")
 end
 
-json_serializer = Serializers::JSON.new(taxonomy, version)
-File.open(Application.from_root("dist/taxonomy.json"), "w") do |file|
+json_serializer = Serializers::JSON.new(
+  verticals: Category.verticals,
+  properties: Property.all,
+  version:,
+)
+File.open("#{Application.root}/dist/taxonomy.json", "w") do |file|
   file.write(json_serializer.taxonomy)
+  file.write("\n")
 end
-File.open(Application.from_root("dist/categories.json"), "w") do |file|
+File.open("#{Application.root}/dist/categories.json", "w") do |file|
   file.write(json_serializer.categories)
+  file.write("\n")
 end
-File.open(Application.from_root("dist/attributes.json"), "w") do |file|
+File.open("#{Application.root}/dist/attributes.json", "w") do |file|
   file.write(json_serializer.attributes)
+  file.write("\n")
 end
