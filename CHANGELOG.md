@@ -1,3 +1,12 @@
+## 0.4.0 (Feb 28, 2024)
+
+Adds 2 more verticals.
+
+#### 📚 Taxonomy
+
+- Adds `Hardware` vertical
+- Adds `Luggage & Bags` vertical
+
 ## 0.3.0 (Feb 21, 2024)
 
 Adds electronics and simplifies existing verticals.
