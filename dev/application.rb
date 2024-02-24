@@ -11,7 +11,7 @@ require_relative 'app/models/property_value'
 require_relative 'app/serializers/json'
 require_relative 'app/serializers/text'
 
-class Application
+module Application
   ROOT = File.expand_path('..', __dir__)
   private_constant :ROOT
 
