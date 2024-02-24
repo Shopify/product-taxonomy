@@ -5,13 +5,7 @@ module DB
     class << self
       def attributes_from(data)
         data.each do |json|
-          Property.create(
-            id: json["id"],
-            name: json["name"],
-            property_values: json["values"].map do |v_json|
-              PropertyValue.new(id: v_json["id"], name: v_json["name"])
-            end
-          )
+          Serializers::Data::PropertySerializer.deserialize(json).save!
         end
       end
 
@@ -23,12 +17,8 @@ module DB
           # create all categories
           delayed_children = vertical_json.filter_map do |category_json|
             begin
-              category = Category.create(
-                id: category_json["id"].downcase,
-                name: category_json["name"],
-                parent_id: category_json["parent_id"],
-                property_ids: category_json["attribute_ids"]
-              )
+              category = Serializers::Data::CategorySerializer.deserialize(category_json.except("children_ids"))
+              category.save!
             rescue => _e
               puts "⨯ Failed creating category: #{current_vertical} > #{category_json["name"]} <#{category_json["id"]}>"
               failed_category_ids << category_json["id"]

@@ -12,7 +12,7 @@ DB::Seed.categories_from(verticals_data)
 
 version = File.read("#{Application.root}/VERSION").strip
 
-text_serializer = Serializers::Text.new(
+text_serializer = Serializers::Dist::Text.new(
   verticals: Category.verticals,
   version:,
 )
@@ -21,7 +21,7 @@ File.open("#{Application.root}/dist/categories.txt", "w") do |file|
   file.write("\n")
 end
 
-json_serializer = Serializers::JSON.new(
+json_serializer = Serializers::Dist::JSON.new(
   verticals: Category.verticals,
   properties: Property.all,
   version:,
