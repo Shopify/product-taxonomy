@@ -4,12 +4,19 @@ module DB
   class Seed
     class << self
       def attributes_from(data)
-        puts "Importing properties and values"
+        puts "Importing values"
+        data.each do |property_json|
+          property_json['values'].each do |property_json|
+            Serializers::Data::PropertyValueSerializer.deserialize(property_json).save!
+          end
+        end
+        puts "✓ Imported #{PropertyValue.count} values"
+
+        puts "Importing properties"
         data.each do |json|
           Serializers::Data::PropertySerializer.deserialize(json).save!
         end
         puts "✓ Imported #{Property.count} properties"
-        puts "✓ Imported #{PropertyValue.count} values"
       end
 
       def categories_from(data)

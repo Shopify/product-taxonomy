@@ -13,7 +13,7 @@ module Serializers
         Property.new(
           id: hash["id"],
           name: hash["name"],
-          property_values: hash["values"].map { PropertyValueSerializer.deserialize(_1) }
+          property_value_ids: hash["values"].map { _1["id"] }
         )
       end
     end
