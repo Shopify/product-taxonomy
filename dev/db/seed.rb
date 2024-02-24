@@ -27,24 +27,21 @@ module DB
 
           # create all categories
           failed_category_ids = []
-          delayed_children = vertical_json.filter_map do |category_json|
+          categories = vertical_json.filter_map do |category_json|
             begin
               category = Serializers::Data::CategorySerializer.deserialize(category_json.except("children_ids"))
               category.save!
+              category
             rescue => _e
               puts "  ⨯ Failed to import category: #{category_json["name"]} <#{category_json["id"]}>"
               failed_category_ids << category_json["id"]
               next
             end
-
-            [category, category_json["children_ids"]]
           end
 
           # assemble the tree
-          delayed_children.each do |category, delayed_child_ids|
-            next if delayed_child_ids.empty?
-
-            category.child_ids = delayed_child_ids - failed_category_ids
+          categories.zip(vertical_json).each do |category, json|
+            category.child_ids = json["children_ids"] - failed_category_ids
             category.save!
           end
         end
