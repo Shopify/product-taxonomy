@@ -1,4 +1,16 @@
-## 0.4.0 (Feb 28, 2024)
+## 0.5.0 (Feb 23, 2024)
+
+Adds 6 more verticals.
+
+#### 📚 Taxonomy
+- Adds `Animals & Pet Supplies` vertical
+- Adds `Arts & Entertainment` vertical
+- Adds `Baby's & Toddlers` vertical
+- Adds `Cameras & Optics` vertical
+- Adds `Media` vertical
+- Adds `Office Supplies` vertical
+
+## 0.4.0 (Feb 23, 2024)
 
 Adds 2 more verticals.
 
