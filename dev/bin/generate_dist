@@ -14,10 +14,20 @@ version = File.read("#{Application.root}/VERSION").strip
 
 text_serializer = Serializers::Dist::Text.new(
   verticals: Category.verticals,
+  properties: Property.all,
+  values: PropertyValue.all,
   version:,
 )
 File.open("#{Application.root}/dist/categories.txt", "w") do |file|
   file.write(text_serializer.categories)
+  file.write("\n")
+end
+File.open("#{Application.root}/dist/attributes.txt", "w") do |file|
+  file.write(text_serializer.attributes)
+  file.write("\n")
+end
+File.open("#{Application.root}/dist/attribute_values.txt", "w") do |file|
+  file.write(text_serializer.values)
   file.write("\n")
 end
 
