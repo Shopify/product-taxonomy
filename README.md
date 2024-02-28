@@ -53,6 +53,8 @@ Verticals will be regularly released to this repository, with all 20 published b
 | Business & industrial | 🕑 soon |
 | Office supplies | ✅ done |
 | Services | 🕑 soon |
+| Mature | 🕑 soon |
+| Religious & Ceremonial | 🕑 soon |
 
 ## 🧭 Getting started
 
