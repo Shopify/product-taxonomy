@@ -1,6 +1,6 @@
 # Hacking on product-taxonomy
 
-This is a simple ruby app with a few models and serializers. The bulk of the work is parsing `data/` into a tree of `app/models/category.rb` to serialize reliably to `/dist/`. The app is setup to be rails-like, but  is not a rails app, though is using an in-memory `ActiveRecord` setup.
+This is a simple ruby app with a few models and serializers. The bulk of the work is parsing `data/` into a tree of `app/models/category.rb` to serialize reliably to `/dist/`. The app is setup to be rails-like, but  is not a rails app, though is using `ActiveRecord`.
 
 ## Diving in 🤿
 
@@ -9,6 +9,7 @@ Everything ultimately runs through `make` (`dev` simply proxies). Here are the c
 ```sh
 make       # build the dist and documentation files
 make clean # remove sentinels and all generated files
+make seed  # parse /data into local db
 make test  # run ruby tests and cue schema verification
 make serve # http://localhost:3000 interactive view of /dist/
 ```
