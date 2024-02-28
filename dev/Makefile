@@ -37,6 +37,10 @@ GENERATED_DIST_PATH = ../dist
 ATTRIBUTES_DATA_CUE = ../schema/attributes_data.cue
 CATEGORIES_DATA_CUE = ../schema/categories_data.cue
 
+# DATA files to run application
+LOCAL_DB = ../tmp/local.sqlite3
+
+# JSON files generated
 CATEGORIES_JSON = ../dist/categories.json
 ATTRIBUTES_JSON = ../dist/attributes.json
 
@@ -46,6 +50,8 @@ default: $(CATEGORIES_DATA_CUE) \
 .PHONY: default
 
 clean:
+	@$(NUKE) "Cleaning dev db"
+	$(V)rm -f $(LOCAL_DB)
 	@$(NUKE) "Cleaning Generated Docs" $(GENERATED_DOCS_PATH)
 	$(V)rm -f $(DOCS_GENERATED_SENTINEL)
 	$(V)rm -rf $(GENERATED_DOCS_PATH)
@@ -66,6 +72,11 @@ server:
 test: vet_schema tests_only
 .PHONY: test
 
+seed:
+	@$(GENERATE) "Seeding Database" $(LOCAL_DB)
+	$(V)bin/seed
+.PHONY: seed
+
 tests_only:
 	@$(RUN_CMD) "Running Tests"
 	$(V)bin/rake test $(filter-out $@,$(MAKECMDGOALS))
@@ -83,10 +94,15 @@ $(DOCS_GENERATED_SENTINEL): $(CATEGORIES_DATA) $(ATTRIBUTES_DATA)
 	$(V)touch $@
 
 # This generates both dist/categories.json and dist/attributes.json
-$(DIST_GENERATED_SENTINEL): $(CATEGORIES_DATA) $(ATTRIBUTES_DATA)
+$(DIST_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA)
 	@$(GENERATE) "Building Dist" "../dist/*.json"
 	$(V)bin/generate_dist
 	$(V)touch $@
+
+$(LOCAL_DB): seed
+ifeq ($(shell test -e $(LOCAL_DB) && echo -n yes),yes)
+	seed
+endif
 
 # TODO: These two targets can be done together
 $(CATEGORIES_DATA_CUE): $(DIST_GENERATED_SENTINEL)

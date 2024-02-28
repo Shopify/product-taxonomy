@@ -3,13 +3,6 @@
 require 'yaml'
 require_relative '../application'
 
-attributes_data = YAML.load_file("#{Application.root}/data/attributes/attributes.yml")
-DB::Seed.attributes_from(attributes_data)
-
-category_files = Dir.glob("#{Application.root}/data/categories/*.yml")
-verticals_data = category_files.map { YAML.load_file(_1) }
-DB::Seed.categories_from(verticals_data)
-
 version = File.read("#{Application.root}/VERSION").strip
 
 text_serializer = Serializers::Dist::Text.new(

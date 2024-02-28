@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require_relative '../application'
+require_relative '../db/schema'
+
+attributes_data = YAML.load_file("#{Application.root}/data/attributes/attributes.yml")
+DB::Seed.attributes_from(attributes_data)
+
+category_files = Dir.glob("#{Application.root}/data/categories/*.yml")
+verticals_data = category_files.map { YAML.load_file(_1) }
+DB::Seed.categories_from(verticals_data)

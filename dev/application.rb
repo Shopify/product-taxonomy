@@ -1,7 +1,7 @@
 require 'bundler/setup'
 Bundler.require(:default)
 
-require_relative 'db/schema'
+require_relative 'db/connection'
 require_relative 'db/seed'
 
 require_relative 'app/models/application_record'
