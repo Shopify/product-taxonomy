@@ -11,7 +11,7 @@ make       # build the dist and documentation files
 make clean # remove sentinels and all generated files
 make seed  # parse /data into local db
 make test  # run ruby tests and cue schema verification
-make serve # http://localhost:3000 interactive view of /dist/
+make server # http://localhost:4000 interactive view of /dist/
 ```
 
 ## Setup and dependencies 🛠️
