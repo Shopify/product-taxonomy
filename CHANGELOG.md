@@ -1,3 +1,11 @@
+## 0.6.0 (Feb 23, 2024)
+
+Adds 2 more verticals.
+
+#### 📚 Taxonomy
+- Adds `Business & Industrial` vertical
+- Adds `Software` vertical
+
 ## 0.5.0 (Feb 23, 2024)
 
 Adds 6 more verticals.
