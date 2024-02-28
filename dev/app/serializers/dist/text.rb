@@ -1,9 +1,10 @@
 module Serializers
   module Dist
     class Text
-      def initialize(verticals:, properties:, version:)
+      def initialize(verticals:, properties:, values:, version:)
         @verticals = verticals
         @properties = properties
+        @values = values
         @version = version
       end
 
@@ -26,6 +27,15 @@ module Serializers
           .join("\n")
       end
 
+      def values
+        header = "# Shopify Product Taxonomy - Attribute Values: #{@version}"
+        gid_padd = PropertyValue.reorder("LENGTH(id) desc").first.gid.size
+        @values
+          .map { serialize_property_value(_1, gid_padd:) }
+          .unshift(header)
+          .join("\n")
+      end
+
       private
 
       def serialize_category(category, gid_padd:)
@@ -34,6 +44,10 @@ module Serializers
 
       def serialize_property(property, gid_padd:)
         "#{property.gid.ljust(gid_padd)} : #{property.name}"
+      end
+
+      def serialize_property_value(value, gid_padd:)
+        "#{value.gid.ljust(gid_padd)} : #{value.name}"
       end
     end
   end
