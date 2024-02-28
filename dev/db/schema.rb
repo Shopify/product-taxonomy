@@ -6,7 +6,7 @@ ActiveRecord::Base.establish_connection(
   database: ':memory:'
 )
 
-ActiveRecord::Schema.define do
+ActiveRecord::Schema[7.1].define do
   create_table :categories, id: :string do |t|
     t.string :name, null: false
     t.string :parent_id
