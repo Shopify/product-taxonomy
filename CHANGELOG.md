@@ -1,4 +1,12 @@
-## 0.6.0 (Feb 23, 2024)
+## 0.7.0 (Feb 29, 2024)
+
+Adds 2 more verticals.
+
+#### 📚 Taxonomy
+- Adds `Toys & Games` vertical
+- Adds `Vehicles & Parts` vertical
+
+## 0.6.0 (Feb 28, 2024)
 
 Adds 2 more verticals.
 
