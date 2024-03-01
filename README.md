@@ -1,13 +1,13 @@
 <p align="center"><img src="./docs/assets/img/header.png" /></p>
 
 <!-- omit in toc -->
-<h1 align="center">Shopify's Standard Product Taxonomy <img src="https://img.shields.io/badge/preview-orange.svg" alt="Preview"> <a href="./VERSION"><img src="https://img.shields.io/badge/version-v0.7.0-blue.svg" alt="Version"></a></h1>
+<h1 align="center">Shopify's Standard Product Taxonomy <img src="https://img.shields.io/badge/preview-orange.svg" alt="Preview"> <a href="./VERSION"><img src="https://img.shields.io/badge/version-v0.8.0-blue.svg" alt="Version"></a></h1>
 
 > **🌍 Global Standard**: Our open-source, standardized product taxonomy establishes a universal language for product classification. Comprehensive and already empowering merchants on Shopify.
 
 > **👩🏼‍💻 Integration Friendly**: With a stable structure and diverse formats our taxonomy is designed for effortless integration into any system.
 
-> **🚀 Industry Benchmark**: Spanning 20 essential verticals <em>(soon)</em>, our taxonomy encompasses categories, attributes, and values, all thoughtfully integrated within Shopify and numerous marketplaces.
+> **🚀 Industry Benchmark**: Spanning 22 essential verticals, our taxonomy encompasses categories, attributes, and values, all thoughtfully integrated within Shopify and numerous marketplaces.
 
 <p align="right"><em>Learn more on <a href="https://help.shopify.com/manual/products/details/product-category">help.shopify.com</a></em></p>
 
@@ -29,7 +29,7 @@ Ready to dive in? [Explore our taxonomy interactively](https://shopify.github.io
 
 ## 📚 Taxonomy overview
 
-Verticals will be regularly released to this repository, with all 20 published by the end of February, 2024. The following table shows the current status of each vertical.
+The following table shows the current status of each vertical.
 
 | Vertical | Status |
 |----------|----------|
@@ -43,8 +43,8 @@ Verticals will be regularly released to this repository, with all 20 published b
 | Electronics | ✅ done |
 | Media | ✅ done |
 | Arts & Entertainment | ✅ done |
-| Vehicles & parts | 🕑 soon |
-| Toys & games | 🕑 soon |
+| Vehicles & parts | ✅ done |
+| Toys & games | ✅ done |
 | Luggage & bags | ✅ done |
 | Software | ✅ done |
 | Cameras & optics | ✅ done |
@@ -52,9 +52,9 @@ Verticals will be regularly released to this repository, with all 20 published b
 | Baby & toddler | ✅ done |
 | Business & industrial | ✅ done |
 | Office supplies | ✅ done |
-| Services | 🕑 soon |
-| Mature | 🕑 soon |
-| Religious & Ceremonial | 🕑 soon |
+| Services | ✅ done |
+| Mature | ✅ done |
+| Religious & Ceremonial | ✅ done |
 
 ## 🧭 Getting started
 
