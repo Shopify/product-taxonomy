@@ -1,3 +1,12 @@
+## 0.8.0 (Mar 1, 2024)
+
+Adds 3 more verticals.
+
+#### 📚 Taxonomy
+- Adds `Mature` vertical
+- Adds `Religious & Ceremonial` vertical
+- Adds `Services` vertical
+
 ## 0.7.0 (Feb 29, 2024)
 
 Adds 2 more verticals.
