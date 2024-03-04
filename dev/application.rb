@@ -1,7 +1,9 @@
 require 'bundler/setup'
 Bundler.require(:default)
 
-require_relative 'db/connection'
+require 'sqlite3'
+require 'active_record'
+
 require_relative 'db/seed'
 
 require_relative 'app/models/application_record'
@@ -23,6 +25,19 @@ module Application
   class << self
     def root
       ROOT
+    end
+
+    def establish_db_connection!(env: :local)
+      config = YAML.load_file('db/config.yml', aliases: true).fetch(env.to_s)
+      unless config['database'] == ':memory:'
+        config.merge!('database' => "#{root}/dev/tmp/#{config['database']}")
+      end
+
+      ActiveRecord::Base.establish_connection(config)
+    end
+
+    def load_and_reset_schema!
+      require_relative('db/schema')
     end
   end
 end

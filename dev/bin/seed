@@ -2,7 +2,9 @@
 
 require 'yaml'
 require_relative '../application'
-require_relative '../db/schema'
+
+Application.establish_db_connection!
+Application.load_and_reset_schema!
 
 attributes_data = YAML.load_file("#{Application.root}/data/attributes/attributes.yml")
 DB::Seed.attributes_from(attributes_data)

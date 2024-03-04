@@ -3,6 +3,8 @@
 require 'yaml'
 require_relative '../application'
 
+Application.establish_db_connection!
+
 version = File.read("#{Application.root}/VERSION").strip
 
 text_serializer = Serializers::Dist::Text.new(
