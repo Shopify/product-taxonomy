@@ -1,10 +1,7 @@
 Bundler.require(:test)
 require_relative '../application'
-ActiveRecord::Base.establish_connection(
-  adapter: 'sqlite3',
-  database: ':memory:'
-)
-require_relative '../db/schema'
+Application.establish_db_connection!(env: :test)
+Application.load_and_reset_schema!
 
 require 'minitest/autorun'
 require 'minitest/pride'
