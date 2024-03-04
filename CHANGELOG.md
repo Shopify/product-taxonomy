@@ -1,3 +1,16 @@
+## 0.9.0 (Mar 4, 2024)
+
+Changed GID structure for Attribute Values and added more txt distributions.
+
+#### 👩🏼‍💻 Structure
+
+- Attribute GID from `gid://shopify/Taxonomy/Attribute/123/12` → `gid://shopify/TaxonomyValue/12`
+- Added both `dist/attributes.txt` and `dist/attributes_values.txt`
+
+#### 💅🏼 Enhancement
+
+- DB is now in a file instead of in-memory to save unnecessary seeding
+
 ## 0.8.0 (Mar 1, 2024)
 
 Adds 3 more verticals.
@@ -15,7 +28,7 @@ Adds 2 more verticals.
 - Adds `Toys & Games` vertical
 - Adds `Vehicles & Parts` vertical
 
-## 0.6.0 (Feb 28, 2024)
+## 0.6.0 (Feb 23, 2024)
 
 Adds 2 more verticals.
 
