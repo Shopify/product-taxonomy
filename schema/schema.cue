@@ -1,8 +1,8 @@
 package product_taxonomy
 
 #attribute_gid_regex: "^gid://shopify/Taxonomy/Attribute/\\d+$"
-
-#category_gid_pattern: "^gid://shopify/Taxonomy/Category/[a-zA-Z]{2}(-\\d+)*$"
+#value_gid_regex: "^gid://shopify/Taxonomy/Value/\\d+$"
+#category_gid_regex: "^gid://shopify/Taxonomy/Category/[a-zA-Z]{2}(-\\d+)*$"
 
 // This file defines and enforces the shape of the data for dist/attributes.json and dist/categories.json
 // There are additional validations handled in validations.cue in this directory but use this to understand
@@ -18,12 +18,11 @@ version!: string & =~"^\\d+.\\d+.\\d+$"
 attributes!: [
 	...{
 		id!:      string & =~#attribute_gid_regex
-		_attr_id: id
 		name!:    string
 		values!: [
 			...{
 				// TODO: Consider this for categories somehow
-				id!:   =~"^\(_attr_id)/\\d+$"
+				id!:   string & =~#value_gid_regex
 				name!: string
 			},
 		]
@@ -31,7 +30,7 @@ attributes!: [
 ]
 
 _category_reference: {
-	id!:   string & =~#category_gid_pattern
+	id!:   string & =~#category_gid_regex
 	name!: validations.category_lookup[id]
 }
 
@@ -40,11 +39,11 @@ verticals!: [...{
 	name!:   string
 	prefix!: string & =~"^[a-zA-Z]{2}$"
 	categories!: [...{
-		id!:        string & =~#category_gid_pattern
+		id!:        string & =~#category_gid_regex
 		name!:      validations.category_lookup[id]
 		level!:     int & >=0
 		full_name!: string
-		parent_id:  null | string & =~#category_gid_pattern
+		parent_id:  null | string & =~#category_gid_regex
 		attributes!: [...{
 			id!: string & =~#attribute_gid_regex
 			// The name must match the name of the attribute being referenced

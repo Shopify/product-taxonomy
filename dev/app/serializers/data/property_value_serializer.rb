@@ -10,7 +10,7 @@ module Serializers
 
       def deserialize(hash)
         PropertyValue.new(
-          id: hash["id"],
+          id: hash["id"].split("-").last,
           name: hash["name"],
         )
       end

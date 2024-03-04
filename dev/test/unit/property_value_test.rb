@@ -6,7 +6,7 @@ class PropertyValueTest < Minitest::Test
   end
 
   def test_gid
-    assert_equal 'gid://shopify/Taxonomy/Attribute/1/1', PropertyValue.new(id: '1-1', name: 'Foo').gid
+    assert_equal 'gid://shopify/Taxonomy/Value/12', PropertyValue.new(id: '12', name: 'Foo').gid
   end
 
   def test_default_ordering_places_other_at_end
