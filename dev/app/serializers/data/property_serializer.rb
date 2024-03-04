@@ -13,7 +13,7 @@ module Serializers
         Property.new(
           id: hash["id"],
           name: hash["name"],
-          property_value_ids: hash["values"].map { _1["id"] }
+          property_value_ids: hash["values"].map { _1["id"].split("-").last }
         )
       end
     end

@@ -7,7 +7,14 @@ module DB
         puts "Importing values"
         data.each do |property_json|
           property_json['values'].each do |property_json|
-            Serializers::Data::PropertyValueSerializer.deserialize(property_json).save!
+            property_value = Serializers::Data::PropertyValueSerializer.deserialize(property_json)
+            existing_value = PropertyValue.find_by(id: property_value.id)
+
+            if existing_value.nil?
+              property_value.save!
+            elsif existing_value.name != property_value.name
+              puts "  ⨯ Failed to import category: #{property_value.name} <#{property_value.id}> already exists as #{existing_value.name}"
+            end
           end
         end
         puts "✓ Imported #{PropertyValue.count} values"
