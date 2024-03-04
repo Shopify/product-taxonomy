@@ -8,12 +8,15 @@ module DB
         data.each do |property_json|
           property_json['values'].each do |property_json|
             property_value = Serializers::Data::PropertyValueSerializer.deserialize(property_json)
-            existing_value = PropertyValue.find_by(id: property_value.id)
+            by_id = PropertyValue.find_by(id: property_value.id)
+            by_friendly_id = PropertyValue.find_by(friendly_id: property_value.friendly_id)
 
-            if existing_value.nil?
+            if by_id.nil? && by_friendly_id.nil?
               property_value.save!
-            elsif existing_value.name != property_value.name
-              puts "  ⨯ Failed to import category: #{property_value.name} <#{property_value.id}> already exists as #{existing_value.name}"
+            elsif by_friendly_id && by_friendly_id.name != property_value.name
+              puts "  ⨯ Failed to import value: #{property_value.name} <#{property_value.friendly_id}> already exists as #{by_friendly_id.name} <#{by_friendly_id.friendly_id}>"
+            elsif by_id && by_id.name != property_value.name
+              puts "  ⨯ Failed to import value: #{property_value.name} <#{property_value.id}> already exists as #{by_id.name} <#{by_id.id}>"
             end
           end
         end

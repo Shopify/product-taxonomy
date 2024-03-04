@@ -14,15 +14,15 @@
   - bt-11
   - bt-12
   - bt-8
-  attribute_ids: []
+  attribute_friendly_ids: []
 - id: bt-1
   name: Baby Bathing
   children_ids:
   - bt-1-1
   - bt-1-2
-  attribute_ids:
-  - 1
-  - 4
+  attribute_friendly_ids:
+  - color
+  - material
 - id: bt-1-1
   name: Baby Bathtubs & Bath Seats
   children_ids:
@@ -31,33 +31,33 @@
   - bt-1-1-3
   - bt-1-1-4
   - bt-1-1-5
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
-  - 1716
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
+  - safety_certifications
 - id: bt-1-2
   name: Shower Visors
   children_ids:
   - bt-1-2-1
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
 - id: bt-2
   name: Baby Gift Sets
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1717
-  - 4
-  - 1718
-  - 3
-  - 1719
-  - 837
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - baby_gift_items_included
+  - material
+  - gift_set_format
+  - pattern
+  - personalization_options
+  - target_gender
 - id: bt-3
   name: Baby Health
   children_ids:
@@ -66,48 +66,48 @@
   - bt-3-3
   - bt-3-4
   - bt-3-5
-  attribute_ids: []
+  attribute_friendly_ids: []
 - id: bt-3-1
   name: Baby Health & Grooming Kits
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1720
-  - 4
-  - 1721
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - baby_health_items_included
+  - material
+  - grooming_kit_format
 - id: bt-3-2
   name: Nasal Aspirators
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
 - id: bt-3-3
   name: Pacifier Clips & Holders
   children_ids: []
-  attribute_ids:
-  - 80
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - closure_type
+  - color
+  - material
+  - pattern
 - id: bt-3-4
   name: Pacifier Wipes
   children_ids: []
-  attribute_ids:
-  - 1722
-  - 4
+  attribute_friendly_ids:
+  - wipe_fragrance
+  - material
 - id: bt-3-5
   name: Pacifiers & Teethers
   children_ids:
   - bt-3-5-1
   - bt-3-5-2
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
-  - 1723
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
+  - pacifier_teether_design
 - id: bt-4
   name: Baby Safety
   children_ids:
@@ -117,7 +117,7 @@
   - bt-4-4
   - bt-4-5
   - bt-4-6
-  attribute_ids: []
+  attribute_friendly_ids: []
 - id: bt-4-1
   name: Baby & Pet Gate Accessories
   children_ids:
@@ -126,35 +126,35 @@
   - bt-4-1-3
   - bt-4-1-4
   - bt-4-1-5
-  attribute_ids:
-  - 1
-  - 4
+  attribute_friendly_ids:
+  - color
+  - material
 - id: bt-4-2
   name: Baby & Pet Gates
   children_ids:
   - bt-4-2-1
   - bt-4-2-2
   - bt-4-2-3
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-4-3
   name: Baby Monitors
   children_ids:
   - bt-4-3-1
   - bt-4-3-2
   - bt-4-3-3
-  attribute_ids:
-  - 1272
-  - 1730
-  - 1731
+  attribute_friendly_ids:
+  - connectivity_technology
+  - display_color_mode
+  - range_type
 - id: bt-4-4
   name: Baby Safety Harnesses & Leashes
   children_ids:
   - bt-4-4-1
   - bt-4-4-2
   - bt-4-4-3
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-4-5
   name: Baby Safety Locks & Guards
   children_ids:
@@ -163,20 +163,20 @@
   - bt-4-5-3
   - bt-4-5-4
   - bt-4-5-5
-  attribute_ids:
-  - 1
-  - 1725
-  - 1726
-  - 4
+  attribute_friendly_ids:
+  - color
+  - safety_device_installation
+  - locking_mechanism
+  - material
 - id: bt-4-6
   name: Baby Safety Rails
   children_ids:
   - bt-4-6-1
   - bt-4-6-2
-  attribute_ids:
-  - 1
-  - 1732
-  - 4
+  attribute_friendly_ids:
+  - color
+  - safety_rail_installation
+  - material
 - id: bt-5
   name: Baby Toys & Activity Equipment
   children_ids:
@@ -192,8 +192,8 @@
   - bt-5-10
   - bt-5-11
   - bt-5-12
-  attribute_ids:
-  - 1
+  attribute_friendly_ids:
+  - color
 - id: bt-5-1
   name: Alphabet Toys
   children_ids:
@@ -202,9 +202,9 @@
   - bt-5-1-3
   - bt-5-1-4
   - bt-5-1-5
-  attribute_ids:
-  - 1
-  - 4
+  attribute_friendly_ids:
+  - color
+  - material
 - id: bt-5-2
   name: Baby Activity Toys
   children_ids:
@@ -212,111 +212,111 @@
   - bt-5-2-2
   - bt-5-2-3
   - bt-5-2-4
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-5-3
   name: Baby Bouncers & Rockers
   children_ids:
   - bt-5-3-1
   - bt-5-3-2
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-5-4
   name: Baby Jumpers & Swings
   children_ids:
   - bt-5-4-1
   - bt-5-4-2
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-5-5
   name: Baby Mobile Accessories
   children_ids:
   - bt-5-5-1
   - bt-5-5-2
   - bt-5-5-3
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-5-6
   name: Baby Mobiles
   children_ids:
   - bt-5-6-1
   - bt-5-6-2
   - bt-5-6-3
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-5-7
   name: Baby Soothers
   children_ids:
   - bt-5-7-1
   - bt-5-7-2
   - bt-5-7-3
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-5-8
   name: Baby Walkers & Entertainers
   children_ids:
   - bt-5-8-1
   - bt-5-8-2
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-5-9
   name: Play Mats & Gyms
   children_ids:
   - bt-5-9-1
   - bt-5-9-2
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-5-9-1
   name: Play Gyms
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-5-9-2
   name: Play Mats
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
 - id: bt-5-10
   name: Play Yards
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
 - id: bt-5-11
   name: Push & Pull Toys
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
 - id: bt-5-12
   name: Sorting & Stacking Toys
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
 - id: bt-6
   name: Baby Transport
   children_ids:
   - bt-6-1
   - bt-6-2
   - bt-6-3
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-6-1
   name: Baby & Toddler Car Seats
   children_ids:
@@ -324,9 +324,9 @@
   - bt-6-1-2
   - bt-6-1-3
   - bt-6-1-4
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-6-2
   name: Baby Carriers
   children_ids:
@@ -335,9 +335,9 @@
   - bt-6-2-3
   - bt-6-2-4
   - bt-6-2-5
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-6-3
   name: Baby Strollers
   children_ids:
@@ -347,9 +347,9 @@
   - bt-6-3-4
   - bt-6-3-5
   - bt-6-3-6
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-7
   name: Baby Transport Accessories
   children_ids:
@@ -358,9 +358,9 @@
   - bt-7-3
   - bt-7-4
   - bt-7-5
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-7-1
   name: Baby & Toddler Car Seat Accessories
   children_ids:
@@ -370,9 +370,9 @@
   - bt-7-1-4
   - bt-7-1-5
   - bt-7-1-6
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-7-2
   name: Baby Carrier Accessories
   children_ids:
@@ -382,9 +382,9 @@
   - bt-7-2-4
   - bt-7-2-5
   - bt-7-2-6
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-7-3
   name: Baby Stroller Accessories
   children_ids:
@@ -395,25 +395,25 @@
   - bt-7-3-5
   - bt-7-3-6
   - bt-7-3-7
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-7-4
   name: Baby Transport Liners & Sacks
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1751
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_baby_transport_type
+  - material
+  - pattern
 - id: bt-7-5
   name: Shopping Cart & High Chair Covers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1752
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_baby_chair_type
+  - material
+  - pattern
 - id: bt-9
   name: Diapering
   children_ids:
@@ -429,60 +429,60 @@
   - bt-9-10
   - bt-9-11
   - bt-9-12
-  attribute_ids: []
+  attribute_friendly_ids: []
 - id: bt-9-1
   name: Baby Wipe Dispensers & Warmers
   children_ids:
   - bt-9-1-1
   - bt-9-1-2
   - bt-9-1-3
-  attribute_ids:
-  - 1
+  attribute_friendly_ids:
+  - color
 - id: bt-9-2
   name: Baby Wipes
   children_ids:
   - bt-9-2-1
   - bt-9-2-2
   - bt-9-2-3
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-9-3
   name: Changing Mat & Tray Covers
   children_ids:
   - bt-9-3-1
   - bt-9-3-2
   - bt-9-3-3
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-9-4
   name: Changing Mats & Trays
   children_ids:
   - bt-9-4-1
   - bt-9-4-2
   - bt-9-4-3
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-9-5
   name: Diaper Kits
   children_ids:
   - bt-9-5-1
   - bt-9-5-2
   - bt-9-5-3
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-9-6
   name: Diaper Liners
   children_ids:
   - bt-9-6-1
   - bt-9-6-2
   - bt-9-6-3
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-9-7
   name: Diaper Organizers
   children_ids:
@@ -490,9 +490,9 @@
   - bt-9-7-2
   - bt-9-7-3
   - bt-9-7-4
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-9-8
   name: Diaper Pail Accessories
   children_ids:
@@ -500,17 +500,17 @@
   - bt-9-8-2
   - bt-9-8-3
   - bt-9-8-4
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-9-9
   name: Diaper Pails
   children_ids:
   - bt-9-9-1
   - bt-9-9-3
-  attribute_ids:
-  - 1
-  - 3
+  attribute_friendly_ids:
+  - color
+  - pattern
 - id: bt-9-10
   name: Diaper Rash Treatments
   children_ids:
@@ -518,21 +518,21 @@
   - bt-9-10-2
   - bt-9-10-3
   - bt-9-10-4
-  attribute_ids:
-  - 1384
-  - 1755
-  - 1385
-  - 1756
+  attribute_friendly_ids:
+  - dispenser_type
+  - fragrance_level
+  - ingredients
+  - treatment_texture
 - id: bt-9-11
   name: Diaper Wet Bags
   children_ids:
   - bt-9-11-2
   - bt-9-11-3
-  attribute_ids:
-  - 80
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - closure_type
+  - color
+  - material
+  - pattern
 - id: bt-9-12
   name: Diapers
   children_ids:
@@ -541,8 +541,8 @@
   - bt-9-12-3
   - bt-9-12-4
   - bt-9-12-5
-  attribute_ids:
-  - 1757
+  attribute_friendly_ids:
+  - diaper_size
 - id: bt-10
   name: Nursing & Feeding
   children_ids:
@@ -561,7 +561,7 @@
   - bt-10-13
   - bt-10-14
   - bt-10-15
-  attribute_ids: []
+  attribute_friendly_ids: []
 - id: bt-10-1
   name: Baby & Toddler Food
   children_ids:
@@ -571,20 +571,20 @@
   - bt-10-1-5
   - bt-10-1-6
   - bt-10-1-1
-  attribute_ids: []
+  attribute_friendly_ids: []
 - id: bt-10-1-2
   name: Baby Drinks
   children_ids:
   - bt-10-1-2-1
   - bt-10-1-2-2
-  attribute_ids:
-  - 1715
+  attribute_friendly_ids:
+  - infant_age_group
 - id: bt-10-1-3
   name: Baby Food
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1758
+  attribute_friendly_ids:
+  - infant_age_group
+  - baby_food_flavor
 - id: bt-10-1-4
   name: Baby Formula
   children_ids:
@@ -592,83 +592,83 @@
   - bt-10-1-4-2
   - bt-10-1-4-3
   - bt-10-1-4-4
-  attribute_ids:
-  - 1760
+  attribute_friendly_ids:
+  - formula_level
 - id: bt-10-1-5
   name: Baby Snacks
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1452
-  - 1762
-  - 1763
+  attribute_friendly_ids:
+  - infant_age_group
+  - dietary_preferences
+  - baby_snack_flavor
+  - baby_snack_texture
 - id: bt-10-1-6
   name: Toddler Nutrition Drinks & Shakes
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1452
-  - 1758
+  attribute_friendly_ids:
+  - infant_age_group
+  - dietary_preferences
+  - baby_food_flavor
 - id: bt-10-2
   name: Baby Bottle Nipples & Liners
   children_ids:
   - bt-10-2-1
   - bt-10-2-2
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-10-2-1
   name: Baby Bottle Liners
   children_ids: []
-  attribute_ids:
-  - 1764
-  - 843
-  - 4
+  attribute_friendly_ids:
+  - compatible_baby_bottle_design
+  - usage_type
+  - material
 - id: bt-10-2-2
   name: Baby Bottle Nipples
   children_ids:
   - bt-10-2-2-1
   - bt-10-2-2-2
   - bt-10-2-2-3
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-10-3
   name: Baby Bottles
   children_ids:
   - bt-10-3-1
   - bt-10-3-2
   - bt-10-3-3
-  attribute_ids: []
+  attribute_friendly_ids: []
 - id: bt-10-4
   name: Baby Care Timers
   children_ids:
   - bt-10-4-1
   - bt-10-4-2
-  attribute_ids:
-  - 1248
-  - 1221
+  attribute_friendly_ids:
+  - display_technology
+  - power_source
 - id: bt-10-5
   name: Bibs
   children_ids: []
-  attribute_ids:
-  - 80
-  - 1
-  - 4
-  - 3
-  - 1771
+  attribute_friendly_ids:
+  - closure_type
+  - color
+  - material
+  - pattern
+  - bib_design
 - id: bt-10-6
   name: Bottle Warmers & Sterilizers
   children_ids:
   - bt-10-6-1
   - bt-10-6-2
-  attribute_ids: []
+  attribute_friendly_ids: []
 - id: bt-10-7
   name: Breast Milk Storage Containers
   children_ids: []
-  attribute_ids:
-  - 80
-  - 4
-  - 843
-  - 1777
+  attribute_friendly_ids:
+  - closure_type
+  - material
+  - usage_type
+  - sterilization_instructions
 - id: bt-10-8
   name: Breast Pump Accessories
   children_ids:
@@ -678,1389 +678,1389 @@
   - bt-10-8-5
   - bt-10-8-6
   - bt-10-8-7
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-10-9
   name: Breast Pumps
   children_ids:
   - bt-10-9-1
   - bt-10-9-2
   - bt-10-9-3
-  attribute_ids:
-  - 1778
-  - 1779
+  attribute_friendly_ids:
+  - pump_accessories
+  - cleaning_instructions
 - id: bt-10-10
   name: Burp Cloths
   children_ids: []
-  attribute_ids:
-  - 1779
-  - 80
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - cleaning_instructions
+  - closure_type
+  - color
+  - material
+  - pattern
 - id: bt-10-11
   name: Nursing Covers
   children_ids: []
-  attribute_ids:
-  - 80
-  - 1
-  - 1782
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - closure_type
+  - color
+  - nursing_cover_coverage
+  - material
+  - pattern
 - id: bt-10-12
   name: Nursing Pads & Shields
   children_ids:
   - bt-10-12-3
   - bt-10-12-1
   - bt-10-12-2
-  attribute_ids:
-  - 4
-  - 1783
+  attribute_friendly_ids:
+  - material
+  - nursing_pad_design
 - id: bt-10-13
   name: Nursing Pillow Covers
   children_ids: []
-  attribute_ids:
-  - 1784
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - cover_closure_design
+  - color
+  - material
+  - pattern
 - id: bt-10-14
   name: Nursing Pillows
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1514
-  - 4
-  - 3
-  - 1785
+  attribute_friendly_ids:
+  - color
+  - firmness
+  - material
+  - pattern
+  - pillow_shape
 - id: bt-10-15
   name: Sippy Cups
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1786
-  - 4
-  - 3
-  - 1787
+  attribute_friendly_ids:
+  - color
+  - lid_type
+  - material
+  - pattern
+  - spout_type
 - id: bt-11
   name: Potty Training
   children_ids:
   - bt-11-2
   - bt-11-1
   - bt-11-3
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-11-2
   name: Potty Training Kits
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1789
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - potty_training_kit_components
+  - material
+  - pattern
 - id: bt-12
   name: Swaddling & Receiving Blankets
   children_ids:
   - bt-12-1
   - bt-12-2
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-12-1
   name: Receiving Blankets
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-12-2
   name: Swaddling Blankets
   children_ids: []
-  attribute_ids:
-  - 80
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - closure_type
+  - color
+  - material
+  - pattern
 - id: bt-1-1-1
   name: Bath Rings
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
-  - 1716
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
+  - safety_certifications
 - id: bt-1-1-2
   name: Bath Seats
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
-  - 1716
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
+  - safety_certifications
 - id: bt-1-1-3
   name: Bath Supports
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
-  - 1716
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
+  - safety_certifications
 - id: bt-1-1-4
   name: Bathtubs
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
-  - 1716
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
+  - safety_certifications
 - id: bt-1-1-5
   name: Tummy Tubs
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
-  - 1716
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
+  - safety_certifications
 - id: bt-1-2-1
   name: Hair Rinse Cups
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
 - id: bt-3-5-1
   name: Pacifiers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
-  - 1723
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
+  - pacifier_teether_design
 - id: bt-3-5-2
   name: Teethers
   children_ids: []
-  attribute_ids:
-  - 50
-  - 1715
-  - 1
-  - 4
-  - 3
-  - 1723
+  attribute_friendly_ids:
+  - accessory_size
+  - infant_age_group
+  - color
+  - material
+  - pattern
+  - pacifier_teether_design
 - id: bt-4-1-1
   name: Door Stoppers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1724
-  - 1725
-  - 4
+  attribute_friendly_ids:
+  - color
+  - door_stopper_design
+  - safety_device_installation
+  - material
 - id: bt-4-1-2
   name: Extension Kits
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1725
-  - 4
+  attribute_friendly_ids:
+  - color
+  - safety_device_installation
+  - material
 - id: bt-4-1-3
   name: Locking Mechanisms
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1725
-  - 1726
-  - 4
+  attribute_friendly_ids:
+  - color
+  - safety_device_installation
+  - locking_mechanism
+  - material
 - id: bt-4-1-4
   name: Mounting Kits
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1725
-  - 4
+  attribute_friendly_ids:
+  - color
+  - safety_device_installation
+  - material
 - id: bt-4-1-5
   name: Wall Cups
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1725
-  - 4
+  attribute_friendly_ids:
+  - color
+  - safety_device_installation
+  - material
 - id: bt-4-2-1
   name: Retractable Gates
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1725
-  - 1726
-  - 1727
+  attribute_friendly_ids:
+  - color
+  - safety_device_installation
+  - locking_mechanism
+  - gate_mounting_type
 - id: bt-4-2-2
   name: Swing Gates
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1725
-  - 1726
-  - 4
-  - 1727
-  - 1728
+  attribute_friendly_ids:
+  - color
+  - safety_device_installation
+  - locking_mechanism
+  - material
+  - gate_mounting_type
+  - opening_direction
 - id: bt-4-2-3
   name: Walk Through Gates
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1725
-  - 1726
-  - 1727
-  - 1729
+  attribute_friendly_ids:
+  - color
+  - safety_device_installation
+  - locking_mechanism
+  - gate_mounting_type
+  - opening_mechanism
 - id: bt-4-3-1
   name: Audio & Video Baby Monitors
   children_ids: []
-  attribute_ids:
-  - 1272
-  - 1730
-  - 1731
+  attribute_friendly_ids:
+  - connectivity_technology
+  - display_color_mode
+  - range_type
 - id: bt-4-3-2
   name: Audio Baby Monitors
   children_ids: []
-  attribute_ids:
-  - 1272
-  - 1730
-  - 1731
+  attribute_friendly_ids:
+  - connectivity_technology
+  - display_color_mode
+  - range_type
 - id: bt-4-3-3
   name: Video Baby Monitors
   children_ids: []
-  attribute_ids:
-  - 1272
-  - 1730
-  - 1731
+  attribute_friendly_ids:
+  - connectivity_technology
+  - display_color_mode
+  - range_type
 - id: bt-4-4-1
   name: Harnesses
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 80
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - closure_type
+  - color
+  - material
+  - pattern
 - id: bt-4-4-2
   name: Leashes
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 80
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - closure_type
+  - color
+  - material
+  - pattern
 - id: bt-4-4-3
   name: Wristbands
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 80
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - closure_type
+  - color
+  - material
+  - pattern
 - id: bt-4-5-1
   name: Cabinet Locks
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1725
-  - 1726
-  - 4
+  attribute_friendly_ids:
+  - color
+  - safety_device_installation
+  - locking_mechanism
+  - material
 - id: bt-4-5-2
   name: Corner Guards
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1725
-  - 1726
-  - 4
+  attribute_friendly_ids:
+  - color
+  - safety_device_installation
+  - locking_mechanism
+  - material
 - id: bt-4-5-3
   name: Door Locks
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1725
-  - 1726
-  - 4
+  attribute_friendly_ids:
+  - color
+  - safety_device_installation
+  - locking_mechanism
+  - material
 - id: bt-4-5-4
   name: Drawer Locks
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1725
-  - 1726
-  - 4
+  attribute_friendly_ids:
+  - color
+  - safety_device_installation
+  - locking_mechanism
+  - material
 - id: bt-4-5-5
   name: Outlet Covers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1725
-  - 1726
-  - 4
+  attribute_friendly_ids:
+  - color
+  - safety_device_installation
+  - locking_mechanism
+  - material
 - id: bt-4-6-1
   name: Bed Safety Rails
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1732
-  - 4
+  attribute_friendly_ids:
+  - color
+  - safety_rail_installation
+  - material
 - id: bt-4-6-2
   name: Stair Safety Rails
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1732
-  - 4
+  attribute_friendly_ids:
+  - color
+  - safety_rail_installation
+  - material
 - id: bt-5-1-1
   name: Alphabet Blocks
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1733
-  - 4
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - language
+  - material
 - id: bt-5-1-2
   name: Alphabet Books
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1733
-  - 4
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - language
+  - material
 - id: bt-5-1-3
   name: Alphabet Cards
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1733
-  - 4
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - language
+  - material
 - id: bt-5-1-4
   name: Alphabet Electric Toys
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1733
-  - 4
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - language
+  - material
 - id: bt-5-1-5
   name: Alphabet Puzzles
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1733
-  - 4
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - language
+  - material
 - id: bt-5-2-1
   name: Activity Centers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
 - id: bt-5-2-2
   name: Musical Toys
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
 - id: bt-5-2-3
   name: Rattles
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
 - id: bt-5-2-4
   name: Teething Toys
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
 - id: bt-5-3-1
   name: Baby Bouncers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 4
-  - 1734
-  - 1735
+  attribute_friendly_ids:
+  - infant_age_group
+  - material
+  - motion
+  - safety_features
 - id: bt-5-3-2
   name: Baby Rockers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 4
-  - 1734
-  - 1735
+  attribute_friendly_ids:
+  - infant_age_group
+  - material
+  - motion
+  - safety_features
 - id: bt-5-4-1
   name: Baby Jumpers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 4
-  - 1734
+  attribute_friendly_ids:
+  - infant_age_group
+  - material
+  - motion
 - id: bt-5-4-2
   name: Baby Swings
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 4
-  - 1734
+  attribute_friendly_ids:
+  - infant_age_group
+  - material
+  - motion
 - id: bt-5-5-1
   name: Mobile Arms
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 1736
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - mobile_mounting_type
+  - pattern
 - id: bt-5-5-2
   name: Mobile Attachments
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 1736
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - mobile_mounting_type
+  - pattern
 - id: bt-5-5-3
   name: Mobile Holders
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 1736
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - mobile_mounting_type
+  - pattern
 - id: bt-5-6-1
   name: Ceiling Mobiles
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1737
-  - 1
-  - 4
-  - 1738
-  - 3
-  - 1739
+  attribute_friendly_ids:
+  - infant_age_group
+  - attachment_method
+  - color
+  - material
+  - mobile_movement
+  - pattern
+  - nursery_theme
 - id: bt-5-6-2
   name: Crib Mobiles
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1737
-  - 1
-  - 4
-  - 1738
-  - 3
-  - 1739
+  attribute_friendly_ids:
+  - infant_age_group
+  - attachment_method
+  - color
+  - material
+  - mobile_movement
+  - pattern
+  - nursery_theme
 - id: bt-5-6-3
   name: Stroller Mobiles
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1737
-  - 1
-  - 4
-  - 1738
-  - 3
-  - 1739
+  attribute_friendly_ids:
+  - infant_age_group
+  - attachment_method
+  - color
+  - material
+  - mobile_movement
+  - pattern
+  - nursery_theme
 - id: bt-5-7-1
   name: Night Lights
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1737
-  - 1
-  - 1740
-  - 4
-  - 3
-  - 1221
-  - 1741
+  attribute_friendly_ids:
+  - infant_age_group
+  - attachment_method
+  - color
+  - light_options
+  - material
+  - pattern
+  - power_source
+  - soothing_sounds
 - id: bt-5-7-2
   name: Plush Toys
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1737
-  - 1
-  - 1740
-  - 4
-  - 3
-  - 1221
-  - 1741
+  attribute_friendly_ids:
+  - infant_age_group
+  - attachment_method
+  - color
+  - light_options
+  - material
+  - pattern
+  - power_source
+  - soothing_sounds
 - id: bt-5-7-3
   name: Sound Machines
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1737
-  - 1
-  - 1740
-  - 4
-  - 3
-  - 1221
-  - 1741
+  attribute_friendly_ids:
+  - infant_age_group
+  - attachment_method
+  - color
+  - light_options
+  - material
+  - pattern
+  - power_source
+  - soothing_sounds
 - id: bt-5-8-1
   name: Baby Walkers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
 - id: bt-5-8-2
   name: Jumperoos
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - material
+  - pattern
 - id: bt-6-1-1
   name: Booster Seats
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1742
-  - 1743
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - car_seat_installation
+  - car_seat_orientation
+  - pattern
 - id: bt-6-1-2
   name: Car Seat Strollers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1744
-  - 1742
-  - 1743
-  - 3
-  - 1745
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - folding_mechanism
+  - car_seat_installation
+  - car_seat_orientation
+  - pattern
+  - stroller_wheel_type
 - id: bt-6-1-3
   name: Convertible Car Seats
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1742
-  - 1743
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - car_seat_installation
+  - car_seat_orientation
+  - pattern
 - id: bt-6-1-4
   name: Infant Car Seats
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1742
-  - 1743
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - car_seat_installation
+  - car_seat_orientation
+  - pattern
 - id: bt-6-2-1
   name: Backpack Carriers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1746
-  - 80
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - carrying_positions
+  - closure_type
+  - color
+  - material
+  - pattern
 - id: bt-6-2-2
   name: Mei Tai Carriers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1746
-  - 80
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - carrying_positions
+  - closure_type
+  - color
+  - material
+  - pattern
 - id: bt-6-2-3
   name: Ring Slings & Hip Carriers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1746
-  - 80
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - carrying_positions
+  - closure_type
+  - color
+  - material
+  - pattern
 - id: bt-6-2-4
   name: Soft-Structured Carriers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1746
-  - 80
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - carrying_positions
+  - closure_type
+  - color
+  - material
+  - pattern
 - id: bt-6-2-5
   name: Wrap Carriers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1746
-  - 80
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - infant_age_group
+  - carrying_positions
+  - closure_type
+  - color
+  - material
+  - pattern
 - id: bt-6-3-1
   name: Convertible Strollers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1744
-  - 3
-  - 1745
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - folding_mechanism
+  - pattern
+  - stroller_wheel_type
 - id: bt-6-3-2
   name: Double Strollers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1747
-  - 1744
-  - 3
-  - 1745
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - double_stroller_configuration
+  - folding_mechanism
+  - pattern
+  - stroller_wheel_type
 - id: bt-6-3-3
   name: Full-Sized Strollers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1744
-  - 3
-  - 1745
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - folding_mechanism
+  - pattern
+  - stroller_wheel_type
 - id: bt-6-3-4
   name: Jogging Strollers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1744
-  - 3
-  - 1745
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - folding_mechanism
+  - pattern
+  - stroller_wheel_type
 - id: bt-6-3-5
   name: Travel Systems
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1744
-  - 3
-  - 1745
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - folding_mechanism
+  - pattern
+  - stroller_wheel_type
 - id: bt-6-3-6
   name: Umbrella Strollers
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1
-  - 1744
-  - 3
-  - 1745
+  attribute_friendly_ids:
+  - infant_age_group
+  - color
+  - folding_mechanism
+  - pattern
+  - stroller_wheel_type
 - id: bt-7-1-1
   name: Car Seat Canopies
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1748
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_seat_type
+  - material
+  - pattern
 - id: bt-7-1-2
   name: Car Seat Covers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1748
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_seat_type
+  - material
+  - pattern
 - id: bt-7-1-3
   name: Car Seat Mirrors
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1748
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_seat_type
+  - material
+  - pattern
 - id: bt-7-1-4
   name: Car Seat Organizers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1748
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_seat_type
+  - material
+  - pattern
 - id: bt-7-1-5
   name: Car Seat Protectors
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1748
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_seat_type
+  - material
+  - pattern
 - id: bt-7-1-6
   name: Car Seat Travel Bags
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1748
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_seat_type
+  - material
+  - pattern
 - id: bt-7-2-1
   name: Baby Carrier Bibs
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1749
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_baby_carrier_type
+  - material
+  - pattern
 - id: bt-7-2-2
   name: Baby Carrier Covers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1749
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_baby_carrier_type
+  - material
+  - pattern
 - id: bt-7-2-3
   name: Baby Carrier Hoods
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1749
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_baby_carrier_type
+  - material
+  - pattern
 - id: bt-7-2-4
   name: Baby Carrier Storage Bags
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1749
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_baby_carrier_type
+  - material
+  - pattern
 - id: bt-7-2-5
   name: Baby Carrier Teething Pads
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1749
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_baby_carrier_type
+  - material
+  - pattern
 - id: bt-7-2-6
   name: Baby Carrier Waistband Extenders
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1749
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_baby_carrier_type
+  - material
+  - pattern
 - id: bt-7-3-1
   name: Stroller Cup Holders
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1750
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_stroller_type
+  - material
+  - pattern
 - id: bt-7-3-2
   name: Stroller Footmuffs
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1750
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_stroller_type
+  - material
+  - pattern
 - id: bt-7-3-3
   name: Stroller Hooks
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1750
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_stroller_type
+  - material
+  - pattern
 - id: bt-7-3-4
   name: Stroller Organizers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1750
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_stroller_type
+  - material
+  - pattern
 - id: bt-7-3-5
   name: Stroller Rain Covers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1750
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_stroller_type
+  - material
+  - pattern
 - id: bt-7-3-6
   name: Stroller Sunshades
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1750
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_stroller_type
+  - material
+  - pattern
 - id: bt-7-3-7
   name: Stroller Travel Bags
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1750
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - compatible_stroller_type
+  - material
+  - pattern
 - id: bt-8
   name: Baby Transport Replacement Parts
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-1-1
   name: Baby Wipe Dispensers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1221
+  attribute_friendly_ids:
+  - color
+  - power_source
 - id: bt-9-1-2
   name: Baby Wipe Warmers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1221
+  attribute_friendly_ids:
+  - color
+  - power_source
 - id: bt-9-1-3
   name: Portable Wipe Dispensers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1221
+  attribute_friendly_ids:
+  - color
+  - power_source
 - id: bt-9-2-1
   name: Cloth Baby Wipes
   children_ids: []
-  attribute_ids:
-  - 50
-  - 1
-  - 4
-  - 1753
-  - 3
-  - 1722
+  attribute_friendly_ids:
+  - accessory_size
+  - color
+  - material
+  - wipe_packaging
+  - pattern
+  - wipe_fragrance
 - id: bt-9-2-2
   name: Disposable Baby Wipes
   children_ids: []
-  attribute_ids:
-  - 50
-  - 1
-  - 4
-  - 1753
-  - 3
-  - 1722
+  attribute_friendly_ids:
+  - accessory_size
+  - color
+  - material
+  - wipe_packaging
+  - pattern
+  - wipe_fragrance
 - id: bt-9-2-3
   name: Flushable Baby Wipes
   children_ids: []
-  attribute_ids:
-  - 50
-  - 1
-  - 4
-  - 1753
-  - 3
-  - 1722
+  attribute_friendly_ids:
+  - accessory_size
+  - color
+  - material
+  - wipe_packaging
+  - pattern
+  - wipe_fragrance
 - id: bt-9-3-1
   name: Changing Mat Covers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-3-2
   name: Changing Tray Covers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-3-3
   name: Diaper Changing Pad Covers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-4-1
   name: Changing Mats
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-4-2
   name: Changing Trays
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-4-3
   name: Diaper Changing Pads
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-5-1
   name: Diaper Bag Kits
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1754
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - diaper_kit_components
+  - material
+  - pattern
 - id: bt-9-5-2
   name: Diaper Changing Kits
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1754
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - diaper_kit_components
+  - material
+  - pattern
 - id: bt-9-5-3
   name: Travel Diaper Kits
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1754
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - diaper_kit_components
+  - material
+  - pattern
 - id: bt-9-6-1
   name: Cloth Diaper Liners
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-6-2
   name: Disposable Diaper Liners
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-6-3
   name: Flushable Diaper Liners
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-7-1
   name: Diaper Bag Organizers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-7-2
   name: Diaper Caddies
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-7-3
   name: Diaper Stackers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-7-4
   name: Hanging Diaper Organizers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-8-1
   name: Diaper Pail Bags
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-8-2
   name: Diaper Pail Deodorizers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-8-3
   name: Diaper Pail Liners
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-8-4
   name: Diaper Pail Refills
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-9-1
   name: Diaper Disposal Systems
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-9-3
   name: Diaper Trash Cans
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
 - id: bt-9-10-1
   name: Diaper Rash Creams
   children_ids: []
-  attribute_ids:
-  - 1384
-  - 1755
-  - 1385
-  - 1756
+  attribute_friendly_ids:
+  - dispenser_type
+  - fragrance_level
+  - ingredients
+  - treatment_texture
 - id: bt-9-10-2
   name: Diaper Rash Lotions
   children_ids: []
-  attribute_ids:
-  - 1384
-  - 1755
-  - 1385
-  - 1756
+  attribute_friendly_ids:
+  - dispenser_type
+  - fragrance_level
+  - ingredients
+  - treatment_texture
 - id: bt-9-10-3
   name: Diaper Rash Ointments
   children_ids: []
-  attribute_ids:
-  - 1384
-  - 1755
-  - 1385
-  - 1756
+  attribute_friendly_ids:
+  - dispenser_type
+  - fragrance_level
+  - ingredients
+  - treatment_texture
 - id: bt-9-10-4
   name: Diaper Rash Powder
   children_ids: []
-  attribute_ids:
-  - 1384
-  - 1755
-  - 1385
-  - 1756
+  attribute_friendly_ids:
+  - dispenser_type
+  - fragrance_level
+  - ingredients
+  - treatment_texture
 - id: bt-9-11-2
   name: Hanging Diaper Wet Bags
   children_ids: []
-  attribute_ids:
-  - 80
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - closure_type
+  - color
+  - material
+  - pattern
 - id: bt-9-11-3
   name: Wet Dry Diaper Bags
   children_ids: []
-  attribute_ids:
-  - 80
-  - 1
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - closure_type
+  - color
+  - material
+  - pattern
 - id: bt-9-12-1
   name: Cloth Diapers
   children_ids: []
-  attribute_ids:
-  - 1
-  - 1757
-  - 4
-  - 3
+  attribute_friendly_ids:
+  - color
+  - diaper_size
+  - material
+  - pattern
 - id: bt-9-12-2
   name: Disposable Diapers
   children_ids: []
-  attribute_ids:
-  - 1757
-  - 4
+  attribute_friendly_ids:
+  - diaper_size
+  - material
 - id: bt-9-12-3
   name: Overnight Diapers
   children_ids: []
-  attribute_ids:
-  - 1757
-  - 4
+  attribute_friendly_ids:
+  - diaper_size
+  - material
 - id: bt-9-12-4
   name: Pull-Up Diapers
   children_ids: []
-  attribute_ids:
-  - 1757
-  - 4
+  attribute_friendly_ids:
+  - diaper_size
+  - material
 - id: bt-9-12-5
   name: Swim Diapers
   children_ids: []
-  attribute_ids:
-  - 1757
-  - 4
+  attribute_friendly_ids:
+  - diaper_size
+  - material
 - id: bt-10-1-1
   name: Baby Cereals
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1452
-  - 1484
+  attribute_friendly_ids:
+  - infant_age_group
+  - dietary_preferences
+  - flour_grain_type
 - id: bt-10-1-2-1
   name: Concentrated Drinks
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1758
-  - 1759
+  attribute_friendly_ids:
+  - infant_age_group
+  - baby_food_flavor
+  - baby_drink_packaging
 - id: bt-10-1-2-2
   name: Powdered Drinks
   children_ids: []
-  attribute_ids:
-  - 1715
-  - 1758
-  - 1759
+  attribute_friendly_ids:
+  - infant_age_group
+  - baby_food_flavor
+  - baby_drink_packaging
 - id: bt-10-1-4-1
   name: Dairy Formula
   children_ids: []
-  attribute_ids:
-  - 1760
-  - 1761
+  attribute_friendly_ids:
+  - formula_level
+  - baby_formula_format
 - id: bt-10-1-4-2
   name: Hypoallergenic Formula
   children_ids: []
-  attribute_ids:
-  - 1760
-  - 1761
+  attribute_friendly_ids:
+  - formula_level
+  - baby_formula_format
 - id: bt-10-1-4-3
   name: Lactose-Free Formula
   children_ids: []
-  attribute_ids:
-  - 1760
-  - 1761
+  attribute_friendly_ids:
+  - formula_level
+  - baby_formula_format
 - id: bt-10-1-4-4
   name: Soy Formula
   children_ids: []
-  attribute_ids:
-  - 1760
-  - 1761
+  attribute_friendly_ids:
+  - formula_level
+  - baby_formula_format
 - id: bt-10-2-2-1
   name: Orthodontic Nipples
   children_ids: []
-  attribute_ids:
-  - 1764
-  - 1765
-  - 4
-  - 73
-  - 1766
+  attribute_friendly_ids:
+  - compatible_baby_bottle_design
+  - flow_rate_type
+  - material
+  - shape
+  - stage
 - id: bt-10-2-2-2
   name: Standard Nipples
   children_ids: []
-  attribute_ids:
-  - 1764
-  - 1765
-  - 4
-  - 1767
-  - 1766
+  attribute_friendly_ids:
+  - compatible_baby_bottle_design
+  - flow_rate_type
+  - material
+  - nipple_shape
+  - stage
 - id: bt-10-2-2-3
   name: Wide Neck Nipples
   children_ids: []
-  attribute_ids:
-  - 1764
-  - 1765
-  - 4
-  - 1767
-  - 1766
+  attribute_friendly_ids:
+  - compatible_baby_bottle_design
+  - flow_rate_type
+  - material
+  - nipple_shape
+  - stage
 - id: bt-10-3-1
   name: Anti Colic Bottles
   children_ids: []
-  attribute_ids:
-  - 1768
-  - 1765
-  - 4
-  - 1769
-  - 1770
+  attribute_friendly_ids:
+  - bottle_design
+  - flow_rate_type
+  - material
+  - nipple_material
+  - nipple_type
 - id: bt-10-3-2
   name: Standard Bottles
   children_ids: []
-  attribute_ids:
-  - 1768
-  - 1765
-  - 4
-  - 1769
-  - 1770
+  attribute_friendly_ids:
+  - bottle_design
+  - flow_rate_type
+  - material
+  - nipple_material
+  - nipple_type
 - id: bt-10-3-3
   name: Wide Neck Bottles
   children_ids: []
-  attribute_ids:
-  - 1768
-  - 1765
-  - 4
-  - 1769
-  - 1770
+  attribute_friendly_ids:
+  - bottle_design
+  - flow_rate_type
+  - material
+  - nipple_material
+  - nipple_type
 - id: bt-10-4-1
   name: Analog Timers
   children_ids: []
-  attribute_ids:
-  - 1248
-  - 1221
+  attribute_friendly_ids:
+  - display_technology
+  - power_source
 - id: bt-10-4-2
   name: Digital Timers
   children_ids: []
-  attribute_ids:
-  - 1248
-  - 1221
+  attribute_friendly_ids:
+  - display_technology
+  - power_source
 - id: bt-10-6-1
   name: Bottle Warmers
   children_ids:
   - bt-10-6-1-1
   - bt-10-6-1-2
-  attribute_ids:
-  - 1764
+  attribute_friendly_ids:
+  - compatible_baby_bottle_design
 - id: bt-10-6-1-1
   name: Electric Bottle Warmers
   children_ids: []
-  attribute_ids:
-  - 1764
-  - 1772
-  - 1773
-  - 1774
+  attribute_friendly_ids:
+  - compatible_baby_bottle_design
+  - heating_method
+  - heating_speed
+  - temperature_control
 - id: bt-10-6-1-2
   name: Portable Bottle Warmers
   children_ids: []
-  attribute_ids:
-  - 1764
-  - 1772
-  - 1773
-  - 1774
+  attribute_friendly_ids:
+  - compatible_baby_bottle_design
+  - heating_method
+  - heating_speed
+  - temperature_control
 - id: bt-10-6-2
   name: Sterilizers
   children_ids:
   - bt-10-6-2-1
   - bt-10-6-2-2
   - bt-10-6-2-3
-  attribute_ids: []
+  attribute_friendly_ids: []
 - id: bt-10-6-2-1
   name: Electric Steam Sterilizers
   children_ids: []
-  attribute_ids:
-  - 1775
-  - 1776
+  attribute_friendly_ids:
+  - sterilization_cycle_time
+  - sterilization_method
 - id: bt-10-6-2-2
   name: Microwave Sterilizers
   children_ids: []
-  attribute_ids:
-  - 1775
-  - 1776
+  attribute_friendly_ids:
+  - sterilization_cycle_time
+  - sterilization_method
 - id: bt-10-6-2-3
   name: UV Sterilizers
   children_ids: []
-  attribute_ids:
-  - 1775
-  - 1776
+  attribute_friendly_ids:
+  - sterilization_cycle_time
+  - sterilization_method
 - id: bt-10-8-2
   name: Carrying Bags & Totes
   children_ids: []
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-10-8-3
   name: Cleaning Brushes & Wipes
   children_ids: []
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-10-8-4
   name: Connectors & Adapters
   children_ids: []
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-10-8-5
   name: Hands Free Pumping Bras
   children_ids: []
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-10-8-6
   name: Tubing
   children_ids: []
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-10-8-7
   name: Valves & Membranes
   children_ids: []
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-10-9-1
   name: Double Electric Breast Pumps
   children_ids: []
-  attribute_ids:
-  - 1778
-  - 1779
-  - 1634
-  - 1221
-  - 1780
-  - 1781
+  attribute_friendly_ids:
+  - pump_accessories
+  - cleaning_instructions
+  - portability
+  - power_source
+  - pump_speed_settings
+  - suction_levels
 - id: bt-10-9-2
   name: Electric Breast Pumps
   children_ids: []
-  attribute_ids:
-  - 1778
-  - 1779
-  - 1634
-  - 1221
-  - 1780
-  - 1781
+  attribute_friendly_ids:
+  - pump_accessories
+  - cleaning_instructions
+  - portability
+  - power_source
+  - pump_speed_settings
+  - suction_levels
 - id: bt-10-9-3
   name: Manual Breast Pumps
   children_ids: []
-  attribute_ids:
-  - 1778
-  - 1779
+  attribute_friendly_ids:
+  - pump_accessories
+  - cleaning_instructions
 - id: bt-10-12-3
   name: Breast Shields
   children_ids: []
-  attribute_ids:
-  - 4
+  attribute_friendly_ids:
+  - material
 - id: bt-10-12-1
   name: Disposable Nursing Pads
   children_ids: []
-  attribute_ids:
-  - 4
-  - 1783
+  attribute_friendly_ids:
+  - material
+  - nursing_pad_design
 - id: bt-10-12-2
   name: Reusable Nursing Pads
   children_ids: []
-  attribute_ids:
-  - 4
-  - 1783
+  attribute_friendly_ids:
+  - material
+  - nursing_pad_design
 - id: bt-11-1
   name: Potties
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
-  - 1788
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
+  - potty_toilet_seat_design
 - id: bt-11-3
   name: Toilet Seats & Step Stools
   children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
-  - 1788
+  attribute_friendly_ids:
+  - color
+  - material
+  - pattern
+  - potty_toilet_seat_design

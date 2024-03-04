@@ -6,13 +6,13 @@ class PropertyValueTest < Minitest::Test
   end
 
   def test_gid
-    assert_equal 'gid://shopify/Taxonomy/Value/12', PropertyValue.new(id: '12', name: 'Foo').gid
+    assert_equal 'gid://shopify/Taxonomy/Value/12', PropertyValue.new(id: 12, name: 'Foo', friendly_id: 'foo').gid
   end
 
   def test_default_ordering_places_other_at_end
-    red = PropertyValue.create(id: '1-1', name: 'Red')
-    zoo = PropertyValue.create(id: '1-2', name: 'Zoo')
-    other = PropertyValue.create(id: '1-3', name: 'Other')
+    red = PropertyValue.create(id: 11, name: 'Red', friendly_id: 'red')
+    zoo = PropertyValue.create(id: 12, name: 'Zoo', friendly_id: 'zoo')
+    other = PropertyValue.create(id: 13, name: 'Other', friendly_id: 'other')
 
     assert_equal [red, zoo, other], PropertyValue.all.to_a
   end
