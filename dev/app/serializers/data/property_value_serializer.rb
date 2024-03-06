@@ -4,7 +4,6 @@ module Serializers
       def serialize(property_value)
         {
           id: property.id,
-          friendly_id: property.friendly_id,
           name: property.name,
         }
       end
@@ -12,7 +11,6 @@ module Serializers
       def deserialize(hash)
         PropertyValue.new(
           id: hash["id"],
-          friendly_id: hash["friendly_id"],
           name: hash["name"],
         )
       end

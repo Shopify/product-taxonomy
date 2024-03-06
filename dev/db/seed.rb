@@ -9,13 +9,10 @@ module DB
           property_json['values'].each do |property_json|
             property_value = Serializers::Data::PropertyValueSerializer.deserialize(property_json)
             by_id = PropertyValue.find_by(id: property_value.id)
-            by_friendly_id = PropertyValue.find_by(friendly_id: property_value.friendly_id)
 
-            if by_id.nil? && by_friendly_id.nil?
+            if by_id.nil?
               property_value.save!
-            elsif by_friendly_id && by_friendly_id.name != property_value.name
-              puts "  ⨯ Failed to import value: #{property_value.name} <#{property_value.friendly_id}> already exists as #{by_friendly_id.name} <#{by_friendly_id.friendly_id}>"
-            elsif by_id && by_id.name != property_value.name
+            elsif by_id.name != property_value.name
               puts "  ⨯ Failed to import value: #{property_value.name} <#{property_value.id}> already exists as #{by_id.name} <#{by_id.id}>"
             end
           end

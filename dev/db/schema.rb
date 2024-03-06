@@ -13,9 +13,6 @@ ActiveRecord::Schema[7.1].define do
   end
   create_table :property_values, force: :cascade do |t|
     t.string :name, null: false
-    t.string :friendly_id, null: false
-
-    t.index :friendly_id, unique: true
   end
 
   create_table :categories_properties, id: false, force: :cascade do |t|
