@@ -3,11 +3,11 @@
 <!-- omit in toc -->
 <h1 align="center">Shopify's Standard Product Taxonomy <img src="https://img.shields.io/badge/preview-orange.svg" alt="Preview"> <a href="./VERSION"><img src="https://img.shields.io/badge/version-v0.9.0-blue.svg" alt="Version"></a></h1>
 
-> **🌍 Global Standard**: Our open-source, standardized product taxonomy establishes a universal language for product classification. Comprehensive and already empowering merchants on Shopify.
+**🌍 Global Standard**: Our open-source, standardized product taxonomy establishes a universal language for product classification. Comprehensive and already empowering merchants on Shopify.
 
-> **👩🏼‍💻 Integration Friendly**: With a stable structure and diverse formats our taxonomy is designed for effortless integration into any system.
+**👩🏼‍💻 Integration Friendly**: With a stable structure and diverse formats our taxonomy is designed for effortless integration into any system.
 
-> **🚀 Industry Benchmark**: Spanning 22 essential verticals, our taxonomy encompasses categories, attributes, and values, all thoughtfully integrated within Shopify and numerous marketplaces.
+**🚀 Industry Benchmark**: Spanning 22 essential verticals, our taxonomy encompasses categories, attributes, and values, all thoughtfully integrated within Shopify and numerous marketplaces.
 
 <p align="right"><em>Learn more on <a href="https://help.shopify.com/manual/products/details/product-category">help.shopify.com</a></em></p>
 
@@ -25,36 +25,13 @@
 
 ## 🕹️ Interactive explorer
 
-Ready to dive in? [Explore our taxonomy interactively](https://shopify.github.io/product-taxonomy/?categoryId=sg-4-17-2-17) to visualize and discover what's published.
+Ready to dive in? [Explore our taxonomy interactively](https://shopify.github.io/product-taxonomy/?categoryId=gid%3A%2F%2Fshopify%2FTaxonomy%2FCategory%2Fsg-4-17-2-17) to visualize and discover what's published across the many categories, attributes, and values.
 
 ## 📚 Taxonomy overview
 
-The following table shows the current status of each vertical.
+Our taxonomy is an open-source comprehensive, global standard for product classification. It's a universal language that empowers merchants to categorize their products. Spanning 22 essential verticals, our taxonomy encompasses categories, attributes, and values, all thoughtfully integrated within Shopify and numerous marketplaces.
 
-| Vertical | Status |
-|----------|----------|
-| Apparel & Accessories | ✅ done |
-| Food, Beverages, & Tobacco | ✅ done |
-| Home & Garden | ✅ done |
-| Sporting Goods | ✅ done |
-| Furniture | ✅ done |
-| Health & Beauty | ✅ done |
-| Animals & Pet supplies | ✅ done |
-| Electronics | ✅ done |
-| Media | ✅ done |
-| Arts & Entertainment | ✅ done |
-| Vehicles & parts | ✅ done |
-| Toys & games | ✅ done |
-| Luggage & bags | ✅ done |
-| Software | ✅ done |
-| Cameras & optics | ✅ done |
-| Hardware | ✅ done |
-| Baby & toddler | ✅ done |
-| Business & industrial | ✅ done |
-| Office supplies | ✅ done |
-| Services | ✅ done |
-| Mature | ✅ done |
-| Religious & Ceremonial | ✅ done |
+What's next? ⏭️ More attributes and values as we work to make this truly comprehensive.
 
 ## 🧭 Getting started
 
@@ -69,7 +46,6 @@ Dive straight into `dist/` to find the files you need and integrate this taxonom
 We're working on a variety of formats to make it easy to integrate with your systems. Today we have `txt` and `json` formats, and we're working on more. If you have a specific format you'd like to see, please open an issue and let us know!
 
 ### 🧑🏼‍🏫 How to make changes to the taxonomy: `data/`
-
 
 > **🔵 Note**: While we are in preview we are not actively seeking PRs.
 
