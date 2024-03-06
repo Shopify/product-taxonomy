@@ -36,7 +36,7 @@ module DB
           failed_category_ids = []
           categories = vertical_json.filter_map do |category_json|
             begin
-              category = Serializers::Data::CategorySerializer.deserialize(category_json.except("children_ids"))
+              category = Serializers::Data::CategorySerializer.deserialize(category_json.except("children"))
               category.save!
               category
             rescue => _e
@@ -48,7 +48,7 @@ module DB
 
           # assemble the tree
           categories.zip(vertical_json).each do |category, json|
-            category.child_ids = json["children_ids"] - failed_category_ids
+            category.child_ids = json["children"] - failed_category_ids
             category.save!
           end
         end

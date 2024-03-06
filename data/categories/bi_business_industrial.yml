@@ -1,7 +1,7 @@
 ---
 - id: bi
   name: Business & Industrial
-  children_ids:
+  children:
   - bi-1
   - bi-2
   - bi-3
@@ -27,22 +27,22 @@
   - bi-23
   - bi-24
   - bi-25
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-1
   name: Advertising & Marketing
-  children_ids:
+  children:
   - bi-1-1
   - bi-1-2
   - bi-1-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-1-1
   name: Brochures
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - fold_type
   - orientation
@@ -51,18 +51,18 @@
   - pattern
 - id: bi-1-2
   name: Trade Show Counters
-  children_ids:
+  children:
   - bi-1-2-1
   - bi-1-2-2
   - bi-1-2-3
   - bi-1-2-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-1-3
   name: Trade Show Displays
-  children_ids:
+  children:
   - bi-1-3-1
   - bi-1-3-2
   - bi-1-3-3
@@ -76,7 +76,7 @@
   - bi-1-3-12
   - bi-1-3-13
   - bi-1-3-14
-  attribute_friendly_ids:
+  attributes:
   - color
   - connectivity_technology
   - display_recommended_use
@@ -87,45 +87,45 @@
   - suitable_space
 - id: bi-2
   name: Agriculture
-  children_ids:
+  children:
   - bi-2-1
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-2-1
   name: Animal Husbandry
-  children_ids:
+  children:
   - bi-2-1-1
   - bi-2-1-2
   - bi-2-1-3
   - bi-2-1-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-2-1-1
   name: Egg Incubators
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-2-1-2
   name: Livestock Feed
-  children_ids:
+  children:
   - bi-2-1-2-1
   - bi-2-1-2-2
   - bi-2-1-2-3
   - bi-2-1-2-4
   - bi-2-1-2-5
-  attribute_friendly_ids:
+  attributes:
   - animal_feed_form
   - color
   - livestock_food_ingredients
   - pattern
 - id: bi-2-1-2-1
   name: Cattle Feed
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - animal_feed_form
   - color
   - ingredient_category
@@ -133,8 +133,8 @@
   - pattern
 - id: bi-2-1-2-2
   name: Chicken Feed
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - animal_feed_form
   - chicken_feed_stage
   - color
@@ -143,8 +143,8 @@
   - pattern
 - id: bi-2-1-2-3
   name: Goat & Sheep Feed
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - animal_feed_form
   - color
   - ingredient_category
@@ -152,8 +152,8 @@
   - pattern
 - id: bi-2-1-2-4
   name: Mixed Herd Feed
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - animal_feed_form
   - color
   - ingredient_category
@@ -161,8 +161,8 @@
   - pattern
 - id: bi-2-1-2-5
   name: Pig Feed
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - animal_feed_form
   - color
   - ingredient_category
@@ -171,18 +171,18 @@
   - pig_feed_stage
 - id: bi-2-1-3
   name: Livestock Feeders & Waterers
-  children_ids:
+  children:
   - bi-2-1-3-1
   - bi-2-1-3-2
-  attribute_friendly_ids:
+  attributes:
   - animal_type
   - color
   - material
   - pattern
 - id: bi-2-1-4
   name: Livestock Halters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - animal_type
   - color
@@ -191,21 +191,21 @@
   - suitable_for_animal_type
 - id: bi-3
   name: Automation Control Components
-  children_ids:
+  children:
   - bi-3-1
   - bi-3-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-3-1
   name: Programmable Logic Controllers
-  children_ids:
+  children:
   - bi-3-1-2
   - bi-3-1-4
   - bi-3-1-5
   - bi-3-1-9
   - bi-3-1-7
-  attribute_friendly_ids:
+  attributes:
   - color
   - communication_protocols
   - controller_design
@@ -213,83 +213,83 @@
   - power_source
 - id: bi-3-2
   name: Variable Frequency & Adjustable Speed Drives
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - control_method
   - controller_drive_type
   - pattern
 - id: bi-4
   name: Construction
-  children_ids:
+  children:
   - bi-4-1
   - bi-4-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-4-1
   name: Surveying
-  children_ids:
+  children:
   - bi-4-1-1
   - bi-4-1-2
   - bi-4-1-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - connectivity_technology
   - pattern
 - id: bi-4-2
   name: Traffic Cones & Barrels
-  children_ids:
+  children:
   - bi-4-2-1
   - bi-4-2-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-5
   name: Dentistry
-  children_ids:
+  children:
   - bi-5-1
   - bi-5-2
   - bi-5-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-5-1
   name: Dental Cement
-  children_ids:
+  children:
   - bi-5-1-1
   - bi-5-1-2
   - bi-5-1-3
   - bi-5-1-5
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-5-2
   name: Dental Tools
-  children_ids:
+  children:
   - bi-5-2-1
   - bi-5-2-2
   - bi-5-2-3
   - bi-5-2-4
   - bi-5-2-5
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-5-2-1
   name: Dappen Dishes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-5-2-2
   name: Dental Mirrors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - mirror_handle_design
@@ -297,16 +297,16 @@
   - shape
 - id: bi-5-2-3
   name: Dental Tool Sets
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - dentistry_items_included
   - material
   - pattern
 - id: bi-5-2-4
   name: Prophy Cups
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - attachment_type
   - color
   - material
@@ -314,16 +314,16 @@
   - prophy_cup_design
 - id: bi-5-2-5
   name: Prophy Heads
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - attachment_type
   - color
   - material
   - pattern
 - id: bi-5-3
   name: Prophy Paste
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - dental_paste_flavor
   - grit_type
@@ -331,25 +331,25 @@
   - pattern
 - id: bi-6
   name: Film & Television
-  children_ids:
+  children:
   - bi-6-1
   - bi-6-2
   - bi-6-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-7
   name: Finance & Insurance
-  children_ids:
+  children:
   - bi-7-1
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-7-1
   name: Bullion
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - bullion_form
   - color
   - country_of_origin
@@ -357,7 +357,7 @@
   - pattern
 - id: bi-8
   name: Food Service
-  children_ids:
+  children:
   - bi-8-1
   - bi-8-2
   - bi-8-3
@@ -375,115 +375,115 @@
   - bi-8-15
   - bi-8-16
   - bi-8-17
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-8-1
   name: Bakery Boxes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-8-2
   name: Bus Tubs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-8-3
   name: Check Presenters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-8-4
   name: Concession Food Containers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-8-5
   name: Disposable Lids
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-8-6
   name: Disposable Serveware
-  children_ids:
+  children:
   - bi-8-6-1
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-8-6-1
   name: Disposable Serving Trays
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-8-7
   name: Disposable Tableware
-  children_ids:
+  children:
   - bi-8-7-1
   - bi-8-7-2
   - bi-8-7-3
   - bi-8-7-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-8-7-1
   name: Disposable Bowls
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
   - shape
 - id: bi-8-7-2
   name: Disposable Cups
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-8-7-3
   name: Disposable Cutlery
-  children_ids:
+  children:
   - bi-8-7-3-1
   - bi-8-7-3-2
   - bi-8-7-3-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-8-7-4
   name: Disposable Plates
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
   - shape
 - id: bi-8-8
   name: Food Service Baskets
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
   - shape
 - id: bi-8-9
   name: Food Service Carts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
@@ -491,49 +491,49 @@
   - shelf_material
 - id: bi-8-10
   name: Food Washers & Dryers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-8-11
   name: Hot Dog Rollers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-8-12
   name: Ice Bins
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-8-13
   name: Plate & Dish Warmers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-8-14
   name: Sneeze Guards
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-8-15
   name: Take-Out Containers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-8-16
   name: Tilt Skillets
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - bottom_surface_material
   - burner_material
   - color
@@ -543,61 +543,61 @@
   - power_source
 - id: bi-8-17
   name: Vending Machines
-  children_ids:
+  children:
   - bi-8-17-1
   - bi-8-17-2
   - bi-8-17-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-9
   name: Forestry & Logging
-  children_ids:
+  children:
   - bi-9-1
   - bi-9-2
   - bi-9-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-10
   name: Hairdressing & Cosmetology
-  children_ids:
+  children:
   - bi-10-1
   - bi-10-2
   - bi-10-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-10-1
   name: Hairdressing Capes & Neck Covers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - age_group
   - color
   - material
   - pattern
 - id: bi-10-2
   name: Pedicure Chairs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-10-3
   name: Salon Chairs
-  children_ids:
+  children:
   - bi-10-3-1
   - bi-10-3-2
   - bi-10-3-3
   - bi-10-3-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-11
   name: Heavy Machinery
-  children_ids:
+  children:
   - bi-11-3
   - bi-11-1
   - bi-11-2
@@ -614,48 +614,48 @@
   - bi-11-14
   - bi-11-15
   - bi-11-16
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-11-3
   name: Chippers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - chipper_technology
   - color
   - pattern
   - power_source
 - id: bi-12
   name: Hotel & Hospitality
-  children_ids:
+  children:
   - bi-12-1
   - bi-12-2
   - bi-12-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-13
   name: Industrial Storage
-  children_ids:
+  children:
   - bi-13-1
   - bi-13-2
   - bi-13-3
   - bi-13-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-13-1
   name: Industrial Cabinets
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - lock_type
   - material
   - pattern
 - id: bi-13-2
   name: Industrial Shelving
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - frame_material
   - material
@@ -663,143 +663,143 @@
   - shelf_material
 - id: bi-13-3
   name: Shipping Containers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-13-4
   name: Wire Partitions, Enclosures & Doors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - lock_type
   - material
   - pattern
 - id: bi-14
   name: Industrial Storage Accessories
-  children_ids:
+  children:
   - bi-14-1
   - bi-14-2
   - bi-14-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-15
   name: Janitorial Carts & Caddies
-  children_ids:
+  children:
   - bi-15-1
   - bi-15-2
   - bi-15-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-16
   name: Law Enforcement
-  children_ids:
+  children:
   - bi-16-1
   - bi-16-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-16-1
   name: Cuffs
-  children_ids:
+  children:
   - bi-16-1-1
   - bi-16-1-2
   - bi-16-1-3
   - bi-16-1-4
   - bi-16-1-5
-  attribute_friendly_ids:
+  attributes:
   - color
   - handcuff_lock_type
   - material
   - pattern
 - id: bi-16-2
   name: Metal Detectors
-  children_ids:
+  children:
   - bi-16-2-1
   - bi-16-2-2
   - bi-16-2-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - detector_sensitivity
   - pattern
   - power_source
 - id: bi-17
   name: Manufacturing
-  children_ids:
+  children:
   - bi-17-1
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-18
   name: Material Handling
-  children_ids:
+  children:
   - bi-18-1
   - bi-18-2
   - bi-18-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-18-1
   name: Conveyors
-  children_ids:
+  children:
   - bi-18-1-1
   - bi-18-1-2
   - bi-18-1-4
   - bi-18-1-5
   - bi-18-1-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-18-2
   name: Lifts & Hoists
-  children_ids:
+  children:
   - bi-18-2-1
   - bi-18-2-2
   - bi-18-2-3
   - bi-18-2-4
   - bi-18-2-5
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-18-2-1
   name: Hoists, Cranes & Trolleys
-  children_ids:
+  children:
   - bi-18-2-1-1
   - bi-18-2-1-2
   - bi-18-2-1-3
   - bi-18-2-1-4
   - bi-18-2-1-5
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-18-2-2
   name: Jacks & Lift Trucks
-  children_ids:
+  children:
   - bi-18-2-2-1
   - bi-18-2-2-2
   - bi-18-2-2-3
   - bi-18-2-2-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-18-2-3
   name: Personnel Lifts
-  children_ids:
+  children:
   - bi-18-2-3-1
   - bi-18-2-3-2
   - bi-18-2-3-3
   - bi-18-2-3-4
   - bi-18-2-3-5
   - bi-18-2-3-6
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
@@ -807,35 +807,35 @@
   - suitable_for_vehicle_type
 - id: bi-18-2-4
   name: Pulleys, Blocks & Sheaves
-  children_ids:
+  children:
   - bi-18-2-4-2
   - bi-18-2-4-3
   - bi-18-2-4-4
   - bi-18-2-4-5
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-18-2-5
   name: Winches
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-18-3
   name: Pallets & Loading Platforms
-  children_ids:
+  children:
   - bi-18-3-1
   - bi-18-3-2
   - bi-18-3-3
   - bi-18-3-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19
   name: Medical
-  children_ids:
+  children:
   - bi-19-1
   - bi-19-2
   - bi-19-3
@@ -847,36 +847,36 @@
   - bi-19-9
   - bi-19-10
   - bi-19-11
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-19-1
   name: Hospital Curtains
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-2
   name: Hospital Gowns
-  children_ids:
+  children:
   - bi-19-2-1
   - bi-19-2-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-3
   name: Medical Bedding
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - bedding_size
   - color
   - material
   - pattern
 - id: bi-19-4
   name: Medical Equipment
-  children_ids:
+  children:
   - bi-19-4-1
   - bi-19-4-2
   - bi-19-4-3
@@ -886,65 +886,65 @@
   - bi-19-4-7
   - bi-19-4-8
   - bi-19-4-9
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-19-4-1
   name: Automated External Defibrillators
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - operating_mode
   - pattern
 - id: bi-19-4-2
   name: Gait Belts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-4-3
   name: Medical Reflex Hammers & Tuning Forks
-  children_ids:
+  children:
   - bi-19-4-3-1
   - bi-19-4-3-2
   - bi-19-4-3-5
   - bi-19-4-3-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-19-4-4
   name: Medical Stretchers & Gurneys
-  children_ids:
+  children:
   - bi-19-4-4-2
   - bi-19-4-4-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-4-5
   name: Otoscopes & Ophthalmoscopes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - mounting_type
   - pattern
   - power_source
 - id: bi-19-4-6
   name: Patient Lifts
-  children_ids:
+  children:
   - bi-19-4-6-2
   - bi-19-4-6-3
   - bi-19-4-6-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-19-4-7
   name: Stethoscopes
-  children_ids:
+  children:
   - bi-19-4-7-1
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
   - stethoscope_design
@@ -952,138 +952,138 @@
   - tube_color
 - id: bi-19-4-8
   name: Vital Signs Monitor Accessories
-  children_ids:
+  children:
   - bi-19-4-8-1
   - bi-19-4-8-2
   - bi-19-4-8-3
   - bi-19-4-8-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-19-4-9
   name: Vital Signs Monitors
-  children_ids:
+  children:
   - bi-19-4-9-1
   - bi-19-4-9-2
   - bi-19-4-9-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-19-5
   name: Medical Furniture
-  children_ids:
+  children:
   - bi-19-5-1
   - bi-19-5-2
   - bi-19-5-3
   - bi-19-5-4
   - bi-19-5-5
   - bi-19-5-6
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-19-5-1
   name: Chiropractic Tables
-  children_ids:
+  children:
   - bi-19-5-1-3
   - bi-19-5-1-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-5-2
   name: Examination Chairs & Tables
-  children_ids:
+  children:
   - bi-19-5-2-1
   - bi-19-5-2-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - compatible_patient_profile
   - material
   - pattern
 - id: bi-19-5-3
   name: Homecare & Hospital Beds
-  children_ids:
+  children:
   - bi-19-5-3-2
   - bi-19-5-3-3
   - bi-19-5-3-4
-  attribute_friendly_ids:
+  attributes:
   - bedding_size
   - color
   - pattern
 - id: bi-19-5-4
   name: Medical Cabinets
-  children_ids:
+  children:
   - bi-19-5-4-1
   - bi-19-5-4-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - mounting_type
   - pattern
 - id: bi-19-5-5
   name: Medical Carts
-  children_ids:
+  children:
   - bi-19-5-5-1
   - bi-19-5-5-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-5-5-1
   name: Crash Carts
-  children_ids:
+  children:
   - bi-19-5-5-1-1
   - bi-19-5-5-1-2
   - bi-19-5-5-1-3
   - bi-19-5-5-1-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-5-5-2
   name: IV Poles & Carts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - cart_design
   - color
   - material
   - pattern
 - id: bi-19-5-6
   name: Surgical Tables
-  children_ids:
+  children:
   - bi-19-5-6-2
   - bi-19-5-6-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - compatible_patient_profile
   - pattern
   - power_source
 - id: bi-19-6
   name: Medical Instruments
-  children_ids:
+  children:
   - bi-19-6-1
   - bi-19-6-2
   - bi-19-6-3
   - bi-19-6-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-19-6-1
   name: Medical Forceps
-  children_ids:
+  children:
   - bi-19-6-1-1
   - bi-19-6-1-2
   - bi-19-6-1-3
   - bi-19-6-1-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-6-2
   name: Scalpel Blades
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - blade_material
   - blade_shape
   - color
@@ -1094,8 +1094,8 @@
   - usage_type
 - id: bi-19-6-3
   name: Scalpels
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - blade_material
   - blade_shape
   - color
@@ -1106,46 +1106,46 @@
   - usage_type
 - id: bi-19-6-4
   name: Surgical Needles & Sutures
-  children_ids:
+  children:
   - bi-19-6-4-1
   - bi-19-6-4-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-19-7
   name: Medical Supplies
-  children_ids:
+  children:
   - bi-19-7-1
   - bi-19-7-2
   - bi-19-7-3
   - bi-19-7-4
   - bi-19-7-5
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-19-7-1
   name: Disposable Gloves
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-19-7-2
   name: Finger Cots
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-19-7-3
   name: Medical Needles & Syringes
-  children_ids:
+  children:
   - bi-19-7-3-1
   - bi-19-7-3-2
   - bi-19-7-3-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - housing_material
   - medical_syringe_purpose
@@ -1155,8 +1155,8 @@
   - usage_type
 - id: bi-19-7-3-1
   name: Medical Needle & Syringe Sets
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - housing_material
   - medical_syringe_purpose
@@ -1166,8 +1166,8 @@
   - usage_type
 - id: bi-19-7-3-2
   name: Medical Needles
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - housing_material
   - medical_syringe_purpose
@@ -1177,8 +1177,8 @@
   - usage_type
 - id: bi-19-7-3-3
   name: Medical Syringes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - housing_material
   - medical_syringe_purpose
@@ -1188,60 +1188,60 @@
   - usage_type
 - id: bi-19-7-4
   name: Ostomy Supplies
-  children_ids:
+  children:
   - bi-19-7-4-1
   - bi-19-7-4-2
   - bi-19-7-4-3
   - bi-19-7-4-4
-  attribute_friendly_ids:
+  attributes:
   - accessory_size
   - color
   - pattern
 - id: bi-19-7-5
   name: Tongue Depressors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - age_group
   - color
   - material
   - pattern
 - id: bi-19-8
   name: Medical Teaching Equipment
-  children_ids:
+  children:
   - bi-19-8-1
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-19-8-1
   name: Medical & Emergency Response Training Mannequins
-  children_ids:
+  children:
   - bi-19-8-1-1
   - bi-19-8-1-2
   - bi-19-8-1-3
   - bi-19-8-1-4
-  attribute_friendly_ids:
+  attributes:
   - age_group
   - color
   - pattern
 - id: bi-19-9
   name: Scrub Caps
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-10
   name: Scrubs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-19-11
   name: Surgical Gowns
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
@@ -1249,87 +1249,87 @@
   - product_sterility
 - id: bi-20
   name: Mining & Quarrying
-  children_ids:
+  children:
   - bi-20-1
   - bi-20-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-21
   name: Piercing & Tattooing
-  children_ids:
+  children:
   - bi-21-1
   - bi-21-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-21-1
   name: Piercing Supplies
-  children_ids:
+  children:
   - bi-21-1-1
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-21-1-1
   name: Piercing Needles
-  children_ids:
+  children:
   - bi-21-1-1-1
   - bi-21-1-1-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - needle_gauge
   - pattern
 - id: bi-21-2
   name: Tattooing Supplies
-  children_ids:
+  children:
   - bi-21-2-1
   - bi-21-2-2
   - bi-21-2-3
   - bi-21-2-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-21-2-1
   name: Tattoo Cover-Ups
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-21-2-2
   name: Tattooing Inks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-21-2-3
   name: Tattooing Machines
-  children_ids:
+  children:
   - bi-21-2-3-1
   - bi-21-2-3-2
   - bi-21-2-3-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
   - power_source
 - id: bi-21-2-4
   name: Tattooing Needles
-  children_ids:
+  children:
   - bi-21-2-4-1
   - bi-21-2-4-2
   - bi-21-2-4-3
   - bi-21-2-4-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - needle_gauge
   - pattern
 - id: bi-22
   name: Retail
-  children_ids:
+  children:
   - bi-22-1
   - bi-22-2
   - bi-22-3
@@ -1338,46 +1338,46 @@
   - bi-22-6
   - bi-22-7
   - bi-22-8
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-22-1
   name: Clothing Display Racks
-  children_ids:
+  children:
   - bi-22-1-1
   - bi-22-1-2
   - bi-22-1-3
   - bi-22-1-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-22-2
   name: Display Mannequins
-  children_ids:
+  children:
   - bi-22-2-1
   - bi-22-2-2
   - bi-22-2-3
   - bi-22-2-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
   - target_gender
 - id: bi-22-3
   name: Mannequin Parts
-  children_ids:
+  children:
   - bi-22-3-1
   - bi-22-3-2
   - bi-22-3-3
   - bi-22-3-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-22-4
   name: Money Handling
-  children_ids:
+  children:
   - bi-22-4-1
   - bi-22-4-2
   - bi-22-4-3
@@ -1385,13 +1385,13 @@
   - bi-22-4-5
   - bi-22-4-6
   - bi-22-4-7
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-22-4-1
   name: Banknote Verifiers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - currencies_supported
   - pattern
@@ -1399,34 +1399,34 @@
   - verification_technology
 - id: bi-22-4-2
   name: Cash Register & POS Terminal Accessories
-  children_ids:
+  children:
   - bi-22-4-2-1
   - bi-22-4-2-2
   - bi-22-4-2-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-22-4-2-1
   name: Cash Drawers & Trays
-  children_ids:
+  children:
   - bi-22-4-2-1-2
   - bi-22-4-2-1-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-22-4-2-2
   name: Credit Card Terminals
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - connectivity_technology
   - mounting_type
   - pattern
 - id: bi-22-4-2-3
   name: Signature Capture Pads
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - connectivity_technology
   - display_resolution
@@ -1435,40 +1435,40 @@
   - pattern
 - id: bi-22-4-3
   name: Cash Registers & POS Terminals
-  children_ids:
+  children:
   - bi-22-4-3-1
   - bi-22-4-3-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-22-4-3-1
   name: Cash Registers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - connectivity_technology
   - pattern
   - terminal_operation
 - id: bi-22-4-3-2
   name: POS Terminals
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - mounting_type
   - operating_system
   - pattern
 - id: bi-22-4-4
   name: Coin & Bill Counters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - currency_type
   - pattern
   - power_source
 - id: bi-22-4-5
   name: Money Changers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - currency_type
   - display_technology
@@ -1478,98 +1478,98 @@
   - pattern
 - id: bi-22-4-6
   name: Money Deposit Bags
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
   - usage_type
 - id: bi-22-4-7
   name: Paper Coin Wrappers & Bill Straps
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - currency_type
   - pattern
 - id: bi-22-5
   name: Paper & Plastic Shopping Bags
-  children_ids:
+  children:
   - bi-22-5-1
   - bi-22-5-2
   - bi-22-5-3
   - bi-22-5-4
-  attribute_friendly_ids:
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-22-6
   name: Pricing Guns
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-22-7
   name: Retail Display Cases
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - mounting_type
   - pattern
 - id: bi-22-8
   name: Retail Display Props & Models
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23
   name: Science & Laboratory
-  children_ids:
+  children:
   - bi-23-1
   - bi-23-2
   - bi-23-3
   - bi-23-4
   - bi-23-5
   - bi-23-6
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-23-1
   name: Biochemicals
-  children_ids:
+  children:
   - bi-23-1-1
   - bi-23-1-2
   - bi-23-1-3
-  attribute_friendly_ids:
+  attributes:
   - chemical_grade
   - chemical_purity
   - color
   - pattern
 - id: bi-23-2
   name: Dissection Kits
-  children_ids:
+  children:
   - bi-23-2-1
   - bi-23-2-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-23-3
   name: Laboratory Chemicals
-  children_ids:
+  children:
   - bi-23-3-1
   - bi-23-3-2
   - bi-23-3-3
   - bi-23-3-4
-  attribute_friendly_ids:
+  attributes:
   - chemical_grade
   - chemical_purity
   - color
   - pattern
 - id: bi-23-4
   name: Laboratory Equipment
-  children_ids:
+  children:
   - bi-23-4-1
   - bi-23-4-2
   - bi-23-4-3
@@ -1584,115 +1584,115 @@
   - bi-23-4-12
   - bi-23-4-13
   - bi-23-4-14
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-23-4-1
   name: Autoclaves
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - autoclave_sterilization_method
   - color
   - pattern
 - id: bi-23-4-2
   name: Centrifuges
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - mounting_type
   - pattern
 - id: bi-23-4-3
   name: Dry Ice Makers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - mounting_type
   - pattern
 - id: bi-23-4-4
   name: Freeze-Drying Machines
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - mounting_type
   - pattern
 - id: bi-23-4-5
   name: Laboratory Blenders
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - blending_type
   - color
   - pattern
 - id: bi-23-4-6
   name: Laboratory Freezers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - laboratory_freezer_design
   - pattern
 - id: bi-23-4-7
   name: Laboratory Funnels
-  children_ids:
+  children:
   - bi-23-4-7-1
   - bi-23-4-7-2
   - bi-23-4-7-3
   - bi-23-4-7-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-4-8
   name: Laboratory Hot Plates
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-4-9
   name: Laboratory Ovens
-  children_ids:
+  children:
   - bi-23-4-9-1
   - bi-23-4-9-2
   - bi-23-4-9-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-23-4-10
   name: Microscope Accessories
-  children_ids:
+  children:
   - bi-23-4-10-1
   - bi-23-4-10-2
   - bi-23-4-10-3
   - bi-23-4-10-4
   - bi-23-4-10-5
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-23-4-10-1
   name: Microscope Cameras
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - camera_sensor_type
   - color
   - pattern
 - id: bi-23-4-10-2
   name: Microscope Eyepieces & Adapters
-  children_ids:
+  children:
   - bi-23-4-10-2-1
   - bi-23-4-10-2-2
   - bi-23-4-10-2-3
   - bi-23-4-10-2-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - magnification
   - material
   - pattern
 - id: bi-23-4-10-3
   name: Microscope Objective Lenses
-  children_ids:
+  children:
   - bi-23-4-10-3-1
   - bi-23-4-10-3-2
   - bi-23-4-10-3-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - magnification
   - maximum_magnification
@@ -1700,29 +1700,29 @@
   - pattern
 - id: bi-23-4-10-4
   name: Microscope Replacement Bulbs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - bulb_type
   - color
   - pattern
 - id: bi-23-4-10-5
   name: Microscope Slides
-  children_ids:
+  children:
   - bi-23-4-10-5-1
   - bi-23-4-10-5-2
   - bi-23-4-10-5-3
   - bi-23-4-10-5-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-4-11
   name: Microscopes
-  children_ids:
+  children:
   - bi-23-4-11-2
   - bi-23-4-11-3
   - bi-23-4-11-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - illumination_technique
   - magnification
@@ -1730,41 +1730,41 @@
   - pattern
 - id: bi-23-4-12
   name: Microtomes
-  children_ids:
+  children:
   - bi-23-4-12-1
   - bi-23-4-12-2
   - bi-23-4-12-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-23-4-13
   name: Spectrometer Accessories
-  children_ids:
+  children:
   - bi-23-4-13-1
   - bi-23-4-13-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-23-4-14
   name: Spectrometers
-  children_ids:
+  children:
   - bi-23-4-14-1
   - bi-23-4-14-2
   - bi-23-4-14-3
   - bi-23-4-14-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-23-5
   name: Laboratory Specimens
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - preservation_type
 - id: bi-23-6
   name: Laboratory Supplies
-  children_ids:
+  children:
   - bi-23-6-1
   - bi-23-6-2
   - bi-23-6-3
@@ -1773,77 +1773,77 @@
   - bi-23-6-6
   - bi-23-6-7
   - bi-23-6-8
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-6-1
   name: Beakers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-6-2
   name: Graduated Cylinders
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-6-3
   name: Laboratory Flasks
-  children_ids:
+  children:
   - bi-23-6-3-1
   - bi-23-6-3-2
   - bi-23-6-3-3
   - bi-23-6-3-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-6-4
   name: Petri Dishes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-6-5
   name: Pipettes
-  children_ids:
+  children:
   - bi-23-6-5-1
   - bi-23-6-5-2
   - bi-23-6-5-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-6-6
   name: Test Tube Racks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - housing_material
   - material
   - pattern
 - id: bi-23-6-7
   name: Test Tubes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-6-8
   name: Wash Bottles
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-24
   name: Signage
-  children_ids:
+  children:
   - bi-24-1
   - bi-24-2
   - bi-24-3
@@ -1857,13 +1857,13 @@
   - bi-24-11
   - bi-24-12
   - bi-24-13
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-24-1
   name: Business Hour Signs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - display_technology
@@ -1873,8 +1873,8 @@
   - suitable_space
 - id: bi-24-2
   name: Digital Signs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - connectivity_technology
   - display_resolution
@@ -1883,10 +1883,10 @@
   - suitable_space
 - id: bi-24-3
   name: Electric Signs
-  children_ids:
+  children:
   - bi-24-3-1
   - bi-24-3-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - display_sign_design
   - display_technology
@@ -1895,8 +1895,8 @@
   - suitable_space
 - id: bi-24-3-1
   name: LED Signs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - display_sign_design
   - display_technology
@@ -1905,8 +1905,8 @@
   - suitable_space
 - id: bi-24-3-2
   name: Neon Signs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - display_sign_design
   - display_technology
@@ -1915,8 +1915,8 @@
   - suitable_space
 - id: bi-24-4
   name: Emergency & Exit Signs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - display_technology
   - emergency_safety_sign_design
@@ -1926,8 +1926,8 @@
   - suitable_space
 - id: bi-24-5
   name: Facility Identification Signs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - display_technology
   - facility_sign_design
@@ -1937,8 +1937,8 @@
   - suitable_space
 - id: bi-24-6
   name: Open & Closed Signs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - display_technology
   - material
@@ -1948,8 +1948,8 @@
   - suitable_space
 - id: bi-24-7
   name: Parking Signs & Permits
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - mounting_type
@@ -1958,8 +1958,8 @@
   - suitable_space
 - id: bi-24-8
   name: Policy Signs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - mounting_type
@@ -1968,8 +1968,8 @@
   - suitable_space
 - id: bi-24-9
   name: Retail & Sale Signs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - display_technology
   - material
@@ -1979,8 +1979,8 @@
   - suitable_space
 - id: bi-24-10
   name: Road & Traffic Signs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - mounting_type
@@ -1989,8 +1989,8 @@
   - suitable_space
 - id: bi-24-11
   name: Safety & Warning Signs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - emergency_safety_sign_design
   - material
@@ -1999,8 +1999,8 @@
   - warning_category
 - id: bi-24-12
   name: Security Signs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - emergency_safety_sign_design
   - material
@@ -2009,8 +2009,8 @@
   - warning_category
 - id: bi-24-13
   name: Sidewalk & Yard Signs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - mounting_type
@@ -2019,7 +2019,7 @@
   - suitable_space
 - id: bi-25
   name: Work Safety Protective Gear
-  children_ids:
+  children:
   - bi-25-1
   - bi-25-2
   - bi-25-3
@@ -2032,13 +2032,13 @@
   - bi-25-10
   - bi-25-11
   - bi-25-12
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-25-1
   name: Bullet Proof Vests
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - bullet_protection_level
   - color
@@ -2046,18 +2046,18 @@
   - pattern
 - id: bi-25-2
   name: Gas Mask & Respirator Accessories
-  children_ids:
+  children:
   - bi-25-2-1
   - bi-25-2-2
   - bi-25-2-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - filtration_class
   - pattern
 - id: bi-25-3
   name: Hardhats
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - hardhat_class
   - material
@@ -2065,8 +2065,8 @@
   - protection_type
 - id: bi-25-4
   name: Hazardous Material Suits
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - hazmat_suit_design
@@ -2074,33 +2074,33 @@
   - pattern
 - id: bi-25-5
   name: Protective Aprons
-  children_ids:
+  children:
   - bi-25-5-1
   - bi-25-5-2
   - bi-25-5-3
-  attribute_friendly_ids:
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-25-6
   name: Protective Eyewear
-  children_ids:
+  children:
   - bi-25-6-1
   - bi-25-6-2
   - bi-25-6-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - lens_color
   - pattern
 - id: bi-25-7
   name: Protective Masks
-  children_ids:
+  children:
   - bi-25-7-1
   - bi-25-7-2
   - bi-25-7-3
   - bi-25-7-4
-  attribute_friendly_ids:
+  attributes:
   - accessory_size
   - color
   - material
@@ -2108,8 +2108,8 @@
   - usage_type
 - id: bi-25-7-1
   name: Dust Masks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - dust_mask_type
@@ -2119,8 +2119,8 @@
   - usage_type
 - id: bi-25-7-2
   name: Fireman's Masks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
@@ -2128,8 +2128,8 @@
   - usage_type
 - id: bi-25-7-3
   name: Gas Masks & Respirators
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
@@ -2137,8 +2137,8 @@
   - usage_type
 - id: bi-25-7-4
   name: Medical Masks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
@@ -2146,20 +2146,20 @@
   - usage_type
 - id: bi-25-8
   name: Safety Gloves
-  children_ids:
+  children:
   - bi-25-8-1
   - bi-25-8-2
   - bi-25-8-3
   - bi-25-8-4
-  attribute_friendly_ids:
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-25-9
   name: Safety Knee Pads
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - attachment_type
   - color
@@ -2167,8 +2167,8 @@
   - pattern
 - id: bi-25-10
   name: Welding Helmets
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - helmet_shade_design
   - pattern
@@ -2176,57 +2176,57 @@
   - viewing_area_width
 - id: bi-25-11
   name: Work Safety Harnesses
-  children_ids:
+  children:
   - bi-25-11-1
   - bi-25-11-2
   - bi-25-11-3
-  attribute_friendly_ids:
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-25-12
   name: Work Safety Tethers
-  children_ids:
+  children:
   - bi-25-12-1
   - bi-25-12-2
   - bi-25-12-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-1-2-1
   name: Lockable Counters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-1-2-2
   name: Modular Counters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-1-2-3
   name: Pop-Up Counters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-1-2-4
   name: Portable Counters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-1-3-1
   name: Backlit Displays
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - connectivity_technology
   - display_recommended_use
@@ -2237,16 +2237,16 @@
   - suitable_space
 - id: bi-1-3-2
   name: Banner Stands
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - display_recommended_use
   - pattern
   - suitable_space
 - id: bi-1-3-3
   name: Digital A-Boards
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - connectivity_technology
   - display_recommended_use
@@ -2257,8 +2257,8 @@
   - suitable_space
 - id: bi-1-3-4
   name: Digital Signage Flat Panels
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - connectivity_technology
   - display_recommended_use
@@ -2269,8 +2269,8 @@
   - suitable_space
 - id: bi-1-3-6
   name: Interactive Flat Panels
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - connectivity_technology
   - display_recommended_use
@@ -2281,8 +2281,8 @@
   - suitable_space
 - id: bi-1-3-7
   name: Interactive Kids' Tables
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - connectivity_technology
   - display_recommended_use
@@ -2293,8 +2293,8 @@
   - suitable_space
 - id: bi-1-3-8
   name: Kiosks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - connectivity_technology
   - display_recommended_use
@@ -2305,8 +2305,8 @@
   - suitable_space
 - id: bi-1-3-9
   name: Modular Displays
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - connectivity_technology
   - display_recommended_use
@@ -2317,8 +2317,8 @@
   - suitable_space
 - id: bi-1-3-10
   name: Panoramas
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - connectivity_technology
   - display_recommended_use
@@ -2329,24 +2329,24 @@
   - suitable_space
 - id: bi-1-3-11
   name: Pop-Up Displays
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - display_recommended_use
   - pattern
   - suitable_space
 - id: bi-1-3-12
   name: Tabletop Displays
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - display_recommended_use
   - pattern
   - suitable_space
 - id: bi-1-3-13
   name: Totems
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - connectivity_technology
   - display_recommended_use
@@ -2358,32 +2358,32 @@
   - totem_design
 - id: bi-1-3-14
   name: Transparent Box Displays
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - display_recommended_use
   - pattern
   - suitable_space
 - id: bi-2-1-3-1
   name: Livestock Feeders
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - animal_type
   - color
   - material
   - pattern
 - id: bi-2-1-3-2
   name: Livestock Waterers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - animal_type
   - color
   - material
   - pattern
 - id: bi-3-1-2
   name: Automation Control Modules
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - communication_protocols
   - controller_design
@@ -2391,8 +2391,8 @@
   - power_source
 - id: bi-3-1-4
   name: Building Management System (BMS) Controllers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - communication_protocols
   - controller_design
@@ -2400,8 +2400,8 @@
   - power_source
 - id: bi-3-1-5
   name: Digital Addressable Lighting Interface (DALI) Controllers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - communication_protocols
   - controller_design
@@ -2409,8 +2409,8 @@
   - power_source
 - id: bi-3-1-9
   name: Motor Controllers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - communication_protocols
   - controller_design
@@ -2419,8 +2419,8 @@
   - power_source
 - id: bi-3-1-7
   name: Motor Starters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - communication_protocols
   - controller_design
@@ -2428,71 +2428,71 @@
   - power_source
 - id: bi-4-1-1
   name: Automatic Levels
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - connectivity_technology
   - pattern
 - id: bi-4-1-2
   name: GPS & GNSS Systems
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - connectivity_technology
   - pattern
 - id: bi-4-1-4
   name: Total Stations
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - connectivity_technology
   - pattern
 - id: bi-4-2-1
   name: Traffic Barrels
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-4-2-2
   name: Traffic Cones
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-5-1-1
   name: Filling Dental Cement
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-5-1-2
   name: Lining Dental Cement
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-5-1-3
   name: Luting Dental Cement
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-5-1-5
   name: Temporary Dental Cement
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-6-1
   name: Film & Television Costumes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - costume_theme
@@ -2500,8 +2500,8 @@
   - pattern
 - id: bi-6-2
   name: Film & Television Props
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
@@ -2509,112 +2509,112 @@
   - suitable_space
 - id: bi-6-3
   name: Film & Television Set Pieces
-  children_ids:
+  children:
   - bi-6-3-1
   - bi-6-3-2
   - bi-6-3-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
   - suitable_space
 - id: bi-6-3-1
   name: Backdrop Set Pieces
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
   - suitable_space
 - id: bi-6-3-2
   name: Furniture Set Pieces
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
   - suitable_space
 - id: bi-6-3-3
   name: Set Decoration
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
   - suitable_space
 - id: bi-8-7-3-1
   name: Disposable Forks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-8-7-3-2
   name: Disposable Knives
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-8-7-3-3
   name: Disposable Spoons
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-8-17-1
   name: Combo Vending Machines
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-8-17-2
   name: Drink Vending Machines
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-8-17-3
   name: Snack Vending Machines
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-9-1
   name: Arborist Accessories
-  children_ids:
+  children:
   - bi-9-1-1
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-9-1-1
   name: Throw Weights
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-9-2
   name: Forestry & Logging Protective Gear
-  children_ids:
+  children:
   - bi-9-2-1
   - bi-9-2-2
   - bi-9-2-3
   - bi-9-2-4
   - bi-9-2-5
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-9-2-1
   name: Forestry & Logging Boots
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
@@ -2622,439 +2622,439 @@
   - target_gender
 - id: bi-9-2-2
   name: Forestry & Logging Chaps
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-9-2-3
   name: Forestry & Logging Eyewear
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-9-2-4
   name: Forestry & Logging Gloves
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-9-2-5
   name: Forestry & Logging Helmets
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-9-3
   name: Forestry & Logging Tools
-  children_ids:
+  children:
   - bi-9-3-1
   - bi-9-3-2
   - bi-9-3-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - handle_material
   - pattern
 - id: bi-9-3-1
   name: Log Hooks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - blade_material
   - color
   - handle_material
   - pattern
 - id: bi-9-3-2
   name: Log Tongs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - handle_material
   - jaw_material
   - pattern
 - id: bi-9-3-3
   name: Tree Calipers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - handle_material
   - pattern
   - scale_material
 - id: bi-10-3-1
   name: All-Purpose Chairs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-10-3-2
   name: Barber Chairs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-10-3-3
   name: Shampoo Chairs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-10-3-4
   name: Styling Chairs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-11-1
   name: Backhoes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-2
   name: Bulldozers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - bulldozer_blade_type
   - color
   - pattern
 - id: bi-11-4
   name: Crawler Loaders
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-5
   name: Dump Trucks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - discharge_type
   - pattern
 - id: bi-11-6
   name: Excavators
-  children_ids:
+  children:
   - bi-11-6-1
   - bi-11-6-2
   - bi-11-6-3
   - bi-11-6-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-11-6-1
   name: Compact Excavators
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-6-2
   name: Dragline Excavators
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-6-3
   name: Long Reach Excavators
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-6-4
   name: Wheeled Excavators
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-7
   name: Harvesters
-  children_ids:
+  children:
   - bi-11-7-1
   - bi-11-7-2
   - bi-11-7-3
   - bi-11-7-4
   - bi-11-7-5
-  attribute_friendly_ids:
+  attributes:
   - color
   - drive_type
   - pattern
 - id: bi-11-7-1
   name: Combine Harvesters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - drive_type
   - pattern
 - id: bi-11-7-2
   name: Cotton Harvesters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - drive_type
   - pattern
 - id: bi-11-7-3
   name: Forage Harvesters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - drive_type
   - pattern
 - id: bi-11-7-4
   name: Potato Harvesters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - drive_type
   - pattern
 - id: bi-11-7-5
   name: Sugar Beet Harvesters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - drive_type
   - pattern
 - id: bi-11-8
   name: Motor Graders
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-9
   name: Pavers
-  children_ids:
+  children:
   - bi-11-9-1
   - bi-11-9-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-11-9-1
   name: Asphalt Pavers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-9-2
   name: Concrete Pavers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-10
   name: Scrapers
-  children_ids:
+  children:
   - bi-11-10-1
   - bi-11-10-2
   - bi-11-10-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-11-10-1
   name: Elevating Scrapers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-10-2
   name: Open Bowl Scrapers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-10-3
   name: Pull Scrapers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-11
   name: Skid-Steer Loaders
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-12
   name: Tractors
-  children_ids:
+  children:
   - bi-11-12-1
   - bi-11-12-2
   - bi-11-12-3
   - bi-11-12-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - drive_type
   - pattern
 - id: bi-11-12-1
   name: Articulated 4WD Tractors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-12-2
   name: Compact Tractors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - drive_type
   - pattern
 - id: bi-11-12-3
   name: Row Crop Tractors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - drive_type
   - pattern
 - id: bi-11-12-4
   name: Utility Tractors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - drive_type
   - pattern
 - id: bi-11-13
   name: Trenchers
-  children_ids:
+  children:
   - bi-11-13-1
   - bi-11-13-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-11-13-1
   name: Ride-On Trenchers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-13-2
   name: Walk-Behind Trenchers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-14
   name: Wheel Loaders
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-15
   name: Wheel Tractor Scrapers
-  children_ids:
+  children:
   - bi-11-15-1
   - bi-11-15-2
   - bi-11-15-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-11-15-1
   name: Elevating Wheel Tractor Scrapers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-15-2
   name: Open Bowl Wheel Tractor Scrapers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-15-3
   name: Pull Wheel Tractor Scrapers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-11-16
   name: Yard Scrapers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - propulsion_type
 - id: bi-12-1
   name: Hospitality Supplies
-  children_ids:
+  children:
   - bi-12-1-1
   - bi-12-1-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-12-1-1
   name: Bar Counters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - counter_shape
   - material
   - pattern
 - id: bi-12-1-2
   name: Underbar Equipment
-  children_ids:
+  children:
   - bi-12-1-2-1
   - bi-12-1-2-2
   - bi-12-1-2-3
   - bi-12-1-2-4
   - bi-12-1-2-5
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-12-1-2-1
   name: Bar & Cocktail Stations
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-12-1-2-2
   name: Glass Racks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
   - rack_design
 - id: bi-12-1-2-3
   name: Menu Covers & Check Presenters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-12-1-2-4
   name: Menu Displays & Boards
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - mounting_type
   - pattern
 - id: bi-12-1-2-5
   name: Speed Rails
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-12-2
   name: Hotel & Hospitality Accessories
-  children_ids:
+  children:
   - bi-12-2-1
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-12-2-1
   name: Desk Bells
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - bell_design
   - bell_sound
   - color
@@ -3062,274 +3062,274 @@
   - pattern
 - id: bi-12-3
   name: Hotel Supplies
-  children_ids:
+  children:
   - bi-12-3-1
-  attribute_friendly_ids:
+  attributes:
   - color
   - material
   - pattern
 - id: bi-12-3-1
   name: Reception Desks & Counters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - counter_shape
   - material
   - pattern
 - id: bi-14-1
   name: Individual Industrial Shelves
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-14-2
   name: Industrial Shelf Dividers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-14-3
   name: Locking Clips & Pins
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-15-1
   name: Cleaning Carts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-15-2
   name: Laundry Carts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-15-4
   name: Waste Collection Carts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-16-1-1
   name: Chain Link Cuffs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - handcuff_lock_type
   - material
   - pattern
 - id: bi-16-1-2
   name: Disposable Cuffs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - handcuff_lock_type
   - material
   - pattern
 - id: bi-16-1-3
   name: Hinged Cuffs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - handcuff_lock_type
   - material
   - pattern
 - id: bi-16-1-4
   name: Leg Irons Cuffs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - handcuff_lock_type
   - material
   - pattern
 - id: bi-16-1-5
   name: Rigid Cuffs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - handcuff_lock_type
   - material
   - pattern
 - id: bi-16-2-1
   name: Ground Search Metal Detectors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - detector_sensitivity
   - pattern
   - power_source
 - id: bi-16-2-2
   name: Handheld Metal Detectors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - detector_sensitivity
   - pattern
   - power_source
 - id: bi-16-2-3
   name: Walk-Through Metal Detectors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - detector_sensitivity
   - pattern
   - power_source
 - id: bi-17-1
   name: Packaging Machines
-  children_ids:
+  children:
   - bi-17-1-1
   - bi-17-1-2
   - bi-17-1-3
   - bi-17-1-4
   - bi-17-1-5
-  attribute_friendly_ids:
+  attributes:
   - automation
   - color
   - pattern
 - id: bi-17-1-1
   name: Filling Machines
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - automation
   - color
   - pattern
 - id: bi-17-1-2
   name: Labeling Machines
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - automation
   - color
   - pattern
 - id: bi-17-1-3
   name: Sealing Machines
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - automation
   - color
   - pattern
 - id: bi-17-1-4
   name: Strapping Machines
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - automation
   - color
   - pattern
 - id: bi-17-1-5
   name: Wrapping Machines
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - automation
   - color
   - pattern
 - id: bi-18-1-1
   name: Belt Conveyors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - conveyor_operation
   - pattern
 - id: bi-18-1-2
   name: Flexible Conveyors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - conveyor_operation
   - pattern
 - id: bi-18-1-4
   name: Pneumatic Conveyors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - pneumatic_conveyor_operation
 - id: bi-18-1-5
   name: Roller Conveyors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - conveyor_operation
   - pattern
 - id: bi-18-1-3
   name: Vertical & Overhead Conveyors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-18-2-1-1
   name: Chain Hoists
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-18-2-1-2
   name: Gantry Cranes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-18-2-1-3
   name: Jib Cranes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-18-2-1-4
   name: Trolleys
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-18-2-1-5
   name: Wire Rope Hoists
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-18-2-2-1
   name: Bottle Jacks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-18-2-2-2
   name: Floor Jacks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-18-2-2-3
   name: Pallet Jacks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-18-2-2-4
   name: Scissor Jacks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-18-2-3-1
   name: Boom Lifts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
@@ -3337,8 +3337,8 @@
   - suitable_for_vehicle_type
 - id: bi-18-2-3-2
   name: Drive-On Parallelograms
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
@@ -3346,8 +3346,8 @@
   - suitable_for_vehicle_type
 - id: bi-18-2-3-3
   name: Multi-Post Runways
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
@@ -3355,8 +3355,8 @@
   - suitable_for_vehicle_type
 - id: bi-18-2-3-4
   name: Scissor Lifts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
@@ -3364,8 +3364,8 @@
   - suitable_for_vehicle_type
 - id: bi-18-2-3-5
   name: Two-Post Surface Mounted Lifts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
@@ -3373,8 +3373,8 @@
   - suitable_for_vehicle_type
 - id: bi-18-2-3-6
   name: Vertical Mast Lifts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
@@ -3382,100 +3382,100 @@
   - suitable_for_vehicle_type
 - id: bi-18-2-4-2
   name: Double Pulleys
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-18-2-4-3
   name: Sheaves
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-18-2-4-4
   name: Single Pulleys
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-18-2-4-5
   name: Triple Pulleys
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-18-3-1
   name: Block Pallets
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-18-3-2
   name: Double-Face Pallets
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-18-3-3
   name: Solid Deck Pallets
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-18-3-4
   name: Stringer Pallets
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-2-1
   name: Isolation Gowns
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-2-2
   name: Patient Gowns
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-4-3-1
   name: Babinski Hammers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-19-4-3-2
   name: Buck Hammers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-19-4-3-5
   name: Taylor Hammers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-19-4-3-3
   name: Tuning Forks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - tuning_fork_design
   - tuning_fork_frequency
 - id: bi-19-4-4-2
   name: Manual Stretchers & Gurneys
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - compatible_patient_profile
   - material
@@ -3483,8 +3483,8 @@
   - stretcher_gurney_intended_use
 - id: bi-19-4-4-4
   name: Powered Stretchers & Gurneys
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - compatible_patient_profile
   - material
@@ -3492,8 +3492,8 @@
   - stretcher_gurney_intended_use
 - id: bi-19-4-6-2
   name: Bath Lifts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - compatible_patient_profile
   - equipment_operation
@@ -3501,8 +3501,8 @@
   - power_source
 - id: bi-19-4-6-3
   name: Mobile Lifts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - compatible_patient_profile
   - equipment_operation
@@ -3510,8 +3510,8 @@
   - power_source
 - id: bi-19-4-6-4
   name: Stand-Up Patient Lifts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - compatible_patient_profile
   - equipment_operation
@@ -3519,8 +3519,8 @@
   - power_source
 - id: bi-19-4-7-1
   name: Training Stethoscopes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - stethoscope_design
@@ -3528,383 +3528,383 @@
   - tube_color
 - id: bi-19-4-8-1
   name: Vital Signs Monitor Cuffs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-19-4-8-2
   name: Vital Signs Monitor Mounts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-19-4-8-3
   name: Vital Signs Monitor Power Cords
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-19-4-8-4
   name: Vital Signs Monitor Sensors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-19-4-9-1
   name: ECG Monitors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-19-4-9-2
   name: Multi-Parameter Monitors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-19-4-9-3
   name: Pulse Oximeter Monitors
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-19-5-1-3
   name: Portable Chiropractic Tables
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - chiropractic_table_design
   - color
   - material
   - pattern
 - id: bi-19-5-1-4
   name: Stationary Chiropractic Tables
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - chiropractic_table_design
   - color
   - material
   - pattern
 - id: bi-19-5-2-1
   name: Examination Chairs
-  children_ids:
+  children:
   - bi-19-5-2-1-2
   - bi-19-5-2-1-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - compatible_patient_profile
   - material
   - pattern
 - id: bi-19-5-2-1-2
   name: Manual Examination Chairs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - compatible_patient_profile
   - material
   - pattern
 - id: bi-19-5-2-1-4
   name: Powered Examination Chairs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - compatible_patient_profile
   - material
   - pattern
 - id: bi-19-5-2-2
   name: Examination Tables
-  children_ids:
+  children:
   - bi-19-5-2-2-1
   - bi-19-5-2-2-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - compatible_patient_profile
   - material
   - pattern
 - id: bi-19-5-2-2-1
   name: Manual Examination Tables
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - compatible_patient_profile
   - material
   - pattern
 - id: bi-19-5-2-2-2
   name: Powered Examination Tables
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - compatible_patient_profile
   - material
   - pattern
 - id: bi-19-5-3-2
   name: Full-Electric Beds
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - bedding_size
   - color
   - compatible_patient_profile
   - pattern
 - id: bi-19-5-3-3
   name: Manual Beds
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - bedding_size
   - color
   - compatible_patient_profile
   - pattern
 - id: bi-19-5-3-4
   name: Semi-Electric Beds
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - bedding_size
   - color
   - pattern
 - id: bi-19-5-4-1
   name: Bedside Cabinets
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - mounting_type
   - pattern
 - id: bi-19-5-4-2
   name: Exam Room Cabinets
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - mounting_type
   - pattern
 - id: bi-19-5-5-1-1
   name: Anesthesia Crash Carts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-5-5-1-2
   name: Emergency Crash Carts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-5-5-1-3
   name: Isolation Crash Carts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-5-5-1-4
   name: Pediatric Crash Carts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-5-6-2
   name: General Surgery Surgical Tables
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - compatible_patient_profile
   - pattern
   - power_source
 - id: bi-19-5-6-3
   name: Orthopedic Surgical Tables
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - compatible_patient_profile
   - pattern
   - power_source
 - id: bi-19-6-1-1
   name: Dressing Forceps
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-6-1-2
   name: Hemostatic Forceps
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-6-1-3
   name: Splinter Forceps
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-6-1-4
   name: Tissue Forceps
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-19-6-4-1
   name: Surgical Needles
-  children_ids:
+  children:
   - bi-19-6-4-1-1
   - bi-19-6-4-1-2
   - bi-19-6-4-1-3
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-19-6-4-1-1
   name: Cutting Surgical Needles
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-19-6-4-1-2
   name: Reverse Cutting Surgical Needles
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-19-6-4-1-3
   name: Taper Surgical Needles
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-19-6-4-2
   name: Surgical Sutures
-  children_ids:
+  children:
   - bi-19-6-4-2-1
   - bi-19-6-4-2-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
 - id: bi-19-6-4-2-1
   name: Absorbable Surgical Sutures
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-19-6-4-2-2
   name: Non-Absorbable Surgical Sutures
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-19-7-4-1
   name: Adhesive Removers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - pattern
 - id: bi-19-7-4-2
   name: Ostomy Bags
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - pattern
 - id: bi-19-7-4-3
   name: Ostomy Belts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - pattern
 - id: bi-19-7-4-4
   name: Skin Barriers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - pattern
 - id: bi-19-8-1-1
   name: Childbirth Training Mannequins
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - age_group
   - color
   - pattern
 - id: bi-19-8-1-2
   name: Choking Training Mannequins
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - age_group
   - color
   - pattern
 - id: bi-19-8-1-3
   name: CPR Training Mannequins
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - age_group
   - color
   - pattern
 - id: bi-19-8-1-4
   name: Trauma Training Mannequins
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - age_group
   - color
   - pattern
 - id: bi-20-1
   name: Mining & Quarrying Machinery
-  children_ids:
+  children:
   - bi-20-1-1
   - bi-20-1-2
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-20-1-1
   name: Crushers
-  children_ids:
+  children:
   - bi-20-1-1-1
   - bi-20-1-1-2
   - bi-20-1-1-3
   - bi-20-1-1-4
-  attribute_friendly_ids:
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-20-1-1-1
   name: Cone Crushers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-20-1-1-2
   name: Gyratory Crushers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-20-1-1-3
   name: Impact Crushers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-20-1-1-4
   name: Jaw Crushers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
   - power_source
 - id: bi-20-1-2
   name: Drilling Rigs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - drilling_method
   - drilling_rig_orientation
@@ -3912,367 +3912,367 @@
   - power_source
 - id: bi-20-2
   name: Mining & Quarrying Supplies
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-21-1-1-1
   name: Cannula Needles
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - needle_gauge
   - pattern
 - id: bi-21-1-1-2
   name: Dermal Punches
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - needle_gauge
   - pattern
 - id: bi-21-2-3-1
   name: Coil Tattooing Machines
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
   - power_source
 - id: bi-21-2-3-2
   name: Pen Tattooing Machines
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
   - power_source
 - id: bi-21-2-3-3
   name: Rotary Tattooing Machines
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
   - power_source
 - id: bi-21-2-4-1
   name: Curved Magnum Tattooing Needles
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - needle_gauge
   - pattern
 - id: bi-21-2-4-2
   name: Magnum Tattooing Needles
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - needle_gauge
   - pattern
 - id: bi-21-2-4-3
   name: Round Liner Tattooing Needles
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - needle_gauge
   - pattern
 - id: bi-21-2-4-4
   name: Round Shader Tattooing Needles
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - needle_gauge
   - pattern
 - id: bi-22-1-1
   name: Four-Way Clothing Display Racks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-22-1-2
   name: Round Clothing Display Racks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-22-1-3
   name: Straight Clothing Display Racks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-22-1-4
   name: Two-Way Clothing Display Racks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-22-2-1
   name: Full Body Display Mannequins
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
   - target_gender
 - id: bi-22-2-2
   name: Head Display Mannequins
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
   - target_gender
 - id: bi-22-2-3
   name: Leg Display Mannequins
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
   - target_gender
 - id: bi-22-2-4
   name: Torso Display Mannequins
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
   - target_gender
 - id: bi-22-3-1
   name: Mannequin Arms
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-22-3-2
   name: Mannequin Heads
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-22-3-3
   name: Mannequin Legs
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-22-3-4
   name: Mannequin Torsos
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-22-4-2-1-2
   name: Electronic Cash Drawers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-22-4-2-1-3
   name: Manual Cash Drawers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-22-5-1
   name: Die Cut Shopping Bags
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-22-5-2
   name: Rigid Handle Shopping Bags
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-22-5-3
   name: Soft Loop Shopping Bags
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-22-5-4
   name: T-Shirt Shopping Bags
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-23-1-1
   name: Buffers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - chemical_grade
   - chemical_purity
   - color
   - pattern
 - id: bi-23-1-2
   name: Detergents
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - chemical_grade
   - chemical_purity
   - color
   - pattern
 - id: bi-23-1-3
   name: Enzymes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - chemical_grade
   - chemical_purity
   - color
   - pattern
 - id: bi-23-2-1
   name: Professional Dissection Kits
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-23-2-2
   name: Training Dissection Kits
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-23-3-1
   name: Acids
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - chemical_grade
   - chemical_purity
   - color
   - pattern
 - id: bi-23-3-2
   name: Bases
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - chemical_grade
   - chemical_purity
   - color
   - pattern
 - id: bi-23-3-3
   name: Salts
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - chemical_grade
   - chemical_purity
   - color
   - pattern
 - id: bi-23-3-4
   name: Solvents
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - chemical_grade
   - chemical_purity
   - color
   - pattern
 - id: bi-23-4-7-1
   name: Dropping Laboratory Funnels
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-4-7-2
   name: Filter Laboratory Funnels
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-4-7-3
   name: Powder Laboratory Funnels
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-4-7-4
   name: Separatory Laboratory Funnels
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-4-9-1
   name: Gravity Convection Laboratory Ovens
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-23-4-9-2
   name: Mechanical Convection Laboratory Ovens
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-23-4-9-3
   name: Vacuum Laboratory Ovens
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-23-4-10-2-1
   name: Huygenian Eyepieces & Adapters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - magnification
   - material
   - pattern
 - id: bi-23-4-10-2-2
   name: Kellner Eyepieces & Adapters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - magnification
   - material
   - pattern
 - id: bi-23-4-10-2-3
   name: Orthoscopic Eyepieces & Adapters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - magnification
   - material
   - pattern
 - id: bi-23-4-10-2-4
   name: Plössl Eyepieces & Adapters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - magnification
   - material
   - pattern
 - id: bi-23-4-10-3-1
   name: Achromatic Microscope Lenses
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - field_of_view
   - magnification
@@ -4281,8 +4281,8 @@
   - pattern
 - id: bi-23-4-10-3-2
   name: Apochromatic Microscope Lenses
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - field_of_view
   - magnification
@@ -4291,8 +4291,8 @@
   - pattern
 - id: bi-23-4-10-3-3
   name: Fluorite Microscope Lenses
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - field_of_view
   - magnification
@@ -4301,36 +4301,36 @@
   - pattern
 - id: bi-23-4-10-5-1
   name: Adhesive Microscope Slides
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-4-10-5-2
   name: Charged Microscope Slides
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-4-10-5-3
   name: Frosted Microscope Slides
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-4-10-5-4
   name: Plain Microscope Slides
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-4-11-2
   name: Optical Microscopes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - illumination_technique
   - magnification
@@ -4338,8 +4338,8 @@
   - pattern
 - id: bi-23-4-11-3
   name: Projection Microscopes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - illumination_technique
   - magnification
@@ -4347,8 +4347,8 @@
   - pattern
 - id: bi-23-4-11-4
   name: USB Microscopes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - illumination_technique
   - magnification
@@ -4356,247 +4356,247 @@
   - pattern
 - id: bi-23-4-12-1
   name: Cryostat Microtomes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-23-4-12-2
   name: Rotary Microtomes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-23-4-12-3
   name: Sliding Microtomes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-23-4-13-1
   name: Cuvettes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-23-4-13-2
   name: Fiber Optic Probes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-23-4-14-1
   name: Fluorescence Spectrometers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-23-4-14-2
   name: Fourier Transform Infrared (FT-IR) Spectrometers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-23-4-14-3
   name: Raman Spectrometers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-23-4-14-4
   name: UV-Vis Spectrometers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - pattern
 - id: bi-23-6-3-1
   name: Boiling Laboratory Flasks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-6-3-2
   name: Buchner Laboratory Flasks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-6-3-3
   name: Erlenmeyer Laboratory Flasks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-6-3-4
   name: Volumetric Laboratory Flasks
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-6-5-1
   name: Graduated Pipettes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-6-5-2
   name: Micropipettes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-23-6-5-3
   name: Volumetric Pipettes
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-25-2-1
   name: Combination Cartridges
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - filtration_class
   - pattern
 - id: bi-25-2-2
   name: Particulate Filters
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - filtration_class
   - pattern
 - id: bi-25-2-3
   name: Vapor Cartridges
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - filtration_class
   - pattern
 - id: bi-25-5-1
   name: Bib Protective Aprons
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-25-5-2
   name: Cobbler Protective Aprons
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-25-5-3
   name: Waist Protective Aprons
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-25-6-1
   name: Face Shields
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - lens_color
   - pattern
 - id: bi-25-6-2
   name: Goggles
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - lens_color
   - pattern
 - id: bi-25-6-3
   name: Safety Glasses
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - lens_color
   - pattern
 - id: bi-25-8-1
   name: Chemical-Resistant Safety Gloves
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-25-8-2
   name: Cut-Resistant Safety Gloves
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-25-8-3
   name: Electrical-Resistant Safety Gloves
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-25-8-4
   name: Heat-Resistant Safety Gloves
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-25-11-1
   name: Cross-Chest Work Safety Harnesses
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-25-11-2
   name: Full-Body Work Safety Harnesses
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-25-11-3
   name: Vest-Style Work Safety Harnesses
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - accessory_size
   - color
   - material
   - pattern
 - id: bi-25-12-1
   name: Anchorage Work Safety Tethers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-25-12-2
   name: Tool Belt Work Safety Tethers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
 - id: bi-25-12-3
   name: Wrist Work Safety Tethers
-  children_ids: []
-  attribute_friendly_ids:
+  children: []
+  attributes:
   - color
   - material
   - pattern
