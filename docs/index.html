@@ -7,8 +7,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopify Standard Product Taxonomy</title>
-    <script src="https://cdn.jsdelivr.net/npm/js-yaml@3.14.1/dist/js-yaml.min.js"></script>
-    <script src="index.js"></script>
     <link rel="stylesheet" href="styles.css">
   </head>
 
@@ -30,6 +28,11 @@
       <div class="content-container container">
         <div class="primary-container">
           <h2 class="container_title">Categories</h2>
+          <input type="text" id="category-search" onkeyup="categorySearch(this.value)" placeholder="Search for categories&hellip;">
+          <div class="category-search-results-container">
+            <ul id="category-search-results"></ul>
+          </div>
+
           {% for sibling_group in site.data.sibling_groups %}
             {% for categories in sibling_group[1] %}
               {% assign depth = sibling_group[0] %}
@@ -90,5 +93,11 @@
         </div>
       </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@3.14.1/dist/js-yaml.min.js"></script>
+    <script type="module">
+      import { categorySearch } from './assets/js/index.js';
+      window.categorySearch = categorySearch;
+    </script>
   </body>
 </html>

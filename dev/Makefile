@@ -50,7 +50,7 @@ default: $(CATEGORIES_DATA_CUE) \
 .PHONY: default
 
 clean:
-	@$(NUKE) "Cleaning dev db"
+	@$(NUKE) "Cleaning dev db" $(LOCAL_DB)
 	$(V)rm -f $(LOCAL_DB)
 	@$(NUKE) "Cleaning Generated Docs" $(GENERATED_DOCS_PATH)
 	$(V)rm -f $(DOCS_GENERATED_SENTINEL)

@@ -109,6 +109,29 @@ a:active {
   display: block;
 }
 
+.category-search-results-container {
+  position: relative;
+}
+
+.category-search-results-container ul {
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  list-style-type: none;
+  margin: 0;
+}
+
+.category-search-results-container ul:has(li) {
+  padding: 0.5em;
+  border: solid 1px rgba(48, 48, 48, 1);
+}
+
+.category-search-results-container li {
+  padding: 0 0 0.5em;
+  cursor: pointer;
+}
+
 .title {
   display: flex;
   align-items: center;

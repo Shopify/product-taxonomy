@@ -72,15 +72,20 @@ class GenerateDocs
       search_index = verticals.flat_map do |vertical|
         vertical['categories'].map do |category|
           {
-            "title" => category.fetch("name"),
+            "title" => category.fetch("full_name"),
             "url" => "?categoryId=#{CGI.escapeURIComponent(category.fetch("id"))}",
-            "body" => category.fetch("full_name"),
+            "category" => {
+              "id" => category.fetch("id"),
+              "name" => category.fetch("name"),
+              "fully_qualified_type" => category.fetch("full_name"),
+              "depth" => category.fetch("level"),
+            }
           }
         end
       end
 
       puts "  → Writing docs/_data/search_index.json"
-      File.open("#{Application.root}/docs/_data/search_index.json", "w") do |file|
+      File.open("#{Application.root}/docs/assets/js/search_index.json", "w") do |file|
         file.write(search_index.to_json)
       end
       puts "  ✓"
