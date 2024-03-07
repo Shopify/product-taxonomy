@@ -27,9 +27,13 @@ jobs:
         gem install bundler
         bundle install --jobs 4 --retry 3
 
-    - name: Run tests
+    - name: Run unit tests
       working-directory: ./dev
-      run: make tests_only
+      run: make unit_tests
+
+    - name: Run integration tests
+      working-directory: ./dev
+      run: make integration_tests
 
   verify_schema:
     runs-on: ubuntu-latest

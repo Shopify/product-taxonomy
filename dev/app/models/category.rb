@@ -7,7 +7,22 @@ class Category < ApplicationRecord
   belongs_to :parent, class_name: 'Category', optional: true
   has_and_belongs_to_many :properties
 
-  validates :name, presence: true
+  validates :id,
+    presence: { strict: true },
+    format: { with: /\A[a-z]{2}(\-[0-9]+)*\z/ }
+  validates :name,
+    presence: { strict: true }
+  validate :assigned_to_correct_parent
+
+  def assigned_to_correct_parent
+    return if parent.nil?
+
+    expected_parts = id.split("-").tap(&:pop)
+    parent_parts = parent.id.split("-")
+    return if expected_parts == parent_parts
+
+    errors.add(:parent_id, "must be a prefix of id")
+  end
 
   def gid
     "gid://shopify/Taxonomy/Category/#{id}"

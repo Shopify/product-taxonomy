@@ -3,10 +3,10 @@ module Serializers
     class CategorySerializer < ObjectSerializer
       def serialize(category)
         {
-          id: category.id,
-          name: category.name,
-          children: category.children.map(&:id),
-          attributes: category.properties.map(&:friendly_id),
+          "id" => category.id,
+          "name" => category.name,
+          "children" => category.children.map(&:id),
+          "attributes" => category.properties.reorder(:id).map(&:friendly_id),
         }
       end
 
