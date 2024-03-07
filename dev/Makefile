@@ -69,18 +69,23 @@ server:
 	$(V)bundle exec jekyll serve --source ../docs --destination ../_site
 .PHONY: server
 
-test: vet_schema tests_only
-.PHONY: test
-
 seed:
 	@$(GENERATE) "Seeding Database" $(LOCAL_DB)
 	$(V)bin/seed
 .PHONY: seed
 
-tests_only:
-	@$(RUN_CMD) "Running Tests"
+test: vet_schema unit_tests integration_tests
+.PHONY: test
+
+unit_tests:
+	@$(RUN_CMD) "Running Unit Tests"
 	$(V)bin/rake test $(filter-out $@,$(MAKECMDGOALS))
-.PHONY: tests_only
+.PHONY: unit_tests
+
+integration_tests:
+	@$(RUN_CMD) "Running Integration Tests"
+	$(V)bin/rake test_integration $(filter-out $@,$(MAKECMDGOALS))
+.PHONY: integration_tests
 
 vet_schema: $(CATEGORIES_DATA_CUE) $(ATTRIBUTES_DATA_CUE)
 	@$(RUN_CMD) "Validating Schema"

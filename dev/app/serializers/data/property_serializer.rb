@@ -3,10 +3,10 @@ module Serializers
     class PropertySerializer < ObjectSerializer
       def serialize(property)
         {
-          id: property.id,
-          friendly_id: property.friendly_id,
-          name: property.name,
-          values: property.property_values.map { PropertyValueSerializer.serialize(_1) }
+          "id" => property.id,
+          "name" => property.name,
+          "friendly_id" => property.friendly_id,
+          "values" => property.property_values.reorder(:id).map { PropertyValueSerializer.serialize(_1) }
         }
       end
 

@@ -3,8 +3,8 @@ module Serializers
     class PropertyValueSerializer < ObjectSerializer
       def serialize(property_value)
         {
-          id: property.id,
-          name: property.name,
+          "id" => property_value.id,
+          "name" => property_value.name,
         }
       end
 
