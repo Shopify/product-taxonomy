@@ -1,14 +1,14 @@
 ---
 - id: hb
   name: Health & Beauty
-  children_ids:
+  children:
   - hb-1
   - hb-2
   - hb-3
-  attribute_ids: []
+  attributes: []
 - id: hb-1
   name: Health Care
-  children_ids:
+  children:
   - hb-1-1
   - hb-1-2
   - hb-1-3
@@ -34,96 +34,96 @@
   - hb-1-23
   - hb-1-24
   - hb-1-25
-  attribute_ids: []
+  attributes: []
 - id: hb-1-1
   name: Acupuncture
-  children_ids:
+  children:
   - hb-1-1-1
   - hb-1-1-2
-  attribute_ids: []
+  attributes: []
 - id: hb-1-1-1
   name: Acupuncture Models
-  children_ids: []
-  attribute_ids:
-  - 1543
-  - 1544
-  - 4
+  children: []
+  attributes:
+  - acupuncture_model_format
+  - acupuncture_model_type
+  - material
 - id: hb-1-1-2
   name: Acupuncture Needles
-  children_ids: []
-  attribute_ids:
-  - 1545
+  children: []
+  attributes:
+  - needle_material
 - id: hb-1-2
   name: Bed Pans
-  children_ids: []
-  attribute_ids:
-  - 1546
-  - 4
+  children: []
+  attributes:
+  - bed_pan_type
+  - material
 - id: hb-1-3
   name: Biometric Monitor Accessories
-  children_ids:
+  children:
   - hb-1-3-1
   - hb-1-3-2
   - hb-1-3-3
   - hb-1-3-4
-  attribute_ids:
-  - 1
-  - 1331
+  attributes:
+  - color
+  - control_type
 - id: hb-1-3-1
   name: Activity Monitor Accessories
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1331
+  children: []
+  attributes:
+  - color
+  - control_type
 - id: hb-1-3-2
   name: Blood Glucose Meter Accessories
-  children_ids:
+  children:
   - hb-1-3-2-1
   - hb-1-3-2-2
   - hb-1-3-2-3
-  attribute_ids:
-  - 1
-  - 1331
+  attributes:
+  - color
+  - control_type
 - id: hb-1-3-2-1
   name: Blood Glucose Control Solution
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1331
+  children: []
+  attributes:
+  - color
+  - control_type
 - id: hb-1-3-2-2
   name: Blood Glucose Test Strips
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1331
+  children: []
+  attributes:
+  - color
+  - control_type
 - id: hb-1-3-2-3
   name: Lancing Devices
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1331
+  children: []
+  attributes:
+  - color
+  - control_type
 - id: hb-1-3-3
   name: Blood Pressure Monitor Accessories
-  children_ids:
+  children:
   - hb-1-3-3-1
-  attribute_ids:
-  - 1
-  - 1331
+  attributes:
+  - color
+  - control_type
 - id: hb-1-3-3-1
   name: Blood Pressure Monitor Cuffs
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1331
+  children: []
+  attributes:
+  - color
+  - control_type
 - id: hb-1-3-4
   name: Body Weight Scale Accessories
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1331
+  children: []
+  attributes:
+  - color
+  - control_type
 - id: hb-1-4
   name: Biometric Monitors
-  children_ids:
+  children:
   - hb-1-4-1
   - hb-1-4-2
   - hb-1-4-3
@@ -135,256 +135,256 @@
   - hb-1-4-9
   - hb-1-4-10
   - hb-1-4-11
-  attribute_ids:
-  - 1
-  - 1248
+  attributes:
+  - color
+  - display_technology
 - id: hb-1-4-1
   name: Activity Monitors
-  children_ids: []
-  attribute_ids:
-  - 1547
-  - 1
-  - 1548
-  - 1272
-  - 1248
-  - 73
-  - 1549
+  children: []
+  attributes:
+  - activity_tracker_design
+  - color
+  - compatible_operating_system
+  - connectivity_technology
+  - display_technology
+  - shape
+  - tracking_metrics
 - id: hb-1-4-2
   name: Blood Glucose Meters
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1272
-  - 1248
+  children: []
+  attributes:
+  - color
+  - connectivity_technology
+  - display_technology
 - id: hb-1-4-3
   name: Blood Pressure Monitors
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1248
+  children: []
+  attributes:
+  - color
+  - display_technology
 - id: hb-1-4-4
   name: Body Fat Analyzers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1248
-  - 1550
-  - 1551
+  children: []
+  attributes:
+  - color
+  - display_technology
+  - measuring_method
+  - metrics_supported
 - id: hb-1-4-5
   name: Body Weight Scales
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1248
-  - 4
-  - 1552
+  children: []
+  attributes:
+  - color
+  - display_technology
+  - material
+  - weight_unit_supported
 - id: hb-1-4-6
   name: Breathalyzers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1248
+  children: []
+  attributes:
+  - color
+  - display_technology
 - id: hb-1-4-7
   name: Cholesterol Analyzers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1248
+  children: []
+  attributes:
+  - color
+  - display_technology
 - id: hb-1-4-8
   name: Fertility Monitors and Ovulation Tests
-  children_ids:
+  children:
   - hb-1-4-8-1
   - hb-1-4-8-2
-  attribute_ids:
-  - 1
-  - 1248
-  - 1553
+  attributes:
+  - color
+  - display_technology
+  - test_format
 - id: hb-1-4-8-1
   name: Fertility Tests & Monitors
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1248
-  - 1553
+  children: []
+  attributes:
+  - color
+  - display_technology
+  - test_format
 - id: hb-1-4-8-2
   name: Ovulation Tests
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1553
+  children: []
+  attributes:
+  - color
+  - test_format
 - id: hb-1-4-9
   name: Medical Thermometers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1331
-  - 1248
-  - 1554
-  - 1555
-  - 1556
+  children: []
+  attributes:
+  - color
+  - control_type
+  - display_technology
+  - measuring_type
+  - temperature_measurement
+  - test_sample
 - id: hb-1-4-10
   name: Prenatal Heart Rate Monitors
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1272
-  - 1248
-  - 1554
+  children: []
+  attributes:
+  - color
+  - connectivity_technology
+  - display_technology
+  - measuring_type
 - id: hb-1-4-11
   name: Pulse Oximeters
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1248
+  children: []
+  attributes:
+  - color
+  - display_technology
 - id: hb-1-5
   name: Condoms
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1557
-  - 4
-  - 1558
+  children: []
+  attributes:
+  - color
+  - condom_type
+  - material
+  - texture
 - id: hb-1-6
   name: Conductivity Gels & Lotions
-  children_ids: []
-  attribute_ids:
-  - 1456
+  children: []
+  attributes:
+  - package_type
 - id: hb-1-7
   name: Contraceptive Cases
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-1-8
   name: First Aid
-  children_ids:
+  children:
   - hb-1-8-1
   - hb-1-8-2
   - hb-1-8-3
   - hb-1-8-4
   - hb-1-8-5
   - hb-1-8-6
-  attribute_ids:
-  - 843
+  attributes:
+  - usage_type
 - id: hb-1-8-1
   name: Antiseptics & Cleaning Supplies
-  children_ids: []
-  attribute_ids:
-  - 1384
-  - 1285
-  - 1559
-  - 843
+  children: []
+  attributes:
+  - dispenser_type
+  - product_form
+  - suitable_for_skin_type
+  - usage_type
 - id: hb-1-8-2
   name: Cast & Bandage Protectors
-  children_ids: []
-  attribute_ids:
-  - 1560
-  - 4
-  - 843
+  children: []
+  attributes:
+  - application_area
+  - material
+  - usage_type
 - id: hb-1-8-3
   name: Eye Wash Supplies
-  children_ids: []
-  attribute_ids:
-  - 1384
-  - 843
+  children: []
+  attributes:
+  - dispenser_type
+  - usage_type
 - id: hb-1-8-4
   name: First Aid Kits
-  children_ids: []
-  attribute_ids:
-  - 116
-  - 1561
-  - 1562
-  - 843
+  children: []
+  attributes:
+  - case_color
+  - case_material
+  - first_aid_kit_usage
+  - usage_type
 - id: hb-1-8-5
   name: Hot & Cold Therapies
-  children_ids:
+  children:
   - hb-1-8-5-1
   - hb-1-8-5-2
   - hb-1-8-5-3
-  attribute_ids:
-  - 1563
-  - 1
-  - 1564
-  - 843
+  attributes:
+  - body_area
+  - color
+  - treatment_objective
+  - usage_type
 - id: hb-1-8-5-1
   name: Heat Rubs
-  children_ids: []
-  attribute_ids:
-  - 1563
-  - 1
-  - 1285
-  - 1564
-  - 843
+  children: []
+  attributes:
+  - body_area
+  - color
+  - product_form
+  - treatment_objective
+  - usage_type
 - id: hb-1-8-5-2
   name: Heating Pads
-  children_ids: []
-  attribute_ids:
-  - 1563
-  - 1
-  - 1221
-  - 1564
-  - 843
+  children: []
+  attributes:
+  - body_area
+  - color
+  - power_source
+  - treatment_objective
+  - usage_type
 - id: hb-1-8-5-3
   name: Ice Packs
-  children_ids: []
-  attribute_ids:
-  - 1563
-  - 1
-  - 1565
-  - 1564
-  - 843
+  children: []
+  attributes:
+  - body_area
+  - color
+  - ice_pack_type
+  - treatment_objective
+  - usage_type
 - id: hb-1-8-6
   name: Medical Tape & Bandages
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 1566
-  - 843
+  children: []
+  attributes:
+  - color
+  - material
+  - product_sterility
+  - usage_type
 - id: hb-1-9
   name: Fitness & Nutrition
-  children_ids:
+  children:
   - hb-1-9-1
   - hb-1-9-2
   - hb-1-9-3
   - hb-1-9-4
   - hb-1-9-5
   - hb-1-9-6
-  attribute_ids:
-  - 1452
+  attributes:
+  - dietary_preferences
 - id: hb-1-9-1
   name: Nutrition Bars
-  children_ids: []
-  attribute_ids:
-  - 1452
-  - 1567
-  - 1458
+  children: []
+  attributes:
+  - dietary_preferences
+  - dietary_use
+  - flavor
 - id: hb-1-9-2
   name: Nutrition Drinks & Shakes
-  children_ids: []
-  attribute_ids:
-  - 1452
-  - 1567
-  - 1458
+  children: []
+  attributes:
+  - dietary_preferences
+  - dietary_use
+  - flavor
 - id: hb-1-9-3
   name: Nutrition Gels & Chews
-  children_ids: []
-  attribute_ids:
-  - 1452
-  - 1567
-  - 1458
+  children: []
+  attributes:
+  - dietary_preferences
+  - dietary_use
+  - flavor
 - id: hb-1-9-4
   name: Nutritional Food Purées
-  children_ids: []
-  attribute_ids:
-  - 1452
-  - 1568
+  children: []
+  attributes:
+  - dietary_preferences
+  - texture_level
 - id: hb-1-9-5
   name: Tube Feeding Supplements
-  children_ids: []
-  attribute_ids:
-  - 1452
+  children: []
+  attributes:
+  - dietary_preferences
 - id: hb-1-9-6
   name: Vitamins & Supplements
-  children_ids:
+  children:
   - hb-1-9-6-1
   - hb-1-9-6-2
   - hb-1-9-6-3
@@ -394,16 +394,16 @@
   - hb-1-9-6-7
   - hb-1-9-6-8
   - hb-1-9-6-9
-  attribute_ids:
-  - 30
-  - 1452
-  - 1458
-  - 1569
-  - 1261
-  - 1285
+  attributes:
+  - age_group
+  - dietary_preferences
+  - flavor
+  - ingredient_category
+  - product_certifications_and_standards
+  - product_form
 - id: hb-1-10
   name: Hearing Aids
-  children_ids:
+  children:
   - hb-1-10-1
   - hb-1-10-2
   - hb-1-10-3
@@ -414,339 +414,339 @@
   - hb-1-10-8
   - hb-1-10-9
   - hb-1-10-10
-  attribute_ids:
-  - 30
-  - 1571
-  - 4
-  - 1572
+  attributes:
+  - age_group
+  - battery_type
+  - material
+  - technology_level
 - id: hb-1-11
   name: Incontinence Aids
-  children_ids:
+  children:
   - hb-1-11-6
   - hb-1-11-7
   - hb-1-11-8
-  attribute_ids:
-  - 894
-  - 50
-  - 1
+  attributes:
+  - absorbency_level
+  - accessory_size
+  - color
 - id: hb-1-12
   name: Light Therapy Lamps
-  children_ids: []
-  attribute_ids:
-  - 1574
+  children: []
+  attributes:
+  - light_spectrum
 - id: hb-1-13
   name: Medical Alarm Systems
-  children_ids: []
-  attribute_ids:
-  - 1575
+  children: []
+  attributes:
+  - system_range
 - id: hb-1-14
   name: Medical Identification Tags & Jewelry
-  children_ids: []
-  attribute_ids:
-  - 4
+  children: []
+  attributes:
+  - material
 - id: hb-1-15
   name: Medical Tests
-  children_ids:
+  children:
   - hb-1-15-1
   - hb-1-15-2
   - hb-1-15-3
   - hb-1-15-4
   - hb-1-15-5
   - hb-1-15-6
-  attribute_ids:
-  - 1576
-  - 1556
+  attributes:
+  - test_method
+  - test_sample
 - id: hb-1-15-1
   name: Allergy Test Kits
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1577
-  - 1576
-  - 1556
+  children: []
+  attributes:
+  - age_group
+  - allergen_test_type
+  - test_method
+  - test_sample
 - id: hb-1-15-2
   name: Blood Typing Test Kits
-  children_ids: []
-  attribute_ids:
-  - 1578
-  - 1576
-  - 1556
+  children: []
+  attributes:
+  - blood_test_kit_components
+  - test_method
+  - test_sample
 - id: hb-1-15-3
   name: Drug Tests
-  children_ids: []
-  attribute_ids:
-  - 1579
-  - 1576
-  - 1556
+  children: []
+  attributes:
+  - detectable_drugs
+  - test_method
+  - test_sample
 - id: hb-1-15-4
   name: HIV Tests
-  children_ids: []
-  attribute_ids:
-  - 1576
-  - 1556
+  children: []
+  attributes:
+  - test_method
+  - test_sample
 - id: hb-1-15-5
   name: Pregnancy Tests
-  children_ids: []
-  attribute_ids:
-  - 1580
-  - 1581
-  - 1576
-  - 1556
+  children: []
+  attributes:
+  - pregnancy_test_sensitivity
+  - result_display
+  - test_method
+  - test_sample
 - id: hb-1-15-6
   name: Urinary Tract Infection Tests
-  children_ids: []
-  attribute_ids:
-  - 1553
-  - 1576
-  - 1556
+  children: []
+  attributes:
+  - test_format
+  - test_method
+  - test_sample
 - id: hb-1-16
   name: Medicine & Drugs
-  children_ids: []
-  attribute_ids:
-  - 1285
+  children: []
+  attributes:
+  - product_form
 - id: hb-1-17
   name: Mobility & Accessibility
-  children_ids:
+  children:
   - hb-1-17-1
   - hb-1-17-2
   - hb-1-17-3
   - hb-1-17-4
   - hb-1-17-5
-  attribute_ids: []
+  attributes: []
 - id: hb-1-17-1
   name: Accessibility Equipment
-  children_ids:
+  children:
   - hb-1-17-1-1
   - hb-1-17-1-2
   - hb-1-17-1-3
   - hb-1-17-1-4
-  attribute_ids:
-  - 4
+  attributes:
+  - material
 - id: hb-1-17-1-1
   name: Mobility Scooters
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1582
+  children: []
+  attributes:
+  - material
+  - mobility_scooter_type
 - id: hb-1-17-1-2
   name: Stair Lifts
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1583
-  - 1584
-  - 1585
+  children: []
+  attributes:
+  - material
+  - stair_lifts_control_type
+  - stair_lifts_safety_features
+  - staircase_type
 - id: hb-1-17-1-3
   name: Transfer Boards & Sheets
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1586
+  children: []
+  attributes:
+  - material
+  - transfer_boards_surface_type
 - id: hb-1-17-1-4
   name: Wheelchairs
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1587
+  children: []
+  attributes:
+  - material
+  - wheelchair_type
 - id: hb-1-17-2
   name: Accessibility Equipment Accessories
-  children_ids: []
-  attribute_ids:
-  - 1267
-  - 4
+  children: []
+  attributes:
+  - attachment_type
+  - material
 - id: hb-1-17-3
   name: Accessibility Furniture & Fixtures
-  children_ids:
+  children:
   - hb-1-17-3-1
-  attribute_ids: []
+  attributes: []
 - id: hb-1-17-3-1
   name: Shower Benches & Seats
-  children_ids:
+  children:
   - hb-1-17-3-1-1
   - hb-1-17-3-1-2
   - hb-1-17-3-1-3
   - hb-1-17-3-1-4
   - hb-1-17-3-1-5
-  attribute_ids:
-  - 1267
-  - 4
-  - 1205
+  attributes:
+  - attachment_type
+  - material
+  - mounting_type
 - id: hb-1-17-4
   name: Walking Aid Accessories
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1588
+  children: []
+  attributes:
+  - color
+  - compatible_walking_aid_equipment
 - id: hb-1-17-5
   name: Walking Aids
-  children_ids:
+  children:
   - hb-1-17-5-1
   - hb-1-17-5-2
   - hb-1-17-5-3
-  attribute_ids:
-  - 1
+  attributes:
+  - color
 - id: hb-1-17-5-1
   name: Canes & Walking Sticks
-  children_ids:
+  children:
   - hb-1-17-5-1-1
   - hb-1-17-5-1-2
   - hb-1-17-5-1-3
   - hb-1-17-5-1-4
-  attribute_ids:
-  - 1
-  - 4
+  attributes:
+  - color
+  - material
 - id: hb-1-17-5-2
   name: Crutches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1589
+  children: []
+  attributes:
+  - color
+  - crutch_type
 - id: hb-1-17-5-3
   name: Walkers
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-1-18
   name: Occupational & Physical Therapy Equipment
-  children_ids:
+  children:
   - hb-1-18-1
   - hb-1-18-2
-  attribute_ids: []
+  attributes: []
 - id: hb-1-18-1
   name: Electrical Muscle Stimulators
-  children_ids: []
-  attribute_ids:
-  - 1590
-  - 1221
+  children: []
+  attributes:
+  - muscle_estimulator_design
+  - power_source
 - id: hb-1-18-2
   name: Therapeutic Swings
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-1-19
   name: Pillboxes
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-1-20
   name: Respiratory Care
-  children_ids:
+  children:
   - hb-1-20-1
   - hb-1-20-2
   - hb-1-20-3
   - hb-1-20-4
   - hb-1-20-5
-  attribute_ids: []
+  attributes: []
 - id: hb-1-20-1
   name: Nebulizers
-  children_ids: []
-  attribute_ids:
-  - 1591
-  - 1221
-  - 1592
+  children: []
+  attributes:
+  - nebulizer_technology
+  - power_source
+  - product_design
 - id: hb-1-20-2
   name: Oxygen Tanks
-  children_ids: []
-  attribute_ids:
-  - 1593
+  children: []
+  attributes:
+  - oxygen_tank_valve_type
 - id: hb-1-20-3
   name: PAP Machines
-  children_ids:
+  children:
   - hb-1-20-3-1
   - hb-1-20-3-2
   - hb-1-20-3-3
-  attribute_ids:
-  - 1221
+  attributes:
+  - power_source
 - id: hb-1-20-4
   name: PAP Masks
-  children_ids: []
-  attribute_ids:
-  - 1594
+  children: []
+  attributes:
+  - mask_type
 - id: hb-1-20-5
   name: Steam Inhalers
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-1-21
   name: Specimen Cups
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-1-22
   name: Spermicides
-  children_ids: []
-  attribute_ids:
-  - 1285
+  children: []
+  attributes:
+  - product_form
 - id: hb-1-23
   name: Stump Shrinkers
-  children_ids: []
-  attribute_ids:
-  - 1595
-  - 4
+  children: []
+  attributes:
+  - compression_level
+  - material
 - id: hb-1-24
   name: Supports & Braces
-  children_ids:
+  children:
   - hb-1-24-1
   - hb-1-24-2
   - hb-1-24-3
   - hb-1-24-4
   - hb-1-24-5
   - hb-1-24-6
-  attribute_ids:
-  - 80
-  - 1
-  - 4
+  attributes:
+  - closure_type
+  - color
+  - material
 - id: hb-1-25
   name: Surgical Lubricants
-  children_ids: []
-  attribute_ids:
-  - 1384
-  - 1285
+  children: []
+  attributes:
+  - dispenser_type
+  - product_form
 - id: hb-2
   name: Jewelry Cleaning & Care
-  children_ids:
+  children:
   - hb-2-1
   - hb-2-2
   - hb-2-3
   - hb-2-4
   - hb-2-5
-  attribute_ids:
-  - 1596
+  attributes:
+  - compatible_material
 - id: hb-2-1
   name: Jewelry Cleaning Solutions & Polishes
-  children_ids: []
-  attribute_ids:
-  - 1596
-  - 1456
-  - 1285
+  children: []
+  attributes:
+  - compatible_material
+  - package_type
+  - product_form
 - id: hb-2-2
   name: Jewelry Cleaning Tools
-  children_ids:
+  children:
   - hb-2-2-1
   - hb-2-2-2
   - hb-2-2-3
   - hb-2-2-4
-  attribute_ids:
-  - 1596
+  attributes:
+  - compatible_material
 - id: hb-2-3
   name: Jewelry Holders
-  children_ids:
+  children:
   - hb-2-3-1
   - hb-2-3-2
   - hb-2-3-3
   - hb-2-3-4
   - hb-2-3-5
-  attribute_ids:
-  - 1596
+  attributes:
+  - compatible_material
 - id: hb-2-4
   name: Jewelry Steam Cleaners
-  children_ids: []
-  attribute_ids:
-  - 1596
+  children: []
+  attributes:
+  - compatible_material
 - id: hb-2-5
   name: Watch Repair Kits
-  children_ids: []
-  attribute_ids:
-  - 1596
+  children: []
+  attributes:
+  - compatible_material
 - id: hb-3
   name: Personal Care
-  children_ids:
+  children:
   - hb-3-1
   - hb-3-2
   - hb-3-3
@@ -766,19 +766,19 @@
   - hb-3-18
   - hb-3-19
   - hb-3-5
-  attribute_ids: []
+  attributes: []
 - id: hb-3-1
   name: Back Care
-  children_ids:
+  children:
   - hb-3-1-1
-  attribute_ids: []
+  attributes: []
 - id: hb-3-1-1
   name: Back & Lumbar Support Cushions
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-3-2
   name: Cosmetics
-  children_ids:
+  children:
   - hb-3-2-1
   - hb-3-2-2
   - hb-3-2-3
@@ -788,10 +788,10 @@
   - hb-3-2-7
   - hb-3-2-9
   - hb-3-2-8
-  attribute_ids: []
+  attributes: []
 - id: hb-3-2-1
   name: Bath & Body
-  children_ids:
+  children:
   - hb-3-2-1-1
   - hb-3-2-1-2
   - hb-3-2-1-3
@@ -802,98 +802,98 @@
   - hb-3-2-1-9
   - hb-3-2-1-10
   - hb-3-2-1-7
-  attribute_ids:
-  - 1349
+  attributes:
+  - scent
 - id: hb-3-2-1-1
   name: Bar Soap
-  children_ids: []
-  attribute_ids:
-  - 1349
-  - 1559
+  children: []
+  attributes:
+  - scent
+  - suitable_for_skin_type
 - id: hb-3-2-1-2
   name: Bath Additives
-  children_ids: []
-  attribute_ids:
-  - 1349
+  children: []
+  attributes:
+  - scent
 - id: hb-3-2-1-3
   name: Bath Brushes
-  children_ids: []
-  attribute_ids:
-  - 1295
-  - 1597
-  - 1349
+  children: []
+  attributes:
+  - handle_material
+  - handle_type
+  - scent
 - id: hb-3-2-1-4
   name: Bath Sponges & Loofahs
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1349
+  children: []
+  attributes:
+  - material
+  - scent
 - id: hb-3-2-1-5
   name: Body Wash
-  children_ids: []
-  attribute_ids:
-  - 1456
-  - 1285
-  - 1349
-  - 1559
+  children: []
+  attributes:
+  - package_type
+  - product_form
+  - scent
+  - suitable_for_skin_type
 - id: hb-3-2-1-6
   name: Hand Sanitizers & Wipes
-  children_ids: []
-  attribute_ids:
-  - 1598
-  - 1384
-  - 1285
-  - 1349
+  children: []
+  attributes:
+  - active_ingredient
+  - dispenser_type
+  - product_form
+  - scent
 - id: hb-3-2-1-8
   name: Liquid Hand Soap
-  children_ids: []
-  attribute_ids:
-  - 1456
-  - 1285
-  - 1349
-  - 1559
+  children: []
+  attributes:
+  - package_type
+  - product_form
+  - scent
+  - suitable_for_skin_type
 - id: hb-3-2-1-9
   name: Powdered Hand Soap
-  children_ids: []
-  attribute_ids:
-  - 1349
-  - 1599
+  children: []
+  attributes:
+  - scent
+  - solubility
 - id: hb-3-2-1-10
   name: Shower Caps
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 1349
+  children: []
+  attributes:
+  - color
+  - material
+  - scent
 - id: hb-3-2-2
   name: Bath & Body Gift Sets
-  children_ids: []
-  attribute_ids:
-  - 1349
-  - 1559
-  - 837
+  children: []
+  attributes:
+  - scent
+  - suitable_for_skin_type
+  - target_gender
 - id: hb-3-2-3
   name: Cosmetic Sets
-  children_ids: []
-  attribute_ids:
-  - 1559
-  - 837
+  children: []
+  attributes:
+  - suitable_for_skin_type
+  - target_gender
 - id: hb-3-2-4
   name: Cosmetic Tool Cleansers
-  children_ids: []
-  attribute_ids:
-  - 1600
-  - 1285
+  children: []
+  attributes:
+  - compatible_cosmetic_tools
+  - product_form
 - id: hb-3-2-5
   name: Cosmetic Tools
-  children_ids:
+  children:
   - hb-3-2-5-1
   - hb-3-2-5-2
   - hb-3-2-5-3
-  attribute_ids: []
+  attributes: []
 - id: hb-3-2-5-1
   name: Makeup Tools
-  children_ids:
+  children:
   - hb-3-2-5-1-12
   - hb-3-2-5-1-3
   - hb-3-2-5-1-4
@@ -904,82 +904,82 @@
   - hb-3-2-5-1-9
   - hb-3-2-5-1-10
   - hb-3-2-5-1-11
-  attribute_ids: []
+  attributes: []
 - id: hb-3-2-5-1-12
   name: Double Eyelid Glue & Tape
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-3-2-5-1-3
   name: Eyebrow Stencils
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-2-5-1-4
   name: Eyelash Curler Refills
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-2-5-1-5
   name: Eyelash Curlers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: hb-3-2-5-1-6
   name: Face Mirrors
-  children_ids: []
-  attribute_ids:
-  - 1205
-  - 73
+  children: []
+  attributes:
+  - mounting_type
+  - shape
 - id: hb-3-2-5-1-7
   name: Facial Blotting Paper
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-3-2-5-1-8
   name: False Eyelash Accessories
-  children_ids:
+  children:
   - hb-3-2-5-1-8-1
   - hb-3-2-5-1-8-2
   - hb-3-2-5-1-8-3
-  attribute_ids: []
+  attributes: []
 - id: hb-3-2-5-1-8-1
   name: False Eyelash Adhesive
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1601
+  children: []
+  attributes:
+  - color
+  - drying_speed
 - id: hb-3-2-5-1-8-2
   name: False Eyelash Applicators
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1602
+  children: []
+  attributes:
+  - color
+  - eyelash_applicator_design
 - id: hb-3-2-5-1-8-3
   name: False Eyelash Remover
-  children_ids: []
-  attribute_ids:
-  - 1285
+  children: []
+  attributes:
+  - product_form
 - id: hb-3-2-5-1-9
   name: Makeup Brushes
-  children_ids: []
-  attribute_ids:
-  - 1603
-  - 1
-  - 4
+  children: []
+  attributes:
+  - bristle_shape
+  - color
+  - material
 - id: hb-3-2-5-1-10
   name: Makeup Sponges
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1604
+  children: []
+  attributes:
+  - material
+  - sponge_shape
 - id: hb-3-2-5-1-11
   name: Refillable Makeup Palettes & Cases
-  children_ids: []
-  attribute_ids:
-  - 1605
+  children: []
+  attributes:
+  - compatible_makeup
 - id: hb-3-2-5-2
   name: Nail Tools
-  children_ids:
+  children:
   - hb-3-2-5-2-1
   - hb-3-2-5-2-2
   - hb-3-2-5-2-3
@@ -990,62 +990,62 @@
   - hb-3-2-5-2-8
   - hb-3-2-5-2-9
   - hb-3-2-5-2-10
-  attribute_ids: []
+  attributes: []
 - id: hb-3-2-5-2-1
   name: Cuticle Pushers
-  children_ids: []
-  attribute_ids:
-  - 1606
+  children: []
+  attributes:
+  - tip_style
 - id: hb-3-2-5-2-2
   name: Cuticle Scissors
-  children_ids: []
-  attribute_ids:
-  - 1388
-  - 1251
+  children: []
+  attributes:
+  - blade_material
+  - blade_type
 - id: hb-3-2-5-2-3
   name: Manicure & Pedicure Spacers
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1607
+  children: []
+  attributes:
+  - material
+  - toe_spacer_design
 - id: hb-3-2-5-2-4
   name: Manicure Tool Sets
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-3-2-5-2-5
   name: Nail Buffers
-  children_ids: []
-  attribute_ids:
-  - 4
+  children: []
+  attributes:
+  - material
 - id: hb-3-2-5-2-6
   name: Nail Clippers
-  children_ids: []
-  attribute_ids:
-  - 1251
-  - 1
-  - 4
+  children: []
+  attributes:
+  - blade_type
+  - color
+  - material
 - id: hb-3-2-5-2-7
   name: Nail Drill Accessories
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-3-2-5-2-8
   name: Nail Drills
-  children_ids: []
-  attribute_ids:
-  - 1221
+  children: []
+  attributes:
+  - power_source
 - id: hb-3-2-5-2-9
   name: Nail Dryers
-  children_ids: []
-  attribute_ids:
-  - 1221
+  children: []
+  attributes:
+  - power_source
 - id: hb-3-2-5-2-10
   name: Nail Files & Emery Boards
-  children_ids: []
-  attribute_ids:
-  - 4
+  children: []
+  attributes:
+  - material
 - id: hb-3-2-5-3
   name: Skin Care Tools
-  children_ids:
+  children:
   - hb-3-2-5-3-1
   - hb-3-2-5-3-2
   - hb-3-2-5-3-3
@@ -1054,58 +1054,58 @@
   - hb-3-2-5-3-6
   - hb-3-2-5-3-7
   - hb-3-2-5-3-8
-  attribute_ids: []
+  attributes: []
 - id: hb-3-2-5-3-1
   name: Facial Saunas
-  children_ids: []
-  attribute_ids:
-  - 1221
+  children: []
+  attributes:
+  - power_source
 - id: hb-3-2-5-3-2
   name: Foot Files
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 73
+  children: []
+  attributes:
+  - material
+  - shape
 - id: hb-3-2-5-3-3
   name: Lotion & Sunscreen Applicators
-  children_ids: []
-  attribute_ids:
-  - 1608
+  children: []
+  attributes:
+  - pad_type
 - id: hb-3-2-5-3-4
   name: Pumice Stones
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: hb-3-2-5-3-5
   name: Skin Care Extractors
-  children_ids: []
-  attribute_ids:
-  - 1609
-  - 4
+  children: []
+  attributes:
+  - extractor_tip_style
+  - material
 - id: hb-3-2-5-3-6
   name: Skin Care Rollers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1610
-  - 1611
-  - 1612
+  children: []
+  attributes:
+  - color
+  - roller_head
+  - roller_material
+  - roller_type
 - id: hb-3-2-5-3-7
   name: Skin Cleansing Brush Heads
-  children_ids: []
-  attribute_ids:
-  - 1613
-  - 1
+  children: []
+  attributes:
+  - brush_head_usage
+  - color
 - id: hb-3-2-5-3-8
   name: Skin Cleansing Brushes & Systems
-  children_ids: []
-  attribute_ids:
-  - 1221
-  - 1273
+  children: []
+  attributes:
+  - power_source
+  - speed_settings
 - id: hb-3-2-6
   name: Makeup
-  children_ids:
+  children:
   - hb-3-2-6-1
   - hb-3-2-6-2
   - hb-3-2-6-3
@@ -1113,40 +1113,40 @@
   - hb-3-2-6-5
   - hb-3-2-6-6
   - hb-3-2-6-7
-  attribute_ids:
-  - 1261
+  attributes:
+  - product_certifications_and_standards
 - id: hb-3-2-6-1
   name: Body Makeup
-  children_ids:
+  children:
   - hb-3-2-6-1-4
   - hb-3-2-6-1-2
-  attribute_ids:
-  - 1261
-  - 1285
+  attributes:
+  - product_certifications_and_standards
+  - product_form
 - id: hb-3-2-6-1-4
   name: Body & Hair Glitter
-  children_ids: []
-  attribute_ids:
-  - 1261
-  - 1285
+  children: []
+  attributes:
+  - product_certifications_and_standards
+  - product_form
 - id: hb-3-2-6-1-2
   name: Body Paint & Foundation
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1614
-  - 1261
-  - 1285
-  - 1615
-  - 1616
+  children: []
+  attributes:
+  - color
+  - cosmetic_finish
+  - product_certifications_and_standards
+  - product_form
+  - skin_tone
+  - skin_undertone
 - id: hb-3-2-6-2
   name: Costume & Stage Makeup
-  children_ids: []
-  attribute_ids:
-  - 1261
+  children: []
+  attributes:
+  - product_certifications_and_standards
 - id: hb-3-2-6-3
   name: Eye Makeup
-  children_ids:
+  children:
   - hb-3-2-6-3-3
   - hb-3-2-6-3-4
   - hb-3-2-6-3-5
@@ -1155,140 +1155,140 @@
   - hb-3-2-6-3-2
   - hb-3-2-6-3-7
   - hb-3-2-6-3-8
-  attribute_ids:
-  - 1
-  - 1261
+  attributes:
+  - color
+  - product_certifications_and_standards
 - id: hb-3-2-6-3-3
   name: Eyebrow Enhancers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1614
-  - 1261
-  - 1285
+  children: []
+  attributes:
+  - color
+  - cosmetic_finish
+  - product_certifications_and_standards
+  - product_form
 - id: hb-3-2-6-3-4
   name: Eyeliner
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1614
-  - 1384
-  - 1261
-  - 1285
+  children: []
+  attributes:
+  - color
+  - cosmetic_finish
+  - dispenser_type
+  - product_certifications_and_standards
+  - product_form
 - id: hb-3-2-6-3-5
   name: False Eyelashes
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 1
-  - 4
-  - 1261
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - material
+  - product_certifications_and_standards
 - id: hb-3-2-6-3-6
   name: Lash & Brow Growth Treatments
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1261
-  - 1285
+  children: []
+  attributes:
+  - color
+  - product_certifications_and_standards
+  - product_form
 - id: hb-3-2-6-4
   name: Face Makeup
-  children_ids:
+  children:
   - hb-3-2-6-4-1
   - hb-3-2-6-4-2
   - hb-3-2-6-4-4
   - hb-3-2-6-4-5
   - hb-3-2-6-4-3
-  attribute_ids:
-  - 1614
-  - 1261
-  - 1285
-  - 1559
+  attributes:
+  - cosmetic_finish
+  - product_certifications_and_standards
+  - product_form
+  - suitable_for_skin_type
 - id: hb-3-2-6-4-1
   name: Blushes & Bronzers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1614
-  - 1384
-  - 1620
-  - 1261
-  - 1285
-  - 1559
+  children: []
+  attributes:
+  - color
+  - cosmetic_finish
+  - dispenser_type
+  - product_benefits
+  - product_certifications_and_standards
+  - product_form
+  - suitable_for_skin_type
 - id: hb-3-2-6-4-2
   name: Face Powder
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1614
-  - 1384
-  - 1261
-  - 1285
-  - 1615
-  - 1559
+  children: []
+  attributes:
+  - color
+  - cosmetic_finish
+  - dispenser_type
+  - product_certifications_and_standards
+  - product_form
+  - skin_tone
+  - suitable_for_skin_type
 - id: hb-3-2-6-4-4
   name: Foundations & Concealers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1614
-  - 1384
-  - 1261
-  - 1285
-  - 1617
-  - 1615
-  - 1616
-  - 1559
+  children: []
+  attributes:
+  - color
+  - cosmetic_finish
+  - dispenser_type
+  - product_certifications_and_standards
+  - product_form
+  - skin_care_effect
+  - skin_tone
+  - skin_undertone
+  - suitable_for_skin_type
 - id: hb-3-2-6-4-5
   name: Highlighters & Luminizers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1614
-  - 1384
-  - 1261
-  - 1285
-  - 1559
+  children: []
+  attributes:
+  - color
+  - cosmetic_finish
+  - dispenser_type
+  - product_certifications_and_standards
+  - product_form
+  - suitable_for_skin_type
 - id: hb-3-2-6-5
   name: Lip Makeup
-  children_ids:
+  children:
   - hb-3-2-6-5-1
   - hb-3-2-6-5-2
   - hb-3-2-6-5-3
   - hb-3-2-6-5-5
   - hb-3-2-6-5-6
-  attribute_ids:
-  - 1
-  - 1261
+  attributes:
+  - color
+  - product_certifications_and_standards
 - id: hb-3-2-6-5-1
   name: Lip & Cheek Stains
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1614
-  - 1261
+  children: []
+  attributes:
+  - color
+  - cosmetic_finish
+  - product_certifications_and_standards
 - id: hb-3-2-6-5-2
   name: Lip Gloss
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1614
-  - 1621
-  - 1261
+  children: []
+  attributes:
+  - color
+  - cosmetic_finish
+  - lip_gloss_effect
+  - product_certifications_and_standards
 - id: hb-3-2-6-6
   name: Makeup Finishing Sprays
-  children_ids: []
-  attribute_ids:
-  - 1614
-  - 1261
+  children: []
+  attributes:
+  - cosmetic_finish
+  - product_certifications_and_standards
 - id: hb-3-2-6-7
   name: Temporary Tattoos
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1261
+  children: []
+  attributes:
+  - color
+  - product_certifications_and_standards
 - id: hb-3-2-7
   name: Nail Care
-  children_ids:
+  children:
   - hb-3-2-7-2
   - hb-3-2-7-3
   - hb-3-2-7-4
@@ -1297,57 +1297,57 @@
   - hb-3-2-7-10
   - hb-3-2-7-11
   - hb-3-2-7-1
-  attribute_ids:
-  - 1261
+  attributes:
+  - product_certifications_and_standards
 - id: hb-3-2-7-2
   name: False Nails
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1623
-  - 1624
-  - 1261
+  children: []
+  attributes:
+  - color
+  - nail_design
+  - nail_shape
+  - product_certifications_and_standards
 - id: hb-3-2-7-3
   name: Manicure Glue
-  children_ids: []
-  attribute_ids:
-  - 1601
-  - 1625
-  - 1261
+  children: []
+  attributes:
+  - drying_speed
+  - glue_strength
+  - product_certifications_and_standards
 - id: hb-3-2-7-4
   name: Nail Art Kits & Accessories
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1261
+  children: []
+  attributes:
+  - color
+  - product_certifications_and_standards
 - id: hb-3-2-7-8
   name: Nail Polish Drying Drops & Sprays
-  children_ids: []
-  attribute_ids:
-  - 1601
-  - 1261
-  - 1285
+  children: []
+  attributes:
+  - drying_speed
+  - product_certifications_and_standards
+  - product_form
 - id: hb-3-2-7-9
   name: Nail Polish Removers
-  children_ids: []
-  attribute_ids:
-  - 1626
-  - 1261
+  children: []
+  attributes:
+  - polish_remover_form
+  - product_certifications_and_standards
 - id: hb-3-2-7-10
   name: Nail Polish Thinners
-  children_ids: []
-  attribute_ids:
-  - 1261
+  children: []
+  attributes:
+  - product_certifications_and_standards
 - id: hb-3-2-7-11
   name: Nail Polishes
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1614
-  - 1620
+  children: []
+  attributes:
+  - color
+  - cosmetic_finish
+  - product_benefits
 - id: hb-3-2-9
   name: Skin Care
-  children_ids:
+  children:
   - hb-3-2-9-1
   - hb-3-2-9-3
   - hb-3-2-9-4
@@ -1366,229 +1366,229 @@
   - hb-3-2-9-18
   - hb-3-2-9-2
   - hb-3-2-9-10
-  attribute_ids:
-  - 1261
-  - 1285
-  - 1617
-  - 1559
+  attributes:
+  - product_certifications_and_standards
+  - product_form
+  - skin_care_effect
+  - suitable_for_skin_type
 - id: hb-3-2-9-1
   name: Acne Treatments & Kits
-  children_ids: []
-  attribute_ids:
-  - 1598
-  - 1261
+  children: []
+  attributes:
+  - active_ingredient
+  - product_certifications_and_standards
 - id: hb-3-2-9-3
   name: Body Oil
-  children_ids: []
-  attribute_ids:
-  - 1598
-  - 1261
-  - 1285
-  - 1617
-  - 1559
+  children: []
+  attributes:
+  - active_ingredient
+  - product_certifications_and_standards
+  - product_form
+  - skin_care_effect
+  - suitable_for_skin_type
 - id: hb-3-2-9-4
   name: Body Powder
-  children_ids: []
-  attribute_ids:
-  - 1598
-  - 1261
-  - 1285
-  - 1617
-  - 1559
+  children: []
+  attributes:
+  - active_ingredient
+  - product_certifications_and_standards
+  - product_form
+  - skin_care_effect
+  - suitable_for_skin_type
 - id: hb-3-2-9-5
   name: Compressed Skin Care Mask Sheets
-  children_ids: []
-  attribute_ids:
-  - 1598
-  - 4
-  - 1261
-  - 1285
-  - 1617
-  - 1559
+  children: []
+  attributes:
+  - active_ingredient
+  - material
+  - product_certifications_and_standards
+  - product_form
+  - skin_care_effect
+  - suitable_for_skin_type
 - id: hb-3-2-9-6
   name: Facial Cleansers
-  children_ids: []
-  attribute_ids:
-  - 1598
-  - 1456
-  - 1261
-  - 1285
-  - 1617
-  - 1559
+  children: []
+  attributes:
+  - active_ingredient
+  - package_type
+  - product_certifications_and_standards
+  - product_form
+  - skin_care_effect
+  - suitable_for_skin_type
 - id: hb-3-2-9-7
   name: Facial Cleansing Kits
-  children_ids: []
-  attribute_ids:
-  - 1598
-  - 1456
-  - 1261
-  - 1285
-  - 1617
-  - 1559
+  children: []
+  attributes:
+  - active_ingredient
+  - package_type
+  - product_certifications_and_standards
+  - product_form
+  - skin_care_effect
+  - suitable_for_skin_type
 - id: hb-3-2-9-8
   name: Facial Pore Strips
-  children_ids: []
-  attribute_ids:
-  - 1598
-  - 1456
-  - 1261
-  - 1285
-  - 1617
-  - 1559
+  children: []
+  attributes:
+  - active_ingredient
+  - package_type
+  - product_certifications_and_standards
+  - product_form
+  - skin_care_effect
+  - suitable_for_skin_type
 - id: hb-3-2-9-9
   name: Lip Balms & Treatments
-  children_ids:
+  children:
   - hb-3-2-9-9-1
   - hb-3-2-9-9-2
-  attribute_ids:
-  - 1456
-  - 1261
-  - 1285
-  - 1559
-  - 837
+  attributes:
+  - package_type
+  - product_certifications_and_standards
+  - product_form
+  - suitable_for_skin_type
+  - target_gender
 - id: hb-3-2-9-9-1
   name: Lip Balms
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1629
-  - 1614
-  - 1458
-  - 1456
-  - 1261
-  - 1285
-  - 1559
-  - 837
+  children: []
+  attributes:
+  - color
+  - constitutive_ingredients
+  - cosmetic_finish
+  - flavor
+  - package_type
+  - product_certifications_and_standards
+  - product_form
+  - suitable_for_skin_type
+  - target_gender
 - id: hb-3-2-9-9-2
   name: Medicated Lip Treatments
-  children_ids: []
-  attribute_ids:
-  - 1598
-  - 1614
-  - 1630
-  - 1456
-  - 1261
-  - 1285
-  - 1349
-  - 1559
-  - 837
+  children: []
+  attributes:
+  - active_ingredient
+  - cosmetic_finish
+  - cosmetic_function
+  - package_type
+  - product_certifications_and_standards
+  - product_form
+  - scent
+  - suitable_for_skin_type
+  - target_gender
 - id: hb-3-2-9-11
   name: Makeup Removers
-  children_ids: []
-  attribute_ids:
-  - 1630
-  - 1456
-  - 1261
-  - 1559
+  children: []
+  attributes:
+  - cosmetic_function
+  - package_type
+  - product_certifications_and_standards
+  - suitable_for_skin_type
 - id: hb-3-2-9-12
   name: Petroleum Jelly
-  children_ids: []
-  attribute_ids:
-  - 1630
-  - 1456
-  - 1261
-  - 1559
+  children: []
+  attributes:
+  - cosmetic_function
+  - package_type
+  - product_certifications_and_standards
+  - suitable_for_skin_type
 - id: hb-3-2-9-13
   name: Skin Care Masks & Peels
-  children_ids: []
-  attribute_ids:
-  - 1631
-  - 1261
-  - 1617
-  - 1559
-  - 837
+  children: []
+  attributes:
+  - allergens
+  - product_certifications_and_standards
+  - skin_care_effect
+  - suitable_for_skin_type
+  - target_gender
 - id: hb-3-2-9-14
   name: Skin Insect Repellent
-  children_ids: []
-  attribute_ids:
-  - 1384
-  - 1261
-  - 1632
+  children: []
+  attributes:
+  - dispenser_type
+  - product_certifications_and_standards
+  - suitable_for_bug_type
 - id: hb-3-2-9-15
   name: Sunscreen
-  children_ids: []
-  attribute_ids:
-  - 1560
-  - 1384
-  - 1261
-  - 1285
-  - 1617
-  - 1559
+  children: []
+  attributes:
+  - application_area
+  - dispenser_type
+  - product_certifications_and_standards
+  - product_form
+  - skin_care_effect
+  - suitable_for_skin_type
 - id: hb-3-2-9-16
   name: Tanning Products
-  children_ids:
+  children:
   - hb-3-2-9-16-1
   - hb-3-2-9-16-2
-  attribute_ids:
-  - 1560
-  - 1384
-  - 1261
-  - 1285
-  - 1617
-  - 1633
+  attributes:
+  - application_area
+  - dispenser_type
+  - product_certifications_and_standards
+  - product_form
+  - skin_care_effect
+  - tan_type
 - id: hb-3-2-9-16-1
   name: Self Tanner
-  children_ids: []
-  attribute_ids:
-  - 1560
-  - 1384
-  - 1261
-  - 1285
-  - 1617
-  - 1633
+  children: []
+  attributes:
+  - application_area
+  - dispenser_type
+  - product_certifications_and_standards
+  - product_form
+  - skin_care_effect
+  - tan_type
 - id: hb-3-2-9-17
   name: Toners & Astringents
-  children_ids:
+  children:
   - hb-3-2-9-17-1
   - hb-3-2-9-17-2
-  attribute_ids:
-  - 1598
-  - 1630
-  - 1456
-  - 1261
-  - 1285
-  - 1559
+  attributes:
+  - active_ingredient
+  - cosmetic_function
+  - package_type
+  - product_certifications_and_standards
+  - product_form
+  - suitable_for_skin_type
 - id: hb-3-2-9-17-1
   name: Astringents
-  children_ids: []
-  attribute_ids:
-  - 1598
-  - 1630
-  - 1456
-  - 1261
-  - 1285
-  - 1559
+  children: []
+  attributes:
+  - active_ingredient
+  - cosmetic_function
+  - package_type
+  - product_certifications_and_standards
+  - product_form
+  - suitable_for_skin_type
 - id: hb-3-2-9-17-2
   name: Toners
-  children_ids: []
-  attribute_ids:
-  - 1598
-  - 1630
-  - 1456
-  - 1261
-  - 1285
-  - 1559
+  children: []
+  attributes:
+  - active_ingredient
+  - cosmetic_function
+  - package_type
+  - product_certifications_and_standards
+  - product_form
+  - suitable_for_skin_type
 - id: hb-3-2-9-18
   name: Wart Removers
-  children_ids: []
-  attribute_ids:
-  - 1563
-  - 1384
-  - 1261
-  - 1285
+  children: []
+  attributes:
+  - body_area
+  - dispenser_type
+  - product_certifications_and_standards
+  - product_form
 - id: hb-3-3
   name: Cotton Balls
-  children_ids: []
-  attribute_ids:
-  - 4
+  children: []
+  attributes:
+  - material
 - id: hb-3-4
   name: Cotton Swabs
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-6
   name: Ear Care
-  children_ids:
+  children:
   - hb-3-6-1
   - hb-3-6-2
   - hb-3-6-3
@@ -1597,153 +1597,153 @@
   - hb-3-6-6
   - hb-3-6-7
   - hb-3-6-8
-  attribute_ids: []
+  attributes: []
 - id: hb-3-6-1
   name: Ear Candles
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1349
+  children: []
+  attributes:
+  - material
+  - scent
 - id: hb-3-6-2
   name: Ear Drops
-  children_ids: []
-  attribute_ids:
-  - 1316
-  - 1285
-  - 1564
+  children: []
+  attributes:
+  - application_method
+  - product_form
+  - treatment_objective
 - id: hb-3-6-3
   name: Ear Dryers
-  children_ids: []
-  attribute_ids:
-  - 1634
-  - 1221
+  children: []
+  attributes:
+  - portability
+  - power_source
 - id: hb-3-6-4
   name: Ear Picks & Spoons
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: hb-3-6-5
   name: Ear Syringes
-  children_ids: []
-  attribute_ids:
-  - 4
+  children: []
+  attributes:
+  - material
 - id: hb-3-6-6
   name: Ear Wax Removal Kits
-  children_ids: []
-  attribute_ids:
-  - 1635
+  children: []
+  attributes:
+  - tip_material
 - id: hb-3-6-7
   name: Earplug Dispensers
-  children_ids: []
-  attribute_ids:
-  - 4
+  children: []
+  attributes:
+  - material
 - id: hb-3-6-8
   name: Earplugs
-  children_ids:
+  children:
   - hb-3-6-8-1
   - hb-3-6-8-2
   - hb-3-6-8-3
-  attribute_ids:
-  - 50
-  - 1636
-  - 4
+  attributes:
+  - accessory_size
+  - earplug_use
+  - material
 - id: hb-3-7
   name: Enema Kits & Supplies
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1564
+  children: []
+  attributes:
+  - material
+  - treatment_objective
 - id: hb-3-8
   name: Feminine Sanitary Supplies
-  children_ids:
+  children:
   - hb-3-8-4
   - hb-3-8-5
   - hb-3-8-6
   - hb-3-8-2
   - hb-3-8-3
-  attribute_ids: []
+  attributes: []
 - id: hb-3-8-4
   name: Feminine Pads & Protectors
-  children_ids:
+  children:
   - hb-3-8-4-1
   - hb-3-8-4-2
   - hb-3-8-4-3
   - hb-3-8-4-4
   - hb-3-8-4-5
   - hb-3-8-4-6
-  attribute_ids:
-  - 894
-  - 4
-  - 1261
+  attributes:
+  - absorbency_level
+  - material
+  - product_certifications_and_standards
 - id: hb-3-8-5
   name: Menstrual Cups
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 1
-  - 4
-  - 1638
-  - 843
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - material
+  - menstrual_cup_shape
+  - usage_type
 - id: hb-3-8-6
   name: Tampons
-  children_ids: []
-  attribute_ids:
-  - 1639
-  - 4
-  - 1261
+  children: []
+  attributes:
+  - applicator_material
+  - material
+  - product_certifications_and_standards
 - id: hb-3-9
   name: Foot Care
-  children_ids:
+  children:
   - hb-3-9-1
   - hb-3-9-2
   - hb-3-9-3
   - hb-3-9-4
   - hb-3-9-5
-  attribute_ids:
-  - 1563
+  attributes:
+  - body_area
 - id: hb-3-9-1
   name: Bunion Care Supplies
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 1563
-  - 1
-  - 4
+  children: []
+  attributes:
+  - accessory_size
+  - body_area
+  - color
+  - material
 - id: hb-3-9-2
   name: Corn & Callus Care Supplies
-  children_ids: []
-  attribute_ids:
-  - 1563
-  - 4
+  children: []
+  attributes:
+  - body_area
+  - material
 - id: hb-3-9-3
   name: Foot Odor Removers
-  children_ids: []
-  attribute_ids:
-  - 1563
-  - 1384
-  - 1285
+  children: []
+  attributes:
+  - body_area
+  - dispenser_type
+  - product_form
 - id: hb-3-9-4
   name: Insoles & Inserts
-  children_ids:
+  children:
   - hb-3-9-4-1
   - hb-3-9-4-2
   - hb-3-9-4-3
-  attribute_ids:
-  - 1563
-  - 1640
-  - 4
-  - 1564
+  attributes:
+  - body_area
+  - compatible_shoe_size
+  - material
+  - treatment_objective
 - id: hb-3-9-5
   name: Toe Spacers
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 1563
-  - 4
+  children: []
+  attributes:
+  - accessory_size
+  - body_area
+  - material
 - id: hb-3-10
   name: Hair Care
-  children_ids:
+  children:
   - hb-3-10-1
   - hb-3-10-2
   - hb-3-10-3
@@ -1757,169 +1757,169 @@
   - hb-3-10-11
   - hb-3-10-12
   - hb-3-10-13
-  attribute_ids:
-  - 837
+  attributes:
+  - target_gender
 - id: hb-3-10-1
   name: Hair Care Kits
-  children_ids: []
-  attribute_ids:
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-2
   name: Hair Color
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 837
+  children: []
+  attributes:
+  - color
+  - target_gender
 - id: hb-3-10-3
   name: Hair Color Removers
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-4
   name: Hair Coloring Accessories
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 837
+  children: []
+  attributes:
+  - color
+  - target_gender
 - id: hb-3-10-5
   name: Hair Loss Concealers
-  children_ids: []
-  attribute_ids:
-  - 1285
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - product_form
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-6
   name: Hair Loss Treatments
-  children_ids: []
-  attribute_ids:
-  - 1643
-  - 837
-  - 1644
+  children: []
+  attributes:
+  - hair_loss_type
+  - target_gender
+  - treatment_type
 - id: hb-3-10-7
   name: Hair Permanents & Straighteners
-  children_ids: []
-  attribute_ids:
-  - 1285
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - product_form
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-8
   name: Hair Shears
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 837
+  children: []
+  attributes:
+  - material
+  - target_gender
 - id: hb-3-10-9
   name: Hair Steamers & Heat Caps
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 837
+  children: []
+  attributes:
+  - color
+  - target_gender
 - id: hb-3-10-10
   name: Hair Styling Products
-  children_ids: []
-  attribute_ids:
-  - 1645
-  - 1199
-  - 1646
-  - 837
+  children: []
+  attributes:
+  - hair_care_finish
+  - hair_type
+  - hold_level
+  - target_gender
 - id: hb-3-10-11
   name: Hair Styling Tool Accessories
-  children_ids:
+  children:
   - hb-3-10-11-1
   - hb-3-10-11-2
   - hb-3-10-11-3
-  attribute_ids: []
+  attributes: []
 - id: hb-3-10-11-1
   name: Hair Curler Clips & Pins
-  children_ids:
+  children:
   - hb-3-10-11-1-1
   - hb-3-10-11-1-2
-  attribute_ids:
-  - 50
-  - 4
+  attributes:
+  - accessory_size
+  - material
 - id: hb-3-10-11-2
   name: Hair Dryer Accessories
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-10-11-3
   name: Hair Iron Accessories
-  children_ids: []
-  attribute_ids:
-  - 4
+  children: []
+  attributes:
+  - material
 - id: hb-3-10-12
   name: Hair Styling Tools
-  children_ids:
+  children:
   - hb-3-10-12-2
   - hb-3-10-12-3
   - hb-3-10-12-5
   - hb-3-10-12-6
   - hb-3-10-12-7
   - hb-3-10-12-9
-  attribute_ids:
-  - 1
-  - 1647
+  attributes:
+  - color
+  - hair_care_technology
 - id: hb-3-10-12-2
   name: Combs & Brushes
-  children_ids:
+  children:
   - hb-3-10-12-2-1
   - hb-3-10-12-2-2
   - hb-3-10-12-2-3
   - hb-3-10-12-2-4
   - hb-3-10-12-2-5
   - hb-3-10-12-2-6
-  attribute_ids:
-  - 1
+  attributes:
+  - color
 - id: hb-3-10-12-3
   name: Curling Irons
-  children_ids: []
-  attribute_ids:
-  - 1648
-  - 1
-  - 1647
-  - 1649
+  children: []
+  attributes:
+  - barrel_material
+  - color
+  - hair_care_technology
+  - heat_settings
 - id: hb-3-10-12-5
   name: Hair Curlers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1650
-  - 1649
-  - 4
+  children: []
+  attributes:
+  - color
+  - curler_type
+  - heat_settings
+  - material
 - id: hb-3-10-12-6
   name: Hair Dryers
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-10-12-7
   name: Hair Straighteners
-  children_ids: []
-  attribute_ids:
-  - 1649
-  - 1651
+  children: []
+  attributes:
+  - heat_settings
+  - plate_type
 - id: hb-3-10-12-9
   name: Hair Styling Tool Sets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1647
+  children: []
+  attributes:
+  - color
+  - hair_care_technology
 - id: hb-3-10-13
   name: Shampoo & Conditioner
-  children_ids:
+  children:
   - hb-3-10-13-1
   - hb-3-10-13-3
   - hb-3-10-13-2
-  attribute_ids:
-  - 1642
-  - 1261
-  - 1641
-  - 837
+  attributes:
+  - compatible_hair_color
+  - product_certifications_and_standards
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-1
   name: Conditioners
-  children_ids:
+  children:
   - hb-3-10-13-1-1
   - hb-3-10-13-1-2
   - hb-3-10-13-1-3
@@ -1931,15 +1931,15 @@
   - hb-3-10-13-1-9
   - hb-3-10-13-1-10
   - hb-3-10-13-1-11
-  attribute_ids:
-  - 1642
-  - 1652
-  - 1261
-  - 1641
-  - 837
+  attributes:
+  - compatible_hair_color
+  - conditioner_effect
+  - product_certifications_and_standards
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-3
   name: Shampoo
-  children_ids:
+  children:
   - hb-3-10-13-3-1
   - hb-3-10-13-3-2
   - hb-3-10-13-3-3
@@ -1954,28 +1954,28 @@
   - hb-3-10-13-3-12
   - hb-3-10-13-3-13
   - hb-3-10-13-3-14
-  attribute_ids:
-  - 1642
-  - 1261
-  - 1653
-  - 1641
-  - 837
+  attributes:
+  - compatible_hair_color
+  - product_certifications_and_standards
+  - shampoo_type
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-2
   name: Shampoo & Conditioner Sets
-  children_ids:
+  children:
   - hb-3-10-13-2-1
   - hb-3-10-13-2-2
   - hb-3-10-13-2-3
   - hb-3-10-13-2-4
   - hb-3-10-13-2-5
   - hb-3-10-13-2-6
-  attribute_ids:
-  - 1642
-  - 1641
-  - 837
+  attributes:
+  - compatible_hair_color
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-11
   name: Massage & Relaxation
-  children_ids:
+  children:
   - hb-3-11-1
   - hb-3-11-2
   - hb-3-11-3
@@ -1984,83 +1984,83 @@
   - hb-3-11-6
   - hb-3-11-7
   - hb-3-11-8
-  attribute_ids:
-  - 1654
-  - 1528
+  attributes:
+  - heat_function
+  - massage_technique
 - id: hb-3-11-1
   name: Back Scratchers
-  children_ids: []
-  attribute_ids:
-  - 1655
-  - 4
+  children: []
+  attributes:
+  - claw_design
+  - material
 - id: hb-3-11-2
   name: Eye Pillows
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 1656
-  - 4
-  - 1349
+  children: []
+  attributes:
+  - accessory_size
+  - eye_pillow_shape
+  - material
+  - scent
 - id: hb-3-11-3
   name: Massage Chairs
-  children_ids: []
-  attribute_ids:
-  - 1657
-  - 1528
-  - 1658
+  children: []
+  attributes:
+  - massage_area
+  - massage_technique
+  - reclining_function
 - id: hb-3-11-4
   name: Massage Oil
-  children_ids: []
-  attribute_ids:
-  - 1659
-  - 1660
-  - 1558
+  children: []
+  attributes:
+  - aromatherapy
+  - base_oil
+  - texture
 - id: hb-3-11-5
   name: Massage Stone Warmers
-  children_ids: []
-  attribute_ids:
-  - 1661
+  children: []
+  attributes:
+  - stone_name
 - id: hb-3-11-6
   name: Massage Stones
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 73
-  - 1661
-  - 1662
-  - 1558
+  children: []
+  attributes:
+  - material
+  - shape
+  - stone_name
+  - stone_type
+  - texture
 - id: hb-3-11-7
   name: Massage Tables
-  children_ids: []
-  attribute_ids:
-  - 4
+  children: []
+  attributes:
+  - material
 - id: hb-3-11-8
   name: Massagers
-  children_ids:
+  children:
   - hb-3-11-8-1
   - hb-3-11-8-2
   - hb-3-11-8-3
-  attribute_ids: []
+  attributes: []
 - id: hb-3-11-8-1
   name: Electric Massagers
-  children_ids: []
-  attribute_ids:
-  - 1560
-  - 1528
-  - 1221
+  children: []
+  attributes:
+  - application_area
+  - massage_technique
+  - power_source
 - id: hb-3-11-8-2
   name: Manual Massage Tools
-  children_ids: []
-  attribute_ids:
-  - 1528
+  children: []
+  attributes:
+  - massage_technique
 - id: hb-3-11-8-3
   name: Massage Cushions
-  children_ids: []
-  attribute_ids:
-  - 1563
+  children: []
+  attributes:
+  - body_area
 - id: hb-3-12
   name: Oral Care
-  children_ids:
+  children:
   - hb-3-12-2
   - hb-3-12-3
   - hb-3-12-4
@@ -2081,88 +2081,88 @@
   - hb-3-12-18
   - hb-3-12-20
   - hb-3-12-1
-  attribute_ids: []
+  attributes: []
 - id: hb-3-12-2
   name: Dental Floss
-  children_ids: []
-  attribute_ids:
-  - 1664
-  - 1458
-  - 4
+  children: []
+  attributes:
+  - dental_floss_thickness_level
+  - flavor
+  - material
 - id: hb-3-12-3
   name: Dental Mouthguards
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1665
-  - 4
+  children: []
+  attributes:
+  - age_group
+  - dental_mouthguard_certifications
+  - material
 - id: hb-3-12-4
   name: Dental Water Jet Replacement Tips
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1605
+  children: []
+  attributes:
+  - color
+  - compatible_makeup
 - id: hb-3-12-5
   name: Dental Water Jets
-  children_ids: []
-  attribute_ids:
-  - 1666
-  - 1221
+  children: []
+  attributes:
+  - nozzle_type
+  - power_source
 - id: hb-3-12-6
   name: Denture Adhesives
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-3-12-7
   name: Denture Cleaners
-  children_ids: []
-  attribute_ids:
-  - 1285
+  children: []
+  attributes:
+  - product_form
 - id: hb-3-12-8
   name: Denture Repair Kits
-  children_ids: []
-  attribute_ids:
-  - 4
+  children: []
+  attributes:
+  - material
 - id: hb-3-12-9
   name: Dentures
-  children_ids: []
-  attribute_ids:
-  - 1667
-  - 1668
-  - 4
-  - 837
+  children: []
+  attributes:
+  - denture_base_color
+  - denture_teeth_color
+  - material
+  - target_gender
 - id: hb-3-12-10
   name: Gum Stimulators
-  children_ids:
+  children:
   - hb-3-12-10-1
   - hb-3-12-10-2
-  attribute_ids:
-  - 50
-  - 1669
-  - 4
-  - 1670
+  attributes:
+  - accessory_size
+  - handle_grip_texture
+  - material
+  - tip_shape
 - id: hb-3-12-11
   name: Mouthwash
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-3-12-12
   name: Orthodontic Appliance Cases
-  children_ids:
+  children:
   - hb-3-12-12-1
   - hb-3-12-12-2
-  attribute_ids:
-  - 50
-  - 80
-  - 1
-  - 4
+  attributes:
+  - accessory_size
+  - closure_type
+  - color
+  - material
 - id: hb-3-12-13
   name: Power Flossers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1221
+  children: []
+  attributes:
+  - color
+  - power_source
 - id: hb-3-12-14
   name: Teeth Whiteners
-  children_ids:
+  children:
   - hb-3-12-14-1
   - hb-3-12-14-2
   - hb-3-12-14-3
@@ -2173,75 +2173,75 @@
   - hb-3-12-14-8
   - hb-3-12-14-9
   - hb-3-12-14-10
-  attribute_ids:
-  - 1671
-  - 1672
+  attributes:
+  - peroxide_content
+  - usage_frequency
 - id: hb-3-12-15
   name: Tongue Scrapers
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-12-16
   name: Toothbrush Accessories
-  children_ids:
+  children:
   - hb-3-12-16-1
   - hb-3-12-16-2
   - hb-3-12-16-3
-  attribute_ids: []
+  attributes: []
 - id: hb-3-12-16-1
   name: Toothbrush Covers
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-12-16-2
   name: Toothbrush Replacement Heads
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-12-16-3
   name: Toothbrush Sanitizers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1205
-  - 1221
-  - 1673
+  children: []
+  attributes:
+  - color
+  - mounting_type
+  - power_source
+  - suitable_for_toothbrush
 - id: hb-3-12-17
   name: Toothbrushes
-  children_ids:
+  children:
   - hb-3-12-17-1
   - hb-3-12-17-2
   - hb-3-12-17-3
-  attribute_ids:
-  - 30
-  - 1
+  attributes:
+  - age_group
+  - color
 - id: hb-3-12-19
   name: Toothpaste
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1674
+  children: []
+  attributes:
+  - age_group
+  - toothpaste_type
 - id: hb-3-12-18
   name: Toothpaste Squeezers & Dispensers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 1205
+  children: []
+  attributes:
+  - color
+  - material
+  - mounting_type
 - id: hb-3-12-20
   name: Toothpicks
-  children_ids: []
-  attribute_ids:
-  - 1675
+  children: []
+  attributes:
+  - toothpick_design
 - id: hb-3-13
   name: Personal Lubricants
-  children_ids: []
-  attribute_ids:
-  - 1676
-  - 1677
+  children: []
+  attributes:
+  - lubricant_application
+  - lubricant_composition
 - id: hb-3-14
   name: Shaving & Grooming
-  children_ids:
+  children:
   - hb-3-14-1
   - hb-3-14-2
   - hb-3-14-3
@@ -2255,1474 +2255,1474 @@
   - hb-3-14-12
   - hb-3-14-13
   - hb-3-14-11
-  attribute_ids: []
+  attributes: []
 - id: hb-3-14-1
   name: Aftershave
-  children_ids: []
-  attribute_ids:
-  - 1559
+  children: []
+  attributes:
+  - suitable_for_skin_type
 - id: hb-3-14-2
   name: Body & Facial Hair Bleach
-  children_ids: []
-  attribute_ids:
-  - 1316
-  - 1678
+  children: []
+  attributes:
+  - application_method
+  - body_facial_hair_type
 - id: hb-3-14-3
   name: Electric Razor Accessories
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: hb-3-14-4
   name: Electric Razors
-  children_ids:
+  children:
   - hb-3-14-4-1
   - hb-3-14-4-2
   - hb-3-14-4-3
-  attribute_ids:
-  - 1679
-  - 1680
-  - 1681
+  attributes:
+  - razor_flexibility
+  - razor_head_design
+  - usage_conditions
 - id: hb-3-14-5
   name: Hair Clipper & Trimmer Accessories
-  children_ids: []
-  attribute_ids:
-  - 4
+  children: []
+  attributes:
+  - material
 - id: hb-3-14-6
   name: Hair Clippers & Trimmers
-  children_ids: []
-  attribute_ids:
-  - 1682
-  - 1
-  - 1221
+  children: []
+  attributes:
+  - battery_size
+  - color
+  - power_source
 - id: hb-3-14-7
   name: Hair Removal
-  children_ids:
+  children:
   - hb-3-14-7-1
   - hb-3-14-7-2
   - hb-3-14-7-3
   - hb-3-14-7-4
   - hb-3-14-7-5
   - hb-3-14-7-6
-  attribute_ids: []
+  attributes: []
 - id: hb-3-14-7-1
   name: Depilatories
-  children_ids: []
-  attribute_ids:
-  - 1563
+  children: []
+  attributes:
+  - body_area
 - id: hb-3-14-7-2
   name: Electrolysis Devices
-  children_ids: []
-  attribute_ids:
-  - 1563
-  - 1647
-  - 1221
+  children: []
+  attributes:
+  - body_area
+  - hair_care_technology
+  - power_source
 - id: hb-3-14-7-3
   name: Epilators
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-14-7-4
   name: Hair Removal Wax Warmers
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-14-7-5
   name: Laser & IPL Hair Removal Devices
-  children_ids:
+  children:
   - hb-3-14-7-5-1
   - hb-3-14-7-5-2
-  attribute_ids:
-  - 1563
-  - 1642
-  - 1683
+  attributes:
+  - body_area
+  - compatible_hair_color
+  - suitable_for_skin_tone
 - id: hb-3-14-7-6
   name: Waxing Kits & Supplies
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-3-14-8
   name: Razors & Razor Blades
-  children_ids: []
-  attribute_ids:
-  - 837
+  children: []
+  attributes:
+  - target_gender
 - id: hb-3-14-9
   name: Shaving Bowls & Mugs
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-14-10
   name: Shaving Brushes
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: hb-3-14-12
   name: Shaving Kits
-  children_ids: []
-  attribute_ids:
-  - 1685
-  - 1686
-  - 1687
-  - 1688
+  children: []
+  attributes:
+  - brush_type
+  - razor_type
+  - shaving_kit_components
+  - stand_material
 - id: hb-3-14-13
   name: Styptic Pencils
-  children_ids: []
-  attribute_ids:
-  - 1598
-  - 1559
+  children: []
+  attributes:
+  - active_ingredient
+  - suitable_for_skin_type
 - id: hb-3-15
   name: Sleeping Aids
-  children_ids:
+  children:
   - hb-3-15-1
   - hb-3-15-2
   - hb-3-15-3
   - hb-3-15-4
-  attribute_ids: []
+  attributes: []
 - id: hb-3-15-1
   name: Eye Masks
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: hb-3-15-2
   name: Snoring & Sleep Apnea Aids
-  children_ids:
+  children:
   - hb-3-15-2-1
   - hb-3-15-2-2
   - hb-3-15-2-3
   - hb-3-15-2-4
   - hb-3-15-2-5
   - hb-3-15-2-6
-  attribute_ids:
-  - 4
-  - 1564
+  attributes:
+  - material
+  - treatment_objective
 - id: hb-3-15-3
   name: Travel Pillows
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1689
+  children: []
+  attributes:
+  - material
+  - travel_pillow_shape
 - id: hb-3-15-4
   name: White Noise Machines
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-16
   name: Spray Tanning Tents
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 1
-  - 4
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - material
 - id: hb-3-17
   name: Tanning Beds
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-3-18
   name: Tweezers
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-19
   name: Vision Care
-  children_ids:
+  children:
   - hb-3-19-1
   - hb-3-19-2
   - hb-3-19-3
   - hb-3-19-4
   - hb-3-19-5
   - hb-3-19-6
-  attribute_ids: []
+  attributes: []
 - id: hb-3-19-1
   name: Contact Lens Care
-  children_ids:
+  children:
   - hb-3-19-1-1
   - hb-3-19-1-2
   - hb-3-19-1-3
   - hb-3-19-1-4
-  attribute_ids: []
+  attributes: []
 - id: hb-3-19-1-1
   name: Contact Lens Care Kits
-  children_ids: []
-  attribute_ids:
-  - 1456
-  - 1690
+  children: []
+  attributes:
+  - package_type
+  - solution_type
 - id: hb-3-19-1-2
   name: Contact Lens Cases
-  children_ids:
+  children:
   - hb-3-19-1-2-1
   - hb-3-19-1-2-2
-  attribute_ids:
-  - 50
-  - 1
-  - 4
+  attributes:
+  - accessory_size
+  - color
+  - material
 - id: hb-3-19-1-3
   name: Contact Lens Solution
-  children_ids: []
-  attribute_ids:
-  - 1691
-  - 1690
+  children: []
+  attributes:
+  - bottle_type
+  - solution_type
 - id: hb-3-19-2
   name: Eye Drops & Lubricants
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-3-19-3
   name: Eyeglass Lenses
-  children_ids: []
-  attribute_ids:
-  - 1225
+  children: []
+  attributes:
+  - lens_material
 - id: hb-3-19-4
   name: Eyeglasses
-  children_ids: []
-  attribute_ids:
-  - 1224
-  - 1692
-  - 1693
-  - 1225
-  - 1694
-  - 1695
+  children: []
+  attributes:
+  - frame_material
+  - frame_shape
+  - lens_coating
+  - lens_material
+  - lens_type
+  - optical_frame_design
 - id: hb-3-19-5
   name: Eyewear Accessories
-  children_ids:
+  children:
   - hb-3-19-5-1
   - hb-3-19-5-2
   - hb-3-19-5-3
   - hb-3-19-5-4
-  attribute_ids: []
+  attributes: []
 - id: hb-3-19-5-1
   name: Eyewear Cases & Holders
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 80
-  - 4
+  children: []
+  attributes:
+  - accessory_size
+  - closure_type
+  - material
 - id: hb-3-19-5-2
   name: Eyewear Lens Cleaning Solutions
-  children_ids: []
-  attribute_ids:
-  - 1691
-  - 1690
+  children: []
+  attributes:
+  - bottle_type
+  - solution_type
 - id: hb-3-19-5-3
   name: Eyewear Replacement Parts
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-3-19-5-4
   name: Eyewear Straps & Chains
-  children_ids:
+  children:
   - hb-3-19-5-4-1
   - hb-3-19-5-4-2
-  attribute_ids:
-  - 1
-  - 4
+  attributes:
+  - color
+  - material
 - id: hb-3-19-6
   name: Sunglass Lenses
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1225
-  - 1694
-  - 1696
+  children: []
+  attributes:
+  - color
+  - lens_material
+  - lens_type
+  - uv_protection
 - id: hb-1-9-6-1
   name: Amino Acids
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1570
-  - 1452
-  - 1458
-  - 1261
-  - 1285
+  children: []
+  attributes:
+  - age_group
+  - detailed_ingredients
+  - dietary_preferences
+  - flavor
+  - product_certifications_and_standards
+  - product_form
 - id: hb-1-9-6-2
   name: Collagen
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1570
-  - 1452
-  - 1458
-  - 1261
-  - 1285
+  children: []
+  attributes:
+  - age_group
+  - detailed_ingredients
+  - dietary_preferences
+  - flavor
+  - product_certifications_and_standards
+  - product_form
 - id: hb-1-9-6-3
   name: Creatine
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1570
-  - 1452
-  - 1458
-  - 1261
-  - 1285
+  children: []
+  attributes:
+  - age_group
+  - detailed_ingredients
+  - dietary_preferences
+  - flavor
+  - product_certifications_and_standards
+  - product_form
 - id: hb-1-9-6-4
   name: Digestive Supplements
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1570
-  - 1452
-  - 1458
-  - 1261
-  - 1285
+  children: []
+  attributes:
+  - age_group
+  - detailed_ingredients
+  - dietary_preferences
+  - flavor
+  - product_certifications_and_standards
+  - product_form
 - id: hb-1-9-6-5
   name: Herbal Supplements
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1570
-  - 1452
-  - 1458
-  - 1261
-  - 1285
+  children: []
+  attributes:
+  - age_group
+  - detailed_ingredients
+  - dietary_preferences
+  - flavor
+  - product_certifications_and_standards
+  - product_form
 - id: hb-1-9-6-6
   name: Minerals
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1570
-  - 1452
-  - 1458
-  - 1261
-  - 1285
+  children: []
+  attributes:
+  - age_group
+  - detailed_ingredients
+  - dietary_preferences
+  - flavor
+  - product_certifications_and_standards
+  - product_form
 - id: hb-1-9-6-7
   name: Multivitamin Supplements
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1570
-  - 1452
-  - 1458
-  - 1261
-  - 1285
-  - 837
+  children: []
+  attributes:
+  - age_group
+  - detailed_ingredients
+  - dietary_preferences
+  - flavor
+  - product_certifications_and_standards
+  - product_form
+  - target_gender
 - id: hb-1-9-6-8
   name: Protein Supplements
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1570
-  - 1452
-  - 1458
-  - 1569
-  - 1261
-  - 1285
+  children: []
+  attributes:
+  - age_group
+  - detailed_ingredients
+  - dietary_preferences
+  - flavor
+  - ingredient_category
+  - product_certifications_and_standards
+  - product_form
 - id: hb-1-9-6-9
   name: Single Vitamins
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1570
-  - 1452
-  - 1458
-  - 1261
-  - 1285
+  children: []
+  attributes:
+  - age_group
+  - detailed_ingredients
+  - dietary_preferences
+  - flavor
+  - product_certifications_and_standards
+  - product_form
 - id: hb-1-10-1
   name: Behind-The-Ear (BTE) Hearing Aids
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1571
-  - 4
-  - 1572
+  children: []
+  attributes:
+  - age_group
+  - battery_type
+  - material
+  - technology_level
 - id: hb-1-10-2
   name: Body-Worn Hearing Aids
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1571
-  - 4
-  - 1572
+  children: []
+  attributes:
+  - age_group
+  - battery_type
+  - material
+  - technology_level
 - id: hb-1-10-3
   name: Bone-Anchored Hearing Aids (BAHA)
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1571
-  - 4
-  - 1572
+  children: []
+  attributes:
+  - age_group
+  - battery_type
+  - material
+  - technology_level
 - id: hb-1-10-4
   name: Completely-In-Canal (CIC) Hearing Aids
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1571
-  - 4
-  - 1572
+  children: []
+  attributes:
+  - age_group
+  - battery_type
+  - material
+  - technology_level
 - id: hb-1-10-5
   name: Full-Shell In-the-Ear (FSITE) Hearing Aids
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1571
-  - 4
-  - 1572
+  children: []
+  attributes:
+  - age_group
+  - battery_type
+  - material
+  - technology_level
 - id: hb-1-10-6
   name: Half-Shell In-the-Ear (HSITE) Hearing Aids
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1571
-  - 4
-  - 1572
+  children: []
+  attributes:
+  - age_group
+  - battery_type
+  - material
+  - technology_level
 - id: hb-1-10-7
   name: In-The-Canal (ITC) Hearing Aids
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1571
-  - 4
-  - 1572
+  children: []
+  attributes:
+  - age_group
+  - battery_type
+  - material
+  - technology_level
 - id: hb-1-10-8
   name: In-The-Ear (ITE) Hearing Aids
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1571
-  - 4
-  - 1572
+  children: []
+  attributes:
+  - age_group
+  - battery_type
+  - material
+  - technology_level
 - id: hb-1-10-9
   name: Invisible-In-Canal (IIC) Hearing Aids
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1571
-  - 4
-  - 1572
+  children: []
+  attributes:
+  - age_group
+  - battery_type
+  - material
+  - technology_level
 - id: hb-1-10-10
   name: Mini Behind-The-Ear (mBTE) Hearing Aids
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1571
-  - 4
-  - 1572
+  children: []
+  attributes:
+  - age_group
+  - battery_type
+  - material
+  - technology_level
 - id: hb-1-11-6
   name: Adult Diapers
-  children_ids: []
-  attribute_ids:
-  - 894
-  - 50
-  - 1573
-  - 4
-  - 837
+  children: []
+  attributes:
+  - absorbency_level
+  - accessory_size
+  - diaper_type
+  - material
+  - target_gender
 - id: hb-1-11-7
   name: Bed Pads
-  children_ids: []
-  attribute_ids:
-  - 894
-  - 50
-  - 4
+  children: []
+  attributes:
+  - absorbency_level
+  - accessory_size
+  - material
 - id: hb-1-11-8
   name: Incontinence Pads
-  children_ids: []
-  attribute_ids:
-  - 894
-  - 50
-  - 4
+  children: []
+  attributes:
+  - absorbency_level
+  - accessory_size
+  - material
 - id: hb-1-17-3-1-1
   name: Padded Shower Benches
-  children_ids: []
-  attribute_ids:
-  - 1267
-  - 4
-  - 1205
+  children: []
+  attributes:
+  - attachment_type
+  - material
+  - mounting_type
 - id: hb-1-17-3-1-2
   name: Shower Benches
-  children_ids: []
-  attribute_ids:
-  - 1267
-  - 4
-  - 1205
+  children: []
+  attributes:
+  - attachment_type
+  - material
+  - mounting_type
 - id: hb-1-17-3-1-3
   name: Shower Seats
-  children_ids: []
-  attribute_ids:
-  - 1267
-  - 4
-  - 1205
+  children: []
+  attributes:
+  - attachment_type
+  - material
+  - mounting_type
 - id: hb-1-17-3-1-4
   name: Transfer Benches
-  children_ids: []
-  attribute_ids:
-  - 1267
-  - 4
-  - 1205
+  children: []
+  attributes:
+  - attachment_type
+  - material
+  - mounting_type
 - id: hb-1-17-3-1-5
   name: Wall-Mounted Shower Seats
-  children_ids: []
-  attribute_ids:
-  - 1267
-  - 4
-  - 1205
+  children: []
+  attributes:
+  - attachment_type
+  - material
+  - mounting_type
 - id: hb-1-17-5-1-1
   name: Folding Canes
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: hb-1-17-5-1-2
   name: Offset Canes
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: hb-1-17-5-1-3
   name: Quad Canes
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: hb-1-17-5-1-4
   name: Walking Sticks
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: hb-1-20-3-1
   name: APAP Machines
-  children_ids: []
-  attribute_ids:
-  - 1221
+  children: []
+  attributes:
+  - power_source
 - id: hb-1-20-3-2
   name: BiPAP Machines
-  children_ids: []
-  attribute_ids:
-  - 1221
+  children: []
+  attributes:
+  - power_source
 - id: hb-1-20-3-3
   name: CPAP Machines
-  children_ids: []
-  attribute_ids:
-  - 1221
+  children: []
+  attributes:
+  - power_source
 - id: hb-1-24-1
   name: Ankle Supports
-  children_ids: []
-  attribute_ids:
-  - 80
-  - 1
-  - 4
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - material
 - id: hb-1-24-2
   name: Back Braces
-  children_ids: []
-  attribute_ids:
-  - 80
-  - 1
-  - 4
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - material
 - id: hb-1-24-3
   name: Elbow Supports
-  children_ids: []
-  attribute_ids:
-  - 80
-  - 1
-  - 4
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - material
 - id: hb-1-24-4
   name: Knee Braces
-  children_ids: []
-  attribute_ids:
-  - 80
-  - 1
-  - 4
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - material
 - id: hb-1-24-5
   name: Neck Braces
-  children_ids: []
-  attribute_ids:
-  - 80
-  - 1
-  - 4
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - material
 - id: hb-1-24-6
   name: Wrist Braces
-  children_ids: []
-  attribute_ids:
-  - 80
-  - 1
-  - 4
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - material
 - id: hb-2-2-1
   name: Jewelry Cleaning Brushes
-  children_ids: []
-  attribute_ids:
-  - 1596
+  children: []
+  attributes:
+  - compatible_material
 - id: hb-2-2-2
   name: Jewelry Polishing Cloths
-  children_ids: []
-  attribute_ids:
-  - 1596
+  children: []
+  attributes:
+  - compatible_material
 - id: hb-2-2-3
   name: Jewelry Steam Cleaners
-  children_ids: []
-  attribute_ids:
-  - 1596
+  children: []
+  attributes:
+  - compatible_material
 - id: hb-2-2-4
   name: Ultrasonic Jewelry Cleaners
-  children_ids: []
-  attribute_ids:
-  - 1596
+  children: []
+  attributes:
+  - compatible_material
 - id: hb-2-3-1
   name: Jewelry Boxes
-  children_ids: []
-  attribute_ids:
-  - 1596
+  children: []
+  attributes:
+  - compatible_material
 - id: hb-2-3-2
   name: Jewelry Stands
-  children_ids: []
-  attribute_ids:
-  - 1596
+  children: []
+  attributes:
+  - compatible_material
 - id: hb-2-3-3
   name: Jewelry Trays
-  children_ids: []
-  attribute_ids:
-  - 1596
+  children: []
+  attributes:
+  - compatible_material
 - id: hb-2-3-4
   name: Ring Holders
-  children_ids: []
-  attribute_ids:
-  - 1596
+  children: []
+  attributes:
+  - compatible_material
 - id: hb-2-3-5
   name: Wall-Mounted Jewelry Organizers
-  children_ids: []
-  attribute_ids:
-  - 1596
+  children: []
+  attributes:
+  - compatible_material
 - id: hb-3-2-1-7
   name: Hygienic Wipes
-  children_ids: []
-  attribute_ids:
-  - 1349
-  - 1753
+  children: []
+  attributes:
+  - scent
+  - wipe_packaging
 - id: hb-3-2-6-3-1
   name: Eye Primers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1384
-  - 1261
-  - 1285
-  - 1617
+  children: []
+  attributes:
+  - color
+  - dispenser_type
+  - product_certifications_and_standards
+  - product_form
+  - skin_care_effect
 - id: hb-3-2-6-3-2
   name: Eye Shadows
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1614
-  - 1618
-  - 1261
-  - 1285
+  children: []
+  attributes:
+  - color
+  - cosmetic_finish
+  - eye_shadow_effect
+  - product_certifications_and_standards
+  - product_form
 - id: hb-3-2-6-3-7
   name: Mascara Primers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1261
-  - 1285
+  children: []
+  attributes:
+  - color
+  - product_certifications_and_standards
+  - product_form
 - id: hb-3-2-6-3-8
   name: Mascaras
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1619
-  - 1261
+  children: []
+  attributes:
+  - color
+  - mascara_effect
+  - product_certifications_and_standards
 - id: hb-3-2-6-4-3
   name: Face Primers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1614
-  - 1384
-  - 1261
-  - 1285
-  - 1617
-  - 1559
+  children: []
+  attributes:
+  - color
+  - cosmetic_finish
+  - dispenser_type
+  - product_certifications_and_standards
+  - product_form
+  - skin_care_effect
+  - suitable_for_skin_type
 - id: hb-3-2-6-5-3
   name: Lip Liners
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1614
-  - 1620
-  - 1261
-  - 1558
+  children: []
+  attributes:
+  - color
+  - cosmetic_finish
+  - product_benefits
+  - product_certifications_and_standards
+  - texture
 - id: hb-3-2-6-5-5
   name: Lip Primers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1614
-  - 1384
-  - 1261
-  - 1558
+  children: []
+  attributes:
+  - color
+  - cosmetic_finish
+  - dispenser_type
+  - product_certifications_and_standards
+  - texture
 - id: hb-3-2-6-5-6
   name: Lipsticks
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1614
-  - 1622
-  - 1261
-  - 1558
+  children: []
+  attributes:
+  - color
+  - cosmetic_finish
+  - lipstick_effect
+  - product_certifications_and_standards
+  - texture
 - id: hb-3-2-7-1
   name: Cuticle Creams & Oil
-  children_ids:
+  children:
   - hb-3-2-7-1-1
   - hb-3-2-7-1-2
-  attribute_ids:
-  - 1570
-  - 1261
+  attributes:
+  - detailed_ingredients
+  - product_certifications_and_standards
 - id: hb-3-2-7-1-1
   name: Cuticle Creams
-  children_ids: []
-  attribute_ids:
-  - 1570
-  - 1261
+  children: []
+  attributes:
+  - detailed_ingredients
+  - product_certifications_and_standards
 - id: hb-3-2-7-1-2
   name: Cuticle Oil
-  children_ids: []
-  attribute_ids:
-  - 1570
-  - 1261
+  children: []
+  attributes:
+  - detailed_ingredients
+  - product_certifications_and_standards
 - id: hb-3-2-8
   name: Perfumes & Colognes
-  children_ids:
+  children:
   - hb-3-2-8-1
   - hb-3-2-8-2
   - hb-3-2-8-3
   - hb-3-2-8-4
-  attribute_ids:
-  - 1627
-  - 1349
-  - 1628
-  - 837
+  attributes:
+  - occasion
+  - scent
+  - season
+  - target_gender
 - id: hb-3-2-8-1
   name: Body Mists
-  children_ids: []
-  attribute_ids:
-  - 1627
-  - 1349
-  - 1628
+  children: []
+  attributes:
+  - occasion
+  - scent
+  - season
 - id: hb-3-2-8-2
   name: Colognes
-  children_ids: []
-  attribute_ids:
-  - 1627
-  - 1349
-  - 1628
+  children: []
+  attributes:
+  - occasion
+  - scent
+  - season
 - id: hb-3-2-8-3
   name: Eaux de Parfum
-  children_ids: []
-  attribute_ids:
-  - 1627
-  - 1349
-  - 1628
+  children: []
+  attributes:
+  - occasion
+  - scent
+  - season
 - id: hb-3-2-8-4
   name: Eaux De Toilette
-  children_ids: []
-  attribute_ids:
-  - 1627
-  - 1349
-  - 1628
+  children: []
+  attributes:
+  - occasion
+  - scent
+  - season
 - id: hb-3-2-9-2
   name: Anti-Aging Skin Care
-  children_ids: []
-  attribute_ids:
-  - 1598
-  - 1261
-  - 1285
-  - 1617
-  - 1559
+  children: []
+  attributes:
+  - active_ingredient
+  - product_certifications_and_standards
+  - product_form
+  - skin_care_effect
+  - suitable_for_skin_type
 - id: hb-3-2-9-10
   name: Lotions & Moisturizers
-  children_ids: []
-  attribute_ids:
-  - 1630
-  - 1570
-  - 1456
-  - 1261
-  - 1285
-  - 1559
+  children: []
+  attributes:
+  - cosmetic_function
+  - detailed_ingredients
+  - package_type
+  - product_certifications_and_standards
+  - product_form
+  - suitable_for_skin_type
 - id: hb-3-2-9-16-2
   name: Tanning Oil & Lotions
-  children_ids: []
-  attribute_ids:
-  - 1560
-  - 1384
-  - 1261
-  - 1285
-  - 1617
-  - 1633
+  children: []
+  attributes:
+  - application_area
+  - dispenser_type
+  - product_certifications_and_standards
+  - product_form
+  - skin_care_effect
+  - tan_type
 - id: hb-3-5
   name: Deodorants & Anti-Perspirant
-  children_ids:
+  children:
   - hb-3-5-1
   - hb-3-5-2
-  attribute_ids:
-  - 1384
-  - 1261
-  - 1285
-  - 837
+  attributes:
+  - dispenser_type
+  - product_certifications_and_standards
+  - product_form
+  - target_gender
 - id: hb-3-5-1
   name: Anti-Perspirant
-  children_ids: []
-  attribute_ids:
-  - 1384
-  - 1261
-  - 1285
-  - 1349
-  - 837
+  children: []
+  attributes:
+  - dispenser_type
+  - product_certifications_and_standards
+  - product_form
+  - scent
+  - target_gender
 - id: hb-3-5-2
   name: Deodorants
-  children_ids: []
-  attribute_ids:
-  - 1384
-  - 1261
-  - 1349
-  - 837
+  children: []
+  attributes:
+  - dispenser_type
+  - product_certifications_and_standards
+  - scent
+  - target_gender
 - id: hb-3-6-8-1
   name: Foam Earplugs
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 1636
-  - 4
+  children: []
+  attributes:
+  - accessory_size
+  - earplug_use
+  - material
 - id: hb-3-6-8-2
   name: Moldable Earplugs
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 1636
-  - 4
+  children: []
+  attributes:
+  - accessory_size
+  - earplug_use
+  - material
 - id: hb-3-6-8-3
   name: Pre-Molded Earplugs
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 1636
-  - 4
+  children: []
+  attributes:
+  - accessory_size
+  - earplug_use
+  - material
 - id: hb-3-8-2
   name: Feminine Deodorants
-  children_ids: []
-  attribute_ids:
-  - 1285
-  - 1349
+  children: []
+  attributes:
+  - product_form
+  - scent
 - id: hb-3-8-3
   name: Feminine Douches
-  children_ids: []
-  attribute_ids:
-  - 1637
-  - 1564
-  - 843
+  children: []
+  attributes:
+  - fragrance
+  - treatment_objective
+  - usage_type
 - id: hb-3-8-4-1
   name: Maternity Pads & Protectors
-  children_ids: []
-  attribute_ids:
-  - 894
-  - 4
-  - 1261
+  children: []
+  attributes:
+  - absorbency_level
+  - material
+  - product_certifications_and_standards
 - id: hb-3-8-4-2
   name: Menstrual Pads & Protectors
-  children_ids: []
-  attribute_ids:
-  - 894
-  - 4
-  - 1261
+  children: []
+  attributes:
+  - absorbency_level
+  - material
+  - product_certifications_and_standards
 - id: hb-3-8-4-3
   name: Overnight Pads & Protectors
-  children_ids: []
-  attribute_ids:
-  - 894
-  - 4
-  - 1261
+  children: []
+  attributes:
+  - absorbency_level
+  - material
+  - product_certifications_and_standards
 - id: hb-3-8-4-4
   name: Panty Liners
-  children_ids: []
-  attribute_ids:
-  - 894
-  - 4
-  - 1261
+  children: []
+  attributes:
+  - absorbency_level
+  - material
+  - product_certifications_and_standards
 - id: hb-3-8-4-5
   name: Regular Pads & Protectors
-  children_ids: []
-  attribute_ids:
-  - 894
-  - 4
-  - 1261
+  children: []
+  attributes:
+  - absorbency_level
+  - material
+  - product_certifications_and_standards
 - id: hb-3-8-4-6
   name: Reusable Clothes
-  children_ids: []
-  attribute_ids:
-  - 894
-  - 4
-  - 1261
+  children: []
+  attributes:
+  - absorbency_level
+  - material
+  - product_certifications_and_standards
 - id: hb-3-9-4-1
   name: Arch Supports
-  children_ids: []
-  attribute_ids:
-  - 1563
-  - 1640
-  - 4
-  - 1564
+  children: []
+  attributes:
+  - body_area
+  - compatible_shoe_size
+  - material
+  - treatment_objective
 - id: hb-3-9-4-2
   name: Gel Heel Pads
-  children_ids: []
-  attribute_ids:
-  - 1563
-  - 1640
-  - 4
-  - 1564
+  children: []
+  attributes:
+  - body_area
+  - compatible_shoe_size
+  - material
+  - treatment_objective
 - id: hb-3-9-4-3
   name: Metatarsal Cushions
-  children_ids: []
-  attribute_ids:
-  - 1563
-  - 1640
-  - 4
-  - 1564
+  children: []
+  attributes:
+  - body_area
+  - compatible_shoe_size
+  - material
+  - treatment_objective
 - id: hb-3-10-11-1-1
   name: Clips
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 4
+  children: []
+  attributes:
+  - accessory_size
+  - material
 - id: hb-3-10-11-1-2
   name: Pins
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 4
+  children: []
+  attributes:
+  - accessory_size
+  - material
 - id: hb-3-10-12-2-1
   name: Hair Combs
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-10-12-2-2
   name: Hairbrushes & Combs
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-10-12-2-3
   name: Hot Air Brushes
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-10-12-2-4
   name: Paddle Hairbrushes
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-10-12-2-5
   name: Round Hairbrushes
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-10-12-2-6
   name: Straightening Brushes
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: hb-3-10-13-1-1
   name: Co-Wash Conditioners
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1652
-  - 1261
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - conditioner_effect
+  - product_certifications_and_standards
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-1-2
   name: Color-Safe Conditioners
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1652
-  - 1261
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - conditioner_effect
+  - product_certifications_and_standards
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-1-3
   name: Curl-Defining Conditioners
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1652
-  - 1261
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - conditioner_effect
+  - product_certifications_and_standards
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-1-4
   name: Damage Repair Conditioners
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1652
-  - 1261
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - conditioner_effect
+  - product_certifications_and_standards
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-1-5
   name: Dandruff Conditioners
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1652
-  - 1261
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - conditioner_effect
+  - product_certifications_and_standards
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-1-6
   name: Deep Conditioners
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1652
-  - 1261
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - conditioner_effect
+  - product_certifications_and_standards
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-1-7
   name: Detangling Conditioners
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1652
-  - 1261
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - conditioner_effect
+  - product_certifications_and_standards
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-1-8
   name: Hair-Thickening Conditioners
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1652
-  - 1261
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - conditioner_effect
+  - product_certifications_and_standards
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-1-9
   name: Leave-In Conditioners
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1652
-  - 1261
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - conditioner_effect
+  - product_certifications_and_standards
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-1-10
   name: Smoothing Conditioners
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1652
-  - 1261
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - conditioner_effect
+  - product_certifications_and_standards
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-1-11
   name: Volumizing Conditioners
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1652
-  - 1261
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - conditioner_effect
+  - product_certifications_and_standards
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-3-1
   name: Clarifying Shampoo
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1261
-  - 1653
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - product_certifications_and_standards
+  - shampoo_type
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-3-2
   name: Color-Safe Shampoo
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1261
-  - 1653
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - product_certifications_and_standards
+  - shampoo_type
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-3-3
   name: Curl-Defining Shampoo
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1261
-  - 1653
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - product_certifications_and_standards
+  - shampoo_type
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-3-4
   name: Damage Repair Shampoo
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1261
-  - 1653
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - product_certifications_and_standards
+  - shampoo_type
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-3-5
   name: Dandruff Shampoo
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1261
-  - 1653
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - product_certifications_and_standards
+  - shampoo_type
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-3-6
   name: Deep Cleansing Shampoo
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1261
-  - 1653
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - product_certifications_and_standards
+  - shampoo_type
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-3-7
   name: Detox Shampoo
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1261
-  - 1653
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - product_certifications_and_standards
+  - shampoo_type
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-3-8
   name: Dry Shampoo
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1261
-  - 1653
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - product_certifications_and_standards
+  - shampoo_type
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-3-9
   name: Hair-Thickening Shampoo
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1261
-  - 1653
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - product_certifications_and_standards
+  - shampoo_type
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-3-10
   name: Hydrating Shampoo
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1261
-  - 1653
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - product_certifications_and_standards
+  - shampoo_type
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-3-11
   name: Moisturizing Shampoo
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1261
-  - 1653
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - product_certifications_and_standards
+  - shampoo_type
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-3-12
   name: Smoothing Shampoo
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1261
-  - 1653
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - product_certifications_and_standards
+  - shampoo_type
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-3-13
   name: Toning Shampoo
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1261
-  - 1653
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - product_certifications_and_standards
+  - shampoo_type
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-3-14
   name: Volumizing Shampoo
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1261
-  - 1653
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - product_certifications_and_standards
+  - shampoo_type
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-2-1
   name: Color-Safe Sets
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-2-2
   name: Hydrating Sets
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-2-3
   name: Repairing Sets
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-2-4
   name: Scalp Care Sets
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-2-5
   name: Smoothing Sets
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-10-13-2-6
   name: Volumizing Sets
-  children_ids: []
-  attribute_ids:
-  - 1642
-  - 1641
-  - 837
+  children: []
+  attributes:
+  - compatible_hair_color
+  - suitable_for_hair_type
+  - target_gender
 - id: hb-3-12-1
   name: Breath Sprays
-  children_ids: []
-  attribute_ids:
-  - 1663
-  - 1458
+  children: []
+  attributes:
+  - breath_sprays_certifications
+  - flavor
 - id: hb-3-12-10-1
   name: Electric Gum Stimulators
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 1669
-  - 4
-  - 1670
+  children: []
+  attributes:
+  - accessory_size
+  - handle_grip_texture
+  - material
+  - tip_shape
 - id: hb-3-12-10-2
   name: Manual Gum Stimulators
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 1669
-  - 4
-  - 1670
+  children: []
+  attributes:
+  - accessory_size
+  - handle_grip_texture
+  - material
+  - tip_shape
 - id: hb-3-12-12-1
   name: Hard Orthodontic Appliance Cases
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 80
-  - 1
-  - 4
+  children: []
+  attributes:
+  - accessory_size
+  - closure_type
+  - color
+  - material
 - id: hb-3-12-12-2
   name: Soft Orthodontic Appliance Cases
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 80
-  - 1
-  - 4
+  children: []
+  attributes:
+  - accessory_size
+  - closure_type
+  - color
+  - material
 - id: hb-3-12-14-1
   name: Charcoal Powder
-  children_ids: []
-  attribute_ids:
-  - 1671
-  - 1672
+  children: []
+  attributes:
+  - peroxide_content
+  - usage_frequency
 - id: hb-3-12-14-2
   name: LED Light Kits
-  children_ids: []
-  attribute_ids:
-  - 1671
-  - 1672
+  children: []
+  attributes:
+  - peroxide_content
+  - usage_frequency
 - id: hb-3-12-14-3
   name: Tray Cases
-  children_ids: []
-  attribute_ids:
-  - 1671
-  - 1672
+  children: []
+  attributes:
+  - peroxide_content
+  - usage_frequency
 - id: hb-3-12-14-4
   name: Whitening Foam
-  children_ids: []
-  attribute_ids:
-  - 1671
-  - 1672
+  children: []
+  attributes:
+  - peroxide_content
+  - usage_frequency
 - id: hb-3-12-14-5
   name: Whitening Gels
-  children_ids: []
-  attribute_ids:
-  - 1671
-  - 1672
+  children: []
+  attributes:
+  - peroxide_content
+  - usage_frequency
 - id: hb-3-12-14-6
   name: Whitening Mouthwash
-  children_ids: []
-  attribute_ids:
-  - 1671
-  - 1672
+  children: []
+  attributes:
+  - peroxide_content
+  - usage_frequency
 - id: hb-3-12-14-7
   name: Whitening Pens
-  children_ids: []
-  attribute_ids:
-  - 1671
-  - 1672
+  children: []
+  attributes:
+  - peroxide_content
+  - usage_frequency
 - id: hb-3-12-14-8
   name: Whitening Pods
-  children_ids: []
-  attribute_ids:
-  - 1671
-  - 1672
+  children: []
+  attributes:
+  - peroxide_content
+  - usage_frequency
 - id: hb-3-12-14-9
   name: Whitening Powder
-  children_ids: []
-  attribute_ids:
-  - 1671
-  - 1672
+  children: []
+  attributes:
+  - peroxide_content
+  - usage_frequency
 - id: hb-3-12-14-10
   name: Whitening Strips
-  children_ids: []
-  attribute_ids:
-  - 1671
-  - 1672
+  children: []
+  attributes:
+  - peroxide_content
+  - usage_frequency
 - id: hb-3-12-17-1
   name: Electric Toothbrushes
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1
+  children: []
+  attributes:
+  - age_group
+  - color
 - id: hb-3-12-17-2
   name: Manual Toothbrushes
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1
+  children: []
+  attributes:
+  - age_group
+  - color
 - id: hb-3-12-17-3
   name: Toothbrush Sets
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1
+  children: []
+  attributes:
+  - age_group
+  - color
 - id: hb-3-14-4-1
   name: Foil Electric Razors
-  children_ids: []
-  attribute_ids:
-  - 1679
-  - 1680
+  children: []
+  attributes:
+  - razor_flexibility
+  - razor_head_design
 - id: hb-3-14-4-2
   name: Rotary Electric Razors
-  children_ids: []
-  attribute_ids:
-  - 1679
-  - 1680
+  children: []
+  attributes:
+  - razor_flexibility
+  - razor_head_design
 - id: hb-3-14-4-3
   name: Trimmers
-  children_ids: []
-  attribute_ids:
-  - 1679
-  - 1680
+  children: []
+  attributes:
+  - razor_flexibility
+  - razor_head_design
 - id: hb-3-14-7-5-1
   name: IPL Hair Removal Devices
-  children_ids: []
-  attribute_ids:
-  - 1563
-  - 1642
-  - 1683
+  children: []
+  attributes:
+  - body_area
+  - compatible_hair_color
+  - suitable_for_skin_tone
 - id: hb-3-14-7-5-2
   name: Laser Hair Removal Devices
-  children_ids: []
-  attribute_ids:
-  - 1563
-  - 1642
-  - 1683
+  children: []
+  attributes:
+  - body_area
+  - compatible_hair_color
+  - suitable_for_skin_tone
 - id: hb-3-14-11
   name: Shaving Creams
-  children_ids: []
-  attribute_ids:
-  - 1349
-  - 1684
-  - 1559
-  - 837
+  children: []
+  attributes:
+  - scent
+  - shaving_cream_formulation
+  - suitable_for_skin_type
+  - target_gender
 - id: hb-3-15-2-1
   name: External Nasal Strips
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1564
+  children: []
+  attributes:
+  - material
+  - treatment_objective
 - id: hb-3-15-2-2
   name: Jaw Support Devices
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1564
+  children: []
+  attributes:
+  - material
+  - treatment_objective
 - id: hb-3-15-2-3
   name: Mandibular Advancement Devices (MAD)
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1564
+  children: []
+  attributes:
+  - material
+  - treatment_objective
 - id: hb-3-15-2-4
   name: Nasal Clips
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1564
+  children: []
+  attributes:
+  - material
+  - treatment_objective
 - id: hb-3-15-2-5
   name: Nasal Cones
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1564
+  children: []
+  attributes:
+  - material
+  - treatment_objective
 - id: hb-3-15-2-6
   name: Tongue Retaining Devices (TRD)
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1564
+  children: []
+  attributes:
+  - material
+  - treatment_objective
 - id: hb-3-19-1-2-1
   name: Barrel Contact Lens Cases
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 1
-  - 4
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - material
 - id: hb-3-19-1-2-2
   name: Flat Contact Lens Cases
-  children_ids: []
-  attribute_ids:
-  - 50
-  - 1
-  - 4
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - material
 - id: hb-3-19-1-4
   name: Contact Lenses
-  children_ids:
+  children:
   - hb-3-19-1-4-1
   - hb-3-19-1-4-2
   - hb-3-19-1-4-3
   - hb-3-19-1-4-4
   - hb-3-19-1-4-5
-  attribute_ids: []
+  attributes: []
 - id: hb-3-19-1-4-1
   name: Biweekly Contact Lenses
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-3-19-1-4-2
   name: Daily Contact Lenses
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-3-19-1-4-3
   name: Monthly Contact Lenses
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-3-19-1-4-4
   name: Weekly Contact Lenses
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-3-19-1-4-5
   name: Yearly Contact Lenses
-  children_ids: []
-  attribute_ids: []
+  children: []
+  attributes: []
 - id: hb-3-19-5-4-1
   name: Eyewear Chains
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: hb-3-19-5-4-2
   name: Eyewear Straps
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material

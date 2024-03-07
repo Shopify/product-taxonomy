@@ -5,8 +5,8 @@ module Serializers
         {
           id: category.id,
           name: category.name,
-          children_ids: category.children.map(&:id),
-          attribute_ids: category.properties.map(&:id),
+          children: category.children.map(&:id),
+          attributes: category.properties.map(&:friendly_id),
         }
       end
 
@@ -14,8 +14,8 @@ module Serializers
         Category.new(
           id: hash["id"].downcase,
           name: hash["name"],
-          child_ids: hash["children_ids"],
-          property_ids: hash["attribute_ids"],
+          child_ids: hash["children"],
+          property_ids: Property.where(friendly_id: hash["attributes"]).pluck(:id),
         )
       end
     end

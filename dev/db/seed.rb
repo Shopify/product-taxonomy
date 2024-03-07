@@ -8,12 +8,12 @@ module DB
         data.each do |property_json|
           property_json['values'].each do |property_json|
             property_value = Serializers::Data::PropertyValueSerializer.deserialize(property_json)
-            existing_value = PropertyValue.find_by(id: property_value.id)
+            by_id = PropertyValue.find_by(id: property_value.id)
 
-            if existing_value.nil?
+            if by_id.nil?
               property_value.save!
-            elsif existing_value.name != property_value.name
-              puts "  ⨯ Failed to import category: #{property_value.name} <#{property_value.id}> already exists as #{existing_value.name}"
+            elsif by_id.name != property_value.name
+              puts "  ⨯ Failed to import value: #{property_value.name} <#{property_value.id}> already exists as #{by_id.name} <#{by_id.id}>"
             end
           end
         end
@@ -36,7 +36,7 @@ module DB
           failed_category_ids = []
           categories = vertical_json.filter_map do |category_json|
             begin
-              category = Serializers::Data::CategorySerializer.deserialize(category_json.except("children_ids"))
+              category = Serializers::Data::CategorySerializer.deserialize(category_json.except("children"))
               category.save!
               category
             rescue => _e
@@ -48,7 +48,7 @@ module DB
 
           # assemble the tree
           categories.zip(vertical_json).each do |category, json|
-            category.child_ids = json["children_ids"] - failed_category_ids
+            category.child_ids = json["children"] - failed_category_ids
             category.save!
           end
         end

@@ -1,7 +1,7 @@
 ---
 - id: me
   name: Media
-  children_ids:
+  children:
   - me-1
   - me-2
   - me-3
@@ -10,259 +10,259 @@
   - me-8
   - me-4
   - me-7
-  attribute_ids: []
+  attributes: []
 - id: me-1
   name: Books
-  children_ids:
+  children:
   - me-1-1
   - me-1-3
   - me-1-2
-  attribute_ids:
-  - 2535
-  - 2536
-  - 2537
+  attributes:
+  - genre
+  - language_version
+  - target_audience
 - id: me-1-1
   name: Audiobooks
-  children_ids: []
-  attribute_ids:
-  - 2535
-  - 2536
-  - 2537
+  children: []
+  attributes:
+  - genre
+  - language_version
+  - target_audience
 - id: me-1-3
   name: Print Books
-  children_ids: []
-  attribute_ids:
-  - 2538
-  - 2535
-  - 2536
-  - 2537
+  children: []
+  attributes:
+  - book_cover_type
+  - genre
+  - language_version
+  - target_audience
 - id: me-2
   name: Magazines & Newspapers
-  children_ids:
+  children:
   - me-2-1
   - me-2-2
-  attribute_ids:
-  - 2536
-  - 2539
+  attributes:
+  - language_version
+  - media_access
 - id: me-2-1
   name: Magazines
-  children_ids:
+  children:
   - me-2-1-1
   - me-2-1-2
   - me-2-1-3
-  attribute_ids:
-  - 2536
-  - 2539
-  - 2540
-  - 2541
+  attributes:
+  - language_version
+  - media_access
+  - media_theme
+  - publication_frequency
 - id: me-2-2
   name: Newspapers
-  children_ids:
+  children:
   - me-2-2-1
   - me-2-2-2
   - me-2-2-3
-  attribute_ids:
-  - 2536
-  - 2539
-  - 2542
-  - 2541
+  attributes:
+  - language_version
+  - media_access
+  - media_section
+  - publication_frequency
 - id: me-3
   name: Music & Sound Recordings
-  children_ids:
+  children:
   - me-3-1
   - me-3-3
   - me-3-2
   - me-3-4
   - me-3-5
   - me-3-6
-  attribute_ids:
-  - 1793
+  attributes:
+  - music_genre
 - id: me-3-1
   name: Digital Music Downloads
-  children_ids: []
-  attribute_ids:
-  - 2543
-  - 1793
+  children: []
+  attributes:
+  - download_format
+  - music_genre
 - id: me-3-3
   name: Music CDs
-  children_ids: []
-  attribute_ids:
-  - 1793
+  children: []
+  attributes:
+  - music_genre
 - id: me-3-2
   name: Music Cassette Tapes
-  children_ids: []
-  attribute_ids:
-  - 1793
+  children: []
+  attributes:
+  - music_genre
 - id: me-3-4
   name: Records & LPs
-  children_ids: []
-  attribute_ids:
-  - 1793
+  children: []
+  attributes:
+  - music_genre
 - id: me-3-5
   name: Spoken Word & Field Recordings
-  children_ids: []
-  attribute_ids:
-  - 1793
+  children: []
+  attributes:
+  - music_genre
 - id: me-5
   name: Product Manuals
-  children_ids: []
-  attribute_ids:
-  - 2536
-  - 2545
+  children: []
+  attributes:
+  - language_version
+  - product_manual_area
 - id: me-6
   name: Sheet Music
-  children_ids: []
-  attribute_ids:
-  - 2538
-  - 2409
-  - 1793
+  children: []
+  attributes:
+  - book_cover_type
+  - compatible_instrument
+  - music_genre
 - id: me-8
   name: Academic Papers & Studies
-  children_ids: []
-  attribute_ids:
-  - 2529
-  - 2530
-  - 2531
-  - 2532
-  - 2533
-  - 2534
+  children: []
+  attributes:
+  - academic_level
+  - publication_type
+  - research_focus
+  - research_methodology
+  - subject_area
+  - time_period
 - id: me-1-2
   name: E-Books
-  children_ids: []
-  attribute_ids:
-  - 2535
-  - 2536
-  - 2537
+  children: []
+  attributes:
+  - genre
+  - language_version
+  - target_audience
 - id: me-2-1-1
   name: Consumer Magazines
-  children_ids: []
-  attribute_ids:
-  - 2536
-  - 2539
-  - 2540
-  - 2541
+  children: []
+  attributes:
+  - language_version
+  - media_access
+  - media_theme
+  - publication_frequency
 - id: me-2-1-2
   name: In-House Magazines
-  children_ids: []
-  attribute_ids:
-  - 2536
-  - 2539
-  - 2540
-  - 2541
+  children: []
+  attributes:
+  - language_version
+  - media_access
+  - media_theme
+  - publication_frequency
 - id: me-2-1-3
   name: Professional Magazines
-  children_ids: []
-  attribute_ids:
-  - 2536
-  - 2539
-  - 2540
-  - 2541
+  children: []
+  attributes:
+  - language_version
+  - media_access
+  - media_theme
+  - publication_frequency
 - id: me-2-2-1
   name: International Newspapers
-  children_ids: []
-  attribute_ids:
-  - 2536
-  - 2539
-  - 2542
-  - 2541
+  children: []
+  attributes:
+  - language_version
+  - media_access
+  - media_section
+  - publication_frequency
 - id: me-2-2-2
   name: Local Newspapers
-  children_ids: []
-  attribute_ids:
-  - 2536
-  - 2539
-  - 2542
-  - 2541
+  children: []
+  attributes:
+  - language_version
+  - media_access
+  - media_section
+  - publication_frequency
 - id: me-2-2-3
   name: National Newspapers
-  children_ids: []
-  attribute_ids:
-  - 2536
-  - 2539
-  - 2542
-  - 2541
+  children: []
+  attributes:
+  - language_version
+  - media_access
+  - media_section
+  - publication_frequency
 - id: me-3-6
   name: Vinyl
-  children_ids: []
-  attribute_ids:
-  - 1793
+  children: []
+  attributes:
+  - music_genre
 - id: me-4
   name: Podcasts & Live Streams
-  children_ids:
+  children:
   - me-4-1
   - me-4-2
   - me-4-3
-  attribute_ids:
-  - 2535
-  - 1733
-  - 2544
+  attributes:
+  - genre
+  - language
+  - release_schedule
 - id: me-4-1
   name: Live Streams
-  children_ids: []
-  attribute_ids:
-  - 2535
-  - 1733
-  - 2544
+  children: []
+  attributes:
+  - genre
+  - language
+  - release_schedule
 - id: me-4-2
   name: Podcasts
-  children_ids: []
-  attribute_ids:
-  - 2535
-  - 1733
-  - 2544
+  children: []
+  attributes:
+  - genre
+  - language
+  - release_schedule
 - id: me-4-3
   name: Radio Shows
-  children_ids: []
-  attribute_ids:
-  - 2535
-  - 1733
-  - 2544
+  children: []
+  attributes:
+  - genre
+  - language
+  - release_schedule
 - id: me-7
   name: Videos
-  children_ids:
+  children:
   - me-7-1
   - me-7-2
   - me-7-3
   - me-7-4
-  attribute_ids:
-  - 2535
-  - 2536
-  - 2546
-  - 2547
-  - 2537
+  attributes:
+  - genre
+  - language_version
+  - media_content_type
+  - mpaa_rating
+  - target_audience
 - id: me-7-1
   name: Blu-ray
-  children_ids: []
-  attribute_ids:
-  - 2535
-  - 2536
-  - 2546
-  - 2547
-  - 2537
+  children: []
+  attributes:
+  - genre
+  - language_version
+  - media_content_type
+  - mpaa_rating
+  - target_audience
 - id: me-7-2
   name: Digital Downloads
-  children_ids: []
-  attribute_ids:
-  - 2535
-  - 2536
-  - 2546
-  - 2547
-  - 2537
+  children: []
+  attributes:
+  - genre
+  - language_version
+  - media_content_type
+  - mpaa_rating
+  - target_audience
 - id: me-7-3
   name: DVDs
-  children_ids: []
-  attribute_ids:
-  - 2535
-  - 2536
-  - 2546
-  - 2547
-  - 2537
+  children: []
+  attributes:
+  - genre
+  - language_version
+  - media_content_type
+  - mpaa_rating
+  - target_audience
 - id: me-7-4
   name: VHS Tapes
-  children_ids: []
-  attribute_ids:
-  - 2535
-  - 2536
-  - 2546
-  - 2547
-  - 2537
+  children: []
+  attributes:
+  - genre
+  - language_version
+  - media_content_type
+  - mpaa_rating
+  - target_audience

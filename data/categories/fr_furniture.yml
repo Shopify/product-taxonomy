@@ -1,7 +1,7 @@
 ---
 - id: fr
   name: Furniture
-  children_ids:
+  children:
   - fr-1
   - fr-2
   - fr-3
@@ -26,11 +26,11 @@
   - fr-23
   - fr-24
   - fr-8
-  attribute_ids:
-  - 1
+  attributes:
+  - color
 - id: fr-1
   name: Baby & Toddler Furniture
-  children_ids:
+  children:
   - fr-1-1
   - fr-1-2
   - fr-1-3
@@ -40,24 +40,24 @@
   - fr-1-7
   - fr-1-8
   - fr-1-9
-  attribute_ids:
-  - 1
-  - 4
+  attributes:
+  - color
+  - material
 - id: fr-1-1
   name: Baby & Toddler Furniture Sets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-1-2
   name: Bassinet & Cradle Accessories
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-1-3
   name: Bassinets & Cradles
-  children_ids:
+  children:
   - fr-1-3-1
   - fr-1-3-2
   - fr-1-3-3
@@ -67,46 +67,46 @@
   - fr-1-3-8
   - fr-1-3-10
   - fr-1-3-11
-  attribute_ids:
-  - 4
-  - 30
-  - 1
+  attributes:
+  - material
+  - age_group
+  - color
 - id: fr-1-4
   name: Changing Tables
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 30
-  - 1
+  children: []
+  attributes:
+  - material
+  - age_group
+  - color
 - id: fr-1-5
   name: Crib & Toddler Bed Accessories
-  children_ids:
+  children:
   - fr-1-5-1
   - fr-1-5-2
-  attribute_ids:
-  - 4
-  - 1
+  attributes:
+  - material
+  - color
 - id: fr-1-5-1
   name: Crib Bumpers & Liners
-  children_ids:
+  children:
   - fr-1-5-1-1
   - fr-1-5-1-2
   - fr-1-5-1-3
   - fr-1-5-1-4
   - fr-1-5-1-5
   - fr-1-5-1-6
-  attribute_ids:
-  - 4
-  - 1
+  attributes:
+  - material
+  - color
 - id: fr-1-5-2
   name: Crib Conversion Kits
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-1-6
   name: Cribs & Toddler Beds
-  children_ids:
+  children:
   - fr-1-6-4
   - fr-1-6-5
   - fr-1-6-6
@@ -115,47 +115,47 @@
   - fr-1-6-10
   - fr-1-6-11
   - fr-1-6-12
-  attribute_ids:
-  - 1
-  - 4
+  attributes:
+  - color
+  - material
 - id: fr-1-7
   name: High Chair & Booster Seat Accessories
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-1-8
   name: High Chairs & Booster Seats
-  children_ids:
+  children:
   - fr-1-8-2
   - fr-1-8-3
   - fr-1-8-4
   - fr-1-8-5
-  attribute_ids:
-  - 4
-  - 1
+  attributes:
+  - material
+  - color
 - id: fr-2
   name: Beds & Accessories
-  children_ids:
+  children:
   - fr-2-1
   - fr-2-2
   - fr-2-5
   - fr-2-6
   - fr-2-3
   - fr-2-4
-  attribute_ids:
-  - 1259
-  - 1
+  attributes:
+  - bedding_size
+  - color
 - id: fr-2-1
   name: Bed & Bed Frame Accessories
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1513
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - compatible_mattress_size
 - id: fr-2-2
   name: Beds & Bed Frames
-  children_ids:
+  children:
   - fr-2-2-1
   - fr-2-2-2
   - fr-2-2-3
@@ -172,14 +172,14 @@
   - fr-2-2-14
   - fr-2-2-15
   - fr-2-2-16
-  attribute_ids:
-  - 1259
-  - 1
-  - 1513
-  - 4
+  attributes:
+  - bedding_size
+  - color
+  - compatible_mattress_size
+  - material
 - id: fr-2-5
   name: Mattress Foundations
-  children_ids:
+  children:
   - fr-2-5-1
   - fr-2-5-2
   - fr-2-5-3
@@ -187,16 +187,16 @@
   - fr-2-5-5
   - fr-2-5-7
   - fr-2-5-8
-  attribute_ids:
-  - 1259
-  - 1
-  - 1341
-  - 1514
-  - 1224
-  - 1515
+  attributes:
+  - bedding_size
+  - color
+  - cover_material
+  - firmness
+  - frame_material
+  - slat_material
 - id: fr-2-6
   name: Mattresses
-  children_ids:
+  children:
   - fr-2-6-1
   - fr-2-6-2
   - fr-2-6-3
@@ -204,22 +204,22 @@
   - fr-2-6-5
   - fr-2-6-6
   - fr-2-6-7
-  attribute_ids:
-  - 1259
-  - 1
-  - 1514
+  attributes:
+  - bedding_size
+  - color
+  - firmness
 - id: fr-3
   name: Benches
-  children_ids:
+  children:
   - fr-3-1
   - fr-3-2
   - fr-3-3
-  attribute_ids:
-  - 1
-  - 4
+  attributes:
+  - color
+  - material
 - id: fr-3-1
   name: Kitchen & Dining Benches
-  children_ids:
+  children:
   - fr-3-1-1
   - fr-3-1-2
   - fr-3-1-3
@@ -234,15 +234,15 @@
   - fr-3-1-13
   - fr-3-1-14
   - fr-3-1-15
-  attribute_ids:
-  - 1246
-  - 1224
-  - 1516
-  - 1517
-  - 1518
+  attributes:
+  - frame_color
+  - frame_material
+  - seat_color
+  - seat_material
+  - seat_type
 - id: fr-3-2
   name: Storage & Entryway Benches
-  children_ids:
+  children:
   - fr-3-2-1
   - fr-3-2-2
   - fr-3-2-3
@@ -256,18 +256,18 @@
   - fr-3-2-12
   - fr-3-2-13
   - fr-3-2-14
-  attribute_ids:
-  - 1
-  - 4
+  attributes:
+  - color
+  - material
 - id: fr-3-3
   name: Vanity Benches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4
   name: Cabinets & Storage
-  children_ids:
+  children:
   - fr-4-1
   - fr-4-3
   - fr-4-5
@@ -284,12 +284,12 @@
   - fr-4-2
   - fr-4-4
   - fr-4-11
-  attribute_ids:
-  - 1
-  - 4
+  attributes:
+  - color
+  - material
 - id: fr-4-1
   name: Armoires & Wardrobes
-  children_ids:
+  children:
   - fr-4-1-1
   - fr-4-1-2
   - fr-4-1-3
@@ -307,12 +307,12 @@
   - fr-4-1-15
   - fr-4-1-16
   - fr-4-1-17
-  attribute_ids:
-  - 1
-  - 4
+  attributes:
+  - color
+  - material
 - id: fr-4-3
   name: China Cabinets & Hutches
-  children_ids:
+  children:
   - fr-4-3-1
   - fr-4-3-2
   - fr-4-3-3
@@ -327,30 +327,30 @@
   - fr-4-3-12
   - fr-4-3-13
   - fr-4-3-14
-  attribute_ids:
-  - 4
-  - 1
+  attributes:
+  - material
+  - color
 - id: fr-4-5
   name: Dressers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-6
   name: File Cabinets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-7
   name: Ironing Centers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-8
   name: Kitchen Cabinets
-  children_ids:
+  children:
   - fr-4-8-1
   - fr-4-8-2
   - fr-4-8-3
@@ -367,58 +367,58 @@
   - fr-4-8-14
   - fr-4-8-15
   - fr-4-8-16
-  attribute_ids:
-  - 1
-  - 4
+  attributes:
+  - color
+  - material
 - id: fr-4-9
   name: Magazine Racks
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-10
   name: Media Storage Cabinets & Racks
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-4-12
   name: Storage Cabinets & Lockers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-13
   name: Storage Chests
-  children_ids:
+  children:
   - fr-4-13-1
   - fr-4-13-2
-  attribute_ids:
-  - 1
-  - 4
+  attributes:
+  - color
+  - material
 - id: fr-4-13-1
   name: Hope Chests
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-13-2
   name: Toy Chests
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14
   name: Vanities
-  children_ids:
+  children:
   - fr-4-14-1
   - fr-4-14-2
-  attribute_ids:
-  - 1
-  - 4
+  attributes:
+  - color
+  - material
 - id: fr-4-14-1
   name: Bathroom Vanities
-  children_ids:
+  children:
   - fr-4-14-1-1
   - fr-4-14-1-2
   - fr-4-14-1-3
@@ -430,12 +430,12 @@
   - fr-4-14-1-9
   - fr-4-14-1-10
   - fr-4-14-1-11
-  attribute_ids:
-  - 1
-  - 4
+  attributes:
+  - color
+  - material
 - id: fr-4-14-2
   name: Bedroom Vanities
-  children_ids:
+  children:
   - fr-4-14-2-1
   - fr-4-14-2-3
   - fr-4-14-2-4
@@ -443,46 +443,46 @@
   - fr-4-14-2-6
   - fr-4-14-2-7
   - fr-4-14-2-8
-  attribute_ids:
-  - 4
-  - 1
+  attributes:
+  - material
+  - color
 - id: fr-4-15
   name: Wine & Liquor Cabinets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-16
   name: Wine Racks
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 1526
+  children: []
+  attributes:
+  - color
+  - material
+  - wine_rack_design
 - id: fr-5
   name: Carts & Islands
-  children_ids:
+  children:
   - fr-5-1
   - fr-5-2
-  attribute_ids:
-  - 1
-  - 4
+  attributes:
+  - color
+  - material
 - id: fr-6
   name: Chair Accessories
-  children_ids:
+  children:
   - fr-6-1
-  attribute_ids:
-  - 1
-  - 4
+  attributes:
+  - color
+  - material
 - id: fr-6-1
   name: Hanging Chair Replacement Parts
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-7
   name: Chairs
-  children_ids:
+  children:
   - fr-7-2
   - fr-7-3
   - fr-7-4
@@ -495,286 +495,286 @@
   - fr-7-11
   - fr-7-12
   - fr-7-1
-  attribute_ids:
-  - 4
-  - 1518
-  - 1527
-  - 1
+  attributes:
+  - material
+  - seat_type
+  - backrest_type
+  - color
 - id: fr-7-2
   name: Bean Bag Chairs
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1341
-  - 1342
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - filler_material
 - id: fr-7-3
   name: Chaises
-  children_ids:
+  children:
   - fr-7-3-1
   - fr-7-3-2
   - fr-7-3-3
   - fr-7-3-5
-  attribute_ids:
-  - 1527
-  - 1
-  - 4
-  - 1518
+  attributes:
+  - backrest_type
+  - color
+  - material
+  - seat_type
 - id: fr-7-4
   name: Electric Massaging Chairs
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1528
-  - 4
-  - 1221
-  - 1529
+  children: []
+  attributes:
+  - color
+  - massage_technique
+  - material
+  - power_source
+  - treatment_area
 - id: fr-7-5
   name: Floor Chairs
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1518
-  - 1527
-  - 1
+  children: []
+  attributes:
+  - material
+  - seat_type
+  - backrest_type
+  - color
 - id: fr-7-6
   name: Folding Chairs & Stools
-  children_ids:
+  children:
   - fr-7-6-1
   - fr-7-6-2
-  attribute_ids:
-  - 1527
-  - 1
-  - 4
-  - 1518
+  attributes:
+  - backrest_type
+  - color
+  - material
+  - seat_type
 - id: fr-7-7
   name: Gaming Chairs
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1527
-  - 1
-  - 1518
+  children: []
+  attributes:
+  - material
+  - backrest_type
+  - color
+  - seat_type
 - id: fr-7-8
   name: Hanging Chairs
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
-  - 1530
-  - 1214
+  children: []
+  attributes:
+  - material
+  - color
+  - hanging_chair_design
+  - suitable_space
 - id: fr-7-9
   name: Kitchen & Dining Room Chairs
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1527
-  - 1
-  - 1518
+  children: []
+  attributes:
+  - material
+  - backrest_type
+  - color
+  - seat_type
 - id: fr-7-10
   name: Rocking Chairs
-  children_ids:
+  children:
   - fr-7-10-1
   - fr-7-10-4
   - fr-7-10-5
-  attribute_ids:
-  - 1
-  - 4
-  - 1518
-  - 1214
+  attributes:
+  - color
+  - material
+  - seat_type
+  - suitable_space
 - id: fr-7-11
   name: Slipper Chairs
-  children_ids: []
-  attribute_ids:
-  - 1527
-  - 1
-  - 4
-  - 1518
+  children: []
+  attributes:
+  - backrest_type
+  - color
+  - material
+  - seat_type
 - id: fr-7-12
   name: Table & Bar Stools
-  children_ids:
+  children:
   - fr-7-12-1
   - fr-7-12-2
-  attribute_ids:
-  - 1531
-  - 1
-  - 4
-  - 1518
+  attributes:
+  - back_type
+  - color
+  - material
+  - seat_type
 - id: fr-9
   name: Entertainment Centers & TV Stands
-  children_ids: []
-  attribute_ids:
-  - 1246
-  - 1224
-  - 1524
-  - 1525
-  - 1522
-  - 1523
+  children: []
+  attributes:
+  - frame_color
+  - frame_material
+  - leg_color
+  - leg_material
+  - top_color
+  - top_material
 - id: fr-10
   name: Furniture Sets
-  children_ids:
+  children:
   - fr-10-1
   - fr-10-2
   - fr-10-3
   - fr-10-4
-  attribute_ids:
-  - 1
-  - 3
+  attributes:
+  - color
+  - pattern
 - id: fr-10-1
   name: Bathroom Furniture Sets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 3
-  - 1532
+  children: []
+  attributes:
+  - color
+  - pattern
+  - tabletop_shape
 - id: fr-10-2
   name: Bedroom Furniture Sets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 1205
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - mounting_type
+  - pattern
 - id: fr-10-3
   name: Kitchen & Dining Furniture Sets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 3
-  - 1532
+  children: []
+  attributes:
+  - color
+  - pattern
+  - tabletop_shape
 - id: fr-10-4
   name: Living Room Furniture Sets
-  children_ids: []
-  attribute_ids:
-  - 1527
-  - 1246
-  - 1224
-  - 3
-  - 1516
-  - 1517
-  - 1533
-  - 1518
+  children: []
+  attributes:
+  - backrest_type
+  - frame_color
+  - frame_material
+  - pattern
+  - seat_color
+  - seat_material
+  - seat_pattern
+  - seat_type
 - id: fr-11
   name: Futons
-  children_ids:
+  children:
   - fr-11-1
   - fr-11-2
-  attribute_ids:
-  - 1
-  - 3
-  - 1214
+  attributes:
+  - color
+  - pattern
+  - suitable_space
 - id: fr-12
   name: Office Furniture
-  children_ids:
+  children:
   - fr-12-1
   - fr-12-2
   - fr-12-3
   - fr-12-4
   - fr-12-5
-  attribute_ids:
-  - 1
-  - 3
+  attributes:
+  - color
+  - pattern
 - id: fr-12-1
   name: Desks
-  children_ids: []
-  attribute_ids:
-  - 1524
-  - 1525
-  - 1534
-  - 1535
-  - 1532
-  - 1246
-  - 1224
+  children: []
+  attributes:
+  - leg_color
+  - leg_material
+  - tabletop_color
+  - tabletop_material
+  - tabletop_shape
+  - frame_color
+  - frame_material
 - id: fr-12-2
   name: Office Chairs
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-12-3
   name: Office Furniture Sets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 3
+  children: []
+  attributes:
+  - color
+  - pattern
 - id: fr-12-4
   name: Workspace Tables
-  children_ids:
+  children:
   - fr-12-4-1
   - fr-12-4-2
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-12-4-1
   name: Art & Drafting Tables
-  children_ids: []
-  attribute_ids:
-  - 1246
-  - 1224
-  - 3
-  - 1534
-  - 1535
-  - 1536
+  children: []
+  attributes:
+  - frame_color
+  - frame_material
+  - pattern
+  - tabletop_color
+  - tabletop_material
+  - tabletop_pattern
 - id: fr-12-4-2
   name: Conference Room Tables
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-12-5
   name: Workstations & Cubicles
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-13
   name: Office Furniture Accessories
-  children_ids:
+  children:
   - fr-13-1
   - fr-13-2
   - fr-13-3
-  attribute_ids:
-  - 1
+  attributes:
+  - color
 - id: fr-13-1
   name: Desk Parts & Accessories
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: fr-13-2
   name: Office Chair Accessories
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: fr-13-3
   name: Workstation & Cubicle Accessories
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: fr-14
   name: Ottomans
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15
   name: Outdoor Furniture
-  children_ids:
+  children:
   - fr-15-1
   - fr-15-2
   - fr-15-3
   - fr-15-4
   - fr-15-5
   - fr-15-6
-  attribute_ids:
-  - 1
-  - 3
+  attributes:
+  - color
+  - pattern
 - id: fr-15-1
   name: Outdoor Beds
-  children_ids:
+  children:
   - fr-15-1-1
   - fr-15-1-2
   - fr-15-1-3
@@ -783,22 +783,22 @@
   - fr-15-1-7
   - fr-15-1-8
   - fr-15-1-9
-  attribute_ids:
-  - 1259
-  - 1
-  - 1514
-  - 1205
-  - 3
+  attributes:
+  - bedding_size
+  - color
+  - firmness
+  - mounting_type
+  - pattern
 - id: fr-15-2
   name: Outdoor Furniture Sets
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 3
-  - 1
+  children: []
+  attributes:
+  - material
+  - pattern
+  - color
 - id: fr-15-3
   name: Outdoor Ottomans
-  children_ids:
+  children:
   - fr-15-3-1
   - fr-15-3-2
   - fr-15-3-3
@@ -815,79 +815,79 @@
   - fr-15-3-14
   - fr-15-3-15
   - fr-15-3-16
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-4
   name: Outdoor Seating
-  children_ids:
+  children:
   - fr-15-4-1
   - fr-15-4-2
   - fr-15-4-3
   - fr-15-4-4
   - fr-15-4-5
-  attribute_ids:
-  - 1
-  - 3
+  attributes:
+  - color
+  - pattern
 - id: fr-15-4-1
   name: Outdoor Benches
-  children_ids:
+  children:
   - fr-15-4-1-10
   - fr-15-4-1-11
   - fr-15-4-1-12
-  attribute_ids:
-  - 1
-  - 4
-  - 3
-  - 1537
+  attributes:
+  - color
+  - material
+  - pattern
+  - seat_structure
 - id: fr-15-4-2
   name: Outdoor Chairs
-  children_ids:
+  children:
   - fr-15-4-2-5
   - fr-15-4-2-9
   - fr-15-4-2-15
   - fr-15-4-2-16
   - fr-15-4-2-18
-  attribute_ids:
-  - 1527
-  - 1
-  - 4
-  - 1518
-  - 3
-  - 1537
+  attributes:
+  - backrest_type
+  - color
+  - material
+  - seat_type
+  - pattern
+  - seat_structure
 - id: fr-15-4-3
   name: Outdoor Sectional Sofa Units
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 3
+  children: []
+  attributes:
+  - color
+  - pattern
 - id: fr-15-4-4
   name: Outdoor Sofas
-  children_ids:
+  children:
   - fr-15-4-4-1
   - fr-15-4-4-2
-  attribute_ids:
-  - 1
-  - 3
+  attributes:
+  - color
+  - pattern
 - id: fr-15-4-5
   name: Sunloungers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 3
+  children: []
+  attributes:
+  - color
+  - pattern
 - id: fr-15-5
   name: Outdoor Storage Boxes
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
-  - 73
-  - 1538
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - shape
+  - suitable_for_storage_type
 - id: fr-15-6
   name: Outdoor Tables
-  children_ids:
+  children:
   - fr-15-6-1
   - fr-15-6-2
   - fr-15-6-3
@@ -896,139 +896,139 @@
   - fr-15-6-7
   - fr-15-6-9
   - fr-15-6-11
-  attribute_ids:
-  - 1
-  - 4
-  - 3
-  - 1532
+  attributes:
+  - color
+  - material
+  - pattern
+  - tabletop_shape
 - id: fr-16
   name: Outdoor Furniture Accessories
-  children_ids:
+  children:
   - fr-16-1
-  attribute_ids:
-  - 1
-  - 3
+  attributes:
+  - color
+  - pattern
 - id: fr-16-1
   name: Outdoor Furniture Covers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-17
   name: Room Divider Accessories
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: fr-18
   name: Room Dividers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 3
-  - 1351
+  children: []
+  attributes:
+  - color
+  - pattern
+  - style
 - id: fr-19
   name: Shelving
-  children_ids:
+  children:
   - fr-19-1
   - fr-19-2
-  attribute_ids:
-  - 1
-  - 4
-  - 1539
-  - 1205
-  - 3
+  attributes:
+  - color
+  - material
+  - suitable_location
+  - mounting_type
+  - pattern
 - id: fr-19-1
   name: Bookcases & Standing Shelves
-  children_ids:
+  children:
   - fr-19-1-1
   - fr-19-1-2
   - fr-19-1-3
   - fr-19-1-4
   - fr-19-1-5
-  attribute_ids:
-  - 1
-  - 4
-  - 1205
-  - 3
-  - 1539
+  attributes:
+  - color
+  - material
+  - mounting_type
+  - pattern
+  - suitable_location
 - id: fr-19-2
   name: Wall Shelves & Ledges
-  children_ids:
+  children:
   - fr-19-2-1
   - fr-19-2-2
   - fr-19-2-3
   - fr-19-2-4
   - fr-19-2-5
-  attribute_ids:
-  - 4
-  - 1205
-  - 3
-  - 1539
-  - 1
+  attributes:
+  - material
+  - mounting_type
+  - pattern
+  - suitable_location
+  - color
 - id: fr-20
   name: Shelving Accessories
-  children_ids:
+  children:
   - fr-20-1
-  attribute_ids:
-  - 1
+  attributes:
+  - color
 - id: fr-20-1
   name: Replacement Shelves
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: fr-21
   name: Sofa Accessories
-  children_ids:
+  children:
   - fr-21-1
   - fr-21-2
-  attribute_ids:
-  - 1
+  attributes:
+  - color
 - id: fr-21-1
   name: Chair & Sofa Supports
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: fr-21-2
   name: Sectional Sofa Units
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: fr-22
   name: Sofas
-  children_ids:
+  children:
   - fr-22-1
   - fr-22-3
   - fr-22-4
   - fr-22-6
-  attribute_ids:
-  - 1540
-  - 1
-  - 1514
-  - 3
-  - 1541
+  attributes:
+  - backrest_upholstery_material
+  - color
+  - firmness
+  - pattern
+  - seat_upholstery_material
 - id: fr-23
   name: Table Accessories
-  children_ids:
+  children:
   - fr-23-1
   - fr-23-2
-  attribute_ids:
-  - 1
+  attributes:
+  - color
 - id: fr-23-1
   name: Table Legs
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-23-2
   name: Table Tops
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-24
   name: Tables
-  children_ids:
+  children:
   - fr-24-1
   - fr-24-2
   - fr-24-3
@@ -1037,957 +1037,957 @@
   - fr-24-6
   - fr-24-7
   - fr-24-8
-  attribute_ids:
-  - 1525
-  - 3
-  - 1535
-  - 1532
-  - 1
+  attributes:
+  - leg_material
+  - pattern
+  - tabletop_material
+  - tabletop_shape
+  - color
 - id: fr-24-1
   name: Accent Tables
-  children_ids:
+  children:
   - fr-24-1-1
   - fr-24-1-2
   - fr-24-1-3
-  attribute_ids:
-  - 1
-  - 1525
-  - 3
-  - 1535
-  - 1532
+  attributes:
+  - color
+  - leg_material
+  - pattern
+  - tabletop_material
+  - tabletop_shape
 - id: fr-24-1-1
   name: Coffee Tables
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1525
-  - 3
-  - 1535
-  - 1532
+  children: []
+  attributes:
+  - color
+  - leg_material
+  - pattern
+  - tabletop_material
+  - tabletop_shape
 - id: fr-24-1-2
   name: End Tables
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1525
-  - 3
-  - 1535
-  - 1532
+  children: []
+  attributes:
+  - color
+  - leg_material
+  - pattern
+  - tabletop_material
+  - tabletop_shape
 - id: fr-24-1-3
   name: Sofa Tables
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1525
-  - 3
-  - 1535
-  - 1532
+  children: []
+  attributes:
+  - color
+  - leg_material
+  - pattern
+  - tabletop_material
+  - tabletop_shape
 - id: fr-24-2
   name: Activity Tables
-  children_ids: []
-  attribute_ids:
-  - 1525
-  - 3
-  - 1534
-  - 1535
-  - 1524
+  children: []
+  attributes:
+  - leg_material
+  - pattern
+  - tabletop_color
+  - tabletop_material
+  - leg_color
 - id: fr-24-3
   name: Folding Tables
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1224
-  - 1525
-  - 3
-  - 1535
+  children: []
+  attributes:
+  - color
+  - frame_material
+  - leg_material
+  - pattern
+  - tabletop_material
 - id: fr-24-4
   name: Kitchen & Dining Room Tables
-  children_ids:
+  children:
   - fr-24-4-1
-  attribute_ids:
-  - 1
-  - 1525
-  - 3
-  - 1535
+  attributes:
+  - color
+  - leg_material
+  - pattern
+  - tabletop_material
 - id: fr-24-5
   name: Kotatsu
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1525
-  - 1542
-  - 1535
-  - 1532
+  children: []
+  attributes:
+  - color
+  - leg_material
+  - leg_pattern
+  - tabletop_material
+  - tabletop_shape
 - id: fr-24-6
   name: Nightstands
-  children_ids: []
-  attribute_ids:
-  - 1246
-  - 1224
-  - 1524
-  - 1525
-  - 3
-  - 1532
-  - 1522
-  - 1523
+  children: []
+  attributes:
+  - frame_color
+  - frame_material
+  - leg_color
+  - leg_material
+  - pattern
+  - tabletop_shape
+  - top_color
+  - top_material
 - id: fr-24-7
   name: Poker & Game Tables
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1525
-  - 3
-  - 1535
-  - 1532
+  children: []
+  attributes:
+  - color
+  - leg_material
+  - pattern
+  - tabletop_material
+  - tabletop_shape
 - id: fr-24-8
   name: Sewing Machine Tables
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1525
-  - 1542
-  - 3
-  - 1535
-  - 1532
+  children: []
+  attributes:
+  - color
+  - leg_material
+  - leg_pattern
+  - pattern
+  - tabletop_material
+  - tabletop_shape
 - id: fr-1-3-1
   name: Bassinet Playards
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1
-  - 4
+  children: []
+  attributes:
+  - age_group
+  - color
+  - material
 - id: fr-1-3-2
   name: Bassinets
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1
-  - 4
+  children: []
+  attributes:
+  - age_group
+  - color
+  - material
 - id: fr-1-3-3
   name: Bedside Bassinets
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 30
-  - 1
+  children: []
+  attributes:
+  - material
+  - age_group
+  - color
 - id: fr-1-3-5
   name: Convertible Bassinets
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 4
-  - 1
+  children: []
+  attributes:
+  - age_group
+  - material
+  - color
 - id: fr-1-3-6
   name: Cradles
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1
-  - 4
+  children: []
+  attributes:
+  - age_group
+  - color
+  - material
 - id: fr-1-3-7
   name: Folding Bassinets
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1
-  - 4
+  children: []
+  attributes:
+  - age_group
+  - color
+  - material
 - id: fr-1-3-8
   name: Hanging Bassinets
-  children_ids: []
-  attribute_ids:
-  - 30
-  - 1
-  - 4
+  children: []
+  attributes:
+  - age_group
+  - color
+  - material
 - id: fr-1-3-10
   name: Rocking Bassinets
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 30
-  - 1
+  children: []
+  attributes:
+  - material
+  - age_group
+  - color
 - id: fr-1-3-11
   name: Travel Bassinets
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 30
-  - 1
+  children: []
+  attributes:
+  - material
+  - age_group
+  - color
 - id: fr-1-5-1-1
   name: Crib Liners
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-1-5-1-2
   name: Crib Rail Covers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-1-5-1-3
   name: Crib Skirts
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-1-5-1-4
   name: Mesh Crib Bumpers
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-1-5-1-5
   name: Padded Crib Bumpers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-1-5-1-6
   name: Teething Rail Covers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-1-6-4
   name: Bunk Toddler Beds
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-1-6-5
   name: Canopy Toddler Beds
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-1-6-6
   name: Loft Toddler Beds
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-1-6-7
   name: Mini Cribs
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-1-6-9
   name: Sleigh Toddler Beds
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-1-6-10
   name: Standard Cribs
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-1-6-11
   name: Toddler Beds
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-1-6-12
   name: Travel Cribs
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-1-8-2
   name: Booster Feeding Seats
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-1-8-3
   name: Convertible High Chairs
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-1-8-4
   name: High Chairs
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-1-8-5
   name: Hook-On Seats
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-1-9
   name: Play Sofas
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-2-2-1
   name: Air Beds
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1513
-  - 4
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - compatible_mattress_size
+  - material
 - id: fr-2-2-2
   name: Bunk Beds & Bed Frames
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1513
-  - 4
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - compatible_mattress_size
+  - material
 - id: fr-2-2-3
   name: Cabin Beds & Bed Frames
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1513
-  - 4
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - compatible_mattress_size
+  - material
 - id: fr-2-2-4
   name: Canopy Beds & Bed Frames
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1513
-  - 4
-  - 1259
+  children: []
+  attributes:
+  - color
+  - compatible_mattress_size
+  - material
+  - bedding_size
 - id: fr-2-2-5
   name: Cot Beds & Bed Frames
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1513
-  - 4
-  - 1259
+  children: []
+  attributes:
+  - color
+  - compatible_mattress_size
+  - material
+  - bedding_size
 - id: fr-2-2-6
   name: Divan Beds & Bed Frames
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1513
-  - 4
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - compatible_mattress_size
+  - material
 - id: fr-2-2-7
   name: Four Posters
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1513
-  - 4
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - compatible_mattress_size
+  - material
 - id: fr-2-2-8
   name: Loft Beds & Bed Frames
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1513
-  - 4
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - compatible_mattress_size
+  - material
 - id: fr-2-2-9
   name: Mid-Century Beds & Bed Frames
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1513
-  - 4
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - compatible_mattress_size
+  - material
 - id: fr-2-2-10
   name: Panel Beds & Bed Frames
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1513
-  - 4
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - compatible_mattress_size
+  - material
 - id: fr-2-2-11
   name: Platform Beds & Bed Frames
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1513
-  - 4
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - compatible_mattress_size
+  - material
 - id: fr-2-2-12
   name: Slat Beds & Bed Frames
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1513
-  - 4
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - compatible_mattress_size
+  - material
 - id: fr-2-2-13
   name: Sleigh Beds & Bed Frames
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1513
-  - 4
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - compatible_mattress_size
+  - material
 - id: fr-2-2-14
   name: Trundle Beds & Bed Frames
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1513
-  - 4
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - compatible_mattress_size
+  - material
 - id: fr-2-2-15
   name: Wall Beds & Bed Frames
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1513
-  - 4
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - compatible_mattress_size
+  - material
 - id: fr-2-2-16
   name: Water Beds
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1513
-  - 1259
-  - 4
+  children: []
+  attributes:
+  - color
+  - compatible_mattress_size
+  - bedding_size
+  - material
 - id: fr-2-3
   name: Footboards
-  children_ids: []
-  attribute_ids:
-  - 4
+  children: []
+  attributes:
+  - material
 - id: fr-2-4
   name: Headboards
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-2-5-1
   name: Adjustable Bases
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1341
-  - 1514
-  - 1224
-  - 1515
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - cover_material
+  - firmness
+  - frame_material
+  - slat_material
 - id: fr-2-5-2
   name: Box Springs
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1341
-  - 1514
-  - 1224
-  - 1515
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - cover_material
+  - firmness
+  - frame_material
+  - slat_material
 - id: fr-2-5-3
   name: Bunkie Boards
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1341
-  - 1514
-  - 1224
-  - 1515
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - cover_material
+  - firmness
+  - frame_material
+  - slat_material
 - id: fr-2-5-4
   name: Foldable Metal Foundations
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1341
-  - 1514
-  - 1224
-  - 1515
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - cover_material
+  - firmness
+  - frame_material
+  - slat_material
 - id: fr-2-5-5
   name: Foundations & Frames-in-One
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1341
-  - 1514
-  - 1224
-  - 1515
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - cover_material
+  - firmness
+  - frame_material
+  - slat_material
 - id: fr-2-5-7
   name: Panel Bases
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1341
-  - 1514
-  - 1224
-  - 1515
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - cover_material
+  - firmness
+  - frame_material
+  - slat_material
 - id: fr-2-5-8
   name: Platform Bases
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1341
-  - 1514
-  - 1224
-  - 1515
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - cover_material
+  - firmness
+  - frame_material
+  - slat_material
 - id: fr-2-6-1
   name: Gel Foam Mattresses
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1514
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - firmness
 - id: fr-2-6-2
   name: High Resilience Foam Mattresses
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1514
-  - 1259
+  children: []
+  attributes:
+  - color
+  - firmness
+  - bedding_size
 - id: fr-2-6-3
   name: Innerspring Mattresses
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1514
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - firmness
 - id: fr-2-6-4
   name: Latex Mattresses
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1514
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - firmness
 - id: fr-2-6-5
   name: Memory Foam Mattresses
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1514
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - firmness
 - id: fr-2-6-6
   name: Rolled Mattresses
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1514
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - firmness
 - id: fr-2-6-7
   name: Water Mattresses
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1514
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - firmness
 - id: fr-3-1-1
   name: Backed Benches
-  children_ids: []
-  attribute_ids:
-  - 1246
-  - 1224
-  - 1516
-  - 1517
-  - 1518
+  children: []
+  attributes:
+  - frame_color
+  - frame_material
+  - seat_color
+  - seat_material
+  - seat_type
 - id: fr-3-1-2
   name: Backless Benches
-  children_ids: []
-  attribute_ids:
-  - 1246
-  - 1224
-  - 1516
-  - 1517
-  - 1518
+  children: []
+  attributes:
+  - frame_color
+  - frame_material
+  - seat_color
+  - seat_material
+  - seat_type
 - id: fr-3-1-3
   name: Banquettes
-  children_ids: []
-  attribute_ids:
-  - 1224
-  - 1516
-  - 1517
-  - 1518
-  - 1246
+  children: []
+  attributes:
+  - frame_material
+  - seat_color
+  - seat_material
+  - seat_type
+  - frame_color
 - id: fr-3-1-4
   name: Booths
-  children_ids: []
-  attribute_ids:
-  - 1246
-  - 1224
-  - 1516
-  - 1517
-  - 1518
+  children: []
+  attributes:
+  - frame_color
+  - frame_material
+  - seat_color
+  - seat_material
+  - seat_type
 - id: fr-3-1-5
   name: Corner Benches
-  children_ids: []
-  attribute_ids:
-  - 1246
-  - 1224
-  - 1516
-  - 1517
-  - 1518
+  children: []
+  attributes:
+  - frame_color
+  - frame_material
+  - seat_color
+  - seat_material
+  - seat_type
 - id: fr-3-1-6
   name: Counter Height Benches
-  children_ids: []
-  attribute_ids:
-  - 1517
-  - 1518
-  - 1246
-  - 1224
-  - 1516
+  children: []
+  attributes:
+  - seat_material
+  - seat_type
+  - frame_color
+  - frame_material
+  - seat_color
 - id: fr-3-1-7
   name: Dining Benches
-  children_ids: []
-  attribute_ids:
-  - 1246
-  - 1224
-  - 1516
-  - 1517
-  - 1518
+  children: []
+  attributes:
+  - frame_color
+  - frame_material
+  - seat_color
+  - seat_material
+  - seat_type
 - id: fr-3-1-8
   name: Farmhouse Benches
-  children_ids: []
-  attribute_ids:
-  - 1246
-  - 1224
-  - 1516
-  - 1517
-  - 1518
+  children: []
+  attributes:
+  - frame_color
+  - frame_material
+  - seat_color
+  - seat_material
+  - seat_type
 - id: fr-3-1-9
   name: Kitchen Nook Benches
-  children_ids: []
-  attribute_ids:
-  - 1246
-  - 1224
-  - 1516
-  - 1517
-  - 1518
+  children: []
+  attributes:
+  - frame_color
+  - frame_material
+  - seat_color
+  - seat_material
+  - seat_type
 - id: fr-3-1-10
   name: L-Shaped Benches
-  children_ids: []
-  attribute_ids:
-  - 1516
-  - 1517
-  - 1518
-  - 1246
-  - 1224
+  children: []
+  attributes:
+  - seat_color
+  - seat_material
+  - seat_type
+  - frame_color
+  - frame_material
 - id: fr-3-1-11
   name: Saddle Benches
-  children_ids: []
-  attribute_ids:
-  - 1246
-  - 1224
-  - 1516
-  - 1517
-  - 1518
+  children: []
+  attributes:
+  - frame_color
+  - frame_material
+  - seat_color
+  - seat_material
+  - seat_type
 - id: fr-3-1-13
   name: Storage Benches
-  children_ids: []
-  attribute_ids:
-  - 1246
-  - 1224
-  - 1516
-  - 1517
-  - 1518
+  children: []
+  attributes:
+  - frame_color
+  - frame_material
+  - seat_color
+  - seat_material
+  - seat_type
 - id: fr-3-1-14
   name: Trestles
-  children_ids: []
-  attribute_ids:
-  - 1246
-  - 1224
-  - 1516
-  - 1517
-  - 1518
+  children: []
+  attributes:
+  - frame_color
+  - frame_material
+  - seat_color
+  - seat_material
+  - seat_type
 - id: fr-3-1-15
   name: Upholstered Benches
-  children_ids: []
-  attribute_ids:
-  - 1246
-  - 1224
-  - 1516
-  - 1517
-  - 1518
+  children: []
+  attributes:
+  - frame_color
+  - frame_material
+  - seat_color
+  - seat_material
+  - seat_type
 - id: fr-3-2-1
   name: Basket Benches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-3-2-2
   name: Coat Racks
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-3-2-3
   name: Cubby Benches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-3-2-4
   name: Drawer Storage Benches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-3-2-5
   name: Entryway Benches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-3-2-6
   name: Hall Trees
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-3-2-7
   name: Hook Benches
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-3-2-8
   name: Lidded Storage Benches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-3-2-9
   name: Lift-Top Storage Benches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-3-2-10
   name: Locker Benches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-3-2-12
   name: Shoe Storage Benches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-3-2-13
   name: Upholstered Storage Benches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-3-2-14
   name: Window Seats
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-1-1
   name: Computer Armoires
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-1-2
   name: Corner Armoires
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-1-3
   name: Corner Wardrobes
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-1-4
   name: Double Wardrobes
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-1-5
   name: Hanging Rail Wardrobes
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-1-6
   name: Hinged Door Wardrobes
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-1-7
   name: Jewelry Armoires
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-1-8
   name: Kids' Armoires
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-1-9
   name: Kids' Wardrobes
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-1-10
   name: Mirrored Armoires
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-1-11
   name: Mirrored Wardrobes
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-1-12
   name: Office Armoires
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-1-13
   name: Portable Wardrobes
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-4-1-14
   name: Shelved Armoires
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-1-15
   name: Sliding Door Wardrobes
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-1-16
   name: Triple Wardrobes
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-1-17
   name: TV Armoires
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-2
   name: Buffets
-  children_ids: []
-  attribute_ids:
-  - 1519
-  - 1520
-  - 1521
-  - 1246
-  - 1224
-  - 1522
-  - 1523
+  children: []
+  attributes:
+  - door_color
+  - door_material
+  - door_type
+  - frame_color
+  - frame_material
+  - top_color
+  - top_material
 - id: fr-4-3-1
   name: Buffets with Hutch
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-3-2
   name: Cabinet Hutches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-3-3
   name: China Cabinets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-3-4
   name: Corner Display Cabinets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-3-5
   name: Corner Hutches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-3-6
   name: Credenza Hutches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-3-7
   name: Dining Room Hutches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-3-8
   name: Display Hutches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-3-9
   name: Kitchen Hutches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-3-10
   name: Secretary Desks with Hutch
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-3-11
   name: Server Hutches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-3-12
   name: Sideboards with Hutch
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-3-13
   name: Tall Display Cabinets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-3-14
   name: Wall-Mounted Hutches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-4
   name: Closets & Closet Accessories
-  children_ids:
+  children:
   - fr-4-4-1
   - fr-4-4-2
   - fr-4-4-3
@@ -1997,900 +1997,900 @@
   - fr-4-4-7
   - fr-4-4-8
   - fr-4-4-9
-  attribute_ids:
-  - 1
-  - 4
+  attributes:
+  - color
+  - material
 - id: fr-4-4-1
   name: Closet Baskets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-4-2
   name: Closet Bins
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-4-3
   name: Closet Doors
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-4-4
   name: Closet Drawers
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-4-5
   name: Closet Rods
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-4-6
   name: Closet Shelves
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-4-7
   name: Kids' Closets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-4-8
   name: Reach-In Closets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-4-9
   name: Walk-In Closets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-8-1
   name: Base Kitchen Cabinets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-8-2
   name: Corner Kitchen Cabinets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-8-3
   name: Double Doors
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-8-4
   name: Drawer Base Kitchen Cabinets
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-4-8-5
   name: Farmhouse Kitchen Cabinets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-8-6
   name: Glass-Front Kitchen Cabinets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-8-7
   name: Hutch-Style Kitchen Cabinets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-8-8
   name: Microwave Cabinets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-8-9
   name: Open Shelves
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-8-10
   name: Oven Cabinets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-8-11
   name: Pantries
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-8-12
   name: Pull-Out Trash Cans
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-8-13
   name: Single Door Kitchen Cabinets
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-4-8-14
   name: Sink Base Cabinets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-8-15
   name: Tall Kitchen Cabinets
-  children_ids: []
-  attribute_ids:
-  - 4
+  children: []
+  attributes:
+  - material
 - id: fr-4-8-16
   name: Wall Kitchen Cabinets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-11
   name: Sideboards
-  children_ids: []
-  attribute_ids:
-  - 1521
-  - 1246
-  - 1224
-  - 1524
-  - 1525
-  - 1522
-  - 1523
+  children: []
+  attributes:
+  - door_type
+  - frame_color
+  - frame_material
+  - leg_color
+  - leg_material
+  - top_color
+  - top_material
 - id: fr-4-14-1-1
   name: Bathroom Cabinets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14-1-2
   name: Bathroom Vanity Sets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14-1-3
   name: Corner Vanities
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14-1-4
   name: Double Sinks
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14-1-5
   name: Floating Vanities
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14-1-6
   name: Free-Standing Vanities
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14-1-7
   name: Pedestal Vanities
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14-1-8
   name: Single Sink Vanities
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14-1-9
   name: Topless Vanities
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14-1-10
   name: Topped Vanities
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14-1-11
   name: Vanity Bases
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14-2-1
   name: Bedroom Vanity Sets
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14-2-3
   name: Desk Vanities
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14-2-4
   name: Dressing Tables
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14-2-5
   name: Lighted Vanities
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14-2-6
   name: Makeup Vanities
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-4-14-2-7
   name: Mirrored Vanities
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
+  children: []
+  attributes:
+  - material
+  - color
 - id: fr-4-14-2-8
   name: Table Vanities
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-5-1
   name: Carts
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
+  children: []
+  attributes:
+  - color
+  - material
 - id: fr-5-2
   name: Islands
-  children_ids: []
-  attribute_ids:
-  - 1
+  children: []
+  attributes:
+  - color
 - id: fr-7-1
   name: Armchairs, Recliners & Sleeper Chairs
-  children_ids:
+  children:
   - fr-7-1-1
   - fr-7-1-2
   - fr-7-1-3
-  attribute_ids:
-  - 1527
-  - 1
-  - 4
-  - 1518
+  attributes:
+  - backrest_type
+  - color
+  - material
+  - seat_type
 - id: fr-7-1-1
   name: Armchairs
-  children_ids: []
-  attribute_ids:
-  - 1527
-  - 1
-  - 4
-  - 1518
+  children: []
+  attributes:
+  - backrest_type
+  - color
+  - material
+  - seat_type
 - id: fr-7-1-2
   name: Recliners
-  children_ids: []
-  attribute_ids:
-  - 1527
-  - 1
-  - 4
-  - 1518
+  children: []
+  attributes:
+  - backrest_type
+  - color
+  - material
+  - seat_type
 - id: fr-7-1-3
   name: Sleeper Chairs
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 1527
-  - 1518
+  children: []
+  attributes:
+  - color
+  - material
+  - backrest_type
+  - seat_type
 - id: fr-7-3-1
   name: Armless Chaises
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1527
-  - 1
-  - 1518
+  children: []
+  attributes:
+  - material
+  - backrest_type
+  - color
+  - seat_type
 - id: fr-7-3-2
   name: Chaise Longues
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1527
-  - 1
-  - 1518
+  children: []
+  attributes:
+  - material
+  - backrest_type
+  - color
+  - seat_type
 - id: fr-7-3-3
   name: Double Chaises Longues
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1518
-  - 1527
-  - 1
+  children: []
+  attributes:
+  - material
+  - seat_type
+  - backrest_type
+  - color
 - id: fr-7-3-5
   name: Reclining Chaises Longues
-  children_ids: []
-  attribute_ids:
-  - 1527
-  - 1
-  - 4
-  - 1518
+  children: []
+  attributes:
+  - backrest_type
+  - color
+  - material
+  - seat_type
 - id: fr-7-6-1
   name: Folding Chairs
-  children_ids: []
-  attribute_ids:
-  - 1527
-  - 1
-  - 4
-  - 1518
+  children: []
+  attributes:
+  - backrest_type
+  - color
+  - material
+  - seat_type
 - id: fr-7-6-2
   name: Folding Stools
-  children_ids: []
-  attribute_ids:
-  - 1527
-  - 1
-  - 4
-  - 1518
+  children: []
+  attributes:
+  - backrest_type
+  - color
+  - material
+  - seat_type
 - id: fr-7-10-1
   name: Classic Rocking Chairs
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 1214
+  children: []
+  attributes:
+  - color
+  - material
+  - suitable_space
 - id: fr-7-10-4
   name: Kids' Rocking Chairs
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1527
-  - 1
-  - 1518
+  children: []
+  attributes:
+  - material
+  - backrest_type
+  - color
+  - seat_type
 - id: fr-7-10-5
   name: Nursery Rocking Chairs
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1518
-  - 1527
-  - 1
+  children: []
+  attributes:
+  - material
+  - seat_type
+  - backrest_type
+  - color
 - id: fr-7-12-1
   name: Adjustable Bar Stools
-  children_ids: []
-  attribute_ids:
-  - 1531
-  - 1
-  - 4
-  - 1518
+  children: []
+  attributes:
+  - back_type
+  - color
+  - material
+  - seat_type
 - id: fr-7-12-2
   name: Bar Stools
-  children_ids: []
-  attribute_ids:
-  - 1531
-  - 1
-  - 4
-  - 1518
+  children: []
+  attributes:
+  - back_type
+  - color
+  - material
+  - seat_type
 - id: fr-8
   name: Daybeds
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-11-1
   name: Futon Frames
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 4
-  - 3
-  - 1214
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - material
+  - pattern
+  - suitable_space
 - id: fr-11-2
   name: Futon Pads
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1514
-  - 4
-  - 3
-  - 1214
+  children: []
+  attributes:
+  - color
+  - firmness
+  - material
+  - pattern
+  - suitable_space
 - id: fr-15-1-1
   name: Bunk Beds
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1514
-  - 1205
-  - 3
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - firmness
+  - mounting_type
+  - pattern
 - id: fr-15-1-2
   name: Cabana Beds
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1514
-  - 1205
-  - 3
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - firmness
+  - mounting_type
+  - pattern
 - id: fr-15-1-3
   name: Canopy Beds
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1514
-  - 1205
-  - 3
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - firmness
+  - mounting_type
+  - pattern
 - id: fr-15-1-4
   name: Daybeds
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1514
-  - 1205
-  - 3
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - firmness
+  - mounting_type
+  - pattern
 - id: fr-15-1-5
   name: Futons
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1514
-  - 1205
-  - 3
-  - 1259
+  children: []
+  attributes:
+  - color
+  - firmness
+  - mounting_type
+  - pattern
+  - bedding_size
 - id: fr-15-1-7
   name: Poolside Beds
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1514
-  - 1205
-  - 3
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - firmness
+  - mounting_type
+  - pattern
 - id: fr-15-1-8
   name: Sunbeds
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1514
-  - 1205
-  - 3
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - firmness
+  - mounting_type
+  - pattern
 - id: fr-15-1-9
   name: Swings
-  children_ids: []
-  attribute_ids:
-  - 1259
-  - 1
-  - 1514
-  - 1205
-  - 3
+  children: []
+  attributes:
+  - bedding_size
+  - color
+  - firmness
+  - mounting_type
+  - pattern
 - id: fr-15-3-1
   name: Cocktail Ottomans
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-3-2
   name: Foldable Ottomans
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-3-3
   name: Footstools
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-3-4
   name: Glider Ottomans
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-3-5
   name: Hassocks
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-3-6
   name: Ottoman Benches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-3-7
   name: Ottoman Cubes
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-3-8
   name: Poufs
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-3-9
   name: Rectangle Ottomans
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-3-10
   name: Round Ottomans
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-3-11
   name: Shoe Storage Ottomans
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-3-12
   name: Sleeper Ottomans
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-3-13
   name: Square Ottomans
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-3-14
   name: Storage Ottomans
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-3-15
   name: Tray Top Ottomans
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-3-16
   name: Tufted Ottomans
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: fr-15-4-1-10
   name: Picnic Benches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
-  - 1537
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - seat_structure
 - id: fr-15-4-1-11
   name: Storage Benches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
-  - 1537
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - seat_structure
 - id: fr-15-4-1-12
   name: Swing Benches
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
-  - 1537
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - seat_structure
 - id: fr-15-4-2-5
   name: Club Chairs
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1527
-  - 1
-  - 3
-  - 1537
-  - 1518
+  children: []
+  attributes:
+  - material
+  - backrest_type
+  - color
+  - pattern
+  - seat_structure
+  - seat_type
 - id: fr-15-4-2-9
   name: Folding Chairs
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1527
-  - 1
-  - 3
-  - 1537
-  - 1518
+  children: []
+  attributes:
+  - material
+  - backrest_type
+  - color
+  - pattern
+  - seat_structure
+  - seat_type
 - id: fr-15-4-2-15
   name: Rocking Chairs
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 3
-  - 1537
-  - 1518
-  - 1527
-  - 1
+  children: []
+  attributes:
+  - material
+  - pattern
+  - seat_structure
+  - seat_type
+  - backrest_type
+  - color
 - id: fr-15-4-2-16
   name: Sling Chairs
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
-  - 1537
-  - 1518
-  - 1527
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - seat_structure
+  - seat_type
+  - backrest_type
 - id: fr-15-4-2-18
   name: Swing Chairs
-  children_ids: []
-  attribute_ids:
-  - 1527
-  - 1
-  - 4
-  - 3
-  - 1537
-  - 1518
+  children: []
+  attributes:
+  - backrest_type
+  - color
+  - material
+  - pattern
+  - seat_structure
+  - seat_type
 - id: fr-15-4-4-1
   name: Loveseat Sofas
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 3
+  children: []
+  attributes:
+  - color
+  - pattern
 - id: fr-15-4-4-2
   name: Sectional Sofas
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 3
+  children: []
+  attributes:
+  - color
+  - pattern
 - id: fr-15-6-1
   name: Bar Tables
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
-  - 1532
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - tabletop_shape
 - id: fr-15-6-2
   name: Bistro Tables
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
-  - 1532
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - tabletop_shape
 - id: fr-15-6-3
   name: Coffee Tables
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
-  - 1532
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - tabletop_shape
 - id: fr-15-6-4
   name: Console Tables
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
-  - 1532
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - tabletop_shape
 - id: fr-15-6-5
   name: Dining Tables
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
-  - 1532
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - tabletop_shape
 - id: fr-15-6-7
   name: Fire Pits
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 3
-  - 1532
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - tabletop_shape
 - id: fr-15-6-9
   name: Game Tables
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
-  - 3
-  - 1532
+  children: []
+  attributes:
+  - material
+  - color
+  - pattern
+  - tabletop_shape
 - id: fr-15-6-11
   name: Poolside Tables
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
-  - 3
-  - 1532
+  children: []
+  attributes:
+  - material
+  - color
+  - pattern
+  - tabletop_shape
 - id: fr-19-1-1
   name: Corner Bookcases & Shelves
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1205
-  - 3
-  - 1539
-  - 1
+  children: []
+  attributes:
+  - material
+  - mounting_type
+  - pattern
+  - suitable_location
+  - color
 - id: fr-19-1-2
   name: Floating Bookcases & Shelves
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1205
-  - 3
-  - 1539
-  - 1
+  children: []
+  attributes:
+  - material
+  - mounting_type
+  - pattern
+  - suitable_location
+  - color
 - id: fr-19-1-3
   name: Ladder Bookcases & Shelves
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 1205
-  - 3
-  - 1539
+  children: []
+  attributes:
+  - color
+  - material
+  - mounting_type
+  - pattern
+  - suitable_location
 - id: fr-19-1-4
   name: Modular Bookcases & Shelves
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 1205
-  - 3
-  - 1539
+  children: []
+  attributes:
+  - color
+  - material
+  - mounting_type
+  - pattern
+  - suitable_location
 - id: fr-19-1-5
   name: Rack Bookcases & Shelves
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1
-  - 1205
-  - 3
-  - 1539
+  children: []
+  attributes:
+  - material
+  - color
+  - mounting_type
+  - pattern
+  - suitable_location
 - id: fr-19-2-1
   name: Corner Wall Shelves & Ledges
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1205
-  - 3
-  - 1539
-  - 1
+  children: []
+  attributes:
+  - material
+  - mounting_type
+  - pattern
+  - suitable_location
+  - color
 - id: fr-19-2-2
   name: Floating Wall Shelves & Ledges
-  children_ids: []
-  attribute_ids:
-  - 4
-  - 1205
-  - 3
-  - 1539
-  - 1
+  children: []
+  attributes:
+  - material
+  - mounting_type
+  - pattern
+  - suitable_location
+  - color
 - id: fr-19-2-3
   name: Ladder Wall Shelves & Ledges
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 1205
-  - 3
-  - 1539
+  children: []
+  attributes:
+  - color
+  - material
+  - mounting_type
+  - pattern
+  - suitable_location
 - id: fr-19-2-4
   name: Modular Wall Shelves & Ledges
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 1205
-  - 3
-  - 1539
+  children: []
+  attributes:
+  - color
+  - material
+  - mounting_type
+  - pattern
+  - suitable_location
 - id: fr-19-2-5
   name: Rack Wall Shelves & Ledges
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 4
-  - 1205
-  - 3
-  - 1539
+  children: []
+  attributes:
+  - color
+  - material
+  - mounting_type
+  - pattern
+  - suitable_location
 - id: fr-22-1
   name: Chaise Longue Sofas
-  children_ids: []
-  attribute_ids:
-  - 1540
-  - 1
-  - 1514
-  - 3
-  - 1541
+  children: []
+  attributes:
+  - backrest_upholstery_material
+  - color
+  - firmness
+  - pattern
+  - seat_upholstery_material
 - id: fr-22-3
   name: Corner Sofas
-  children_ids: []
-  attribute_ids:
-  - 1540
-  - 1
-  - 1514
-  - 3
-  - 1541
+  children: []
+  attributes:
+  - backrest_upholstery_material
+  - color
+  - firmness
+  - pattern
+  - seat_upholstery_material
 - id: fr-22-4
   name: Loveseat Sofas
-  children_ids: []
-  attribute_ids:
-  - 1540
-  - 1
-  - 1514
-  - 3
-  - 1541
+  children: []
+  attributes:
+  - backrest_upholstery_material
+  - color
+  - firmness
+  - pattern
+  - seat_upholstery_material
 - id: fr-22-6
   name: Sectional Sofas
-  children_ids: []
-  attribute_ids:
-  - 1540
-  - 1
-  - 1514
-  - 3
-  - 1541
+  children: []
+  attributes:
+  - backrest_upholstery_material
+  - color
+  - firmness
+  - pattern
+  - seat_upholstery_material
 - id: fr-24-4-1
   name: Console Tables
-  children_ids: []
-  attribute_ids:
-  - 1
-  - 1525
-  - 3
-  - 1535
+  children: []
+  attributes:
+  - color
+  - leg_material
+  - pattern
+  - tabletop_material
