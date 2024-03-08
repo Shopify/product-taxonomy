@@ -1,8 +1,9 @@
 body {
   margin: 2rem;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "San Francisco",
+    "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   font-size: 13px;
-  color: rgba(48, 48, 48, 1)
+  color: rgba(48, 48, 48, 1);
 }
 
 p {
@@ -109,6 +110,34 @@ a:active {
   display: block;
 }
 
+.category-search-container {
+  position: relative;
+}
+
+#category-search-results {
+  display: none;
+  background: white;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ddd;
+}
+
+#category-search-results li {
+  padding: 2px 4px;
+}
+
+#category-search-results a {
+  text-decoration: none;
+}
+
+#category-search-results a:hover {
+  text-decoration: underline;
+}
+
 .title {
   display: flex;
   align-items: center;
@@ -116,7 +145,8 @@ a:active {
 
 .id {
   font-size: 10px;
-  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas,
+    "Liberation Mono", Menlo, monospace;
   margin-bottom: 0.5rem;
   color: rgba(0, 58, 90, 1);
   background-color: rgba(234, 244, 255, 1);
@@ -222,7 +252,8 @@ a:active {
   color: rgba(255, 255, 255, 1);
 }
 
-.accordion-item:hover, .accordion-item:active {
+.accordion-item:hover,
+.accordion-item:active {
   background-color: rgba(26, 26, 26, 1);
   color: rgba(255, 255, 255, 1);
 }

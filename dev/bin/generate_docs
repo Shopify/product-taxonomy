@@ -2,6 +2,7 @@
 
 require 'yaml'
 require 'json'
+require 'cgi'
 require 'fileutils'
 
 require_relative '../application'
@@ -9,10 +10,28 @@ require_relative '../application'
 class GenerateDocs
   class << self
     def generate_pages_data
-      category_data = JSON.load_file("#{Application.root}/dist/categories.json")
+      FileUtils.mkdir_p("#{Application.root}/docs/_data")
 
+      puts "Loading data"
+      puts "  → Reading dist/categories.json..."
+      category_data = JSON.load_file("#{Application.root}/dist/categories.json")
+      puts "  → Reading dist/attributes.json..."
+      attribute_data = JSON.load_file("#{Application.root}/dist/attributes.json")
+      puts "  ✓"
+      puts
+
+      generate_sibling_groups(category_data.fetch('verticals'))
+      generate_search_index(category_data.fetch('verticals'))
+      generate_attributes(attribute_data.fetch('attributes'))
+    end
+
+    private
+
+    def generate_sibling_groups(verticals)
+      puts "Preparing categories"
+      puts "  → Parsing categories into sibling groups"
       sibling_groups = {}
-      category_data['verticals'].each do |vertical|
+      verticals.each do |vertical|
         vertical['categories'].each do |category|
           parent_id = category.fetch('parent_id')
           parent_id = 'root' if parent_id.nil? || parent_id.empty?
@@ -34,20 +53,53 @@ class GenerateDocs
           sibling_groups[node_depth][parent_id] << mapped_category
         end
       end
-      fail if sibling_groups.empty?
+      if sibling_groups.empty?
+        puts "  ⨯ No categories found. Aborting."
+        fail
+      end
 
-      FileUtils.mkdir_p("#{Application.root}/docs/_data")
-
-      puts "Writing sibling_groups.yml..."
+      puts "  → Writing docs/_data/sibling_groups.yml"
       File.open("#{Application.root}/docs/_data/sibling_groups.yml", "w") do |file|
         file.write(sibling_groups.to_yaml(line_width: 1000))
       end
+      puts "  ✓"
+      puts
+    end
 
-      puts "Writing attributes.yml..."
-      attribute_data = JSON.load_file("#{Application.root}/dist/attributes.json")
-      File.open("#{Application.root}/docs/_data/attributes.yml", "w") do |file|
-        file.write(attribute_data.fetch('attributes').to_yaml(line_width: 1000))
+    def generate_search_index(verticals)
+      puts "Preparing search index"
+      puts "  → Parsing categories into search index"
+      search_index = verticals.flat_map do |vertical|
+        vertical['categories'].map do |category|
+          {
+            "title" => category.fetch("full_name"),
+            "url" => "?categoryId=#{CGI.escapeURIComponent(category.fetch("id"))}",
+            "category" => {
+              "id" => category.fetch("id"),
+              "name" => category.fetch("name"),
+              "fully_qualified_type" => category.fetch("full_name"),
+              "depth" => category.fetch("level"),
+            }
+          }
+        end
       end
+
+      puts "  → Writing docs/_data/search_index.json"
+      File.open("#{Application.root}/docs/assets/js/search_index.json", "w") do |file|
+        file.write(search_index.to_json)
+      end
+      puts "  ✓"
+      puts
+    end
+
+    def generate_attributes(attributes)
+      puts "Preparing attributes"
+      puts "  → Writing docs/_data/attributes.yml"
+      File.open("#{Application.root}/docs/_data/attributes.yml", "w") do |file|
+        file.write(attributes.to_yaml(line_width: 1000))
+      end
+      puts "  ✓"
+      puts
     end
   end
 end
