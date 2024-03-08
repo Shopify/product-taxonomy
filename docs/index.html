@@ -28,8 +28,8 @@
       <div class="content-container container">
         <div class="primary-container">
           <h2 class="container_title">Categories</h2>
-          <input type="text" id="category-search" onkeyup="categorySearch(this.value)" placeholder="Search for categories&hellip;">
-          <div class="category-search-results-container">
+          <div class="category-search-container">
+            <input type="text" id="category-search" placeholder="Search for categories&hellip;" />
             <ul id="category-search-results"></ul>
           </div>
 
@@ -95,9 +95,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@3.14.1/dist/js-yaml.min.js"></script>
-    <script type="module">
-      import { categorySearch } from './assets/js/index.js';
-      window.categorySearch = categorySearch;
-    </script>
+    <script type="module" src="assets/js/index.js"></script>
   </body>
 </html>

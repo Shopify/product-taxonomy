@@ -1,8 +1,9 @@
 import Fuse from "https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.mjs";
 import categories from "./search_index.json" assert { type: "json" };
 
-let selectedNodes = {};
+const searchDebounceMs = 200;
 const nodeQueryParamKey = "categoryId";
+let selectedNodes = {};
 let selectedNode = null;
 
 const getQueryParam = (param) => {
@@ -10,8 +11,12 @@ const getQueryParam = (param) => {
   return urlParams.get(param);
 };
 
+const qq = (selector, context = document) =>
+  Array.from(context.querySelectorAll(selector));
+const q = (selector, context = document) => context.querySelector(selector);
+
 const toggleExpandedCategories = () => {
-  document.querySelectorAll(".sibling-list").forEach((list) => {
+  qq(".sibling-list").forEach((list) => {
     const parentId = list.getAttribute("parent_id");
     const depth = list.getAttribute("node_depth") - 1;
     if (selectedNodes[depth] === parentId) {
@@ -23,7 +28,7 @@ const toggleExpandedCategories = () => {
 };
 
 const toggleSelectedCategory = () => {
-  document.querySelectorAll(".accordion-item").forEach((item) => {
+  qq(".accordion-item").forEach((item) => {
     const nodeId = item.getAttribute("node_id");
     if (Object.values(selectedNodes).includes(nodeId)) {
       item.classList.add("selected");
@@ -34,7 +39,7 @@ const toggleSelectedCategory = () => {
 };
 
 const toggleVisibleCategory = () => {
-  document.querySelectorAll(".category-container").forEach((item) => {
+  qq(".category-container").forEach((item) => {
     const nodeId = item.getAttribute("id");
     if (selectedNode === nodeId) {
       item.classList.add("active");
@@ -45,17 +50,15 @@ const toggleVisibleCategory = () => {
 };
 
 const toggleVisibleAttributes = () => {
-  document.querySelector(".secondary-container").classList.remove("active");
+  q(".secondary-container").classList.remove("active");
   if (!selectedNode) return;
-  document.querySelector(".secondary-container").classList.add("active");
+  q(".secondary-container").classList.add("active");
 
-  const documentNode = document.querySelector(
-    `.accordion-item[node_id="${selectedNode}"]`
-  );
+  const documentNode = q(`.accordion-item[node_id="${selectedNode}"]`);
   const attributeIds = documentNode.getAttribute("attribute_ids");
   const attributeList = attributeIds.split(",");
 
-  document.querySelectorAll(".attribute-container").forEach((attribute) => {
+  qq(".attribute-container").forEach((attribute) => {
     const attributeId = attribute.getAttribute("id");
     if (attributeList.includes(attributeId)) {
       attribute.classList.add("active");
@@ -106,7 +109,7 @@ const toggleNode = (nodeId, depth) => {
 };
 
 const setupListeners = () => {
-  document.querySelectorAll(".accordion-item").forEach((item) => {
+  qq(".accordion-item").forEach((item) => {
     item.addEventListener("click", (e) => {
       toggleNode(
         e.target.getAttribute("node_id"),
@@ -114,16 +117,44 @@ const setupListeners = () => {
       );
     });
   });
-  document.querySelectorAll(".attribute-title").forEach((attribute) => {
+  qq(".attribute-title").forEach((attribute) => {
     attribute.addEventListener("click", toggleAttributeSelected);
   });
+
+  setupSearchListeners();
+};
+
+const setupSearchListeners = () => {
+  const searchInput = q("#category-search");
+  const searchResults = q("#category-search-results");
+  let timeoutId;
+
+  searchInput.addEventListener("input", (e) => {
+    resetSearch();
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      categorySearch(e.target.value);
+    }, searchDebounceMs);
+  });
+  searchInput.addEventListener("focus", () => {
+    clearTimeout(timeoutId);
+  });
+
+  const handleBlur = (e) => {
+    if (searchResults.contains(e.relatedTarget)) return;
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => resetSearch({ clearInput: true }), 200);
+  };
+
+  searchResults.addEventListener("blur", handleBlur);
+  searchInput.addEventListener("blur", handleBlur);
 };
 
 const setInitialNode = () => {
   const initialNode = getQueryParam(nodeQueryParamKey);
-  const documentNode = document.querySelector(
-    `.accordion-item[node_id="${initialNode}"]`
-  );
+  if (!initialNode) return;
+
+  const documentNode = q(`.accordion-item[node_id="${initialNode}"]`);
   if (!documentNode) return;
 
   const ancestors = documentNode.getAttribute("ancestor_ids")
@@ -131,48 +162,63 @@ const setInitialNode = () => {
     : [];
   const depth = ancestors.length;
 
-  if (initialNode) {
-    ancestors.forEach((ancestor, index) => {
-      selectedNodes[depth - index - 1] = ancestor;
-    });
-    selectedNodes[depth] = initialNode;
-    selectedNode = initialNode;
-  }
+  ancestors.forEach((ancestor, index) => {
+    selectedNodes[depth - index - 1] = ancestor;
+  });
+  selectedNodes[depth] = initialNode;
+  selectedNode = initialNode;
 };
 
-const fuse = new Fuse(categories, {
-  includeMatches: true,
-  minMatchCharLength: 2,
-  keys: [
-    { name: "title", score: 0.5 },
-    { name: "category.name", score: 1 },
-    { name: "category.id", score: 0.8 },
-  ],
-});
+const resetSearch = ({ clearInput, focusInput } = {}) => {
+  if (clearInput) q("#category-search").value = "";
+  if (focusInput) q("#category-search").focus();
+  const searchContainer = q("#category-search-results");
+  searchContainer.innerHTML = "";
+  searchContainer.style.display = "none";
+};
 
-export function categorySearch(query) {
-  const searchInput = document.getElementById("category-search");
-  let ul = document.getElementById("category-search-results");
-  ul.innerHTML = "";
+let _fuse;
+const getFuse = () => {
+  if (_fuse) return _fuse;
+  _fuse = new Fuse(categories, {
+    includeMatches: true,
+    minMatchCharLength: 2,
+    keys: [
+      { name: "title", score: 0.5 },
+      { name: "category.name", score: 1 },
+      { name: "category.id", score: 0.8 },
+    ],
+  });
+  return _fuse;
+};
 
-  const results = fuse.search(query, { limit: 5 });
+function categorySearch(query) {
+  if (!query.trim()) return;
+  const searchContainer = q("#category-search-results");
+  searchContainer.style.display = "block";
+
+  const results = getFuse().search(query, { limit: 5 });
+  if (results.length === 0) {
+    searchContainer.textContent = "No results found";
+    return;
+  }
+
   results.forEach(({ item }) => {
-    let li = document.createElement("li");
-    let elemlink = document.createElement("a");
+    const searchResult = document.createElement("li");
+    const searchLink = document.createElement("a");
     // TODO: use item.matches to highlight the matched characters
-    elemlink.innerHTML = item.title;
-    elemlink.setAttribute("href", item.url);
-    elemlink.onclick = (e) => {
+    searchLink.textContent = item.title;
+    searchLink.href = item.url;
+    searchLink.onclick = (e) => {
       e.preventDefault();
       selectedNodes = {};
       setNodeQueryParam(item.category.id);
       setInitialNode();
       renderPage();
-      ul.innerHTML = "";
-      searchInput.value = "";
+      resetSearch({ clearInput: true, focusInput: e.detail === 0 });
     };
-    li.appendChild(elemlink);
-    ul.appendChild(li);
+    searchResult.appendChild(searchLink);
+    searchContainer.appendChild(searchResult);
   });
 }
 
