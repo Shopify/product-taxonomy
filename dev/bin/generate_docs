@@ -90,8 +90,11 @@ class GenerateDocs
       File.open("#{Application.root}/#{search_index_path}", "w") do |file|
         file.write(search_index.to_json)
       end
-      File.delete("#{Application.root}/#{search_index_symlink}")
-      File.symlink("#{Application.root}/#{search_index_path}", "#{Application.root}/#{search_index_symlink}")
+      FileUtils.ln_s(
+        "#{Application.root}/#{search_index_path}",
+        "#{Application.root}/#{search_index_symlink}",
+        force: true
+      )
       puts "  ✓"
       puts
     end
