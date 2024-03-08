@@ -20,14 +20,24 @@ class GenerateDocs
       puts "  ✓"
       puts
 
-      generate_sibling_groups(category_data.fetch('verticals'))
-      generate_search_index(category_data.fetch('verticals'))
-      generate_attributes(attribute_data.fetch('attributes'))
+      generate_sibling_groups(
+        category_data.fetch('verticals'),
+        target: "docs/_data/sibling_groups.yml"
+      )
+      generate_search_index(
+        category_data.fetch('verticals'),
+        target: "docs/_data/search_index.json",
+        symlink: "docs/assets/js/search_index.json"
+      )
+      generate_attributes(
+        attribute_data.fetch('attributes'),
+        target: "docs/_data/attributes.yml"
+      )
     end
 
     private
 
-    def generate_sibling_groups(verticals)
+    def generate_sibling_groups(verticals, target:)
       puts "Preparing categories"
       puts "  → Parsing categories into sibling groups"
       sibling_groups = {}
@@ -58,15 +68,15 @@ class GenerateDocs
         fail
       end
 
-      puts "  → Writing docs/_data/sibling_groups.yml"
-      File.open("#{Application.root}/docs/_data/sibling_groups.yml", "w") do |file|
+      puts "  → Writing #{target}"
+      File.open("#{Application.root}/#{target}", "w") do |file|
         file.write(sibling_groups.to_yaml(line_width: 1000))
       end
       puts "  ✓"
       puts
     end
 
-    def generate_search_index(verticals)
+    def generate_search_index(verticals, target:, symlink:)
       puts "Preparing search index"
       puts "  → Parsing categories into search index"
       search_index = verticals.flat_map do |vertical|
@@ -84,25 +94,23 @@ class GenerateDocs
         end
       end
 
-      search_index_path = "docs/_data/search_index.json"
-      search_index_symlink = "docs/assets/js/search_index.json"
-      puts "  → Writing #{search_index_path}"
-      File.open("#{Application.root}/#{search_index_path}", "w") do |file|
+      puts "  → Writing #{target}"
+      File.open("#{Application.root}/#{target}", "w") do |file|
         file.write(search_index.to_json)
       end
       FileUtils.ln_s(
-        "#{Application.root}/#{search_index_path}",
-        "#{Application.root}/#{search_index_symlink}",
+        "#{Application.root}/#{target}",
+        "#{Application.root}/#{symlink}",
         force: true
       )
       puts "  ✓"
       puts
     end
 
-    def generate_attributes(attributes)
+    def generate_attributes(attributes, target:)
       puts "Preparing attributes"
-      puts "  → Writing docs/_data/attributes.yml"
-      File.open("#{Application.root}/docs/_data/attributes.yml", "w") do |file|
+      puts "  → Writing #{target}"
+      File.open("#{Application.root}/#{target}", "w") do |file|
         file.write(attributes.to_yaml(line_width: 1000))
       end
       puts "  ✓"
