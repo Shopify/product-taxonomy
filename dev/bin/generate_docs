@@ -84,10 +84,14 @@ class GenerateDocs
         end
       end
 
-      puts "  → Writing docs/_data/search_index.json"
-      File.open("#{Application.root}/docs/assets/js/search_index.json", "w") do |file|
+      search_index_path = "docs/_data/search_index.json"
+      search_index_symlink = "docs/assets/js/search_index.json"
+      puts "  → Writing #{search_index_path}"
+      File.open("#{Application.root}/#{search_index_path}", "w") do |file|
         file.write(search_index.to_json)
       end
+      File.delete("#{Application.root}/#{search_index_symlink}")
+      File.symlink("#{Application.root}/#{search_index_path}", "#{Application.root}/#{search_index_symlink}")
       puts "  ✓"
       puts
     end
