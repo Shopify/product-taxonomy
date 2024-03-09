@@ -26,7 +26,7 @@ const getSearchIndex = (() => {
   let searchIndex;
   return () => {
     if (searchIndex) return searchIndex;
-    searchIndex = fetch("/assets/js/search_index.json").then((res) =>
+    searchIndex = fetch("./assets/js/search_index.json").then((res) =>
       res.json()
     );
     return searchIndex;
