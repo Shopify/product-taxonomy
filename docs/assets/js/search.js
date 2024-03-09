@@ -81,7 +81,10 @@ async function categorySearch(query) {
   const fuse = await getFuse();
   const results = fuse.search(query, { limit: 5 });
   if (results.length === 0) {
-    searchContainer.textContent = "No results found";
+    const noResults = document.createElement("li");
+    noResults.textContent = "No results found";
+    noResults.style.minWidth = "160px";
+    searchContainer.appendChild(noResults);
     return;
   }
 
