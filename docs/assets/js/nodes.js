@@ -17,9 +17,10 @@ const toggleExpandedCategories = () => {
 };
 
 const toggleSelectedCategory = () => {
+  const selectedNodeIds = Object.values(selectedNodes);
   qq(".accordion-item").forEach((item) => {
     const nodeId = item.getAttribute("node_id");
-    if (Object.values(selectedNodes).includes(nodeId)) {
+    if (selectedNodeIds.includes(nodeId)) {
       item.classList.add("selected");
     } else {
       item.classList.remove("selected");
