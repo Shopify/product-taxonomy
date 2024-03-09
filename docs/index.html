@@ -43,6 +43,7 @@
                 <ul>
                   {% for category in categories[1] %}
                     <li
+                      tabindex="0"
                       class="accordion-item"
                       node_id="{{ category.id }}"
                       ancestor_ids="{{ category.ancestor_ids }}"
@@ -71,7 +72,7 @@
           <div class="attributes-container">
             {% for attribute in site.data.attributes %}
               <div class="attribute-container" id="{{ attribute.id }}">
-                <h4 class="title attribute-title">
+                <h4 class="title attribute-title" tabindex="0">
                   {{ attribute.name }}
                   <span class="id">{{ attribute.id }}</span>
                   <span class="arrow right-arrow">&rarr;</span>

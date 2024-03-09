@@ -1,9 +1,17 @@
+:root {
+  --border-color: #c7c7c7;
+  --border: 1px solid var(--border-color);
+  --text-color: rgba(48, 48, 48, 1);
+  --inverse-text-color: rgba(255, 255, 255, 1);
+  --box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
 body {
   margin: 2rem;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "San Francisco",
     "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   font-size: 13px;
-  color: rgba(48, 48, 48, 1);
+  color: var(--text-color);
 }
 
 p {
@@ -45,15 +53,15 @@ a:active {
   flex-direction: row;
   flex-wrap: wrap;
   max-height: 100vh;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-  border: 1px solid #c7c7c7;
+  box-shadow: var(--box-shadow);
+  border: var(--border);
   border-radius: 1rem;
   overflow: hidden;
 }
 
 .header-container {
   padding: 1rem;
-  border-bottom: 1px solid #c7c7c7;
+  border-bottom: var(--border);
   width: 100%;
 }
 
@@ -80,7 +88,7 @@ a:active {
 }
 
 .secondary-container {
-  border-left: 1px solid #c7c7c7;
+  border-left: var(--border);
   flex-basis: 30%;
   display: none;
   margin-top: -1rem;
@@ -97,7 +105,7 @@ a:active {
   display: none;
   margin-bottom: 1rem;
   padding: 1rem;
-  border-bottom: 1px solid #c7c7c7;
+  border-bottom: var(--border);
   min-height: 100px;
 }
 
@@ -114,7 +122,7 @@ a:active {
   position: relative;
 }
 
-#category-search-results {
+.category-search-container ul {
   display: none;
   background: white;
   position: absolute;
@@ -123,19 +131,27 @@ a:active {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  border: 1px solid #ddd;
+  padding-bottom: 0.25rem;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
 }
 
-#category-search-results li {
-  padding: 2px 4px;
+.category-search-container li {
+  padding: 0.25rem 0.5rem;
 }
 
-#category-search-results a {
+.category-search-container a {
   text-decoration: none;
 }
 
-#category-search-results a:hover {
+.category-search-container a:hover {
   text-decoration: underline;
+}
+
+.category-search-container input {
+  padding: 0.25rem 0.5rem;
+  border: var(--border);
+  border-radius: 0.25rem;
 }
 
 .title {
@@ -248,14 +264,14 @@ a:active {
 }
 
 .accordion-item.selected {
-  background-color: rgba(48, 48, 48, 1);
-  color: rgba(255, 255, 255, 1);
+  background-color: var(--text-color);
+  color: var(--inverse-text-color);
 }
 
 .accordion-item:hover,
 .accordion-item:active {
   background-color: rgba(26, 26, 26, 1);
-  color: rgba(255, 255, 255, 1);
+  color: var(--inverse-text-color);
 }
 
 .accordion-content {
