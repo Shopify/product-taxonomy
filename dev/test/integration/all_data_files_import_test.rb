@@ -1,13 +1,13 @@
 require_relative '../test_helper'
 
-class AllDataFilesImportTest < Minitest::Test
+class AllDataFilesImportTest < ActiveSupport::TestCase
   def teardown
     Category.destroy_all
     Property.destroy_all
     PropertyValue.destroy_all
   end
 
-  def test_seed_imports_all_data_correctly
+  test "DB::Seed imports everything from all data/ files" do
     raw_attributes_data = YAML.load_file("#{Application.root}/data/attributes/attributes.yml")
     DB::Seed.attributes_from(raw_attributes_data)
 
