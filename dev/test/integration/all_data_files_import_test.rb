@@ -1,13 +1,13 @@
 require_relative '../test_helper'
 
-class StableSerializationTest < Minitest::Test
+class AllDataFilesImportTest < ActiveSupport::TestCase
   def teardown
     Category.destroy_all
     Property.destroy_all
     PropertyValue.destroy_all
   end
 
-  def test_seed_imports_all_data_correctly
+  test "DB::Seed imports everything from all data/ files" do
     raw_attributes_data = YAML.load_file("#{Application.root}/data/attributes/attributes.yml")
     DB::Seed.attributes_from(raw_attributes_data)
 
@@ -30,6 +30,8 @@ class StableSerializationTest < Minitest::Test
       real_category = Category.find(raw_category.fetch('id'))
 
       assert_equal deserialized_category, real_category
+      assert_equal raw_category.fetch('children').size, real_category.children.count
+      assert_equal deserialized_category.children, real_category.children
     end
   end
 end

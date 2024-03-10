@@ -29,27 +29,11 @@ module DB
       def categories_from(data)
         puts "Importing #{data.count} category verticals"
         data.each do |vertical_json|
-          current_vertical = vertical_json.first.fetch("name")
-          puts "  → #{current_vertical}"
-
-          # create all categories
-          failed_category_ids = []
-          categories = vertical_json.filter_map do |category_json|
-            begin
-              category = Serializers::Data::CategorySerializer.deserialize(category_json.except("children"))
-              category.save!
-              category
-            rescue => _e
+          puts "  → #{vertical_json.first.fetch("name")}"
+          vertical_json.each do |category_json|
+            unless Serializers::Data::CategorySerializer.deserialize(category_json.except("children")).save
               puts "  ⨯ Failed to import category: #{category_json["name"]} <#{category_json["id"]}>"
-              failed_category_ids << category_json["id"]
-              next
             end
-          end
-
-          # assemble the tree
-          categories.zip(vertical_json).each do |category, json|
-            category.child_ids = json["children"] - failed_category_ids
-            category.save!
           end
         end
         puts "✓ Imported #{Category.count} categories"

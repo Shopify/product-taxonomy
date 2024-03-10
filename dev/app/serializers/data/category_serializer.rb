@@ -11,12 +11,14 @@ module Serializers
       end
 
       def deserialize(hash)
-        Category.new(
-          id: hash["id"].downcase,
-          name: hash["name"],
-          child_ids: hash["children"],
-          property_ids: Property.where(friendly_id: hash["attributes"]).pluck(:id),
-        )
+        id = hash["id"].downcase
+        parent_id = id.split("-")[0...-1].join("-").presence
+        name = hash["name"]
+
+        Category.new(id:, parent_id:, name:).tap do |category|
+          category.child_ids = hash["children"] if hash["children"]
+          category.property_ids = Property.where(friendly_id: hash["attributes"]).pluck(:id) if hash["attributes"]
+        end
       end
     end
   end
