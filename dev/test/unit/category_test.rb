@@ -48,6 +48,13 @@ class CategoryTest < Minitest::Test
     assert_equal [child_category, category], grandchild_category.ancestors
   end
 
+  def test_children_sort_by_name
+    beta_child = Category.create(id: 'tt-1', name: 'Beta', parent: category)
+    alpha_child = Category.create(id: 'tt-2', name: 'Alpha', parent: category)
+
+    assert_equal [alpha_child, beta_child], category.reload.children.to_a
+  end
+
   def test_ancestors_and_self_includes_self
     child_category = Category.new(id: 'tt-7', name: 'Child')
     category.children << child_category
@@ -59,19 +66,12 @@ class CategoryTest < Minitest::Test
   end
 
   def test_descendants_are_depth_first
-    l2_category = Category.new(id: 'tt-8', name: 'Child')
-    category.children << l2_category
+    l2_category = Category.create(id: 'tt-8', name: 'Child', parent: category)
+    l3_category = Category.create(id: 'tt-8-1', name: 'Grandchild', parent: l2_category)
+    l3_sibling = Category.create(id: 'tt-8-2', name: 'Alpha Grandchild', parent: l2_category)
+    l4_category = Category.create(id: 'tt-8-2-1', name: 'Great Grandchild', parent: l3_sibling)
 
-    l3_category = Category.new(id: 'tt-8-1', name: 'Grandchild')
-    l2_category.children << l3_category
-
-    l3_sibling = Category.new(id: 'tt-8-2', name: 'Alpha Grandchild')
-    l2_category.children << l3_sibling
-
-    l4_category = Category.new(id: 'tt-8-1-1', name: 'Great Grandchild')
-    l3_sibling.children << l4_category
-
-    assert_equal [l2_category, l3_sibling, l4_category, l3_category], category.descendants
+    assert_equal [l2_category, l3_sibling, l4_category, l3_category], category.reload.descendants
   end
 
   def test_descendants_and_self_includes_self
@@ -81,7 +81,7 @@ class CategoryTest < Minitest::Test
     grandchild_category = Category.create(id: 'tt-7-1', name: 'Grandchild')
     child_category.children << grandchild_category
 
-    assert_equal [category, child_category, grandchild_category], category.descendants_and_self.to_a
+    assert_equal [category, child_category, grandchild_category], category.descendants_and_self
   end
 
   private

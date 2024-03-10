@@ -9,20 +9,13 @@ class Category < ApplicationRecord
 
   validates :id,
     presence: { strict: true },
-    format: { with: /\A[a-z]{2}(\-[0-9]+)*\z/ }
+    format: { with: /\A[a-z]{2}(-\d+)*\z/ }
   validates :name,
     presence: { strict: true }
-  validate :assigned_to_correct_parent
-
-  def assigned_to_correct_parent
-    return if parent.nil?
-
-    expected_parts = id.split("-").tap(&:pop)
-    parent_parts = parent.id.split("-")
-    return if expected_parts == parent_parts
-
-    errors.add(:parent_id, "must be a prefix of id")
-  end
+  validate :id_matches_depth
+  validate :id_starts_with_parent_id,
+    unless: :root?
+  validates_associated :children
 
   def gid
     "gid://shopify/Taxonomy/Category/#{id}"
@@ -67,5 +60,19 @@ class Category < ApplicationRecord
 
   def descendants_and_self
     [self] + descendants
+  end
+
+  private
+
+  def id_matches_depth
+    return if id.count("-") == level
+
+    errors.add(:id, "#{id} must have #{level + 1} parts")
+  end
+
+  def id_starts_with_parent_id
+    return if id.start_with?(parent.id)
+
+    errors.add(:id, "#{id} must be prefixed by parent_id=#{parent_id}")
   end
 end
