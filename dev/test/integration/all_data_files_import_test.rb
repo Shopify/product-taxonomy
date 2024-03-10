@@ -1,6 +1,6 @@
 require_relative '../test_helper'
 
-class StableSerializationTest < Minitest::Test
+class AllDataFilesImportTest < Minitest::Test
   def teardown
     Category.destroy_all
     Property.destroy_all
