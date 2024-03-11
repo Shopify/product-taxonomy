@@ -42,7 +42,7 @@ export const setupSearch = async () => {
   const searchInput = q("#category-search");
   const searchResults = q("#category-search-results");
 
-  searchInput.placeholder = "Search for categories…";
+  searchInput.placeholder = "Search for categories";
 
   let timeoutId;
   searchInput.addEventListener("input", (e) => {

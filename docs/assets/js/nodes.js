@@ -98,18 +98,27 @@ const toggleNode = (nodeId, depth) => {
   renderPage();
 };
 
+const addOnClick = (target, handler) => {
+  target.addEventListener("click", handler);
+  target.addEventListener("keypress", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      target.dispatchEvent(new Event("click"));
+    }
+  });
+};
+
 const setupListeners = () => {
   qq(".accordion-item").forEach((item) => {
-    item.addEventListener("click", (e) => {
+    addOnClick(item, () =>
       toggleNode(
-        e.target.getAttribute("node_id"),
-        e.target.closest(".sibling-list").getAttribute("node_depth")
-      );
-    });
+        item.getAttribute("node_id"),
+        item.closest(".sibling-list").getAttribute("node_depth")
+      )
+    );
   });
-  qq(".attribute-title").forEach((attribute) => {
-    attribute.addEventListener("click", toggleAttributeSelected);
-  });
+  qq(".attribute-title").forEach((attribute) =>
+    addOnClick(attribute, toggleAttributeSelected)
+  );
 };
 
 const setInitialNode = () => {
