@@ -243,7 +243,7 @@
   - color
   - condom_type
   - material
-  - texture
+  - surface_texture
 - id: hb-1-6
   name: Conductivity Gels & Lotions
   children: []
@@ -290,9 +290,9 @@
   children: []
   attributes:
   - case_color
-  - case_material
   - first_aid_kit_usage
   - usage_type
+  - bag_case_material
 - id: hb-1-8-5
   name: Hot & Cold Therapies
   children:
@@ -319,9 +319,9 @@
   attributes:
   - body_area
   - color
-  - power_source
   - treatment_objective
   - usage_type
+  - heat_source
 - id: hb-1-8-5-3
   name: Ice Packs
   children: []
@@ -336,9 +336,9 @@
   children: []
   attributes:
   - color
-  - material
   - product_sterility
   - usage_type
+  - medical_tape_material
 - id: hb-1-9
   name: Fitness & Nutrition
   children:
@@ -400,7 +400,7 @@
   - flavor
   - ingredient_category
   - product_certifications_and_standards
-  - product_form
+  - food_supplement_form
 - id: hb-1-10
   name: Hearing Aids
   children:
@@ -417,8 +417,8 @@
   attributes:
   - age_group
   - battery_type
-  - material
   - technology_level
+  - hearing_aid_material
 - id: hb-1-11
   name: Incontinence Aids
   children:
@@ -503,7 +503,7 @@
   name: Medicine & Drugs
   children: []
   attributes:
-  - product_form
+  - medicine_drug_form
 - id: hb-1-17
   name: Mobility & Accessibility
   children:
@@ -569,8 +569,8 @@
   - hb-1-17-3-1-5
   attributes:
   - attachment_type
-  - material
   - mounting_type
+  - furniture_fixture_material
 - id: hb-1-17-4
   name: Walking Aid Accessories
   children: []
@@ -691,7 +691,7 @@
   attributes:
   - closure_type
   - color
-  - material
+  - support_brace_material
 - id: hb-1-25
   name: Surgical Lubricants
   children: []
@@ -707,14 +707,14 @@
   - hb-2-4
   - hb-2-5
   attributes:
-  - compatible_material
+  - suitable_for_precious_material
 - id: hb-2-1
   name: Jewelry Cleaning Solutions & Polishes
   children: []
   attributes:
-  - compatible_material
   - package_type
   - product_form
+  - suitable_for_precious_material
 - id: hb-2-2
   name: Jewelry Cleaning Tools
   children:
@@ -723,7 +723,7 @@
   - hb-2-2-3
   - hb-2-2-4
   attributes:
-  - compatible_material
+  - suitable_for_precious_material
 - id: hb-2-3
   name: Jewelry Holders
   children:
@@ -732,18 +732,16 @@
   - hb-2-3-3
   - hb-2-3-4
   - hb-2-3-5
-  attributes:
-  - compatible_material
+  attributes: []
 - id: hb-2-4
   name: Jewelry Steam Cleaners
   children: []
   attributes:
-  - compatible_material
+  - suitable_for_precious_material
 - id: hb-2-5
   name: Watch Repair Kits
   children: []
-  attributes:
-  - compatible_material
+  attributes: []
 - id: hb-3
   name: Personal Care
   children:
@@ -929,8 +927,8 @@
   name: Face Mirrors
   children: []
   attributes:
-  - mounting_type
   - shape
+  - mounting_hardware
 - id: hb-3-2-5-1-7
   name: Facial Blotting Paper
   children: []
@@ -965,7 +963,7 @@
   attributes:
   - bristle_shape
   - color
-  - material
+  - bristle_material
 - id: hb-3-2-5-1-10
   name: Makeup Sponges
   children: []
@@ -1065,7 +1063,7 @@
   children: []
   attributes:
   - material
-  - shape
+  - file_shape
 - id: hb-3-2-5-3-3
   name: Lotion & Sunscreen Applicators
   children: []
@@ -1162,7 +1160,6 @@
   name: Eyebrow Enhancers
   children: []
   attributes:
-  - color
   - cosmetic_finish
   - product_certifications_and_standards
   - product_form
@@ -1181,8 +1178,8 @@
   attributes:
   - accessory_size
   - color
-  - material
   - product_certifications_and_standards
+  - eyelash_material
 - id: hb-3-2-6-3-6
   name: Lash & Brow Growth Treatments
   children: []
@@ -1218,7 +1215,6 @@
   name: Face Powder
   children: []
   attributes:
-  - color
   - cosmetic_finish
   - dispenser_type
   - product_certifications_and_standards
@@ -1229,7 +1225,6 @@
   name: Foundations & Concealers
   children: []
   attributes:
-  - color
   - cosmetic_finish
   - dispenser_type
   - product_certifications_and_standards
@@ -1242,7 +1237,6 @@
   name: Highlighters & Luminizers
   children: []
   attributes:
-  - color
   - cosmetic_finish
   - dispenser_type
   - product_certifications_and_standards
@@ -1326,7 +1320,7 @@
   attributes:
   - drying_speed
   - product_certifications_and_standards
-  - product_form
+  - polish_dry_form
 - id: hb-3-2-7-9
   name: Nail Polish Removers
   children: []
@@ -1392,9 +1386,9 @@
   attributes:
   - active_ingredient
   - product_certifications_and_standards
-  - product_form
   - skin_care_effect
   - suitable_for_skin_type
+  - package_type
 - id: hb-3-2-9-5
   name: Compressed Skin Care Mask Sheets
   children: []
@@ -1602,15 +1596,15 @@
   name: Ear Candles
   children: []
   attributes:
-  - material
   - scent
+  - candle_material
 - id: hb-3-6-2
   name: Ear Drops
   children: []
   attributes:
-  - application_method
   - product_form
   - treatment_objective
+  - ear_car_application_method
 - id: hb-3-6-3
   name: Ear Dryers
   children: []
@@ -1690,7 +1684,6 @@
   children: []
   attributes:
   - applicator_material
-  - material
   - product_certifications_and_standards
 - id: hb-3-9
   name: Foot Care
@@ -1709,7 +1702,6 @@
   - accessory_size
   - body_area
   - color
-  - material
 - id: hb-3-9-2
   name: Corn & Callus Care Supplies
   children: []
@@ -1732,15 +1724,14 @@
   attributes:
   - body_area
   - compatible_shoe_size
-  - material
   - treatment_objective
+  - clothing_accessory_material
 - id: hb-3-9-5
   name: Toe Spacers
   children: []
   attributes:
   - accessory_size
   - body_area
-  - material
 - id: hb-3-10
   name: Hair Care
   children:
@@ -1999,7 +1990,6 @@
   attributes:
   - accessory_size
   - eye_pillow_shape
-  - material
   - scent
 - id: hb-3-11-3
   name: Massage Chairs
@@ -2024,11 +2014,11 @@
   name: Massage Stones
   children: []
   attributes:
-  - material
   - shape
   - stone_name
   - stone_type
-  - texture
+  - stone_material
+  - massage_stone_texture
 - id: hb-3-11-7
   name: Massage Tables
   children: []
@@ -2139,7 +2129,7 @@
   - accessory_size
   - handle_grip_texture
   - material
-  - tip_shape
+  - stimulator_tip_shape
 - id: hb-3-12-11
   name: Mouthwash
   children: []
@@ -2153,7 +2143,7 @@
   - accessory_size
   - closure_type
   - color
-  - material
+  - bag_case_material
 - id: hb-3-12-13
   name: Power Flossers
   children: []
@@ -2355,7 +2345,7 @@
   children: []
   attributes:
   - color
-  - material
+  - bristle_material
 - id: hb-3-14-12
   name: Shaving Kits
   children: []
@@ -2363,7 +2353,6 @@
   - brush_type
   - razor_type
   - shaving_kit_components
-  - stand_material
 - id: hb-3-14-13
   name: Styptic Pencils
   children: []
@@ -2400,7 +2389,6 @@
   name: Travel Pillows
   children: []
   attributes:
-  - material
   - travel_pillow_shape
 - id: hb-3-15-4
   name: White Noise Machines
@@ -2455,7 +2443,7 @@
   attributes:
   - accessory_size
   - color
-  - material
+  - bag_case_material
 - id: hb-3-19-1-3
   name: Contact Lens Solution
   children: []
@@ -2470,17 +2458,17 @@
   name: Eyeglass Lenses
   children: []
   attributes:
-  - lens_material
+  - eyewear_lens_material
 - id: hb-3-19-4
   name: Eyeglasses
   children: []
   attributes:
-  - frame_material
   - frame_shape
   - lens_coating
-  - lens_material
   - lens_type
   - optical_frame_design
+  - eyewear_frame_material
+  - eyewear_lens_material
 - id: hb-3-19-5
   name: Eyewear Accessories
   children:
@@ -2495,7 +2483,7 @@
   attributes:
   - accessory_size
   - closure_type
-  - material
+  - bag_case_material
 - id: hb-3-19-5-2
   name: Eyewear Lens Cleaning Solutions
   children: []
@@ -2519,9 +2507,9 @@
   children: []
   attributes:
   - color
-  - lens_material
   - lens_type
   - uv_protection
+  - eyewear_lens_material
 - id: hb-1-9-6-1
   name: Amino Acids
   children: []
@@ -2531,7 +2519,7 @@
   - dietary_preferences
   - flavor
   - product_certifications_and_standards
-  - product_form
+  - food_supplement_form
 - id: hb-1-9-6-2
   name: Collagen
   children: []
@@ -2541,7 +2529,7 @@
   - dietary_preferences
   - flavor
   - product_certifications_and_standards
-  - product_form
+  - food_supplement_form
 - id: hb-1-9-6-3
   name: Creatine
   children: []
@@ -2551,7 +2539,7 @@
   - dietary_preferences
   - flavor
   - product_certifications_and_standards
-  - product_form
+  - food_supplement_form
 - id: hb-1-9-6-4
   name: Digestive Supplements
   children: []
@@ -2561,7 +2549,7 @@
   - dietary_preferences
   - flavor
   - product_certifications_and_standards
-  - product_form
+  - food_supplement_form
 - id: hb-1-9-6-5
   name: Herbal Supplements
   children: []
@@ -2571,7 +2559,7 @@
   - dietary_preferences
   - flavor
   - product_certifications_and_standards
-  - product_form
+  - food_supplement_form
 - id: hb-1-9-6-6
   name: Minerals
   children: []
@@ -2581,7 +2569,7 @@
   - dietary_preferences
   - flavor
   - product_certifications_and_standards
-  - product_form
+  - food_supplement_form
 - id: hb-1-9-6-7
   name: Multivitamin Supplements
   children: []
@@ -2591,8 +2579,8 @@
   - dietary_preferences
   - flavor
   - product_certifications_and_standards
-  - product_form
   - target_gender
+  - food_supplement_form
 - id: hb-1-9-6-8
   name: Protein Supplements
   children: []
@@ -2603,7 +2591,7 @@
   - flavor
   - ingredient_category
   - product_certifications_and_standards
-  - product_form
+  - food_supplement_form
 - id: hb-1-9-6-9
   name: Single Vitamins
   children: []
@@ -2613,87 +2601,87 @@
   - dietary_preferences
   - flavor
   - product_certifications_and_standards
-  - product_form
+  - food_supplement_form
 - id: hb-1-10-1
   name: Behind-The-Ear (BTE) Hearing Aids
   children: []
   attributes:
   - age_group
   - battery_type
-  - material
   - technology_level
+  - hearing_aid_material
 - id: hb-1-10-2
   name: Body-Worn Hearing Aids
   children: []
   attributes:
   - age_group
   - battery_type
-  - material
   - technology_level
+  - hearing_aid_material
 - id: hb-1-10-3
   name: Bone-Anchored Hearing Aids (BAHA)
   children: []
   attributes:
   - age_group
   - battery_type
-  - material
   - technology_level
+  - hearing_aid_material
 - id: hb-1-10-4
   name: Completely-In-Canal (CIC) Hearing Aids
   children: []
   attributes:
   - age_group
   - battery_type
-  - material
   - technology_level
+  - hearing_aid_material
 - id: hb-1-10-5
   name: Full-Shell In-the-Ear (FSITE) Hearing Aids
   children: []
   attributes:
   - age_group
   - battery_type
-  - material
   - technology_level
+  - hearing_aid_material
 - id: hb-1-10-6
   name: Half-Shell In-the-Ear (HSITE) Hearing Aids
   children: []
   attributes:
   - age_group
   - battery_type
-  - material
   - technology_level
+  - hearing_aid_material
 - id: hb-1-10-7
   name: In-The-Canal (ITC) Hearing Aids
   children: []
   attributes:
   - age_group
   - battery_type
-  - material
   - technology_level
+  - hearing_aid_material
 - id: hb-1-10-8
   name: In-The-Ear (ITE) Hearing Aids
   children: []
   attributes:
   - age_group
   - battery_type
-  - material
   - technology_level
+  - hearing_aid_material
 - id: hb-1-10-9
   name: Invisible-In-Canal (IIC) Hearing Aids
   children: []
   attributes:
   - age_group
   - battery_type
-  - material
   - technology_level
+  - hearing_aid_material
 - id: hb-1-10-10
   name: Mini Behind-The-Ear (mBTE) Hearing Aids
   children: []
   attributes:
   - age_group
   - battery_type
-  - material
   - technology_level
+  - hearing_aid_material
 - id: hb-1-11-6
   name: Adult Diapers
   children: []
@@ -2722,36 +2710,36 @@
   children: []
   attributes:
   - attachment_type
-  - material
   - mounting_type
+  - furniture_fixture_material
 - id: hb-1-17-3-1-2
   name: Shower Benches
   children: []
   attributes:
   - attachment_type
-  - material
   - mounting_type
+  - furniture_fixture_material
 - id: hb-1-17-3-1-3
   name: Shower Seats
   children: []
   attributes:
   - attachment_type
-  - material
   - mounting_type
+  - furniture_fixture_material
 - id: hb-1-17-3-1-4
   name: Transfer Benches
   children: []
   attributes:
   - attachment_type
-  - material
   - mounting_type
+  - furniture_fixture_material
 - id: hb-1-17-3-1-5
   name: Wall-Mounted Shower Seats
   children: []
   attributes:
   - attachment_type
-  - material
   - mounting_type
+  - furniture_fixture_material
 - id: hb-1-17-5-1-1
   name: Folding Canes
   children: []
@@ -2797,87 +2785,82 @@
   attributes:
   - closure_type
   - color
-  - material
+  - support_brace_material
 - id: hb-1-24-2
   name: Back Braces
   children: []
   attributes:
   - closure_type
   - color
-  - material
+  - support_brace_material
 - id: hb-1-24-3
   name: Elbow Supports
   children: []
   attributes:
   - closure_type
   - color
-  - material
+  - support_brace_material
 - id: hb-1-24-4
   name: Knee Braces
   children: []
   attributes:
   - closure_type
   - color
-  - material
+  - support_brace_material
 - id: hb-1-24-5
   name: Neck Braces
   children: []
   attributes:
   - closure_type
   - color
-  - material
+  - support_brace_material
 - id: hb-1-24-6
   name: Wrist Braces
   children: []
   attributes:
   - closure_type
   - color
-  - material
+  - support_brace_material
 - id: hb-2-2-1
   name: Jewelry Cleaning Brushes
   children: []
   attributes:
-  - compatible_material
+  - suitable_for_precious_material
 - id: hb-2-2-2
   name: Jewelry Polishing Cloths
   children: []
   attributes:
-  - compatible_material
+  - suitable_for_precious_material
 - id: hb-2-2-3
   name: Jewelry Steam Cleaners
   children: []
   attributes:
-  - compatible_material
+  - suitable_for_precious_material
 - id: hb-2-2-4
   name: Ultrasonic Jewelry Cleaners
   children: []
   attributes:
-  - compatible_material
+  - suitable_for_precious_material
 - id: hb-2-3-1
   name: Jewelry Boxes
   children: []
-  attributes:
-  - compatible_material
+  attributes: []
 - id: hb-2-3-2
   name: Jewelry Stands
   children: []
-  attributes:
-  - compatible_material
+  attributes: []
 - id: hb-2-3-3
   name: Jewelry Trays
   children: []
-  attributes:
-  - compatible_material
+  attributes: []
 - id: hb-2-3-4
   name: Ring Holders
   children: []
-  attributes:
-  - compatible_material
+  attributes: []
 - id: hb-2-3-5
   name: Wall-Mounted Jewelry Organizers
   children: []
-  attributes:
-  - compatible_material
+  attributes: []
 - id: hb-3-2-1-7
   name: Hygienic Wipes
   children: []
@@ -2920,7 +2903,6 @@
   name: Face Primers
   children: []
   attributes:
-  - color
   - cosmetic_finish
   - dispenser_type
   - product_certifications_and_standards
@@ -3152,24 +3134,24 @@
   attributes:
   - body_area
   - compatible_shoe_size
-  - material
   - treatment_objective
+  - clothing_accessory_material
 - id: hb-3-9-4-2
   name: Gel Heel Pads
   children: []
   attributes:
   - body_area
   - compatible_shoe_size
-  - material
   - treatment_objective
+  - clothing_accessory_material
 - id: hb-3-9-4-3
   name: Metatarsal Cushions
   children: []
   attributes:
   - body_area
   - compatible_shoe_size
-  - material
   - treatment_objective
+  - clothing_accessory_material
 - id: hb-3-10-11-1-1
   name: Clips
   children: []
@@ -3492,7 +3474,7 @@
   - accessory_size
   - handle_grip_texture
   - material
-  - tip_shape
+  - stimulator_tip_shape
 - id: hb-3-12-10-2
   name: Manual Gum Stimulators
   children: []
@@ -3500,7 +3482,7 @@
   - accessory_size
   - handle_grip_texture
   - material
-  - tip_shape
+  - stimulator_tip_shape
 - id: hb-3-12-12-1
   name: Hard Orthodontic Appliance Cases
   children: []
@@ -3508,7 +3490,7 @@
   - accessory_size
   - closure_type
   - color
-  - material
+  - bag_case_material
 - id: hb-3-12-12-2
   name: Soft Orthodontic Appliance Cases
   children: []
@@ -3516,7 +3498,7 @@
   - accessory_size
   - closure_type
   - color
-  - material
+  - bag_case_material
 - id: hb-3-12-14-1
   name: Charcoal Powder
   children: []
@@ -3677,14 +3659,14 @@
   attributes:
   - accessory_size
   - color
-  - material
+  - bag_case_material
 - id: hb-3-19-1-2-2
   name: Flat Contact Lens Cases
   children: []
   attributes:
   - accessory_size
   - color
-  - material
+  - bag_case_material
 - id: hb-3-19-1-4
   name: Contact Lenses
   children:

@@ -64,18 +64,18 @@
   - hg-1-1-5
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: hg-1-2
   name: Bath Mats & Rugs
   children: []
   attributes:
   - color
-  - material
   - pattern
   - pile_type
-  - shape
   - theme
+  - rug_mat_material
+  - mat_rug_shape
 - id: hg-1-3
   name: Bath Pillows
   children: []
@@ -88,9 +88,9 @@
   children: []
   attributes:
   - color
-  - material
   - mounting_type
   - pattern
+  - mount_material
 - id: hg-1-5
   name: Bathroom Accessory Sets
   children: []
@@ -119,15 +119,14 @@
   attributes:
   - color
   - housing_material
-  - material
   - pattern
 - id: hg-1-9
   name: Medicine Cabinets
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: hg-1-10
   name: Robe Hooks
   children: []
@@ -140,31 +139,31 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - hardware_material
 - id: hg-1-12
   name: Shower Curtain Rings
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - hardware_material
 - id: hg-1-13
   name: Shower Curtains
   children: []
   attributes:
   - color
   - material
-  - mounting_type
   - pattern
+  - shower_curtain_mounting_type
 - id: hg-1-14
   name: Shower Rods
   children: []
   attributes:
   - color
-  - material
   - pattern
   - rod_shape
+  - hardware_material
 - id: hg-1-15
   name: Soap & Lotion Dispensers
   children: []
@@ -260,14 +259,14 @@
   - color
   - connectivity_technology
   - pattern
-  - sensor_type
+  - motion_sensor_type
 - id: hg-2-4
   name: Safety & Security Mirrors
   children: []
   attributes:
   - color
-  - mounting_type
   - pattern
+  - mounting_hardware
 - id: hg-2-5
   name: Security Lights
   children: []
@@ -284,9 +283,9 @@
   - color
   - display_resolution
   - display_technology
-  - mounting_type
   - pattern
   - power_source
+  - monitor_mounting_type
 - id: hg-2-7
   name: Security Safe Accessories
   children:
@@ -316,7 +315,7 @@
   - color
   - connectivity_technology
   - pattern
-  - sensor_type
+  - motion_sensor_type
 - id: hg-3
   name: Decor
   children:
@@ -422,8 +421,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-4
   name: Artwork
   children:
@@ -438,9 +437,9 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - theme
+  - decoration_material
 - id: hg-3-4-2
   name: Posters, Prints, & Visual Artwork
   children:
@@ -450,34 +449,34 @@
   attributes:
   - color
   - frame
-  - frame_material
   - pattern
   - theme
+  - artwork_frame_material
 - id: hg-3-4-3
   name: Sculptures & Statues
   children: []
   attributes:
   - color
-  - material
   - pattern
   - theme
+  - decoration_material
 - id: hg-3-5
   name: Backrest Pillows
   children: []
   attributes:
   - color
-  - cover_material
   - filler_material
   - filler_support
   - pattern
   - shape
+  - upholstery_material
 - id: hg-3-6
   name: Baskets
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - basket_material
 - id: hg-3-7
   name: Bird & Wildlife Feeder Accessories
   children:
@@ -500,33 +499,33 @@
   - hg-3-8-3
   attributes:
   - color
-  - material
-  - mounting_type
   - pattern
+  - decoration_material
+  - mounting_hardware
 - id: hg-3-8-1
   name: Bird Feeders
   children: []
   attributes:
   - color
-  - material
-  - mounting_type
   - pattern
+  - decoration_material
+  - mounting_hardware
 - id: hg-3-8-2
   name: Butterfly Feeders
   children: []
   attributes:
   - color
-  - material
-  - mounting_type
   - pattern
+  - decoration_material
+  - mounting_hardware
 - id: hg-3-8-3
   name: Squirrel Feeders
   children: []
   attributes:
   - color
-  - material
-  - mounting_type
   - pattern
+  - decoration_material
+  - mounting_hardware
 - id: hg-3-9
   name: Bird & Wildlife House Accessories
   children:
@@ -545,40 +544,40 @@
   attributes:
   - color
   - material
-  - mounting_type
   - pattern
+  - mounting_hardware
 - id: hg-3-10-1
   name: Bat Houses
   children: []
   attributes:
   - color
   - material
-  - mounting_type
   - pattern
+  - mounting_hardware
 - id: hg-3-10-2
   name: Birdhouses
   children: []
   attributes:
   - color
   - material
-  - mounting_type
   - pattern
+  - mounting_hardware
 - id: hg-3-10-3
   name: Butterfly Houses
   children: []
   attributes:
   - color
   - material
-  - mounting_type
   - pattern
+  - mounting_hardware
 - id: hg-3-11
   name: Bird Baths
   children: []
   attributes:
   - color
-  - material
-  - mounting_type
   - pattern
+  - decoration_material
+  - mounting_hardware
 - id: hg-3-12
   name: Bookends
   children: []
@@ -598,10 +597,10 @@
   children: []
   attributes:
   - color
-  - cover_material
   - filler_material
   - pattern
   - suitable_for_chair_type
+  - upholstery_material
 - id: hg-3-16
   name: Clock Parts
   children:
@@ -670,63 +669,63 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-20
   name: Decorative Bottles
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-21
   name: Decorative Bowls
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-22
   name: Decorative Jars
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-23
   name: Decorative Plaques
   children: []
   attributes:
   - color
-  - material
-  - mounting_type
   - pattern
   - theme
+  - decoration_material
+  - mounting_hardware
 - id: hg-3-24
   name: Decorative Plates
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-25
   name: Decorative Trays
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-26
   name: Door Mats
   children: []
   attributes:
-  - base_material
   - color
   - pattern
   - pile_type
   - shape
   - suitable_space
-  - surface_material
+  - door_mat_base_material
+  - door_mat_surface_material
 - id: hg-3-27
   name: Dreamcatchers
   children: []
@@ -750,17 +749,17 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - theme
+  - decoration_material
 - id: hg-3-31
   name: Finials
   children: []
   attributes:
   - color
   - finial_shape
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-32
   name: Flag & Windsock Accessories
   children:
@@ -803,7 +802,7 @@
   attributes:
   - color
   - pattern
-  - shape
+  - candle_shape
 - id: hg-3-35
   name: Fountains & Ponds
   children:
@@ -958,8 +957,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-43
   name: Lawn Ornaments & Garden Sculptures
   children:
@@ -974,8 +973,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-45
   name: Mailbox Accessories
   children:
@@ -1014,22 +1013,22 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - post_material
 - id: hg-3-45-5
   name: Mailbox Replacement Doors
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: hg-3-46
   name: Mailboxes
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-47
   name: Mirrors
   children: []
@@ -1050,33 +1049,33 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-50
   name: Novelty Signs
   children: []
   attributes:
   - color
-  - material
   - pattern
   - theme
+  - decoration_material
 - id: hg-3-51
   name: Ottoman Cushions
   children: []
   attributes:
   - color
-  - cover_material
   - filler_material
   - pattern
   - shape
+  - upholstery_material
 - id: hg-3-52
   name: Picture Frames
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - decoration_material
 - id: hg-3-53
   name: Piggy Banks & Money Jars
   children:
@@ -1084,15 +1083,15 @@
   - hg-3-53-2
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-54
   name: Rain Chains
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-55
   name: Rain Gauges
   children: []
@@ -1114,12 +1113,12 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - pile_type
-  - shape
   - style
   - suitable_space
+  - rug_material
+  - rug_shape
 - id: hg-3-58
   name: Seasonal & Holiday Decorations
   children:
@@ -1154,10 +1153,10 @@
   name: Christmas Tree Stands
   children: []
   attributes:
-  - base_material
   - color
   - fixation_type
   - pattern
+  - tree_stand_material
 - id: hg-3-58-4
   name: Easter Egg Decorating Kits
   children: []
@@ -1176,29 +1175,28 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: hg-3-58-7
   name: Holiday Ornaments
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-58-8
   name: Holiday Stocking Hangers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-58-9
   name: Holiday Stockings
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-58-10
   name: Japanese Traditional Dolls
   children: []
@@ -1218,8 +1216,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-59
   name: Shadow Boxes
   children: []
@@ -1231,9 +1229,9 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - suitable_for_furniture_type
+  - decoration_material
 - id: hg-3-61
   name: Snow Globes
   children: []
@@ -1257,10 +1255,10 @@
   children: []
   attributes:
   - color
-  - cover_material
   - filler_material
   - pattern
-  - shape
+  - upholstery_material
+  - throw_pillow_shape
 - id: hg-3-65
   name: Trunks
   children: []
@@ -1280,9 +1278,9 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - vase_shape
+  - decoration_material
 - id: hg-3-68
   name: Wallpaper
   children: []
@@ -1306,8 +1304,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-71
   name: Wind Wheels & Spinners
   children:
@@ -1339,15 +1337,15 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - hardware_material
 - id: hg-3-73-2
   name: Curtain & Drape Rods
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - hardware_material
 - id: hg-3-73-3
   name: Curtain Holdbacks & Tassels
   children:
@@ -1355,8 +1353,8 @@
   - hg-3-73-3-2
   attributes:
   - color
-  - material
   - pattern
+  - hardware_material
 - id: hg-3-73-4
   name: Window Treatment Replacement Parts
   children:
@@ -1387,8 +1385,8 @@
   - hg-3-74-1-2
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-3-74-2
   name: Stained Glass Panels
   children: []
@@ -1406,24 +1404,23 @@
   - color
   - control_technology
   - light_control
-  - material
   - pattern
-  - style
+  - window_treatment_material
+  - blind_shade_style
 - id: hg-3-74-4
   name: Window Films
   children: []
   attributes:
   - color
   - film_application_method
-  - material
   - pattern
 - id: hg-3-74-5
   name: Window Screens
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - window_treatment_material
 - id: hg-3-74-6
   name: Window Valances & Cornices
   children:
@@ -1495,8 +1492,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - hardware_material
 - id: hg-5
   name: Fireplace & Wood Stove Accessories
   children:
@@ -1574,8 +1571,8 @@
   - hg-5-9-3
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: hg-5-10
   name: Log Racks & Carriers
   children:
@@ -1583,8 +1580,8 @@
   - hg-5-10-2
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: hg-5-11
   name: Wood Stove Fans & Blowers
   children: []
@@ -1636,7 +1633,6 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: hg-7-4
   name: Fire Extinguishers
@@ -2399,9 +2395,9 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - fabric
 - id: hg-10-4
   name: Garage Floor Mats
   children: []
@@ -2478,8 +2474,8 @@
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - handwear_material
 - id: hg-10-6-7
   name: Duster Refills
   children: []
@@ -2507,7 +2503,6 @@
   attributes:
   - cleaning_surfaces
   - color
-  - material
   - pattern
 - id: hg-10-6-11
   name: Household Cleaning Products
@@ -2719,8 +2714,8 @@
   - cleaning_surfaces
   - color
   - dry_wet_cleaning
-  - material
   - pattern
+  - brush_material
 - id: hg-10-6-15
   name: Scrub Brushes
   children: []
@@ -2728,8 +2723,8 @@
   - cleaning_surfaces
   - color
   - dry_wet_cleaning
-  - material
   - pattern
+  - brush_material
 - id: hg-10-6-16
   name: Shop Towels & General-Purpose Cleaning Cloths
   children: []
@@ -2901,8 +2896,8 @@
   - hg-10-9-12-2
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-10-9-13
   name: Ironing Board Replacement Parts
   children:
@@ -2915,9 +2910,9 @@
   children: []
   attributes:
   - color
-  - cover_material
   - mounting_type
   - pattern
+  - upholstery_material
 - id: hg-10-9-15
   name: Laundry Balls
   children: []
@@ -2980,7 +2975,6 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - power_source
 - id: hg-10-11-2
@@ -3172,14 +3166,12 @@
   - hg-10-16-1-6
   attributes:
   - color
-  - material
   - pattern
 - id: hg-10-16-1-1
   name: Charging Valets
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: hg-10-16-1-2
   name: Closet Organizers & Garment Racks
@@ -3188,28 +3180,24 @@
   - hg-10-16-1-2-2
   attributes:
   - color
-  - material
   - pattern
 - id: hg-10-16-1-3
   name: Clothes Valets
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: hg-10-16-1-4
   name: Hangers
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: hg-10-16-1-5
   name: Hat Boxes
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: hg-10-16-1-6
   name: Shoe Racks & Organizers
@@ -3218,7 +3206,6 @@
   - hg-10-16-1-6-2
   attributes:
   - color
-  - material
   - pattern
 - id: hg-10-16-2
   name: Flatware Chests
@@ -3239,8 +3226,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - bag_case_material
 - id: hg-10-16-5
   name: Household Storage Caddies
   children: []
@@ -3470,8 +3457,8 @@
   - hg-11-1-3-2
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-4
   name: Beverage Tubs & Chillers
   children:
@@ -3496,8 +3483,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-7
   name: Coaster Holders
   children: []
@@ -3511,9 +3498,9 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - barware_material
 - id: hg-11-1-9
   name: Cocktail & Barware Tool Sets
   children: []
@@ -3530,43 +3517,43 @@
   - hg-11-1-10-5
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-10-1
   name: Bar Ice Picks
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-10-2
   name: Bottle Openers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-10-3
   name: Cocktail Shakers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-10-4
   name: Cocktail Strainers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-10-5
   name: Muddlers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-11
   name: Corkscrews
   children:
@@ -3577,15 +3564,15 @@
   - hg-11-1-11-5
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-12
   name: Decanters
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-14
   name: Foil Cutters
   children: []
@@ -3597,8 +3584,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-17
   name: Wine Bottle Holders
   children: []
@@ -3633,91 +3620,91 @@
   - hg-11-2-1-11
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-1-1
   name: Bakeware Sets
   children: []
   attributes:
   - bakeware_pieces_included
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-1-2
   name: Baking & Cookie Sheets
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - baking_sheet_material
 - id: hg-11-2-1-3
   name: Bread Pans & Molds
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - cookware_bakeware_material
 - id: hg-11-2-1-4
   name: Broiling Pans
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-1-5
   name: Cake Pans & Molds
   children: []
   attributes:
   - color
-  - material
   - pattern
-  - shape
+  - cookware_bakeware_material
+  - bakeware_shape
 - id: hg-11-2-1-6
   name: Muffin & Pastry Pans
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-1-7
   name: Pie & Quiche Pans
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-1-8
   name: Pizza Pans
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-1-9
   name: Pizza Stones
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - cookware_bakeware_material
 - id: hg-11-2-1-10
   name: Ramekins & Souffle Dishes
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - cookware_bakeware_material
 - id: hg-11-2-1-11
   name: Roasting Pans
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-2
   name: Bakeware Accessories
   children:
@@ -3726,8 +3713,8 @@
   - hg-11-2-2-3
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-2-1
   name: Baking Mats & Liners
   children:
@@ -3735,8 +3722,8 @@
   - hg-11-2-2-1-2
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-2-2
   name: Baking Weights
   children:
@@ -3744,15 +3731,15 @@
   - hg-11-2-2-2-2
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-2-3
   name: Roasting Pan Racks
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3
   name: Cookware
   children:
@@ -3776,8 +3763,8 @@
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-4
   name: Cookware & Bakeware Combo Sets
   children: []
@@ -3790,17 +3777,17 @@
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
   - shape
+  - cookware_bakeware_material
 - id: hg-11-2-3-2
   name: Cookware Sets
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-3
   name: Crêpe & Blini Pans
   children:
@@ -3809,55 +3796,55 @@
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-4
   name: Double Boilers
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-5
   name: Dutch Ovens
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-6
   name: Fermentation & Pickling Crocks
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-7
   name: Griddles & Grill Pans
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-8
   name: Grill Presses
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-9
   name: Paella Pans
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-10
   name: Pressure Cookers & Canners
   children:
@@ -3866,25 +3853,25 @@
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-11
   name: Saucepans
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
   - shape
+  - cookware_bakeware_material
 - id: hg-11-2-3-12
   name: Sauté Pans
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-13
   name: Skillets & Frying Pans
   children:
@@ -3893,25 +3880,25 @@
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
   - shape
+  - cookware_bakeware_material
 - id: hg-11-2-3-14
   name: Stock Pots
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-15
   name: Stovetop Kettles
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-16
   name: Tagines & Clay Cooking Pots
   children:
@@ -3920,16 +3907,16 @@
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-17
   name: Woks
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-5
   name: Cookware Accessories
   children:
@@ -3940,23 +3927,23 @@
   - hg-11-2-5-5
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-5-1
   name: Pot & Pan Handles
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - handle_material
 - id: hg-11-2-5-2
   name: Pot & Pan Lids
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - cookware_bakeware_material
 - id: hg-11-2-5-3
   name: Pressure Cooker & Canner Accessories
   children:
@@ -3967,15 +3954,15 @@
   - hg-11-2-5-3-6
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-5-4
   name: Steamer Baskets
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-5-5
   name: Wok Accessories
   children:
@@ -3983,22 +3970,22 @@
   - hg-11-2-5-5-2
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-5-5-1
   name: Wok Brushes
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - brush_material
 - id: hg-11-2-5-5-2
   name: Wok Rings
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-3
   name: Food & Beverage Carriers
   children:
@@ -4074,8 +4061,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - food_bag_material
 - id: hg-11-3-7
   name: Lunch Boxes & Totes
   children:
@@ -4093,8 +4080,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - basket_material
 - id: hg-11-3-9
   name: Replacement Drink Lids
   children: []
@@ -4122,8 +4109,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - bag_case_material
 - id: hg-11-4
   name: Food Storage
   children:
@@ -4143,48 +4130,48 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - food_storage_material
 - id: hg-11-4-2
   name: Candy Buckets
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - food_storage_material
 - id: hg-11-4-3
   name: Cookie Jars
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - food_storage_material
 - id: hg-11-4-4
   name: Food Container Covers
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - food_storage_material
 - id: hg-11-4-5
   name: Food Storage Bags
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - food_bag_material
 - id: hg-11-4-6
   name: Food Storage Containers
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - food_storage_material
 - id: hg-11-4-7
   name: Food Wraps
   children:
@@ -4224,9 +4211,9 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - food_storage_material
 - id: hg-11-5
   name: Food Storage Accessories
   children:
@@ -4351,8 +4338,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - filter_material
 - id: hg-11-6-2-5
   name: Coffee Grinder Accessories
   children: []
@@ -4399,16 +4386,16 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - filter_material
 - id: hg-11-6-2-9
   name: Frothing Pitchers
   children: []
   attributes:
-  - bowl_material
   - color
   - pattern
   - power_source
+  - tool_utensil_material
 - id: hg-11-6-2-10
   name: Portafilters
   children: []
@@ -5487,16 +5474,16 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-11-8-2
   name: Baking Peels
   children: []
   attributes:
   - color
   - handle_material
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-3
   name: Basters
   children: []
@@ -5530,8 +5517,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-8
   name: Can Crushers
   children: []
@@ -5564,8 +5551,8 @@
   - hg-11-8-12-2
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-13
   name: Condiment Dispensers
   children: []
@@ -5577,17 +5564,17 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - theme
+  - tool_utensil_material
 - id: hg-11-8-15
   name: Cookie Presses
   children: []
   attributes:
   - color
-  - material
   - pattern
   - theme
+  - tool_utensil_material
 - id: hg-11-8-16
   name: Cooking Thermometer Accessories
   children:
@@ -5633,8 +5620,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-22
   name: Dish Racks & Drain Boards
   children:
@@ -5650,7 +5637,7 @@
   - color
   - handle_material
   - pattern
-  - wheel_material
+  - blade_material
 - id: hg-11-8-24
   name: Electric Knife Accessories
   children:
@@ -5675,15 +5662,15 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-27
   name: Food & Drink Stencils
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-28
   name: Food Crackers
   children:
@@ -5732,8 +5719,8 @@
   - hg-11-8-30-2
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-31
   name: Food Peelers & Corers
   children:
@@ -5755,15 +5742,15 @@
   - hg-11-8-33-2
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-34
   name: Funnels
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-35
   name: Garlic Presses
   children: []
@@ -5775,15 +5762,15 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-37
   name: Ice Cube Trays
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-38
   name: Jerky Guns
   children: []
@@ -5960,9 +5947,9 @@
   children: []
   attributes:
   - accessory_size
-  - blade_type
   - color
   - pattern
+  - edge_type
 - id: hg-11-8-44
   name: Kitchen Slicers
   children: []
@@ -5982,15 +5969,15 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-47
   name: Mashers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-48
   name: Measuring Cups & Spoons
   children:
@@ -6004,8 +5991,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-50
   name: Mixing Bowls
   children: []
@@ -6018,8 +6005,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-52
   name: Oil & Vinegar Dispensers
   children:
@@ -6027,8 +6014,8 @@
   - hg-11-8-52-2
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-53
   name: Oven Bags
   children: []
@@ -6040,8 +6027,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-55
   name: Pasta Molds & Stamps
   children:
@@ -6063,8 +6050,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-11-8-58
   name: Pizza Cutter Accessories
   children:
@@ -6123,15 +6110,15 @@
   - hg-11-8-63-2
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-64
   name: Salad Spinners
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-65
   name: Scoops
   children:
@@ -6141,29 +6128,29 @@
   - hg-11-8-65-4
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-65-1
   name: Ice Cream Scoops
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-65-2
   name: Ice Scoops
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-65-3
   name: Melon Ballers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-65-4
   name: Popcorn & French Fry Scoops
   children:
@@ -6171,8 +6158,8 @@
   - hg-11-8-65-4-2
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-66
   name: Sink Caddies
   children: []
@@ -6217,8 +6204,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-73
   name: Sugar Dispensers
   children: []
@@ -6230,30 +6217,30 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-75
   name: Tea Strainers
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - tool_utensil_material
 - id: hg-11-8-76
   name: Tongs
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-77
   name: Whisks
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-9
   name: Prefabricated Kitchens & Kitchenettes
   children: []
@@ -6293,31 +6280,31 @@
   - hg-11-10-4-3
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-4-1
   name: Bowls
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-4-2
   name: Dinnerware Sets
   children: []
   attributes:
   - color
   - dinnerware_pieces_included
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-4-3
   name: Plates
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - tableware_material
 - id: hg-11-10-5
   name: Drinkware
   children:
@@ -6331,65 +6318,65 @@
   - hg-11-10-5-8
   attributes:
   - color
-  - material
   - pattern
+  - drinkware_material
 - id: hg-11-10-5-1
   name: Beer Glasses
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - drinkware_material
 - id: hg-11-10-5-2
   name: Coffee & Tea Cups
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - drinkware_material
 - id: hg-11-10-5-3
   name: Coffee & Tea Saucers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - drinkware_material
 - id: hg-11-10-5-4
   name: Drinkware Sets
   children: []
   attributes:
   - color
   - drinkware_pieces_included
-  - material
   - pattern
+  - drinkware_material
 - id: hg-11-10-5-5
   name: Mugs
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - drinkware_material
 - id: hg-11-10-5-6
   name: Shot Glasses
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - drinkware_material
 - id: hg-11-10-5-7
   name: Stemware
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - drinkware_material
 - id: hg-11-10-5-8
   name: Tumblers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - drinkware_material
 - id: hg-11-10-6
   name: Flatware
   children:
@@ -6417,8 +6404,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - flatware_material
 - id: hg-11-10-6-4
   name: Flatware Sets
   children: []
@@ -6432,26 +6419,26 @@
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - flatware_material
 - id: hg-11-10-6-6
   name: Spoons
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - flatware_material
 - id: hg-11-10-6-7
   name: Table Knives
   children: []
   attributes:
   - accessory_size
   - blade_material
-  - blade_type
   - color
   - handle_material
   - pattern
+  - edge_type
 - id: hg-11-10-7
   name: Serveware
   children:
@@ -6468,73 +6455,73 @@
   - hg-11-10-7-11
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-7-1
   name: Butter Dishes
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-7-2
   name: Cake Boards
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-7-3
   name: Cake Stands
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-7-4
   name: Egg Cups
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-7-5
   name: Gravy Boats
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-7-6
   name: Punch Bowls
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-7-7
   name: Serving Pitchers & Carafes
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-7-8
   name: Serving Platters
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - tableware_material
 - id: hg-11-10-7-9
   name: Serving Trays
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - tableware_material
 - id: hg-11-10-7-10
   name: Sugar Bowls & Creamers
   children:
@@ -6542,15 +6529,15 @@
   - hg-11-10-7-10-2
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-7-11
   name: Tureens
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-8
   name: Serveware Accessories
   children:
@@ -6559,29 +6546,29 @@
   - hg-11-10-8-3
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-8-1
   name: Punch Bowl Stands
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-8-2
   name: Tureen Lids
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-8-3
   name: Tureen Stands
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-9
   name: Tablecloth Clips & Weights
   children:
@@ -6595,8 +6582,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-12
   name: Lawn & Garden
   children:
@@ -6711,8 +6698,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - bag_case_material
 - id: hg-12-1-5-3
   name: Potting Benches
   children: []
@@ -6897,7 +6884,6 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: hg-12-1-11
   name: Landscape Fabric Accessories
@@ -6906,7 +6892,6 @@
   - hg-12-1-11-2
   attributes:
   - color
-  - material
   - pattern
 - id: hg-12-1-11-1
   name: Landscape Fabric Staples & Pins
@@ -6915,14 +6900,12 @@
   - hg-12-1-11-1-2
   attributes:
   - color
-  - material
   - pattern
 - id: hg-12-1-11-2
   name: Landscape Fabric Tape
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: hg-12-1-12
   name: Mulch
@@ -6940,8 +6923,8 @@
   - hg-12-1-13-2
   attributes:
   - color
-  - material
   - pattern
+  - plant_support_material
 - id: hg-12-1-14
   name: Plant Stands
   children: []
@@ -6954,8 +6937,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - plant_support_material
 - id: hg-12-1-16
   name: Pots & Planters
   children:
@@ -6963,8 +6946,8 @@
   - hg-12-1-16-2
   attributes:
   - color
-  - material
   - pattern
+  - plant_support_material
 - id: hg-12-1-17
   name: Rain Barrels
   children: []
@@ -7037,7 +7020,7 @@
   - frame_color
   - frame_material
   - frame_pattern
-  - shape
+  - awning_design
 - id: hg-12-2-3
   name: Hammock Parts & Accessories
   children:
@@ -7142,8 +7125,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - hardware_material
 - id: hg-12-2-6-2-5
   name: Canopy Weights
   children: []
@@ -7194,8 +7177,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-12-2-7-2
   name: Outdoor Umbrella Bases
   children: []
@@ -8156,28 +8139,25 @@
   - hg-14-5
   attributes:
   - color
-  - material
   - pattern
 - id: hg-14-1
   name: Lamp Post Bases
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: hg-14-2
   name: Lamp Post Mounts
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - mount_material
 - id: hg-14-3
   name: Lamp Shades
   children: []
   attributes:
   - color
-  - material
   - mounting_type
   - pattern
   - suitable_space
@@ -8187,7 +8167,6 @@
   attributes:
   - color
   - display_technology
-  - material
   - pattern
   - timer_type
 - id: hg-14-5
@@ -8195,7 +8174,6 @@
   children: []
   attributes:
   - color
-  - material
   - oil_type
   - pattern
   - suitable_space
@@ -8208,8 +8186,8 @@
   - hg-15-4
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-1
   name: Bedding
   children:
@@ -8225,16 +8203,16 @@
   - hg-15-1-10
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-1-1
   name: Bed Canopies
   children: []
   attributes:
   - bedding_size
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-1-2
   name: Bed Sheets
   children: []
@@ -8242,32 +8220,32 @@
   - bedding_pieces_included
   - bedding_size
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-1-3
   name: Bedskirts
   children: []
   attributes:
   - bedding_size
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-1-4
   name: Blankets
   children: []
   attributes:
   - bedding_size
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-1-5
   name: Duvet Covers
   children: []
   attributes:
   - bedding_size
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-1-6
   name: Mattress Protectors
   children:
@@ -8276,31 +8254,31 @@
   attributes:
   - bedding_size
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-1-6-1
   name: Mattress Encasements
   children: []
   attributes:
   - bedding_size
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-1-6-2
   name: Mattress Pads
   children: []
   attributes:
   - bedding_size
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-1-7
   name: Nap Mats
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-1-8
   name: Pillowcases & Shams
   children: []
@@ -8308,33 +8286,33 @@
   - bedding_size
   - closure_style
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-1-9
   name: Pillows
   children: []
   attributes:
   - bedding_size
   - color
-  - cover_material
   - filler_material
   - filler_support
   - pattern
+  - upholstery_material
 - id: hg-15-1-10
   name: Quilts & Comforters
   children: []
   attributes:
   - bedding_size
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-2
   name: Kitchen Linens Sets
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-3
   name: Table Linens
   children:
@@ -8346,53 +8324,53 @@
   - hg-15-3-6
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-3-1
   name: Cloth Napkins
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-3-2
   name: Doilies
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - fabric
 - id: hg-15-3-3
   name: Placemats
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - fabric
 - id: hg-15-3-4
   name: Table Runners
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-3-5
   name: Table Skirts
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-3-6
   name: Tablecloths
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - fabric
 - id: hg-15-4
   name: Towels
   children:
@@ -8401,8 +8379,8 @@
   - hg-15-4-3
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-4-1
   name: Bath Towels & Washcloths
   children:
@@ -8410,22 +8388,22 @@
   - hg-15-4-1-2
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-4-2
   name: Beach Towels
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-15-4-3
   name: Kitchen Towels
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-16
   name: Parasols & Rain Umbrellas
   children:
@@ -8779,8 +8757,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - bag_case_material
 - id: hg-19-3
   name: Cigar Cutters & Punches
   children:
@@ -8795,8 +8773,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - bag_case_material
 - id: hg-19-5
   name: Cigarette Holders
   children: []
@@ -8839,36 +8817,36 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: hg-1-1-2
   name: Freestanding Caddies
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: hg-1-1-3
   name: Over-the-Toilet Caddies
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: hg-1-1-4
   name: Shower Caddies
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: hg-1-1-5
   name: Wall-Mounted Caddies
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: hg-1-18-2
   name: Toilet Brush Holders
   children: []
@@ -8881,8 +8859,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - brush_material
 - id: hg-1-21-1
   name: Towel Holders
   children: []
@@ -8904,9 +8882,9 @@
   - color
   - display_resolution
   - display_technology
-  - mounting_type
   - pattern
   - power_source
+  - monitor_mounting_type
 - id: hg-2-6-2
   name: CCTV Test Monitors
   children: []
@@ -8914,9 +8892,9 @@
   - color
   - display_resolution
   - display_technology
-  - mounting_type
   - pattern
   - power_source
+  - monitor_mounting_type
 - id: hg-2-7-2
   name: Key Locks
   children: []
@@ -8979,64 +8957,64 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - plant_class
   - plant_name
+  - decoration_material
 - id: hg-3-2-2
   name: Artificial Non-Flowering Plants
   children: []
   attributes:
   - color
-  - material
   - pattern
   - plant_class
   - plant_name
+  - decoration_material
 - id: hg-3-2-3
   name: Artificial Shrubs
   children: []
   attributes:
   - color
-  - material
   - pattern
   - plant_class
   - plant_name
+  - decoration_material
 - id: hg-3-2-4
   name: Artificial Trees
   children: []
   attributes:
   - color
-  - material
   - pattern
   - plant_class
   - plant_name
+  - decoration_material
 - id: hg-3-4-2-1
   name: Posters
   children: []
   attributes:
   - color
   - frame
-  - frame_material
   - pattern
   - theme
+  - artwork_frame_material
 - id: hg-3-4-2-2
   name: Prints
   children: []
   attributes:
   - color
   - frame
-  - frame_material
   - pattern
   - theme
+  - artwork_frame_material
 - id: hg-3-4-2-3
   name: Visual Artwork
   children: []
   attributes:
   - color
   - frame
-  - frame_material
   - pattern
   - theme
+  - artwork_frame_material
 - id: hg-3-7-1
   name: Ant Moats
   children: []
@@ -9108,9 +9086,9 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - suitable_for_chair_type
+  - fabric
 - id: hg-3-16-1
   name: Clock Bezels
   children: []
@@ -9212,15 +9190,15 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-53-2
   name: Piggy Banks
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - decoration_material
 - id: hg-3-66-1
   name: Table Scatters
   children: []
@@ -9264,15 +9242,15 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - hardware_material
 - id: hg-3-73-3-2
   name: Curtain Tassels
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - hardware_material
 - id: hg-3-73-4-1
   name: Window Brackets
   children: []
@@ -9308,15 +9286,15 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-3-74-1-2
   name: Drapes
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-3-74-3-1
   name: Blinds
   children: []
@@ -9324,9 +9302,9 @@
   - color
   - control_technology
   - light_control
-  - material
   - pattern
-  - style
+  - window_treatment_material
+  - blind_shade_style
 - id: hg-3-74-3-2
   name: Shades
   children: []
@@ -9334,9 +9312,9 @@
   - color
   - control_technology
   - light_control
-  - material
   - pattern
-  - style
+  - window_treatment_material
+  - blind_shade_style
 - id: hg-3-74-6-1
   name: Cornices
   children: []
@@ -9404,36 +9382,36 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: hg-5-9-2
   name: Back Walls
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: hg-5-9-3
   name: Base Covers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cover_material
 - id: hg-5-10-1
   name: Firewood Carts
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: hg-5-10-2
   name: Firewood Holders
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: hg-6-1
   name: Indoor Fireplaces
   children: []
@@ -10181,8 +10159,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-10-9-12-2
   name: Ironing Board Pads
   children: []
@@ -10296,8 +10274,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cover_material
 - id: hg-10-14-6-1
   name: Dressing Aids
   children: []
@@ -10353,28 +10331,24 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: hg-10-16-1-2-2
   name: Garment Racks
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: hg-10-16-1-6-1
   name: Shoe Organizers
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: hg-10-16-1-6-2
   name: Shoe Racks
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: hg-10-16-9-1-1
   name: Ironing Board Hooks
@@ -10409,8 +10383,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - disposable_bag_material
 - id: hg-10-17-2
   name: Trash Compactor Filters
   children: []
@@ -10439,15 +10413,15 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-3-2
   name: Beverage Sticks
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-4-1
   name: Beverage Chillers
   children: []
@@ -10495,36 +10469,36 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-11-2
   name: Lever Corkscrews
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-11-3
   name: Twist Corkscrews
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-11-4
   name: Waiter's Corkscrews
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-11-5
   name: Winged Corkscrews
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - barware_material
 - id: hg-11-1-13
   name: Drink Charms
   children: []
@@ -10544,138 +10518,138 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-2-1-2
   name: Baking Mats
   children: []
   attributes:
   - pattern
   - color
-  - material
+  - cookware_bakeware_material
 - id: hg-11-2-2-2-1
   name: Blind Baking Beans
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-2-2-2
   name: Ceramic Baking Weights
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-3-1
   name: Blini Pans
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-3-2
   name: Crêpe Pans
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-10-1
   name: Canners
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-10-2
   name: Pressure Cookers
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-13-1
   name: Frying Pans
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
   - shape
+  - cookware_bakeware_material
 - id: hg-11-2-3-13-2
   name: Skillets
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
   - shape
+  - cookware_bakeware_material
 - id: hg-11-2-3-16-1
   name: Clay Cooking Pots
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-3-16-2
   name: Tagines
   children: []
   attributes:
   - color
   - compatible_hob_type
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-5-3-1
   name: Food Dividers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-5-3-2
   name: Gaskets
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-5-3-3
   name: Handles
   children: []
   attributes:
   - color
   - pattern
-  - material
+  - handle_material
 - id: hg-11-2-5-3-4
   name: Pressure Cooker Timers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-2-5-3-6
   name: Valves
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cookware_bakeware_material
 - id: hg-11-3-7-1
   name: Lunch Bags
   children: []
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - food_bag_material
 - id: hg-11-3-7-2
   name: Lunch Box Sets
   children: []
@@ -10893,8 +10867,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - handwear_material
 - id: hg-11-6-3-4
   name: Oven Liners
   children: []
@@ -11633,14 +11607,14 @@
   attributes:
   - pattern
   - color
-  - material
+  - tool_utensil_material
 - id: hg-11-8-12-2
   name: Strainers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-16-1
   name: Calibration Tools
   children: []
@@ -11758,15 +11732,15 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-30-2
   name: Food Zesters
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-31-1
   name: Food Corers
   children: []
@@ -11784,15 +11758,15 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-33-2
   name: Food Sticks
   children: []
   attributes:
   - color
   - pattern
-  - material
+  - tool_utensil_material
 - id: hg-11-8-39-1
   name: Bread Knives
   children: []
@@ -11935,14 +11909,14 @@
   attributes:
   - color
   - pattern
-  - material
+  - tool_utensil_material
 - id: hg-11-8-52-2
   name: Vinegar Dispensers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-55-1
   name: Pasta Molds
   children: []
@@ -11988,29 +11962,29 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-63-2
   name: Shakers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-65-4-1
   name: French Fry Scoops
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tool_utensil_material
 - id: hg-11-8-65-4-2
   name: Popcorn Scoops
   children: []
   attributes:
   - pattern
   - color
-  - material
+  - tool_utensil_material
 - id: hg-11-8-67-1
   name: Sink Grids
   children: []
@@ -12103,8 +12077,8 @@
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - flatware_material
 - id: hg-11-10-6-2-1
   name: Chopstick Cases
   children: []
@@ -12128,15 +12102,15 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-7-10-2
   name: Sugar Creamers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - tableware_material
 - id: hg-11-10-9-1
   name: Tablecloth Clips
   children: []
@@ -12278,14 +12252,12 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: hg-12-1-11-1-2
   name: Landscape Fabric Staples
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: hg-12-1-12-1
   name: Inorganic Mulch
@@ -12311,28 +12283,28 @@
   attributes:
   - pattern
   - color
-  - material
+  - plant_support_material
 - id: hg-12-1-13-2
   name: Plant Supports
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - plant_support_material
 - id: hg-12-1-16-1
   name: Planters
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - plant_support_material
 - id: hg-12-1-16-2
   name: Pots
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - plant_support_material
 - id: hg-12-2-1-1
   name: Awning Arms
   children: []
@@ -12359,15 +12331,15 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - hardware_material
 - id: hg-12-2-1-8
   name: Pull Rods
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - hardware_material
 - id: hg-12-2-1-9
   name: Pull Straps
   children: []
@@ -12380,8 +12352,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cover_material
 - id: hg-12-2-1-12
   name: Side Walls
   children: []
@@ -12394,8 +12366,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - bag_case_material
 - id: hg-12-2-1-14
   name: Structural Frames
   children: []
@@ -12917,14 +12889,14 @@
   attributes:
   - pattern
   - color
-  - material
+  - fabric
 - id: hg-15-4-1-2
   name: Washcloths
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: hg-16-1
   name: Parasols
   children: []
