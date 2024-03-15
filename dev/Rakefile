@@ -1,15 +1,17 @@
-require 'minitest/test_task'
+# frozen_string_literal: true
 
-task default: %w[test]
+require "minitest/test_task"
 
-Minitest::TestTask.create :test do |t|
+task default: ["test"]
+
+Minitest::TestTask.create(:test) do |t|
   t.test_globs = [
     "test/unit/**/*_test.rb",
   ]
   t.warning = false
 end
 
-Minitest::TestTask.create :test_integration do |t|
+Minitest::TestTask.create(:test_integration) do |t|
   t.test_globs = [
     "test/integration/**/*_test.rb",
   ]

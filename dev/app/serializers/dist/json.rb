@@ -1,4 +1,6 @@
-require 'json'
+# frozen_string_literal: true
+
+require "json"
 
 module Serializers
   module Dist
@@ -68,7 +70,7 @@ module Serializers
       def serialize_nested(connection)
         {
           id: connection.gid,
-          name: connection.name
+          name: connection.name,
         }
       end
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Serializers
   module Dist
     class Text

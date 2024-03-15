@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class Category < ApplicationRecord
   default_scope { order(:name) }
 
   scope :verticals, -> { where(parent_id: nil) }
 
-  has_many :children, class_name: 'Category', inverse_of: :parent
-  belongs_to :parent, class_name: 'Category', optional: true
+  has_many :children, class_name: "Category", inverse_of: :parent
+  belongs_to :parent, class_name: "Category", optional: true
   has_and_belongs_to_many :properties
 
   validates :id,

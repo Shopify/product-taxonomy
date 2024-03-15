@@ -1,4 +1,6 @@
-require_relative '../application'
+# frozen_string_literal: true
+
+require_relative "../application"
 
 module DB
   class Seed
@@ -6,14 +8,15 @@ module DB
       def attributes_from(data)
         puts "Importing values"
         data.each do |property_json|
-          property_json['values'].each do |property_json|
+          property_json["values"].each do |property_json|
             property_value = Serializers::Data::PropertyValueSerializer.deserialize(property_json)
             by_id = PropertyValue.find_by(id: property_value.id)
 
             if by_id.nil?
               property_value.save!
             elsif by_id.name != property_value.name
-              puts "  ⨯ Failed to import value: #{property_value.name} <#{property_value.id}> already exists as #{by_id.name} <#{by_id.id}>"
+              puts "  ⨯ Failed to import value: #{property_value.name} <#{property_value.id}> already exists as " \
+                "#{by_id.name} <#{by_id.id}>"
             end
           end
         end

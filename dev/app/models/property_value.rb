@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PropertyValue < ApplicationRecord
   default_scope { order(Arel.sql("CASE WHEN name = 'Other' THEN 1 ELSE 0 END, name")) }
 

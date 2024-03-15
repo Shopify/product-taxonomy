@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
-require 'yaml'
-require_relative '../application'
+require "yaml"
+require_relative "../application"
 
 Application.establish_db_connection!
 Application.load_and_reset_schema!
