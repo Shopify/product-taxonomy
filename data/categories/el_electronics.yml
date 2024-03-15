@@ -41,7 +41,6 @@
   name: Basketball Arcade Games
   children: []
   attributes:
-  - base_material
   - cabinet_type
   - color
   - frame_material
@@ -62,7 +61,6 @@
   name: Pinball Machines
   children: []
   attributes:
-  - base_material
   - color
   - frame_material
   - pattern
@@ -72,7 +70,6 @@
   name: Skee-Ball Machines
   children: []
   attributes:
-  - base_material
   - color
   - frame_material
   - pattern
@@ -93,7 +90,6 @@
   name: Video Game Arcade Cabinets
   children: []
   attributes:
-  - base_material
   - cabinet_type
   - color
   - frame_material
@@ -189,8 +185,8 @@
   attributes:
   - case_type
   - color
-  - material
   - pattern
+  - bag_case_material
 - id: el-2-1-4
   name: Microphone Accessories
   children:
@@ -232,8 +228,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - bag_case_material
 - id: el-2-1-8-2
   name: Speaker Components & Kits
   children: []
@@ -245,16 +241,16 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - bag_case_material
 - id: el-2-1-8-4
   name: Speaker Stands & Mounts
   children: []
   attributes:
   - color
-  - material
   - mounting_type
   - pattern
+  - mount_material
 - id: el-2-1-8-5
   name: Tactile Transducers
   children: []
@@ -885,7 +881,6 @@
   attributes:
   - color
   - component_package_type
-  - material
   - pattern
 - id: el-3-6-1
   name: Camera Circuit Boards
@@ -893,7 +888,6 @@
   attributes:
   - color
   - component_package_type
-  - material
   - pattern
 - id: el-3-6-2
   name: Computer Circuit Boards
@@ -904,7 +898,6 @@
   attributes:
   - color
   - component_package_type
-  - material
   - pattern
 - id: el-3-6-2-1
   name: Computer Inverter Boards
@@ -912,7 +905,6 @@
   attributes:
   - color
   - component_package_type
-  - material
   - pattern
 - id: el-3-6-2-2
   name: Hard Drive Circuit Boards
@@ -920,7 +912,6 @@
   attributes:
   - color
   - component_package_type
-  - material
   - pattern
 - id: el-3-6-2-3
   name: Motherboards
@@ -946,7 +937,6 @@
   attributes:
   - color
   - component_package_type
-  - material
   - memory_technology
   - pattern
   - processor_socket
@@ -956,7 +946,6 @@
   attributes:
   - color
   - component_package_type
-  - material
   - pattern
 - id: el-3-6-5
   name: Household Appliance Circuit Boards
@@ -964,7 +953,6 @@
   attributes:
   - color
   - component_package_type
-  - material
   - pattern
 - id: el-3-6-6
   name: Pool & Spa Circuit Boards
@@ -972,7 +960,6 @@
   attributes:
   - color
   - component_package_type
-  - material
   - pattern
 - id: el-3-6-7
   name: Printer, Copier, & Fax Machine Circuit Boards
@@ -980,7 +967,6 @@
   attributes:
   - color
   - component_package_type
-  - material
   - pattern
 - id: el-3-6-8
   name: Scanner Circuit Boards
@@ -988,7 +974,6 @@
   attributes:
   - color
   - component_package_type
-  - material
   - pattern
 - id: el-3-6-9
   name: Television Circuit Boards
@@ -996,7 +981,6 @@
   attributes:
   - color
   - component_package_type
-  - material
   - pattern
 - id: el-3-7
   name: Semiconductors
@@ -1393,13 +1377,13 @@
   - connection_type
   - data_network
   - display_resolution
-  - display_technology
   - e_book_formats_supported
   - energy_efficiency_class
   - operating_system
   - pattern
   - power_source
   - processor_family
+  - e_reader_display_technology
 - id: el-6-4-3
   name: PDAs
   children: []
@@ -1875,8 +1859,8 @@
   attributes:
   - case_type
   - color
-  - material
   - pattern
+  - bag_case_material
 - id: el-7-8-4-2
   name: PDA Accessories
   children:
@@ -1890,8 +1874,8 @@
   attributes:
   - case_type
   - color
-  - material
   - pattern
+  - bag_case_material
 - id: el-7-8-5
   name: Keyboard & Mouse Wrist Rests
   children: []
@@ -2046,8 +2030,8 @@
   attributes:
   - color
   - display_resolution
-  - display_technology
   - pattern
+  - e_reader_display_technology
 - id: el-7-9-10
   name: I/O Cards & Adapters
   children:
@@ -2467,8 +2451,8 @@
   attributes:
   - case_type
   - color
-  - material
   - pattern
+  - bag_case_material
 - id: el-7-9-14-2-2
   name: Hard Drive Docks
   children: []
@@ -2703,9 +2687,9 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - removable_storage_formats_supported
+  - bag_case_material
 - id: el-7-14
   name: Mobile Phone & Tablet Tripods & Monopods
   children: []
@@ -3599,7 +3583,7 @@
   - energy_efficiency_class_sdr
   - native_aspect_ratio
   - pattern
-  - shape
+  - monitor_shape
 - id: el-17-2
   name: Projectors
   children:
@@ -3710,8 +3694,8 @@
   attributes:
   - color
   - device_interface
-  - material
   - pattern
+  - 3d_glasses_material
 - id: el-17-5-2
   name: Computer Monitor Accessories
   children:
@@ -3770,9 +3754,9 @@
   name: Projector Replacement Lamps
   children: []
   attributes:
-  - bulb_type
   - color
   - pattern
+  - projector_light_source
 - id: el-17-5-4
   name: Rewinders
   children: []
@@ -4013,8 +3997,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - bag_case_material
 - id: el-2-1-2-4-1
   name: Headphone Cushions
   children: []
@@ -4239,8 +4223,8 @@
   attributes:
   - color
   - connector_gender
-  - material
   - pattern
+  - wire_rope_material
 - id: el-3-4-1
   name: All-Pass Filters
   children: []
@@ -4298,9 +4282,9 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - radio_case_design
+  - bag_case_material
 - id: el-4-4-1
   name: Amateur Radios
   children: []
@@ -4386,8 +4370,8 @@
   - certifications_and_standards
   - color
   - hand_side
-  - material
   - pattern
+  - bag_case_material
 - id: el-4-8-4-3
   name: Mobile Phone Charms & Straps
   children: []

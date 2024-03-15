@@ -15,14 +15,21 @@
   name: Books
   children:
   - me-1-1
-  - me-1-3
   - me-1-2
+  - me-1-3
   attributes:
   - genre
   - language_version
   - target_audience
 - id: me-1-1
   name: Audiobooks
+  children: []
+  attributes:
+  - genre
+  - language_version
+  - target_audience
+- id: me-1-2
+  name: E-Books
   children: []
   attributes:
   - genre
@@ -126,13 +133,6 @@
   - research_methodology
   - subject_area
   - time_period
-- id: me-1-2
-  name: E-Books
-  children: []
-  attributes:
-  - genre
-  - language_version
-  - target_audience
 - id: me-2-1-1
   name: Consumer Magazines
   children: []

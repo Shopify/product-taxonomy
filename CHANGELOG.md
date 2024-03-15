@@ -1,3 +1,9 @@
+## 0.10.0 (Mar 14, 2024)
+
+#### 📚 Taxonomy Attribute Updates
+
+- Product attributes in the taxonomy have been refined, splitting the general 'material' attribute into more specific categories such as 'fabric', 'cocktail decoration material', 'safety equipment material' etc.
+
 ## 0.9.0 (Mar 4, 2024)
 
 Changed GID structure for Attribute Values and added more txt distributions.

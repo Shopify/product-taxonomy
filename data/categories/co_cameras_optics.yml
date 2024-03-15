@@ -28,7 +28,7 @@
   - co-1-1-3
   attributes:
   - color
-  - material
+  - cable_housing_material
 - id: co-1-2
   name: Camera & Video Camera Lenses
   children:
@@ -38,8 +38,8 @@
   attributes:
   - camera_lens_type
   - color
-  - material
   - suitable_for_camera_type
+  - camera_lens_material
 - id: co-1-2-1
   name: Camera Lenses
   children: []
@@ -48,24 +48,24 @@
   - color
   - focus_adjustment
   - focus_type
-  - material
   - suitable_for_camera_type
+  - camera_lens_material
 - id: co-1-2-2
   name: Surveillance Camera Lenses
   children: []
   attributes:
   - camera_lens_type
   - color
-  - material
   - suitable_for_camera_type
+  - camera_lens_material
 - id: co-1-2-3
   name: Video Camera Lenses
   children: []
   attributes:
   - camera_lens_type
   - color
-  - material
   - suitable_for_camera_type
+  - camera_lens_material
 - id: co-1-3
   name: Camera Lens Accessories
   children:
@@ -92,7 +92,7 @@
   - bag_case_closure
   - carrying_type
   - color
-  - material
+  - bag_case_material
 - id: co-1-3-3
   name: Lens Caps
   children: []
@@ -173,7 +173,7 @@
   attributes:
   - bag_case_closure
   - color
-  - material
+  - bag_case_material
 - id: co-1-4-3
   name: Camera Body Replacement Panels & Doors
   children: []
@@ -201,7 +201,6 @@
   - contrast
   - film_format
   - grain
-  - material
 - id: co-1-4-6
   name: Camera Flash Accessories
   children: []
@@ -402,7 +401,7 @@
   attributes:
   - accessory_size
   - color
-  - material
+  - bag_case_material
 - id: co-1-5-3
   name: Rangefinder Accessories
   children: []
@@ -449,7 +448,7 @@
   children: []
   attributes:
   - color
-  - material
+  - bag_case_material
 - id: co-1-6-2
   name: Tripod & Monopod Heads
   children: []
@@ -465,14 +464,14 @@
   - collar_mount_compatible_device
   - collar_mount_design
   - color
-  - material
+  - mount_material
 - id: co-1-6-4
   name: Tripod Handles
   children: []
   attributes:
   - color
-  - material
   - tripop_handle_type
+  - handle_material
 - id: co-1-6-5
   name: Tripod Spreaders
   children: []
@@ -567,7 +566,6 @@
   - color
   - exposure_control
   - film_type
-  - material
 - id: co-2-5
   name: Surveillance Cameras
   children: []
@@ -815,7 +813,6 @@
   attributes:
   - color
   - compatible_film_type
-  - material
   - photographic_chemical_form
 - id: co-4-1-4
   name: Photographic Paper
@@ -949,7 +946,7 @@
   - co-4-2-8-10
   attributes:
   - color
-  - material
+  - mount_material
 - id: co-4-3
   name: Photo Mounting Supplies
   children: []
@@ -968,82 +965,82 @@
   children: []
   attributes:
   - color
-  - material
+  - cable_housing_material
 - id: co-1-1-2
   name: Composite Video Cables
   children: []
   attributes:
   - color
-  - material
+  - cable_housing_material
 - id: co-1-1-3
   name: Optical Audio Cables
   children: []
   attributes:
   - color
-  - material
+  - cable_housing_material
 - id: co-1-4-2-1
   name: Camera Backpacks
   children: []
   attributes:
   - bag_case_closure
   - color
-  - material
+  - bag_case_material
 - id: co-1-4-2-2
   name: Camera Hard Cases
   children: []
   attributes:
   - bag_case_closure
   - color
-  - material
+  - bag_case_material
 - id: co-1-4-2-3
   name: Camera Holster Bags
   children: []
   attributes:
   - bag_case_closure
   - color
-  - material
+  - bag_case_material
 - id: co-1-4-2-4
   name: Camera Rolling Cases
   children: []
   attributes:
   - bag_case_closure
   - color
-  - material
+  - bag_case_material
 - id: co-1-4-2-5
   name: Camera Shoulder Bags
   children: []
   attributes:
   - bag_case_closure
   - color
-  - material
+  - bag_case_material
 - id: co-1-4-2-6
   name: Camera Sling Bags
   children: []
   attributes:
   - bag_case_closure
   - color
-  - material
+  - bag_case_material
 - id: co-1-4-2-7
   name: Camera Soft Pouches
   children: []
   attributes:
   - bag_case_closure
   - color
-  - material
+  - bag_case_material
 - id: co-1-4-2-8
   name: Camera Tote Bags
   children: []
   attributes:
   - bag_case_closure
   - color
-  - material
+  - bag_case_material
 - id: co-1-4-2-9
   name: Camera Underwater Cases
   children: []
   attributes:
   - bag_case_closure
   - color
-  - material
+  - bag_case_material
 - id: co-1-4-5-1
   name: Black & White Film
   children: []
@@ -1053,7 +1050,6 @@
   - contrast
   - film_format
   - grain
-  - material
 - id: co-1-4-5-2
   name: Color Negative Film
   children: []
@@ -1063,7 +1059,6 @@
   - contrast
   - film_format
   - grain
-  - material
 - id: co-1-4-5-3
   name: Infrared Film
   children: []
@@ -1073,7 +1068,6 @@
   - contrast
   - film_format
   - grain
-  - material
 - id: co-1-4-5-4
   name: Instant Film
   children: []
@@ -1083,7 +1077,6 @@
   - contrast
   - film_format
   - grain
-  - material
 - id: co-1-4-5-5
   name: Slide Film
   children: []
@@ -1093,7 +1086,6 @@
   - contrast
   - film_format
   - grain
-  - material
 - id: co-1-4-5-6
   name: Special Effects Film
   children: []
@@ -1103,7 +1095,6 @@
   - contrast
   - film_format
   - grain
-  - material
 - id: co-1-4-10-1
   name: Battery Grips
   children: []
@@ -1258,63 +1249,63 @@
   attributes:
   - accessory_size
   - color
-  - material
+  - bag_case_material
 - id: co-1-5-2-2
   name: Binocular Cases
   children: []
   attributes:
   - accessory_size
   - color
-  - material
+  - bag_case_material
 - id: co-1-5-2-4
   name: Drone Cases
   children: []
   attributes:
   - accessory_size
   - color
-  - material
+  - bag_case_material
 - id: co-1-5-2-5
   name: Lens Bags
   children: []
   attributes:
   - accessory_size
   - color
-  - material
+  - bag_case_material
 - id: co-1-5-2-6
   name: Microscope Cases
   children: []
   attributes:
   - accessory_size
   - color
-  - material
+  - bag_case_material
 - id: co-1-5-2-7
   name: Monocular Cases
   children: []
   attributes:
   - accessory_size
   - color
-  - material
+  - bag_case_material
 - id: co-1-5-2-8
   name: Rangefinder Cases
   children: []
   attributes:
   - accessory_size
   - color
-  - material
+  - bag_case_material
 - id: co-1-5-2-9
   name: Spotting Scope Cases
   children: []
   attributes:
   - accessory_size
   - color
-  - material
+  - bag_case_material
 - id: co-1-5-2-10
   name: Telescope Bags
   children: []
   attributes:
   - accessory_size
   - color
-  - material
+  - bag_case_material
 - id: co-1-7-1
   name: Boom Stands
   children: []
@@ -1563,7 +1554,6 @@
   - color
   - exposure_control
   - film_type
-  - material
 - id: co-2-4-2
   name: Instant Film Cameras
   children: []
@@ -1572,7 +1562,6 @@
   - exposure_control
   - film_format
   - film_type
-  - material
 - id: co-2-4-3
   name: Large Format Film Cameras
   children: []
@@ -1580,7 +1569,6 @@
   - color
   - exposure_control
   - film_type
-  - material
 - id: co-2-4-4
   name: Medium Format Film Cameras
   children: []
@@ -1588,7 +1576,6 @@
   - color
   - exposure_control
   - film_type
-  - material
 - id: co-2-4-5
   name: Rangefinder Film Cameras
   children: []
@@ -1596,7 +1583,6 @@
   - color
   - exposure_control
   - film_type
-  - material
 - id: co-2-4-6
   name: SLR Film Cameras
   children: []
@@ -1604,7 +1590,6 @@
   - color
   - exposure_control
   - film_type
-  - material
 - id: co-2-7-1
   name: 360-Degree Video Cameras
   children: []
@@ -1718,13 +1703,11 @@
   children: []
   attributes:
   - color
-  - material
 - id: co-4-1-1-4-2
   name: Film Washers
   children: []
   attributes:
   - color
-  - material
 - id: co-4-1-1-4-3
   name: Print Dryers
   children: []
@@ -1755,7 +1738,6 @@
   attributes:
   - color
   - compatible_film_type
-  - material
   - photographic_chemical_form
 - id: co-4-1-3-2
   name: Film Developers
@@ -1763,7 +1745,6 @@
   attributes:
   - color
   - compatible_film_type
-  - material
   - photographic_chemical_form
 - id: co-4-1-3-3
   name: Film Hardeners
@@ -1771,7 +1752,6 @@
   attributes:
   - color
   - compatible_film_type
-  - material
   - photographic_chemical_form
 - id: co-4-1-3-4
   name: Fixers
@@ -1779,7 +1759,6 @@
   attributes:
   - color
   - compatible_film_type
-  - material
   - photographic_chemical_form
 - id: co-4-1-3-5
   name: Hypo Clearing Agents
@@ -1787,7 +1766,6 @@
   attributes:
   - color
   - compatible_film_type
-  - material
   - photographic_chemical_form
 - id: co-4-1-3-6
   name: Paper Developers
@@ -1795,7 +1773,6 @@
   attributes:
   - color
   - compatible_film_type
-  - material
   - photographic_chemical_form
 - id: co-4-1-3-7
   name: Reversal Baths
@@ -1803,7 +1780,6 @@
   attributes:
   - color
   - compatible_film_type
-  - material
   - photographic_chemical_form
 - id: co-4-1-3-8
   name: Stop Baths
@@ -1811,7 +1787,6 @@
   attributes:
   - color
   - compatible_film_type
-  - material
   - photographic_chemical_form
 - id: co-4-1-3-9
   name: Toners
@@ -1819,7 +1794,6 @@
   attributes:
   - color
   - compatible_film_type
-  - material
   - photographic_chemical_form
 - id: co-4-1-3-10
   name: Wetting Agents
@@ -1827,7 +1801,6 @@
   attributes:
   - color
   - compatible_film_type
-  - material
   - photographic_chemical_form
 - id: co-4-2-8-1
   name: Backdrop Stands
@@ -1852,7 +1825,7 @@
   children: []
   attributes:
   - color
-  - material
+  - mount_material
 - id: co-4-2-8-5
   name: Clamps
   children: []
@@ -1888,4 +1861,4 @@
   children: []
   attributes:
   - color
-  - material
+  - mount_material

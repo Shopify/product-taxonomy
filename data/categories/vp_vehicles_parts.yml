@@ -148,8 +148,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - power_source
+  - mount_material
 - id: vp-1-4
   name: Motor Vehicle Parts
   children:
@@ -208,8 +208,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - pattern
+  - fabric
 - id: vp-1-4-3
   name: Motor Vehicle Climate Control
   children:
@@ -225,7 +225,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-4
   name: Motor Vehicle Controls
   children:
@@ -239,7 +239,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-5
   name: Motor Vehicle Engine Oil Circulation
   children:
@@ -255,7 +255,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-6
   name: Motor Vehicle Engine Parts
   children:
@@ -272,7 +272,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-7
   name: Motor Vehicle Engines
   children:
@@ -297,8 +297,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - motor_vehicle_type
+  - item_material
 - id: vp-1-4-9
   name: Motor Vehicle Frame & Body Parts
   children:
@@ -314,7 +314,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-10
   name: Motor Vehicle Fuel Systems
   children:
@@ -331,7 +331,7 @@
   - fuel_supply
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-11
   name: Motor Vehicle Interior Fittings
   children:
@@ -347,9 +347,9 @@
   - fit_type
   - item_condition
   - manufacturer_type
-  - material
   - motor_vehicle_type
   - pattern
+  - item_material
 - id: vp-1-4-12
   name: Motor Vehicle Lighting
   children:
@@ -398,7 +398,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - fabric
 - id: vp-1-4-16
   name: Motor Vehicle Sensors & Gauges
   children:
@@ -446,7 +446,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-19
   name: Motor Vehicle Transmission & Drivetrain Parts
   children:
@@ -474,7 +474,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-20-1
   name: Motor Vehicle Rims & Wheels
   children:
@@ -485,8 +485,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - rim_wheel_design
+  - item_material
 - id: vp-1-4-20-1-1
   name: Automotive Rims & Wheels
   children: []
@@ -494,8 +494,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - rim_wheel_design
+  - item_material
 - id: vp-1-4-20-1-2
   name: Motorcycle Rims & Wheels
   children: []
@@ -503,8 +503,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - rim_wheel_design
+  - item_material
 - id: vp-1-4-20-1-3
   name: Off-Road and All-Terrain Vehicle Rims & Wheels
   children: []
@@ -512,8 +512,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - rim_wheel_design
+  - item_material
 - id: vp-1-4-20-2
   name: Motor Vehicle Tire Accessories
   children: []
@@ -521,7 +521,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-20-3
   name: Motor Vehicle Tires
   children:
@@ -532,7 +532,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-20-3-1
   name: Automotive Tires
   children: []
@@ -540,8 +540,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - vehicle_tire_type
+  - item_material
 - id: vp-1-4-20-3-2
   name: Motorcycle Tires
   children: []
@@ -549,8 +549,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - motorcycle_tire_type
+  - item_material
 - id: vp-1-4-20-3-3
   name: Off-Road and All-Terrain Vehicle Tires
   children: []
@@ -559,7 +559,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-20-4
   name: Motor Vehicle Wheel Parts
   children: []
@@ -567,8 +567,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - wheel_part_type
+  - item_material
 - id: vp-1-4-21
   name: Motor Vehicle Window Parts & Accessories
   children: []
@@ -576,7 +576,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-5
   name: Vehicle Maintenance, Care & Decor
   children:
@@ -616,9 +616,9 @@
   attributes:
   - brush_type
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - bristle_material
 - id: vp-1-5-2-2
   name: Car Wash Solutions
   children:
@@ -682,50 +682,50 @@
   attributes:
   - color
   - cover_type
-  - material
   - vehicle_application_area
   - vehicle_type
+  - cover_material
 - id: vp-1-5-3-1
   name: Golf Cart Enclosures
   children: []
   attributes:
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - cover_material
 - id: vp-1-5-3-2
   name: Motor Vehicle Windshield Covers
   children: []
   attributes:
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - cover_material
 - id: vp-1-5-3-3
   name: Tonneau Covers
   children: []
   attributes:
   - color
   - cover_type
-  - material
   - vehicle_application_area
   - vehicle_type
+  - cover_material
 - id: vp-1-5-3-4
   name: Vehicle Hardtops
   children: []
   attributes:
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - cover_material
 - id: vp-1-5-3-5
   name: Vehicle Soft Tops
   children: []
   attributes:
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - cover_material
 - id: vp-1-5-3-6
   name: Vehicle Storage Covers
   children:
@@ -737,54 +737,54 @@
   attributes:
   - color
   - cover_type
-  - material
   - vehicle_application_area
   - vehicle_type
+  - cover_material
 - id: vp-1-5-3-6-1
   name: Automotive Storage Covers
   children: []
   attributes:
   - color
   - cover_type
-  - material
   - vehicle_application_area
   - vehicle_type
+  - cover_material
 - id: vp-1-5-3-6-2
   name: Golf Cart Storage Covers
   children: []
   attributes:
   - color
   - cover_type
-  - material
   - vehicle_application_area
   - vehicle_type
+  - cover_material
 - id: vp-1-5-3-6-3
   name: Motorcycle Storage Covers
   children: []
   attributes:
   - color
   - cover_type
-  - material
   - vehicle_application_area
   - vehicle_type
+  - cover_material
 - id: vp-1-5-3-6-4
   name: Recreational Vehicle Storage Covers
   children: []
   attributes:
   - color
   - cover_type
-  - material
   - vehicle_application_area
   - vehicle_type
+  - cover_material
 - id: vp-1-5-3-6-5
   name: Watercraft Storage Covers
   children: []
   attributes:
   - color
   - cover_type
-  - material
   - vehicle_application_area
   - vehicle_type
+  - cover_material
 - id: vp-1-5-4
   name: Vehicle Decor
   children:
@@ -810,18 +810,18 @@
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - decoration_material
 - id: vp-1-5-4-1
   name: Bumper Stickers
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - decoration_material
 - id: vp-1-5-4-2
   name: Vehicle Air Fresheners
   children: []
@@ -830,162 +830,162 @@
   - air_freshener_form
   - car_freshener_fragrance
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - decoration_material
 - id: vp-1-5-4-3
   name: Vehicle Antenna Balls
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - decoration_material
 - id: vp-1-5-4-4
   name: Vehicle Dashboard Accessories
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - decoration_material
 - id: vp-1-5-4-5
   name: Vehicle Decals
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - decoration_material
 - id: vp-1-5-4-6
   name: Vehicle Decor Accessory Sets
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - decoration_material
 - id: vp-1-5-4-7
   name: Vehicle Display Flags
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - decoration_material
 - id: vp-1-5-4-8
   name: Vehicle Emblems & Hood Ornaments
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - decoration_material
 - id: vp-1-5-4-9
   name: Vehicle Hitch Covers
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - cover_material
 - id: vp-1-5-4-10
   name: Vehicle License Plate Covers
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - cover_material
 - id: vp-1-5-4-11
   name: Vehicle License Plate Frames
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - decoration_material
 - id: vp-1-5-4-12
   name: Vehicle License Plate Mounts & Holders
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - mount_material
 - id: vp-1-5-4-13
   name: Vehicle License Plates
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - decoration_material
 - id: vp-1-5-4-14
   name: Vehicle Magnets
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - decoration_material
 - id: vp-1-5-4-15
   name: Vehicle Rear View Mirror Ornaments
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - decoration_material
 - id: vp-1-5-4-16
   name: Vehicle Shift Boots
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - decoration_material
 - id: vp-1-5-4-17
   name: Vehicle Shift Knobs
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - decoration_material
 - id: vp-1-5-4-18
   name: Vehicle Steering Wheel Covers
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - cover_material
 - id: vp-1-5-4-19
   name: Vehicle Wraps
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - vehicle_application_area
   - vehicle_type
+  - decoration_material
 - id: vp-1-5-5
   name: Vehicle Fluids
   children:
@@ -1232,60 +1232,60 @@
   - vp-1-6-1-10
   attributes:
   - accessory_size
-  - material
   - target_gender
   - vehicle_type
+  - gear_material
 - id: vp-1-6-1-1
   name: Motorcycle Chest & Back Protectors
   children: []
   attributes:
   - accessory_size
-  - material
   - target_gender
   - vehicle_type
+  - gear_material
 - id: vp-1-6-1-2
   name: Motorcycle Elbow & Wrist Guards
   children: []
   attributes:
   - accessory_size
-  - material
   - target_gender
   - vehicle_type
+  - gear_material
 - id: vp-1-6-1-3
   name: Motorcycle Gloves
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - motorcycle_glove_purpose
   - target_gender
   - vehicle_type
+  - handwear_material
 - id: vp-1-6-1-4
   name: Motorcycle Goggles
   children: []
   attributes:
   - accessory_size
   - lens_color
-  - material
   - target_gender
   - vehicle_type
+  - gear_material
 - id: vp-1-6-1-5
   name: Motorcycle Hand Guards
   children: []
   attributes:
   - accessory_size
-  - material
   - target_gender
   - vehicle_type
+  - gear_material
 - id: vp-1-6-1-6
   name: Motorcycle Helmet Parts & Accessories
   children: []
   attributes:
   - accessory_size
-  - material
   - target_gender
   - vehicle_type
+  - gear_material
 - id: vp-1-6-1-7
   name: Motorcycle Helmets
   children:
@@ -1297,33 +1297,33 @@
   attributes:
   - accessory_size
   - color
-  - material
   - target_gender
   - vehicle_type
+  - gear_material
 - id: vp-1-6-1-8
   name: Motorcycle Kidney Belts
   children: []
   attributes:
   - accessory_size
-  - material
   - target_gender
   - vehicle_type
+  - item_material
 - id: vp-1-6-1-9
   name: Motorcycle Knee & Shin Guards
   children: []
   attributes:
   - accessory_size
-  - material
   - target_gender
   - vehicle_type
+  - gear_material
 - id: vp-1-6-1-10
   name: Motorcycle Neck Braces
   children: []
   attributes:
   - accessory_size
-  - material
   - target_gender
   - vehicle_type
+  - gear_material
 - id: vp-1-6-2
   name: Off-Road & All-Terrain Vehicle Protective Gear
   children:
@@ -1334,7 +1334,6 @@
   name: ATV & UTV Bar Pads
   children: []
   attributes:
-  - material
   - vehicle_type
 - id: vp-1-6-3
   name: Vehicle Alarms & Locks
@@ -1476,71 +1475,71 @@
   - vp-1-6-4-9
   - vp-1-6-4-10
   attributes:
-  - material
   - vehicle_type
+  - safety_equipment_material
 - id: vp-1-6-4-1
   name: Car Window Nets
   children: []
   attributes:
-  - material
   - vehicle_type
+  - net_material
 - id: vp-1-6-4-2
   name: Emergency Road Flares
   children: []
   attributes:
   - flare_type
-  - material
   - vehicle_type
+  - safety_equipment_material
 - id: vp-1-6-4-3
   name: Motor Vehicle Airbag Parts
   children: []
   attributes:
-  - material
   - vehicle_type
+  - safety_equipment_material
 - id: vp-1-6-4-4
   name: Motor Vehicle Roll Cages & Bars
   children: []
   attributes:
   - cage_type
-  - material
   - vehicle_type
+  - safety_equipment_material
 - id: vp-1-6-4-5
   name: Vehicle Seat Belt Buckles
   children: []
   attributes:
-  - material
   - vehicle_type
+  - safety_equipment_material
 - id: vp-1-6-4-6
   name: Vehicle Seat Belt Covers
   children: []
   attributes:
-  - material
   - vehicle_type
+  - cover_material
 - id: vp-1-6-4-7
   name: Vehicle Seat Belt Straps
   children: []
   attributes:
-  - material
   - vehicle_type
+  - safety_equipment_material
 - id: vp-1-6-4-8
   name: Vehicle Seat Belts
   children: []
   attributes:
   - belt_type
-  - material
   - vehicle_type
+  - fabric
 - id: vp-1-6-4-9
   name: Vehicle Warning Whips
   children: []
   attributes:
-  - material
   - vehicle_type
+  - safety_equipment_material
 - id: vp-1-6-4-10
   name: Vehicle Wheel Chocks
   children: []
   attributes:
-  - material
   - vehicle_type
+  - safety_equipment_material
 - id: vp-1-7
   name: Vehicle Storage & Cargo
   children:
@@ -1565,8 +1564,8 @@
   attributes:
   - accessory_size
   - item_condition
-  - material
   - vehicle_type
+  - net_material
 - id: vp-1-7-2
   name: Motor Vehicle Carrying Rack Accessories
   children:
@@ -1734,8 +1733,8 @@
   attributes:
   - bag_type
   - item_condition
-  - material
   - vehicle_type
+  - bag_case_material
 - id: vp-1-7-7
   name: Truck Bed Storage Boxes & Organizers
   children: []
@@ -1773,8 +1772,8 @@
   - vp-1-8-9
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-1
   name: Docking & Anchoring
   children:
@@ -1788,102 +1787,102 @@
   - vp-1-8-1-8
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-1-1
   name: Anchor Chains
   children: []
   attributes:
   - chain_type
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-1-2
   name: Anchor Lines & Ropes
   children: []
   attributes:
   - item_condition
   - line_rope_type
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-1-3
   name: Anchor Windlasses
   children: []
   attributes:
   - item_condition
-  - material
   - power_source
   - vehicle_type
   - windlass_design
+  - item_material
 - id: vp-1-8-1-4
   name: Anchors
   children: []
   attributes:
   - anchor_type
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-1-5
   name: Boat Hooks
   children: []
   attributes:
   - hook_type
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-1-6
   name: Boat Ladders
   children: []
   attributes:
   - item_condition
   - ladder_type
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-1-7
   name: Dock Cleats
   children: []
   attributes:
   - cleat_type
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-1-8
   name: Dock Steps
   children: []
   attributes:
   - item_condition
-  - material
   - step_type
   - vehicle_type
+  - item_material
 - id: vp-1-8-2
   name: Sailboat Parts
   children: []
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-3
   name: Watercraft Care
   children:
   - vp-1-8-3-1
   - vp-1-8-3-2
   attributes:
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-3-1
   name: Watercraft Cleaners
   children: []
   attributes:
   - cleaner_purpose
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-3-2
   name: Watercraft Polishes
   children: []
   attributes:
-  - material
   - polish_type
   - vehicle_type
+  - item_material
 - id: vp-1-8-4
   name: Watercraft Engine Parts
   children:
@@ -1898,75 +1897,75 @@
   - vp-1-8-4-9
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-4-1
   name: Watercraft Alternators
   children: []
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-4-2
   name: Watercraft Carburetors & Parts
   children: []
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-4-3
   name: Watercraft Engine Controls
   children: []
   attributes:
   - item_condition
-  - material
   - vehicle_type
   - watercraft_engine_control_type
+  - item_material
 - id: vp-1-8-4-4
   name: Watercraft Ignition Parts
   children: []
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-4-5
   name: Watercraft Impellers
   children: []
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-4-6
   name: Watercraft Motor Locks
   children: []
   attributes:
   - item_condition
   - lock_placement
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-4-7
   name: Watercraft Motor Mounts
   children: []
   attributes:
   - item_condition
-  - material
   - vehicle_type
   - watercraft_motor_mounting_type
+  - mount_material
 - id: vp-1-8-4-8
   name: Watercraft Pistons & Parts
   children: []
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-4-9
   name: Watercraft Propellers
   children: []
   attributes:
   - item_condition
-  - material
   - propeller_blade_design
   - vehicle_type
+  - item_material
 - id: vp-1-8-5
   name: Watercraft Engines & Motors
   children:
@@ -1977,8 +1976,8 @@
   - engine_type
   - fuel_supply
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-6
   name: Watercraft Exhaust Parts
   children:
@@ -1986,22 +1985,22 @@
   - vp-1-8-6-2
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-6-1
   name: Watercraft Manifolds
   children: []
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-6-2
   name: Watercraft Mufflers & Parts
   children: []
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-7
   name: Watercraft Fuel Systems
   children:
@@ -2011,46 +2010,46 @@
   - vp-1-8-7-4
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-7-1
   name: Watercraft Fuel Lines & Parts
   children: []
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-7-2
   name: Watercraft Fuel Meters
   children: []
   attributes:
   - item_condition
-  - material
   - meter_type
   - vehicle_type
+  - item_material
 - id: vp-1-8-7-3
   name: Watercraft Fuel Pumps & Parts
   children: []
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-7-4
   name: Watercraft Fuel Tanks & Parts
   children: []
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-8
   name: Watercraft Lighting
   children: []
   attributes:
   - item_condition
   - light_type
-  - material
   - power_source
   - vehicle_type
+  - item_material
 - id: vp-1-8-9
   name: Watercraft Steering Parts
   children:
@@ -2058,23 +2057,23 @@
   - vp-1-8-9-2
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-9-1
   name: Watercraft Steering Cables
   children: []
   attributes:
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-9-2
   name: Watercraft Steering Wheels
   children: []
   attributes:
   - item_condition
-  - material
   - vehicle_type
   - watercraft_steering_wheel_type
+  - item_material
 - id: vp-2
   name: Vehicles
   children:
@@ -2367,7 +2366,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - bag_case_material
 - id: vp-1-2-8-1
   name: Adapter Cases
   children: []
@@ -2376,7 +2375,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - bag_case_material
 - id: vp-1-2-8-2
   name: Battery Cases
   children: []
@@ -2385,7 +2384,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - bag_case_material
 - id: vp-1-2-8-3
   name: Charging Cable Cases
   children: []
@@ -2394,7 +2393,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - bag_case_material
 - id: vp-1-2-8-4
   name: Connector Cases
   children: []
@@ -2403,7 +2402,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - bag_case_material
 - id: vp-1-2-8-5
   name: Conversion Kit Cases
   children: []
@@ -2412,7 +2411,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - bag_case_material
 - id: vp-1-2-8-6
   name: Tool Cases
   children: []
@@ -2421,7 +2420,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - bag_case_material
 - id: vp-1-2-9
   name: Regenerative Braking Modules
   children: []
@@ -2429,7 +2428,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-3-4-1
   name: Double DIN Cassette Players
   children: []
@@ -2565,8 +2564,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - power_source
+  - mount_material
 - id: vp-1-3-10-2
   name: Headrest Mounts
   children: []
@@ -2574,8 +2573,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - power_source
+  - mount_material
 - id: vp-1-3-10-3
   name: Overhead Mounts
   children: []
@@ -2583,8 +2582,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - power_source
+  - mount_material
 - id: vp-1-3-10-4
   name: Rearview Mirror Mounts
   children: []
@@ -2592,8 +2591,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - power_source
+  - mount_material
 - id: vp-1-3-10-5
   name: Seat Mounts
   children: []
@@ -2601,8 +2600,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - power_source
+  - mount_material
 - id: vp-1-3-10-6
   name: Sun Visor Mounts
   children: []
@@ -2610,8 +2609,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - power_source
+  - mount_material
 - id: vp-1-3-10-7
   name: Windshield Mounts
   children: []
@@ -2619,8 +2618,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - power_source
+  - mount_material
 - id: vp-1-4-1-1
   name: Anti-Lock Braking System (ABS) Parts
   children: []
@@ -2682,8 +2681,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - pattern
+  - fabric
 - id: vp-1-4-2-2
   name: Carpet Kits
   children: []
@@ -2691,8 +2690,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - pattern
+  - fabric
 - id: vp-1-4-2-3
   name: Console Covers
   children: []
@@ -2700,8 +2699,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - pattern
+  - cover_material
 - id: vp-1-4-2-4
   name: Dash Covers
   children: []
@@ -2709,8 +2708,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - pattern
+  - cover_material
 - id: vp-1-4-2-5
   name: Door Panels
   children: []
@@ -2718,8 +2717,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - pattern
+  - fabric
 - id: vp-1-4-2-6
   name: Headliners
   children: []
@@ -2727,8 +2726,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - pattern
+  - fabric
 - id: vp-1-4-2-7
   name: Trunk Mats
   children: []
@@ -2736,8 +2735,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - pattern
+  - fabric
 - id: vp-1-4-2-8
   name: Upholstery Fabric
   children: []
@@ -2745,8 +2744,8 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
   - pattern
+  - fabric
 - id: vp-1-4-3-1
   name: AC Compressors
   children: []
@@ -2754,7 +2753,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-3-2
   name: AC Condensers
   children: []
@@ -2762,7 +2761,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-3-3
   name: AC Evaporators
   children: []
@@ -2770,7 +2769,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-3-4
   name: AC Hoses
   children: []
@@ -2778,7 +2777,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - hose_material
 - id: vp-1-4-3-5
   name: Blower Motors
   children: []
@@ -2786,7 +2785,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-3-6
   name: Climate Control Modules
   children: []
@@ -2794,7 +2793,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-3-7
   name: Heater Controls
   children: []
@@ -2802,7 +2801,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-3-8
   name: Heater Cores
   children: []
@@ -2810,7 +2809,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-4-1
   name: Handbrakes
   children: []
@@ -2818,7 +2817,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-4-2
   name: Pedals
   children: []
@@ -2826,7 +2825,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-4-3
   name: Steering Columns
   children: []
@@ -2834,7 +2833,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-4-4
   name: Steering Pumps
   children: []
@@ -2842,7 +2841,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-4-5
   name: Steering Racks
   children: []
@@ -2850,7 +2849,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-4-6
   name: Steering Wheels
   children: []
@@ -2858,7 +2857,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-5-1
   name: Oil Coolers
   children: []
@@ -2866,7 +2865,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-5-2
   name: Oil Dipsticks
   children: []
@@ -2874,7 +2873,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-5-3
   name: Oil Drain Plugs
   children: []
@@ -2882,7 +2881,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-5-4
   name: Oil Filler Caps
   children: []
@@ -2890,7 +2889,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-5-5
   name: Oil Filters
   children: []
@@ -2898,7 +2897,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-5-6
   name: Oil Pans
   children: []
@@ -2906,7 +2905,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-5-7
   name: Oil Pressure Sensors
   children: []
@@ -2914,7 +2913,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-5-8
   name: Oil Pumps
   children: []
@@ -2922,7 +2921,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-6-1
   name: Camshafts
   children: []
@@ -2930,7 +2929,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-6-2
   name: Crankshafts
   children: []
@@ -2938,7 +2937,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-6-3
   name: Cylinder Heads
   children: []
@@ -2946,7 +2945,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-6-4
   name: Engine Bearings
   children: []
@@ -2954,7 +2953,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-6-5
   name: Ignition Components
   children: []
@@ -2962,7 +2961,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-6-6
   name: Pistons
   children: []
@@ -2970,7 +2969,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-6-7
   name: Timing Belts
   children: []
@@ -2978,7 +2977,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-6-8
   name: Timing Chains
   children: []
@@ -2986,7 +2985,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-6-9
   name: Valves
   children: []
@@ -2994,7 +2993,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-7-1
   name: Complete Engines
   children: []
@@ -3074,7 +3073,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-9-2
   name: Doors
   children: []
@@ -3082,7 +3081,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-9-3
   name: Fenders
   children: []
@@ -3090,7 +3089,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-9-4
   name: Grilles
   children: []
@@ -3098,7 +3097,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-9-5
   name: Hoods
   children: []
@@ -3106,7 +3105,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-9-6
   name: Quarter Panels
   children: []
@@ -3114,7 +3113,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-9-7
   name: Spoilers
   children: []
@@ -3122,7 +3121,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-9-8
   name: Trunks
   children: []
@@ -3130,7 +3129,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-10-1
   name: Carburetors
   children: []
@@ -3196,9 +3195,9 @@
   - fit_type
   - item_condition
   - manufacturer_type
-  - material
   - motor_vehicle_type
   - pattern
+  - item_material
 - id: vp-1-4-11-2
   name: Car Organizers
   children: []
@@ -3207,9 +3206,9 @@
   - fit_type
   - item_condition
   - manufacturer_type
-  - material
   - motor_vehicle_type
   - pattern
+  - fabric
 - id: vp-1-4-11-3
   name: Floor Mats
   children: []
@@ -3218,9 +3217,9 @@
   - fit_type
   - item_condition
   - manufacturer_type
-  - material
   - motor_vehicle_type
   - pattern
+  - fabric
 - id: vp-1-4-11-4
   name: Pedal Sets
   children: []
@@ -3229,9 +3228,9 @@
   - fit_type
   - item_condition
   - manufacturer_type
-  - material
   - motor_vehicle_type
   - pattern
+  - item_material
 - id: vp-1-4-11-5
   name: Seat Covers
   children: []
@@ -3240,9 +3239,9 @@
   - fit_type
   - item_condition
   - manufacturer_type
-  - material
   - motor_vehicle_type
   - pattern
+  - cover_material
 - id: vp-1-4-11-6
   name: Steering Wheel Covers
   children: []
@@ -3251,9 +3250,9 @@
   - fit_type
   - item_condition
   - manufacturer_type
-  - material
   - motor_vehicle_type
   - pattern
+  - cover_material
 - id: vp-1-4-11-7
   name: Sun Shades
   children: []
@@ -3262,9 +3261,9 @@
   - fit_type
   - item_condition
   - manufacturer_type
-  - material
   - motor_vehicle_type
   - pattern
+  - fabric
 - id: vp-1-4-12-1
   name: Fog Lights
   children: []
@@ -3400,7 +3399,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - fabric
 - id: vp-1-4-15-2
   name: Rear Seats
   children: []
@@ -3408,7 +3407,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - fabric
 - id: vp-1-4-16-1
   name: Fuel Level Sensors
   children: []
@@ -3544,7 +3543,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-18-2
   name: Hitch Mounts
   children: []
@@ -3552,7 +3551,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - mount_material
 - id: vp-1-4-18-3
   name: Tow Bars
   children: []
@@ -3560,7 +3559,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-18-4
   name: Tow Straps
   children: []
@@ -3568,7 +3567,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-18-5
   name: Trailer Brakes
   children: []
@@ -3576,7 +3575,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-18-6
   name: Trailer Hitches
   children: []
@@ -3584,7 +3583,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-18-7
   name: Trailer Lights
   children: []
@@ -3592,7 +3591,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-18-8
   name: Trailer Wiring
   children: []
@@ -3600,7 +3599,7 @@
   - color
   - item_condition
   - manufacturer_type
-  - material
+  - item_material
 - id: vp-1-4-19-1
   name: Axles
   children: []
@@ -3875,69 +3874,69 @@
   attributes:
   - accessory_size
   - color
-  - material
   - target_gender
   - vehicle_type
+  - gear_material
 - id: vp-1-6-1-7-2
   name: Half Helmets
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - target_gender
   - vehicle_type
+  - gear_material
 - id: vp-1-6-1-7-3
   name: Modular Helmets
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - target_gender
   - vehicle_type
+  - gear_material
 - id: vp-1-6-1-7-4
   name: Off-Road Helmets
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - target_gender
   - vehicle_type
+  - gear_material
 - id: vp-1-6-1-7-5
   name: Open Face Helmets
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - target_gender
   - vehicle_type
+  - gear_material
 - id: vp-1-7-1-1
   name: Roof Cargo Nets
   children: []
   attributes:
   - accessory_size
   - item_condition
-  - material
   - vehicle_type
+  - net_material
 - id: vp-1-7-1-2
   name: Truck Bed Cargo Nets
   children: []
   attributes:
   - accessory_size
   - item_condition
-  - material
   - vehicle_type
+  - net_material
 - id: vp-1-7-1-3
   name: Trunk Cargo Nets
   children: []
   attributes:
   - accessory_size
   - item_condition
-  - material
   - vehicle_type
+  - net_material
 - id: vp-1-8-5-1
   name: Inboard Motors
   children: []
@@ -3945,8 +3944,8 @@
   - engine_type
   - fuel_supply
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-5-2
   name: Outboard Motors
   children: []
@@ -3954,8 +3953,8 @@
   - engine_type
   - fuel_supply
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-1-8-5-3
   name: Trolling Motors
   children: []
@@ -3963,8 +3962,8 @@
   - engine_type
   - fuel_supply
   - item_condition
-  - material
   - vehicle_type
+  - item_material
 - id: vp-2-2-1-1
   name: Electric Vehicles (EV)
   children:

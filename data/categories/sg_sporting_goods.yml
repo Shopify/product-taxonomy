@@ -77,9 +77,9 @@
   - age_group
   - color
   - hand_side
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-2-3
   name: Baseball & Softball Gloves & Mitts
   children:
@@ -89,9 +89,9 @@
   - age_group
   - color
   - hand_side
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-2-5
   name: Baseball & Softball Pitching Mats
   children: []
@@ -167,18 +167,18 @@
   - age_group
   - bat_standard
   - color
-  - material
   - pattern
   - swing_weighting
+  - bat_material
 - id: sg-1-2-11
   name: Baseballs
   children: []
   attributes:
   - ball_size
   - color
-  - material
   - pattern
   - baseball_softball_ball_type
+  - ball_material
 - id: sg-1-2-12
   name: Pitching Machines
   children: []
@@ -193,17 +193,17 @@
   - age_group
   - bat_standard
   - color
-  - material
   - pattern
   - sports_discipline
+  - bat_material
 - id: sg-1-2-14
   name: Softballs
   children: []
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-1-3
   name: Basketball
   children:
@@ -239,18 +239,18 @@
   attributes:
   - age_group
   - color
-  - items_included
   - material
   - pattern
+  - basketball_equipment_included
 - id: sg-1-3-1-3
   name: Basketball Hoop Posts
   children: []
   attributes:
   - age_group
   - color
-  - items_included
-  - material
   - pattern
+  - basketball_equipment_included
+  - post_material
 - id: sg-1-3-1-4
   name: Basketball Nets
   children: []
@@ -274,10 +274,10 @@
   attributes:
   - age_group
   - color
-  - items_included
   - material
   - pattern
   - suitable_space
+  - basketball_equipment_included
 - id: sg-1-3-3
   name: Basketball Training Aids
   children:
@@ -295,8 +295,8 @@
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-1-4
   name: Boxing & Martial Arts
   children:
@@ -330,9 +330,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - gear_material
 - id: sg-1-4-1-1
   name: Boxing & Martial Arts Arm Guards
   children: []
@@ -356,9 +356,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - gear_material
 - id: sg-1-4-1-6
   name: MMA Shin Guards
   children: []
@@ -385,9 +385,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-4-2-2
   name: Grappling Dummies
   children: []
@@ -420,8 +420,8 @@
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - punching_training_bag_material
 - id: sg-1-4-2-5
   name: Strike Shields
   children: []
@@ -453,9 +453,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - clothing_accessory_material
 - id: sg-1-4-6
   name: Martial Arts Weapons
   children:
@@ -554,17 +554,17 @@
   - sg-1-7-7-2
   attributes:
   - color
-  - material
   - pattern
   - sport
+  - furniture_fixture_material
 - id: sg-1-7-8
   name: Referee Wallets
   children: []
   attributes:
   - color
-  - material
   - pattern
   - sport
+  - clothing_accessory_material
 - id: sg-1-7-9
   name: Scoreboards
   children:
@@ -611,8 +611,8 @@
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-1-8-2
   name: Cricket Bat Accessories
   children:
@@ -633,15 +633,15 @@
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - bat_material
 - id: sg-1-8-4
   name: Cricket Equipment Sets
   children: []
   attributes:
   - color
-  - items_included
   - pattern
+  - cricket_equipment_included
 - id: sg-1-8-5
   name: Cricket Protective Gear
   children:
@@ -721,9 +721,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-10-1-3
   name: Fencing Jackets & Lamés
   children: []
@@ -731,9 +731,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - gear_material
 - id: sg-1-10-1-4
   name: Fencing Masks
   children: []
@@ -791,9 +791,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-11-1-2
   name: Field Hockey & Lacrosse Helmets
   children: []
@@ -824,8 +824,8 @@
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-1-11-3
   name: Field Hockey Goals
   children: []
@@ -840,23 +840,23 @@
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - stick_material
 - id: sg-1-11-6
   name: Lacrosse Balls
   children: []
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-1-11-7
   name: Lacrosse Equipment Sets
   children: []
   attributes:
   - color
-  - items_included
   - pattern
+  - lacrosse_equipment_included
 - id: sg-1-11-8
   name: Lacrosse Goals
   children: []
@@ -894,16 +894,16 @@
   attributes:
   - color
   - hand_side
-  - material
   - pattern
+  - stick_material
 - id: sg-1-11-10
   name: Lacrosse Sticks
   children: []
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - stick_material
 - id: sg-1-11-11
   name: Lacrosse Training Aids
   children:
@@ -937,8 +937,8 @@
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-1-12-3
   name: Hockey Goals
   children: []
@@ -976,16 +976,16 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-12-4-3
   name: Hockey Goalie Equipment Sets
   children: []
   attributes:
   - color
-  - items_included
   - pattern
+  - hockey_equipment_included
 - id: sg-1-12-4-4
   name: Hockey Helmets
   children: []
@@ -1002,9 +1002,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - gear_material
 - id: sg-1-12-4-6
   name: Hockey Shin Guards & Leg Pads
   children: []
@@ -1063,8 +1063,8 @@
   - blade_curve
   - color
   - hand_side
-  - material
   - pattern
+  - blade_material
 - id: sg-1-12-7-2
   name: Hockey Stick Shafts
   children: []
@@ -1072,16 +1072,16 @@
   - age_group
   - color
   - hand_side
-  - material
   - pattern
+  - stick_material
 - id: sg-1-12-8
   name: Hockey Sticks
   children: []
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - stick_material
 - id: sg-1-12-9
   name: Ice Skate Parts & Accessories
   children:
@@ -1112,8 +1112,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - hardware_material
 - id: sg-1-12-9-4
   name: Skate Blade Guards
   children: []
@@ -1160,9 +1160,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-1-2
   name: American Football Goal Posts
   children: []
@@ -1198,9 +1198,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - gear_material
 - id: sg-1-1-4-2
   name: American Football Helmet Accessories
   children:
@@ -1260,9 +1260,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - gear_material
 - id: sg-1-1-4-5
   name: American Football Rib Protection Shirts & Vests
   children: []
@@ -1270,9 +1270,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - gear_material
 - id: sg-1-1-4-6
   name: American Football Shoulder Pads
   children: []
@@ -1302,8 +1302,8 @@
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-1-13
   name: General Purpose Athletic Equipment
   children:
@@ -1350,8 +1350,8 @@
   - sg-1-13-3-3
   attributes:
   - color
-  - material
   - pattern
+  - bag_case_material
 - id: sg-1-13-4
   name: Ball Pump Accessories
   children:
@@ -1364,8 +1364,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - hardware_material
 - id: sg-1-13-5
   name: Ball Pumps
   children: []
@@ -1396,16 +1396,16 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - exercise_mat_material
 - id: sg-1-13-10
   name: Practice Nets & Screens
   children: []
   attributes:
   - color
-  - material
   - mounting_type
   - pattern
+  - net_material
 - id: sg-1-13-11
   name: Speed & Agility Ladders & Hurdles
   children: []
@@ -1475,8 +1475,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - gear_material
 - id: sg-1-14-3
   name: Gymnastics Rings
   children: []
@@ -1517,18 +1517,18 @@
   - ball_size
   - color
   - dynamic_level
-  - material
   - pattern
   - sport
+  - ball_material
 - id: sg-1-15-2
   name: Racquetball & Squash Eyewear
   children: []
   attributes:
   - age_group
   - color
-  - frame_material
-  - lens_material
   - pattern
+  - eyewear_frame_material
+  - eyewear_lens_material
 - id: sg-1-15-3
   name: Racquetball & Squash Gloves
   children: []
@@ -1552,8 +1552,8 @@
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - bat_material
 - id: sg-1-17
   name: Rugby
   children:
@@ -1571,8 +1571,8 @@
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-1-17-2
   name: Rugby Gloves
   children: []
@@ -1580,17 +1580,17 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-17-3
   name: Rugby Posts
   children: []
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - post_material
 - id: sg-1-17-4
   name: Rugby Protective Gear
   children:
@@ -1605,8 +1605,8 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
+  - gear_material
 - id: sg-1-17-5
   name: Rugby Training Aids
   children:
@@ -1636,8 +1636,8 @@
   - age_group
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-1-18-2
   name: Soccer Corner Flags
   children: []
@@ -1651,9 +1651,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-18-4
   name: Soccer Goal Accessories
   children:
@@ -1704,8 +1704,8 @@
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-1-20
   name: Tennis
   children:
@@ -1745,15 +1745,15 @@
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-1-20-5
   name: Tennis Nets
   children: []
   attributes:
   - color
-  - mounting_type
   - pattern
+  - net_mounting_type
 - id: sg-1-21
   name: Track & Field
   children:
@@ -1897,8 +1897,8 @@
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-1-23
   name: Wallyball Equipment
   children:
@@ -1924,8 +1924,8 @@
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-1-24-2
   name: Water Polo Caps
   children: []
@@ -1962,8 +1962,8 @@
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - gear_material
 - id: sg-1-25-1-2
   name: Wrestling Knee Pads
   children: []
@@ -2051,8 +2051,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-3-2-3
   name: Billiard Cue Accessories
   children:
@@ -2067,8 +2067,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - bag_case_material
 - id: sg-3-2-3-2
   name: Billiard Cue Chalk
   children: []
@@ -2099,9 +2099,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-3-2-6
   name: Billiard Table Lights
   children: []
@@ -2144,8 +2144,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cover_material
 - id: sg-3-2-8
   name: Billiard Tables
   children: []
@@ -2176,8 +2176,8 @@
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-3-3-3
   name: Bowling Gloves
   children: []
@@ -2185,9 +2185,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-3-3-4
   name: Bowling Pins
   children: []
@@ -2220,8 +2220,8 @@
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-3-4-2
   name: Foosball Table Parts & Accessories
   children:
@@ -2248,8 +2248,8 @@
   - age_group
   - color
   - games_included
-  - material
   - pattern
+  - furniture_fixture_material
 - id: sg-3-6
   name: Ping Pong
   children:
@@ -2269,7 +2269,6 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: sg-3-6-2
   name: Ping Pong Nets & Posts
@@ -2294,8 +2293,8 @@
   children: []
   attributes:
   - color
-  - items_included
   - pattern
+  - ping_pong_equipment_included
 - id: sg-3-6-5
   name: Ping Pong Robot Accessories
   children: []
@@ -2467,9 +2466,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-4-1-1-2
   name: Canoe Accessories
   children:
@@ -2517,7 +2516,7 @@
   - color
   - material
   - pattern
-  - vehicle_drive_type
+  - watercraft_propulsion_type
 - id: sg-4-1-1-6
   name: Paddle Leashes
   children: []
@@ -2536,14 +2535,14 @@
   attributes:
   - color
   - pattern
-  - vehicle_drive_type
+  - watercraft_propulsion_type
 - id: sg-4-1-1-9
   name: Row Boats
   children: []
   attributes:
   - color
   - pattern
-  - vehicle_drive_type
+  - watercraft_propulsion_type
 - id: sg-4-1-1-10
   name: Whitewater Rafts
   children: []
@@ -2633,10 +2632,10 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - shoe_size
   - target_gender
+  - handwear_material
 - id: sg-4-1-2-6-3
   name: Wetsuit Tops
   children: []
@@ -2685,7 +2684,6 @@
   attributes:
   - color
   - display_technology
-  - material
   - pattern
   - power_source
 - id: sg-4-1-3-3
@@ -2693,9 +2691,9 @@
   children: []
   attributes:
   - color
-  - items_included
   - pattern
   - water_sport
+  - diving_snorkeling_equipment_included
 - id: sg-4-1-3-4
   name: Diving & Snorkeling Fins
   children:
@@ -2705,8 +2703,8 @@
   - accessory_size
   - color
   - fin_pocket_type
-  - material
   - pattern
+  - fin_material
 - id: sg-4-1-3-5
   name: Diving & Snorkeling Masks
   children: []
@@ -2714,10 +2712,10 @@
   - accessory_size
   - age_group
   - color
-  - frame_material
-  - lens_material
   - pattern
   - water_sport
+  - eyewear_frame_material
+  - eyewear_lens_material
 - id: sg-4-1-3-6
   name: Diving Belts
   children: []
@@ -2732,16 +2730,16 @@
   - sg-4-1-3-7-1
   - sg-4-1-3-7-2
   attributes:
-  - blade_type
   - color
   - pattern
+  - edge_type
 - id: sg-4-1-3-8
   name: Diving Regulators
   children: []
   attributes:
   - color
   - pattern
-  - product_style
+  - diving_regulator_style
 - id: sg-4-1-3-9
   name: Snorkels
   children:
@@ -2752,7 +2750,7 @@
   - age_group
   - color
   - pattern
-  - shape
+  - snorkel_shape
 - id: sg-4-1-4
   name: Kitesurfing
   children:
@@ -2858,7 +2856,6 @@
   - accessory_size
   - color
   - fin_profile
-  - material
   - pattern
 - id: sg-4-1-5-7
   name: Surfboard Wax
@@ -2886,9 +2883,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-4-1-5-10
   name: Surfing Tail Pads
   children: []
@@ -2977,9 +2974,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-4-1-6-8
   name: Swim Goggle & Mask Accessories
   children:
@@ -2995,10 +2992,10 @@
   - accessory_size
   - age_group
   - color
-  - frame_material
-  - lens_material
   - pattern
   - target_gender
+  - eyewear_frame_material
+  - eyewear_lens_material
 - id: sg-4-1-6-10
   name: Swim Weights
   children: []
@@ -3079,9 +3076,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-4-1-7-4
   name: Wakeboarding
   children:
@@ -3154,9 +3151,9 @@
   attributes:
   - age_group
   - color
-  - construction_type
   - pattern
   - rocker_type
+  - ski_construction
 - id: sg-4-1-7-6
   name: Water Sport Tow Cables
   children: []
@@ -3221,8 +3218,8 @@
   attributes:
   - color
   - pattern
-  - product_style
   - recommended_skill_level
+  - windsurfing_board_style
 - id: sg-4-1-9-3
   name: Windsurfing Sails
   children: []
@@ -3288,8 +3285,8 @@
   - bedding_size
   - color
   - frame_material
-  - lining_material
   - pattern
+  - cover_material
 - id: sg-4-2-2
   name: Camping Cookware & Dinnerware
   children:
@@ -3306,10 +3303,10 @@
   children: []
   attributes:
   - color
-  - fuel_type
   - light_color
   - light_temperature
   - pattern
+  - power_source
 - id: sg-4-2-4
   name: Camping Tools
   children:
@@ -3331,10 +3328,10 @@
   - sg-4-2-4-7-2
   - sg-4-2-4-7-3
   attributes:
-  - blade_type
   - color
   - knife_type
   - pattern
+  - hunting_survival_knife_design
 - id: sg-4-2-4-8
   name: Multifunction Tools & Knives
   children: []
@@ -3382,8 +3379,8 @@
   - sg-4-2-9-2
   attributes:
   - color
-  - material
   - pattern
+  - net_material
 - id: sg-4-2-10
   name: Navigational Compasses
   children:
@@ -3394,7 +3391,7 @@
   - color
   - material
   - pattern
-  - product_style
+  - compass_style
 - id: sg-4-2-11
   name: Portable Toilets & Showers
   children:
@@ -3465,8 +3462,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - cover_material
 - id: sg-4-2-16-2
   name: Tent Footprints
   children: []
@@ -3551,7 +3548,7 @@
   - color
   - material
   - pattern
-  - shape
+  - carabiner_shape
 - id: sg-4-3-3
   name: Climbing Apparel & Accessories
   children:
@@ -3568,9 +3565,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-4-3-3-2
   name: Climbing Helmets
   children: []
@@ -3583,9 +3580,9 @@
   name: Crampons
   children: []
   attributes:
-  - attachment_type
   - color
   - pattern
+  - crampon_attachment_type
 - id: sg-4-3-4
   name: Climbing Ascenders & Descenders
   children: []
@@ -3729,18 +3726,18 @@
   attributes:
   - color
   - compatible_bike_type
-  - material
   - pattern
   - vehicle_placement
+  - bag_case_material
 - id: sg-4-4-1-2
   name: Bicycle Baskets
   children: []
   attributes:
   - color
   - compatible_bike_type
-  - material
   - pattern
   - vehicle_placement
+  - basket_material
 - id: sg-4-4-1-3
   name: Bicycle Bells & Horns
   children: []
@@ -3763,8 +3760,8 @@
   attributes:
   - color
   - compatible_bike_type
-  - mounting_type
   - pattern
+  - child_seat_placement
 - id: sg-4-4-1-7
   name: Bicycle Computer Accessories
   children:
@@ -4197,13 +4194,13 @@
   name: Bicycle Saddles
   children: []
   attributes:
-  - base_material
   - color
   - compatible_bike_type
   - cycling_style
   - pattern
-  - saddle_material
   - target_gender
+  - saddle_base_material
+  - saddle_seat_material
 - id: sg-4-4-2-14
   name: Bicycle Seatpost Clamps
   children: []
@@ -4444,9 +4441,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-4-4-4-4
   name: Bicycle Helmet Parts & Accessories
   children: []
@@ -4476,8 +4473,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: sg-4-4-5
   name: Tricycle Accessories
   children:
@@ -4494,10 +4491,10 @@
   - age_group
   - color
   - pattern
-  - product_style
   - target_gender
-  - vehicle_drive_type
   - wheel_type
+  - tricycle_design
+  - tricycle_propulsion_type
 - id: sg-4-4-7
   name: Unicycle Accessories
   children:
@@ -4564,7 +4561,7 @@
   attributes:
   - color
   - pattern
-  - product_form
+  - animal_feed_form
 - id: sg-4-5-1-4
   name: Horse Fly Masks
   children: []
@@ -4586,8 +4583,8 @@
   children: []
   attributes:
   - color
-  - items_included
   - pattern
+  - horse_grooming_accessories_included
 - id: sg-4-5-1-5-2
   name: Horse Grooming Combs, Brushes & Mitts
   children:
@@ -4769,9 +4766,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-4-5-5-2
   name: Equestrian Helmets
   children: []
@@ -4877,7 +4874,6 @@
   - sg-4-6-5-20
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-6
@@ -4937,11 +4933,11 @@
   - sg-4-6-9-6
   - sg-4-6-9-7
   attributes:
-  - base_material
   - color
   - gear_ratio
   - pattern
   - spool_material
+  - body_material
 - id: sg-4-6-10
   name: Fishing Rod Accessories
   children:
@@ -5047,8 +5043,8 @@
   - sg-4-6-13-4-6
   attributes:
   - color
-  - material
   - pattern
+  - sinker_material
 - id: sg-4-6-13-5
   name: Fishing Snaps & Swivels
   children: []
@@ -5128,9 +5124,9 @@
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
+  - golf_equipment_included
 - id: sg-4-7-3
   name: Golf Bag Accessories
   children:
@@ -5234,9 +5230,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-4-7-12
   name: Golf Tees
   children: []
@@ -5249,8 +5245,8 @@
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - fabric
 - id: sg-4-7-14
   name: Golf Training Aids
   children:
@@ -5336,9 +5332,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-4-9-1-3
   name: Archery Targets
   children: []
@@ -5366,8 +5362,8 @@
   - age_group
   - archery_style
   - color
-  - material
   - pattern
+  - arrow_fletching_material
 - id: sg-4-9-1-4-2
   name: Arrow Nocks
   children:
@@ -5379,8 +5375,8 @@
   attributes:
   - archery_style
   - color
-  - material
   - pattern
+  - nock_material
 - id: sg-4-9-1-4-3
   name: Broadheads & Field Points
   children:
@@ -5389,8 +5385,8 @@
   attributes:
   - archery_style
   - color
-  - material
   - pattern
+  - broadhead_field_point_material
 - id: sg-4-9-1-5
   name: Arrows & Bolts
   children:
@@ -5409,7 +5405,6 @@
   attributes:
   - archery_activity
   - color
-  - material
   - pattern
 - id: sg-4-9-1-7
   name: Bows & Crossbows
@@ -5515,25 +5510,24 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-4-9-4-2
   name: Hunting & Shooting Jackets
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
   - target_gender
+  - gear_material
 - id: sg-4-9-3-1
   name: Animal Traps
   children: []
   attributes:
   - animal_type
   - color
-  - material
   - pattern
 - id: sg-4-9-3-2
   name: Hearing Enhancers
@@ -5547,8 +5541,8 @@
   - sg-4-9-3-3-1
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: sg-4-9-3-4
   name: Hunting Dog Equipment
   children:
@@ -5611,7 +5605,7 @@
   attributes:
   - color
   - pattern
-  - product_form
+  - animal_feed_form
 - id: sg-4-9-5
   name: Paintball & Airsoft
   children:
@@ -5648,8 +5642,8 @@
   children: []
   attributes:
   - color
-  - items_included
   - pattern
+  - paintball_airsoft_equipment_included
 - id: sg-4-9-5-1-3
   name: Airsoft Pellets
   children: []
@@ -5685,9 +5679,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-4-9-5-3-2
   name: Paintball & Airsoft Goggles & Masks
   children: []
@@ -5701,8 +5695,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - gear_material
 - id: sg-4-9-5-3-4
   name: Paintball & Airsoft Vests
   children: []
@@ -5874,14 +5868,14 @@
   - sg-4-12-3-4
   attributes:
   - age_group
-  - boot_material
   - boot_type
   - color
-  - frame_material
   - inline_skating_style
   - pattern
   - shoe_size
   - target_gender
+  - footwear_material
+  - shell_frame_material
 - id: sg-4-12-4
   name: Roller Skate Parts
   children:
@@ -5900,14 +5894,14 @@
   - sg-4-12-5-4
   attributes:
   - age_group
-  - boot_material
   - boot_type
   - color
-  - frame_material
   - inline_skating_style
   - pattern
   - shoe_size
   - target_gender
+  - footwear_material
+  - shell_frame_material
 - id: sg-4-12-6
   name: Roller Skis
   children:
@@ -5918,11 +5912,11 @@
   attributes:
   - age_group
   - color
-  - construction_type
   - inline_skating_style
   - pattern
   - rocker_type
   - target_gender
+  - ski_construction
 - id: sg-4-13
   name: Kite Buggying
   children:
@@ -6041,8 +6035,8 @@
   children: []
   attributes:
   - color
-  - items_included
   - pattern
+  - paddle_equipment_included
 - id: sg-4-14-6
   name: Pickleball
   children:
@@ -6085,8 +6079,8 @@
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-4-14-8
   name: Tetherball
   children:
@@ -6108,16 +6102,16 @@
   children: []
   attributes:
   - color
-  - items_included
   - pattern
+  - tetherball_equipment_included
 - id: sg-4-14-8-3
   name: Tetherballs
   children: []
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-4-15
   name: Riding Scooters
   children:
@@ -6222,9 +6216,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-4-16-5-3
   name: Skateboarding Pads
   children: []
@@ -6306,17 +6300,17 @@
   children: []
   attributes:
   - color
-  - frame_material
-  - lens_material
   - pattern
+  - eyewear_frame_material
+  - eyewear_lens_material
 - id: sg-4-17-2-3
   name: Ski & Snowboard Goggles
   children: []
   attributes:
   - color
-  - frame_material
-  - lens_material
   - pattern
+  - eyewear_frame_material
+  - eyewear_lens_material
 - id: sg-4-17-2-4
   name: Ski & Snowboard Helmets
   children: []
@@ -6363,9 +6357,9 @@
   - application_method
   - color
   - pattern
-  - product_form
   - skiing_style
   - sport
+  - wax_application_method
 - id: sg-4-17-2-9
   name: Ski Binding Parts
   children:
@@ -6418,22 +6412,22 @@
   attributes:
   - age_group
   - color
-  - construction_type
   - pattern
   - rocker_type
   - skiing_style
   - target_gender
+  - ski_construction
 - id: sg-4-17-2-13-2
   name: Downhill Skis
   children: []
   attributes:
   - age_group
   - color
-  - construction_type
   - pattern
   - rocker_type
   - skiing_style
   - target_gender
+  - ski_construction
 - id: sg-4-17-2-14
   name: Snowboard Binding Parts
   children:
@@ -6474,12 +6468,12 @@
   attributes:
   - age_group
   - color
-  - construction_type
   - pattern
   - recommended_skill_level
   - snowboard_design
   - snowboarding_style
   - target_gender
+  - snowboard_construction
 - id: sg-4-17-3
   name: Sleds
   children:
@@ -6561,9 +6555,9 @@
   - age_group
   - color
   - hand_side
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-2-4
   name: Baseball & Softball Pitching Grips
   children: []
@@ -6680,9 +6674,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-4-1-4-1
   name: Bag Mitts
   children: []
@@ -6690,9 +6684,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-4-1-4-2
   name: Fight Gloves
   children: []
@@ -6700,9 +6694,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-4-1-4-3
   name: MMA Gloves
   children: []
@@ -6710,9 +6704,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-4-1-4-4
   name: Sparring Gloves
   children: []
@@ -6720,9 +6714,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-4-2-3-1
   name: Punching & Training Cases
   children: []
@@ -6750,72 +6744,72 @@
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - punching_training_bag_material
 - id: sg-1-4-2-4-2
   name: Punching & Training Double-End Bags
   children: []
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - punching_training_bag_material
 - id: sg-1-4-2-4-3
   name: Punching & Training Heavy Bags
   children: []
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - punching_training_bag_material
 - id: sg-1-4-2-4-4
   name: Punching & Training Maize Bags
   children: []
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - punching_training_bag_material
 - id: sg-1-4-2-4-5
   name: Punching & Training Pedestal Bags
   children: []
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - punching_training_bag_material
 - id: sg-1-4-2-4-6
   name: Punching & Training Punch Pads
   children: []
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - punching_training_bag_material
 - id: sg-1-4-2-4-7
   name: Punching & Training Speed Bags
   children: []
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - punching_training_bag_material
 - id: sg-1-4-2-4-8
   name: Punching & Training Uppercut Bags
   children: []
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - punching_training_bag_material
 - id: sg-1-4-2-4-9
   name: Punching & Training Wall Bags
   children: []
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - punching_training_bag_material
 - id: sg-1-4-3-1
   name: Boxing Ring Ceiling Hangers
   children: []
@@ -6828,8 +6822,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - net_material
 - id: sg-1-4-3-3
   name: Boxing Ring Poles
   children: []
@@ -6967,17 +6961,17 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - sport
+  - furniture_fixture_material
 - id: sg-1-7-7-2
   name: Referee Stands
   children: []
   attributes:
   - color
-  - material
   - pattern
   - sport
+  - furniture_fixture_material
 - id: sg-1-7-9-1
   name: Electronic Scoreboards
   children: []
@@ -7020,9 +7014,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-8-7
   name: Cricket Training Aids
   children:
@@ -7398,8 +7392,8 @@
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-1-12-2-2
   name: Hockey Pucks
   children: []
@@ -7491,22 +7485,22 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - bag_case_material
 - id: sg-1-13-3-2
   name: Ball Carrying Carts
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: sg-1-13-3-3
   name: Ball Carrying Nets
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: sg-1-13-6-1
   name: Exercise & Gym Mat Storage Cages
   children: []
@@ -7694,18 +7688,18 @@
   attributes:
   - age_group
   - color
-  - material
   - pattern
   - recommended_skill_level
+  - racket_material
 - id: sg-1-15-6
   name: Squash Rackets
   children: []
   attributes:
   - age_group
   - color
-  - material
   - pattern
   - recommended_skill_level
+  - racket_material
 - id: sg-1-16-2
   name: Rounders Gloves & Mitts
   children: []
@@ -7713,9 +7707,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-1-16-3
   name: Rounders Training Aids
   children:
@@ -7962,33 +7956,33 @@
   - sg-1-20-6-3-3
   attributes:
   - color
-  - material
   - pattern
   - sport
+  - tape_material
 - id: sg-1-20-6-3-1
   name: Tennis Racket Overgrips
   children: []
   attributes:
   - color
-  - material
   - pattern
   - sport
+  - tape_material
 - id: sg-1-20-6-3-2
   name: Tennis Racket Replacement Grips
   children: []
   attributes:
   - color
-  - material
   - pattern
   - sport
+  - tape_material
 - id: sg-1-20-6-3-3
   name: Tennis Racket Tape
   children: []
   attributes:
   - color
-  - material
   - pattern
   - sport
+  - tape_material
 - id: sg-1-20-6-4
   name: Tennis Racket Grommets
   children: []
@@ -8000,22 +7994,22 @@
   children: []
   attributes:
   - color
-  - construction_type
-  - material
   - pattern
   - racket_gauge
   - shape
   - sport
+  - racket_string_design
+  - racket_string_material
 - id: sg-1-20-7
   name: Tennis Rackets
   children: []
   attributes:
   - age_group
   - color
-  - material
   - pattern
   - recommended_skill_level
   - swing_style
+  - racket_material
 - id: sg-1-20-8
   name: Tennis Training Aids
   children:
@@ -8346,29 +8340,29 @@
   - sg-2-1-2
   attributes:
   - color
-  - material
   - pattern
+  - exercise_equipment_material
 - id: sg-2-1-1
   name: Ab Rollers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - exercise_equipment_material
 - id: sg-2-1-2
   name: Ab Wheels
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - exercise_equipment_material
 - id: sg-2-2
   name: Aerobic Steps
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - exercise_equipment_material
 - id: sg-2-3
   name: Balance Trainers
   children:
@@ -8744,16 +8738,16 @@
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - exercise_equipment_material
 - id: sg-2-5
   name: Exercise Balls
   children: []
   attributes:
   - color
-  - items_included
-  - material
   - pattern
+  - exercise_equipment_included
+  - ball_material
 - id: sg-2-6
   name: Exercise Bands & Loops
   children: []
@@ -8778,8 +8772,8 @@
   - sg-2-8-5
   attributes:
   - color
-  - material
   - pattern
+  - exercise_mat_material
 - id: sg-2-8-1
   name: Elliptical Trainer Mats
   children: []
@@ -8790,14 +8784,14 @@
   name: Exercise Bike Floor Mats
   children: []
   attributes:
-  - material
+  - exercise_mat_material
 - id: sg-2-8-3
   name: Floor Protection Mats
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - exercise_mat_material
 - id: sg-2-8-4
   name: Rowing Machine Mats
   children: []
@@ -8808,14 +8802,14 @@
   name: Stair Climber & Stepper Mats
   children: []
   attributes:
-  - material
+  - exercise_mat_material
 - id: sg-2-9
   name: Exercise Machine & Equipment Sets
   children: []
   attributes:
   - color
-  - items_included
   - pattern
+  - exercise_equipment_included
 - id: sg-2-10
   name: Exercise Wedges
   children: []
@@ -8869,8 +8863,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - exercise_equipment_material
 - id: sg-2-13
   name: Hand Exercisers
   children: []
@@ -8894,50 +8888,50 @@
   - sg-2-15-6
   attributes:
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-2-15-1
   name: Dual-Grip Balls
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-2-15-2
   name: Slam Balls
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-2-15-3
   name: Soft Balls
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-2-15-4
   name: Toning Balls
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-2-15-5
   name: Tornado Balls
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-2-15-6
   name: Wall Balls
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-2-16
   name: Power Towers
   children: []
@@ -8951,16 +8945,16 @@
   attributes:
   - color
   - material
-  - mounting_type
   - pattern
+  - bar_mounting_type
 - id: sg-2-18
   name: Reaction Balls
   children: []
   attributes:
   - ball_size
   - color
-  - material
   - pattern
+  - ball_material
 - id: sg-2-19
   name: Speed & Resistance Parachutes
   children: []
@@ -9155,9 +9149,9 @@
   attributes:
   - color
   - compatible_weight_lifting_accessory
-  - lock_type
   - material
   - pattern
+  - collar_lock_type
 - id: sg-2-24-2
   name: Free Weights, Dumbbells & Kettlebells
   children:
@@ -9212,9 +9206,9 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - target_gender
+  - handwear_material
 - id: sg-2-24-5
   name: Weight Lifting Machine & Exercise Bench Accessories
   children:
@@ -9360,16 +9354,16 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - exercise_mat_material
 - id: sg-2-26-4
   name: Yoga & Pilates Towels
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - fabric
 - id: sg-2-26-5
   name: Yoga Mat Bags & Straps
   children:
@@ -9505,8 +9499,8 @@
   - age_group
   - color
   - games_included
-  - material
   - pattern
+  - furniture_fixture_material
 - id: sg-3-5-2
   name: Flip Multi-Game Tables
   children: []
@@ -9514,8 +9508,8 @@
   - age_group
   - color
   - games_included
-  - material
   - pattern
+  - furniture_fixture_material
 - id: sg-3-5-3
   name: Hybrid Multi-Game Tables
   children: []
@@ -9523,8 +9517,8 @@
   - age_group
   - color
   - games_included
-  - material
   - pattern
+  - furniture_fixture_material
 - id: sg-3-6-2-1
   name: Ping Pong Nets
   children: []
@@ -9633,7 +9627,7 @@
   - color
   - material
   - pattern
-  - vehicle_drive_type
+  - watercraft_propulsion_type
 - id: sg-4-1-1-5-2
   name: Flatwater Kayaks
   children: []
@@ -9641,7 +9635,7 @@
   - color
   - material
   - pattern
-  - vehicle_drive_type
+  - watercraft_propulsion_type
 - id: sg-4-1-1-5-3
   name: Folding Kayaks
   children: []
@@ -9649,7 +9643,7 @@
   - color
   - material
   - pattern
-  - vehicle_drive_type
+  - watercraft_propulsion_type
 - id: sg-4-1-1-5-4
   name: Inflatable Kayaks
   children: []
@@ -9657,7 +9651,7 @@
   - color
   - material
   - pattern
-  - vehicle_drive_type
+  - watercraft_propulsion_type
 - id: sg-4-1-1-5-5
   name: Playboats
   children: []
@@ -9672,7 +9666,7 @@
   - color
   - material
   - pattern
-  - vehicle_drive_type
+  - watercraft_propulsion_type
 - id: sg-4-1-1-5-7
   name: Slalom Kayaks
   children: []
@@ -9680,7 +9674,7 @@
   - color
   - material
   - pattern
-  - vehicle_drive_type
+  - watercraft_propulsion_type
 - id: sg-4-1-1-5-8
   name: Surf Kayaks
   children: []
@@ -9688,7 +9682,7 @@
   - color
   - material
   - pattern
-  - vehicle_drive_type
+  - watercraft_propulsion_type
 - id: sg-4-1-1-5-9
   name: Whitewater Kayaks
   children: []
@@ -9696,7 +9690,7 @@
   - color
   - material
   - pattern
-  - vehicle_drive_type
+  - watercraft_propulsion_type
 - id: sg-4-1-2-2-1
   name: Life Jacket Lights
   children: []
@@ -9722,10 +9716,10 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - shoe_size
   - target_gender
+  - handwear_material
 - id: sg-4-1-2-6-2-2
   name: Wetsuit Gloves
   children: []
@@ -9733,10 +9727,10 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - shoe_size
   - target_gender
+  - handwear_material
 - id: sg-4-1-2-6-2-3
   name: Wetsuit Hoods
   children: []
@@ -9744,10 +9738,10 @@
   - accessory_size
   - age_group
   - color
-  - material
   - pattern
   - shoe_size
   - target_gender
+  - handwear_material
 - id: sg-4-1-2-7-1
   name: Full Wetsuits
   children: []
@@ -9775,8 +9769,8 @@
   - accessory_size
   - color
   - fin_pocket_type
-  - material
   - pattern
+  - fin_material
 - id: sg-4-1-3-4-2
   name: Split Fins
   children: []
@@ -9784,22 +9778,22 @@
   - accessory_size
   - color
   - fin_pocket_type
-  - material
   - pattern
+  - fin_material
 - id: sg-4-1-3-7-1
   name: Diving Knives
   children: []
   attributes:
-  - blade_type
   - color
   - pattern
+  - edge_type
 - id: sg-4-1-3-7-2
   name: Diving Shears
   children: []
   attributes:
-  - blade_type
   - color
   - pattern
+  - edge_type
 - id: sg-4-1-3-9-1
   name: Dry Snorkels
   children: []
@@ -9807,7 +9801,7 @@
   - age_group
   - color
   - pattern
-  - shape
+  - snorkel_shape
 - id: sg-4-1-3-9-2
   name: Semi-Dry Snorkels
   children: []
@@ -9815,7 +9809,7 @@
   - age_group
   - color
   - pattern
-  - shape
+  - snorkel_shape
 - id: sg-4-1-3-9-3
   name: Traditional Snorkels
   children: []
@@ -9823,7 +9817,7 @@
   - age_group
   - color
   - pattern
-  - shape
+  - snorkel_shape
 - id: sg-4-1-4-2-1
   name: Kiteboard Fins
   children: []
@@ -9997,27 +9991,27 @@
   attributes:
   - age_group
   - color
-  - construction_type
   - pattern
   - rocker_type
+  - ski_construction
 - id: sg-4-1-7-5-4-2
   name: Slalom Water Skis
   children: []
   attributes:
   - age_group
   - color
-  - construction_type
   - pattern
   - rocker_type
+  - ski_construction
 - id: sg-4-1-7-5-4-3
   name: Trick Water Skis
   children: []
   attributes:
   - age_group
   - color
-  - construction_type
   - pattern
   - rocker_type
+  - ski_construction
 - id: sg-4-2-1-1-1
   name: Air Mattress & Sleeping Pad Pumps
   children: []
@@ -10102,26 +10096,26 @@
   name: Locking Blade Knives
   children: []
   attributes:
-  - blade_type
   - color
   - knife_type
   - pattern
+  - hunting_survival_knife_design
 - id: sg-4-2-4-7-2
   name: Peasant Knives
   children: []
   attributes:
-  - blade_type
   - color
   - knife_type
   - pattern
+  - hunting_survival_knife_design
 - id: sg-4-2-4-7-3
   name: Slip Joint Knives
   children: []
   attributes:
-  - blade_type
   - color
   - knife_type
   - pattern
+  - hunting_survival_knife_design
 - id: sg-4-2-7-1
   name: Hiking Pole Baskets
   children: []
@@ -10169,15 +10163,15 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - net_material
 - id: sg-4-2-9-2
   name: Pyramid Mosquito Nets
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - net_material
 - id: sg-4-2-10-1
   name: Electronic Navigational Compasses
   children: []
@@ -10185,7 +10179,7 @@
   - color
   - material
   - pattern
-  - product_style
+  - compass_style
 - id: sg-4-2-10-2
   name: Gyrocompasses
   children: []
@@ -10193,7 +10187,7 @@
   - color
   - material
   - pattern
-  - product_style
+  - compass_style
 - id: sg-4-2-10-3
   name: Magnetic Navigational Compasses
   children: []
@@ -10201,7 +10195,7 @@
   - color
   - material
   - pattern
-  - product_style
+  - compass_style
 - id: sg-4-2-11-1-1
   name: Portable Showers
   children: []
@@ -10392,27 +10386,27 @@
   attributes:
   - color
   - compatible_bike_type
-  - material
   - pattern
   - vehicle_placement
+  - bag_case_material
 - id: sg-4-4-1-1-2
   name: Bicycle Panniers
   children: []
   attributes:
   - color
   - compatible_bike_type
-  - material
   - pattern
   - vehicle_placement
+  - bag_case_material
 - id: sg-4-4-1-1-3
   name: Bicycle Top Cases
   children: []
   attributes:
   - color
   - compatible_bike_type
-  - material
   - pattern
   - vehicle_placement
+  - bag_case_material
 - id: sg-4-4-1-4-1
   name: Bicycle Bottle Cages
   children: []
@@ -10909,7 +10903,7 @@
   attributes:
   - color
   - pattern
-  - product_form
+  - animal_feed_form
 - id: sg-4-5-1-5-2-1
   name: Horse Grooming Brushes
   children: []
@@ -10992,8 +10986,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: sg-4-5-4-2
   name: Vaulting Reins
   children: []
@@ -11058,15 +11052,13 @@
   children: []
   attributes:
   - color
-  - items_included
-  - material
   - pattern
+  - needle_material
 - id: sg-4-6-5-2
   name: Bait Drills
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-5-3
@@ -11074,7 +11066,6 @@
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-5-4
@@ -11082,7 +11073,6 @@
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-5-5
@@ -11090,7 +11080,6 @@
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-5-6
@@ -11098,7 +11087,6 @@
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-5-7
@@ -11106,7 +11094,6 @@
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-5-8
@@ -11114,7 +11101,6 @@
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-5-9
@@ -11122,7 +11108,6 @@
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-5-10
@@ -11130,7 +11115,6 @@
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-5-11
@@ -11138,7 +11122,6 @@
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-5-12
@@ -11146,15 +11129,13 @@
   children: []
   attributes:
   - color
-  - items_included
-  - material
   - pattern
+  - needle_material
 - id: sg-4-6-5-13
   name: Fly Tying Scissors
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-5-14
@@ -11162,7 +11143,6 @@
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-5-15
@@ -11170,7 +11150,6 @@
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-5-16
@@ -11178,15 +11157,13 @@
   children: []
   attributes:
   - color
-  - items_included
-  - material
   - pattern
+  - needle_material
 - id: sg-4-6-5-17
   name: Multi Pull Tools
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-5-18
@@ -11194,7 +11171,6 @@
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-5-19
@@ -11202,15 +11178,13 @@
   children: []
   attributes:
   - color
-  - items_included
-  - material
   - pattern
+  - needle_material
 - id: sg-4-6-5-20
   name: Throwing Sticks
   children: []
   attributes:
   - color
-  - items_included
   - material
   - pattern
 - id: sg-4-6-6-1
@@ -11239,71 +11213,71 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fishing_wire_material
 - id: sg-4-6-9-1
   name: Baitcasting Fishing Reels
   children: []
   attributes:
-  - base_material
   - color
   - gear_ratio
   - pattern
   - spool_material
+  - body_material
 - id: sg-4-6-9-2
   name: Centerpin Fishing Reels
   children: []
   attributes:
-  - base_material
   - color
   - gear_ratio
   - pattern
   - spool_material
+  - body_material
 - id: sg-4-6-9-3
   name: Fly Fishing Reels
   children: []
   attributes:
-  - base_material
   - color
   - gear_ratio
   - pattern
   - spool_material
+  - body_material
 - id: sg-4-6-9-4
   name: Spincast Fishing Reels
   children: []
   attributes:
-  - base_material
   - color
   - gear_ratio
   - pattern
   - spool_material
+  - body_material
 - id: sg-4-6-9-5
   name: Spinning Fishing Reels
   children: []
   attributes:
-  - base_material
   - color
   - gear_ratio
   - pattern
   - spool_material
+  - body_material
 - id: sg-4-6-9-6
   name: Triggerspin Fishing Reels
   children: []
   attributes:
-  - base_material
   - color
   - gear_ratio
   - pattern
   - spool_material
+  - body_material
 - id: sg-4-6-9-7
   name: Trolling Fishing Reels
   children: []
   attributes:
-  - base_material
   - color
   - gear_ratio
   - pattern
   - spool_material
+  - body_material
 - id: sg-4-6-11-1
   name: Baitcasting Fishing Rods
   children: []
@@ -11530,43 +11504,43 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - sinker_material
 - id: sg-4-6-13-4-2
   name: Fishing Barrels
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - sinker_material
 - id: sg-4-6-13-4-3
   name: Fishing Bullets
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - sinker_material
 - id: sg-4-6-13-4-4
   name: Fishing Dipseys
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - sinker_material
 - id: sg-4-6-13-4-5
   name: Fishing Pyramids
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - sinker_material
 - id: sg-4-6-13-4-6
   name: Fishing Split-Shots
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - sinker_material
 - id: sg-4-7-8
   name: Golf Club Sets
   children: []
@@ -11612,56 +11586,56 @@
   attributes:
   - archery_style
   - color
-  - material
   - pattern
+  - nock_material
 - id: sg-4-9-1-4-2-2
   name: Lighted Arrow Nocks
   children: []
   attributes:
   - archery_style
   - color
-  - material
   - pattern
+  - nock_material
 - id: sg-4-9-1-4-2-3
   name: Pin Arrow Nocks
   children: []
   attributes:
   - archery_style
   - color
-  - material
   - pattern
+  - nock_material
 - id: sg-4-9-1-4-2-4
   name: Push-In Arrow Nocks
   children: []
   attributes:
   - archery_style
   - color
-  - material
   - pattern
+  - nock_material
 - id: sg-4-9-1-4-2-5
   name: Taper-Fit Arrow Nocks
   children: []
   attributes:
   - archery_style
   - color
-  - material
   - pattern
+  - nock_material
 - id: sg-4-9-1-4-3-1
   name: Broadheads
   children: []
   attributes:
   - archery_style
   - color
-  - material
   - pattern
+  - broadhead_field_point_material
 - id: sg-4-9-1-4-3-2
   name: Field Points
   children: []
   attributes:
   - archery_style
   - color
-  - material
   - pattern
+  - broadhead_field_point_material
 - id: sg-4-9-1-5-1
   name: Arrows
   children: []
@@ -11669,8 +11643,8 @@
   - age_group
   - archery_style
   - color
-  - material
   - pattern
+  - arrow_material
 - id: sg-4-9-1-5-2
   name: Bolts
   children: []
@@ -11678,15 +11652,14 @@
   - age_group
   - archery_style
   - color
-  - material
   - pattern
+  - bolt_material
 - id: sg-4-9-1-6-1
   name: Bow & Crossbow Targets
   children: []
   attributes:
   - archery_activity
   - color
-  - material
   - pattern
 - id: sg-4-9-1-7-3-1
   name: Longbows
@@ -11705,11 +11678,11 @@
   - archery_style
   - color
   - hand_side
-  - items_included
   - pattern
   - core_material
   - riser_material
   - string_material
+  - archery_equipment_included
 - id: sg-4-9-1-7-4
   name: Youth Bows
   children: []
@@ -11717,18 +11690,18 @@
   - archery_style
   - color
   - hand_side
-  - items_included
   - pattern
   - core_material
   - riser_material
   - string_material
+  - archery_equipment_included
 - id: sg-4-9-3-3-1
   name: Hunting Blind Fabric
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: sg-4-9-3-4-1
   name: Hunting Dog Collars
   children: []
@@ -11753,21 +11726,21 @@
   attributes:
   - color
   - pattern
-  - product_form
+  - animal_feed_form
 - id: sg-4-9-3-7-4-2
   name: Wildlife Feed
   children: []
   attributes:
   - color
   - pattern
-  - product_form
+  - animal_feed_form
 - id: sg-4-9-3-7-4-3
   name: Wildlife Minerals
   children: []
   attributes:
   - color
   - pattern
-  - product_form
+  - animal_feed_form
 - id: sg-4-9-6-2-1
   name: Shooting Bipods
   children: []
@@ -11798,16 +11771,16 @@
   attributes:
   - activity
   - color
-  - material
   - pattern
+  - fabric
 - id: sg-4-10-3
   name: Hydration Belts
   children: []
   attributes:
   - activity
   - color
-  - material
   - pattern
+  - fabric
 - id: sg-4-10-4
   name: Hydration Bladders
   children: []
@@ -11881,53 +11854,53 @@
   children: []
   attributes:
   - age_group
-  - boot_material
   - boot_type
   - color
-  - frame_material
   - inline_skating_style
   - pattern
   - shoe_size
   - target_gender
+  - footwear_material
+  - shell_frame_material
 - id: sg-4-12-3-2
   name: Race Inline Skates
   children: []
   attributes:
   - age_group
-  - boot_material
   - boot_type
   - color
-  - frame_material
   - inline_skating_style
   - pattern
   - shoe_size
   - target_gender
+  - footwear_material
+  - shell_frame_material
 - id: sg-4-12-3-3
   name: Recreation Inline Skates
   children: []
   attributes:
   - age_group
-  - boot_material
   - boot_type
   - color
-  - frame_material
   - inline_skating_style
   - pattern
   - shoe_size
   - target_gender
+  - footwear_material
+  - shell_frame_material
 - id: sg-4-12-3-4
   name: Urban Inline Skates
   children: []
   attributes:
   - age_group
-  - boot_material
   - boot_type
   - color
-  - frame_material
   - inline_skating_style
   - pattern
   - shoe_size
   - target_gender
+  - footwear_material
+  - shell_frame_material
 - id: sg-4-12-4-1
   name: Roller Skate Bearings
   children: []
@@ -11951,97 +11924,97 @@
   children: []
   attributes:
   - age_group
-  - boot_material
   - boot_type
   - color
-  - frame_material
   - inline_skating_style
   - pattern
   - shoe_size
   - target_gender
+  - footwear_material
+  - shell_frame_material
 - id: sg-4-12-5-2
   name: Race Roller Skates
   children: []
   attributes:
   - age_group
-  - boot_material
   - boot_type
   - color
-  - frame_material
   - inline_skating_style
   - pattern
   - shoe_size
   - target_gender
+  - footwear_material
+  - shell_frame_material
 - id: sg-4-12-5-3
   name: Recreation Roller Skates
   children: []
   attributes:
   - age_group
-  - boot_material
   - boot_type
   - color
-  - frame_material
   - inline_skating_style
   - pattern
   - shoe_size
   - target_gender
+  - footwear_material
+  - shell_frame_material
 - id: sg-4-12-5-4
   name: Urban Roller Skates
   children: []
   attributes:
   - age_group
-  - boot_material
   - boot_type
   - color
-  - frame_material
   - inline_skating_style
   - pattern
   - shoe_size
   - target_gender
+  - footwear_material
+  - shell_frame_material
 - id: sg-4-12-6-1
   name: Fitness Roller Skis
   children: []
   attributes:
   - age_group
   - color
-  - construction_type
   - inline_skating_style
   - pattern
   - rocker_type
   - target_gender
+  - ski_construction
 - id: sg-4-12-6-2
   name: Race Roller Skis
   children: []
   attributes:
   - age_group
   - color
-  - construction_type
   - inline_skating_style
   - pattern
   - rocker_type
   - target_gender
+  - ski_construction
 - id: sg-4-12-6-3
   name: Recreation Roller Skis
   children: []
   attributes:
   - age_group
   - color
-  - construction_type
   - inline_skating_style
   - pattern
   - rocker_type
   - target_gender
+  - ski_construction
 - id: sg-4-12-6-4
   name: Urban Roller Skis
   children: []
   attributes:
   - age_group
   - color
-  - construction_type
   - inline_skating_style
   - pattern
   - rocker_type
   - target_gender
+  - ski_construction
 - id: sg-4-13-2-1
   name: Kite Buggy Seat Covers
   children: []
@@ -12068,26 +12041,26 @@
   attributes:
   - age_group
   - color
-  - material
   - pattern
   - recommended_skill_level
+  - racket_material
 - id: sg-4-14-1-2-1
   name: Badminton Racket Sets
   children: []
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - racket_material
 - id: sg-4-14-1-2-2
   name: Badminton Rackets
   children: []
   attributes:
   - age_group
   - color
-  - material
   - pattern
   - recommended_skill_level
+  - racket_material
 - id: sg-4-14-1-3-1
   name: Feather Shuttlecocks
   children: []
@@ -12298,9 +12271,9 @@
   - application_method
   - color
   - pattern
-  - product_form
   - skiing_style
   - sport
+  - wax_application_method
 - id: sg-4-17-2-8-2
   name: Ski & Snowboard Grip Wax
   children: []
@@ -12308,9 +12281,9 @@
   - application_method
   - color
   - pattern
-  - product_form
   - skiing_style
   - sport
+  - wax_application_method
 - id: sg-4-17-2-9-1
   name: Ski Binding Straps
   children: []

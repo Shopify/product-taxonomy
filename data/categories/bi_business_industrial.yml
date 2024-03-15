@@ -264,7 +264,6 @@
   - bi-5-1-5
   attributes:
   - color
-  - material
   - pattern
 - id: bi-5-2
   name: Dental Tools
@@ -437,23 +436,23 @@
   - bi-8-7-4
   attributes:
   - color
-  - material
   - pattern
+  - disposable_tableware_material
 - id: bi-8-7-1
   name: Disposable Bowls
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - disposable_tableware_material
 - id: bi-8-7-2
   name: Disposable Cups
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - disposable_tableware_material
 - id: bi-8-7-3
   name: Disposable Cutlery
   children:
@@ -462,33 +461,33 @@
   - bi-8-7-3-3
   attributes:
   - color
-  - material
   - pattern
+  - disposable_tableware_material
 - id: bi-8-7-4
   name: Disposable Plates
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - disposable_tableware_material
 - id: bi-8-8
   name: Food Service Baskets
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
+  - basket_material
 - id: bi-8-9
   name: Food Service Carts
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shape
   - shelf_material
+  - furniture_fixture_material
 - id: bi-8-10
   name: Food Washers & Dryers
   children: []
@@ -538,7 +537,6 @@
   - burner_material
   - color
   - lid_material
-  - material
   - pattern
   - power_source
 - id: bi-8-17
@@ -575,15 +573,15 @@
   attributes:
   - age_group
   - color
-  - material
   - pattern
+  - fabric
 - id: bi-10-2
   name: Pedicure Chairs
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - upholstery_material
 - id: bi-10-3
   name: Salon Chairs
   children:
@@ -593,8 +591,8 @@
   - bi-10-3-4
   attributes:
   - color
-  - material
   - pattern
+  - upholstery_material
 - id: bi-11
   name: Heavy Machinery
   children:
@@ -658,7 +656,6 @@
   attributes:
   - color
   - frame_material
-  - material
   - pattern
   - shelf_material
 - id: bi-13-3
@@ -901,8 +898,8 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - fabric
 - id: bi-19-4-3
   name: Medical Reflex Hammers & Tuning Forks
   children:
@@ -989,8 +986,8 @@
   - bi-19-5-1-4
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-2
   name: Examination Chairs & Tables
   children:
@@ -999,8 +996,8 @@
   attributes:
   - color
   - compatible_patient_profile
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-3
   name: Homecare & Hospital Beds
   children:
@@ -1018,9 +1015,9 @@
   - bi-19-5-4-2
   attributes:
   - color
-  - material
   - mounting_type
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-5
   name: Medical Carts
   children:
@@ -1028,8 +1025,8 @@
   - bi-19-5-5-2
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-5-1
   name: Crash Carts
   children:
@@ -1039,16 +1036,16 @@
   - bi-19-5-5-1-4
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-5-2
   name: IV Poles & Carts
   children: []
   attributes:
   - cart_design
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-6
   name: Surgical Tables
   children:
@@ -1087,7 +1084,6 @@
   - blade_material
   - blade_shape
   - color
-  - material
   - pattern
   - product_sterility
   - scalpel_blade_number
@@ -1129,8 +1125,8 @@
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - handwear_material
 - id: bi-19-7-2
   name: Finger Cots
   children: []
@@ -1147,45 +1143,45 @@
   - bi-19-7-3-3
   attributes:
   - color
-  - housing_material
   - medical_syringe_purpose
   - needle_gauge
   - pattern
   - tip_design
   - usage_type
+  - needle_housing_material
 - id: bi-19-7-3-1
   name: Medical Needle & Syringe Sets
   children: []
   attributes:
   - color
-  - housing_material
   - medical_syringe_purpose
   - needle_gauge
   - pattern
   - tip_design
   - usage_type
+  - needle_housing_material
 - id: bi-19-7-3-2
   name: Medical Needles
   children: []
   attributes:
   - color
-  - housing_material
   - medical_syringe_purpose
   - needle_gauge
   - pattern
   - tip_design
   - usage_type
+  - needle_housing_material
 - id: bi-19-7-3-3
   name: Medical Syringes
   children: []
   attributes:
   - color
-  - housing_material
   - medical_syringe_purpose
   - needle_gauge
   - pattern
   - tip_design
   - usage_type
+  - needle_housing_material
 - id: bi-19-7-4
   name: Ostomy Supplies
   children:
@@ -1278,9 +1274,9 @@
   - bi-21-1-1-2
   attributes:
   - color
-  - material
   - needle_gauge
   - pattern
+  - needle_material
 - id: bi-21-2
   name: Tattooing Supplies
   children:
@@ -1324,9 +1320,9 @@
   - bi-21-2-4-4
   attributes:
   - color
-  - material
   - needle_gauge
   - pattern
+  - needle_material
 - id: bi-22
   name: Retail
   children:
@@ -1473,7 +1469,6 @@
   - currency_type
   - display_technology
   - housing_material
-  - material
   - mounting_type
   - pattern
 - id: bi-22-4-6
@@ -1481,9 +1476,9 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - usage_type
+  - bag_case_material
 - id: bi-22-4-7
   name: Paper Coin Wrappers & Bill Straps
   children: []
@@ -1501,8 +1496,8 @@
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - shopping_bag_material
 - id: bi-22-6
   name: Pricing Guns
   children: []
@@ -1514,9 +1509,9 @@
   children: []
   attributes:
   - color
-  - material
   - mounting_type
   - pattern
+  - bag_case_material
 - id: bi-22-8
   name: Retail Display Props & Models
   children: []
@@ -1684,8 +1679,8 @@
   attributes:
   - color
   - magnification
-  - material
   - pattern
+  - eyepiece_adapter_material
 - id: bi-23-4-10-3
   name: Microscope Objective Lenses
   children:
@@ -1714,8 +1709,8 @@
   - bi-23-4-10-5-4
   attributes:
   - color
-  - material
   - pattern
+  - microscope_slide_material
 - id: bi-23-4-11
   name: Microscopes
   children:
@@ -1825,7 +1820,6 @@
   attributes:
   - color
   - housing_material
-  - material
   - pattern
 - id: bi-23-6-7
   name: Test Tubes
@@ -2042,8 +2036,8 @@
   - accessory_size
   - bullet_protection_level
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-25-2
   name: Gas Mask & Respirator Accessories
   children:
@@ -2060,9 +2054,9 @@
   attributes:
   - color
   - hardhat_class
-  - material
   - pattern
   - protection_type
+  - gear_material
 - id: bi-25-4
   name: Hazardous Material Suits
   children: []
@@ -2070,8 +2064,8 @@
   - accessory_size
   - color
   - hazmat_suit_design
-  - material
   - pattern
+  - gear_material
 - id: bi-25-5
   name: Protective Aprons
   children:
@@ -2081,8 +2075,8 @@
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-25-6
   name: Protective Eyewear
   children:
@@ -2103,9 +2097,9 @@
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
   - usage_type
+  - gear_material
 - id: bi-25-7-1
   name: Dust Masks
   children: []
@@ -2114,9 +2108,9 @@
   - color
   - dust_mask_type
   - filtration_class
-  - material
   - pattern
   - usage_type
+  - gear_material
 - id: bi-25-7-2
   name: Fireman's Masks
   children: []
@@ -2132,18 +2126,18 @@
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
   - usage_type
+  - gear_material
 - id: bi-25-7-4
   name: Medical Masks
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
   - usage_type
+  - gear_material
 - id: bi-25-8
   name: Safety Gloves
   children:
@@ -2154,8 +2148,8 @@
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - handwear_material
 - id: bi-25-9
   name: Safety Knee Pads
   children: []
@@ -2163,8 +2157,8 @@
   - accessory_size
   - attachment_type
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-25-10
   name: Welding Helmets
   children: []
@@ -2183,8 +2177,8 @@
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-25-12
   name: Work Safety Tethers
   children:
@@ -2193,8 +2187,8 @@
   - bi-25-12-3
   attributes:
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-1-2-1
   name: Lockable Counters
   children: []
@@ -2466,28 +2460,24 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: bi-5-1-2
   name: Lining Dental Cement
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: bi-5-1-3
   name: Luting Dental Cement
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: bi-5-1-5
   name: Temporary Dental Cement
   children: []
   attributes:
   - color
-  - material
   - pattern
 - id: bi-6-1
   name: Film & Television Costumes
@@ -2496,8 +2486,8 @@
   - accessory_size
   - color
   - costume_theme
-  - material
   - pattern
+  - fabric
 - id: bi-6-2
   name: Film & Television Props
   children: []
@@ -2531,9 +2521,9 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - suitable_space
+  - furniture_fixture_material
 - id: bi-6-3-3
   name: Set Decoration
   children: []
@@ -2547,22 +2537,22 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - disposable_tableware_material
 - id: bi-8-7-3-2
   name: Disposable Knives
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - disposable_tableware_material
 - id: bi-8-7-3-3
   name: Disposable Spoons
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - disposable_tableware_material
 - id: bi-8-17-1
   name: Combo Vending Machines
   children: []
@@ -2609,49 +2599,49 @@
   - bi-9-2-5
   attributes:
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-9-2-1
   name: Forestry & Logging Boots
   children: []
   attributes:
   - color
-  - material
   - pattern
   - shoe_size
   - target_gender
+  - gear_material
 - id: bi-9-2-2
   name: Forestry & Logging Chaps
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-9-2-3
   name: Forestry & Logging Eyewear
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-9-2-4
   name: Forestry & Logging Gloves
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - handwear_material
 - id: bi-9-2-5
   name: Forestry & Logging Helmets
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-9-3
   name: Forestry & Logging Tools
   children:
@@ -2691,29 +2681,29 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - upholstery_material
 - id: bi-10-3-2
   name: Barber Chairs
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - upholstery_material
 - id: bi-10-3-3
   name: Shampoo Chairs
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - upholstery_material
 - id: bi-10-3-4
   name: Styling Chairs
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - upholstery_material
 - id: bi-11-1
   name: Backhoes
   children: []
@@ -3019,7 +3009,6 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
   - rack_design
 - id: bi-12-1-2-3
@@ -3058,8 +3047,8 @@
   - bell_design
   - bell_sound
   - color
-  - material
   - pattern
+  - hardware_material
 - id: bi-12-3
   name: Hotel Supplies
   children:
@@ -3577,16 +3566,16 @@
   attributes:
   - chiropractic_table_design
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-1-4
   name: Stationary Chiropractic Tables
   children: []
   attributes:
   - chiropractic_table_design
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-2-1
   name: Examination Chairs
   children:
@@ -3595,24 +3584,24 @@
   attributes:
   - color
   - compatible_patient_profile
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-2-1-2
   name: Manual Examination Chairs
   children: []
   attributes:
   - color
   - compatible_patient_profile
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-2-1-4
   name: Powered Examination Chairs
   children: []
   attributes:
   - color
   - compatible_patient_profile
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-2-2
   name: Examination Tables
   children:
@@ -3621,24 +3610,24 @@
   attributes:
   - color
   - compatible_patient_profile
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-2-2-1
   name: Manual Examination Tables
   children: []
   attributes:
   - color
   - compatible_patient_profile
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-2-2-2
   name: Powered Examination Tables
   children: []
   attributes:
   - color
   - compatible_patient_profile
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-3-2
   name: Full-Electric Beds
   children: []
@@ -3667,45 +3656,45 @@
   children: []
   attributes:
   - color
-  - material
   - mounting_type
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-4-2
   name: Exam Room Cabinets
   children: []
   attributes:
   - color
-  - material
   - mounting_type
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-5-1-1
   name: Anesthesia Crash Carts
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-5-1-2
   name: Emergency Crash Carts
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-5-1-3
   name: Isolation Crash Carts
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-5-1-4
   name: Pediatric Crash Carts
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - furniture_fixture_material
 - id: bi-19-5-6-2
   name: General Surgery Surgical Tables
   children: []
@@ -3922,9 +3911,9 @@
   children: []
   attributes:
   - color
-  - material
   - needle_gauge
   - pattern
+  - needle_material
 - id: bi-21-1-1-2
   name: Dermal Punches
   children: []
@@ -3962,33 +3951,33 @@
   children: []
   attributes:
   - color
-  - material
   - needle_gauge
   - pattern
+  - needle_material
 - id: bi-21-2-4-2
   name: Magnum Tattooing Needles
   children: []
   attributes:
   - color
-  - material
   - needle_gauge
   - pattern
+  - needle_material
 - id: bi-21-2-4-3
   name: Round Liner Tattooing Needles
   children: []
   attributes:
   - color
-  - material
   - needle_gauge
   - pattern
+  - needle_material
 - id: bi-21-2-4-4
   name: Round Shader Tattooing Needles
   children: []
   attributes:
   - color
-  - material
   - needle_gauge
   - pattern
+  - needle_material
 - id: bi-22-1-1
   name: Four-Way Clothing Display Racks
   children: []
@@ -4097,32 +4086,32 @@
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - shopping_bag_material
 - id: bi-22-5-2
   name: Rigid Handle Shopping Bags
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - shopping_bag_material
 - id: bi-22-5-3
   name: Soft Loop Shopping Bags
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - shopping_bag_material
 - id: bi-22-5-4
   name: T-Shirt Shopping Bags
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - shopping_bag_material
 - id: bi-23-1-1
   name: Buffers
   children: []
@@ -4243,32 +4232,32 @@
   attributes:
   - color
   - magnification
-  - material
   - pattern
+  - eyepiece_adapter_material
 - id: bi-23-4-10-2-2
   name: Kellner Eyepieces & Adapters
   children: []
   attributes:
   - color
   - magnification
-  - material
   - pattern
+  - eyepiece_adapter_material
 - id: bi-23-4-10-2-3
   name: Orthoscopic Eyepieces & Adapters
   children: []
   attributes:
   - color
   - magnification
-  - material
   - pattern
+  - eyepiece_adapter_material
 - id: bi-23-4-10-2-4
   name: Plössl Eyepieces & Adapters
   children: []
   attributes:
   - color
   - magnification
-  - material
   - pattern
+  - eyepiece_adapter_material
 - id: bi-23-4-10-3-1
   name: Achromatic Microscope Lenses
   children: []
@@ -4304,29 +4293,29 @@
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - microscope_slide_material
 - id: bi-23-4-10-5-2
   name: Charged Microscope Slides
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - microscope_slide_material
 - id: bi-23-4-10-5-3
   name: Frosted Microscope Slides
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - microscope_slide_material
 - id: bi-23-4-10-5-4
   name: Plain Microscope Slides
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - microscope_slide_material
 - id: bi-23-4-11-2
   name: Optical Microscopes
   children: []
@@ -4484,24 +4473,24 @@
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-25-5-2
   name: Cobbler Protective Aprons
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-25-5-3
   name: Waist Protective Aprons
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-25-6-1
   name: Face Shields
   children: []
@@ -4529,74 +4518,74 @@
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - handwear_material
 - id: bi-25-8-2
   name: Cut-Resistant Safety Gloves
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - handwear_material
 - id: bi-25-8-3
   name: Electrical-Resistant Safety Gloves
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - handwear_material
 - id: bi-25-8-4
   name: Heat-Resistant Safety Gloves
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - handwear_material
 - id: bi-25-11-1
   name: Cross-Chest Work Safety Harnesses
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-25-11-2
   name: Full-Body Work Safety Harnesses
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-25-11-3
   name: Vest-Style Work Safety Harnesses
   children: []
   attributes:
   - accessory_size
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-25-12-1
   name: Anchorage Work Safety Tethers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-25-12-2
   name: Tool Belt Work Safety Tethers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - gear_material
 - id: bi-25-12-3
   name: Wrist Work Safety Tethers
   children: []
   attributes:
   - color
-  - material
   - pattern
+  - gear_material
