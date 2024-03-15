@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Serializers
   module Data
     class PropertySerializer < ObjectSerializer
@@ -6,7 +8,7 @@ module Serializers
           "id" => property.id,
           "name" => property.name,
           "friendly_id" => property.friendly_id,
-          "values" => property.property_values.reorder(:id).map { PropertyValueSerializer.serialize(_1) }
+          "values" => property.property_values.reorder(:id).map { PropertyValueSerializer.serialize(_1) },
         }
       end
 
@@ -15,7 +17,7 @@ module Serializers
           id: hash["id"],
           friendly_id: hash["friendly_id"],
           name: hash["name"],
-          property_value_ids: hash["values"].map { _1["id"] }
+          property_value_ids: hash["values"].map { _1["id"] },
         )
       end
     end

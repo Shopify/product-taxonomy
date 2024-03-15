@@ -1,11 +1,12 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
-require 'yaml'
-require 'json'
-require 'cgi'
-require 'fileutils'
+require "yaml"
+require "json"
+require "cgi"
+require "fileutils"
 
-require_relative '../application'
+require_relative "../application"
 
 class GenerateDocs
   class << self
@@ -21,17 +22,17 @@ class GenerateDocs
       puts
 
       generate_sibling_groups(
-        category_data.fetch('verticals'),
-        target: "docs/_data/sibling_groups.yml"
+        category_data.fetch("verticals"),
+        target: "docs/_data/sibling_groups.yml",
       )
       generate_search_index(
-        category_data.fetch('verticals'),
+        category_data.fetch("verticals"),
         target: "docs/_data/search_index.json",
-        symlink: "docs/assets/js/search_index.json"
+        symlink: "docs/assets/js/search_index.json",
       )
       generate_attributes(
-        attribute_data.fetch('attributes'),
-        target: "docs/_data/attributes.yml"
+        attribute_data.fetch("attributes"),
+        target: "docs/_data/attributes.yml",
       )
     end
 
@@ -42,20 +43,20 @@ class GenerateDocs
       puts "  → Parsing categories into sibling groups"
       sibling_groups = {}
       verticals.each do |vertical|
-        vertical['categories'].each do |category|
-          parent_id = category.fetch('parent_id')
-          parent_id = 'root' if parent_id.nil? || parent_id.empty?
-          node_depth = category.fetch('level')
+        vertical["categories"].each do |category|
+          parent_id = category.fetch("parent_id")
+          parent_id = "root" if parent_id.nil? || parent_id.empty?
+          node_depth = category.fetch("level")
 
           mapped_category = {
-            "id" => category.fetch('id'),
-            "name" => category.fetch('name'),
-            "fully_qualified_type" => category.fetch('full_name'),
+            "id" => category.fetch("id"),
+            "name" => category.fetch("name"),
+            "fully_qualified_type" => category.fetch("full_name"),
             "depth" => node_depth,
             "parent_id" => parent_id,
-            "node_type" => node_depth.zero? ? 'root' : 'leaf',
-            "ancestor_ids" => category.fetch('ancestors').map { _1.fetch('id') }.join(','),
-            "attribute_ids" => category.fetch('attributes').map { _1.fetch('id') }.join(','),
+            "node_type" => node_depth.zero? ? "root" : "leaf",
+            "ancestor_ids" => category.fetch("ancestors").map { _1.fetch("id") }.join(","),
+            "attribute_ids" => category.fetch("attributes").map { _1.fetch("id") }.join(","),
           }
 
           sibling_groups[node_depth] ||= {}
@@ -65,7 +66,7 @@ class GenerateDocs
       end
       if sibling_groups.empty?
         puts "  ⨯ No categories found. Aborting."
-        fail
+        raise
       end
 
       puts "  → Writing #{target}"
@@ -80,7 +81,7 @@ class GenerateDocs
       puts "Preparing search index"
       puts "  → Parsing categories into search index"
       search_index = verticals.flat_map do |vertical|
-        vertical['categories'].map do |category|
+        vertical["categories"].map do |category|
           {
             "title" => category.fetch("full_name"),
             "url" => "?categoryId=#{CGI.escapeURIComponent(category.fetch("id"))}",
@@ -89,7 +90,7 @@ class GenerateDocs
               "name" => category.fetch("name"),
               "fully_qualified_type" => category.fetch("full_name"),
               "depth" => category.fetch("level"),
-            }
+            },
           }
         end
       end
@@ -101,7 +102,7 @@ class GenerateDocs
       FileUtils.ln_s(
         "#{Application.root}/#{target}",
         "#{Application.root}/#{symlink}",
-        force: true
+        force: true,
       )
       puts "  ✓"
       puts

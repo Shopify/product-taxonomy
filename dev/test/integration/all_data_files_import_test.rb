@@ -1,4 +1,6 @@
-require_relative '../test_helper'
+# frozen_string_literal: true
+
+require_relative "../test_helper"
 
 class AllDataFilesImportTest < ActiveSupport::TestCase
   def teardown
@@ -14,7 +16,7 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     assert_equal raw_attributes_data.size, Property.count
     raw_attributes_data.each do |raw_attribute|
       deserialized_attribute = Serializers::Data::PropertySerializer.deserialize(raw_attribute)
-      real_attribute = Property.find(raw_attribute.fetch('id'))
+      real_attribute = Property.find(raw_attribute.fetch("id"))
 
       assert_equal deserialized_attribute, real_attribute
     end
@@ -27,10 +29,10 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     assert_equal raw_verticals_data.map(&:size).sum, Category.count
     raw_verticals_data.flatten.each do |raw_category|
       deserialized_category = Serializers::Data::CategorySerializer.deserialize(raw_category)
-      real_category = Category.find(raw_category.fetch('id'))
+      real_category = Category.find(raw_category.fetch("id"))
 
       assert_equal deserialized_category, real_category
-      assert_equal raw_category.fetch('children').size, real_category.children.count
+      assert_equal raw_category.fetch("children").size, real_category.children.count
       assert_equal deserialized_category.children, real_category.children
     end
   end
