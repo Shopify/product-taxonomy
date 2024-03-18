@@ -17,7 +17,7 @@
 - [🕹️ Interactive explorer](#️-interactive-explorer)
 - [📚 Taxonomy overview](#-taxonomy-overview)
 - [🧭 Getting started](#-getting-started)
-  - [🧩 How to integrate with the taxonomy: `releases` branch (you're here!)](#-how-to-integrate-with-the-taxonomy-releases-branch-youre-here)
+  - [🧩 How to integrate with the taxonomy: `releases` @ `/` (you're here!)](#-how-to-integrate-with-the-taxonomy-releases---youre-here)
   - [🧑🏼‍🏫 How to make changes to the taxonomy: `main` @ `data/`](#-how-to-make-changes-to-the-taxonomy-main--data)
   - [👩🏼‍💻 How to evolve the system: `main` @ `/`](#-how-to-evolve-the-system-main--)
 - [📅 Releases](#-releases)
@@ -39,7 +39,7 @@ This repository is the home of Shopify's Standard Product Taxonomy. It houses th
 
 We've structured it to be as user-friendly as possible, whether you're looking to integrate the taxonomy into your own system, suggest changes, or delve into how it's developed and maintained.
 
-### 🧩 How to integrate with the taxonomy: `releases` branch (you're here!)
+### 🧩 How to integrate with the taxonomy: [`releases` @ `/`](./) (you're here!)
 
 Dive straight into `releases` to find the files you need and integrate this taxonomy into your system.
 
@@ -59,7 +59,7 @@ For more information, see the [dev README](https://github.com/Shopify/product-ta
 
 ## 📅 Releases
 
-You can always find the current version in [`VERSION`](./VERSION).
+You can always find the current published version in [`VERSION`](./VERSION). The changelog is available in [`CHANGELOG.md`](./CHANGELOG.md).
 
 We follow time-based releases consistent with [Shopify's API release schedule](https://shopify.dev/docs/api/usage/versioning#release-schedule) _at most_. That means a release every 3 months at the beginning of the quarter. Version names are date-based to be meaningful and semantically unambiguous (for example, `2024-01`).
 
