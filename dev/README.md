@@ -1,8 +1,32 @@
-# Hacking on product-taxonomy
+<p align="center"><img src="./docs/assets/img/header.png" /></p>
+
+<!-- omit in toc -->
+<h1 align="center">Shopify's Standard Product Taxonomy <img src="https://img.shields.io/badge/preview-orange.svg" alt="Preview"> <a href="./VERSION"><img src="https://img.shields.io/badge/version-v0.10.0-blue.svg" alt="Version"></a></h1>
+
+**🌍 Global Standard**: Our open-source, standardized product taxonomy establishes a universal language for product classification. Comprehensive and already empowering merchants on Shopify.
+
+**👩🏼‍💻 Integration Friendly**: With a stable structure and diverse formats our taxonomy is designed for effortless integration into any system.
+
+**🚀 Industry Benchmark**: Spanning 22 essential verticals, our taxonomy encompasses categories, attributes, and values, all thoughtfully integrated within Shopify and numerous marketplaces.
+
+<p align="right"><em>Learn more on <a href="https://help.shopify.com/manual/products/details/product-category">help.shopify.com</a></em></p>
+
+<!-- omit in toc -->
+## 🗂️ Table of Contents
+
+- [tl;dr;](#tldr)
+- [🤿 Diving in](#-diving-in)
+- [🛠️ Setup and dependencies](#️-setup-and-dependencies)
+- [📂 How this is all organized](#-how-this-is-all-organized)
+- [📅 Releases](#-releases)
+- [📜 License](#-license)
+
+
+## tl;dr;
 
 This is a simple ruby app with a few models and serializers. The bulk of the work is parsing `data/` into a tree of `app/models/category.rb` to serialize reliably to `/dist/`. The app is setup to be rails-like, but  is not a rails app, though is using `ActiveRecord`.
 
-## Diving in 🤿
+## 🤿 Diving in
 
 Everything ultimately runs through `make` (`dev` simply proxies). Here are the commands you'll use most often:
 
@@ -14,7 +38,7 @@ make test   # run ruby tests and cue schema verification
 make server # http://localhost:4000 interactive view of /dist/
 ```
 
-## Setup and dependencies 🛠️
+## 🛠️ Setup and dependencies
 
 For Shopify employees or folks with [`minidev`](https://github.com/burke/minidev):
 - Run `dev up`
@@ -27,7 +51,7 @@ For everyone else you'll need to:
 
 When you edit any cue files, ensure you're running `cue fmt`. This will format the cue files to the standard format.
 
-## How this is all organized 📂
+## 📂 How this is all organized
 
 Most folks won't touch most of this, but we see you 👩🏼‍💻.
 
@@ -58,3 +82,13 @@ dev/
 │   └── seed.rb         # seed the db by parsing data shaped from /data
 └── test/
 ```
+
+## 📅 Releases
+
+You can always find the current version in [`VERSION`](./VERSION).
+
+We follow time-based releases consistent with [Shopify's API release schedule](https://shopify.dev/docs/api/usage/versioning#release-schedule) _at most_. That means a release every 3 months at the beginning of the quarter. Version names are date-based to be meaningful and semantically unambiguous (for example, `2024-01`).
+
+## 📜 License
+
+Shopify's Product Taxonomy is released under the [MIT License](./LICENSE). So go ahead, explore, play, and build something awesome!

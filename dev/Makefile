@@ -61,7 +61,8 @@ clean:
 	$(V)rm -f $(CATEGORIES_DATA_CUE)
 	@$(NUKE) "Cleaning Generated Dist Files" $(GENERATED_DIST_PATH)
 	$(V)rm -f $(DIST_GENERATED_SENTINEL)
-	$(V)rm -rf $(GENERATED_DIST_PATH)/*
+	$(V)rm -rf $(GENERATED_DIST_PATH)/*.json
+	$(V)rm -rf $(GENERATED_DIST_PATH)/*.txt
 .PHONY: clean
 
 server:
