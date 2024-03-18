@@ -19,8 +19,8 @@ ADVISORY = printf "\e[%sm!! %-21s\e[0;1m\n" "1;31" # bold red text with a !! pre
 RUN_CMD  = printf "\e[%sm>> %-21s\e[0;1m\n" "1;34" # bold blue text with a >> prefix
 
 # Inputs
-CATEGORIES_DATA = $(shell find ../data/categories)
-ATTRIBUTES_DATA = $(shell find ../data/attributes)
+CATEGORIES_DATA = $(shell find data/categories)
+ATTRIBUTES_DATA = $(shell find data/attributes)
 
 # Targets
 
@@ -29,20 +29,20 @@ ATTRIBUTES_DATA = $(shell find ../data/attributes)
 # arbitrary numbers of outputs, so we'll use a sentinel instead.
 # also required for generating dist files
 DOCS_GENERATED_SENTINEL = tmp/.docs_generated_sentinel
-GENERATED_DOCS_PATH = ../docs/_data
+GENERATED_DOCS_PATH = docs/_data
 DIST_GENERATED_SENTINEL = tmp/.dist_generated_sentinel
-GENERATED_DIST_PATH = ../dist
+GENERATED_DIST_PATH = dist
 
 # CUE imports needed for schema validation
-ATTRIBUTES_DATA_CUE = ../schema/attributes_data.cue
-CATEGORIES_DATA_CUE = ../schema/categories_data.cue
+ATTRIBUTES_DATA_CUE = schema/attributes_data.cue
+CATEGORIES_DATA_CUE = schema/categories_data.cue
 
 # DATA files to run application
-LOCAL_DB = ../tmp/local.sqlite3
+LOCAL_DB = tmp/local.sqlite3
 
 # JSON files generated
-CATEGORIES_JSON = ../dist/categories.json
-ATTRIBUTES_JSON = ../dist/attributes.json
+CATEGORIES_JSON = $(GENERATED_DIST_PATH)/categories.json
+ATTRIBUTES_JSON = $(GENERATED_DIST_PATH)/attributes.json
 
 default: $(CATEGORIES_DATA_CUE) \
 	$(ATTRIBUTES_DATA_CUE) \
@@ -67,7 +67,7 @@ clean:
 
 server:
 	@$(RUN_CMD) "Running Server"
-	$(V)bundle exec jekyll serve --source ../docs --destination ../_site
+	$(V)bundle exec jekyll serve --source docs --destination _site
 .PHONY: server
 
 seed:
@@ -90,18 +90,18 @@ integration_tests:
 
 vet_schema: $(CATEGORIES_DATA_CUE) $(ATTRIBUTES_DATA_CUE)
 	@$(RUN_CMD) "Validating Schema"
-	$(V)cd ../schema && cue vet
+	$(V)cd schema && cue vet
 	$(V)echo "Done!"
 .PHONY: vet_schema
 
 $(DOCS_GENERATED_SENTINEL): $(CATEGORIES_DATA) $(ATTRIBUTES_DATA)
-	@$(GENERATE) "Building Docs" "../docs/_data/*.yml"
+	@$(GENERATE) "Building Docs" "$(GENERATED_DOCS_PATH)/*.yml"
 	$(V)./bin/generate_docs
 	$(V)touch $@
 
 # This generates both dist/categories.json and dist/attributes.json
 $(DIST_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA)
-	@$(GENERATE) "Building Dist" "../dist/*.json"
+	@$(GENERATE) "Building Dist" "$(GENERATED_DIST_PATH)/*.json"
 	$(V)bin/generate_dist
 	$(V)touch $@
 

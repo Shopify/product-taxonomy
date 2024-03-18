@@ -31,13 +31,11 @@ jobs:
         version: 'v0.7.0'
 
     - name: Install bundler and gems
-      working-directory: ./dev
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
 
     - name: Generate dist & docs
-      working-directory: ./dev
       run: make
 
     - name: Deploy to releases branch

@@ -14,52 +14,80 @@
 <!-- omit in toc -->
 ## 🗂️ Table of Contents
 
-- [🕹️ Interactive explorer](#️-interactive-explorer)
-- [📚 Taxonomy overview](#-taxonomy-overview)
-- [🧭 Getting started](#-getting-started)
-  - [🧩 How to integrate with the taxonomy: `dist/`](#-how-to-integrate-with-the-taxonomy-dist)
-  - [🧑🏼‍🏫 How to make changes to the taxonomy: `data/`](#-how-to-make-changes-to-the-taxonomy-data)
-  - [👩🏼‍💻 How to evolve the system: `dev/`](#-how-to-evolve-the-system-dev)
+- [tl;dr;](#tldr)
+- [🤿 Diving in](#-diving-in)
+- [🛠️ Setup and dependencies](#️-setup-and-dependencies)
+- [📂 How this is all organized](#-how-this-is-all-organized)
 - [📅 Releases](#-releases)
 - [📜 License](#-license)
 
-## 🕹️ Interactive explorer
 
-Ready to dive in? [Explore our taxonomy interactively](https://shopify.github.io/product-taxonomy/?categoryId=gid%3A%2F%2Fshopify%2FTaxonomy%2FCategory%2Fsg-4-17-2-17) to visualize and discover what's published across the many categories, attributes, and values.
+## tl;dr;
 
-## 📚 Taxonomy overview
+This is a simple ruby app with a few models and serializers. The bulk of the work is parsing `data/` into a tree of `app/models/category.rb` to serialize reliably to `/dist/`. The app is setup to be rails-like, but  is not a rails app, though is using `ActiveRecord`.
 
-Our taxonomy is an open-source comprehensive, global standard for product classification. It's a universal language that empowers merchants to categorize their products. Spanning 22 essential verticals, our taxonomy encompasses categories, attributes, and values, all thoughtfully integrated within Shopify and numerous marketplaces.
+## 🤿 Diving in
 
-What's next? ⏭️ More attributes and values as we work to make this truly comprehensive.
+Everything ultimately runs through `make` (`dev` simply proxies). Here are the commands you'll use most often:
 
-## 🧭 Getting started
+```sh
+make        # build the dist and documentation files
+make clean  # remove sentinels and all generated files
+make seed   # parse /data into local db
+make test   # run ruby tests and cue schema verification
+make server # http://localhost:4000 interactive view of /dist/
+```
 
-This repository is the home of Shopify's Standard Product Taxonomy. It houses the source-of-truth data, the distribution files for implementation, and the source code that makes this all sing.
+## 🛠️ Setup and dependencies
 
-We've structured it to be as user-friendly as possible, whether you're looking to integrate the taxonomy into your own system, suggest changes, or delve into how it's developed and maintained.
+For Shopify employees or folks with [`minidev`](https://github.com/burke/minidev):
+- Run `dev up`
 
-### 🧩 How to integrate with the taxonomy: `dist/`
+For everyone else you'll need to:
+- Install `ruby`, version matching `.ruby-version`
+- Install [`cue`](https://github.com/cue-lang/cue?tab=readme-ov-file#download-and-install), version 0.7.x or higher
+- Install `make`
+- Run `bundle install`
 
-Dive straight into `dist/` to find the files you need and integrate this taxonomy into your system.
+When you edit any cue files, ensure you're running `cue fmt`. This will format the cue files to the standard format.
 
-We're working on a variety of formats to make it easy to integrate with your systems. Today we have `txt` and `json` formats, and we're working on more. If you have a specific format you'd like to see, please open an issue and let us know!
+## 📂 How this is all organized
 
-### 🧑🏼‍🏫 How to make changes to the taxonomy: `data/`
+Most folks won't touch most of this, but we see you 👩🏼‍💻.
 
-> **🔵 Note**: While we are in preview we are not actively seeking PRs.
+If you want to add a new serialization target, three simple steps:
+1. Add a new serializer to `app/serializers`
+2. Add the file load to `application.rb`
+3. Extend `bin/generate_dist` to use your new serializer and write files
 
-Everything comes from the source-of-truth in `data/`. This is where you can submit PRs to change the taxonomy itself.
+For your own explorations, here's a map of the land:
 
-### 👩🏼‍💻 How to evolve the system: `dev/`
-
-Dive deep by hopping straight into `dev/` to see how the taxonomy is generated and maintained. This is where the magic happens.
-
-For more information, see the [dev readme](./dev/README.md)
+```
+./
+├── application.rb  # handles file loading "app-wide"
+├── Makefile        # primary source of useful commands
+├── Rakefile        # only used for testing
+├── app/
+│   ├── models/         # most models are simple data objects
+│   │   ├── category.rb     # node-based tree impl for categories
+│   │   └── ...
+│   └── serializers/    # serializers are per-format, not per-model
+│       ├── json.rb
+│       └── text.rb
+├── bin/
+│   ├── generate_dist   # file IO for /data → /dist
+│   └── generate_docs   # file IO for /dist → /docs
+├── db/
+│   ├── schema.rb       # defines in-memory tables for models
+│   └── seed.rb         # seed the db by parsing data shaped from /data
+└── test/
+```
 
 ## 📅 Releases
 
-We'll manage releases on Github and generally follow [semver](https://semver.org/). You can always find the current version in [`VERSION`](./VERSION).
+You can always find the current version in [`VERSION`](./VERSION).
+
+We follow time-based releases consistent with [Shopify's API release schedule](https://shopify.dev/docs/api/usage/versioning#release-schedule) _at most_. That means a release every 3 months at the beginning of the quarter. Version names are date-based to be meaningful and semantically unambiguous (for example, `2024-01`).
 
 ## 📜 License
 

@@ -21,7 +21,7 @@ require_relative "app/serializers/dist/json"
 require_relative "app/serializers/dist/text"
 
 module Application
-  ROOT = File.expand_path("..", __dir__)
+  ROOT = File.expand_path(".", __dir__)
   private_constant :ROOT
 
   class << self
@@ -30,9 +30,9 @@ module Application
     end
 
     def establish_db_connection!(env: :local)
-      config = YAML.load_file("db/config.yml", aliases: true).fetch(env.to_s)
+      config = YAML.load_file("#{root}/db/config.yml", aliases: true).fetch(env.to_s)
       unless config["database"] == ":memory:"
-        config.merge!("database" => "#{root}/dev/tmp/#{config["database"]}")
+        config.merge!("database" => "#{root}/tmp/#{config["database"]}")
       end
 
       ActiveRecord::Base.establish_connection(config)
