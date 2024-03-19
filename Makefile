@@ -18,37 +18,79 @@ NUKE     = $(FMT) "1;31" # bold red
 ADVISORY = printf "\e[%sm!! %-21s\e[0;1m\n" "1;31" # bold red text with a !! prefix
 RUN_CMD  = printf "\e[%sm>> %-21s\e[0;1m\n" "1;34" # bold blue text with a >> prefix
 
-# Inputs
+
+###############################################################################
+# INPUTS
+
 CATEGORIES_DATA = $(shell find data/categories)
 ATTRIBUTES_DATA = $(shell find data/attributes)
 
-# Targets
 
-# Note, this is only because bin/generate_docs generates multiple files
-# and would probably generate more in the future. Make isn't great at targeting
-# arbitrary numbers of outputs, so we'll use a sentinel instead.
-# also required for generating dist files
-DOCS_GENERATED_SENTINEL = tmp/.docs_generated_sentinel
+###############################################################################
+# TARGETS
+# Many commands generate many files (that'll expand), and Make isn't great at
+# targeting arbitrary numbers of outputs, so we'll use sentinels.
+
+# DOCS
 GENERATED_DOCS_PATH = docs/_data
-DIST_GENERATED_SENTINEL = tmp/.dist_generated_sentinel
+DOCS_GENERATED_SENTINEL = tmp/.docs_generated_sentinel
+
+# DIST
 GENERATED_DIST_PATH = dist
+DIST_GENERATED_SENTINEL = tmp/.dist_generated_sentinel
+CATEGORIES_JSON = $(GENERATED_DIST_PATH)/categories.json
+ATTRIBUTES_JSON = $(GENERATED_DIST_PATH)/attributes.json
+STATIC_VERSION_FILE = $(GENERATED_DIST_PATH)/VERSION
+STATIC_LICENSE_FILE = $(GENERATED_DIST_PATH)/LICENSE
+STATIC_CHANGELOG_FILE = $(GENERATED_DIST_PATH)/CHANGELOG.md
+
+# DATA files to run application
+LOCAL_DB = tmp/local.sqlite3
 
 # CUE imports needed for schema validation
 ATTRIBUTES_DATA_CUE = schema/attributes_data.cue
 CATEGORIES_DATA_CUE = schema/categories_data.cue
 
-# DATA files to run application
-LOCAL_DB = tmp/local.sqlite3
+###############################################################################
+# COMMANDS
 
-# JSON files generated
-CATEGORIES_JSON = $(GENERATED_DIST_PATH)/categories.json
-ATTRIBUTES_JSON = $(GENERATED_DIST_PATH)/attributes.json
-
-default: $(CATEGORIES_DATA_CUE) \
-	$(ATTRIBUTES_DATA_CUE) \
-	$(DOCS_GENERATED_SENTINEL)
+#
+# BUILD commands and children
+default: build
 .PHONY: default
 
+build: $(CATEGORIES_DATA_CUE) \
+	$(ATTRIBUTES_DATA_CUE) \
+	$(DOCS_GENERATED_SENTINEL) \
+	$(STATIC_VERSION_FILE) \
+	$(STATIC_LICENSE_FILE) \
+	$(STATIC_CHANGELOG_FILE)
+.PHONY: build
+
+$(DOCS_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA)
+	@$(GENERATE) "Building Docs" "$(GENERATED_DOCS_PATH)/*"
+	$(V)./bin/generate_docs
+	$(V)touch $@
+
+$(DIST_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA)
+	@$(GENERATE) "Building Dist" "$(GENERATED_DIST_PATH)/*.[json|txt]"
+	$(V)bin/generate_dist
+	$(V)touch $@
+
+$(STATIC_VERSION_FILE):
+	@$(GENERATE) "Copying Version File" $(STATIC_VERSION_FILE)
+	$(V)cp -f VERSION $(STATIC_VERSION_FILE)
+
+$(STATIC_LICENSE_FILE):
+	@$(GENERATE) "Copying License File" $(STATIC_LICENSE_FILE)
+	$(V)cp -f LICENSE $(STATIC_LICENSE_FILE)
+
+$(STATIC_CHANGELOG_FILE):
+	@$(GENERATE) "Copying Changelog File" $(STATIC_CHANGELOG_FILE)
+	$(V)cp -f CHANGELOG.md $(STATIC_CHANGELOG_FILE)
+
+#
+# CLEAN
 clean:
 	@$(NUKE) "Cleaning dev db" $(LOCAL_DB)
 	$(V)rm -f $(LOCAL_DB)
@@ -61,21 +103,32 @@ clean:
 	$(V)rm -f $(CATEGORIES_DATA_CUE)
 	@$(NUKE) "Cleaning Generated Dist Files" $(GENERATED_DIST_PATH)
 	$(V)rm -f $(DIST_GENERATED_SENTINEL)
+	$(V)rm -f $(STATIC_VERSION_FILE)
+	$(V)rm -f $(STATIC_LICENSE_FILE)
+	$(V)rm -f $(STATIC_CHANGELOG_FILE)
 	$(V)rm -rf $(GENERATED_DIST_PATH)/*.json
 	$(V)rm -rf $(GENERATED_DIST_PATH)/*.txt
 .PHONY: clean
 
-server:
+#
+# DOCS SERVER
+server: $(DOCS_GENERATED_SENTINEL)
 	@$(RUN_CMD) "Running Server"
 	$(V)bundle exec jekyll serve --source docs --destination _site
 .PHONY: server
 
-seed:
-	@$(GENERATE) "Seeding Database" $(LOCAL_DB)
-	$(V)bin/seed
+#
+# DATABASE SETUP
+seed: $(LOCAL_DB)
 .PHONY: seed
 
-test: vet_schema unit_tests integration_tests
+$(LOCAL_DB):
+	@$(GENERATE) "Seeding Database" $(LOCAL_DB)
+	$(V)bin/seed
+
+#
+# TESTS
+test: unit_tests integration_tests vet_schema
 .PHONY: test
 
 unit_tests:
@@ -93,22 +146,6 @@ vet_schema: $(CATEGORIES_DATA_CUE) $(ATTRIBUTES_DATA_CUE)
 	$(V)cd schema && cue vet
 	$(V)echo "Done!"
 .PHONY: vet_schema
-
-$(DOCS_GENERATED_SENTINEL): $(CATEGORIES_DATA) $(ATTRIBUTES_DATA)
-	@$(GENERATE) "Building Docs" "$(GENERATED_DOCS_PATH)/*.yml"
-	$(V)./bin/generate_docs
-	$(V)touch $@
-
-# This generates both dist/categories.json and dist/attributes.json
-$(DIST_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA)
-	@$(GENERATE) "Building Dist" "$(GENERATED_DIST_PATH)/*.json"
-	$(V)bin/generate_dist
-	$(V)touch $@
-
-$(LOCAL_DB): seed
-ifeq ($(shell test -e $(LOCAL_DB) && echo -n yes),yes)
-	seed
-endif
 
 # TODO: These two targets can be done together
 $(CATEGORIES_DATA_CUE): $(DIST_GENERATED_SENTINEL)
