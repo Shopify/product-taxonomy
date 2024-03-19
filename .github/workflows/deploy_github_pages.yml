@@ -59,9 +59,6 @@ jobs:
           name: data
           path: docs/_data
 
-      - name: Link search index
-        run: cp -f docs/_data/search_index.json docs/assets/js/search_index.json
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 

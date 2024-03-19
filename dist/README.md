@@ -25,7 +25,7 @@
 
 ## 🕹️ Interactive explorer
 
-Ready to dive in? [Explore our taxonomy interactively](https://shopify.github.io/product-taxonomy/?categoryId=gid%3A%2F%2Fshopify%2FTaxonomy%2FCategory%2Fsg-4-17-2-17) to visualize and discover what's published across the many categories, attributes, and values.
+Ready to dive in? [Explore our taxonomy interactively](https://shopify.github.io/product-taxonomy/releases/unstable/?categoryId=gid%3A%2F%2Fshopify%2FTaxonomy%2FCategory%2Fsg-4-17-2-17) to visualize and discover what's published across the many categories, attributes, and values.
 
 ## 📚 Taxonomy overview
 

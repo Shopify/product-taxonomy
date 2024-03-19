@@ -19,6 +19,8 @@ require_relative "app/serializers/data/property_serializer"
 require_relative "app/serializers/data/property_value_serializer"
 require_relative "app/serializers/dist/json"
 require_relative "app/serializers/dist/text"
+require_relative "app/serializers/docs/sibling_groups"
+require_relative "app/serializers/docs/search_index"
 
 module Application
   ROOT = File.expand_path(".", __dir__)
