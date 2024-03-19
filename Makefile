@@ -25,14 +25,13 @@ RUN_CMD  = printf "\e[%sm>> %-21s\e[0;1m\n" "1;34" # bold blue text with a >> pr
 CATEGORIES_DATA = $(shell find data/categories)
 ATTRIBUTES_DATA = $(shell find data/attributes)
 
-
 ###############################################################################
 # TARGETS
 # Many commands generate many files (that'll expand), and Make isn't great at
 # targeting arbitrary numbers of outputs, so we'll use sentinels.
 
 # DOCS
-GENERATED_DOCS_PATH = docs/_data
+GENERATED_DOCS_PATH = docs/_data/unstable
 DOCS_GENERATED_SENTINEL = tmp/.docs_generated_sentinel
 
 # DIST
