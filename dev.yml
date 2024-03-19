@@ -19,8 +19,10 @@ up:
     - cue
 
 commands:
-  build:
+  rebuild:
     run: make clean && make
+  build:
+    run: make
   server:
     run: make server
   test:
