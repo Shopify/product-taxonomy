@@ -26,7 +26,8 @@ const getSearchIndex = (() => {
   let searchIndex;
   return () => {
     if (searchIndex) return searchIndex;
-    searchIndex = fetch("./assets/js/search_index.json").then((res) =>
+    // intentionally local so each release has its own search index
+    searchIndex = fetch("./search_index.json").then((res) =>
       res.json()
     );
     return searchIndex;
