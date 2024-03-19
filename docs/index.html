@@ -24,7 +24,7 @@ layout: default
     {% for release in site.releases %}
       <ul>
         <li>
-          <a href="{{ release.url }}">{{ release.title }}</a>
+          <a href="{{ release.url | relative_url }}">{{ release.title }}</a>
         </li>
       </ul>
     {% endfor %}
