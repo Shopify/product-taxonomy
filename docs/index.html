@@ -24,7 +24,7 @@ layout: default
     {% for release in site.releases %}
       <ul>
         <li>
-          <a href="{{ release.url }}">{{ release.title }}</a>
+          <a href="{{ release.url | relative_url }}">Explore {{ release.title | titleize }}</a> (sourced from <a href="{{ release.github_url }}" target="_blank">GitHub</a>)
         </li>
       </ul>
     {% endfor %}
