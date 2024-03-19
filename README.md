@@ -14,6 +14,8 @@
 <!-- omit in toc -->
 ## 🗂️ Table of Contents
 
+- [🕹️ Interactive explorer](#️-interactive-explorer)
+- [📚 Taxonomy overview](#-taxonomy-overview)
 - [🧭 Getting started](#-getting-started)
   - [🧩 How to integrate with the taxonomy: `releases` @ `/`](#-how-to-integrate-with-the-taxonomy-releases--)
   - [🧑🏼‍🏫 How to make changes to the taxonomy: `main` @ `data/`](#-how-to-make-changes-to-the-taxonomy-main--data)
@@ -23,6 +25,16 @@
 - [📂 How this is all organized](#-how-this-is-all-organized)
 - [📅 Releases](#-releases)
 - [📜 License](#-license)
+
+## 🕹️ Interactive explorer
+
+Ready to dive in? [Explore our taxonomy interactively](https://shopify.github.io/product-taxonomy/?categoryId=gid%3A%2F%2Fshopify%2FTaxonomy%2FCategory%2Fsg-4-17-2-17) to visualize and discover what's published across the many categories, attributes, and values.
+
+## 📚 Taxonomy overview
+
+Our taxonomy is an open-source comprehensive, global standard for product classification. It's a universal language that empowers merchants to categorize their products. Spanning 22 essential verticals, our taxonomy encompasses categories, attributes, and values, all thoughtfully integrated within Shopify and numerous marketplaces.
+
+What's next? ⏭️ More attributes and values as we work to make this truly comprehensive.
 
 ## 🧭 Getting started
 
