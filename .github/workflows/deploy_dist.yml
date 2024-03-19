@@ -1,0 +1,47 @@
+name: Deploy distribution files
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+concurrency:
+  group: "dist"
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  generate_dist:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.3.0
+
+    - name: Install Cue
+      uses: cue-lang/setup-cue@v1.0.0
+      with:
+        version: 'v0.7.0'
+
+    - name: Install bundler and gems
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+
+    - name: Generate dist & docs
+      run: make
+
+    - name: Deploy to releases branch
+      uses: s0/git-publish-subdir-action@develop
+      env:
+        REPO: self
+        BRANCH: releases
+        FOLDER: dist
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

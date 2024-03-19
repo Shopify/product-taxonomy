@@ -1,0 +1,27 @@
+# dev.yml is a configuration for setting up development environments for Shopify toolchains.
+# You may be able to use this tool outside of shopify with Minidev
+# See: https://github.com/burke/minidev, but you're probably better off installing ruby manually and using bundle installing
+# like any other ruby project.
+name: product-taxonomy
+
+type: ruby
+
+up:
+  - ruby
+  - bundler
+  - custom:
+      name: "Remove old cue version"
+      # Cue versions prior to 0.7.0 won't work but our homebrew integration
+      # doesn't give us a great way to force an upgrade.
+      met?: '! ( cue version 2>/dev/null | grep -E "cue version v0\.[123456]\." )'
+      meet: brew uninstall cue
+  - packages:
+    - cue
+
+commands:
+  build:
+    run: make clean && make
+  server:
+    run: make server
+  test:
+    run: make test
