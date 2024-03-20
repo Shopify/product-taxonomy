@@ -1,15 +1,13 @@
-#!/usr/bin/env ruby
-# frozen_string_literal: true
+#!/usr/bin/env bash
 
-require "fileutils"
+root=$(dirname $(dirname $0))
 
-require_relative "../application"
-
-Dir.glob("#{Application.root}/docs/_data/*/").each do |dir|
-  src = "#{dir}search_index.json"
-  target = "#{Application.root}/_site/releases/#{File.basename(dir)}/search_index.json"
-  puts "Copying #{src} to #{target}"
-  FileUtils.cp(src, target)
-end
+for dir in $root/docs/_data/*/
+do
+  src="${dir}search_index.json"
+  target="$root/_site/releases/$(basename $dir)/search_index.json"
+  echo "Copying $src to $target"
+  cp $src $target
+done
 
 exit 0
