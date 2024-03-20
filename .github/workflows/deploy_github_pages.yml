@@ -65,8 +65,11 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./docs
-          destination: ./_site
+          source: docs
+          destination: _site
+
+      - name: Copy search indexes
+        run: bin/copy_docs_search_indexes
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
