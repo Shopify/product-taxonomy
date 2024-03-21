@@ -12,8 +12,6 @@ require_relative "app/models/application_record"
 require_relative "app/models/category"
 require_relative "app/models/property"
 require_relative "app/models/property_value"
-require_relative "app/models/categories_property"
-require_relative "app/models/properties_property_value"
 
 require_relative "app/serializers/object_serializer"
 require_relative "app/serializers/data/category_serializer"
