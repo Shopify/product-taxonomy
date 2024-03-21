@@ -6,6 +6,7 @@ gem "activerecord", "~> 7.1"
 gem "jekyll", "~> 4.3"
 gem "rake", "~> 13.1"
 gem "sqlite3", "~> 1.7"
+gem "zeitwerk", "~> 2.6"
 
 gem "byebug"
 gem "rubocop-shopify", require: false

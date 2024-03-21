@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "../test_helper"
+require_relative "../../db/seed"
 
 class AllDataFilesImportTest < ActiveSupport::TestCase
   include Minitest::Hooks
@@ -26,7 +27,7 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
 
   test "AttributeValues are consistent with attributes.yml" do
     @unique_raw_values_data.each do |raw_value|
-      deserialized_value = Serializers::Data::PropertyValueSerializer.deserialize(raw_value)
+      deserialized_value = SourceData::PropertyValueSerializer.deserialize(raw_value)
       real_value = PropertyValue.find(raw_value.fetch("id"))
 
       assert_equal deserialized_value, real_value
@@ -45,7 +46,7 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
 
   test "Attributes are consistent with attributes.yml" do
     @raw_attributes_data.each do |raw_attribute|
-      deserialized_attribute = Serializers::Data::PropertySerializer.deserialize(raw_attribute)
+      deserialized_attribute = SourceData::PropertySerializer.deserialize(raw_attribute)
       real_attribute = Property.find(raw_attribute.fetch("id"))
 
       assert_equal deserialized_attribute, real_attribute
@@ -65,7 +66,7 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
 
   test "Categories are consistent with categories/*.yml" do
     @raw_verticals_data.flatten.each do |raw_category|
-      deserialized_category = Serializers::Data::CategorySerializer.deserialize(raw_category)
+      deserialized_category = SourceData::CategorySerializer.deserialize(raw_category)
       real_category = Category.find(raw_category.fetch("id"))
 
       assert_equal deserialized_category, real_category

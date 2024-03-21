@@ -1,31 +1,28 @@
 # frozen_string_literal: true
 
+require "json"
+require "yaml"
+require "cgi"
+require "fileutils"
+
 require "bundler/setup"
 Bundler.require(:default)
 
-require "sqlite3"
-require "active_record"
+require "zeitwerk"
+LOADER = Zeitwerk::Loader.new
+LOADER.push_dir("#{__dir__}/app/models")
+LOADER.push_dir("#{__dir__}/app/serializers")
 
-require_relative "db/seed"
+LOADER.inflector.inflect(
+  "json" => "JSON",
+  "json_serializer" => "JSONSerializer",
+)
 
-require_relative "app/models/application_record"
-require_relative "app/models/category"
-require_relative "app/models/property"
-require_relative "app/models/property_value"
-require_relative "app/models/categories_property"
-require_relative "app/models/properties_property_value"
-
-require_relative "app/serializers/object_serializer"
-require_relative "app/serializers/data/category_serializer"
-require_relative "app/serializers/data/property_serializer"
-require_relative "app/serializers/data/property_value_serializer"
-require_relative "app/serializers/dist/json"
-require_relative "app/serializers/dist/text"
-require_relative "app/serializers/docs/sibling_groups"
-require_relative "app/serializers/docs/search_index"
+LOADER.enable_reloading
+LOADER.setup
 
 module Application
-  ROOT = File.expand_path(".", __dir__)
+  ROOT = File.expand_path(__dir__)
   private_constant :ROOT
 
   class << self
@@ -34,6 +31,9 @@ module Application
     end
 
     def establish_db_connection!(env: :local)
+      require "sqlite3"
+      require "active_record"
+
       config = YAML.load_file("#{root}/db/config.yml", aliases: true).fetch(env.to_s)
       unless config["database"] == ":memory:"
         config.merge!("database" => "#{root}/tmp/#{config["database"]}")

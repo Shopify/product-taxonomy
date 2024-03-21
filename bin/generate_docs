@@ -15,12 +15,12 @@ category_data = JSON.load_file("#{Application.root}/dist/categories.json").fetch
 attribute_data = JSON.load_file("#{Application.root}/dist/attributes.json").fetch("attributes")
 
 File.open("#{target}/sibling_groups.yml", "w") do |file|
-  file.write(Serializers::Docs::SiblingGroups.serialize(category_data))
+  file.write(Docs::SiblingGroupsSerializer.serialize(category_data))
   file.write("\n")
 end
 
 File.open("#{target}/search_index.json", "w") do |file|
-  file.write(Serializers::Docs::SearchIndex.serialize(category_data))
+  file.write(Docs::SearchIndexSerializer.serialize(category_data))
   file.write("\n")
 end
 
