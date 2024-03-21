@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require "json"
-require "cgi"
-
 module Docs
   class SearchIndexSerializer
     include Singleton

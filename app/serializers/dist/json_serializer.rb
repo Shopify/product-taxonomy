@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "json"
-
 module Dist
   class JSONSerializer
     def initialize(verticals:, properties:, version:)

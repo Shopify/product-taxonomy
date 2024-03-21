@@ -1,14 +1,16 @@
 # frozen_string_literal: true
 
-require "json"
-require "yaml"
 require "cgi"
 require "fileutils"
+require "json"
+require "yaml"
 
 require "bundler/setup"
 Bundler.require(:default)
 
+require "active_record"
 require "zeitwerk"
+
 LOADER = Zeitwerk::Loader.new
 LOADER.push_dir("#{__dir__}/app/models")
 LOADER.push_dir("#{__dir__}/app/serializers")
@@ -32,7 +34,6 @@ module Application
 
     def establish_db_connection!(env: :local)
       require "sqlite3"
-      require "active_record"
 
       config = YAML.load_file("#{root}/db/config.yml", aliases: true).fetch(env.to_s)
       unless config["database"] == ":memory:"
