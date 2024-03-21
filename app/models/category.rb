@@ -8,10 +8,8 @@ class Category < ApplicationRecord
   has_many :children, class_name: "Category", inverse_of: :parent
   belongs_to :parent, class_name: "Category", optional: true
 
-  has_and_belongs_to_many :properties,
-    join_table: :categories_properties,
-    foreign_key: :category_id,
-    association_foreign_key: :property_friendly_id
+  has_many :categories_properties, dependent: :destroy
+  has_many :properties, through: :categories_properties, foreign_key: :property_friendly_id
   def property_friendly_ids=(ids)
     self.properties = Property.where(friendly_id: ids)
   end
