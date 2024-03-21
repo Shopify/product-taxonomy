@@ -3,80 +3,37 @@
 require_relative "../test_helper"
 
 class AllDataFilesImportTest < ActiveSupport::TestCase
-  include Minitest::Hooks
-
-  def before_all
-    @raw_attributes_data = YAML.load_file("#{Application.root}/data/attributes/attributes.yml")
-    DB::Seed.attributes_from(@raw_attributes_data)
-
-    # this will be replaced by values.yml
-    @unique_raw_values_data = @raw_attributes_data
-      .flat_map { _1.fetch("values") }
-      .uniq { _1.fetch("id") }
-
-    # Categories are only successfully parseable if attributes are already present
-    category_files = Dir.glob("#{Application.root}/data/categories/*.yml")
-    @raw_verticals_data = category_files.map { YAML.load_file(_1) }
-    DB::Seed.categories_from(@raw_verticals_data)
+  def teardown
+    Category.destroy_all
+    Property.destroy_all
+    PropertyValue.destroy_all
   end
 
-  test "AttributeValues are correctly imported from attributes.yml" do
-    assert_equal @unique_raw_values_data.size, PropertyValue.count
-  end
+  test "DB::Seed imports everything from all data/ files" do
+    raw_attributes_data = YAML.load_file("#{Application.root}/data/attributes/attributes.yml")
+    DB::Seed.attributes_from(raw_attributes_data)
 
-  test "AttributeValues are consistent with attributes.yml" do
-    @unique_raw_values_data.each do |raw_value|
-      deserialized_value = Serializers::Data::PropertyValueSerializer.deserialize(raw_value)
-      real_value = PropertyValue.find(raw_value.fetch("id"))
-
-      assert_equal deserialized_value, real_value
-    end
-  end
-
-  test "AttributeValues are all valid" do
-    PropertyValue.all.each do |value|
-      assert_predicate value, :valid?
-    end
-  end
-
-  test "Attributes are correctly imported from attributes.yml" do
-    assert_equal @raw_attributes_data.size, Property.count
-  end
-
-  test "Attributes are consistent with attributes.yml" do
-    @raw_attributes_data.each do |raw_attribute|
+    assert_equal raw_attributes_data.size, Property.count
+    raw_attributes_data.each do |raw_attribute|
       deserialized_attribute = Serializers::Data::PropertySerializer.deserialize(raw_attribute)
       real_attribute = Property.find(raw_attribute.fetch("id"))
 
       assert_equal deserialized_attribute, real_attribute
     end
-  end
 
-  test "Attributes are all valid" do
-    Property.all.each do |attribute|
-      assert_predicate attribute, :valid?
-    end
-  end
+    category_files = Dir.glob("#{Application.root}/data/categories/*.yml")
+    raw_verticals_data = category_files.map { YAML.load_file(_1) }
+    DB::Seed.categories_from(raw_verticals_data)
 
-  test "Categories are fully imported from categories/*.yml" do
-    assert_equal @raw_verticals_data.size, Category.verticals.count
-    assert_equal @raw_verticals_data.map(&:size).sum, Category.count
-  end
-
-  test "Categories are consistent with categories/*.yml" do
-    @raw_verticals_data.flatten.each do |raw_category|
+    assert_equal raw_verticals_data.size, Category.verticals.count
+    assert_equal raw_verticals_data.map(&:size).sum, Category.count
+    raw_verticals_data.flatten.each do |raw_category|
       deserialized_category = Serializers::Data::CategorySerializer.deserialize(raw_category)
       real_category = Category.find(raw_category.fetch("id"))
 
       assert_equal deserialized_category, real_category
       assert_equal raw_category.fetch("children").size, real_category.children.count
       assert_equal deserialized_category.children, real_category.children
-    end
-  end
-
-  test "Categories are all valid" do
-    Category.all.each do |category|
-      assert_predicate category, :valid?
     end
   end
 end

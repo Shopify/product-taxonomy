@@ -5,7 +5,7 @@ module Serializers
     include Singleton
 
     class << self
-      delegate(:serialize, :deserialize, to: :instance)
+      delegate :serialize, :deserialize, to: :instance
     end
 
     def serialize(object)
