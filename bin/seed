@@ -3,13 +3,21 @@
 
 require_relative "../application"
 require_relative "../db/seed"
+require_relative "../lib/cli"
+
+cli = CLI.new
+cli.parse!(ARGV)
+
+puts("Seeding local database...")
+cli.options_status
+
+attributes_data = cli.parse_yaml("data/attributes/attributes.yml")
+category_files = Dir.glob("#{CLI.root}/data/categories/*.yml")
+verticals_data = category_files.map { cli.parse_yaml(_1) }
 
 Application.establish_db_connection!
 Application.load_and_reset_schema!
 
-attributes_data = YAML.load_file("#{Application.root}/data/attributes/attributes.yml")
-DB::Seed.attributes_from(attributes_data)
-
-category_files = Dir.glob("#{Application.root}/data/categories/*.yml")
-verticals_data = category_files.map { YAML.load_file(_1) }
-DB::Seed.categories_from(verticals_data)
+seed = DB::Seed.new(verbose: cli.options.verbose)
+seed.attributes_from(attributes_data)
+seed.categories_from(verticals_data)

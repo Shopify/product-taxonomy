@@ -8,7 +8,8 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
 
   def before_all
     @raw_attributes_data = YAML.load_file("#{Application.root}/data/attributes/attributes.yml")
-    DB::Seed.attributes_from(@raw_attributes_data)
+    seed = DB::Seed.new
+    seed.attributes_from(@raw_attributes_data)
 
     # this will be replaced by values.yml
     @unique_raw_values_data = @raw_attributes_data
@@ -18,7 +19,7 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     # Categories are only successfully parseable if attributes are already present
     category_files = Dir.glob("#{Application.root}/data/categories/*.yml")
     @raw_verticals_data = category_files.map { YAML.load_file(_1) }
-    DB::Seed.categories_from(@raw_verticals_data)
+    seed.categories_from(@raw_verticals_data)
   end
 
   test "AttributeValues are correctly imported from attributes.yml" do

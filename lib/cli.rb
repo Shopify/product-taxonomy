@@ -50,6 +50,14 @@ class CLI
     File.read(path)
   end
 
+  def parse_json(path_from_root)
+    JSON.parse(read_file(path_from_root))
+  end
+
+  def parse_yaml(path_from_root)
+    YAML.load(read_file(path_from_root))
+  end
+
   def write_file(path_from_root, &)
     path = path_for(path_from_root)
     if new_or_forced?(path)
