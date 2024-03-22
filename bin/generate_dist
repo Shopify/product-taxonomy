@@ -2,26 +2,31 @@
 # frozen_string_literal: true
 
 require_relative "../application"
+require_relative "../lib/cli"
+
+cli = CLI.new
+cli.parse!(ARGV)
+
+puts("Generating distribution files...")
+cli.options_status
 
 Application.establish_db_connection!
-
-version = File.read("#{Application.root}/VERSION").strip
-
+VERSION = cli.read_file("VERSION").strip
 text_serializer = Dist::TextSerializer.new(
   verticals: Category.verticals,
   properties: Property.all,
   values: PropertyValue.all,
-  version:,
+  version: VERSION,
 )
-File.open("#{Application.root}/dist/categories.txt", "w") do |file|
+cli.write_file!("dist/categories.txt") do |file|
   file.write(text_serializer.categories)
   file.write("\n")
 end
-File.open("#{Application.root}/dist/attributes.txt", "w") do |file|
+cli.write_file!("dist/attributes.txt") do |file|
   file.write(text_serializer.attributes)
   file.write("\n")
 end
-File.open("#{Application.root}/dist/attribute_values.txt", "w") do |file|
+cli.write_file!("dist/attribute_values.txt") do |file|
   file.write(text_serializer.values)
   file.write("\n")
 end
@@ -29,17 +34,17 @@ end
 json_serializer = Dist::JSONSerializer.new(
   verticals: Category.verticals,
   properties: Property.all,
-  version:,
+  version: VERSION,
 )
-File.open("#{Application.root}/dist/taxonomy.json", "w") do |file|
+cli.write_file!("dist/taxonomy.json") do |file|
   file.write(json_serializer.taxonomy)
   file.write("\n")
 end
-File.open("#{Application.root}/dist/categories.json", "w") do |file|
+cli.write_file!("dist/categories.json") do |file|
   file.write(json_serializer.categories)
   file.write("\n")
 end
-File.open("#{Application.root}/dist/attributes.json", "w") do |file|
+cli.write_file!("dist/attributes.json") do |file|
   file.write(json_serializer.attributes)
   file.write("\n")
 end
