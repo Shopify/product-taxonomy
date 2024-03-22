@@ -43,6 +43,47 @@ module DB
       vputs("✓ Imported #{CategoriesProperty.count} category ↔ property relationships")
     end
 
+    def integrations_from(data)
+      puts "Importing integrations"
+      integrations = data.map { { name: _1["name"] } }
+      Integration.insert_all(integrations)
+      vputs("✓ Imported #{Integration.count} integrations")
+    end
+
+    def mapping_rules_from(data)
+      puts "Importing mapping rules"
+      mapping_rules = []
+      data.each do |file|
+        puts "Importing mapping rules from #{file}"
+        from_shopify = File.basename(file, ".*").split("_")[0] == "from"
+        integration_name = Pathname.new(file).each_filename.to_a[-3]
+        integration_id = Integration.find_by(name: integration_name)&.id
+        next if integration_id.nil?
+
+        raw_mappings = YAML.load_file(file)
+        input_type = "#{raw_mappings["input_taxonomy"].split("/")[0].capitalize}Product"
+        output_type = "#{raw_mappings["output_taxonomy"].split("/")[0].capitalize}Product"
+        rules = raw_mappings["rules"]
+        rules.each do |rule|
+          input_product_hash = SourceData::ProductSerializer.deserialize(rule["input"], input_type).payload
+          input_product = Product.find_or_create_by!(type: input_type, payload: input_product_hash)
+          output_product_hash = SourceData::ProductSerializer.deserialize(rule["output"], output_type).payload
+          output_product = Product.find_or_create_by!(type: output_type, payload: output_product_hash)
+
+          mapping_rules << {
+            integration_id: integration_id,
+            from_shopify: from_shopify,
+            input_id: input_product.id,
+            output_id: output_product.id,
+            input_type: input_type,
+            output_type: output_type,
+          }
+        end
+      end
+      MappingRule.insert_all(mapping_rules)
+      vputs("✓ Imported all #{MappingRule.count} mapping rules")
+    end
+
     private
 
     def vputs(...)

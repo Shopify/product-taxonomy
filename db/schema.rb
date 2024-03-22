@@ -31,4 +31,27 @@ ActiveRecord::Schema[7.1].define do
     t.index([:property_id, :property_value_id], unique: true)
     t.index(:property_value_id)
   end
+
+  create_table :integrations, force: :cascade do |t|
+    t.string(:name, null: false)
+    t.index(:name, unique: true)
+  end
+
+  create_table :products, force: :cascade do |t|
+    t.text(:payload)
+    t.string(:type)
+    t.index([:type, :payload], unique: true)
+  end
+
+  create_table :mapping_rules, force: :cascade do |t|
+    t.integer(:integration_id, null: false)
+    t.boolean(:from_shopify, default: true)
+    t.integer(:input_id, null: false)
+    t.integer(:output_id, null: false)
+    t.string(:input_type, null: false)
+    t.string(:output_type, null: false)
+
+    t.index([:integration_id], name: "index_mapping_rules_on_integration_id")
+    t.index([:input_id, :output_id], name: "index_unique_mapping_rule", unique: true)
+  end
 end
