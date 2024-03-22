@@ -4,19 +4,21 @@
 require_relative "../application"
 require_relative "../lib/cli"
 
-cli = CLI.new
+cli = CLI.new([:version]) do |opts|
+  opts.on("-V VERSION", "--version=VERSION", "Version of the documentation")
+end
 cli.parse!(ARGV)
+cli.options.version ||= cli.read_file("VERSION").strip
 
-puts("Generating distribution files...")
+puts("Generating `#{cli.options.version}` distribution files...")
 cli.options_status
 
 Application.establish_db_connection!
-VERSION = cli.read_file("VERSION").strip
 text_serializer = Dist::TextSerializer.new(
   verticals: Category.verticals,
   properties: Property.all,
   values: PropertyValue.all,
-  version: VERSION,
+  version: cli.options.version,
 )
 cli.write_file!("dist/categories.txt") do |file|
   file.write(text_serializer.categories)
@@ -34,7 +36,7 @@ end
 json_serializer = Dist::JSONSerializer.new(
   verticals: Category.verticals,
   properties: Property.all,
-  version: VERSION,
+  version: cli.options.version,
 )
 cli.write_file!("dist/taxonomy.json") do |file|
   file.write(json_serializer.taxonomy)

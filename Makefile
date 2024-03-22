@@ -92,6 +92,13 @@ $(STATIC_CHANGELOG_FILE):
 	$(V)cp -f CHANGELOG.md $(STATIC_CHANGELOG_FILE)
 
 #
+# RELEASE
+release: build
+	@$(RUN_CMD) "Preparing release"
+	$(V)bin/generate_release $(VARG)
+.PHONY: release
+
+#
 # CLEAN
 clean:
 	@$(NUKE) "Cleaning dev db" $(LOCAL_DB)

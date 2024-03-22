@@ -22,7 +22,9 @@ commands:
   rebuild:
     run: make clean && make
   build:
-    run: make
+    run: make build
+  release:
+    run: make release
   server:
     run: make server
   test:

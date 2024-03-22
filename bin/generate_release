@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "English"
+require_relative "../application"
+require_relative "../lib/cli"
+
+cli = CLI.new([:version]) do |opts|
+  opts.on("-V VERSION", "--version=VERSION", "Version of the documentation")
+end
+cli.parse!(ARGV)
+
+VERSION_FROM_FILE = cli.read_file("VERSION").strip
+cli.options.version ||= VERSION_FROM_FILE
+
+subcommand_opts = ["--version=#{cli.options.version}", "--force"]
+subcommand_opts << "--verbose" if cli.options.verbose
+
+puts("Generating version `#{cli.options.version}`...")
+cli.options_status
+
+if cli.options.version != VERSION_FROM_FILE
+  puts("→ Version mismatch! Updating VERSION file to `#{cli.options.version}` from `#{VERSION_FROM_FILE}`")
+  cli.write_file!("VERSION") do |file|
+    file.write(cli.options.version)
+    file.write("\n")
+  end
+
+  system("bin/generate_dist", *subcommand_opts)
+end
+
+system("bin/generate_docs", *subcommand_opts)
+
+git_tag = "v#{cli.options.version}"
+cli.vputs("Preparing git tag `#{git_tag}`")
+system("git", "tag", git_tag)
+
+content = cli.read_file("dist/README.md")
+cli.write_file!("dist/README.md") do |file|
+  content.gsub!(%r{badge/version-v(?<version>.*?)-blue\.svg}) do |match|
+    match.sub($LAST_MATCH_INFO[:version], cli.options.version)
+  end
+
+  file.write(content)
+end
