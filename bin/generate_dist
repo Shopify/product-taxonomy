@@ -1,14 +1,13 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require "yaml"
 require_relative "../application"
 
 Application.establish_db_connection!
 
 version = File.read("#{Application.root}/VERSION").strip
 
-text_serializer = Serializers::Dist::Text.new(
+text_serializer = Dist::TextSerializer.new(
   verticals: Category.verticals,
   properties: Property.all,
   values: PropertyValue.all,
@@ -27,7 +26,7 @@ File.open("#{Application.root}/dist/attribute_values.txt", "w") do |file|
   file.write("\n")
 end
 
-json_serializer = Serializers::Dist::JSON.new(
+json_serializer = Dist::JSONSerializer.new(
   verticals: Category.verticals,
   properties: Property.all,
   version:,
