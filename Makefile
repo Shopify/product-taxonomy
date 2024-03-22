@@ -7,9 +7,11 @@
 ifeq ($(VERBOSE),1)
 	V=
 	VPIPE=
+	VARG=--verbose
 else
 	V=@
 	VPIPE= >/dev/null
+	VARG=
 endif
 
 FMT      = printf "\e[%sm>> %-21s\e[0;1m →\e[1;32m %s\e[0m\n"
@@ -69,12 +71,12 @@ build: $(DIST_GENERATED_SENTINEL) \
 
 $(DOCS_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA)
 	@$(GENERATE) "Building Docs" "$(GENERATED_DOCS_PATH)/*"
-	$(V)./bin/generate_docs
+	$(V)./bin/generate_docs $(VARG)
 	$(V)touch $@
 
 $(DIST_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA)
 	@$(GENERATE) "Building Dist" "$(GENERATED_DIST_PATH)/*.[json|txt]"
-	$(V)bin/generate_dist
+	$(V)bin/generate_dist $(VARG)
 	$(V)touch $@
 
 $(STATIC_VERSION_FILE):
@@ -88,6 +90,13 @@ $(STATIC_LICENSE_FILE):
 $(STATIC_CHANGELOG_FILE):
 	@$(GENERATE) "Copying Changelog File" $(STATIC_CHANGELOG_FILE)
 	$(V)cp -f CHANGELOG.md $(STATIC_CHANGELOG_FILE)
+
+#
+# RELEASE
+release: build
+	@$(RUN_CMD) "Preparing release"
+	$(V)bin/generate_release $(VARG)
+.PHONY: release
 
 #
 # CLEAN
@@ -114,7 +123,7 @@ clean:
 # DOCS SERVER
 server: $(DOCS_GENERATED_SENTINEL)
 	@$(RUN_CMD) "Running Server"
-	$(V)bundle exec jekyll serve --source docs --destination _site
+	$(V)bundle exec jekyll serve --source docs --destination _site $(VARG)
 .PHONY: server
 
 #
@@ -124,7 +133,7 @@ seed: $(LOCAL_DB)
 
 $(LOCAL_DB):
 	@$(GENERATE) "Seeding Database" $(LOCAL_DB)
-	$(V)bin/seed
+	$(V)bin/seed $(VARG)
 
 #
 # TESTS
