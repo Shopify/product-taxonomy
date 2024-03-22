@@ -4,14 +4,8 @@
 require_relative "../application"
 require_relative "../lib/cli"
 
-#
-# Read required data
 UNSTABLE = "unstable"
-category_data = JSON.load_file("#{CLI.root}/dist/categories.json").fetch("verticals")
-attribute_data = JSON.load_file("#{CLI.root}/dist/attributes.json").fetch("attributes")
 
-#
-# Establish CLI and command options
 cli = CLI.new([:version]) do |opts|
   opts.on("-V VERSION", "--version=VERSION", "Version of the documentation")
 end
@@ -22,29 +16,24 @@ cli.options.force = true if cli.options.version == UNSTABLE # we want unstable t
 puts("Generating `#{cli.options.version}` documentation files...")
 cli.options_status
 
-#
-# Target files
-DATA_TARGET = "docs/_data/#{cli.options.version}"
-INDEX_TARGET = "docs/_releases/#{cli.options.version}.html"
+category_data = cli.parse_json("dist/categories.json").fetch("verticals")
+attribute_data = cli.parse_json("dist/attributes.json").fetch("attributes")
 
-#
-# Actual work
+DATA_TARGET = "docs/_data/#{cli.options.version}"
 cli.write_file("#{DATA_TARGET}/sibling_groups.yml") do |file|
   file.write(Docs::SiblingGroupsSerializer.serialize(category_data))
   file.write("\n")
 end
-
 cli.write_file("#{DATA_TARGET}/search_index.json") do |file|
   file.write(Docs::SearchIndexSerializer.serialize(category_data))
   file.write("\n")
 end
-
 cli.write_file("#{DATA_TARGET}/attributes.yml") do |file|
   file.write(attribute_data.to_yaml(line_width: 1000))
   file.write("\n")
 end
 
-cli.write_file(INDEX_TARGET) do |file|
+cli.write_file("docs/_releases/#{cli.options.version}.html") do |file|
   content = cli.read_file("docs/_releases/_template.html")
   content.gsub!("TITLE", cli.options.version.upcase)
   content.gsub!("TARGET", cli.options.version)
