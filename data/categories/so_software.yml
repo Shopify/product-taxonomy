@@ -2,15 +2,24 @@
 - id: so
   name: Software
   children:
+  - so-4
   - so-1
   - so-2
   - so-3
-  - so-4
   attributes: []
+- id: so-4
+  name: Cloud Services
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - compliance_certifications
+  - primary_region
+  - service_type
 - id: so-1
   name: Computer Software
   children:
   - so-1-1
+  - so-1-15
   - so-1-2
   - so-1-3
   - so-1-4
@@ -24,7 +33,6 @@
   - so-1-12
   - so-1-13
   - so-1-14
-  - so-1-15
   attributes:
   - license_type
   - operating_system
@@ -38,6 +46,28 @@
   - operating_system
   - supported_language
   - user_type
+- id: so-1-15
+  name: Artificial Intelligence (AI) Software
+  children:
+  - so-1-15-1
+  attributes:
+  - ai_application
+  - compatible_programming_languages
+  - deployment_type
+  - industry_focus
+  - license_type
+  - performance_metrics
+  - training_data_requirements
+- id: so-1-15-1
+  name: Machine Learning Software
+  children: []
+  attributes:
+  - ai_application
+  - compatible_programming_languages
+  - industry_focus
+  - license_type
+  - performance_metrics
+  - training_data_requirements
 - id: so-1-2
   name: Business & Productivity Software
   children:
@@ -53,10 +83,74 @@
   - operating_system
   - supported_language
   - user_type
+- id: so-1-2-11
+  name: Communication & Collaboration Software
+  children: []
+  attributes:
+  - customer_support_channels
+  - license_type
+  - operating_system
+  - supported_language
+  - user_type
+- id: so-1-2-12
+  name: Customer Relationship Management (CRM) Software
+  children: []
+  attributes:
+  - customer_support_channels
+  - license_type
+  - operating_system
+  - supported_language
+  - user_type
+- id: so-1-2-13
+  name: Data Analysis & Visualization Software
+  children: []
+  attributes:
+  - customer_support_channels
+  - license_type
+  - operating_system
+  - supported_language
+  - user_type
+- id: so-1-2-1
+  name: Database Management Software
+  children: []
+  attributes:
+  - customer_support_channels
+  - license_type
+  - operating_system
+  - supported_language
+  - user_type
+- id: so-1-2-14
+  name: Enterprise Resource Planning (ERP) Software
+  children: []
+  attributes:
+  - customer_support_channels
+  - license_type
+  - operating_system
+  - supported_language
+  - user_type
+- id: so-1-2-8
+  name: Project Management Software
+  children: []
+  attributes:
+  - customer_support_channels
+  - license_type
+  - operating_system
+  - supported_language
+  - user_type
 - id: so-1-3
   name: Compilers & Programming Tools
   children:
   - so-1-3-1
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_tool_type
+  - supported_language
+  - user_type
+- id: so-1-3-1
+  name: Software Development Tools
+  children: []
   attributes:
   - compatible_programming_languages
   - license_type
@@ -253,12 +347,12 @@
   name: Digital Goods & Currency
   children:
   - so-2-1
+  - so-2-2
   - so-2-3
   - so-2-4
   - so-2-5
   - so-2-6
   - so-2-7
-  - so-2-2
   attributes:
   - operating_system
 - id: so-2-1
@@ -268,6 +362,13 @@
   - file_format_type
   - icon_type
   - operating_system
+- id: so-2-2
+  name: Desktop Wallpapers
+  children: []
+  attributes:
+  - file_format_type
+  - operating_system
+  - wallpaper_theme
 - id: so-2-3
   name: Digital Artwork
   children: []
@@ -313,104 +414,3 @@
   - region_code
   - video_game_genre
   - video_game_sub_genre
-- id: so-4
-  name: Cloud Services
-  children: []
-  attributes:
-  - compatible_programming_languages
-  - compliance_certifications
-  - primary_region
-  - service_type
-- id: so-1-15
-  name: Artificial Intelligence (AI) Software
-  children:
-  - so-1-15-1
-  attributes:
-  - ai_application
-  - compatible_programming_languages
-  - deployment_type
-  - industry_focus
-  - license_type
-  - performance_metrics
-  - training_data_requirements
-- id: so-1-15-1
-  name: Machine Learning Software
-  children: []
-  attributes:
-  - ai_application
-  - compatible_programming_languages
-  - industry_focus
-  - license_type
-  - performance_metrics
-  - training_data_requirements
-- id: so-1-2-11
-  name: Communication & Collaboration Software
-  children: []
-  attributes:
-  - customer_support_channels
-  - license_type
-  - operating_system
-  - supported_language
-  - user_type
-- id: so-1-2-12
-  name: Customer Relationship Management (CRM) Software
-  children: []
-  attributes:
-  - customer_support_channels
-  - license_type
-  - operating_system
-  - supported_language
-  - user_type
-- id: so-1-2-13
-  name: Data Analysis & Visualization Software
-  children: []
-  attributes:
-  - customer_support_channels
-  - license_type
-  - operating_system
-  - supported_language
-  - user_type
-- id: so-1-2-1
-  name: Database Management Software
-  children: []
-  attributes:
-  - customer_support_channels
-  - license_type
-  - operating_system
-  - supported_language
-  - user_type
-- id: so-1-2-14
-  name: Enterprise Resource Planning (ERP) Software
-  children: []
-  attributes:
-  - customer_support_channels
-  - license_type
-  - operating_system
-  - supported_language
-  - user_type
-- id: so-1-2-8
-  name: Project Management Software
-  children: []
-  attributes:
-  - customer_support_channels
-  - license_type
-  - operating_system
-  - supported_language
-  - user_type
-- id: so-1-3-1
-  name: Software Development Tools
-  children: []
-  attributes:
-  - compatible_programming_languages
-  - license_type
-  - operating_system
-  - software_tool_type
-  - supported_language
-  - user_type
-- id: so-2-2
-  name: Desktop Wallpapers
-  children: []
-  attributes:
-  - file_format_type
-  - operating_system
-  - wallpaper_theme

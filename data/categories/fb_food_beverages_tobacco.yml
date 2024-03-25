@@ -12,8 +12,11 @@
   - fb-1-1
   - fb-1-2
   - fb-1-3
+  - fb-1-4
   - fb-1-5
   - fb-1-6
+  - fb-1-7
+  - fb-1-8
   - fb-1-9
   - fb-1-10
   - fb-1-11
@@ -22,9 +25,6 @@
   - fb-1-14
   - fb-1-15
   - fb-1-16
-  - fb-1-4
-  - fb-1-7
-  - fb-1-8
   attributes:
   - allergen_information
   - dietary_preferences
@@ -36,8 +36,8 @@
   - fb-1-1-3
   - fb-1-1-4
   - fb-1-1-5
-  - fb-1-1-7
   - fb-1-1-6
+  - fb-1-1-7
   attributes:
   - allergen_information
   - dietary_preferences
@@ -45,18 +45,18 @@
   name: Beer
   children: []
   attributes:
-  - beer_variety
-  - country_of_origin
   - allergen_information
   - beer_style
+  - beer_variety
+  - country_of_origin
   - dietary_preferences
   - package_type
 - id: fb-1-1-2
   name: Bitters
   children: []
   attributes:
-  - bitter_variery
   - allergen_information
+  - bitter_variery
   - country_of_origin
   - dietary_preferences
 - id: fb-1-1-3
@@ -95,11 +95,11 @@
   name: Absinthe
   children: []
   attributes:
+  - absinthe_style
+  - absinthe_variety
   - allergen_information
   - country_of_origin
   - dietary_preferences
-  - absinthe_style
-  - absinthe_variety
 - id: fb-1-1-5-2
   name: Brandy
   children: []
@@ -112,9 +112,9 @@
   name: Gin
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - gin_variety
 - id: fb-1-1-5-4
   name: Liqueurs
@@ -129,10 +129,10 @@
   name: Rum
   children: []
   attributes:
-  - rum_grade
   - allergen_information
   - country_of_origin
   - dietary_preferences
+  - rum_grade
 - id: fb-1-1-5-6
   name: Shochu & Soju
   children:
@@ -147,9 +147,9 @@
   name: Shochu
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - spirit_dilution
 - id: fb-1-1-5-6-2
   name: Soju
@@ -184,8 +184,74 @@
   - country_of_origin
   - dietary_preferences
   - region
-  - whiskey_variety
   - whiskey_style
+  - whiskey_variety
+- id: fb-1-1-6
+  name: Premixed Spirits & Cocktail Mixes
+  children:
+  - fb-1-1-6-1
+  - fb-1-1-6-2
+  - fb-1-1-6-3
+  - fb-1-1-6-4
+  - fb-1-1-6-5
+  - fb-1-1-6-6
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+  - beverage_product_form
+- id: fb-1-1-6-1
+  name: Beer-Based Cocktails
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+  - beverage_product_form
+- id: fb-1-1-6-2
+  name: Fruit Mix Preparations
+  children: []
+  attributes:
+  - allergen_information
+  - base_spirit
+  - country_of_origin
+  - dietary_preferences
+  - beverage_product_form
+- id: fb-1-1-6-3
+  name: Hard Seltzers
+  children: []
+  attributes:
+  - allergen_information
+  - base_spirit
+  - country_of_origin
+  - dietary_preferences
+  - beverage_product_form
+- id: fb-1-1-6-4
+  name: Liquor & Spirit-Based Cocktails
+  children: []
+  attributes:
+  - allergen_information
+  - base_spirit
+  - country_of_origin
+  - dietary_preferences
+  - beverage_product_form
+- id: fb-1-1-6-5
+  name: Spice Mix Preparations
+  children: []
+  attributes:
+  - allergen_information
+  - base_spirit
+  - country_of_origin
+  - dietary_preferences
+  - beverage_product_form
+- id: fb-1-1-6-6
+  name: Wine-Based Cocktails
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+  - beverage_product_form
 - id: fb-1-1-7
   name: Wine
   children: []
@@ -194,8 +260,8 @@
   - country_of_origin
   - dietary_preferences
   - region
-  - wine_variety
   - wine_sweetness
+  - wine_variety
 - id: fb-1-2
   name: Buttermilk
   children: []
@@ -216,6 +282,43 @@
   - country_of_origin
   - dietary_preferences
   - flavor
+- id: fb-1-3-2
+  name: Coffee Pods & Capsules
+  children: []
+  attributes:
+  - allergen_information
+  - coffee_roast
+  - country_of_origin
+  - dietary_preferences
+  - flavor
+- id: fb-1-3-1
+  name: Coffee Beans & Ground Coffee
+  children: []
+  attributes:
+  - allergen_information
+  - coffee_roast
+  - country_of_origin
+  - dietary_preferences
+  - flavor
+  - coffee_product_form
+- id: fb-1-3-3
+  name: Instant Coffee
+  children: []
+  attributes:
+  - allergen_information
+  - coffee_roast
+  - country_of_origin
+  - dietary_preferences
+  - flavor
+- id: fb-1-4
+  name: Cordials, Syrups & Squash
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+  - flavor
+  - package_type
 - id: fb-1-5
   name: Fruit Flavored Drinks
   children: []
@@ -235,13 +338,91 @@
   - allergen_information
   - country_of_origin
   - dietary_preferences
+- id: fb-1-6-1
+  name: Cocoa Powder
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-1-6-2
+  name: Hot Chocolate Mixes
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-1-6-3
+  name: Malted Milk
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-1-7
+  name: Juices, Milkshakes & Smoothies
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+  - fruit_source
+  - package_type
+- id: fb-1-8
+  name: Low Alcohol & Alcohol-Free Beverages
+  children:
+  - fb-1-8-1
+  - fb-1-8-2
+  - fb-1-8-3
+  - fb-1-8-4
+  - fb-1-8-5
+  - fb-1-8-6
+  attributes:
+  - allergen_information
+  - dietary_preferences
+- id: fb-1-8-1
+  name: Low Alcohol & Alcohol-Free Beer
+  children: []
+  attributes:
+  - allergen_information
+  - dietary_preferences
+- id: fb-1-8-2
+  name: Low Alcohol & Alcohol-Free Bitters
+  children: []
+  attributes:
+  - allergen_information
+  - dietary_preferences
+- id: fb-1-8-3
+  name: Low Alcohol & Alcohol-Free Cocktail Mixes
+  children: []
+  attributes:
+  - allergen_information
+  - dietary_preferences
+- id: fb-1-8-4
+  name: Low Alcohol & Alcohol-Free Hard Cider
+  children: []
+  attributes:
+  - allergen_information
+  - dietary_preferences
+- id: fb-1-8-5
+  name: Low Alcohol & Alcohol-Free Liquors & Spirits
+  children: []
+  attributes:
+  - allergen_information
+  - dietary_preferences
+- id: fb-1-8-6
+  name: Low Alcohol & Alcohol-Free Wine
+  children: []
+  attributes:
+  - allergen_information
+  - dietary_preferences
 - id: fb-1-9
   name: Milk
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - fat_content
 - id: fb-1-10
   name: Non-Dairy Milk
@@ -255,13 +436,48 @@
   - allergen_information
   - country_of_origin
   - dietary_preferences
+- id: fb-1-10-1
+  name: Coconut Milk & Drinks
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-1-10-2
+  name: Nut Drinks
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-1-10-3
+  name: Oat Drinks
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-1-10-4
+  name: Rice Drinks
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-1-10-5
+  name: Soy Drinks
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
 - id: fb-1-11
   name: Powdered Beverage Mixes
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-1-12
   name: Soda
   children: []
@@ -283,25 +499,61 @@
   - dietary_preferences
   - package_type
   - beverage_product_form
+- id: fb-1-13-1
+  name: Energy Drinks
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+  - package_type
+  - beverage_product_form
+- id: fb-1-13-2
+  name: Sports Drinks
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+  - package_type
+  - beverage_product_form
 - id: fb-1-14
   name: Tea & Infusions
   children:
   - fb-1-14-1
   - fb-1-14-2
   attributes:
-  - flavor
-  - tea_input_type
   - allergen_information
   - country_of_origin
   - dietary_preferences
+  - flavor
+  - tea_input_type
+- id: fb-1-14-1
+  name: Infusions
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+  - flavor
+  - tea_input_type
+- id: fb-1-14-2
+  name: Tea
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+  - flavor
+  - tea_input_type
 - id: fb-1-15
   name: Vinegar Drinks
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
   - vinegar_drink_variety
 - id: fb-1-16
   name: Water
@@ -311,46 +563,46 @@
   - fb-1-16-3
   - fb-1-16-4
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
   - package_type
 - id: fb-1-16-1
   name: Carbonated Water
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
   - package_type
 - id: fb-1-16-2
   name: Distilled Water
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
   - package_type
 - id: fb-1-16-3
   name: Flat Mineral Water
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - flavor
   - package_type
 - id: fb-1-16-4
   name: Spring Water
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
   - package_type
 - id: fb-2
   name: Food Items
@@ -375,9 +627,9 @@
   - fb-2-18
   - fb-2-19
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-1
   name: Bakery
   children:
@@ -397,33 +649,33 @@
   - fb-2-1-14
   - fb-2-1-15
   attributes:
-  - dietary_preferences
   - allergen_information
+  - dietary_preferences
   - flour_grain_type
 - id: fb-2-1-1
   name: Bagels
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
   - flour_grain_type
 - id: fb-2-1-2
   name: Bakery Assortments
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - flour_grain_type
 - id: fb-2-1-3
   name: Breads & Buns
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - flour_grain_type
 - id: fb-2-1-4
   name: Cakes & Dessert Bars
@@ -431,107 +683,125 @@
   - fb-2-1-4-1
   - fb-2-1-4-2
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
+  - flour_grain_type
+- id: fb-2-1-4-1
+  name: Cakes
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+  - flavor
+  - flour_grain_type
+- id: fb-2-1-4-2
+  name: Dessert Bars
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+  - flavor
   - flour_grain_type
 - id: fb-2-1-5
   name: Coffee Cakes
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
   - flour_grain_type
 - id: fb-2-1-6
   name: Cookies
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
   - flour_grain_type
 - id: fb-2-1-7
   name: Cupcakes
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
   - flour_grain_type
 - id: fb-2-1-8
   name: Donuts
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
   - flour_grain_type
 - id: fb-2-1-9
   name: Fudge
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
   - flour_grain_type
 - id: fb-2-1-10
   name: Ice Cream Cones
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
   - flour_grain_type
 - id: fb-2-1-11
   name: Muffins
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
   - flour_grain_type
 - id: fb-2-1-12
   name: Pastries & Scones
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
   - flour_grain_type
 - id: fb-2-1-13
   name: Pies & Tarts
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
   - flour_grain_type
 - id: fb-2-1-14
   name: Taco Shells & Tostadas
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - flour_grain_type
 - id: fb-2-1-15
   name: Tortillas & Wraps
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - flour_grain_type
 - id: fb-2-2
   name: Candied & Chocolate Covered Fruit
@@ -539,18 +809,46 @@
   - fb-2-2-1
   - fb-2-2-2
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+- id: fb-2-2-1
+  name: Candied Fruit
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-2-2
+  name: Chocolate Covered Fruit
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
 - id: fb-2-3
   name: Candy & Chocolate
   children:
   - fb-2-3-1
   - fb-2-3-2
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+- id: fb-2-3-1
+  name: Candy
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-3-2
+  name: Chocolate
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
 - id: fb-2-4
   name: Condiments & Sauces
   children:
@@ -581,24 +879,24 @@
   - fb-2-4-25
   - fb-2-4-26
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - heat_level
 - id: fb-2-4-1
   name: Cocktail Sauce
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-4-2
   name: Curry Sauce
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - heat_level
 - id: fb-2-4-3
   name: Dessert Toppings
@@ -606,175 +904,189 @@
   - fb-2-4-3-1
   - fb-2-4-3-2
   attributes:
+  - allergen_information
   - dietary_preferences
   - flavor
-  - allergen_information
 - id: fb-2-4-3-1
   name: Fruit Toppings
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
 - id: fb-2-4-3-2
   name: Ice Cream Syrup
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
 - id: fb-2-4-4
   name: Fish Sauce
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-4-5
   name: Gravy
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-4-6
   name: Honey
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - package_type
 - id: fb-2-4-7
   name: Horseradish Sauce
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-4-8
   name: Hot Sauce
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - heat_level
 - id: fb-2-4-9
   name: Ketchup
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - package_type
 - id: fb-2-4-10
   name: Marinades & Grilling Sauces
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - heat_level
 - id: fb-2-4-11
   name: Mayonnaise
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-4-12
   name: Mustard
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-4-13
   name: Olives & Capers
   children:
   - fb-2-4-13-1
   - fb-2-4-13-2
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+- id: fb-2-4-13-1
+  name: Capers
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-4-13-2
+  name: Olives
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
 - id: fb-2-4-14
   name: Pasta Sauce
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - heat_level
 - id: fb-2-4-15
   name: Pickled Fruits & Vegetables
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-4-16
   name: Pizza Sauce
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - heat_level
 - id: fb-2-4-17
   name: Relish & Chutney
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - heat_level
 - id: fb-2-4-18
   name: Salad Dressing
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-4-19
   name: Satay Sauce
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-4-20
   name: Soy Sauce
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-4-21
   name: Sweet and Sour Sauces
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - heat_level
 - id: fb-2-4-22
   name: Syrup
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-4-23
   name: Tahini
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-4-24
   name: Tartar Sauce
   children: []
@@ -786,16 +1098,16 @@
   name: White & Cream Sauces
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-4-26
   name: Worcestershire Sauce
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-5
   name: Cooking & Baking Ingredients
   children:
@@ -836,59 +1148,59 @@
   - fb-2-5-35
   - fb-2-5-36
   attributes:
-  - dietary_preferences
   - allergen_information
+  - dietary_preferences
 - id: fb-2-5-1
   name: Baking Chips
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-5-2
   name: Baking Chocolate
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-5-3
   name: Baking Flavors & Extracts
   children: []
   attributes:
-  - dietary_preferences
-  - flavor
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+  - flavor
 - id: fb-2-5-4
   name: Baking Mixes
   children: []
   attributes:
-  - baking_purpose
-  - dietary_preferences
   - allergen_information
+  - baking_purpose
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-5-5
   name: Baking Powder
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-5-6
   name: Baking Soda
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-5-7
   name: Batter & Coating Mixes
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-5-8
   name: Bean Paste
   children: []
@@ -913,15 +1225,36 @@
   - allergen_information
   - country_of_origin
   - dietary_preferences
+- id: fb-2-5-10-1
+  name: Condensed Milk
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-5-10-2
+  name: Evaporated Milk
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-5-10-3
+  name: Powdered Milk
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
 - id: fb-2-5-11
   name: Cookie Decorating Kits
   children: []
   attributes:
-  - dietary_preferences
-  - pattern
   - allergen_information
   - color
   - country_of_origin
+  - dietary_preferences
+  - pattern
 - id: fb-2-5-12
   name: Cooking Oils
   children:
@@ -936,31 +1269,101 @@
   - fb-2-5-12-9
   - fb-2-5-12-10
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
+- id: fb-2-5-12-1
+  name: Avocado Oil
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-5-12-2
+  name: Coconut Oil
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-5-12-3
+  name: Corn Oil
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-5-12-4
+  name: Olive Oil
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-5-12-5
+  name: Peanut Oil
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-5-12-6
+  name: Rapeseed Oil
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-5-12-7
+  name: Sesame Oil
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-5-12-8
+  name: Soybean Oil
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-5-12-9
+  name: Sunflower Oil
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-5-12-10
+  name: Vegetable Oil
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
 - id: fb-2-5-13
   name: Cooking Starch
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-5-14
   name: Cooking Wine
   children: []
   attributes:
-  - cooking_wine_variety
-  - dietary_preferences
   - allergen_information
+  - cooking_wine_variety
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-5-15
   name: Corn Syrup
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-5-16
   name: Dough
   children:
@@ -968,32 +1371,32 @@
   - fb-2-5-16-2
   - fb-2-5-16-3
   attributes:
-  - dietary_preferences
   - allergen_information
+  - dietary_preferences
   - flour_grain_type
 - id: fb-2-5-16-1
   name: Bread & Pastry Dough
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - flour_grain_type
 - id: fb-2-5-16-2
   name: Cookie & Brownie Dough
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - flour_grain_type
 - id: fb-2-5-16-3
   name: Pie Crusts
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
   - flour_grain_type
 - id: fb-2-5-17
   name: Edible Baking Decorations
@@ -1030,11 +1433,11 @@
   name: Food Coloring
   children: []
   attributes:
-  - pattern
   - allergen_information
   - color
   - country_of_origin
   - dietary_preferences
+  - pattern
 - id: fb-2-5-22
   name: Frosting & Icing
   children: []
@@ -1106,6 +1509,34 @@
   - allergen_information
   - country_of_origin
   - dietary_preferences
+- id: fb-2-5-30-1
+  name: Granulated Sugar
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-5-30-2
+  name: Icing Sugar
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-5-30-3
+  name: Sweeteners
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-5-30-4
+  name: Syrups & Nectars
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
 - id: fb-2-5-31
   name: Tapioca Pearls
   children: []
@@ -1141,9 +1572,9 @@
   name: Waffle & Pancake Mixes
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-5-36
   name: Yeast
   children: []
@@ -1177,22 +1608,50 @@
   - allergen_information
   - country_of_origin
   - dietary_preferences
+- id: fb-2-6-1-1
+  name: Margarine
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-6-1-2
+  name: Salted Butter
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-6-1-3
+  name: Unsalted Butter
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-6-1-4
+  name: Whipped Butter
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
 - id: fb-2-6-2
   name: Cheese
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-6-3
   name: Coffee Creamer
   children: []
   attributes:
   - allergen_information
+  - coffee_creamer_variety
   - country_of_origin
   - dietary_preferences
   - fat_content
-  - coffee_creamer_variety
 - id: fb-2-6-4
   name: Cottage Cheese
   children: []
@@ -1206,6 +1665,22 @@
   children:
   - fb-2-6-5-1
   - fb-2-6-5-2
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+  - fat_content
+- id: fb-2-6-5-1
+  name: Fresh Cream
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+  - fat_content
+- id: fb-2-6-5-2
+  name: Whipping Cream
+  children: []
   attributes:
   - allergen_information
   - country_of_origin
@@ -1300,31 +1775,31 @@
   name: Nut Butters
   children: []
   attributes:
-  - nut_butter_variety
   - allergen_information
   - country_of_origin
   - dietary_preferences
+  - nut_butter_variety
 - id: fb-2-7-8
   name: Salsa
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-7-9
   name: Tapenade
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-7-10
   name: Vegetable Dip
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - country_of_origin
+  - dietary_preferences
 - id: fb-2-8
   name: Food Gift Baskets
   children: []
@@ -1350,6 +1825,41 @@
   - fb-2-9-1-3
   - fb-2-9-1-4
   - fb-2-9-1-5
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-9-1-1
+  name: Frozen Yogurt
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-9-1-2
+  name: Gelato
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-9-1-3
+  name: Ice Cream
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-9-1-4
+  name: Sherbet
+  children: []
+  attributes:
+  - allergen_information
+  - country_of_origin
+  - dietary_preferences
+- id: fb-2-9-1-5
+  name: Sorbet
+  children: []
   attributes:
   - allergen_information
   - country_of_origin
@@ -2291,10 +2801,10 @@
   name: Chicory
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - cooking_method
   - country_of_origin
+  - dietary_preferences
   - food_product_form
 - id: fb-2-10-8-26-6
   name: Choy Sum
@@ -2327,10 +2837,10 @@
   name: On Choy
   children: []
   attributes:
-  - dietary_preferences
   - allergen_information
   - cooking_method
   - country_of_origin
+  - dietary_preferences
   - food_product_form
 - id: fb-2-10-8-26-10
   name: Salad Mixes
@@ -2832,6 +3342,78 @@
   - cuisine
   - dietary_preferences
   - food_product_form
+- id: fb-2-12-2-2-1
+  name: Beef
+  children: []
+  attributes:
+  - allergen_information
+  - cooking_method
+  - cuisine
+  - dietary_preferences
+  - meat_cut
+  - food_product_form
+- id: fb-2-12-2-2-2
+  name: Game
+  children: []
+  attributes:
+  - allergen_information
+  - cooking_method
+  - cuisine
+  - dietary_preferences
+  - meat_cut
+  - food_product_form
+- id: fb-2-12-2-2-3
+  name: Lamb
+  children: []
+  attributes:
+  - allergen_information
+  - cooking_method
+  - cuisine
+  - dietary_preferences
+  - meat_cut
+  - food_product_form
+- id: fb-2-12-2-2-4
+  name: Pork
+  children: []
+  attributes:
+  - allergen_information
+  - cooking_method
+  - cuisine
+  - dietary_preferences
+  - meat_cut
+  - food_product_form
+- id: fb-2-12-2-2-5
+  name: Poultry
+  children:
+  - fb-2-12-2-2-5-1
+  - fb-2-12-2-2-5-2
+  attributes:
+  - allergen_information
+  - cooking_method
+  - cuisine
+  - dietary_preferences
+  - meat_cut
+  - food_product_form
+- id: fb-2-12-2-2-5-1
+  name: Chicken
+  children: []
+  attributes:
+  - allergen_information
+  - cooking_method
+  - cuisine
+  - dietary_preferences
+  - meat_cut
+  - food_product_form
+- id: fb-2-12-2-2-5-2
+  name: Turkey
+  children: []
+  attributes:
+  - allergen_information
+  - cooking_method
+  - cuisine
+  - dietary_preferences
+  - meat_cut
+  - food_product_form
 - id: fb-2-12-2-3
   name: Lunch & Deli Meats
   children: []
@@ -2865,8 +3447,8 @@
   - cooking_method
   - cuisine
   - dietary_preferences
-  - seafood_type
   - food_product_form
+  - seafood_type
 - id: fb-2-13
   name: Nuts & Seeds
   children: []
@@ -3225,618 +3807,16 @@
 - id: fb-3-7
   name: Vaporizers & Electronic Cigarettes
   children:
+  - fb-3-7-1
   - fb-3-7-2
   - fb-3-7-3
-  - fb-3-7-1
   attributes:
-  - pattern
-  - vaping_style
-  - e_liquid_flavor
   - coil_connection
   - color
   - e_cigarette_vaporizer_style
-- id: fb-3-7-2
-  name: Electronic Cigarettes
-  children: []
-  attributes:
-  - e_cigarette_vaporizer_style
+  - e_liquid_flavor
   - pattern
   - vaping_style
-  - color
-  - e_liquid_flavor
-  - coil_connection
-- id: fb-3-7-3
-  name: Vaporizers
-  children: []
-  attributes:
-  - coil_connection
-  - e_cigarette_vaporizer_style
-  - e_liquid_flavor
-  - vaping_style
-  - color
-  - pattern
-- id: fb-1-1-6
-  name: Premixed Spirits & Cocktail Mixes
-  children:
-  - fb-1-1-6-1
-  - fb-1-1-6-2
-  - fb-1-1-6-3
-  - fb-1-1-6-4
-  - fb-1-1-6-5
-  - fb-1-1-6-6
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-  - beverage_product_form
-- id: fb-1-1-6-1
-  name: Beer-Based Cocktails
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-  - beverage_product_form
-- id: fb-1-1-6-2
-  name: Fruit Mix Preparations
-  children: []
-  attributes:
-  - allergen_information
-  - base_spirit
-  - country_of_origin
-  - dietary_preferences
-  - beverage_product_form
-- id: fb-1-1-6-3
-  name: Hard Seltzers
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - base_spirit
-  - country_of_origin
-  - beverage_product_form
-- id: fb-1-1-6-4
-  name: Liquor & Spirit-Based Cocktails
-  children: []
-  attributes:
-  - allergen_information
-  - base_spirit
-  - country_of_origin
-  - dietary_preferences
-  - beverage_product_form
-- id: fb-1-1-6-5
-  name: Spice Mix Preparations
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - base_spirit
-  - country_of_origin
-  - beverage_product_form
-- id: fb-1-1-6-6
-  name: Wine-Based Cocktails
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-  - beverage_product_form
-- id: fb-1-3-2
-  name: Coffee Pods & Capsules
-  children: []
-  attributes:
-  - dietary_preferences
-  - flavor
-  - allergen_information
-  - coffee_roast
-  - country_of_origin
-- id: fb-1-3-1
-  name: Coffee Beans & Ground Coffee
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - coffee_roast
-  - country_of_origin
-  - flavor
-  - coffee_product_form
-- id: fb-1-3-3
-  name: Instant Coffee
-  children: []
-  attributes:
-  - dietary_preferences
-  - flavor
-  - allergen_information
-  - coffee_roast
-  - country_of_origin
-- id: fb-1-4
-  name: Cordials, Syrups & Squash
-  children: []
-  attributes:
-  - dietary_preferences
-  - flavor
-  - allergen_information
-  - country_of_origin
-  - package_type
-- id: fb-1-6-1
-  name: Cocoa Powder
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-- id: fb-1-6-2
-  name: Hot Chocolate Mixes
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-- id: fb-1-6-3
-  name: Malted Milk
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-- id: fb-1-7
-  name: Juices, Milkshakes & Smoothies
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-  - fruit_source
-  - package_type
-- id: fb-1-8
-  name: Low Alcohol & Alcohol-Free Beverages
-  children:
-  - fb-1-8-1
-  - fb-1-8-2
-  - fb-1-8-3
-  - fb-1-8-4
-  - fb-1-8-5
-  - fb-1-8-6
-  attributes:
-  - dietary_preferences
-  - allergen_information
-- id: fb-1-8-1
-  name: Low Alcohol & Alcohol-Free Beer
-  children: []
-  attributes:
-  - allergen_information
-  - dietary_preferences
-- id: fb-1-8-2
-  name: Low Alcohol & Alcohol-Free Bitters
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-- id: fb-1-8-3
-  name: Low Alcohol & Alcohol-Free Cocktail Mixes
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-- id: fb-1-8-4
-  name: Low Alcohol & Alcohol-Free Hard Cider
-  children: []
-  attributes:
-  - allergen_information
-  - dietary_preferences
-- id: fb-1-8-5
-  name: Low Alcohol & Alcohol-Free Liquors & Spirits
-  children: []
-  attributes:
-  - allergen_information
-  - dietary_preferences
-- id: fb-1-8-6
-  name: Low Alcohol & Alcohol-Free Wine
-  children: []
-  attributes:
-  - allergen_information
-  - dietary_preferences
-- id: fb-1-10-1
-  name: Coconut Milk & Drinks
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-- id: fb-1-10-2
-  name: Nut Drinks
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-- id: fb-1-10-3
-  name: Oat Drinks
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-1-10-4
-  name: Rice Drinks
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-- id: fb-1-10-5
-  name: Soy Drinks
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-1-13-1
-  name: Energy Drinks
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-  - package_type
-  - beverage_product_form
-- id: fb-1-13-2
-  name: Sports Drinks
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-  - package_type
-  - beverage_product_form
-- id: fb-1-14-1
-  name: Infusions
-  children: []
-  attributes:
-  - flavor
-  - tea_input_type
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-1-14-2
-  name: Tea
-  children: []
-  attributes:
-  - dietary_preferences
-  - flavor
-  - tea_input_type
-  - allergen_information
-  - country_of_origin
-- id: fb-2-1-4-1
-  name: Cakes
-  children: []
-  attributes:
-  - dietary_preferences
-  - flavor
-  - allergen_information
-  - country_of_origin
-  - flour_grain_type
-- id: fb-2-1-4-2
-  name: Dessert Bars
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-  - flavor
-  - flour_grain_type
-- id: fb-2-2-1
-  name: Candied Fruit
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-2-2
-  name: Chocolate Covered Fruit
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-3-1
-  name: Candy
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-- id: fb-2-3-2
-  name: Chocolate
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-- id: fb-2-4-13-1
-  name: Capers
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-- id: fb-2-4-13-2
-  name: Olives
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-5-10-1
-  name: Condensed Milk
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-- id: fb-2-5-10-2
-  name: Evaporated Milk
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-- id: fb-2-5-10-3
-  name: Powdered Milk
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-- id: fb-2-5-12-1
-  name: Avocado Oil
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-5-12-2
-  name: Coconut Oil
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-5-12-3
-  name: Corn Oil
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-5-12-4
-  name: Olive Oil
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-- id: fb-2-5-12-5
-  name: Peanut Oil
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-- id: fb-2-5-12-6
-  name: Rapeseed Oil
-  children: []
-  attributes:
-  - dietary_preferences
-  - allergen_information
-  - country_of_origin
-- id: fb-2-5-12-7
-  name: Sesame Oil
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-5-12-8
-  name: Soybean Oil
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-5-12-9
-  name: Sunflower Oil
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-5-12-10
-  name: Vegetable Oil
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-5-30-1
-  name: Granulated Sugar
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-5-30-2
-  name: Icing Sugar
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-5-30-3
-  name: Sweeteners
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-5-30-4
-  name: Syrups & Nectars
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-6-1-1
-  name: Margarine
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-6-1-2
-  name: Salted Butter
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-6-1-3
-  name: Unsalted Butter
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-6-1-4
-  name: Whipped Butter
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-6-5-1
-  name: Fresh Cream
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-  - fat_content
-- id: fb-2-6-5-2
-  name: Whipping Cream
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-  - fat_content
-- id: fb-2-9-1-1
-  name: Frozen Yogurt
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-9-1-2
-  name: Gelato
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-9-1-3
-  name: Ice Cream
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-9-1-4
-  name: Sherbet
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-9-1-5
-  name: Sorbet
-  children: []
-  attributes:
-  - allergen_information
-  - country_of_origin
-  - dietary_preferences
-- id: fb-2-12-2-2-1
-  name: Beef
-  children: []
-  attributes:
-  - cuisine
-  - allergen_information
-  - cooking_method
-  - dietary_preferences
-  - meat_cut
-  - food_product_form
-- id: fb-2-12-2-2-2
-  name: Game
-  children: []
-  attributes:
-  - allergen_information
-  - cooking_method
-  - cuisine
-  - dietary_preferences
-  - meat_cut
-  - food_product_form
-- id: fb-2-12-2-2-3
-  name: Lamb
-  children: []
-  attributes:
-  - cuisine
-  - allergen_information
-  - cooking_method
-  - dietary_preferences
-  - meat_cut
-  - food_product_form
-- id: fb-2-12-2-2-4
-  name: Pork
-  children: []
-  attributes:
-  - cuisine
-  - allergen_information
-  - cooking_method
-  - dietary_preferences
-  - meat_cut
-  - food_product_form
-- id: fb-2-12-2-2-5
-  name: Poultry
-  children:
-  - fb-2-12-2-2-5-1
-  - fb-2-12-2-2-5-2
-  attributes:
-  - cuisine
-  - dietary_preferences
-  - meat_cut
-  - allergen_information
-  - cooking_method
-  - food_product_form
-- id: fb-2-12-2-2-5-1
-  name: Chicken
-  children: []
-  attributes:
-  - cuisine
-  - allergen_information
-  - cooking_method
-  - dietary_preferences
-  - meat_cut
-  - food_product_form
-- id: fb-2-12-2-2-5-2
-  name: Turkey
-  children: []
-  attributes:
-  - allergen_information
-  - cooking_method
-  - cuisine
-  - dietary_preferences
-  - meat_cut
-  - food_product_form
 - id: fb-3-7-1
   name: E-Liquid
   children: []
@@ -3844,3 +3824,23 @@
   - e_liquid_flavor
   - e_liquid_variety
   - vg_pg_ratio
+- id: fb-3-7-2
+  name: Electronic Cigarettes
+  children: []
+  attributes:
+  - coil_connection
+  - color
+  - e_cigarette_vaporizer_style
+  - e_liquid_flavor
+  - pattern
+  - vaping_style
+- id: fb-3-7-3
+  name: Vaporizers
+  children: []
+  attributes:
+  - coil_connection
+  - color
+  - e_cigarette_vaporizer_style
+  - e_liquid_flavor
+  - pattern
+  - vaping_style

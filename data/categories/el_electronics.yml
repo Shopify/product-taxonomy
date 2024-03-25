@@ -57,6 +57,31 @@
   - color
   - pattern
   - theme
+- id: el-1-2-2
+  name: Playfield Waxes
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-1-2-3
+  name: Protective Covers
+  children: []
+  attributes:
+  - color
+  - pattern
+  - theme
+- id: el-1-2-4
+  name: Replacement Balls
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-1-2-5
+  name: Rubber Ring Kits
+  children: []
+  attributes:
+  - color
+  - pattern
 - id: el-1-3
   name: Pinball Machines
   children: []
@@ -86,6 +111,39 @@
   - color
   - pattern
   - theme
+- id: el-1-5-1
+  name: Coin Mechanisms
+  children: []
+  attributes:
+  - color
+  - currency
+  - pattern
+- id: el-1-5-2
+  name: Control Panels
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-1-5-3
+  name: Joysticks
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-1-5-4
+  name: Marquees
+  children: []
+  attributes:
+  - color
+  - pattern
+  - theme
+- id: el-1-5-5
+  name: Push Buttons
+  children: []
+  attributes:
+  - color
+  - pattern
+  - shape
 - id: el-1-6
   name: Video Game Arcade Cabinets
   children: []
@@ -115,9 +173,9 @@
   - el-2-1-1
   - el-2-1-2
   - el-2-1-3
-  - el-2-1-6
   - el-2-1-4
   - el-2-1-5
+  - el-2-1-6
   - el-2-1-7
   - el-2-1-8
   - el-2-1-9
@@ -132,14 +190,34 @@
   attributes:
   - color
   - pattern
+- id: el-2-1-1-1
+  name: Audio & Video Receiver Rack Mounts
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-2-1-1-2
+  name: Bluetooth Adapters
+  children: []
+  attributes:
+  - color
+  - pattern
+  - usb_standard
 - id: el-2-1-2
   name: Headphone & Headset Accessories
   children:
-  - el-2-1-2-4
   - el-2-1-2-3
+  - el-2-1-2-4
   - el-2-1-2-5
   attributes:
   - color
+  - pattern
+- id: el-2-1-2-3
+  name: Headphone Carrying Cases
+  children: []
+  attributes:
+  - color
+  - bag_case_material
   - pattern
 - id: el-2-1-2-4
   name: Headphone Cushions & Tips
@@ -149,11 +227,35 @@
   attributes:
   - color
   - pattern
+- id: el-2-1-2-4-1
+  name: Headphone Cushions
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-2-1-2-4-2
+  name: Headphone Tips
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-2-1-2-5
+  name: Headphone Stands
+  children: []
+  attributes:
+  - color
+  - pattern
 - id: el-2-1-3
   name: Karaoke System Accessories
   children:
-  - el-2-1-3-2
   - el-2-1-3-1
+  - el-2-1-3-2
+  attributes:
+  - color
+  - pattern
+- id: el-2-1-3-1
+  name: Karaoke Carrying Cases
+  children: []
   attributes:
   - color
   - pattern
@@ -163,6 +265,43 @@
   attributes:
   - color
   - music_genre
+  - pattern
+- id: el-2-1-4
+  name: Microphone Accessories
+  children:
+  - el-2-1-4-1
+  - el-2-1-4-2
+  - el-2-1-4-3
+  attributes:
+  - color
+  - pattern
+- id: el-2-1-4-1
+  name: Microphone Shock Mounts
+  children: []
+  attributes:
+  - color
+  - compatible_microphone_thread
+  - pattern
+- id: el-2-1-4-2
+  name: Pop Filters
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-2-1-4-3
+  name: Windshields
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-2-1-5
+  name: Microphone Stands
+  children: []
+  attributes:
+  - base_type
+  - color
+  - material
+  - microphone_thread
   - pattern
 - id: el-2-1-6
   name: MP3 Player Accessories
@@ -185,30 +324,18 @@
   attributes:
   - case_type
   - color
-  - pattern
   - bag_case_material
-- id: el-2-1-4
-  name: Microphone Accessories
-  children:
-  - el-2-1-4-1
-  - el-2-1-4-2
-  - el-2-1-4-3
-  attributes:
-  - color
-  - pattern
-- id: el-2-1-5
-  name: Microphone Stands
-  children: []
-  attributes:
-  - base_type
-  - color
-  - material
-  - microphone_thread
   - pattern
 - id: el-2-1-7
   name: Satellite Radio Accessories
   children:
   - el-2-1-7-1
+  attributes:
+  - color
+  - pattern
+- id: el-2-1-7-1
+  name: Satellite Radio Mounts & Brackets
+  children: []
   attributes:
   - color
   - pattern
@@ -228,8 +355,8 @@
   children: []
   attributes:
   - color
-  - pattern
   - bag_case_material
+  - pattern
 - id: el-2-1-8-2
   name: Speaker Components & Kits
   children: []
@@ -241,16 +368,16 @@
   children: []
   attributes:
   - color
-  - pattern
   - bag_case_material
+  - pattern
 - id: el-2-1-8-4
   name: Speaker Stands & Mounts
   children: []
   attributes:
   - color
+  - mount_material
   - mounting_type
   - pattern
-  - mount_material
 - id: el-2-1-8-5
   name: Tactile Transducers
   children: []
@@ -265,6 +392,31 @@
   - el-2-1-9-2
   - el-2-1-9-3
   - el-2-1-9-4
+  attributes:
+  - color
+  - pattern
+- id: el-2-1-9-1
+  name: Cartridges
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-2-1-9-2
+  name: Record Cleaning Kits
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-2-1-9-3
+  name: Replacement Needles
+  children: []
+  attributes:
+  - color
+  - pattern
+  - stylus_type
+- id: el-2-1-9-4
+  name: Slipmats
+  children: []
   attributes:
   - color
   - pattern
@@ -432,6 +584,55 @@
   - headphone_style
   - microphone_type
   - pattern
+- id: el-2-2-7-1-1
+  name: Bone Conduction Headphones
+  children: []
+  attributes:
+  - color
+  - connectivity_technology
+  - device_interface
+  - microphone_type
+  - pattern
+- id: el-2-2-7-1-2
+  name: DJ Headphones
+  children: []
+  attributes:
+  - audio_connectivity
+  - color
+  - connectivity_technology
+  - headphone_style
+  - microphone_type
+  - pattern
+- id: el-2-2-7-1-3
+  name: In-Ear Headphones
+  children: []
+  attributes:
+  - audio_connectivity
+  - color
+  - connectivity_technology
+  - headphone_style
+  - microphone_type
+  - pattern
+- id: el-2-2-7-1-4
+  name: On-Ear Headphones
+  children: []
+  attributes:
+  - audio_connectivity
+  - color
+  - connectivity_technology
+  - headphone_style
+  - microphone_type
+  - pattern
+- id: el-2-2-7-1-5
+  name: Over-Ear Headphones
+  children: []
+  attributes:
+  - audio_connectivity
+  - color
+  - connectivity_technology
+  - headphone_style
+  - microphone_type
+  - pattern
 - id: el-2-2-7-2
   name: Headsets
   children: []
@@ -574,6 +775,7 @@
   name: Audio Players & Recorders
   children:
   - el-2-3-1
+  - el-2-3-2
   - el-2-3-3
   - el-2-3-4
   - el-2-3-5
@@ -583,7 +785,6 @@
   - el-2-3-9
   - el-2-3-10
   - el-2-3-11
-  - el-2-3-2
   attributes:
   - color
   - connectivity_technology
@@ -596,6 +797,16 @@
   - color
   - connection_type
   - connectivity_technology
+  - pattern
+  - power_source
+- id: el-2-3-2
+  name: Handheld Players & Recorders
+  children: []
+  attributes:
+  - color
+  - connection_type
+  - connectivity_technology
+  - media_format
   - pattern
   - power_source
 - id: el-2-3-3
@@ -651,6 +862,78 @@
   - el-2-3-7-4
   - el-2-3-7-5
   - el-2-3-7-6
+  attributes:
+  - audio_codecs_formats_supported
+  - color
+  - connection_type
+  - connectivity_technology
+  - frequency_radio_bands_supported
+  - pattern
+  - power_source
+  - tuner_type
+- id: el-2-3-7-1
+  name: AM/FM Radios
+  children: []
+  attributes:
+  - audio_codecs_formats_supported
+  - color
+  - connection_type
+  - connectivity_technology
+  - frequency_radio_bands_supported
+  - pattern
+  - power_source
+  - tuner_type
+- id: el-2-3-7-2
+  name: DAB Radios
+  children: []
+  attributes:
+  - audio_codecs_formats_supported
+  - color
+  - connection_type
+  - connectivity_technology
+  - frequency_radio_bands_supported
+  - pattern
+  - power_source
+  - tuner_type
+- id: el-2-3-7-3
+  name: Internet Radios
+  children: []
+  attributes:
+  - audio_codecs_formats_supported
+  - color
+  - connection_type
+  - connectivity_technology
+  - frequency_radio_bands_supported
+  - pattern
+  - power_source
+  - tuner_type
+- id: el-2-3-7-4
+  name: Satellite Radios
+  children: []
+  attributes:
+  - audio_codecs_formats_supported
+  - color
+  - connection_type
+  - connectivity_technology
+  - frequency_radio_bands_supported
+  - pattern
+  - power_source
+  - tuner_type
+- id: el-2-3-7-5
+  name: Shortwave Radios
+  children: []
+  attributes:
+  - audio_codecs_formats_supported
+  - color
+  - connection_type
+  - connectivity_technology
+  - frequency_radio_bands_supported
+  - pattern
+  - power_source
+  - tuner_type
+- id: el-2-3-7-6
+  name: Weather Radios
+  children: []
   attributes:
   - audio_codecs_formats_supported
   - color
@@ -788,6 +1071,27 @@
   attributes:
   - color
   - pattern
+- id: el-3-1-1
+  name: Circuit Board Protective Cases
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-3-1-2
+  name: Heat Sinks
+  children: []
+  attributes:
+  - color
+  - pattern
+  - shape
+- id: el-3-1-3
+  name: Jump Wires
+  children: []
+  attributes:
+  - color
+  - connector_gender
+  - wire_rope_material
+  - pattern
 - id: el-3-2
   name: Circuit Decoders & Encoders
   children: []
@@ -819,6 +1123,51 @@
   - el-3-4-3
   - el-3-4-4
   - el-3-4-5
+  attributes:
+  - color
+  - component_package_type
+  - passband
+  - pattern
+  - stopband
+- id: el-3-4-1
+  name: All-Pass Filters
+  children: []
+  attributes:
+  - color
+  - component_package_type
+  - passband
+  - pattern
+  - stopband
+- id: el-3-4-2
+  name: Band-Pass Filters
+  children: []
+  attributes:
+  - color
+  - component_package_type
+  - passband
+  - pattern
+  - stopband
+- id: el-3-4-3
+  name: Band-Stop Filters
+  children: []
+  attributes:
+  - color
+  - component_package_type
+  - passband
+  - pattern
+  - stopband
+- id: el-3-4-4
+  name: High-Pass Filters
+  children: []
+  attributes:
+  - color
+  - component_package_type
+  - passband
+  - pattern
+  - stopband
+- id: el-3-4-5
+  name: Low-Pass Filters
+  children: []
   attributes:
   - color
   - component_package_type
@@ -1058,13 +1407,38 @@
   attributes:
   - color
   - pattern
+- id: el-4-3-1
+  name: Earpieces
+  children: []
+  attributes:
+  - audio_connectivity
+  - color
+  - pattern
+- id: el-4-3-2
+  name: Radio Carrying Cases
+  children: []
+  attributes:
+  - color
+  - bag_case_material
+  - pattern
+  - radio_case_design
 - id: el-4-4
   name: Communication Radios
   children:
+  - el-4-4-1
   - el-4-4-2
   - el-4-4-3
   - el-4-4-4
-  - el-4-4-1
+  attributes:
+  - color
+  - connection_type
+  - connectivity_technology
+  - frequency_radio_bands_supported
+  - pattern
+  - power_source
+- id: el-4-4-1
+  name: Amateur Radios
+  children: []
   attributes:
   - color
   - connection_type
@@ -1110,6 +1484,17 @@
   - color
   - connection_type
   - pattern
+- id: el-4-5-1
+  name: Speaker Units
+  children: []
+  attributes:
+  - audio_output_channel
+  - color
+  - connectivity_technology
+  - device_interface
+  - mounting_type
+  - pattern
+  - speaker_technology
 - id: el-4-6
   name: Intercoms
   children: []
@@ -1133,10 +1518,10 @@
   - el-4-8-1
   - el-4-8-2
   - el-4-8-3
-  - el-4-8-6
-  - el-4-8-7
   - el-4-8-4
   - el-4-8-5
+  - el-4-8-6
+  - el-4-8-7
   attributes:
   - color
   - pattern
@@ -1162,6 +1547,136 @@
   - handset_type
   - pattern
   - telephone_style
+- id: el-4-8-4
+  name: Mobile & Smart Phone Accessories
+  children:
+  - el-4-8-4-1
+  - el-4-8-4-2
+  - el-4-8-4-3
+  - el-4-8-4-4
+  - el-4-8-4-5
+  - el-4-8-4-6
+  - el-4-8-4-7
+  attributes:
+  - color
+  - pattern
+- id: el-4-8-4-1
+  name: Mobile Phone Camera Accessories
+  children:
+  - el-4-8-4-1-1
+  - el-4-8-4-1-2
+  - el-4-8-4-1-3
+  - el-4-8-4-1-4
+  attributes:
+  - color
+  - device_interface
+  - pattern
+- id: el-4-8-4-1-1
+  name: Lenses
+  children: []
+  attributes:
+  - color
+  - device_interface
+  - pattern
+- id: el-4-8-4-1-2
+  name: Lighting Kits
+  children: []
+  attributes:
+  - color
+  - connection_type
+  - pattern
+- id: el-4-8-4-1-3
+  name: Remote Shutters
+  children: []
+  attributes:
+  - color
+  - device_interface
+  - pattern
+- id: el-4-8-4-1-4
+  name: Selfie Sticks
+  children: []
+  attributes:
+  - color
+  - device_interface
+  - feet_type
+  - leg_lock_type
+  - leg_sections
+  - material
+  - pattern
+- id: el-4-8-4-2
+  name: Mobile Phone Cases
+  children: []
+  attributes:
+  - case_type
+  - certifications_standards
+  - color
+  - hand_side
+  - bag_case_material
+  - pattern
+- id: el-4-8-4-3
+  name: Mobile Phone Charms & Straps
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-4-8-4-4
+  name: Mobile Phone Pre-Paid Cards & SIM Cards
+  children:
+  - el-4-8-4-4-1
+  - el-4-8-4-4-2
+  attributes:
+  - color
+  - currency
+  - pattern
+- id: el-4-8-4-4-1
+  name: Mobile Phone Pre-Paid Cards
+  children: []
+  attributes:
+  - color
+  - currency
+  - pattern
+- id: el-4-8-4-4-2
+  name: SIM Cards
+  children: []
+  attributes:
+  - color
+  - currency
+  - pattern
+  - sim_card_type
+- id: el-4-8-4-5
+  name: Mobile Phone Replacement Parts
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-4-8-4-6
+  name: Mobile Phone Stands
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-4-8-4-7
+  name: SIM Card Ejection Tools
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-4-8-5
+  name: Mobile & Smart Phones
+  children: []
+  attributes:
+  - battery_technology
+  - color
+  - cosmetic_condition
+  - data_network
+  - display_resolution
+  - operating_system
+  - pattern
+  - removable_storage_formats_supported
+  - sim_card_capability
+  - sim_card_type_1
+  - sim_card_type_2
+  - subscription_type
 - id: el-4-8-6
   name: Satellite Phones
   children: []
@@ -1377,13 +1892,13 @@
   - connection_type
   - data_network
   - display_resolution
+  - e_reader_display_technology
   - e_book_formats_supported
   - energy_efficiency_class
   - operating_system
   - pattern
   - power_source
   - processor_family
-  - e_reader_display_technology
 - id: el-6-4-3
   name: PDAs
   children: []
@@ -1734,12 +2249,12 @@
   name: Cables
   children:
   - el-7-7-1
+  - el-7-7-2
   - el-7-7-3
   - el-7-7-4
   - el-7-7-5
   - el-7-7-6
   - el-7-7-7
-  - el-7-7-2
   attributes:
   - cable_shielding
   - color
@@ -1752,6 +2267,47 @@
   - el-7-7-1-2
   - el-7-7-1-3
   - el-7-7-1-4
+  attributes:
+  - cable_shielding
+  - color
+  - device_interface
+  - pattern
+- id: el-7-7-1-1
+  name: AUX Cables
+  children: []
+  attributes:
+  - audio_connectivity
+  - cable_shielding
+  - color
+  - pattern
+- id: el-7-7-1-2
+  name: HDMI Cables
+  children: []
+  attributes:
+  - cable_shielding
+  - color
+  - device_interface
+  - pattern
+- id: el-7-7-1-3
+  name: VGA Cables
+  children: []
+  attributes:
+  - cable_shielding
+  - color
+  - device_interface
+  - pattern
+- id: el-7-7-1-4
+  name: XLR Cables
+  children: []
+  attributes:
+  - cable_shielding
+  - color
+  - input_connection
+  - output_connection
+  - pattern
+- id: el-7-7-2
+  name: Extension Cables
+  children: []
   attributes:
   - cable_shielding
   - color
@@ -1775,6 +2331,22 @@
   - color
   - network_cable_interface
   - pattern
+- id: el-7-7-4-1
+  name: Coaxial Cables
+  children: []
+  attributes:
+  - cable_shielding
+  - color
+  - device_interface
+  - pattern
+- id: el-7-7-4-2
+  name: Ethernet Cables
+  children: []
+  attributes:
+  - cable_shielding
+  - color
+  - network_cable_interface
+  - pattern
 - id: el-7-7-5
   name: Storage & Data Transfer Cables
   children:
@@ -1784,6 +2356,22 @@
   - cable_shielding
   - color
   - device_interface
+  - pattern
+- id: el-7-7-5-1
+  name: FireWire Cables
+  children: []
+  attributes:
+  - cable_shielding
+  - color
+  - device_interface
+  - pattern
+- id: el-7-7-5-2
+  name: USB Cables
+  children: []
+  attributes:
+  - cable_shielding
+  - color
+  - connection_type
   - pattern
 - id: el-7-7-6
   name: System & Power Cables
@@ -1859,8 +2447,8 @@
   attributes:
   - case_type
   - color
-  - pattern
   - bag_case_material
+  - pattern
 - id: el-7-8-4-2
   name: PDA Accessories
   children:
@@ -1874,8 +2462,8 @@
   attributes:
   - case_type
   - color
-  - pattern
   - bag_case_material
+  - pattern
 - id: el-7-8-5
   name: Keyboard & Mouse Wrist Rests
   children: []
@@ -2030,8 +2618,8 @@
   attributes:
   - color
   - display_resolution
-  - pattern
   - e_reader_display_technology
+  - pattern
 - id: el-7-9-10
   name: I/O Cards & Adapters
   children:
@@ -2106,6 +2694,24 @@
   attributes:
   - color
   - pattern
+- id: el-7-9-11-2-1
+  name: Game Controller Carrying Cases
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-7-9-11-2-2
+  name: Game Controller Skins
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-7-9-11-2-3
+  name: Thumb Grips
+  children: []
+  attributes:
+  - color
+  - pattern
 - id: el-7-9-11-3
   name: Keyboard Keys & Caps
   children: []
@@ -2121,6 +2727,24 @@
   attributes:
   - color
   - pattern
+- id: el-7-9-11-4-1
+  name: Mice & Trackball Carrying Cases
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-7-9-11-4-2
+  name: Mouse Bungees
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-7-9-11-4-3
+  name: Mouse Skates
+  children: []
+  attributes:
+  - color
+  - pattern
 - id: el-7-9-12
   name: Input Devices
   children:
@@ -2131,8 +2755,8 @@
   - el-7-9-12-5
   - el-7-9-12-6
   - el-7-9-12-7
-  - el-7-9-12-9
   - el-7-9-12-8
+  - el-7-9-12-9
   - el-7-9-12-10
   - el-7-9-12-11
   - el-7-9-12-12
@@ -2264,18 +2888,6 @@
   - display_resolution
   - pattern
   - power_source
-- id: el-7-9-12-9
-  name: KVM Switches
-  children: []
-  attributes:
-  - color
-  - connectivity_technology
-  - device_interface
-  - keyboard_port_type
-  - mouse_port_type
-  - pattern
-  - power_source
-  - video_port_type
 - id: el-7-9-12-8
   name: Keyboards
   children: []
@@ -2289,6 +2901,18 @@
   - pattern
   - pointing_device
   - power_source
+- id: el-7-9-12-9
+  name: KVM Switches
+  children: []
+  attributes:
+  - color
+  - connectivity_technology
+  - device_interface
+  - keyboard_port_type
+  - mouse_port_type
+  - pattern
+  - power_source
+  - video_port_type
 - id: el-7-9-12-10
   name: Memory Card Readers
   children: []
@@ -2408,12 +3032,22 @@
 - id: el-7-9-14-1
   name: Disk Duplicators
   children:
+  - el-7-9-14-1-1
   - el-7-9-14-1-2
   - el-7-9-14-1-3
-  - el-7-9-14-1-1
   attributes:
   - color
   - device_interface
+  - pattern
+  - power_source
+  - read_write_speed
+- id: el-7-9-14-1-1
+  name: CD/DVD/Blu-ray Duplicators
+  children: []
+  attributes:
+  - color
+  - device_interface
+  - optical_drive_type
   - pattern
   - power_source
   - read_write_speed
@@ -2451,8 +3085,8 @@
   attributes:
   - case_type
   - color
-  - pattern
   - bag_case_material
+  - pattern
 - id: el-7-9-14-2-2
   name: Hard Drive Docks
   children: []
@@ -2584,11 +3218,17 @@
 - id: el-7-11
   name: Electronics Films & Shields
   children:
+  - el-7-11-1
   - el-7-11-2
   - el-7-11-3
   - el-7-11-4
   - el-7-11-5
-  - el-7-11-1
+  attributes:
+  - color
+  - pattern
+- id: el-7-11-1
+  name: Dust Covers
+  children: []
   attributes:
   - color
   - pattern
@@ -2687,9 +3327,9 @@
   children: []
   attributes:
   - color
+  - bag_case_material
   - pattern
   - removable_storage_formats_supported
-  - bag_case_material
 - id: el-7-14
   name: Mobile Phone & Tablet Tripods & Monopods
   children: []
@@ -2705,13 +3345,13 @@
   - el-7-15-4
   - el-7-15-5
   - el-7-15-6
+  - el-7-15-7
   - el-7-15-8
   - el-7-15-9
   - el-7-15-10
   - el-7-15-11
   - el-7-15-12
   - el-7-15-13
-  - el-7-15-7
   attributes:
   - color
   - pattern
@@ -2723,8 +3363,8 @@
   - el-7-15-1-3
   - el-7-15-1-4
   - el-7-15-1-5
-  - el-7-15-1-7
   - el-7-15-1-6
+  - el-7-15-1-7
   - el-7-15-1-8
   - el-7-15-1-9
   - el-7-15-1-10
@@ -2775,16 +3415,16 @@
   - battery_technology
   - color
   - pattern
-- id: el-7-15-1-7
-  name: MP3 Player Batteries
+- id: el-7-15-1-6
+  name: Mobile Phone Batteries
   children: []
   attributes:
   - battery_size
   - battery_technology
   - color
   - pattern
-- id: el-7-15-1-6
-  name: Mobile Phone Batteries
+- id: el-7-15-1-7
+  name: MP3 Player Batteries
   children: []
   attributes:
   - battery_size
@@ -2916,6 +3556,20 @@
   attributes:
   - color
   - pattern
+- id: el-7-15-4-1
+  name: Charger Protective Cases
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-7-15-4-2
+  name: Replacement Cords
+  children: []
+  attributes:
+  - cable_shielding
+  - color
+  - pattern
+  - plug_type
 - id: el-7-15-5
   name: Power Adapters & Chargers
   children:
@@ -2927,6 +3581,27 @@
   - pattern
   - plug_type
   - power_source
+- id: el-7-15-5-1
+  name: Power Banks
+  children: []
+  attributes:
+  - charging_method
+  - color
+  - compatible_device
+  - connection_type
+  - pattern
+  - plug_type
+  - power_source
+- id: el-7-15-5-2
+  name: Wireless Chargers
+  children: []
+  attributes:
+  - color
+  - compatible_device
+  - connection_type
+  - pattern
+  - plug_type
+  - power_source
 - id: el-7-15-6
   name: Power Control Units
   children: []
@@ -2934,6 +3609,15 @@
   - color
   - outlet_type
   - pattern
+- id: el-7-15-7
+  name: Power Stations
+  children: []
+  attributes:
+  - battery_technology
+  - color
+  - connection_type
+  - pattern
+  - power_source
 - id: el-7-15-8
   name: Power Strips & Surge Suppressors
   children: []
@@ -2977,6 +3661,12 @@
   name: UPS Accessories
   children:
   - el-7-15-13-1
+  attributes:
+  - color
+  - pattern
+- id: el-7-15-13-1
+  name: UPS Rack Mounting Kits
+  children: []
   attributes:
   - color
   - pattern
@@ -3277,6 +3967,96 @@
   - network_protocols_supported
   - pattern
   - power_source
+- id: el-12-3-1
+  name: Gigabit Switches
+  children: []
+  attributes:
+  - color
+  - connection_type
+  - ethernet_lan_interface_type
+  - network_protocols_supported
+  - pattern
+  - power_source
+- id: el-12-3-2
+  name: Layer 2 Switches
+  children: []
+  attributes:
+  - color
+  - connection_type
+  - ethernet_lan_interface_type
+  - network_protocols_supported
+  - pattern
+  - power_source
+- id: el-12-3-3
+  name: Layer 3 Switches
+  children: []
+  attributes:
+  - color
+  - connection_type
+  - ethernet_lan_interface_type
+  - network_protocols_supported
+  - pattern
+  - power_source
+- id: el-12-3-4
+  name: Managed Switches
+  children: []
+  attributes:
+  - color
+  - connection_type
+  - ethernet_lan_interface_type
+  - network_protocols_supported
+  - pattern
+  - power_source
+- id: el-12-3-5
+  name: Modular Switches
+  children: []
+  attributes:
+  - color
+  - connection_type
+  - ethernet_lan_interface_type
+  - network_protocols_supported
+  - pattern
+  - power_source
+- id: el-12-3-6
+  name: Power Over Ethernet Switches
+  children: []
+  attributes:
+  - color
+  - connection_type
+  - ethernet_lan_interface_type
+  - network_protocols_supported
+  - pattern
+  - power_source
+- id: el-12-3-7
+  name: Smart Switches
+  children: []
+  attributes:
+  - color
+  - connection_type
+  - ethernet_lan_interface_type
+  - network_protocols_supported
+  - pattern
+  - power_source
+- id: el-12-3-8
+  name: Stackable Switches
+  children: []
+  attributes:
+  - color
+  - connection_type
+  - ethernet_lan_interface_type
+  - network_protocols_supported
+  - pattern
+  - power_source
+- id: el-12-3-9
+  name: Unmanaged Switches
+  children: []
+  attributes:
+  - color
+  - connection_type
+  - ethernet_lan_interface_type
+  - network_protocols_supported
+  - pattern
+  - power_source
 - id: el-12-4
   name: Modem Accessories
   children: []
@@ -3366,6 +4146,49 @@
   attributes:
   - color
   - pattern
+- id: el-13-1-1
+  name: 3D Printer Carrying Cases
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-13-1-2
+  name: 3D Printer Cleaning Kits
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-13-1-3
+  name: Build Tape
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-13-1-4
+  name: Extruders
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-13-1-5
+  name: Filaments
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+- id: el-13-1-6
+  name: Nozzles
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-13-1-7
+  name: Print Beds
+  children: []
+  attributes:
+  - color
+  - pattern
 - id: el-13-2
   name: 3D Printers
   children: []
@@ -3385,9 +4208,9 @@
   - el-13-3-2
   - el-13-3-3
   - el-13-3-4
-  - el-13-3-7
   - el-13-3-5
   - el-13-3-6
+  - el-13-3-7
   attributes:
   - color
   - pattern
@@ -3419,6 +4242,34 @@
   - el-13-3-1-2-2
   - el-13-3-1-2-3
   - el-13-3-1-2-4
+  attributes:
+  - color
+  - pattern
+  - print_technology
+- id: el-13-3-1-2-1
+  name: Air Printer Filters
+  children: []
+  attributes:
+  - color
+  - pattern
+  - print_technology
+- id: el-13-3-1-2-2
+  name: Fume Printer Filters
+  children: []
+  attributes:
+  - color
+  - pattern
+  - print_technology
+- id: el-13-3-1-2-3
+  name: Ozone Printer Filters
+  children: []
+  attributes:
+  - color
+  - pattern
+  - print_technology
+- id: el-13-3-1-2-4
+  name: Toner Printer Filters
+  children: []
   attributes:
   - color
   - pattern
@@ -3482,6 +4333,18 @@
   attributes:
   - color
   - pattern
+- id: el-13-3-5
+  name: Printer, Copier & Fax Carrying Cases
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-13-3-6
+  name: Printer, Copier & Fax Cleaning Kits
+  children: []
+  attributes:
+  - color
+  - pattern
 - id: el-13-3-7
   name: Printer, Copier & Fax Machine Replacement Parts
   children: []
@@ -3509,6 +4372,18 @@
   attributes:
   - color
   - pattern
+- id: el-13-5-1
+  name: Scanner Carrying Cases
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: el-13-5-2
+  name: Scanner Cleaning Kits
+  children: []
+  attributes:
+  - color
+  - pattern
 - id: el-13-6
   name: Scanners
   children:
@@ -3518,6 +4393,78 @@
   - el-13-6-4
   - el-13-6-5
   - el-13-6-6
+  attributes:
+  - color
+  - compatible_paper_size
+  - connection_type
+  - energy_efficiency_class
+  - memory_technology
+  - pattern
+  - power_source
+  - scanner_sensor_type
+- id: el-13-6-1
+  name: Drum Scanners
+  children: []
+  attributes:
+  - color
+  - compatible_paper_size
+  - connection_type
+  - energy_efficiency_class
+  - memory_technology
+  - pattern
+  - power_source
+  - scanner_sensor_type
+- id: el-13-6-2
+  name: Film Scanners
+  children: []
+  attributes:
+  - color
+  - compatible_paper_size
+  - connection_type
+  - energy_efficiency_class
+  - memory_technology
+  - pattern
+  - power_source
+  - scanner_sensor_type
+- id: el-13-6-3
+  name: Flatbed Scanners
+  children: []
+  attributes:
+  - color
+  - compatible_paper_size
+  - connection_type
+  - energy_efficiency_class
+  - memory_technology
+  - pattern
+  - power_source
+  - scanner_sensor_type
+- id: el-13-6-4
+  name: Photo Scanners
+  children: []
+  attributes:
+  - color
+  - compatible_paper_size
+  - connection_type
+  - energy_efficiency_class
+  - memory_technology
+  - pattern
+  - power_source
+  - scanner_sensor_type
+- id: el-13-6-5
+  name: Portable Scanners
+  children: []
+  attributes:
+  - color
+  - compatible_paper_size
+  - connection_type
+  - energy_efficiency_class
+  - memory_technology
+  - pattern
+  - power_source
+  - scanner_sensor_type
+- id: el-13-6-6
+  name: Sheetfed Scanners
+  children: []
   attributes:
   - color
   - compatible_paper_size
@@ -3694,8 +4641,8 @@
   attributes:
   - color
   - device_interface
-  - pattern
   - 3d_glasses_material
+  - pattern
 - id: el-17-5-2
   name: Computer Monitor Accessories
   children:
@@ -3754,9 +4701,9 @@
   name: Projector Replacement Lamps
   children: []
   attributes:
+  - projector_light_source
   - color
   - pattern
-  - projector_light_source
 - id: el-17-5-4
   name: Rewinders
   children: []
@@ -3818,16 +4765,25 @@
 - id: el-17-8
   name: Video Players & Recorders
   children:
-  - el-17-8-2
   - el-17-8-1
+  - el-17-8-2
+  - el-17-8-3
   - el-17-8-4
   - el-17-8-5
-  - el-17-8-3
   attributes:
   - color
   - device_interface
   - energy_efficiency_class
   - pattern
+- id: el-17-8-1
+  name: Digital Video Recorders
+  children: []
+  attributes:
+  - color
+  - device_interface
+  - energy_efficiency_class
+  - pattern
+  - video_codecs_formats_supported
 - id: el-17-8-2
   name: DVD & Blu-ray Players
   children: []
@@ -3839,15 +4795,17 @@
   - playback_disc_formats
   - video_codecs_formats_supported
   - video_region_code
-- id: el-17-8-1
-  name: Digital Video Recorders
+- id: el-17-8-3
+  name: DVD & Blu-ray Recorders
   children: []
   attributes:
   - color
-  - device_interface
+  - connection_type
   - energy_efficiency_class
   - pattern
+  - playback_disc_formats
   - video_codecs_formats_supported
+  - video_region_code
 - id: el-17-8-4
   name: Streaming & Home Media Players
   children: []
@@ -3887,16 +4845,29 @@
 - id: el-18
   name: Video Game Console Accessories
   children:
+  - el-18-1
   - el-18-3
   - el-18-4
-  - el-18-1
   attributes:
   - color
+  - pattern
+- id: el-18-1
+  name: Charging Docks
+  children: []
+  attributes:
+  - color
+  - device_interface
   - pattern
 - id: el-18-3
   name: Home Game Console Accessories
   children:
   - el-18-3-2
+  attributes:
+  - color
+  - pattern
+- id: el-18-3-2
+  name: Home Game Console Skins
+  children: []
   attributes:
   - color
   - pattern
@@ -3906,989 +4877,6 @@
   - el-18-4-1
   - el-18-4-2
   - el-18-4-3
-  attributes:
-  - color
-  - pattern
-- id: el-19
-  name: Video Game Consoles
-  children: []
-  attributes:
-  - color
-  - compatible_game_format
-  - compatible_resolution
-  - connection_type
-  - console_system
-  - energy_efficiency_class
-  - pattern
-  - power_source
-- id: el-1-2-2
-  name: Playfield Waxes
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-1-2-3
-  name: Protective Covers
-  children: []
-  attributes:
-  - color
-  - pattern
-  - theme
-- id: el-1-2-4
-  name: Replacement Balls
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-1-2-5
-  name: Rubber Ring Kits
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-1-5-1
-  name: Coin Mechanisms
-  children: []
-  attributes:
-  - color
-  - currency
-  - pattern
-- id: el-1-5-2
-  name: Control Panels
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-1-5-3
-  name: Joysticks
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-1-5-4
-  name: Marquees
-  children: []
-  attributes:
-  - color
-  - pattern
-  - theme
-- id: el-1-5-5
-  name: Push Buttons
-  children: []
-  attributes:
-  - color
-  - pattern
-  - shape
-- id: el-2-1-1-1
-  name: Audio & Video Receiver Rack Mounts
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-2-1-1-2
-  name: Bluetooth Adapters
-  children: []
-  attributes:
-  - color
-  - pattern
-  - usb_standard
-- id: el-2-1-2-3
-  name: Headphone Carrying Cases
-  children: []
-  attributes:
-  - color
-  - pattern
-  - bag_case_material
-- id: el-2-1-2-4-1
-  name: Headphone Cushions
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-2-1-2-4-2
-  name: Headphone Tips
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-2-1-2-5
-  name: Headphone Stands
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-2-1-3-1
-  name: Karaoke Carrying Cases
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-2-1-4-1
-  name: Microphone Shock Mounts
-  children: []
-  attributes:
-  - color
-  - compatible_microphone_thread
-  - pattern
-- id: el-2-1-4-2
-  name: Pop Filters
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-2-1-4-3
-  name: Windshields
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-2-1-7-1
-  name: Satellite Radio Mounts & Brackets
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-2-1-9-1
-  name: Cartridges
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-2-1-9-2
-  name: Record Cleaning Kits
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-2-1-9-3
-  name: Replacement Needles
-  children: []
-  attributes:
-  - color
-  - pattern
-  - stylus_type
-- id: el-2-1-9-4
-  name: Slipmats
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-2-2-7-1-1
-  name: Bone Conduction Headphones
-  children: []
-  attributes:
-  - color
-  - connectivity_technology
-  - device_interface
-  - microphone_type
-  - pattern
-- id: el-2-2-7-1-2
-  name: DJ Headphones
-  children: []
-  attributes:
-  - audio_connectivity
-  - color
-  - connectivity_technology
-  - headphone_style
-  - microphone_type
-  - pattern
-- id: el-2-2-7-1-3
-  name: In-Ear Headphones
-  children: []
-  attributes:
-  - audio_connectivity
-  - color
-  - connectivity_technology
-  - headphone_style
-  - microphone_type
-  - pattern
-- id: el-2-2-7-1-4
-  name: On-Ear Headphones
-  children: []
-  attributes:
-  - audio_connectivity
-  - color
-  - connectivity_technology
-  - headphone_style
-  - microphone_type
-  - pattern
-- id: el-2-2-7-1-5
-  name: Over-Ear Headphones
-  children: []
-  attributes:
-  - audio_connectivity
-  - color
-  - connectivity_technology
-  - headphone_style
-  - microphone_type
-  - pattern
-- id: el-2-3-2
-  name: Handheld Players & Recorders
-  children: []
-  attributes:
-  - color
-  - connection_type
-  - connectivity_technology
-  - media_format
-  - pattern
-  - power_source
-- id: el-2-3-7-1
-  name: AM/FM Radios
-  children: []
-  attributes:
-  - audio_codecs_formats_supported
-  - color
-  - connection_type
-  - connectivity_technology
-  - frequency_radio_bands_supported
-  - pattern
-  - power_source
-  - tuner_type
-- id: el-2-3-7-2
-  name: DAB Radios
-  children: []
-  attributes:
-  - audio_codecs_formats_supported
-  - color
-  - connection_type
-  - connectivity_technology
-  - frequency_radio_bands_supported
-  - pattern
-  - power_source
-  - tuner_type
-- id: el-2-3-7-3
-  name: Internet Radios
-  children: []
-  attributes:
-  - audio_codecs_formats_supported
-  - color
-  - connection_type
-  - connectivity_technology
-  - frequency_radio_bands_supported
-  - pattern
-  - power_source
-  - tuner_type
-- id: el-2-3-7-4
-  name: Satellite Radios
-  children: []
-  attributes:
-  - audio_codecs_formats_supported
-  - color
-  - connection_type
-  - connectivity_technology
-  - frequency_radio_bands_supported
-  - pattern
-  - power_source
-  - tuner_type
-- id: el-2-3-7-5
-  name: Shortwave Radios
-  children: []
-  attributes:
-  - audio_codecs_formats_supported
-  - color
-  - connection_type
-  - connectivity_technology
-  - frequency_radio_bands_supported
-  - pattern
-  - power_source
-  - tuner_type
-- id: el-2-3-7-6
-  name: Weather Radios
-  children: []
-  attributes:
-  - audio_codecs_formats_supported
-  - color
-  - connection_type
-  - connectivity_technology
-  - frequency_radio_bands_supported
-  - pattern
-  - power_source
-  - tuner_type
-- id: el-3-1-1
-  name: Circuit Board Protective Cases
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-3-1-2
-  name: Heat Sinks
-  children: []
-  attributes:
-  - color
-  - pattern
-  - shape
-- id: el-3-1-3
-  name: Jump Wires
-  children: []
-  attributes:
-  - color
-  - connector_gender
-  - pattern
-  - wire_rope_material
-- id: el-3-4-1
-  name: All-Pass Filters
-  children: []
-  attributes:
-  - color
-  - component_package_type
-  - passband
-  - pattern
-  - stopband
-- id: el-3-4-2
-  name: Band-Pass Filters
-  children: []
-  attributes:
-  - color
-  - component_package_type
-  - passband
-  - pattern
-  - stopband
-- id: el-3-4-3
-  name: Band-Stop Filters
-  children: []
-  attributes:
-  - color
-  - component_package_type
-  - passband
-  - pattern
-  - stopband
-- id: el-3-4-4
-  name: High-Pass Filters
-  children: []
-  attributes:
-  - color
-  - component_package_type
-  - passband
-  - pattern
-  - stopband
-- id: el-3-4-5
-  name: Low-Pass Filters
-  children: []
-  attributes:
-  - color
-  - component_package_type
-  - passband
-  - pattern
-  - stopband
-- id: el-4-3-1
-  name: Earpieces
-  children: []
-  attributes:
-  - audio_connectivity
-  - color
-  - pattern
-- id: el-4-3-2
-  name: Radio Carrying Cases
-  children: []
-  attributes:
-  - color
-  - pattern
-  - radio_case_design
-  - bag_case_material
-- id: el-4-4-1
-  name: Amateur Radios
-  children: []
-  attributes:
-  - color
-  - connection_type
-  - connectivity_technology
-  - frequency_radio_bands_supported
-  - pattern
-  - power_source
-- id: el-4-5-1
-  name: Speaker Units
-  children: []
-  attributes:
-  - audio_output_channel
-  - color
-  - connectivity_technology
-  - device_interface
-  - mounting_type
-  - pattern
-  - speaker_technology
-- id: el-4-8-4
-  name: Mobile & Smart Phone Accessories
-  children:
-  - el-4-8-4-1
-  - el-4-8-4-2
-  - el-4-8-4-3
-  - el-4-8-4-4
-  - el-4-8-4-5
-  - el-4-8-4-6
-  - el-4-8-4-7
-  attributes:
-  - color
-  - pattern
-- id: el-4-8-4-1
-  name: Mobile Phone Camera Accessories
-  children:
-  - el-4-8-4-1-1
-  - el-4-8-4-1-2
-  - el-4-8-4-1-3
-  - el-4-8-4-1-4
-  attributes:
-  - color
-  - device_interface
-  - pattern
-- id: el-4-8-4-1-1
-  name: Lenses
-  children: []
-  attributes:
-  - color
-  - device_interface
-  - pattern
-- id: el-4-8-4-1-2
-  name: Lighting Kits
-  children: []
-  attributes:
-  - color
-  - connection_type
-  - pattern
-- id: el-4-8-4-1-3
-  name: Remote Shutters
-  children: []
-  attributes:
-  - color
-  - device_interface
-  - pattern
-- id: el-4-8-4-1-4
-  name: Selfie Sticks
-  children: []
-  attributes:
-  - color
-  - device_interface
-  - feet_type
-  - leg_lock_type
-  - leg_sections
-  - material
-  - pattern
-- id: el-4-8-4-2
-  name: Mobile Phone Cases
-  children: []
-  attributes:
-  - case_type
-  - certifications_and_standards
-  - color
-  - hand_side
-  - pattern
-  - bag_case_material
-- id: el-4-8-4-3
-  name: Mobile Phone Charms & Straps
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-4-8-4-4
-  name: Mobile Phone Pre-Paid Cards & SIM Cards
-  children:
-  - el-4-8-4-4-1
-  - el-4-8-4-4-2
-  attributes:
-  - color
-  - currency
-  - pattern
-- id: el-4-8-4-4-1
-  name: Mobile Phone Pre-Paid Cards
-  children: []
-  attributes:
-  - color
-  - currency
-  - pattern
-- id: el-4-8-4-4-2
-  name: SIM Cards
-  children: []
-  attributes:
-  - color
-  - currency
-  - pattern
-  - sim_card_type
-- id: el-4-8-4-5
-  name: Mobile Phone Replacement Parts
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-4-8-4-6
-  name: Mobile Phone Stands
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-4-8-4-7
-  name: SIM Card Ejection Tools
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-4-8-5
-  name: Mobile & Smart Phones
-  children: []
-  attributes:
-  - battery_technology
-  - color
-  - cosmetic_condition
-  - data_network
-  - display_resolution
-  - operating_system
-  - pattern
-  - removable_storage_formats_supported
-  - sim_card_capability
-  - sim_card_type_1
-  - sim_card_type_2
-  - subscription_type
-- id: el-7-7-1-1
-  name: AUX Cables
-  children: []
-  attributes:
-  - audio_connectivity
-  - cable_shielding
-  - color
-  - pattern
-- id: el-7-7-1-2
-  name: HDMI Cables
-  children: []
-  attributes:
-  - cable_shielding
-  - color
-  - device_interface
-  - pattern
-- id: el-7-7-1-3
-  name: VGA Cables
-  children: []
-  attributes:
-  - cable_shielding
-  - color
-  - device_interface
-  - pattern
-- id: el-7-7-1-4
-  name: XLR Cables
-  children: []
-  attributes:
-  - cable_shielding
-  - color
-  - input_connection
-  - output_connection
-  - pattern
-- id: el-7-7-2
-  name: Extension Cables
-  children: []
-  attributes:
-  - cable_shielding
-  - color
-  - device_interface
-  - pattern
-- id: el-7-7-4-1
-  name: Coaxial Cables
-  children: []
-  attributes:
-  - cable_shielding
-  - color
-  - device_interface
-  - pattern
-- id: el-7-7-4-2
-  name: Ethernet Cables
-  children: []
-  attributes:
-  - cable_shielding
-  - color
-  - network_cable_interface
-  - pattern
-- id: el-7-7-5-1
-  name: FireWire Cables
-  children: []
-  attributes:
-  - cable_shielding
-  - color
-  - device_interface
-  - pattern
-- id: el-7-7-5-2
-  name: USB Cables
-  children: []
-  attributes:
-  - cable_shielding
-  - color
-  - connection_type
-  - pattern
-- id: el-7-9-11-2-1
-  name: Game Controller Carrying Cases
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-7-9-11-2-2
-  name: Game Controller Skins
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-7-9-11-2-3
-  name: Thumb Grips
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-7-9-11-4-1
-  name: Mice & Trackball Carrying Cases
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-7-9-11-4-2
-  name: Mouse Bungees
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-7-9-11-4-3
-  name: Mouse Skates
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-7-9-14-1-1
-  name: CD/DVD/Blu-ray Duplicators
-  children: []
-  attributes:
-  - color
-  - device_interface
-  - optical_drive_type
-  - pattern
-  - power_source
-  - read_write_speed
-- id: el-7-11-1
-  name: Dust Covers
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-7-15-4-1
-  name: Charger Protective Cases
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-7-15-4-2
-  name: Replacement Cords
-  children: []
-  attributes:
-  - cable_shielding
-  - color
-  - pattern
-  - plug_type
-- id: el-7-15-5-1
-  name: Power Banks
-  children: []
-  attributes:
-  - charging_method
-  - color
-  - compatible_device
-  - connection_type
-  - pattern
-  - plug_type
-  - power_source
-- id: el-7-15-5-2
-  name: Wireless Chargers
-  children: []
-  attributes:
-  - color
-  - compatible_device
-  - connection_type
-  - pattern
-  - plug_type
-  - power_source
-- id: el-7-15-7
-  name: Power Stations
-  children: []
-  attributes:
-  - battery_technology
-  - color
-  - connection_type
-  - pattern
-  - power_source
-- id: el-7-15-13-1
-  name: UPS Rack Mounting Kits
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-12-3-1
-  name: Gigabit Switches
-  children: []
-  attributes:
-  - color
-  - connection_type
-  - ethernet_lan_interface_type
-  - network_protocols_supported
-  - pattern
-  - power_source
-- id: el-12-3-2
-  name: Layer 2 Switches
-  children: []
-  attributes:
-  - color
-  - connection_type
-  - ethernet_lan_interface_type
-  - network_protocols_supported
-  - pattern
-  - power_source
-- id: el-12-3-3
-  name: Layer 3 Switches
-  children: []
-  attributes:
-  - color
-  - connection_type
-  - ethernet_lan_interface_type
-  - network_protocols_supported
-  - pattern
-  - power_source
-- id: el-12-3-4
-  name: Managed Switches
-  children: []
-  attributes:
-  - color
-  - connection_type
-  - ethernet_lan_interface_type
-  - network_protocols_supported
-  - pattern
-  - power_source
-- id: el-12-3-5
-  name: Modular Switches
-  children: []
-  attributes:
-  - color
-  - connection_type
-  - ethernet_lan_interface_type
-  - network_protocols_supported
-  - pattern
-  - power_source
-- id: el-12-3-6
-  name: Power Over Ethernet Switches
-  children: []
-  attributes:
-  - color
-  - connection_type
-  - ethernet_lan_interface_type
-  - network_protocols_supported
-  - pattern
-  - power_source
-- id: el-12-3-7
-  name: Smart Switches
-  children: []
-  attributes:
-  - color
-  - connection_type
-  - ethernet_lan_interface_type
-  - network_protocols_supported
-  - pattern
-  - power_source
-- id: el-12-3-8
-  name: Stackable Switches
-  children: []
-  attributes:
-  - color
-  - connection_type
-  - ethernet_lan_interface_type
-  - network_protocols_supported
-  - pattern
-  - power_source
-- id: el-12-3-9
-  name: Unmanaged Switches
-  children: []
-  attributes:
-  - color
-  - connection_type
-  - ethernet_lan_interface_type
-  - network_protocols_supported
-  - pattern
-  - power_source
-- id: el-13-1-1
-  name: 3D Printer Carrying Cases
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-13-1-2
-  name: 3D Printer Cleaning Kits
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-13-1-3
-  name: Build Tape
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-13-1-4
-  name: Extruders
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-13-1-5
-  name: Filaments
-  children: []
-  attributes:
-  - color
-  - material
-  - pattern
-- id: el-13-1-6
-  name: Nozzles
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-13-1-7
-  name: Print Beds
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-13-3-1-2-1
-  name: Air Printer Filters
-  children: []
-  attributes:
-  - color
-  - pattern
-  - print_technology
-- id: el-13-3-1-2-2
-  name: Fume Printer Filters
-  children: []
-  attributes:
-  - color
-  - pattern
-  - print_technology
-- id: el-13-3-1-2-3
-  name: Ozone Printer Filters
-  children: []
-  attributes:
-  - color
-  - pattern
-  - print_technology
-- id: el-13-3-1-2-4
-  name: Toner Printer Filters
-  children: []
-  attributes:
-  - color
-  - pattern
-  - print_technology
-- id: el-13-3-5
-  name: Printer, Copier & Fax Carrying Cases
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-13-3-6
-  name: Printer, Copier & Fax Cleaning Kits
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-13-5-1
-  name: Scanner Carrying Cases
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-13-5-2
-  name: Scanner Cleaning Kits
-  children: []
-  attributes:
-  - color
-  - pattern
-- id: el-13-6-1
-  name: Drum Scanners
-  children: []
-  attributes:
-  - color
-  - compatible_paper_size
-  - connection_type
-  - energy_efficiency_class
-  - memory_technology
-  - pattern
-  - power_source
-  - scanner_sensor_type
-- id: el-13-6-2
-  name: Film Scanners
-  children: []
-  attributes:
-  - color
-  - compatible_paper_size
-  - connection_type
-  - energy_efficiency_class
-  - memory_technology
-  - pattern
-  - power_source
-  - scanner_sensor_type
-- id: el-13-6-3
-  name: Flatbed Scanners
-  children: []
-  attributes:
-  - color
-  - compatible_paper_size
-  - connection_type
-  - energy_efficiency_class
-  - memory_technology
-  - pattern
-  - power_source
-  - scanner_sensor_type
-- id: el-13-6-4
-  name: Photo Scanners
-  children: []
-  attributes:
-  - color
-  - compatible_paper_size
-  - connection_type
-  - energy_efficiency_class
-  - memory_technology
-  - pattern
-  - power_source
-  - scanner_sensor_type
-- id: el-13-6-5
-  name: Portable Scanners
-  children: []
-  attributes:
-  - color
-  - compatible_paper_size
-  - connection_type
-  - energy_efficiency_class
-  - memory_technology
-  - pattern
-  - power_source
-  - scanner_sensor_type
-- id: el-13-6-6
-  name: Sheetfed Scanners
-  children: []
-  attributes:
-  - color
-  - compatible_paper_size
-  - connection_type
-  - energy_efficiency_class
-  - memory_technology
-  - pattern
-  - power_source
-  - scanner_sensor_type
-- id: el-17-8-3
-  name: DVD & Blu-ray Recorders
-  children: []
-  attributes:
-  - color
-  - connection_type
-  - energy_efficiency_class
-  - pattern
-  - playback_disc_formats
-  - video_codecs_formats_supported
-  - video_region_code
-- id: el-18-1
-  name: Charging Docks
-  children: []
-  attributes:
-  - color
-  - device_interface
-  - pattern
-- id: el-18-3-2
-  name: Home Game Console Skins
-  children: []
   attributes:
   - color
   - pattern
@@ -4910,3 +4898,15 @@
   attributes:
   - color
   - pattern
+- id: el-19
+  name: Video Game Consoles
+  children: []
+  attributes:
+  - color
+  - compatible_game_format
+  - compatible_resolution
+  - connection_type
+  - console_system
+  - energy_efficiency_class
+  - pattern
+  - power_source

@@ -7,14 +7,13 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
   include Minitest::Hooks
 
   def before_all
-    @raw_attributes_data = YAML.load_file("#{Application.root}/data/attributes/attributes.yml")
     seed = DB::Seed.new
-    seed.attributes_from(@raw_attributes_data)
 
-    # this will be replaced by values.yml
-    @unique_raw_values_data = @raw_attributes_data
-      .flat_map { _1.fetch("values") }
-      .uniq { _1.fetch("id") }
+    @raw_values_data = YAML.load_file("#{Application.root}/data/values.yml")
+    seed.values_from(@raw_values_data)
+
+    @raw_attributes_data = YAML.load_file("#{Application.root}/data/attributes.yml")
+    seed.attributes_from(@raw_attributes_data)
 
     # Categories are only successfully parseable if attributes are already present
     category_files = Dir.glob("#{Application.root}/data/categories/*.yml")
@@ -22,12 +21,12 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     seed.categories_from(@raw_verticals_data)
   end
 
-  test "AttributeValues are correctly imported from attributes.yml" do
-    assert_equal @unique_raw_values_data.size, PropertyValue.count
+  test "AttributeValues are correctly imported from values.yml" do
+    assert_equal @raw_values_data.size, PropertyValue.count
   end
 
-  test "AttributeValues are consistent with attributes.yml" do
-    @unique_raw_values_data.each do |raw_value|
+  test "AttributeValues are consistent with values.yml" do
+    @raw_values_data.each do |raw_value|
       deserialized_value = SourceData::PropertyValueSerializer.deserialize(raw_value)
       real_value = PropertyValue.find(raw_value.fetch("id"))
 
@@ -92,13 +91,44 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     end
   end
 
-  test "Attribute ↔ Value relationships are consistent with attributes.yml" do
+  test "Attribute ↔ Value relationships are consistent with attributes.yml when values are listed" do
     @raw_attributes_data.each do |raw_attribute|
       property = Property.find(raw_attribute.fetch("id"))
-      raw_attribute.fetch("values").each do |raw_property_value|
-        property_value = PropertyValue.find(raw_property_value.fetch("id"))
+
+      next unless raw_attribute.fetch("values_from", nil).nil?
+
+      raw_value_friendly_ids = raw_attribute.fetch("values", [])
+      refute raw_value_friendly_ids.empty?
+
+      raw_value_friendly_ids.each do |property_value_friendly_id|
+        property_value = PropertyValue.find_by(friendly_id: property_value_friendly_id)
         assert_includes property.property_values, property_value
       end
+    end
+  end
+
+  test "Attribute ↔ Value relationships are consistent with attributes.yml when values are inherited" do
+    @raw_attributes_data.each do |raw_attribute|
+      property = Property.find(raw_attribute.fetch("id"))
+
+      next unless raw_attribute.fetch("values", nil).nil?
+
+      values_from_property_friendly_id = raw_attribute.fetch("values_from", nil)
+      refute values_from_property_friendly_id.nil?
+
+      values_from_property = Property.find_by(friendly_id: values_from_property_friendly_id)
+
+      assert_equal values_from_property.property_values.size, property.property_values.size
+
+      property.property_values.each do |property_values|
+        assert_includes values_from_property.property_values, property_values
+      end
+    end
+  end
+
+  test "Attributes in yaml either have values or inherit values" do
+    @raw_attributes_data.each do |raw_attribute|
+      assert raw_attribute.key?("values") ^ raw_attribute.key?("values_from")
     end
   end
 
@@ -109,7 +139,7 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     assert_equal "Snowboards", snowboard.name
     assert_empty snowboard.children
 
-    real_property_friendly_ids = snowboard.properties.pluck(:friendly_id)
+    real_property_friendly_ids = snowboard.property_friendly_ids
     assert_equal 8, real_property_friendly_ids.size
     assert_includes real_property_friendly_ids, "age_group"
     assert_includes real_property_friendly_ids, "color"
@@ -128,11 +158,11 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     assert_equal "Snowboard construction", snowboard_construction.name
     assert_equal "snowboard_construction", snowboard_construction.friendly_id
 
-    real_value_ids = snowboard_construction.property_value_ids
-    assert_equal 4, real_value_ids.size
-    assert_includes real_value_ids, 1363 # Flat
-    assert_includes real_value_ids, 7083 # Hybrid
-    assert_includes real_value_ids, 7236 # Camber
-    assert_includes real_value_ids, 7237 # Rocker
+    real_value_friendly_ids = snowboard_construction.property_value_friendly_ids
+    assert_equal 4, real_value_friendly_ids.size
+    assert_includes real_value_friendly_ids, "snowboard_construction__camber"
+    assert_includes real_value_friendly_ids, "snowboard_construction__flat"
+    assert_includes real_value_friendly_ids, "snowboard_construction__hybrid"
+    assert_includes real_value_friendly_ids, "snowboard_construction__rocker"
   end
 end

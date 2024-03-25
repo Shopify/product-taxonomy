@@ -12,20 +12,20 @@ class PropertyValueTest < ActiveSupport::TestCase
   end
 
   test "default ordering is alphabetical with 'other' last" do
-    red = value!(id: 11, name: "Red")
-    zoo = value!(id: 12, name: "Zoo")
-    other = value!(id: 10, name: "Other")
+    red = value!(id: 11, name: "Red", friendly_id: "test__red")
+    zoo = value!(id: 12, name: "Zoo", friendly_id: "test__zoo")
+    other = value!(id: 10, name: "Other", friendly_id: "test__other")
 
     assert_equal [red, zoo, other], PropertyValue.all.to_a
   end
 
   private
 
-  def value(id: 1, name: "Foo")
-    PropertyValue.new(id: id, name: name)
+  def value(id: 1, name: "Foo", friendly_id: "test__foo")
+    PropertyValue.new(id: id, name: name, friendly_id: friendly_id)
   end
 
-  def value!(id: 1, name: "Foo")
-    PropertyValue.create(id: id, name: name)
+  def value!(id: 1, name: "Foo", friendly_id: "test__foo")
+    PropertyValue.create(id: id, name: name, friendly_id: friendly_id)
   end
 end

@@ -11,7 +11,8 @@ cli.parse!(ARGV)
 puts("Seeding local database...")
 cli.options_status
 
-attributes_data = cli.parse_yaml("data/attributes/attributes.yml")
+values_data = cli.parse_yaml("data/values.yml")
+attributes_data = cli.parse_yaml("data/attributes.yml")
 category_files = Dir.glob("#{CLI.root}/data/categories/*.yml")
 verticals_data = category_files.map { cli.parse_yaml(_1) }
 
@@ -19,5 +20,6 @@ Application.establish_db_connection!
 Application.load_and_reset_schema!
 
 seed = DB::Seed.new(verbose: cli.options.verbose)
+seed.values_from(values_data)
 seed.attributes_from(attributes_data)
 seed.categories_from(verticals_data)
