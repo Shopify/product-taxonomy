@@ -1249,7 +1249,6 @@
 - id: hb-3-2-5-1
   name: Makeup Tools
   children:
-  - hb-3-2-5-1-12
   - hb-3-2-5-1-3
   - hb-3-2-5-1-4
   - hb-3-2-5-1-5
@@ -1259,10 +1258,7 @@
   - hb-3-2-5-1-9
   - hb-3-2-5-1-10
   - hb-3-2-5-1-11
-  attributes: []
-- id: hb-3-2-5-1-12
-  name: Double Eyelid Glue & Tape
-  children: []
+  - hb-3-2-5-1-12
   attributes: []
 - id: hb-3-2-5-1-3
   name: Eyebrow Stencils
@@ -1332,6 +1328,10 @@
   children: []
   attributes:
   - compatible_makeup
+- id: hb-3-2-5-1-12
+  name: Double Eyelid Glue & Tape
+  children: []
+  attributes: []
 - id: hb-3-2-5-2
   name: Nail Tools
   children:
@@ -1473,14 +1473,8 @@
 - id: hb-3-2-6-1
   name: Body Makeup
   children:
-  - hb-3-2-6-1-4
   - hb-3-2-6-1-2
-  attributes:
-  - product_certifications_standards
-  - product_form
-- id: hb-3-2-6-1-4
-  name: Body & Hair Glitter
-  children: []
+  - hb-3-2-6-1-4
   attributes:
   - product_certifications_standards
   - product_form
@@ -1494,6 +1488,12 @@
   - product_form
   - skin_tone
   - skin_undertone
+- id: hb-3-2-6-1-4
+  name: Body & Hair Glitter
+  children: []
+  attributes:
+  - product_certifications_standards
+  - product_form
 - id: hb-3-2-6-2
   name: Costume & Stage Makeup
   children: []
@@ -2585,8 +2585,8 @@
   name: Shampoo & Conditioner
   children:
   - hb-3-10-13-1
-  - hb-3-10-13-3
   - hb-3-10-13-2
+  - hb-3-10-13-3
   attributes:
   - compatible_hair_color
   - product_certifications_standards
@@ -2709,6 +2709,61 @@
   - compatible_hair_color
   - conditioner_effect
   - product_certifications_standards
+  - suitable_for_hair_type
+  - target_gender
+- id: hb-3-10-13-2
+  name: Shampoo & Conditioner Sets
+  children:
+  - hb-3-10-13-2-1
+  - hb-3-10-13-2-2
+  - hb-3-10-13-2-3
+  - hb-3-10-13-2-4
+  - hb-3-10-13-2-5
+  - hb-3-10-13-2-6
+  attributes:
+  - compatible_hair_color
+  - suitable_for_hair_type
+  - target_gender
+- id: hb-3-10-13-2-1
+  name: Color-Safe Sets
+  children: []
+  attributes:
+  - compatible_hair_color
+  - suitable_for_hair_type
+  - target_gender
+- id: hb-3-10-13-2-2
+  name: Hydrating Sets
+  children: []
+  attributes:
+  - compatible_hair_color
+  - suitable_for_hair_type
+  - target_gender
+- id: hb-3-10-13-2-3
+  name: Repairing Sets
+  children: []
+  attributes:
+  - compatible_hair_color
+  - suitable_for_hair_type
+  - target_gender
+- id: hb-3-10-13-2-4
+  name: Scalp Care Sets
+  children: []
+  attributes:
+  - compatible_hair_color
+  - suitable_for_hair_type
+  - target_gender
+- id: hb-3-10-13-2-5
+  name: Smoothing Sets
+  children: []
+  attributes:
+  - compatible_hair_color
+  - suitable_for_hair_type
+  - target_gender
+- id: hb-3-10-13-2-6
+  name: Volumizing Sets
+  children: []
+  attributes:
+  - compatible_hair_color
   - suitable_for_hair_type
   - target_gender
 - id: hb-3-10-13-3
@@ -2860,61 +2915,6 @@
   - shampoo_type
   - suitable_for_hair_type
   - target_gender
-- id: hb-3-10-13-2
-  name: Shampoo & Conditioner Sets
-  children:
-  - hb-3-10-13-2-1
-  - hb-3-10-13-2-2
-  - hb-3-10-13-2-3
-  - hb-3-10-13-2-4
-  - hb-3-10-13-2-5
-  - hb-3-10-13-2-6
-  attributes:
-  - compatible_hair_color
-  - suitable_for_hair_type
-  - target_gender
-- id: hb-3-10-13-2-1
-  name: Color-Safe Sets
-  children: []
-  attributes:
-  - compatible_hair_color
-  - suitable_for_hair_type
-  - target_gender
-- id: hb-3-10-13-2-2
-  name: Hydrating Sets
-  children: []
-  attributes:
-  - compatible_hair_color
-  - suitable_for_hair_type
-  - target_gender
-- id: hb-3-10-13-2-3
-  name: Repairing Sets
-  children: []
-  attributes:
-  - compatible_hair_color
-  - suitable_for_hair_type
-  - target_gender
-- id: hb-3-10-13-2-4
-  name: Scalp Care Sets
-  children: []
-  attributes:
-  - compatible_hair_color
-  - suitable_for_hair_type
-  - target_gender
-- id: hb-3-10-13-2-5
-  name: Smoothing Sets
-  children: []
-  attributes:
-  - compatible_hair_color
-  - suitable_for_hair_type
-  - target_gender
-- id: hb-3-10-13-2-6
-  name: Volumizing Sets
-  children: []
-  attributes:
-  - compatible_hair_color
-  - suitable_for_hair_type
-  - target_gender
 - id: hb-3-11
   name: Massage & Relaxation
   children:
@@ -3019,8 +3019,8 @@
   - hb-3-12-15
   - hb-3-12-16
   - hb-3-12-17
-  - hb-3-12-19
   - hb-3-12-18
+  - hb-3-12-19
   - hb-3-12-20
   attributes: []
 - id: hb-3-12-1
@@ -3271,12 +3271,6 @@
   attributes:
   - age_group
   - color
-- id: hb-3-12-19
-  name: Toothpaste
-  children: []
-  attributes:
-  - age_group
-  - toothpaste_type
 - id: hb-3-12-18
   name: Toothpaste Squeezers & Dispensers
   children: []
@@ -3284,6 +3278,12 @@
   - color
   - material
   - mounting_type
+- id: hb-3-12-19
+  name: Toothpaste
+  children: []
+  attributes:
+  - age_group
+  - toothpaste_type
 - id: hb-3-12-20
   name: Toothpicks
   children: []

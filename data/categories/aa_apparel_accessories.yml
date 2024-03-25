@@ -19,7 +19,6 @@
   - aa-1-1
   - aa-1-2
   - aa-1-3
-  - aa-1-13
   - aa-1-4
   - aa-1-5
   - aa-1-6
@@ -29,6 +28,7 @@
   - aa-1-10
   - aa-1-11
   - aa-1-12
+  - aa-1-13
   - aa-1-14
   - aa-1-15
   - aa-1-16
@@ -36,9 +36,9 @@
   - aa-1-18
   - aa-1-19
   - aa-1-20
-  - aa-1-23
   - aa-1-21
   - aa-1-22
+  - aa-1-23
   attributes:
   - color
   - fabric
@@ -47,12 +47,12 @@
   name: Activewear
   children:
   - aa-1-1-1
-  - aa-1-1-7
   - aa-1-1-2
-  - aa-1-1-8
   - aa-1-1-4
   - aa-1-1-5
   - aa-1-1-6
+  - aa-1-1-7
+  - aa-1-1-8
   attributes:
   - activity
   - color
@@ -176,6 +176,84 @@
   - size
   - target_gender
   - waist_rise
+- id: aa-1-1-2
+  name: Activewear Tops
+  children:
+  - aa-1-1-2-1
+  - aa-1-1-2-2
+  - aa-1-1-2-3
+  attributes:
+  - activity
+  - color
+  - fabric
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
+- id: aa-1-1-2-1
+  name: Crop Tops
+  children: []
+  attributes:
+  - activity
+  - color
+  - fabric
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
+- id: aa-1-1-2-2
+  name: T-Shirts
+  children: []
+  attributes:
+  - activity
+  - color
+  - fabric
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
+- id: aa-1-1-2-3
+  name: Tank Tops
+  children: []
+  attributes:
+  - activity
+  - color
+  - fabric
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
+- id: aa-1-1-4
+  name: Boxing Shorts
+  children: []
+  attributes:
+  - color
+  - fabric
+  - pattern
+  - size
+  - target_gender
+- id: aa-1-1-5
+  name: Dance Dresses, Skirts & Costumes
+  children: []
+  attributes:
+  - color
+  - fabric
+  - pattern
+  - size
+  - skirt_dress_length_type
+  - sleeve_length_type
+  - target_gender
+- id: aa-1-1-6
+  name: Sports Bras
+  children: []
+  attributes:
+  - bra_strap_type
+  - bra_support_level
+  - color
+  - cup_size
+  - fabric
+  - pattern
+  - target_gender
 - id: aa-1-1-7
   name: Activewear Sweatshirts & Hoodies
   children:
@@ -239,69 +317,11 @@
   - size
   - sleeve_length_type
   - target_gender
-- id: aa-1-1-2
-  name: Activewear Tops
-  children:
-  - aa-1-1-2-1
-  - aa-1-1-2-2
-  - aa-1-1-2-3
-  attributes:
-  - activity
-  - color
-  - fabric
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
-- id: aa-1-1-2-1
-  name: Crop Tops
-  children: []
-  attributes:
-  - activity
-  - color
-  - fabric
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
-- id: aa-1-1-2-2
-  name: T-Shirts
-  children: []
-  attributes:
-  - activity
-  - color
-  - fabric
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
-- id: aa-1-1-2-3
-  name: Tank Tops
-  children: []
-  attributes:
-  - activity
-  - color
-  - fabric
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
 - id: aa-1-1-8
   name: Activewear Vests & Jackets
   children:
-  - aa-1-1-8-2
   - aa-1-1-8-1
-  attributes:
-  - activity
-  - color
-  - fabric
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
-- id: aa-1-1-8-2
-  name: Jackets
-  children: []
+  - aa-1-1-8-2
   attributes:
   - activity
   - color
@@ -320,36 +340,16 @@
   - pattern
   - size
   - target_gender
-- id: aa-1-1-4
-  name: Boxing Shorts
+- id: aa-1-1-8-2
+  name: Jackets
   children: []
   attributes:
+  - activity
   - color
   - fabric
   - pattern
   - size
-  - target_gender
-- id: aa-1-1-5
-  name: Dance Dresses, Skirts & Costumes
-  children: []
-  attributes:
-  - color
-  - fabric
-  - pattern
-  - size
-  - skirt_dress_length_type
   - sleeve_length_type
-  - target_gender
-- id: aa-1-1-6
-  name: Sports Bras
-  children: []
-  attributes:
-  - bra_strap_type
-  - bra_support_level
-  - color
-  - cup_size
-  - fabric
-  - pattern
   - target_gender
 - id: aa-1-2
   name: Baby & Toddler Clothing
@@ -748,15 +748,15 @@
   - aa-1-2-8-2
   - aa-1-2-8-3
   - aa-1-2-8-4
-  - aa-1-2-8-22
   - aa-1-2-8-9
   - aa-1-2-8-10
-  - aa-1-2-8-23
   - aa-1-2-8-13
   - aa-1-2-8-14
   - aa-1-2-8-15
   - aa-1-2-8-16
   - aa-1-2-8-17
+  - aa-1-2-8-22
+  - aa-1-2-8-23
   - aa-1-2-8-24
   attributes:
   - color
@@ -795,16 +795,6 @@
   - size
   - sleeve_length_type
   - target_gender
-- id: aa-1-2-8-22
-  name: One-Piece Swimsuits
-  children: []
-  attributes:
-  - color
-  - fabric
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
 - id: aa-1-2-8-9
   name: Rash Guards
   children: []
@@ -816,16 +806,6 @@
   - target_gender
 - id: aa-1-2-8-10
   name: Skirtinis
-  children: []
-  attributes:
-  - color
-  - fabric
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
-- id: aa-1-2-8-23
-  name: Surf Tops
   children: []
   attributes:
   - color
@@ -879,6 +859,26 @@
   - fabric
   - pattern
   - size
+  - target_gender
+- id: aa-1-2-8-22
+  name: One-Piece Swimsuits
+  children: []
+  attributes:
+  - color
+  - fabric
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
+- id: aa-1-2-8-23
+  name: Surf Tops
+  children: []
+  attributes:
+  - color
+  - fabric
+  - pattern
+  - size
+  - sleeve_length_type
   - target_gender
 - id: aa-1-2-8-24
   name: Swimwear Tops
@@ -1139,143 +1139,6 @@
   - pattern
   - size
   - underwear_style
-- id: aa-1-13
-  name: Clothing Tops
-  children:
-  - aa-1-13-1
-  - aa-1-13-2
-  - aa-1-13-3
-  - aa-1-13-5
-  - aa-1-13-6
-  - aa-1-13-7
-  - aa-1-13-8
-  - aa-1-13-9
-  - aa-1-13-11
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - neckline
-  - pattern
-  - size
-  - sleeve_length_type
-  - top_length_type
-- id: aa-1-13-1
-  name: Blouses
-  children: []
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - neckline
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
-  - top_length_type
-- id: aa-1-13-2
-  name: Bodysuits
-  children: []
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - neckline
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
-  - top_length_type
-- id: aa-1-13-3
-  name: Cardigans
-  children: []
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - neckline
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
-  - top_length_type
-- id: aa-1-13-5
-  name: Overshirts
-  children: []
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - neckline
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
-  - top_length_type
-- id: aa-1-13-6
-  name: Polos
-  children: []
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - neckline
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
-  - top_length_type
-- id: aa-1-13-7
-  name: Shirts
-  children: []
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - neckline
-  - pattern
-  - size
-  - target_gender
-  - top_length_type
-- id: aa-1-13-8
-  name: T-Shirts
-  children: []
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - neckline
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
-  - top_length_type
-- id: aa-1-13-9
-  name: Tank Tops
-  children: []
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - neckline
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
-  - top_length_type
-- id: aa-1-13-11
-  name: Tunics
-  children: []
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - neckline
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
-  - top_length_type
 - id: aa-1-4
   name: Dresses
   children: []
@@ -1714,6 +1577,7 @@
 - id: aa-1-7
   name: Maternity Clothing
   children:
+  - aa-1-7-1
   - aa-1-7-2
   - aa-1-7-3
   - aa-1-7-4
@@ -1721,9 +1585,19 @@
   - aa-1-7-6
   - aa-1-7-7
   - aa-1-7-8
-  - aa-1-7-1
   attributes:
   - color
+  - fabric
+  - pattern
+- id: aa-1-7-1
+  name: Nursing Bras
+  children: []
+  attributes:
+  - bra_closure_type
+  - bra_coverage
+  - bra_strap_type
+  - color
+  - cup_size
   - fabric
   - pattern
 - id: aa-1-7-2
@@ -1866,13 +1740,21 @@
 - id: aa-1-7-7
   name: Maternity Swimwear
   children:
+  - aa-1-7-7-2
   - aa-1-7-7-4
   - aa-1-7-7-5
   - aa-1-7-7-6
-  - aa-1-7-7-20
-  - aa-1-7-7-2
   - aa-1-7-7-14
+  - aa-1-7-7-20
   - aa-1-7-7-21
+  attributes:
+  - color
+  - fabric
+  - pattern
+  - size
+- id: aa-1-7-7-2
+  name: Swim Boxers
+  children: []
   attributes:
   - color
   - fabric
@@ -1905,8 +1787,8 @@
   - pattern
   - size
   - sleeve_length_type
-- id: aa-1-7-7-20
-  name: One-Piece Swimsuits
+- id: aa-1-7-7-14
+  name: Swim Dresses
   children: []
   attributes:
   - color
@@ -1914,16 +1796,8 @@
   - pattern
   - size
   - sleeve_length_type
-- id: aa-1-7-7-2
-  name: Swim Boxers
-  children: []
-  attributes:
-  - color
-  - fabric
-  - pattern
-  - size
-- id: aa-1-7-7-14
-  name: Swim Dresses
+- id: aa-1-7-7-20
+  name: One-Piece Swimsuits
   children: []
   attributes:
   - color
@@ -2048,17 +1922,6 @@
   - size
   - sleeve_length_type
   - top_length_type
-- id: aa-1-7-1
-  name: Nursing Bras
-  children: []
-  attributes:
-  - bra_closure_type
-  - bra_coverage
-  - bra_strap_type
-  - color
-  - cup_size
-  - fabric
-  - pattern
 - id: aa-1-8
   name: Men's Undergarments
   children:
@@ -2613,17 +2476,154 @@
   - size
   - target_gender
   - waist_rise
+- id: aa-1-13
+  name: Clothing Tops
+  children:
+  - aa-1-13-1
+  - aa-1-13-2
+  - aa-1-13-3
+  - aa-1-13-5
+  - aa-1-13-6
+  - aa-1-13-7
+  - aa-1-13-8
+  - aa-1-13-9
+  - aa-1-13-11
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - top_length_type
+- id: aa-1-13-1
+  name: Blouses
+  children: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
+  - top_length_type
+- id: aa-1-13-2
+  name: Bodysuits
+  children: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
+  - top_length_type
+- id: aa-1-13-3
+  name: Cardigans
+  children: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
+  - top_length_type
+- id: aa-1-13-5
+  name: Overshirts
+  children: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
+  - top_length_type
+- id: aa-1-13-6
+  name: Polos
+  children: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
+  - top_length_type
+- id: aa-1-13-7
+  name: Shirts
+  children: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - target_gender
+  - top_length_type
+- id: aa-1-13-8
+  name: T-Shirts
+  children: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
+  - top_length_type
+- id: aa-1-13-9
+  name: Tank Tops
+  children: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
+  - top_length_type
+- id: aa-1-13-11
+  name: Tunics
+  children: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
+  - top_length_type
 - id: aa-1-14
   name: Shorts
   children:
   - aa-1-14-1
   - aa-1-14-2
   - aa-1-14-3
+  - aa-1-14-4
   - aa-1-14-5
   - aa-1-14-6
   - aa-1-14-7
   - aa-1-14-8
-  - aa-1-14-4
   attributes:
   - age_group
   - color
@@ -2659,6 +2659,18 @@
   - waist_rise
 - id: aa-1-14-3
   name: Chino Shorts
+  children: []
+  attributes:
+  - age_group
+  - color
+  - fit
+  - fabric
+  - pattern
+  - size
+  - target_gender
+  - waist_rise
+- id: aa-1-14-4
+  name: Short Trousers
   children: []
   attributes:
   - age_group
@@ -2707,18 +2719,6 @@
   - waist_rise
 - id: aa-1-14-8
   name: Legging Shorts
-  children: []
-  attributes:
-  - age_group
-  - color
-  - fit
-  - fabric
-  - pattern
-  - size
-  - target_gender
-  - waist_rise
-- id: aa-1-14-4
-  name: Short Trousers
   children: []
   attributes:
   - age_group
@@ -3076,15 +3076,15 @@
   name: Swimwear
   children:
   - aa-1-20-2
+  - aa-1-20-3
+  - aa-1-20-4
   - aa-1-20-5
   - aa-1-20-6
   - aa-1-20-7
-  - aa-1-20-22
   - aa-1-20-12
-  - aa-1-20-23
-  - aa-1-20-3
-  - aa-1-20-4
   - aa-1-20-17
+  - aa-1-20-22
+  - aa-1-20-23
   - aa-1-20-24
   attributes:
   - age_group
@@ -3095,6 +3095,26 @@
   - target_gender
 - id: aa-1-20-2
   name: Boardshorts
+  children: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - size
+  - target_gender
+- id: aa-1-20-3
+  name: Swim Boxers
+  children: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - size
+  - target_gender
+- id: aa-1-20-4
+  name: Swim Briefs
   children: []
   attributes:
   - age_group
@@ -3136,50 +3156,8 @@
   - size
   - sleeve_length_type
   - target_gender
-- id: aa-1-20-22
-  name: One-Piece Swimsuits
-  children: []
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
 - id: aa-1-20-12
   name: Rash Guards
-  children: []
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - pattern
-  - size
-  - target_gender
-- id: aa-1-20-23
-  name: Surf Tops
-  children: []
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - pattern
-  - size
-  - sleeve_length_type
-  - target_gender
-- id: aa-1-20-3
-  name: Swim Boxers
-  children: []
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - pattern
-  - size
-  - target_gender
-- id: aa-1-20-4
-  name: Swim Briefs
   children: []
   attributes:
   - age_group
@@ -3199,6 +3177,28 @@
   - size
   - sleeve_length_type
   - target_gender
+- id: aa-1-20-22
+  name: One-Piece Swimsuits
+  children: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
+- id: aa-1-20-23
+  name: Surf Tops
+  children: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
 - id: aa-1-20-24
   name: Swimwear Tops
   children: []
@@ -3209,38 +3209,6 @@
   - pattern
   - size
   - sleeve_length_type
-  - target_gender
-- id: aa-1-23
-  name: Traditional & Ceremonial Clothing
-  children:
-  - aa-1-23-1
-  - aa-1-23-2
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - pattern
-  - size
-  - target_gender
-- id: aa-1-23-1
-  name: Kimonos
-  children: []
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - pattern
-  - size
-  - target_gender
-- id: aa-1-23-2
-  name: Saris & Lehengas
-  children: []
-  attributes:
-  - age_group
-  - color
-  - fabric
-  - pattern
-  - size
   - target_gender
 - id: aa-1-21
   name: Uniforms
@@ -3379,6 +3347,38 @@
   - size
   - skirt_dress_length_type
   - sleeve_length_type
+- id: aa-1-23
+  name: Traditional & Ceremonial Clothing
+  children:
+  - aa-1-23-1
+  - aa-1-23-2
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - size
+  - target_gender
+- id: aa-1-23-1
+  name: Kimonos
+  children: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - size
+  - target_gender
+- id: aa-1-23-2
+  name: Saris & Lehengas
+  children: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - size
+  - target_gender
 - id: aa-2
   name: Clothing Accessories
   children:
@@ -3411,8 +3411,8 @@
   - aa-2-27
   - aa-2-28
   - aa-2-29
-  - aa-2-31
   - aa-2-30
+  - aa-2-31
   attributes:
   - age_group
   - color
@@ -4055,6 +4055,15 @@
   - fabric
   - pattern
   - target_gender
+- id: aa-2-30
+  name: Wristbands
+  children: []
+  attributes:
+  - age_group
+  - color
+  - material
+  - pattern
+  - target_gender
 - id: aa-2-31
   name: Traditional Clothing Accessories
   children: []
@@ -4063,15 +4072,6 @@
   - age_group
   - color
   - fabric
-  - pattern
-  - target_gender
-- id: aa-2-30
-  name: Wristbands
-  children: []
-  attributes:
-  - age_group
-  - color
-  - material
   - pattern
   - target_gender
 - id: aa-3
@@ -4503,9 +4503,9 @@
   - aa-6-7
   - aa-6-8
   - aa-6-9
-  - aa-6-12
   - aa-6-10
   - aa-6-11
+  - aa-6-12
   attributes:
   - color
   - jewelry_type
@@ -4603,19 +4603,6 @@
   - pattern
   - ring_size
   - target_gender
-- id: aa-6-12
-  name: Smart Watches
-  children: []
-  attributes:
-  - age_group
-  - band_color
-  - watch_material
-  - case_color
-  - dial_color
-  - face_color
-  - pattern
-  - bag_case_material
-  - watch_display
 - id: aa-6-10
   name: Watch Accessories
   children:
@@ -4666,6 +4653,19 @@
   - watch_material
   - case_color
   - dial_color
+  - pattern
+  - bag_case_material
+  - watch_display
+- id: aa-6-12
+  name: Smart Watches
+  children: []
+  attributes:
+  - age_group
+  - band_color
+  - watch_material
+  - case_color
+  - dial_color
+  - face_color
   - pattern
   - bag_case_material
   - watch_display
@@ -4832,25 +4832,12 @@
 - id: aa-8-2
   name: Baby & Toddler Shoes
   children:
-  - aa-8-2-4
   - aa-8-2-1
   - aa-8-2-2
+  - aa-8-2-4
   - aa-8-2-5
   - aa-8-2-6
   attributes:
-  - closure_type
-  - color
-  - footwear_material
-  - pattern
-  - shoe_fit
-  - shoe_size
-  - target_gender
-  - toe_style
-- id: aa-8-2-4
-  name: Baby & Toddler Athletic Shoes
-  children: []
-  attributes:
-  - activity
   - closure_type
   - color
   - footwear_material
@@ -4881,6 +4868,19 @@
   - color
   - footwear_material
   - occasion_style
+  - pattern
+  - shoe_fit
+  - shoe_size
+  - target_gender
+  - toe_style
+- id: aa-8-2-4
+  name: Baby & Toddler Athletic Shoes
+  children: []
+  attributes:
+  - activity
+  - closure_type
+  - color
+  - footwear_material
   - pattern
   - shoe_fit
   - shoe_size

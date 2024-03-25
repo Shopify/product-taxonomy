@@ -236,9 +236,9 @@
   name: Cement, Mortar & Concrete Mixes
   children:
   - ha-1-5-2-1
-  - ha-1-5-2-4
   - ha-1-5-2-2
   - ha-1-5-2-3
+  - ha-1-5-2-4
   - ha-1-5-2-5
   - ha-1-5-2-6
   - ha-1-5-2-7
@@ -257,15 +257,6 @@
   - pattern
   - suitable_for_material_type
   - suitable_space
-- id: ha-1-5-2-4
-  name: Concrete Mixes
-  children: []
-  attributes:
-  - color
-  - masonry_product_form
-  - pattern
-  - suitable_for_material_type
-  - suitable_space
 - id: ha-1-5-2-2
   name: Firestop Mortar
   children: []
@@ -277,6 +268,15 @@
   - suitable_space
 - id: ha-1-5-2-3
   name: Mortar Mixes
+  children: []
+  attributes:
+  - color
+  - masonry_product_form
+  - pattern
+  - suitable_for_material_type
+  - suitable_space
+- id: ha-1-5-2-4
+  name: Concrete Mixes
   children: []
   attributes:
   - color
@@ -493,8 +493,8 @@
   name: Solvents, Strippers & Thinners
   children:
   - ha-1-10-1
-  - ha-1-10-3
   - ha-1-10-2
+  - ha-1-10-3
   attributes:
   - color
   - pattern
@@ -508,14 +508,6 @@
   - pattern
   - solvent_application
   - suitable_space
-- id: ha-1-10-3
-  name: Strippers
-  children: []
-  attributes:
-  - color
-  - pattern
-  - stripper_application
-  - suitable_space
 - id: ha-1-10-2
   name: Thinners
   children: []
@@ -524,6 +516,14 @@
   - pattern
   - suitable_space
   - thinner_application
+- id: ha-1-10-3
+  name: Strippers
+  children: []
+  attributes:
+  - color
+  - pattern
+  - stripper_application
+  - suitable_space
 - id: ha-1-11
   name: Wall Patching Compounds & Plaster
   children:
@@ -2329,11 +2329,11 @@
   children:
   - ha-6-14-6-2
   - ha-6-14-6-3
+  - ha-6-14-6-4
   - ha-6-14-6-6
   - ha-6-14-6-7
   - ha-6-14-6-8
   - ha-6-14-6-9
-  - ha-6-14-6-4
   - ha-6-14-6-10
   - ha-6-14-6-11
   - ha-6-14-6-12
@@ -2357,6 +2357,15 @@
   - suitable_for_material_type
 - id: ha-6-14-6-3
   name: Drywall Screws
+  children: []
+  attributes:
+  - color
+  - fastener_finish
+  - hardware_material
+  - pattern
+  - suitable_for_material_type
+- id: ha-6-14-6-4
+  name: Screw Eyes & Hooks
   children: []
   attributes:
   - color
@@ -2393,15 +2402,6 @@
   - suitable_for_material_type
 - id: ha-6-14-6-9
   name: Roofing Screws
-  children: []
-  attributes:
-  - color
-  - fastener_finish
-  - hardware_material
-  - pattern
-  - suitable_for_material_type
-- id: ha-6-14-6-4
-  name: Screw Eyes & Hooks
   children: []
   attributes:
   - color
@@ -3141,21 +3141,21 @@
 - id: ha-9-3
   name: Key Card Entry Systems
   children:
-  - ha-9-3-3
   - ha-9-3-1
-  attributes:
-  - color
-  - pattern
-  - recommended_use
-- id: ha-9-3-3
-  name: Contactless Cards
-  children: []
+  - ha-9-3-3
   attributes:
   - color
   - pattern
   - recommended_use
 - id: ha-9-3-1
   name: Magnetic Stripe Cards
+  children: []
+  attributes:
+  - color
+  - pattern
+  - recommended_use
+- id: ha-9-3-3
+  name: Contactless Cards
   children: []
   attributes:
   - color
@@ -5374,21 +5374,21 @@
 - id: ha-14-4-3
   name: Drill Bit Sharpeners
   children:
-  - ha-14-4-3-2
   - ha-14-4-3-1
-  attributes:
-  - color
-  - hardware_material
-  - pattern
-- id: ha-14-4-3-2
-  name: Manual Sharpeners
-  children: []
+  - ha-14-4-3-2
   attributes:
   - color
   - hardware_material
   - pattern
 - id: ha-14-4-3-1
   name: Power Sharpeners
+  children: []
+  attributes:
+  - color
+  - hardware_material
+  - pattern
+- id: ha-14-4-3-2
+  name: Manual Sharpeners
   children: []
   attributes:
   - color
@@ -6521,19 +6521,19 @@
 - id: ha-15-11-6
   name: Rebar Cutters
   children:
-  - ha-15-11-6-2
   - ha-15-11-6-1
-  attributes:
-  - color
-  - pattern
-- id: ha-15-11-6-2
-  name: Manual Rebar Cutters
-  children: []
+  - ha-15-11-6-2
   attributes:
   - color
   - pattern
 - id: ha-15-11-6-1
   name: Power Rebar Cutters
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: ha-15-11-6-2
+  name: Manual Rebar Cutters
   children: []
   attributes:
   - color
@@ -7183,8 +7183,8 @@
   name: Lighters & Matches
   children:
   - ha-15-30-1
-  - ha-15-30-3
   - ha-15-30-2
+  - ha-15-30-3
   attributes:
   - color
   - hardware_material
@@ -7196,15 +7196,15 @@
   - color
   - hardware_material
   - pattern
-- id: ha-15-30-3
-  name: Metal Lighters
+- id: ha-15-30-2
+  name: Safety Matches
   children: []
   attributes:
   - color
   - hardware_material
   - pattern
-- id: ha-15-30-2
-  name: Safety Matches
+- id: ha-15-30-3
+  name: Metal Lighters
   children: []
   attributes:
   - color
@@ -8202,8 +8202,15 @@
 - id: ha-15-36-34
   name: Thermocouples & Thermopiles
   children:
-  - ha-15-36-34-2
   - ha-15-36-34-1
+  - ha-15-36-34-2
+  attributes:
+  - color
+  - display_technology
+  - pattern
+- id: ha-15-36-34-1
+  name: Thermopiles
+  children: []
   attributes:
   - color
   - display_technology
@@ -8216,13 +8223,6 @@
   - display_technology
   - pattern
   - thermocouple_type
-- id: ha-15-36-34-1
-  name: Thermopiles
-  children: []
-  attributes:
-  - color
-  - display_technology
-  - pattern
 - id: ha-15-36-35
   name: Transducers
   children:
@@ -8351,8 +8351,8 @@
   children:
   - ha-15-40-1
   - ha-15-40-2
-  - ha-15-40-4
   - ha-15-40-3
+  - ha-15-40-4
   attributes:
   - color
   - pattern
@@ -8371,15 +8371,15 @@
   - color
   - pattern
   - power_source
-- id: ha-15-40-4
-  name: Heavy Duty Staplers
+- id: ha-15-40-3
+  name: Staple Guns
   children: []
   attributes:
   - color
   - pattern
   - power_source
-- id: ha-15-40-3
-  name: Staple Guns
+- id: ha-15-40-4
+  name: Heavy Duty Staplers
   children: []
   attributes:
   - color
@@ -8479,19 +8479,19 @@
 - id: ha-15-42-5
   name: Paint Shakers
   children:
-  - ha-15-42-5-2
   - ha-15-42-5-1
-  attributes:
-  - color
-  - pattern
-- id: ha-15-42-5-2
-  name: Manual Shakers
-  children: []
+  - ha-15-42-5-2
   attributes:
   - color
   - pattern
 - id: ha-15-42-5-1
   name: Power Shakers
+  children: []
+  attributes:
+  - color
+  - pattern
+- id: ha-15-42-5-2
+  name: Manual Shakers
   children: []
   attributes:
   - color
@@ -8843,8 +8843,8 @@
   name: Putty Knives & Scrapers
   children:
   - ha-15-55-1
-  - ha-15-55-3
   - ha-15-55-2
+  - ha-15-55-3
   attributes:
   - blade_material
   - color
@@ -8858,16 +8858,16 @@
   - color
   - handle_material
   - pattern
-- id: ha-15-55-3
-  name: Stiff Putty Knives
+- id: ha-15-55-2
+  name: Wallpaper & Paint Scrapers
   children: []
   attributes:
   - blade_material
   - color
   - handle_material
   - pattern
-- id: ha-15-55-2
-  name: Wallpaper & Paint Scrapers
+- id: ha-15-55-3
+  name: Stiff Putty Knives
   children: []
   attributes:
   - blade_material

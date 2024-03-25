@@ -388,8 +388,8 @@
   - bi-3-1-2
   - bi-3-1-4
   - bi-3-1-5
-  - bi-3-1-9
   - bi-3-1-7
+  - bi-3-1-9
   attributes:
   - color
   - communication_protocols
@@ -423,6 +423,15 @@
   - controller_design
   - pattern
   - power_source
+- id: bi-3-1-7
+  name: Motor Starters
+  children: []
+  attributes:
+  - color
+  - communication_protocols
+  - controller_design
+  - pattern
+  - power_source
 - id: bi-3-1-9
   name: Motor Controllers
   children: []
@@ -432,15 +441,6 @@
   - controller_design
   - pattern
   - phase_type
-  - power_source
-- id: bi-3-1-7
-  name: Motor Starters
-  children: []
-  attributes:
-  - color
-  - communication_protocols
-  - controller_design
-  - pattern
   - power_source
 - id: bi-3-2
   name: Variable Frequency & Adjustable Speed Drives
@@ -1775,9 +1775,9 @@
   children:
   - bi-18-1-1
   - bi-18-1-2
+  - bi-18-1-3
   - bi-18-1-4
   - bi-18-1-5
-  - bi-18-1-3
   attributes:
   - color
   - pattern
@@ -1795,6 +1795,12 @@
   - color
   - conveyor_operation
   - pattern
+- id: bi-18-1-3
+  name: Vertical & Overhead Conveyors
+  children: []
+  attributes:
+  - color
+  - pattern
 - id: bi-18-1-4
   name: Pneumatic Conveyors
   children: []
@@ -1808,12 +1814,6 @@
   attributes:
   - color
   - conveyor_operation
-  - pattern
-- id: bi-18-1-3
-  name: Vertical & Overhead Conveyors
-  children: []
-  attributes:
-  - color
   - pattern
 - id: bi-18-2
   name: Lifts & Hoists
@@ -2151,8 +2151,8 @@
   children:
   - bi-19-4-3-1
   - bi-19-4-3-2
-  - bi-19-4-3-5
   - bi-19-4-3-3
+  - bi-19-4-3-5
   attributes:
   - color
   - pattern
@@ -2168,12 +2168,6 @@
   attributes:
   - color
   - pattern
-- id: bi-19-4-3-5
-  name: Taylor Hammers
-  children: []
-  attributes:
-  - color
-  - pattern
 - id: bi-19-4-3-3
   name: Tuning Forks
   children: []
@@ -2182,6 +2176,12 @@
   - pattern
   - tuning_fork_design
   - tuning_fork_frequency
+- id: bi-19-4-3-5
+  name: Taylor Hammers
+  children: []
+  attributes:
+  - color
+  - pattern
 - id: bi-19-4-4
   name: Medical Stretchers & Gurneys
   children:
