@@ -15,6 +15,9 @@ ActiveRecord::Schema[7.1].define do
   end
   create_table :property_values, force: :cascade do |t|
     t.string(:name, null: false)
+    t.string(:friendly_id, null: false)
+
+    t.index(:friendly_id, unique: true)
   end
 
   create_table :categories_properties, id: false, force: :cascade do |t|
@@ -26,9 +29,9 @@ ActiveRecord::Schema[7.1].define do
   end
   create_table :properties_property_values, id: false, force: :cascade do |t|
     t.integer(:property_id, null: false)
-    t.integer(:property_value_id, null: false)
+    t.string(:property_value_friendly_id, null: false)
 
-    t.index([:property_id, :property_value_id], unique: true)
-    t.index(:property_value_id)
+    t.index([:property_id, :property_value_friendly_id], unique: true)
+    t.index(:property_value_friendly_id)
   end
 end

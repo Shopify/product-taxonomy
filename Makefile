@@ -25,7 +25,8 @@ RUN_CMD  = printf "\e[%sm>> %-21s\e[0;1m\n" "1;34" # bold blue text with a >> pr
 # INPUTS
 
 CATEGORIES_DATA = $(shell find data/categories)
-ATTRIBUTES_DATA = $(shell find data/attributes)
+ATTRIBUTES_DATA = $(shell find data/attributes.yml)
+VALUES_DATA     = $(shell find data/values.yml)
 
 ###############################################################################
 # TARGETS
@@ -69,12 +70,12 @@ build: $(DIST_GENERATED_SENTINEL) \
 	$(ATTRIBUTES_DATA_CUE)
 .PHONY: build
 
-$(DOCS_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA)
+$(DOCS_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA) $(VALUES_DATA)
 	@$(GENERATE) "Building Docs" "$(GENERATED_DOCS_PATH)/*"
 	$(V)./bin/generate_docs $(VARG)
 	$(V)touch $@
 
-$(DIST_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA)
+$(DIST_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA) $(VALUES_DATA)
 	@$(GENERATE) "Building Dist" "$(GENERATED_DIST_PATH)/*.[json|txt]"
 	$(V)bin/generate_dist $(VARG)
 	$(V)touch $@
@@ -102,7 +103,7 @@ release: build
 # CLEAN
 clean:
 	@$(NUKE) "Cleaning dev db" $(LOCAL_DB)
-	$(V)rm -f $(LOCAL_DB)
+	$(V)rm -f $(LOCAL_DB)*
 	@$(NUKE) "Cleaning Generated Docs" $(GENERATED_DOCS_PATH)
 	$(V)rm -f $(DOCS_GENERATED_SENTINEL)
 	$(V)rm -rf $(GENERATED_DOCS_PATH)

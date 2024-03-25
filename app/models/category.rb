@@ -10,6 +10,11 @@ class Category < ApplicationRecord
 
   has_many :categories_properties, dependent: :destroy
   has_many :properties, through: :categories_properties, foreign_key: :property_friendly_id
+
+  def property_friendly_ids
+    properties.pluck(:friendly_id)
+  end
+
   def property_friendly_ids=(ids)
     self.properties = Property.where(friendly_id: ids)
   end

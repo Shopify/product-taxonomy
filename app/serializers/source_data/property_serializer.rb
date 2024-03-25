@@ -16,33 +16,49 @@ module SourceData
     end
 
     def deserialize(hash)
-      Property.new(
-        id: hash["id"],
-        friendly_id: hash["friendly_id"],
-        name: hash["name"],
-        property_value_ids: hash["values"].map { _1["id"] },
-      )
+      Property.new(**attributes_from(hash)).tap do |property|
+        property.property_value_friendly_ids = if hash["values_from"].present?
+          Property.find_by!(friendly_id: hash["values_from"]).property_value_friendly_ids
+        else
+          hash["values"]
+        end
+      end
     end
 
     def deserialize_for_insert_all(array)
-      array.map do |hash|
-        {
-          id: hash["id"],
-          friendly_id: hash["friendly_id"],
-          name: hash["name"],
-        }
-      end
+      array.map { attributes_from(_1) }
     end
 
     def deserialize_for_join_insert_all(array)
       array.flat_map do |hash|
-        hash["values"].map do |value_hash|
+        if hash["values_from"].present?
+          property = Property.find_by!(friendly_id: hash["values_from"])
+
+          next property.property_values.map do |value|
+            {
+              property_id: hash["id"],
+              property_value_friendly_id: value.friendly_id,
+            }
+          end
+        end
+
+        hash["values"].map do |value_friendly_id|
           {
             property_id: hash["id"],
-            property_value_id: value_hash["id"],
+            property_value_friendly_id: value_friendly_id,
           }
         end
       end
+    end
+
+    private
+
+    def attributes_from(hash)
+      {
+        id: hash["id"],
+        friendly_id: hash["friendly_id"],
+        name: hash["name"],
+      }
     end
   end
 end

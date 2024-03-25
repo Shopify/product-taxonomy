@@ -8,21 +8,27 @@ module DB
       @verbose = verbose
     end
 
-    def attributes_from(data)
+    def values_from(data)
       vputs("Importing values")
-      raw_values = data.flat_map { _1.fetch("values") }
-      values = SourceData::PropertyValueSerializer.deserialize_for_insert_all(raw_values)
-      PropertyValue.insert_all(values)
+      property_values = SourceData::PropertyValueSerializer.deserialize_for_insert_all(data)
+      PropertyValue.insert_all(property_values)
       vputs("✓ Imported #{PropertyValue.count} values")
+    end
 
+    def attributes_from(data)
       vputs("Importing properties")
       properties = SourceData::PropertySerializer.deserialize_for_insert_all(data)
       Property.insert_all(properties)
       vputs("✓ Imported #{Property.count} properties")
 
       vputs("Importing property ↔ value relationships")
-      joins = SourceData::PropertySerializer.deserialize_for_join_insert_all(data)
-      PropertiesPropertyValue.insert_all(joins)
+      standard_attributes, reference_attributes = data.partition { _1["values_from"].nil? }
+      standard_attribute_joins = SourceData::PropertySerializer.deserialize_for_join_insert_all(standard_attributes)
+      PropertiesPropertyValue.insert_all!(standard_attribute_joins)
+
+      reference_attribute_joins = SourceData::PropertySerializer.deserialize_for_join_insert_all(reference_attributes)
+      PropertiesPropertyValue.insert_all(reference_attribute_joins)
+
       vputs("✓ Imported #{PropertiesPropertyValue.count} property ↔ value relationships")
     end
 

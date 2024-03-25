@@ -5,11 +5,11 @@
   - me-1
   - me-2
   - me-3
+  - me-4
   - me-5
   - me-6
-  - me-8
-  - me-4
   - me-7
+  - me-8
   attributes: []
 - id: me-1
   name: Books
@@ -62,77 +62,6 @@
   - media_access
   - media_theme
   - publication_frequency
-- id: me-2-2
-  name: Newspapers
-  children:
-  - me-2-2-1
-  - me-2-2-2
-  - me-2-2-3
-  attributes:
-  - language_version
-  - media_access
-  - media_section
-  - publication_frequency
-- id: me-3
-  name: Music & Sound Recordings
-  children:
-  - me-3-1
-  - me-3-3
-  - me-3-2
-  - me-3-4
-  - me-3-5
-  - me-3-6
-  attributes:
-  - music_genre
-- id: me-3-1
-  name: Digital Music Downloads
-  children: []
-  attributes:
-  - download_format
-  - music_genre
-- id: me-3-3
-  name: Music CDs
-  children: []
-  attributes:
-  - music_genre
-- id: me-3-2
-  name: Music Cassette Tapes
-  children: []
-  attributes:
-  - music_genre
-- id: me-3-4
-  name: Records & LPs
-  children: []
-  attributes:
-  - music_genre
-- id: me-3-5
-  name: Spoken Word & Field Recordings
-  children: []
-  attributes:
-  - music_genre
-- id: me-5
-  name: Product Manuals
-  children: []
-  attributes:
-  - language_version
-  - product_manual_area
-- id: me-6
-  name: Sheet Music
-  children: []
-  attributes:
-  - book_cover_type
-  - compatible_instrument
-  - music_genre
-- id: me-8
-  name: Academic Papers & Studies
-  children: []
-  attributes:
-  - academic_level
-  - publication_type
-  - research_focus
-  - research_methodology
-  - subject_area
-  - time_period
 - id: me-2-1-1
   name: Consumer Magazines
   children: []
@@ -156,6 +85,17 @@
   - language_version
   - media_access
   - media_theme
+  - publication_frequency
+- id: me-2-2
+  name: Newspapers
+  children:
+  - me-2-2-1
+  - me-2-2-2
+  - me-2-2-3
+  attributes:
+  - language_version
+  - media_access
+  - media_section
   - publication_frequency
 - id: me-2-2-1
   name: International Newspapers
@@ -181,6 +121,43 @@
   - media_access
   - media_section
   - publication_frequency
+- id: me-3
+  name: Music & Sound Recordings
+  children:
+  - me-3-1
+  - me-3-2
+  - me-3-3
+  - me-3-4
+  - me-3-5
+  - me-3-6
+  attributes:
+  - music_genre
+- id: me-3-1
+  name: Digital Music Downloads
+  children: []
+  attributes:
+  - download_format
+  - music_genre
+- id: me-3-2
+  name: Music Cassette Tapes
+  children: []
+  attributes:
+  - music_genre
+- id: me-3-3
+  name: Music CDs
+  children: []
+  attributes:
+  - music_genre
+- id: me-3-4
+  name: Records & LPs
+  children: []
+  attributes:
+  - music_genre
+- id: me-3-5
+  name: Spoken Word & Field Recordings
+  children: []
+  attributes:
+  - music_genre
 - id: me-3-6
   name: Vinyl
   children: []
@@ -217,6 +194,19 @@
   - genre
   - language
   - release_schedule
+- id: me-5
+  name: Product Manuals
+  children: []
+  attributes:
+  - language_version
+  - product_manual_area
+- id: me-6
+  name: Sheet Music
+  children: []
+  attributes:
+  - book_cover_type
+  - compatible_instrument
+  - music_genre
 - id: me-7
   name: Videos
   children:
@@ -266,3 +256,13 @@
   - media_content_type
   - mpaa_rating
   - target_audience
+- id: me-8
+  name: Academic Papers & Studies
+  children: []
+  attributes:
+  - academic_level
+  - publication_type
+  - research_focus
+  - research_methodology
+  - subject_area
+  - time_period
