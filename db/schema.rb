@@ -32,6 +32,6 @@ ActiveRecord::Schema[7.1].define do
     t.string(:property_value_friendly_id, null: false)
 
     t.index([:property_id, :property_value_friendly_id], unique: true)
-    t.index(:property_value_id)
+    t.index(:property_value_friendly_id)
   end
 end
