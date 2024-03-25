@@ -15,6 +15,8 @@ values_data = cli.parse_yaml("data/values.yml")
 attributes_data = cli.parse_yaml("data/attributes.yml")
 category_files = Dir.glob("#{CLI.root}/data/categories/*.yml")
 verticals_data = category_files.map { cli.parse_yaml(_1) }
+integrations_data = YAML.load_file("#{Application.root}/data/integrations/integrations.yml")
+mapping_rule_files = Dir.glob("#{Application.root}/data/integrations/*/mappings/*_shopify.yml")
 
 Application.establish_db_connection!
 Application.load_and_reset_schema!
@@ -23,3 +25,5 @@ seed = DB::Seed.new(verbose: cli.options.verbose)
 seed.values_from(values_data)
 seed.attributes_from(attributes_data)
 seed.categories_from(verticals_data)
+seed.integrations_from(integrations_data)
+seed.mapping_rules_from(mapping_rule_files)

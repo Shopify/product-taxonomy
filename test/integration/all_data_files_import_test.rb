@@ -19,6 +19,13 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     category_files = Dir.glob("#{Application.root}/data/categories/*.yml")
     @raw_verticals_data = category_files.map { YAML.load_file(_1) }
     seed.categories_from(@raw_verticals_data)
+
+    integrations_data = YAML.load_file("#{Application.root}/data/integrations/integrations.yml")
+    seed.integrations_from(integrations_data)
+
+    mapping_rule_files = Dir.glob("#{Application.root}/data/integrations/*/mappings/*_shopify.yml")
+    @raw_mapping_rules_data = mapping_rule_files.map { YAML.load_file(_1) }
+    seed.mapping_rules_from(mapping_rule_files)
   end
 
   test "AttributeValues are correctly imported from values.yml" do
@@ -164,5 +171,24 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     assert_includes real_value_friendly_ids, "snowboard_construction__flat"
     assert_includes real_value_friendly_ids, "snowboard_construction__hybrid"
     assert_includes real_value_friendly_ids, "snowboard_construction__rocker"
+  end
+
+  test "MappingRules are fully imported from integrations/*/mappings/*_shopify.yml" do
+    assert_equal @raw_mapping_rules_data.size, MappingRule.select(:integration_id, :from_shopify).distinct.to_a.count
+    assert_equal @raw_mapping_rules_data.map { |raw| raw["rules"].count }.sum, MappingRule.count
+  end
+
+  test "MappingRule ↔ Product relationships are consistent with integrations/*/mappings/*_shopify.yml" do
+    @raw_mapping_rules_data.each do |raw|
+      input_type = "#{raw.fetch("input_taxonomy").split("/")[0].capitalize}Product"
+      output_type = "#{raw.fetch("output_taxonomy").split("/")[0].capitalize}Product"
+      raw.fetch("rules").each do |raw_rule|
+        deserialized_input_product = SourceData::ProductSerializer.deserialize(raw_rule.fetch("input"), input_type)
+        deserialized_output_product = SourceData::ProductSerializer.deserialize(raw_rule.fetch("output"), output_type)
+        input_id = Product.find_by(type: input_type, payload: deserialized_input_product.payload).id
+        output_id = Product.find_by(type: output_type, payload: deserialized_output_product.payload).id
+        assert_predicate MappingRule.find_by(input_id: input_id, output_id: output_id), :present?
+      end
+    end
   end
 end
