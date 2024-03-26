@@ -60,7 +60,7 @@ module DB
       vputs("Importing mapping rules")
       mapping_rules = []
       data.each do |file|
-        puts "Importing mapping rules from #{file}"
+        vputs("Importing mapping rules from #{file}")
         from_shopify = File.basename(file, ".*").split("_")[0] == "from"
         integration_name = Pathname.new(file).each_filename.to_a[-3]
         integration_id = Integration.find_by(name: integration_name)&.id

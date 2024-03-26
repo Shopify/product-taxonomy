@@ -2,7 +2,7 @@
 
 module Dist
   class JSONSerializer
-    def initialize(verticals:, properties:, mapping_rules: nil, version:)
+    def initialize(verticals:, properties:, mapping_rules:, version:)
       @verticals = verticals
       @properties = properties
       @mapping_rules = mapping_rules
@@ -14,7 +14,6 @@ module Dist
         version: @version,
         verticals: @verticals.map(&method(:serialize_vertical)),
         attributes: @properties.map(&method(:serialize_property)),
-        mappings: build_mapping_blocks.map(&method(:serialize_mapping_block)),
       }
       ::JSON.pretty_generate(output)
     end
@@ -31,6 +30,14 @@ module Dist
       output = {
         version: @version,
         attributes: @properties.map(&method(:serialize_property)),
+      }
+      ::JSON.pretty_generate(output)
+    end
+
+    def mappings
+      output = {
+        version: @version,
+        mappings: build_mapping_blocks.map(&method(:serialize_mapping_block)),
       }
       ::JSON.pretty_generate(output)
     end
@@ -74,8 +81,6 @@ module Dist
     end
 
     def build_mapping_blocks
-      puts "Generating mappings ..."
-      mapping_count = 0
       mapping_rule_blocks = Integration.all.flat_map do |integration|
         [true, false].filter_map do |from_shopify|
           rules = @mapping_rules.where(integration:, from_shopify:)
@@ -85,9 +90,8 @@ module Dist
 
       mapping_blocks = mapping_rule_blocks.map do |mapping_rules|
         rules = Category.verticals.flat_map do |vertical|
-          MappingBuilder.build_one_to_one_mappings_for_vertical(mapping_rules:, vertical:)
+          MappingBuilder.build_category_to_category_mappings_for_vertical(mapping_rules:, vertical:)
         end
-        mapping_count += rules.count
         from_shopify = mapping_rules.first.from_shopify
         integration = mapping_rules.first.integration
         {
@@ -96,8 +100,6 @@ module Dist
           rules:,
         }
       end
-
-      puts "✓ Generated #{mapping_count} mappings"
       mapping_blocks
     end
 

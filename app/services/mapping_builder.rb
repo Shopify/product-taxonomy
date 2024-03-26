@@ -2,7 +2,7 @@
 
 class MappingBuilder
   class << self
-    def build_one_to_one_mappings_for_vertical(mapping_rules:, vertical:)
+    def build_category_to_category_mappings_for_vertical(mapping_rules:, vertical:)
       mapping_rules
         .select { _1.input.product_category_id.start_with?(vertical.id) }
         .map do
@@ -14,7 +14,6 @@ class MappingBuilder
     end
 
     def build_mappings_for_vertical(mapping_rules:, vertical:)
-      puts " → for #{Integration.find(mapping_rules.first.integration_id).name} in #{vertical.name}..."
       relevant_rules = mapping_rules.select { |rule| rule.input.product_category_id.start_with?(vertical.id) }
       return if relevant_rules.count.zero?
 
