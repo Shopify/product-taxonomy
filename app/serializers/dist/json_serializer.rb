@@ -14,7 +14,7 @@ module Dist
         version: @version,
         verticals: @verticals.map(&method(:serialize_vertical)),
         attributes: @properties.map(&method(:serialize_property)),
-        mappings: build_mapping_blocks(@mapping_rules).map(&method(:serialize_mapping_block)),
+        mappings: build_mapping_blocks.map(&method(:serialize_mapping_block)),
       }
       ::JSON.pretty_generate(output)
     end
@@ -73,36 +73,32 @@ module Dist
       }
     end
 
-    def build_mapping_blocks(mapping_rules)
-      all_mapping_blocks = []
+    def build_mapping_blocks
       puts "Generating mappings ..."
       mapping_count = 0
-      Integration.all.each do |integration|
-        [true, false].each do |from_shopify|
-          mapping_rule_block = mapping_rules.where(
-            integration_id: integration.id,
-            from_shopify: from_shopify,
-          )
-          next if mapping_rule_block.count.zero?
-
-          mappings = []
-          Category.verticals.each do |vertical|
-            mappings << MappingBuilder.build_one_to_one_mappings_for_vertical(
-              mapping_rules: mapping_rule_block,
-              vertical: vertical,
-            )
-          end
-          processed_mappings = mappings.flatten.compact
-          mapping_count += processed_mappings.count
-          all_mapping_blocks << {
-            input_taxonomy: "shopify/v1",
-            output_taxonomy: "#{integration.name}/v1",
-            rules: processed_mappings,
-          }
+      mapping_rule_blocks = Integration.all.flat_map do |integration|
+        [true, false].filter_map do |from_shopify|
+          rules = @mapping_rules.where(integration:, from_shopify:)
+          rules if rules.any?
         end
       end
+
+      mapping_blocks = mapping_rule_blocks.map do |mapping_rules|
+        rules = Category.verticals.flat_map do |vertical|
+          MappingBuilder.build_one_to_one_mappings_for_vertical(mapping_rules:, vertical:)
+        end
+        mapping_count += rules.count
+        from_shopify = mapping_rules.first.from_shopify
+        integration = mapping_rules.first.integration
+        {
+          input_taxonomy: from_shopify ? "shopify/v1" : "#{integration.name}/v1",
+          output_taxonomy: from_shopify ? "#{integration.name}/v1" : "shopify/v1",
+          rules:,
+        }
+      end
+
       puts "✓ Generated #{mapping_count} mappings"
-      all_mapping_blocks
+      mapping_blocks
     end
 
     def serialize_mapping_block(mapping_block)
@@ -119,7 +115,7 @@ module Dist
         mapping[:input][:attributes] = mapping[:input][:attributes].map do |attribute|
           {
             name: Property.find(attribute[:name]).gid,
-            value: attribute[:value].nil? ? nil : PropertyValue.find(attribute[:value]).gid,
+            value: attribute[:value] || PropertyValue.find(attribute[:value]).gid,
           }
         end
       end
