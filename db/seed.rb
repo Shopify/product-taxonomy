@@ -50,17 +50,17 @@ module DB
     end
 
     def integrations_from(data)
-      puts "Importing integrations"
+      vputs("Importing integrations")
       integrations = data.map { { name: _1["name"] } }
       Integration.insert_all(integrations)
       vputs("✓ Imported #{Integration.count} integrations")
     end
 
     def mapping_rules_from(data)
-      puts "Importing mapping rules"
+      vputs("Importing mapping rules")
       mapping_rules = []
       data.each do |file|
-        puts "Importing mapping rules from #{file}"
+        vputs("Importing mapping rules from #{file}")
         from_shopify = File.basename(file, ".*").split("_")[0] == "from"
         integration_name = Pathname.new(file).each_filename.to_a[-3]
         integration_id = Integration.find_by(name: integration_name)&.id
