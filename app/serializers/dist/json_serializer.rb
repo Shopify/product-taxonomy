@@ -2,9 +2,10 @@
 
 module Dist
   class JSONSerializer
-    def initialize(verticals:, properties:, version:)
+    def initialize(verticals:, properties:, mapping_rules:, version:)
       @verticals = verticals
       @properties = properties
+      @mapping_rules = mapping_rules
       @version = version
     end
 
@@ -29,6 +30,14 @@ module Dist
       output = {
         version: @version,
         attributes: @properties.map(&method(:serialize_property)),
+      }
+      ::JSON.pretty_generate(output)
+    end
+
+    def mappings
+      output = {
+        version: @version,
+        mappings: build_mapping_blocks.map(&method(:serialize_mapping_block)),
       }
       ::JSON.pretty_generate(output)
     end
@@ -68,6 +77,55 @@ module Dist
       {
         id: connection.gid,
         name: connection.name,
+      }
+    end
+
+    def build_mapping_blocks
+      mapping_rule_blocks = Integration.all.flat_map do |integration|
+        [true, false].filter_map do |from_shopify|
+          rules = @mapping_rules.where(integration:, from_shopify:)
+          rules if rules.any?
+        end
+      end
+
+      mapping_blocks = mapping_rule_blocks.map do |mapping_rules|
+        rules = Category.verticals.flat_map do |vertical|
+          MappingBuilder.build_category_to_category_mappings_for_vertical(mapping_rules:, vertical:)
+        end
+        from_shopify = mapping_rules.first.from_shopify
+        integration = mapping_rules.first.integration
+        {
+          input_taxonomy: from_shopify ? "shopify/v1" : "#{integration.name}/v1",
+          output_taxonomy: from_shopify ? "#{integration.name}/v1" : "shopify/v1",
+          rules:,
+        }
+      end
+      mapping_blocks
+    end
+
+    def serialize_mapping_block(mapping_block)
+      {
+        input_taxonomy: mapping_block[:input_taxonomy],
+        output_taxonomy: mapping_block[:output_taxonomy],
+        rules: mapping_block[:rules]&.filter_map(&method(:serialize_mapping)),
+      }
+    end
+
+    def serialize_mapping(mapping)
+      return if mapping.nil?
+
+      mapping[:input][:product_category_id] = Category.find(mapping[:input][:product_category_id]).gid
+      if mapping[:input][:attributes].present?
+        mapping[:input][:attributes] = mapping[:input][:attributes].map do |attribute|
+          {
+            name: Property.find(attribute[:name]).gid,
+            value: attribute[:value].nil? ? nil : PropertyValue.find(attribute[:value]).gid,
+          }
+        end
+      end
+      {
+        input: mapping[:input],
+        output: mapping[:output],
       }
     end
   end

@@ -36,6 +36,7 @@ end
 json_serializer = Dist::JSONSerializer.new(
   verticals: Category.verticals,
   properties: Property.all,
+  mapping_rules: MappingRule.all,
   version: cli.options.version,
 )
 cli.write_file!("dist/taxonomy.json") do |file|
@@ -48,5 +49,9 @@ cli.write_file!("dist/categories.json") do |file|
 end
 cli.write_file!("dist/attributes.json") do |file|
   file.write(json_serializer.attributes)
+  file.write("\n")
+end
+cli.write_file!("dist/mappings.json") do |file|
+  file.write(json_serializer.mappings)
   file.write("\n")
 end
