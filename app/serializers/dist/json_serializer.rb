@@ -107,17 +107,19 @@ module Dist
       {
         input_taxonomy: mapping_block[:input_taxonomy],
         output_taxonomy: mapping_block[:output_taxonomy],
-        rules: mapping_block[:rules]&.map(&method(:serialize_mapping)),
+        rules: mapping_block[:rules]&.filter_map(&method(:serialize_mapping)),
       }
     end
 
     def serialize_mapping(mapping)
+      return if mapping.nil?
+
       mapping[:input][:product_category_id] = Category.find(mapping[:input][:product_category_id]).gid
       if mapping[:input][:attributes].present?
         mapping[:input][:attributes] = mapping[:input][:attributes].map do |attribute|
           {
             name: Property.find(attribute[:name]).gid,
-            value: attribute[:value] || PropertyValue.find(attribute[:value]).gid,
+            value: attribute[:value].nil? ? nil : PropertyValue.find(attribute[:value]).gid,
           }
         end
       end

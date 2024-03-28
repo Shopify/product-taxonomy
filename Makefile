@@ -27,6 +27,7 @@ RUN_CMD  = printf "\e[%sm>> %-21s\e[0;1m\n" "1;34" # bold blue text with a >> pr
 CATEGORIES_DATA = $(shell find data/categories)
 ATTRIBUTES_DATA = $(shell find data/attributes.yml)
 VALUES_DATA     = $(shell find data/values.yml)
+MAPPINGS_DATA   = $(shell find data/integrations/*/mappings)
 
 ###############################################################################
 # TARGETS
@@ -42,6 +43,7 @@ GENERATED_DIST_PATH = dist
 DIST_GENERATED_SENTINEL = tmp/.dist_generated_sentinel
 CATEGORIES_JSON = $(GENERATED_DIST_PATH)/categories.json
 ATTRIBUTES_JSON = $(GENERATED_DIST_PATH)/attributes.json
+MAPPINGS_JSON = $(GENERATED_DIST_PATH)/mappings.json
 STATIC_VERSION_FILE = $(GENERATED_DIST_PATH)/VERSION
 STATIC_LICENSE_FILE = $(GENERATED_DIST_PATH)/LICENSE
 STATIC_CHANGELOG_FILE = $(GENERATED_DIST_PATH)/CHANGELOG.md
@@ -52,6 +54,7 @@ LOCAL_DB = tmp/local.sqlite3
 # CUE imports needed for schema validation
 ATTRIBUTES_DATA_CUE = schema/attributes_data.cue
 CATEGORIES_DATA_CUE = schema/categories_data.cue
+MAPPINGS_DATA_CUE = schema/mappings_data.cue
 
 ###############################################################################
 # COMMANDS
@@ -67,7 +70,8 @@ build: $(DIST_GENERATED_SENTINEL) \
 	$(STATIC_CHANGELOG_FILE) \
 	$(DOCS_GENERATED_SENTINEL) \
 	$(CATEGORIES_DATA_CUE) \
-	$(ATTRIBUTES_DATA_CUE)
+	$(ATTRIBUTES_DATA_CUE) \
+	$(MAPPINGS_DATA_CUE)
 .PHONY: build
 
 $(DOCS_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA) $(VALUES_DATA)
@@ -75,7 +79,7 @@ $(DOCS_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA) $(
 	$(V)./bin/generate_docs $(VARG)
 	$(V)touch $@
 
-$(DIST_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA) $(VALUES_DATA)
+$(DIST_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA) $(VALUES_DATA) $(MAPPINGS_DATA)
 	@$(GENERATE) "Building Dist" "$(GENERATED_DIST_PATH)/*.[json|txt]"
 	$(V)bin/generate_dist $(VARG)
 	$(V)touch $@
@@ -111,6 +115,8 @@ clean:
 	$(V)rm -f $(ATTRIBUTES_DATA_CUE)
 	@$(NUKE) "Cleaning category data cuefiles" $(CATEGORIES_DATA_CUE)
 	$(V)rm -f $(CATEGORIES_DATA_CUE)
+	@$(NUKE) "Cleaning mapping data cuefiles" $(MAPPINGS_DATA_CUE)
+	$(V)rm -f $(MAPPINGS_DATA_CUE)
 	@$(NUKE) "Cleaning Generated Dist Files" $(GENERATED_DIST_PATH)
 	$(V)rm -f $(DIST_GENERATED_SENTINEL)
 	$(V)rm -f $(STATIC_VERSION_FILE)
@@ -151,7 +157,7 @@ integration_tests:
 	$(V)bin/rake test_integration $(filter-out $@,$(MAKECMDGOALS))
 .PHONY: integration_tests
 
-vet_schema: $(CATEGORIES_DATA_CUE) $(ATTRIBUTES_DATA_CUE)
+vet_schema: $(CATEGORIES_DATA_CUE) $(ATTRIBUTES_DATA_CUE) $(MAPPINGS_DATA_CUE)
 	@$(RUN_CMD) "Validating Schema"
 	$(V)cd schema && cue vet
 	$(V)echo "Done!"
@@ -165,3 +171,7 @@ $(CATEGORIES_DATA_CUE): $(DIST_GENERATED_SENTINEL)
 $(ATTRIBUTES_DATA_CUE): $(DIST_GENERATED_SENTINEL)
 	@$(GENERATE) "Importing $(ATTRIBUTES_JSON)" $(ATTRIBUTES_DATA_CUE)
 	$(V)cue import $(ATTRIBUTES_JSON) -p product_taxonomy -f -o $(ATTRIBUTES_DATA_CUE)
+
+$(MAPPINGS_DATA_CUE): $(DIST_GENERATED_SENTINEL)
+	@$(GENERATE) "Importing $(MAPPINGS_JSON)" $(MAPPINGS_DATA_CUE)
+	$(V)cue import $(MAPPINGS_JSON) -p product_taxonomy -f -o $(MAPPINGS_DATA_CUE)

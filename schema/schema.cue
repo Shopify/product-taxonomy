@@ -1,8 +1,9 @@
 package product_taxonomy
 
-#attribute_gid_regex: "^gid://shopify/TaxonomyAttribute/\\d+$"
-#value_gid_regex: "^gid://shopify/TaxonomyValue/\\d+$"
-#category_gid_regex: "^gid://shopify/TaxonomyCategory/[a-zA-Z]{2}(-\\d+)*$"
+#attribute_gid_regex: "^gid://shopify/Taxonomy/Attribute/\\d+$"
+#value_gid_regex: "^gid://shopify/Taxonomy/Value/\\d+$"
+#category_gid_regex: "^gid://shopify/Taxonomy/Category/[a-zA-Z]{2}(-\\d+)*$"
+#mapping_taxonomy_version_regex: "^\\w+/v(\\d+\\.)*\\d+$"
 
 // This file defines and enforces the shape of the data for dist/attributes.json and dist/categories.json
 // There are additional validations handled in validations.cue in this directory but use this to understand
@@ -53,3 +54,23 @@ verticals!: [...{
 		ancestors!: [..._category_reference]
 	}]
 }]
+
+// Present in mappings.json / mappings_data.cue
+mappings!: [
+	...{
+		input_taxonomy!:  string & =~#mapping_taxonomy_version_regex
+		output_taxonomy!: string & =~#mapping_taxonomy_version_regex
+		rules!: [
+			...{
+				input!: {
+					product_category_id: string & =~#category_gid_regex
+					attributes?: [...{
+						name:  string & =~#attribute_gid_regex
+						value: string & =~#value_gid_regex | null
+					}]
+				}
+				output!: [string]: _
+			},
+		]
+	},
+]
