@@ -15,10 +15,6 @@ class PropertyValue < ApplicationRecord
     foreign_key: :primary_property_friendly_id,
     primary_key: :friendly_id
 
-  def primary_property_friendly_id
-    primary_property&.friendly_id
-  end
-
   def primary_property_friendly_id=(id)
     self.primary_property = Property.find_by(friendly_id: id)
   end
