@@ -32,7 +32,7 @@ class CategoryTest < ActiveSupport::TestCase
   end
 
   test "#gid returns a global id" do
-    assert_equal "gid://shopify/Taxonomy/Category/tt", category.gid
+    assert_equal "gid://shopify/TaxonomyCategory/tt", category.gid
   end
 
   test "#root returns the top-most category node" do

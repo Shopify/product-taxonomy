@@ -30,7 +30,7 @@ class Category < ApplicationRecord
   validates_associated :children
 
   def gid
-    "gid://shopify/Taxonomy/Category/#{id}"
+    "gid://shopify/TaxonomyCategory/#{id}"
   end
 
   def full_name

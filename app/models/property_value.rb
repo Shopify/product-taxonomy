@@ -13,6 +13,6 @@ class PropertyValue < ApplicationRecord
   validates :name, presence: true
 
   def gid
-    "gid://shopify/Taxonomy/Value/#{id}"
+    "gid://shopify/TaxonomyValue/#{id}"
   end
 end
