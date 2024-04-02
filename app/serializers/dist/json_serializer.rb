@@ -81,22 +81,24 @@ module Dist
     end
 
     def build_mapping_blocks
-      mapping_rule_blocks = Integration.all.flat_map do |integration|
-        [true, false].filter_map do |from_shopify|
-          rules = @mapping_rules.where(integration:, from_shopify:)
-          rules if rules.any?
+      mapping_rule_blocks = Integration.all.pluck(:id, :available_versions).flat_map do |id, versions|
+        [id].product(versions, [true, false])
+      end.filter_map do |integration_id, version, from_shopify|
+        rules = if from_shopify
+          @mapping_rules.where(integration_id:, from_shopify: true, output_version: version)
+        else
+          @mapping_rules.where(integration_id:, from_shopify: false, input_version: version)
         end
+        rules if rules.any?
       end
 
       mapping_blocks = mapping_rule_blocks.map do |mapping_rules|
         rules = Category.verticals.flat_map do |vertical|
           MappingBuilder.build_category_to_category_mappings_for_vertical(mapping_rules:, vertical:)
         end
-        from_shopify = mapping_rules.first.from_shopify
-        integration = mapping_rules.first.integration
         {
-          input_taxonomy: from_shopify ? "shopify/v1" : "#{integration.name}/v1",
-          output_taxonomy: from_shopify ? "#{integration.name}/v1" : "shopify/v1",
+          input_taxonomy: mapping_rules.first.input_version,
+          output_taxonomy: mapping_rules.first.output_version,
           rules:,
         }
       end

@@ -27,7 +27,7 @@ RUN_CMD  = printf "\e[%sm>> %-21s\e[0;1m\n" "1;34" # bold blue text with a >> pr
 CATEGORIES_DATA = $(shell find data/categories)
 ATTRIBUTES_DATA = $(shell find data/attributes.yml)
 VALUES_DATA     = $(shell find data/values.yml)
-MAPPINGS_DATA   = $(shell find data/integrations/*/mappings)
+MAPPINGS_DATA   = $(shell find data/integrations/*/*/mappings)
 
 ###############################################################################
 # TARGETS
