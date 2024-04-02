@@ -8,7 +8,7 @@ class PropertyValueTest < ActiveSupport::TestCase
   end
 
   test "#gid returns a global id" do
-    assert_equal "gid://shopify/Taxonomy/Value/12", value(id: 12).gid
+    assert_equal "gid://shopify/TaxonomyValue/12", value(id: 12).gid
   end
 
   test "default ordering is alphabetical with 'other' last" do

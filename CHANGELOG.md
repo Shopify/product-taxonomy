@@ -1,6 +1,16 @@
+## 0.11.0 (Apr 2, 2024)
+
+Making GIDs spec-compliant.
+
+### 👩🏼‍💻 Structure
+
+- Category GID from `gid://shopify/Taxonomy/Category/*` → `gid://shopify/TaxonomyCategory/*`
+- Attribute GID from `gid://shopify/Taxonomy/Attribute/*` → `gid://shopify/TaxonomyAttribute/*`
+- Attribute Value GID from `gid://shopify/Taxonomy/Value/*` → `gid://shopify/TaxonomyValue/*`
+
 ## 0.10.0 (Mar 14, 2024)
 
-#### 📚 Taxonomy Attribute Updates
+### 📚 Taxonomy Attribute Updates
 
 - Product attributes in the taxonomy have been refined, splitting the general 'material' attribute into more specific categories such as 'fabric', 'cocktail decoration material', 'safety equipment material' etc.
 
@@ -8,12 +18,12 @@
 
 Changed GID structure for Attribute Values and added more txt distributions.
 
-#### 👩🏼‍💻 Structure
+### 👩🏼‍💻 Structure
 
-- Attribute GID from `gid://shopify/Taxonomy/Attribute/123/12` → `gid://shopify/TaxonomyValue/12`
+- Attribute GID from `gid://shopify/Taxonomy/Attribute/123/12` → `gid://shopify/Taxonomy/Value/12`
 - Added both `dist/attributes.txt` and `dist/attributes_values.txt`
 
-#### 💅🏼 Enhancement
+### 💅🏼 Enhancement
 
 - DB is now in a file instead of in-memory to save unnecessary seeding
 
@@ -21,7 +31,7 @@ Changed GID structure for Attribute Values and added more txt distributions.
 
 Adds 3 more verticals.
 
-#### 📚 Taxonomy
+### 📚 Taxonomy
 - Adds `Mature` vertical
 - Adds `Religious & Ceremonial` vertical
 - Adds `Services` vertical
@@ -30,7 +40,7 @@ Adds 3 more verticals.
 
 Adds 2 more verticals.
 
-#### 📚 Taxonomy
+### 📚 Taxonomy
 - Adds `Toys & Games` vertical
 - Adds `Vehicles & Parts` vertical
 
@@ -38,7 +48,7 @@ Adds 2 more verticals.
 
 Adds 2 more verticals.
 
-#### 📚 Taxonomy
+### 📚 Taxonomy
 - Adds `Business & Industrial` vertical
 - Adds `Software` vertical
 
@@ -46,7 +56,7 @@ Adds 2 more verticals.
 
 Adds 6 more verticals.
 
-#### 📚 Taxonomy
+### 📚 Taxonomy
 - Adds `Animals & Pet Supplies` vertical
 - Adds `Arts & Entertainment` vertical
 - Adds `Baby's & Toddlers` vertical
@@ -58,7 +68,7 @@ Adds 6 more verticals.
 
 Adds 2 more verticals.
 
-#### 📚 Taxonomy
+### 📚 Taxonomy
 
 - Adds `Hardware` vertical
 - Adds `Luggage & Bags` vertical
@@ -67,7 +77,7 @@ Adds 2 more verticals.
 
 Adds electronics and simplifies existing verticals.
 
-#### 📚 Taxonomy
+### 📚 Taxonomy
 
 - Adds `Electronics` vertical
 - Simplifies `Food, Beverages, & Tobacco` vertical
@@ -78,7 +88,7 @@ Adds electronics and simplifies existing verticals.
 
 Adds the next vertical.
 
-#### 📚 Taxonomy
+### 📚 Taxonomy
 
 - Adds `Health & Beauty` vertical
 - Adds `Uncategorized` category
@@ -87,11 +97,11 @@ Adds the next vertical.
 
 Structure CHANGED for `dist/attributes.json`. Adds schema validation.
 
-#### 📚 Taxonomy
+### 📚 Taxonomy
 
 - Attribute distribution JSON is now normative, with top-level `attributes` and `version` keys
 
-#### 💅🏼 Enhancement
+### 💅🏼 Enhancement
 
 - `cue` added to validate `dist/` while providing a clear spec of the distribution files
 
@@ -99,7 +109,7 @@ Structure CHANGED for `dist/attributes.json`. Adds schema validation.
 
 Adds the next vertical.
 
-#### 📚 Taxonomy
+### 📚 Taxonomy
 
 - Adds `Furniture` vertical
 
@@ -107,12 +117,12 @@ Adds the next vertical.
 
 Sort output and improve the developer experience.
 
-#### 📚 Taxonomy
+### 📚 Taxonomy
 
 - Category distribution files are now sorted by name
 - Attribute distribution files are now sorted by name
 
-#### 💅🏼 Enhancement
+### 💅🏼 Enhancement
 
 - Add an additional output, `taxonomy.json` that gives you all the data in one file
 
@@ -120,7 +130,7 @@ Sort output and improve the developer experience.
 
 Initial public release.
 
-#### 📚 Taxonomy
+### 📚 Taxonomy
 
 Adds verticals:
 - `Apparel & Accessories`
