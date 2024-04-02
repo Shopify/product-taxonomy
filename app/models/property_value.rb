@@ -27,6 +27,10 @@ class PropertyValue < ApplicationRecord
   end
 
   def full_name
-    [primary_property&.name, name].compact.join(" > ")
+    if primary_property
+      "#{name} [#{primary_property.name}]"
+    else
+      name
+    end
   end
 end

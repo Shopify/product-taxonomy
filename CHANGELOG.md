@@ -1,3 +1,8 @@
+## 0.12.0 (Apr 3, 2024)
+
+- Shift attribute and attribute value friendly_ids to be consistent.
+- Text distribution for values includes primary property.
+
 ## 0.11.0 (Apr 2, 2024)
 
 Making GIDs spec-compliant.

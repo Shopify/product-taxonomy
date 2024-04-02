@@ -23,7 +23,7 @@ class PropertyValueTest < ActiveSupport::TestCase
     color = Property.create!(name: "Color", friendly_id: "color")
     red = value!(name: "Red", friendly_id: "color__red", primary_property: color)
 
-    assert_equal "Color > Red", red.full_name
+    assert_equal "Red [Color]", red.full_name
   end
 
   test "#full_name is just name if primary property is missing" do
