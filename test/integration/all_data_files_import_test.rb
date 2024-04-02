@@ -47,6 +47,12 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     end
   end
 
+  test "AttributeValues all have a primary property" do
+    PropertyValue.all.each do |value|
+      assert_predicate value.primary_property, :present?, "Value #{value.friendly_id} has no primary property"
+    end
+  end
+
   test "Attributes are correctly imported from attributes.yml" do
     assert_equal @raw_attributes_data.size, Property.count
   end

@@ -19,13 +19,28 @@ class PropertyValueTest < ActiveSupport::TestCase
     assert_equal [red, zoo, other], PropertyValue.all.to_a
   end
 
-  private
+  test "#full_name returns the name of the primary property and the value" do
+    color = Property.create!(name: "Color", friendly_id: "color")
+    red = value!(name: "Red", friendly_id: "color__red", primary_property: color)
 
-  def value(id: 1, name: "Foo", friendly_id: "test__foo")
-    PropertyValue.new(id: id, name: name, friendly_id: friendly_id)
+    assert_equal "Color > Red", red.full_name
   end
 
-  def value!(id: 1, name: "Foo", friendly_id: "test__foo")
-    PropertyValue.create(id: id, name: name, friendly_id: friendly_id)
+  test "#full_name is just name if primary property is missing" do
+    red = value!(name: "Red", friendly_id: "color__red")
+
+    assert_equal "Red", red.full_name
+  end
+
+  private
+
+  def value(**args)
+    default_args = { id: 1, name: "Foo", friendly_id: "test__foo" }
+    PropertyValue.new(default_args.merge(args))
+  end
+
+  def value!(**args)
+    default_args = { id: 1, name: "Foo", friendly_id: "test__foo" }
+    PropertyValue.create(default_args.merge(args))
   end
 end

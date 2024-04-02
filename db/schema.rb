@@ -16,8 +16,10 @@ ActiveRecord::Schema[7.1].define do
   create_table :property_values, force: :cascade do |t|
     t.string(:name, null: false)
     t.string(:friendly_id, null: false)
+    t.string(:primary_property_friendly_id) # nullable to avoid cyclic dependency
 
     t.index(:friendly_id, unique: true)
+    t.index(:primary_property_friendly_id)
   end
 
   create_table :categories_properties, id: false, force: :cascade do |t|
