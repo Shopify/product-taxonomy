@@ -1,5 +1,7 @@
 <p align="center"><img src="./dist/img/header.png" /></p>
 
+<p align="center"><em><b>This is the development branch</b>. See <a href="https://github.com/Shopify/product-taxonomy/tree/releases"><code>releases</code></a> for stable distribution files.</em></p>
+
 <!-- omit in toc -->
 <h1 align="center">Shopify's Standard Product Taxonomy <a href="./VERSION"><img src="https://img.shields.io/badge/version-vUNRELEASED-orange.svg" alt="Version"></a></h1>
 
@@ -17,9 +19,9 @@
 - [🕹️ Interactive explorer](#️-interactive-explorer)
 - [📚 Taxonomy overview](#-taxonomy-overview)
 - [🧭 Getting started](#-getting-started)
-  - [🧩 How to integrate with the taxonomy: `releases` @ `/`](#-how-to-integrate-with-the-taxonomy-releases--)
-  - [🧑🏼‍🏫 How to make changes to the taxonomy: `main` @ `data/`](#-how-to-make-changes-to-the-taxonomy-main--data)
-  - [👩🏼‍💻 How to evolve the system: `main` @ `/` (you're here!)](#-how-to-evolve-the-system-main---youre-here)
+  - [🧩 How to integrate with the taxonomy](#-how-to-integrate-with-the-taxonomy)
+  - [🧑🏼‍🏫 How to make changes to the taxonomy](#-how-to-make-changes-to-the-taxonomy)
+  - [👩🏼‍💻 How to evolve the system](#-how-to-evolve-the-system)
 - [🤿 Diving in](#-diving-in)
 - [🛠️ Setup and dependencies](#️-setup-and-dependencies)
 - [📂 How this is all organized](#-how-this-is-all-organized)
@@ -40,23 +42,23 @@ What's next? ⏭️ More attributes and values as we work to make this truly com
 
 This repository is the home of Shopify's Standard Product Taxonomy. It houses the source-of-truth data, the distribution files for implementation, and the source code that makes this all sing.
 
-We've structured it to be as user-friendly as possible, whether you're looking to integrate the taxonomy into your own system, suggest changes, or delve into how it's developed and maintained.
+We've structured it to be as user-friendly as possible, whether you're looking to integrate the taxonomy into your system, suggest changes, or delve into how it's developed and maintained.
 
-### 🧩 How to integrate with the taxonomy: [`releases` @ `/`](https://github.com/Shopify/product-taxonomy/tree/releases)
+### 🧩 How to integrate with the taxonomy
 
-Dive straight into `releases` branch to find the files you need and integrate this taxonomy into your system.
+Dive straight into [`releases` branch](https://github.com/Shopify/product-taxonomy/tree/releases) to find the files you need and integrate this taxonomy into your system.
 
 We're working on a variety of formats to make it easy to integrate with your systems. Today we have `txt` and `json` formats, and we're working on more. If you have a specific format you'd like to see, please open an issue and let us know!
 
-### 🧑🏼‍🏫 How to make changes to the taxonomy: [`main` @ `data/`](./data)
+### 🧑🏼‍🏫 How to make changes to the taxonomy
 
 > **🔵 Note**: While we are in preview we are not actively seeking PRs.
 
-Everything comes from the source-of-truth in `data/`. This is where you can submit PRs to change the taxonomy itself.
+Everything comes from the source-of-truth files in [`data/`](./data). This is where you should submit PRs to change the taxonomy itself.
 
-### 👩🏼‍💻 How to evolve the system: [`main` @ `/`](./) (you're here!)
+### 👩🏼‍💻 How to evolve the system
 
-You can see how how the taxonomy is generated and maintained. This is where the magic happens.
+This system is how we manage the taxonomy and generate distributions. This is where the magic happens.
 
 ## 🤿 Diving in
 
@@ -124,7 +126,9 @@ For your own explorations, here's a map of the land:
 
 You can always find the current published version in [`VERSION`](./VERSION).  The changelog is available in [`CHANGELOG.md`](./CHANGELOG.md).
 
-We follow time-based releases consistent with [Shopify's API release schedule](https://shopify.dev/docs/api/usage/versioning#release-schedule) _at most_. That means a release every 3 months at the beginning of the quarter. Version names are date-based to be meaningful and semantically unambiguous (for example, `2024-01`).
+While this is `UNSTABLE`, we're using SemVer, but when this goes stable it will transition to [CalVer](https://calver.org/), in sync with [Shopify's API release schedule](https://shopify.dev/docs/api/usage/versioning#release-schedule).
+
+That means a stable release every 3 months **at most**, at the beginning of the quarter. Version names are date-based to be meaningful and semantically unambiguous (for example, `2024-01`).
 
 ## 📜 License
 
