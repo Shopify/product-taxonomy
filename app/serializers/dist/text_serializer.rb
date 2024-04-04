@@ -10,7 +10,10 @@ module Dist
     end
 
     def categories
-      header = "# Shopify Product Taxonomy - Categories: #{@version}"
+      header = <<~HEADER
+        # Shopify Product Taxonomy - Categories: #{@version}
+        # Format: {GID} : {Ancestor name} > ... > {Category name}
+      HEADER
       gid_padd = Category.reorder("LENGTH(id) desc").first.gid.size
       @verticals
         .flat_map(&:descendants_and_self)
@@ -20,7 +23,10 @@ module Dist
     end
 
     def attributes
-      header = "# Shopify Product Taxonomy - Attributes: #{@version}"
+      header = <<~HEADER
+        # Shopify Product Taxonomy - Attributes: #{@version}
+        # Format: {GID} : {Attribute name}
+      HEADER
       gid_padd = Property.reorder("LENGTH(id) desc").first.gid.size
       @properties
         .map { serialize_property(_1, gid_padd:) }
@@ -29,7 +35,10 @@ module Dist
     end
 
     def values
-      header = "# Shopify Product Taxonomy - Attribute Values: #{@version}"
+      header = <<~HEADER
+        # Shopify Product Taxonomy - Attribute Values: #{@version}
+        # Format: {GID} : {Value name} [{Attribute name}]
+      HEADER
       gid_padd = PropertyValue.reorder("LENGTH(id) desc").first.gid.size
       @values
         .map { serialize_property_value(_1, gid_padd:) }
@@ -48,7 +57,7 @@ module Dist
     end
 
     def serialize_property_value(value, gid_padd:)
-      "#{value.gid.ljust(gid_padd)} : #{value.name}"
+      "#{value.gid.ljust(gid_padd)} : #{value.full_name}"
     end
   end
 end

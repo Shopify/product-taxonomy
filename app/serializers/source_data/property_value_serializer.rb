@@ -10,7 +10,7 @@ module SourceData
       {
         "id" => property_value.id,
         "name" => property_value.name,
-        "friendly_id": property_value.friendly_id,
+        "friendly_id" => property_value.friendly_id,
       }
     end
 
@@ -29,6 +29,7 @@ module SourceData
         id: hash["id"],
         name: hash["name"],
         friendly_id: hash["friendly_id"],
+        primary_property_friendly_id: hash["friendly_id"].split("__").first,
       }
     end
   end

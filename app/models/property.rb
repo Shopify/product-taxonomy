@@ -9,10 +9,6 @@ class Property < ApplicationRecord
   has_many :properties_property_values, dependent: :destroy
   has_many :property_values, through: :properties_property_values, foreign_key: :property_value_friendly_id
 
-  def property_value_friendly_ids
-    property_values.pluck(:friendly_id)
-  end
-
   def property_value_friendly_ids=(ids)
     self.property_values = PropertyValue.where(friendly_id: ids)
   end

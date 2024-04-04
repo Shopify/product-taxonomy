@@ -17,10 +17,10 @@ module SourceData
 
     def deserialize(hash)
       Property.new(**attributes_from(hash)).tap do |property|
-        property.property_value_friendly_ids = if hash["values_from"].present?
-          Property.find_by!(friendly_id: hash["values_from"]).property_value_friendly_ids
+        if hash["values_from"].present?
+          property.property_values = Property.find_by!(friendly_id: hash["values_from"]).property_values
         else
-          hash["values"]
+          property.property_value_friendly_ids = hash["values"]
         end
       end
     end

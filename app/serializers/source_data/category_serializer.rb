@@ -11,7 +11,7 @@ module SourceData
         "id" => category.id,
         "name" => category.name,
         "children" => category.children.map(&:id),
-        "attributes" => category.properties.reorder(:id).map(&:friendly_id),
+        "attributes" => category.properties.reorder(:id).pluck(:friendly_id),
       }
     end
 

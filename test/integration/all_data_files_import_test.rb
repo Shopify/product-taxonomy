@@ -2,29 +2,26 @@
 
 require_relative "../test_helper"
 require_relative "../../db/seed"
+require_relative "../../lib/cli"
 
 class AllDataFilesImportTest < ActiveSupport::TestCase
   include Minitest::Hooks
 
   def before_all
-    seed = DB::Seed.new
-
-    @raw_values_data = YAML.load_file("#{Application.root}/data/values.yml")
-    seed.values_from(@raw_values_data)
-
-    @raw_attributes_data = YAML.load_file("#{Application.root}/data/attributes.yml")
-    seed.attributes_from(@raw_attributes_data)
-
-    # Categories are only successfully parseable if attributes are already present
-    category_files = Dir.glob("#{Application.root}/data/categories/*.yml")
-    @raw_verticals_data = category_files.map { YAML.load_file(_1) }
-    seed.categories_from(@raw_verticals_data)
-
-    integrations_data = YAML.load_file("#{Application.root}/data/integrations/integrations.yml")
-    seed.integrations_from(integrations_data)
-
-    mapping_rule_files = Dir.glob("#{Application.root}/data/integrations/*/mappings/*_shopify.yml")
+    cli = CLI.new
+    @raw_values_data = cli.parse_yaml("data/values.yml")
+    @raw_attributes_data = cli.parse_yaml("data/attributes.yml")
+    category_files = Dir.glob("#{CLI.root}/data/categories/*.yml")
+    @raw_verticals_data = category_files.map { cli.parse_yaml(_1) }
+    @raw_integrations_data = cli.parse_yaml("data/integrations/integrations.yml")
+    mapping_rule_files = Dir.glob("#{CLI.root}/data/integrations/*/mappings/*_shopify.yml")
     @raw_mapping_rules_data = mapping_rule_files.map { YAML.load_file(_1) }
+
+    seed = DB::Seed.new
+    seed.values_from(@raw_values_data)
+    seed.attributes_from(@raw_attributes_data)
+    seed.categories_from(@raw_verticals_data)
+    seed.integrations_from(@raw_integrations_data)
     seed.mapping_rules_from(mapping_rule_files)
   end
 
@@ -44,6 +41,12 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
   test "AttributeValues are all valid" do
     PropertyValue.all.each do |value|
       assert_predicate value, :valid?
+    end
+  end
+
+  test "AttributeValues all have a primary property" do
+    PropertyValue.all.each do |value|
+      assert_predicate value.primary_property, :present?, "Value #{value.friendly_id} has no primary property"
     end
   end
 
@@ -90,50 +93,32 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
 
   test "Category ↔ Attribute relationships are consistent with categories/*.yml" do
     @raw_verticals_data.flatten.each do |raw_category|
-      real_category = Category.find(raw_category.fetch("id"))
-      raw_category.fetch("attributes").each do |friendly_id|
-        property = Property.find_by(friendly_id:)
-        assert_includes real_category.properties, property
-      end
+      properties_via_raw_category_id = Category.find(raw_category.fetch("id")).properties
+      properties_via_raw_attributes = raw_category.fetch("attributes").map { Property.find_by(friendly_id: _1) }
+
+      assert_equal properties_via_raw_attributes.sort, properties_via_raw_category_id.sort
     end
   end
 
   test "Attribute ↔ Value relationships are consistent with attributes.yml when values are listed" do
-    @raw_attributes_data.each do |raw_attribute|
-      property = Property.find(raw_attribute.fetch("id"))
+    @raw_attributes_data.select { _1.key?("values") }.each do |raw_attribute|
+      values_via_raw_id = Property.find(raw_attribute.fetch("id")).property_values
+      values_via_raw_values = raw_attribute.fetch("values").map { PropertyValue.find_by(friendly_id: _1) }
 
-      next unless raw_attribute.fetch("values_from", nil).nil?
-
-      raw_value_friendly_ids = raw_attribute.fetch("values", [])
-      refute raw_value_friendly_ids.empty?
-
-      raw_value_friendly_ids.each do |property_value_friendly_id|
-        property_value = PropertyValue.find_by(friendly_id: property_value_friendly_id)
-        assert_includes property.property_values, property_value
-      end
+      assert_equal values_via_raw_values.sort, values_via_raw_id.sort
     end
   end
 
   test "Attribute ↔ Value relationships are consistent with attributes.yml when values are inherited" do
-    @raw_attributes_data.each do |raw_attribute|
-      property = Property.find(raw_attribute.fetch("id"))
+    @raw_attributes_data.select { _1.key?("values_from") }.each do |raw_attribute|
+      values_via_raw_id = Property.find(raw_attribute.fetch("id")).property_values
+      values_via_raw_values_from = Property.find_by(friendly_id: raw_attribute.fetch("values_from")).property_values
 
-      next unless raw_attribute.fetch("values", nil).nil?
-
-      values_from_property_friendly_id = raw_attribute.fetch("values_from", nil)
-      refute values_from_property_friendly_id.nil?
-
-      values_from_property = Property.find_by(friendly_id: values_from_property_friendly_id)
-
-      assert_equal values_from_property.property_values.size, property.property_values.size
-
-      property.property_values.each do |property_values|
-        assert_includes values_from_property.property_values, property_values
-      end
+      assert_equal values_via_raw_values_from.sort, values_via_raw_id.sort
     end
   end
 
-  test "Attributes in yaml either have values or inherit values" do
+  test "Attributes in attributes.yaml xor values or values_from" do
     @raw_attributes_data.each do |raw_attribute|
       assert raw_attribute.key?("values") ^ raw_attribute.key?("values_from")
     end
@@ -146,7 +131,7 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     assert_equal "Snowboards", snowboard.name
     assert_empty snowboard.children
 
-    real_property_friendly_ids = snowboard.property_friendly_ids
+    real_property_friendly_ids = snowboard.properties.pluck(:friendly_id)
     assert_equal 8, real_property_friendly_ids.size
     assert_includes real_property_friendly_ids, "age_group"
     assert_includes real_property_friendly_ids, "color"
@@ -165,7 +150,7 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     assert_equal "Snowboard construction", snowboard_construction.name
     assert_equal "snowboard_construction", snowboard_construction.friendly_id
 
-    real_value_friendly_ids = snowboard_construction.property_value_friendly_ids
+    real_value_friendly_ids = snowboard_construction.property_values.pluck(:friendly_id)
     assert_equal 4, real_value_friendly_ids.size
     assert_includes real_value_friendly_ids, "snowboard_construction__camber"
     assert_includes real_value_friendly_ids, "snowboard_construction__flat"
