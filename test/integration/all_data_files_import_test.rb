@@ -25,6 +25,18 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     seed.mapping_rules_from(mapping_rule_files)
   end
 
+  test "data/attributes.yml has no empty value lists" do
+    @raw_attributes_data.select { _1.key?("values") }.each do |raw_attribute|
+      assert_predicate raw_attribute.fetch("values"), :present?
+    end
+  end
+
+  test "data/attributes.yaml xor values or values_from" do
+    @raw_attributes_data.each do |raw_attribute|
+      assert raw_attribute.key?("values") ^ raw_attribute.key?("values_from")
+    end
+  end
+
   test "AttributeValues are correctly imported from values.yml" do
     assert_equal @raw_values_data.size, PropertyValue.count
   end
@@ -115,12 +127,6 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
       values_via_raw_values_from = Property.find_by(friendly_id: raw_attribute.fetch("values_from")).property_values
 
       assert_equal values_via_raw_values_from.sort, values_via_raw_id.sort
-    end
-  end
-
-  test "Attributes in attributes.yaml xor values or values_from" do
-    @raw_attributes_data.each do |raw_attribute|
-      assert raw_attribute.key?("values") ^ raw_attribute.key?("values_from")
     end
   end
 
