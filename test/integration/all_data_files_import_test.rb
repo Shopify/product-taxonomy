@@ -130,6 +130,16 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     end
   end
 
+  test "Attributes have at least one value listed or inherited" do
+    @raw_attributes_data.each do |raw_attribute|
+      has_values_from = raw_attribute.key?("values_from")
+      has_values = raw_attribute.key?("values")
+
+      assert has_values || has_values_from
+      refute_empty raw_attribute.fetch("values", []) if has_values
+    end
+  end
+
   # more fragile, but easier sanity check
   test "Snowboards category <sg-4-17-2-17> is fully imported and modeled correctly" do
     snowboard = Category.find("sg-4-17-2-17")
