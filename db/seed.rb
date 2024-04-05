@@ -51,7 +51,7 @@ module DB
 
     def integrations_from(data)
       vputs("Importing integrations")
-      integrations = data.map { { name: _1["name"] } }
+      integrations = data.map { { name: _1["name"], available_versions: _1["available_versions"] } }
       Integration.insert_all(integrations)
       vputs("✓ Imported #{Integration.count} integrations")
     end
@@ -60,15 +60,18 @@ module DB
       vputs("Importing mapping rules")
       mapping_rules = []
       data.each do |file|
-        puts "Importing mapping rules from #{file}"
+        vputs("Importing mapping rules from #{file}")
         from_shopify = File.basename(file, ".*").split("_")[0] == "from"
-        integration_name = Pathname.new(file).each_filename.to_a[-3]
+        integration_name = Pathname.new(file).each_filename.to_a[-4]
         integration_id = Integration.find_by(name: integration_name)&.id
         next if integration_id.nil?
 
         raw_mappings = YAML.load_file(file)
-        input_type = "#{raw_mappings["input_taxonomy"].split("/")[0].capitalize}Product"
-        output_type = "#{raw_mappings["output_taxonomy"].split("/")[0].capitalize}Product"
+        input_type = "ShopifyProduct"
+        output_type = "#{integration_name.capitalize}Product"
+        unless from_shopify
+          input_type, output_type = output_type, input_type
+        end
         rules = raw_mappings["rules"]
         rules.each do |rule|
           input_product_hash = SourceData::ProductSerializer.deserialize(rule["input"], input_type).payload
@@ -83,6 +86,8 @@ module DB
             output_id: output_product.id,
             input_type: input_type,
             output_type: output_type,
+            input_version: raw_mappings["input_taxonomy"],
+            output_version: raw_mappings["output_taxonomy"],
           }
         end
       end

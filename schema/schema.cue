@@ -53,3 +53,23 @@ verticals!: [...{
 		ancestors!: [..._category_reference]
 	}]
 }]
+
+// Present in mappings.json / mappings_data.cue
+mappings!: [
+	...{
+		input_taxonomy!:  string
+		output_taxonomy!: string
+		rules!: [
+			...{
+				input!: {
+					product_category_id: string & =~#category_gid_regex
+					attributes?: [...{
+						name:  string & =~#attribute_gid_regex
+						value: string & =~#value_gid_regex | null
+					}]
+				}
+				output!: [string]: _
+			},
+		]
+	},
+]

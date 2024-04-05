@@ -39,6 +39,7 @@ ActiveRecord::Schema[7.1].define do
 
   create_table :integrations, force: :cascade do |t|
     t.string(:name, null: false)
+    t.text(:available_versions)
     t.index(:name, unique: true)
   end
 
@@ -55,6 +56,8 @@ ActiveRecord::Schema[7.1].define do
     t.integer(:output_id, null: false)
     t.string(:input_type, null: false)
     t.string(:output_type, null: false)
+    t.string(:input_version, null: false)
+    t.string(:output_version, null: false)
 
     t.index([:integration_id], name: "index_mapping_rules_on_integration_id")
     t.index([:input_id, :output_id], name: "index_unique_mapping_rule", unique: true)

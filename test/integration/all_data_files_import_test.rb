@@ -14,8 +14,8 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     category_files = Dir.glob("#{CLI.root}/data/categories/*.yml")
     @raw_verticals_data = category_files.map { cli.parse_yaml(_1) }
     @raw_integrations_data = cli.parse_yaml("data/integrations/integrations.yml")
-    mapping_rule_files = Dir.glob("#{CLI.root}/data/integrations/*/mappings/*_shopify.yml")
-    @raw_mapping_rules_data = mapping_rule_files.map { YAML.load_file(_1) }
+    mapping_rule_files = Dir.glob("#{CLI.root}/data/integrations/*/*/mappings/*_shopify.yml")
+    @raw_mapping_rules_data = mapping_rule_files.map { { content: YAML.load_file(_1), file_name: _1 } }
 
     seed = DB::Seed.new
     seed.values_from(@raw_values_data)
@@ -164,16 +164,22 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     assert_includes real_value_friendly_ids, "snowboard_construction__rocker"
   end
 
-  test "MappingRules are fully imported from integrations/*/mappings/*_shopify.yml" do
-    assert_equal @raw_mapping_rules_data.size, MappingRule.select(:integration_id, :from_shopify).distinct.to_a.count
-    assert_equal @raw_mapping_rules_data.map { |raw| raw["rules"].count }.sum, MappingRule.count
+  test "MappingRules are fully imported from integrations/*/*/mappings/*_shopify.yml" do
+    assert_equal @raw_mapping_rules_data.size,
+      MappingRule.select(:integration_id, :from_shopify).distinct.to_a.count
+    assert_equal @raw_mapping_rules_data.map { |raw| raw[:content]["rules"].count }.sum, MappingRule.count
   end
 
-  test "MappingRule ↔ Product relationships are consistent with integrations/*/mappings/*_shopify.yml" do
+  test "MappingRule ↔ Product relationships are consistent with integrations/*/*/mappings/*_shopify.yml" do
     @raw_mapping_rules_data.each do |raw|
-      input_type = "#{raw.fetch("input_taxonomy").split("/")[0].capitalize}Product"
-      output_type = "#{raw.fetch("output_taxonomy").split("/")[0].capitalize}Product"
-      raw.fetch("rules").each do |raw_rule|
+      from_shopify = File.basename(raw[:file_name], ".*").split("_")[0] == "from"
+      integration_name = Pathname.new(raw[:file_name]).each_filename.to_a[-4]
+      input_type = "ShopifyProduct"
+      output_type = "#{integration_name.capitalize}Product"
+      unless from_shopify
+        input_type, output_type = output_type, input_type
+      end
+      raw[:content].fetch("rules").each do |raw_rule|
         deserialized_input_product = SourceData::ProductSerializer.deserialize(raw_rule.fetch("input"), input_type)
         deserialized_output_product = SourceData::ProductSerializer.deserialize(raw_rule.fetch("output"), output_type)
         input_id = Product.find_by(type: input_type, payload: deserialized_input_product.payload).id
