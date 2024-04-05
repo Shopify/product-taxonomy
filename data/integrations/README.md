@@ -123,7 +123,16 @@ output
 
 ---
 
-**Final Mapping (JSON)**
+**Final Mapping**
+
+| Input (generated) | Output | Notes
+|--------|--------|--------|
+| product_category_id: "aa-6-9", attributes: ["target_gender": "target_gender__male", "age_group": "age_group__adults"] | amazon_category: [3888171, 9539904011] | Matches rules 1 & 2 |
+| product_category_id: "aa-6-9", attributes: ["target_gender": "target_gender__female", "age_group": "age_group__adults"] | amazon_category: [9539894011, 9539902011, 9539895011, 9539896011]| Matches rules 1 & 3 |
+| ... | ... ||
+
+<details>
+<summary>Output as JSON</summary>
 
 ```json
 [
@@ -144,7 +153,7 @@ output
         "output": {
             "amazon_category": [3888171, 9539904011]
         }
-    }, // Matches rules 1 and 2
+    },
     {
         "input": {
             "product_category_id": "aa-6-9",
@@ -162,7 +171,8 @@ output
         "output": {
             "amazon_category": [9539894011, 9539902011, 9539895011, 9539896011]
         }
-    } // Matches rules 1 and 3
+    }
 ]
 
 ```
+</details>

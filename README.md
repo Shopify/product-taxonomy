@@ -108,7 +108,6 @@ If you want to add a new distribution format, you'll need to do 3 things:
 This is a rails app after all, so we'll give a map of the _novel_ pieces of our system:
 
 ```
-<<<<<<< HEAD
 ├── Makefile             # key dev and build commands
 ├── app/                 # rails standard
 ├── bin/
