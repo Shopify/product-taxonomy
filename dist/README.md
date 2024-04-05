@@ -3,7 +3,7 @@
 <p align="center"><em><b>This is the releases branch</b>. See <a href="https://github.com/Shopify/product-taxonomy/"><code>main</code></a> for the source.</em></p>
 
 <!-- omit in toc -->
-<h1 align="center">Shopify's Standard Product Taxonomy <img src="https://img.shields.io/badge/preview-orange.svg" alt="Preview"> <a href="./VERSION"><img src="https://img.shields.io/badge/version-v0.12.0-blue.svg" alt="Version"></a></h1>
+<h1 align="center">Shopify's Standard Product Taxonomy <img src="https://img.shields.io/badge/preview-orange.svg" alt="Preview"> <a href="./VERSION"><img src="https://img.shields.io/badge/version-v0.13.0-blue.svg" alt="Version"></a></h1>
 
 
 **🌍 Global Standard**: Our open-source, standardized product taxonomy establishes a universal language for product classification. Comprehensive and already empowering merchants on Shopify.

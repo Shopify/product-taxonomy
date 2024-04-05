@@ -1,3 +1,12 @@
+## 0.13.0 (Apr 5, 2024)
+
+Add 2 more verticals.
+
+### 📚 Taxonomy
+
+- Adds `Gift Cards` vertical
+- Adds `Product Add-Ons` vertical
+
 ## 0.12.0 (Apr 3, 2024)
 
 - Shift attribute and attribute value friendly_ids to be consistent.
