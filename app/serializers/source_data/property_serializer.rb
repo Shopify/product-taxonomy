@@ -11,6 +11,7 @@ module SourceData
         "id" => property.id,
         "name" => property.name,
         "friendly_id" => property.friendly_id,
+        "parent_friendly_id" => property.parent_friendly_id,
         "values" => property.property_values.reorder(:id).map { PropertyValueSerializer.serialize(_1) },
       }
     end
@@ -58,6 +59,7 @@ module SourceData
         id: hash["id"],
         friendly_id: hash["friendly_id"],
         name: hash["name"],
+        parent_friendly_id: hash["values_from"],
       }
     end
   end

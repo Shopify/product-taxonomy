@@ -75,6 +75,17 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     end
   end
 
+  test "Attributes have primary properties if they inherit values" do
+    @raw_attributes_data.each do |raw_attribute|
+      next unless raw_attribute.key?("values_from")
+
+      real_attribute = Property.find(raw_attribute.fetch("id"))
+      real_parent_property = Property.find_by!(friendly_id: raw_attribute.fetch("values_from"))
+
+      assert_equal real_parent_property, real_attribute.parent
+    end
+  end
+
   test "Attributes are all valid" do
     Property.all.each do |attribute|
       assert_predicate attribute, :valid?

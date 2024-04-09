@@ -69,6 +69,7 @@ module Dist
       {
         id: property.gid,
         name: property.name,
+        parent_id: property.parent&.gid,
         values: property.property_values.map(&method(:serialize_nested)),
       }
     end
