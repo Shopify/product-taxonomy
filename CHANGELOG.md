@@ -1,3 +1,7 @@
+## 0.14.0 (Apr 9, 2024)
+
+- Add `parent_id` field to attributes.json dist output
+
 ## 0.13.0 (Apr 5, 2024)
 
 Add 2 more verticals.
