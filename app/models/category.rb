@@ -25,8 +25,14 @@ class Category < ApplicationRecord
     unless: :root?
   validates_associated :children
 
+  class << self
+    def gid(id)
+      "gid://shopify/TaxonomyCategory/#{id}"
+    end
+  end
+
   def gid
-    "gid://shopify/TaxonomyCategory/#{id}"
+    self.class.gid(id)
   end
 
   def full_name
