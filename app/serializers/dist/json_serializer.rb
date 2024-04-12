@@ -117,6 +117,8 @@ module Dist
     def serialize_mapping(mapping)
       return if mapping.nil?
 
+      return unless Category.find_by_id(mapping[:input][:product_category_id])
+
       mapping[:input][:product_category_id] = Category.find(mapping[:input][:product_category_id]).gid
       if mapping[:input][:attributes].present?
         mapping[:input][:attributes] = mapping[:input][:attributes].map do |attribute|

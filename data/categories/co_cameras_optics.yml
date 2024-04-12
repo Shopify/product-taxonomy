@@ -27,26 +27,26 @@
   - co-1-1-2
   - co-1-1-3
   attributes:
-  - color
   - cable_housing_material
+  - color
 - id: co-1-1-1
   name: Component Video Cables
   children: []
   attributes:
-  - color
   - cable_housing_material
+  - color
 - id: co-1-1-2
   name: Composite Video Cables
   children: []
   attributes:
-  - color
   - cable_housing_material
+  - color
 - id: co-1-1-3
   name: Optical Audio Cables
   children: []
   attributes:
-  - color
   - cable_housing_material
+  - color
 - id: co-1-2
   name: Camera & Video Camera Lenses
   children:
@@ -54,35 +54,35 @@
   - co-1-2-2
   - co-1-2-3
   attributes:
+  - camera_lens_material
   - camera_lens_type
   - color
-  - camera_lens_material
   - suitable_for_camera_type
 - id: co-1-2-1
   name: Camera Lenses
   children: []
   attributes:
+  - camera_lens_material
   - camera_lens_type
   - color
   - focus_adjustment
   - focus_type
-  - camera_lens_material
   - suitable_for_camera_type
 - id: co-1-2-2
   name: Surveillance Camera Lenses
   children: []
   attributes:
+  - camera_lens_material
   - camera_lens_type
   - color
-  - camera_lens_material
   - suitable_for_camera_type
 - id: co-1-2-3
   name: Video Camera Lenses
   children: []
   attributes:
+  - camera_lens_material
   - camera_lens_type
   - color
-  - camera_lens_material
   - suitable_for_camera_type
 - id: co-1-3
   name: Camera Lens Accessories
@@ -108,9 +108,10 @@
   attributes:
   - accessory_size
   - bag/case_closure
+  - bag/case_features
+  - bag/case_material
   - carrying_type
   - color
-  - bag/case_material
 - id: co-1-3-3
   name: Lens Caps
   children: []
@@ -190,71 +191,81 @@
   - co-1-4-2-9
   attributes:
   - bag/case_closure
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-4-2-1
   name: Camera Backpacks
   children: []
   attributes:
   - bag/case_closure
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-4-2-2
   name: Camera Hard Cases
   children: []
   attributes:
   - bag/case_closure
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-4-2-3
   name: Camera Holster Bags
   children: []
   attributes:
   - bag/case_closure
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-4-2-4
   name: Camera Rolling Cases
   children: []
   attributes:
   - bag/case_closure
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-4-2-5
   name: Camera Shoulder Bags
   children: []
   attributes:
   - bag/case_closure
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-4-2-6
   name: Camera Sling Bags
   children: []
   attributes:
   - bag/case_closure
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-4-2-7
   name: Camera Soft Pouches
   children: []
   attributes:
   - bag/case_closure
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-4-2-8
   name: Camera Tote Bags
   children: []
   attributes:
   - bag/case_closure
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-4-2-9
   name: Camera Underwater Cases
   children: []
   attributes:
   - bag/case_closure
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-4-3
   name: Camera Body Replacement Panels & Doors
   children: []
@@ -648,6 +659,7 @@
   - camera_mounting_type
   - color
   - light_design
+  - lighting_features
   - material
   - power_source
 - id: co-1-5
@@ -683,71 +695,81 @@
   - co-1-5-2-10
   attributes:
   - accessory_size
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-5-2-1
   name: Accessory Cases
   children: []
   attributes:
   - accessory_size
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-5-2-2
   name: Binocular Cases
   children: []
   attributes:
   - accessory_size
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-5-2-4
   name: Drone Cases
   children: []
   attributes:
   - accessory_size
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-5-2-5
   name: Lens Bags
   children: []
   attributes:
   - accessory_size
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-5-2-6
   name: Microscope Cases
   children: []
   attributes:
   - accessory_size
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-5-2-7
   name: Monocular Cases
   children: []
   attributes:
   - accessory_size
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-5-2-8
   name: Rangefinder Cases
   children: []
   attributes:
   - accessory_size
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-5-2-9
   name: Spotting Scope Cases
   children: []
   attributes:
   - accessory_size
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-5-2-10
   name: Telescope Bags
   children: []
   attributes:
   - accessory_size
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-5-3
   name: Rangefinder Accessories
   children: []
@@ -793,16 +815,17 @@
   name: Tripod & Monopod Cases
   children: []
   attributes:
-  - color
+  - bag/case_features
   - bag/case_material
+  - color
 - id: co-1-6-2
   name: Tripod & Monopod Heads
   children: []
   attributes:
   - color
   - material
+  - tripod/monopod_attachment_type
   - tripod/monopod_head_type
-  - tripop/monopod_attachment_type
 - id: co-1-6-3
   name: Tripod Collars & Mounts
   children: []
@@ -810,6 +833,7 @@
   - collar/mount_compatible_device
   - collar/mount_design
   - color
+  - mount/stand_features
   - mount_material
 - id: co-1-6-4
   name: Tripod Handles
@@ -817,7 +841,7 @@
   attributes:
   - color
   - handle_material
-  - tripop_handle_type
+  - tripod_handle_type
 - id: co-1-6-5
   name: Tripod Spreaders
   children: []
@@ -843,6 +867,7 @@
   - leg_lock_type
   - leg_sections
   - material
+  - mount/stand_features
 - id: co-1-7-1
   name: Boom Stands
   children: []
@@ -852,6 +877,7 @@
   - leg_lock_type
   - leg_sections
   - material
+  - mount/stand_features
 - id: co-1-7-2
   name: Light Stands
   children: []
@@ -861,6 +887,7 @@
   - leg_lock_type
   - leg_sections
   - material
+  - mount/stand_features
 - id: co-1-7-3
   name: Monopods
   children: []
@@ -870,6 +897,7 @@
   - leg_lock_type
   - leg_sections
   - material
+  - mount/stand_features
 - id: co-1-7-4
   name: Pocket Tripods
   children: []
@@ -879,6 +907,7 @@
   - leg_lock_type
   - leg_sections
   - material
+  - mount/stand_features
 - id: co-1-7-5
   name: Studio Tripods
   children: []
@@ -888,6 +917,7 @@
   - leg_lock_type
   - leg_sections
   - material
+  - mount/stand_features
 - id: co-1-7-6
   name: Tabletop Tripods
   children: []
@@ -897,6 +927,7 @@
   - leg_lock_type
   - leg_sections
   - material
+  - mount/stand_features
 - id: co-1-7-7
   name: Travel Tripods
   children: []
@@ -906,6 +937,7 @@
   - leg_lock_type
   - leg_sections
   - material
+  - mount/stand_features
 - id: co-1-7-9
   name: Underwater Tripods
   children: []
@@ -915,6 +947,7 @@
   - leg_lock_type
   - leg_sections
   - material
+  - mount/stand_features
 - id: co-1-7-10
   name: Video Tripods
   children: []
@@ -924,6 +957,7 @@
   - leg_lock_type
   - leg_sections
   - material
+  - mount/stand_features
 - id: co-2
   name: Cameras
   children:
@@ -936,6 +970,7 @@
   - co-2-7
   - co-2-8
   attributes:
+  - camera_features
   - color
   - material
 - id: co-2-1
@@ -943,6 +978,7 @@
   children: []
   attributes:
   - borescope_design
+  - camera_features
   - color
   - material
   - power_source
@@ -960,6 +996,7 @@
   attributes:
   - auto_focusing_modes
   - camera_display_technology
+  - camera_features
   - camera_hd_type
   - camera_sensor_type
   - color
@@ -980,6 +1017,7 @@
   attributes:
   - auto_focusing_modes
   - camera_display_technology
+  - camera_features
   - camera_hd_type
   - camera_sensor_type
   - color
@@ -1000,6 +1038,7 @@
   attributes:
   - auto_focusing_modes
   - camera_display_technology
+  - camera_features
   - camera_hd_type
   - camera_sensor_type
   - color
@@ -1020,6 +1059,7 @@
   attributes:
   - auto_focusing_modes
   - camera_display_technology
+  - camera_features
   - camera_hd_type
   - camera_sensor_type
   - color
@@ -1040,6 +1080,7 @@
   attributes:
   - auto_focusing_modes
   - camera_display_technology
+  - camera_features
   - camera_hd_type
   - camera_sensor_type
   - color
@@ -1060,6 +1101,7 @@
   attributes:
   - auto_focusing_modes
   - camera_display_technology
+  - camera_features
   - camera_hd_type
   - camera_sensor_type
   - color
@@ -1080,6 +1122,7 @@
   attributes:
   - auto_focusing_modes
   - camera_display_technology
+  - camera_features
   - camera_hd_type
   - camera_sensor_type
   - color
@@ -1100,6 +1143,7 @@
   attributes:
   - auto_focusing_modes
   - camera_display_technology
+  - camera_features
   - camera_hd_type
   - camera_sensor_type
   - color
@@ -1120,6 +1164,7 @@
   attributes:
   - auto_focusing_modes
   - camera_display_technology
+  - camera_features
   - camera_hd_type
   - camera_sensor_type
   - color
@@ -1138,6 +1183,7 @@
   name: Disposable Cameras
   children: []
   attributes:
+  - camera_features
   - color
   - material
 - id: co-2-4
@@ -1150,6 +1196,7 @@
   - co-2-4-5
   - co-2-4-6
   attributes:
+  - camera_features
   - color
   - exposure_control
   - film_type
@@ -1157,6 +1204,7 @@
   name: Compact Film Cameras
   children: []
   attributes:
+  - camera_features
   - color
   - exposure_control
   - film_type
@@ -1164,6 +1212,7 @@
   name: Instant Film Cameras
   children: []
   attributes:
+  - camera_features
   - color
   - exposure_control
   - film_format
@@ -1172,6 +1221,7 @@
   name: Large Format Film Cameras
   children: []
   attributes:
+  - camera_features
   - color
   - exposure_control
   - film_type
@@ -1179,6 +1229,7 @@
   name: Medium Format Film Cameras
   children: []
   attributes:
+  - camera_features
   - color
   - exposure_control
   - film_type
@@ -1186,6 +1237,7 @@
   name: Rangefinder Film Cameras
   children: []
   attributes:
+  - camera_features
   - color
   - exposure_control
   - film_type
@@ -1193,6 +1245,7 @@
   name: SLR Film Cameras
   children: []
   attributes:
+  - camera_features
   - color
   - exposure_control
   - film_type
@@ -1200,6 +1253,7 @@
   name: Surveillance Cameras
   children: []
   attributes:
+  - camera_features
   - camera_sensor_type
   - color
   - connection_method
@@ -1211,6 +1265,7 @@
   name: Trail Cameras
   children: []
   attributes:
+  - camera_features
   - color
   - connection_method
   - material
@@ -1227,6 +1282,7 @@
   - co-2-7-6
   - co-2-7-7
   attributes:
+  - camera_features
   - camera_hd_type
   - camera_sensor_type
   - color
@@ -1239,6 +1295,7 @@
   name: 360-Degree Video Cameras
   children: []
   attributes:
+  - camera_features
   - camera_hd_type
   - camera_sensor_type
   - color
@@ -1251,6 +1308,7 @@
   name: Action Video Cameras
   children: []
   attributes:
+  - camera_features
   - camera_hd_type
   - camera_sensor_type
   - color
@@ -1263,6 +1321,7 @@
   name: Camcorders
   children: []
   attributes:
+  - camera_features
   - camera_hd_type
   - camera_sensor_type
   - color
@@ -1275,6 +1334,7 @@
   name: Cinema Video Cameras
   children: []
   attributes:
+  - camera_features
   - camera_hd_type
   - camera_sensor_type
   - color
@@ -1287,6 +1347,7 @@
   name: Dash Video Cameras
   children: []
   attributes:
+  - camera_features
   - camera_hd_type
   - camera_sensor_type
   - color
@@ -1299,6 +1360,7 @@
   name: Drone Video Cameras
   children: []
   attributes:
+  - camera_features
   - camera_hd_type
   - camera_sensor_type
   - color
@@ -1311,6 +1373,7 @@
   name: Webcams
   children: []
   attributes:
+  - camera_features
   - camera_hd_type
   - camera_mounting_type
   - color
@@ -1418,6 +1481,7 @@
   - material
   - reticle_type
   - scope/sight_design
+  - scope/sight_features
   - suitable_for_weapon_type
 - id: co-4
   name: Photography
@@ -1548,6 +1612,7 @@
   - material
   - power_source
   - timer_design
+  - timer_features
 - id: co-4-1-2-3
   name: Focusing Aids
   children: []
@@ -1685,6 +1750,7 @@
   - co-4-2-8
   attributes:
   - color
+  - lighting_features
   - material
 - id: co-4-2-1
   name: Light Meter Accessories
@@ -1699,6 +1765,7 @@
   - color
   - display_mode
   - material
+  - mount/stand_features
   - power_source
 - id: co-4-2-3
   name: Studio Backgrounds
@@ -1708,6 +1775,7 @@
   - background_design
   - color
   - material
+  - mount/stand_features
   - pattern
 - id: co-4-2-4
   name: Studio Light & Flash Accessories
@@ -1725,6 +1793,7 @@
   attributes:
   - color
   - material
+  - mount/stand_features
   - power_source
 - id: co-4-2-5-1
   name: Flash Diffusers
@@ -1733,6 +1802,7 @@
   - color
   - diffuser_design
   - material
+  - mount/stand_features
   - power_source
 - id: co-4-2-5-2
   name: Flash Reflectors
@@ -1740,6 +1810,7 @@
   attributes:
   - color
   - material
+  - mount/stand_features
   - power_source
   - reflector_design
 - id: co-4-2-5-3
@@ -1748,6 +1819,7 @@
   attributes:
   - color
   - light_filtering
+  - lighting_features
   - material
   - power_source
   - projection_design
@@ -1757,6 +1829,7 @@
   attributes:
   - color
   - material
+  - mount/stand_features
   - power_source
   - softbox_mounting_type
   - softbox_shape
@@ -1765,6 +1838,7 @@
   children: []
   attributes:
   - color
+  - lighting_features
   - material
   - power_source
 - id: co-4-2-7
@@ -1773,6 +1847,7 @@
   attributes:
   - color
   - material
+  - mount/stand_features
 - id: co-4-2-8
   name: Studio Stands & Mounts
   children:
@@ -1788,6 +1863,7 @@
   - co-4-2-8-10
   attributes:
   - color
+  - mount/stand_features
   - mount_material
 - id: co-4-2-8-1
   name: Backdrop Stands
@@ -1795,23 +1871,27 @@
   attributes:
   - color
   - material
+  - mount/stand_features
 - id: co-4-2-8-2
   name: Boom Arms
   children: []
   attributes:
   - color
   - material
+  - mount/stand_features
 - id: co-4-2-8-3
   name: C-Stands
   children: []
   attributes:
   - color
   - material
+  - mount/stand_features
 - id: co-4-2-8-4
   name: Ceiling Mounts
   children: []
   attributes:
   - color
+  - mount/stand_features
   - mount_material
 - id: co-4-2-8-5
   name: Clamps
@@ -1819,35 +1899,41 @@
   attributes:
   - color
   - material
+  - mount/stand_features
 - id: co-4-2-8-6
   name: Grip Heads
   children: []
   attributes:
   - color
   - material
+  - mount/stand_features
 - id: co-4-2-8-7
   name: Light Stands
   children: []
   attributes:
   - color
   - material
+  - mount/stand_features
 - id: co-4-2-8-8
   name: Reflector Holders
   children: []
   attributes:
   - color
   - material
+  - mount/stand_features
 - id: co-4-2-8-9
   name: Tabletop Stands
   children: []
   attributes:
   - color
   - material
+  - mount/stand_features
 - id: co-4-2-8-10
   name: Wall Mounts
   children: []
   attributes:
   - color
+  - mount/stand_features
   - mount_material
 - id: co-4-3
   name: Photo Mounting Supplies

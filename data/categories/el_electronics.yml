@@ -216,8 +216,8 @@
   name: Headphone Carrying Cases
   children: []
   attributes:
-  - color
   - bag/case_material
+  - color
   - pattern
 - id: el-2-1-2-4
   name: Headphone Cushions & Tips
@@ -302,6 +302,7 @@
   - color
   - material
   - microphone_thread
+  - mount/stand_features
   - pattern
 - id: el-2-1-6
   name: MP3 Player Accessories
@@ -322,9 +323,9 @@
   name: MP3 Player Cases
   children: []
   attributes:
+  - bag/case_material
   - case_type
   - color
-  - bag/case_material
   - pattern
 - id: el-2-1-7
   name: Satellite Radio Accessories
@@ -354,8 +355,8 @@
   name: Speaker Bags, Covers & Cases
   children: []
   attributes:
-  - color
   - bag/case_material
+  - color
   - pattern
 - id: el-2-1-8-2
   name: Speaker Components & Kits
@@ -367,8 +368,8 @@
   name: Speaker Stand Bags
   children: []
   attributes:
-  - color
   - bag/case_material
+  - color
   - pattern
 - id: el-2-1-8-4
   name: Speaker Stands & Mounts
@@ -484,8 +485,8 @@
   name: Power Amplifiers
   children: []
   attributes:
-  - amplifier_class
   - amplifier/booster_suitable_location
+  - amplifier_class
   - audio_d/a_converter_dac
   - audio_output_channel
   - color
@@ -581,6 +582,7 @@
   - audio_connectivity
   - color
   - connectivity_technology
+  - earphone_features
   - headphone_style
   - microphone_type
   - pattern
@@ -591,6 +593,7 @@
   - color
   - connectivity_technology
   - device_interface
+  - earphone_features
   - microphone_type
   - pattern
 - id: el-2-2-7-1-2
@@ -600,6 +603,7 @@
   - audio_connectivity
   - color
   - connectivity_technology
+  - earphone_features
   - headphone_style
   - microphone_type
   - pattern
@@ -610,6 +614,7 @@
   - audio_connectivity
   - color
   - connectivity_technology
+  - earphone_features
   - headphone_style
   - microphone_type
   - pattern
@@ -620,6 +625,7 @@
   - audio_connectivity
   - color
   - connectivity_technology
+  - earphone_features
   - headphone_style
   - microphone_type
   - pattern
@@ -630,6 +636,7 @@
   - audio_connectivity
   - color
   - connectivity_technology
+  - earphone_features
   - headphone_style
   - microphone_type
   - pattern
@@ -640,6 +647,7 @@
   - audio_connectivity
   - color
   - connectivity_technology
+  - earphone_features
   - headphone_style
   - microphone_type
   - pattern
@@ -762,6 +770,7 @@
   - pattern
   - power_source
   - speaker_design
+  - speaker_features
   - speaker_technology
 - id: el-2-2-11
   name: Studio Recording Bundles
@@ -786,6 +795,7 @@
   - el-2-3-10
   - el-2-3-11
   attributes:
+  - audio_player/recorder_features
   - color
   - connectivity_technology
   - pattern
@@ -794,6 +804,7 @@
   children: []
   attributes:
   - audio_codecs/formats_supported
+  - audio_player/recorder_features
   - color
   - connection_type
   - connectivity_technology
@@ -803,6 +814,7 @@
   name: Handheld Players & Recorders
   children: []
   attributes:
+  - audio_player/recorder_features
   - color
   - connection_type
   - connectivity_technology
@@ -814,6 +826,7 @@
   children: []
   attributes:
   - audio_codecs/formats_supported
+  - audio_player/recorder_features
   - color
   - connectivity_technology
   - device_interface
@@ -825,6 +838,7 @@
   children: []
   attributes:
   - audio_codecs/formats_supported
+  - audio_player/recorder_features
   - color
   - connection_type
   - connectivity_technology
@@ -836,6 +850,7 @@
   children: []
   attributes:
   - audio_codecs/formats_supported
+  - audio_player/recorder_features
   - color
   - connection_type
   - connectivity_technology
@@ -847,6 +862,7 @@
   children: []
   attributes:
   - audio_codecs/formats_supported
+  - audio_player/recorder_features
   - color
   - connection_type
   - connectivity_technology
@@ -870,6 +886,7 @@
   - frequency/radio_bands_supported
   - pattern
   - power_source
+  - radio_features
   - tuner_type
 - id: el-2-3-7-1
   name: AM/FM Radios
@@ -882,6 +899,7 @@
   - frequency/radio_bands_supported
   - pattern
   - power_source
+  - radio_features
   - tuner_type
 - id: el-2-3-7-2
   name: DAB Radios
@@ -894,6 +912,7 @@
   - frequency/radio_bands_supported
   - pattern
   - power_source
+  - radio_features
   - tuner_type
 - id: el-2-3-7-3
   name: Internet Radios
@@ -906,6 +925,7 @@
   - frequency/radio_bands_supported
   - pattern
   - power_source
+  - radio_features
   - tuner_type
 - id: el-2-3-7-4
   name: Satellite Radios
@@ -918,6 +938,7 @@
   - frequency/radio_bands_supported
   - pattern
   - power_source
+  - radio_features
   - tuner_type
 - id: el-2-3-7-5
   name: Shortwave Radios
@@ -930,6 +951,7 @@
   - frequency/radio_bands_supported
   - pattern
   - power_source
+  - radio_features
   - tuner_type
 - id: el-2-3-7-6
   name: Weather Radios
@@ -942,12 +964,14 @@
   - frequency/radio_bands_supported
   - pattern
   - power_source
+  - radio_features
   - tuner_type
 - id: el-2-3-8
   name: Reel-to-Reel Tape Players & Recorders
   children: []
   attributes:
   - audio_codecs/formats_supported
+  - audio_player/recorder_features
   - color
   - connection_type
   - connectivity_technology
@@ -959,6 +983,7 @@
   children: []
   attributes:
   - audio_codecs/formats_supported
+  - audio_player/recorder_features
   - color
   - connectivity_technology
   - device_interface
@@ -970,6 +995,7 @@
   children: []
   attributes:
   - audio_codecs/formats_supported
+  - audio_player/recorder_features
   - cartridge_type
   - color
   - connection_type
@@ -983,6 +1009,7 @@
   children: []
   attributes:
   - audio_codecs/formats_supported
+  - audio_player/recorder_features
   - color
   - connection_type
   - connectivity_technology
@@ -993,6 +1020,7 @@
   name: Bullhorns
   children: []
   attributes:
+  - bullhorn_features
   - color
   - pattern
   - power_source
@@ -1003,18 +1031,21 @@
   - el-2-5-2
   attributes:
   - color
+  - dj_equipment_features
   - pattern
 - id: el-2-5-1
   name: DJ CD Players
   children: []
   attributes:
   - color
+  - dj_equipment_features
   - pattern
 - id: el-2-5-2
   name: DJ Systems
   children: []
   attributes:
   - color
+  - dj_equipment_features
   - mixer_type
   - pattern
 - id: el-2-6
@@ -1090,8 +1121,8 @@
   attributes:
   - color
   - connector_gender
-  - wire/rope_material
   - pattern
+  - wire/rope_material
 - id: el-3-2
   name: Circuit Decoders & Encoders
   children: []
@@ -1228,6 +1259,7 @@
   - el-3-6-8
   - el-3-6-9
   attributes:
+  - circuit_board_features
   - color
   - component_package_type
   - pattern
@@ -1235,6 +1267,7 @@
   name: Camera Circuit Boards
   children: []
   attributes:
+  - circuit_board_features
   - color
   - component_package_type
   - pattern
@@ -1245,6 +1278,7 @@
   - el-3-6-2-2
   - el-3-6-2-3
   attributes:
+  - circuit_board_features
   - color
   - component_package_type
   - pattern
@@ -1252,6 +1286,7 @@
   name: Computer Inverter Boards
   children: []
   attributes:
+  - circuit_board_features
   - color
   - component_package_type
   - pattern
@@ -1259,6 +1294,7 @@
   name: Hard Drive Circuit Boards
   children: []
   attributes:
+  - circuit_board_features
   - color
   - component_package_type
   - pattern
@@ -1267,13 +1303,14 @@
   children: []
   attributes:
   - bios_type
+  - circuit_board_features
   - color
   - compatible_processor_series
   - expansion_slots
-  - memory_features
   - memory_technology
   - motherboard_chipset_family
   - motherboard_form_factor
+  - motherboard_memory_features
   - multi_gpu_technology
   - parallel_processing_technology_support
   - pattern
@@ -1284,6 +1321,7 @@
   name: Development Boards
   children: []
   attributes:
+  - circuit_board_features
   - color
   - component_package_type
   - memory_technology
@@ -1293,6 +1331,7 @@
   name: Exercise Machine Circuit Boards
   children: []
   attributes:
+  - circuit_board_features
   - color
   - component_package_type
   - pattern
@@ -1300,6 +1339,7 @@
   name: Household Appliance Circuit Boards
   children: []
   attributes:
+  - circuit_board_features
   - color
   - component_package_type
   - pattern
@@ -1307,6 +1347,7 @@
   name: Pool & Spa Circuit Boards
   children: []
   attributes:
+  - circuit_board_features
   - color
   - component_package_type
   - pattern
@@ -1314,6 +1355,7 @@
   name: Printer, Copier, & Fax Machine Circuit Boards
   children: []
   attributes:
+  - circuit_board_features
   - color
   - component_package_type
   - pattern
@@ -1321,6 +1363,7 @@
   name: Scanner Circuit Boards
   children: []
   attributes:
+  - circuit_board_features
   - color
   - component_package_type
   - pattern
@@ -1328,6 +1371,7 @@
   name: Television Circuit Boards
   children: []
   attributes:
+  - circuit_board_features
   - color
   - component_package_type
   - pattern
@@ -1390,6 +1434,7 @@
   children: []
   attributes:
   - color
+  - communication_device_features
   - connectivity_technology
   - pattern
 - id: el-4-2
@@ -1397,6 +1442,7 @@
   children: []
   attributes:
   - color
+  - communication_device_features
   - connectivity_technology
   - pattern
 - id: el-4-3
@@ -1413,13 +1459,14 @@
   attributes:
   - audio_connectivity
   - color
+  - earphone_features
   - pattern
 - id: el-4-3-2
   name: Radio Carrying Cases
   children: []
   attributes:
-  - color
   - bag/case_material
+  - color
   - pattern
   - radio_case_design
 - id: el-4-4
@@ -1436,6 +1483,7 @@
   - frequency/radio_bands_supported
   - pattern
   - power_source
+  - radio_features
 - id: el-4-4-1
   name: Amateur Radios
   children: []
@@ -1446,6 +1494,7 @@
   - frequency/radio_bands_supported
   - pattern
   - power_source
+  - radio_features
 - id: el-4-4-2
   name: CB Radios
   children: []
@@ -1456,6 +1505,7 @@
   - frequency/radio_bands_supported
   - pattern
   - power_source
+  - radio_features
 - id: el-4-4-3
   name: Radio Scanners
   children: []
@@ -1466,6 +1516,7 @@
   - frequency/radio_bands_supported
   - pattern
   - power_source
+  - radio_features
 - id: el-4-4-4
   name: Two-Way Radios
   children: []
@@ -1476,6 +1527,7 @@
   - frequency/radio_bands_supported
   - pattern
   - power_source
+  - radio_features
 - id: el-4-5
   name: Intercom Accessories
   children:
@@ -1494,12 +1546,14 @@
   - device_interface
   - mounting_type
   - pattern
+  - speaker_features
   - speaker_technology
 - id: el-4-6
   name: Intercoms
   children: []
   attributes:
   - color
+  - communication_device_features
   - connection_type
   - connectivity_technology
   - display_resolution
@@ -1530,12 +1584,14 @@
   children: []
   attributes:
   - color
+  - communication_device_features
   - pattern
 - id: el-4-8-2
   name: Corded Phones
   children: []
   attributes:
   - color
+  - communication_device_features
   - handset_type
   - pattern
   - telephone_style
@@ -1544,6 +1600,7 @@
   children: []
   attributes:
   - color
+  - communication_device_features
   - handset_type
   - pattern
   - telephone_style
@@ -1584,6 +1641,7 @@
   attributes:
   - color
   - connection_type
+  - lighting_features
   - pattern
 - id: el-4-8-4-1-3
   name: Remote Shutters
@@ -1602,17 +1660,19 @@
   - leg_lock_type
   - leg_sections
   - material
+  - mount/stand_features
   - pattern
 - id: el-4-8-4-2
   name: Mobile Phone Cases
   children: []
   attributes:
+  - bag/case_material
   - case_type
-  - certifications_standards
   - color
   - hand_side
-  - bag/case_material
+  - mobile_phone_case_features
   - pattern
+  - product_certifications_standards
 - id: el-4-8-4-3
   name: Mobile Phone Charms & Straps
   children: []
@@ -1654,6 +1714,7 @@
   children: []
   attributes:
   - color
+  - mount/stand_features
   - pattern
 - id: el-4-8-4-7
   name: SIM Card Ejection Tools
@@ -1682,6 +1743,7 @@
   children: []
   attributes:
   - color
+  - communication_device_features
   - connectivity_technology
   - data_network
   - pattern
@@ -1707,6 +1769,7 @@
   children: []
   attributes:
   - color
+  - communication_device_features
   - connectivity_technology
   - display_resolution
   - pattern
@@ -1736,6 +1799,7 @@
   - el-5-2-1
   - el-5-2-2
   attributes:
+  - audio/scan_converter_features
   - color
   - connection_type
   - pattern
@@ -1743,6 +1807,7 @@
   name: Audio Converters
   children: []
   attributes:
+  - audio_converter_features
   - color
   - device_interface
   - pattern
@@ -1753,6 +1818,7 @@
   - color
   - connection_type
   - pattern
+  - scan_converter_features
 - id: el-5-3
   name: Electronics Component Connectors
   children: []
@@ -1790,6 +1856,7 @@
   - el-6-10
   attributes:
   - color
+  - computer_specialized_features
   - connection_type
   - energy_efficiency_class
   - memory_technology
@@ -1804,6 +1871,7 @@
   - chassis_type
   - color
   - computer_form
+  - computer_specialized_features
   - connection_type
   - cooling_technology
   - expansion_slots
@@ -1822,6 +1890,7 @@
   - chassis_type
   - color
   - computer_form
+  - computer_server_features
   - connection_type
   - cooling_technology
   - expansion_slots
@@ -1839,6 +1908,7 @@
   attributes:
   - color
   - computer_form
+  - computer_specialized_features
   - connection_type
   - cooling_technology
   - cosmetic_condition
@@ -1892,8 +1962,8 @@
   - connection_type
   - data_network
   - display_resolution
-  - e_reader_display_technology
   - e_book_formats_supported
+  - e_reader_display_technology
   - energy_efficiency_class
   - operating_system
   - pattern
@@ -1933,6 +2003,7 @@
   attributes:
   - color
   - computer_form
+  - computer_specialized_features
   - connection_type
   - cosmetic_condition
   - display_resolution
@@ -2107,6 +2178,7 @@
   children: []
   attributes:
   - color
+  - mount/stand_features
   - pattern
 - id: el-7-2-2
   name: Antenna Rotators
@@ -2146,6 +2218,7 @@
   - compatible_hdcp
   - pattern
   - power_source
+  - splitter/switch_features
   - switching_method
   - video_resolution_supported
 - id: el-7-4-1
@@ -2156,6 +2229,7 @@
   - compatible_hdcp
   - pattern
   - power_source
+  - splitter/switch_features
   - switching_method
   - video_resolution_supported
 - id: el-7-4-2
@@ -2166,6 +2240,7 @@
   - compatible_hdcp
   - pattern
   - power_source
+  - splitter/switch_features
   - switching_method
   - video_resolution_supported
 - id: el-7-4-3
@@ -2176,6 +2251,7 @@
   - compatible_hdcp
   - pattern
   - power_source
+  - splitter/switch_features
   - switching_method
   - video_resolution_supported
 - id: el-7-5
@@ -2445,9 +2521,9 @@
   name: E-Book Reader Cases
   children: []
   attributes:
+  - bag/case_material
   - case_type
   - color
-  - bag/case_material
   - pattern
 - id: el-7-8-4-2
   name: PDA Accessories
@@ -2460,9 +2536,9 @@
   name: PDA Cases
   children: []
   attributes:
+  - bag/case_material
   - case_type
   - color
-  - bag/case_material
   - pattern
 - id: el-7-8-5
   name: Keyboard & Mouse Wrist Rests
@@ -2494,6 +2570,7 @@
   attributes:
   - color
   - material
+  - mouse_pad_features
   - pattern
   - shape
   - theme
@@ -2517,6 +2594,7 @@
   - color
   - device_interface
   - material
+  - mount/stand_features
   - pattern
 - id: el-7-9
   name: Computer Components
@@ -2886,6 +2964,7 @@
   - connection_type
   - connectivity_technology
   - display_resolution
+  - graphics_tablet_specialized_features
   - pattern
   - power_source
 - id: el-7-9-12-8
@@ -2897,6 +2976,7 @@
   - keyboard_format
   - keyboard_language
   - keyboard_layout
+  - keyboard_specialized_features
   - keyboard_switch_type
   - pattern
   - pointing_device
@@ -2929,6 +3009,7 @@
   attributes:
   - color
   - connection_type
+  - mouse/trackball_features
   - mouse_technology
   - pattern
   - power_source
@@ -2989,6 +3070,7 @@
   attributes:
   - color
   - keyboard_language
+  - keyboard_specialized_features
   - pattern
 - id: el-7-9-13-5
   name: Laptop Replacement Screens
@@ -2998,6 +3080,7 @@
   - display_resolution
   - display_technology
   - pattern
+  - screen_specialized_features
 - id: el-7-9-13-6
   name: Laptop Replacement Speakers
   children: []
@@ -3083,9 +3166,9 @@
   name: Hard Drive Carrying Cases
   children: []
   attributes:
+  - bag/case_material
   - case_type
   - color
-  - bag/case_material
   - pattern
 - id: el-7-9-14-2-2
   name: Hard Drive Docks
@@ -3124,6 +3207,7 @@
   attributes:
   - color
   - device_interface
+  - hard_drive_features
   - pattern
   - power_source
   - usb_standard
@@ -3326,8 +3410,8 @@
   name: Memory Cases
   children: []
   attributes:
-  - color
   - bag/case_material
+  - color
   - pattern
   - removable_storage_formats_supported
 - id: el-7-14
@@ -3371,6 +3455,7 @@
   - el-7-15-1-11
   - el-7-15-1-12
   attributes:
+  - battery_features
   - battery_size
   - battery_technology
   - color
@@ -3379,6 +3464,7 @@
   name: Camera Batteries
   children: []
   attributes:
+  - battery_features
   - battery_size
   - battery_technology
   - color
@@ -3387,6 +3473,7 @@
   name: Cordless Phone Batteries
   children: []
   attributes:
+  - battery_features
   - battery_size
   - battery_technology
   - color
@@ -3395,6 +3482,7 @@
   name: E-Book Reader Batteries
   children: []
   attributes:
+  - battery_features
   - battery_size
   - battery_technology
   - color
@@ -3403,6 +3491,7 @@
   name: General Purpose Batteries
   children: []
   attributes:
+  - battery_features
   - battery_size
   - battery_technology
   - color
@@ -3411,6 +3500,7 @@
   name: Laptop Batteries
   children: []
   attributes:
+  - battery_features
   - battery_size
   - battery_technology
   - color
@@ -3419,6 +3509,7 @@
   name: Mobile Phone Batteries
   children: []
   attributes:
+  - battery_features
   - battery_size
   - battery_technology
   - color
@@ -3427,6 +3518,7 @@
   name: MP3 Player Batteries
   children: []
   attributes:
+  - battery_features
   - battery_size
   - battery_technology
   - color
@@ -3435,6 +3527,7 @@
   name: PDA Batteries
   children: []
   attributes:
+  - battery_features
   - battery_size
   - battery_technology
   - color
@@ -3443,6 +3536,7 @@
   name: Tablet Computer Batteries
   children: []
   attributes:
+  - battery_features
   - battery_size
   - battery_technology
   - color
@@ -3451,6 +3545,7 @@
   name: UPS Batteries
   children: []
   attributes:
+  - battery_features
   - battery_size
   - battery_technology
   - color
@@ -3459,6 +3554,7 @@
   name: Video Camera Batteries
   children: []
   attributes:
+  - battery_features
   - battery_size
   - battery_technology
   - color
@@ -3467,6 +3563,7 @@
   name: Video Game Console & Controller Batteries
   children: []
   attributes:
+  - battery_features
   - battery_size
   - battery_technology
   - color
@@ -3751,6 +3848,7 @@
   - best_uses
   - color
   - connection_type
+  - gps_device_features
   - pattern
   - power_source
 - id: el-10
@@ -3785,6 +3883,7 @@
   - color
   - device_interface
   - display_resolution
+  - marine_navigator_features
   - pattern
   - power_source
   - suitable_for_angling_type
@@ -3806,6 +3905,7 @@
   - color
   - device_interface
   - display_resolution
+  - marine_navigator_features
   - pattern
   - power_source
 - id: el-11-4
@@ -3816,6 +3916,7 @@
   - color
   - device_interface
   - display_resolution
+  - marine_navigator_features
   - pattern
   - power_source
 - id: el-11-5
@@ -3828,6 +3929,7 @@
   - display_resolution
   - pattern
   - power_source
+  - radio_features
 - id: el-11-6
   name: Marine Speakers
   children: []
@@ -3838,6 +3940,7 @@
   - display_resolution
   - pattern
   - power_source
+  - speaker_features
   - speaker_technology
 - id: el-12
   name: Networking
@@ -3866,6 +3969,7 @@
   - el-12-1-4
   attributes:
   - antenna_type
+  - bridge/router_advanced_features
   - color
   - connection_type
   - ethernet_lan_interface_type
@@ -3881,6 +3985,7 @@
   children: []
   attributes:
   - antenna_type
+  - bridge/router_advanced_features
   - color
   - connection_type
   - ethernet_lan_interface_type
@@ -3896,6 +4001,7 @@
   children: []
   attributes:
   - antenna_type
+  - bridge/router_advanced_features
   - color
   - connection_type
   - ethernet_lan_interface_type
@@ -3913,6 +4019,7 @@
   children: []
   attributes:
   - antenna_type
+  - bridge/router_advanced_features
   - color
   - connection_type
   - ethernet_lan_interface_type
@@ -3928,6 +4035,7 @@
   children: []
   attributes:
   - antenna_type
+  - bridge/router_advanced_features
   - color
   - connection_type
   - ethernet_lan_interface_type
@@ -4363,6 +4471,7 @@
   - memory_technology
   - pattern
   - print_technology
+  - printer/copier_specialized_features
   - printer_functions
 - id: el-13-5
   name: Scanner Accessories
@@ -4401,6 +4510,7 @@
   - memory_technology
   - pattern
   - power_source
+  - scanner_features
   - scanner_sensor_type
 - id: el-13-6-1
   name: Drum Scanners
@@ -4413,6 +4523,7 @@
   - memory_technology
   - pattern
   - power_source
+  - scanner_features
   - scanner_sensor_type
 - id: el-13-6-2
   name: Film Scanners
@@ -4425,6 +4536,7 @@
   - memory_technology
   - pattern
   - power_source
+  - scanner_features
   - scanner_sensor_type
 - id: el-13-6-3
   name: Flatbed Scanners
@@ -4437,6 +4549,7 @@
   - memory_technology
   - pattern
   - power_source
+  - scanner_features
   - scanner_sensor_type
 - id: el-13-6-4
   name: Photo Scanners
@@ -4449,6 +4562,7 @@
   - memory_technology
   - pattern
   - power_source
+  - scanner_features
   - scanner_sensor_type
 - id: el-13-6-5
   name: Portable Scanners
@@ -4461,6 +4575,7 @@
   - memory_technology
   - pattern
   - power_source
+  - scanner_features
   - scanner_sensor_type
 - id: el-13-6-6
   name: Sheetfed Scanners
@@ -4473,6 +4588,7 @@
   - memory_technology
   - pattern
   - power_source
+  - scanner_features
   - scanner_sensor_type
 - id: el-14
   name: Radar Detectors
@@ -4528,9 +4644,10 @@
   - display_technology
   - energy_efficiency_class_hdr
   - energy_efficiency_class_sdr
+  - monitor_shape
+  - monitor_specialized_features
   - native_aspect_ratio
   - pattern
-  - monitor_shape
 - id: el-17-2
   name: Projectors
   children:
@@ -4624,6 +4741,7 @@
   - pattern
   - smart_tv_platform
   - television_shape
+  - television_specialized_features
 - id: el-17-5
   name: Video Accessories
   children:
@@ -4639,9 +4757,9 @@
   name: 3D Glasses
   children: []
   attributes:
+  - 3d_glasses_material
   - color
   - device_interface
-  - 3d_glasses_material
   - pattern
 - id: el-17-5-2
   name: Computer Monitor Accessories
@@ -4681,12 +4799,14 @@
   children: []
   attributes:
   - color
+  - mount/stand_features
   - pattern
 - id: el-17-5-3-3
   name: Projection Screens
   children: []
   attributes:
   - color
+  - features
   - mounting_type
   - native_aspect_ratio
   - pattern
@@ -4695,15 +4815,16 @@
   children: []
   attributes:
   - color
+  - mount/stand_features
   - mounting_type
   - pattern
 - id: el-17-5-3-5
   name: Projector Replacement Lamps
   children: []
   attributes:
-  - projector_light_source
   - color
   - pattern
+  - projector_light_source
 - id: el-17-5-4
   name: Rewinders
   children: []
@@ -4725,6 +4846,7 @@
   children: []
   attributes:
   - color
+  - mount/stand_features
   - pattern
 - id: el-17-5-5-2
   name: TV Converter Boxes
@@ -4775,6 +4897,7 @@
   - device_interface
   - energy_efficiency_class
   - pattern
+  - player/recorder_specialized_features
 - id: el-17-8-1
   name: Digital Video Recorders
   children: []
@@ -4783,6 +4906,7 @@
   - device_interface
   - energy_efficiency_class
   - pattern
+  - recorder_specialized_features
   - video_codecs/formats_supported
 - id: el-17-8-2
   name: DVD & Blu-ray Players
@@ -4793,6 +4917,7 @@
   - energy_efficiency_class
   - pattern
   - playback_disc_formats
+  - player_specialized_features
   - video_codecs/formats_supported
   - video_region_code
 - id: el-17-8-3
@@ -4804,6 +4929,7 @@
   - energy_efficiency_class
   - pattern
   - playback_disc_formats
+  - recorder_specialized_features
   - video_codecs/formats_supported
   - video_region_code
 - id: el-17-8-4
@@ -4814,6 +4940,7 @@
   - connection_type
   - energy_efficiency_class
   - pattern
+  - player_specialized_features
   - video_codecs/formats_supported
 - id: el-17-8-5
   name: VCRs
@@ -4823,6 +4950,7 @@
   - device_interface
   - energy_efficiency_class
   - pattern
+  - recorder_specialized_features
 - id: el-17-9
   name: Video Servers
   children: []
