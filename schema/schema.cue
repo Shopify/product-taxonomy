@@ -62,7 +62,7 @@ mappings!: [
 		rules!: [
 			...{
 				input!: {
-					product_category_id: string & =~#category_gid_regex
+					product_category_id: string
 					attributes?: [...{
 						name:  string & =~#attribute_gid_regex
 						value: string & =~#value_gid_regex | null

@@ -94,9 +94,7 @@ module Dist
       end
 
       mapping_blocks = mapping_rule_blocks.map do |mapping_rules|
-        rules = Category.verticals.flat_map do |vertical|
-          MappingBuilder.build_category_to_category_mappings_for_vertical(mapping_rules:, vertical:)
-        end
+        rules = MappingBuilder.simple_mapping(mapping_rules:)
         {
           input_taxonomy: mapping_rules.first.input_version,
           output_taxonomy: mapping_rules.first.output_version,
@@ -117,9 +115,6 @@ module Dist
     def serialize_mapping(mapping)
       return if mapping.nil?
 
-      return unless Category.find_by_id(mapping[:input][:product_category_id])
-
-      mapping[:input][:product_category_id] = Category.find(mapping[:input][:product_category_id]).gid
       if mapping[:input][:attributes].present?
         mapping[:input][:attributes] = mapping[:input][:attributes].map do |attribute|
           {
