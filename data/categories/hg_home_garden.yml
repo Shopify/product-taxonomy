@@ -106,6 +106,7 @@
   children: []
   attributes:
   - color
+  - rug/mat_features
   - rug/mat_material
   - pattern
   - pile_type
@@ -624,7 +625,7 @@
   - hg-3-4-2-3
   attributes:
   - color
-  - frame
+  - frame_style
   - artwork_frame_material
   - pattern
   - theme
@@ -633,7 +634,7 @@
   children: []
   attributes:
   - color
-  - frame
+  - frame_style
   - artwork_frame_material
   - pattern
   - theme
@@ -642,7 +643,7 @@
   children: []
   attributes:
   - color
-  - frame
+  - frame_style
   - artwork_frame_material
   - pattern
   - theme
@@ -651,7 +652,7 @@
   children: []
   attributes:
   - color
-  - frame
+  - frame_style
   - artwork_frame_material
   - pattern
   - theme
@@ -668,7 +669,7 @@
   children: []
   attributes:
   - color
-  - upholstery_material
+  - cover_material
   - filler_material
   - filler_support
   - pattern
@@ -866,6 +867,7 @@
   children: []
   attributes:
   - color
+  - cover_features
   - fabric
   - pattern
   - suitable_for_chair_type
@@ -874,7 +876,7 @@
   children: []
   attributes:
   - color
-  - upholstery_material
+  - cover_material
   - filler_material
   - pattern
   - suitable_for_chair_type
@@ -1056,6 +1058,7 @@
   attributes:
   - door_mat_base_material
   - color
+  - allergy_friendly_features
   - pattern
   - pile_type
   - shape
@@ -1274,6 +1277,7 @@
   name: Candles
   children: []
   attributes:
+  - candle_type
   - color
   - pattern
   - scent
@@ -1437,7 +1441,7 @@
   children: []
   attributes:
   - color
-  - upholstery_material
+  - cover_material
   - filler_material
   - pattern
   - shape
@@ -1500,6 +1504,7 @@
   children: []
   attributes:
   - color
+  - rug_features
   - rug_material
   - pattern
   - pile_type
@@ -1642,7 +1647,7 @@
   children: []
   attributes:
   - color
-  - upholstery_material
+  - cover_material
   - filler_material
   - pattern
   - throw_pillow_shape
@@ -2190,7 +2195,6 @@
   - material
   - mounting_type
   - pattern
-  - stove_airflow
 - id: hg-6
   name: Fireplaces
   children:
@@ -3116,6 +3120,7 @@
   - hg-9-3-2
   - hg-9-3-3
   - hg-9-3-4
+  - hg-9-3-5
   - hg-9-3-6
   attributes:
   - color
@@ -3293,6 +3298,13 @@
   - color
   - energy_efficiency_class
   - pattern
+- id: hg-9-3-5
+  name: Handheld Steam Cleaners
+  children: []
+  attributes:
+  - color
+  - energy_efficiency_class
+  - pattern
 - id: hg-9-3-6
   name: Steam Mops
   children:
@@ -3429,6 +3441,7 @@
   attributes:
   - color
   - energy_efficiency_class
+  - dryer_features
   - loading_type
   - mounting_type
   - pattern
@@ -3448,6 +3461,7 @@
   attributes:
   - color
   - energy_efficiency_class
+  - ironing_features
   - pattern
   - soleplate_type
 - id: hg-9-8-3-1
@@ -3456,6 +3470,7 @@
   attributes:
   - color
   - energy_efficiency_class
+  - ironing_features
   - pattern
   - soleplate_type
 - id: hg-9-8-3-2
@@ -3464,6 +3479,7 @@
   attributes:
   - color
   - energy_efficiency_class
+  - ironing_features
   - pattern
   - soleplate_type
 - id: hg-9-8-4
@@ -3511,6 +3527,7 @@
   attributes:
   - color
   - energy_efficiency_class
+  - ironing_features
   - pattern
 - id: hg-9-8-6
   name: Washing Machines
@@ -3518,6 +3535,7 @@
   attributes:
   - color
   - energy_efficiency_class
+  - washing_machine_features
   - loading_type
   - mounting_type
   - pattern
@@ -3654,6 +3672,7 @@
   children: []
   attributes:
   - color
+  - mat_features
   - material
   - pattern
   - shape
@@ -4155,18 +4174,21 @@
   - hg-10-9-4-2
   attributes:
   - color
+  - features
   - pattern
 - id: hg-10-9-4-1
   name: Drying Hangers
   children: []
   attributes:
   - color
+  - features
   - pattern
 - id: hg-10-9-4-2
   name: Drying Racks
   children: []
   attributes:
   - color
+  - features
   - pattern
 - id: hg-10-9-5
   name: Fabric Refreshers
@@ -4272,7 +4294,8 @@
   children: []
   attributes:
   - color
-  - upholstery_material
+  - cover_material
+  - features
   - mounting_type
   - pattern
 - id: hg-10-9-15
@@ -4292,6 +4315,7 @@
   children: []
   attributes:
   - color
+  - laundry_detergent_features
   - ingredients
   - pattern
   - scent
@@ -4732,18 +4756,21 @@
   - hg-10-16-1-6-2
   attributes:
   - color
+  - furniture/fixture_features
   - pattern
 - id: hg-10-16-1-6-1
   name: Shoe Organizers
   children: []
   attributes:
   - color
+  - furniture/fixture_features
   - pattern
 - id: hg-10-16-1-6-2
   name: Shoe Racks
   children: []
   attributes:
   - color
+  - furniture/fixture_features
   - pattern
 - id: hg-10-16-2
   name: Flatware Chests
@@ -5329,6 +5356,7 @@
   attributes:
   - bakeware_pieces_included
   - color
+  - bakeware_features
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-1-2
@@ -5344,6 +5372,7 @@
   children: []
   attributes:
   - color
+  - bakeware_features
   - cookware/bakeware_material
   - pattern
   - shape
@@ -5352,6 +5381,7 @@
   children: []
   attributes:
   - color
+  - bakeware_features
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-1-5
@@ -5359,6 +5389,7 @@
   children: []
   attributes:
   - color
+  - bakeware_features
   - cookware/bakeware_material
   - pattern
   - bakeware_shape
@@ -5367,6 +5398,7 @@
   children: []
   attributes:
   - color
+  - bakeware_features
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-1-7
@@ -5374,6 +5406,7 @@
   children: []
   attributes:
   - color
+  - bakeware_features
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-1-8
@@ -5381,6 +5414,7 @@
   children: []
   attributes:
   - color
+  - bakeware_features
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-1-9
@@ -5396,6 +5430,7 @@
   children: []
   attributes:
   - color
+  - bakeware_features
   - cookware/bakeware_material
   - pattern
   - shape
@@ -5404,6 +5439,7 @@
   children: []
   attributes:
   - color
+  - bakeware_features
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-2
@@ -5491,7 +5527,7 @@
   - hg-11-2-3-17
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-1
@@ -5499,7 +5535,7 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
   - shape
@@ -5508,7 +5544,8 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
+  - cookware_features
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-3
@@ -5518,7 +5555,7 @@
   - hg-11-2-3-3-2
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-3-1
@@ -5526,7 +5563,7 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-3-2
@@ -5534,7 +5571,7 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-4
@@ -5542,7 +5579,7 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-5
@@ -5550,7 +5587,7 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-6
@@ -5558,7 +5595,7 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-7
@@ -5566,7 +5603,8 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
+  - cookware_features
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-8
@@ -5581,7 +5619,8 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
+  - cookware_features
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-10
@@ -5591,7 +5630,7 @@
   - hg-11-2-3-10-2
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-10-1
@@ -5599,7 +5638,7 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-10-2
@@ -5607,7 +5646,7 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-11
@@ -5615,7 +5654,8 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
+  - cookware_features
   - cookware/bakeware_material
   - pattern
   - shape
@@ -5624,7 +5664,8 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
+  - cookware_features
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-13
@@ -5634,7 +5675,8 @@
   - hg-11-2-3-13-2
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
+  - cookware_features
   - cookware/bakeware_material
   - pattern
   - shape
@@ -5643,7 +5685,8 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
+  - cookware_features
   - cookware/bakeware_material
   - pattern
   - shape
@@ -5652,7 +5695,8 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
+  - cookware_features
   - cookware/bakeware_material
   - pattern
   - shape
@@ -5661,7 +5705,7 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-15
@@ -5669,7 +5713,7 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-16
@@ -5679,7 +5723,7 @@
   - hg-11-2-3-16-2
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-16-1
@@ -5687,7 +5731,7 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-16-2
@@ -5695,7 +5739,7 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-3-17
@@ -5703,7 +5747,8 @@
   children: []
   attributes:
   - color
-  - compatible_hob_type
+  - compatible_stove_top_type
+  - cookware_features
   - cookware/bakeware_material
   - pattern
 - id: hg-11-2-4
@@ -5736,6 +5781,7 @@
   children: []
   attributes:
   - color
+  - cookware_features
   - cookware/bakeware_material
   - pattern
   - shape
@@ -5872,6 +5918,7 @@
   - color
   - material
   - pattern
+  - suitable_for_container_type
 - id: hg-11-3-4-2
   name: Cup Sleeves
   children: []
@@ -7612,7 +7659,7 @@
   attributes:
   - color
   - energy_efficiency_class
-  - hob_type
+  - stove_top_type
   - mounting_type
   - pattern
   - top_surface_material
@@ -8002,6 +8049,7 @@
   - color
   - energy_efficiency_class
   - extraction_type
+  - cover_features
   - grease_filter_material
   - pattern
 - id: hg-11-7-40
@@ -8314,6 +8362,7 @@
   attributes:
   - color
   - pattern
+  - suitable_for_container_type
 - id: hg-11-8-9
   name: Can Openers
   children: []
@@ -10034,6 +10083,7 @@
   children: []
   attributes:
   - color
+  - furniture/fixture_features
   - material
   - pattern
 - id: hg-12-1-6
@@ -11047,6 +11097,7 @@
   - color
   - pattern
   - power_source
+  - suitable_for_power_equipment_type
 - id: hg-12-3-9
   name: Outdoor Power Equipment Sets
   children: []
@@ -11134,6 +11185,7 @@
   attributes:
   - color
   - pattern
+  - suitable_for_power_equipment_type
 - id: hg-12-4-1
   name: Chainsaw Accessories
   children:
@@ -11386,6 +11438,7 @@
   attributes:
   - color
   - pattern
+  - suitable_for_power_equipment_type
 - id: hg-12-4-6-1
   name: Grass Edger Attachments
   children: []
@@ -11428,6 +11481,7 @@
   attributes:
   - color
   - pattern
+  - suitable_for_power_equipment_type
 - id: hg-12-4-8
   name: Pressure Washer Accessories
   children:
@@ -11695,7 +11749,7 @@
   attributes:
   - color
   - pattern
-  - suitable_space
+  - suitable_installation
 - id: hg-12-6-4
   name: Sprinkler Accessories
   children:
@@ -12365,7 +12419,7 @@
   attributes:
   - bedding_size
   - color
-  - upholstery_material
+  - cover_material
   - filler_material
   - filler_support
   - pattern
@@ -13181,3 +13235,4 @@
   - color
   - mounting_type
   - pattern
+  - stove_airflow

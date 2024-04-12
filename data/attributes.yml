@@ -50,32 +50,51 @@
   values:
   - material__acrylic
   - material__aluminum
+  - material__angora
+  - material__bamboo
   - material__biodegradable_materials
   - material__brass
   - material__bronze
   - material__canvas
   - material__carbon
   - material__cardboard
+  - material__cashmere
   - material__ceramic
   - material__chrome
   - material__clay
   - material__coir
   - material__concrete
   - material__copper
+  - material__corduroy
   - material__cork
   - material__cotton
+  - material__denim
   - material__fabric
+  - material__faux_fur
   - material__faux_leather
+  - material__felt
   - material__fiberglass
+  - material__flannel
+  - material__fleece
+  - material__fur
   - material__glass
   - material__graphite
+  - material__hemp
   - material__iron
+  - material__jute
   - material__latex
   - material__leather
   - material__linen
+  - material__lycra
+  - material__lyocell
   - material__marble
   - material__medium_density_fiberboard_mdf
+  - material__merino
+  - material__mesh
   - material__metal
+  - material__modal
+  - material__mohair
+  - material__neoprene
   - material__nylon
   - material__paper
   - material__plastic
@@ -87,14 +106,27 @@
   - material__polyurethane_pu
   - material__polyvinyl_chloride_pvc
   - material__porcelain
+  - material__rattan
+  - material__rayon
   - material__resin
   - material__rubber
+  - material__satin
+  - material__sherpa
   - material__silicone
+  - material__silk
   - material__stainless_steel
   - material__stone
+  - material__suede
+  - material__synthetic
+  - material__terrycloth
   - material__thermoplastic_elastomer_tpe
   - material__thermoplastic_polyurethane_tpu
+  - material__tweed
+  - material__twill
+  - material__velour
+  - material__velvet
   - material__vinyl
+  - material__viscose
   - material__wood
   - material__wool
   - material__other
@@ -328,8 +360,6 @@
   - shape__kidney_shaped
   - shape__custom
   - shape__octagonal
-  - shape__curved
-  - shape__straight
   - shape__other
   - shape__free_form
   - shape__semicircular
@@ -836,10 +866,6 @@
   - pants_length_type__footed
   - pants_length_type__knee
   - pants_length_type__long
-- id: 1181
-  name: Face color
-  friendly_id: face_color
-  values_from: color
 - id: 1190
   name: Skirt/Dress length type
   friendly_id: skirt/dress_length_type
@@ -877,20 +903,19 @@
   name: Underwear style
   friendly_id: underwear_style
   values:
-  - underwear_style__boxer
+  - underwear_style__bikini_panties
   - underwear_style__boxer_briefs
+  - underwear_style__boxers
   - underwear_style__boyshorts
-  - underwear_style__briefs
   - underwear_style__classic_briefs
   - underwear_style__control_briefs
-  - underwear_style__raw_cut_briefs
-  - underwear_style__trunk
+  - underwear_style__g_string_panties
   - underwear_style__high_cut_briefs
   - underwear_style__hipster_panties
-  - underwear_style__bikini_panties
+  - underwear_style__raw_cut_briefs
   - underwear_style__tanga_panties
   - underwear_style__thong_panties
-  - underwear_style__g_string_panties
+  - underwear_style__trunk
 - id: 1195
   name: Bra closure type
   friendly_id: bra_closure_type
@@ -1038,20 +1063,12 @@
   - compatible_ball_type__softballs
   - compatible_ball_type__tennis
   - compatible_ball_type__wiffle
-- id: 1213
-  name: Sports discipline
-  friendly_id: sports_discipline
-  values:
-  - sports_discipline__fastpitch_softball
-  - sports_discipline__slowpitch_softball
 - id: 1214
   name: Suitable space
   friendly_id: suitable_space
   values:
   - suitable_space__indoors
   - suitable_space__outdoors
-  - suitable_space__above_ground
-  - suitable_space__below_ground
 - id: 1216
   name: Grip type
   friendly_id: grip_type
@@ -1320,60 +1337,20 @@
   values:
   - joint_style__1/2_x_13
   - joint_style__3/8_x_10
-  - joint_style__3/8_x_10_flat
-  - joint_style__3/8_x_10_piloted
-  - joint_style__3/8_x_10_wood
   - joint_style__3/8_x_11
-  - joint_style__3/8_x_11_flat
-  - joint_style__3/8_x_11_flush
-  - joint_style__3/8_x_11_full
-  - joint_style__3/8_x_11_partial
-  - joint_style__3/8_x_11_piloted
-  - joint_style__3/8_x_11_wood
   - joint_style__3/8_x_14
   - joint_style__3/8_x_8
   - joint_style__5/16_x_11
   - joint_style__5/16_x_12
   - joint_style__5/16_x_14
-  - joint_style__5/16_x_14_flat
-  - joint_style__5/16_x_14_flush
-  - joint_style__5/16_x_14_full
-  - joint_style__5/16_x_14_partial
-  - joint_style__5/16_x_14_piloted
-  - joint_style__5/16_x_14_wood
   - joint_style__5/16_x_18
-  - joint_style__5/16_x_18_flat
-  - joint_style__5/16_x_18_piloted
-  - joint_style__5/16_x_18_wood
-  - joint_style__accu_loc
   - joint_style__bullet
-  - joint_style__flat_faced
-  - joint_style__lbm
-  - joint_style__lucasi_custom_solid_core_low_deflection
-  - joint_style__lucasi_hybrid_zero_flex_slim
-  - joint_style__mcdermott_3/8_x_10
-  - joint_style__mcdermott_quick_release
-  - joint_style__mezz_united_joint
-  - joint_style__mezz_wavy_joint
-  - joint_style__no_joint
-  - joint_style__ob_1_ob_2_ob_classic_ob_pro
-  - joint_style__pechauer_speed_joint
-  - joint_style__piloted
-  - joint_style__predator_radial
-  - joint_style__predator_uniloc
   - joint_style__quick_release
   - joint_style__radial
-  - joint_style__sbj
-  - joint_style__schon_5/16_x_14
-  - joint_style__southwest_5/16_x_14
-  - joint_style__speed_joint
   - joint_style__speed_loc
   - joint_style__true_loc
   - joint_style__uni_loc
-  - joint_style__vantage_3/8_x_10
-  - joint_style__viking_quick_release
-  - joint_style__viking_radial
-  - joint_style__wood_to_wood
+  - joint_style__wavy
   - joint_style__other
 - id: 1243
   name: Light color
@@ -1553,54 +1530,62 @@
   name: Product certifications & standards
   friendly_id: product_certifications_standards
   values:
+  - product_certifications_standards__alcohol_free
+  - product_certifications_standards__all_natural_ingredients
+  - product_certifications_standards__aluminum_free
   - product_certifications_standards__asc
   - product_certifications_standards__b_corporation
+  - product_certifications_standards__biodegradable
+  - product_certifications_standards__bpa_free
+  - product_certifications_standards__ce_certified
   - product_certifications_standards__cruelty_free
+  - product_certifications_standards__dbp
+  - product_certifications_standards__dermatologist_tested
+  - product_certifications_standards__dye_free
+  - product_certifications_standards__eco_friendly
   - product_certifications_standards__ecocert
+  - product_certifications_standards__ewg_verified
   - product_certifications_standards__fair_trade
+  - product_certifications_standards__fda_approved
+  - product_certifications_standards__free_from_formaldehyde
+  - product_certifications_standards__free_from_toluene
+  - product_certifications_standards__gluten_free
   - product_certifications_standards__gmp
   - product_certifications_standards__gras
   - product_certifications_standards__halal
+  - product_certifications_standards__hypoallergenic
   - product_certifications_standards__informed_choice
   - product_certifications_standards__iso
   - product_certifications_standards__kosher
-  - product_certifications_standards__marine_stewardship_council_msc
-  - product_certifications_standards__non_gmo
-  - product_certifications_standards__nsf
-  - product_certifications_standards__pregnancy_safe
-  - product_certifications_standards__rainforest_alliance
-  - product_certifications_standards__ul
-  - product_certifications_standards__usda_organic
-  - product_certifications_standards__other
-  - product_certifications_standards__alcohol_free
-  - product_certifications_standards__dermatologist_tested
-  - product_certifications_standards__dye_free
-  - product_certifications_standards__ewg_verified
-  - product_certifications_standards__gluten_free
+  - product_certifications_standards__latex_free
   - product_certifications_standards__leaping_bunny_certified
   - product_certifications_standards__made_safe_certified
+  - product_certifications_standards__marine_stewardship_council_msc
   - product_certifications_standards__natrue_certified
   - product_certifications_standards__natural_ingredients
   - product_certifications_standards__no_artificial_colors
+  - product_certifications_standards__no_artificial_fragrance
+  - product_certifications_standards__non_gmo
+  - product_certifications_standards__non_toxic
+  - product_certifications_standards__nsf
   - product_certifications_standards__oil_free
   - product_certifications_standards__organic
   - product_certifications_standards__paraben_free
   - product_certifications_standards__peta_approved
+  - product_certifications_standards__phosphate_free
   - product_certifications_standards__phthalate_free
+  - product_certifications_standards__plastic_free
+  - product_certifications_standards__pregnancy_safe
+  - product_certifications_standards__rainforest_alliance
+  - product_certifications_standards__restriction_of_hazardous_substances_rohs_compliant
   - product_certifications_standards__rspo_certified
+  - product_certifications_standards__sensitive_skin
   - product_certifications_standards__silicone_free
   - product_certifications_standards__spf_protection
   - product_certifications_standards__sulfate_free
+  - product_certifications_standards__ul_certified
   - product_certifications_standards__vegan
-  - product_certifications_standards__dbp
-  - product_certifications_standards__free_from_formaldehyde
-  - product_certifications_standards__free_from_toluene
-  - product_certifications_standards__non_toxic
-  - product_certifications_standards__cosmos_organic
-  - product_certifications_standards__all_natural_ingredients
-  - product_certifications_standards__eu_organic
-  - product_certifications_standards__no_artificial_fragrance
-  - product_certifications_standards__non_gmo_project_verified
+  - product_certifications_standards__other
 - id: 1263
   name: Knife type
   friendly_id: knife_type
@@ -1862,16 +1847,6 @@
   - horse_category__pony
   - horse_category__standard
   - horse_category__warmblood
-- id: 1287
-  name: Clothing type
-  friendly_id: clothing_type
-  values:
-  - clothing_type__bootfoot
-  - clothing_type__chest
-  - clothing_type__hip
-  - clothing_type__stockingfoot
-  - clothing_type__thigh
-  - clothing_type__waist
 - id: 1288
   name: Hoop shape
   friendly_id: hoop_shape
@@ -2642,24 +2617,6 @@
   - plant_name__tarragon
   - plant_name__thyme
   - plant_name__tomato
-- id: 1340
-  name: Frame
-  friendly_id: frame
-  values:
-  - frame__acrylic
-  - frame__braided
-  - frame__canvas
-  - frame__clip
-  - frame__floater
-  - frame__framed
-  - frame__gallery_wrapped
-  - frame__matted
-  - frame__modern
-  - frame__ornate
-  - frame__poster
-  - frame__rustic
-  - frame__shadow_box
-  - frame__unframed
 - id: 1341
   name: Cover material
   friendly_id: cover_material
@@ -3054,7 +3011,6 @@
   - soleplate_type__alumite
   - soleplate_type__anodilium
   - soleplate_type__auto_clean
-  - soleplate_type__auto_clean_catalys
   - soleplate_type__careeza
   - soleplate_type__ceramic
   - soleplate_type__ceramic_glide
@@ -3390,15 +3346,6 @@
   - bakeware_pieces_included__loaf_pan
   - bakeware_pieces_included__muffin_tin
   - bakeware_pieces_included__pie_dish
-- id: 1395
-  name: Compatible hob type
-  friendly_id: compatible_hob_type
-  values:
-  - compatible_hob_type__gas
-  - compatible_hob_type__halogen
-  - compatible_hob_type__induction
-  - compatible_hob_type__ceramic
-  - compatible_hob_type__sealed_plate
 - id: 1397
   name: Suitable for food processor type
   friendly_id: suitable_for_food_processor_type
@@ -3413,18 +3360,6 @@
   - coffee_input_type__coffee_beans
   - coffee_input_type__coffee_capsules
   - coffee_input_type__coffee_pods
-- id: 1399
-  name: Hob type
-  friendly_id: hob_type
-  values:
-  - hob_type__ceramic
-  - hob_type__coil
-  - hob_type__combi
-  - hob_type__gas
-  - hob_type__halogen
-  - hob_type__sealed_plate
-  - hob_type__zone_induction
-  - hob_type__zoneless_induction
 - id: 1400
   name: Top surface material
   friendly_id: top_surface_material
@@ -3952,7 +3887,7 @@
   - allergen_information__sesame
   - allergen_information__soybeans
   - allergen_information__sulphites
-  - allergen_information__sulphur_dioxide
+  - allergen_information__sulfur_dioxide
   - allergen_information__wheat
 - id: 1452
   name: Dietary preferences
@@ -4084,15 +4019,6 @@
   - package_type__refill
   - package_type__case
   - package_type__spray_bottle
-- id: 1457
-  name: Bitter variery
-  friendly_id: bitter_variery
-  values:
-  - bitter_variery__aromatic
-  - bitter_variery__floral
-  - bitter_variery__fruit
-  - bitter_variery__herbal
-  - bitter_variery__spicy
 - id: 1458
   name: Flavor
   friendly_id: flavor
@@ -5023,6 +4949,41 @@
   - door_material__walnut_wood
   - door_material__wood
   - door_material__other
+  - door_material__acrylic
+  - door_material__bamboo
+  - door_material__brass
+  - door_material__canvas
+  - door_material__cedar_wood
+  - door_material__ceramic
+  - door_material__concrete
+  - door_material__cork
+  - door_material__cotton
+  - door_material__fabric
+  - door_material__faux_fur
+  - door_material__faux_leather
+  - door_material__fiber_reinforced_plastic_frp
+  - door_material__foam
+  - door_material__granite
+  - door_material__hemp
+  - door_material__jute
+  - door_material__latex
+  - door_material__leather
+  - door_material__linen
+  - door_material__marble
+  - door_material__melamine
+  - door_material__mesh
+  - door_material__polyester
+  - door_material__rattan
+  - door_material__resin
+  - door_material__rubber
+  - door_material__suede
+  - door_material__synthetic
+  - door_material__teak_wood
+  - door_material__velour
+  - door_material__velvet
+  - door_material__wicker
+  - door_material__wood_plastic_composite_wpc
+  - door_material__wool
 - id: 1521
   name: Door type
   friendly_id: door_type
@@ -5562,6 +5523,7 @@
   - detailed_ingredients__almond_oil
   - detailed_ingredients__argan_oil
   - detailed_ingredients__beeswax
+  - detailed_ingredients__cbd_oil
   - detailed_ingredients__coconut_oil
   - detailed_ingredients__glycerin
   - detailed_ingredients__hyaluronic_acid
@@ -5687,13 +5649,6 @@
   values:
   - stair_lifts_control_type__handheld_remote
   - stair_lifts_control_type__wall_mounted_switch
-- id: 1584
-  name: Stair lifts safety features
-  friendly_id: stair_lifts_safety_features
-  values:
-  - stair_lifts_safety_features__emergency_stop
-  - stair_lifts_safety_features__obstacle_sensors
-  - stair_lifts_safety_features__seat_belt
 - id: 1585
   name: Staircase type
   friendly_id: staircase_type
@@ -5735,15 +5690,6 @@
   - crutch_type__forearm_elbow
   - crutch_type__platform
   - crutch_type__underarm_axillary
-- id: 1590
-  name: Muscle estimulator design
-  friendly_id: muscle_estimulator_design
-  values:
-  - muscle_estimulator_design__belt
-  - muscle_estimulator_design__arm_band
-  - muscle_estimulator_design__leg_band
-  - muscle_estimulator_design__sticker_plate
-  - muscle_estimulator_design__electrodes_unit
 - id: 1591
   name: Nebulizer technology
   friendly_id: nebulizer_technology
@@ -5753,12 +5699,6 @@
   - nebulizer_technology__piston
   - nebulizer_technology__ultrasonic
   - nebulizer_technology__vmt
-- id: 1592
-  name: Product design
-  friendly_id: product_design
-  values:
-  - product_design__tabletop
-  - product_design__handheld
 - id: 1593
   name: Oxygen tank valve type
   friendly_id: oxygen_tank_valve_type
@@ -5799,6 +5739,7 @@
   - active_ingredient__glycolic_acid
   - active_ingredient__retinol
   - active_ingredient__salicylic_acid
+  - active_ingredient__cbd_oil
   - active_ingredient__hyaluronic_acid
   - active_ingredient__niacinamide
   - active_ingredient__peptides
@@ -6262,6 +6203,7 @@
   - constitutive_ingredients__blueberry_seed_oil
   - constitutive_ingredients__calendula
   - constitutive_ingredients__castor_oil
+  - constitutive_ingredients__cbd_oil
   - constitutive_ingredients__cherry_oil
   - constitutive_ingredients__cocoa_butter
   - constitutive_ingredients__coconut_oil
@@ -7018,6 +6960,7 @@
   - pet_supply_product_form__wipes
   - pet_supply_product_form__capsules
   - pet_supply_product_form__powder
+  - pet_supply_product_form__oil
 - id: 1699
   name: Cat age group
   friendly_id: cat_age_group
@@ -7059,6 +7002,7 @@
   - pet_food_flavor__beet
   - pet_food_flavor__blueberry
   - pet_food_flavor__bone
+  - pet_food_flavor__brown_rice
   - pet_food_flavor__carrot
   - pet_food_flavor__cheese
   - pet_food_flavor__chicken
@@ -7066,7 +7010,7 @@
   - pet_food_flavor__duck
   - pet_food_flavor__fish
   - pet_food_flavor__fruit
-  - pet_food_flavor__grain
+  - pet_food_flavor__grains
   - pet_food_flavor__grass
   - pet_food_flavor__ham
   - pet_food_flavor__lamb
@@ -7075,23 +7019,24 @@
   - pet_food_flavor__meat
   - pet_food_flavor__mixed_flavors
   - pet_food_flavor__peanut_butter
+  - pet_food_flavor__peas
   - pet_food_flavor__peppermint
   - pet_food_flavor__pork
+  - pet_food_flavor__potatoes
   - pet_food_flavor__rabbit
   - pet_food_flavor__rice
   - pet_food_flavor__salami
+  - pet_food_flavor__salmon
   - pet_food_flavor__seafood
   - pet_food_flavor__spinach
-  - pet_food_flavor__sweet_potato
+  - pet_food_flavor__sweet_potatoes
+  - pet_food_flavor__tuna
   - pet_food_flavor__turkey
   - pet_food_flavor__unflavored
   - pet_food_flavor__veal
   - pet_food_flavor__vegetables
   - pet_food_flavor__venison
   - pet_food_flavor__other
-  - pet_food_flavor__insect
-  - pet_food_flavor__berry
-  - pet_food_flavor__hay
 - id: 1702
   name: Cat litter formula
   friendly_id: cat_litter_formula
@@ -7464,14 +7409,6 @@
   - motion__bouncing
   - motion__rocking
   - motion__swinging
-- id: 1735
-  name: Safety features
-  friendly_id: safety_features
-  values:
-  - safety_features__3_point_harness
-  - safety_features__5_point_harness
-  - safety_features__non_slip_base
-  - safety_features__other
 - id: 1736
   name: Mobile mounting type
   friendly_id: mobile_mounting_type
@@ -7845,8 +7782,6 @@
   values:
   - cleaning_instructions__dishwasher_safe
   - cleaning_instructions__hand_wash_only
-  - cleaning_instructions__machine_washable
-  - cleaning_instructions__tumble_dry
 - id: 1780
   name: Pump speed settings
   friendly_id: pump_speed_settings
@@ -9054,14 +8989,6 @@
   - expansion_slots__dimm
   - expansion_slots__sata
   - expansion_slots__other
-- id: 1839
-  name: Memory features
-  friendly_id: memory_features
-  values:
-  - memory_features__ecc
-  - memory_features__non_ecc
-  - memory_features__registered/buffered
-  - memory_features__unbuffered
 - id: 1840
   name: Memory technology
   friendly_id: memory_technology
@@ -9316,15 +9243,6 @@
   - leg_sections__3
   - leg_sections__4
   - leg_sections__5+
-- id: 1854
-  name: Certifications & standards
-  friendly_id: certifications_standards
-  values:
-  - certifications_standards__bpa_free
-  - certifications_standards__ce_certified
-  - certifications_standards__other
-  - certifications_standards__fda_approved
-  - certifications_standards__silicone_free
 - id: 1855
   name: SIM card type
   friendly_id: sim_card_type
@@ -10059,7 +9977,7 @@
   name: Keyboard layout
   friendly_id: keyboard_layout
   values:
-  - keyboard_layout__erty
+  - keyboard_layout__azerty
   - keyboard_layout__bpo
   - keyboard_layout__colemak
   - keyboard_layout__dvorak
@@ -11682,13 +11600,6 @@
   - tripod/monopod_head_type__panoramic
   - tripod/monopod_head_type__pistol_grip_heads
   - tripod/monopod_head_type__video_heads
-- id: 2010
-  name: Tripop/Monopod attachment type
-  friendly_id: tripop/monopod_attachment_type
-  values:
-  - tripop/monopod_attachment_type__1/4
-  - tripop/monopod_attachment_type__3/8
-  - tripop/monopod_attachment_type__universal
 - id: 2011
   name: Collar/Mount compatible device
   friendly_id: collar/mount_compatible_device
@@ -11706,17 +11617,6 @@
   - collar/mount_design__plate
   - collar/mount_design__quick_release
   - collar/mount_design__ring
-- id: 2013
-  name: Tripop handle type
-  friendly_id: tripop_handle_type
-  values:
-  - tripop_handle_type__crank
-  - tripop_handle_type__extension
-  - tripop_handle_type__multi_function
-  - tripop_handle_type__pan
-  - tripop_handle_type__pistol_grip
-  - tripop_handle_type__tilt
-  - tripop_handle_type__trigger_grip
 - id: 2014
   name: Spreader type
   friendly_id: spreader_type
@@ -11739,7 +11639,7 @@
   values:
   - auto_focusing_modes__ai
   - auto_focusing_modes__area
-  - auto_focusing_modes__centre_weighted
+  - auto_focusing_modes__center_weighted
   - auto_focusing_modes__continuous
   - auto_focusing_modes__contrast_detection
   - auto_focusing_modes__far/near
@@ -12124,7 +12024,7 @@
   - photographic_paper_type__canvas
   - photographic_paper_type__fine_art
   - photographic_paper_type__glossy
-  - photographic_paper_type__lustre
+  - photographic_paper_type__luster
   - photographic_paper_type__matte
   - photographic_paper_type__metallic
   - photographic_paper_type__pearl
@@ -12234,8 +12134,27 @@
   name: Chemical safety features
   friendly_id: chemical_safety_features
   values:
+  - chemical_safety_features__acid_free
+  - chemical_safety_features__alkali_free
+  - chemical_safety_features__ammonia_free
+  - chemical_safety_features__biodegradable
+  - chemical_safety_features__bleach_free
+  - chemical_safety_features__chlorine_free
+  - chemical_safety_features__dye_free
+  - chemical_safety_features__formaldehyde_free
+  - chemical_safety_features__fragrance_free
+  - chemical_safety_features__heavy_metal_free
+  - chemical_safety_features__hypoallergenic
   - chemical_safety_features__low_voc
+  - chemical_safety_features__non_corrosive
+  - chemical_safety_features__non_flammable
+  - chemical_safety_features__non_irritating
   - chemical_safety_features__non_toxic
+  - chemical_safety_features__phosphate_free
+  - chemical_safety_features__phthalate_free
+  - chemical_safety_features__solvent_free
+  - chemical_safety_features__sulfate_free
+  - chemical_safety_features__other
 - id: 2057
   name: Chemical product form
   friendly_id: chemical_product_form
@@ -13059,7 +12978,7 @@
   name: Metal molding application
   friendly_id: metal_molding_application
   values:
-  - metal_molding_application__dental_applicances
+  - metal_molding_application__dental_appliances
   - metal_molding_application__figurines
   - metal_molding_application__ingots
   - metal_molding_application__machinery
@@ -13622,10 +13541,6 @@
   values:
   - system_of_measurement__imperial
   - system_of_measurement__metric
-- id: 2200
-  name: Detected gases
-  friendly_id: detected_gases
-  values_from: gases_detected
 - id: 2201
   name: Frequency weighting
   friendly_id: frequency_weighting
@@ -13644,12 +13559,31 @@
   name: Tape material
   friendly_id: tape_material
   values:
+  - tape_material__acrylic
+  - tape_material__bamboo
+  - tape_material__canvas
+  - tape_material__cotton
   - tape_material__fabric
+  - tape_material__felt
+  - tape_material__latex
+  - tape_material__leather
+  - tape_material__mesh
+  - tape_material__neoprene
+  - tape_material__nylon
   - tape_material__paper
   - tape_material__plastic
+  - tape_material__polyester
   - tape_material__polyurethane_pu
+  - tape_material__rubber
+  - tape_material__satin
+  - tape_material__suede
   - tape_material__synthetic
+  - tape_material__tweed
+  - tape_material__twill
+  - tape_material__velour
+  - tape_material__velvet
   - tape_material__vinyl
+  - tape_material__wool
 - id: 2204
   name: Thermal detector type
   friendly_id: thermal_detector_type
@@ -13827,13 +13761,6 @@
   values:
   - carry_options__handle
   - carry_options__shoulder_strap
-- id: 2227
-  name: Interior features
-  friendly_id: interior_features
-  values:
-  - interior_features__compartments
-  - interior_features__dividers
-  - interior_features__mirror
 - id: 2228
   name: Brightness levels
   friendly_id: brightness_levels
@@ -14205,14 +14132,6 @@
   - packing_materials_included__packing_paper
   - packing_materials_included__packing_peanuts
   - packing_materials_included__stretch_wrap
-- id: 2273
-  name: Additional features
-  friendly_id: additional_features
-  values:
-  - additional_features__backstage_pass
-  - additional_features__meet_greet
-  - additional_features__post_event_activities
-  - additional_features__vip_package
 - id: 2274
   name: Age restrictions
   friendly_id: age_restrictions
@@ -14262,6 +14181,7 @@
   - candle_type__tea_light
   - candle_type__taper
   - candle_type__floating
+  - candle_type__cbd
 - id: 2279
   name: Wax type
   friendly_id: wax_type
@@ -14428,7 +14348,7 @@
   - suitable_for_art_technique__graphite/pencil_drawing
   - suitable_for_art_technique__mixed_media_artwork
   - suitable_for_art_technique__pastel_drawing
-  - suitable_for_art_technique__watercolor_paintin
+  - suitable_for_art_technique__watercolor_painting
 - id: 2295
   name: Button/Snap closure type
   friendly_id: button/snap_closure_type
@@ -14769,18 +14689,6 @@
   name: Sequin shape
   friendly_id: sequin_shape
   values_from: sequin/glitter_shape
-- id: 2326
-  name: Labelling project type
-  friendly_id: labelling_project_type
-  values:
-  - labelling_project_type__accessory_making
-  - labelling_project_type__bag_making
-  - labelling_project_type__clothing_making
-  - labelling_project_type__hand_crafting
-  - labelling_project_type__home_textile_crafting
-  - labelling_project_type__personalized_gift_making
-  - labelling_project_type__quilting
-  - labelling_project_type__other
 - id: 2327
   name: Embossing project type
   friendly_id: embossing_project_type
@@ -14852,6 +14760,7 @@
   - care_instructions__dry_clean_only
   - care_instructions__hand_wash
   - care_instructions__ironing_instructions
+  - care_instructions__tumble_dry
 - id: 2337
   name: Fabric design
   friendly_id: fabric_design
@@ -15822,17 +15731,6 @@
   - model_train_accessory_type__tracks
   - model_train_accessory_type__vehicles
   - model_train_accessory_type__other
-- id: 2394
-  name: Model train them
-  friendly_id: model_train_them
-  values:
-  - model_train_them__cityscape
-  - model_train_them__contemporary
-  - model_train_them__countryside
-  - model_train_them__historical
-  - model_train_them__industrial
-  - model_train_them__modern
-  - model_train_them__sci_fi
 - id: 2395
   name: Model control technology
   friendly_id: model_control_technology
@@ -17521,7 +17419,7 @@
   - costume_theme__cartoon/animated_characters
   - costume_theme__celebrities
   - costume_theme__cultural
-  - costume_theme__fairytales
+  - costume_theme__fairy_tales
   - costume_theme__fantasy
   - costume_theme__ghosts
   - costume_theme__heroes
@@ -17702,6 +17600,7 @@
   name: Operating mode
   friendly_id: operating_mode
   values:
+  - operating_mode__automatic
   - operating_mode__semi_automatic
 - id: 2588
   name: Tuning fork design
@@ -17773,10 +17672,6 @@
   - cart_design__multiple_hook
   - cart_design__single_hook
   - cart_design__with_base
-- id: 2598
-  name: Blade shape
-  friendly_id: blade_shape
-  values_from: shape
 - id: 2599
   name: Scalpel blade number
   friendly_id: scalpel_blade_number
@@ -18089,13 +17984,6 @@
   - emergency/safety_sign_design__no_entry
   - emergency/safety_sign_design__restricted_area
   - emergency/safety_sign_design__video_surveillance
-- id: 2624
-  name: Light features
-  friendly_id: light_features
-  values:
-  - light_features__illuminated
-  - light_features__non_illuminated
-  - light_features__photoluminescent
 - id: 2625
   name: Facility sign design
   friendly_id: facility_sign_design
@@ -18649,13 +18537,6 @@
   - footage_type__stock_videos
   - footage_type__textures
   - footage_type__vectors
-- id: 2671
-  name: Content features
-  friendly_id: content_features
-  values:
-  - content_features__downloadable_content_dlc
-  - content_features__early_access
-  - content_features__free_to_play
 - id: 2672
   name: ESRB rating
   friendly_id: esrb_rating
@@ -18911,13 +18792,6 @@
   - charging_level__level_1_120v
   - charging_level__level_2_240v
   - charging_level__level_3_480v+
-- id: 2684
-  name: Input phase type
-  friendly_id: input_phase_type
-  values:
-  - input_phase_type__single_phase
-  - input_phase_type__three_phase
-  - input_phase_type__two_phase
 - id: 2685
   name: Station type
   friendly_id: station_type
@@ -19138,10 +19012,6 @@
   - vehicle_type__truck
   - vehicle_type__van
   - vehicle_type__watercraft
-  - vehicle_type__boat
-  - vehicle_type__jet_ski
-  - vehicle_type__sailboat
-  - vehicle_type__yacht
 - id: 2706
   name: Vehicle application area
   friendly_id: vehicle_application_area
@@ -19560,10 +19430,10 @@
   name: Watercraft type
   friendly_id: watercraft_type
   values:
-  - watercraft_type__stand_up
-  - watercraft_type__sit_down
-  - watercraft_type__sport
-  - watercraft_type__luxury
+  - watercraft_type__boat
+  - watercraft_type__jet_ski
+  - watercraft_type__sailboat
+  - watercraft_type__yacht
 - id: 2756
   name: Sailboat type
   friendly_id: sailboat_type
@@ -19666,20 +19536,6 @@
   - dice_shape__dodecahedron_12_sides
   - dice_shape__icosahedron_20_sides
   - dice_shape__other
-- id: 2762
-  name: RPG genre
-  friendly_id: rpg_genre
-  values:
-  - rpg_genre__crime
-  - rpg_genre__dragons
-  - rpg_genre__lovecraftian
-  - rpg_genre__magic
-  - rpg_genre__medieval
-  - rpg_genre__military
-  - rpg_genre__mythology
-  - rpg_genre__space
-  - rpg_genre__steampunk
-  - rpg_genre__zombies
 - id: 2763
   name: Electronic game genre
   friendly_id: electronic_game_genre
@@ -19895,6 +19751,7 @@
   - fabric__plush
   - fabric__polyester
   - fabric__rattan
+  - fabric__rayon
   - fabric__rubber
   - fabric__satin
   - fabric__sherpa
@@ -20046,6 +19903,7 @@
   - jewelry_material__alcantara
   - jewelry_material__aluminum
   - jewelry_material__bakelite
+  - jewelry_material__bamboo
   - jewelry_material__brass
   - jewelry_material__bronze
   - jewelry_material__carbon_fiber
@@ -20054,17 +19912,26 @@
   - jewelry_material__copper
   - jewelry_material__cordura
   - jewelry_material__cork
+  - jewelry_material__cotton
   - jewelry_material__diamond
   - jewelry_material__duralumin
   - jewelry_material__enamel
   - jewelry_material__fabric
+  - jewelry_material__faux_fur
   - jewelry_material__faux_leather
+  - jewelry_material__felt
   - jewelry_material__fiberglass
+  - jewelry_material__fur
   - jewelry_material__glass
   - jewelry_material__gold
+  - jewelry_material__hemp
   - jewelry_material__iron
+  - jewelry_material__jute
+  - jewelry_material__latex
   - jewelry_material__leather
+  - jewelry_material__linen
   - jewelry_material__marble
+  - jewelry_material__mesh
   - jewelry_material__metal
   - jewelry_material__microfiber
   - jewelry_material__nickel
@@ -20072,16 +19939,25 @@
   - jewelry_material__palladium
   - jewelry_material__plastic
   - jewelry_material__platinum
+  - jewelry_material__polyester
   - jewelry_material__porcelain
   - jewelry_material__precious_resin
   - jewelry_material__red_gold
   - jewelry_material__resin
   - jewelry_material__rose_gold
+  - jewelry_material__rubber
+  - jewelry_material__satin
+  - jewelry_material__silk
   - jewelry_material__silver
   - jewelry_material__sterling_silver
+  - jewelry_material__suede
+  - jewelry_material__synthetic
   - jewelry_material__titanium
+  - jewelry_material__velvet
+  - jewelry_material__vinyl
   - jewelry_material__white_gold
   - jewelry_material__wood
+  - jewelry_material__wool
   - jewelry_material__other
 - id: 2782
   name: Decoration material
@@ -20092,6 +19968,7 @@
   - decoration_material__bamboo
   - decoration_material__brass
   - decoration_material__bronze
+  - decoration_material__canvas
   - decoration_material__capiz
   - decoration_material__cardboard
   - decoration_material__cast_iron
@@ -20099,13 +19976,19 @@
   - decoration_material__chrome
   - decoration_material__concrete
   - decoration_material__copper
+  - decoration_material__cork
   - decoration_material__cotton
   - decoration_material__crystal
   - decoration_material__fabric
+  - decoration_material__faux_fur
+  - decoration_material__faux_leather
   - decoration_material__feathers
   - decoration_material__felt
   - decoration_material__glass
+  - decoration_material__hemp
   - decoration_material__iron
+  - decoration_material__jute
+  - decoration_material__latex
   - decoration_material__leather
   - decoration_material__marble
   - decoration_material__medium_density_fiberboard_mdf
@@ -20115,6 +19998,7 @@
   - decoration_material__paper
   - decoration_material__papier_mch
   - decoration_material__plastic
+  - decoration_material__plush
   - decoration_material__polyester
   - decoration_material__polypropylene_pp
   - decoration_material__polyvinyl_chloride_pvc
@@ -20129,7 +20013,11 @@
   - decoration_material__stainless_steel
   - decoration_material__steel
   - decoration_material__stone
+  - decoration_material__suede
+  - decoration_material__synthetic
   - decoration_material__terracotta
+  - decoration_material__velour
+  - decoration_material__velvet
   - decoration_material__veneer
   - decoration_material__vinyl
   - decoration_material__wax
@@ -20213,41 +20101,58 @@
   - furniture/fixture_material__bamboo
   - furniture/fixture_material__beech_wood
   - furniture/fixture_material__brass
+  - furniture/fixture_material__canvas
   - furniture/fixture_material__cedar_wood
   - furniture/fixture_material__ceramic
   - furniture/fixture_material__cherry_wood
   - furniture/fixture_material__concrete
+  - furniture/fixture_material__cork
+  - furniture/fixture_material__cotton
   - furniture/fixture_material__fabric
+  - furniture/fixture_material__faux_fur
   - furniture/fixture_material__faux_leather
   - furniture/fixture_material__fiber_reinforced_plastic_frp
   - furniture/fixture_material__fiberglass
   - furniture/fixture_material__foam
   - furniture/fixture_material__glass
   - furniture/fixture_material__granite
+  - furniture/fixture_material__hemp
   - furniture/fixture_material__high_density_fiberboard_hdf
   - furniture/fixture_material__iron
+  - furniture/fixture_material__jute
+  - furniture/fixture_material__latex
   - furniture/fixture_material__leather
+  - furniture/fixture_material__linen
   - furniture/fixture_material__maple_wood
   - furniture/fixture_material__marble
   - furniture/fixture_material__medium_density_fiberboard_mdf
   - furniture/fixture_material__melamine
+  - furniture/fixture_material__mesh
   - furniture/fixture_material__metal
   - furniture/fixture_material__oak_wood
   - furniture/fixture_material__particle_board
   - furniture/fixture_material__pine_wood
   - furniture/fixture_material__plastic
   - furniture/fixture_material__plywood
+  - furniture/fixture_material__polyester
   - furniture/fixture_material__polyurethane_pu
   - furniture/fixture_material__polyvinyl_chloride_pvc
   - furniture/fixture_material__rattan
   - furniture/fixture_material__resin
+  - furniture/fixture_material__rubber
   - furniture/fixture_material__stainless_steel
   - furniture/fixture_material__steel
+  - furniture/fixture_material__suede
+  - furniture/fixture_material__synthetic
   - furniture/fixture_material__teak_wood
+  - furniture/fixture_material__velour
+  - furniture/fixture_material__velvet
+  - furniture/fixture_material__vinyl
   - furniture/fixture_material__walnut_wood
   - furniture/fixture_material__wicker
   - furniture/fixture_material__wood
   - furniture/fixture_material__wood_plastic_composite_wpc
+  - furniture/fixture_material__wool
   - furniture/fixture_material__other
 - id: 2787
   name: Rug/Mat material
@@ -20418,14 +20323,26 @@
   name: Basket material
   friendly_id: basket_material
   values:
+  - basket_material__bamboo
+  - basket_material__canvas
+  - basket_material__cotton
   - basket_material__fabric
   - basket_material__faux_leather
+  - basket_material__felt
+  - basket_material__hemp
+  - basket_material__jute
   - basket_material__leather
+  - basket_material__mesh
   - basket_material__metal
+  - basket_material__nylon
   - basket_material__plastic
   - basket_material__polyester
   - basket_material__rattan
+  - basket_material__rubber
+  - basket_material__synthetic
+  - basket_material__vinyl
   - basket_material__wicker
+  - basket_material__wool
 - id: 2799
   name: Door mat base material
   friendly_id: door_mat_base_material
@@ -20778,10 +20695,25 @@
   name: Support/Brace material
   friendly_id: support/brace_material
   values:
+  - support/brace_material__bamboo
+  - support/brace_material__canvas
+  - support/brace_material__cotton
   - support/brace_material__fabric
+  - support/brace_material__fleece
   - support/brace_material__foam
+  - support/brace_material__latex
+  - support/brace_material__leather
+  - support/brace_material__lycra
+  - support/brace_material__mesh
   - support/brace_material__neoprene
+  - support/brace_material__nylon
+  - support/brace_material__plastic
+  - support/brace_material__polyester
+  - support/brace_material__rubber
   - support/brace_material__silicone
+  - support/brace_material__synthetic
+  - support/brace_material__velour
+  - support/brace_material__vinyl
 - id: 2831
   name: Suitable for precious material
   friendly_id: suitable_for_precious_material
@@ -20824,12 +20756,6 @@
   - candle_material__beeswax
   - candle_material__paraffin_wax
   - candle_material__soy_wax
-- id: 2837
-  name: Ear car application method
-  friendly_id: ear_car_application_method
-  values:
-  - ear_car_application_method__dropper
-  - ear_car_application_method__nozzle
 - id: 2838
   name: Stone material
   friendly_id: stone_material
@@ -20965,12 +20891,22 @@
   friendly_id: punching/training_bag_material
   values:
   - punching/training_bag_material__canvas
+  - punching/training_bag_material__cotton
   - punching/training_bag_material__fabric
+  - punching/training_bag_material__faux_leather
+  - punching/training_bag_material__fleece
   - punching/training_bag_material__foam
+  - punching/training_bag_material__latex
   - punching/training_bag_material__leather
+  - punching/training_bag_material__mesh
+  - punching/training_bag_material__neoprene
+  - punching/training_bag_material__nylon
+  - punching/training_bag_material__plastic
+  - punching/training_bag_material__polyester
   - punching/training_bag_material__rubber
   - punching/training_bag_material__sand
   - punching/training_bag_material__sawdust
+  - punching/training_bag_material__synthetic
   - punching/training_bag_material__vinyl
 - id: 2848
   name: Net material
@@ -21413,36 +21349,62 @@
   name: Foundation material
   friendly_id: foundation_material
   values:
+  - foundation_material__bamboo
+  - foundation_material__cotton
   - foundation_material__fabric
+  - foundation_material__faux_leather
+  - foundation_material__latex
+  - foundation_material__leather
   - foundation_material__metal
   - foundation_material__pine_wood
+  - foundation_material__plastic
   - foundation_material__plywood
   - foundation_material__polyester
   - foundation_material__spruce_wood
   - foundation_material__steel
+  - foundation_material__synthetic
+  - foundation_material__velvet
   - foundation_material__wood
+  - foundation_material__wool
 - id: 2896
   name: Toy/Game material
   friendly_id: toy/game_material
   values:
+  - toy/game_material__acrylic
   - toy/game_material__aluminum
+  - toy/game_material__bamboo
+  - toy/game_material__canvas
   - toy/game_material__cardboard
+  - toy/game_material__cork
   - toy/game_material__cotton
+  - toy/game_material__denim
   - toy/game_material__fabric
+  - toy/game_material__faux_fur
+  - toy/game_material__faux_leather
+  - toy/game_material__felt
   - toy/game_material__fiberglass
   - toy/game_material__fleece
   - toy/game_material__foam
+  - toy/game_material__latex
+  - toy/game_material__leather
   - toy/game_material__mesh
   - toy/game_material__metal
+  - toy/game_material__neoprene
   - toy/game_material__nylon
   - toy/game_material__plastic
   - toy/game_material__plush
   - toy/game_material__polyester
+  - toy/game_material__rattan
   - toy/game_material__rubber
+  - toy/game_material__satin
   - toy/game_material__silicone
+  - toy/game_material__silk
   - toy/game_material__steel
+  - toy/game_material__suede
   - toy/game_material__synthetic
   - toy/game_material__tin
+  - toy/game_material__velour
+  - toy/game_material__velvet
   - toy/game_material__vinyl
   - toy/game_material__wood
   - toy/game_material__wool
@@ -21497,7 +21459,7 @@
   - wire/rope_material__nickel_plated
   - wire/rope_material__nylon
   - wire/rope_material__polyester
-  - wire/rope_material__polypropylene
+  - wire/rope_material__polypropylene_pp
   - wire/rope_material__silver
   - wire/rope_material__silver_plated
   - wire/rope_material__stainless_steel
@@ -21709,22 +21671,33 @@
   name: Office supply material
   friendly_id: office_supply_material
   values:
+  - office_supply_material__acrylic
+  - office_supply_material__bamboo
+  - office_supply_material__canvas
   - office_supply_material__cardboard
-  - office_supply_material__glass
+  - office_supply_material__cork
+  - office_supply_material__cotton
   - office_supply_material__fabric
   - office_supply_material__faux_leather
   - office_supply_material__felt
+  - office_supply_material__glass
+  - office_supply_material__jute
+  - office_supply_material__latex
   - office_supply_material__leather
+  - office_supply_material__mesh
   - office_supply_material__metal
   - office_supply_material__nylon
   - office_supply_material__paper
   - office_supply_material__plastic
+  - office_supply_material__polyester
   - office_supply_material__polyethylene_pe
   - office_supply_material__polyethylene_terephthalate_pet
   - office_supply_material__polypropylene_pp
   - office_supply_material__polyurethane_pu
   - office_supply_material__polyvinyl_chloride_pvc
+  - office_supply_material__rubber
   - office_supply_material__stainless_steel
+  - office_supply_material__synthetic
   - office_supply_material__vinyl
   - office_supply_material__wood
 - id: 2923
@@ -21764,14 +21737,29 @@
   name: Fastener material
   friendly_id: fastener_material
   values:
+  - fastener_material__acrylic
   - fastener_material__aluminum
+  - fastener_material__bamboo
   - fastener_material__bone
   - fastener_material__brass
+  - fastener_material__canvas
   - fastener_material__copper
+  - fastener_material__cork
+  - fastener_material__cotton
+  - fastener_material__denim
   - fastener_material__fabric
+  - fastener_material__faux_leather
+  - fastener_material__felt
   - fastener_material__glass
+  - fastener_material__hemp
+  - fastener_material__jute
+  - fastener_material__latex
   - fastener_material__leather
+  - fastener_material__linen
+  - fastener_material__lycra
+  - fastener_material__mesh
   - fastener_material__metal
+  - fastener_material__neoprene
   - fastener_material__nickel
   - fastener_material__nylon
   - fastener_material__pewter
@@ -21779,12 +21767,21 @@
   - fastener_material__polyamide_pa
   - fastener_material__polyester
   - fastener_material__polypropylene_pp
+  - fastener_material__rattan
   - fastener_material__resin
   - fastener_material__rubber
+  - fastener_material__satin
   - fastener_material__seashell
   - fastener_material__silicone
+  - fastener_material__silk
   - fastener_material__stainless_steel
+  - fastener_material__suede
+  - fastener_material__synthetic
+  - fastener_material__velour
+  - fastener_material__velvet
+  - fastener_material__vinyl
   - fastener_material__wood
+  - fastener_material__wool
   - fastener_material__zinc
   - fastener_material__other
 - id: 2927
@@ -21894,6 +21891,7 @@
   name: Instrument accessory material
   friendly_id: instrument_accessory_material
   values:
+  - instrument_accessory_material__acrylic
   - instrument_accessory_material__acrylonitrile_butadiene_styrene_abs
   - instrument_accessory_material__aluminum
   - instrument_accessory_material__bamboo
@@ -21903,13 +21901,17 @@
   - instrument_accessory_material__carbon_fiber
   - instrument_accessory_material__ceramic
   - instrument_accessory_material__clay
+  - instrument_accessory_material__cork
   - instrument_accessory_material__cotton
   - instrument_accessory_material__fabric
+  - instrument_accessory_material__faux_leather
+  - instrument_accessory_material__felt
   - instrument_accessory_material__fiberglass
   - instrument_accessory_material__fleece
   - instrument_accessory_material__fluorocarbon
   - instrument_accessory_material__foam
   - instrument_accessory_material__hard_rubber
+  - instrument_accessory_material__latex
   - instrument_accessory_material__leather
   - instrument_accessory_material__medium_density_fiberboard_mdf
   - instrument_accessory_material__mesh
@@ -21921,15 +21923,20 @@
   - instrument_accessory_material__plastic
   - instrument_accessory_material__plywood
   - instrument_accessory_material__polyester
+  - instrument_accessory_material__rattan
   - instrument_accessory_material__rubber
+  - instrument_accessory_material__satin
   - instrument_accessory_material__silicone
   - instrument_accessory_material__silk
   - instrument_accessory_material__sponge
   - instrument_accessory_material__stainless_steel
   - instrument_accessory_material__steel
+  - instrument_accessory_material__suede
   - instrument_accessory_material__synthetic
   - instrument_accessory_material__synthetic_resin
+  - instrument_accessory_material__vinyl
   - instrument_accessory_material__wood
+  - instrument_accessory_material__wool
   - instrument_accessory_material__other
 - id: 2934
   name: Drum hardware material
@@ -22438,3 +22445,2721 @@
   - bow_material__fiberglass
   - bow_material__foam
   - bow_material__wood
+- id: 2971
+  name: Liner features
+  friendly_id: liner_features
+  values_from: absorbent_hygiene_product_features
+- id: 2972
+  name: Absorbent hygiene product features
+  friendly_id: absorbent_hygiene_product_features
+  values:
+  - absorbent_hygiene_product_features__adjustable
+  - absorbent_hygiene_product_features__biodegradable
+  - absorbent_hygiene_product_features__easy_to_clean
+  - absorbent_hygiene_product_features__easy_to_remove
+  - absorbent_hygiene_product_features__eco_friendly
+  - absorbent_hygiene_product_features__flushable
+  - absorbent_hygiene_product_features__fragrance_free
+  - absorbent_hygiene_product_features__hypoallergenic
+  - absorbent_hygiene_product_features__leakproof
+  - absorbent_hygiene_product_features__odor_control
+  - absorbent_hygiene_product_features__scented
+  - absorbent_hygiene_product_features__soft_padding
+  - absorbent_hygiene_product_features__tear_resistant
+  - absorbent_hygiene_product_features__waterproof
+  - absorbent_hygiene_product_features__wetness_indicator
+- id: 2973
+  name: Diaper features
+  friendly_id: diaper_features
+  values_from: absorbent_hygiene_product_features
+- id: 2974
+  name: Dog house features
+  friendly_id: dog_house_features
+  values_from: outdoor_equipment_features
+- id: 2975
+  name: Outdoor equipment features
+  friendly_id: outdoor_equipment_features
+  values:
+  - outdoor_equipment_features__adjustable_canopy
+  - outdoor_equipment_features__adjustable_dimensions
+  - outdoor_equipment_features__carry_bag
+  - outdoor_equipment_features__easy_to_assemble
+  - outdoor_equipment_features__foldable
+  - outdoor_equipment_features__lockable
+  - outdoor_equipment_features__portable
+  - outdoor_equipment_features__removable_cover
+  - outdoor_equipment_features__rustproof
+  - outdoor_equipment_features__uv_protection
+  - outdoor_equipment_features__weather_resistant
+- id: 2976
+  name: Dog kennel/run features
+  friendly_id: dog_kennel/run_features
+  values_from: outdoor_equipment_features
+- id: 2977
+  name: Dog pen features
+  friendly_id: dog_pen_features
+  values_from: outdoor_equipment_features
+- id: 2978
+  name: Dog kennel features
+  friendly_id: dog_kennel_features
+  values_from: outdoor_equipment_features
+- id: 2979
+  name: Exercise machine features
+  friendly_id: exercise_machine_features
+  values:
+  - exercise_machine_features__adjustable_inclination
+  - exercise_machine_features__adjustable_speed
+  - exercise_machine_features__built_in_display
+  - exercise_machine_features__foldable
+  - exercise_machine_features__handrail
+  - exercise_machine_features__performance_monitor
+  - exercise_machine_features__pre_set_exercise_programs
+  - exercise_machine_features__remote_control
+  - exercise_machine_features__safety_stop
+- id: 2980
+  name: Aquarium filter features
+  friendly_id: aquarium_filter_features
+  values:
+  - aquarium_filter_features__adjustable_flow_rate
+  - aquarium_filter_features__compact_design
+  - aquarium_filter_features__media_included
+  - aquarium_filter_features__multi_stage_filtration
+  - aquarium_filter_features__quick_cartridge_change
+  - aquarium_filter_features__quiet_operation
+  - aquarium_filter_features__self_priming
+- id: 2981
+  name: Substrate features
+  friendly_id: substrate_features
+  values:
+  - substrate_features__beneficial_bacteria_growth
+  - substrate_features__coated
+  - substrate_features__natural_product
+  - substrate_features__neutral_ph
+  - substrate_features__pre_washed
+- id: 2982
+  name: Lighting features
+  friendly_id: lighting_features
+  values:
+  - lighting_features__adjustable_angle
+  - lighting_features__adjustable_brightness
+  - lighting_features__adjustable_color_temperature
+  - lighting_features__ai_powered
+  - lighting_features__dimmable
+  - lighting_features__energy_efficient
+  - lighting_features__led_lighting
+  - lighting_features__programmable_timer_function
+  - lighting_features__remote_control
+  - lighting_features__waterproof
+- id: 2983
+  name: Pet apparel features
+  friendly_id: pet_apparel_features
+  values_from: pet_apparel/bedding_features
+- id: 2984
+  name: Pet apparel/bedding features
+  friendly_id: pet_apparel/bedding_features
+  values:
+  - pet_apparel/bedding_features__anti_microbial
+  - pet_apparel/bedding_features__anti_slip
+  - pet_apparel/bedding_features__arch_support
+  - pet_apparel/bedding_features__breathable_design
+  - pet_apparel/bedding_features__chew_resistant
+  - pet_apparel/bedding_features__cushioned
+  - pet_apparel/bedding_features__eco_friendly
+  - pet_apparel/bedding_features__lightweight
+  - pet_apparel/bedding_features__orthopedic
+  - pet_apparel/bedding_features__recycled_materials
+  - pet_apparel/bedding_features__removable_cover
+  - pet_apparel/bedding_features__slip_resistant
+  - pet_apparel/bedding_features__vegan_friendly
+  - pet_apparel/bedding_features__waterproof
+- id: 2985
+  name: Pet bedding features
+  friendly_id: pet_bedding_features
+  values_from: pet_apparel/bedding_features
+- id: 2986
+  name: Pet control accessory features
+  friendly_id: pet_control_accessory_features
+  values:
+  - pet_control_accessory_features__adjustable
+  - pet_control_accessory_features__comfort_padding
+  - pet_control_accessory_features__customizable
+  - pet_control_accessory_features__glow_in_the_dark
+  - pet_control_accessory_features__quick_release
+  - pet_control_accessory_features__reflective
+  - pet_control_accessory_features__washable
+  - pet_control_accessory_features__weather_resistant
+- id: 2987
+  name: Glucose meter features
+  friendly_id: glucose_meter_features
+  values_from: sensor/measuring_tool_features
+- id: 2988
+  name: Sensor/Measuring tool features
+  friendly_id: sensor/measuring_tool_features
+  values:
+  - sensor/measuring_tool_features__backlighting
+  - sensor/measuring_tool_features__built_in_camera
+  - sensor/measuring_tool_features__built_in_display
+  - sensor/measuring_tool_features__memory_function
+  - sensor/measuring_tool_features__portable
+  - sensor/measuring_tool_features__remote_control
+  - sensor/measuring_tool_features__smart
+- id: 2989
+  name: Features
+  friendly_id: features
+  values:
+  - features__adjustable_dimensions
+  - features__anti_slip
+  - features__carry_bag
+  - features__easy_to_assemble
+  - features__foldable
+  - features__lightweight
+  - features__lockable
+  - features__portable
+  - features__removable_cover
+  - features__retractable
+  - features__storage_options
+  - features__weather_resistant
+- id: 2990
+  name: Stroller features
+  friendly_id: stroller_features
+  values:
+  - stroller_features__adjustable_handlebar
+  - stroller_features__canopy
+  - stroller_features__cup_holders
+  - stroller_features__foldable
+  - stroller_features__lockable_wheels
+  - stroller_features__mesh_windows
+  - stroller_features__multiple_access_points
+  - stroller_features__padded
+  - stroller_features__rain_cover
+  - stroller_features__reclining_seat
+  - stroller_features__storage_options
+- id: 2991
+  name: Skin care features
+  friendly_id: skin_care_features
+  values:
+  - skin_care_features__durable
+  - skin_care_features__easy_to_apply
+  - skin_care_features__fast_acting
+  - skin_care_features__long_lasting
+  - skin_care_features__moisturizing
+  - skin_care_features__neutral_ph
+  - skin_care_features__non_greasy
+  - skin_care_features__soothing
+  - skin_care_features__uva/uvb_protection
+  - skin_care_features__waterproof
+- id: 2992
+  name: Pet pad features
+  friendly_id: pet_pad_features
+  values_from: absorbent_hygiene_product_features
+- id: 2993
+  name: Waste bag features
+  friendly_id: waste_bag_features
+  values_from: disposable/reusable_bag_features
+- id: 2994
+  name: Disposable/Reusable bag features
+  friendly_id: disposable/reusable_bag_features
+  values:
+  - disposable/reusable_bag_features__biodegradable
+  - disposable/reusable_bag_features__easy_tie_handle
+  - disposable/reusable_bag_features__eco_friendly
+  - disposable/reusable_bag_features__fragrance_free
+  - disposable/reusable_bag_features__leakproof
+  - disposable/reusable_bag_features__long_handle
+  - disposable/reusable_bag_features__odor_control
+  - disposable/reusable_bag_features__scented
+  - disposable/reusable_bag_features__waterproof
+- id: 2995
+  name: Activewear clothing features
+  friendly_id: activewear_clothing_features
+  values:
+  - activewear_clothing_features__adjustable_waistband
+  - activewear_clothing_features__anti_chafing_design
+  - activewear_clothing_features__anti_static_properties
+  - activewear_clothing_features__body_contouring_fit
+  - activewear_clothing_features__breathable_design
+  - activewear_clothing_features__compression
+  - activewear_clothing_features__flatlock_seams
+  - activewear_clothing_features__four_way_stretch
+  - activewear_clothing_features__hidden_pockets
+  - activewear_clothing_features__high_visibility_accents
+  - activewear_clothing_features__mesh_panels
+  - activewear_clothing_features__moisture_wicking
+  - activewear_clothing_features__odor_resistant
+  - activewear_clothing_features__quick_drying
+  - activewear_clothing_features__reflective
+  - activewear_clothing_features__removable_padding
+  - activewear_clothing_features__seamless
+  - activewear_clothing_features__sweatproof_pockets
+  - activewear_clothing_features__temperature_regulation
+  - activewear_clothing_features__thumbholes
+  - activewear_clothing_features__uv_protection
+  - activewear_clothing_features__vegan_friendly
+  - activewear_clothing_features__ventilation
+  - activewear_clothing_features__waterproof_coating
+  - activewear_clothing_features__other
+- id: 2996
+  name: Bra features
+  friendly_id: bra_features
+  values:
+  - bra_features__adjustable_band
+  - bra_features__breathable_design
+  - bra_features__convertible_strap
+  - bra_features__removable_padding
+  - bra_features__seamless
+  - bra_features__sweat_wicking_fabric
+  - bra_features__underwire_support
+- id: 2997
+  name: Baby/Toddler clothing features
+  friendly_id: baby/toddler_clothing_features
+  values:
+  - baby/toddler_clothing_features__adjustable_waistband
+  - baby/toddler_clothing_features__breathable_design
+  - baby/toddler_clothing_features__easy_to_use_buttons/snaps
+  - baby/toddler_clothing_features__hypoallergenic
+  - baby/toddler_clothing_features__quick_drying
+  - baby/toddler_clothing_features__safety_buttons
+  - baby/toddler_clothing_features__tagless
+  - baby/toddler_clothing_features__uv_protection
+- id: 2998
+  name: Outerwear clothing features
+  friendly_id: outerwear_clothing_features
+  values:
+  - outerwear_clothing_features__breathable_design
+  - outerwear_clothing_features__hooded
+  - outerwear_clothing_features__hypoallergenic
+  - outerwear_clothing_features__insulated
+  - outerwear_clothing_features__lightweight
+  - outerwear_clothing_features__pockets
+  - outerwear_clothing_features__quick_drying
+  - outerwear_clothing_features__thermal
+  - outerwear_clothing_features__uv_protection
+  - outerwear_clothing_features__waterproof
+  - outerwear_clothing_features__windproof
+  - outerwear_clothing_features__wrinkle_resistant
+- id: 2999
+  name: Swimwear features
+  friendly_id: swimwear_features
+  values:
+  - swimwear_features__adjustable_strap
+  - swimwear_features__breathable_design
+  - swimwear_features__chlorine_resistant
+  - swimwear_features__elastic_waistband
+  - swimwear_features__flattering_silhouette
+  - swimwear_features__lightweight
+  - swimwear_features__quick_drying
+  - swimwear_features__upf_sun_protection
+  - swimwear_features__vegan_friendly
+- id: 3000
+  name: Intimate apparel features
+  friendly_id: intimate_apparel_features
+  values:
+  - intimate_apparel_features__breathable_design
+  - intimate_apparel_features__comfort_fit
+  - intimate_apparel_features__hypoallergenic
+  - intimate_apparel_features__moisture_wicking
+  - intimate_apparel_features__seamless
+  - intimate_apparel_features__stretchable
+  - intimate_apparel_features__tagless
+  - intimate_apparel_features__thermal
+- id: 3001
+  name: Clothing features
+  friendly_id: clothing_features
+  values:
+  - clothing_features__hypoallergenic
+  - clothing_features__insulated
+  - clothing_features__moisture_wicking
+  - clothing_features__quick_drying
+  - clothing_features__reversible
+  - clothing_features__stretchable
+  - clothing_features__uv_protection
+  - clothing_features__vegan_friendly
+  - clothing_features__water_resistant
+  - clothing_features__windproof
+  - clothing_features__wrinkle_resistant
+- id: 3002
+  name: Maternity clothing features
+  friendly_id: maternity_clothing_features
+  values:
+  - maternity_clothing_features__adjustable_strap
+  - maternity_clothing_features__breathable_design
+  - maternity_clothing_features__chlorine_resistant
+  - maternity_clothing_features__elastic_waistband
+  - maternity_clothing_features__flattering_silhouette
+  - maternity_clothing_features__flexible
+  - maternity_clothing_features__lightweight
+  - maternity_clothing_features__quick_drying
+  - maternity_clothing_features__room_for_belly_growth
+  - maternity_clothing_features__supportive_cups
+  - maternity_clothing_features__upf_sun_protection
+  - maternity_clothing_features__vegan_friendly
+- id: 3003
+  name: Handwear features
+  friendly_id: handwear_features
+  values:
+  - handwear_features__adjustable_closure
+  - handwear_features__enhanced_grip
+  - handwear_features__insulating_properties
+  - handwear_features__touchscreen_compatible
+  - handwear_features__waterproof
+- id: 3004
+  name: Headwear features
+  friendly_id: headwear_features
+  values:
+  - headwear_features__adjustable_fit
+  - headwear_features__collapsible
+  - headwear_features__uv_protection
+  - headwear_features__versatile
+- id: 3005
+  name: Wallet features
+  friendly_id: wallet_features
+  values:
+  - wallet_features__card_organization
+  - wallet_features__compact_design
+  - wallet_features__rfid_protection
+  - wallet_features__vegan_friendly
+  - wallet_features__waterproof
+- id: 3006
+  name: Bag/Case features
+  friendly_id: bag/case_features
+  values:
+  - bag/case_features__adjustable_size
+  - bag/case_features__anti_theft
+  - bag/case_features__convertible
+  - bag/case_features__dustproof
+  - bag/case_features__easy_to_install
+  - bag/case_features__fire_resistant
+  - bag/case_features__four_wheel_spinner
+  - bag/case_features__internal_padding
+  - bag/case_features__lightweight
+  - bag/case_features__lockable
+  - bag/case_features__luggage_tag
+  - bag/case_features__reflective
+  - bag/case_features__rfid_protection
+  - bag/case_features__shockproof
+  - bag/case_features__tsa_approved
+  - bag/case_features__vegan_friendly
+  - bag/case_features__waterproof
+  - bag/case_features__wheeled
+- id: 3007
+  name: Smart watch features
+  friendly_id: smart_watch_features
+  values:
+  - smart_watch_features__alarm
+  - smart_watch_features__anti_reflective
+  - smart_watch_features__blood_oxygen_level_monitoring
+  - smart_watch_features__blood_pressure_monitoring
+  - smart_watch_features__camera_control
+  - smart_watch_features__compass
+  - smart_watch_features__customizable_watch_faces
+  - smart_watch_features__device_location_feature
+  - smart_watch_features__ecg_monitoring
+  - smart_watch_features__fitness_tracker
+  - smart_watch_features__gps_support
+  - smart_watch_features__heart_rate_monitor
+  - smart_watch_features__interchangeable_strap
+  - smart_watch_features__music_control
+  - smart_watch_features__offline_music_storage
+  - smart_watch_features__sleep_tracker
+  - smart_watch_features__step_counter
+  - smart_watch_features__thermometer
+  - smart_watch_features__touchscreen
+  - smart_watch_features__vibration
+  - smart_watch_features__voice_control
+  - smart_watch_features__waterproof
+  - smart_watch_features__world_timer
+  - smart_watch_features__other
+- id: 3008
+  name: Watch features
+  friendly_id: watch_features
+  values:
+  - watch_features__alarm
+  - watch_features__anti_reflective
+  - watch_features__automatic_movement
+  - watch_features__date_display
+  - watch_features__deployment_clasp
+  - watch_features__interchangeable_strap
+  - watch_features__limited_edition
+  - watch_features__luminous_hands
+  - watch_features__luminous_markers
+  - watch_features__magnetic_resistance
+  - watch_features__manual_winding
+  - watch_features__moon_phase_display
+  - watch_features__multiple_time_zones
+  - watch_features__perpetual_calendar
+  - watch_features__power_reserve_indicator
+  - watch_features__quartz_movement
+  - watch_features__rotating_bezel
+  - watch_features__screw_down_crown
+  - watch_features__shockproof
+  - watch_features__skeleton_dial
+  - watch_features__solar_powered
+  - watch_features__tachymeter
+  - watch_features__waterproof
+  - watch_features__world_timer
+  - watch_features__other
+- id: 3009
+  name: Shoe features
+  friendly_id: shoe_features
+  values:
+  - shoe_features__anti_microbial
+  - shoe_features__arch_support
+  - shoe_features__breathable_design
+  - shoe_features__cushioned
+  - shoe_features__eco_friendly
+  - shoe_features__lightweight
+  - shoe_features__orthopedic
+  - shoe_features__recycled_materials
+  - shoe_features__slip_resistant
+  - shoe_features__sustainable_sourcing
+  - shoe_features__vegan_friendly
+  - shoe_features__waterproof
+- id: 3010
+  name: Ticket additional features
+  friendly_id: ticket_additional_features
+  values:
+  - ticket_additional_features__backstage_pass
+  - ticket_additional_features__meet_greet
+  - ticket_additional_features__post_event_activities
+  - ticket_additional_features__vip_package
+- id: 3011
+  name: Labeling project type
+  friendly_id: labeling_project_type
+  values:
+  - labeling_project_type__accessory_making
+  - labeling_project_type__bag_making
+  - labeling_project_type__clothing_making
+  - labeling_project_type__hand_crafting
+  - labeling_project_type__home_textile_crafting
+  - labeling_project_type__personalized_gift_making
+  - labeling_project_type__quilting
+  - labeling_project_type__other
+- id: 3012
+  name: Cover features
+  friendly_id: cover_features
+  values:
+  - cover_features__adjustable_dimensions
+  - cover_features__anti_theft
+  - cover_features__breathable_design
+  - cover_features__carry_bag
+  - cover_features__cold_resistant
+  - cover_features__dustproof
+  - cover_features__easy_to_install
+  - cover_features__fire_resistant
+  - cover_features__heat_resistant
+  - cover_features__internal_padding
+  - cover_features__lightweight
+  - cover_features__moisture_resistant
+  - cover_features__mold_resistant
+  - cover_features__non_fading
+  - cover_features__reflective
+  - cover_features__removable
+  - cover_features__scratch_resistant
+  - cover_features__uv_protection
+  - cover_features__vegan_friendly
+  - cover_features__waterproof
+- id: 3013
+  name: Crafting mat/pad features
+  friendly_id: crafting_mat/pad_features
+  values:
+  - crafting_mat/pad_features__angle_markings
+  - crafting_mat/pad_features__anti_slip_backing
+  - crafting_mat/pad_features__cushioned
+  - crafting_mat/pad_features__double_sided
+  - crafting_mat/pad_features__easy_to_clean
+  - crafting_mat/pad_features__grid_lines
+  - crafting_mat/pad_features__portable
+  - crafting_mat/pad_features__reversible
+  - crafting_mat/pad_features__self_healing_surface
+- id: 3014
+  name: Dress form features
+  friendly_id: dress_form_features
+  values:
+  - dress_form_features__adjustable_height
+  - dress_form_features__adjustable_measurements
+  - dress_form_features__collapsible
+  - dress_form_features__detachable_limbs
+  - dress_form_features__markings_for_measurements
+  - dress_form_features__pinnable_surface
+  - dress_form_features__removable_cover
+  - dress_form_features__rotating_base
+- id: 3015
+  name: Crafting frame/stretcher features
+  friendly_id: crafting_frame/stretcher_features
+  values:
+  - crafting_frame/stretcher_features__adjustable_tension
+  - crafting_frame/stretcher_features__easy_to_assemble
+  - crafting_frame/stretcher_features__even_tension_distribution
+  - crafting_frame/stretcher_features__lightweight
+  - crafting_frame/stretcher_features__portable
+  - crafting_frame/stretcher_features__secure_grip
+  - crafting_frame/stretcher_features__smooth_surface
+- id: 3016
+  name: Crafting stretcher features
+  friendly_id: crafting_stretcher_features
+  values_from: crafting_frame/stretcher_features
+- id: 3017
+  name: Crafting frame features
+  friendly_id: crafting_frame_features
+  values_from: crafting_frame/stretcher_features
+- id: 3018
+  name: Crafting hoop features
+  friendly_id: crafting_hoop_features
+  values_from: crafting_frame/stretcher_features
+- id: 3019
+  name: Glue gun features
+  friendly_id: glue_gun_features
+  values:
+  - glue_gun_features__adjustable_temperature
+  - glue_gun_features__ergonomic_handle
+  - glue_gun_features__fast_melting
+  - glue_gun_features__led_indicator
+  - glue_gun_features__non_drip_nozzle
+  - glue_gun_features__quick_heating
+  - glue_gun_features__safety_features
+  - glue_gun_features__trigger_feed
+- id: 3020
+  name: Textile craft machine features
+  friendly_id: textile_craft_machine_features
+  values:
+  - textile_craft_machine_features__adjustable_fit
+  - textile_craft_machine_features__adjustable_strap
+  - textile_craft_machine_features__adjustable_tension
+  - textile_craft_machine_features__anti_slip_grip
+  - textile_craft_machine_features__breathable_design
+  - textile_craft_machine_features__easy_to_assemble
+  - textile_craft_machine_features__easy_to_install
+  - textile_craft_machine_features__effortless_spinning
+  - textile_craft_machine_features__finger_protection
+  - textile_craft_machine_features__flyer_bobbin_system
+  - textile_craft_machine_features__padded
+  - textile_craft_machine_features__portable
+  - textile_craft_machine_features__sturdy
+  - textile_craft_machine_features__treadle_operated
+- id: 3021
+  name: Postage stamp features
+  friendly_id: postage_stamp_features
+  values:
+  - postage_stamp_features__overprint
+  - postage_stamp_features__perforation
+  - postage_stamp_features__variety
+  - postage_stamp_features__watermark
+- id: 3022
+  name: Model train theme
+  friendly_id: model_train_theme
+  values:
+  - model_train_theme__cityscape
+  - model_train_theme__contemporary
+  - model_train_theme__countryside
+  - model_train_theme__historical
+  - model_train_theme__industrial
+  - model_train_theme__modern
+  - model_train_theme__sci_fi
+- id: 3023
+  name: Mount/Stand features
+  friendly_id: mount/stand_features
+  values:
+  - mount/stand_features__360_degree_rotation
+  - mount/stand_features__adjustable_angle
+  - mount/stand_features__adjustable_dimensions
+  - mount/stand_features__ai_powered
+  - mount/stand_features__anti_slip_base
+  - mount/stand_features__cable_management
+  - mount/stand_features__collapsible
+  - mount/stand_features__easy_to_install
+  - mount/stand_features__foldable
+  - mount/stand_features__motorized_operation
+  - mount/stand_features__portable
+  - mount/stand_features__quick_release
+  - mount/stand_features__remote_control
+  - mount/stand_features__retractable
+  - mount/stand_features__shockproof
+  - mount/stand_features__swivel
+  - mount/stand_features__telescopic
+  - mount/stand_features__tilt_function
+  - mount/stand_features__vibration_reduction
+  - mount/stand_features__weather_resistant
+  - mount/stand_features__other
+- id: 3024
+  name: Winder features
+  friendly_id: winder_features
+  values:
+  - winder_features__bridge_pin_puller
+  - winder_features__built_in_cutter
+- id: 3025
+  name: Piano additional features
+  friendly_id: piano_additional_features
+  values:
+  - piano_additional_features__built_in_speakers
+  - piano_additional_features__metronome
+  - piano_additional_features__recording_function
+- id: 3026
+  name: Baby monitor features
+  friendly_id: baby_monitor_features
+  values:
+  - baby_monitor_features__infrared_sensor
+  - baby_monitor_features__lullabies
+  - baby_monitor_features__motion_detection
+  - baby_monitor_features__night_vision
+  - baby_monitor_features__temperature_monitoring
+  - baby_monitor_features__two_way_communication
+- id: 3027
+  name: Developmental features
+  friendly_id: developmental_features
+  values:
+  - developmental_features__cognitive_development
+  - developmental_features__emotional_social_development
+  - developmental_features__hand_eye_coordination
+  - developmental_features__interactive
+  - developmental_features__language_development
+  - developmental_features__light_sound_effects
+  - developmental_features__motor_skills_development
+  - developmental_features__musical_discovery
+  - developmental_features__physical_development
+  - developmental_features__sensory_exploration
+  - developmental_features__textured_surfaces
+- id: 3028
+  name: Baby equipment safety features
+  friendly_id: baby_equipment_safety_features
+  values_from: baby/toddler_equipment_safety_features
+- id: 3029
+  name: Baby/Toddler equipment safety features
+  friendly_id: baby/toddler_equipment_safety_features
+  values:
+  - baby/toddler_equipment_safety_features__3_point_harness
+  - baby/toddler_equipment_safety_features__5_point_harness
+  - baby/toddler_equipment_safety_features__energy_absorbing_foam
+  - baby/toddler_equipment_safety_features__non_slip_base
+  - baby/toddler_equipment_safety_features__side_impact_protection
+- id: 3030
+  name: Baby/Toddler car seat features
+  friendly_id: baby/toddler_car_seat_features
+  values_from: baby/toddler_equipment_safety_features
+- id: 3031
+  name: Wipe dispenser features
+  friendly_id: wipe_dispenser_features
+  values_from: wipe_dispenser/warmer_features
+- id: 3032
+  name: Wipe dispenser/warmer features
+  friendly_id: wipe_dispenser/warmer_features
+  values:
+  - wipe_dispenser/warmer_features__dispensing_mechanism
+  - wipe_dispenser/warmer_features__led_indicator
+  - wipe_dispenser/warmer_features__moisture_retention
+  - wipe_dispenser/warmer_features__travel_friendly
+  - wipe_dispenser/warmer_features__wipe_heating_function
+- id: 3033
+  name: Wipe warmer features
+  friendly_id: wipe_warmer_features
+  values_from: wipe_dispenser/warmer_features
+- id: 3034
+  name: Changing mat features
+  friendly_id: changing_mat_features
+  values_from: changing_mat/tray_features
+- id: 3035
+  name: Changing mat/tray features
+  friendly_id: changing_mat/tray_features
+  values:
+  - changing_mat/tray_features__built_in_compartments
+  - changing_mat/tray_features__portable
+  - changing_mat/tray_features__safety_strap
+  - changing_mat/tray_features__waterproof
+  - changing_mat/tray_features__wipeable_surface
+- id: 3036
+  name: Changing tray features
+  friendly_id: changing_tray_features
+  values_from: changing_mat/tray_features
+- id: 3037
+  name: Diaper organizer features
+  friendly_id: diaper_organizer_features
+  values:
+  - diaper_organizer_features__adjustable_strap
+  - diaper_organizer_features__insulated_bottle_pockets
+  - diaper_organizer_features__multiple_compartments
+  - diaper_organizer_features__stroller_strap
+  - diaper_organizer_features__waterproof_lining
+- id: 3038
+  name: Disposable bag features
+  friendly_id: disposable_bag_features
+  values_from: disposable/reusable_bag_features
+- id: 3039
+  name: Trash can features
+  friendly_id: trash_can_features
+  values:
+  - trash_can_features__carbon_filters
+  - trash_can_features__childproof
+  - trash_can_features__easy_bag_disposal
+  - trash_can_features__foot_pedal
+  - trash_can_features__hands_free_operation
+  - trash_can_features__odor_control
+- id: 3040
+  name: Wet bag features
+  friendly_id: wet_bag_features
+  values_from: disposable/reusable_bag_features
+- id: 3041
+  name: Timer features
+  friendly_id: timer_features
+  values_from: timepiece_features
+- id: 3042
+  name: Timepiece features
+  friendly_id: timepiece_features
+  values:
+  - timepiece_features__adjustable_duration
+  - timepiece_features__built_in_display
+  - timepiece_features__illuminated
+  - timepiece_features__memory_function
+  - timepiece_features__multiple_timers
+  - timepiece_features__sound_alarm
+  - timepiece_features__time_reminders
+- id: 3043
+  name: Bottle warmer features
+  friendly_id: bottle_warmer_features
+  values_from: bottle_warmer/sterilizer_features
+- id: 3044
+  name: Bottle warmer/sterilizer features
+  friendly_id: bottle_warmer/sterilizer_features
+  values:
+  - bottle_warmer/sterilizer_features__auto_power_off
+  - bottle_warmer/sterilizer_features__defrost_function
+  - bottle_warmer/sterilizer_features__drying_function
+  - bottle_warmer/sterilizer_features__lcd_display
+  - bottle_warmer/sterilizer_features__storage_options
+  - bottle_warmer/sterilizer_features__timer
+- id: 3045
+  name: Bottle sterilizer features
+  friendly_id: bottle_sterilizer_features
+  values_from: bottle_warmer/sterilizer_features
+- id: 3046
+  name: Trade show display features
+  friendly_id: trade_show_display_features
+  values:
+  - trade_show_display_features__built_in_processor
+  - trade_show_display_features__built_in_speakers
+  - trade_show_display_features__carrying_case
+  - trade_show_display_features__double_sided
+  - trade_show_display_features__graphics_support
+  - trade_show_display_features__lighting
+  - trade_show_display_features__touchscreen
+  - trade_show_display_features__vesa_mounting_support
+- id: 3047
+  name: Traffic control device features
+  friendly_id: traffic_control_device_features
+  values:
+  - traffic_control_device_features__collapsible
+  - traffic_control_device_features__reflective
+  - traffic_control_device_features__stackable
+  - traffic_control_device_features__weighted_base
+- id: 3048
+  name: Chair features
+  friendly_id: chair_features
+  values_from: chair/sofa_features
+- id: 3049
+  name: Chair/Sofa features
+  friendly_id: chair/sofa_features
+  values:
+  - chair/sofa_features__360_degree_rotation
+  - chair/sofa_features__adjustable_armrests
+  - chair/sofa_features__adjustable_backrest_angle
+  - chair/sofa_features__adjustable_footrest
+  - chair/sofa_features__adjustable_headrest
+  - chair/sofa_features__adjustable_height
+  - chair/sofa_features__built_in_usb_port
+  - chair/sofa_features__convertible
+  - chair/sofa_features__hydraulic
+  - chair/sofa_features__massage_function
+  - chair/sofa_features__pet_friendly
+  - chair/sofa_features__power_reclining
+  - chair/sofa_features__reclining_backrest
+  - chair/sofa_features__removable_cover
+  - chair/sofa_features__removable_cushions
+  - chair/sofa_features__stain_resistant
+  - chair/sofa_features__storage_options
+  - chair/sofa_features__swivel
+  - chair/sofa_features__towable
+  - chair/sofa_features__upholstered
+  - chair/sofa_features__waterproof
+  - chair/sofa_features__wheeled
+  - chair/sofa_features__other
+- id: 3050
+  name: Metal detector features
+  friendly_id: metal_detector_features
+  values:
+  - metal_detector_features__holster
+  - metal_detector_features__sound_alarm
+  - metal_detector_features__vibration_mode
+  - metal_detector_features__waterproof
+- id: 3051
+  name: External defibrillator features
+  friendly_id: external_defibrillator_features
+  values:
+  - external_defibrillator_features__manual_override
+  - external_defibrillator_features__on_screen_ecg
+  - external_defibrillator_features__pediatric_function
+- id: 3052
+  name: Scalpel blade material
+  friendly_id: scalpel_blade_material
+  values_from: blade_material
+- id: 3053
+  name: Scalpel blade shape
+  friendly_id: scalpel_blade_shape
+  values:
+  - scalpel_blade_shape__curved
+  - scalpel_blade_shape__straight
+- id: 3054
+  name: Disposable glove features
+  friendly_id: disposable_glove_features
+  values:
+  - disposable_glove_features__long_cuff
+  - disposable_glove_features__powder_free
+  - disposable_glove_features__powdered
+- id: 3055
+  name: Microscope features
+  friendly_id: microscope_features
+  values_from: sensor/measuring_tool_features
+- id: 3056
+  name: Lighting options
+  friendly_id: lighting_options
+  values:
+  - lighting_options__illuminated
+  - lighting_options__non_illuminated
+  - lighting_options__photoluminescent
+- id: 3057
+  name: Protective gear features
+  friendly_id: protective_gear_features
+  values:
+  - protective_gear_features__adjustable
+  - protective_gear_features__anti_fog
+  - protective_gear_features__easy_to_install
+  - protective_gear_features__insulated
+  - protective_gear_features__noise_cancellation
+  - protective_gear_features__padded
+  - protective_gear_features__pinlock_ready
+  - protective_gear_features__scratch_resistant
+  - protective_gear_features__shockproof
+  - protective_gear_features__sun_visor
+  - protective_gear_features__touchscreen_compatible
+  - protective_gear_features__uv_protection
+  - protective_gear_features__ventilation
+  - protective_gear_features__waterproof
+  - protective_gear_features__windproof
+- id: 3058
+  name: Protective mask features
+  friendly_id: protective_mask_features
+  values:
+  - protective_mask_features__adjustable_strap
+  - protective_mask_features__anti_fog
+  - protective_mask_features__anti_scratch
+  - protective_mask_features__clog_resistant
+  - protective_mask_features__cushioned
+  - protective_mask_features__face_seal
+  - protective_mask_features__fluid_resistance
+  - protective_mask_features__molded
+  - protective_mask_features__powered_air_unit
+  - protective_mask_features__valved
+- id: 3059
+  name: Welding helmet features
+  friendly_id: welding_helmet_features
+  values:
+  - welding_helmet_features__diopter_compatible
+  - welding_helmet_features__grinding_mode
+  - welding_helmet_features__true_color
+- id: 3060
+  name: Tripod/Monopod attachment type
+  friendly_id: tripod/monopod_attachment_type
+  values:
+  - tripod/monopod_attachment_type__1/4
+  - tripod/monopod_attachment_type__3/8
+  - tripod/monopod_attachment_type__universal
+- id: 3061
+  name: Tripod handle type
+  friendly_id: tripod_handle_type
+  values:
+  - tripod_handle_type__crank
+  - tripod_handle_type__extension
+  - tripod_handle_type__multi_function
+  - tripod_handle_type__pan
+  - tripod_handle_type__pistol_grip
+  - tripod_handle_type__tilt
+  - tripod_handle_type__trigger_grip
+- id: 3062
+  name: Camera features
+  friendly_id: camera_features
+  values:
+  - camera_features__adjustable_aperture
+  - camera_features__adjustable_iso
+  - camera_features__adjustable_shutter_speed
+  - camera_features__anti_reflective
+  - camera_features__articulating_screen
+  - camera_features__built_in_flash
+  - camera_features__built_in_speakers
+  - camera_features__digital_zoom
+  - camera_features__face_detection
+  - camera_features__freezeproof
+  - camera_features__hot_shoe_mount
+  - camera_features__image_stabilization
+  - camera_features__interchangeable_lens
+  - camera_features__led_backlight
+  - camera_features__lightweight
+  - camera_features__remote_control
+  - camera_features__self_timer
+  - camera_features__shockproof
+  - camera_features__slow_motion_mode
+  - camera_features__time_lapse_mode
+  - camera_features__timer
+  - camera_features__touchscreen
+  - camera_features__viewfinder
+  - camera_features__waterproof
+  - camera_features__other
+- id: 3063
+  name: Scope/Sight features
+  friendly_id: scope/sight_features
+  values:
+  - scope/sight_features__illuminated_reticle
+  - scope/sight_features__sound_recording
+  - scope/sight_features__video_recording
+- id: 3064
+  name: Earphone features
+  friendly_id: earphone_features
+  values:
+  - earphone_features__ai_powered
+  - earphone_features__awareness_mode
+  - earphone_features__built_in_microphone
+  - earphone_features__high_fidelity_audio
+  - earphone_features__noise_cancellation
+  - earphone_features__volume_control
+  - earphone_features__waterproof
+- id: 3065
+  name: Speaker features
+  friendly_id: speaker_features
+  values:
+  - speaker_features__ai_powered
+  - speaker_features__auto_pairing
+  - speaker_features__auto_power_off
+  - speaker_features__built_in_amplifier
+  - speaker_features__built_in_display
+  - speaker_features__built_in_memory
+  - speaker_features__echo_cancellation
+  - speaker_features__external_amplifier
+  - speaker_features__noise_cancellation
+  - speaker_features__shockproof
+  - speaker_features__subwoofer
+  - speaker_features__voice_control
+  - speaker_features__volume_control
+  - speaker_features__weather_resistant
+- id: 3066
+  name: Audio player/recorder features
+  friendly_id: audio_player/recorder_features
+  values:
+  - audio_player/recorder_features__ai_powered
+  - audio_player/recorder_features__built_in_memory
+  - audio_player/recorder_features__cassette_player
+  - audio_player/recorder_features__cd_player
+  - audio_player/recorder_features__emergency_alerts
+  - audio_player/recorder_features__fm_radio
+  - audio_player/recorder_features__gps_support
+  - audio_player/recorder_features__memory_card_slot
+  - audio_player/recorder_features__mp3_playback
+  - audio_player/recorder_features__noise_reduction
+  - audio_player/recorder_features__rechargeable_battery
+  - audio_player/recorder_features__recording_function
+  - audio_player/recorder_features__remote_control
+  - audio_player/recorder_features__speakerphone
+  - audio_player/recorder_features__speech_recognition
+  - audio_player/recorder_features__variable_speed_playback
+  - audio_player/recorder_features__voice_control
+  - audio_player/recorder_features__waterproof
+- id: 3067
+  name: Radio features
+  friendly_id: radio_features
+  values_from: audio_player/recorder_features
+- id: 3068
+  name: Bullhorn features
+  friendly_id: bullhorn_features
+  values:
+  - bullhorn_features__ai_powered
+  - bullhorn_features__anti_feedback_technology
+  - bullhorn_features__carrying_case
+  - bullhorn_features__carrying_handle
+  - bullhorn_features__multiple_sound_effects
+  - bullhorn_features__playback_function
+  - bullhorn_features__shockproof
+  - bullhorn_features__siren_function
+  - bullhorn_features__voice_recording
+  - bullhorn_features__volume_control
+  - bullhorn_features__weather_resistant
+- id: 3069
+  name: DJ equipment features
+  friendly_id: dj_equipment_features
+  values:
+  - dj_equipment_features__ai_powered
+  - dj_equipment_features__beat_sync
+  - dj_equipment_features__booth_output
+  - dj_equipment_features__built_in_mixer
+  - dj_equipment_features__crossfader
+  - dj_equipment_features__dvs_support
+  - dj_equipment_features__eq_controls
+  - dj_equipment_features__fader_control
+  - dj_equipment_features__jog_wheels
+  - dj_equipment_features__looping_function
+  - dj_equipment_features__microphone_input
+  - dj_equipment_features__midi_control
+  - dj_equipment_features__performance_pads
+  - dj_equipment_features__portable
+  - dj_equipment_features__sampler
+  - dj_equipment_features__sequencer
+  - dj_equipment_features__standalone_operation
+  - dj_equipment_features__timecode_control
+  - dj_equipment_features__touch_strips
+  - dj_equipment_features__vinyl_mode
+  - dj_equipment_features__other
+- id: 3070
+  name: Circuit board features
+  friendly_id: circuit_board_features
+  values:
+  - circuit_board_features__advanced_configuration
+  - circuit_board_features__esd_protection
+  - circuit_board_features__fan_control
+  - circuit_board_features__onboard_graphics
+  - circuit_board_features__overclocking_support
+- id: 3071
+  name: Motherboard memory features
+  friendly_id: motherboard_memory_features
+  values:
+  - motherboard_memory_features__ecc
+  - motherboard_memory_features__non_ecc
+  - motherboard_memory_features__registered/buffered
+  - motherboard_memory_features__unbuffered
+- id: 3072
+  name: Communication device features
+  friendly_id: communication_device_features
+  values:
+  - communication_device_features__ai_powered
+  - communication_device_features__built_in_display
+  - communication_device_features__call_blocking
+  - communication_device_features__caller_id
+  - communication_device_features__multi_line_support
+  - communication_device_features__speakerphone
+  - communication_device_features__touchscreen
+  - communication_device_features__voice_control
+- id: 3073
+  name: Mobile phone case features
+  friendly_id: mobile_phone_case_features
+  values:
+  - mobile_phone_case_features__ai_powered
+  - mobile_phone_case_features__anti_fingerprint
+  - mobile_phone_case_features__finger_loop
+  - mobile_phone_case_features__modular
+  - mobile_phone_case_features__pocket_friendly
+  - mobile_phone_case_features__ring_grip
+  - mobile_phone_case_features__shockproof
+  - mobile_phone_case_features__snug_fit
+- id: 3074
+  name: Audio/Scan converter features
+  friendly_id: audio/scan_converter_features
+  values:
+  - audio/scan_converter_features__ai_powered
+  - audio/scan_converter_features__analog_support
+  - audio/scan_converter_features__automatic_conversion
+  - audio/scan_converter_features__automatic_image_calibration
+  - audio/scan_converter_features__balanced_audio_support
+  - audio/scan_converter_features__buffered_loop_through
+  - audio/scan_converter_features__digital_support
+  - audio/scan_converter_features__frame_rate_conversion
+  - audio/scan_converter_features__image_freeze_control
+  - audio/scan_converter_features__image_zoom_control
+  - audio/scan_converter_features__internal_color_bar_generator
+  - audio/scan_converter_features__memory_function
+  - audio/scan_converter_features__remote_control
+  - audio/scan_converter_features__security_lockout
+  - audio/scan_converter_features__unbalanced_audio_support
+  - audio/scan_converter_features__vertical_filtering
+- id: 3075
+  name: Audio converter features
+  friendly_id: audio_converter_features
+  values_from: audio/scan_converter_features
+- id: 3076
+  name: Scan converter features
+  friendly_id: scan_converter_features
+  values_from: audio/scan_converter_features
+- id: 3077
+  name: Computer specialized features
+  friendly_id: computer_specialized_features
+  values:
+  - computer_specialized_features__ai_powered
+  - computer_specialized_features__bios_security
+  - computer_specialized_features__ecc_memory_support
+  - computer_specialized_features__kensington_lock
+  - computer_specialized_features__liquid_cooling_system
+  - computer_specialized_features__multi_gpu_support
+  - computer_specialized_features__overclocking_support
+  - computer_specialized_features__quiet_operation
+  - computer_specialized_features__remote_management
+  - computer_specialized_features__rgb_lighting
+  - computer_specialized_features__touchscreen
+  - computer_specialized_features__tpm_trusted_platform_module
+- id: 3078
+  name: Computer server features
+  friendly_id: computer_server_features
+  values:
+  - computer_server_features__ai_powered
+  - computer_server_features__ecc_memory_support
+  - computer_server_features__error_logging
+  - computer_server_features__hot_swappable_drive_bays
+  - computer_server_features__multi_processor_support
+  - computer_server_features__raid_support
+  - computer_server_features__redundant_power_supply
+  - computer_server_features__remote_management
+  - computer_server_features__virtualization_support
+- id: 3079
+  name: Splitter/Switch features
+  friendly_id: splitter/switch_features
+  values:
+  - splitter/switch_features__3d_support
+  - splitter/switch_features__audio_extraction
+  - splitter/switch_features__audio_support
+  - splitter/switch_features__cascadable
+  - splitter/switch_features__edid_management
+  - splitter/switch_features__ethernet_lan_connectivity
+  - splitter/switch_features__ir_extension
+  - splitter/switch_features__signal_amplification
+- id: 3080
+  name: Mouse pad features
+  friendly_id: mouse_pad_features
+  values:
+  - mouse_pad_features__lighting
+  - mouse_pad_features__stitched_edges
+  - mouse_pad_features__suitable_for_gaming
+- id: 3081
+  name: Graphics tablet specialized features
+  friendly_id: graphics_tablet_specialized_features
+  values:
+  - graphics_tablet_specialized_features__adjustable_angle
+  - graphics_tablet_specialized_features__adjustable_brightness
+  - graphics_tablet_specialized_features__adjustable_color_temperature
+  - graphics_tablet_specialized_features__ai_powered
+  - graphics_tablet_specialized_features__dimmable
+  - graphics_tablet_specialized_features__energy_efficient
+  - graphics_tablet_specialized_features__led_backlight
+  - graphics_tablet_specialized_features__programmable_timer_function
+  - graphics_tablet_specialized_features__remote_control
+  - graphics_tablet_specialized_features__waterproof
+- id: 3082
+  name: Keyboard specialized features
+  friendly_id: keyboard_specialized_features
+  values:
+  - keyboard_specialized_features__adjustable_angle
+  - keyboard_specialized_features__adjustable_height
+  - keyboard_specialized_features__ai_powered
+  - keyboard_specialized_features__anti_ghosting
+  - keyboard_specialized_features__backlighting
+  - keyboard_specialized_features__customizable_keycaps
+  - keyboard_specialized_features__key_rollover
+  - keyboard_specialized_features__macro_recording
+  - keyboard_specialized_features__multimedia_keys
+  - keyboard_specialized_features__n_key_rollover
+  - keyboard_specialized_features__numeric_keypad
+  - keyboard_specialized_features__onboard_memory
+  - keyboard_specialized_features__programmable_keys
+  - keyboard_specialized_features__shine_through
+  - keyboard_specialized_features__split_keyboard
+  - keyboard_specialized_features__suitable_for_gaming
+  - keyboard_specialized_features__tenkeyless
+  - keyboard_specialized_features__volume_control_wheel
+  - keyboard_specialized_features__wrist_rest
+- id: 3083
+  name: Mouse/Trackball features
+  friendly_id: mouse/trackball_features
+  values:
+  - mouse/trackball_features__adjustable_polling_rate
+  - mouse/trackball_features__adjustable_weight
+  - mouse/trackball_features__ai_powered
+  - mouse/trackball_features__ambidextrous_design
+  - mouse/trackball_features__customizable_rgb_lighting
+  - mouse/trackball_features__ergonomic_design
+  - mouse/trackball_features__gesture_support
+  - mouse/trackball_features__hyper_fast_scrolling
+  - mouse/trackball_features__laser_sensor
+  - mouse/trackball_features__low_latency
+  - mouse/trackball_features__macro_recording
+  - mouse/trackball_features__noiseless_clicks
+  - mouse/trackball_features__on_the_fly_dpi_switching
+  - mouse/trackball_features__onboard_memory
+  - mouse/trackball_features__optical_sensor
+  - mouse/trackball_features__scroll_wheel
+  - mouse/trackball_features__swappable_side_panels
+  - mouse/trackball_features__tactile_feedback
+  - mouse/trackball_features__thumb_rest
+  - mouse/trackball_features__tilt_wheel
+  - mouse/trackball_features__other
+- id: 3084
+  name: Screen specialized features
+  friendly_id: screen_specialized_features
+  values_from: monitor/screen_specialized_features
+- id: 3085
+  name: Monitor/Screen specialized features
+  friendly_id: monitor/screen_specialized_features
+  values:
+  - monitor/screen_specialized_features__3d_support
+  - monitor/screen_specialized_features__adjustable_viewing_angle
+  - monitor/screen_specialized_features__ai_powered
+  - monitor/screen_specialized_features__ambient_light_sensor
+  - monitor/screen_specialized_features__anti_glare
+  - monitor/screen_specialized_features__blue_light_filter
+  - monitor/screen_specialized_features__built_in_camera
+  - monitor/screen_specialized_features__built_in_soundbar
+  - monitor/screen_specialized_features__built_in_speakers
+  - monitor/screen_specialized_features__flicker_free
+  - monitor/screen_specialized_features__frameless
+  - monitor/screen_specialized_features__glossy_finish
+  - monitor/screen_specialized_features__hdr_support
+  - monitor/screen_specialized_features__led_backlight
+  - monitor/screen_specialized_features__matte_finish
+  - monitor/screen_specialized_features__quantum_dot_technology
+  - monitor/screen_specialized_features__suitable_for_gaming
+  - monitor/screen_specialized_features__touchscreen
+- id: 3086
+  name: Hard drive features
+  friendly_id: hard_drive_features
+  values:
+  - hard_drive_features__ai_powered
+  - hard_drive_features__backup_software_included
+  - hard_drive_features__cloud_backup_integration
+  - hard_drive_features__drive_health_monitoring
+  - hard_drive_features__hot_swappable
+  - hard_drive_features__power_saving
+  - hard_drive_features__raid_support
+  - hard_drive_features__shockproof
+  - hard_drive_features__smart_support
+  - hard_drive_features__temperature_monitoring
+  - hard_drive_features__vibration_resistance
+- id: 3087
+  name: Battery features
+  friendly_id: battery_features
+  values:
+  - battery_features__battery_life_indicator
+  - battery_features__cold_resistant
+  - battery_features__eco_friendly
+  - battery_features__fast_charge
+  - battery_features__heat_resistant
+  - battery_features__high_cycle_life
+  - battery_features__overcharge_protection
+- id: 3088
+  name: GPS device features
+  friendly_id: gps_device_features
+  values:
+  - gps_device_features__ai_powered
+  - gps_device_features__built_in_dash_cam
+  - gps_device_features__built_in_virtual_assistant
+  - gps_device_features__traffic_updates
+  - gps_device_features__voice_control
+- id: 3089
+  name: Marine navigator features
+  friendly_id: marine_navigator_features
+  values:
+  - marine_navigator_features__ai_powered
+  - marine_navigator_features__built_in_sonar
+  - marine_navigator_features__dual_range
+  - marine_navigator_features__electronic_compass
+  - marine_navigator_features__memory_card_slot
+  - marine_navigator_features__nmea_2000
+  - marine_navigator_features__overlay_function
+  - marine_navigator_features__target_tracking
+  - marine_navigator_features__touchscreen
+  - marine_navigator_features__uhd_sonar
+  - marine_navigator_features__vivid_sonar_colors
+  - marine_navigator_features__waterproof
+- id: 3090
+  name: Bridge/Router advanced features
+  friendly_id: bridge/router_advanced_features
+  values:
+  - bridge/router_advanced_features__ai_powered
+  - bridge/router_advanced_features__bridge_mode_support
+  - bridge/router_advanced_features__guest_network_support
+  - bridge/router_advanced_features__intrusion_prevention_system
+  - bridge/router_advanced_features__parental_control
+  - bridge/router_advanced_features__poe_support
+  - bridge/router_advanced_features__vpn_support
+- id: 3091
+  name: Printer/Copier specialized features
+  friendly_id: printer/copier_specialized_features
+  values:
+  - printer/copier_specialized_features__ai_powered
+  - printer/copier_specialized_features__automatic_document_feeder_adf
+  - printer/copier_specialized_features__borderless_printing
+  - printer/copier_specialized_features__cloud_support
+  - printer/copier_specialized_features__duplex_printing
+  - printer/copier_specialized_features__mobile_printing_support
+  - printer/copier_specialized_features__paper_storage
+  - printer/copier_specialized_features__voice_control
+- id: 3092
+  name: Scanner features
+  friendly_id: scanner_features
+  values:
+  - scanner_features__ai_powered
+  - scanner_features__automatic_document_feeder_adf
+  - scanner_features__automatic_image_enhancement
+  - scanner_features__built_in_display
+  - scanner_features__duplex_scanning
+  - scanner_features__multi_page_scanning
+  - scanner_features__negative_scanning
+  - scanner_features__ocr_support
+  - scanner_features__scan_to_cloud
+- id: 3093
+  name: Monitor specialized features
+  friendly_id: monitor_specialized_features
+  values_from: monitor/screen_specialized_features
+- id: 3094
+  name: Television specialized features
+  friendly_id: television_specialized_features
+  values:
+  - television_specialized_features__adjustable_viewing_angle
+  - television_specialized_features__ai_powered
+  - television_specialized_features__ambient_light_sensor
+  - television_specialized_features__built_in_digital_tuner
+  - television_specialized_features__built_in_soundbar
+  - television_specialized_features__hdr_support
+  - television_specialized_features__internet_tv
+  - television_specialized_features__local_dimming
+  - television_specialized_features__memc_technology
+  - television_specialized_features__motion_interpolation_technology
+  - television_specialized_features__noise_reduction
+  - television_specialized_features__parental_control
+  - television_specialized_features__quantum_dot_technology
+  - television_specialized_features__screen_mirroring
+  - television_specialized_features__smart_tv
+  - television_specialized_features__sports_mode
+  - television_specialized_features__suitable_for_gaming
+  - television_specialized_features__vesa_mounting_support
+  - television_specialized_features__voice_control
+- id: 3095
+  name: Player/Recorder specialized features
+  friendly_id: player/recorder_specialized_features
+  values:
+  - player/recorder_specialized_features__3d_support
+  - player/recorder_specialized_features__4k_support
+  - player/recorder_specialized_features__ai_powered
+  - player/recorder_specialized_features__built_in_hdd
+  - player/recorder_specialized_features__dolby_atmos_support
+  - player/recorder_specialized_features__hdr_support
+  - player/recorder_specialized_features__on_screen_display
+  - player/recorder_specialized_features__parental_control
+  - player/recorder_specialized_features__progressive_scan_output
+  - player/recorder_specialized_features__recording_function
+  - player/recorder_specialized_features__remote_control
+  - player/recorder_specialized_features__smart
+  - player/recorder_specialized_features__tv_tuner_integrated
+  - player/recorder_specialized_features__upconversion_capability
+- id: 3096
+  name: Recorder specialized features
+  friendly_id: recorder_specialized_features
+  values_from: player/recorder_specialized_features
+- id: 3097
+  name: Player specialized features
+  friendly_id: player_specialized_features
+  values_from: player/recorder_specialized_features
+- id: 3098
+  name: Dietary supplements
+  friendly_id: dietary_supplements
+  values:
+  - dietary_supplements__aloe_vera
+  - dietary_supplements__caffeine
+  - dietary_supplements__calcium
+  - dietary_supplements__cbd
+  - dietary_supplements__collagen
+  - dietary_supplements__creatine
+  - dietary_supplements__electrolytes
+  - dietary_supplements__fiber
+  - dietary_supplements__iodine
+  - dietary_supplements__iron
+  - dietary_supplements__l_carnitine
+  - dietary_supplements__magnesium
+  - dietary_supplements__manganese
+  - dietary_supplements__omega_fatty_acids
+  - dietary_supplements__potassium
+  - dietary_supplements__probiotics
+  - dietary_supplements__protein
+  - dietary_supplements__selenium
+  - dietary_supplements__sodium
+  - dietary_supplements__spirulina
+  - dietary_supplements__vitamin_a
+  - dietary_supplements__vitamin_b
+  - dietary_supplements__vitamin_c
+  - dietary_supplements__vitamin_d
+  - dietary_supplements__vitamin_e
+  - dietary_supplements__vitamin_k
+  - dietary_supplements__zinc
+  - dietary_supplements__other
+- id: 3099
+  name: Bitter variety
+  friendly_id: bitter_variety
+  values:
+  - bitter_variety__aromatic
+  - bitter_variety__floral
+  - bitter_variety__fruit
+  - bitter_variety__herbal
+  - bitter_variety__spicy
+- id: 3100
+  name: Bakery items included
+  friendly_id: bakery_items_included
+  values:
+  - bakery_items_included__bagel
+  - bakery_items_included__biscuit
+  - bakery_items_included__bread_loaf
+  - bakery_items_included__brownie
+  - bakery_items_included__cake
+  - bakery_items_included__croissant
+  - bakery_items_included__cupcake
+  - bakery_items_included__danish_pastry
+  - bakery_items_included__donut
+  - bakery_items_included__clair
+  - bakery_items_included__english_muffin
+  - bakery_items_included__fruit_pie
+  - bakery_items_included__muffin
+  - bakery_items_included__pastry_roll
+  - bakery_items_included__petit_four
+  - bakery_items_included__scone
+  - bakery_items_included__sweet_roll
+  - bakery_items_included__tart
+  - bakery_items_included__other
+- id: 3101
+  name: Nut/Seed type
+  friendly_id: nut/seed_type
+  values:
+  - nut/seed_type__almonds
+  - nut/seed_type__brazil_nuts
+  - nut/seed_type__cashews
+  - nut/seed_type__chestnuts
+  - nut/seed_type__chia_seeds
+  - nut/seed_type__flax_seeds
+  - nut/seed_type__hazelnuts
+  - nut/seed_type__hemp_seeds
+  - nut/seed_type__macadamia_nuts
+  - nut/seed_type__peanuts
+  - nut/seed_type__pecans
+  - nut/seed_type__pine_nuts
+  - nut/seed_type__pistachios
+  - nut/seed_type__poppy_seeds
+  - nut/seed_type__pumpkin_seeds
+  - nut/seed_type__sesame_seeds
+  - nut/seed_type__sunflower_seeds
+  - nut/seed_type__walnuts
+  - nut/seed_type__other
+- id: 3102
+  name: Furniture/Fixture features
+  friendly_id: furniture/fixture_features
+  values:
+  - furniture/fixture_features__adjustable_shelves
+  - furniture/fixture_features__assembly_required
+  - furniture/fixture_features__built_in_mirror
+  - furniture/fixture_features__built_in_sink
+  - furniture/fixture_features__corner_unit
+  - furniture/fixture_features__doors
+  - furniture/fixture_features__drawers
+  - furniture/fixture_features__expandable
+  - furniture/fixture_features__free_standing
+  - furniture/fixture_features__hanging_rods
+  - furniture/fixture_features__modular
+  - furniture/fixture_features__mountable
+  - furniture/fixture_features__paintable
+  - furniture/fixture_features__removable_bin
+  - furniture/fixture_features__roll_out_rays
+  - furniture/fixture_features__shelves
+  - furniture/fixture_features__storage_options
+  - furniture/fixture_features__wardrobe_lift
+- id: 3103
+  name: Baby/Toddler furniture features
+  friendly_id: baby/toddler_furniture_features
+  values:
+  - baby/toddler_furniture_features__adjustable_height
+  - baby/toddler_furniture_features__changing_pad_included
+  - baby/toddler_furniture_features__convertible
+  - baby/toddler_furniture_features__cushioned
+  - baby/toddler_furniture_features__easy_to_clean
+  - baby/toddler_furniture_features__eco_friendly
+  - baby/toddler_furniture_features__foldable
+  - baby/toddler_furniture_features__guardrails
+  - baby/toddler_furniture_features__lockable_wheels
+  - baby/toddler_furniture_features__music
+  - baby/toddler_furniture_features__nightlight
+  - baby/toddler_furniture_features__non_toxic_finish
+  - baby/toddler_furniture_features__portable
+  - baby/toddler_furniture_features__rocking_mechanism
+  - baby/toddler_furniture_features__safety_strap
+  - baby/toddler_furniture_features__space_efficient
+  - baby/toddler_furniture_features__storage_options
+  - baby/toddler_furniture_features__sturdy
+  - baby/toddler_furniture_features__vibration
+  - baby/toddler_furniture_features__waterproof
+  - baby/toddler_furniture_features__other
+- id: 3104
+  name: Crib/Toddler bed features
+  friendly_id: crib/toddler_bed_features
+  values:
+  - crib/toddler_bed_features__adjustable_height
+  - crib/toddler_bed_features__built_in_music
+  - crib/toddler_bed_features__built_in_nightlight
+  - crib/toddler_bed_features__canopy
+  - crib/toddler_bed_features__changing_table
+  - crib/toddler_bed_features__convertible
+  - crib/toddler_bed_features__foldable
+  - crib/toddler_bed_features__mattress_included
+  - crib/toddler_bed_features__portable
+  - crib/toddler_bed_features__rocking_mechanism
+  - crib/toddler_bed_features__storage_options
+  - crib/toddler_bed_features__teething_rails
+  - crib/toddler_bed_features__toddler_guard_rails
+  - crib/toddler_bed_features__vibration_mode
+  - crib/toddler_bed_features__wheeled
+- id: 3105
+  name: Toddler bed features
+  friendly_id: toddler_bed_features
+  values_from: crib/toddler_bed_features
+- id: 3106
+  name: Crib features
+  friendly_id: crib_features
+  values_from: crib/toddler_bed_features
+- id: 3107
+  name: Baby/Toddler seat features
+  friendly_id: baby/toddler_seat_features
+  values:
+  - baby/toddler_seat_features__adjustable_height
+  - baby/toddler_seat_features__foldable
+  - baby/toddler_seat_features__reclining_seat
+  - baby/toddler_seat_features__tray
+  - baby/toddler_seat_features__wheeled
+- id: 3108
+  name: Bed/Frame features
+  friendly_id: bed/frame_features
+  values:
+  - bed/frame_features__adjustable_frame
+  - bed/frame_features__adjustable_height
+  - bed/frame_features__foldable
+  - bed/frame_features__footboard_included
+  - bed/frame_features__headboard_included
+  - bed/frame_features__mattress_included
+  - bed/frame_features__slats_included
+  - bed/frame_features__storage_options
+- id: 3109
+  name: Mattress features
+  friendly_id: mattress_features
+  values:
+  - mattress_features__adjustable_base_compatibility
+  - mattress_features__anti_microbial
+  - mattress_features__bedbug_resistant
+  - mattress_features__cooling_function
+  - mattress_features__dust_mite_resistant
+  - mattress_features__edge_support
+  - mattress_features__flippable
+  - mattress_features__heat_retention
+  - mattress_features__hypoallergenic
+  - mattress_features__machine_washable_cover
+  - mattress_features__motion_isolation
+  - mattress_features__noise_reduction
+  - mattress_features__removable_cover
+  - mattress_features__safe_non_toxic_materials
+  - mattress_features__stain_resistant
+  - mattress_features__waterproof
+- id: 3110
+  name: Sofa features
+  friendly_id: sofa_features
+  values_from: chair/sofa_features
+- id: 3111
+  name: Durability features
+  friendly_id: durability_features
+  values:
+  - durability_features__cold_resistant
+  - durability_features__fire_resistant
+  - durability_features__heat_resistant
+  - durability_features__moisture_resistant
+  - durability_features__mold_resistant
+  - durability_features__rustproof
+  - durability_features__shockproof
+  - durability_features__uv_resistant
+  - durability_features__waterproof
+  - durability_features__weather_resistant
+- id: 3112
+  name: Gutter style
+  friendly_id: gutter_style
+  values:
+  - gutter_style__deepflow
+  - gutter_style__half_round
+  - gutter_style__industrial
+  - gutter_style__k_style
+  - gutter_style__mini
+  - gutter_style__square
+- id: 3113
+  name: Staircase features
+  friendly_id: staircase_features
+  values:
+  - staircase_features__balusters
+  - staircase_features__central_pole
+  - staircase_features__closed_risers
+  - staircase_features__handrail
+  - staircase_features__newel
+  - staircase_features__open_risers
+  - staircase_features__railing
+  - staircase_features__stair_landing
+- id: 3114
+  name: Fuel container features
+  friendly_id: fuel_container_features
+  values:
+  - fuel_container_features__child_resistant_cap
+  - fuel_container_features__flame_shield
+  - fuel_container_features__fuel_gauge
+  - fuel_container_features__leakproof
+  - fuel_container_features__pressure_relief_valve
+  - fuel_container_features__rustproof
+  - fuel_container_features__spill_proof_spout
+  - fuel_container_features__vent_cap
+- id: 3115
+  name: Sensor features
+  friendly_id: sensor_features
+  values_from: sensor/measuring_tool_features
+- id: 3116
+  name: Toilet cover features
+  friendly_id: toilet_cover_features
+  values:
+  - toilet_cover_features__quick_release
+  - toilet_cover_features__soft_close
+  - toilet_cover_features__standard_closing
+- id: 3117
+  name: Bathtub features
+  friendly_id: bathtub_features
+  values:
+  - bathtub_features__air_jets
+  - bathtub_features__anti_slip
+  - bathtub_features__handheld_shower
+  - bathtub_features__overflow_protection
+  - bathtub_features__whirlpool
+- id: 3118
+  name: Shower features
+  friendly_id: shower_features
+  values:
+  - shower_features__built_in_seat
+  - shower_features__framed
+  - shower_features__frameless
+  - shower_features__grab_bars
+  - shower_features__handheld_shower
+  - shower_features__shower_tray
+  - shower_features__storage_options
+  - shower_features__thermostatic_controls
+- id: 3119
+  name: Suitable installation
+  friendly_id: suitable_installation
+  values:
+  - suitable_installation__above_ground
+  - suitable_installation__below_ground
+- id: 3120
+  name: Drill features
+  friendly_id: drill_features
+  values:
+  - drill_features__adjustable_speed
+  - drill_features__adjustable_torque
+  - drill_features__anger_drilling
+  - drill_features__built_in_lighting
+  - drill_features__hammer_drilling
+  - drill_features__screwdriving
+- id: 3121
+  name: Measuring tool features
+  friendly_id: measuring_tool_features
+  values_from: sensor/measuring_tool_features
+- id: 3122
+  name: Biometric monitor accessory features
+  friendly_id: biometric_monitor_accessory_features
+  values:
+  - biometric_monitor_accessory_features__active_minutes
+  - biometric_monitor_accessory_features__distance_tracking
+  - biometric_monitor_accessory_features__heart_rate_monitor
+  - biometric_monitor_accessory_features__hours_slept
+  - biometric_monitor_accessory_features__memory_function
+  - biometric_monitor_accessory_features__pedometer
+  - biometric_monitor_accessory_features__personal_goals
+  - biometric_monitor_accessory_features__position_location
+  - biometric_monitor_accessory_features__quality_of_sleep
+  - biometric_monitor_accessory_features__touchscreen
+  - biometric_monitor_accessory_features__waterproof
+  - biometric_monitor_accessory_features__workout_tracking
+- id: 3123
+  name: CBD ingredients
+  friendly_id: cbd_ingredients
+  values:
+  - cbd_ingredients__artificial_colorings
+  - cbd_ingredients__artificial_flavorings
+  - cbd_ingredients__broad_spectrum_cbd
+  - cbd_ingredients__capsaicin
+  - cbd_ingredients__cbd_isolate
+  - cbd_ingredients__citrus_oils
+  - cbd_ingredients__flavonoids
+  - cbd_ingredients__full_spectrum_cbd
+  - cbd_ingredients__gelatin
+  - cbd_ingredients__ginger
+  - cbd_ingredients__hemp_seed_oil
+  - cbd_ingredients__lavender_oil
+  - cbd_ingredients__lemon_oil
+  - cbd_ingredients__mct_oil
+  - cbd_ingredients__melatonin
+  - cbd_ingredients__natural_colorings
+  - cbd_ingredients__natural_flavorings
+  - cbd_ingredients__omega_3_fatty_acids
+  - cbd_ingredients__omega_6_fatty_acids
+  - cbd_ingredients__pectin
+  - cbd_ingredients__peppermint_oil
+  - cbd_ingredients__preservatives
+  - cbd_ingredients__sweeteners
+  - cbd_ingredients__terpenes
+  - cbd_ingredients__turmeric
+  - cbd_ingredients__vitamin_e
+- id: 3124
+  name: Hearing aid features
+  friendly_id: hearing_aid_features
+  values:
+  - hearing_aid_features__digital
+  - hearing_aid_features__directional_microphone
+  - hearing_aid_features__discreet
+  - hearing_aid_features__feedback_suppression
+  - hearing_aid_features__programmable
+  - hearing_aid_features__rechargeable_battery
+  - hearing_aid_features__standard_battery
+  - hearing_aid_features__telecoil
+- id: 3125
+  name: Incontinence aid features
+  friendly_id: incontinence_aid_features
+  values_from: absorbent_hygiene_product_features
+- id: 3126
+  name: Medical alarm features
+  friendly_id: medical_alarm_features
+  values:
+  - medical_alarm_features__automatic_fall_detection
+  - medical_alarm_features__emergency_call_button
+  - medical_alarm_features__long_battery_life
+  - medical_alarm_features__long_range_connectivity
+  - medical_alarm_features__loud_alarm
+  - medical_alarm_features__mobile_app_integration
+  - medical_alarm_features__portable
+  - medical_alarm_features__remote_control
+  - medical_alarm_features__sos_button
+  - medical_alarm_features__two_way_communication
+  - medical_alarm_features__visual_alerts
+  - medical_alarm_features__waterproof
+- id: 3127
+  name: Mobility/Accessibility equipment features
+  friendly_id: mobility/accessibility_equipment_features
+  values:
+  - mobility/accessibility_equipment_features__adjustable_dimensions
+  - mobility/accessibility_equipment_features__anti_slip
+  - mobility/accessibility_equipment_features__brake_system
+  - mobility/accessibility_equipment_features__cane_holder
+  - mobility/accessibility_equipment_features__easy_to_operate_brakes
+  - mobility/accessibility_equipment_features__emergency_stop
+  - mobility/accessibility_equipment_features__ergonomic_design
+  - mobility/accessibility_equipment_features__foldable
+  - mobility/accessibility_equipment_features__high_weight_capacity
+  - mobility/accessibility_equipment_features__lightweight
+  - mobility/accessibility_equipment_features__lockable
+  - mobility/accessibility_equipment_features__lockable_rear_wheels
+  - mobility/accessibility_equipment_features__long_battery_life
+  - mobility/accessibility_equipment_features__obstacle_sensors
+  - mobility/accessibility_equipment_features__padded_seat
+  - mobility/accessibility_equipment_features__portable
+  - mobility/accessibility_equipment_features__remote_control
+  - mobility/accessibility_equipment_features__safety_belt
+  - mobility/accessibility_equipment_features__storage_options
+  - mobility/accessibility_equipment_features__swivel_front_wheels
+  - mobility/accessibility_equipment_features__tray
+  - mobility/accessibility_equipment_features__weather_resistant
+  - mobility/accessibility_equipment_features__other
+- id: 3128
+  name: Muscle stimulator design
+  friendly_id: muscle_stimulator_design
+  values:
+  - muscle_stimulator_design__belt
+  - muscle_stimulator_design__arm_band
+  - muscle_stimulator_design__leg_band
+  - muscle_stimulator_design__sticker_plate
+  - muscle_stimulator_design__electrodes_unit
+- id: 3129
+  name: Nebulizer design
+  friendly_id: nebulizer_design
+  values:
+  - nebulizer_design__tabletop
+  - nebulizer_design__handheld
+- id: 3130
+  name: Makeup features
+  friendly_id: makeup_features
+  values:
+  - makeup_features__buildable_coverage
+  - makeup_features__conditioning
+  - makeup_features__contains_hyaluronic_acid
+  - makeup_features__contains_vitamins
+  - makeup_features__durable
+  - makeup_features__easy_to_apply
+  - makeup_features__easy_to_remove
+  - makeup_features__fragrance_free
+  - makeup_features__high_pigmentation
+  - makeup_features__hydrating
+  - makeup_features__long_lasting
+  - makeup_features__moisturizing
+  - makeup_features__non_comedogenic
+  - makeup_features__non_drying
+  - makeup_features__non_irritating
+  - makeup_features__nourishing
+- id: 3131
+  name: Nail care features
+  friendly_id: nail_care_features
+  values:
+  - nail_care_features__chip_resistant
+  - nail_care_features__contains_calcium
+  - nail_care_features__contains_vitamins
+  - nail_care_features__durable
+  - nail_care_features__easy_to_apply
+  - nail_care_features__easy_to_remove
+  - nail_care_features__high_pigmentation
+  - nail_care_features__no_uv/led_curing_required
+  - nail_care_features__quick_drying
+  - nail_care_features__soak_off_formula
+  - nail_care_features__suitable_for_sensitive_skin
+  - nail_care_features__uv/led_curing_required
+- id: 3132
+  name: Ear care application method
+  friendly_id: ear_care_application_method
+  values:
+  - ear_care_application_method__dropper
+  - ear_care_application_method__nozzle
+- id: 3133
+  name: Feminine sanitary supply features
+  friendly_id: feminine_sanitary_supply_features
+  values:
+  - feminine_sanitary_supply_features__breathable_design
+  - feminine_sanitary_supply_features__contour_fit
+  - feminine_sanitary_supply_features__extra_coverage
+  - feminine_sanitary_supply_features__individually_wrapped
+  - feminine_sanitary_supply_features__leakproof
+  - feminine_sanitary_supply_features__long_length
+  - feminine_sanitary_supply_features__oil_free
+  - feminine_sanitary_supply_features__rapid_absorption
+  - feminine_sanitary_supply_features__ultra_thin
+  - feminine_sanitary_supply_features__wingless
+  - feminine_sanitary_supply_features__wings
+- id: 3134
+  name: Tampon features
+  friendly_id: tampon_features
+  values:
+  - tampon_features__comfortable_design
+  - tampon_features__compact_design
+  - tampon_features__easy_to_insert
+  - tampon_features__individually_wrapped
+  - tampon_features__leakproof
+- id: 3135
+  name: Hair styling tool features
+  friendly_id: hair_styling_tool_features
+  values:
+  - hair_styling_tool_features__adjustable_thermostat
+  - hair_styling_tool_features__auto_power_off
+  - hair_styling_tool_features__ceramic_heating_system
+  - hair_styling_tool_features__concentrator_nozzle
+  - hair_styling_tool_features__cool_shot_function
+  - hair_styling_tool_features__diffuser_nozzle
+  - hair_styling_tool_features__ionic_function
+  - hair_styling_tool_features__travel_size
+- id: 3136
+  name: Rug/Mat features
+  friendly_id: rug/mat_features
+  values:
+  - rug/mat_features__all_season
+  - rug/mat_features__anti_slip_base
+  - rug/mat_features__anti_slip_surface
+  - rug/mat_features__easy_to_clean
+  - rug/mat_features__heavy_duty
+  - rug/mat_features__interchangeable_surface
+  - rug/mat_features__low_profile
+  - rug/mat_features__made_to_order
+  - rug/mat_features__quick_drying
+  - rug/mat_features__uv_resistant_colors
+  - rug/mat_features__water_draining
+  - rug/mat_features__waterproof
+- id: 3137
+  name: Frame style
+  friendly_id: frame_style
+  values:
+  - frame_style__acrylic
+  - frame_style__braided
+  - frame_style__canvas
+  - frame_style__clip
+  - frame_style__floater
+  - frame_style__framed
+  - frame_style__gallery_wrapped
+  - frame_style__matted
+  - frame_style__modern
+  - frame_style__ornate
+  - frame_style__poster
+  - frame_style__rustic
+  - frame_style__shadow_box
+  - frame_style__unframed
+- id: 3138
+  name: Allergy-friendly features
+  friendly_id: allergy_friendly_features
+  values:
+  - allergy_friendly_features__chemical_free
+  - allergy_friendly_features__dust_mite_resistant
+  - allergy_friendly_features__hypoallergenic
+  - allergy_friendly_features__latex_free
+  - allergy_friendly_features__low_voc
+  - allergy_friendly_features__mold_resistant
+  - allergy_friendly_features__natural_materials
+- id: 3139
+  name: Rug features
+  friendly_id: rug_features
+  values_from: rug/mat_features
+- id: 3140
+  name: Dryer features
+  friendly_id: dryer_features
+  values_from: washer/dryer_features
+- id: 3141
+  name: Washer/Dryer features
+  friendly_id: washer/dryer_features
+  values:
+  - washer/dryer_features__add_garment_function
+  - washer/dryer_features__adjustable_spin
+  - washer/dryer_features__anti_crease_function
+  - washer/dryer_features__child_lock
+  - washer/dryer_features__delayed_start_timer
+  - washer/dryer_features__drum_interior_light
+  - washer/dryer_features__foam_control_system
+  - washer/dryer_features__half_load
+  - washer/dryer_features__inverter_technology
+  - washer/dryer_features__load_balancing_system
+  - washer/dryer_features__remaining_time_indication
+  - washer/dryer_features__self_cleaning
+  - washer/dryer_features__slats_included
+  - washer/dryer_features__slim_depth
+- id: 3142
+  name: Ironing features
+  friendly_id: ironing_features
+  values:
+  - ironing_features__anti_drip_function
+  - ironing_features__auto_power_off
+  - ironing_features__automatic_anti_calc
+  - ironing_features__continuous_steam
+  - ironing_features__non_twisting_cord
+  - ironing_features__self_cleaning
+  - ironing_features__spray_function
+  - ironing_features__steam_boost
+  - ironing_features__variable_steam
+  - ironing_features__vertical_steam
+- id: 3143
+  name: Washing machine features
+  friendly_id: washing_machine_features
+  values_from: washer/dryer_features
+- id: 3144
+  name: Mat features
+  friendly_id: mat_features
+  values_from: rug/mat_features
+- id: 3145
+  name: Laundry detergent features
+  friendly_id: laundry_detergent_features
+  values:
+  - laundry_detergent_features__brightener
+  - laundry_detergent_features__color_protection
+  - laundry_detergent_features__concentrated_formula
+  - laundry_detergent_features__contains_enzymes
+  - laundry_detergent_features__disinfectant
+  - laundry_detergent_features__safe_for_baby_clothes
+  - laundry_detergent_features__safe_for_dark_colors
+  - laundry_detergent_features__safe_for_delicates
+  - laundry_detergent_features__softener
+  - laundry_detergent_features__stain_removal
+  - laundry_detergent_features__suitable_for_cold_water_washing
+  - laundry_detergent_features__suitable_for_sensitive_skin
+  - laundry_detergent_features__white_laundry
+- id: 3146
+  name: Bakeware features
+  friendly_id: bakeware_features
+  values_from: cookware/bakeware_features
+- id: 3147
+  name: Cookware/Bakeware features
+  friendly_id: cookware/bakeware_features
+  values:
+  - cookware/bakeware_features__induction_ready
+  - cookware/bakeware_features__lid
+  - cookware/bakeware_features__lifetime_warranty
+  - cookware/bakeware_features__non_stick_coating
+  - cookware/bakeware_features__oven_safe
+  - cookware/bakeware_features__stay_cool_handle
+- id: 3148
+  name: Compatible stove top type
+  friendly_id: compatible_stove_top_type
+  values:
+  - compatible_stove_top_type__gas
+  - compatible_stove_top_type__halogen
+  - compatible_stove_top_type__induction
+  - compatible_stove_top_type__ceramic
+  - compatible_stove_top_type__sealed_plate
+- id: 3149
+  name: Cookware features
+  friendly_id: cookware_features
+  values_from: cookware/bakeware_features
+- id: 3150
+  name: Suitable for container type
+  friendly_id: suitable_for_container_type
+  values:
+  - suitable_for_container_type__bottle
+  - suitable_for_container_type__can
+  - suitable_for_container_type__universal
+- id: 3151
+  name: Stove top type
+  friendly_id: stove_top_type
+  values:
+  - stove_top_type__ceramic
+  - stove_top_type__coil
+  - stove_top_type__combi
+  - stove_top_type__gas
+  - stove_top_type__halogen
+  - stove_top_type__sealed_plate
+  - stove_top_type__zone_induction
+  - stove_top_type__zoneless_induction
+- id: 3152
+  name: Suitable for power equipment type
+  friendly_id: suitable_for_power_equipment_type
+  values:
+  - suitable_for_power_equipment_type__auger
+  - suitable_for_power_equipment_type__chainsaw
+  - suitable_for_power_equipment_type__cultivator
+  - suitable_for_power_equipment_type__dethatcher
+  - suitable_for_power_equipment_type__garden_shredder
+  - suitable_for_power_equipment_type__grass_edger
+  - suitable_for_power_equipment_type__hedge_trimmer
+  - suitable_for_power_equipment_type__lawn_mower
+  - suitable_for_power_equipment_type__lawn_sweeper
+  - suitable_for_power_equipment_type__lawn_vacuum
+  - suitable_for_power_equipment_type__leaf_blower
+  - suitable_for_power_equipment_type__log_splitter
+  - suitable_for_power_equipment_type__multi_tool
+  - suitable_for_power_equipment_type__pole_saw
+  - suitable_for_power_equipment_type__power_scrubber
+  - suitable_for_power_equipment_type__pressure_washer
+  - suitable_for_power_equipment_type__sand_blaster
+  - suitable_for_power_equipment_type__snow_blower
+  - suitable_for_power_equipment_type__tiller
+  - suitable_for_power_equipment_type__weed_trimmer
+  - suitable_for_power_equipment_type__other
+- id: 3153
+  name: Calendar/Organizer features
+  friendly_id: calendar/organizer_features
+  values:
+  - calendar/organizer_features__appointment_slots
+  - calendar/organizer_features__holidays_marked
+  - calendar/organizer_features__notes_section
+  - calendar/organizer_features__to_do_lists
+- id: 3154
+  name: Desk organizer features
+  friendly_id: desk_organizer_features
+  values:
+  - desk_organizer_features__adjustable_dividers
+  - desk_organizer_features__built_in_compartments
+  - desk_organizer_features__carrying_handle
+  - desk_organizer_features__clear_pockets
+  - desk_organizer_features__dividers
+  - desk_organizer_features__drawers
+  - desk_organizer_features__multiple_compartments
+  - desk_organizer_features__slots
+- id: 3155
+  name: Corrector features
+  friendly_id: corrector_features
+  values:
+  - corrector_features__no_drying_time
+  - corrector_features__precision_tip
+  - corrector_features__quick_drying
+- id: 3156
+  name: Envelope features
+  friendly_id: envelope_features
+  values:
+  - envelope_features__clasp_closure
+  - envelope_features__lined
+  - envelope_features__padded
+  - envelope_features__peel_seal
+  - envelope_features__security_tint
+  - envelope_features__self_sealing
+  - envelope_features__string_button_closure
+  - envelope_features__suitable_for_printing
+  - envelope_features__tamper_evident
+  - envelope_features__tear_resistant
+  - envelope_features__water_resistant
+  - envelope_features__windowed
+- id: 3157
+  name: Receipt paper features
+  friendly_id: receipt_paper_features
+  values:
+  - receipt_paper_features__carbonless
+  - receipt_paper_features__end_of_roll_indicator
+  - receipt_paper_features__pre_printed_logo
+  - receipt_paper_features__thermal_paper
+- id: 3158
+  name: Office cart features
+  friendly_id: office_cart_features
+  values:
+  - office_cart_features__adjustable_shelves
+  - office_cart_features__basket
+  - office_cart_features__cable_management
+  - office_cart_features__ergonomic_handle
+  - office_cart_features__handlebar
+  - office_cart_features__hanging_file_folders
+  - office_cart_features__lockable_drawers
+  - office_cart_features__lockable_wheels
+  - office_cart_features__mobility_wheels
+  - office_cart_features__multiple_shelves
+  - office_cart_features__push_handle
+  - office_cart_features__swivel
+- id: 3159
+  name: Calculator features
+  friendly_id: calculator_features
+  values:
+  - calculator_features__basic_arithmetic
+  - calculator_features__equation_solving
+  - calculator_features__fraction_calculation
+  - calculator_features__graphing_function
+  - calculator_features__investment_function
+  - calculator_features__lcd_display
+  - calculator_features__loan_calculation
+  - calculator_features__logarithmic_function
+  - calculator_features__measurement_conversion
+  - calculator_features__numeric_keypad
+  - calculator_features__statistical_analysis
+  - calculator_features__statistical_calculation
+  - calculator_features__time_value_of_money_calculation
+  - calculator_features__trigonometric_function
+- id: 3160
+  name: Transcriber/Dictation system features
+  friendly_id: transcriber/dictation_system_features
+  values_from: audio_player/recorder_features
+- id: 3161
+  name: Stapler features
+  friendly_id: stapler_features
+  values:
+  - stapler_features__jam_free_operation
+- id: 3162
+  name: Pen/Pencil features
+  friendly_id: pen/pencil_features
+  values:
+  - pen/pencil_features__eraser
+  - pen/pencil_features__refillable
+  - pen/pencil_features__retractable
+  - pen/pencil_features__scented
+- id: 3163
+  name: Pencil features
+  friendly_id: pencil_features
+  values_from: pen/pencil_features
+- id: 3164
+  name: Pen features
+  friendly_id: pen_features
+  values_from: pen/pencil_features
+- id: 3165
+  name: Presentation supply features
+  friendly_id: presentation_supply_features
+  values:
+  - presentation_supply_features__adjustable_angle
+  - presentation_supply_features__adjustable_height
+  - presentation_supply_features__erasable_surface
+  - presentation_supply_features__foldable
+  - presentation_supply_features__holding_tray
+  - presentation_supply_features__lightweight
+  - presentation_supply_features__magnetic_surface
+  - presentation_supply_features__marker_compatible
+  - presentation_supply_features__sturdy
+- id: 3166
+  name: Display board features
+  friendly_id: display_board_features
+  values:
+  - display_board_features__display_pockets
+  - display_board_features__fade_resistant
+  - display_board_features__lightweight
+  - display_board_features__magnetic_surface
+  - display_board_features__self_adhesive_backing
+  - display_board_features__self_healing_surface
+  - display_board_features__sturdy
+- id: 3167
+  name: Software features
+  friendly_id: software_features
+  values:
+  - software_features__ai_powered
+  - software_features__auto_backup
+  - software_features__auto_data_recovery
+  - software_features__automatic_updates
+  - software_features__built_in_templates
+  - software_features__cloud_based
+  - software_features__customizable_interface
+  - software_features__data_import/export
+  - software_features__encryption
+  - software_features__mobile_access
+  - software_features__multi_user_access
+  - software_features__multilingual_support
+  - software_features__offline_access
+  - software_features__parental_control
+  - software_features__phishing_protection
+  - software_features__privacy_protection
+  - software_features__ransomware_protection
+  - software_features__real_time_updates
+  - software_features__technical_support
+- id: 3168
+  name: Video game content features
+  friendly_id: video_game_content_features
+  values:
+  - video_game_content_features__downloadable_content_dlc
+  - video_game_content_features__early_access
+  - video_game_content_features__free_to_play
+- id: 3169
+  name: Softball discipline
+  friendly_id: softball_discipline
+  values:
+  - softball_discipline__fastpitch_softball
+  - softball_discipline__slowpitch_softball
+- id: 3170
+  name: Scoreboard features
+  friendly_id: scoreboard_features
+  values:
+  - scoreboard_features__cable_management
+  - scoreboard_features__collapsible
+  - scoreboard_features__easy_to_install
+  - scoreboard_features__foldable
+  - scoreboard_features__portable
+  - scoreboard_features__remote_control
+  - scoreboard_features__weather_resistant
+- id: 3171
+  name: Stopwatch features
+  friendly_id: stopwatch_features
+  values_from: timepiece_features
+- id: 3172
+  name: Joint connection
+  friendly_id: joint_connection
+  values:
+  - joint_connection__composite
+  - joint_connection__no_joint
+  - joint_connection__steel
+  - joint_connection__wood_to_wood
+- id: 3173
+  name: Joint face type
+  friendly_id: joint_face_type
+  values:
+  - joint_face_type__curved
+  - joint_face_type__flat
+  - joint_face_type__flush
+  - joint_face_type__full
+  - joint_face_type__piloted
+- id: 3174
+  name: Ping pong robot features
+  friendly_id: ping_pong_robot_features
+  values:
+  - ping_pong_robot_features__drill_grouping
+  - ping_pong_robot_features__drill_mirroring
+  - ping_pong_robot_features__drill_sharing
+  - ping_pong_robot_features__drill_tagging
+  - ping_pong_robot_features__pre_programmed_drills
+  - ping_pong_robot_features__random_settings
+  - ping_pong_robot_features__remote_control
+- id: 3175
+  name: Life jacket features
+  friendly_id: life_jacket_features
+  values:
+  - life_jacket_features__inflatable
+  - life_jacket_features__lightweight
+  - life_jacket_features__reflective
+- id: 3176
+  name: Display features
+  friendly_id: display_features
+  values:
+  - display_features__button_controls
+  - display_features__touchscreen
+- id: 3177
+  name: Bodyboard features
+  friendly_id: bodyboard_features
+  values_from: surfboard_features
+- id: 3178
+  name: Surfboard features
+  friendly_id: surfboard_features
+  values:
+  - surfboard_features__adjustable_strap
+  - surfboard_features__anti_slip
+  - surfboard_features__hard_top
+  - surfboard_features__inflatable
+  - surfboard_features__soft_top
+- id: 3179
+  name: Paddleboard features
+  friendly_id: paddleboard_features
+  values_from: surfboard_features
+- id: 3180
+  name: Waveski features
+  friendly_id: waveski_features
+  values_from: surfboard_features
+- id: 3181
+  name: Kneeboard features
+  friendly_id: kneeboard_features
+  values_from: surfboard_features
+- id: 3182
+  name: Air mattress features
+  friendly_id: air_mattress_features
+  values:
+  - air_mattress_features__easy_to_inflate
+  - air_mattress_features__puncture_resistant
+  - air_mattress_features__weather_resistant
+- id: 3183
+  name: Hand warmer type
+  friendly_id: hand_warmer_type
+  values:
+  - hand_warmer_type__air_activated
+  - hand_warmer_type__battery_powered
+  - hand_warmer_type__charcoal
+  - hand_warmer_type__lighter_fuel
+  - hand_warmer_type__supersaturated
+- id: 3184
+  name: Bicycle features
+  friendly_id: bicycle_features
+  values:
+  - bicycle_features__adjustable_handlebar
+  - bicycle_features__built_in_brake_light
+  - bicycle_features__built_in_front_light
+  - bicycle_features__certified_safety
+  - bicycle_features__heavy_duty_brakes
+  - bicycle_features__led_control_panel
+  - bicycle_features__luggage_rack
+  - bicycle_features__puncture_resistant_tires
+  - bicycle_features__telescoping_seat
+- id: 3185
+  name: Wader type
+  friendly_id: wader_type
+  values:
+  - wader_type__bootfoot
+  - wader_type__chest
+  - wader_type__hip
+  - wader_type__stockingfoot
+  - wader_type__thigh
+  - wader_type__waist
+- id: 3186
+  name: Airsoft equipment included
+  friendly_id: airsoft_equipment_included
+  values_from: paintball/airsoft_equipment_included
+- id: 3187
+  name: Bow/Crossbow features
+  friendly_id: bow/crossbow_features
+  values:
+  - bow/crossbow_features__adjustable_draw
+  - bow/crossbow_features__anti_dry_fire_mechanism
+  - bow/crossbow_features__illuminated_scope
+  - bow/crossbow_features__international_limb_fitting_system_ilf
+  - bow/crossbow_features__quick_detach_quiver
+  - bow/crossbow_features__safety_auto_engage
+- id: 3188
+  name: Bow features
+  friendly_id: bow_features
+  values_from: bow/crossbow_features
+- id: 3189
+  name: Paintball equipment included
+  friendly_id: paintball_equipment_included
+  values_from: paintball/airsoft_equipment_included
+- id: 3190
+  name: Game features
+  friendly_id: game_features
+  values:
+  - game_features__customizable
+  - game_features__light_sound_effects
+  - game_features__travel_friendly
+- id: 3191
+  name: Board game features
+  friendly_id: board_game_features
+  values:
+  - board_game_features__award_winning
+  - board_game_features__expansion_available
+  - board_game_features__multi_level
+  - board_game_features__quick_set_up
+- id: 3192
+  name: Doll/Playset features
+  friendly_id: doll/playset_features
+  values:
+  - doll/playset_features__accessory_set
+  - doll/playset_features__articulated_joints
+  - doll/playset_features__collectible
+  - doll/playset_features__interchangeable_parts
+  - doll/playset_features__limited_edition
+  - doll/playset_features__realistic_details
+  - doll/playset_features__waterproof
+- id: 3193
+  name: Toy figure features
+  friendly_id: toy_figure_features
+  values_from: doll/playset_features
+- id: 3194
+  name: Doll features
+  friendly_id: doll_features
+  values_from: doll/playset_features
+- id: 3195
+  name: Playset features
+  friendly_id: playset_features
+  values_from: doll/playset_features
+- id: 3196
+  name: Battery management features
+  friendly_id: battery_management_features
+  values:
+  - battery_management_features__cell_balancing
+  - battery_management_features__current_monitoring
+  - battery_management_features__data_logging
+  - battery_management_features__depth_of_discharge_dod_estimation
+  - battery_management_features__energy_efficiency_optimization
+  - battery_management_features__fault_detection
+  - battery_management_features__lifespan_prediction
+  - battery_management_features__preemptive_maintenance_alerts
+  - battery_management_features__remote_monitoring
+  - battery_management_features__state_of_charge_soc_estimation
+  - battery_management_features__state_of_health_soh_estimation
+  - battery_management_features__temperature_monitoring
+  - battery_management_features__thermal_management
+  - battery_management_features__voltage_monitoring
+- id: 3197
+  name: EV battery features
+  friendly_id: ev_battery_features
+  values:
+  - ev_battery_features__battery_health_monitoring
+  - ev_battery_features__fast_charge
+  - ev_battery_features__high_capacity
+  - ev_battery_features__long_cycle_life
+  - ev_battery_features__regenerative_braking_compatibility
+  - ev_battery_features__smart_battery_management_system
+  - ev_battery_features__thermal_management
+- id: 3198
+  name: Regenerative braking features
+  friendly_id: regenerative_braking_features
+  values:
+  - regenerative_braking_features__adjustable_regeneration_level
+  - regenerative_braking_features__automatic_activation
+  - regenerative_braking_features__brake_system_integration
+  - regenerative_braking_features__easy_to_install
+  - regenerative_braking_features__software_updates
+  - regenerative_braking_features__weather_resistant
+- id: 3199
+  name: Vehicle audio system features
+  friendly_id: vehicle_audio_system_features
+  values:
+  - vehicle_audio_system_features__bass_boost
+  - vehicle_audio_system_features__led_display
+  - vehicle_audio_system_features__level_controls
+  - vehicle_audio_system_features__line_driver
+  - vehicle_audio_system_features__preamp_stage
+  - vehicle_audio_system_features__remote_control
+  - vehicle_audio_system_features__subwoofer
+- id: 3200
+  name: Parking camera features
+  friendly_id: parking_camera_features
+  values:
+  - parking_camera_features__gps_support
+  - parking_camera_features__hd_video
+  - parking_camera_features__night_vision
+  - parking_camera_features__parking_lines
+  - parking_camera_features__touchscreen
+  - parking_camera_features__waterproof
+  - parking_camera_features__wide_angle
+- id: 3201
+  name: Vehicle braking features
+  friendly_id: vehicle_braking_features
+  values:
+  - vehicle_braking_features__corrosion_resistant
+  - vehicle_braking_features__drilled
+  - vehicle_braking_features__improved_heat_dissipation
+  - vehicle_braking_features__low_dust
+  - vehicle_braking_features__slotted
+  - vehicle_braking_features__ventilation
+- id: 3202
+  name: Vehicle oil features
+  friendly_id: vehicle_oil_features
+  values:
+  - vehicle_oil_features__corrosion_resistant
+  - vehicle_oil_features__energy_conserving
+  - vehicle_oil_features__high_filtration_efficiency
+  - vehicle_oil_features__high_flow
+  - vehicle_oil_features__high_temperature_protection
+  - vehicle_oil_features__low_pressure_drop
+  - vehicle_oil_features__low_temperature_protection
+  - vehicle_oil_features__wear_protection
+- id: 3203
+  name: Vehicle engine part features
+  friendly_id: vehicle_engine_part_features
+  values_from: vehicle_engine/part_features
+- id: 3204
+  name: Vehicle engine/part features
+  friendly_id: vehicle_engine/part_features
+  values:
+  - vehicle_engine/part_features__direct_fit
+  - vehicle_engine/part_features__fuel_efficient
+  - vehicle_engine/part_features__heat_resistant
+  - vehicle_engine/part_features__high_performance
+  - vehicle_engine/part_features__low_emissions
+  - vehicle_engine/part_features__performance_upgrade
+  - vehicle_engine/part_features__racing
+- id: 3205
+  name: Vehicle engine features
+  friendly_id: vehicle_engine_features
+  values_from: vehicle_engine/part_features
+- id: 3206
+  name: Vehicle frame/body features
+  friendly_id: vehicle_frame/body_features
+  values:
+  - vehicle_frame/body_features__adjustable
+  - vehicle_frame/body_features__carbon_fiber_look
+  - vehicle_frame/body_features__chrome_finish
+  - vehicle_frame/body_features__foldable
+  - vehicle_frame/body_features__led_lighting
+  - vehicle_frame/body_features__painted
+  - vehicle_frame/body_features__primed
+- id: 3207
+  name: Vehicle mirror features
+  friendly_id: vehicle_mirror_features
+  values:
+  - vehicle_mirror_features__auto_dimming
+  - vehicle_mirror_features__blind_spot_detection
+  - vehicle_mirror_features__heated
+  - vehicle_mirror_features__integrated_turn_signals
+  - vehicle_mirror_features__memory_function
+  - vehicle_mirror_features__powered
+  - vehicle_mirror_features__puddle_lights
+  - vehicle_mirror_features__wide_angle
+- id: 3208
+  name: Vehicle seating features
+  friendly_id: vehicle_seating_features
+  values:
+  - vehicle_seating_features__adjustable
+  - vehicle_seating_features__armrests
+  - vehicle_seating_features__headrest
+  - vehicle_seating_features__heated
+  - vehicle_seating_features__lumbar_support
+  - vehicle_seating_features__memory_function
+  - vehicle_seating_features__reclining
+- id: 3209
+  name: Vehicle suspension features
+  friendly_id: vehicle_suspension_features
+  values:
+  - vehicle_suspension_features__adjustable
+  - vehicle_suspension_features__ball_joint
+  - vehicle_suspension_features__bushings
+  - vehicle_suspension_features__coil_spring
+  - vehicle_suspension_features__gas_charged
+  - vehicle_suspension_features__hardware_included
+  - vehicle_suspension_features__hydraulic
+  - vehicle_suspension_features__strut_mount
+- id: 3210
+  name: Vehicle drive/handling features
+  friendly_id: vehicle_drive/handling_features
+  values:
+  - vehicle_drive/handling_features__adjustable
+  - vehicle_drive/handling_features__corrosion_resistant
+  - vehicle_drive/handling_features__hardware_included
+  - vehicle_drive/handling_features__heat_resistant
+  - vehicle_drive/handling_features__high_performance
+  - vehicle_drive/handling_features__wiring_included
+- id: 3211
+  name: Vehicle cleaning item features
+  friendly_id: vehicle_cleaning_item_features
+  values:
+  - vehicle_cleaning_item_features__ammonia_free
+  - vehicle_cleaning_item_features__durable
+  - vehicle_cleaning_item_features__high_gloss
+  - vehicle_cleaning_item_features__improved_fuel_efficiency
+  - vehicle_cleaning_item_features__non_streaking
+  - vehicle_cleaning_item_features__reduced_emissions
+  - vehicle_cleaning_item_features__restores_performance
+  - vehicle_cleaning_item_features__safe_for_tinted_windows
+  - vehicle_cleaning_item_features__uv_resistant
+  - vehicle_cleaning_item_features__water_repellent
+- id: 3212
+  name: Vehicle decor features
+  friendly_id: vehicle_decor_features
+  values:
+  - vehicle_decor_features__easy_to_apply
+  - vehicle_decor_features__heat_resistant
+  - vehicle_decor_features__non_fading
+  - vehicle_decor_features__scratch_resistant
+  - vehicle_decor_features__uv_resistant
+  - vehicle_decor_features__waterproof
+- id: 3213
+  name: Vehicle fluid features
+  friendly_id: vehicle_fluid_features
+  values:
+  - vehicle_fluid_features__anti_corrosion
+  - vehicle_fluid_features__anti_foam
+  - vehicle_fluid_features__anti_freeze
+  - vehicle_fluid_features__anti_glare
+  - vehicle_fluid_features__anti_overheat
+  - vehicle_fluid_features__anti_wear
+  - vehicle_fluid_features__biodegradable
+  - vehicle_fluid_features__corrosion_resistant
+  - vehicle_fluid_features__fast_acting
+  - vehicle_fluid_features__high_boiling_point
+  - vehicle_fluid_features__high_temperature_stability
+  - vehicle_fluid_features__improved_fuel_efficiency
+  - vehicle_fluid_features__improved_performance
+  - vehicle_fluid_features__long_lasting
+  - vehicle_fluid_features__low_viscosity
+  - vehicle_fluid_features__non_corrosive
+  - vehicle_fluid_features__non_flammable
+  - vehicle_fluid_features__non_synthetic
+  - vehicle_fluid_features__reduced_emissions
+  - vehicle_fluid_features__rustproof
+  - vehicle_fluid_features__sealant
+  - vehicle_fluid_features__synthetic
+  - vehicle_fluid_features__waterproof
+  - vehicle_fluid_features__other
+- id: 3214
+  name: Vehicle alarm/lock features
+  friendly_id: vehicle_alarm/lock_features
+  values:
+  - vehicle_alarm/lock_features__adjustable
+  - vehicle_alarm/lock_features__corrosion_resistant
+  - vehicle_alarm/lock_features__keyed_alike
+  - vehicle_alarm/lock_features__keyless_entry
+  - vehicle_alarm/lock_features__manual_lock
+  - vehicle_alarm/lock_features__panic_mode
+  - vehicle_alarm/lock_features__power_lock
+  - vehicle_alarm/lock_features__programmable
+  - vehicle_alarm/lock_features__remote_start
+  - vehicle_alarm/lock_features__shock_sensor
+  - vehicle_alarm/lock_features__shockproof
+  - vehicle_alarm/lock_features__trunk_release
+  - vehicle_alarm/lock_features__two_way_paging
+  - vehicle_alarm/lock_features__weather_resistant
+- id: 3215
+  name: Vehicle features
+  friendly_id: vehicle_features
+  values:
+  - vehicle_features__air_conditioning
+  - vehicle_features__canopy
+  - vehicle_features__cargo_rack
+  - vehicle_features__cruise_control
+  - vehicle_features__headlights
+  - vehicle_features__heated_grip
+  - vehicle_features__heated_seats
+  - vehicle_features__leather_seats
+  - vehicle_features__led_lighting
+  - vehicle_features__navigation_system
+  - vehicle_features__rearview_camera
+  - vehicle_features__rearview_mirror
+  - vehicle_features__roll_cage
+  - vehicle_features__saddlebags
+  - vehicle_features__sunroof
+  - vehicle_features__winch
+  - vehicle_features__windproof
+- id: 3216
+  name: Watercraft features
+  friendly_id: watercraft_features
+  values:
+  - watercraft_features__bathroom
+  - watercraft_features__bilge_pump
+  - watercraft_features__bimini_top
+  - watercraft_features__brake_system
+  - watercraft_features__cabin
+  - watercraft_features__flybridge
+  - watercraft_features__jacuzzi
+  - watercraft_features__kitchen
+  - watercraft_features__reverse
+  - watercraft_features__tow_hook
+- id: 3217
+  name: Personal watercraft type
+  friendly_id: personal_watercraft_type
+  values:
+  - personal_watercraft_type__stand_up
+  - personal_watercraft_type__sit_down
+  - personal_watercraft_type__sport
+  - personal_watercraft_type__luxury

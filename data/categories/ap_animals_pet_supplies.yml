@@ -117,24 +117,6 @@
   - material
 - id: ap-2-1-3
   name: Bird Food
-  children:
-  - ap-2-1-3-1
-  - ap-2-1-3-2
-  - ap-2-1-3-3
-  attributes:
-  - suitable_for_bird_type
-- id: ap-2-1-3-1
-  name: Compound Feed & Granules
-  children: []
-  attributes:
-  - suitable_for_bird_type
-- id: ap-2-1-3-2
-  name: Seeds
-  children: []
-  attributes:
-  - suitable_for_bird_type
-- id: ap-2-1-3-3
-  name: Worms
   children: []
   attributes:
   - suitable_for_bird_type
@@ -215,78 +197,6 @@
   - toy/game_material
 - id: ap-2-1-7
   name: Bird Treats
-  children:
-  - ap-2-1-7-1
-  - ap-2-1-7-2
-  - ap-2-1-7-3
-  - ap-2-1-7-4
-  - ap-2-1-7-5
-  - ap-2-1-7-6
-  - ap-2-1-7-7
-  - ap-2-1-7-8
-  - ap-2-1-7-9
-  attributes:
-  - package_type
-  - pet_supply_product_form
-  - suitable_for_bird_type
-- id: ap-2-1-7-1
-  name: Biscuits & Bakery
-  children: []
-  attributes:
-  - package_type
-  - pet_supply_product_form
-  - suitable_for_bird_type
-- id: ap-2-1-7-2
-  name: Cuttlebone & Mineral Blocks
-  children: []
-  attributes:
-  - package_type
-  - pet_supply_product_form
-  - suitable_for_bird_type
-- id: ap-2-1-7-3
-  name: Egg & Protein Treats
-  children: []
-  attributes:
-  - package_type
-  - pet_supply_product_form
-  - suitable_for_bird_type
-- id: ap-2-1-7-4
-  name: Fruit & Vegetables
-  children: []
-  attributes:
-  - package_type
-  - pet_supply_product_form
-  - suitable_for_bird_type
-- id: ap-2-1-7-5
-  name: Grit & Conditioning
-  children: []
-  attributes:
-  - package_type
-  - pet_supply_product_form
-  - suitable_for_bird_type
-- id: ap-2-1-7-6
-  name: Honey Sticks
-  children: []
-  attributes:
-  - package_type
-  - pet_supply_product_form
-  - suitable_for_bird_type
-- id: ap-2-1-7-7
-  name: Nectar & Pollen
-  children: []
-  attributes:
-  - package_type
-  - pet_supply_product_form
-  - suitable_for_bird_type
-- id: ap-2-1-7-8
-  name: Nuts
-  children: []
-  attributes:
-  - package_type
-  - pet_supply_product_form
-  - suitable_for_bird_type
-- id: ap-2-1-7-9
-  name: Pellets
   children: []
   attributes:
   - package_type
@@ -406,7 +316,8 @@
 - id: ap-2-2-4-1
   name: Cat Litter Box Liners
   children: []
-  attributes: []
+  attributes:
+  - liner_features
 - id: ap-2-2-4-2
   name: Cat Litter Box Mats
   children: []
@@ -493,42 +404,6 @@
   - toy/game_material
 - id: ap-2-2-6
   name: Cat Treats
-  children:
-  - ap-2-2-6-1
-  - ap-2-2-6-3
-  - ap-2-2-6-4
-  - ap-2-2-6-5
-  attributes:
-  - cat_age_group
-  - pet_food_flavor
-  - package_type
-  - pet_supply_product_form
-- id: ap-2-2-6-1
-  name: Catnip Treats
-  children: []
-  attributes:
-  - cat_age_group
-  - pet_food_flavor
-  - package_type
-  - pet_supply_product_form
-- id: ap-2-2-6-3
-  name: Freeze-Dried Treats
-  children: []
-  attributes:
-  - cat_age_group
-  - pet_food_flavor
-  - package_type
-  - pet_supply_product_form
-- id: ap-2-2-6-4
-  name: Hairball Controls
-  children: []
-  attributes:
-  - cat_age_group
-  - pet_food_flavor
-  - package_type
-  - pet_supply_product_form
-- id: ap-2-2-6-5
-  name: Soft & Chewy Treats
   children: []
   attributes:
   - cat_age_group
@@ -553,6 +428,7 @@
   children: []
   attributes:
   - accessory_size
+  - liner_features
   - material
 - id: ap-2-3-2
   name: Dog Diapers
@@ -560,6 +436,7 @@
   attributes:
   - accessory_size
   - color
+  - diaper_features
   - material
   - pattern
 - id: ap-2-3-3
@@ -593,6 +470,7 @@
   children: []
   attributes:
   - color
+  - dog_house_features
   - material
 - id: ap-2-3-5
   name: Dog Kennel & Run Accessories
@@ -609,36 +487,42 @@
   - ap-2-3-6-5
   attributes:
   - color
+  - dog_kennel/run_features
   - material
 - id: ap-2-3-6-1
   name: Dog Pens
   children: []
   attributes:
   - color
+  - dog_pen_features
   - material
 - id: ap-2-3-6-2
   name: Dog Runs
   children: []
   attributes:
   - color
+  - outdoor_equipment_features
   - material
 - id: ap-2-3-6-3
   name: Indoor Dog Kennels
   children: []
   attributes:
   - color
+  - dog_kennel_features
   - material
 - id: ap-2-3-6-4
   name: Outdoor Dog Kennels
   children: []
   attributes:
   - color
+  - dog_kennel_features
   - material
 - id: ap-2-3-6-5
   name: Portable Dog Kennels
   children: []
   attributes:
   - color
+  - dog_kennel_features
   - material
 - id: ap-2-3-7
   name: Dog Toys
@@ -648,59 +532,15 @@
 - id: ap-2-3-8
   name: Dog Treadmills
   children: []
-  attributes: []
+  attributes:
+  - exercise_machine_features
 - id: ap-2-3-9
   name: Dog Treats
-  children:
-  - ap-2-3-9-1
-  - ap-2-3-9-2
-  - ap-2-3-9-3
-  - ap-2-3-9-4
-  - ap-2-3-9-5
+  children: []
   attributes:
   - pet_dietary_requirements
   - dog_age_group
   - pet_food_flavor
-  - package_type
-  - pet_treat_texture
-- id: ap-2-3-9-1
-  name: Biscuits & Cookies
-  children: []
-  attributes:
-  - pet_dietary_requirements
-  - dog_age_group
-  - package_type
-  - pet_treat_texture
-- id: ap-2-3-9-2
-  name: Bone Chews
-  children: []
-  attributes:
-  - pet_dietary_requirements
-  - dog_age_group
-  - package_type
-  - pet_treat_texture
-- id: ap-2-3-9-3
-  name: Chewy Dog Treats
-  children: []
-  attributes:
-  - pet_dietary_requirements
-  - dog_age_group
-  - package_type
-  - pet_treat_texture
-- id: ap-2-3-9-4
-  name: Freeze-Dried Dog Treats
-  children: []
-  attributes:
-  - pet_dietary_requirements
-  - dog_age_group
-  - package_type
-  - pet_treat_texture
-- id: ap-2-3-9-5
-  name: Rawhide Dog Treats
-  children: []
-  attributes:
-  - pet_dietary_requirements
-  - dog_age_group
   - package_type
   - pet_treat_texture
 - id: ap-2-4
@@ -952,6 +792,7 @@
   - ap-2-4-5-4
   - ap-2-4-5-5
   attributes:
+  - aquarium_filter_features
   - filter_type
   - power_source
   - suitable_for_water_type
@@ -959,30 +800,35 @@
   name: External & Canister Aquarium Filters
   children: []
   attributes:
+  - aquarium_filter_features
   - power_source
   - suitable_for_water_type
 - id: ap-2-4-5-2
   name: Hang-On-Back (HOB) Aquarium Filters
   children: []
   attributes:
+  - aquarium_filter_features
   - power_source
   - suitable_for_water_type
 - id: ap-2-4-5-3
   name: Internal Aquarium Filters
   children: []
   attributes:
+  - aquarium_filter_features
   - power_source
   - suitable_for_water_type
 - id: ap-2-4-5-4
   name: Sponge Aquarium Filters
   children: []
   attributes:
+  - aquarium_filter_features
   - power_source
   - suitable_for_water_type
 - id: ap-2-4-5-5
   name: Undergravel Aquarium Filters
   children: []
   attributes:
+  - aquarium_filter_features
   - power_source
   - suitable_for_water_type
 - id: ap-2-4-6
@@ -1030,40 +876,49 @@
   - ap-2-4-7-6
   - ap-2-4-7-7
   attributes:
+  - substrate_features
   - gravel/substrate_material
 - id: ap-2-4-7-1
   name: Aquarium Soil
   children: []
-  attributes: []
+  attributes:
+  - substrate_features
 - id: ap-2-4-7-2
   name: Aragonite Sands
   children: []
-  attributes: []
+  attributes:
+  - substrate_features
 - id: ap-2-4-7-3
   name: Crushed Corals
   children: []
-  attributes: []
+  attributes:
+  - substrate_features
 - id: ap-2-4-7-4
   name: Glass Stones
   children: []
-  attributes: []
+  attributes:
+  - substrate_features
 - id: ap-2-4-7-5
   name: Gravel
   children: []
-  attributes: []
+  attributes:
+  - substrate_features
 - id: ap-2-4-7-6
   name: Pebbles
   children: []
-  attributes: []
+  attributes:
+  - substrate_features
 - id: ap-2-4-7-7
   name: Sand
   children: []
-  attributes: []
+  attributes:
+  - substrate_features
 - id: ap-2-4-8
   name: Aquarium Lighting
   children: []
   attributes:
   - aquarium_light_spectrum
+  - lighting_features
   - power_source
 - id: ap-2-4-9
   name: Aquarium Overflow Boxes
@@ -1399,6 +1254,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - fabric
   - pattern
 - id: ap-2-6-1
@@ -1408,6 +1264,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - fabric
   - pattern
 - id: ap-2-6-2
@@ -1417,6 +1274,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - fabric
   - pattern
 - id: ap-2-6-3
@@ -1426,6 +1284,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - fabric
   - pattern
 - id: ap-2-6-4
@@ -1435,6 +1294,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - fabric
   - pattern
 - id: ap-2-6-5
@@ -1444,6 +1304,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - fabric
   - pattern
 - id: ap-2-6-6
@@ -1453,6 +1314,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - fabric
   - pattern
 - id: ap-2-6-7
@@ -1462,6 +1324,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - fabric
   - pattern
 - id: ap-2-6-8
@@ -1471,6 +1334,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - fabric
   - pattern
 - id: ap-2-6-9
@@ -1480,6 +1344,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - fabric
   - pattern
 - id: ap-2-6-10
@@ -1489,6 +1354,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - fabric
   - pattern
 - id: ap-2-6-11
@@ -1498,6 +1364,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - fabric
   - pattern
 - id: ap-2-6-12
@@ -1507,6 +1374,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - fabric
   - pattern
 - id: ap-2-6-13
@@ -1516,6 +1384,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - fabric
   - pattern
 - id: ap-2-6-14
@@ -1525,6 +1394,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - footwear_material
   - pattern
 - id: ap-2-6-15
@@ -1534,6 +1404,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - fabric
   - pattern
 - id: ap-2-6-16
@@ -1543,6 +1414,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - material
   - pattern
 - id: ap-2-6-17
@@ -1552,6 +1424,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_apparel_features
   - fabric
   - pattern
 - id: ap-2-7
@@ -1585,6 +1458,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_bedding_features
   - material
   - pattern
   - shape
@@ -1596,6 +1470,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_bedding_features
   - basket_material
   - pattern
   - shape
@@ -1607,6 +1482,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_bedding_features
   - material
   - pattern
   - shape
@@ -1618,6 +1494,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_bedding_features
   - material
   - pattern
   - shape
@@ -1629,6 +1506,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_bedding_features
   - material
   - pattern
   - shape
@@ -1640,6 +1518,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_bedding_features
   - material
   - pattern
   - shape
@@ -1651,6 +1530,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_bedding_features
   - material
   - pattern
   - shape
@@ -1662,6 +1542,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_bedding_features
   - material
   - pattern
   - shape
@@ -1673,6 +1554,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_bedding_features
   - material
   - pattern
   - shape
@@ -1684,6 +1566,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_bedding_features
   - upholstery_material
   - pattern
   - shape
@@ -1695,6 +1578,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_bedding_features
   - material
   - pattern
   - shape
@@ -1706,6 +1590,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_bedding_features
   - material
   - pattern
   - shape
@@ -1717,6 +1602,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_bedding_features
   - material
   - pattern
   - shape
@@ -1728,6 +1614,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_bedding_features
   - material
   - pattern
   - shape
@@ -1739,21 +1626,25 @@
   - ap-2-10-2
   - ap-2-10-3
   attributes:
+  - pet_control_accessory_features
   - material
 - id: ap-2-10-1
   name: Collar Bells
   children: []
   attributes:
+  - pet_control_accessory_features
   - material
 - id: ap-2-10-2
   name: Collar Charms
   children: []
   attributes:
+  - pet_control_accessory_features
   - material
 - id: ap-2-10-3
   name: ID Tag Charms
   children: []
   attributes:
+  - pet_control_accessory_features
   - material
 - id: ap-2-11
   name: Pet Biometric Monitors
@@ -1768,6 +1659,7 @@
   children: []
   attributes:
   - connectivity_technology
+  - glucose_meter_features
   - pet_monitor_items_included
 - id: ap-2-11-2
   name: Pet Pedometers
@@ -1958,6 +1850,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-17-1
@@ -1967,6 +1860,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-17-2
@@ -1976,6 +1870,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-17-3
@@ -1985,6 +1880,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-17-4
@@ -1994,6 +1890,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-17-5
@@ -2003,6 +1900,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-17-6
@@ -2012,6 +1910,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-17-7
@@ -2021,6 +1920,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-17-8
@@ -2030,6 +1930,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-17-9
@@ -2039,6 +1940,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-17-10
@@ -2048,6 +1950,7 @@
   - accessory_size
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-18
@@ -2530,6 +2433,7 @@
   attributes:
   - accessory_size
   - animal_type
+  - pet_control_accessory_features
   - material
 - id: ap-2-29-1
   name: Digital QR Code Tags
@@ -2537,6 +2441,7 @@
   attributes:
   - accessory_size
   - animal_type
+  - pet_control_accessory_features
   - material
 - id: ap-2-29-2
   name: Embroidered Tags
@@ -2544,6 +2449,7 @@
   attributes:
   - accessory_size
   - animal_type
+  - pet_control_accessory_features
   - material
 - id: ap-2-29-3
   name: Medical Alert Tags
@@ -2551,6 +2457,7 @@
   attributes:
   - accessory_size
   - animal_type
+  - pet_control_accessory_features
   - material
 - id: ap-2-29-4
   name: Slide-On Collar Tags
@@ -2558,6 +2465,7 @@
   attributes:
   - accessory_size
   - animal_type
+  - pet_control_accessory_features
   - material
 - id: ap-2-30
   name: Pet Leash Extensions
@@ -2576,6 +2484,7 @@
   attributes:
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-31-1
@@ -2584,6 +2493,7 @@
   attributes:
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-31-2
@@ -2592,6 +2502,7 @@
   attributes:
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-31-3
@@ -2600,6 +2511,7 @@
   attributes:
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-31-4
@@ -2608,6 +2520,7 @@
   attributes:
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-31-5
@@ -2616,6 +2529,7 @@
   attributes:
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-31-6
@@ -2624,6 +2538,7 @@
   attributes:
   - animal_type
   - color
+  - pet_control_accessory_features
   - material
   - pattern
 - id: ap-2-32
@@ -2632,6 +2547,7 @@
   attributes:
   - accessory_size
   - animal_type
+  - pet_control_accessory_features
 - id: ap-2-33
   name: Pet Medical Tape & Bandages
   children: []
@@ -2697,6 +2613,7 @@
   children: []
   attributes:
   - color
+  - pet_control_accessory_features
   - material
 - id: ap-2-36
   name: Pet Oral Care Supplies
@@ -2771,6 +2688,7 @@
   attributes:
   - accessory_size
   - color
+  - stroller_features
   - material
 - id: ap-2-39-1
   name: Detachable Carrier Pet Strollers
@@ -2778,6 +2696,7 @@
   attributes:
   - accessory_size
   - color
+  - stroller_features
   - material
 - id: ap-2-39-2
   name: Double-Decker Strollers
@@ -2785,6 +2704,7 @@
   attributes:
   - accessory_size
   - color
+  - stroller_features
   - material
 - id: ap-2-39-3
   name: Jogging Strollers
@@ -2792,6 +2712,7 @@
   attributes:
   - accessory_size
   - color
+  - stroller_features
   - material
 - id: ap-2-39-4
   name: Multi-Strollers
@@ -2799,6 +2720,7 @@
   attributes:
   - accessory_size
   - color
+  - stroller_features
   - material
 - id: ap-2-39-5
   name: Standard Strollers
@@ -2806,11 +2728,13 @@
   attributes:
   - accessory_size
   - color
+  - stroller_features
   - material
 - id: ap-2-40
   name: Pet Sunscreen
   children: []
   attributes:
+  - skin_care_features
   - pet_supply_product_form
   - spf_level
 - id: ap-2-41
@@ -2840,6 +2764,7 @@
   attributes:
   - animal_type
   - color
+  - pet_pad_features
   - material
 - id: ap-2-41-2-1
   name: Grid-Top Pad Holders
@@ -2847,6 +2772,7 @@
   attributes:
   - animal_type
   - color
+  - pet_pad_features
   - material
 - id: ap-2-41-2-2
   name: Regular Pad Holders
@@ -2854,6 +2780,7 @@
   attributes:
   - animal_type
   - color
+  - pet_pad_features
   - material
 - id: ap-2-41-2-3
   name: Wall-Mounted Pad Holders
@@ -2861,6 +2788,7 @@
   attributes:
   - animal_type
   - color
+  - pet_pad_features
   - material
 - id: ap-2-41-3
   name: Pet Training Pads
@@ -2868,6 +2796,7 @@
   attributes:
   - animal_type
   - color
+  - pet_pad_features
   - material
 - id: ap-2-41-4
   name: Pet Training Sprays & Solutions
@@ -2889,6 +2818,7 @@
   - ap-2-42-8
   - ap-2-42-9
   - ap-2-42-10
+  - ap-2-42-11
   attributes:
   - pet_food_flavor
   - pet_supply_product_form
@@ -2946,6 +2876,12 @@
   attributes:
   - pet_food_flavor
   - pet_supply_product_form
+- id: ap-2-42-11
+  name: CBD Supplements
+  children: []
+  attributes:
+  - pet_food_flavor
+  - pet_supply_product_form
 - id: ap-2-43
   name: Pet Waste Bag Dispensers & Holders
   children:
@@ -2989,6 +2925,7 @@
   children: []
   attributes:
   - color
+  - waste_bag_features
   - disposable_bag_material
 - id: ap-2-45-2
   name: Litter Trays
@@ -3035,6 +2972,7 @@
   children: []
   attributes:
   - animal_type
+  - lighting_features
   - light_color
   - material
 - id: ap-2-46-4
@@ -3216,4 +3154,5 @@
   children: []
   attributes:
   - color
+  - features
   - material

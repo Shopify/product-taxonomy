@@ -47,6 +47,7 @@
   name: Book Stands & Rests
   children: []
   attributes:
+  - mount/stand_features
   - material
 - id: os-1-4
   name: Bookmarks
@@ -172,6 +173,7 @@
   children: []
   attributes:
   - color
+  - mount/stand_features
   - material
   - pattern
 - id: os-3-5
@@ -190,6 +192,7 @@
   attributes:
   - calendar_format
   - color
+  - calendar/organizer_features
   - pattern
 - id: os-3-5-2
   name: Organizers
@@ -197,6 +200,7 @@
   attributes:
   - calendar_format
   - color
+  - calendar/organizer_features
   - pattern
 - id: os-3-5-3
   name: Planners
@@ -204,6 +208,7 @@
   attributes:
   - calendar_format
   - color
+  - calendar/organizer_features
   - pattern
 - id: os-3-5-4
   name: Wall Calendars
@@ -211,6 +216,7 @@
   attributes:
   - calendar_format
   - color
+  - calendar/organizer_features
   - pattern
 - id: os-3-6
   name: Card Files
@@ -236,6 +242,7 @@
   children: []
   attributes:
   - color
+  - bag/case_features
   - bag/case_material
   - pattern
 - id: os-3-10
@@ -247,6 +254,7 @@
   - os-3-10-4
   attributes:
   - color
+  - desk_organizer_features
   - material
   - pattern
 - id: os-3-10-1
@@ -254,6 +262,7 @@
   children: []
   attributes:
   - color
+  - desk_organizer_features
   - material
   - pattern
 - id: os-3-10-2
@@ -261,6 +270,7 @@
   children: []
   attributes:
   - color
+  - desk_organizer_features
   - material
   - pattern
 - id: os-3-10-3
@@ -268,6 +278,7 @@
   children: []
   attributes:
   - color
+  - desk_organizer_features
   - material
   - pattern
 - id: os-3-10-4
@@ -275,6 +286,7 @@
   children: []
   attributes:
   - color
+  - desk_organizer_features
   - material
   - pattern
 - id: os-3-11
@@ -338,6 +350,7 @@
   children: []
   attributes:
   - color
+  - bag/case_features
   - bag/case_material
   - pattern
 - id: os-3-17
@@ -399,19 +412,23 @@
   - os-4-2-1
   - os-4-2-2
   - os-4-2-3
-  attributes: []
+  attributes:
+  - corrector_features
 - id: os-4-2-1
   name: Correction Fluids
   children: []
-  attributes: []
+  attributes:
+  - corrector_features
 - id: os-4-2-2
   name: Correction Pens
   children: []
-  attributes: []
+  attributes:
+  - corrector_features
 - id: os-4-2-3
   name: Correction Tapes
   children: []
-  attributes: []
+  attributes:
+  - corrector_features
 - id: os-4-3
   name: Erasers
   children:
@@ -617,6 +634,7 @@
   children: []
   attributes:
   - color
+  - envelope_features
 - id: os-4-9-8
   name: Index Cards
   children: []
@@ -625,20 +643,10 @@
 - id: os-4-9-9
   name: Notebooks & Notepads
   children:
-  - os-4-9-9-1
   - os-4-9-9-3
   - os-4-9-9-4
   - os-4-9-9-5
   - os-4-9-9-6
-  - os-4-9-9-9
-  attributes:
-  - color
-  - paper_type
-  - pattern
-  - sheet_color
-- id: os-4-9-9-1
-  name: Composition Notebooks
-  children: []
   attributes:
   - color
   - paper_type
@@ -676,14 +684,6 @@
   - paper_type
   - pattern
   - sheet_color
-- id: os-4-9-9-9
-  name: Subject Notebooks
-  children: []
-  attributes:
-  - color
-  - paper_type
-  - pattern
-  - sheet_color
 - id: os-4-9-10
   name: Post Cards
   children: []
@@ -701,6 +701,7 @@
   children: []
   attributes:
   - color
+  - receipt_paper_features
 - id: os-4-9-13
   name: Stationery
   children: []
@@ -784,16 +785,19 @@
   name: Anti-Fatigue Mats
   children: []
   attributes:
+  - mat_features
   - rug/mat_material
 - id: os-8-2
   name: Chair Mats
   children: []
   attributes:
+  - mat_features
   - rug/mat_material
 - id: os-8-3
   name: Office Mats
   children: []
   attributes:
+  - mat_features
   - rug/mat_material
 - id: os-9
   name: Office Carts
@@ -809,26 +813,31 @@
   name: AV Carts
   children: []
   attributes:
+  - office_cart_features
   - material
 - id: os-9-2
   name: Book Carts
   children: []
   attributes:
+  - office_cart_features
   - material
 - id: os-9-3
   name: File Carts
   children: []
   attributes:
+  - office_cart_features
   - material
 - id: os-9-4
   name: Mail Carts
   children: []
   attributes:
+  - office_cart_features
   - material
 - id: os-9-5
   name: Utility Carts
   children: []
   attributes:
+  - office_cart_features
   - material
 - id: os-10
   name: Office Equipment
@@ -861,23 +870,28 @@
 - id: os-10-2-1
   name: Basic Calculators
   children: []
-  attributes: []
+  attributes:
+  - calculator_features
 - id: os-10-2-2
   name: Construction Calculators
   children: []
-  attributes: []
+  attributes:
+  - calculator_features
 - id: os-10-2-3
   name: Financial Calculators
   children: []
-  attributes: []
+  attributes:
+  - calculator_features
 - id: os-10-2-4
   name: Graphing Calculators
   children: []
-  attributes: []
+  attributes:
+  - calculator_features
 - id: os-10-2-5
   name: Scientific Calculators
   children: []
-  attributes: []
+  attributes:
+  - calculator_features
 - id: os-10-3
   name: Electronic Dictionaries & Translators
   children: []
@@ -912,6 +926,7 @@
   attributes:
   - audio_codecs/formats_supported
   - connectivity_technology
+  - transcriber/dictation_system_features
   - recording_quality
 - id: os-10-10
   name: Typewriters
@@ -1125,6 +1140,7 @@
   children: []
   attributes:
   - color
+  - stapler_features
   - office_instrument_material
   - pattern
 - id: os-11-8-2
@@ -1132,6 +1148,7 @@
   children: []
   attributes:
   - color
+  - stapler_features
   - office_instrument_material
   - pattern
 - id: os-11-8-3
@@ -1139,6 +1156,7 @@
   children: []
   attributes:
   - color
+  - stapler_features
   - office_instrument_material
   - pattern
 - id: os-11-8-4
@@ -1146,6 +1164,7 @@
   children: []
   attributes:
   - color
+  - stapler_features
   - office_instrument_material
   - pattern
 - id: os-11-8-5
@@ -1153,6 +1172,7 @@
   children: []
   attributes:
   - color
+  - stapler_features
   - office_instrument_material
   - pattern
 - id: os-11-8-6
@@ -1160,6 +1180,7 @@
   children: []
   attributes:
   - color
+  - stapler_features
   - office_instrument_material
   - pattern
 - id: os-11-8-7
@@ -1167,6 +1188,7 @@
   children: []
   attributes:
   - color
+  - stapler_features
   - office_instrument_material
   - pattern
 - id: os-11-8-8
@@ -1174,6 +1196,7 @@
   children: []
   attributes:
   - color
+  - stapler_features
   - office_instrument_material
   - pattern
 - id: os-11-8-9
@@ -1181,6 +1204,7 @@
   children: []
   attributes:
   - color
+  - stapler_features
   - office_instrument_material
   - pattern
 - id: os-11-9
@@ -1388,6 +1412,7 @@
   children: []
   attributes:
   - color
+  - pen/pencil_features
   - pen_type
 - id: os-11-11-6
   name: Pastels
@@ -1443,6 +1468,7 @@
   children: []
   attributes:
   - color
+  - pen/pencil_features
   - pen_type
   - pencil_type
 - id: os-11-11-7-2
@@ -1450,28 +1476,33 @@
   children:
   - os-11-11-7-2-1
   - os-11-11-7-2-2
-  attributes: []
+  attributes:
+  - pencil_features
 - id: os-11-11-7-2-1
   name: Art Pencils
   children: []
   attributes:
+  - pencil_features
   - lead_grade
 - id: os-11-11-7-2-2
   name: Writing Pencils
   children:
   - os-11-11-7-2-2-1
   - os-11-11-7-2-2-2
-  attributes: []
+  attributes:
+  - pencil_features
 - id: os-11-11-7-2-2-1
   name: Mechanical Pencils
   children: []
   attributes:
   - color
+  - pencil_features
 - id: os-11-11-7-2-2-2
   name: Wooden Pencils
   children: []
   attributes:
   - color
+  - pencil_features
   - lead_grade
   - pattern
 - id: os-11-11-7-3
@@ -1488,6 +1519,7 @@
   name: Ballpoint Pens
   children: []
   attributes:
+  - pen_features
   - ink_color
   - pen_color
   - pen_tip_design
@@ -1495,6 +1527,7 @@
   name: Felt Tips
   children: []
   attributes:
+  - pen_features
   - felt_tip_design
   - ink_color
   - pen_color
@@ -1502,6 +1535,7 @@
   name: Fountain Pens
   children: []
   attributes:
+  - pen_features
   - ink_color
   - pen_color
   - pen_tip_design
@@ -1509,6 +1543,7 @@
   name: Gel Pens
   children: []
   attributes:
+  - pen_features
   - ink_color
   - pen_color
   - pen_tip_design
@@ -1516,6 +1551,7 @@
   name: Rollerball Pens
   children: []
   attributes:
+  - pen_features
   - ink_color
   - pen_color
   - pen_tip_design
@@ -1585,6 +1621,7 @@
   attributes:
   - board_mounting_type
   - chalkboard_surface
+  - presentation_supply_features
   - frame_design
   - board_material
 - id: os-13-2
@@ -1598,6 +1635,7 @@
   attributes:
   - board_mounting_type
   - board_surface
+  - display_board_features
   - frame_design
   - board_material
 - id: os-13-2-1
@@ -1612,6 +1650,7 @@
   children: []
   attributes:
   - color
+  - display_board_features
   - office_supply_material
   - pattern
 - id: os-13-2-1-2
@@ -1619,6 +1658,7 @@
   children: []
   attributes:
   - color
+  - display_board_features
   - office_supply_material
   - pattern
 - id: os-13-2-2
@@ -1626,6 +1666,7 @@
   children: []
   attributes:
   - board_mounting_type
+  - display_board_features
   - frame_design
   - board_material
 - id: os-13-2-3
@@ -1633,11 +1674,13 @@
   children: []
   attributes:
   - board_mounting_type
+  - display_board_features
 - id: os-13-2-4
   name: Mounting Boards
   children: []
   attributes:
   - board_mounting_type
+  - display_board_features
 - id: os-13-2-5
   name: Poster Boards
   children: []
@@ -1656,17 +1699,20 @@
   children: []
   attributes:
   - board_mounting_type
+  - presentation_supply_features
   - frame_design
   - board_material
 - id: os-13-5
   name: Easel Pads
   children: []
   attributes:
+  - presentation_supply_features
   - paper_type
 - id: os-13-6
   name: Easels
   children: []
   attributes:
+  - presentation_supply_features
   - material
 - id: os-13-7
   name: Laser Pointers
