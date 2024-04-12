@@ -1,3 +1,12 @@
+## 0.15.0 (Apr 12, 2024)
+
+### Taxonomy Attribute Updates
+
+- Product attributes in the taxonomy have been further refined, adding new 'Features'-based attributes
+- Nested data within `data/` directory files are now sorted alphabetically
+  - data/categories/*.yml: `category.attributes` array
+  - data/attributes.yml: `attribute.values` array
+
 ## 0.14.0 (Apr 9, 2024)
 
 - Add `parent_id` field to attributes.json dist output
