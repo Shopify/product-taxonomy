@@ -2,6 +2,16 @@
 
 class MappingBuilder
   class << self
+    def simple_mapping(mapping_rules:)
+      mapping_rules
+        .map do
+          {
+            input: _1.input.payload.compact,
+            output: _1.output.payload.compact,
+          }
+        end
+    end
+
     def build_category_to_category_mappings_for_vertical(mapping_rules:, vertical:)
       mapping_rules
         .select { _1.input.product_category_id.start_with?(vertical.id) }

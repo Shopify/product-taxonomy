@@ -18,6 +18,7 @@ module SourceData
       if product_type == "ShopifyProduct"
         properties = payload.delete("attributes")
         payload["properties"] = properties
+        payload["product_category_id"] = "gid://shopify/TaxonomyCategory/#{payload["product_category_id"]}"
       end
       Product.new(payload: payload, type: product_type)
     end
