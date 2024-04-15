@@ -1,3 +1,9 @@
+## 0.16.0 (Apr 15, 2024)
+
+### Taxonomy Mappings
+
+- Add mapping data from shopify/2022-02 to new shopify categories
+
 ## 0.15.0 (Apr 12, 2024)
 
 ### Taxonomy Attribute Updates
