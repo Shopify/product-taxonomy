@@ -67,11 +67,23 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
   end
 
   test "Attributes are consistent with attributes.yml" do
-    @raw_attributes_data.each do |raw_attribute|
-      deserialized_attribute = SourceData::PropertySerializer.deserialize(raw_attribute)
+    standard_attributes, reference_attributes = @raw_attributes_data.partition { _1["values_from"].nil? }
+
+    standard_attributes.each do |raw_attribute|
+      deserialized_attribute = SourceData::BasePropertySerializer.deserialize(raw_attribute)
       real_attribute = Property.find(raw_attribute.fetch("id"))
 
       assert_equal deserialized_attribute, real_attribute
+    end
+
+    reference_attributes.each do |raw_attribute|
+      deserialized_attribute = SourceData::ExtendedPropertySerializer.deserialize(raw_attribute)
+      real_attribute = Property.find_by(
+        name: raw_attribute.fetch("name"),
+        base_friendly_id: raw_attribute.fetch("values_from"),
+      )
+
+      assert_equal deserialized_attribute.attributes.except("id"), real_attribute.attributes.except("id")
     end
   end
 
@@ -79,10 +91,13 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     @raw_attributes_data.each do |raw_attribute|
       next unless raw_attribute.key?("values_from")
 
-      real_attribute = Property.find(raw_attribute.fetch("id"))
+      real_attribute = Property.find_by(
+        name: raw_attribute.fetch("name"),
+        base_friendly_id: raw_attribute.fetch("values_from"),
+      )
       real_parent_property = Property.find_by!(friendly_id: raw_attribute.fetch("values_from"))
 
-      assert_equal real_parent_property, real_attribute.parent
+      assert_equal real_parent_property, real_attribute.base_property
     end
   end
 
@@ -134,10 +149,13 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
 
   test "Attribute ↔ Value relationships are consistent with attributes.yml when values are inherited" do
     @raw_attributes_data.select { _1.key?("values_from") }.each do |raw_attribute|
-      values_via_raw_id = Property.find(raw_attribute.fetch("id")).property_values
-      values_via_raw_values_from = Property.find_by(friendly_id: raw_attribute.fetch("values_from")).property_values
+      property_via_source = Property.find_by(
+        name: raw_attribute.fetch("name"),
+        base_friendly_id: raw_attribute.fetch("values_from"),
+      )
+      property_via_values_from = Property.find_by(friendly_id: raw_attribute.fetch("values_from"))
 
-      assert_equal values_via_raw_values_from.sort, values_via_raw_id.sort
+      assert_equal property_via_values_from.property_values.sort, property_via_source.property_values.sort
     end
   end
 

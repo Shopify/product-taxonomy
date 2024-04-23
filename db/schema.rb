@@ -10,7 +10,7 @@ ActiveRecord::Schema[7.1].define do
   create_table :properties, force: :cascade do |t|
     t.string(:name, null: false)
     t.string(:friendly_id, null: false)
-    t.string(:parent_friendly_id)
+    t.string(:base_friendly_id)
 
     t.index(:friendly_id, unique: true)
   end

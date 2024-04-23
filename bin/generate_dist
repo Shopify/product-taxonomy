@@ -14,6 +14,7 @@ puts("Generating `#{cli.options.version}` distribution files...")
 cli.options_status
 
 Application.establish_db_connection!
+
 text_serializer = Dist::TextSerializer.new(
   verticals: Category.verticals,
   properties: Property.all,

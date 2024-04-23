@@ -13,7 +13,7 @@ module Dist
       output = {
         version: @version,
         verticals: @verticals.map(&method(:serialize_vertical)),
-        attributes: @properties.map(&method(:serialize_property)),
+        attributes: @properties.base.map(&method(:serialize_base_property)),
       }
       ::JSON.pretty_generate(output)
     end
@@ -29,7 +29,7 @@ module Dist
     def attributes
       output = {
         version: @version,
-        attributes: @properties.map(&method(:serialize_property)),
+        attributes: @properties.base.map(&method(:serialize_base_property)),
       }
       ::JSON.pretty_generate(output)
     end
@@ -59,17 +59,25 @@ module Dist
         name: category.name,
         full_name: category.full_name,
         parent_id: category.parent&.gid,
-        attributes: category.properties.map(&method(:serialize_nested)),
+        attributes: category.properties.map(&method(:serialize_nested_attribute)),
         children: category.children.map(&method(:serialize_nested)),
         ancestors: category.ancestors.map(&method(:serialize_nested)),
       }
     end
 
-    def serialize_property(property)
+    def serialize_nested_attribute(property)
       {
         id: property.gid,
         name: property.name,
-        parent_id: property.parent&.gid,
+        extended: property.extended?,
+      }
+    end
+
+    def serialize_base_property(property)
+      {
+        id: property.gid,
+        name: property.name,
+        extended_attributes: property.extended_properties.map { serialize_nested(_1).except(:id) },
         values: property.property_values.map(&method(:serialize_nested)),
       }
     end
