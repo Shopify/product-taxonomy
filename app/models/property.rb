@@ -20,6 +20,9 @@ class Property < ApplicationRecord
   end
 
   validates :name, presence: true
+  validates :friendly_id, presence: true, uniqueness: true
+  validates :handle, presence: true
+  validate :property_values_match_base, if: :extended?
 
   def gid
     "gid://shopify/TaxonomyAttribute/#{id}"
