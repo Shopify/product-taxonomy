@@ -4,7 +4,7 @@ module Dist
   class TextSerializer
     def initialize(verticals:, properties:, values:, version:)
       @verticals = verticals
-      @properties = properties
+      @properties = properties.base
       @values = values
       @version = version
     end
