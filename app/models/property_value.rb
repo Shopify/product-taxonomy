@@ -21,6 +21,7 @@ class PropertyValue < ApplicationRecord
 
   validates :name, presence: true
   validates :friendly_id, presence: true
+  validates :handle, presence: true, uniqueness: { scope: :primary_property_friendly_id }
 
   def gid
     "gid://shopify/TaxonomyValue/#{id}"

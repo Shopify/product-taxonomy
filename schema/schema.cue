@@ -1,29 +1,33 @@
 package product_taxonomy
 
 #attribute_gid_regex: "^gid://shopify/TaxonomyAttribute/\\d+$"
-#value_gid_regex: "^gid://shopify/TaxonomyValue/\\d+$"
+#value_gid_regex:     "^gid://shopify/TaxonomyValue/\\d+$"
+
 #category_gid_regex: "^gid://shopify/TaxonomyCategory/[a-zA-Z]{2}(-\\d+)*$"
 
 // This file defines and enforces the shape of the data for dist/attributes.json and dist/categories.json
-// There are additional validations handled in validations.cue in this directory but use this to understand
-// the shape of the data.
+// Data validations are handled by the application test-suite
 
-// Both the categories.json and attributes.json file are imported into this cue package for the purposes
-// of this validation. These keys might all be in one file, or split across multiple, cue doesn't care.
-
-// Present in categories.json / categories_data.cue. If this is specified in multiple files this enforces their equality.
+// Present in categories.json / attributes.json / taxonomy.json. If this is specified in multiple files this enforces their equality.
 version!: string & =~"^\\d+.\\d+.\\d+$"
 
-// Present in attributes.json / attributes_data.cue
+// Present in attributes.json / taxonomy.json
 attributes!: [
 	...{
-		id!:      string & =~#attribute_gid_regex
-		name!:    string
+		id!:     string & =~#attribute_gid_regex
+		name!:   string
+		handle!: string
+		extended_attributes!: [
+			...{
+				name!:   string
+				handle!: string
+			},
+		]
 		values!: [
 			...{
-				// TODO: Consider this for categories somehow
-				id!:   string & =~#value_gid_regex
-				name!: string
+				id!:     string & =~#value_gid_regex
+				name!:   string
+				handle!: string
 			},
 		]
 	},
@@ -31,23 +35,24 @@ attributes!: [
 
 _category_reference: {
 	id!:   string & =~#category_gid_regex
-	name!: validations.category_lookup[id]
+	name!: string
 }
 
-// Present in categories.json / categories_data.cue
+// Present in categories.json / taxonomy.json
 verticals!: [...{
 	name!:   string
 	prefix!: string & =~"^[a-zA-Z]{2}$"
 	categories!: [...{
 		id!:        string & =~#category_gid_regex
-		name!:      validations.category_lookup[id]
+		name!:      string
 		level!:     int & >=0
 		full_name!: string
 		parent_id:  null | string & =~#category_gid_regex
 		attributes!: [...{
-			id!: string & =~#attribute_gid_regex
-			// The name must match the name of the attribute being referenced
-			name!: string & validations.attribute_lookup[id]
+			id!:       string & =~#attribute_gid_regex
+			name!:     string
+			handle!:   string
+			extended!: bool
 		}]
 		children!: [..._category_reference]
 		ancestors!: [..._category_reference]

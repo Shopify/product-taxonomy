@@ -10,13 +10,15 @@ ActiveRecord::Schema[7.1].define do
   create_table :properties, force: :cascade do |t|
     t.string(:name, null: false)
     t.string(:friendly_id, null: false)
-    t.string(:parent_friendly_id)
+    t.string(:base_friendly_id)
+    t.string(:handle, null: false)
 
     t.index(:friendly_id, unique: true)
   end
   create_table :property_values, force: :cascade do |t|
     t.string(:name, null: false)
     t.string(:friendly_id, null: false)
+    t.string(:handle, null: false)
     t.string(:primary_property_friendly_id) # nullable to avoid cyclic dependency
 
     t.index(:friendly_id, unique: true)

@@ -25,15 +25,23 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     seed.mapping_rules_from(mapping_rule_files)
   end
 
-  test "data/attributes.yml has no empty value lists" do
-    @raw_attributes_data.select { _1.key?("values") }.each do |raw_attribute|
+  test "data/attributes.yml base_attributes has no empty value lists" do
+    @raw_attributes_data["base_attributes"].select { _1.key?("values") }.each do |raw_attribute|
       assert_predicate raw_attribute.fetch("values"), :present?
     end
   end
 
-  test "data/attributes.yaml xor values or values_from" do
-    @raw_attributes_data.each do |raw_attribute|
-      assert raw_attribute.key?("values") ^ raw_attribute.key?("values_from")
+  test "data/attributes.yaml base attributes do not have values_from key" do
+    @raw_attributes_data["base_attributes"].each do |raw_attribute|
+      assert raw_attribute.key?("values")
+      assert_not raw_attribute.key?("values_from")
+    end
+  end
+
+  test "data/attributes.yaml extended attributes do not have values key" do
+    @raw_attributes_data["extended_attributes"].each do |raw_attribute|
+      assert raw_attribute.key?("values_from")
+      assert_not raw_attribute.key?("values")
     end
   end
 
@@ -63,26 +71,42 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
   end
 
   test "Attributes are correctly imported from attributes.yml" do
-    assert_equal @raw_attributes_data.size, Property.count
+    assert_equal @raw_attributes_data.values.flat_map { _1 }.size, Property.count
   end
 
   test "Attributes are consistent with attributes.yml" do
-    @raw_attributes_data.each do |raw_attribute|
-      deserialized_attribute = SourceData::PropertySerializer.deserialize(raw_attribute)
+    base_attributes = @raw_attributes_data["base_attributes"]
+    extended_attributes = @raw_attributes_data["extended_attributes"]
+
+    base_attributes.each do |raw_attribute|
+      deserialized_attribute = SourceData::BasePropertySerializer.deserialize(raw_attribute)
       real_attribute = Property.find(raw_attribute.fetch("id"))
 
       assert_equal deserialized_attribute, real_attribute
     end
+
+    extended_attributes.each do |raw_attribute|
+      deserialized_attribute = SourceData::ExtendedPropertySerializer.deserialize(raw_attribute)
+      real_attribute = Property.find_by(
+        name: raw_attribute.fetch("name"),
+        base_friendly_id: raw_attribute.fetch("values_from"),
+      )
+
+      assert_equal deserialized_attribute.attributes.except("id"), real_attribute.attributes.except("id")
+    end
   end
 
-  test "Attributes have primary properties if they inherit values" do
-    @raw_attributes_data.each do |raw_attribute|
+  test "Exteneded Attributes have primary properties if they inherit values" do
+    @raw_attributes_data["extended_attributes"].each do |raw_attribute|
       next unless raw_attribute.key?("values_from")
 
-      real_attribute = Property.find(raw_attribute.fetch("id"))
+      real_attribute = Property.find_by(
+        name: raw_attribute.fetch("name"),
+        base_friendly_id: raw_attribute.fetch("values_from"),
+      )
       real_parent_property = Property.find_by!(friendly_id: raw_attribute.fetch("values_from"))
 
-      assert_equal real_parent_property, real_attribute.parent
+      assert_equal real_parent_property, real_attribute.base_property
     end
   end
 
@@ -123,8 +147,8 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     end
   end
 
-  test "Attribute ↔ Value relationships are consistent with attributes.yml when values are listed" do
-    @raw_attributes_data.select { _1.key?("values") }.each do |raw_attribute|
+  test "Attribute ↔ Value relationships are consistent with attributes.yml base_attributes" do
+    @raw_attributes_data["base_attributes"].select { _1.key?("values") }.each do |raw_attribute|
       values_via_raw_id = Property.find(raw_attribute.fetch("id")).property_values
       values_via_raw_values = raw_attribute.fetch("values").map { PropertyValue.find_by(friendly_id: _1) }
 
@@ -132,12 +156,15 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     end
   end
 
-  test "Attribute ↔ Value relationships are consistent with attributes.yml when values are inherited" do
-    @raw_attributes_data.select { _1.key?("values_from") }.each do |raw_attribute|
-      values_via_raw_id = Property.find(raw_attribute.fetch("id")).property_values
-      values_via_raw_values_from = Property.find_by(friendly_id: raw_attribute.fetch("values_from")).property_values
+  test "Attribute ↔ Value relationships are consistent with attributes.yml they are extended" do
+    @raw_attributes_data["extended_attributes"].select { _1.key?("values_from") }.each do |raw_attribute|
+      property_via_source = Property.find_by(
+        name: raw_attribute.fetch("name"),
+        base_friendly_id: raw_attribute.fetch("values_from"),
+      )
+      property_via_values_from = Property.find_by(friendly_id: raw_attribute.fetch("values_from"))
 
-      assert_equal values_via_raw_values_from.sort, values_via_raw_id.sort
+      assert_equal property_via_values_from.property_values.sort, property_via_source.property_values.sort
     end
   end
 
