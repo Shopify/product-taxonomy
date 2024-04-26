@@ -14,17 +14,20 @@ version!: string & =~"^\\d+.\\d+.\\d+$"
 // Present in attributes.json / taxonomy.json
 attributes!: [
 	...{
-		id!:   string & =~#attribute_gid_regex
-		name!: string
+		id!:     string & =~#attribute_gid_regex
+		name!:   string
+		handle!: string
 		extended_attributes!: [
 			...{
-				name!: string
+				name!:   string
+				handle!: string
 			},
 		]
 		values!: [
 			...{
-				id!:   string & =~#value_gid_regex
-				name!: string
+				id!:     string & =~#value_gid_regex
+				name!:   string
+				handle!: string
 			},
 		]
 	},
@@ -48,6 +51,7 @@ verticals!: [...{
 		attributes!: [...{
 			id!:       string & =~#attribute_gid_regex
 			name!:     string
+			handle!:   string
 			extended!: bool
 		}]
 		children!: [..._category_reference]
