@@ -9,6 +9,7 @@ gem "sqlite3", "~> 1.7"
 gem "zeitwerk", "~> 2.6"
 
 gem "byebug"
+gem "bundler"
 gem "rubocop-shopify", require: false
 
 group :test do
