@@ -1,3 +1,15 @@
+## 0.17.0 (Apr 26, 2024)
+
+### Updated Attribute Data format
+- The attributes data file has two new root level properties, `base_attributes` and `extended_attributes`
+  - The `base_attributes` represent the base level attribute that contain an `id` and `values`.
+  - The `extended_attributes` property contain attributes that have extended a `base_attribute`. They do not have an `id` and indicate their parent via the `values_from` property.
+
+### Updated Attribute Distribution format
+
+- Attributes that extend another attribute have been removed and placed under a `extended_attributes` property.
+- Categories that contain an extended attribute have these attributes indicated by an `extended` property.
+
 ## 0.16.0 (Apr 15, 2024)
 
 ### Taxonomy Mappings
