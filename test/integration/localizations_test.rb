@@ -14,13 +14,13 @@ class LocalizationsTest < ActiveSupport::TestCase
     Dir.glob("#{CATEGORY_DIRECTORY}/*.yml").each do |file|
       vertical = File.basename(file, ".yml")
       categories = YAML.load_file(file)
+
       test "#{vertical} has localization keys in #{language} for every category" do
         missing_localization_keys = categories.reject do |category|
           localizations[language]["categories"][category["id"]]
         end
-        assert missing_localization_keys.empty?, "Missing localizations for #{missing_localization_keys.map do |category|
-                                                                                category["id"]
-                                                                              end}"
+        error_message = "Missing localization keys for #{missing_localization_keys.map { _1["id"] }}"
+        assert missing_localization_keys.empty?, error_message
       end
 
       test "#{vertical} has localization values in #{language} for every category" do
@@ -29,9 +29,9 @@ class LocalizationsTest < ActiveSupport::TestCase
         missing_localizations = categories.reject do |category|
           localizations.dig(language, "categories", category["id"], "name")
         end
-        assert missing_localizations.empty?, "Missing localizations for #{missing_localizations.map do |category|
-                                                                            category["id"]
-                                                                          end}"
+
+        error_message = "Missing localization names for #{missing_localizations.map { _1["id"] }}"
+        assert missing_localizations.empty?, error_message
       end
     end
   end
@@ -40,6 +40,7 @@ class LocalizationsTest < ActiveSupport::TestCase
     language = File.basename(file, ".yml")
     localizations = YAML.load_file(file)
     attributes = YAML.load_file(ATTRIUBTES_DIRECTORY).values.flatten
+
     test "attributes have localization keys in #{language}" do
       missing_localization_keys = attributes.reject do |attribute|
         localizations[language]["attributes"][attribute["friendly_id"]]
@@ -63,6 +64,7 @@ class LocalizationsTest < ActiveSupport::TestCase
     language = File.basename(file, ".yml")
     localizations = YAML.load_file(file)
     values = YAML.load_file(VALUES_DIRECTORY)
+
     test "values have localization keys in #{language}" do
       missing_localization_keys = values.reject do |value|
         localizations[language]["values"][value["friendly_id"]]
