@@ -822,6 +822,7 @@
   - ha-2-3-1-3
   attributes:
   - color
+  - door_insulation
   - garage_door_material
   - pattern
   - recommended_use
@@ -830,6 +831,7 @@
   children: []
   attributes:
   - color
+  - door_insulation
   - garage_door_material
   - pattern
   - recommended_use
@@ -838,6 +840,7 @@
   children: []
   attributes:
   - color
+  - door_insulation
   - garage_door_material
   - pattern
   - recommended_use
@@ -846,6 +849,7 @@
   children: []
   attributes:
   - color
+  - door_insulation
   - garage_door_material
   - pattern
   - recommended_use
@@ -869,6 +873,7 @@
   - color
   - durability_features
   - pattern
+  - sound_insulation
 - id: ha-2-5
   name: Flooring & Carpet
   children: []
@@ -1309,9 +1314,9 @@
   attributes:
   - color
   - durability_features
-  - installation_method
   - pattern
   - tile_design
+  - tile_installation_method
   - tile_look
   - tile_material
   - tile_texture
@@ -1321,8 +1326,8 @@
   attributes:
   - color
   - durability_features
-  - installation_method
   - pattern
+  - tile_installation_method
   - tile_look
   - tile_material
   - tile_texture
@@ -1332,9 +1337,9 @@
   attributes:
   - color
   - durability_features
-  - installation_method
   - pattern
   - tile_design
+  - tile_installation_method
   - tile_look
   - tile_material
 - id: ha-2-19
@@ -1349,6 +1354,7 @@
   - color
   - durability_features
   - pattern
+  - sound_insulation
 - id: ha-2-19-1
   name: Beadboards
   children: []
@@ -1357,6 +1363,7 @@
   - color
   - durability_features
   - pattern
+  - sound_insulation
 - id: ha-2-19-2
   name: Board & Batten Paneling
   children: []
@@ -1365,6 +1372,7 @@
   - color
   - durability_features
   - pattern
+  - sound_insulation
 - id: ha-2-19-3
   name: Planks
   children: []
@@ -1373,6 +1381,7 @@
   - color
   - durability_features
   - pattern
+  - sound_insulation
 - id: ha-2-19-4
   name: Wainscoting Paneling
   children: []
@@ -1381,6 +1390,7 @@
   - color
   - durability_features
   - pattern
+  - sound_insulation
 - id: ha-2-20
   name: Weather Stripping & Weatherization Supplies
   children:
@@ -1392,6 +1402,7 @@
   - color
   - material
   - pattern
+  - weather_supply_application_method
   - weatherization_application
 - id: ha-2-20-1
   name: Door Sweeps
@@ -1400,6 +1411,7 @@
   - color
   - material
   - pattern
+  - weather_supply_application_method
   - weatherization_application
 - id: ha-2-20-2
   name: Foam Tape
@@ -1407,6 +1419,7 @@
   attributes:
   - color
   - pattern
+  - weather_supply_application_method
   - weatherization_application
 - id: ha-2-20-3
   name: V Strips
@@ -1416,6 +1429,7 @@
   - material
   - pattern
   - weather_strip_design
+  - weather_supply_application_method
   - weatherization_application
 - id: ha-2-20-4
   name: Weatherstrip Seal
@@ -1424,6 +1438,7 @@
   - color
   - material
   - pattern
+  - weather_supply_application_method
   - weatherization_application
 - id: ha-2-21
   name: Window Hardware
@@ -3104,6 +3119,7 @@
   children: []
   attributes:
   - color
+  - duct_design
   - duct_shape
   - material
   - pattern
@@ -3115,24 +3131,24 @@
   - ha-8-3-3
   attributes:
   - housing_color
+  - housing_pattern
   - hvac_control_type
-  - pattern
   - power_source
 - id: ha-8-3-1
   name: Control Panels
   children: []
   attributes:
   - housing_color
+  - housing_pattern
   - hvac_control_type
-  - pattern
   - power_source
 - id: ha-8-3-2
   name: Humidistats
   children: []
   attributes:
   - housing_color
+  - housing_pattern
   - hvac_control_type
-  - pattern
   - power_source
 - id: ha-8-3-3
   name: Thermostats
@@ -3140,8 +3156,8 @@
   attributes:
   - display_technology
   - housing_color
+  - housing_pattern
   - hvac_control_type
-  - pattern
   - power_source
   - sensor_features
 - id: ha-8-4
@@ -3880,6 +3896,7 @@
   - color
   - hardware_material
   - pattern
+  - shape
 - id: ha-10-2-6-7-1
   name: Fixed Shower Heads
   children: []
@@ -3887,6 +3904,7 @@
   - color
   - hardware_material
   - pattern
+  - shape
 - id: ha-10-2-6-7-2
   name: Handheld Shower Heads
   children: []
@@ -3894,6 +3912,7 @@
   - color
   - hardware_material
   - pattern
+  - shape
 - id: ha-10-2-6-8
   name: Shower Walls & Surrounds
   children:
@@ -4064,25 +4083,28 @@
   - ha-10-2-8-8-2
   attributes:
   - flush_plate_color
+  - flush_plate_pattern
   - material
-  - pattern
   - tank_color
+  - tank_pattern
 - id: ha-10-2-8-8-1
   name: Gravity-Fed Tanks
   children: []
   attributes:
   - flush_plate_color
+  - flush_plate_pattern
   - material
-  - pattern
   - tank_color
+  - tank_pattern
 - id: ha-10-2-8-8-2
   name: Pressure-Assisted Tanks
   children: []
   attributes:
   - flush_plate_color
+  - flush_plate_pattern
   - material
-  - pattern
   - tank_color
+  - tank_pattern
 - id: ha-10-2-8-9
   name: Toilet Trim
   children: []
@@ -4193,6 +4215,7 @@
   - pattern
   - shower_design
   - shower_features
+  - shower_opening_type
 - id: ha-10-3-5
   name: Sinks
   children:
@@ -4896,6 +4919,7 @@
   - color
   - ignition_system
   - pattern
+  - phase_type
   - power_source
 - id: ha-11-15-1
   name: Inverter Generators
@@ -4904,6 +4928,7 @@
   - color
   - ignition_system
   - pattern
+  - phase_type
   - power_source
 - id: ha-11-15-2
   name: Portable Generators
@@ -4912,6 +4937,7 @@
   - color
   - ignition_system
   - pattern
+  - phase_type
   - power_source
 - id: ha-11-15-3
   name: Standby Generators
@@ -4920,6 +4946,7 @@
   - color
   - ignition_system
   - pattern
+  - phase_type
   - power_source
 - id: ha-11-16
   name: Home Automation Kits
@@ -5764,10 +5791,10 @@
   - ha-14-19-1-9
   attributes:
   - abrasive_material
+  - backing_color
   - backing_material
-  - color
+  - backing_pattern
   - grit_type
-  - pattern
   - sanding_application
   - suitable_for_material_type
 - id: ha-14-19-1-1
@@ -5775,10 +5802,10 @@
   children: []
   attributes:
   - abrasive_material
+  - backing_color
   - backing_material
-  - color
+  - backing_pattern
   - grit_type
-  - pattern
   - sanding_application
   - suitable_for_material_type
 - id: ha-14-19-1-2
@@ -5786,10 +5813,10 @@
   children: []
   attributes:
   - abrasive_material
+  - backing_color
   - backing_material
-  - color
+  - backing_pattern
   - grit_type
-  - pattern
   - sanding_application
   - suitable_for_material_type
 - id: ha-14-19-1-3
@@ -5797,10 +5824,10 @@
   children: []
   attributes:
   - abrasive_material
+  - backing_color
   - backing_material
-  - color
+  - backing_pattern
   - grit_type
-  - pattern
   - sanding_application
   - suitable_for_material_type
 - id: ha-14-19-1-4
@@ -5808,10 +5835,10 @@
   children: []
   attributes:
   - abrasive_material
+  - backing_color
   - backing_material
-  - color
+  - backing_pattern
   - grit_type
-  - pattern
   - sanding_application
   - suitable_for_material_type
 - id: ha-14-19-1-5
@@ -5819,10 +5846,10 @@
   children: []
   attributes:
   - abrasive_material
+  - backing_color
   - backing_material
-  - color
+  - backing_pattern
   - grit_type
-  - pattern
   - sanding_application
   - suitable_for_material_type
 - id: ha-14-19-1-6
@@ -5830,10 +5857,10 @@
   children: []
   attributes:
   - abrasive_material
+  - backing_color
   - backing_material
-  - color
+  - backing_pattern
   - grit_type
-  - pattern
   - sanding_application
   - suitable_for_material_type
 - id: ha-14-19-1-7
@@ -5841,10 +5868,10 @@
   children: []
   attributes:
   - abrasive_material
+  - backing_color
   - backing_material
-  - color
+  - backing_pattern
   - grit_type
-  - pattern
   - sanding_application
   - suitable_for_material_type
 - id: ha-14-19-1-8
@@ -5852,10 +5879,10 @@
   children: []
   attributes:
   - abrasive_material
+  - backing_color
   - backing_material
-  - color
+  - backing_pattern
   - grit_type
-  - pattern
   - sanding_application
   - suitable_for_material_type
 - id: ha-14-19-1-9
@@ -5863,10 +5890,10 @@
   children: []
   attributes:
   - abrasive_material
+  - backing_color
   - backing_material
-  - color
+  - backing_pattern
   - grit_type
-  - pattern
   - sanding_application
   - suitable_for_material_type
 - id: ha-14-20
@@ -6034,32 +6061,36 @@
   - ha-14-23-2-3
   attributes:
   - blade_material
-  - color
-  - pattern
+  - handle_color
+  - handle_material
+  - handle_pattern
   - suitable_for_material_type
 - id: ha-14-23-2-1
   name: Circular Saw Blades
   children: []
   attributes:
   - blade_material
-  - color
-  - pattern
+  - handle_color
+  - handle_material
+  - handle_pattern
   - suitable_for_material_type
 - id: ha-14-23-2-2
   name: Jigsaw Blades
   children: []
   attributes:
   - blade_material
-  - color
-  - pattern
+  - handle_color
+  - handle_material
+  - handle_pattern
   - suitable_for_material_type
 - id: ha-14-23-2-3
   name: Reciprocating Saw Blades
   children: []
   attributes:
   - blade_material
-  - color
-  - pattern
+  - handle_color
+  - handle_material
+  - handle_pattern
   - suitable_for_material_type
 - id: ha-14-24
   name: Tool Handle Wedges
@@ -6352,33 +6383,33 @@
   - ha-15-5-3
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-5-1
   name: Straight Chisels
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-5-2
   name: U-Gouges
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-5-3
   name: V-Gouges
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-6
   name: Caulking Tools
   children:
@@ -6448,9 +6479,9 @@
   children: []
   attributes:
   - bristle_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-11
   name: Cutters
   children:
@@ -6498,7 +6529,7 @@
   - blade_material
   - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-11-2-1
   name: Custom Grip Cutters
   children: []
@@ -6506,7 +6537,7 @@
   - blade_material
   - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-11-2-2
   name: Pencil Grip Cutters
   children: []
@@ -6514,7 +6545,7 @@
   - blade_material
   - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-11-2-3
   name: Pistol Grip Cutters
   children: []
@@ -6522,7 +6553,7 @@
   - blade_material
   - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-11-3
   name: Handheld Metal Shears & Nibblers
   children: []
@@ -6561,7 +6592,7 @@
   - blade_material
   - housing_color
   - housing_material
-  - pattern
+  - housing_pattern
 - id: ha-15-11-6
   name: Rebar Cutters
   children:
@@ -6960,10 +6991,10 @@
   - ha-15-20-1
   - ha-15-20-2
   attributes:
-  - color
   - hammer_head_material
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-20-1
   name: Manual Hammers
   children:
@@ -6971,62 +7002,62 @@
   - ha-15-20-1-2
   - ha-15-20-1-3
   attributes:
-  - color
   - hammer_head_material
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-20-1-1
   name: Claw Hammers
   children: []
   attributes:
-  - color
   - hammer_head_material
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-20-1-2
   name: Mallets
   children: []
   attributes:
-  - color
   - hammer_head_material
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-20-1-3
   name: Sledge Hammers
   children: []
   attributes:
-  - color
   - hammer_head_material
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-20-2
   name: Powered Hammers
   children:
   - ha-15-20-2-1
   - ha-15-20-2-2
   attributes:
-  - color
   - hammer_head_material
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
   - power_source
 - id: ha-15-20-2-1
   name: Demolition Hammers
   children: []
   attributes:
-  - color
   - hammer_head_material
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
   - power_source
 - id: ha-15-20-2-2
   name: Rotary Hammers
   children: []
   attributes:
-  - color
   - hammer_head_material
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
   - power_source
 - id: ha-15-21
   name: Handheld Power Mixers
@@ -7112,7 +7143,7 @@
   children: []
   attributes:
   - handle_color
-  - pattern
+  - handle_pattern
 - id: ha-15-27
   name: Ladders & Scaffolding
   children:
@@ -7568,32 +7599,32 @@
   attributes:
   - display_technology
   - housing_color
+  - housing_pattern
   - measuring_tool_features
-  - pattern
 - id: ha-15-36-1-1
   name: CO2 Meters
   children: []
   attributes:
   - display_technology
   - housing_color
+  - housing_pattern
   - measuring_tool_features
-  - pattern
 - id: ha-15-36-1-2
   name: Particulate Meters
   children: []
   attributes:
   - display_technology
   - housing_color
+  - housing_pattern
   - measuring_tool_features
-  - pattern
 - id: ha-15-36-1-3
   name: Volatile Organic Compound (VOC) Meters
   children: []
   attributes:
   - display_technology
   - housing_color
+  - housing_pattern
   - measuring_tool_features
-  - pattern
 - id: ha-15-36-2
   name: Altimeters
   children: []
@@ -8495,8 +8526,9 @@
   name: Airbrushes
   children: []
   attributes:
+  - airbrush_feed_type
+  - airbrush_operation_method
   - color
-  - feed_type
   - pattern
 - id: ha-15-42-2
   name: Paint Brushes
@@ -8813,32 +8845,35 @@
   - ha-15-50-2
   - ha-15-50-3
   attributes:
-  - pattern
   - plunger_shape
   - shaft_color
   - shaft_material
+  - shaft_pattern
   - suction_cup_color
   - suction_cup_material
+  - suction_cup_pattern
 - id: ha-15-50-2
   name: Sink Plungers
   children: []
   attributes:
-  - pattern
   - plunger_shape
   - shaft_color
   - shaft_material
+  - shaft_pattern
   - suction_cup_color
   - suction_cup_material
+  - suction_cup_pattern
 - id: ha-15-50-3
   name: Toilet Plungers
   children: []
   attributes:
-  - pattern
   - plunger_shape
   - shaft_color
   - shaft_material
+  - shaft_pattern
   - suction_cup_color
   - suction_cup_material
+  - suction_cup_pattern
 - id: ha-15-51
   name: Polishers & Buffers
   children:
@@ -8931,33 +8966,33 @@
   - ha-15-55-3
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-55-1
   name: Flexible Putty Knives
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-55-2
   name: Wallpaper & Paint Scrapers
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-55-3
   name: Stiff Putty Knives
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: ha-15-56
   name: Reamers
   children:

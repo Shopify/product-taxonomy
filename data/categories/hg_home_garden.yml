@@ -105,12 +105,14 @@
   name: Bath Mats & Rugs
   children: []
   attributes:
+  - allergy_friendly_features
+  - care_instructions
   - color
-  - mat/rug_shape
   - pattern
   - pile_type
   - rug/mat_features
   - rug/mat_material
+  - rug/mat_shape
   - theme
 - id: hg-1-3
   name: Bath Pillows
@@ -668,11 +670,11 @@
   name: Backrest Pillows
   children: []
   attributes:
-  - color
+  - cover_color
   - cover_material
+  - cover_pattern
   - filler_material
   - filler_support
-  - pattern
   - shape
 - id: hg-3-6
   name: Baskets
@@ -866,6 +868,7 @@
   name: Chair & Sofa Cushion Covers
   children: []
   attributes:
+  - care_instructions
   - color
   - cover_features
   - fabric
@@ -875,10 +878,11 @@
   name: Chair & Sofa Cushions
   children: []
   attributes:
-  - color
+  - care_instructions
+  - cover_color
   - cover_material
+  - cover_pattern
   - filler_material
-  - pattern
   - suitable_for_chair_type
 - id: hg-3-16
   name: Clock Parts
@@ -1057,10 +1061,12 @@
   children: []
   attributes:
   - allergy_friendly_features
-  - color
+  - care_instructions
+  - door_mat_base_color
   - door_mat_base_material
+  - door_mat_base_pattern
   - door_mat_surface_material
-  - pattern
+  - mat_features
   - pile_type
   - shape
   - suitable_space
@@ -1440,10 +1446,10 @@
   name: Ottoman Cushions
   children: []
   attributes:
-  - color
+  - cover_color
   - cover_material
+  - cover_pattern
   - filler_material
-  - pattern
   - shape
 - id: hg-3-52
   name: Picture Frames
@@ -1503,6 +1509,8 @@
   name: Rugs
   children: []
   attributes:
+  - allergy_friendly_features
+  - care_instructions
   - color
   - pattern
   - pile_type
@@ -1646,10 +1654,10 @@
   name: Throw Pillows
   children: []
   attributes:
-  - color
+  - cover_color
   - cover_material
+  - cover_pattern
   - filler_material
-  - pattern
   - throw_pillow_shape
 - id: hg-3-65
   name: Trunks
@@ -2202,6 +2210,7 @@
   - hg-6-2
   attributes:
   - color
+  - flue_type
   - pattern
   - power_source
 - id: hg-6-1
@@ -2209,6 +2218,7 @@
   children: []
   attributes:
   - color
+  - flue_type
   - pattern
   - power_source
 - id: hg-6-2
@@ -2216,6 +2226,7 @@
   children: []
   attributes:
   - color
+  - flue_type
   - pattern
   - power_source
 - id: hg-7
@@ -2244,6 +2255,7 @@
   children: []
   attributes:
   - color
+  - detector_operation_mode
   - pattern
   - power_source
 - id: hg-7-3
@@ -2259,6 +2271,7 @@
   - color
   - extinguisher_rating
   - extinguishing_agent_type
+  - fire_extinguisher_items_included
   - pattern
   - suitable_for_fire_class
 - id: hg-7-5
@@ -2273,6 +2286,7 @@
   attributes:
   - color
   - connectivity_technology
+  - detector_operation_mode
   - detector_type
   - pattern
   - power_source
@@ -2284,6 +2298,7 @@
   attributes:
   - color
   - connectivity_technology
+  - detector_operation_mode
   - mounting_type
   - pattern
   - power_source
@@ -2293,6 +2308,7 @@
   attributes:
   - color
   - connectivity_technology
+  - detector_operation_mode
   - mounting_type
   - pattern
   - power_source
@@ -2303,6 +2319,7 @@
   attributes:
   - color
   - connectivity_technology
+  - detector_operation_mode
   - detector_type
   - mounting_type
   - pattern
@@ -3671,6 +3688,8 @@
   name: Garage Floor Mats
   children: []
   attributes:
+  - allergy_friendly_features
+  - care_instructions
   - color
   - mat_features
   - material
@@ -4314,10 +4333,12 @@
   name: Laundry Detergent
   children: []
   attributes:
+  - application_method
   - color
   - ingredients
   - laundry_detergent_features
   - pattern
+  - product_certifications_standards
   - scent
   - washing_method
 - id: hg-10-9-18
@@ -5184,6 +5205,7 @@
   name: Cocktail & Barware Tool Sets
   children: []
   attributes:
+  - barware_items_included
   - color
   - pattern
 - id: hg-11-1-10
@@ -5355,10 +5377,13 @@
   children: []
   attributes:
   - bakeware_features
+  - bakeware_items_included
   - bakeware_pieces_included
+  - cleaning_instructions
   - color
   - cookware/bakeware_material
   - pattern
+  - product_certifications_standards
 - id: hg-11-2-1-2
   name: Baking & Cookie Sheets
   children: []
@@ -5372,51 +5397,63 @@
   children: []
   attributes:
   - bakeware_features
+  - cleaning_instructions
   - color
   - cookware/bakeware_material
   - pattern
+  - product_certifications_standards
   - shape
 - id: hg-11-2-1-4
   name: Broiling Pans
   children: []
   attributes:
   - bakeware_features
+  - cleaning_instructions
   - color
   - cookware/bakeware_material
   - pattern
+  - product_certifications_standards
 - id: hg-11-2-1-5
   name: Cake Pans & Molds
   children: []
   attributes:
   - bakeware_features
   - bakeware_shape
+  - cleaning_instructions
   - color
   - cookware/bakeware_material
   - pattern
+  - product_certifications_standards
 - id: hg-11-2-1-6
   name: Muffin & Pastry Pans
   children: []
   attributes:
   - bakeware_features
+  - cleaning_instructions
   - color
   - cookware/bakeware_material
   - pattern
+  - product_certifications_standards
 - id: hg-11-2-1-7
   name: Pie & Quiche Pans
   children: []
   attributes:
   - bakeware_features
+  - cleaning_instructions
   - color
   - cookware/bakeware_material
   - pattern
+  - product_certifications_standards
 - id: hg-11-2-1-8
   name: Pizza Pans
   children: []
   attributes:
   - bakeware_features
+  - cleaning_instructions
   - color
   - cookware/bakeware_material
   - pattern
+  - product_certifications_standards
 - id: hg-11-2-1-9
   name: Pizza Stones
   children: []
@@ -5430,18 +5467,22 @@
   children: []
   attributes:
   - bakeware_features
+  - cleaning_instructions
   - color
   - cookware/bakeware_material
   - pattern
+  - product_certifications_standards
   - shape
 - id: hg-11-2-1-11
   name: Roasting Pans
   children: []
   attributes:
   - bakeware_features
+  - cleaning_instructions
   - color
   - cookware/bakeware_material
   - pattern
+  - product_certifications_standards
 - id: hg-11-2-2
   name: Bakeware Accessories
   children:
@@ -5543,11 +5584,14 @@
   name: Cookware Sets
   children: []
   attributes:
+  - cleaning_instructions
   - color
   - compatible_stove_top_type
   - cookware/bakeware_material
   - cookware_features
+  - cookware_items_included
   - pattern
+  - product_certifications_standards
 - id: hg-11-2-3-3
   name: Crêpe & Blini Pans
   children:
@@ -5602,11 +5646,13 @@
   name: Griddles & Grill Pans
   children: []
   attributes:
+  - cleaning_instructions
   - color
   - compatible_stove_top_type
   - cookware/bakeware_material
   - cookware_features
   - pattern
+  - product_certifications_standards
 - id: hg-11-2-3-8
   name: Grill Presses
   children: []
@@ -5618,11 +5664,13 @@
   name: Paella Pans
   children: []
   attributes:
+  - cleaning_instructions
   - color
   - compatible_stove_top_type
   - cookware/bakeware_material
   - cookware_features
   - pattern
+  - product_certifications_standards
 - id: hg-11-2-3-10
   name: Pressure Cookers & Canners
   children:
@@ -5653,52 +5701,62 @@
   name: Saucepans
   children: []
   attributes:
+  - cleaning_instructions
   - color
   - compatible_stove_top_type
   - cookware/bakeware_material
   - cookware_features
   - pattern
+  - product_certifications_standards
   - shape
 - id: hg-11-2-3-12
   name: Sauté Pans
   children: []
   attributes:
+  - cleaning_instructions
   - color
   - compatible_stove_top_type
   - cookware/bakeware_material
   - cookware_features
   - pattern
+  - product_certifications_standards
 - id: hg-11-2-3-13
   name: Skillets & Frying Pans
   children:
   - hg-11-2-3-13-1
   - hg-11-2-3-13-2
   attributes:
+  - cleaning_instructions
   - color
   - compatible_stove_top_type
   - cookware/bakeware_material
   - cookware_features
   - pattern
+  - product_certifications_standards
   - shape
 - id: hg-11-2-3-13-1
   name: Frying Pans
   children: []
   attributes:
+  - cleaning_instructions
   - color
   - compatible_stove_top_type
   - cookware/bakeware_material
   - cookware_features
   - pattern
+  - product_certifications_standards
   - shape
 - id: hg-11-2-3-13-2
   name: Skillets
   children: []
   attributes:
+  - cleaning_instructions
   - color
   - compatible_stove_top_type
   - cookware/bakeware_material
   - cookware_features
   - pattern
+  - product_certifications_standards
   - shape
 - id: hg-11-2-3-14
   name: Stock Pots
@@ -5746,11 +5804,13 @@
   name: Woks
   children: []
   attributes:
+  - cleaning_instructions
   - color
   - compatible_stove_top_type
   - cookware/bakeware_material
   - cookware_features
   - pattern
+  - product_certifications_standards
 - id: hg-11-2-4
   name: Cookware & Bakeware Combo Sets
   children: []
@@ -5780,10 +5840,12 @@
   name: Pot & Pan Lids
   children: []
   attributes:
+  - cleaning_instructions
   - color
   - cookware/bakeware_material
   - cookware_features
   - pattern
+  - product_certifications_standards
   - shape
 - id: hg-11-2-5-3
   name: Pressure Cooker & Canner Accessories
@@ -8305,9 +8367,9 @@
   name: Baking Peels
   children: []
   attributes:
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
   - tool/utensil_material
 - id: hg-11-8-3
   name: Basters
@@ -8320,9 +8382,9 @@
   children: []
   attributes:
   - bristle_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-11-8-5
   name: Beverage Dispensers
   children: []
@@ -8557,9 +8619,9 @@
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-11-8-24
   name: Electric Knife Accessories
   children:
@@ -8791,49 +8853,49 @@
   - hg-11-8-39-5
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-11-8-39-1
   name: Bread Knives
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-11-8-39-2
   name: Chef's Knives
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-11-8-39-3
   name: Paring Knives
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-11-8-39-4
   name: Santoku Knives
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-11-8-39-5
   name: Serrated Knives
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-11-8-40
   name: Kitchen Molds
   children: []
@@ -9247,9 +9309,9 @@
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-11-8-60
   name: Ricers
   children: []
@@ -9769,10 +9831,10 @@
   attributes:
   - accessory_size
   - blade_material
-  - color
   - edge_type
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-11-10-7
   name: Serveware
   children:
@@ -10176,25 +10238,25 @@
   - hg-12-1-7-1-3
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-12-1-7-1-2
   name: Dibblers
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-12-1-7-1-3
   name: Diggers
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-12-1-7-2
   name: Cultivating Tools
   children:
@@ -10208,24 +10270,24 @@
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-12-1-7-2-2
   name: Hoes
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-12-1-7-3
   name: Gardening Forks
   children: []
   attributes:
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
   - teeth_material
 - id: hg-12-1-7-4
   name: Gardening Sickles & Machetes
@@ -10240,25 +10302,25 @@
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-12-1-7-4-2
   name: Gardening Sickles
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-12-1-7-5
   name: Gardening Trowels
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-12-1-7-6
   name: Lawn & Garden Sprayers
   children: []
@@ -10290,25 +10352,25 @@
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-12-1-7-9
   name: Pruning Shears
   children: []
   attributes:
   - blade_material
-  - color
   - cutting_method
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-12-1-7-10
   name: Rakes
   children: []
   attributes:
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
   - teeth_material
 - id: hg-12-1-7-11
   name: Shovels & Spades
@@ -10323,17 +10385,17 @@
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-12-1-7-11-2
   name: Spades
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-12-1-7-12
   name: Spreaders
   children: []
@@ -10352,9 +10414,9 @@
   name: Greenhouses
   children: []
   attributes:
-  - color
+  - frame_color
   - frame_material
-  - pattern
+  - frame_pattern
   - screen_material
 - id: hg-12-1-9
   name: Herbicides
@@ -10896,6 +10958,7 @@
   attributes:
   - color
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-12-2-8
@@ -11159,8 +11222,10 @@
   children: []
   attributes:
   - color
+  - engine_type
   - pattern
   - power_source
+  - tractor_accessories_included
 - id: hg-12-3-15
   name: Weed Trimmers
   children: []
@@ -11700,9 +11765,9 @@
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: hg-12-6
   name: Watering & Irrigation
   children:
@@ -11859,6 +11924,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-1
@@ -11870,6 +11936,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-2
@@ -11881,6 +11948,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-3
@@ -11892,6 +11960,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-4
@@ -11903,6 +11972,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-5
@@ -11919,6 +11989,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-5-1
@@ -11930,6 +12001,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-5-2
@@ -11941,6 +12013,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-5-3
@@ -11952,6 +12025,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-5-4
@@ -11963,6 +12037,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-5-5
@@ -11974,6 +12049,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-6
@@ -11985,6 +12061,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-7
@@ -12001,6 +12078,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-7-1
@@ -12013,6 +12091,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-7-2
@@ -12025,6 +12104,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-7-3
@@ -12037,6 +12117,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-7-4
@@ -12049,6 +12130,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-8
@@ -12060,6 +12142,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
   - suitable_space
@@ -12077,6 +12160,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - mounting_type
   - pattern
@@ -12090,6 +12174,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - mounting_type
   - pattern
@@ -12103,6 +12188,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - mounting_type
   - pattern
@@ -12116,6 +12202,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - material
   - mounting_type
@@ -12131,6 +12218,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - mounting_type
   - pattern
@@ -12143,6 +12231,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-11
@@ -12154,6 +12243,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-12
@@ -12164,6 +12254,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
   - power_source
@@ -12178,6 +12269,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-13-1
@@ -12192,6 +12284,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-13-1-2
@@ -12202,6 +12295,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-13-1-3
@@ -12212,6 +12306,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-13-1-4
@@ -12222,6 +12317,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-13-1-5
@@ -12232,6 +12328,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-13-2
@@ -12242,6 +12339,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-13-13-3
@@ -12252,6 +12350,7 @@
   - color
   - energy_efficiency_class
   - light_color
+  - light_pattern
   - light_temperature
   - pattern
 - id: hg-14
@@ -12335,6 +12434,7 @@
   children: []
   attributes:
   - bedding_size
+  - care_instructions
   - color
   - fabric
   - pattern
@@ -12352,6 +12452,7 @@
   children: []
   attributes:
   - bedding_size
+  - care_instructions
   - color
   - fabric
   - pattern
@@ -12360,6 +12461,7 @@
   children: []
   attributes:
   - bedding_size
+  - care_instructions
   - color
   - fabric
   - pattern
@@ -12368,6 +12470,7 @@
   children: []
   attributes:
   - bedding_size
+  - care_instructions
   - color
   - fabric
   - pattern
@@ -12409,6 +12512,7 @@
   children: []
   attributes:
   - bedding_size
+  - care_instructions
   - closure_style
   - color
   - fabric
@@ -12418,16 +12522,18 @@
   children: []
   attributes:
   - bedding_size
-  - color
+  - care_instructions
+  - cover_color
   - cover_material
+  - cover_pattern
   - filler_material
   - filler_support
-  - pattern
 - id: hg-15-1-10
   name: Quilts & Comforters
   children: []
   attributes:
   - bedding_size
+  - care_instructions
   - color
   - fabric
   - pattern
@@ -12549,10 +12655,12 @@
   - hg-16-1
   - hg-16-2
   attributes:
+  - canopy_color
   - canopy_material
-  - color
-  - pattern
+  - canopy_pattern
+  - pole_color
   - pole_material
+  - pole_pattern
 - id: hg-16-1
   name: Parasols
   children: []
@@ -12589,7 +12697,7 @@
   children: []
   attributes:
   - flower_color
-  - pattern
+  - flower_pattern
   - plant_characteristics
   - plant_class
   - plant_name
@@ -12600,7 +12708,7 @@
   children: []
   attributes:
   - flower_color
-  - pattern
+  - flower_pattern
   - plant_characteristics
   - plant_class
   - plant_name
@@ -12635,7 +12743,7 @@
   children: []
   attributes:
   - flower_color
-  - pattern
+  - flower_pattern
   - plant_characteristics
   - plant_class
   - plant_name
@@ -12646,7 +12754,7 @@
   children: []
   attributes:
   - flower_color
-  - pattern
+  - flower_pattern
   - plant_characteristics
   - plant_class
   - plant_name
@@ -12658,7 +12766,7 @@
   attributes:
   - culinary_botanical_name
   - flower_color
-  - pattern
+  - flower_pattern
   - plant_characteristics
   - plant_name
   - suitable_space
@@ -12679,7 +12787,7 @@
   children: []
   attributes:
   - flower_color
-  - pattern
+  - flower_pattern
   - plant_characteristics
   - plant_class
   - plant_name
@@ -12690,7 +12798,7 @@
   children: []
   attributes:
   - flower_color
-  - pattern
+  - flower_pattern
   - plant_characteristics
   - plant_class
   - plant_name
@@ -12701,7 +12809,7 @@
   children: []
   attributes:
   - flower_color
-  - pattern
+  - flower_pattern
   - plant_characteristics
   - plant_class
   - plant_name
@@ -12723,7 +12831,7 @@
   children: []
   attributes:
   - flower_color
-  - pattern
+  - flower_pattern
   - plant_characteristics
   - plant_class
   - plant_name
@@ -12734,7 +12842,7 @@
   children: []
   attributes:
   - flower_color
-  - pattern
+  - flower_pattern
   - plant_characteristics
   - plant_class
   - plant_name
@@ -12767,7 +12875,7 @@
   children: []
   attributes:
   - flower_color
-  - pattern
+  - flower_pattern
   - plant_characteristics
   - plant_class
   - plant_name
@@ -12778,7 +12886,7 @@
   children: []
   attributes:
   - flower_color
-  - pattern
+  - flower_pattern
   - plant_characteristics
   - plant_class
   - plant_name
@@ -12809,7 +12917,7 @@
   children: []
   attributes:
   - flower_color
-  - pattern
+  - flower_pattern
   - plant_characteristics
   - plant_class
   - plant_name
@@ -12820,7 +12928,7 @@
   children: []
   attributes:
   - flower_color
-  - pattern
+  - flower_pattern
   - plant_characteristics
   - plant_class
   - plant_name
@@ -13111,6 +13219,7 @@
   attributes:
   - color
   - pattern
+  - sauna_accessories_included
   - suitable_space
   - wall_material
 - id: hg-18-4

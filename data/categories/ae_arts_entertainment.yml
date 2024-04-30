@@ -78,8 +78,8 @@
   attributes:
   - age_group
   - incense_fragrance
+  - incense_kit_items_included
   - incense_type
-  - ingredients_included
 - id: ae-2-1-1-5
   name: Jewelry Making Kits
   children: []
@@ -96,8 +96,8 @@
   children: []
   attributes:
   - age_group
-  - kit_type
   - material
+  - needlecraft_kit_type
 - id: ae-2-1-1-8
   name: Scrapbooking & Stamping Kits
   children: []
@@ -218,6 +218,7 @@
   - creative_art_project_type
   - paper_size
   - pattern
+  - transfer_paper_technique
 - id: ae-2-1-2-1-7
   name: Vellum Paper
   children: []
@@ -368,30 +369,35 @@
   attributes:
   - color
   - fastener_material
+  - pattern
 - id: ae-2-1-2-2-6-1
   name: Closed-End Zippers
   children: []
   attributes:
   - color
   - fastener_material
+  - pattern
 - id: ae-2-1-2-2-6-2
   name: Open-End Zippers
   children: []
   attributes:
   - color
   - fastener_material
+  - pattern
 - id: ae-2-1-2-2-6-3
   name: Reversible Zippers
   children: []
   attributes:
   - color
   - fastener_material
+  - pattern
 - id: ae-2-1-2-2-6-4
   name: Two-Way Zippers
   children: []
   attributes:
   - color
   - fastener_material
+  - pattern
 - id: ae-2-1-2-3
   name: Craft Paint, Ink & Glaze
   children:
@@ -432,54 +438,63 @@
   attributes:
   - color
   - ink_form
+  - pattern
 - id: ae-2-1-2-3-3-1
   name: Acrylic Ink
   children: []
   attributes:
   - color
   - ink_form
+  - pattern
 - id: ae-2-1-2-3-3-2
   name: Alcohol Ink
   children: []
   attributes:
   - color
   - ink_form
+  - pattern
 - id: ae-2-1-2-3-3-3
   name: Calligraphy Ink
   children: []
   attributes:
   - color
   - ink_form
+  - pattern
 - id: ae-2-1-2-3-3-4
   name: Drawing Ink
   children: []
   attributes:
   - color
   - ink_form
+  - pattern
 - id: ae-2-1-2-3-3-5
   name: India Ink
   children: []
   attributes:
   - color
   - ink_form
+  - pattern
 - id: ae-2-1-2-3-3-6
   name: Sumi Ink
   children: []
   attributes:
   - color
   - ink_form
+  - pattern
 - id: ae-2-1-2-3-3-7
   name: Watercolor Ink
   children: []
   attributes:
   - color
   - ink_form
+  - pattern
 - id: ae-2-1-2-3-4
   name: Ceramic & Pottery Glazes
   children: []
   attributes:
   - color
   - glaze_finish
+  - pattern
   - visual_effect
 - id: ae-2-1-2-3-5
   name: Craft Dyes
@@ -499,6 +514,7 @@
   attributes:
   - color
   - paint_medium_type
+  - pattern
 - id: ae-2-1-2-4
   name: Craft Shapes & Bases
   children:
@@ -837,12 +853,14 @@
   children: []
   attributes:
   - color
+  - craft_pipe_cleaner_design
   - pattern
 - id: ae-2-1-2-7-2
   name: Floral Wire
   children: []
   attributes:
   - color
+  - floral_wire_design
   - pattern
   - wire/rope_material
 - id: ae-2-1-2-7-3
@@ -1213,6 +1231,7 @@
   children: []
   attributes:
   - color
+  - jewelry_finding_type
   - jewelry_material
   - pattern
 - id: ae-2-1-2-8-8
@@ -1434,6 +1453,7 @@
   attributes:
   - color
   - craft_project_type
+  - pattern
   - sequin/glitter_shape
 - id: ae-2-1-2-8-11-1
   name: Glitter Flakes
@@ -1442,6 +1462,7 @@
   - color
   - craft_project_type
   - glitter_shape
+  - pattern
 - id: ae-2-1-2-8-11-2
   name: Glitter Glue
   children: []
@@ -1449,6 +1470,7 @@
   - color
   - craft_project_type
   - glitter_shape
+  - pattern
 - id: ae-2-1-2-8-11-3
   name: Glitter Powder
   children: []
@@ -1456,6 +1478,7 @@
   - color
   - craft_project_type
   - glitter_shape
+  - pattern
 - id: ae-2-1-2-8-11-4
   name: Loose Glitter
   children: []
@@ -1463,12 +1486,14 @@
   - color
   - craft_project_type
   - glitter_shape
+  - pattern
 - id: ae-2-1-2-8-11-5
   name: Sequins
   children: []
   attributes:
   - color
   - craft_project_type
+  - pattern
   - sequin_shape
 - id: ae-2-1-2-8-12
   name: Sew-in Labels
@@ -1530,6 +1555,7 @@
   - color
   - embossing_project_type
   - finish
+  - pattern
 - id: ae-2-1-2-10
   name: Filling & Padding Material
   children:
@@ -1576,6 +1602,7 @@
   - ae-2-1-2-12-4
   attributes:
   - color
+  - pattern
 - id: ae-2-1-2-12-1
   name: Clay & Modeling Dough
   children:
@@ -1583,6 +1610,7 @@
   - ae-2-1-2-12-1-2
   attributes:
   - color
+  - pattern
 - id: ae-2-1-2-12-1-1
   name: Clay
   children:
@@ -1594,41 +1622,48 @@
   attributes:
   - clay_texture
   - color
+  - pattern
 - id: ae-2-1-2-12-1-1-1
   name: Air-Dry Clay
   children: []
   attributes:
   - clay_texture
   - color
+  - pattern
 - id: ae-2-1-2-12-1-1-2
   name: Oven-Bake Clay
   children: []
   attributes:
   - clay_texture
   - color
+  - pattern
 - id: ae-2-1-2-12-1-1-3
   name: Polymer Clay
   children: []
   attributes:
   - clay_texture
   - color
+  - pattern
 - id: ae-2-1-2-12-1-1-4
   name: Sculpting Clay
   children: []
   attributes:
   - clay_texture
   - color
+  - pattern
 - id: ae-2-1-2-12-1-1-5
   name: Self-Hardening Clay
   children: []
   attributes:
   - clay_texture
   - color
+  - pattern
 - id: ae-2-1-2-12-1-2
   name: Modeling Dough
   children: []
   attributes:
   - color
+  - pattern
 - id: ae-2-1-2-12-2
   name: Papier Mache Mixes
   children: []
@@ -1677,36 +1712,42 @@
   - ae-2-1-2-13-5
   attributes:
   - color
+  - pattern
   - scent
 - id: ae-2-1-2-13-1
   name: Beeswax
   children: []
   attributes:
   - color
+  - pattern
   - scent
 - id: ae-2-1-2-13-2
   name: Gel Wax
   children: []
   attributes:
   - color
+  - pattern
   - scent
 - id: ae-2-1-2-13-3
   name: Palm Wax
   children: []
   attributes:
   - color
+  - pattern
   - scent
 - id: ae-2-1-2-13-4
   name: Paraffin
   children: []
   attributes:
   - color
+  - pattern
   - scent
 - id: ae-2-1-2-13-5
   name: Soy Wax
   children: []
   attributes:
   - color
+  - pattern
   - scent
 - id: ae-2-1-2-14
   name: Textiles
@@ -1928,7 +1969,7 @@
   attributes:
   - care_instructions
   - color
-  - fabric_design
+  - fabric_structure
   - pattern
 - id: ae-2-1-2-14-3-1
   name: Fusible Interfacing
@@ -1936,7 +1977,7 @@
   attributes:
   - care_instructions
   - color
-  - fabric_design
+  - fabric_structure
   - pattern
 - id: ae-2-1-2-14-3-2
   name: Sew-In Interfacing
@@ -1944,7 +1985,7 @@
   attributes:
   - care_instructions
   - color
-  - fabric_design
+  - fabric_structure
   - pattern
 - id: ae-2-1-2-14-4
   name: Printable Fabric
@@ -2054,7 +2095,11 @@
   name: Craft Machine Cases & Covers
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - cover_features
 - id: ae-2-1-3-3
   name: Sewing Machine Extension Tables
@@ -2367,6 +2412,7 @@
   - art/crafting_tool_material
   - palette_design
   - shape
+  - usage_type
 - id: ae-2-1-4-4
   name: Craft Cutting & Embossing Tools
   children:
@@ -2423,6 +2469,7 @@
   children: []
   attributes:
   - art/crafting_tool_material
+  - craft_cutter/embosser_type
 - id: ae-2-1-4-4-3
   name: Craft Knives
   children: []
@@ -2508,6 +2555,7 @@
   children: []
   attributes:
   - art/crafting_tool_material
+  - craft_decoration_maker_type
 - id: ae-2-1-4-6
   name: Craft Measuring & Marking Tools
   children:
@@ -2527,6 +2575,8 @@
   children: []
   attributes:
   - bristle_material
+  - bristle_shape
+  - brush_application
   - brush_size
   - handle_material
 - id: ae-2-1-4-6-2
@@ -2712,6 +2762,8 @@
   attributes:
   - accessory_size
   - glue_gun_features
+  - glue_gun_operation
+  - glue_gun_technology
   - power_source
   - temperature
 - id: ae-2-1-4-12
@@ -3709,6 +3761,7 @@
   - accessory_size
   - condition
   - material
+  - stand/display_type
 - id: ae-2-2-5
   name: Postage Stamps
   children:
@@ -4023,113 +4076,113 @@
   - ae-2-2-10-1-16
   attributes:
   - condition
-  - logo
   - sport
+  - sports_logo
 - id: ae-2-2-10-1-1
   name: Banners
   children: []
   attributes:
   - condition
-  - logo
   - sport
+  - sports_logo
 - id: ae-2-2-10-1-2
   name: Caps
   children: []
   attributes:
   - condition
-  - logo
   - sport
+  - sports_logo
 - id: ae-2-2-10-1-3
   name: Figurines
   children: []
   attributes:
   - condition
-  - logo
   - sport
+  - sports_logo
 - id: ae-2-2-10-1-4
   name: Flags
   children: []
   attributes:
   - condition
-  - logo
   - sport
+  - sports_logo
 - id: ae-2-2-10-1-5
   name: Gloves
   children: []
   attributes:
   - condition
-  - logo
   - sport
+  - sports_logo
 - id: ae-2-2-10-1-6
   name: Hats
   children: []
   attributes:
   - condition
-  - logo
   - sport
+  - sports_logo
 - id: ae-2-2-10-1-7
   name: Hoodies
   children: []
   attributes:
   - condition
-  - logo
   - sport
+  - sports_logo
 - id: ae-2-2-10-1-8
   name: Jerseys
   children: []
   attributes:
   - condition
-  - logo
   - sport
+  - sports_logo
 - id: ae-2-2-10-1-9
   name: Keychains
   children: []
   attributes:
   - condition
-  - logo
   - sport
+  - sports_logo
 - id: ae-2-2-10-1-10
   name: Pins
   children: []
   attributes:
   - condition
-  - logo
   - sport
+  - sports_logo
 - id: ae-2-2-10-1-11
   name: Posters
   children: []
   attributes:
   - condition
-  - logo
   - sport
+  - sports_logo
 - id: ae-2-2-10-1-12
   name: Scarves
   children: []
   attributes:
   - condition
-  - logo
   - sport
+  - sports_logo
 - id: ae-2-2-10-1-14
   name: Socks
   children: []
   attributes:
   - condition
-  - logo
   - sport
+  - sports_logo
 - id: ae-2-2-10-1-15
   name: T-Shirts
   children: []
   attributes:
   - condition
-  - logo
   - sport
+  - sports_logo
 - id: ae-2-2-10-1-16
   name: Wall Decals
   children: []
   attributes:
   - condition
-  - logo
   - sport
+  - sports_logo
 - id: ae-2-2-11
   name: Vintage Advertisements
   children: []
@@ -4442,6 +4495,7 @@
   name: Scale Model Kits
   children: []
   attributes:
+  - scale_model_kit_type
   - scale_model_material
   - skill_level
 - id: ae-2-7
@@ -4620,6 +4674,7 @@
   children: []
   attributes:
   - instrument_accessory_material
+  - instrument_support_type
 - id: ae-2-7-2
   name: Conductor Batons
   children: []
@@ -4633,6 +4688,7 @@
   attributes:
   - display_technology
   - power_source
+  - tuner_design
   - tuning_modes
   - tuning_range
 - id: ae-2-7-4
@@ -4673,8 +4729,12 @@
   name: Music Stand Bags
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
 - id: ae-2-7-7-2
   name: Music Stand Lights
   children: []
@@ -4721,6 +4781,7 @@
   attributes:
   - desk_size
   - instrument_accessory_material
+  - music_stand_design
 - id: ae-2-7-9
   name: Musical Instrument Amplifier Accessories
   children:
@@ -4741,7 +4802,11 @@
   name: Musical Instrument Amplifier Covers & Cases
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - closure_type
   - compatible_amplifier
   - cover_features
@@ -4759,6 +4824,7 @@
   - instrument_accessory_material
   - knob_function
   - knob_style
+  - pattern
 - id: ae-2-7-9-5
   name: Musical Instrument Amplifier Stands
   children: []
@@ -4766,6 +4832,8 @@
   - color
   - compatible_electric/acoustic_instrument
   - instrument_accessory_material
+  - music_stand_design
+  - pattern
 - id: ae-2-7-9-6
   name: Musical Instrument Amplifier Tubes
   children: []
@@ -4823,36 +4891,56 @@
   - ae-2-7-11-1-3
   - ae-2-7-11-1-4
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - compatible_keyboard_configuration
 - id: ae-2-7-11-1-1
   name: Musical Keyboard Gigbags
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - compatible_keyboard_configuration
 - id: ae-2-7-11-1-2
   name: Musical Keyboard Hard Cases
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - compatible_keyboard_configuration
 - id: ae-2-7-11-1-3
   name: Musical Keyboard Rolling Cases
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - compatible_keyboard_configuration
 - id: ae-2-7-11-1-4
   name: Musical Keyboard Soft Cases
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - compatible_keyboard_configuration
 - id: ae-2-7-11-2
   name: Musical Keyboard Stands
@@ -5091,48 +5179,48 @@
   - ae-2-7-12-5-3-4
   - ae-2-7-12-5-3-5
   attributes:
-  - adjustability
   - compatible_drum_configuration
+  - drum_hardware_adjustability
   - drum_hardware_material
   - footboard_type
 - id: ae-2-7-12-5-3-1
   name: Belt Drives
   children: []
   attributes:
-  - adjustability
   - compatible_drum_configuration
+  - drum_hardware_adjustability
   - drum_hardware_material
   - footboard_type
 - id: ae-2-7-12-5-3-2
   name: Chain Drives
   children: []
   attributes:
-  - adjustability
   - compatible_drum_configuration
+  - drum_hardware_adjustability
   - drum_hardware_material
   - footboard_type
 - id: ae-2-7-12-5-3-3
   name: Direct Drives
   children: []
   attributes:
-  - adjustability
   - compatible_drum_configuration
+  - drum_hardware_adjustability
   - drum_hardware_material
   - footboard_type
 - id: ae-2-7-12-5-3-4
   name: Double Drum Pedals
   children: []
   attributes:
-  - adjustability
   - compatible_drum_configuration
+  - drum_hardware_adjustability
   - drum_hardware_material
   - footboard_type
 - id: ae-2-7-12-5-3-5
   name: Single Drum Pedals
   children: []
   attributes:
-  - adjustability
   - compatible_drum_configuration
+  - drum_hardware_adjustability
   - drum_hardware_material
   - footboard_type
 - id: ae-2-7-12-6
@@ -5145,8 +5233,12 @@
   name: Drum Stick & Brush Bags & Holders
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - closure_type
 - id: ae-2-7-12-7
   name: Drum Sticks & Brushes
@@ -5214,8 +5306,12 @@
   children: []
   attributes:
   - accessory_size
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - closure_type
 - id: ae-2-7-12-9-2
   name: Hand Percussion Stands & Mounts
@@ -5379,18 +5475,21 @@
   name: Guitar Cases & Gigbags
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - color
   - compatible_string_instrument
-  - inner_color
-  - inner_pattern
   - pattern
 - id: ae-2-7-13-1-5
   name: Guitar Fittings & Parts
   children: []
   attributes:
   - compatible_string_instrument
+  - guitar_fitting/part_type
   - instrument_part_material
 - id: ae-2-7-13-1-6
   name: Guitar Humidifiers
@@ -5400,24 +5499,28 @@
   - ae-2-7-13-1-6-3
   attributes:
   - compatible_string_instrument
+  - humidifier_design
   - instrument_accessory_material
 - id: ae-2-7-13-1-6-1
   name: Case Humidifiers
   children: []
   attributes:
   - compatible_string_instrument
+  - humidifier_design
   - instrument_accessory_material
 - id: ae-2-7-13-1-6-2
   name: Room Humidifiers
   children: []
   attributes:
   - compatible_string_instrument
+  - humidifier_design
   - instrument_accessory_material
 - id: ae-2-7-13-1-6-3
   name: Soundhole Humidifiers
   children: []
   attributes:
   - compatible_string_instrument
+  - humidifier_design
   - instrument_accessory_material
 - id: ae-2-7-13-1-7
   name: Guitar Picks
@@ -5552,32 +5655,48 @@
   - ae-2-7-13-2-1-2
   - ae-2-7-13-2-1-3
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - closure_type
   - compatible_orchestral_string_instrument
 - id: ae-2-7-13-2-1-1
   name: Double Bow Cases
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - closure_type
   - compatible_orchestral_string_instrument
 - id: ae-2-7-13-2-1-2
   name: Multiple Bow Cases
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - closure_type
   - compatible_orchestral_string_instrument
 - id: ae-2-7-13-2-1-3
   name: Single Bow Cases
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - closure_type
   - compatible_orchestral_string_instrument
 - id: ae-2-7-13-2-2
@@ -5585,14 +5704,19 @@
   children: []
   attributes:
   - bow_hair_material
+  - compatible_orchestral_string_instrument
   - frog_material
   - instrument_accessory_material
 - id: ae-2-7-13-2-3
   name: Orchestral String Instrument Cases
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - closure_type
   - color
   - compatible_orchestral_string_instrument
@@ -5617,6 +5741,8 @@
   - color
   - compatible_orchestral_string_instrument
   - pattern
+  - pickup_design
+  - pickup_type
 - id: ae-2-7-13-2-7
   name: Orchestral String Instrument Stands
   children: []
@@ -5719,8 +5845,12 @@
   name: Bassoon Cases & Gigbags
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - color
   - pattern
 - id: ae-2-7-14-1-3
@@ -5780,12 +5910,14 @@
   attributes:
   - instrument_accessory_material
   - mount/stand_features
+  - music_stand_design
 - id: ae-2-7-14-1-6
   name: Bassoon Straps & Supports
   children: []
   attributes:
   - color
   - instrument_accessory_material
+  - instrument_support_type
   - pattern
 - id: ae-2-7-14-2
   name: Clarinet Accessories
@@ -5826,8 +5958,12 @@
   name: Clarinet Cases & Gigbags
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - color
   - pattern
 - id: ae-2-7-14-2-3
@@ -5902,9 +6038,9 @@
   attributes:
   - color
   - compatible_clarinet_type
-  - facing
   - instrument_accessory_material
   - pattern
+  - tip_opening
 - id: ae-2-7-14-2-4-4
   name: Clarinet Small Parts
   children: []
@@ -5917,6 +6053,7 @@
   attributes:
   - compatible_clarinet_type
   - instrument_accessory_material
+  - music_stand_design
 - id: ae-2-7-14-2-6
   name: Clarinet Reeds
   children: []
@@ -5929,6 +6066,7 @@
   attributes:
   - compatible_clarinet_type
   - instrument_accessory_material
+  - instrument_support_type
 - id: ae-2-7-14-3
   name: Flute Accessories
   children:
@@ -5963,8 +6101,12 @@
   name: Flute Cases & Gigbags
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
 - id: ae-2-7-14-3-3
   name: Flute Parts
   children:
@@ -6018,8 +6160,12 @@
   name: Harmonica Cases
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
 - id: ae-2-7-14-4-2
   name: Harmonica Holders
   children:
@@ -6070,8 +6216,12 @@
   name: Oboe Cases & Gigbags
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
 - id: ae-2-7-14-5-3
   name: Oboe Parts
   children:
@@ -6111,14 +6261,17 @@
 - id: ae-2-7-14-6-1
   name: Recorder Care & Cleaning
   children: []
-  attributes:
-  - cleaning_solution
+  attributes: []
 - id: ae-2-7-14-6-2
   name: Recorder Cases
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
 - id: ae-2-7-14-6-3
   name: Recorder Parts
   children: []
@@ -6161,8 +6314,12 @@
   name: Saxophone Cases & Gigbags
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
 - id: ae-2-7-14-7-3
   name: Saxophone Ligatures & Caps
   children: []
@@ -6519,28 +6676,28 @@
   attributes:
   - instrument_material
   - interface_type
-  - key_type
+  - keyboard_key_type
 - id: ae-2-8-4-3-1
   name: Digital Pianos
   children: []
   attributes:
   - instrument_material
   - interface_type
-  - key_type
+  - keyboard_key_type
 - id: ae-2-8-4-3-3
   name: Stage Pianos
   children: []
   attributes:
   - instrument_material
   - interface_type
-  - key_type
+  - keyboard_key_type
 - id: ae-2-8-4-3-4
   name: Synthesizer Keyboards
   children: []
   attributes:
   - instrument_material
   - interface_type
-  - key_type
+  - keyboard_key_type
 - id: ae-2-8-4-4
   name: Sound Synthesizers
   children:
@@ -6730,28 +6887,28 @@
   - ae-2-8-5-4-2
   - ae-2-8-5-4-3
   attributes:
-  - instrument_components
+  - electronic_drum_components
   - instrument_material
   - interface_type
 - id: ae-2-8-5-4-1
   name: Electronic Cymbals
   children: []
   attributes:
-  - instrument_components
+  - electronic_drum_components
   - instrument_material
   - interface_type
 - id: ae-2-8-5-4-2
   name: Electronic Snare Drums
   children: []
   attributes:
-  - instrument_components
+  - electronic_drum_components
   - instrument_material
   - interface_type
 - id: ae-2-8-5-4-3
   name: Electronic Tom-Toms
   children: []
   attributes:
-  - instrument_components
+  - electronic_drum_components
   - instrument_material
   - interface_type
 - id: ae-2-8-5-5
@@ -7348,52 +7505,87 @@
   - ae-2-8-7-2-3
   - ae-2-8-7-2-4
   attributes:
-  - color
+  - fingerboard_color
   - fingerboard_material
+  - fingerboard_pattern
   - guitar_size
+  - instrument_color
   - instrument_material
+  - instrument_pattern
+  - instrument_string_color
   - instrument_string_material
+  - instrument_string_pattern
+  - neck_color
   - neck_material
+  - neck_pattern
 - id: ae-2-8-7-2-1
   name: Acoustic Guitars
   children: []
   attributes:
-  - color
+  - fingerboard_color
   - fingerboard_material
+  - fingerboard_pattern
   - guitar_size
+  - instrument_color
   - instrument_material
+  - instrument_pattern
+  - instrument_string_color
   - instrument_string_material
+  - instrument_string_pattern
+  - neck_color
   - neck_material
+  - neck_pattern
 - id: ae-2-8-7-2-2
   name: Bass Guitars
   children: []
   attributes:
-  - color
+  - fingerboard_color
   - fingerboard_material
+  - fingerboard_pattern
   - guitar_size
+  - instrument_color
   - instrument_material
+  - instrument_pattern
+  - instrument_string_color
   - instrument_string_material
+  - instrument_string_pattern
+  - neck_color
   - neck_material
+  - neck_pattern
 - id: ae-2-8-7-2-3
   name: Classical Guitars
   children: []
   attributes:
-  - color
+  - fingerboard_color
   - fingerboard_material
+  - fingerboard_pattern
   - guitar_size
+  - instrument_color
   - instrument_material
+  - instrument_pattern
+  - instrument_string_color
   - instrument_string_material
+  - instrument_string_pattern
+  - neck_color
   - neck_material
+  - neck_pattern
 - id: ae-2-8-7-2-4
   name: Electric Guitars
   children: []
   attributes:
-  - color
+  - fingerboard_color
   - fingerboard_material
+  - fingerboard_pattern
   - guitar_size
+  - instrument_color
   - instrument_material
+  - instrument_pattern
+  - instrument_string_color
   - instrument_string_material
+  - instrument_string_pattern
+  - neck_color
   - neck_material
+  - neck_pattern
 - id: ae-2-8-7-3
   name: Harps
   children:
@@ -7719,21 +7911,18 @@
   attributes:
   - accessory_size
   - instrument_material
-  - tuning
 - id: ae-2-8-8-6-1
   name: Contemporary Jew's Harps
   children: []
   attributes:
   - accessory_size
   - instrument_material
-  - tuning
 - id: ae-2-8-8-6-2
   name: Traditional Jew's Harps
   children: []
   attributes:
   - accessory_size
   - instrument_material
-  - tuning
 - id: ae-2-8-8-7
   name: Melodicas
   children:
@@ -8037,13 +8226,14 @@
   - color
   - item_style
   - material
+  - pattern
 - id: ae-3-1-2
   name: Corsages & Boutonnières
   children: []
   attributes:
   - color
   - corsage/boutonniere_design
-  - ribbon_color
+  - pattern
 - id: ae-3-1-3
   name: Fresh Cut Flowers
   children:
@@ -8056,6 +8246,7 @@
   attributes:
   - arrangement
   - color
+  - pattern
   - stem_length
 - id: ae-3-1-3-1
   name: Daisies
@@ -8063,6 +8254,7 @@
   attributes:
   - arrangement
   - color
+  - pattern
   - stem_length
 - id: ae-3-1-3-2
   name: Lilies
@@ -8070,6 +8262,7 @@
   attributes:
   - arrangement
   - color
+  - pattern
   - stem_length
 - id: ae-3-1-3-3
   name: Orchids
@@ -8077,6 +8270,7 @@
   attributes:
   - arrangement
   - color
+  - pattern
   - stem_length
 - id: ae-3-1-3-4
   name: Roses
@@ -8084,6 +8278,7 @@
   attributes:
   - arrangement
   - color
+  - pattern
   - stem_length
 - id: ae-3-1-3-5
   name: Sunflowers
@@ -8091,6 +8286,7 @@
   attributes:
   - arrangement
   - color
+  - pattern
   - stem_length
 - id: ae-3-1-3-6
   name: Tulips
@@ -8098,6 +8294,7 @@
   attributes:
   - arrangement
   - color
+  - pattern
   - stem_length
 - id: ae-3-1-5
   name: Gift Wrapping
@@ -8252,6 +8449,7 @@
   children: []
   attributes:
   - birthday_candle_design
+  - birthday_candle_type
   - color
   - pattern
 - id: ae-3-2-6
@@ -8592,6 +8790,7 @@
   - accessory_size
   - celebration_type
   - color
+  - pattern
 - id: ae-3-3
   name: Special Effects
   children:
@@ -8665,6 +8864,7 @@
   - ae-3-3-5-5
   attributes:
   - light_color
+  - light_pattern
   - mounting_type
   - power_source
   - sfx_control_technology
@@ -8673,6 +8873,7 @@
   children: []
   attributes:
   - light_color
+  - light_pattern
   - mounting_type
   - power_source
   - sfx_control_technology
@@ -8681,6 +8882,7 @@
   children: []
   attributes:
   - light_color
+  - light_pattern
   - mounting_type
   - power_source
   - sfx_control_technology
@@ -8689,6 +8891,7 @@
   children: []
   attributes:
   - light_color
+  - light_pattern
   - mounting_type
   - power_source
   - sfx_control_technology
@@ -8697,6 +8900,7 @@
   children: []
   attributes:
   - light_color
+  - light_pattern
   - mounting_type
   - power_source
   - sfx_control_technology
@@ -8705,6 +8909,7 @@
   children: []
   attributes:
   - light_color
+  - light_pattern
   - mounting_type
   - power_source
   - sfx_control_technology

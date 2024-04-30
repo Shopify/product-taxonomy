@@ -133,17 +133,18 @@
   name: Binders
   children: []
   attributes:
+  - binder_ring_shape
   - color
   - office_supply_material
   - paper_size
   - pattern
-  - ring_type
 - id: os-3-2-3
   name: Binding Combs & Spines
   children: []
   attributes:
   - color
   - office_supply_material
+  - pattern
 - id: os-3-2-4
   name: Binding Machines
   children:
@@ -241,8 +242,12 @@
   name: CD/DVD Cases & Organizers
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - color
   - pattern
 - id: os-3-10
@@ -349,8 +354,12 @@
   name: Pen & Pencil Cases
   children: []
   attributes:
+  - bag/case_closure
   - bag/case_features
   - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
   - color
   - pattern
 - id: os-3-17
@@ -406,6 +415,7 @@
   children: []
   attributes:
   - color
+  - pattern
 - id: os-4-2
   name: Correction Fluids, Pens & Tapes
   children:
@@ -459,7 +469,7 @@
   - color
   - material
   - pattern
-  - supply_shape
+  - shape
 - id: os-4-4
   name: Labels & Tags
   children:
@@ -478,6 +488,7 @@
   - color
   - office_supply_material
   - pattern
+  - usage_type
 - id: os-4-4-2
   name: Folder Tabs
   children: []
@@ -485,6 +496,7 @@
   - color
   - office_supply_material
   - pattern
+  - usage_type
 - id: os-4-4-3
   name: Label Clips
   children: []
@@ -492,6 +504,7 @@
   - color
   - office_supply_material
   - pattern
+  - usage_type
 - id: os-4-4-4
   name: Label Tapes & Refill Rolls
   children: []
@@ -499,6 +512,7 @@
   - color
   - pattern
   - tape_material
+  - usage_type
 - id: os-4-4-5
   name: Shipping Labels
   children: []
@@ -506,6 +520,7 @@
   - color
   - office_supply_material
   - pattern
+  - usage_type
 - id: os-4-4-6
   name: Shipping Tags
   children: []
@@ -513,6 +528,7 @@
   - color
   - office_supply_material
   - pattern
+  - usage_type
 - id: os-4-5
   name: Laminating Film, Pouches & Sheets
   children:
@@ -544,6 +560,8 @@
   children: []
   attributes:
   - color
+  - pattern
+  - product_certifications_standards
 - id: os-4-7
   name: Office Tape
   children:
@@ -555,11 +573,13 @@
   children: []
   attributes:
   - color
+  - pattern
 - id: os-4-7-2
   name: Transparent Tape
   children: []
   attributes:
   - color
+  - pattern
 - id: os-4-8
   name: Paper Clips & Clamps
   children:
@@ -567,18 +587,21 @@
   - os-4-8-2
   attributes:
   - color
+  - pattern
 - id: os-4-8-1
   name: Binder Clips
   children: []
   attributes:
   - color
   - office_supply_material
+  - pattern
 - id: os-4-8-2
   name: Paper Clips
   children: []
   attributes:
   - color
   - office_supply_material
+  - pattern
 - id: os-4-9
   name: Paper Products
   children:
@@ -598,48 +621,57 @@
   - os-4-9-14
   attributes:
   - color
+  - pattern
 - id: os-4-9-1
   name: Binder Paper
   children: []
   attributes:
   - color
   - paper_size
+  - pattern
 - id: os-4-9-2
   name: Blank ID Cards
   children: []
   attributes:
   - color
+  - pattern
 - id: os-4-9-3
   name: Business Cards
   children: []
   attributes:
   - color
+  - pattern
 - id: os-4-9-4
   name: Business Forms & Receipts
   children: []
   attributes:
   - color
+  - pattern
 - id: os-4-9-5
   name: Checks
   children: []
   attributes:
   - color
+  - pattern
 - id: os-4-9-6
   name: Cover Paper
   children: []
   attributes:
   - color
+  - pattern
 - id: os-4-9-7
   name: Envelopes
   children: []
   attributes:
   - color
   - envelope_features
+  - pattern
 - id: os-4-9-8
   name: Index Cards
   children: []
   attributes:
   - color
+  - pattern
 - id: os-4-9-9
   name: Notebooks & Notepads
   children:
@@ -652,6 +684,7 @@
   - paper_type
   - pattern
   - sheet_color
+  - sheet_pattern
 - id: os-4-9-9-3
   name: Journals
   children: []
@@ -660,6 +693,7 @@
   - paper_type
   - pattern
   - sheet_color
+  - sheet_pattern
 - id: os-4-9-9-4
   name: Memo Pads
   children: []
@@ -668,14 +702,18 @@
   - paper_type
   - pattern
   - sheet_color
+  - sheet_pattern
 - id: os-4-9-9-5
   name: Notepads
   children: []
   attributes:
   - color
+  - notepad_cover_type
+  - notepad_design
   - paper_type
   - pattern
   - sheet_color
+  - sheet_pattern
 - id: os-4-9-9-6
   name: Pocket Notebooks
   children: []
@@ -684,6 +722,7 @@
   - paper_type
   - pattern
   - sheet_color
+  - sheet_pattern
 - id: os-4-9-10
   name: Post Cards
   children: []
@@ -696,11 +735,13 @@
   children: []
   attributes:
   - color
+  - pattern
 - id: os-4-9-12
   name: Receipt & Adding Machine Paper Rolls
   children: []
   attributes:
   - color
+  - pattern
   - receipt_paper_features
 - id: os-4-9-13
   name: Stationery
@@ -714,13 +755,14 @@
   attributes:
   - color
   - pattern
-  - supply_shape
+  - shape
 - id: os-4-10
   name: Rubber Bands
   children: []
   attributes:
   - band_strength
   - color
+  - pattern
 - id: os-4-11
   name: Staples
   children: []
@@ -733,6 +775,7 @@
   - accessory_size
   - color
   - office_supply_material
+  - pattern
   - point_design
   - tack/pushpin_head_design
 - id: os-5
@@ -740,15 +783,18 @@
   children:
   - os-5-1
   - os-5-2
-  attributes: []
+  attributes:
+  - cutter_options
 - id: os-5-1
   name: Handheld Impulse Sealers
   children: []
-  attributes: []
+  attributes:
+  - cutter_options
 - id: os-5-2
   name: Tabletop Impulse Sealers
   children: []
-  attributes: []
+  attributes:
+  - cutter_options
 - id: os-6
   name: Lap Desks
   children: []
@@ -768,11 +814,13 @@
   children: []
   attributes:
   - office_supply_material
+  - personalization_design
 - id: os-7-2
   name: Door Name Plates
   children: []
   attributes:
   - office_supply_material
+  - personalization_design
 - id: os-8
   name: Office & Chair Mats
   children:
@@ -857,7 +905,9 @@
   name: Calculator Accessories
   children: []
   attributes:
+  - calculator_accessory_type
   - color
+  - pattern
 - id: os-10-2
   name: Calculators
   children:
@@ -895,15 +945,20 @@
 - id: os-10-3
   name: Electronic Dictionaries & Translators
   children: []
-  attributes: []
+  attributes:
+  - supported_language
 - id: os-10-4
   name: Label Makers
   children: []
-  attributes: []
+  attributes:
+  - portability
 - id: os-10-5
   name: Laminators
   children: []
-  attributes: []
+  attributes:
+  - lamination_mode
+  - paper_size
+  - portability
 - id: os-10-6
   name: Office Shredders
   children: []
@@ -917,6 +972,7 @@
   name: Time & Attendance Clocks
   children: []
   attributes:
+  - authentication_technology
   - connectivity_technology
   - display_technology
   - power_source
@@ -933,6 +989,7 @@
   children: []
   attributes:
   - compatible_paper_size
+  - keyboard_layout
   - line_spacing_options
 - id: os-11
   name: Office Instruments
@@ -969,9 +1026,9 @@
   children: []
   attributes:
   - blade_material
-  - color
+  - handle_color
   - handle_material
-  - pattern
+  - handle_pattern
 - id: os-11-4
   name: Magnifiers
   children: []
@@ -979,6 +1036,7 @@
   - color
   - handle_material
   - lens_configuration
+  - pattern
 - id: os-11-5
   name: Office Stamps
   children:
@@ -992,7 +1050,10 @@
   - os-11-5-8
   attributes:
   - color
+  - customization
   - ink_color
+  - ink_pattern
+  - pattern
   - stamp_type
   - text_plate_material
 - id: os-11-5-1
@@ -1000,7 +1061,10 @@
   children: []
   attributes:
   - color
+  - customization
   - ink_color
+  - ink_pattern
+  - pattern
   - stamp_type
   - text_plate_material
 - id: os-11-5-2
@@ -1008,7 +1072,10 @@
   children: []
   attributes:
   - color
+  - customization
   - ink_color
+  - ink_pattern
+  - pattern
   - stamp_type
   - text_plate_material
 - id: os-11-5-3
@@ -1016,7 +1083,10 @@
   children: []
   attributes:
   - color
+  - customization
   - ink_color
+  - ink_pattern
+  - pattern
   - stamp_type
   - text_plate_material
 - id: os-11-5-4
@@ -1024,7 +1094,10 @@
   children: []
   attributes:
   - color
+  - customization
   - ink_color
+  - ink_pattern
+  - pattern
   - stamp_type
   - text_plate_material
 - id: os-11-5-5
@@ -1032,7 +1105,10 @@
   children: []
   attributes:
   - color
+  - customization
   - ink_color
+  - ink_pattern
+  - pattern
   - stamp_type
   - text_plate_material
 - id: os-11-5-6
@@ -1040,7 +1116,10 @@
   children: []
   attributes:
   - color
+  - customization
   - ink_color
+  - ink_pattern
+  - pattern
   - stamp_type
   - text_plate_material
 - id: os-11-5-7
@@ -1048,7 +1127,10 @@
   children: []
   attributes:
   - color
+  - customization
   - ink_color
+  - ink_pattern
+  - pattern
   - stamp_type
   - text_plate_material
 - id: os-11-5-8
@@ -1056,7 +1138,10 @@
   children: []
   attributes:
   - color
+  - customization
   - ink_color
+  - ink_pattern
+  - pattern
   - stamp_type
   - text_plate_material
 - id: os-11-6
@@ -1079,6 +1164,7 @@
   - color
   - office_instrument_material
   - pattern
+  - pencil_sharpener_design
 - id: os-11-6-2
   name: Carpenter Sharpeners
   children: []
@@ -1086,6 +1172,7 @@
   - color
   - office_instrument_material
   - pattern
+  - pencil_sharpener_design
 - id: os-11-6-3
   name: Double Sharpeners
   children: []
@@ -1093,6 +1180,7 @@
   - color
   - office_instrument_material
   - pattern
+  - pencil_sharpener_design
 - id: os-11-6-4
   name: Electric Pencil Sharpeners
   children: []
@@ -1100,6 +1188,7 @@
   - color
   - office_instrument_material
   - pattern
+  - pencil_sharpener_design
   - power_source
 - id: os-11-6-5
   name: Mechanical Sharpeners
@@ -1108,6 +1197,7 @@
   - color
   - office_instrument_material
   - pattern
+  - pencil_sharpener_design
 - id: os-11-6-6
   name: Standard Sharpeners
   children: []
@@ -1115,6 +1205,7 @@
   - color
   - office_instrument_material
   - pattern
+  - pencil_sharpener_design
 - id: os-11-7
   name: Staple Removers
   children: []
@@ -1222,6 +1313,7 @@
   - os-11-10-3
   attributes:
   - color
+  - pattern
 - id: os-11-10-1
   name: Marker & Highlighter Ink Refills
   children:
@@ -1229,21 +1321,25 @@
   - os-11-10-1-2
   attributes:
   - color
+  - pattern
 - id: os-11-10-1-1
   name: Highlighter Refills
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-10-1-2
   name: Marker Refills
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-10-2
   name: Pen Ink & Refills
   children: []
   attributes:
   - color
+  - pattern
   - pen_tip_design
 - id: os-11-10-3
   name: Pencil Lead & Refills
@@ -1251,6 +1347,7 @@
   attributes:
   - color
   - lead_grade
+  - pattern
 - id: os-11-11
   name: Writing & Drawing Instruments
   children:
@@ -1276,65 +1373,76 @@
   - os-11-11-1-9
   attributes:
   - color
+  - pattern
 - id: os-11-11-1-1
   name: Charcoal Pencils
   children: []
   attributes:
   - color
   - hardness
+  - pattern
 - id: os-11-11-1-2
   name: Compressed Charcoals
   children: []
   attributes:
   - color
   - hardness
+  - pattern
 - id: os-11-11-1-3
   name: Conté Charcoals
   children: []
   attributes:
   - color
   - hardness
+  - pattern
 - id: os-11-11-1-4
   name: Graphite Charcoals
   children: []
   attributes:
   - color
   - hardness
+  - pattern
 - id: os-11-11-1-5
   name: Nitram Charcoals
   children: []
   attributes:
   - color
   - hardness
+  - pattern
 - id: os-11-11-1-6
   name: Pastel Charcoals
   children: []
   attributes:
   - color
   - hardness
+  - pattern
 - id: os-11-11-1-7
   name: Powdered Charcoals
   children: []
   attributes:
   - color
   - hardness
+  - pattern
 - id: os-11-11-1-8
   name: Vine Charcoals
   children: []
   attributes:
   - color
   - hardness
+  - pattern
 - id: os-11-11-1-9
   name: Willow Charcoals
   children: []
   attributes:
   - color
   - hardness
+  - pattern
 - id: os-11-11-2
   name: Chalk
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-11-3
   name: Crayons
   children:
@@ -1348,46 +1456,55 @@
   - os-11-11-3-8
   attributes:
   - color
+  - pattern
 - id: os-11-11-3-1
   name: Gel Crayons
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-11-3-2
   name: Jumbo Crayons
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-11-3-3
   name: Metallic Crayons
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-11-3-4
   name: Neon Crayons
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-11-3-5
   name: Regular Crayons
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-11-3-6
   name: Scented Crayons
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-11-3-7
   name: Twistable Crayons
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-11-3-8
   name: Watercolor Crayons
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-11-4
   name: Markers & Highlighters
   children:
@@ -1395,23 +1512,27 @@
   - os-11-11-4-2
   attributes:
   - color
+  - pattern
 - id: os-11-11-4-1
   name: Highlighters
   children: []
   attributes:
   - color
   - marker_tip_design
+  - pattern
 - id: os-11-11-4-2
   name: Markers
   children: []
   attributes:
   - color
   - marker_tip_design
+  - pattern
 - id: os-11-11-5
   name: Multifunction Writing Instruments
   children: []
   attributes:
   - color
+  - pattern
   - pen/pencil_features
   - pen_type
 - id: os-11-11-6
@@ -1425,36 +1546,43 @@
   - os-11-11-6-6
   attributes:
   - color
+  - pattern
 - id: os-11-11-6-1
   name: Chalk Pastels
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-11-6-2
   name: Hard Pastels
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-11-6-3
   name: Oil Pastels
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-11-6-4
   name: Pan Pastels
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-11-6-5
   name: Pastel Pencils
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-11-6-6
   name: Soft Pastels
   children: []
   attributes:
   - color
+  - pattern
 - id: os-11-11-7
   name: Pens & Pencils
   children:
@@ -1463,11 +1591,13 @@
   - os-11-11-7-3
   attributes:
   - color
+  - pattern
 - id: os-11-11-7-1
   name: Pen & Pencil Sets
   children: []
   attributes:
   - color
+  - pattern
   - pen/pencil_features
   - pen_type
   - pencil_type
@@ -1496,6 +1626,7 @@
   children: []
   attributes:
   - color
+  - pattern
   - pencil_features
 - id: os-11-11-7-2-2-2
   name: Wooden Pencils
@@ -1515,13 +1646,16 @@
   - os-11-11-7-3-5
   attributes:
   - ink_color
+  - ink_pattern
 - id: os-11-11-7-3-1
   name: Ballpoint Pens
   children: []
   attributes:
   - ink_color
+  - ink_pattern
   - pen_color
   - pen_features
+  - pen_pattern
   - pen_tip_design
 - id: os-11-11-7-3-2
   name: Felt Tips
@@ -1529,31 +1663,39 @@
   attributes:
   - felt_tip_design
   - ink_color
+  - ink_pattern
   - pen_color
   - pen_features
+  - pen_pattern
 - id: os-11-11-7-3-3
   name: Fountain Pens
   children: []
   attributes:
   - ink_color
+  - ink_pattern
   - pen_color
   - pen_features
+  - pen_pattern
   - pen_tip_design
 - id: os-11-11-7-3-4
   name: Gel Pens
   children: []
   attributes:
   - ink_color
+  - ink_pattern
   - pen_color
   - pen_features
+  - pen_pattern
   - pen_tip_design
 - id: os-11-11-7-3-5
   name: Rollerball Pens
   children: []
   attributes:
   - ink_color
+  - ink_pattern
   - pen_color
   - pen_features
+  - pen_pattern
   - pen_tip_design
 - id: os-12
   name: Paper Handling
@@ -1571,6 +1713,7 @@
   attributes:
   - accessory_size
   - color
+  - pattern
 - id: os-12-2
   name: Hole Punches
   children: []
@@ -1587,6 +1730,7 @@
   children: []
   attributes:
   - accessory_size
+  - paper_size
 - id: os-12-5
   name: Paperweights
   children: []
@@ -1693,6 +1837,7 @@
   attributes:
   - color
   - connectivity_technology
+  - pattern
   - zoom_type
 - id: os-13-4
   name: Dry-Erase Boards
@@ -1722,6 +1867,7 @@
   - color
   - laser_color
   - laser_light_source
+  - laser_pattern
   - material
   - pattern
 - id: os-13-8
@@ -1731,6 +1877,7 @@
   - color
   - lectern_mounting_type
   - material
+  - pattern
 - id: os-13-9
   name: Transparencies
   children: []
@@ -1751,20 +1898,24 @@
   - os-14-3
   attributes:
   - color
+  - pattern
 - id: os-14-1
   name: Moving & Shipping Boxes
   children: []
   attributes:
   - color
   - moving/shipping_box_material
+  - pattern
 - id: os-14-2
   name: Packing Materials
   children: []
   attributes:
   - color
   - packing_materials_included
+  - pattern
 - id: os-14-3
   name: Packing Tape
   children: []
   attributes:
   - color
+  - pattern
