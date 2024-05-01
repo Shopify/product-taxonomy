@@ -1,0 +1,51 @@
+name: Ensure distribution files committed are up-to-date
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  ensure_dist_committed:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+
+    - name: Install Cue
+      uses: cue-lang/setup-cue@v1.0.0
+      with:
+        version: 'v0.7.0'
+
+    - name: Install bundler and gems
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+
+    - name: Generate distribution files
+      run: make
+
+    - name: Ensure there are no uncommitted distrubtion file changes
+      id: ensure-dist-committed
+      run: |
+        git diff --exit-code || (echo "Please commit the changes made by the build process" && exit 1)
+
+    - name: Inform PR author of failure and path to fix
+      if: ${{ failure() && steps.ensure-dist-committed.outcome == 'failure' }}
+      run: |
+        # Comment to send
+        COMMENT="Hi there! It looks like your pull request changes taxonomy \`data/*\` files, but is missing updates to \`dist/*\` files.<br /><br />**⏭️ How to fix**<br />Make a PR comment of \`/generate_dist\`, and I will fix this for you :robot:. Alternatively, you can run \`make\` locally and commit the changes yourself."
+
+        # GitHub API Token and PR URL
+        GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+        COMMENT_URL="https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments"
+
+        # Use jq to encode the JSON properly, carefully handling the new lines and backticks
+        JSON_BODY=$(jq -n --arg body "$COMMENT" '{body: $body}')
+
+        # Use curl to post the comment.
+        curl -s -H "Authorization: token ${GITHUB_TOKEN}" -X POST "$COMMENT_URL" -d "$JSON_BODY"
