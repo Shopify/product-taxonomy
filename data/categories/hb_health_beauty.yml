@@ -69,14 +69,18 @@
   attributes:
   - biometric_monitor_accessory_features
   - color
+  - connectivity_technology
   - control_type
+  - pattern
 - id: hb-1-3-1
   name: Activity Monitor Accessories
   children: []
   attributes:
   - biometric_monitor_accessory_features
   - color
+  - connectivity_technology
   - control_type
+  - pattern
 - id: hb-1-3-2
   name: Blood Glucose Meter Accessories
   children:
@@ -86,28 +90,36 @@
   attributes:
   - biometric_monitor_accessory_features
   - color
+  - connectivity_technology
   - control_type
+  - pattern
 - id: hb-1-3-2-1
   name: Blood Glucose Control Solution
   children: []
   attributes:
   - biometric_monitor_accessory_features
   - color
+  - connectivity_technology
   - control_type
+  - pattern
 - id: hb-1-3-2-2
   name: Blood Glucose Test Strips
   children: []
   attributes:
   - biometric_monitor_accessory_features
   - color
+  - connectivity_technology
   - control_type
+  - pattern
 - id: hb-1-3-2-3
   name: Lancing Devices
   children: []
   attributes:
   - biometric_monitor_accessory_features
   - color
+  - connectivity_technology
   - control_type
+  - pattern
 - id: hb-1-3-3
   name: Blood Pressure Monitor Accessories
   children:
@@ -115,21 +127,27 @@
   attributes:
   - biometric_monitor_accessory_features
   - color
+  - connectivity_technology
   - control_type
+  - pattern
 - id: hb-1-3-3-1
   name: Blood Pressure Monitor Cuffs
   children: []
   attributes:
   - biometric_monitor_accessory_features
   - color
+  - connectivity_technology
   - control_type
+  - pattern
 - id: hb-1-3-4
   name: Body Weight Scale Accessories
   children: []
   attributes:
   - biometric_monitor_accessory_features
   - color
+  - connectivity_technology
   - control_type
+  - pattern
 - id: hb-1-4
   name: Biometric Monitors
   children:
@@ -147,6 +165,7 @@
   attributes:
   - color
   - display_technology
+  - pattern
 - id: hb-1-4-1
   name: Activity Monitors
   children: []
@@ -157,6 +176,7 @@
   - compatible_operating_system
   - connectivity_technology
   - display_technology
+  - pattern
   - shape
   - tracking_metrics
 - id: hb-1-4-2
@@ -167,12 +187,14 @@
   - color
   - connectivity_technology
   - display_technology
+  - pattern
 - id: hb-1-4-3
   name: Blood Pressure Monitors
   children: []
   attributes:
   - color
   - display_technology
+  - pattern
 - id: hb-1-4-4
   name: Body Fat Analyzers
   children: []
@@ -181,6 +203,7 @@
   - display_technology
   - measuring_method
   - metrics_supported
+  - pattern
 - id: hb-1-4-5
   name: Body Weight Scales
   children: []
@@ -188,6 +211,7 @@
   - color
   - display_technology
   - material
+  - pattern
   - weight_unit_supported
 - id: hb-1-4-6
   name: Breathalyzers
@@ -195,12 +219,14 @@
   attributes:
   - color
   - display_technology
+  - pattern
 - id: hb-1-4-7
   name: Cholesterol Analyzers
   children: []
   attributes:
   - color
   - display_technology
+  - pattern
 - id: hb-1-4-8
   name: Fertility Monitors and Ovulation Tests
   children:
@@ -209,6 +235,7 @@
   attributes:
   - color
   - display_technology
+  - pattern
   - test_format
 - id: hb-1-4-8-1
   name: Fertility Tests & Monitors
@@ -216,12 +243,14 @@
   attributes:
   - color
   - display_technology
+  - pattern
   - test_format
 - id: hb-1-4-8-2
   name: Ovulation Tests
   children: []
   attributes:
   - color
+  - pattern
   - test_format
 - id: hb-1-4-9
   name: Medical Thermometers
@@ -231,6 +260,7 @@
   - control_type
   - display_technology
   - measuring_type
+  - pattern
   - temperature_measurement
   - test_sample
 - id: hb-1-4-10
@@ -241,19 +271,23 @@
   - connectivity_technology
   - display_technology
   - measuring_type
+  - pattern
 - id: hb-1-4-11
   name: Pulse Oximeters
   children: []
   attributes:
   - color
   - display_technology
+  - pattern
 - id: hb-1-5
   name: Condoms
   children: []
   attributes:
   - color
   - condom_type
+  - flavor
   - material
+  - pattern
   - surface_texture
 - id: hb-1-6
   name: Conductivity Gels & Lotions
@@ -302,6 +336,7 @@
   attributes:
   - bag/case_material
   - case_color
+  - case_pattern
   - first_aid_kit_usage
   - usage_type
 - id: hb-1-8-5
@@ -313,6 +348,7 @@
   attributes:
   - body_area
   - color
+  - pattern
   - treatment_objective
   - usage_type
 - id: hb-1-8-5-1
@@ -321,6 +357,7 @@
   attributes:
   - body_area
   - color
+  - pattern
   - product_form
   - treatment_objective
   - usage_type
@@ -331,6 +368,7 @@
   - body_area
   - color
   - heat_source
+  - pattern
   - treatment_objective
   - usage_type
 - id: hb-1-8-5-3
@@ -340,6 +378,7 @@
   - body_area
   - color
   - ice_pack_type
+  - pattern
   - treatment_objective
   - usage_type
 - id: hb-1-8-6
@@ -348,6 +387,7 @@
   attributes:
   - color
   - medical_tape_material
+  - pattern
   - product_sterility
   - usage_type
 - id: hb-1-9
@@ -634,6 +674,7 @@
   - accessory_size
   - color
   - incontinence_aid_features
+  - pattern
 - id: hb-1-11-6
   name: Adult Diapers
   children: []
@@ -672,7 +713,11 @@
   name: Medical Identification Tags & Jewelry
   children: []
   attributes:
+  - color
   - material
+  - medical_identification_type
+  - pattern
+  - personalization_design
 - id: hb-1-15
   name: Medical Tests
   children:
@@ -777,6 +822,7 @@
   name: Wheelchairs
   children: []
   attributes:
+  - age_group
   - material
   - mobility/accessibility_equipment_features
   - wheelchair_type
@@ -784,13 +830,15 @@
   name: Accessibility Equipment Accessories
   children: []
   attributes:
+  - age_group
   - attachment_type
   - material
 - id: hb-1-17-3
   name: Accessibility Furniture & Fixtures
   children:
   - hb-1-17-3-1
-  attributes: []
+  attributes:
+  - age_group
 - id: hb-1-17-3-1
   name: Shower Benches & Seats
   children:
@@ -800,6 +848,7 @@
   - hb-1-17-3-1-4
   - hb-1-17-3-1-5
   attributes:
+  - age_group
   - attachment_type
   - furniture/fixture_material
   - mounting_type
@@ -842,8 +891,10 @@
   name: Walking Aid Accessories
   children: []
   attributes:
+  - age_group
   - color
   - compatible_walking_aid_equipment
+  - pattern
 - id: hb-1-17-5
   name: Walking Aids
   children:
@@ -851,7 +902,9 @@
   - hb-1-17-5-2
   - hb-1-17-5-3
   attributes:
+  - age_group
   - color
+  - pattern
 - id: hb-1-17-5-1
   name: Canes & Walking Sticks
   children:
@@ -860,44 +913,54 @@
   - hb-1-17-5-1-3
   - hb-1-17-5-1-4
   attributes:
+  - age_group
   - color
   - material
+  - pattern
 - id: hb-1-17-5-1-1
   name: Folding Canes
   children: []
   attributes:
   - color
   - material
+  - pattern
 - id: hb-1-17-5-1-2
   name: Offset Canes
   children: []
   attributes:
   - color
   - material
+  - pattern
 - id: hb-1-17-5-1-3
   name: Quad Canes
   children: []
   attributes:
   - color
   - material
+  - pattern
 - id: hb-1-17-5-1-4
   name: Walking Sticks
   children: []
   attributes:
   - color
   - material
+  - pattern
 - id: hb-1-17-5-2
   name: Crutches
   children: []
   attributes:
+  - age_group
   - color
   - crutch_type
+  - pattern
 - id: hb-1-17-5-3
   name: Walkers
   children: []
   attributes:
+  - age_group
   - color
   - mobility/accessibility_equipment_features
+  - pattern
 - id: hb-1-18
   name: Occupational & Physical Therapy Equipment
   children:
@@ -913,7 +976,8 @@
 - id: hb-1-18-2
   name: Therapeutic Swings
   children: []
-  attributes: []
+  attributes:
+  - age_group
 - id: hb-1-19
   name: Pillboxes
   children: []
@@ -998,6 +1062,7 @@
   attributes:
   - closure_type
   - color
+  - pattern
   - support/brace_material
 - id: hb-1-24-1
   name: Ankle Supports
@@ -1005,6 +1070,7 @@
   attributes:
   - closure_type
   - color
+  - pattern
   - support/brace_material
 - id: hb-1-24-2
   name: Back Braces
@@ -1012,6 +1078,7 @@
   attributes:
   - closure_type
   - color
+  - pattern
   - support/brace_material
 - id: hb-1-24-3
   name: Elbow Supports
@@ -1019,6 +1086,7 @@
   attributes:
   - closure_type
   - color
+  - pattern
   - support/brace_material
 - id: hb-1-24-4
   name: Knee Braces
@@ -1026,6 +1094,7 @@
   attributes:
   - closure_type
   - color
+  - pattern
   - support/brace_material
 - id: hb-1-24-5
   name: Neck Braces
@@ -1033,6 +1102,7 @@
   attributes:
   - closure_type
   - color
+  - pattern
   - support/brace_material
 - id: hb-1-24-6
   name: Wrist Braces
@@ -1040,6 +1110,7 @@
   attributes:
   - closure_type
   - color
+  - pattern
   - support/brace_material
 - id: hb-1-25
   name: Surgical Lubricants
@@ -1195,17 +1266,20 @@
   name: Bar Soap
   children: []
   attributes:
+  - age_group
   - scent
   - suitable_for_skin_type
 - id: hb-3-2-1-2
   name: Bath Additives
   children: []
   attributes:
+  - age_group
   - scent
 - id: hb-3-2-1-3
   name: Bath Brushes
   children: []
   attributes:
+  - age_group
   - handle_material
   - handle_type
   - scent
@@ -1213,12 +1287,14 @@
   name: Bath Sponges & Loofahs
   children: []
   attributes:
+  - age_group
   - material
   - scent
 - id: hb-3-2-1-5
   name: Body Wash
   children: []
   attributes:
+  - age_group
   - package_type
   - product_form
   - scent
@@ -1227,7 +1303,8 @@
   name: Hand Sanitizers & Wipes
   children: []
   attributes:
-  - active_ingredient
+  - age_group
+  - constitutive_ingredients
   - dispenser_type
   - product_form
   - scent
@@ -1235,12 +1312,15 @@
   name: Hygienic Wipes
   children: []
   attributes:
+  - age_group
   - scent
   - wipe_packaging
 - id: hb-3-2-1-8
   name: Liquid Hand Soap
   children: []
   attributes:
+  - age_group
+  - constitutive_ingredients
   - package_type
   - product_form
   - scent
@@ -1257,6 +1337,7 @@
   attributes:
   - color
   - material
+  - pattern
   - scent
 - id: hb-3-2-2
   name: Bath & Body Gift Sets
@@ -1303,17 +1384,20 @@
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-2-5-1-4
   name: Eyelash Curler Refills
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-2-5-1-5
   name: Eyelash Curlers
   children: []
   attributes:
   - color
   - material
+  - pattern
 - id: hb-3-2-5-1-6
   name: Face Mirrors
   children: []
@@ -1337,12 +1421,14 @@
   attributes:
   - color
   - drying_speed
+  - pattern
 - id: hb-3-2-5-1-8-2
   name: False Eyelash Applicators
   children: []
   attributes:
   - color
   - eyelash_applicator_design
+  - pattern
 - id: hb-3-2-5-1-8-3
   name: False Eyelash Remover
   children: []
@@ -1355,6 +1441,7 @@
   - bristle_material
   - bristle_shape
   - color
+  - pattern
 - id: hb-3-2-5-1-10
   name: Makeup Sponges
   children: []
@@ -1401,6 +1488,7 @@
   attributes:
   - material
   - toe_spacer_design
+  - usage_type
 - id: hb-3-2-5-2-4
   name: Manicure Tool Sets
   children: []
@@ -1414,9 +1502,11 @@
   name: Nail Clippers
   children: []
   attributes:
+  - age_group
   - blade_type
   - color
   - material
+  - pattern
 - id: hb-3-2-5-2-7
   name: Nail Drill Accessories
   children: []
@@ -1470,6 +1560,7 @@
   attributes:
   - color
   - material
+  - pattern
 - id: hb-3-2-5-3-5
   name: Skin Care Extractors
   children: []
@@ -1481,6 +1572,7 @@
   children: []
   attributes:
   - color
+  - pattern
   - roller_head
   - roller_material
   - roller_type
@@ -1490,6 +1582,7 @@
   attributes:
   - brush_head_usage
   - color
+  - pattern
 - id: hb-3-2-5-3-8
   name: Skin Cleansing Brushes & Systems
   children: []
@@ -1522,9 +1615,12 @@
   name: Body Paint & Foundation
   children: []
   attributes:
+  - age_group
+  - body_paint/foundation_type
   - color
   - cosmetic_finish
   - makeup_features
+  - pattern
   - product_certifications_standards
   - product_form
   - skin_tone
@@ -1556,6 +1652,7 @@
   attributes:
   - color
   - makeup_features
+  - pattern
   - product_certifications_standards
 - id: hb-3-2-6-3-1
   name: Eye Primers
@@ -1564,6 +1661,7 @@
   - color
   - dispenser_type
   - makeup_features
+  - pattern
   - product_certifications_standards
   - product_form
   - skin_care_effect
@@ -1575,6 +1673,7 @@
   - cosmetic_finish
   - eye_shadow_effect
   - makeup_features
+  - pattern
   - product_certifications_standards
   - product_form
 - id: hb-3-2-6-3-3
@@ -1582,6 +1681,7 @@
   children: []
   attributes:
   - cosmetic_finish
+  - eyebrow_enhancer_color
   - makeup_features
   - product_certifications_standards
   - product_form
@@ -1593,6 +1693,7 @@
   - cosmetic_finish
   - dispenser_type
   - makeup_features
+  - pattern
   - product_certifications_standards
   - product_form
 - id: hb-3-2-6-3-5
@@ -1602,7 +1703,9 @@
   - accessory_size
   - color
   - eyelash_material
+  - eyelash_type
   - makeup_features
+  - pattern
   - product_certifications_standards
 - id: hb-3-2-6-3-6
   name: Lash & Brow Growth Treatments
@@ -1610,6 +1713,7 @@
   attributes:
   - color
   - makeup_features
+  - pattern
   - product_certifications_standards
   - product_form
 - id: hb-3-2-6-3-7
@@ -1618,6 +1722,7 @@
   attributes:
   - color
   - makeup_features
+  - pattern
   - product_certifications_standards
   - product_form
 - id: hb-3-2-6-3-8
@@ -1627,6 +1732,7 @@
   - color
   - makeup_features
   - mascara_effect
+  - pattern
   - product_certifications_standards
 - id: hb-3-2-6-4
   name: Face Makeup
@@ -1650,6 +1756,7 @@
   - cosmetic_finish
   - dispenser_type
   - makeup_features
+  - pattern
   - product_benefits
   - product_certifications_standards
   - product_form
@@ -1660,10 +1767,13 @@
   attributes:
   - cosmetic_finish
   - dispenser_type
+  - face_powder_color
+  - face_powder_type
   - makeup_features
   - product_certifications_standards
   - product_form
   - skin_tone
+  - skin_undertone
   - suitable_for_skin_type
 - id: hb-3-2-6-4-3
   name: Face Primers
@@ -1671,6 +1781,7 @@
   attributes:
   - cosmetic_finish
   - dispenser_type
+  - makeup_color/shade
   - makeup_features
   - product_certifications_standards
   - product_form
@@ -1682,6 +1793,7 @@
   attributes:
   - cosmetic_finish
   - dispenser_type
+  - makeup_color/shade
   - makeup_features
   - product_certifications_standards
   - product_form
@@ -1695,6 +1807,7 @@
   attributes:
   - cosmetic_finish
   - dispenser_type
+  - makeup_color/shade
   - makeup_features
   - product_certifications_standards
   - product_form
@@ -1709,7 +1822,9 @@
   - hb-3-2-6-5-6
   attributes:
   - color
+  - cosmetic_finish
   - makeup_features
+  - pattern
   - product_certifications_standards
 - id: hb-3-2-6-5-1
   name: Lip & Cheek Stains
@@ -1718,6 +1833,7 @@
   - color
   - cosmetic_finish
   - makeup_features
+  - pattern
   - product_certifications_standards
 - id: hb-3-2-6-5-2
   name: Lip Gloss
@@ -1727,6 +1843,7 @@
   - cosmetic_finish
   - lip_gloss_effect
   - makeup_features
+  - pattern
   - product_certifications_standards
 - id: hb-3-2-6-5-3
   name: Lip Liners
@@ -1734,7 +1851,9 @@
   attributes:
   - color
   - cosmetic_finish
+  - lip_liner_design
   - makeup_features
+  - pattern
   - product_benefits
   - product_certifications_standards
   - texture
@@ -1746,6 +1865,7 @@
   - cosmetic_finish
   - dispenser_type
   - makeup_features
+  - pattern
   - product_certifications_standards
   - texture
 - id: hb-3-2-6-5-6
@@ -1756,6 +1876,7 @@
   - cosmetic_finish
   - lipstick_effect
   - makeup_features
+  - pattern
   - product_certifications_standards
   - texture
 - id: hb-3-2-6-6
@@ -1771,6 +1892,7 @@
   attributes:
   - color
   - makeup_features
+  - pattern
   - product_certifications_standards
 - id: hb-3-2-7
   name: Nail Care
@@ -1792,21 +1914,21 @@
   - hb-3-2-7-1-1
   - hb-3-2-7-1-2
   attributes:
-  - detailed_ingredients
+  - constitutive_ingredients
   - nail_care_features
   - product_certifications_standards
 - id: hb-3-2-7-1-1
   name: Cuticle Creams
   children: []
   attributes:
-  - detailed_ingredients
+  - constitutive_ingredients
   - nail_care_features
   - product_certifications_standards
 - id: hb-3-2-7-1-2
   name: Cuticle Oil
   children: []
   attributes:
-  - detailed_ingredients
+  - constitutive_ingredients
   - nail_care_features
   - product_certifications_standards
 - id: hb-3-2-7-2
@@ -1814,9 +1936,12 @@
   children: []
   attributes:
   - color
+  - false_nail_application_method
+  - finish
   - nail_care_features
   - nail_design
   - nail_shape
+  - pattern
   - product_certifications_standards
 - id: hb-3-2-7-3
   name: Manicure Glue
@@ -1830,12 +1955,15 @@
   children: []
   attributes:
   - color
+  - nail_art_items_included
+  - pattern
   - product_certifications_standards
 - id: hb-3-2-7-8
   name: Nail Polish Drying Drops & Sprays
   children: []
   attributes:
   - drying_speed
+  - nail_polish_drying_form
   - polish_dry_form
   - product_certifications_standards
 - id: hb-3-2-7-9
@@ -1855,6 +1983,7 @@
   attributes:
   - color
   - cosmetic_finish
+  - pattern
   - product_benefits
 - id: hb-3-2-8
   name: Perfumes & Colognes
@@ -1917,6 +2046,9 @@
   - hb-3-2-9-16
   - hb-3-2-9-17
   - hb-3-2-9-18
+  - hb-3-2-9-19
+  - hb-3-2-9-20
+  - hb-3-2-9-21
   attributes:
   - product_certifications_standards
   - product_form
@@ -1926,14 +2058,16 @@
   name: Acne Treatments & Kits
   children: []
   attributes:
-  - active_ingredient
+  - constitutive_ingredients
+  - fragrance_level
   - product_certifications_standards
   - skin_care_features
 - id: hb-3-2-9-2
   name: Anti-Aging Skin Care
   children: []
   attributes:
-  - active_ingredient
+  - anti_agin_skin_care_type
+  - constitutive_ingredients
   - product_certifications_standards
   - product_form
   - skin_care_effect
@@ -1942,7 +2076,8 @@
   name: Body Oil
   children: []
   attributes:
-  - active_ingredient
+  - age_group
+  - constitutive_ingredients
   - product_certifications_standards
   - product_form
   - skin_care_effect
@@ -1951,7 +2086,7 @@
   name: Body Powder
   children: []
   attributes:
-  - active_ingredient
+  - constitutive_ingredients
   - package_type
   - product_certifications_standards
   - skin_care_effect
@@ -1960,7 +2095,8 @@
   name: Compressed Skin Care Mask Sheets
   children: []
   attributes:
-  - active_ingredient
+  - constitutive_ingredients
+  - fragrance_level
   - material
   - product_certifications_standards
   - product_form
@@ -1971,7 +2107,7 @@
   name: Facial Cleansers
   children: []
   attributes:
-  - active_ingredient
+  - constitutive_ingredients
   - package_type
   - product_certifications_standards
   - product_form
@@ -1981,7 +2117,7 @@
   name: Facial Cleansing Kits
   children: []
   attributes:
-  - active_ingredient
+  - constitutive_ingredients
   - package_type
   - product_certifications_standards
   - product_form
@@ -1991,7 +2127,7 @@
   name: Facial Pore Strips
   children: []
   attributes:
-  - active_ingredient
+  - constitutive_ingredients
   - package_type
   - product_certifications_standards
   - product_form
@@ -2017,6 +2153,7 @@
   - cosmetic_finish
   - flavor
   - package_type
+  - pattern
   - product_certifications_standards
   - product_form
   - suitable_for_skin_type
@@ -2025,7 +2162,7 @@
   name: Medicated Lip Treatments
   children: []
   attributes:
-  - active_ingredient
+  - constitutive_ingredients
   - cosmetic_finish
   - cosmetic_function
   - package_type
@@ -2038,8 +2175,9 @@
   name: Lotions & Moisturizers
   children: []
   attributes:
+  - age_group
+  - constitutive_ingredients
   - cosmetic_function
-  - detailed_ingredients
   - package_type
   - product_certifications_standards
   - product_form
@@ -2051,6 +2189,7 @@
   - cosmetic_function
   - package_type
   - product_certifications_standards
+  - product_form
   - suitable_for_skin_type
 - id: hb-3-2-9-12
   name: Petroleum Jelly
@@ -2065,15 +2204,19 @@
   children: []
   attributes:
   - allergens
+  - constitutive_ingredients
+  - fragrance_level
   - product_certifications_standards
   - skin_care_effect
   - skin_care_features
+  - skin_care_mask_type
   - suitable_for_skin_type
   - target_gender
 - id: hb-3-2-9-14
   name: Skin Insect Repellent
   children: []
   attributes:
+  - constitutive_ingredients
   - dispenser_type
   - product_certifications_standards
   - suitable_for_bug_type
@@ -2081,8 +2224,11 @@
   name: Sunscreen
   children: []
   attributes:
+  - age_group
   - application_area
+  - constitutive_ingredients
   - dispenser_type
+  - fragrance_level
   - product_certifications_standards
   - product_form
   - skin_care_effect
@@ -2096,6 +2242,7 @@
   attributes:
   - application_area
   - dispenser_type
+  - fragrance_level
   - product_certifications_standards
   - product_form
   - skin_care_effect
@@ -2107,6 +2254,7 @@
   attributes:
   - application_area
   - dispenser_type
+  - fragrance_level
   - product_certifications_standards
   - product_form
   - skin_care_effect
@@ -2117,7 +2265,9 @@
   children: []
   attributes:
   - application_area
+  - constitutive_ingredients
   - dispenser_type
+  - fragrance_level
   - product_certifications_standards
   - product_form
   - skin_care_effect
@@ -2129,7 +2279,7 @@
   - hb-3-2-9-17-1
   - hb-3-2-9-17-2
   attributes:
-  - active_ingredient
+  - constitutive_ingredients
   - cosmetic_function
   - package_type
   - product_certifications_standards
@@ -2139,7 +2289,7 @@
   name: Astringents
   children: []
   attributes:
-  - active_ingredient
+  - constitutive_ingredients
   - cosmetic_function
   - package_type
   - product_certifications_standards
@@ -2149,7 +2299,7 @@
   name: Toners
   children: []
   attributes:
-  - active_ingredient
+  - constitutive_ingredients
   - cosmetic_function
   - package_type
   - product_certifications_standards
@@ -2163,6 +2313,33 @@
   - dispenser_type
   - product_certifications_standards
   - product_form
+- id: hb-3-2-9-19
+  name: Eye Creams
+  children: []
+  attributes:
+  - active_ingredient
+  - dispenser_type
+  - product_form
+  - skin_care_effect
+  - suitable_for_skin_type
+- id: hb-3-2-9-20
+  name: Face Moisturizers
+  children: []
+  attributes:
+  - active_ingredient
+  - fragrance_level
+  - moisturizer_type
+  - product_form
+  - suitable_for_skin_type
+- id: hb-3-2-9-21
+  name: Face Serums
+  children: []
+  attributes:
+  - active_ingredient
+  - product_form
+  - serum_target_areas
+  - skin_care_effect
+  - suitable_for_skin_type
 - id: hb-3-3
   name: Cotton Balls
   children: []
@@ -2173,6 +2350,7 @@
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-5
   name: Deodorants & Anti-Perspirant
   children:
@@ -2180,6 +2358,7 @@
   - hb-3-5-2
   attributes:
   - dispenser_type
+  - fragrance
   - product_certifications_standards
   - product_form
   - target_gender
@@ -2222,6 +2401,7 @@
   name: Ear Drops
   children: []
   attributes:
+  - age_group
   - ear_care_application_method
   - product_form
   - treatment_objective
@@ -2229,29 +2409,36 @@
   name: Ear Dryers
   children: []
   attributes:
+  - age_group
   - portability
   - power_source
 - id: hb-3-6-4
   name: Ear Picks & Spoons
   children: []
   attributes:
+  - age_group
   - color
   - material
+  - pattern
 - id: hb-3-6-5
   name: Ear Syringes
   children: []
   attributes:
+  - age_group
   - material
 - id: hb-3-6-6
   name: Ear Wax Removal Kits
   children: []
   attributes:
+  - age_group
   - tip_material
 - id: hb-3-6-7
   name: Earplug Dispensers
   children: []
   attributes:
+  - age_group
   - material
+  - mounting_type
 - id: hb-3-6-8
   name: Earplugs
   children:
@@ -2260,6 +2447,7 @@
   - hb-3-6-8-3
   attributes:
   - accessory_size
+  - age_group
   - earplug_use
   - material
 - id: hb-3-6-8-1
@@ -2325,6 +2513,7 @@
   - feminine_sanitary_supply_features
   - material
   - product_certifications_standards
+  - usage_type
 - id: hb-3-8-4-1
   name: Maternity Pads & Protectors
   children: []
@@ -2333,6 +2522,7 @@
   - feminine_sanitary_supply_features
   - material
   - product_certifications_standards
+  - usage_type
 - id: hb-3-8-4-2
   name: Menstrual Pads & Protectors
   children: []
@@ -2341,6 +2531,7 @@
   - feminine_sanitary_supply_features
   - material
   - product_certifications_standards
+  - usage_type
 - id: hb-3-8-4-3
   name: Overnight Pads & Protectors
   children: []
@@ -2349,6 +2540,7 @@
   - feminine_sanitary_supply_features
   - material
   - product_certifications_standards
+  - usage_type
 - id: hb-3-8-4-4
   name: Panty Liners
   children: []
@@ -2357,6 +2549,7 @@
   - feminine_sanitary_supply_features
   - material
   - product_certifications_standards
+  - usage_type
 - id: hb-3-8-4-5
   name: Regular Pads & Protectors
   children: []
@@ -2365,6 +2558,7 @@
   - feminine_sanitary_supply_features
   - material
   - product_certifications_standards
+  - usage_type
 - id: hb-3-8-4-6
   name: Reusable Clothes
   children: []
@@ -2373,6 +2567,7 @@
   - feminine_sanitary_supply_features
   - material
   - product_certifications_standards
+  - usage_type
 - id: hb-3-8-5
   name: Menstrual Cups
   children: []
@@ -2381,13 +2576,16 @@
   - color
   - material
   - menstrual_cup_shape
+  - pattern
   - usage_type
 - id: hb-3-8-6
   name: Tampons
   children: []
   attributes:
   - applicator_material
+  - applicator_type
   - product_certifications_standards
+  - tampon_absorbency_level
   - tampon_features
 - id: hb-3-9
   name: Foot Care
@@ -2406,6 +2604,7 @@
   - accessory_size
   - body_area
   - color
+  - pattern
 - id: hb-3-9-2
   name: Corn & Callus Care Supplies
   children: []
@@ -2482,6 +2681,7 @@
   name: Hair Care Kits
   children: []
   attributes:
+  - hair_care_items_included
   - suitable_for_hair_type
   - target_gender
 - id: hb-3-10-2
@@ -2489,6 +2689,7 @@
   children: []
   attributes:
   - color
+  - pattern
   - target_gender
 - id: hb-3-10-3
   name: Hair Color Removers
@@ -2502,6 +2703,7 @@
   children: []
   attributes:
   - color
+  - pattern
   - target_gender
 - id: hb-3-10-5
   name: Hair Loss Concealers
@@ -2528,6 +2730,7 @@
   name: Hair Shears
   children: []
   attributes:
+  - hair_shear_type
   - material
   - target_gender
 - id: hb-3-10-9
@@ -2535,14 +2738,17 @@
   children: []
   attributes:
   - color
+  - pattern
   - target_gender
 - id: hb-3-10-10
   name: Hair Styling Products
   children: []
   attributes:
+  - constitutive_ingredients
   - hair_care_finish
   - hair_type
   - hold_level
+  - product_form
   - target_gender
 - id: hb-3-10-11
   name: Hair Styling Tool Accessories
@@ -2576,6 +2782,7 @@
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-10-11-3
   name: Hair Iron Accessories
   children: []
@@ -2594,6 +2801,7 @@
   - color
   - hair_care_technology
   - hair_styling_tool_features
+  - pattern
 - id: hb-3-10-12-2
   name: Combs & Brushes
   children:
@@ -2605,36 +2813,43 @@
   - hb-3-10-12-2-6
   attributes:
   - color
+  - pattern
 - id: hb-3-10-12-2-1
   name: Hair Combs
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-10-12-2-2
   name: Hairbrushes & Combs
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-10-12-2-3
   name: Hot Air Brushes
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-10-12-2-4
   name: Paddle Hairbrushes
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-10-12-2-5
   name: Round Hairbrushes
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-10-12-2-6
   name: Straightening Brushes
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-10-12-3
   name: Curling Irons
   children: []
@@ -2644,6 +2859,7 @@
   - hair_care_technology
   - hair_styling_tool_features
   - heat_settings
+  - pattern
 - id: hb-3-10-12-5
   name: Hair Curlers
   children: []
@@ -2652,12 +2868,14 @@
   - curler_type
   - heat_settings
   - material
+  - pattern
 - id: hb-3-10-12-6
   name: Hair Dryers
   children: []
   attributes:
   - color
   - hair_styling_tool_features
+  - pattern
 - id: hb-3-10-12-7
   name: Hair Straighteners
   children: []
@@ -2670,7 +2888,9 @@
   attributes:
   - color
   - hair_care_technology
+  - hair_styling_items_included
   - hair_styling_tool_features
+  - pattern
 - id: hb-3-10-13
   name: Shampoo & Conditioner
   children:
@@ -2678,6 +2898,7 @@
   - hb-3-10-13-2
   - hb-3-10-13-3
   attributes:
+  - age_group
   - compatible_hair_color
   - product_certifications_standards
   - suitable_for_hair_type
@@ -2686,8 +2907,10 @@
   name: Conditioners
   children: []
   attributes:
+  - age_group
   - compatible_hair_color
   - conditioner_effect
+  - constitutive_ingredients
   - product_certifications_standards
   - suitable_for_hair_type
   - target_gender
@@ -2695,15 +2918,22 @@
   name: Shampoo & Conditioner Sets
   children: []
   attributes:
+  - age_group
   - compatible_hair_color
+  - constitutive_ingredients
+  - shampoo/conditioner_effect
+  - shampoo/conditioner_items_included
   - suitable_for_hair_type
   - target_gender
 - id: hb-3-10-13-3
   name: Shampoo
   children: []
   attributes:
+  - age_group
   - compatible_hair_color
+  - constitutive_ingredients
   - product_certifications_standards
+  - product_form
   - shampoo_type
   - suitable_for_hair_type
   - target_gender
@@ -2791,6 +3021,7 @@
   children: []
   attributes:
   - body_area
+  - massage_technique
 - id: hb-3-12
   name: Oral Care
   children:
@@ -2825,7 +3056,9 @@
   name: Dental Floss
   children: []
   attributes:
+  - dental_floss_shape
   - dental_floss_thickness_level
+  - dental_floss_type
   - flavor
   - material
 - id: hb-3-12-3
@@ -2833,6 +3066,7 @@
   children: []
   attributes:
   - age_group
+  - dental_mouthgard_recommended_use
   - dental_mouthguard_certifications
   - material
 - id: hb-3-12-4
@@ -2840,10 +3074,12 @@
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-12-5
   name: Dental Water Jets
   children: []
   attributes:
+  - dental_water_jet_operation
   - nozzle_type
   - power_source
 - id: hb-3-12-6
@@ -2859,12 +3095,15 @@
   name: Denture Repair Kits
   children: []
   attributes:
+  - dental_repair_kit_certifications
   - material
 - id: hb-3-12-9
   name: Dentures
   children: []
   attributes:
   - denture_base_color
+  - denture_coverage
+  - denture_design
   - denture_teeth_color
   - material
   - target_gender
@@ -2908,6 +3147,7 @@
   - bag/case_material
   - closure_type
   - color
+  - pattern
 - id: hb-3-12-12-1
   name: Hard Orthodontic Appliance Cases
   children: []
@@ -2916,6 +3156,7 @@
   - bag/case_material
   - closure_type
   - color
+  - pattern
 - id: hb-3-12-12-2
   name: Soft Orthodontic Appliance Cases
   children: []
@@ -2924,11 +3165,13 @@
   - bag/case_material
   - closure_type
   - color
+  - pattern
 - id: hb-3-12-13
   name: Power Flossers
   children: []
   attributes:
   - color
+  - pattern
   - power_source
 - id: hb-3-12-14
   name: Teeth Whiteners
@@ -3011,6 +3254,7 @@
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-12-16
   name: Toothbrush Accessories
   children:
@@ -3023,17 +3267,20 @@
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-12-16-2
   name: Toothbrush Replacement Heads
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-12-16-3
   name: Toothbrush Sanitizers
   children: []
   attributes:
   - color
   - mounting_type
+  - pattern
   - power_source
   - suitable_for_toothbrush
 - id: hb-3-12-17
@@ -3045,24 +3292,28 @@
   attributes:
   - age_group
   - color
+  - pattern
 - id: hb-3-12-17-1
   name: Electric Toothbrushes
   children: []
   attributes:
   - age_group
   - color
+  - pattern
 - id: hb-3-12-17-2
   name: Manual Toothbrushes
   children: []
   attributes:
   - age_group
   - color
+  - pattern
 - id: hb-3-12-17-3
   name: Toothbrush Sets
   children: []
   attributes:
   - age_group
   - color
+  - pattern
 - id: hb-3-12-18
   name: Toothpaste Squeezers & Dispensers
   children: []
@@ -3070,6 +3321,7 @@
   - color
   - material
   - mounting_type
+  - pattern
 - id: hb-3-12-19
   name: Toothpaste
   children: []
@@ -3085,6 +3337,7 @@
   name: Personal Lubricants
   children: []
   attributes:
+  - constitutive_ingredients
   - lubricant_application
   - lubricant_composition
 - id: hb-3-14
@@ -3108,6 +3361,8 @@
   name: Aftershave
   children: []
   attributes:
+  - aftershave_product_form
+  - scent
   - suitable_for_skin_type
 - id: hb-3-14-2
   name: Body & Facial Hair Bleach
@@ -3115,12 +3370,15 @@
   attributes:
   - application_method
   - body/facial_hair_type
+  - fragrance_level
+  - suitable_for_body/facial_hair
 - id: hb-3-14-3
   name: Electric Razor Accessories
   children: []
   attributes:
   - color
   - material
+  - pattern
 - id: hb-3-14-4
   name: Electric Razors
   children:
@@ -3160,6 +3418,7 @@
   attributes:
   - battery_size
   - color
+  - pattern
   - power_source
 - id: hb-3-14-7
   name: Hair Removal
@@ -3176,6 +3435,7 @@
   children: []
   attributes:
   - body_area
+  - suitable_for_skin_type
 - id: hb-3-14-7-2
   name: Electrolysis Devices
   children: []
@@ -3188,11 +3448,15 @@
   children: []
   attributes:
   - color
+  - pattern
+  - suitable_for_skin_type
+  - usage_conditions
 - id: hb-3-14-7-4
   name: Hair Removal Wax Warmers
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-14-7-5
   name: Laser & IPL Hair Removal Devices
   children:
@@ -3200,26 +3464,24 @@
   - hb-3-14-7-5-2
   attributes:
   - body_area
-  - compatible_hair_color
   - suitable_for_skin_tone
 - id: hb-3-14-7-5-1
   name: IPL Hair Removal Devices
   children: []
   attributes:
   - body_area
-  - compatible_hair_color
   - suitable_for_skin_tone
 - id: hb-3-14-7-5-2
   name: Laser Hair Removal Devices
   children: []
   attributes:
   - body_area
-  - compatible_hair_color
   - suitable_for_skin_tone
 - id: hb-3-14-7-6
   name: Waxing Kits & Supplies
   children: []
-  attributes: []
+  attributes:
+  - suitable_for_skin_type
 - id: hb-3-14-8
   name: Razors & Razor Blades
   children: []
@@ -3230,12 +3492,14 @@
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-14-10
   name: Shaving Brushes
   children: []
   attributes:
   - bristle_material
   - color
+  - pattern
 - id: hb-3-14-11
   name: Shaving Creams
   children: []
@@ -3255,7 +3519,7 @@
   name: Styptic Pencils
   children: []
   attributes:
-  - active_ingredient
+  - constitutive_ingredients
   - suitable_for_skin_type
 - id: hb-3-15
   name: Sleeping Aids
@@ -3271,6 +3535,7 @@
   attributes:
   - color
   - material
+  - pattern
 - id: hb-3-15-2
   name: Snoring & Sleep Apnea Aids
   children:
@@ -3329,6 +3594,7 @@
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-16
   name: Spray Tanning Tents
   children: []
@@ -3336,6 +3602,7 @@
   - accessory_size
   - color
   - material
+  - pattern
 - id: hb-3-17
   name: Tanning Beds
   children: []
@@ -3345,6 +3612,7 @@
   children: []
   attributes:
   - color
+  - pattern
 - id: hb-3-19
   name: Vision Care
   children:
@@ -3378,6 +3646,7 @@
   - accessory_size
   - bag/case_material
   - color
+  - pattern
 - id: hb-3-19-1-2-1
   name: Barrel Contact Lens Cases
   children: []
@@ -3385,6 +3654,7 @@
   - accessory_size
   - bag/case_material
   - color
+  - pattern
 - id: hb-3-19-1-2-2
   name: Flat Contact Lens Cases
   children: []
@@ -3392,6 +3662,7 @@
   - accessory_size
   - bag/case_material
   - color
+  - pattern
 - id: hb-3-19-1-3
   name: Contact Lens Solution
   children: []
@@ -3441,8 +3712,8 @@
   children: []
   attributes:
   - eyewear_frame_material
+  - eyewear_frame_shape
   - eyewear_lens_material
-  - frame_shape
   - lens_coating
   - lens_type
   - optical_frame_design
@@ -3479,18 +3750,21 @@
   attributes:
   - color
   - material
+  - pattern
 - id: hb-3-19-5-4-1
   name: Eyewear Chains
   children: []
   attributes:
   - color
   - material
+  - pattern
 - id: hb-3-19-5-4-2
   name: Eyewear Straps
   children: []
   attributes:
   - color
   - material
+  - pattern
 - id: hb-3-19-6
   name: Sunglass Lenses
   children: []
@@ -3498,4 +3772,5 @@
   - color
   - eyewear_lens_material
   - lens_type
+  - pattern
   - uv_protection

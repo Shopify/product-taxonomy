@@ -499,6 +499,7 @@
   name: Audio Mixers
   children: []
   attributes:
+  - audio_mixer_type
   - color
   - connectivity_technology
   - digital_sound_processing
@@ -884,6 +885,7 @@
   - connection_type
   - connectivity_technology
   - frequency/radio_bands_supported
+  - pairing_method
   - pattern
   - power_source
   - radio_features
@@ -897,6 +899,7 @@
   - connection_type
   - connectivity_technology
   - frequency/radio_bands_supported
+  - pairing_method
   - pattern
   - power_source
   - radio_features
@@ -910,6 +913,7 @@
   - connection_type
   - connectivity_technology
   - frequency/radio_bands_supported
+  - pairing_method
   - pattern
   - power_source
   - radio_features
@@ -923,6 +927,7 @@
   - connection_type
   - connectivity_technology
   - frequency/radio_bands_supported
+  - pairing_method
   - pattern
   - power_source
   - radio_features
@@ -936,6 +941,7 @@
   - connection_type
   - connectivity_technology
   - frequency/radio_bands_supported
+  - pairing_method
   - pattern
   - power_source
   - radio_features
@@ -949,6 +955,7 @@
   - connection_type
   - connectivity_technology
   - frequency/radio_bands_supported
+  - pairing_method
   - pattern
   - power_source
   - radio_features
@@ -962,6 +969,7 @@
   - connection_type
   - connectivity_technology
   - frequency/radio_bands_supported
+  - pairing_method
   - pattern
   - power_source
   - radio_features
@@ -1031,21 +1039,27 @@
   - el-2-5-2
   attributes:
   - color
+  - device_interface
   - dj_equipment_features
+  - dj_software_compatibility
   - pattern
 - id: el-2-5-1
   name: DJ CD Players
   children: []
   attributes:
   - color
+  - device_interface
   - dj_equipment_features
+  - dj_software_compatibility
   - pattern
 - id: el-2-5-2
   name: DJ Systems
   children: []
   attributes:
   - color
+  - device_interface
   - dj_equipment_features
+  - dj_software_compatibility
   - mixer_type
   - pattern
 - id: el-2-6
@@ -1263,6 +1277,7 @@
   - color
   - component_package_type
   - pattern
+  - pcb_type
 - id: el-3-6-1
   name: Camera Circuit Boards
   children: []
@@ -1271,6 +1286,7 @@
   - color
   - component_package_type
   - pattern
+  - pcb_type
 - id: el-3-6-2
   name: Computer Circuit Boards
   children:
@@ -1282,6 +1298,7 @@
   - color
   - component_package_type
   - pattern
+  - pcb_type
 - id: el-3-6-2-1
   name: Computer Inverter Boards
   children: []
@@ -1290,6 +1307,7 @@
   - color
   - component_package_type
   - pattern
+  - pcb_type
 - id: el-3-6-2-2
   name: Hard Drive Circuit Boards
   children: []
@@ -1298,6 +1316,7 @@
   - color
   - component_package_type
   - pattern
+  - pcb_type
 - id: el-3-6-2-3
   name: Motherboards
   children: []
@@ -1314,6 +1333,7 @@
   - multi_gpu_technology
   - parallel_processing_technology_support
   - pattern
+  - pcb_type
   - processor_socket
   - storage_drive_interfaces_supported
   - wi_fi_standard
@@ -1326,6 +1346,7 @@
   - component_package_type
   - memory_technology
   - pattern
+  - pcb_type
   - processor_socket
 - id: el-3-6-4
   name: Exercise Machine Circuit Boards
@@ -1335,6 +1356,7 @@
   - color
   - component_package_type
   - pattern
+  - pcb_type
 - id: el-3-6-5
   name: Household Appliance Circuit Boards
   children: []
@@ -1343,6 +1365,7 @@
   - color
   - component_package_type
   - pattern
+  - pcb_type
 - id: el-3-6-6
   name: Pool & Spa Circuit Boards
   children: []
@@ -1351,6 +1374,7 @@
   - color
   - component_package_type
   - pattern
+  - pcb_type
 - id: el-3-6-7
   name: Printer, Copier, & Fax Machine Circuit Boards
   children: []
@@ -1359,6 +1383,7 @@
   - color
   - component_package_type
   - pattern
+  - pcb_type
 - id: el-3-6-8
   name: Scanner Circuit Boards
   children: []
@@ -1367,6 +1392,7 @@
   - color
   - component_package_type
   - pattern
+  - pcb_type
 - id: el-3-6-9
   name: Television Circuit Boards
   children: []
@@ -1375,6 +1401,7 @@
   - color
   - component_package_type
   - pattern
+  - pcb_type
 - id: el-3-7
   name: Semiconductors
   children:
@@ -1632,6 +1659,7 @@
   name: Lenses
   children: []
   attributes:
+  - camera_lens_type
   - color
   - device_interface
   - pattern
@@ -1649,6 +1677,7 @@
   attributes:
   - color
   - device_interface
+  - pairing_method
   - pattern
 - id: el-4-8-4-1-4
   name: Selfie Sticks
@@ -2707,6 +2736,7 @@
   - el-7-9-10-4
   - el-7-9-10-5
   attributes:
+  - card/adapter_installation
   - color
   - device_interface
   - pattern
@@ -2715,6 +2745,7 @@
   children: []
   attributes:
   - audio_output_channel
+  - card/adapter_installation
   - color
   - device_interface
   - pattern
@@ -2722,6 +2753,7 @@
   name: Computer Interface Cards & Adapters
   children: []
   attributes:
+  - card/adapter_installation
   - color
   - device_interface
   - pattern
@@ -2729,6 +2761,7 @@
   name: Riser Cards
   children: []
   attributes:
+  - card/adapter_installation
   - color
   - device_interface
   - pattern
@@ -2736,6 +2769,7 @@
   name: TV Tuner Cards & Adapters
   children: []
   attributes:
+  - card/adapter_installation
   - color
   - device_interface
   - pattern
@@ -2743,6 +2777,7 @@
   name: Video Cards & Adapters
   children: []
   attributes:
+  - card/adapter_installation
   - color
   - device_interface
   - pattern
@@ -2964,6 +2999,7 @@
   - connection_type
   - connectivity_technology
   - display_resolution
+  - graphics_tablet_accessories_included
   - graphics_tablet_specialized_features
   - pattern
   - power_source
@@ -3208,6 +3244,8 @@
   - color
   - device_interface
   - hard_drive_features
+  - hard_drive_form_factor
+  - hard_drive_installation
   - pattern
   - power_source
   - usb_standard
@@ -3458,8 +3496,10 @@
   - battery_features
   - battery_size
   - battery_technology
+  - battery_type
   - color
   - pattern
+  - product_certifications_standards
 - id: el-7-15-1-1
   name: Camera Batteries
   children: []
@@ -3467,8 +3507,10 @@
   - battery_features
   - battery_size
   - battery_technology
+  - battery_type
   - color
   - pattern
+  - product_certifications_standards
 - id: el-7-15-1-2
   name: Cordless Phone Batteries
   children: []
@@ -3476,8 +3518,10 @@
   - battery_features
   - battery_size
   - battery_technology
+  - battery_type
   - color
   - pattern
+  - product_certifications_standards
 - id: el-7-15-1-3
   name: E-Book Reader Batteries
   children: []
@@ -3485,8 +3529,10 @@
   - battery_features
   - battery_size
   - battery_technology
+  - battery_type
   - color
   - pattern
+  - product_certifications_standards
 - id: el-7-15-1-4
   name: General Purpose Batteries
   children: []
@@ -3494,8 +3540,10 @@
   - battery_features
   - battery_size
   - battery_technology
+  - battery_type
   - color
   - pattern
+  - product_certifications_standards
 - id: el-7-15-1-5
   name: Laptop Batteries
   children: []
@@ -3503,8 +3551,10 @@
   - battery_features
   - battery_size
   - battery_technology
+  - battery_type
   - color
   - pattern
+  - product_certifications_standards
 - id: el-7-15-1-6
   name: Mobile Phone Batteries
   children: []
@@ -3512,8 +3562,10 @@
   - battery_features
   - battery_size
   - battery_technology
+  - battery_type
   - color
   - pattern
+  - product_certifications_standards
 - id: el-7-15-1-7
   name: MP3 Player Batteries
   children: []
@@ -3521,8 +3573,10 @@
   - battery_features
   - battery_size
   - battery_technology
+  - battery_type
   - color
   - pattern
+  - product_certifications_standards
 - id: el-7-15-1-8
   name: PDA Batteries
   children: []
@@ -3530,8 +3584,10 @@
   - battery_features
   - battery_size
   - battery_technology
+  - battery_type
   - color
   - pattern
+  - product_certifications_standards
 - id: el-7-15-1-9
   name: Tablet Computer Batteries
   children: []
@@ -3539,8 +3595,10 @@
   - battery_features
   - battery_size
   - battery_technology
+  - battery_type
   - color
   - pattern
+  - product_certifications_standards
 - id: el-7-15-1-10
   name: UPS Batteries
   children: []
@@ -3548,8 +3606,10 @@
   - battery_features
   - battery_size
   - battery_technology
+  - battery_type
   - color
   - pattern
+  - product_certifications_standards
 - id: el-7-15-1-11
   name: Video Camera Batteries
   children: []
@@ -3557,8 +3617,10 @@
   - battery_features
   - battery_size
   - battery_technology
+  - battery_type
   - color
   - pattern
+  - product_certifications_standards
 - id: el-7-15-1-12
   name: Video Game Console & Controller Batteries
   children: []
@@ -3566,8 +3628,10 @@
   - battery_features
   - battery_size
   - battery_technology
+  - battery_type
   - color
   - pattern
+  - product_certifications_standards
 - id: el-7-15-2
   name: Battery Accessories
   children:
@@ -3711,10 +3775,13 @@
   children: []
   attributes:
   - battery_technology
+  - battery_type
   - color
   - connection_type
   - pattern
+  - portability
   - power_source
+  - product_certifications_standards
 - id: el-7-15-8
   name: Power Strips & Surge Suppressors
   children: []
@@ -3919,6 +3986,7 @@
   - marine_navigator_features
   - pattern
   - power_source
+  - radar_technology
 - id: el-11-5
   name: Marine Radios
   children: []
@@ -4072,6 +4140,7 @@
   - color
   - connection_type
   - ethernet_lan_interface_type
+  - hub/switch_storage_options
   - network_protocols_supported
   - pattern
   - power_source
@@ -4082,6 +4151,7 @@
   - color
   - connection_type
   - ethernet_lan_interface_type
+  - hub/switch_storage_options
   - network_protocols_supported
   - pattern
   - power_source
@@ -4092,6 +4162,7 @@
   - color
   - connection_type
   - ethernet_lan_interface_type
+  - hub/switch_storage_options
   - network_protocols_supported
   - pattern
   - power_source
@@ -4102,6 +4173,7 @@
   - color
   - connection_type
   - ethernet_lan_interface_type
+  - hub/switch_storage_options
   - network_protocols_supported
   - pattern
   - power_source
@@ -4112,6 +4184,7 @@
   - color
   - connection_type
   - ethernet_lan_interface_type
+  - hub/switch_storage_options
   - network_protocols_supported
   - pattern
   - power_source
@@ -4122,6 +4195,7 @@
   - color
   - connection_type
   - ethernet_lan_interface_type
+  - hub/switch_storage_options
   - network_protocols_supported
   - pattern
   - power_source
@@ -4132,6 +4206,7 @@
   - color
   - connection_type
   - ethernet_lan_interface_type
+  - hub/switch_storage_options
   - network_protocols_supported
   - pattern
   - power_source
@@ -4142,6 +4217,7 @@
   - color
   - connection_type
   - ethernet_lan_interface_type
+  - hub/switch_storage_options
   - network_protocols_supported
   - pattern
   - power_source
@@ -4152,6 +4228,7 @@
   - color
   - connection_type
   - ethernet_lan_interface_type
+  - hub/switch_storage_options
   - network_protocols_supported
   - pattern
   - power_source
@@ -4162,6 +4239,7 @@
   - color
   - connection_type
   - ethernet_lan_interface_type
+  - hub/switch_storage_options
   - network_protocols_supported
   - pattern
   - power_source
@@ -4283,6 +4361,7 @@
   children: []
   attributes:
   - color
+  - filament_type
   - material
   - pattern
 - id: el-13-1-6
@@ -4793,6 +4872,7 @@
   children: []
   attributes:
   - color
+  - fabric
   - pattern
 - id: el-17-5-3-2
   name: Projection Screen Stands
