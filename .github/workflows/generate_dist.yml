@@ -1,0 +1,45 @@
+name: Generate and commit distribution files
+
+on:
+  issue_comment:
+    types: [created, edited]
+  workflow_dispatch:
+
+concurrency:
+  group: "dist"
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  generate_dist:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.issue.pull_request && github.event.comment.body == '/generate_dist' }}
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+
+    - name: Install Cue
+      uses: cue-lang/setup-cue@v1.0.0
+      with:
+        version: 'v0.7.0'
+
+    - name: Install bundler and gems
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+
+    - name: Generate distribution files
+      run: make
+
+    - name: Commit distribution files
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add dist
+        git commit -m "🤖 Update distribution files"
+        git push
