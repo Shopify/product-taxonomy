@@ -38,7 +38,7 @@ cli.write_file("docs/_releases/#{cli.options.version}.html") do |file|
   content.gsub!("TITLE", cli.options.version.upcase)
   content.gsub!("TARGET", cli.options.version)
   github_target = if cli.options.version == UNSTABLE
-    "tree/releases"
+    "tree/main/dist"
   else
     "releases/tag/v#{cli.options.version}"
   end
