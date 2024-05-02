@@ -17,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.issue.pull_request && github.event.comment.body == '/generate_dist' }}
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
     - name: Checkout PR
       run: gh pr checkout $ISSUE
       env:
