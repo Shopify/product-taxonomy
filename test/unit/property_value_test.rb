@@ -4,6 +4,7 @@ require_relative "../test_helper"
 
 class PropertyValueTest < ActiveSupport::TestCase
   def teardown
+    Property.destroy_all
     PropertyValue.destroy_all
   end
 

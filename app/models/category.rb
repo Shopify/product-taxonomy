@@ -29,6 +29,10 @@ class Category < ApplicationRecord
     def gid(id)
       "gid://shopify/TaxonomyCategory/#{id}"
     end
+
+    def parent_id_of(id)
+      id.split("-")[0...-1].join("-").presence
+    end
   end
 
   def gid
