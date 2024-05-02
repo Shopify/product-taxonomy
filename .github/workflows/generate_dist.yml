@@ -17,8 +17,11 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.issue.pull_request && github.event.comment.body == '/generate_dist' }}
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+    - name: Checkout PR
+      run: gh pr checkout $ISSUE
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ISSUE: ${{ github.event.issue.html_url }}
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
@@ -38,8 +41,8 @@ jobs:
 
     - name: Commit distribution files
       run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "GitHub Action"
+        git config --local user.email "action@github.com"
         git add dist
-        git commit -m "🤖 Update distribution files"
+        git commit -m "🤖 Update distribution files" || exit 0 # Exit gracefully if no changes
         git push
