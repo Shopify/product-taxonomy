@@ -84,6 +84,21 @@ layout: default
         </div>
       {% endfor %}
     </div>
+    <div>
+      {% assign rules = site.data[page.target].mappings %}
+      <ul>
+        {% for rule in rules %}
+          {% assign shopifyCategoryId = rule.output.product_category_id %}
+          {% assign partnerCategoryId = rule.input.product_category_id %}
+          <li
+            class="mapped-category-container"
+            mapped_category_id="{{ shopifyCategoryId }}"
+            category_id="{{ partnerCategoryId }}">
+            Google category id: {{ shopifyCategoryId }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 </div>
 

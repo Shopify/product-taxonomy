@@ -56,7 +56,17 @@ const toggleVisibleAttributes = () => {
       attribute.classList.remove("active");
     }
   });
+
+  qq(".mapped-category-container").forEach((mappedCategory) => {
+    const categoryNodeId = mappedCategory.getAttribute("category_id");
+    if (selectedNode === categoryNodeId) {
+      mappedCategory.classList.add("active");
+    } else {
+      mappedCategory.classList.remove("active");
+    }
+  });
 };
+
 
 const toggleAttributeSelected = (event) => {
   const attributeElement = event.currentTarget.parentNode;

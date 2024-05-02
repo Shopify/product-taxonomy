@@ -18,6 +18,7 @@ cli.options_status
 
 category_data = cli.parse_json("dist/categories.json").fetch("verticals")
 attribute_data = cli.parse_json("dist/attributes.json").fetch("attributes")
+mapping_data = cli.parse_json("dist/mappings.json").fetch("mappings")
 
 DATA_TARGET = "docs/_data/#{cli.options.version}"
 cli.write_file("#{DATA_TARGET}/sibling_groups.yml") do |file|
@@ -30,6 +31,10 @@ cli.write_file("#{DATA_TARGET}/search_index.json") do |file|
 end
 cli.write_file("#{DATA_TARGET}/attributes.yml") do |file|
   file.write(attribute_data.to_yaml(line_width: 1000))
+  file.write("\n")
+end
+cli.write_file("#{DATA_TARGET}/mappings.yml") do |file|
+  file.write(mapping_data.to_yaml(line_width: 1000))
   file.write("\n")
 end
 
