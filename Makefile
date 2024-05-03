@@ -74,7 +74,7 @@ $(DOCS_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA) $(
 	$(V)touch $@
 
 $(DIST_GENERATED_SENTINEL): $(LOCAL_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA) $(VALUES_DATA) $(MAPPINGS_DATA)
-	@$(GENERATE) "Building Dist" "$(GENERATED_DIST_PATH)/*.[json|txt]"
+	@$(GENERATE) "Building Distribution" "$(GENERATED_DIST_PATH)/*.[json|txt]"
 	$(V)bin/generate_dist $(VARG)
 	$(V)touch $@
 
@@ -99,7 +99,7 @@ clean:
 	$(V)rm -f $(CATEGORIES_DATA_CUE)
 	@$(NUKE) "Cleaning mapping data cuefiles" $(MAPPINGS_DATA_CUE)
 	$(V)rm -f $(MAPPINGS_DATA_CUE)
-	@$(NUKE) "Cleaning Generated Dist Files" $(GENERATED_DIST_PATH)
+	@$(NUKE) "Cleaning Generated Distribution Files" $(GENERATED_DIST_PATH)
 	$(V)rm -f $(DIST_GENERATED_SENTINEL)
 	$(V)rm -rf $(GENERATED_DIST_PATH)/*.json
 	$(V)rm -rf $(GENERATED_DIST_PATH)/*.txt

@@ -7,6 +7,16 @@ class CategoryTest < ActiveSupport::TestCase
     Category.destroy_all
   end
 
+  test ".gid returns a global id" do
+    assert_equal "gid://shopify/TaxonomyCategory/tt", Category.gid("tt")
+  end
+
+  test ".parent_id_of returns the parent ID" do
+    assert_nil Category.parent_id_of("tt")
+    assert_equal "tt", Category.parent_id_of("tt-0")
+    assert_equal "tt-0", Category.parent_id_of("tt-0-1")
+  end
+
   test "#id must follow parent" do
     assert_predicate Category.new(id: "tt", name: "Root"), :valid?
     assert_predicate Category.new(id: "tt-0", name: "Child", parent: category), :valid?

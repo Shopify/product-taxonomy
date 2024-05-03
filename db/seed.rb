@@ -10,57 +10,53 @@ module DB
 
     def values_from(data)
       vputs("Importing values")
-      property_values = SourceData::PropertyValueSerializer.deserialize_for_insert_all(data)
-      PropertyValue.insert_all(property_values)
+
+      PropertyValue.insert_all(Source::PropertyValueSerializer.unpack_all(data))
+
       vputs("✓ Imported #{PropertyValue.count} values")
     end
 
     def attributes_from(data)
-      base_attributes = data["base_attributes"]
-      extended_attributes = data["extended_attributes"]
-      vputs("Importing base properties")
-      base_properties = SourceData::BasePropertySerializer.deserialize_for_insert_all(base_attributes)
-      Property.insert_all(base_properties)
-      vputs("→ and their value relationships")
-      base_property_joins = SourceData::BasePropertySerializer.deserialize_for_join_insert_all(base_attributes)
-      PropertiesPropertyValue.insert_all!(base_property_joins)
-      vputs("✓ Imported #{Property.count} properties")
+      vputs("Importing properties")
 
-      vputs("Importing extended properties")
-      extended_properties = SourceData::ExtendedPropertySerializer.deserialize_for_insert_all(extended_attributes)
-      inserted_properties = Property.insert_all(extended_properties, returning: ["id", "base_friendly_id"])
-      vputs("→ and their value relationships")
-      extended_property_joins = SourceData::ExtendedPropertySerializer.deserialize_for_join_insert_all(inserted_properties)
-      PropertiesPropertyValue.insert_all(extended_property_joins)
-      vputs("✓ Imported #{PropertiesPropertyValue.count} property ↔ value relationships")
+      Property.insert_all(Source::PropertySerializer.unpack_all(data["base_attributes"]))
+      PropertiesPropertyValue.insert_all!(Source::PropertiesPropertyValueSerializer.unpack_all(data["base_attributes"]))
+
+      inserted_properties = Property.insert_all(
+        Source::ExtendedPropertySerializer.unpack_all(data["extended_attributes"]),
+        returning: ["id", "base_friendly_id"],
+      )
+      PropertiesPropertyValue.insert_all!(
+        Source::ExtendedPropertiesPropertyValueSerializer.unpack_all(inserted_properties),
+      )
+
+      vputs("✓ Imported #{Property.count} properties")
     end
 
     def categories_from(data)
       vputs("Importing #{data.count} category verticals")
-      data.each do |vertical_json|
-        vputs("  → #{vertical_json.first.fetch("name")}")
-        categories = SourceData::CategorySerializer.deserialize_for_insert_all(vertical_json)
-        Category.insert_all(categories)
-      end
-      vputs("✓ Imported #{Category.count} categories")
 
-      vputs("Importing category relationships")
-      data.each do |vertical_json|
-        joins = SourceData::CategorySerializer.deserialize_for_join_insert_all(vertical_json)
-        CategoriesProperty.insert_all(joins)
+      data.each do |vertical_data|
+        vputs("  → #{vertical_data.first.fetch("name")}")
+        Category.insert_all(Source::CategorySerializer.unpack_all(vertical_data))
+        CategoriesProperty.insert_all(Source::CategoriesPropertySerializer.unpack_all(vertical_data))
       end
-      vputs("✓ Imported #{CategoriesProperty.count} category ↔ property relationships")
+
+      vputs("✓ Imported #{Category.count} categories")
     end
 
     def integrations_from(data)
       vputs("Importing integrations")
+
       integrations = data.map { { name: _1["name"], available_versions: _1["available_versions"] } }
       Integration.insert_all(integrations)
+
       vputs("✓ Imported #{Integration.count} integrations")
     end
 
     def mapping_rules_from(data)
       vputs("Importing mapping rules")
+
       mapping_rules = []
       data.each do |file|
         vputs("Importing mapping rules from #{file}")
@@ -77,9 +73,9 @@ module DB
         end
         rules = raw_mappings["rules"]
         rules.each do |rule|
-          input_product_hash = SourceData::ProductSerializer.deserialize(rule["input"], input_type).payload
+          input_product_hash = Source::ProductSerializer.unpack(rule["input"].merge("type" => input_type))
           input_product = Product.find_or_create_by!(type: input_type, payload: input_product_hash)
-          output_product_hash = SourceData::ProductSerializer.deserialize(rule["output"], output_type).payload
+          output_product_hash = Source::ProductSerializer.unpack(rule["output"].merge("type" => output_type))
           output_product = Product.find_or_create_by!(type: output_type, payload: output_product_hash)
 
           mapping_rules << {
@@ -95,6 +91,7 @@ module DB
         end
       end
       MappingRule.insert_all(mapping_rules)
+
       vputs("✓ Imported all #{MappingRule.count} mapping rules")
     end
 

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Dist
+module Distribution
   class TextSerializer
     def initialize(verticals:, properties:, values:, version:)
       @verticals = verticals
