@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
-module Data2
-  class PropertySerializer
+module Source
+  class ExtendedPropertySerializer
     class << self
       def unpack(hash)
         {
-          "id" => hash["id"],
-          "friendly_id" => hash["friendly_id"],
           "name" => hash["name"],
           "handle" => hash["handle"],
+          "friendly_id" => hash["friendly_id"],
           "base_friendly_id" => hash["values_from"],
         }
       end
@@ -19,11 +18,10 @@ module Data2
 
       def pack(property)
         {
-          "id" => property.id,
           "name" => property.name,
-          "friendly_id" => property.friendly_id,
           "handle" => property.handle,
-          "values" => property.property_values.reorder(:id).map { PropertyValueSerializer.pack(_1) },
+          "friendly_id" => property.friendly_id,
+          "values_from" => property.base_friendly_id,
         }
       end
 

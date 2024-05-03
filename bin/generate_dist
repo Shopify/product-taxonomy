@@ -14,7 +14,7 @@ puts("Generating `#{cli.options.version}` distribution files...")
 cli.options_status
 
 Application.establish_db_connection!
-text_serializer = Dist::TextSerializer.new(
+text_serializer = Distribution::TextSerializer.new(
   verticals: Category.verticals,
   properties: Property.all,
   values: PropertyValue.all,
@@ -33,7 +33,7 @@ cli.write_file!("dist/attribute_values.txt") do |file|
   file.write("\n")
 end
 
-json_serializer = Dist::JSONSerializer.new(
+json_serializer = Distribution::JSONSerializer.new(
   verticals: Category.verticals,
   properties: Property.all,
   mapping_rules: MappingRule.all,

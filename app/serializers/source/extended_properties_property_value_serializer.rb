@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Data2
+module Source
   class ExtendedPropertiesPropertyValueSerializer
     class << self
       def unpack(hash)

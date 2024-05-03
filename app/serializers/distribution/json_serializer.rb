@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Dist
+module Distribution
   class JSONSerializer
     def initialize(verticals:, properties:, mapping_rules:, version:)
       @verticals = verticals
