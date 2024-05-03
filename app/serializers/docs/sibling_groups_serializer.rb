@@ -2,43 +2,35 @@
 
 module Docs
   class SiblingGroupsSerializer
-    include Singleton
-
     class << self
-      delegate :serialize, to: :instance
-    end
+      def unpack(hash)
+        {
+          "id" => hash["id"],
+          "name" => hash["name"],
+          "fully_qualified_type" => hash["full_name"],
+          "depth" => hash["level"],
+          "parent_id" => parent_id(hash),
+          "node_type" => hash["level"].zero? ? "root" : "leaf",
+          "ancestor_ids" => hash["ancestors"].map { _1["id"] }.join(","),
+          "attribute_ids" => hash["attributes"].map { _1["id"] }.join(","),
+        }
+      end
 
-    def serialize(category_dist_json)
-      return @serialized if @serialized
-
-      sibling_groups = {}
-      category_dist_json.each do |vertical|
-        vertical["categories"].each do |category|
-          parent_id = category.fetch("parent_id").presence || "root"
-          depth = category.fetch("level")
-
-          sibling_groups[depth] ||= {}
-          sibling_groups[depth][parent_id] ||= []
-          sibling_groups[depth][parent_id] << sibling_group(category, parent_id:, depth:)
+      def unpack_all(data_list)
+        data_list.each_with_object({}) do |vertical, groups|
+          vertical["categories"].each do |hash|
+            groups[hash["level"]] ||= {}
+            groups[hash["level"]][parent_id(hash)] ||= []
+            groups[hash["level"]][parent_id(hash)] << unpack(hash)
+          end
         end
       end
 
-      @serialized = sibling_groups.to_yaml(line_width: 1000)
-    end
+      private
 
-    private
-
-    def sibling_group(category, parent_id:, depth:)
-      {
-        "id" => category.fetch("id"),
-        "name" => category.fetch("name"),
-        "fully_qualified_type" => category.fetch("full_name"),
-        "depth" => depth,
-        "parent_id" => parent_id,
-        "node_type" => depth.zero? ? "root" : "leaf",
-        "ancestor_ids" => category.fetch("ancestors").map { _1.fetch("id") }.join(","),
-        "attribute_ids" => category.fetch("attributes").map { _1.fetch("id") }.join(","),
-      }
+      def parent_id(hash)
+        hash["parent_id"].presence || "root"
+      end
     end
   end
 end

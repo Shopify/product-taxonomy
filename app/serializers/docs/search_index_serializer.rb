@@ -2,31 +2,25 @@
 
 module Docs
   class SearchIndexSerializer
-    include Singleton
-
     class << self
-      delegate :serialize, to: :instance
-    end
-
-    def serialize(category_dist_json)
-      return @serialized if @serialized
-
-      search_index = category_dist_json.flat_map do |vertical|
-        vertical["categories"].map do |category|
-          {
-            "title" => category.fetch("full_name"),
-            "url" => "?categoryId=#{CGI.escapeURIComponent(category.fetch("id"))}",
-            "category" => {
-              "id" => category.fetch("id"),
-              "name" => category.fetch("name"),
-              "fully_qualified_type" => category.fetch("full_name"),
-              "depth" => category.fetch("level"),
-            },
-          }
-        end
+      def unpack(hash)
+        {
+          "title" => hash["full_name"],
+          "url" => "?categoryId=#{CGI.escapeURIComponent(hash["id"])}",
+          "category" => {
+            "id" => hash["id"],
+            "name" => hash["name"],
+            "fully_qualified_type" => hash["full_name"],
+            "depth" => hash["level"],
+          },
+        }
       end
 
-      @serialized = ::JSON.fast_generate(search_index)
+      def unpack_all(data_list)
+        data_list.flat_map do |vertical|
+          vertical["categories"].map { unpack(_1) }
+        end
+      end
     end
   end
 end
