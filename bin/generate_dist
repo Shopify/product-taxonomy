@@ -14,44 +14,40 @@ puts("Generating `#{cli.options.version}` distribution files...")
 cli.options_status
 
 Application.establish_db_connection!
-text_serializer = Distribution::TextSerializer.new(
-  verticals: Category.verticals,
-  properties: Property.all,
-  values: PropertyValue.all,
-  version: cli.options.version,
-)
+
 cli.write_file!("dist/categories.txt") do |file|
-  file.write(text_serializer.categories)
+  file.write(Distribution::VerticalSerializer.to_txt_collection(Category.verticals, version: cli.options.version))
   file.write("\n")
 end
 cli.write_file!("dist/attributes.txt") do |file|
-  file.write(text_serializer.attributes)
+  file.write(Distribution::PropertySerializer.to_txt_collection(Property.base, version: cli.options.version))
   file.write("\n")
 end
 cli.write_file!("dist/attribute_values.txt") do |file|
-  file.write(text_serializer.values)
+  file.write(Distribution::PropertyValueSerializer.to_txt_collection(PropertyValue.all, version: cli.options.version))
   file.write("\n")
 end
 
-json_serializer = Distribution::JSONSerializer.new(
-  verticals: Category.verticals,
-  properties: Property.all,
+mapping_serializer = Distribution::MappingSerializer.new(
   mapping_rules: MappingRule.all,
   version: cli.options.version,
 )
+category_json = Distribution::VerticalSerializer.as_json_collection(Category.verticals, version: cli.options.version)
+attribute_json = Distribution::PropertySerializer.as_json_collection(Property.base, version: cli.options.version)
+
 cli.write_file!("dist/taxonomy.json") do |file|
-  file.write(json_serializer.taxonomy)
+  file.write(JSON.pretty_generate(category_json.merge(attribute_json)))
   file.write("\n")
 end
 cli.write_file!("dist/categories.json") do |file|
-  file.write(json_serializer.categories)
+  file.write(JSON.pretty_generate(category_json))
   file.write("\n")
 end
 cli.write_file!("dist/attributes.json") do |file|
-  file.write(json_serializer.attributes)
+  file.write(JSON.pretty_generate(attribute_json))
   file.write("\n")
 end
 cli.write_file!("dist/mappings.json") do |file|
-  file.write(json_serializer.mappings)
+  file.write(mapping_serializer.mappings)
   file.write("\n")
 end
