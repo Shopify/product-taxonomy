@@ -15,12 +15,12 @@ class PropertyValue < ApplicationRecord
     foreign_key: :primary_property_friendly_id,
     primary_key: :friendly_id
 
-  def primary_property_friendly_id=(id)
-    self.primary_property = Property.find_by(friendly_id: id)
+  def primary_property_friendly_id=(friendly_id)
+    self.primary_property = Property.find_by(friendly_id:)
   end
 
   validates :name, presence: true
-  validates :friendly_id, presence: true
+  validates :friendly_id, presence: true, uniqueness: true
   validates :handle, presence: true, uniqueness: { scope: :primary_property_friendly_id }
 
   def gid

@@ -4,7 +4,12 @@ require_relative "../../../test_helper"
 
 module Serializers
   module Source
-    class CategorySerializerTest < ActiveSupport::TestCase
+    class CategorySerializerTest < ApplicationTestCase
+      def teardown
+        Category.delete_all
+        Property.delete_all
+      end
+
       test "#unpack is well formed" do
         data = {
           "id" => "aa-123",
@@ -51,7 +56,7 @@ module Serializers
       end
 
       test "#pack is well formed for simple Category" do
-        category = Category.new(id: "aa-123", name: "foo")
+        category = build(:category, id: "aa-123", name: "foo")
 
         assert_equal(
           {
@@ -65,24 +70,29 @@ module Serializers
       end
 
       test "#pack_all is well formed for multiple Categories" do
-        categories = [
-          Category.new(id: "aa-123", name: "foo"),
-          Category.new(id: "bb", name: "bar"),
-        ]
+        Category.delete_all
+
+        color = build(:property, name: "Color")
+        size = build(:property, name: "Size")
+        parent = build(:category, id: "aa", properties: [color])
+        child = create(:category, id: "aa-123", parent:, properties: [color, size])
+
+        parent.reload
+        categories = [parent, child]
 
         assert_equal(
           [
             {
-              "id" => "aa-123",
-              "name" => "foo",
-              "children" => [],
-              "attributes" => [],
+              "id" => "aa",
+              "name" => "Category aa",
+              "children" => ["aa-123"],
+              "attributes" => ["color"],
             },
             {
-              "id" => "bb",
-              "name" => "bar",
+              "id" => "aa-123",
+              "name" => "Category aa-123",
               "children" => [],
-              "attributes" => [],
+              "attributes" => ["color", "size"],
             },
           ],
           ::Source::CategorySerializer.pack_all(categories),
