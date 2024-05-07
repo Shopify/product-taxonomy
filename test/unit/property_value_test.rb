@@ -2,63 +2,56 @@
 
 require_relative "../test_helper"
 
-class PropertyValueTest < ActiveSupport::TestCase
+class PropertyValueTest < ApplicationTestCase
   def teardown
-    Property.destroy_all
-    PropertyValue.destroy_all
+    Property.delete_all
+    PropertyValue.delete_all
   end
 
-  test "#gid returns a global id" do
-    assert_equal "gid://shopify/TaxonomyValue/12", value(id: 12).gid
-  end
-
-  test "default ordering is alphabetical with 'other' last" do
-    red = value!(id: 11, name: "Red", friendly_id: "test__red", handle: "red")
-    zoo = value!(id: 12, name: "Zoo", friendly_id: "test__zoo", handle: "zoo")
-    other = value!(id: 10, name: "Other", friendly_id: "test__other", handle: "other")
+  test "default ordering is alphabetical with 'Other' last" do
+    other = create(:property_value, name: "Other")
+    zoo = create(:property_value, name: "Zoo")
+    red = create(:property_value, name: "Red")
 
     assert_equal [red, zoo, other], PropertyValue.all.to_a
   end
 
-  test "#full_name returns the name of the primary property and the value" do
-    color = Property.create!(name: "Color", friendly_id: "color", handle: "color")
-    red = value!(name: "Red", friendly_id: "color__red", primary_property: color)
+  test "#gid returns a global id" do
+    assert_equal "gid://shopify/TaxonomyValue/42", build(:property_value, id: 42).gid
+  end
 
-    assert_equal "Red [Color]", red.full_name
+  test "#full_name returns the name of the primary property and the value" do
+    assert_equal "Gold [Color]", build(:property_value, name: "Gold", primary_property: color_property).full_name
   end
 
   test "#full_name is just name if primary property is missing" do
-    red = value!(name: "Red", friendly_id: "color__red", handle: "red")
-
-    assert_equal "Red", red.full_name
+    assert_equal "Foo", build(:property_value, name: "Foo").full_name
   end
 
-  test "#handle must be unique per primary friendly id" do
-    Property.create!(name: "Bar", friendly_id: "bar", handle: "bar")
-    value!(handle: "foo", primary_property_friendly_id: "bar")
-    assert_raises(ActiveRecord::RecordInvalid) { value!(id: 2, handle: "foo", primary_property_friendly_id: "bar") }
+  test "#friendly_id must be unique" do
+    create(:property_value, friendly_id: "gold")
+    another_gold = build(:property_value, friendly_id: "gold")
+
+    refute_predicate another_gold, :valid?
   end
 
-  test "handle can be duplicated across different primary property friendly ids" do
-    Property.create!(name: "Bat", friendly_id: "bat", handle: "bat")
-    Property.create!(name: "Baz", friendly_id: "baz", handle: "baz")
-    value!(handle: "foo", primary_property_friendly_id: "bar")
-    value!(id: 2, friendly_id: "test_boo", handle: "foo", primary_property_friendly_id: "baz")
+  test "#handle must be unique per primary property" do
+    create(:property_value, handle: "gold", primary_property: color_property)
+    another_gold = build(:property_value, handle: "gold", primary_property: color_property)
+
+    refute_predicate another_gold, :valid?
+  end
+
+  test "#handle can be duplicated across different primary properties" do
+    create(:property_value, handle: "gold", primary_property: color_property)
+    material_gold = build(:property_value, handle: "gold", primary_property: build(:property, name: "Material"))
+
+    assert_predicate material_gold, :valid?
   end
 
   private
 
-  def value(**args)
-    default_args = {
-      id: 1,
-      name: "Foo",
-      friendly_id: "test__foo",
-      handle: "foo",
-    }
-    PropertyValue.new(default_args.merge(args))
-  end
-
-  def value!(**args)
-    value(**args).tap(&:save!)
+  def color_property
+    @color_property ||= build(:property, name: "Color")
   end
 end

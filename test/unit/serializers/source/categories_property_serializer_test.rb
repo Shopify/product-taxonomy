@@ -4,7 +4,7 @@ require_relative "../../../test_helper"
 
 module Serializers
   module Source
-    class CategoriesPropertySerializerTest < ActiveSupport::TestCase
+    class CategoriesPropertySerializerTest < ApplicationTestCase
       test "#unpack is an array of joins" do
         data = {
           "id" => 1,
