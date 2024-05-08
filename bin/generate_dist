@@ -16,15 +16,15 @@ cli.options_status
 Application.establish_db_connection!
 
 cli.write_file!("dist/categories.txt") do |file|
-  file.write(Distribution::VerticalSerializer.to_txt_collection(Category.verticals, version: cli.options.version))
+  file.write(Category.as_txt(Category.verticals, version: cli.options.version))
   file.write("\n")
 end
 cli.write_file!("dist/attributes.txt") do |file|
-  file.write(Distribution::PropertySerializer.to_txt_collection(Property.base, version: cli.options.version))
+  file.write(Property.as_txt(Property.base, version: cli.options.version))
   file.write("\n")
 end
 cli.write_file!("dist/attribute_values.txt") do |file|
-  file.write(Distribution::PropertyValueSerializer.to_txt_collection(PropertyValue.all, version: cli.options.version))
+  file.write(PropertyValue.as_txt(PropertyValue.all, version: cli.options.version))
   file.write("\n")
 end
 
@@ -32,19 +32,24 @@ mapping_serializer = Distribution::MappingSerializer.new(
   mapping_rules: MappingRule.all,
   version: cli.options.version,
 )
-category_json = Distribution::VerticalSerializer.as_json_collection(Category.verticals, version: cli.options.version)
-attribute_json = Distribution::PropertySerializer.as_json_collection(Property.base, version: cli.options.version)
+categories_json = Category.as_json(Category.verticals, version: cli.options.version)
+attributes_json = Property.as_json(Property.base, version: cli.options.version)
+values_json = PropertyValue.as_json(PropertyValue.all, version: cli.options.version)
 
 cli.write_file!("dist/taxonomy.json") do |file|
-  file.write(JSON.pretty_generate(category_json.merge(attribute_json)))
+  file.write(JSON.pretty_generate(categories_json.merge(attributes_json)))
   file.write("\n")
 end
 cli.write_file!("dist/categories.json") do |file|
-  file.write(JSON.pretty_generate(category_json))
+  file.write(JSON.pretty_generate(categories_json))
   file.write("\n")
 end
 cli.write_file!("dist/attributes.json") do |file|
-  file.write(JSON.pretty_generate(attribute_json))
+  file.write(JSON.pretty_generate(attributes_json))
+  file.write("\n")
+end
+cli.write_file!("dist/values.json") do |file|
+  file.write(JSON.pretty_generate(values_json))
   file.write("\n")
 end
 cli.write_file!("dist/mappings.json") do |file|

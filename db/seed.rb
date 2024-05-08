@@ -11,7 +11,7 @@ module DB
     def values_from(data)
       vputs("Importing values")
 
-      PropertyValue.insert_all(Source::PropertyValueSerializer.unpack_all(data))
+      PropertyValue.insert_all_from_data(data)
 
       vputs("✓ Imported #{PropertyValue.count} values")
     end
@@ -19,16 +19,14 @@ module DB
     def attributes_from(data)
       vputs("Importing properties")
 
-      Property.insert_all(Source::PropertySerializer.unpack_all(data["base_attributes"]))
-      PropertiesPropertyValue.insert_all!(Source::PropertiesPropertyValueSerializer.unpack_all(data["base_attributes"]))
+      Property.insert_all_from_data(data["base_attributes"])
+      PropertiesPropertyValue.insert_all_from_data!(data["base_attributes"])
 
-      inserted_properties = Property.insert_all(
-        Source::ExtendedPropertySerializer.unpack_all(data["extended_attributes"]),
+      inserted_properties = Property.insert_all_from_data(
+        data["extended_attributes"],
         returning: ["id", "base_friendly_id"],
       )
-      PropertiesPropertyValue.insert_all!(
-        Source::ExtendedPropertiesPropertyValueSerializer.unpack_all(inserted_properties),
-      )
+      PropertiesPropertyValue.insert_all_from_data!(inserted_properties)
 
       vputs("✓ Imported #{Property.count} properties")
     end
@@ -38,8 +36,8 @@ module DB
 
       data.each do |vertical_data|
         vputs("  → #{vertical_data.first.fetch("name")}")
-        Category.insert_all(Source::CategorySerializer.unpack_all(vertical_data))
-        CategoriesProperty.insert_all(Source::CategoriesPropertySerializer.unpack_all(vertical_data))
+        Category.insert_all_from_data(vertical_data)
+        CategoriesProperty.insert_all_from_data(vertical_data)
       end
 
       vputs("✓ Imported #{Category.count} categories")
@@ -73,10 +71,8 @@ module DB
         end
         rules = raw_mappings["rules"]
         rules.each do |rule|
-          input_product_hash = Source::ProductSerializer.unpack(rule["input"].merge("type" => input_type))
-          input_product = Product.find_or_create_by!(type: input_type, payload: input_product_hash)
-          output_product_hash = Source::ProductSerializer.unpack(rule["output"].merge("type" => output_type))
-          output_product = Product.find_or_create_by!(type: output_type, payload: output_product_hash)
+          input_product = Product.find_or_create_from_data!(rule["input"], type: input_type)
+          output_product = Product.find_or_create_from_data!(rule["output"], type: output_type)
 
           mapping_rules << {
             integration_id: integration_id,
