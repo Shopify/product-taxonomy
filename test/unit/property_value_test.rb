@@ -49,6 +49,84 @@ class PropertyValueTest < ApplicationTestCase
     assert_predicate material_gold, :valid?
   end
 
+  test ".new_from_data creates a new property value" do
+    color_property.save!
+    property_value = PropertyValue.new_from_data(
+      "id" => 1,
+      "name" => "Gold",
+      "handle" => "gold",
+      "friendly_id" => "color__gold",
+    )
+
+    assert_equal 1, property_value.id
+    assert_equal "Gold", property_value.name
+    assert_equal "gold", property_value.handle
+    assert_equal "color__gold", property_value.friendly_id
+    assert_equal "color", property_value.primary_property_friendly_id
+  end
+
+  test ".insert_all_from_data creates multiple categories" do
+    data = [
+      { "id" => 1, "name" => "Gold", "handle" => "gold", "friendly_id" => "color__gold" },
+      { "id" => 2, "name" => "Red", "handle" => "red", "friendly_id" => "color__red" },
+    ]
+
+    assert_difference -> { PropertyValue.count }, 2 do
+      PropertyValue.insert_all_from_data(data)
+    end
+  end
+
+  test ".as_json returns distribution json" do
+    gold = create(:property_value, name: "Gold")
+    red = create(:property_value, name: "Red")
+
+    assert_equal(
+      {
+        "version" => 1,
+        "values" => [
+          {
+            "id" => "gid://shopify/TaxonomyValue/#{gold.id}",
+            "name" => "Gold",
+            "handle" => "gold",
+          },
+          {
+            "id" => "gid://shopify/TaxonomyValue/#{red.id}",
+            "name" => "Red",
+            "handle" => "red",
+          },
+        ],
+      },
+      PropertyValue.as_json([gold, red], version: 1),
+    )
+  end
+
+  test ".as_txt returns padded and version string representation" do
+    gold = create(:property_value, name: "Gold", primary_property: color_property)
+    red = create(:property_value, name: "Red", primary_property: color_property)
+
+    assert_equal <<~TXT.strip, PropertyValue.as_txt([gold, red], version: 1)
+      # Shopify Product Taxonomy - Attribute Values: 1
+      # Format: {GID} : {Value name} [{Attribute name}]
+
+      gid://shopify/TaxonomyValue/#{gold.id} : Gold [Color]
+      gid://shopify/TaxonomyValue/#{red.id} : Red [Color]
+    TXT
+  end
+
+  test "#as_json_for_data returns data json" do
+    gold = create(:property_value, name: "Gold", primary_property: color_property)
+
+    assert_equal(
+      {
+        "id" => gold.id,
+        "name" => "Gold",
+        "friendly_id" => "color__gold",
+        "handle" => "gold",
+      },
+      gold.as_json_for_data,
+    )
+  end
+
   private
 
   def color_property

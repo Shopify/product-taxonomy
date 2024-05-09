@@ -21,11 +21,11 @@ attribute_data = cli.parse_json("dist/attributes.json").fetch("attributes")
 
 DATA_TARGET = "docs/_data/#{cli.options.version}"
 cli.write_file("#{DATA_TARGET}/sibling_groups.yml") do |file|
-  file.write(Docs::SiblingGroupsSerializer.unpack_all(category_data).to_yaml(line_width: 1000))
+  file.write(Category.as_json_for_docs_siblings(category_data).to_yaml(line_width: 1000))
   file.write("\n")
 end
 cli.write_file("#{DATA_TARGET}/search_index.json") do |file|
-  file.write(JSON.fast_generate(Docs::SearchIndexSerializer.unpack_all(category_data)))
+  file.write(JSON.fast_generate(Category.as_json_for_docs_search(category_data)))
   file.write("\n")
 end
 cli.write_file("#{DATA_TARGET}/attributes.yml") do |file|

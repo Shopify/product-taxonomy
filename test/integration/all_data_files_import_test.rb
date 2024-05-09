@@ -51,7 +51,7 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
 
   test "AttributeValues are consistent with values.yml" do
     @raw_values_data.each do |raw_value|
-      deserialized_value = PropertyValue.new(Source::PropertyValueSerializer.unpack(raw_value))
+      deserialized_value = PropertyValue.new_from_data(raw_value)
       real_value = PropertyValue.find(raw_value.fetch("id"))
 
       assert_equal deserialized_value, real_value
@@ -79,14 +79,14 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     extended_attributes = @raw_attributes_data["extended_attributes"]
 
     base_attributes.each do |raw_attribute|
-      deserialized_attribute = Property.new(Source::PropertySerializer.unpack(raw_attribute))
+      deserialized_attribute = Property.new_from_data(raw_attribute)
       real_attribute = Property.find(raw_attribute.fetch("id"))
 
       assert_equal deserialized_attribute, real_attribute
     end
 
     extended_attributes.each do |raw_attribute|
-      deserialized_attribute = Property.new(Source::ExtendedPropertySerializer.unpack(raw_attribute))
+      deserialized_attribute = Property.new_from_data(raw_attribute)
       real_attribute = Property.find_by(
         name: raw_attribute.fetch("name"),
         base_friendly_id: raw_attribute.fetch("values_from"),
@@ -123,7 +123,7 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
 
   test "Categories are consistent with categories/*.yml" do
     @raw_verticals_data.flatten.each do |raw_category|
-      deserialized_category = Category.new(Source::CategorySerializer.unpack(raw_category))
+      deserialized_category = Category.new_from_data(raw_category)
       real_category = Category.find(raw_category.fetch("id"))
 
       assert_equal deserialized_category, real_category
@@ -218,17 +218,10 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
         input_type, output_type = output_type, input_type
       end
       raw[:content].fetch("rules").each do |raw_rule|
-        deserialized_input_product = Product.new(
-          payload: Source::ProductSerializer.unpack(raw_rule["input"].merge("type" => input_type)),
-          type: input_type,
-        )
-        deserialized_output_product = Product.new(
-          payload: Source::ProductSerializer.unpack(raw_rule["output"].merge("type" => output_type)),
-          type: output_type,
-        )
-        input_id = Product.find_by(type: input_type, payload: deserialized_input_product.payload).id
-        output_id = Product.find_by(type: output_type, payload: deserialized_output_product.payload).id
-        assert_predicate MappingRule.find_by(input_id: input_id, output_id: output_id), :present?
+        input_id = Product.find_from_data(raw_rule["input"], type: input_type).id
+        output_id = Product.find_from_data(raw_rule["output"], type: output_type).id
+
+        assert_predicate MappingRule.find_by(input_id:, output_id:), :present?
       end
     end
   end
