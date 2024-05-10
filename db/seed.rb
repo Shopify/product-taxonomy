@@ -11,24 +11,24 @@ module DB
     def values_from(data)
       vputs("Importing values")
 
-      PropertyValue.insert_all_from_data(data)
+      Value.insert_all_from_data(data)
 
-      vputs("✓ Imported #{PropertyValue.count} values")
+      vputs("✓ Imported #{Value.count} values")
     end
 
     def attributes_from(data)
-      vputs("Importing properties")
+      vputs("Importing attributes")
 
-      Property.insert_all_from_data(data["base_attributes"])
-      PropertiesPropertyValue.insert_all_from_data!(data["base_attributes"])
+      Attribute.insert_all_from_data(data["base_attributes"])
+      AttributesValue.insert_all_from_data!(data["base_attributes"])
 
-      inserted_properties = Property.insert_all_from_data(
+      inserted_properties = Attribute.insert_all_from_data(
         data["extended_attributes"],
         returning: ["id", "base_friendly_id"],
       )
-      PropertiesPropertyValue.insert_all_from_data!(inserted_properties)
+      AttributesValue.insert_all_from_data!(inserted_properties)
 
-      vputs("✓ Imported #{Property.count} properties")
+      vputs("✓ Imported #{Attribute.count} attributes")
     end
 
     def categories_from(data)
@@ -37,7 +37,7 @@ module DB
       data.each do |vertical_data|
         vputs("  → #{vertical_data.first.fetch("name")}")
         Category.insert_all_from_data(vertical_data)
-        CategoriesProperty.insert_all_from_data(vertical_data)
+        CategoriesAttribute.insert_all_from_data(vertical_data)
       end
 
       vputs("✓ Imported #{Category.count} categories")

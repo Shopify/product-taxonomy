@@ -33,16 +33,13 @@ cli.write_file("#{DATA_TARGET}/attributes.yml") do |file|
   file.write("\n")
 end
 
-cli.write_file("docs/_releases/#{cli.options.version}.html") do |file|
-  content = cli.read_file("docs/_releases/_template.html")
-  content.gsub!("TITLE", cli.options.version.upcase)
-  content.gsub!("TARGET", cli.options.version)
-  github_target = if cli.options.version == UNSTABLE
-    "tree/main/dist"
-  else
-    "releases/tag/v#{cli.options.version}"
-  end
-  content.gsub!("GH_URL", "https://github.com/Shopify/product-taxonomy/#{github_target}")
+unless cli.options.version == UNSTABLE
+  cli.write_file("docs/_releases/#{cli.options.version}.html") do |file|
+    content = cli.read_file("docs/_releases/_template.html")
+    content.gsub!("TITLE", cli.options.version.upcase)
+    content.gsub!("TARGET", cli.options.version)
+    content.gsub!("GH_URL", "https://github.com/Shopify/product-taxonomy/releases/tag/v#{cli.options.version}")
 
-  file.write(content)
+    file.write(content)
+  end
 end

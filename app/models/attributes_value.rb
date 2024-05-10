@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class PropertiesPropertyValue < ApplicationRecord
-  belongs_to :property
-  belongs_to :property_value, foreign_key: :property_value_friendly_id, primary_key: :friendly_id
+class AttributesValue < ApplicationRecord
+  belongs_to :related_attribute, class_name: "Attribute", foreign_key: :attribute_id, primary_key: :id
+  belongs_to :value, foreign_key: :value_friendly_id, primary_key: :friendly_id
 
   class << self
     #
@@ -17,12 +17,12 @@ class PropertiesPropertyValue < ApplicationRecord
     def rows_from_data(data)
       values, friendly_id, id = data.values_at("values", "base_friendly_id", "id")
 
-      value_friendly_ids = values || Property.find_by!(friendly_id:).property_values.pluck(:friendly_id)
+      value_friendly_ids = values || Attribute.find_by!(friendly_id:).values.pluck(:friendly_id)
 
       value_friendly_ids.map do |value_friendly_id|
         {
-          "property_id" => id,
-          "property_value_friendly_id" => value_friendly_id,
+          "attribute_id" => id,
+          "value_friendly_id" => value_friendly_id,
         }
       end
     end

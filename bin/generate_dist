@@ -20,11 +20,11 @@ cli.write_file!("dist/categories.txt") do |file|
   file.write("\n")
 end
 cli.write_file!("dist/attributes.txt") do |file|
-  file.write(Property.as_txt(Property.base, version: cli.options.version))
+  file.write(Attribute.as_txt(Attribute.base, version: cli.options.version))
   file.write("\n")
 end
 cli.write_file!("dist/attribute_values.txt") do |file|
-  file.write(PropertyValue.as_txt(PropertyValue.all, version: cli.options.version))
+  file.write(Value.as_txt(Value.all, version: cli.options.version))
   file.write("\n")
 end
 
@@ -33,8 +33,8 @@ mapping_serializer = Distribution::MappingSerializer.new(
   version: cli.options.version,
 )
 categories_json = Category.as_json(Category.verticals, version: cli.options.version)
-attributes_json = Property.as_json(Property.base, version: cli.options.version)
-values_json = PropertyValue.as_json(PropertyValue.all, version: cli.options.version)
+attributes_json = Attribute.as_json(Attribute.base, version: cli.options.version)
+values_json = Value.as_json(Value.all, version: cli.options.version)
 
 cli.write_file!("dist/taxonomy.json") do |file|
   file.write(JSON.pretty_generate(categories_json.merge(attributes_json)))

@@ -46,32 +46,32 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
   end
 
   test "AttributeValues are correctly imported from values.yml" do
-    assert_equal @raw_values_data.size, PropertyValue.count
+    assert_equal @raw_values_data.size, Value.count
   end
 
   test "AttributeValues are consistent with values.yml" do
     @raw_values_data.each do |raw_value|
-      deserialized_value = PropertyValue.new_from_data(raw_value)
-      real_value = PropertyValue.find(raw_value.fetch("id"))
+      deserialized_value = Value.new_from_data(raw_value)
+      real_value = Value.find(raw_value.fetch("id"))
 
       assert_equal deserialized_value, real_value
     end
   end
 
   test "AttributeValues are all valid" do
-    PropertyValue.all.each do |value|
+    Value.all.each do |value|
       assert_predicate value, :valid?
     end
   end
 
-  test "AttributeValues all have a primary property" do
-    PropertyValue.all.each do |value|
-      assert_predicate value.primary_property, :present?, "Value #{value.friendly_id} has no primary property"
+  test "AttributeValues all have a primary attribute" do
+    Value.all.each do |value|
+      assert_predicate value.primary_attribute, :present?, "Value #{value.friendly_id} has no primary attribute"
     end
   end
 
   test "Attributes are correctly imported from attributes.yml" do
-    assert_equal @raw_attributes_data.values.flat_map { _1 }.size, Property.count
+    assert_equal @raw_attributes_data.values.flat_map { _1 }.size, Attribute.count
   end
 
   test "Attributes are consistent with attributes.yml" do
@@ -79,15 +79,15 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     extended_attributes = @raw_attributes_data["extended_attributes"]
 
     base_attributes.each do |raw_attribute|
-      deserialized_attribute = Property.new_from_data(raw_attribute)
-      real_attribute = Property.find(raw_attribute.fetch("id"))
+      deserialized_attribute = Attribute.new_from_data(raw_attribute)
+      real_attribute = Attribute.find(raw_attribute.fetch("id"))
 
       assert_equal deserialized_attribute, real_attribute
     end
 
     extended_attributes.each do |raw_attribute|
-      deserialized_attribute = Property.new_from_data(raw_attribute)
-      real_attribute = Property.find_by(
+      deserialized_attribute = Attribute.new_from_data(raw_attribute)
+      real_attribute = Attribute.find_by(
         name: raw_attribute.fetch("name"),
         base_friendly_id: raw_attribute.fetch("values_from"),
       )
@@ -96,22 +96,22 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     end
   end
 
-  test "Exteneded Attributes have primary properties if they inherit values" do
+  test "Exteneded Attributes have primary attributes if they inherit values" do
     @raw_attributes_data["extended_attributes"].each do |raw_attribute|
       next unless raw_attribute.key?("values_from")
 
-      real_attribute = Property.find_by(
+      real_attribute = Attribute.find_by(
         name: raw_attribute.fetch("name"),
         base_friendly_id: raw_attribute.fetch("values_from"),
       )
-      real_parent_property = Property.find_by!(friendly_id: raw_attribute.fetch("values_from"))
+      real_parent_attribute = Attribute.find_by!(friendly_id: raw_attribute.fetch("values_from"))
 
-      assert_equal real_parent_property, real_attribute.base_property
+      assert_equal real_parent_attribute, real_attribute.base_attribute
     end
   end
 
   test "Attributes are all valid" do
-    Property.all.each do |attribute|
+    Attribute.all.each do |attribute|
       assert_predicate attribute, :valid?
     end
   end
@@ -140,8 +140,8 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
 
   test "Category ↔ Attribute relationships are consistent with categories/*.yml" do
     @raw_verticals_data.flatten.each do |raw_category|
-      properties_via_raw_category_id = Category.find(raw_category.fetch("id")).properties
-      properties_via_raw_attributes = raw_category.fetch("attributes").map { Property.find_by(friendly_id: _1) }
+      properties_via_raw_category_id = Category.find(raw_category.fetch("id")).related_attributes
+      properties_via_raw_attributes = raw_category.fetch("attributes").map { Attribute.find_by(friendly_id: _1) }
 
       assert_equal properties_via_raw_attributes.sort, properties_via_raw_category_id.sort
     end
@@ -149,8 +149,8 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
 
   test "Attribute ↔ Value relationships are consistent with attributes.yml base_attributes" do
     @raw_attributes_data["base_attributes"].select { _1.key?("values") }.each do |raw_attribute|
-      values_via_raw_id = Property.find(raw_attribute.fetch("id")).property_values
-      values_via_raw_values = raw_attribute.fetch("values").map { PropertyValue.find_by(friendly_id: _1) }
+      values_via_raw_id = Attribute.find(raw_attribute.fetch("id")).values
+      values_via_raw_values = raw_attribute.fetch("values").map { Value.find_by(friendly_id: _1) }
 
       assert_equal values_via_raw_values.sort, values_via_raw_id.sort
     end
@@ -158,13 +158,13 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
 
   test "Attribute ↔ Value relationships are consistent with attributes.yml they are extended" do
     @raw_attributes_data["extended_attributes"].select { _1.key?("values_from") }.each do |raw_attribute|
-      property_via_source = Property.find_by(
+      attribute_via_source = Attribute.find_by(
         name: raw_attribute.fetch("name"),
         base_friendly_id: raw_attribute.fetch("values_from"),
       )
-      property_via_values_from = Property.find_by(friendly_id: raw_attribute.fetch("values_from"))
+      attribute_via_values_from = Attribute.find_by(friendly_id: raw_attribute.fetch("values_from"))
 
-      assert_equal property_via_values_from.property_values.sort, property_via_source.property_values.sort
+      assert_equal attribute_via_values_from.values.sort, attribute_via_source.values.sort
     end
   end
 
@@ -175,26 +175,26 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     assert_equal "Snowboards", snowboard.name
     assert_empty snowboard.children
 
-    real_property_friendly_ids = snowboard.properties.pluck(:friendly_id)
-    assert_equal 8, real_property_friendly_ids.size
-    assert_includes real_property_friendly_ids, "age_group"
-    assert_includes real_property_friendly_ids, "color"
-    assert_includes real_property_friendly_ids, "pattern"
-    assert_includes real_property_friendly_ids, "recommended_skill_level"
-    assert_includes real_property_friendly_ids, "snowboard_design"
-    assert_includes real_property_friendly_ids, "snowboarding_style"
-    assert_includes real_property_friendly_ids, "target_gender"
-    assert_includes real_property_friendly_ids, "snowboard_construction"
+    real_attribute_friendly_ids = snowboard.related_attributes.pluck(:friendly_id)
+    assert_equal 8, real_attribute_friendly_ids.size
+    assert_includes real_attribute_friendly_ids, "age_group"
+    assert_includes real_attribute_friendly_ids, "color"
+    assert_includes real_attribute_friendly_ids, "pattern"
+    assert_includes real_attribute_friendly_ids, "recommended_skill_level"
+    assert_includes real_attribute_friendly_ids, "snowboard_design"
+    assert_includes real_attribute_friendly_ids, "snowboarding_style"
+    assert_includes real_attribute_friendly_ids, "target_gender"
+    assert_includes real_attribute_friendly_ids, "snowboard_construction"
   end
 
   # more fragile, but easier sanity check
   test "Snowboard construction attribute <2894> is fully imported and modeled correctly" do
-    snowboard_construction = Property.find(2894)
+    snowboard_construction = Attribute.find(2894)
 
     assert_equal "Snowboard construction", snowboard_construction.name
     assert_equal "snowboard_construction", snowboard_construction.friendly_id
 
-    real_value_friendly_ids = snowboard_construction.property_values.pluck(:friendly_id)
+    real_value_friendly_ids = snowboard_construction.values.pluck(:friendly_id)
     assert_equal 4, real_value_friendly_ids.size
     assert_includes real_value_friendly_ids, "snowboard_construction__camber"
     assert_includes real_value_friendly_ids, "snowboard_construction__flat"

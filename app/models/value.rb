@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-class PropertyValue < ApplicationRecord
+class Value < ApplicationRecord
   default_scope { order(Arel.sql("CASE WHEN name = 'Other' THEN 1 ELSE 0 END, name")) }
 
-  has_many :properties_property_values,
+  has_many :attributes_values,
     dependent: :destroy,
-    foreign_key: :property_value_friendly_id,
+    foreign_key: :value_friendly_id,
     primary_key: :friendly_id,
-    inverse_of: :property_value
-  has_many :properties, through: :properties_property_values
+    inverse_of: :value
+  has_many :related_attributes, through: :attributes_values
 
-  belongs_to :primary_property,
-    class_name: "Property",
-    foreign_key: :primary_property_friendly_id,
+  belongs_to :primary_attribute,
+    class_name: "Attribute",
+    foreign_key: :primary_attribute_friendly_id,
     primary_key: :friendly_id
 
   validates :name, presence: true
   validates :friendly_id, presence: true, uniqueness: true
-  validates :handle, presence: true, uniqueness: { scope: :primary_property_friendly_id }
+  validates :handle, presence: true, uniqueness: { scope: :primary_attribute_friendly_id }
 
   class << self
     #
@@ -34,14 +34,14 @@ class PropertyValue < ApplicationRecord
     #
     # `dist/` serialization
 
-    def as_json(property_values, version:)
+    def as_json(values, version:)
       {
         "version" => version,
-        "values" => property_values.map(&:as_json),
+        "values" => values.map(&:as_json),
       }
     end
 
-    def as_txt(property_values, version:)
+    def as_txt(values, version:)
       header = <<~HEADER
         # Shopify Product Taxonomy - Attribute Values: #{version}
         # Format: {GID} : {Value name} [{Attribute name}]
@@ -49,7 +49,7 @@ class PropertyValue < ApplicationRecord
       padding = reorder("LENGTH(id) desc").first.gid.size
       [
         header,
-        *property_values.map { _1.as_txt(padding: padding) },
+        *values.map { _1.as_txt(padding: padding) },
       ].join("\n")
     end
 
@@ -61,7 +61,7 @@ class PropertyValue < ApplicationRecord
         "name" => data["name"],
         "handle" => data["handle"],
         "friendly_id" => data["friendly_id"],
-        "primary_property_friendly_id" => data["friendly_id"].split("__").first,
+        "primary_attribute_friendly_id" => data["friendly_id"].split("__").first,
       }
     end
   end
@@ -71,15 +71,15 @@ class PropertyValue < ApplicationRecord
   end
 
   def full_name
-    if primary_property
-      "#{name} [#{primary_property.name}]"
+    if primary_attribute
+      "#{name} [#{primary_attribute.name}]"
     else
       name
     end
   end
 
-  def primary_property_friendly_id=(friendly_id)
-    self.primary_property = Property.find_by(friendly_id:)
+  def primary_attribute_friendly_id=(friendly_id)
+    self.primary_attribute = Attribute.find_by(friendly_id:)
   end
 
   #
