@@ -28,10 +28,7 @@ cli.write_file!("dist/attribute_values.txt") do |file|
   file.write("\n")
 end
 
-mapping_serializer = Distribution::MappingSerializer.new(
-  mapping_rules: MappingRule.all,
-  version: cli.options.version,
-)
+mappings_json = MappingRule.legacy_as_json(MappingRule.all, version: cli.options.version)
 categories_json = Category.as_json(Category.verticals, version: cli.options.version)
 attributes_json = Attribute.as_json(Attribute.base, version: cli.options.version)
 values_json = Value.as_json(Value.all, version: cli.options.version)
@@ -53,6 +50,6 @@ cli.write_file!("dist/values.json") do |file|
   file.write("\n")
 end
 cli.write_file!("dist/mappings.json") do |file|
-  file.write(mapping_serializer.mappings)
+  file.write(JSON.pretty_generate(mappings_json))
   file.write("\n")
 end

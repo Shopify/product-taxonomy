@@ -13,7 +13,6 @@ require "zeitwerk"
 
 LOADER = Zeitwerk::Loader.new
 LOADER.push_dir("#{__dir__}/app/models")
-LOADER.push_dir("#{__dir__}/app/serializers")
 LOADER.push_dir("#{__dir__}/app/services")
 
 LOADER.inflector.inflect(
