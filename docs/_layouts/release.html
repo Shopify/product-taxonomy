@@ -18,6 +18,7 @@ layout: default
     <li><a href="https://help.shopify.com/manual/products/details/product-category">Help Docs</a></li>
   </ul>
 </div>
+
 <div class="content-container container">
   <div class="primary-container">
     <h2 class="container_title">Categories</h2>
@@ -32,7 +33,7 @@ layout: default
         {% assign parent_id = categories[0] %}
         {% assign node_type = categories[1].first.node_type %}
         <div class="sibling-list {{node_type}}" node_depth="{{depth}}" parent_id="{{parent_id}}">
-          <h3>Level {{ depth | plus: 1 }}</h3>
+          <h3 class="sibling-list-title">Level {{ depth | plus: 1 }} <span></span></h3>
           <ul>
             {% for category in categories[1] %}
               <li
@@ -49,9 +50,34 @@ layout: default
         </div>
       {% endfor %}
     {% endfor %}
+
+    <section class="attribute-section">
+      {% for attribute in site.data[page.target].attributes %}
+        <!-- <div class="attribute-container" id="{{ attribute.id }}"> -->
+        <div class="attribute-title" id="{{ attribute.id }}">
+          <!-- <h3>Attributes</h3> -->
+          <h4 class="title" tabindex="0">
+            {{ attribute.name }}
+            <div class="id">{{ attribute.id }}</div>
+          </h4>
+        </div>
+
+        <div class="attribute-container attribute-values" id="{{ attribute.id }}">
+          <!-- <h3>Attribute Value</h3> -->
+          <ul>
+            {% for value in attribute.values %}
+              <li class="accordion-item">
+                {{ value.name }}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    </section>
   </div>
-  <div class="secondary-container">
-    {% for sibling_group in site.data[page.target].sibling_groups %}
+
+  <!-- <div class="secondary-container"> -->
+    <!-- {% for sibling_group in site.data[page.target].sibling_groups %}
       {% for categories in sibling_group[1] %}
         {% for category in categories[1] %}
           <div class="category-container" id="{{category.id}}">
@@ -61,30 +87,9 @@ layout: default
           </div>
         {% endfor %}
       {% endfor %}
-    {% endfor %}
-    <div class="attributes-container">
-      {% for attribute in site.data[page.target].attributes %}
-        <div class="attribute-container" id="{{ attribute.id }}">
-          <h4 class="title attribute-title" tabindex="0">
-            {{ attribute.name }}
-            <span class="id">{{ attribute.id }}</span>
-            <span class="arrow right-arrow">&rarr;</span>
-            <span class="arrow down-arrow">&darr;</span>
-          </h4>
-          <div class="values-container">
-            <ul>
-              {% for value in attribute.values %}
-                <li>
-                  {{ value.name }}
-                  <span class="id">{{ value.id }}</span>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-    <div>
+    {% endfor %} -->
+
+    <!-- <div>
       {% assign rules = site.data[page.target].mappings %}
       <ul>
         {% for rule in rules %}
@@ -99,7 +104,8 @@ layout: default
         {% endfor %}
       </ul>
     </div>
-  </div>
+
+  </div> -->
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/js-yaml@3.14.1/dist/js-yaml.min.js"></script>

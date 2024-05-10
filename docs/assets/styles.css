@@ -126,7 +126,6 @@ a:active {
   display: block;
 }
 
-
 .category-search-container {
   position: relative;
 }
@@ -163,12 +162,7 @@ a:active {
   border-radius: 0.25rem;
 }
 
-.title {
-  display: flex;
-  align-items: center;
-}
-
-.id {
+/* .id {
   font-size: 10px;
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas,
     "Liberation Mono", Menlo, monospace;
@@ -178,7 +172,7 @@ a:active {
   padding: 0.2rem;
   margin: 0.15rem;
   border-radius: 0.25rem;
-}
+} */
 
 .id--large {
   font-size: 12px;
@@ -187,30 +181,44 @@ a:active {
 }
 
 .attributes-container {
-  overflow-y: auto;
-  max-height: calc(100% - 100px - 5rem);
+  /* overflow-y: auto; */
+  /* max-height: calc(100% - 100px - 5rem); */
   padding: 1rem;
   padding-top: 0;
 }
 
-.attribute-container {
+.attribute-section {
+  display: grid;
+  grid: auto-flow / 1fr 1fr;
+  grid-template-areas:
+    "left right"
+    "left right";
+}
+
+.attribute-section h3 {
+  text-transform: uppercase;
+}
+
+.attribute-title {
   display: none;
+  grid-area: left;
 }
 
-.attribute-container.active {
+.attribute-title.active {
   display: block;
 }
 
-.attribute-container.selected .values-container {
-  display: block;
+
+.attribute-values {
+  grid-area: right;
 }
 
-.attribute-container .attribute-title {
-  cursor: pointer;
-  margin: 0.5rem 0 0;
+.attribute-values li {
+  list-style-type: none;
+  margin: 0.25rem 0;
 }
 
-.attribute-container .arrow {
+/* .attribute-container .arrow {
   margin-left: 0.25rem;
 }
 
@@ -228,21 +236,7 @@ a:active {
 
 .attribute-container.selected .right-arrow {
   display: none;
-}
-
-.values-container {
-  display: none;
-}
-
-.values-container ul {
-  padding-inline-start: 20px;
-  margin-top: 0;
-}
-
-.values-container li {
-  list-style-type: circle;
-  margin: 0.25rem 0;
-}
+} */
 
 .sibling-list {
   display: none;
@@ -254,13 +248,17 @@ a:active {
   display: block;
 }
 
-.sibling-list ul {
+.sibling-list ul, .attribute-values ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+.sibling-list-title span {
+  padding-left: 1rem;
 }
 
 .accordion-item {

@@ -4,6 +4,33 @@ const nodeQueryParamKey = "categoryId";
 let selectedNodes = {};
 let selectedNode = null;
 
+function clearSelectedNodeIdFromTitle() {
+  qq(".sibling-list-title").forEach(
+    (element) => (element.firstElementChild.innerHTML = "")
+  );
+}
+
+const renderSelectedNodeIdToTitle = () => {
+  if (!selectedNodes) return;
+
+  const [lastSelectedNodeKey, ..._] = Object.keys(selectedNodes).reverse();
+  const lastSelectedNode = selectedNodes[lastSelectedNodeKey];
+
+  clearSelectedNodeIdFromTitle();
+
+  qq(".selected").forEach((element) => {
+    const elementNodeId = element.getAttribute("node_id");
+    if (elementNodeId === lastSelectedNode) {
+      const siblingListTitleElement =
+        element.closest(".sibling-list").firstElementChild;
+      siblingListTitleElement.firstElementChild.insertAdjacentText(
+        "afterbegin",
+        lastSelectedNode
+      );
+    }
+  });
+};
+
 const toggleExpandedCategories = () => {
   qq(".sibling-list").forEach((list) => {
     const parentId = list.getAttribute("parent_id");
@@ -40,9 +67,7 @@ const toggleVisibleCategory = () => {
 };
 
 const toggleVisibleAttributes = () => {
-  q(".secondary-container").classList.remove("active");
   if (!selectedNode) return;
-  q(".secondary-container").classList.add("active");
 
   const documentNode = q(`.accordion-item[node_id="${selectedNode}"]`);
   const attributeIds = documentNode.getAttribute("attribute_ids");
@@ -67,11 +92,10 @@ const toggleVisibleAttributes = () => {
   });
 };
 
-
-const toggleAttributeSelected = (event) => {
-  const attributeElement = event.currentTarget.parentNode;
-  attributeElement.classList.toggle("selected");
-};
+// const toggleAttributeSelected = (event) => {
+//   const attributeElement = event.currentTarget.parentNode;
+//   attributeElement.classList.toggle("selected");
+// };
 
 const setNodeQueryParam = (nodeId) => {
   const url = new URL(window.location);
@@ -86,6 +110,7 @@ const setNodeQueryParam = (nodeId) => {
 const renderPage = () => {
   toggleExpandedCategories();
   toggleSelectedCategory();
+  renderSelectedNodeIdToTitle();
   toggleVisibleAttributes();
   toggleVisibleCategory();
 };
@@ -126,9 +151,6 @@ const setupListeners = () => {
       )
     );
   });
-  qq(".attribute-title").forEach((attribute) =>
-    addOnClick(attribute, toggleAttributeSelected)
-  );
 };
 
 const setInitialNode = () => {
