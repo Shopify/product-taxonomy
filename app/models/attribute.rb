@@ -1,39 +1,39 @@
 # frozen_string_literal: true
 
-class Property < ApplicationRecord
+class Attribute < ApplicationRecord
   default_scope { order(:name) }
 
   scope :base, -> { where(base_friendly_id: nil) }
   scope :extended, -> { where.not(base_friendly_id: nil) }
 
-  has_many :categories_properties,
+  has_many :categories_attributes,
     dependent: :destroy,
-    foreign_key: :property_friendly_id,
+    foreign_key: :attribute_friendly_id,
     primary_key: :friendly_id,
-    inverse_of: :property
-  has_many :categories, through: :categories_properties
-  has_many :properties_property_values,
+    inverse_of: :related_attribute
+  has_many :categories, through: :categories_attributes
+  has_many :attributes_values,
     dependent: :destroy,
-    foreign_key: :property_id,
+    foreign_key: :attribute_id,
     primary_key: :id,
-    inverse_of: :property
-  has_many :property_values, through: :properties_property_values
+    inverse_of: :related_attribute
+  has_many :values, through: :attributes_values
 
-  belongs_to :base_property,
-    class_name: "Property",
+  belongs_to :base_attribute,
+    class_name: "Attribute",
     optional: true,
     foreign_key: :base_friendly_id,
     primary_key: :friendly_id
 
-  has_many :extended_properties,
-    class_name: "Property",
+  has_many :extended_attributes,
+    class_name: "Attribute",
     foreign_key: :base_friendly_id,
     primary_key: :friendly_id
 
   validates :name, presence: true
   validates :friendly_id, presence: true, uniqueness: true
   validates :handle, presence: true
-  validate :property_values_match_base, if: :extended?
+  validate :values_match_base, if: :extended?
 
   class << self
     #
@@ -50,14 +50,14 @@ class Property < ApplicationRecord
     #
     # `dist/` serialization
 
-    def as_json(properties, version:)
+    def as_json(attributes, version:)
       {
         "version" => version,
-        "attributes" => properties.map(&:as_json),
+        "attributes" => attributes.map(&:as_json),
       }
     end
 
-    def as_txt(properties, version:)
+    def as_txt(attributes, version:)
       header = <<~HEADER
         # Shopify Product Taxonomy - Attributes: #{version}
         # Format: {GID} : {Attribute name}
@@ -65,7 +65,7 @@ class Property < ApplicationRecord
       padding = reorder("LENGTH(id) desc").first.gid.size
       [
         header,
-        *properties.map { _1.as_txt(padding:) },
+        *attributes.map { _1.as_txt(padding:) },
       ].join("\n")
     end
 
@@ -86,20 +86,20 @@ class Property < ApplicationRecord
     if base?
       "gid://shopify/TaxonomyAttribute/#{id}"
     else
-      base_property.gid
+      base_attribute.gid
     end
   end
 
   def base?
-    base_property.nil?
+    base_attribute.nil?
   end
 
   def extended?
     !base?
   end
 
-  def property_value_friendly_ids=(friendly_id)
-    self.property_values = PropertyValue.where(friendly_id:)
+  def value_friendly_ids=(friendly_id)
+    self.values = Value.where(friendly_id:)
   end
 
   #
@@ -112,7 +112,7 @@ class Property < ApplicationRecord
         "name" => name,
         "friendly_id" => friendly_id,
         "handle" => handle,
-        "values" => property_values.reorder(:id).map(&:friendly_id),
+        "values" => values.reorder(:id).map(&:friendly_id),
       }
     else
       {
@@ -132,13 +132,13 @@ class Property < ApplicationRecord
       "id" => gid,
       "name" => name,
       "handle" => handle,
-      "extended_attributes" => extended_properties.map do
+      "extended_attributes" => extended_attributes.map do
         {
           "name" => _1.name,
           "handle" => _1.handle,
         }
       end,
-      "values" => property_values.map do
+      "values" => values.map do
         {
           "id" => _1.gid,
           "name" => _1.name,
@@ -154,9 +154,9 @@ class Property < ApplicationRecord
 
   private
 
-  def property_values_match_base
-    return if property_values == base_property.property_values
+  def values_match_base
+    return if values == base_attribute.values
 
-    errors.add(:property_values, "must match base's property values")
+    errors.add(:values, "must match base attribute's values")
   end
 end

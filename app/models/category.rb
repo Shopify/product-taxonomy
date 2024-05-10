@@ -8,12 +8,12 @@ class Category < ApplicationRecord
   belongs_to :parent, class_name: "Category", optional: true
 
   has_many :children, class_name: "Category", inverse_of: :parent
-  has_many :categories_properties,
+  has_many :categories_attributes,
     dependent: :destroy,
     foreign_key: :category_id,
     primary_key: :id,
     inverse_of: :category
-  has_many :properties, through: :categories_properties
+  has_many :related_attributes, through: :categories_attributes
 
   validates :id,
     presence: { strict: true },
@@ -165,8 +165,8 @@ class Category < ApplicationRecord
     [self] + descendants
   end
 
-  def property_friendly_ids=(ids)
-    self.properties = Property.where(friendly_id: ids)
+  def related_attribute_friendly_ids=(ids)
+    self.related_attributes = Attribute.where(friendly_id: ids)
   end
 
   #
@@ -177,7 +177,7 @@ class Category < ApplicationRecord
       "id" => id,
       "name" => name,
       "children" => children.map(&:id),
-      "attributes" => properties.reorder(:id).map(&:friendly_id),
+      "attributes" => related_attributes.reorder(:id).map(&:friendly_id),
     }
   end
 
@@ -199,7 +199,7 @@ class Category < ApplicationRecord
       "name" => name,
       "full_name" => full_name,
       "parent_id" => parent&.gid,
-      "attributes" => properties.map do
+      "attributes" => related_attributes.map do
         {
           "id" => _1.gid,
           "name" => _1.name,

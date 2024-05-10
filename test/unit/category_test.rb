@@ -5,7 +5,7 @@ require_relative "../test_helper"
 class CategoryTest < ApplicationTestCase
   def teardown
     Category.delete_all
-    Property.delete_all
+    Attribute.delete_all
   end
 
   test ".gid returns a global id" do
@@ -169,8 +169,8 @@ class CategoryTest < ApplicationTestCase
 
   test "#as_json_for_data returns data json" do
     child.save!
-    color = create(:property, name: "Color")
-    parent.properties = [color]
+    color = create(:attribute, name: "Color")
+    parent.related_attributes = [color]
     parent.save!
 
     parent.reload

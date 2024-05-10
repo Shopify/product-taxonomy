@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class CategoriesProperty < ApplicationRecord
+class CategoriesAttribute < ApplicationRecord
   belongs_to :category
-  belongs_to :property, foreign_key: :property_friendly_id, primary_key: :friendly_id
+  belongs_to :related_attribute, class_name: "Attribute", foreign_key: :attribute_friendly_id, primary_key: :friendly_id
 
   class << self
     #
@@ -18,7 +18,7 @@ class CategoriesProperty < ApplicationRecord
       data["attributes"].map do |friendly_id|
         {
           "category_id" => data["id"],
-          "property_friendly_id" => friendly_id,
+          "attribute_friendly_id" => friendly_id,
         }
       end
     end

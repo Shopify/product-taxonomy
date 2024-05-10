@@ -55,8 +55,8 @@ module Distribution
       if mapping[:input][:attributes].present?
         mapping[:input][:attributes] = mapping[:input][:attributes].map do |attribute|
           {
-            name: Property.find(attribute[:name]).gid,
-            value: attribute[:value].nil? ? nil : PropertyValue.find(attribute[:value]).gid,
+            name: Attribute.find(attribute[:name]).gid,
+            value: attribute[:value].nil? ? nil : Value.find(attribute[:value]).gid,
           }
         end
       end
