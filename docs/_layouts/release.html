@@ -52,21 +52,20 @@ layout: default
     {% endfor %}
 
     <section class="attribute-section">
+      <h3 class="attribute-section-title">Attributes</h3>
+      <h3 class="attribute-section-title">Attribute Value</h3>
       {% for attribute in site.data[page.target].attributes %}
-        <!-- <div class="attribute-container" id="{{ attribute.id }}"> -->
-        <div class="attribute-title" id="{{ attribute.id }}">
-          <!-- <h3>Attributes</h3> -->
+        <div class="attribute-visibility attribute-title" id="{{ attribute.id }}">
           <h4 class="title" tabindex="0">
             {{ attribute.name }}
             <div class="id">{{ attribute.id }}</div>
           </h4>
         </div>
 
-        <div class="attribute-container attribute-values" id="{{ attribute.id }}">
-          <!-- <h3>Attribute Value</h3> -->
+        <div class="attribute-visibility attribute-values" id="{{ attribute.id }}">
           <ul>
             {% for value in attribute.values %}
-              <li class="accordion-item">
+              <li class="attribute-item">
                 {{ value.name }}
               </li>
             {% endfor %}

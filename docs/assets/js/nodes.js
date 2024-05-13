@@ -67,20 +67,28 @@ const toggleVisibleCategory = () => {
 };
 
 const toggleVisibleAttributes = () => {
+  attributeSectionTitleVisibility.remove();
+  let attributeSectionTitleVisible = false;
+
   if (!selectedNode) return;
 
   const documentNode = q(`.accordion-item[node_id="${selectedNode}"]`);
   const attributeIds = documentNode.getAttribute("attribute_ids");
   const attributeList = attributeIds.split(",");
 
-  qq(".attribute-container").forEach((attribute) => {
+  qq(".attribute-visibility").forEach((attribute) => {
     const attributeId = attribute.getAttribute("id");
     if (attributeList.includes(attributeId)) {
-      attribute.classList.add("active");
+      attributeSectionTitleVisible = true;
+      attribute.classList.add("attribute-active");
     } else {
-      attribute.classList.remove("active");
+      attribute.classList.remove("attribute-active");
     }
   });
+
+  if (attributeSectionTitleVisible) {
+    attributeSectionTitleVisibility.set();
+  }
 
   qq(".mapped-category-container").forEach((mappedCategory) => {
     const categoryNodeId = mappedCategory.getAttribute("category_id");
@@ -90,6 +98,11 @@ const toggleVisibleAttributes = () => {
       mappedCategory.classList.remove("active");
     }
   });
+};
+
+const attributeSectionTitleVisibility = {
+  set: () => qq(".attribute-section-title").forEach(element => element.classList.add("visible")),
+  remove: () => qq(".attribute-section-title").forEach(element => element.classList.remove("visible")),
 };
 
 // const toggleAttributeSelected = (event) => {
