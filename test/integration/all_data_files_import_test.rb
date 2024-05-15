@@ -25,6 +25,16 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     seed.mapping_rules_from(mapping_rule_files)
   end
 
+  def after_all
+    Value.delete_all
+    Attribute.delete_all
+    Category.delete_all
+    AttributesValue.delete_all
+    CategoriesAttribute.delete_all
+    Integration.delete_all
+    MappingRule.delete_all
+  end
+
   test "data/attributes.yml base_attributes has no empty value lists" do
     @raw_attributes_data["base_attributes"].select { _1.key?("values") }.each do |raw_attribute|
       assert_predicate raw_attribute.fetch("values"), :present?

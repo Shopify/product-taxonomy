@@ -1,19 +1,6 @@
-# frozen_string_literal: true
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
-require "minitest/test_task"
+require_relative "config/application"
 
-task default: ["test"]
-
-Minitest::TestTask.create(:test) do |t|
-  t.test_globs = [
-    "test/unit/**/*_test.rb",
-  ]
-  t.warning = false
-end
-
-Minitest::TestTask.create(:test_integration) do |t|
-  t.test_globs = [
-    "test/integration/**/*_test.rb",
-  ]
-  t.warning = false
-end
+Rails.application.load_tasks
