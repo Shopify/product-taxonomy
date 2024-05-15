@@ -115,22 +115,22 @@ clean:
 
 #
 # COMMANDS
-server: $(DOCS_GENERATED_SENTINEL)
-	@$(RUN_CMD) "Running server"
+docs: $(DOCS_GENERATED_SENTINEL)
+	@$(RUN_CMD) "Running docs server"
 	$(V)bundle exec jekyll serve --source docs --destination _site $(VARG)
-.PHONY: server
+.PHONY: docs
 
 console:
 	@$(RUN_CMD) "Running console with dependencies"
-	$(V)bin/console
+	$(V)bin/rails console
 .PHONY: console
 
 #
 # DATABASE SETUP
 seed: vet_data_schemas
 	@$(GENERATE) "Seeding Database" $(DEV_DB)
-	$(V)rake db:drop
-	$(V)rake db:schema_load
+	$(V)bin/rails db:drop
+	$(V)bin/rails db:schema:load
 	$(V)bin/seed $(VARG)
 .PHONY: seed
 
@@ -140,17 +140,17 @@ $(DEV_DB): seed
 # TESTS
 test: vet_data_schemas vet_dist_schemas
 	@$(RUN_CMD) "Running All Tests"
-	$(V)bin/rake test $(filter-out $@,$(MAKECMDGOALS))
+	$(V)bin/rails test $(filter-out $@,$(MAKECMDGOALS))
 .PHONY: test
 
 unit_tests:
 	@$(RUN_CMD) "Running Unit Tests"
-	$(V)bin/rake unit $(filter-out $@,$(MAKECMDGOALS))
+	$(V)bin/rails unit $(filter-out $@,$(MAKECMDGOALS))
 .PHONY: unit_tests
 
 integration_tests:
 	@$(RUN_CMD) "Running Integration Tests"
-	$(V)bin/rake integration $(filter-out $@,$(MAKECMDGOALS))
+	$(V)bin/rails integration $(filter-out $@,$(MAKECMDGOALS))
 .PHONY: integration_tests
 
 vet_dist_schemas: $(CATEGORIES_DATA_CUE) $(ATTRIBUTES_DATA_CUE) $(MAPPINGS_DATA_CUE)

@@ -2,20 +2,16 @@
 
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
-Bundler.require(:test)
-
-ProductTaxonomy::Application.reset_schema!
-
-require "minitest/autorun"
 require "minitest/pride"
-require "active_support/test_case"
-
-FactoryBot.find_definitions
+require "rails/test_help"
 
 module ActiveSupport
   class TestCase
     include FactoryBot::Syntax::Methods
 
     parallelize workers: :number_of_processors
+    fixtures :all
+
+    self.use_transactional_tests = true
   end
 end

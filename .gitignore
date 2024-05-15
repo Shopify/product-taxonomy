@@ -5,7 +5,7 @@ schema/mappings_data.cue
 
 # Ignore docs site
 /_site
-/docs/_data/*
+/docs/_data/unstable
 
 # Ignore bundler config.
 /.bundle
@@ -17,8 +17,13 @@ schema/mappings_data.cue
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
-.byebug_history
+
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
 
 # Ignore storage (uploaded files in development and any SQLite databases).
 /storage/*
 /tmp/storage/*
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key

@@ -69,7 +69,7 @@ make clean   # remove sentinels and all generated files
 make seed    # parse data/ into local db
 make console # irb with dependencies loaded
 make test    # run ruby tests and cue schema verification
-make server  # http://localhost:4000 interactive view of dist/
+make docs    # http://localhost:4000 interactive view of dist/
 ```
 
 ## 🛠️ Setup and dependencies
