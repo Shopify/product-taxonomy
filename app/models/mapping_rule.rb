@@ -20,6 +20,36 @@ class MappingRule < ApplicationRecord
       }
     end
 
+    def as_txt(mappings, version:)
+      header = <<~HEADER
+        # Shopify Product Taxonomy - Mappings: #{version}
+        # Format:
+        # {input_taxonomy_version} -> {output_taxonomy_version} # Mappings A start
+        # ...
+        # {input_category_id} => {output_category_id}
+        # {input_category_id} => {output_category_id}
+        # ...
+        # {input_taxonomy_version} -> {output_taxonomy_version} # Mappings A end, Mappings B start
+        # ...
+        # {input_category_id} => {output_category_id}
+        # {input_category_id} => {output_category_id}
+        # ...
+      HEADER
+      lpadding = Category.reorder("LENGTH(id) DESC").first.gid.size
+      rpadding = lpadding
+      mapping_groups = mappings.group_by { |record| [record.input_version, record.output_version] }
+      lines = mapping_groups.map do |taxonomy_versions, records|
+        [
+          taxonomy_versions.join(" -> "),
+          *records.map { _1.as_txt(lpadding: lpadding, rpadding: rpadding) },
+        ]
+      end
+      [
+        header,
+        lines,
+      ].flatten.join("\n")
+    end
+
     private
 
     def integration_blocks
@@ -58,5 +88,9 @@ class MappingRule < ApplicationRecord
         }
       end
     end
+  end
+
+  def as_txt(lpadding: 0, rpadding: 0)
+    "#{input.as_txt.ljust(lpadding)} => #{output.as_txt.ljust(rpadding)}"
   end
 end

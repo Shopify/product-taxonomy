@@ -31,6 +31,10 @@ class Product < ApplicationRecord
           "properties" => data["attributes"],
           "product_category_id" => category_id,
         }
+      when "GoogleProduct"
+        {
+          "product_category_id" => data["product_category_id"],
+        }
       else
         data.slice("product_category_id")
       end
@@ -59,5 +63,9 @@ class Product < ApplicationRecord
 
   def as_json(options = {})
     super(options.merge({ methods: :type }))
+  end
+
+  def as_txt
+    product_category_id.to_s
   end
 end
