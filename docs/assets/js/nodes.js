@@ -6,14 +6,18 @@ let selectedNode = null;
 
 function clearSelectedNodeIdFromTitle() {
   qq(".sibling-list-title").forEach(
-    (element) => (element.firstElementChild.innerHTML = "")
+    (element) => {
+      if (element.firstElementChild) {
+        element.firstElementChild.innerHTML = "";
+      }
+    }
   );
 }
 
 const renderSelectedNodeIdToTitle = () => {
   if (!selectedNodes) return;
 
-  const [lastSelectedNodeKey, ..._] = Object.keys(selectedNodes).reverse();
+  const [lastSelectedNodeKey] = Object.keys(selectedNodes).reverse();
   const lastSelectedNode = selectedNodes[lastSelectedNodeKey];
 
   clearSelectedNodeIdFromTitle();
@@ -23,10 +27,13 @@ const renderSelectedNodeIdToTitle = () => {
     if (elementNodeId === lastSelectedNode) {
       const siblingListTitleElement =
         element.closest(".sibling-list").firstElementChild;
-      siblingListTitleElement.firstElementChild.insertAdjacentText(
-        "afterbegin",
-        lastSelectedNode
-      );
+
+      if (siblingListTitleElement.firstElementChild) {
+        siblingListTitleElement.firstElementChild.insertAdjacentText(
+          "afterbegin",
+          lastSelectedNode
+        );
+      }
     }
   });
 };
@@ -45,9 +52,30 @@ const toggleExpandedCategories = () => {
 
 const toggleSelectedCategory = () => {
   const selectedNodeIds = Object.values(selectedNodes);
-  qq(".accordion-item").forEach((item) => {
+  qq(".shopify-node-item").forEach((item) => {
     const nodeId = item.getAttribute("node_id");
     if (selectedNodeIds.includes(nodeId)) {
+      item.classList.add("selected");
+    } else {
+      item.classList.remove("selected");
+    }
+  });
+
+  const selectedMappedCategory = q(`[shopify_id='${selectedNode}']`);
+  let selectedMappedCategoryNodeId = [];
+  let selectedMappedCategoryAncestors = [];
+
+  if (selectedMappedCategory) {
+    selectedMappedCategoryNodeId = selectedMappedCategory.getAttribute("node_id");
+    selectedMappedCategoryAncestors = selectedMappedCategory.getAttribute("ancestor_ids").split(",");
+  }
+
+  const mappedIds = [selectedMappedCategoryNodeId, ...selectedMappedCategoryAncestors]
+
+  qq(".mapped-category").forEach((item) => {
+    const categoryNodeId = item.getAttribute("node_id");
+
+    if(mappedIds.includes(categoryNodeId)) {
       item.classList.add("selected");
     } else {
       item.classList.remove("selected");
@@ -72,7 +100,7 @@ const toggleVisibleAttributes = () => {
 
   if (!selectedNode) return;
 
-  const documentNode = q(`.accordion-item[node_id="${selectedNode}"]`);
+  const documentNode = q(`.shopify-node-item[node_id="${selectedNode}"]`);
   const attributeIds = documentNode.getAttribute("attribute_ids");
   const attributeList = attributeIds.split(",");
 
@@ -89,26 +117,12 @@ const toggleVisibleAttributes = () => {
   if (attributeSectionTitleVisible) {
     attributeSectionTitleVisibility.set();
   }
-
-  qq(".mapped-category-container").forEach((mappedCategory) => {
-    const categoryNodeId = mappedCategory.getAttribute("category_id");
-    if (selectedNode === categoryNodeId) {
-      mappedCategory.classList.add("active");
-    } else {
-      mappedCategory.classList.remove("active");
-    }
-  });
 };
 
 const attributeSectionTitleVisibility = {
   set: () => qq(".attribute-section-title").forEach(element => element.classList.add("visible")),
   remove: () => qq(".attribute-section-title").forEach(element => element.classList.remove("visible")),
 };
-
-// const toggleAttributeSelected = (event) => {
-//   const attributeElement = event.currentTarget.parentNode;
-//   attributeElement.classList.toggle("selected");
-// };
 
 const setNodeQueryParam = (nodeId) => {
   const url = new URL(window.location);
@@ -156,7 +170,7 @@ const addOnClick = (target, handler) => {
 };
 
 const setupListeners = () => {
-  qq(".accordion-item").forEach((item) => {
+  qq(".shopify-node-item").forEach((item) => {
     addOnClick(item, () =>
       toggleNode(
         item.getAttribute("node_id"),
@@ -170,7 +184,7 @@ const setInitialNode = () => {
   const initialNode = getQueryParam(nodeQueryParamKey);
   if (!initialNode) return;
 
-  const documentNode = q(`.accordion-item[node_id="${initialNode}"]`);
+  const documentNode = q(`.shopify-node-item[node_id="${initialNode}"]`);
   if (!documentNode) return;
 
   const ancestors = documentNode.getAttribute("ancestor_ids")

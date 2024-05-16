@@ -18,7 +18,13 @@ cli.options_status
 
 category_data = cli.parse_json("dist/categories.json").fetch("verticals")
 attribute_data = cli.parse_json("dist/attributes.json").fetch("attributes")
-mapping_data = cli.parse_json("dist/mappings.json").fetch("mappings")
+mappings_data = cli.parse_json("dist/mappings.json").fetch("mappings").each do |mapping|
+  if mapping["output_taxonomy"].include?("shopify")
+    mapping["rules"].each do |rule|
+      rule['input'], rule['output'] = rule['output'], rule['input']
+    end
+  end
+end
 
 DATA_TARGET = "docs/_data/#{cli.options.version}"
 cli.write_file("#{DATA_TARGET}/sibling_groups.yml") do |file|
@@ -34,7 +40,7 @@ cli.write_file("#{DATA_TARGET}/attributes.yml") do |file|
   file.write("\n")
 end
 cli.write_file("#{DATA_TARGET}/mappings.yml") do |file|
-  file.write(mapping_data.to_yaml(line_width: 1000))
+  file.write(mappings_data.to_yaml(line_width: 1000))
   file.write("\n")
 end
 
