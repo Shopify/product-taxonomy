@@ -13,7 +13,8 @@ class Value < ApplicationRecord
   belongs_to :primary_attribute,
     class_name: "Attribute",
     foreign_key: :primary_attribute_friendly_id,
-    primary_key: :friendly_id
+    primary_key: :friendly_id,
+    optional: true
 
   validates :name, presence: true
   validates :friendly_id, presence: true, uniqueness: true

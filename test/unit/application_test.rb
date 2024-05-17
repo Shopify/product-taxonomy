@@ -2,7 +2,7 @@
 
 require_relative "../test_helper"
 
-class ApplicationTest < ApplicationTestCase
+class ApplicationTest < ActiveSupport::TestCase
   test "Zeitwerk compliance" do
     LOADER.eager_load(force: true)
   rescue Zeitwerk::NameError => e
