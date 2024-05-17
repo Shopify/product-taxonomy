@@ -34,27 +34,27 @@ class MappingRule < ApplicationRecord
         "output_taxonomy" => output_version,
         "rules" => mapping_rules.select {
           _1.input_version == input_version && _1.output_version == output_version
-        }.map(&:rule_as_json),
+        }.map(&:as_json),
       }
     end
   end
 
-  def rule_as_json
+  def as_json
     resolve_input_attribute_values
     {
-      "input" => input.payload.compact,
-      "output" => output.payload.compact,
+      "input" => input.payload.except!("properties").compact,
+      "output" => output.payload.except!("properties").compact,
     }
   end
 
   private
 
   def resolve_input_attribute_values
-    if input.payload[:properties].present?
-      input.payload[:properties] = input.payload[:properties].map do |attribute|
+    if input.payload["properties"].present?
+      input.payload["attributes"] = input.payload["properties"].map do |property|
         {
-          name: Attribute.find(attribute[:name]).gid,
-          value: Value.find_by_id(attribute[:value])&.gid,
+          "attribute" => Attribute.find_by(friendly_id: property["attribute"]).gid,
+          "value" => Value.find_by(friendly_id: property["value"])&.gid,
         }
       end
     end
