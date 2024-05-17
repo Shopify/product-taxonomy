@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :category do
     sequence(:id, 1) do
       if parent.nil?
-        "aa"
+        ("a".."z").to_a.sample(2).join
       else
         "#{parent.id}-#{_1}"
       end

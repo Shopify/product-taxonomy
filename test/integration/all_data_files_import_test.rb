@@ -6,16 +6,16 @@ require_relative "../../lib/cli"
 
 class AllDataFilesImportTest < ActiveSupport::TestCase
   include Minitest::Hooks
+  parallelize(workers: 1) # disable parallelization
 
   def before_all
     cli = CLI.new
     @raw_values_data = cli.parse_yaml("data/values.yml")
     @raw_attributes_data = cli.parse_yaml("data/attributes.yml")
-    category_files = Dir.glob("#{CLI.root}/data/categories/*.yml")
-    @raw_verticals_data = category_files.map { cli.parse_yaml(_1) }
+    @raw_verticals_data = Dir.glob("#{CLI.root}/data/categories/*.yml").map { cli.parse_yaml(_1) }
     @raw_integrations_data = cli.parse_yaml("data/integrations/integrations.yml")
     mapping_rule_files = Dir.glob("#{CLI.root}/data/integrations/*/*/mappings/*_shopify.yml")
-    @raw_mapping_rules_data = mapping_rule_files.map { { content: YAML.load_file(_1), file_name: _1 } }
+    @raw_mapping_rules_data = mapping_rule_files.map { { content: cli.parse_yaml(_1), file_name: _1 } }
 
     seed = DB::Seed.new
     seed.values_from(@raw_values_data)

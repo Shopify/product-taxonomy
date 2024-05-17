@@ -2,8 +2,7 @@
 
 FactoryBot.define do
   factory :attribute do
-    sequence(:id, 1)
-    name { "Attribute#{id}" }
+    sequence(:name) { "Attribute" }
     handle { name.downcase }
     friendly_id { handle }
   end

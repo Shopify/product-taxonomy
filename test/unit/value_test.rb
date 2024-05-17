@@ -2,7 +2,7 @@
 
 require_relative "../test_helper"
 
-class ValueTest < ApplicationTestCase
+class ValueTest < ActiveSupport::TestCase
   def teardown
     Attribute.delete_all
     Value.delete_all
