@@ -33,6 +33,7 @@ class Attribute < ApplicationRecord
   validates :name, presence: true
   validates :friendly_id, presence: true, uniqueness: true
   validates :handle, presence: true
+  validates :description, presence: true
   validate :values_match_base, if: :extended?
 
   class << self
@@ -76,6 +77,7 @@ class Attribute < ApplicationRecord
         "id" => data["id"],
         "name" => data["name"],
         "handle" => data["handle"],
+        "description" => data["description"],
         "friendly_id" => data["friendly_id"],
         "base_friendly_id" => data["values_from"],
       }.compact
@@ -112,12 +114,14 @@ class Attribute < ApplicationRecord
         "name" => name,
         "friendly_id" => friendly_id,
         "handle" => handle,
+        "description" => description,
         "values" => values.reorder(:id).map(&:friendly_id),
       }
     else
       {
         "name" => name,
         "handle" => handle,
+        "description" => description,
         "friendly_id" => friendly_id,
         "values_from" => base_friendly_id,
       }
@@ -132,6 +136,7 @@ class Attribute < ApplicationRecord
       "id" => gid,
       "name" => name,
       "handle" => handle,
+      "description" => description,
       "extended_attributes" => extended_attributes.map do
         {
           "name" => _1.name,

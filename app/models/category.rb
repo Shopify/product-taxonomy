@@ -204,6 +204,7 @@ class Category < ApplicationRecord
           "id" => _1.gid,
           "name" => _1.name,
           "handle" => _1.handle,
+          "description" => _1.description,
           "extended" => _1.extended?,
         }
       end,

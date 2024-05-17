@@ -1,3 +1,8 @@
+## 0.18.0 (May 17, 2024)
+- Importing attribute descriptions
+- Importing latest localizations
+- Updating country attribute
+
 ## 0.17.0 (Apr 26, 2024)
 
 ### Updated Attribute Data format

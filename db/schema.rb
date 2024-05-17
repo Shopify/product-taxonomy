@@ -12,6 +12,7 @@ ActiveRecord::Schema[7.1].define do
     t.string(:friendly_id, null: false)
     t.string(:base_friendly_id)
     t.string(:handle, null: false)
+    t.string(:description, null: false)
 
     t.index(:friendly_id, unique: true)
   end
