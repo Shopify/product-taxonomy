@@ -2,7 +2,7 @@
 
 require_relative "../test_helper"
 
-class CategoryTest < ApplicationTestCase
+class CategoryTest < ActiveSupport::TestCase
   def teardown
     Category.delete_all
     Attribute.delete_all

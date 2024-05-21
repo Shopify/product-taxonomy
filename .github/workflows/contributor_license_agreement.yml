@@ -9,6 +9,9 @@ on:
 jobs:
   cla:
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      pull-requests: write
     if: |
       (github.event.issue.pull_request
         && !github.event.issue.pull_request.merged_at

@@ -21,9 +21,9 @@ class Attribute < ApplicationRecord
 
   belongs_to :base_attribute,
     class_name: "Attribute",
-    optional: true,
     foreign_key: :base_friendly_id,
-    primary_key: :friendly_id
+    primary_key: :friendly_id,
+    optional: true
 
   has_many :extended_attributes,
     class_name: "Attribute",

@@ -45,7 +45,7 @@ cli.write_file!("dist/attributes.json") do |file|
   file.write(JSON.pretty_generate(attributes_json))
   file.write("\n")
 end
-cli.write_file!("dist/values.json") do |file|
+cli.write_file!("dist/attribute_values.json") do |file|
   file.write(JSON.pretty_generate(values_json))
   file.write("\n")
 end

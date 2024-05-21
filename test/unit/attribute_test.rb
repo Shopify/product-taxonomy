@@ -2,7 +2,7 @@
 
 require_relative "../test_helper"
 
-class AttributeTest < ApplicationTestCase
+class AttributeTest < ActiveSupport::TestCase
   def teardown
     Attribute.delete_all
     Value.delete_all
@@ -17,17 +17,17 @@ class AttributeTest < ApplicationTestCase
   end
 
   test ".base returns base attributes" do
-    base_attribute.save!
-    extended_attribute.save!
+    base = create(:attribute, name: "Base", base_attribute: nil)
+    create(:attribute, name: "Extended", base_attribute: base)
 
-    assert_equal [base_attribute], Attribute.base
+    assert_equal [base], Attribute.base
   end
 
   test ".extended returns attributes based off others" do
-    base_attribute.save!
-    extended_attribute.save!
+    base = create(:attribute, name: "Base", base_attribute: nil)
+    extended = create(:attribute, name: "Extended", base_attribute: base)
 
-    assert_equal [extended_attribute], Attribute.extended
+    assert_equal [extended], Attribute.extended
   end
 
   test "#gid returns a global id" do
@@ -35,8 +35,11 @@ class AttributeTest < ApplicationTestCase
   end
 
   test "#gid returns base_attribute.gid when extended" do
-    refute_equal base_attribute.id, extended_attribute.id
-    assert_equal base_attribute.gid, extended_attribute.gid
+    base = build(:attribute, id: 1, name: "Base", base_attribute: nil)
+    extended = build(:attribute, id: 2, name: "Extended", base_attribute: base)
+
+    refute_equal base.id, extended.id
+    assert_equal base.gid, extended.gid
   end
 
   test "#base?" do
@@ -147,12 +150,16 @@ class AttributeTest < ApplicationTestCase
     color = create(:attribute, name: "Color")
     size = create(:attribute, name: "Size")
 
+    ids = [color.id, size.id]
+    lpad = ids.map { _1.to_s.size }.max
+    color_id, size_id = ids.map { _1.to_s.ljust(lpad) }
+
     assert_equal <<~TXT.strip, Attribute.as_txt([color, size], version: 1)
       # Shopify Product Taxonomy - Attributes: 1
       # Format: {GID} : {Attribute name}
 
-      gid://shopify/TaxonomyAttribute/#{color.id} : Color
-      gid://shopify/TaxonomyAttribute/#{size.id} : Size
+      gid://shopify/TaxonomyAttribute/#{color_id} : Color
+      gid://shopify/TaxonomyAttribute/#{size_id} : Size
     TXT
   end
 
