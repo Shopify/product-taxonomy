@@ -2,7 +2,7 @@
 
 require_relative "../test_helper"
 
-class MappingRuleTest < ApplicationTestCase
+class MappingRuleTest < ActiveSupport::TestCase
   def teardown
     Product.delete_all
     GoogleProduct.delete_all
