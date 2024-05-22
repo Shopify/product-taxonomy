@@ -2,8 +2,10 @@
 
 FactoryBot.define do
   factory :mapping_rule do
-    sequence(:id, 1)
-    sequence(:integration_id, 1)
+    association :integration, factory: :integration
+    association :input, factory: :product
+    association :output, factory: :product # TODO: FactoryBot is upset about this
+
     sequence(:input_id, 1)
     sequence(:output_id, 1)
     input_type { "Product" }
