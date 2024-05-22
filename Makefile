@@ -20,19 +20,16 @@ NUKE     = $(FMT) "1;31" # bold red
 ADVISORY = printf "\e[%sm!! %-21s\e[0;1m\n" "1;31" # bold red text with a !! prefix
 RUN_CMD  = printf "\e[%sm>> %-21s\e[0;1m\n" "1;34" # bold blue text with a >> prefix
 
-
-###############################################################################
-# INPUTS
-
-CATEGORIES_DATA = $(shell find data/categories)
-ATTRIBUTES_DATA = $(shell find data/attributes.yml)
-VALUES_DATA     = $(shell find data/values.yml)
-MAPPINGS_DATA   = $(shell find data/integrations/*/*/mappings)
-
 ###############################################################################
 # TARGETS
 # Many commands generate many files (that'll expand), and Make isn't great at
 # targeting arbitrary numbers of outputs, so we'll use sentinels.
+
+# DATA
+CATEGORIES_DATA_PATH = data/categories/*.yml
+ATTRIBUTES_DATA_PATH = data/attributes.yml
+VALUES_DATA_PATH = data/values.yml
+MAPPINGS_DATA_PATH = data/integrations/*/*/mappings
 
 # DOCS
 GENERATED_DOCS_PATH = docs/_data/unstable
@@ -45,7 +42,7 @@ CATEGORIES_JSON = $(GENERATED_DIST_PATH)/categories.json
 ATTRIBUTES_JSON = $(GENERATED_DIST_PATH)/attributes.json
 MAPPINGS_JSON = $(GENERATED_DIST_PATH)/mappings.json
 
-# DATA files to run application
+# APP files to run application
 DEV_DB = storage/development.sqlite3
 TEST_DB = storage/test.sqlite3
 
@@ -53,6 +50,14 @@ TEST_DB = storage/test.sqlite3
 ATTRIBUTES_DATA_CUE = schema/attributes_data.cue
 CATEGORIES_DATA_CUE = schema/categories_data.cue
 MAPPINGS_DATA_CUE = schema/mappings_data.cue
+
+###############################################################################
+# INPUTS
+
+CATEGORIES_DATA = $(shell find $(CATEGORIES_DATA_PATH))
+ATTRIBUTES_DATA = $(shell find $(ATTRIBUTES_DATA_PATH))
+VALUES_DATA     = $(shell find $(VALUES_DATA_PATH))
+MAPPINGS_DATA   = $(shell find $(MAPPINGS_DATA_PATH))
 
 ###############################################################################
 # COMMANDS
@@ -122,7 +127,7 @@ console:
 
 #
 # DATABASE SETUP
-seed:
+seed: vet_data_schemas
 	@$(GENERATE) "Seeding Database" $(DEV_DB)
 	$(V)rake db:drop
 	$(V)rake db:schema_load
@@ -133,7 +138,7 @@ $(DEV_DB): seed
 
 #
 # TESTS
-test: vet_schema
+test: vet_data_schemas vet_dist_schemas
 	@$(RUN_CMD) "Running All Tests"
 	$(V)bin/rake test $(filter-out $@,$(MAKECMDGOALS))
 .PHONY: test
@@ -148,11 +153,32 @@ integration_tests:
 	$(V)bin/rake integration $(filter-out $@,$(MAKECMDGOALS))
 .PHONY: integration_tests
 
-vet_schema: $(CATEGORIES_DATA_CUE) $(ATTRIBUTES_DATA_CUE) $(MAPPINGS_DATA_CUE)
-	@$(RUN_CMD) "Validating Schema"
+vet_dist_schemas: $(CATEGORIES_DATA_CUE) $(ATTRIBUTES_DATA_CUE) $(MAPPINGS_DATA_CUE)
+	@$(RUN_CMD) "Validating data/*.json schema"
 	$(V)cd schema && cue vet
 	$(V)echo "Done!"
-.PHONY: vet_schema
+.PHONY: vet_dist_schemas
+
+vet_data_schemas: vet_data_attributes_schema vet_data_categories_schema vet_data_values_schema
+.PHONY: vet_data_schemas
+
+vet_data_attributes_schema:
+	@$(RUN_CMD) "Validating $(ATTRIBUTES_DATA_PATH) schema"
+	$(V)cue vet schema/data/attributes_schema.cue $(ATTRIBUTES_DATA_PATH)
+	$(V)echo "Done!"
+.PHONY: vet_data_attributes_schema
+
+vet_data_categories_schema:
+	@$(RUN_CMD) "Validating $(CATEGORIES_DATA_PATH) schema"
+	$(V)cue vet schema/data/categories_schema.cue -d '#schema' $(CATEGORIES_DATA_PATH)
+	$(V)echo "Done!"
+.PHONY: vet_data_categories_schema
+
+vet_data_values_schema:
+	@$(RUN_CMD) "Validating $(VALUES_DATA_PATH) schema"
+	$(V)cue vet schema/data/values_schema.cue -d '#schema' $(VALUES_DATA_PATH)
+	$(V)echo "Done!"
+.PHONY: vet_data_values_schema
 
 # TODO: These two targets can be done together
 $(CATEGORIES_DATA_CUE): $(DIST_GENERATED_SENTINEL)

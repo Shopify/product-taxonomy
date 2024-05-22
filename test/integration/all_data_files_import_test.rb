@@ -38,27 +38,6 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     MappingRule.delete_all
   end
 
-  # TODO: Replace with cue schemas
-  test "data/attributes.yml base_attributes has no empty value lists" do
-    @raw_attributes_data["base_attributes"].select { _1.key?("values") }.each do |raw_attribute|
-      assert_predicate raw_attribute.fetch("values"), :present?
-    end
-  end
-
-  test "data/attributes.yaml base attributes do not have values_from key" do
-    @raw_attributes_data["base_attributes"].each do |raw_attribute|
-      assert raw_attribute.key?("values")
-      assert_not raw_attribute.key?("values_from")
-    end
-  end
-
-  test "data/attributes.yaml extended attributes do not have values key" do
-    @raw_attributes_data["extended_attributes"].each do |raw_attribute|
-      assert raw_attribute.key?("values_from")
-      assert_not raw_attribute.key?("values")
-    end
-  end
-
   test "AttributeValues are consistent with values.yml" do
     @raw_values_data.each do |raw_value|
       deserialized_value = Value.new_from_data(raw_value)
