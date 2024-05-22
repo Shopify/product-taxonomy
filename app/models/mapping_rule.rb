@@ -11,94 +11,51 @@ class MappingRule < ApplicationRecord
     #
     # `dist/` serialization
 
-    def legacy_as_json(mapping_rules, version:)
+    def as_json(mapping_rules, version:)
       {
         "version" => version,
-        "mappings" => mapping_blocks_as_json(mapping_rules),
+        "mappings" => integration_blocks.map do |source, target|
+          mapping_blocks_as_json(source, target, mapping_rules)
+        end,
       }
     end
 
     private
 
-    # TODO: Make this normative
-    def mapping_blocks_as_json(mapping_rules)
-      mapping_rule_blocks = Integration.all.pluck(:id, :available_versions).flat_map do |id, versions|
-        [id].product(versions, [true, false])
-      end.filter_map do |integration_id, version, from_shopify|
-        rules = mapping_rules.where(integration_id:, from_shopify:)
-        rules = if from_shopify
-          rules.where(output_version: version)
-        else
-          rules.where(input_version: version)
-        end
-        rules if rules.any?
-      end
-
-      mapping_rule_blocks.map do |mapping_rules|
-        rules = MappingBuilder.simple_mapping(mapping_rules:)
-        {
-          "input_taxonomy" => mapping_rules.first.input_version,
-          "output_taxonomy" => mapping_rules.first.output_version,
-          "rules" => rules&.filter_map { serialize_rule(_1) },
-        }
+    def integration_blocks
+      Integration.all.pluck(:id, :available_versions).flat_map do |id, versions|
+        _source, _destination = where(integration_id: id).pluck(:input_version, :output_version).uniq
       end
     end
 
-    def serialize_rule(mapping)
-      return if mapping.nil?
-
-      if mapping[:input][:attributes].present?
-        mapping[:input][:attributes] = mapping[:input][:attributes].map do |attribute|
-          {
-            name: Attribute.find(attribute[:name]).gid,
-            value: attribute[:value].nil? ? nil : Value.find(attribute[:value]).gid,
-          }
-        end
-      end
-
+    def mapping_blocks_as_json(input_version, output_version, mapping_rules)
       {
-        "input" => mapping[:input],
-        "output" => mapping[:output],
+        "input_taxonomy" => input_version,
+        "output_taxonomy" => output_version,
+        "rules" => mapping_rules.select do
+          _1.input_version == input_version && _1.output_version == output_version
+        end.map(&:as_json),
       }
     end
   end
 
-  def apply(output_acc)
-    output_hash = output.payload.as_json
-    output_hash.delete_if { |_, value| value == [] }
-    output_acc.merge(output_hash) do |key, old_val, new_val|
-      intersection = old_val.intersection(new_val)
-      if !old_val.empty? && intersection.empty?
-        raise "Rules conflicted, please review the rules.
-          rule: #{as_json}, key: #{key}, old_val: #{old_val}, new_val: #{new_val}"
-      end
-
-      intersection
-    end
+  def as_json
+    resolve_input_attribute_values!
+    {
+      "input" => input.payload.except!("properties").compact,
+      "output" => output.payload.except!("properties").compact,
+    }
   end
 
-  def match?(product_input)
-    rule_input = input
+  private
 
-    return false unless product_input[:product_category_id] == rule_input.product_category_id
-    return true if rule_input.properties.blank?
-
-    rule_input.properties.all? do |rule_attribute|
-      product_input[:attributes].any? do |attribute|
-        if attribute[:name] == rule_attribute["name"]
-          values_match = attribute[:value] == rule_attribute["value"]
-          # TODO: Handle inputs that are lists/multi-selections
-          value_included = if rule_attribute["value"].is_a?(Array)
-            rule_attribute["value"].include?(attribute[:value])
-          else
-            false
-          end
-          value_present = attribute[:value].present? && rule_attribute["value"] == PRESENT
-
-          values_match || value_included || value_present
-        else
-          false
-        end
+  def resolve_input_attribute_values!
+    if input.payload["properties"].present?
+      input.payload["attributes"] = input.payload["properties"].map do |property|
+        {
+          "attribute" => Attribute.find_by(friendly_id: property["attribute"]).gid,
+          "value" => Value.find_by(friendly_id: property["value"])&.gid,
+        }
       end
     end
   end

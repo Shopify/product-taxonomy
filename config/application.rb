@@ -12,7 +12,6 @@ Bundler.require(:default, :development)
 
 LOADER = Zeitwerk::Loader.new
 LOADER.push_dir("#{__dir__}/../app/models")
-LOADER.push_dir("#{__dir__}/../app/services")
 LOADER.enable_reloading
 LOADER.setup
 
