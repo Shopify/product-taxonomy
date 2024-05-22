@@ -102,8 +102,20 @@ class AttributeTest < ActiveSupport::TestCase
 
   test ".insert_all_from_data creates multiple categories" do
     data = [
-      { "id" => 1, "name" => "Color", "friendly_id" => "color", "handle" => "color" },
-      { "id" => 2, "name" => "Size", "friendly_id" => "size", "handle" => "size" },
+      {
+        "id" => 1,
+        "name" => "Color",
+        "friendly_id" => "color",
+        "handle" => "color",
+        "description" => "Description for Color",
+      },
+      {
+        "id" => 2,
+        "name" => "Size",
+        "friendly_id" => "size",
+        "handle" => "size",
+        "description" => "Description for Size",
+      },
     ]
 
     assert_difference -> { Attribute.count }, 2 do
@@ -126,6 +138,7 @@ class AttributeTest < ActiveSupport::TestCase
             "id" => "gid://shopify/TaxonomyAttribute/#{color.id}",
             "name" => "Color",
             "handle" => "color",
+            "description" => "Description for Color",
             "extended_attributes" => [
               {
                 "name" => "Swatch Color",
@@ -172,6 +185,7 @@ class AttributeTest < ActiveSupport::TestCase
         "id" => color.id,
         "name" => "Color",
         "handle" => "color",
+        "description" => "Description for Color",
         "friendly_id" => "color",
         "values" => [red.friendly_id],
       },
@@ -190,6 +204,7 @@ class AttributeTest < ActiveSupport::TestCase
       {
         "name" => "Swatch Color",
         "handle" => "swatch-color",
+        "description" => "Description for Swatch Color",
         "friendly_id" => "swatch-color",
         "values_from" => "color",
       },

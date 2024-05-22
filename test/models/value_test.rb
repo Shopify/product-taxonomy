@@ -25,8 +25,8 @@ class ValueTest < ActiveSupport::TestCase
   end
 
   test "#friendly_id must be unique" do
-    create(:value, friendly_id: "gold")
-    another_gold = build(:value, friendly_id: "gold")
+    create(:value, friendly_id: "wonderful-gold")
+    another_gold = build(:value, friendly_id: "wonderful-gold")
 
     refute_predicate another_gold, :valid?
   end
