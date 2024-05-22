@@ -59,7 +59,10 @@ Everything else is how we manage the taxonomy and generate distributions. This i
 
 ## 🤿 Diving in
 
-This is a simple ruby app with a few models and serializers. The bulk of the work is parsing `data/` into a tree of `app/models/category.rb` to serialize reliably to `dist/`. The app is set up to be rails-like including using `ActiveRecord`.
+This is a simple ETL app ultimately, with a few core models. The app is built on Ruby, Rails, and Jekyll:
+
+- Rails is used to generate distribution files from `data/` and ensure the correctness of results.
+- Jekyll is used to serve the documentation locally and on GitHub pages.
 
 Everything ultimately runs through `make` (`dev` simply proxies). Here are the commands you'll use most often:
 
@@ -89,9 +92,9 @@ When you edit any cue files, ensure you're running `cue fmt`. This will format t
 
 Most folks won't touch most of this, but we see you 👩🏼‍💻.
 
-If you want to add a new serialization target, three simple steps:
-1. Add a new serializer to `app/serializers/dist/`
-2. Extend `bin/generate_dist` to use your new serializer and write files
+If you want to add a new serialization target, or change an existing one:
+1. Add new serialization methods to relevant models (e.g., `Category#as_json`, `Category#as_pkl`)
+2. Extend `bin/generate_dist` to write files in the new format
 
 For your explorations, here's a map of the land:
 
