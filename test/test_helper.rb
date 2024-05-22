@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-require "bundler/setup"
+ENV["RAILS_ENV"] ||= "test"
+require_relative "../config/environment"
 Bundler.require(:test)
 
-require "minitest/rails"
-require "minitest/pride"
-require_relative "../application"
+ProductTaxonomy::Application.reset_schema!
 
-Application.establish_db_connection!(env: :test)
-Application.load_and_reset_schema!
+require "minitest/autorun"
+require "minitest/pride"
+require "active_support/test_case"
 
 FactoryBot.find_definitions
 
@@ -16,6 +16,6 @@ module ActiveSupport
   class TestCase
     include FactoryBot::Syntax::Methods
 
-    parallelize(workers: :number_of_processors)
+    parallelize workers: :number_of_processors
   end
 end

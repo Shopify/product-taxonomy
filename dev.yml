@@ -19,10 +19,16 @@ up:
     - cue
 
 commands:
+  clean:
+    run: make clean
+  seed:
+    run: make seed
   rebuild:
     run: make clean && make
   build:
     run: make build
+  console:
+    run: bin/console
   release:
     run: make release
   server:

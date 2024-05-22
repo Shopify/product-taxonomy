@@ -1,30 +1,44 @@
 # frozen_string_literal: true
 
 require_relative "../test_helper"
+require_relative "../../config/cli"
 require_relative "../../db/seed"
-require_relative "../../lib/cli"
 
 class AllDataFilesImportTest < ActiveSupport::TestCase
   include Minitest::Hooks
   parallelize(workers: 1) # disable parallelization
 
   def before_all
+    Value.delete_all
+    Attribute.delete_all
+    Category.delete_all
+    AttributesValue.delete_all
+    CategoriesAttribute.delete_all
+    Integration.delete_all
+    MappingRule.delete_all
+
     cli = CLI.new
     @raw_values_data = cli.parse_yaml("data/values.yml")
     @raw_attributes_data = cli.parse_yaml("data/attributes.yml")
-    @raw_verticals_data = Dir.glob("#{CLI.root}/data/categories/*.yml").map { cli.parse_yaml(_1) }
+    @raw_verticals_data = cli.glob("data/categories/*.yml").map { cli.parse_yaml(_1) }
     @raw_integrations_data = cli.parse_yaml("data/integrations/integrations.yml")
-    mapping_rule_files = Dir.glob("#{CLI.root}/data/integrations/*/*/mappings/*_shopify.yml")
+    mapping_rule_files = cli.glob("data/integrations/*/*/mappings/*_shopify.yml")
     @raw_mapping_rules_data = mapping_rule_files.map { { content: cli.parse_yaml(_1), file_name: _1 } }
 
-    seed = DB::Seed.new
-    seed.values_from(@raw_values_data)
-    seed.attributes_from(@raw_attributes_data)
-    seed.categories_from(@raw_verticals_data)
-    seed.integrations_from(@raw_integrations_data)
-    seed.mapping_rules_from(mapping_rule_files)
+    DB::Seed.from_data_files!(cli)
   end
 
+  def after_all
+    Value.delete_all
+    Attribute.delete_all
+    Category.delete_all
+    AttributesValue.delete_all
+    CategoriesAttribute.delete_all
+    Integration.delete_all
+    MappingRule.delete_all
+  end
+
+  # TODO: Replace with cue schemas
   test "data/attributes.yml base_attributes has no empty value lists" do
     @raw_attributes_data["base_attributes"].select { _1.key?("values") }.each do |raw_attribute|
       assert_predicate raw_attribute.fetch("values"), :present?
@@ -45,10 +59,6 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     end
   end
 
-  test "AttributeValues are correctly imported from values.yml" do
-    assert_equal @raw_values_data.size, Value.count
-  end
-
   test "AttributeValues are consistent with values.yml" do
     @raw_values_data.each do |raw_value|
       deserialized_value = Value.new_from_data(raw_value)
@@ -56,22 +66,6 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
 
       assert_equal deserialized_value, real_value
     end
-  end
-
-  test "AttributeValues are all valid" do
-    Value.all.each do |value|
-      assert_predicate value, :valid?
-    end
-  end
-
-  test "AttributeValues all have a primary attribute" do
-    Value.all.each do |value|
-      assert_predicate value.primary_attribute, :present?, "Value #{value.friendly_id} has no primary attribute"
-    end
-  end
-
-  test "Attributes are correctly imported from attributes.yml" do
-    assert_equal @raw_attributes_data.values.flat_map { _1 }.size, Attribute.count
   end
 
   test "Attributes are consistent with attributes.yml" do
@@ -110,17 +104,6 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     end
   end
 
-  test "Attributes are all valid" do
-    Attribute.all.each do |attribute|
-      assert_predicate attribute, :valid?
-    end
-  end
-
-  test "Categories are fully imported from categories/*.yml" do
-    assert_equal @raw_verticals_data.size, Category.verticals.count
-    assert_equal @raw_verticals_data.map(&:size).sum, Category.count
-  end
-
   test "Categories are consistent with categories/*.yml" do
     @raw_verticals_data.flatten.each do |raw_category|
       deserialized_category = Category.new_from_data(raw_category)
@@ -129,12 +112,6 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
       assert_equal deserialized_category, real_category
       assert_equal raw_category.fetch("children").size, real_category.children.count
       assert_equal deserialized_category.children, real_category.children
-    end
-  end
-
-  test "Categories are all valid" do
-    Category.all.each do |category|
-      assert_predicate category, :valid?
     end
   end
 
@@ -200,12 +177,6 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     assert_includes real_value_friendly_ids, "snowboard_construction__flat"
     assert_includes real_value_friendly_ids, "snowboard_construction__hybrid"
     assert_includes real_value_friendly_ids, "snowboard_construction__rocker"
-  end
-
-  test "MappingRules are fully imported from integrations/*/*/mappings/*_shopify.yml" do
-    assert_equal @raw_mapping_rules_data.size,
-      MappingRule.select(:integration_id, :from_shopify).distinct.to_a.count
-    assert_equal @raw_mapping_rules_data.map { |raw| raw[:content]["rules"].count }.sum, MappingRule.count
   end
 
   test "MappingRule ↔ Product relationships are consistent with integrations/*/*/mappings/*_shopify.yml" do

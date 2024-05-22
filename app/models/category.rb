@@ -38,7 +38,7 @@ class Category < ApplicationRecord
     end
 
     def insert_all_from_data(data, ...)
-      insert_all(Array(data).map { row_from_data(_1) }, ...)
+      insert_all!(Array(data).map { row_from_data(_1) }, ...)
     end
 
     #

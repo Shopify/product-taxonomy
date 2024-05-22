@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+root=$(dirname $(dirname $0))
+
+irb -r "$root/config/environment"

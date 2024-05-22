@@ -1,15 +1,24 @@
-# generated schema data files to validate against
+# Ignore generated schema data files to validate against
 schema/attributes_data.cue
 schema/categories_data.cue
 schema/mappings_data.cue
 
-# docs site
+# Ignore docs site
 /_site
-/docs/_data/unstable
+/docs/_data/*
 
-# dev files
+# Ignore bundler config.
+/.bundle
+
+# Ignore all environment files (except templates).
+/.env*
+!/.env*.erb
+
+# Ignore all logfiles and tempfiles.
+/log/*
 /tmp/*
 .byebug_history
 
-# generated dist files
-/dist/CHANGELOG.md
+# Ignore storage (uploaded files in development and any SQLite databases).
+/storage/*
+/tmp/storage/*

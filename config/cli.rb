@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+require "fileutils"
+require "json"
+require "optparse"
+require "yaml"
+
 class CLI
   ROOT = File.expand_path("..", __dir__)
   private_constant :ROOT
@@ -48,6 +53,13 @@ class CLI
     vputs("→ Reading `#{path}`")
 
     File.read(path)
+  end
+
+  def glob(path_from_root)
+    path = path_for(path_from_root)
+    vputs("→ Globbing `#{path}`")
+
+    Dir.glob(path)
   end
 
   def parse_json(path_from_root)

@@ -112,7 +112,7 @@ class AttributeTest < ActiveSupport::TestCase
   end
 
   test ".as_json returns distribution json" do
-    red = build(:value, name: "Red")
+    red = build(:value, name: "Red", handle: "color-red")
     color = create(:attribute, name: "Color", values: [red])
     create(:attribute, name: "Swatch Color", handle: "swatch-color", base_attribute: color, values: [red])
 
@@ -136,7 +136,7 @@ class AttributeTest < ActiveSupport::TestCase
               {
                 "id" => "gid://shopify/TaxonomyValue/#{red.id}",
                 "name" => "Red",
-                "handle" => "red",
+                "handle" => "color-red",
               },
             ],
           },

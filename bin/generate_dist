@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative "../application"
-require_relative "../lib/cli"
+require_relative "../config/environment"
+require_relative "../config/cli"
 
 cli = CLI.new([:version]) do |opts|
   opts.on("-V VERSION", "--version=VERSION", "Version of the documentation")
@@ -12,8 +12,6 @@ cli.options.version ||= cli.read_file("VERSION").strip
 
 puts("Generating `#{cli.options.version}` distribution files...")
 cli.options_status
-
-Application.establish_db_connection!
 
 cli.write_file!("dist/categories.txt") do |file|
   file.write(Category.as_txt(Category.verticals, version: cli.options.version))
