@@ -13,12 +13,12 @@ class Value < ApplicationRecord
   belongs_to :primary_attribute,
     class_name: "Attribute",
     foreign_key: :primary_attribute_friendly_id,
-    primary_key: :friendly_id,
-    optional: true
+    primary_key: :friendly_id
 
   validates :name, presence: true
   validates :friendly_id, presence: true, uniqueness: true
   validates :handle, presence: true, uniqueness: { scope: :primary_attribute_friendly_id }
+  validates :primary_attribute, presence: true
 
   class << self
     #
@@ -29,7 +29,7 @@ class Value < ApplicationRecord
     end
 
     def insert_all_from_data(data, ...)
-      insert_all(Array(data).map { row_from_data(_1) }, ...)
+      insert_all!(Array(data).map { row_from_data(_1) }, ...)
     end
 
     #
@@ -72,11 +72,7 @@ class Value < ApplicationRecord
   end
 
   def full_name
-    if primary_attribute
-      "#{name} [#{primary_attribute.name}]"
-    else
-      name
-    end
+    "#{name} [#{primary_attribute.name}]"
   end
 
   def primary_attribute_friendly_id=(friendly_id)

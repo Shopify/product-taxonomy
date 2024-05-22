@@ -24,10 +24,6 @@ class ValueTest < ActiveSupport::TestCase
     assert_equal "Gold [Color]", build(:value, name: "Gold", primary_attribute: color_attribute).full_name
   end
 
-  test "#full_name is just name if primary attribute is missing" do
-    assert_equal "Foo", build(:value, name: "Foo").full_name
-  end
-
   test "#friendly_id must be unique" do
     create(:value, friendly_id: "gold")
     another_gold = build(:value, friendly_id: "gold")
@@ -77,8 +73,8 @@ class ValueTest < ActiveSupport::TestCase
   end
 
   test ".as_json returns distribution json" do
-    gold = create(:value, name: "Gold")
-    red = create(:value, name: "Red")
+    gold = create(:value, name: "Gold", handle: "color-gold")
+    red = create(:value, name: "Red", handle: "color-red")
 
     assert_equal(
       {
@@ -87,12 +83,12 @@ class ValueTest < ActiveSupport::TestCase
           {
             "id" => "gid://shopify/TaxonomyValue/#{gold.id}",
             "name" => "Gold",
-            "handle" => "gold",
+            "handle" => "color-gold",
           },
           {
             "id" => "gid://shopify/TaxonomyValue/#{red.id}",
             "name" => "Red",
-            "handle" => "red",
+            "handle" => "color-red",
           },
         ],
       },
@@ -121,7 +117,7 @@ class ValueTest < ActiveSupport::TestCase
         "id" => gold.id,
         "name" => "Gold",
         "friendly_id" => "color__gold",
-        "handle" => "gold",
+        "handle" => "color-gold",
       },
       gold.as_json_for_data,
     )

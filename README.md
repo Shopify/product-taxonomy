@@ -67,6 +67,7 @@ Everything ultimately runs through `make` (`dev` simply proxies). Here are the c
 make [build] # build the dist and documentation files
 make clean   # remove sentinels and all generated files
 make seed    # parse data/ into local db
+make console # irb with dependencies loaded
 make test    # run ruby tests and cue schema verification
 make server  # http://localhost:4000 interactive view of dist/
 ```
@@ -95,27 +96,23 @@ If you want to add a new serialization target, three simple steps:
 For your explorations, here's a map of the land:
 
 ```
-./
-├── application.rb       # handles file loading "app-wide"
-├── Makefile             # primary source of useful commands
-├── Rakefile             # only used for testing
+├── Makefile             # key dev and build commands
+├── Rakefile             # manages ruby tests
 ├── app/
-│   ├── models/          # most models are simple data objects
-│   │   ├── category.rb  # node-based tree impl for categories
-│   │   └── ...
-│   └── serializers/
-│       ├── source_data/ # object-centric, to read/write source-data files
-│       ├── docs/        # object-centric, for docs site
-│       └── dist/        # file-type-centric, one file per distribution type
+│   └── models/          # most models are simple data objects
+│       ├── category.rb  # node-based tree impl for categories
+│       └── ...
 ├── bin/
 │   ├── generate_dist    # primary entrypoint for generating dist/
 │   └── generate_docs    # primary entrypoint for generating docs/
+├── config/              # setup for the app, including DB config
 ├── db/
 │   ├── schema.rb        # defines tables for models
-│   └── seed.rb          # seed the db by parsing data shaped from data/
+│   └── seed.rb          # seeds the db from data/
+├── dist/                # generated distribution files
 ├── data/
 │   ├── integrations/    # integrations and mappings between taxonomies
-│   ├── localizations/   # localizations for categories, attributes, and values
+│   └── localizations/   # localizations for categories, attributes, and values
 │   ├── categories/      # source-of-truth for categories
 │   ├── attributes.yml   # source-of-truth for attributes
 │   └── values.yml       # source-of-truth for values

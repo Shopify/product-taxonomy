@@ -1,63 +1,117 @@
 # frozen_string_literal: true
 
-require_relative "../application"
+require_relative "../config/application"
 
 module DB
   class Seed
+    class << self
+      def from_data_files!(cli)
+        seed = new(verbose: cli.options.verbose)
+        seed.import_taxonomy!(
+          values_data: cli.parse_yaml("data/values.yml"),
+          attributes_data: cli.parse_yaml("data/attributes.yml"),
+          verticals_data: cli.glob("data/categories/*.yml").map { cli.parse_yaml(_1) },
+        )
+        seed.import_integrations!(
+          integrations_data: cli.parse_yaml("data/integrations/integrations.yml"),
+          mapping_rule_files: cli.glob("data/integrations/*/*/mappings/*_shopify.yml"),
+        )
+        seed
+      end
+    end
+
     def initialize(verbose: false)
-      @verbose = verbose
+      @verbose = !!verbose
     end
 
-    def values_from(data)
-      vputs("Importing values")
+    def import_taxonomy!(values_data:, attributes_data:, verticals_data:)
+      vputs("→ Importing taxonomy")
 
-      Value.insert_all_from_data(data)
+      vputs("  → Attributes and values")
+      Attribute.insert_all_from_data(attributes_data["base_attributes"])
+      Value.insert_all_from_data(values_data)
+      AttributesValue.insert_all_from_data(attributes_data["base_attributes"])
 
-      vputs("✓ Imported #{Value.count} values")
-    end
-
-    def attributes_from(data)
-      vputs("Importing attributes")
-
-      Attribute.insert_all_from_data(data["base_attributes"])
-      AttributesValue.insert_all_from_data!(data["base_attributes"])
-
-      inserted_properties = Attribute.insert_all_from_data(
-        data["extended_attributes"],
+      inserted_attributes = Attribute.insert_all_from_data(
+        attributes_data["extended_attributes"],
         returning: ["id", "base_friendly_id"],
       )
-      AttributesValue.insert_all_from_data!(inserted_properties)
+      AttributesValue.insert_all_from_data(inserted_attributes)
+      vputs("    ✓ Imported #{Attribute.count} attributes and #{Value.count} values")
 
-      vputs("✓ Imported #{Attribute.count} attributes")
-    end
-
-    def categories_from(data)
-      vputs("Importing #{data.count} category verticals")
-
-      data.each do |vertical_data|
-        vputs("  → #{vertical_data.first.fetch("name")}")
+      vputs("  → #{verticals_data.count} category verticals")
+      verticals_data.each do |vertical_data|
+        vputs("    → #{vertical_data.first.fetch("name")}")
         Category.insert_all_from_data(vertical_data)
         CategoriesAttribute.insert_all_from_data(vertical_data)
       end
+      vputs("    ✓ Imported #{Category.verticals.count} verticals with #{Category.count} categories")
 
-      vputs("✓ Imported #{Category.count} categories")
+      vputs("  → Validating taxonomy...")
+      if values_data.size != Value.count
+        vputs("  ✗ Import failed. Values count mismatch")
+        exit(1)
+      elsif attributes_data["base_attributes"].size != Attribute.base.count
+        vputs("  ✗ Import failed. Base attributes count mismatch")
+        exit(1)
+      elsif attributes_data["extended_attributes"].size != Attribute.extended.count
+        vputs("  ✗ Import failed. Extended attributes count mismatch")
+        exit(1)
+      elsif verticals_data.size != Category.verticals.count
+        vputs("  ✗ Import failed. Verticals count mismatch")
+        exit(1)
+      elsif verticals_data.sum(&:size) != Category.count
+        vputs("  ✗ Import failed. Categories count mismatch")
+        exit(1)
+      end
+      [Value, Attribute, AttributesValue, Category, CategoriesAttribute].each do |model|
+        if model.count.zero?
+          vputs("  ✗ Import failed. No #{model.name.pluralize} found")
+          exit(1)
+        elsif model.all.any?(:invalid?)
+          vputs("  ✗ Import failed. Invalid #{model.name.pluralize} found")
+          exit(1)
+        else
+          vputs("    ✓ #{model.name.pluralize} valid")
+        end
+      end
+      vputs("  ✓ Taxonomy import successful")
     end
 
-    def integrations_from(data)
-      vputs("Importing integrations")
+    def import_integrations!(integrations_data:, mapping_rule_files:)
+      vputs("→ Importing integrations")
 
-      integrations = data.map { { name: _1["name"], available_versions: _1["available_versions"] } }
-      Integration.insert_all(integrations)
+      vputs("  → #{integrations_data.count} mapping integrations")
+      Integration.insert_all_from_data(integrations_data)
+      mapping_rules_from(mapping_rule_files)
+      vputs("    ✓ Imported #{Integration.count} integrations with #{MappingRule.count} mapping rules")
 
-      vputs("✓ Imported #{Integration.count} integrations")
+      vputs("  → Validating integrations...")
+      if integrations_data.size != Integration.count
+        vputs("  ✗ Import failed. Integrations count mismatch")
+        exit(1)
+      end
+      [Integration, MappingRule, Product].each do |model|
+        if model.count.zero?
+          vputs("  ✗ Import failed. No #{model.name.pluralize} found")
+          exit(1)
+        elsif model.all.any?(:invalid?)
+          vputs("  ✗ Import failed. Invalid #{model.name.pluralize} found")
+          exit(1)
+        else
+          vputs("    ✓ #{model.name.pluralize} valid")
+        end
+      end
+      vputs("  ✓ Integration import successful")
     end
 
+    private
+
+    # once serializers are complete, this likely can be inlined
     def mapping_rules_from(data)
-      vputs("Importing mapping rules")
-
       mapping_rules = []
       data.each do |file|
-        vputs("Importing mapping rules from #{file}")
+        vputs("    → #{file}")
         from_shopify = File.basename(file, ".*").split("_")[0] == "from"
         integration_name = Pathname.new(file).each_filename.to_a[-4]
         integration_id = Integration.find_by(name: integration_name)&.id
@@ -87,11 +141,7 @@ module DB
         end
       end
       MappingRule.insert_all(mapping_rules)
-
-      vputs("✓ Imported all #{MappingRule.count} mapping rules")
     end
-
-    private
 
     def vputs(...)
       puts(...) if @verbose

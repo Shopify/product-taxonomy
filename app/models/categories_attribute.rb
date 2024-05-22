@@ -9,7 +9,7 @@ class CategoriesAttribute < ApplicationRecord
     # `data/` deserialization
 
     def insert_all_from_data(data, ...)
-      insert_all(Array(data).flat_map { rows_from_data(_1) }, ...)
+      insert_all!(Array(data).flat_map { rows_from_data(_1) }, ...)
     end
 
     private

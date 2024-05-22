@@ -2,8 +2,8 @@
 # frozen_string_literal: true
 
 require "English"
-require_relative "../application"
-require_relative "../lib/cli"
+require_relative "../config/boot"
+require_relative "../config/cli"
 
 cli = CLI.new([:version]) do |opts|
   opts.on("-V VERSION", "--version=VERSION", "Version of the documentation")
