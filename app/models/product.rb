@@ -66,6 +66,6 @@ class Product < ApplicationRecord
   end
 
   def as_txt
-    product_category_id.to_s
+    "product_category_id: #{product_category_id}, full_name: TBD"
   end
 end

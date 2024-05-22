@@ -24,30 +24,26 @@ class MappingRule < ApplicationRecord
       header = <<~HEADER
         # Shopify Product Taxonomy - Mappings: #{version}
         # Format:
-        # {input_taxonomy_version} -> {output_taxonomy_version} # Mappings A start
-        # ...
-        # {input_category_id} => {output_category_id}
-        # {input_category_id} => {output_category_id}
-        # ...
-        # {input_taxonomy_version} -> {output_taxonomy_version} # Mappings A end, Mappings B start
-        # ...
-        # {input_category_id} => {output_category_id}
-        # {input_category_id} => {output_category_id}
-        # ...
+        # product_category_id: {input_product_category_id}, full_name: {full_name} => product_category_id: {output_product_category_id}, full_name: {full_name}
       HEADER
-      lpadding = Category.reorder("LENGTH(id) DESC").first.gid.size
+      lpadding = 50 # TBD by gid and fullnames
       rpadding = lpadding
-      mapping_groups = mappings.group_by { |record| [record.input_version, record.output_version] }
-      lines = mapping_groups.map do |taxonomy_versions, records|
-        [
-          taxonomy_versions.join(" -> "),
-          *records.map { _1.as_txt(lpadding: lpadding, rpadding: rpadding) },
-        ]
-      end
       [
         header,
-        lines,
+        *mappings.map { _1.as_txt(lpadding: lpadding, rpadding: rpadding) },
       ].flatten.join("\n")
+    end
+
+    def write_txt_file!(cli)
+      mapping_groups = all.group_by { |record| [record.input_version, record.output_version] }
+      mapping_groups.each do |_, records|
+        directory_path = "dist/integrations/#{records.first.output_version}"
+        FileUtils.mkdir_p(directory_path)
+        cli.write_file!("#{directory_path}/mappings_from_#{records.first.input_version}.txt") do |file|
+          file.write(MappingRule.as_txt(records, version: cli.options.version))
+          file.write("\n")
+        end
+      end
     end
 
     private
@@ -77,6 +73,10 @@ class MappingRule < ApplicationRecord
     }
   end
 
+  def as_txt(lpadding: 0, rpadding: 0)
+    "#{input.as_txt.ljust(lpadding)} => #{output.as_txt.ljust(rpadding)}"
+  end
+
   private
 
   def resolve_input_attribute_values!
@@ -88,9 +88,5 @@ class MappingRule < ApplicationRecord
         }
       end
     end
-  end
-
-  def as_txt(lpadding: 0, rpadding: 0)
-    "#{input.as_txt.ljust(lpadding)} => #{output.as_txt.ljust(rpadding)}"
   end
 end
