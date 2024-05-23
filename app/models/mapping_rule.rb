@@ -34,18 +34,6 @@ class MappingRule < ApplicationRecord
       ].flatten.join("\n")
     end
 
-    def write_txt_file!(cli)
-      mapping_groups = all.group_by { |record| [record.input_version, record.output_version] }
-      mapping_groups.each do |_, records|
-        directory_path = "dist/integrations/#{records.first.output_version}"
-        FileUtils.mkdir_p(directory_path)
-        cli.write_file!("#{directory_path}/mappings_from_#{records.first.input_version}.txt") do |file|
-          file.write(MappingRule.as_txt(records, version: cli.options.version))
-          file.write("\n")
-        end
-      end
-    end
-
     private
 
     def integration_blocks

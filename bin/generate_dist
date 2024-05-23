@@ -15,7 +15,15 @@ end
 if @cli.options.locales.map(&:downcase).include?("all")
   @cli.options.locales = @cli.glob("data/localizations/categories/*.yml").map { File.basename(_1, ".yml") }
 end
-MappingRule.write_txt_file!(cli)
+mapping_groups = MappingRule.all.group_by { |record| [record.input_version, record.output_version] }
+mapping_groups.each do |_, records|
+  directory_path = "dist/integrations/#{records.first.output_version}"
+  FileUtils.mkdir_p(directory_path)
+  cli.write_file!("#{directory_path}/mappings_from_#{records.first.input_version}.txt") do |file|
+    file.write(MappingRule.as_txt(records, version: cli.options.version))
+    file.write("\n")
+  end
+end
 
 def mappings_json
   @mappings_json ||= MappingRule.as_json(MappingRule.all, version: @cli.options.version)
