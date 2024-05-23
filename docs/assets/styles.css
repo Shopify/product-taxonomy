@@ -101,6 +101,14 @@ a:active {
   overflow: hidden;
 }
 
+.mapped-category {
+  display: none;
+}
+
+.mapped-category.active {
+  display: block;
+}
+
 .category-container {
   display: none;
   margin-bottom: 1rem;
@@ -177,47 +185,51 @@ a:active {
   margin-left: 0;
 }
 
-.attributes-container {
+.values-wrapper {
   overflow-y: auto;
   max-height: calc(100% - 100px - 5rem);
   padding: 1rem;
   padding-top: 0;
 }
 
-.attribute-container {
+.value-visibility {
   display: none;
 }
 
-.attribute-container.active {
+.value-visibility.active {
   display: block;
 }
 
-.attribute-container.selected .values-container {
+li.value-visibility.active {
+  display: list-item;
+}
+
+.value-container.selected .values-container {
   display: block;
 }
 
-.attribute-container .attribute-title {
+.value-container .attribute-title {
   cursor: pointer;
   margin: 0.5rem 0 0;
 }
 
-.attribute-container .arrow {
+.value-container .arrow {
   margin-left: 0.25rem;
 }
 
-.attribute-container .right-arrow {
+.value-container .right-arrow {
   display: inline-block;
 }
 
-.attribute-container .down-arrow {
+.value-container .down-arrow {
   display: none;
 }
 
-.attribute-container.selected .down-arrow {
+.value-container.selected .down-arrow {
   display: inline-block;
 }
 
-.attribute-container.selected .right-arrow {
+.value-container.selected .right-arrow {
   display: none;
 }
 

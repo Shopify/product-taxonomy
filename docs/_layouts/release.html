@@ -54,7 +54,7 @@ layout: default
     {% for sibling_group in site.data[page.target].sibling_groups %}
       {% for categories in sibling_group[1] %}
         {% for category in categories[1] %}
-          <div class="category-container" id="{{category.id}}">
+          <div class="category-container" data-id="{{category.id}}">
             <h3 class="title">{{ category.name }}</h3>
             <span class="id id--large">{{ category.id }}</span>
             <p>{{ category.fully_qualified_type }}</p>
@@ -62,9 +62,9 @@ layout: default
         {% endfor %}
       {% endfor %}
     {% endfor %}
-    <div class="attributes-container">
+    <div class="values-wrapper">
       {% for attribute in site.data[page.target].attributes %}
-        <div class="attribute-container" id="{{ attribute.id }}">
+        <div class="value-container value-visibility" data-id="{{ attribute.id }}">
           <h4 class="title attribute-title" tabindex="0">
             {{ attribute.name }}
             <span class="id">{{ attribute.id }}</span>
@@ -77,6 +77,32 @@ layout: default
                 <li>
                   {{ value.name }}
                   <span class="id">{{ value.id }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="values-wrapper">
+      {% assign mappings = site.data[page.target].mappings %}
+      {% for mapping in mappings %}
+        <div class="value-container">
+          {% assign input_taxonomy = mapping.input_taxonomy %}
+          {% assign output_taxonomy = mapping.output_taxonomy %}
+          {% assign rules = mapping.rules %}
+          <h4 class="title attribute-title" tabindex="0">
+            {{ output_taxonomy }}
+            <span class="arrow right-arrow">&rarr;</span>
+            <span class="arrow down-arrow">&darr;</span>
+          </h4>
+          <div class="values-container">
+            <ul>
+              {% for rule in rules %}
+                {% assign input_id = rule.input.product_category_id %}
+                {% assign output_id = rule.output.product_category_id %}
+                <li class="value-visibility" data-id="{{ input_id }}">
+                  <span class="id">{{ output_id }}</span>
                 </li>
               {% endfor %}
             </ul>

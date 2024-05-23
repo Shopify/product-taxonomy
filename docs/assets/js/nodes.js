@@ -30,7 +30,7 @@ const toggleSelectedCategory = () => {
 
 const toggleVisibleCategory = () => {
   qq(".category-container").forEach((item) => {
-    const nodeId = item.getAttribute("id");
+    const nodeId = item.dataset.id;
     if (selectedNode === nodeId) {
       item.classList.add("active");
     } else {
@@ -39,21 +39,21 @@ const toggleVisibleCategory = () => {
   });
 };
 
-const toggleVisibleAttributes = () => {
+const toggleVisibleSecondaryValues = () => {
   q(".secondary-container").classList.remove("active");
   if (!selectedNode) return;
   q(".secondary-container").classList.add("active");
 
   const documentNode = q(`.accordion-item[node_id="${selectedNode}"]`);
   const attributeIds = documentNode.getAttribute("attribute_ids");
-  const attributeList = attributeIds.split(",");
+  const attributesList = attributeIds.split(",");
 
-  qq(".attribute-container").forEach((attribute) => {
-    const attributeId = attribute.getAttribute("id");
-    if (attributeList.includes(attributeId)) {
-      attribute.classList.add("active");
+  qq(".value-visibility").forEach((element) => {
+    const valueId = element.dataset.id;
+    if (attributesList.includes(valueId) || selectedNode === valueId) {
+      element.classList.add("active");
     } else {
-      attribute.classList.remove("active");
+      element.classList.remove("active");
     }
   });
 };
@@ -76,7 +76,7 @@ const setNodeQueryParam = (nodeId) => {
 const renderPage = () => {
   toggleExpandedCategories();
   toggleSelectedCategory();
-  toggleVisibleAttributes();
+  toggleVisibleSecondaryValues();
   toggleVisibleCategory();
 };
 
