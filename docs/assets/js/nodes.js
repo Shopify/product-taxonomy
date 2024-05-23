@@ -1,66 +1,149 @@
-import { q, qq, getQueryParam } from "./util.js";
+import {q, qq, getQueryParam} from './util.js';
 
-const nodeQueryParamKey = "categoryId";
+const nodeQueryParamKey = 'categoryId';
+const className = {
+  hidden: 'hidden',
+  visible: 'visible',
+};
 let selectedNodes = {};
-let selectedNode = null;
+let selectedNode = undefined;
+let cachedElements = {
+  mappingElements: undefined,
+  categoryLevelElements: undefined,
+  categoryNodeElements: undefined,
+  selectedCategoryContainerElements: undefined,
+  attributeValuesElement: undefined,
+};
+
+const readMappingElements = () => {
+  if (cachedElements.mappingElements) {
+    return cachedElements.mappingElements;
+  } else {
+    return (cachedElements.mappingElements = qq('.mapped-category'));
+  }
+};
+
+const readCategoryLevelElements = () => {
+  if (cachedElements.categoryLevelElements) {
+    return cachedElements.categoryLevelElements;
+  } else {
+    return (cachedElements.categoryLevelElements = qq('.category-level'));
+  }
+};
+
+const readCategoryNodeElements = () => {
+  if (cachedElements.categoryNodeElements) {
+    return cachedElements.categoryNodeElements;
+  } else {
+    return (cachedElements.categoryNodeElements = qq('.category-node'));
+  }
+};
+
+const readSelectedCategoryContainerElements = () => {
+  if (cachedElements.selectedCategoryContainerElements) {
+    return cachedElements.selectedCategoryContainerElements;
+  } else {
+    return qq('.selected-category');
+  }
+};
+
+const readAttributeValuesElement = () => {
+  if (cachedElements.attributeValuesElement) {
+    return cachedElements.attributeValuesElement;
+  } else {
+    return (cachedElements.attributeValuesElement = qq('.attribute-values'));
+  }
+};
 
 const toggleExpandedCategories = () => {
-  qq(".sibling-list").forEach((list) => {
-    const parentId = list.getAttribute("parent_id");
-    const depth = list.getAttribute("node_depth") - 1;
+  const categoryLevelElements = readCategoryLevelElements();
+
+  categoryLevelElements.forEach((element) => {
+    const parentId = element.dataset.parentId;
+    const depth = element.dataset.nodeDepth - 1;
+    const classes = element.classList;
+
     if (selectedNodes[depth] === parentId) {
-      list.classList.add("expanded");
+      classes.replace(className.hidden, className.visible);
     } else {
-      list.classList.remove("expanded");
+      classes.replace(className.visible, className.hidden);
     }
   });
 };
 
 const toggleSelectedCategory = () => {
   const selectedNodeIds = Object.values(selectedNodes);
-  qq(".accordion-item").forEach((item) => {
-    const nodeId = item.getAttribute("node_id");
+  const categoryNodeElements = readCategoryNodeElements();
+
+  categoryNodeElements.forEach((element) => {
+    const nodeId = element.id;
+    const classes = element.classList;
     if (selectedNodeIds.includes(nodeId)) {
-      item.classList.add("selected");
+      classes.add('selected');
     } else {
-      item.classList.remove("selected");
+      classes.remove('selected');
     }
   });
 };
 
-const toggleVisibleCategory = () => {
-  qq(".category-container").forEach((item) => {
-    const nodeId = item.getAttribute("id");
+const toggleVisibleSelectedCategory = () => {
+  const selectedCategoryContainerElements =
+    readSelectedCategoryContainerElements();
+
+  selectedCategoryContainerElements.forEach((element) => {
+    const nodeId = element.id;
+    const classes = element.classList;
     if (selectedNode === nodeId) {
-      item.classList.add("active");
+      classes.replace(className.hidden, className.visible);
     } else {
-      item.classList.remove("active");
+      classes.replace(className.visible, className.hidden);
     }
   });
 };
 
-const toggleVisibleAttributes = () => {
-  q(".secondary-container").classList.remove("active");
+const toggleVisibleAtrributes = () => {
   if (!selectedNode) return;
-  q(".secondary-container").classList.add("active");
 
-  const documentNode = q(`.accordion-item[node_id="${selectedNode}"]`);
-  const attributeIds = documentNode.getAttribute("attribute_ids");
-  const attributeList = attributeIds.split(",");
+  const attributeElements = readAttributeValuesElement();
+  const documentNode = q(`.category-node[id="${selectedNode}"]`);
 
-  qq(".attribute-container").forEach((attribute) => {
-    const attributeId = attribute.getAttribute("id");
-    if (attributeList.includes(attributeId)) {
-      attribute.classList.add("active");
+  if (!documentNode) {
+    return attributeElements.forEach((element) =>
+      element.classList.remove(className.visible),
+    );
+  }
+
+  const attributeIds = documentNode.dataset.attributeIds;
+  const attributesList = attributeIds.split(',');
+
+  attributeElements.forEach((element) => {
+    const valueId = element.id;
+    const classes = element.classList;
+    if (attributesList.includes(valueId)) {
+      classes.replace(className.hidden, className.visible);
     } else {
-      attribute.classList.remove("active");
+      classes.replace(className.visible, className.hidden);
+    }
+  });
+};
+
+const toggleMappedCategories = () => {
+  const mappingElements = readMappingElements();
+
+  mappingElements.forEach((element) => {
+    const valueId = element.id;
+    const classes = element.classList;
+    if (selectedNode === valueId) {
+      classes.replace(className.hidden, className.visible);
+    } else {
+      classes.replace(className.visible, className.hidden);
     }
   });
 };
 
 const toggleAttributeSelected = (event) => {
   const attributeElement = event.currentTarget.parentNode;
-  attributeElement.classList.toggle("selected");
+  attributeElement.classList.toggle('selected');
 };
 
 const setNodeQueryParam = (nodeId) => {
@@ -70,14 +153,49 @@ const setNodeQueryParam = (nodeId) => {
   } else {
     url.searchParams.delete(nodeQueryParamKey);
   }
-  window.history.pushState({}, "", url);
+  window.history.pushState({}, '', url);
 };
 
+function yieldToMain() {
+  return new Promise((resolve) => {
+    setTimeout(resolve, 0);
+  });
+}
+
+const renderWithYieldToMain = async () => {
+  const tasks = [
+    toggleSelectedCategory,
+    toggleExpandedCategories,
+    toggleVisibleSelectedCategory,
+    toggleVisibleAtrributes,
+    toggleMappedCategories,
+  ];
+
+  while (tasks.length > 0) {
+    const task = tasks.shift();
+    task();
+    await yieldToMain();
+  }
+};
+
+const renderWithScheduler = () => {
+  scheduler.postTask(toggleSelectedCategory, {priority: 'user-blocking'});
+  scheduler.postTask(toggleExpandedCategories, {priority: 'user-blocking'});
+  scheduler.postTask(toggleVisibleSelectedCategory);
+  scheduler.postTask(toggleVisibleAtrributes);
+  scheduler.postTask(toggleMappedCategories);
+};
+
+let renderPageFunc = (() => {
+  if ('scheduler' in window) {
+    return renderWithScheduler;
+  } else {
+    return renderWithYieldToMain;
+  }
+})();
+
 const renderPage = () => {
-  toggleExpandedCategories();
-  toggleSelectedCategory();
-  toggleVisibleAttributes();
-  toggleVisibleCategory();
+  renderPageFunc();
 };
 
 const toggleNode = (nodeId, depth) => {
@@ -99,25 +217,29 @@ const toggleNode = (nodeId, depth) => {
 };
 
 const addOnClick = (target, handler) => {
-  target.addEventListener("click", handler);
-  target.addEventListener("keypress", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      target.dispatchEvent(new Event("click"));
+  target.addEventListener('click', handler);
+  target.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      target.dispatchEvent(new Event('click'));
     }
   });
 };
 
 const setupListeners = () => {
-  qq(".accordion-item").forEach((item) => {
-    addOnClick(item, () =>
+  const categoryNodeElements = readCategoryNodeElements();
+  const attributeTitleElements = qq('.attribute-title');
+
+  categoryNodeElements.forEach((element) => {
+    addOnClick(element, () =>
       toggleNode(
-        item.getAttribute("node_id"),
-        item.closest(".sibling-list").getAttribute("node_depth")
-      )
+        element.id,
+        element.closest('.category-level').dataset.nodeDepth,
+      ),
     );
   });
-  qq(".attribute-title").forEach((attribute) =>
-    addOnClick(attribute, toggleAttributeSelected)
+
+  attributeTitleElements.forEach((attribute) =>
+    addOnClick(attribute, toggleAttributeSelected),
   );
 };
 
@@ -133,11 +255,11 @@ const setInitialNode = () => {
   const initialNode = ensureCategoryGID(getQueryParam(nodeQueryParamKey));
   if (!initialNode) return;
 
-  const documentNode = q(`.accordion-item[node_id="${initialNode}"]`);
+  const documentNode = q(`.category-node[id="${initialNode}"]`);
   if (!documentNode) return;
 
-  const ancestors = documentNode.getAttribute("ancestor_ids")
-    ? documentNode.getAttribute("ancestor_ids").split(",")
+  const ancestors = documentNode.dataset.ancestorIds
+    ? documentNode.dataset.ancestorIds.split(',')
     : [];
   const depth = ancestors.length;
 

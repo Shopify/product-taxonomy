@@ -20,6 +20,14 @@ taxonomy_data = cli.parse_json("dist/en/taxonomy.json")
 category_data = taxonomy_data.fetch("verticals")
 attribute_data = taxonomy_data.fetch("attributes")
 
+# mappings_data = cli.parse_json("dist/mappings.json").fetch("mappings").each do |mapping|
+#   if mapping["output_taxonomy"].include?("shopify")
+#     mapping["rules"].each do |rule|
+#       rule['input'], rule['output'] = rule['output'], rule['input']
+#     end
+#   end
+# end
+
 DATA_TARGET = "docs/_data/#{cli.options.version}"
 cli.write_file("#{DATA_TARGET}/sibling_groups.yml") do |file|
   file.write(Category.as_json_for_docs_siblings(category_data).to_yaml(line_width: 1000))
@@ -33,6 +41,10 @@ cli.write_file("#{DATA_TARGET}/attributes.yml") do |file|
   file.write(attribute_data.to_yaml(line_width: 1000))
   file.write("\n")
 end
+cli.write_file("#{DATA_TARGET}/mappings.yml") do |file|
+  file.write(mappings_data.to_yaml(line_width: 1000))
+  file.write("\n")
+end
 
 unless cli.options.version == UNSTABLE
   cli.write_file("docs/_releases/#{cli.options.version}.html") do |file|
@@ -42,5 +54,11 @@ unless cli.options.version == UNSTABLE
     content.gsub!("GH_URL", "https://github.com/Shopify/product-taxonomy/releases/tag/v#{cli.options.version}")
 
     file.write(content)
+  end
+end
+
+def reverse_mapping_rules(rules)
+  rules.each do |rule|
+    rule["input"], rule["output"] = rule["output"], rule["input"]
   end
 end
