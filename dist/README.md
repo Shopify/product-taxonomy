@@ -24,7 +24,7 @@
 
 Our taxonomy is an open-source comprehensive, global standard for product classification. It's a universal language that empowers merchants to categorize their products. Spanning 25+ essential verticals, our taxonomy encompasses categories, attributes, and values, all thoughtfully integrated within Shopify and numerous marketplaces.
 
-Ready to dive in? [Explore our taxonomy interactively](https://shopify.github.io/product-taxonomy/releases/unstable/?categoryId=gid%3A%2F%2Fshopify%2FTaxonomyCategory%2Fsg-4-17-2-17) to visualize and discover what's published across the many categories, attributes, and values.
+Ready to dive in? [Explore our taxonomy interactively](https://shopify.github.io/product-taxonomy/releases/unstable/?categoryId=sg-4-17-2-17) to visualize and discover what's published across the many categories, attributes, and values.
 
 ### 🧩 How to integrate with the taxonomy
 
