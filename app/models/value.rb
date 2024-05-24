@@ -20,6 +20,8 @@ class Value < ApplicationRecord
   validates :handle, presence: true, uniqueness: { scope: :primary_attribute_friendly_id }
   validates :primary_attribute, presence: true
 
+  LOCALIZATION_PATH = "data/localizations/values/*.yml"
+
   class << self
     #
     # `data/` deserialization
@@ -32,17 +34,28 @@ class Value < ApplicationRecord
       insert_all!(Array(data).map { row_from_data(_1) }, ...)
     end
 
+    def localizations
+      @localizations ||= Dir.glob(LOCALIZATION_PATH).each_with_object({}) do |file, localizations|
+        locale = File.basename(file, ".yml")
+        localizations[locale] = YAML.load_file(file).dig(locale, "values")
+      end
+    end
+
+    def find_localization(locale, id, key)
+      localizations.dig(locale, id, key)
+    end
+
     #
     # `dist/` serialization
 
-    def as_json(values, version:)
+    def as_json(values, version:, locale: "en")
       {
         "version" => version,
-        "values" => values.map(&:as_json),
+        "values" => values.map { _1.as_json(locale:) },
       }
     end
 
-    def as_txt(values, version:)
+    def as_txt(values, version:, locale: "en")
       header = <<~HEADER
         # Shopify Product Taxonomy - Attribute Values: #{version}
         # Format: {GID} : {Value name} [{Attribute name}]
@@ -50,7 +63,7 @@ class Value < ApplicationRecord
       padding = reorder("LENGTH(id) desc").first.gid.size
       [
         header,
-        *values.map { _1.as_txt(padding: padding) },
+        *values.map { _1.as_txt(padding: padding, locale:) },
       ].join("\n")
     end
 
@@ -71,8 +84,12 @@ class Value < ApplicationRecord
     "gid://shopify/TaxonomyValue/#{id}"
   end
 
-  def full_name
-    "#{name} [#{primary_attribute.name}]"
+  def name(locale: "en")
+    self.class.find_localization(locale, friendly_id, "name") || super()
+  end
+
+  def full_name(locale: "en")
+    "#{name(locale:)} [#{primary_attribute.name(locale:)}]"
   end
 
   def primary_attribute_friendly_id=(friendly_id)
@@ -94,15 +111,15 @@ class Value < ApplicationRecord
   #
   # `dist/` serialization
 
-  def as_json
+  def as_json(locale: "en")
     {
       "id" => gid,
-      "name" => name,
+      "name" => name(locale:),
       "handle" => handle,
     }
   end
 
-  def as_txt(padding: 0)
-    "#{gid.ljust(padding)} : #{full_name}"
+  def as_txt(padding: 0, locale: "en")
+    "#{gid.ljust(padding)} : #{full_name(locale:)}"
   end
 end

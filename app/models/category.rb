@@ -25,9 +25,22 @@ class Category < ApplicationRecord
     unless: :root?
   validates_associated :children
 
+  LOCALIZATION_PATH = "data/localizations/categories/*.yml"
+
   class << self
     def gid(id)
       "gid://shopify/TaxonomyCategory/#{id}"
+    end
+
+    def localizations
+      @localizations ||= Dir.glob(LOCALIZATION_PATH).each_with_object({}) do |file, localizations|
+        locale = File.basename(file, ".yml")
+        localizations[locale] = YAML.load_file(file).dig(locale, "categories")
+      end
+    end
+
+    def find_localization(locale, id, key)
+      localizations.dig(locale, id, key)
     end
 
     #
@@ -44,14 +57,14 @@ class Category < ApplicationRecord
     #
     # `dist/` serialization
 
-    def as_json(verticals, version:)
+    def as_json(verticals, version:, locale: "en")
       {
         "version" => version,
-        "verticals" => verticals.map(&:as_json_with_descendants),
+        "verticals" => verticals.map { _1.as_json_with_descendants(locale:) },
       }
     end
 
-    def as_txt(verticals, version:)
+    def as_txt(verticals, version:, locale: "en")
       header = <<~HEADER
         # Shopify Product Taxonomy - Categories: #{version}
         # Format: {GID} : {Ancestor name} > ... > {Category name}
@@ -59,7 +72,7 @@ class Category < ApplicationRecord
       padding = reorder("LENGTH(id) desc").first.gid.size
       [
         header,
-        *verticals.flat_map(&:descendants_and_self).map { _1.as_txt(padding:) },
+        *verticals.flat_map(&:descendants_and_self).map { _1.as_txt(padding:, locale:) },
       ].join("\n")
     end
 
@@ -124,8 +137,12 @@ class Category < ApplicationRecord
     self.class.gid(id)
   end
 
-  def full_name
-    ancestors.reverse.map(&:name).push(name).join(" > ")
+  def name(locale: "en")
+    self.class.find_localization(locale, id, "name") || super()
+  end
+
+  def full_name(locale: "en")
+    ancestors.reverse.map { _1.name(locale:) }.push(name(locale:)).join(" > ")
   end
 
   def root?
@@ -184,25 +201,25 @@ class Category < ApplicationRecord
   #
   # `dist/` serialization
 
-  def as_json_with_descendants
+  def as_json_with_descendants(locale: "en")
     {
-      "name" => name,
+      "name" => name(locale:),
       "prefix" => id.downcase,
-      "categories" => descendants_and_self.map(&:as_json),
+      "categories" => descendants_and_self.map { _1.as_json(locale:) },
     }
   end
 
-  def as_json
+  def as_json(locale: "en")
     {
       "id" => gid,
       "level" => level,
-      "name" => name,
-      "full_name" => full_name,
+      "name" => name(locale:),
+      "full_name" => full_name(locale:),
       "parent_id" => parent&.gid,
       "attributes" => related_attributes.map do
         {
           "id" => _1.gid,
-          "name" => _1.name,
+          "name" => _1.name(locale:),
           "handle" => _1.handle,
           "description" => _1.description,
           "extended" => _1.extended?,
@@ -211,20 +228,20 @@ class Category < ApplicationRecord
       "children" => children.map do
         {
           "id" => _1.gid,
-          "name" => _1.name,
+          "name" => _1.name(locale:),
         }
       end,
       "ancestors" => ancestors.map do
         {
           "id" => _1.gid,
-          "name" => _1.name,
+          "name" => _1.name(locale:),
         }
       end,
     }
   end
 
-  def as_txt(padding: 0)
-    "#{gid.ljust(padding)} : #{full_name}"
+  def as_txt(padding: 0, locale:)
+    "#{gid.ljust(padding)} : #{full_name(locale:)}"
   end
 
   private

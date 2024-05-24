@@ -4,50 +4,63 @@
 require_relative "../config/environment"
 require_relative "../config/cli"
 
-cli = CLI.new([:version]) do |opts|
+@cli = CLI.new([:version, :locales]) do |opts|
   opts.on("-V VERSION", "--version=VERSION", "Version of the documentation")
+  opts.on("-l LOCALES", "--locales=LOCALES", Array, "Locales to generate")
 end
-cli.parse!(ARGV)
-cli.options.version ||= cli.read_file("VERSION").strip
+@cli.parse!(ARGV)
+@cli.options.version ||= @cli.read_file("VERSION").strip
 
-puts("Generating `#{cli.options.version}` distribution files...")
-cli.options_status
-
-cli.write_file!("dist/categories.txt") do |file|
-  file.write(Category.as_txt(Category.verticals, version: cli.options.version))
-  file.write("\n")
-end
-cli.write_file!("dist/attributes.txt") do |file|
-  file.write(Attribute.as_txt(Attribute.base, version: cli.options.version))
-  file.write("\n")
-end
-cli.write_file!("dist/attribute_values.txt") do |file|
-  file.write(Value.as_txt(Value.all, version: cli.options.version))
-  file.write("\n")
+@cli.options.locales ||= ["en"]
+if @cli.options.locales.map(&:downcase).include?("all")
+  @cli.options.locales = @cli.glob("data/localizations/categories/*.yml").map { File.basename(_1, ".yml") }
 end
 
-mappings_json = MappingRule.as_json(MappingRule.all, version: cli.options.version)
-categories_json = Category.as_json(Category.verticals, version: cli.options.version)
-attributes_json = Attribute.as_json(Attribute.base, version: cli.options.version)
-values_json = Value.as_json(Value.all, version: cli.options.version)
+def mappings_json
+  @mappings_json ||= MappingRule.as_json(MappingRule.all, version: @cli.options.version)
+end
 
-cli.write_file!("dist/taxonomy.json") do |file|
-  file.write(JSON.pretty_generate(categories_json.merge(attributes_json)))
-  file.write("\n")
+def generate_dist_files(locale)
+  @cli.write_file!("dist/#{locale}/categories.txt") do |file|
+    file.write(Category.as_txt(Category.verticals, version: @cli.options.version, locale: locale))
+    file.write("\n")
+  end
+  @cli.write_file!("dist/#{locale}/attributes.txt") do |file|
+    file.write(Attribute.as_txt(Attribute.base, version: @cli.options.version, locale: locale))
+    file.write("\n")
+  end
+  @cli.write_file!("dist/#{locale}/attribute_values.txt") do |file|
+    file.write(Value.as_txt(Value.all, version: @cli.options.version, locale: locale))
+    file.write("\n")
+  end
+
+  categories_json = Category.as_json(Category.verticals, version: @cli.options.version, locale: locale)
+  attributes_json = Attribute.as_json(Attribute.base, version: @cli.options.version, locale: locale)
+  values_json = Value.as_json(Value.all, version: @cli.options.version, locale: locale)
+
+  @cli.write_file!("dist/#{locale}/taxonomy.json") do |file|
+    file.write(JSON.pretty_generate(categories_json.merge(attributes_json)))
+    file.write("\n")
+  end
+  @cli.write_file!("dist/#{locale}/categories.json") do |file|
+    file.write(JSON.pretty_generate(categories_json))
+    file.write("\n")
+  end
+  @cli.write_file!("dist/#{locale}/attributes.json") do |file|
+    file.write(JSON.pretty_generate(attributes_json))
+    file.write("\n")
+  end
+  @cli.write_file!("dist/#{locale}/attribute_values.json") do |file|
+    file.write(JSON.pretty_generate(values_json))
+    file.write("\n")
+  end
+  @cli.write_file!("dist/#{locale}/mappings.json") do |file|
+    file.write(JSON.pretty_generate(mappings_json))
+    file.write("\n")
+  end
 end
-cli.write_file!("dist/categories.json") do |file|
-  file.write(JSON.pretty_generate(categories_json))
-  file.write("\n")
-end
-cli.write_file!("dist/attributes.json") do |file|
-  file.write(JSON.pretty_generate(attributes_json))
-  file.write("\n")
-end
-cli.write_file!("dist/attribute_values.json") do |file|
-  file.write(JSON.pretty_generate(values_json))
-  file.write("\n")
-end
-cli.write_file!("dist/mappings.json") do |file|
-  file.write(JSON.pretty_generate(mappings_json))
-  file.write("\n")
-end
+
+puts("Generating `#{@cli.options.version}` distribution files for #{@cli.options.locales.join(", ")}...")
+@cli.options_status
+
+@cli.options.locales.each { generate_dist_files(_1) }
