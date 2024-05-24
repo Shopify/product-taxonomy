@@ -121,8 +121,16 @@ const setupListeners = () => {
   );
 };
 
+const ensureCategoryGID = (categoryNodeId) => {
+  if (!categoryNodeId) return;
+  if (categoryNodeId.startsWith("gid://shopify/TaxonomyCategory/"))
+    return categoryNodeId;
+
+  return `gid://shopify/TaxonomyCategory/${categoryNodeId}`;
+};
+
 const setInitialNode = () => {
-  const initialNode = getQueryParam(nodeQueryParamKey);
+  const initialNode = ensureCategoryGID(getQueryParam(nodeQueryParamKey));
   if (!initialNode) return;
 
   const documentNode = q(`.accordion-item[node_id="${initialNode}"]`);
