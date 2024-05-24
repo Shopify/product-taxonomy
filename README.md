@@ -14,68 +14,62 @@
 <!-- omit in toc -->
 ## 🗂️ Table of Contents
 
-- [🕹️ Interactive explorer](#️-interactive-explorer)
-- [📚 Taxonomy overview](#-taxonomy-overview)
+- [📚 The Taxonomy](#-the-taxonomy)
+  - [🕹️ Interactive explorer](#️-interactive-explorer)
 - [🧭 Getting started](#-getting-started)
-  - [🧩 How to integrate with the taxonomy](#-how-to-integrate-with-the-taxonomy)
-  - [🧑🏼‍🏫 How to make changes to the taxonomy](#-how-to-make-changes-to-the-taxonomy)
-  - [👩🏼‍💻 How to evolve the system](#-how-to-evolve-the-system)
-- [🤿 Diving in](#-diving-in)
-- [🛠️ Setup and dependencies](#️-setup-and-dependencies)
-- [📂 How this is all organized](#-how-this-is-all-organized)
+  - [🧩 1. Integrators: How to integrate with the taxonomy](#-1-integrators-how-to-integrate-with-the-taxonomy)
+  - [🧑🏼‍🏫 2. Taxonomists: How to make changes to the taxonomy](#-2-taxonomists-how-to-make-changes-to-the-taxonomy)
+  - [👩🏼‍💻 3. Developers: How to evolve the system](#-3-developers-how-to-evolve-the-system)
+    - [🛠️ Setup and dependencies](#️-setup-and-dependencies)
+    - [⛰️ Common tasks](#️-common-tasks)
+    - [📂 Navigating this repository](#-navigating-this-repository)
 - [🧑‍💻 Contributing](#-contributing)
 - [📅 Releases](#-releases)
 - [📜 License](#-license)
 
-## 🕹️ Interactive explorer
-
-Ready to dive in? [Explore our taxonomy interactively](https://shopify.github.io/product-taxonomy/releases/unstable/?categoryId=gid%3A%2F%2Fshopify%2FTaxonomyCategory%2Fsg-4-17-2-17) to visualize and discover what's published across the many categories, attributes, and values.
-
-## 📚 Taxonomy overview
+## 📚 The Taxonomy
 
 Our taxonomy is an open-source comprehensive, global standard for product classification. It's a universal language that empowers merchants to categorize their products. Spanning 25+ essential verticals, our taxonomy encompasses categories, attributes, and values, all thoughtfully integrated within Shopify and numerous marketplaces.
+
+### 🕹️ Interactive explorer
+
+Ready to dive in? [Explore our taxonomy interactively](https://shopify.github.io/product-taxonomy/releases/unstable/?categoryId=gid%3A%2F%2Fshopify%2FTaxonomyCategory%2Fsg-4-17-2-17) to visualize and discover what's published across the many categories, attributes, and values.
 
 ## 🧭 Getting started
 
 This repository is the home of Shopify's Standard Product Taxonomy. It houses the source-of-truth data, the distribution files for implementation, and the source code that makes this all sing.
 
-We've structured it to be as user-friendly as possible, whether you're looking to integrate the taxonomy into your system, suggest changes, or delve into how it's developed and maintained.
+You can think of this repository serving 3 primary users:
 
-### 🧩 How to integrate with the taxonomy
+1. **Integrators**: Those who integrate the taxonomy into other systems. You want **stable distribution files**.
+2. **Taxonomists**: Those who want to evolve the taxonomy itself. You want to work with the **source-of-truth data files**.
+3. **Developers**: Those who want to evolve _how this ETL pipeline_ works, or add richer tooling for other users. You work with the **application files**.
+
+### 🧩 1. Integrators: How to integrate with the taxonomy
 
 Dive straight into [`dist`](./dist/) to find the files you need and integrate this taxonomy into your system.
 
 We're working on a variety of formats to make it easy to integrate with your systems. Today we have `txt` and `json` formats, and we're working on more. If you have a specific format you'd like to see, please open an issue and let us know!
 
-### 🧑🏼‍🏫 How to make changes to the taxonomy
+### 🧑🏼‍🏫 2. Taxonomists: How to make changes to the taxonomy
 
-> **🔵 Note**: While we are in preview we are not actively seeking PRs.
+Everything comes from the source-of-truth files in [`data/`](./data).
 
-Everything comes from the source-of-truth files in [`data/`](./data). This is where you should submit PRs to change the taxonomy itself.
+You may submit PRs against these files to change the taxonomy itself.
 
-### 👩🏼‍💻 How to evolve the system
+If you make changes to any files in [`data/`](./data), you'll need to update the distribution files. There are two ways:
+1. Make a PR comment of `/generate_dist` to have CI commit the changes for you 🤖
+2. Run `make` locally and commit the changes yourself
+
+### 👩🏼‍💻 3. Developers: How to evolve the system
 
 Everything else is how we manage the taxonomy and generate distributions. This is where the magic happens.
 
-## 🤿 Diving in
-
-This is a simple ETL app ultimately, with a few core models. The app is built on Ruby, Rails, and Jekyll:
-
+This is a simple ETL app composed of a few core models. The app is built on Rails and Jekyll:
 - Rails is used to generate distribution files from `data/` and ensure the correctness of results.
 - Jekyll is used to serve the documentation locally and on GitHub pages.
 
-Everything ultimately runs through `make` (`dev` simply proxies). Here are the commands you'll use most often:
-
-```sh
-make [build] # build the dist and documentation files
-make clean   # remove sentinels and all generated files
-make seed    # parse data/ into local db
-make console # irb with dependencies loaded
-make test    # run ruby tests and cue schema verification
-make docs    # http://localhost:4000 interactive view of dist/
-```
-
-## 🛠️ Setup and dependencies
+#### 🛠️ Setup and dependencies
 
 For Shopify employees or folks with [`minidev`](https://github.com/burke/minidev):
 - Run `dev up`
@@ -86,32 +80,37 @@ For everyone else you'll need to:
 - Install `make`
 - Run `bundle install`
 
-When you edit any cue files, ensure you're running `cue fmt`. This will format the cue files to the standard format.
+#### ⛰️ Common tasks
 
-## 📂 How this is all organized
+Here are the commands you'll use most often:
 
-Most folks won't touch most of this, but we see you 👩🏼‍💻.
+```sh
+make [build] # build the dist and documentation files
+make clean   # remove sentinels and generated files
+make seed    # parse data/ into local db
+make console # irb with dependencies loaded
+make test    # run ruby tests and cue schema verification
+make docs    # http://localhost:4000 interactive view of dist/
+```
 
-If you want to add a new serialization target, or change an existing one:
+If you want to add a new distribution format, you'll need to do 3 things:
 1. Add new serialization methods to relevant models (e.g., `Category#as_json`, `Category#as_pkl`)
 2. Extend `bin/generate_dist` to write files in the new format
+3. Extend the `Makefile` to add the new file format to the clean target
 
-For your explorations, here's a map of the land:
+#### 📂 Navigating this repository
+
+This is a rails app after all, so we'll give a map of the _novel_ pieces of our system:
 
 ```
 ├── Makefile             # key dev and build commands
-├── Rakefile             # manages ruby tests
-├── app/
-│   └── models/          # most models are simple data objects
-│       ├── category.rb  # node-based tree impl for categories
-│       └── ...
+├── app/                 # rails standard
 ├── bin/
 │   ├── generate_dist    # primary entrypoint for generating dist/
 │   └── generate_docs    # primary entrypoint for generating docs/
-├── config/              # setup for the app, including DB config
 ├── db/
-│   ├── schema.rb        # defines tables for models
-│   └── seed.rb          # seeds the db from data/
+│   ├── schema.rb        # because this is a local-only app, we don't use migrations
+│   └── seed.rb          # a custom seed script to load data/ into the local db
 ├── dist/                # generated distribution files
 ├── data/
 │   ├── integrations/    # integrations and mappings between taxonomies
@@ -119,7 +118,7 @@ For your explorations, here's a map of the land:
 │   ├── categories/      # source-of-truth for categories
 │   ├── attributes.yml   # source-of-truth for attributes
 │   └── values.yml       # source-of-truth for values
-└── test/
+└── test/                # rails standard
 ```
 
 ## 🧑‍💻 Contributing
