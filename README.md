@@ -49,7 +49,7 @@ You can think of this repository serving 3 primary users:
 
 Dive straight into [`dist`](./dist/) to find the files you need and integrate this taxonomy into your system.
 
-We're working on a variety of formats to make it easy to integrate with your systems. Today we have `txt` and `json` formats, and we're working on more. If you have a specific format you'd like to see, please open an issue and let us know!
+We offer `txt` and `json` formats to make it easy to integrate with your systems. If you have a specific format you'd like to see, please open an issue and let us know!
 
 ### 🧑🏼‍🏫 2. Taxonomists: How to make changes to the taxonomy
 

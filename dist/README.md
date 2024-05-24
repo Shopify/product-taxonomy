@@ -1,7 +1,7 @@
 <p align="center"><img src="../docs/assets/img/header.png" /></p>
 
 <!-- omit in toc -->
-<h1 align="center">Shopify's Standard Product Taxonomy <img src="https://img.shields.io/badge/preview-orange.svg" alt="Preview"> <a href="../VERSION"><img src="https://img.shields.io/badge/version-v0.17.0-blue.svg" alt="Version"></a></h1>
+<h1 align="center">Shopify's Standard Product Taxonomy <img src="https://img.shields.io/badge/preview-orange.svg" alt="Preview"> <a href="../VERSION"><img src="https://img.shields.io/badge/version-v0.18.0-blue.svg" alt="Version"></a></h1>
 
 **🌍 Global Standard**: Our open-source, standardized product taxonomy establishes a universal language for product classification. Comprehensive and already empowering merchants on Shopify.
 
@@ -14,28 +14,25 @@
 <!-- omit in toc -->
 ## 🗂️ Table of Contents
 
-- [🕹️ Interactive explorer](#️-interactive-explorer)
-- [📚 Taxonomy overview](#-taxonomy-overview)
+- [📚 The Taxonomy](#-the-taxonomy)
   - [🧩 How to integrate with the taxonomy](#-how-to-integrate-with-the-taxonomy)
   - [👀 Everything else?](#-everything-else)
 - [📅 Releases](#-releases)
 - [📜 License](#-license)
 
-## 🕹️ Interactive explorer
-
-Ready to dive in? [Explore our taxonomy interactively](https://shopify.github.io/product-taxonomy/releases/unstable/?categoryId=gid%3A%2F%2Fshopify%2FTaxonomyCategory%2Fsg-4-17-2-17) to visualize and discover what's published across the many categories, attributes, and values.
-
-## 📚 Taxonomy overview
+## 📚 The Taxonomy
 
 Our taxonomy is an open-source comprehensive, global standard for product classification. It's a universal language that empowers merchants to categorize their products. Spanning 25+ essential verticals, our taxonomy encompasses categories, attributes, and values, all thoughtfully integrated within Shopify and numerous marketplaces.
 
+Ready to dive in? [Explore our taxonomy interactively](https://shopify.github.io/product-taxonomy/releases/unstable/?categoryId=gid%3A%2F%2Fshopify%2FTaxonomyCategory%2Fsg-4-17-2-17) to visualize and discover what's published across the many categories, attributes, and values.
+
 ### 🧩 How to integrate with the taxonomy
 
-We're working on a variety of formats to make it easy to integrate with your systems. Today we have `txt` and `json` formats, and we're working on more. If you have a specific format you'd like to see, please open an issue and let us know!
+You're in the right place! We offer `txt` and `json` formats to make it easy to integrate with your systems. If you have a specific format you'd like to see, please open an issue and let us know!
 
 ### 👀 Everything else?
 
-Hop back to root and check out the main [`README.md`](../README.md). Go forth and explore!
+Review the main [`README.md`](../README.md) to get started. Go forth and explore!
 
 ## 📅 Releases
 
