@@ -21,9 +21,15 @@ class Product < ApplicationRecord
     def payload_for(data, type:)
       case type
       when "ShopifyProduct"
+        category_id = if data["product_category_id"].is_a?(Array)
+          data["product_category_id"].map { Category.gid(_1) }
+        else
+          Category.gid(data["product_category_id"])
+        end
+
         {
           "properties" => data["attributes"],
-          "product_category_id" => Category.gid(data["product_category_id"]),
+          "product_category_id" => category_id,
         }
       else
         data.slice("product_category_id")
