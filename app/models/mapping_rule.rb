@@ -23,15 +23,16 @@ class MappingRule < ApplicationRecord
     def as_txt(mappings, version:)
       header = <<~HEADER
         # Shopify Product Taxonomy - Mappings: #{version}
-        # Format:
-        # product_category_id: {input_product_category_id}, full_name: {full_name} => product_category_id: {output_product_category_id}, full_name: {full_name}
+        # Format: {full_name} → {full_name}
       HEADER
-      lpadding = 50 # TBD by gid and fullnames
-      rpadding = lpadding
+      sorted_mapping = mappings.sort_by do |mapping|
+        mapping.input.full_name.nil? ? 0 : -mapping.input.full_name.size
+      end
+      padding = sorted_mapping.first.input.full_name.size
       [
         header,
-        *mappings.map { _1.as_txt(lpadding: lpadding, rpadding: rpadding) },
-      ].flatten.join("\n")
+        *mappings.map { _1.as_txt(padding: padding) },
+      ].flatten.compact.join("\n")
     end
 
     private
@@ -61,8 +62,12 @@ class MappingRule < ApplicationRecord
     }
   end
 
-  def as_txt(lpadding: 0, rpadding: 0)
-    "#{input.as_txt.ljust(lpadding)} => #{output.as_txt.ljust(rpadding)}"
+  def as_txt(padding: 0)
+    input_text = input.as_txt
+    output_text = output.as_txt
+    return if input_text.empty? || output_text.empty?
+
+    "#{input.as_txt.ljust(padding)} → #{output.as_txt}"
   end
 
   private
