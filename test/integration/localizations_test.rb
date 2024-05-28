@@ -83,4 +83,15 @@ class LocalizationsTest < ActiveSupport::TestCase
       assert missing_localizations.empty?, error_message
     end
   end
+
+  test "all resources have the same locales" do
+    categories_locales = Dir.glob("#{LOCALIZATION_DIRECTORY}/categories/*.yml").map { File.basename(_1, ".yml") }
+    attributes_locales = Dir.glob("#{LOCALIZATION_DIRECTORY}/attributes/*.yml").map { File.basename(_1, ".yml") }
+    values_locales = Dir.glob("#{LOCALIZATION_DIRECTORY}/values/*.yml").map { File.basename(_1, ".yml") }
+
+    all_locales = (categories_locales + attributes_locales + values_locales).uniq
+    assert_equal all_locales, categories_locales
+    assert_equal all_locales, attributes_locales
+    assert_equal all_locales, values_locales
+  end
 end

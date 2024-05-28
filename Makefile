@@ -38,9 +38,9 @@ DOCS_GENERATED_SENTINEL = tmp/.docs_generated_sentinel
 # DIST
 GENERATED_DIST_PATH = dist
 DIST_GENERATED_SENTINEL = tmp/.dist_generated_sentinel
-CATEGORIES_JSON = $(GENERATED_DIST_PATH)/categories.json
-ATTRIBUTES_JSON = $(GENERATED_DIST_PATH)/attributes.json
-MAPPINGS_JSON = $(GENERATED_DIST_PATH)/mappings.json
+CATEGORIES_JSON = $(GENERATED_DIST_PATH)/en/categories.json
+ATTRIBUTES_JSON = $(GENERATED_DIST_PATH)/en/attributes.json
+MAPPINGS_JSON = $(GENERATED_DIST_PATH)/en/mappings.json
 
 # APP files to run application
 DEV_DB = storage/development.sqlite3
@@ -54,6 +54,7 @@ MAPPINGS_DATA_CUE = schema/mappings_data.cue
 ###############################################################################
 # INPUTS
 
+LOCALES ?= en
 CATEGORIES_DATA = $(shell find $(CATEGORIES_DATA_PATH))
 ATTRIBUTES_DATA = $(shell find $(ATTRIBUTES_DATA_PATH))
 VALUES_DATA     = $(shell find $(VALUES_DATA_PATH))
@@ -81,7 +82,7 @@ $(DOCS_GENERATED_SENTINEL): $(DEV_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA) $(VA
 
 $(DIST_GENERATED_SENTINEL): $(DEV_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA) $(VALUES_DATA) $(MAPPINGS_DATA)
 	@$(GENERATE) "Building Distribution" "$(GENERATED_DIST_PATH)/*.[json|txt]"
-	$(V)bin/generate_dist $(VARG)
+	$(V)bin/generate_dist --locales $(LOCALES) $(VARG)
 	$(V)touch $@
 
 #

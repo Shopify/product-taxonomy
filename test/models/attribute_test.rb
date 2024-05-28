@@ -3,6 +3,11 @@
 require_relative "../test_helper"
 
 class AttributeTest < ActiveSupport::TestCase
+  def setup
+    Attribute.stubs(:localizations).returns({})
+    Value.stubs(:localizations).returns({})
+  end
+
   def teardown
     Attribute.delete_all
     Value.delete_all

@@ -36,6 +36,8 @@ class Attribute < ApplicationRecord
   validates :description, presence: true
   validate :values_match_base, if: :extended?
 
+  LOCALIZATION_PATH = "data/localizations/attributes/*.yml"
+
   class << self
     #
     # `data/` deserialization
@@ -48,17 +50,28 @@ class Attribute < ApplicationRecord
       insert_all!(Array(data).map { row_from_data(_1) }, ...)
     end
 
+    def localizations
+      @localizations ||= Dir.glob(LOCALIZATION_PATH).each_with_object({}) do |file, localizations|
+        locale = File.basename(file, ".yml")
+        localizations[locale] = YAML.load_file(file).dig(locale, "attributes")
+      end
+    end
+
+    def find_localization(locale, id, key)
+      localizations.dig(locale, id, key)
+    end
+
     #
     # `dist/` serialization
 
-    def as_json(attributes, version:)
+    def as_json(attributes, version:, locale: "en")
       {
         "version" => version,
-        "attributes" => attributes.map(&:as_json),
+        "attributes" => attributes.map { _1.as_json(locale:) },
       }
     end
 
-    def as_txt(attributes, version:)
+    def as_txt(attributes, version:, locale: "en")
       header = <<~HEADER
         # Shopify Product Taxonomy - Attributes: #{version}
         # Format: {GID} : {Attribute name}
@@ -66,7 +79,7 @@ class Attribute < ApplicationRecord
       padding = reorder("LENGTH(id) desc").first.gid.size
       [
         header,
-        *attributes.map { _1.as_txt(padding:) },
+        *attributes.map { _1.as_txt(padding:, locale:) },
       ].join("\n")
     end
 
@@ -90,6 +103,10 @@ class Attribute < ApplicationRecord
     else
       base_attribute.gid
     end
+  end
+
+  def name(locale: "en")
+    self.class.find_localization(locale, friendly_id, "name") || super()
   end
 
   def base?
@@ -131,30 +148,30 @@ class Attribute < ApplicationRecord
   #
   # `dist/` serialization
 
-  def as_json
+  def as_json(locale: "en")
     {
       "id" => gid,
-      "name" => name,
+      "name" => name(locale:),
       "handle" => handle,
       "description" => description,
       "extended_attributes" => extended_attributes.map do
         {
-          "name" => _1.name,
+          "name" => _1.name(locale:),
           "handle" => _1.handle,
         }
       end,
       "values" => values.map do
         {
           "id" => _1.gid,
-          "name" => _1.name,
+          "name" => _1.name(locale:),
           "handle" => _1.handle,
         }
       end,
     }
   end
 
-  def as_txt(padding: 0)
-    "#{gid.ljust(padding)} : #{name}"
+  def as_txt(padding: 0, locale: "en")
+    "#{gid.ljust(padding)} : #{name(locale:)}"
   end
 
   private

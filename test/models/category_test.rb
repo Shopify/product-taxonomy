@@ -3,6 +3,11 @@
 require_relative "../test_helper"
 
 class CategoryTest < ActiveSupport::TestCase
+  def setup
+    Category.stubs(:localizations).returns({})
+    Attribute.stubs(:localizations).returns({})
+  end
+
   def teardown
     Category.delete_all
     Attribute.delete_all
