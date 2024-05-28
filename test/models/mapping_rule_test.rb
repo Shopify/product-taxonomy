@@ -72,6 +72,20 @@ class MappingRuleTest < ActiveSupport::TestCase
     )
   end
 
+  test ".as_txt returns padded and version string representation" do
+    assert_equal <<~TXT.strip, MappingRule.as_txt([mapping_rule], version: 1)
+      # Shopify Product Taxonomy - Mappings: 1
+      # Format:
+      # input_taxonomy: <input taxonomy version>
+      # output_taxonomy: <output taxonomy version>
+      # {full_name} → {full_name}
+
+      input_taxonomy: shopify/v1
+      output_taxonomy: google/v1
+      Apparel & Accessories → Apparel & Accessories
+    TXT
+  end
+
   private
 
   def integration_shopify
@@ -103,7 +117,8 @@ class MappingRuleTest < ActiveSupport::TestCase
   def shopify_product
     @shopify_product ||= build(
       :product,
-      payload: { "properties" => nil , "product_category_id" => "gid://shopify/TaxonomyCategory/aa" },
+      payload: { "properties" => nil, "product_category_id" => "gid://shopify/TaxonomyCategory/aa" },
+      full_name: "Apparel & Accessories",
     )
   end
 
@@ -120,7 +135,8 @@ class MappingRuleTest < ActiveSupport::TestCase
   def google_product
     @google_product ||= build(
       :google_product,
-      payload: { "properties" => nil , "product_category_id" => ["1"] },
+      payload: { "properties" => nil, "product_category_id" => ["1"] },
+      full_name: "Apparel & Accessories",
     )
   end
 
