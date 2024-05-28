@@ -3,23 +3,25 @@ name: Generate and commit all distribution files
 on:
   workflow_dispatch:
   push:
-    branches: [ 'main' ]
+    branches:
+      - main
 
 concurrency:
-  group: "dist"
+  group: "full_dist"
   cancel-in-progress: false
 
 permissions:
   contents: write
 
+env:
+  branch_name: "dist-update-branch-${GITHUB_RUN_ID}"
+
 jobs:
-  generate_dist:
+  generate_full_dist:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      with:
-        ref: 'main'
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
@@ -47,14 +49,15 @@ jobs:
       run: |
         git config --local user.name "GitHub Action"
         git config --local user.email "action@github.com"
-        branch_name="dist-update-branch-${GITHUB_RUN_ID}"
-        git checkout -b $branch_name
         git add dist
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "🤖 Update distribution files" || exit 0 # Exit gracefully if no changes
-          git push origin $branch_name
+          COMMIT_SHA=$(git rev-parse HEAD | cut -c1-7)
+
+          git checkout -b ${{ env.branch_name }}
+          git commit -m "🤖 Update localization files for $(COMMIT_SHA)" || exit 0 # Exit gracefully if no changes
+          git push origin ${{ env.branch_name }}
         fi
 
     - name: Create Pull Request
@@ -62,7 +65,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ env.branch_name }}
-        title: "🤖 Update distribution files"
-        body: "This PR updates the distribution files. @${{ steps.last_author.outputs.author }}, please review and merge."
+        title: "🤖 Update localization files"
+        body: "This PR updates the distribution localization files. @${{ steps.last_author.outputs.author }}, please review and merge."
         labels: automated-pr
         reviewers: "@${{ steps.last_author.outputs.author }}"
