@@ -44,8 +44,14 @@ jobs:
 
     - name: Commit distribution files
       run: |
+        # configure git
         git config --local user.name "GitHub Action"
         git config --local user.email "action@github.com"
+
+        # get a reference to the latest commit on the branch
+        COMMIT_SHA=$(git rev-parse HEAD | cut -c1-7)
+
+        # commit and push the changes
         git add dist
-        git commit -m "🤖 Update distribution files" || exit 0 # Exit gracefully if no changes
+        git commit -m "🤖 Update distribution files for $(COMMIT_SHA)" || exit 0 # Exit gracefully if no changes
         git push
