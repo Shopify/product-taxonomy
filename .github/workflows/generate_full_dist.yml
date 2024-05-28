@@ -1,4 +1,4 @@
-name: Generate and commit distribution files for all locales
+name: Generate and commit all distribution files
 
 on:
   workflow_dispatch:
@@ -18,12 +18,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
-    - name: Checkout PR
-      run: gh pr checkout $ISSUE
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ISSUE: ${{ github.event.issue.html_url }}
+      with:
+        ref: 'main'
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
@@ -41,10 +37,32 @@ jobs:
     - name: Generate distribution files
       run: make LOCALES=all
 
+    - name: Get last commit author
+      id: last_author
+      run: |
+        author=$(git log -1 --pretty=format:'%an')
+        echo "::set-output name=author::$author"
+
     - name: Commit distribution files
       run: |
         git config --local user.name "GitHub Action"
         git config --local user.email "action@github.com"
+        branch_name="dist-update-branch-${GITHUB_RUN_ID}"
+        git checkout -b $branch_name
         git add dist
-        git commit -m "🤖 Update distribution files" || exit 0 # Exit gracefully if no changes
-        git push
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "🤖 Update distribution files" || exit 0 # Exit gracefully if no changes
+          git push origin $branch_name
+        fi
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v6
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ env.branch_name }}
+        title: "🤖 Update distribution files"
+        body: "This PR updates the distribution files. @${{ steps.last_author.outputs.author }}, please review and merge."
+        labels: automated-pr
+        reviewers: "@${{ steps.last_author.outputs.author }}"
