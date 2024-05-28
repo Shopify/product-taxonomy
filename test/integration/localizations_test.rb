@@ -24,8 +24,6 @@ class LocalizationsTest < ActiveSupport::TestCase
       end
 
       test "#{vertical} has localization values in #{language} for every category" do
-        skip "Some localizations are missing skipping until they are added"
-
         missing_localizations = categories.reject do |category|
           localizations.dig(language, "categories", category["id"], "name")
         end
@@ -50,8 +48,6 @@ class LocalizationsTest < ActiveSupport::TestCase
     end
 
     test "attributes have localization values for name in #{language}" do
-      skip "Some localizations are missing skipping until they are added"
-
       missing_localizations = attributes.reject do |attribute|
         localizations.dig(language, "attributes", attribute["friendly_id"], "name")
       end
@@ -74,8 +70,6 @@ class LocalizationsTest < ActiveSupport::TestCase
     end
 
     test "values have localizations for name in #{language}" do
-      skip "Some localizations are missing skipping until they are added"
-
       missing_localizations = values.reject do |value|
         localizations.dig(language, "values", value["friendly_id"], "name")
       end
