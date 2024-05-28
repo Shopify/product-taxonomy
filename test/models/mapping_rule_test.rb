@@ -74,14 +74,9 @@ class MappingRuleTest < ActiveSupport::TestCase
 
   test ".as_txt returns padded and version string representation" do
     assert_equal <<~TXT.strip, MappingRule.as_txt([mapping_rule], version: 1)
-      # Shopify Product Taxonomy - Mappings: 1
-      # Format:
-      # input_taxonomy: <input taxonomy version>
-      # output_taxonomy: <output taxonomy version>
-      # {full_name} → {full_name}
+      # Shopify Product Taxonomy - Mapping shopify/v1 to google/v1
+      # Format: {base taxonomy category name} → {mapped taxonomy category name}
 
-      input_taxonomy: shopify/v1
-      output_taxonomy: google/v1
       Apparel & Accessories → Apparel & Accessories
     TXT
   end

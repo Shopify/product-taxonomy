@@ -31,10 +31,6 @@ class Product < ApplicationRecord
           "properties" => data["attributes"],
           "product_category_id" => category_id,
         }
-      when "GoogleProduct"
-        {
-          "product_category_id" => data["product_category_id"],
-        }
       else
         data.slice("product_category_id")
       end

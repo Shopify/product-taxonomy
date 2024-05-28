@@ -15,16 +15,6 @@ end
 if @cli.options.locales.map(&:downcase).include?("all")
   @cli.options.locales = @cli.glob("data/localizations/categories/*.yml").map { File.basename(_1, ".yml") }
 end
-mapping_groups = MappingRule.all.group_by { |record| [record.input_version, record.output_version] }
-mapping_groups.each do |_, records|
-  directory_path = "dist/integrations/#{records.first.integration.name}"
-  input_version = records.first.input_version.gsub("/", "_")
-  output_version = records.first.output_version.gsub("/", "_")
-  @cli.write_file!("#{directory_path}/#{input_version}_to_#{output_version}.txt") do |file|
-    file.write(MappingRule.as_txt(records, version: @cli.options.version))
-    file.write("\n")
-  end
-end
 
 def mappings_json
   @mappings_json ||= MappingRule.as_json(MappingRule.all, version: @cli.options.version)
@@ -42,6 +32,17 @@ def generate_dist_files(locale)
   @cli.write_file!("dist/#{locale}/attribute_values.txt") do |file|
     file.write(Value.as_txt(Value.all, version: @cli.options.version, locale: locale))
     file.write("\n")
+  end
+
+  mapping_groups = MappingRule.all.group_by { |record| [record.input_version, record.output_version] }
+  mapping_groups.each do |_, records|
+    directory_path = "dist/integrations/#{records.first.integration.name}"
+    input_version = records.first.input_version.gsub("/", "_")
+    output_version = records.first.output_version.gsub("/", "_")
+    @cli.write_file!("#{directory_path}/#{input_version}_to_#{output_version}.txt") do |file|
+      file.write(MappingRule.as_txt(records, version: @cli.options.version))
+      file.write("\n")
+    end
   end
 
   categories_json = Category.as_json(Category.verticals, version: @cli.options.version, locale: locale)

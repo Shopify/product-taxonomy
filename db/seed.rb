@@ -131,34 +131,32 @@ module DB
         rules = raw_mappings["rules"]
         rules.each do |rule|
           input_product_category_id = rule["input"]["product_category_id"]
+          input_product_category_full_name = if from_shopify
+            Category.find_by(id: input_product_category_id)&.full_name
+          else
+            if input_product_category_id.is_a?(Integer)
+              input_product_category_id = Category.gid(input_product_category_id)
+            end
+            full_names[input_product_category_id]
+          end
           input_product = Product.find_or_create_from_data!(
             rule["input"],
             type: input_type,
-            full_name: if from_shopify
-                         Category.find_by(id: input_product_category_id)&.full_name
-                       else
-                         if input_product_category_id.is_a?(Integer)
-                           input_product_category_id = Category.gid(input_product_category_id)
-                         end
-                         full_names[input_product_category_id]
-                       end,
+            full_name: input_product_category_full_name,
           )
-          output_product_category_id = if rule["output"]["product_category_id"].is_a?(Array)
-            rule["output"]["product_category_id"].first
+          output_product_category_id = Array(rule["output"]["product_category_id"]).first
+          output_product_category_full_name = if from_shopify
+            unless output_product_category_id.starts_with?("gid")
+              output_product_category_id = Category.gid(output_product_category_id)
+            end
+            full_names[output_product_category_id]
           else
-            rule["output"]["product_category_id"]
+            Category.find_by(id: output_product_category_id)&.full_name
           end
           output_product = Product.find_or_create_from_data!(
             rule["output"],
             type: output_type,
-            full_name: if from_shopify
-                         unless output_product_category_id.starts_with?("gid")
-                           output_product_category_id = Category.gid(output_product_category_id)
-                         end
-                         full_names[output_product_category_id]
-                       else
-                         Category.find_by(id: output_product_category_id)&.full_name
-                       end,
+            full_name: output_product_category_full_name,
           )
 
           mapping_rules << {

@@ -22,20 +22,16 @@ class MappingRule < ApplicationRecord
 
     def as_txt(mappings, version:)
       header = <<~HEADER
-        # Shopify Product Taxonomy - Mappings: #{version}
-        # Format:
-        # input_taxonomy: <input taxonomy version>
-        # output_taxonomy: <output taxonomy version>
-        # {full_name} → {full_name}
+        # Shopify Product Taxonomy - Mapping #{mappings.first.input_version} to #{mappings.first.output_version}
+        # Format: {base taxonomy category name} → {mapped taxonomy category name}
       HEADER
-      sorted_mapping = mappings.sort_by do |mapping|
-        mapping.input.full_name.nil? ? 0 : -mapping.input.full_name.size
+      unformatted_text_mappings = *mappings.map(&:as_txt)
+      sorted_mappings = unformatted_text_mappings.sort_by do |mapping|
+        mapping.nil? ? 0 : -mapping.split(" → ").first.size
       end
-      padding = sorted_mapping.first.input.full_name.size
+      padding = sorted_mappings.first.split(" → ").first.size
       [
         header,
-        "input_taxonomy: #{mappings.first.input_version}",
-        "output_taxonomy: #{mappings.first.output_version}",
         *mappings.map { _1.as_txt(padding: padding) },
       ].flatten.compact.join("\n")
     end
@@ -70,7 +66,9 @@ class MappingRule < ApplicationRecord
   def as_txt(padding: 0)
     input_text = input.as_txt
     output_text = output.as_txt
-    return if input_text.empty? || output_text.empty?
+
+    return if input_text.blank? || output_text.blank?
+    return if input_text == output_text && input.type == output.type
 
     "#{input_text.ljust(padding)} → #{output_text}"
   end
