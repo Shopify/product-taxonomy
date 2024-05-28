@@ -6,24 +6,18 @@ on:
     branches: [ 'main' ]
 
 concurrency:
-  group: "dist"
-  cancel-in-progress: false
+  group: "generate_full_dist"
+  cancel-in-progress: true
 
 permissions:
   contents: write
 
 jobs:
-  generate_dist:
+  generate_full_dist:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
-    - name: Checkout PR
-      run: gh pr checkout $ISSUE
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ISSUE: ${{ github.event.issue.html_url }}
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
@@ -46,5 +40,5 @@ jobs:
         git config --local user.name "GitHub Action"
         git config --local user.email "action@github.com"
         git add dist
-        git commit -m "🤖 Update distribution files" || exit 0 # Exit gracefully if no changes
+        git commit -m "🤖 Update distribution localization files" || exit 0 # Exit gracefully if no changes
         git push
