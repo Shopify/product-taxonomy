@@ -50,7 +50,8 @@ ActiveRecord::Schema[7.1].define do
   create_table :products, force: :cascade do |t|
     t.text(:payload)
     t.string(:type)
-    t.index([:type, :payload], unique: true)
+    t.string(:full_name)
+    t.index([:type, :payload, :full_name], unique: true)
   end
 
   create_table :mapping_rules, force: :cascade do |t|

@@ -20,6 +20,24 @@ class MappingRule < ApplicationRecord
       }
     end
 
+    def as_txt(mappings, version:)
+      header = <<~HEADER
+        # Shopify Product Taxonomy - Mapping #{mappings.first.input_version} to #{mappings.first.output_version}
+        # Format:
+        # → {base taxonomy category name}
+        # ⇒ {mapped taxonomy category name}
+      HEADER
+      visible_mappings = mappings.filter_map do |mapping|
+        next if mapping.input.type == mapping.output.type && mapping.input.full_name == mapping.output.full_name
+
+        mapping.as_txt.presence
+      end.sort
+      [
+        header,
+        *visible_mappings,
+      ].flatten.join("\n").chomp
+    end
+
     private
 
     def integration_blocks
@@ -45,6 +63,17 @@ class MappingRule < ApplicationRecord
       "input" => input.payload.except!("properties").compact,
       "output" => output.payload.except!("properties").compact,
     }
+  end
+
+  def as_txt
+    input_text = input.as_txt
+    output_text = output.as_txt
+    return if input_text.blank? || output_text.blank?
+
+    <<~TEXT
+      → #{input_text}
+      ⇒ #{output_text}
+    TEXT
   end
 
   private

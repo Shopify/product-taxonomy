@@ -12,8 +12,8 @@ class Product < ApplicationRecord
       find_by(type:, payload: payload_for(data, type:))
     end
 
-    def find_or_create_from_data!(data, type:)
-      find_or_create_by!(type:, payload: payload_for(data, type:))
+    def find_or_create_from_data!(data, type:, full_name:)
+      find_or_create_by!(type:, payload: payload_for(data, type:), full_name:)
     end
 
     private
@@ -59,5 +59,9 @@ class Product < ApplicationRecord
 
   def as_json(options = {})
     super(options.merge({ methods: :type }))
+  end
+
+  def as_txt
+    full_name.to_s
   end
 end
