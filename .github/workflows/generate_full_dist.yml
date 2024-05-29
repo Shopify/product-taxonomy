@@ -14,6 +14,9 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+  GITHUB_SHA_SHORT: $(git rev-parse --short ${{ github.sha }})
+
 jobs:
   generate_full_dist:
     runs-on: ubuntu-latest
@@ -35,24 +38,14 @@ jobs:
         bundle install --jobs 4 --retry 3
 
     - name: Generate distribution files
-      run: make LOCALES=all
-
-    - name: Get last commit author
-      id: last_author
-      run: |
-        author=$(git log -1 --pretty=format:'%an')
-        echo "::set-output name=author::$author"
+      run: make VERBOSE=1 LOCALES=all
 
     - name: Commit changes and create PR
       uses: peter-evans/create-pull-request@v6
       with:
         commit-message: "🤖 Update localization files for ${{ github.sha }}"
+        branch: create-pull-request/localization
         branch-suffix: short-commit-hash
-        title: "🤖 Update localization files: ${{ github.ref }}"
-        body: |
-          Update distribution localization files. Triggered by ${{ github.sha }} from ${{ github.ref }}.
-
-          @${{ steps.last_author.outputs.author }}, please review and merge.
-        labels: automated-pr
-        assignees: ${{ steps.last_author.outputs.author }}
-        reviewers: ${{ steps.last_author.outputs.author }}
+        title: "🤖 Update localization files for ${GITHUB_SHA_SHORT}"
+        body: Update `dist/` localization files. Triggered by ${GITHUB_SHA_SHORT}.
+        labels: automated-pr, localization

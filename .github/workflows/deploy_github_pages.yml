@@ -36,7 +36,7 @@ jobs:
         bundle install --jobs 4 --retry 3
 
     - name: Generate dist & docs
-      run: make
+      run: make VERBOSE=1
 
     - name: Upload data
       uses: actions/upload-artifact@v4
