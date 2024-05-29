@@ -28,7 +28,7 @@ class MappingRule < ApplicationRecord
       end
     end
 
-    def mapping_blocks_as_json(input_version, output_version, mapping_rules)
+    def mapping_blocks_as_json(input_version, output_version, mapping_rules)chann
       {
         "input_taxonomy" => input_version,
         "output_taxonomy" => output_version,
@@ -41,6 +41,8 @@ class MappingRule < ApplicationRecord
 
   def as_json
     resolve_input_attribute_values!
+    resolve_input_product_data!
+    resolve_output_product_data!
     {
       "input" => input.payload.except!("properties").compact,
       "output" => output.payload.except!("properties").compact,
@@ -58,5 +60,39 @@ class MappingRule < ApplicationRecord
         }
       end
     end
+  end
+
+  def full_name(category_id:, for_current_shopify_version: false)
+    category_id = category_id.split("/").last
+    if for_current_shopify_version
+      Category.find(category_id).full_name
+    else
+      full_name_map(version: output_version)[category_id]
+    end
+  end
+
+  def full_name_map(version:)
+    @full_name_map ||= YAML.load_file(File.join(Rails.root, "data/integrations/#{version}/full_names.yml"))
+  end
+
+  def resolve_input_product_data!
+    input.payload["product"] = {
+      "category_id" => input.payload["product_category_id"],
+      "full_name" => full_name(
+        category_id: input.payload["product_category_id"],
+        for_current_shopify_version: from_shopify?
+        ),
+      }
+    input.payload.except!("product_category_id")
+  end
+
+  def resolve_output_product_data!
+    output.payload["product"] = output.payload["product_category_id"].map do |category_id|
+      {
+        "category_id" => category_id,
+        "full_name" => full_name(category_id: category_id, for_current_shopify_version: !from_shopify?),
+      }
+    end
+    output.payload.except!("product_category_id")
   end
 end
