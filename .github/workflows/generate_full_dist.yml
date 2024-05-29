@@ -1,29 +1,25 @@
-name: Generate and commit distribution files for all locales
+name: Generate and commit all distribution files
 
 on:
   workflow_dispatch:
   push:
-    branches: [ 'main' ]
+    branches:
+      - main
 
 concurrency:
-  group: "dist"
+  group: "full_dist"
   cancel-in-progress: false
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
-  generate_dist:
+  generate_full_dist:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
-    - name: Checkout PR
-      run: gh pr checkout $ISSUE
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ISSUE: ${{ github.event.issue.html_url }}
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
@@ -41,10 +37,22 @@ jobs:
     - name: Generate distribution files
       run: make LOCALES=all
 
-    - name: Commit distribution files
+    - name: Get last commit author
+      id: last_author
       run: |
-        git config --local user.name "GitHub Action"
-        git config --local user.email "action@github.com"
-        git add dist
-        git commit -m "🤖 Update distribution files" || exit 0 # Exit gracefully if no changes
-        git push
+        author=$(git log -1 --pretty=format:'%an')
+        echo "::set-output name=author::$author"
+
+    - name: Commit changes and create PR
+      uses: peter-evans/create-pull-request@v6
+      with:
+        commit-message: "🤖 Update localization files for ${{ github.sha }}"
+        branch-suffix: short-commit-hash
+        title: "🤖 Update localization files: ${{ github.ref }}"
+        body: |
+          Update distribution localization files. Triggered by ${{ github.sha }} from ${{ github.ref }}.
+
+          @${{ steps.last_author.outputs.author }}, please review and merge.
+        labels: automated-pr
+        assignees: ${{ steps.last_author.outputs.author }}
+        reviewers: ${{ steps.last_author.outputs.author }}
