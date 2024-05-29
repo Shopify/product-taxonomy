@@ -1,7 +1,8 @@
 name: Taxonomy Tree Requests
 description: File a request to change the Taxonomy Tree
 title: "[Taxonomy Tree]: "
-labels: ["taxonomy-tree-request"]
+labels:
+  - "taxonomy-tree-request"
 body:
   - type: dropdown
     id: taxonomy_field
@@ -40,7 +41,7 @@ body:
         - Sporting Goods
         - Toys & Games
         - Vehicles & Parts
-        - Product Add-ons  
+        - Product Add-ons
   - type: dropdown
     id: change_type
     attributes:
@@ -60,16 +61,16 @@ body:
     id: issue
     attributes:
       label: Issue
-      description: Provide a brief summary of your issue. For example: 'Missing category for Sombrero Hats.'
+      description: "Provide a brief summary of your issue. For example: 'Missing category for Sombrero Hats.'"
     validations:
       required: true
   - type: textarea
     id: description
     attributes:
       label: Description
-      description: Describe your experience in more detail. For example: 'I didn't find a suitable category or fitting attributes for my product, even though we have one for Baseball Caps.'
+      description: "Describe your experience in more detail. For example: 'I didn't find a suitable category or fitting attributes for my product, even though we have one for Baseball Caps.'"
     validations:
-      required: true     
+      required: true
   - type: textarea
     id: video_screenshot
     attributes:
