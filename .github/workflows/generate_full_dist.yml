@@ -12,9 +12,7 @@ concurrency:
 
 permissions:
   contents: write
-
-env:
-  branch_name: "dist-update-branch-${GITHUB_RUN_ID}"
+  pull-requests: write
 
 jobs:
   generate_full_dist:
@@ -45,27 +43,16 @@ jobs:
         author=$(git log -1 --pretty=format:'%an')
         echo "::set-output name=author::$author"
 
-    - name: Commit distribution files
-      run: |
-        git config --local user.name "GitHub Action"
-        git config --local user.email "action@github.com"
-        git add dist
-        if git diff --staged --quiet; then
-          echo "No changes to commit"
-        else
-          COMMIT_SHA=$(git rev-parse HEAD | cut -c1-7)
-
-          git checkout -b ${{ env.branch_name }}
-          git commit -m "🤖 Update localization files for $(COMMIT_SHA)" || exit 0 # Exit gracefully if no changes
-          git push origin ${{ env.branch_name }}
-        fi
-
-    - name: Create Pull Request
+    - name: Commit changes and create PR
       uses: peter-evans/create-pull-request@v6
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ env.branch_name }}
-        title: "🤖 Update localization files"
-        body: "This PR updates the distribution localization files. @${{ steps.last_author.outputs.author }}, please review and merge."
+        commit-message: "🤖 Update localization files for ${{ github.sha }}"
+        branch-suffix: short-commit-hash
+        title: "🤖 Update localization files: ${{ github.ref }}"
+        body: |
+          Update distribution localization files. Triggered by ${{ github.sha }} from ${{ github.ref }}.
+
+          @${{ steps.last_author.outputs.author }}, please review and merge.
         labels: automated-pr
-        reviewers: "@${{ steps.last_author.outputs.author }}"
+        assignees: ${{ steps.last_author.outputs.author }}
+        reviewers: ${{ steps.last_author.outputs.author }}
