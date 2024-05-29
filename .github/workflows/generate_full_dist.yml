@@ -8,7 +8,7 @@ on:
 
 concurrency:
   group: "full_dist"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -103,4 +103,4 @@ jobs:
             Update `dist/` localization files. Triggered by ${{ steps.short_sha.outputs.sha }}.
             cc @${{ steps.last_committer.outputs.username }}
           labels: automated-pr, localization
-          assignees: ${{ steps.last_committer.outputs.username }}
+          reviewers: ${{ steps.last_committer.outputs.username }}
