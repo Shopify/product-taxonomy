@@ -112,7 +112,6 @@ clean:
 	$(V)rm -f $(DIST_GENERATED_SENTINEL)
 	$(V)rm -rf $(GENERATED_DIST_PATH)/*.json
 	$(V)rm -rf $(GENERATED_DIST_PATH)/*.txt
-	$(V)rm -rf $(GENERATED_DIST_PATH)/integrations
 .PHONY: clean
 
 #

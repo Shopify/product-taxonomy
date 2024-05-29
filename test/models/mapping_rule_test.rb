@@ -72,12 +72,75 @@ class MappingRuleTest < ActiveSupport::TestCase
     )
   end
 
-  test ".as_txt returns padded and version string representation" do
+  test ".as_txt returns version string representation" do
     assert_equal <<~TXT.strip, MappingRule.as_txt([mapping_rule], version: 1)
       # Shopify Product Taxonomy - Mapping shopify/v1 to google/v1
-      # Format: {base taxonomy category name} → {mapped taxonomy category name}
+      # Format:
+      # → {base taxonomy category name}
+      # ⇒ {mapped taxonomy category name}
 
-      Apparel & Accessories → Apparel & Accessories
+      → Apparel & Accessories
+      ⇒ Apparel & Accessories
+    TXT
+  end
+
+  test ".as_txt generates a version string and omits entries where the input and output categories originate from the same taxonomy and have identical names" do
+    mapping_same = build(
+      :mapping_rule,
+      integration_id: integration_shopify.id,
+      input: build(
+        :product,
+        payload: { "properties" => nil, "product_category_id" => "gid://shopify/TaxonomyCategory/1" },
+        full_name: "Apparel & Accessories",
+      ),
+      output: shopify_product,
+      input_version: "shopify/v0",
+      output_version: "shopify/v1",
+    )
+    mapping_short = build(
+      :mapping_rule,
+      integration_id: integration_shopify.id,
+      input: build(
+        :product,
+        payload: { "properties" => nil, "product_category_id" => "gid://shopify/TaxonomyCategory/100001" },
+        full_name: "Media > DVDs & Videos",
+      ),
+      output: build(
+        :product,
+        payload: { "properties" => nil, "product_category_id" => "gid://shopify/TaxonomyCategory/me" },
+        full_name: "Media > Videos",
+      ),
+      input_version: "shopify/v0",
+      output_version: "shopify/v1",
+    )
+    mapping_long = build(
+      :mapping_rule,
+      integration_id: integration_shopify.id,
+      input: build(
+        :product,
+        payload: { "properties" => nil, "product_category_id" => "gid://shopify/TaxonomyCategory/200002" },
+        full_name: "Electronics > Communications > Telephony > Mobile Phone Accessories > Mobile Phone Cases",
+      ),
+      output: build(
+        :product,
+        payload: { "properties" => nil, "product_category_id" => "gid://shopify/TaxonomyCategory/el-4-8-4" },
+        full_name: "Electronics > Communications > Telephony > Mobile & Smart Phone Accessories > Mobile Phone Cases",
+      ),
+      input_version: "shopify/v0",
+      output_version: "shopify/v1",
+    )
+
+    assert_equal <<~TXT.strip, MappingRule.as_txt([mapping_same, mapping_short, mapping_long], version: 1)
+      # Shopify Product Taxonomy - Mapping shopify/v0 to shopify/v1
+      # Format:
+      # → {base taxonomy category name}
+      # ⇒ {mapped taxonomy category name}
+
+      → Electronics > Communications > Telephony > Mobile Phone Accessories > Mobile Phone Cases
+      ⇒ Electronics > Communications > Telephony > Mobile & Smart Phone Accessories > Mobile Phone Cases
+
+      → Media > DVDs & Videos
+      ⇒ Media > Videos
     TXT
   end
 
