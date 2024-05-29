@@ -135,7 +135,8 @@ seed: vet_data_schemas
 	$(V)bin/seed $(VARG)
 .PHONY: seed
 
-$(DEV_DB): seed
+$(DEV_DB):
+	if [ ! -f $@ ]; then make seed; fi
 
 #
 # TESTS
