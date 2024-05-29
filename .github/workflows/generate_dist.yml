@@ -40,7 +40,7 @@ jobs:
         bundle install --jobs 4 --retry 3
 
     - name: Generate distribution files
-      run: make
+      run: make VERBOSE=1
 
     - name: Commit distribution files
       run: |

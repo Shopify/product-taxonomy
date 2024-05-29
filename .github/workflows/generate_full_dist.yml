@@ -35,7 +35,7 @@ jobs:
         bundle install --jobs 4 --retry 3
 
     - name: Generate distribution files
-      run: make LOCALES=all
+      run: make VERBOSE=1 LOCALES=all
 
     - name: Get last commit author
       id: last_author
