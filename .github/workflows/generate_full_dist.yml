@@ -83,13 +83,13 @@ jobs:
         id: short_sha
         run: echo "sha=$(git rev-parse --short ${{ github.sha }})" >> $GITHUB_OUTPUT
 
-      - name: Get last committer username
+      - name: Get last commit author username
         id: last_committer
         run: |
           LAST_COMMIT_SHA=$(git log -1 --pretty=format:'%H')
           API_URL="https://api.github.com/repos/${{ github.repository }}/commits/${LAST_COMMIT_SHA}"
-          COMMITTER_LOGIN=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" $API_URL | jq -r '.committer.login')
-          echo "username=$COMMITTER_LOGIN" >> $GITHUB_OUTPUT
+          AUTHOR_LOGIN=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" $API_URL | jq -r '.author.login')
+          echo "username=$AUTHOR_LOGIN" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit changes and create PR
