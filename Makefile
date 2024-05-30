@@ -7,11 +7,11 @@
 ifeq ($(VERBOSE),1)
 	V=
 	VPIPE=
-	VARG=--verbose
+	VERBOSE_ARG=--verbose
 else
 	V=@
 	VPIPE= >/dev/null
-	VARG=
+	VERBOSE_ARG=
 endif
 
 FMT      = printf "\e[%sm>> %-21s\e[0;1m →\e[1;32m %s\e[0m\n"
@@ -36,20 +36,16 @@ GENERATED_DOCS_PATH = docs/_data/unstable
 DOCS_GENERATED_SENTINEL = tmp/.docs_generated_sentinel
 
 # DIST
-GENERATED_DIST_PATH = dist
+DIST_PATH = dist
 DIST_GENERATED_SENTINEL = tmp/.dist_generated_sentinel
-CATEGORIES_JSON = $(GENERATED_DIST_PATH)/en/categories.json
-ATTRIBUTES_JSON = $(GENERATED_DIST_PATH)/en/attributes.json
-MAPPINGS_JSON = $(GENERATED_DIST_PATH)/en/mappings.json
+TAXONOMY_JSON = $(DIST_PATH)/en/taxonomy.json
+CATEGORIES_JSON = $(DIST_PATH)/en/categories.json
+ATTRIBUTES_JSON = $(DIST_PATH)/en/attributes.json
+MAPPINGS_JSON = $(DIST_PATH)/en/mappings.json
 
 # APP files to run application
 DEV_DB = storage/development.sqlite3
 TEST_DB = storage/test.sqlite3
-
-# CUE imports needed for schema validation
-ATTRIBUTES_DATA_CUE = schema/attributes_data.cue
-CATEGORIES_DATA_CUE = schema/categories_data.cue
-MAPPINGS_DATA_CUE = schema/mappings_data.cue
 
 ###############################################################################
 # INPUTS
@@ -69,57 +65,43 @@ default: build
 .PHONY: default
 
 build: $(DIST_GENERATED_SENTINEL) \
-	$(DOCS_GENERATED_SENTINEL) \
-	$(CATEGORIES_DATA_CUE) \
-	$(ATTRIBUTES_DATA_CUE) \
-	$(MAPPINGS_DATA_CUE)
+	$(DOCS_GENERATED_SENTINEL)
 .PHONY: build
 
 $(DOCS_GENERATED_SENTINEL): $(DEV_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA) $(VALUES_DATA)
 	@$(GENERATE) "Building Docs" "$(GENERATED_DOCS_PATH)/*"
-	$(V)./bin/generate_docs $(VARG)
+	$(V)./bin/generate_docs $(VERBOSE_ARG)
 	$(V)touch $@
 
 $(DIST_GENERATED_SENTINEL): $(DEV_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA) $(VALUES_DATA) $(MAPPINGS_DATA)
-	@$(GENERATE) "Building Distribution" "$(GENERATED_DIST_PATH)/*.[json|txt]"
-	$(V)bin/generate_dist --locales $(LOCALES) $(VARG)
+	@$(GENERATE) "Building Distribution" "$(DIST_PATH)/*.[json|txt]"
+	$(V)bin/generate_dist --locales $(LOCALES) $(VERBOSE_ARG)
 	$(V)touch $@
 
 #
 # RELEASE
-release: build
+release: $(DIST_GENERATED_SENTINEL)
 	@$(RUN_CMD) "Preparing release"
-	$(V)bin/generate_release $(VARG)
+	$(V)bin/generate_release $(VERBOSE_ARG)
 .PHONY: release
 
 #
 # CLEAN
 clean:
-	@$(NUKE) "Cleaning dev db" $(DEV_DB)
-	$(V)rm -f $(DEV_DB)*
-	@$(NUKE) "Cleaning test db" $(TEST_DB)
-	$(V)rm -f $(TEST_DB)*
-	@$(NUKE) "Cleaning generated docs" $(GENERATED_DOCS_PATH)
-	$(V)rm -f $(DOCS_GENERATED_SENTINEL)
+	@$(NUKE) "Cleaning sentinels" "$(DIST_GENERATED_SENTINEL) $(DOCS_GENERATED_SENTINEL)"
+	$(V)rm -f $(DIST_GENERATED_SENTINEL) $(DOCS_GENERATED_SENTINEL)
+	@$(NUKE) "Cleaning local dbs" "$(DEV_DB) $(TEST_DB)"
+	$(V)rm -f $(DEV_DB)* $(TEST_DB)*
+	@$(NUKE) "Cleaning unstable docs" $(GENERATED_DOCS_PATH)
 	$(V)rm -rf $(GENERATED_DOCS_PATH)
-	@$(NUKE) "Cleaning attribute data cuefile" $(ATTRIBUTES_DATA_CUE)
-	$(V)rm -f $(ATTRIBUTES_DATA_CUE)
-	@$(NUKE) "Cleaning category data cuefile" $(CATEGORIES_DATA_CUE)
-	$(V)rm -f $(CATEGORIES_DATA_CUE)
-	@$(NUKE) "Cleaning mapping data cuefile" $(MAPPINGS_DATA_CUE)
-	$(V)rm -f $(MAPPINGS_DATA_CUE)
-	@$(NUKE) "Cleaning generated distribution files" $(GENERATED_DIST_PATH)
-	$(V)rm -f $(DIST_GENERATED_SENTINEL)
-	$(V)rm -rf $(GENERATED_DIST_PATH)/*.json
-	$(V)rm -rf $(GENERATED_DIST_PATH)/*.txt
 .PHONY: clean
 
 #
 # COMMANDS
-docs: $(DOCS_GENERATED_SENTINEL)
+run_docs: $(DOCS_GENERATED_SENTINEL)
 	@$(RUN_CMD) "Running docs server"
-	$(V)bundle exec jekyll serve --source docs --destination _site $(VARG)
-.PHONY: docs
+	$(V)bundle exec jekyll serve --source docs --destination _site $(VERBOSE_ARG)
+.PHONY: run_docs
 
 console:
 	@$(RUN_CMD) "Running console with dependencies"
@@ -128,11 +110,11 @@ console:
 
 #
 # DATABASE SETUP
-seed: vet_data_schemas
+seed: vet_schema_data
 	@$(GENERATE) "Seeding Database" $(DEV_DB)
 	$(V)bin/rails db:drop
 	$(V)bin/rails db:schema:load
-	$(V)bin/seed $(VARG)
+	$(V)bin/seed $(VERBOSE_ARG)
 .PHONY: seed
 
 $(DEV_DB):
@@ -140,57 +122,39 @@ $(DEV_DB):
 
 #
 # TESTS
-test: vet_data_schemas vet_dist_schemas
-	@$(RUN_CMD) "Running All Tests"
-	$(V)bin/rails test $(filter-out $@,$(MAKECMDGOALS))
+test: test_unit test_integration vet_schema
 .PHONY: test
 
-unit_tests:
+test_unit:
 	@$(RUN_CMD) "Running Unit Tests"
 	$(V)bin/rails unit $(filter-out $@,$(MAKECMDGOALS))
-.PHONY: unit_tests
+.PHONY: test_unit
 
-integration_tests:
+test_integration:
 	@$(RUN_CMD) "Running Integration Tests"
 	$(V)bin/rails integration $(filter-out $@,$(MAKECMDGOALS))
-.PHONY: integration_tests
+.PHONY: test_integration
 
-vet_dist_schemas: $(CATEGORIES_DATA_CUE) $(ATTRIBUTES_DATA_CUE) $(MAPPINGS_DATA_CUE)
-	@$(RUN_CMD) "Validating data/*.json schema"
-	$(V)cd schema && cue vet
-	$(V)echo "Done!"
-.PHONY: vet_dist_schemas
+vet_schema: vet_schema_data vet_schema_dist
+.PHONY: .vet_schema
 
-vet_data_schemas: vet_data_attributes_schema vet_data_categories_schema vet_data_values_schema
-.PHONY: vet_data_schemas
-
-vet_data_attributes_schema:
+vet_schema_data:
 	@$(RUN_CMD) "Validating $(ATTRIBUTES_DATA_PATH) schema"
 	$(V)cue vet schema/data/attributes_schema.cue $(ATTRIBUTES_DATA_PATH)
-	$(V)echo "Done!"
-.PHONY: vet_data_attributes_schema
-
-vet_data_categories_schema:
 	@$(RUN_CMD) "Validating $(CATEGORIES_DATA_PATH) schema"
 	$(V)cue vet schema/data/categories_schema.cue -d '#schema' $(CATEGORIES_DATA_PATH)
-	$(V)echo "Done!"
-.PHONY: vet_data_categories_schema
-
-vet_data_values_schema:
 	@$(RUN_CMD) "Validating $(VALUES_DATA_PATH) schema"
 	$(V)cue vet schema/data/values_schema.cue -d '#schema' $(VALUES_DATA_PATH)
-	$(V)echo "Done!"
-.PHONY: vet_data_values_schema
+.PHONY: vet_schema_data
 
-# TODO: These two targets can be done together
-$(CATEGORIES_DATA_CUE): $(DIST_GENERATED_SENTINEL)
-	@$(GENERATE) "Importing $(CATEGORIES_JSON)" $(CATEGORIES_DATA_CUE)
-	$(V)cue import $(CATEGORIES_JSON) -p product_taxonomy -f -o $(CATEGORIES_DATA_CUE)
-
-$(ATTRIBUTES_DATA_CUE): $(DIST_GENERATED_SENTINEL)
-	@$(GENERATE) "Importing $(ATTRIBUTES_JSON)" $(ATTRIBUTES_DATA_CUE)
-	$(V)cue import $(ATTRIBUTES_JSON) -p product_taxonomy -f -o $(ATTRIBUTES_DATA_CUE)
-
-$(MAPPINGS_DATA_CUE): $(DIST_GENERATED_SENTINEL)
-	@$(GENERATE) "Importing $(MAPPINGS_JSON)" $(MAPPINGS_DATA_CUE)
-	$(V)cue import $(MAPPINGS_JSON) -p product_taxonomy -f -o $(MAPPINGS_DATA_CUE)
+vet_schema_dist:
+	@$(RUN_CMD) "Validating $(ATTRIBUTES_JSON) schema"
+	$(V)cue vet schema/dist/attributes_schema.cue $(ATTRIBUTES_JSON)
+	@$(RUN_CMD) "Validating $(CATEGORIES_JSON) schema"
+	$(V)cue vet schema/dist/categories_schema.cue $(CATEGORIES_JSON)
+	@$(RUN_CMD) "Validating $(TAXONOMY_JSON) schema"
+	$(V)cue vet schema/dist/attributes_schema.cue $(TAXONOMY_JSON)
+	$(V)cue vet schema/dist/categories_schema.cue $(TAXONOMY_JSON)
+	@$(RUN_CMD) "Validating $(MAPPINGS_JSON) schema"
+	$(V)cue vet schema/dist/mappings_schema.cue $(MAPPINGS_JSON)
+.PHONY: vet_schema_dist
