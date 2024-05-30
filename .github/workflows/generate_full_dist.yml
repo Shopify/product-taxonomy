@@ -57,8 +57,6 @@ jobs:
     - uses: actions/download-artifact@v4
       with:
         path: dist
-    - name: Display structure of downloaded files
-      run: ls -R dist
     - name: Set up short SHA
       id: short_sha
       run: echo "sha=$(git rev-parse --short ${{ github.sha }})" >> $GITHUB_OUTPUT
@@ -76,8 +74,7 @@ jobs:
       with:
         commit-message: "🤖 Update localization files for ${{ github.sha }}"
         branch: "localization-dist"
-        branch-suffix: short-commit-hash
-        title: "🤖 Update localization files for ${{ steps.short_sha.outputs.sha }}"
+        title: "🤖 Update localization files"
         body: |
           Update `dist/` localization files. Triggered by ${{ steps.short_sha.outputs.sha }}.
           cc @${{ steps.last_committer.outputs.username }}
