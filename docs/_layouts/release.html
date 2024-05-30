@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="header-container container">
+<div class="header-container">
   <h1>Shopify Standard Product Taxonomy ({{ page.title }})</h1>
   <p><a href="{{ site.baseurl }}/">⬅︎ back to all releases</a></p>
   <p>
@@ -13,14 +13,14 @@ layout: default
     Learn more how this is <a href="http://shopify.com/editions/winter2024#new-taxonomy">integrated with Shopify</a>,
     where you can also sign-up to be considered for early access.
   </p>
-  <ul class="header-links">
+  <ul class="header-links flex">
     <li><a href="https://github.com/Shopify/product-taxonomy">GitHub</a></li>
     <li><a href="https://help.shopify.com/manual/products/details/product-category">Help Docs</a></li>
   </ul>
 </div>
-<div class="content-container container">
+<div class="content-container">
   <div class="primary-container">
-    <h2 class="container_title">Categories</h2>
+    <h2>Categories</h2>
     <div class="category-search-container">
       <input type="text" id="category-search" placeholder="Loading…">
       <ul id="category-search-results"></ul>
@@ -31,16 +31,16 @@ layout: default
         {% assign depth = sibling_group[0] %}
         {% assign parent_id = categories[0] %}
         {% assign node_type = categories[1].first.node_type %}
-        <div class="sibling-list {{node_type}}" node_depth="{{depth}}" parent_id="{{parent_id}}">
+        <div class="sibling-list {{node_type}}" data-node-depth="{{depth}}" data-parent-id="{{parent_id}}">
           <h3>Level {{ depth | plus: 1 }}</h3>
-          <ul>
+          <ul class="flex">
             {% for category in categories[1] %}
               <li
                 tabindex="0"
+                id="{{ category.id }}"
                 class="accordion-item"
-                node_id="{{ category.id }}"
-                ancestor_ids="{{ category.ancestor_ids }}"
-                attribute_ids="{{ category.attribute_ids }}"
+                data-ancestor-ids="{{ category.ancestor_ids }}"
+                data-attribute-ids="{{ category.attribute_ids }}"
               >
                 {{ category.name }}
               </li>
@@ -54,8 +54,8 @@ layout: default
     {% for sibling_group in site.data[page.target].sibling_groups %}
       {% for categories in sibling_group[1] %}
         {% for category in categories[1] %}
-          <div class="category-container" data-id="{{category.id}}">
-            <h3 class="title">{{ category.name }}</h3>
+          <div class="category-container" id="{{category.id}}">
+            <h3>{{ category.name }}</h3>
             <span class="id id--large">{{ category.id }}</span>
             <p>{{ category.fully_qualified_type }}</p>
           </div>
@@ -63,9 +63,10 @@ layout: default
       {% endfor %}
     {% endfor %}
     <div class="values-wrapper">
+      <h2>Category attributes</h2>
       {% for attribute in site.data[page.target].attributes %}
-        <div class="value-container value-visibility" data-id="{{ attribute.id }}">
-          <h4 class="title attribute-title" tabindex="0">
+        <div class="value-container attribute-values" id="{{ attribute.id }}">
+          <h4 class="attribute-title flex" tabindex="0">
             {{ attribute.name }}
             <span class="id">{{ attribute.id }}</span>
             <span class="arrow right-arrow">&rarr;</span>
@@ -85,13 +86,14 @@ layout: default
       {% endfor %}
     </div>
     <div class="values-wrapper">
+      <h2>Category mappings</h2>
       {% assign mappings = site.data[page.target].mappings %}
       {% for mapping in mappings %}
         <div class="value-container">
           {% assign input_taxonomy = mapping.input_taxonomy %}
           {% assign output_taxonomy = mapping.output_taxonomy %}
           {% assign rules = mapping.rules %}
-          <h4 class="title attribute-title" tabindex="0">
+          <h4 class="attribute-title flex" tabindex="0">
             {{ output_taxonomy }}
             <span class="arrow right-arrow">&rarr;</span>
             <span class="arrow down-arrow">&darr;</span>
@@ -101,7 +103,7 @@ layout: default
               {% for rule in rules %}
                 {% assign input_id = rule.input.product_category_id %}
                 {% assign output_id = rule.output.product_category_id %}
-                <li class="value-visibility" data-id="{{ input_id }}">
+                <li class="mapped-category" id="{{ input_id }}">
                   <span class="id">{{ output_id }}</span>
                 </li>
               {% endfor %}
@@ -113,5 +115,5 @@ layout: default
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/js-yaml@3.14.1/dist/js-yaml.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/js-yaml@3.14.1/dist/js-yaml.min.js"></script> -->
 <script type="module" src="{{ site.baseurl }}/assets/js/category_release.js"></script>

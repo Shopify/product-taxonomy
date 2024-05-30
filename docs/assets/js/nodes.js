@@ -3,15 +3,18 @@ import { q, qq, getQueryParam } from "./util.js";
 const nodeQueryParamKey = "categoryId";
 let selectedNodes = {};
 let selectedNode = null;
+let cachedElements = {
+  mappingElements: null,
+};
 
 const toggleExpandedCategories = () => {
   qq(".sibling-list").forEach((list) => {
-    const parentId = list.getAttribute("parent_id");
-    const depth = list.getAttribute("node_depth") - 1;
+    const parentId = list.dataset.parentId;
+    const depth = list.dataset.nodeDepth - 1;
     if (selectedNodes[depth] === parentId) {
-      list.classList.add("expanded");
+      list.classList.add("visible");
     } else {
-      list.classList.remove("expanded");
+      list.classList.remove("visible");
     }
   });
 };
@@ -19,7 +22,7 @@ const toggleExpandedCategories = () => {
 const toggleSelectedCategory = () => {
   const selectedNodeIds = Object.values(selectedNodes);
   qq(".accordion-item").forEach((item) => {
-    const nodeId = item.getAttribute("node_id");
+    const nodeId = item.id;
     if (selectedNodeIds.includes(nodeId)) {
       item.classList.add("selected");
     } else {
@@ -30,30 +33,65 @@ const toggleSelectedCategory = () => {
 
 const toggleVisibleCategory = () => {
   qq(".category-container").forEach((item) => {
-    const nodeId = item.dataset.id;
+    const nodeId = item.id;
     if (selectedNode === nodeId) {
-      item.classList.add("active");
+      item.classList.add("visible");
     } else {
-      item.classList.remove("active");
+      item.classList.remove("visible");
     }
   });
 };
 
-const toggleVisibleSecondaryValues = () => {
-  q(".secondary-container").classList.remove("active");
-  if (!selectedNode) return;
-  q(".secondary-container").classList.add("active");
+const toggleSecondaryContainer = () => {
+  const secondaryContainer = q(".secondary-container-visibility");
 
-  const documentNode = q(`.accordion-item[node_id="${selectedNode}"]`);
-  const attributeIds = documentNode.getAttribute("attribute_ids");
+  if (selectedNode) {
+    secondaryContainer.classList.add("visible");
+  } else {
+    secondaryContainer.classList.remove("visible");
+  }
+};
+
+const toggleVisibleAtrributes = () => {
+  if (!selectedNode) return;
+
+  const attributeElements = qq(".attribute-values");
+  const documentNode = q(`.accordion-item[id="${selectedNode}"]`);
+
+  if (!documentNode) {
+    return attributeElements.forEach((element) => element.classList.remove("visible"));
+  }
+
+  const attributeIds = documentNode.dataset.attributeIds;
   const attributesList = attributeIds.split(",");
 
-  qq(".value-visibility").forEach((element) => {
-    const valueId = element.dataset.id;
-    if (attributesList.includes(valueId) || selectedNode === valueId) {
-      element.classList.add("active");
+  attributeElements.forEach((element) => {
+    const valueId = element.id;
+    if (attributesList.includes(valueId)) {
+      element.classList.add("visible");
     } else {
-      element.classList.remove("active");
+      element.classList.remove("visible");
+    }
+  });
+};
+
+const readMappingElements = () => {
+  if (cachedElements.mappingElements) {
+    return cachedElements.mappingElements;
+  }
+
+  return cachedElements.mappingElements = qq(".mapped-category");
+};
+
+const toggleMappedCategories = () => {
+  const mappingElements = readMappingElements();
+
+  mappingElements.forEach((element) => {
+    const valueId = element.id;
+    if (selectedNode === valueId) {
+      element.classList.add("visible");
+    } else {
+      element.classList.remove("visible");
     }
   });
 };
@@ -73,11 +111,61 @@ const setNodeQueryParam = (nodeId) => {
   window.history.pushState({}, "", url);
 };
 
-const renderPage = () => {
-  toggleExpandedCategories();
+const renderWithManualPriority = () => {
   toggleSelectedCategory();
-  toggleVisibleSecondaryValues();
+  toggleExpandedCategories();
   toggleVisibleCategory();
+
+
+  setTimeout(() => {
+    toggleVisibleAtrributes();
+    toggleMappedCategories();
+  }, 0);
+};
+
+function yieldToMain () {
+  return new Promise(resolve => {
+    setTimeout(resolve, 0);
+  });
+}
+
+const renderWithYieldToMain = async () => {
+  const tasks = [
+    toggleSelectedCategory,
+    toggleExpandedCategories,
+    toggleVisibleCategory,
+    toggleVisibleAtrributes,
+    toggleMappedCategories,
+  ];
+
+  while (tasks.length > 0) {
+    const task = tasks.shift();
+    task();
+    await yieldToMain();
+  };
+};
+
+const renderWithScheduler = () => {
+  scheduler.postTask(toggleSelectedCategory, {priority: 'user-blocking'});
+  scheduler.postTask(toggleExpandedCategories, {priority: 'user-blocking'});
+  scheduler.postTask(toggleVisibleCategory);
+  scheduler.postTask(toggleVisibleAtrributes);
+  scheduler.postTask(toggleMappedCategories);
+};
+
+const renderWithoutPriority = () => {
+  toggleSelectedCategory();
+  toggleExpandedCategories();
+  toggleVisibleCategory();
+  toggleVisibleAtrributes();
+  toggleMappedCategories();
+};
+
+const renderPage = () => {
+  performance.mark("start");
+  renderWithYieldToMain();
+  performance.mark("end");
+  console.log(performance.measure("renderPage", "start", "end"));
 };
 
 const toggleNode = (nodeId, depth) => {
@@ -111,8 +199,8 @@ const setupListeners = () => {
   qq(".accordion-item").forEach((item) => {
     addOnClick(item, () =>
       toggleNode(
-        item.getAttribute("node_id"),
-        item.closest(".sibling-list").getAttribute("node_depth")
+        item.id,
+        item.closest(".sibling-list").dataset.nodeDepth
       )
     );
   });
@@ -125,11 +213,11 @@ const setInitialNode = () => {
   const initialNode = getQueryParam(nodeQueryParamKey);
   if (!initialNode) return;
 
-  const documentNode = q(`.accordion-item[node_id="${initialNode}"]`);
+  const documentNode = q(`.accordion-item[id="${initialNode}"]`);
   if (!documentNode) return;
 
-  const ancestors = documentNode.getAttribute("ancestor_ids")
-    ? documentNode.getAttribute("ancestor_ids").split(",")
+  const ancestors = documentNode.dataset.ancestorIds
+    ? documentNode.dataset.ancestorIds.split(",")
     : [];
   const depth = ancestors.length;
 
