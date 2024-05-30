@@ -51,10 +51,6 @@ TEST_DB = storage/test.sqlite3
 # INPUTS
 
 LOCALES ?= en
-CATEGORIES_DATA = $(shell find $(CATEGORIES_DATA_PATH))
-ATTRIBUTES_DATA = $(shell find $(ATTRIBUTES_DATA_PATH))
-VALUES_DATA     = $(shell find $(VALUES_DATA_PATH))
-MAPPINGS_DATA   = $(shell find $(MAPPINGS_DATA_PATH))
 
 ###############################################################################
 # COMMANDS
@@ -68,14 +64,14 @@ build: $(DIST_GENERATED_SENTINEL) \
 	$(DOCS_GENERATED_SENTINEL)
 .PHONY: build
 
-$(DOCS_GENERATED_SENTINEL): $(DEV_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA) $(VALUES_DATA)
-	@$(GENERATE) "Building Docs" "$(GENERATED_DOCS_PATH)/*"
-	$(V)./bin/generate_docs $(VERBOSE_ARG)
-	$(V)touch $@
-
-$(DIST_GENERATED_SENTINEL): $(DEV_DB) $(CATEGORIES_DATA) $(ATTRIBUTES_DATA) $(VALUES_DATA) $(MAPPINGS_DATA)
+$(DIST_GENERATED_SENTINEL): $(DEV_DB)
 	@$(GENERATE) "Building Distribution" "$(DIST_PATH)/*.[json|txt]"
 	$(V)bin/generate_dist --locales $(LOCALES) $(VERBOSE_ARG)
+	$(V)touch $@
+
+$(DOCS_GENERATED_SENTINEL): $(DIST_GENERATED_SENTINEL)
+	@$(GENERATE) "Building Docs" "$(GENERATED_DOCS_PATH)/*"
+	$(V)./bin/generate_docs $(VERBOSE_ARG)
 	$(V)touch $@
 
 #

@@ -16,8 +16,9 @@ cli.options.force = true if cli.options.version == UNSTABLE # we want unstable t
 puts("Generating `#{cli.options.version}` documentation files...")
 cli.options_status
 
-category_data = cli.parse_json("dist/en/categories.json").fetch("verticals")
-attribute_data = cli.parse_json("dist/en/attributes.json").fetch("attributes")
+taxonomy_data = cli.parse_json("dist/en/taxonomy.json")
+category_data = taxonomy_data.fetch("verticals")
+attribute_data = taxonomy_data.fetch("attributes")
 
 DATA_TARGET = "docs/_data/#{cli.options.version}"
 cli.write_file("#{DATA_TARGET}/sibling_groups.yml") do |file|

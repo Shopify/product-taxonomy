@@ -1,10 +1,10 @@
-name: Deploy GitHub page
+name: Deploy docs site
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -19,25 +19,15 @@ jobs:
   generate_docs:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-
-    - name: Install Cue
-      uses: cue-lang/setup-cue@v1.0.0
+    - uses: actions/checkout@v4
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
+    - uses: cue-lang/setup-cue@v1.0.0
       with:
         version: 'v0.7.0'
-
-    - name: Install bundler and gems
-      run: |
-        gem install bundler
-        bundle install --jobs 4 --retry 3
-
     - name: Generate dist & docs
       run: make VERBOSE=1
-
     - name: Upload data
       uses: actions/upload-artifact@v4
       with:
@@ -48,29 +38,19 @@ jobs:
     runs-on: ubuntu-latest
     needs: generate_docs
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Download data
-        uses: actions/download-artifact@v4
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
         with:
           name: data
           path: docs/_data
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+      - uses: actions/configure-pages@v4
+      - uses: actions/jekyll-build-pages@v1
         with:
           source: docs
           destination: _site
-
       - name: Copy search indexes
         run: sudo bin/copy_docs_search_indexes
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
 
   deploy:
     environment:
@@ -79,6 +59,5 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
+      - uses: actions/deploy-pages@v4
         id: deployment
-        uses: actions/deploy-pages@v4
