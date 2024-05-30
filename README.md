@@ -85,12 +85,12 @@ For everyone else you'll need to:
 Here are the commands you'll use most often:
 
 ```sh
-make [build] # build the dist and documentation files
-make clean   # remove sentinels and generated files
-make seed    # parse data/ into local db
-make console # irb with dependencies loaded
-make test    # run ruby tests and cue schema verification
-make docs    # http://localhost:4000 interactive view of dist/
+make [build]  # build the dist and documentation files
+make clean    # remove sentinels and generated files
+make seed     # parse data/ into local db
+make console  # irb with dependencies loaded
+make test     # run ruby tests and cue schema verification
+make run_docs # http://localhost:4000 interactive view of dist/
 ```
 
 If you want to add a new distribution format, you'll need to do 3 things:
