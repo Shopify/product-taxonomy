@@ -1,10 +1,12 @@
+#reference_regex: "^.+__.+$"
+
 base_attributes!: [
 	...{
 		id!:          int
 		name!:        string
 		friendly_id!: string
 		handle!:      string
-		values!: [_, ...string] // at least one; all strings
+		values!: [_, ...string & =~#reference_regex] // at least one; all strings
 	},
 ]
 

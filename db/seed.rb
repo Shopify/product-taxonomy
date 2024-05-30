@@ -118,6 +118,11 @@ module DB
         next if integration_id.nil?
 
         raw_mappings = YAML.load_file(file)
+        full_name_file_dir = File.expand_path("..", File.dirname(file))
+        full_names = {}
+        YAML.load_file(File.join(full_name_file_dir, "full_names.yml")).each do |category|
+          full_names[Category.gid(category["id"])] = category["full_name"]
+        end
         input_type = "ShopifyProduct"
         output_type = "#{integration_name.capitalize}Product"
         unless from_shopify
@@ -125,8 +130,34 @@ module DB
         end
         rules = raw_mappings["rules"]
         rules.each do |rule|
-          input_product = Product.find_or_create_from_data!(rule["input"], type: input_type)
-          output_product = Product.find_or_create_from_data!(rule["output"], type: output_type)
+          input_product_category_id = rule["input"]["product_category_id"]
+          input_product_category_full_name = if from_shopify
+            Category.find_by(id: input_product_category_id)&.full_name
+          else
+            if input_product_category_id.is_a?(Integer)
+              input_product_category_id = Category.gid(input_product_category_id)
+            end
+            full_names[input_product_category_id]
+          end
+          input_product = Product.find_or_create_from_data!(
+            rule["input"],
+            type: input_type,
+            full_name: input_product_category_full_name,
+          )
+          output_product_category_id = Array(rule["output"]["product_category_id"]).first
+          output_product_category_full_name = if from_shopify
+            unless output_product_category_id.starts_with?("gid")
+              output_product_category_id = Category.gid(output_product_category_id)
+            end
+            full_names[output_product_category_id]
+          else
+            Category.find_by(id: output_product_category_id)&.full_name
+          end
+          output_product = Product.find_or_create_from_data!(
+            rule["output"],
+            type: output_type,
+            full_name: output_product_category_full_name,
+          )
 
           mapping_rules << {
             integration_id: integration_id,

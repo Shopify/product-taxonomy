@@ -1,0 +1,82 @@
+name: Generate distribution files for all locales
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: "full_dist"
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate_locales:
+    runs-on: ubuntu-latest
+    outputs:
+      LOCALES: ${{ steps.retrieve_locales.outputs.locales }}
+    steps:
+    - uses: actions/checkout@v4
+    - name: Retrieve Locales
+      id: retrieve_locales
+      run: |
+        locales=$(ls data/localizations/categories/ | grep -Eo '^[a-z]{2,3}(-[A-Z]{2})?' | uniq | xargs)
+        locales_json=$(echo -n "["; for locale in $locales; do echo -n "\"$locale\","; done | sed 's/,$//'; echo -n "]")
+        echo "locales=$locales_json" >> $GITHUB_OUTPUT
+
+  generate_distribution_files:
+    needs: generate_locales
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        locale: ${{ fromJson(needs.generate_locales.outputs.LOCALES) }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
+    - uses: cue-lang/setup-cue@v1.0.0
+      with:
+        version: 'v0.7.0'
+    - name: Generate local-specific distribution files
+      run: make VERBOSE=1 LOCALES=${{ matrix.locale }}
+    - uses: actions/upload-artifact@v4
+      with:
+        name: ${{ matrix.locale }}
+        path: dist/${{ matrix.locale }}
+
+  create_pull_request:
+    needs: generate_distribution_files
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/download-artifact@v4
+      with:
+        path: dist
+    - name: Set up short SHA
+      id: short_sha
+      run: echo "sha=$(git rev-parse --short ${{ github.sha }})" >> $GITHUB_OUTPUT
+    - name: Get last commit author username
+      id: last_committer
+      run: |
+        LAST_COMMIT_SHA=$(git log -1 --pretty=format:'%H')
+        API_URL="https://api.github.com/repos/${{ github.repository }}/commits/${LAST_COMMIT_SHA}"
+        AUTHOR_LOGIN=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" $API_URL | jq -r '.author.login')
+        echo "username=$AUTHOR_LOGIN" >> $GITHUB_OUTPUT
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Commit changes and create PR
+      uses: peter-evans/create-pull-request@v6
+      with:
+        commit-message: "🤖 Update localization files for ${{ github.sha }}"
+        branch: "localization-dist"
+        title: "🤖 Update localization files"
+        body: |
+          Update `dist/` localization files. Triggered by ${{ steps.short_sha.outputs.sha }}.
+          cc @${{ steps.last_committer.outputs.username }}
+        labels: automated-pr, localization
+        reviewers: ${{ steps.last_committer.outputs.username }}
