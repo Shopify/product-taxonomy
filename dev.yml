@@ -19,19 +19,19 @@ up:
     - cue
 
 commands:
-  clean:
-    run: make clean
-  seed:
-    run: make seed
-  rebuild:
-    run: make clean && make
   build:
     run: make build
+  rebuild:
+    run: make clean_sentinels && make build
+  clean:
+    run: make clean
   console:
     run: make console
   release:
     run: make release
   run_docs:
     run: make run_docs
+  seed:
+    run: make seed
   test:
     run: make test
