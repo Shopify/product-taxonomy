@@ -97,7 +97,7 @@ class Product < ApplicationRecord
   def get_category_hash(category_id:, integration_version:)
     category_id = parse_category_id(category_id)
     if integration_version.nil?
-      Category.find_by(id: category_id)&.as_json&.slice("id", "full_name") || {"id" => Category.gid(category_id), "full_name" => "" }
+      Category.find_by(id: category_id)&.as_json&.slice("id", "full_name")
     else
       {
         "id" => category_id,

@@ -52,7 +52,7 @@ class MappingRule < ApplicationRecord
         "output_taxonomy" => output_version,
         "rules" => mapping_rules.select do
           _1.input_version == input_version && _1.output_version == output_version
-        end.map(&:as_json),
+        end.map(&:as_json).compact,
       }
     end
   end
@@ -60,9 +60,17 @@ class MappingRule < ApplicationRecord
   def as_json
     input_integration_version = input_version unless from_shopify?
     output_integration_version = output_version if from_shopify?
+
+    input_json = input.as_json(integration_version: input_integration_version)
+    output_json = output.as_json(integration_version: output_integration_version)
+
+    if input_json.nil? || output_json.nil?
+      return {}
+    end
+
     {
-      "input" => input.as_json(integration_version: input_integration_version),
-      "output" => output.as_json(integration_version: output_integration_version),
+      "input" => input_json,
+      "output" => output_json,
     }
   end
 
