@@ -41,7 +41,7 @@ DIST_GENERATED_SENTINEL = tmp/.dist_generated_sentinel
 TAXONOMY_JSON = $(DIST_PATH)/en/taxonomy.json
 CATEGORIES_JSON = $(DIST_PATH)/en/categories.json
 ATTRIBUTES_JSON = $(DIST_PATH)/en/attributes.json
-MAPPINGS_JSON = $(DIST_PATH)/en/mappings.json
+MAPPINGS_JSON = $(DIST_PATH)/en/integrations/all_mappings.json
 
 # APP files to run application
 DEV_DB = storage/development.sqlite3

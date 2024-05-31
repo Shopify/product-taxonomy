@@ -52,7 +52,7 @@ class MappingRule < ApplicationRecord
         "output_taxonomy" => output_version,
         "rules" => mapping_rules.select do
           _1.input_version == input_version && _1.output_version == output_version
-        end.map(&:as_json).compact,
+        end.map(&:as_json).compact_blank,
       }
     end
   end
@@ -64,7 +64,7 @@ class MappingRule < ApplicationRecord
     input_json = input.as_json(integration_version: input_integration_version)
     output_json = output.as_json(integration_version: output_integration_version)
 
-    if input_json.nil? || output_json.nil?
+    if input_json.empty? || output_json.empty?
       return {}
     end
 
