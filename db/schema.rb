@@ -51,7 +51,6 @@ ActiveRecord::Schema[7.1].define do
     t.text(:payload)
     t.string(:type)
     t.string(:full_name)
-    t.boolean(:for_current_shopify_version, default: true)
     t.index([:type, :payload, :full_name], unique: true)
   end
 
