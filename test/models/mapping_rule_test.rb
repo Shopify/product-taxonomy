@@ -4,6 +4,7 @@ require_relative "../test_helper"
 
 class MappingRuleTest < ActiveSupport::TestCase
   def teardown
+    Category.delete_all
     Product.delete_all
     GoogleProduct.delete_all
     MappingRule.delete_all
@@ -15,21 +16,30 @@ class MappingRuleTest < ActiveSupport::TestCase
   test ".as_json returns distribution json" do
     integration_shopify.save!
     mapping_rule.save!
+    category.save!
 
     assert_equal(
       {
         "version" => 1,
         "mappings"=>[
           {
-            "input_taxonomy"=>"shopify/v1",
-            "output_taxonomy"=>"google/v1",
+            "input_taxonomy"=>"shopify/2022-02",
+            "output_taxonomy"=>"google/2021-09-21",
             "rules" => [
               {
                 "input" => {
-                  "product_category_id" => "gid://shopify/TaxonomyCategory/aa"
+                  "category" => {
+                    "id" => "gid://shopify/TaxonomyCategory/aa",
+                    "full_name" => "Apparel & Accessories"
+                  }
                 },
                 "output" => {
-                  "product_category_id" => ["1"]
+                  "category" => [
+                    {
+                      "id" => "166",
+                      "full_name" => "Apparel & Accessories"
+                    }
+                  ]
                 }
               }
             ]
@@ -41,13 +51,22 @@ class MappingRuleTest < ActiveSupport::TestCase
   end
 
   test "#as_json returns data json" do
+    category.save!
     assert_equal(
       {
         "input" => {
-          "product_category_id" => "gid://shopify/TaxonomyCategory/aa"
+          "category" => {
+            "id" => "gid://shopify/TaxonomyCategory/aa",
+            "full_name" => "Apparel & Accessories"
+          }
         },
         "output" => {
-          "product_category_id" => ["1"]
+          "category" => [
+            {
+              "id" => "166",
+              "full_name" => "Apparel & Accessories"
+            }
+          ]
         }
       },
       mapping_rule.as_json,
@@ -55,17 +74,26 @@ class MappingRuleTest < ActiveSupport::TestCase
   end
 
   test "#as_json returns resolved attributes when present" do
+    category.save!
     attribute.save!
     value.save!
 
     assert_equal(
       {
         "input" => {
-          "product_category_id" => "gid://shopify/TaxonomyCategory/aa",
+          "category" => {
+            "id" => "gid://shopify/TaxonomyCategory/aa",
+            "full_name" => "Apparel & Accessories"
+          },
           "attributes" => [{ "attribute" => attribute.gid, "value" => value.gid }]
         },
         "output" => {
-          "product_category_id" => ["1"]
+          "category" => [
+            {
+              "id" => "166",
+              "full_name" => "Apparel & Accessories"
+            }
+          ]
         }
       },
       mapping_rule_with_attributes.as_json.sort.to_h,
@@ -74,7 +102,7 @@ class MappingRuleTest < ActiveSupport::TestCase
 
   test ".as_txt returns version string representation" do
     assert_equal <<~TXT.strip, MappingRule.as_txt([mapping_rule], version: 1)
-      # Shopify Product Taxonomy - Mapping shopify/v1 to google/v1
+      # Shopify Product Taxonomy - Mapping shopify/2022-02 to google/2021-09-21
       # Format:
       # → {base taxonomy category name}
       # ⇒ {mapped taxonomy category name}
@@ -156,8 +184,8 @@ class MappingRuleTest < ActiveSupport::TestCase
       integration_id: integration_shopify.id,
       input: shopify_product,
       output: google_product,
-      input_version: "shopify/v1",
-      output_version: "google/v1",
+      input_version: "shopify/2022-02",
+      output_version: "google/2021-09-21",
     )
   end
 
@@ -167,8 +195,8 @@ class MappingRuleTest < ActiveSupport::TestCase
       integration_id: integration_shopify.id,
       input: shopify_product_with_attributes,
       output: google_product,
-      input_version: "shopify/v1",
-      output_version: "google/v1",
+      input_version: "shopify/2022-02",
+      output_version: "google/2021-09-21",
     )
   end
 
@@ -193,13 +221,17 @@ class MappingRuleTest < ActiveSupport::TestCase
   def google_product
     @google_product ||= build(
       :google_product,
-      payload: { "properties" => nil, "product_category_id" => ["1"] },
+      payload: { "properties" => nil, "product_category_id" => ["166"] },
       full_name: "Apparel & Accessories",
     )
   end
 
   def attribute
     @attribute ||= build(:attribute,)
+  end
+
+  def category
+    @category ||= build(:category, id: "aa")
   end
 
   def value

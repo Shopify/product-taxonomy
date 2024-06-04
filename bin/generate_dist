@@ -55,7 +55,7 @@ def generate_dist_files(locale)
     file.write("\n")
   end
   if locale == "en"
-    @cli.write_file!("dist/#{locale}/mappings.json") do |file|
+    @cli.write_file!("dist/#{locale}/integrations/all_mappings.json") do |file|
       file.write(JSON.pretty_generate(mappings_json))
       file.write("\n")
     end
@@ -67,6 +67,10 @@ def generate_dist_files(locale)
       output_version = records.first.output_version.gsub("/", "_")
       @cli.write_file!("#{directory_path}/#{input_version}_to_#{output_version}.txt") do |file|
         file.write(MappingRule.as_txt(records, version: @cli.options.version))
+        file.write("\n")
+      end
+      @cli.write_file!("#{directory_path}/#{input_version}_to_#{output_version}.json") do |file|
+        file.write(JSON.pretty_generate(MappingRule.as_json(records, version: @cli.options.version)))
         file.write("\n")
       end
     end

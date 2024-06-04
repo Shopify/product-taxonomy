@@ -12,7 +12,10 @@ mappings!: [
 		rules!: [
 			...{
 				input!: {
-					product_category_id: string
+					category!: {
+						id: string
+						full_name: string
+					}
 					attributes?: [...{
 						name:  string & =~#attribute_gid_regex
 						value: string & =~#value_gid_regex | null

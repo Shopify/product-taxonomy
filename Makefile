@@ -25,7 +25,7 @@ GENERATED_DIST_SENTINEL  := $(TMP_PATH)/.dist_generated_sentinel
 TAXONOMY_JSON            := $(DIST_PATH)/en/taxonomy.json
 CATEGORIES_JSON          := $(DIST_PATH)/en/categories.json
 ATTRIBUTES_JSON          := $(DIST_PATH)/en/attributes.json
-MAPPINGS_JSON            := $(DIST_PATH)/en/mappings.json
+MAPPINGS_JSON            := $(DIST_PATH)/en/integrations/all_mappings.json
 
 DB_DEV                   := $(DB_PATH)/development.sqlite3
 
