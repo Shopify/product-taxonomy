@@ -16,6 +16,10 @@ class Product < ApplicationRecord
       find_or_create_by!(type:, payload: payload_for(data, type:), full_name:)
     end
 
+    def full_name_map
+      @full_name_map ||= {}
+    end
+
     private
 
     def payload_for(data, type:)
@@ -111,9 +115,12 @@ class Product < ApplicationRecord
   end
 
   def full_name_map(integration_version:)
-    categories = YAML.load_file(File.join(Rails.root, "data/integrations/#{integration_version}/full_names.yml"))
-    @full_name_map ||= categories.each_with_object({}) do |category, hash|
-      hash[category["id"].to_s] = category["full_name"]
+    unless self.class.full_name_map.key?(integration_version)
+      categories = YAML.load_file(File.join(Rails.root, "data/integrations/#{integration_version}/full_names.yml"))
+      self.class.full_name_map[integration_version] = categories.each_with_object({}) do |category, hash|
+        hash[category["id"].to_s] = category["full_name"]
+      end
     end
+    self.class.full_name_map[integration_version]
   end
 end
