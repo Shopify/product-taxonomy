@@ -8,87 +8,53 @@ class LocalizationsTest < ActiveSupport::TestCase
     mappings_json_data = CLI.new.parse_json("dist/en/integrations/all_mappings.json")
     invalid_categories = []
     mappings_json_data["mappings"].each do |mapping|
-      # process input taxonomy
-      category_ids = get_category_ids(mapping["input_taxonomy"])
-      res = validate_mapping_category_ids(mapping["rules"], category_ids, "input", mapping["input_taxonomy"])
-      unless res[:all_mapping_category_ids_are_valid]
-        invalid_categories.push(res[:invalid_categories])
-      end
+      res = validate_mapping_category_ids(mapping["rules"], "input", mapping["input_taxonomy"])
+      invalid_categories.concat(res)
 
-      # process output taxonomy
-      category_ids = get_category_ids(mapping["output_taxonomy"])
-      res = validate_mapping_category_ids(mapping["rules"], category_ids, "output", mapping["output_taxonomy"])
-      unless res[:all_mapping_category_ids_are_valid]
-        invalid_categories.push(res[:invalid_categories])
-      end
+      res = validate_mapping_category_ids(mapping["rules"], "output", mapping["output_taxonomy"])
+      invalid_categories.concat(res)
     end
 
     assert invalid_categories.empty?,
       "The following category ids in mappings are invalid:
-    #{invalid_categories}"
+      #{invalid_categories}"
   end
 
-  def validate_mapping_category_ids(mapping_rules, category_ids, input_or_output, input_or_output_taxonomy)
-    if category_ids.nil?
-      return {
-        all_mapping_category_ids_are_valid: true,
-      }
-    end
+  def validate_mapping_category_ids(mapping_rules, input_or_output, input_or_output_taxonomy)
+    category_ids = category_ids_from_taxonomy(input_or_output_taxonomy)
 
-    invalid_category_ids_in_input_taxonomy = Set.new
-    invalid_category_ids_in_output_taxonomy = Set.new
+    return [] if category_ids.nil?
 
-    if input_or_output == "input"
-      mapping_rules.each do |rule|
-        product_category_id = rule[input_or_output]["category"]["id"]
-        unless category_ids.include?(product_category_id)
-          invalid_category_ids_in_input_taxonomy.add(product_category_id)
-        end
-      end
-    else
-      mapping_rules.each do |rule|
-        product_categories = rule[input_or_output]["category"]
-        product_categories.each do |product_category|
-          unless category_ids.include?(product_category["id"])
-            invalid_category_ids_in_output_taxonomy.add(product_category["id"])
-          end
-        end
+    invalid_category_ids = Set.new
+
+    mapping_rules.each do |rule|
+      product_categories = rule[input_or_output]["category"]
+      product_categories = [product_categories] unless product_categories.is_a?(Array)
+
+      product_categories.each do |product_category|
+        invalid_category_ids.add(product_category["id"]) unless category_ids.include?(product_category["id"])
       end
     end
-    invalid_categories = []
 
-    unless invalid_category_ids_in_input_taxonomy.empty?
-      invalid_categories.push({
-        taxonomy_version: input_or_output_taxonomy,
-        category_ids: invalid_category_ids_in_input_taxonomy,
-      })
-    end
-
-    unless invalid_category_ids_in_output_taxonomy.empty?
-      invalid_categories.push({
-        taxonomy_version: input_or_output_taxonomy,
-        category_ids: invalid_category_ids_in_output_taxonomy,
-      })
-    end
-
-    if invalid_category_ids_in_input_taxonomy.empty? &&
-        invalid_category_ids_in_output_taxonomy.empty?
-      {
-        all_mapping_category_ids_are_valid: true,
-      }
+    if invalid_category_ids.empty?
+      []
     else
-      {
-        all_mapping_category_ids_are_valid: false,
-        invalid_categories: invalid_categories,
-      }
+      [
+        {
+          taxonomy_version: input_or_output_taxonomy,
+          input_or_output: input_or_output,
+          category_ids: invalid_category_ids,
+        },
+      ]
     end
   end
 
-  def get_category_ids(input_or_output_taxonomy)
+  def category_ids_from_taxonomy(input_or_output_taxonomy)
+    return if input_or_output_taxonomy.include?("shopify/2022-02")
+
     cli = CLI.new
-    if input_or_output_taxonomy.include?("shopify/2022-02")
-      nil
-    elsif input_or_output_taxonomy.include?("shopify")
+
+    if input_or_output_taxonomy.include?("shopify")
       categories_json_data = cli.parse_json("dist/en/categories.json")
       shopify_category_ids = Set.new
       categories_json_data["verticals"].each do |vertical|
