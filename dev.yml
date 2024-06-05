@@ -15,6 +15,10 @@ up:
       # doesn't give us a great way to force an upgrade.
       met?: '! ( cue version 2>/dev/null | grep -E "cue version v0\.[123456]\." )'
       meet: brew uninstall cue
+  - node:
+      version: v20.12.2
+      pnpm: 8.15.5
+      package_manager: pnpm@8.15.5
   - packages:
     - cue
 

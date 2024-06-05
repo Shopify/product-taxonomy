@@ -102,14 +102,12 @@ const toggleVisibleSelectedCategory = () => {
 };
 
 const toggleVisibleAtrributes = () => {
-  if (!selectedNode) return;
-
   const attributeElements = readAttributeValuesElement();
   const documentNode = q(`.category-node[id="${selectedNode}"]`);
 
   if (!documentNode) {
     return attributeElements.forEach((element) =>
-      element.classList.remove(className.visible),
+      element.classList.replace(className.visible, className.hidden),
     );
   }
 

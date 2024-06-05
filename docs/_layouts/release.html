@@ -117,16 +117,19 @@ layout: default
         <div class="values-container values-container--box">
           <ul class="values-container__list values-container__list--box">
             {% for rule in rules %}
-              {% assign input_id = rule.input.product_category_id %}
-              {% assign output_id = rule.output.product_category_id %}
-              <li class="mapped-category hidden" id="{{ input_id }}">
-                <div class="mapped-category__id">
-                  <h4 class="mapped-category__title">{{ output_title }} Taxonomy ID</h4>
-                  <span class="id">{{ output_id }}</span>
-                </div>
-                <div class="mapped-category__version">ver {{ output_version }}</div>
-                <h4 class="mapped-category__title">Breadcrumb</h4>
-              </li>
+              {% assign input_id = rule.input.category.id %}
+              {% assign outputs = rule.output.category %}
+              {% for output in outputs %}
+                <li class="mapped-category hidden" id="{{ input_id }}">
+                  <div class="mapped-category__id">
+                    <h4 class="mapped-category__title">{{ output_title }} Taxonomy ID</h4>
+                    <span class="id">{{ output.id }}</span>
+                  </div>
+                  <div class="mapped-category__version">ver {{ output_version }}</div>
+                  <h4 class="mapped-category__title">Breadcrumb</h4>
+                  {{ output.full_name }}
+                </li>
+              {% endfor %}
             {% endfor %}
           </ul>
         </div>

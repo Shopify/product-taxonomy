@@ -90,7 +90,7 @@ async function categorySearch(query) {
   results.forEach(({item}) => {
     const searchResult = document.createElement('li');
     const searchLink = document.createElement('a');
-    // TODO: use item.matches to highlight the matched characters
+
     searchLink.textContent = item.title;
     searchLink.href = item.url;
     searchLink.onclick = (e) => {
