@@ -35,3 +35,8 @@ commands:
     run: make seed
   test:
     run: make test
+  mappings_convert:
+    subcommands:
+      yml_to_csv:
+        desc: "convert mappings from .yml to .csv.  e.g. dev mappings_convert yml_to_csv data/integrations/google/2021-09-21/mappings/from_shopify.yml"
+        run: make convert_mappings_yml_to_csv INPUT_FILE_PATH="$1"

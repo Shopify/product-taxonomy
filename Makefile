@@ -158,6 +158,10 @@ vet_schema_dist:
 	$(V) cue vet $(SCHEMA_PATH)/dist/mappings_schema.cue $(MAPPINGS_JSON)
 .PHONY: vet_schema_dist
 
+convert_mappings_yml_to_csv: clean seed
+	@$(LOG_CMD) "Converting Mappings From YAML to CSV"
+	$(V)bin/convert_mappings_yml_to_csv $(INPUT_FILE_PATH)
+
 # Help target
 help:
 	@echo "Makefile targets:"

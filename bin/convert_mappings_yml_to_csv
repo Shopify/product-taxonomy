@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "yaml"
+require "csv"
+
+require_relative "../config/environment"
+
+yml_file_path = ARGV[0]
+from_shopify = File.basename(yml_file_path, ".*").split("_")[0] == "from"
+yml_data = YAML.load_file(yml_file_path)
+input_taxonomy_version = yml_data["input_taxonomy"].gsub("/", "_")
+output_taxonomy_version = yml_data["output_taxonomy"].gsub("/", "_")
+
+full_name_file_dir = File.expand_path("..", File.dirname(yml_file_path))
+full_names = {}
+YAML.load_file(File.join(full_name_file_dir, "full_names.yml")).each do |category|
+  full_names[Category.gid(category["id"])] = category["full_name"]
+end
+
+output_file_path = "tmp/#{input_taxonomy_version}_to_#{output_taxonomy_version}.csv"
+
+CSV.open(output_file_path, "w") do |csv|
+  csv << ["Source ID", "Source Breadcrumb", "Target Breadcrumb", "Target ID"]
+  rules = yml_data["rules"]
+
+  rules.each do |rule|
+    if from_shopify
+      input_category = Category.find_by(id: rule["input"]["product_category_id"])
+      next if input_category.nil?
+
+      input_id = input_category.id
+      input_full_name = input_category.full_name
+      output_id = rule["output"]["product_category_id"].first
+      output_full_name = full_names[Category.gid(output_id)]
+    else
+      output_category = Category.find_by(id: rule["output"]["product_category_id"].first)
+      next if output_category.nil?
+
+      input_id = rule["input"]["product_category_id"]
+      input_full_name = full_names[Category.gid(input_id)]
+      output_id = output_category.id
+      output_full_name = output_category.full_name
+    end
+    csv << [input_id, input_full_name, output_full_name, output_id]
+  end
+end
