@@ -74,8 +74,8 @@ layout: default
       <h3>Category attributes</h3>
       {% for attribute in site.data[page.target].attributes %}
         <div class="value-container attribute-values hidden" id="{{ attribute.id }}">
-          <h4 class="attribute-title" tabindex="0">
-            <div class="attribute-title__text">
+          <h4 class="value-title" tabindex="0">
+            <div class="value-title__text">
               {{ attribute.name }}
             </div>
             <div class="value-container__id">
@@ -110,7 +110,7 @@ layout: default
         {% assign output_title = output_title_and_version[0] %}
         {% assign output_version = output_title_and_version[1] %}
         {% assign rules = mapping.rules %}
-        <h3 class="attribute-title attribute-title--box" tabindex="0">
+        <h3 class="value-title value-title--box" tabindex="0">
           {{ output_title }}
           <span class="chevron"></span>
         </h3>

@@ -91,6 +91,7 @@ a:active {
   margin-bottom: 1rem;
   padding: 0 1rem 1rem 1rem;
   border: var(--border);
+  border-radius: var(--border-radius);
 }
 
 .id {
@@ -192,7 +193,7 @@ a:active {
   gap: 0.25rem;
 }
 
-.attribute-title {
+.value-title {
   display: inline-flex;
   align-items: center;
   flex-wrap: wrap;
@@ -201,11 +202,11 @@ a:active {
   margin: 0 0 1rem;
 }
 
-.attribute-title__text {
+.value-title__text {
   white-space: nowrap;
 }
 
-.attribute-title--box {
+.value-title--box {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -216,7 +217,7 @@ a:active {
   text-transform: capitalize;
 }
 
-.value-container.selected .attribute-title--box {
+.value-container.selected .value-title--box {
   background-color: var(--text-color);
   color: var(--inverse-text-color);
   border: unset;
@@ -224,7 +225,7 @@ a:active {
   border-bottom-right-radius: unset;
 }
 
-.value-container.selected .attribute-title {
+.value-container.selected .value-title {
   margin-bottom: 0;
 }
 

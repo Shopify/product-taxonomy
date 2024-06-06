@@ -225,7 +225,7 @@ const addOnClick = (target, handler) => {
 
 const setupListeners = () => {
   const categoryNodeElements = readCategoryNodeElements();
-  const attributeTitleElements = qq('.attribute-title');
+  const attributeTitleElements = qq('.value-title');
 
   categoryNodeElements.forEach((element) => {
     addOnClick(element, () =>
@@ -243,7 +243,7 @@ const setupListeners = () => {
 
 const ensureCategoryGID = (categoryNodeId) => {
   if (!categoryNodeId) return;
-  if (categoryNodeId.startsWith("gid://shopify/TaxonomyCategory/"))
+  if (categoryNodeId.startsWith('gid://shopify/TaxonomyCategory/'))
     return categoryNodeId;
 
   return `gid://shopify/TaxonomyCategory/${categoryNodeId}`;
