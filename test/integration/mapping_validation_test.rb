@@ -3,7 +3,7 @@
 require_relative "../test_helper"
 require_relative "../../config/cli"
 
-class LocalizationsTest < ActiveSupport::TestCase
+class MappingValidationTest < ActiveSupport::TestCase
   test "category IDs in mappings are valid" do
     mappings_json_data = CLI.new.parse_json("dist/en/integrations/all_mappings.json")
     invalid_categories = []
