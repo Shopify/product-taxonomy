@@ -1,0 +1,44 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "yaml"
+require "csv"
+require "fileutils"
+
+require_relative "../config/environment"
+
+csv_file_path = ARGV[0]
+LATEST_SHOPIFY_TAXONOMY_VERSION = "shopify/2024-04" # can we fetch this dynamically?
+taxonomy_versions = File.basename(csv_file_path, ".*").split("_to_")
+input_taxonomy = taxonomy_versions[0].gsub("_", "/")
+output_taxonomy = taxonomy_versions[1].gsub("_", "/")
+from_shopify = input_taxonomy == LATEST_SHOPIFY_TAXONOMY_VERSION
+grouped_mappings = {}
+CSV.foreach(csv_file_path, headers: true) do |row|
+  key = row["Source ID"]
+
+  grouped_mappings[key] ||= []
+  grouped_mappings[key] << row.to_h
+end
+
+data = []
+
+grouped_mappings.each do |key, rows|
+  data << {
+    "input" => { "product_category_id" => key },
+    "output" => {
+      "product_category_id" => rows.reduce([]) { |acc, row| acc << row["Target ID"] },
+    },
+  }
+end
+
+yaml_data = {
+  "input_taxonomy" => input_taxonomy,
+  "output_taxonomy" => output_taxonomy,
+  "rules" => data,
+}.to_yaml
+output_file_base_name = from_shopify ? "from_shopify" : "to_shopify"
+output_file_dir = "data/integrations/#{from_shopify ? output_taxonomy : input_taxonomy}/mappings"
+FileUtils.mkdir_p(output_file_dir)
+output_file_path = "#{output_file_dir}/#{output_file_base_name}.yml"
+File.write(output_file_path, yaml_data)
