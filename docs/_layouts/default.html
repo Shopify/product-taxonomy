@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles.css">
+    {% if jekyll.environment == "production" %}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SJLBWD2TH"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0SJLBWD2TH', { 'app_name': 'product-taxonomy' });
+      </script>
+    {% endif %}
+    {% if jekyll.environment == "development" %}
+      <script>
+        // Mock & silence gtag function in development environment
+        function gtag() {}
+      </script>
+    {% endif %}
   </head>
 
   <body>

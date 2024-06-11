@@ -15,6 +15,20 @@ let cachedElements = {
   attributeValuesElement: undefined,
 };
 
+const yieldToMain = () => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, 0);
+  });
+};
+
+const executeTasksWithYieldToMain = async (tasks) => {
+  while (tasks.length > 0) {
+    const task = tasks.shift();
+    task();
+    await yieldToMain();
+  }
+};
+
 const readMappingElements = () => {
   if (cachedElements.mappingElements) {
     return cachedElements.mappingElements;
@@ -139,10 +153,39 @@ const toggleMappedCategories = () => {
   });
 };
 
-const toggleAttributeSelected = (event) => {
-  const attributeElement = event.currentTarget.parentNode;
-  attributeElement.classList.toggle('selected');
+const toggleAttributeSelectedClass = (event) => {
+  const element = event.target.closest('.attribute-values');
+  element.classList.toggle('selected');
 };
+
+const toggleMappingSelectedClass = (event) => {
+  const element = event.target.parentNode;
+  element.classList.toggle('selected');
+};
+
+const sendMappingTitleClickAnalytics = () =>
+  window.gtag('event', 'app_click', {
+    event_action: 'toggle_mapping_visibility',
+  });
+
+const sendAttributeTitleClickAnalytics = () =>
+  window.gtag('event', 'app_click', {
+    event_action: 'toggle_attribute_visibility',
+  });
+
+const valueTitleClickWithYieldToMain =
+  (toggleSelectClassFunc, sendAnalyticsFunc) => (event) => {
+    const tasks = [() => toggleSelectClassFunc(event), sendAnalyticsFunc];
+    executeTasksWithYieldToMain(tasks);
+  };
+
+const valueTitleClickWithScheduler =
+  (toggleSelectClassFunc, sendAnalyticsFunc) => (event) => {
+    scheduler.postTask(() => toggleSelectClassFunc(event), {
+      priority: 'user-blocking',
+    });
+    scheduler.postTask(sendAnalyticsFunc, {priority: 'background'});
+  };
 
 const setNodeQueryParam = (nodeId) => {
   const url = new URL(window.location);
@@ -154,13 +197,7 @@ const setNodeQueryParam = (nodeId) => {
   window.history.pushState({}, '', url);
 };
 
-function yieldToMain() {
-  return new Promise((resolve) => {
-    setTimeout(resolve, 0);
-  });
-}
-
-const renderWithYieldToMain = async () => {
+const renderWithYieldToMain = () => {
   const tasks = [
     toggleSelectedCategory,
     toggleExpandedCategories,
@@ -169,11 +206,7 @@ const renderWithYieldToMain = async () => {
     toggleMappedCategories,
   ];
 
-  while (tasks.length > 0) {
-    const task = tasks.shift();
-    task();
-    await yieldToMain();
-  }
+  executeTasksWithYieldToMain(tasks);
 };
 
 const renderWithScheduler = () => {
@@ -184,16 +217,38 @@ const renderWithScheduler = () => {
   scheduler.postTask(toggleMappedCategories);
 };
 
-let renderPageFunc = (() => {
+let scheduleRenderPage = undefined;
+let scheduleMappingTitleClick = undefined;
+let scheduleAttributeTitleClick = undefined;
+
+const initSchedulerFunctions = () => {
   if ('scheduler' in window) {
-    return renderWithScheduler;
+    scheduleRenderPage = renderWithScheduler;
+    scheduleMappingTitleClick = valueTitleClickWithScheduler(
+      toggleMappingSelectedClass,
+      sendMappingTitleClickAnalytics,
+    );
+    scheduleAttributeTitleClick = valueTitleClickWithScheduler(
+      toggleAttributeSelectedClass,
+      sendAttributeTitleClickAnalytics,
+    );
+    return;
   } else {
-    return renderWithYieldToMain;
+    scheduleRenderPage = renderWithYieldToMain;
+    scheduleMappingTitleClick = valueTitleClickWithYieldToMain(
+      toggleMappingSelectedClass,
+      sendMappingTitleClickAnalytics,
+    );
+    scheduleAttributeTitleClick = valueTitleClickWithYieldToMain(
+      toggleAttributeSelectedClass,
+      sendAttributeTitleClickAnalytics,
+    );
+    return;
   }
-})();
+};
 
 const renderPage = () => {
-  renderPageFunc();
+  scheduleRenderPage();
 };
 
 const toggleNode = (nodeId, depth) => {
@@ -225,7 +280,8 @@ const addOnClick = (target, handler) => {
 
 const setupListeners = () => {
   const categoryNodeElements = readCategoryNodeElements();
-  const attributeTitleElements = qq('.value-title');
+  const attributeTitleElements = qq('.attribute-title');
+  const mappingTitleElements = qq('.mapping-title');
 
   categoryNodeElements.forEach((element) => {
     addOnClick(element, () =>
@@ -236,8 +292,12 @@ const setupListeners = () => {
     );
   });
 
-  attributeTitleElements.forEach((attribute) =>
-    addOnClick(attribute, toggleAttributeSelected),
+  attributeTitleElements.forEach((element) =>
+    addOnClick(element, scheduleAttributeTitleClick),
+  );
+
+  mappingTitleElements.forEach((element) =>
+    addOnClick(element, scheduleMappingTitleClick),
   );
 };
 
@@ -276,6 +336,7 @@ export const resetToCategory = (categoryId) => {
 };
 
 export const setupNodes = () => {
+  initSchedulerFunctions();
   setInitialNode();
   setupListeners();
   renderPage();
