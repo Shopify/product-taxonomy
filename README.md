@@ -18,6 +18,7 @@
   - [🕹️ Interactive explorer](#️-interactive-explorer)
 - [🧭 Getting started](#-getting-started)
   - [🧩 1. Integrators: How to integrate with the taxonomy](#-1-integrators-how-to-integrate-with-the-taxonomy)
+    - [🗺️ Mapping to other taxonomies](#-mapping-to-other-taxonomies)
   - [🧑🏼‍🏫 2. Taxonomists: How to make changes to the taxonomy](#-2-taxonomists-how-to-make-changes-to-the-taxonomy)
   - [👩🏼‍💻 3. Developers: How to evolve the system](#-3-developers-how-to-evolve-the-system)
     - [🛠️ Setup and dependencies](#️-setup-and-dependencies)
@@ -50,6 +51,10 @@ You can think of this repository serving 3 primary users:
 Dive straight into [`dist`](./dist/) to find the files you need and integrate this taxonomy into your system.
 
 We offer `txt` and `json` formats to make it easy to integrate with your systems. If you have a specific format you'd like to see, please open an issue and let us know!
+
+#### 🗺️ Mapping to other taxonomies
+
+To make it easier to integrate with the taxonomy, we have also included a set of data called _mappings_. These are rules that can be used to convert between categories and attributes in the Shopify taxonomy to categories and attributes of another taxonomy. For more on mappings see documentaton in the [integrations](./data/integrations/README.md) directory.
 
 ### 🧑🏼‍🏫 2. Taxonomists: How to make changes to the taxonomy
 
