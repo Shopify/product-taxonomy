@@ -58,7 +58,8 @@ output:
 
 <details>
 <summary>Output as JSON</summary>
-For example, `dist/en/integrations/all_mappings.json` contains their generated JSON output
+
+For the example above, `dist/en/integrations/all_mappings.json` would contain the following generated JSON output
 
 ```json
 {
