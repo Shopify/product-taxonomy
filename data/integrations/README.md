@@ -14,7 +14,7 @@ Integrations live in the `data/integrations` directory and are further grouped b
 data/integrations/
 ├── integrations.yml  # lists integrations and their versions for taxonomy mappings in distribution
 ├── <integration 1>  # name/handle of the commerce system (e.g. google/amazon)
-│   ├── <version> # e.g. v1.0.1 or 2024-04
+│   ├── <version> # e.g. v1.0.1 or 2024-07
 │   │   ├── mappings
 │   │   │   ├── from_shopify.yml
 │   │   │   └── to_shopify.yml
@@ -30,7 +30,7 @@ Generated distribution files for mappings can be found in `dist/{locale}/integra
 dist/{locale}/integrations/
 ├── all_mappings.json  # contains all taxonomy mappings for all available integrations
 ├── <integration 1>  # e.g. google, shopify
-│   ├── <source_taxonomy_version>_to_<target_taxonomy_version>.json # e.g. shopify_2024-04_to_google_2021-09-21.json
+│   ├── <source_taxonomy_version>_to_<target_taxonomy_version>.json # e.g. shopify_2024-07_to_google_2021-09-21.json
 │   └── <source_taxonomy_version>_to_<target_taxonomy_version>.txt
 └── <integration 2>
 ```
@@ -66,7 +66,7 @@ For the example above, `dist/en/integrations/all_mappings.json` would contain th
   "version": "0.18.0",
   "mappings": [
     {
-      "input_taxonomy": "shopify/2024-04",
+      "input_taxonomy": "shopify/2024-07",
       "output_taxonomy": "google/2021-09-21",
       "rules": [
         //...
@@ -91,7 +91,7 @@ For the example above, `dist/en/integrations/all_mappings.json` would contain th
     },
     {
       "input_taxonomy": "shopify/2022-02",
-      "output_taxonomy": "shopify/2024-04",
+      "output_taxonomy": "shopify/2024-07",
       "rules": [
         //...
         {
