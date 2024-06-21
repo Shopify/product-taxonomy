@@ -1,7 +1,7 @@
 <p align="center"><img src="./docs/assets/img/header.png" /></p>
 
 <!-- omit in toc -->
-<h1 align="center">Shopify's Standard Product Taxonomy <a href="./VERSION"><img src="https://img.shields.io/badge/version-v2024-07-orange.svg" alt="Version"></a></h1>
+<h1 align="center">Shopify's Standard Product Taxonomy <a href="./VERSION"><img src="https://img.shields.io/badge/Version-2024--07-blue.svg" alt="Version"></a></h1>
 
 **🌍 Global Standard**: Our open-source, standardized product taxonomy establishes a universal language for product classification. Comprehensive and already empowering merchants on Shopify.
 
@@ -134,7 +134,7 @@ We welcome contributions! Before we can merge any changes you submit, you'll nee
 
 You can always find the current published version in [`VERSION`](./VERSION). The changelog is available in [`CHANGELOG.md`](./CHANGELOG.md).
 
-While this is `UNSTABLE`, we're using SemVer, but when this goes stable it will transition to [CalVer](https://calver.org/), in sync with [Shopify's API release schedule](https://shopify.dev/docs/api/usage/versioning#release-schedule).
+Versions are determined by [CalVer](https://calver.org/), in sync with [Shopify's API release schedule](https://shopify.dev/docs/api/usage/versioning#release-schedule).
 
 That means a stable release every 3 months **at most**, at the beginning of the quarter. Version names are date-based to be meaningful and semantically unambiguous (for example, `2024-07`).
 
