@@ -1,0 +1,77 @@
+---
+layout: default
+
+title: Attributes
+target: unstable
+github_url: https://github.com/Shopify/product-taxonomy/tree/main/dist
+---
+
+<div class="header-container">
+  <h1>Shopify Standard Product Taxonomy ({{ page.title }})</h1>
+  <p><a href="{{ site.baseurl }}/">⬅︎ back to all releases</a></p>
+  <p>
+    Shopify's public product taxonomy serves as an open-source, standardized, and global classification of products sold
+    on Shopify. Composed of product categories, attributes, and attribute values, the taxonomy is leveraged across
+    Shopify and is integrated with numerous marketplaces.
+  </p>
+  <ul class="header-links">
+    <li class="header-links__li header-links__li--first-child"><a href="https://github.com/Shopify/product-taxonomy">GitHub</a></li>
+    <li class="header-links__li"><a href="https://help.shopify.com/manual/products/details/product-category">Help Docs</a></li>
+  </ul>
+</div>
+<div class="attribute-search-wrapper">
+  <div class="search-container">
+    <input class="search-container__input" type="text" id="attribute-search" placeholder="Loading…">
+    <ul class="search-container__ul" id="attribute-search-results"></ul>
+  </div>
+</div>
+{% for attribute in site.data[page.target].reversed_attributes.attributes %}
+<div class="attribute-container hidden" id="{{ attribute.id }}">
+  <div class="column">
+    <div class="attributes-wrapper box">
+      <div class="value-container attribute-values">
+        <h3>
+            {{ attribute.name }}
+          </h3>
+          <div class="value-container__id">
+            <span class="id">{{ attribute.id }}</span>
+          </div>
+        <div>
+          <ul class="values-container__list">
+            {% for value in attribute.values %}
+              <li class="values-container__list-item">
+                <div class="values-container__list-item-content">
+                  {{ value.name }}
+                  <div class="id">{{ value.id }}</div>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="attribute-categories-wrapper box">
+      <div class="categories-container attribute-categories">
+        <h3>
+          Categories
+        </h3>
+        <div>
+          <ul class="values-container__list">
+            {% for category in attribute.categories %}
+              <li class="values-container__list-item">
+                <div class="values-container__list-item-content">
+                  {{ category.full_name }}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<script type="module" src="{{ site.baseurl }}/assets/js/attribute_release.js"></script>

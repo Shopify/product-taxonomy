@@ -71,6 +71,24 @@ class Attribute < ApplicationRecord
       }
     end
 
+    def as_json_for_docs(locale: "en")
+      {
+        "attributes" => all.map { _1.as_json_for_docs(locale:) },
+      }
+    end
+
+    def as_json_for_docs_search
+      all.map do |data|
+        {
+          "title" => data["name"],
+          "url" => "?attributeId=#{data["friendly_id"]}",
+          "attribute" => {
+            "id" => data["friendly_id"],
+          },
+        }
+      end
+    end
+
     def as_txt(attributes, version:, locale: "en")
       header = <<~HEADER
         # Shopify Product Taxonomy - Attributes: #{version}
@@ -169,6 +187,26 @@ class Attribute < ApplicationRecord
       end,
     }
   end
+
+  def as_json_for_docs(locale:)
+    {
+      "id" => friendly_id,
+      "name" => name(locale:),
+      "categories" => categories.sort_by{ _1.full_name(locale:)}.map do
+        {
+          "id" => _1.gid,
+          "full_name" => _1.full_name(locale:),
+        }
+      end,
+      "values" => values.map do
+        {
+          "id" => _1.gid,
+          "name" => _1.name(locale:),
+        }
+      end,
+    }
+  end
+
 
   def as_txt(padding: 0, locale: "en")
     "#{gid.ljust(padding)} : #{name(locale:)}"
