@@ -117,6 +117,10 @@ class Attribute < ApplicationRecord
     !base?
   end
 
+  def sorted_values
+    ValuesSorter.sort_values_for_attribute(handle, values)
+  end
+
   def value_friendly_ids=(friendly_id)
     self.values = Value.where(friendly_id:)
   end
@@ -160,7 +164,7 @@ class Attribute < ApplicationRecord
           "handle" => _1.handle,
         }
       end,
-      "values" => values.map do
+      "values" => sorted_values.map do
         {
           "id" => _1.gid,
           "name" => _1.name(locale:),
