@@ -17,9 +17,9 @@ layout: default
 <div class="content-container">
   <div class="column column--taxonomy">
     <h2>Categories</h2>
-    <div class="category-search-container">
-      <input class="category-search-container__input" type="text" id="category-search" placeholder="Loading…">
-      <ul class="category-search-container__ul" id="category-search-results"></ul>
+    <div class="search-container">
+      <input class="search-container__input" type="text" id="category-search" placeholder="Loading…">
+      <ul class="search-container__ul" id="category-search-results"></ul>
     </div>
 
     {% for sibling_group in site.data[page.target].sibling_groups %}
