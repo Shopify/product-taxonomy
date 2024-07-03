@@ -22,4 +22,5 @@ group :development, :test do
   gem "mocha"
   gem "factory_bot_rails", "~> 6.4"
   gem "minitest-hooks", "~> 1.5"
+  gem "minitest-stub-const", "~> 0.6"
 end
