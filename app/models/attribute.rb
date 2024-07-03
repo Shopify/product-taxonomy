@@ -71,6 +71,10 @@ class Attribute < ApplicationRecord
       }
     end
 
+    def as_json_for_docs(locale: "en")
+      Attribute.where(base_friendly_id: nil).map { _1.as_json_for_docs(locale:) }
+    end
+
     def as_txt(attributes, version:, locale: "en")
       header = <<~HEADER
         # Shopify Product Taxonomy - Attributes: #{version}
@@ -117,6 +121,10 @@ class Attribute < ApplicationRecord
     !base?
   end
 
+  def sorted_values
+    ValueSorter.sort_values_for_attribute(handle, values)
+  end
+
   def value_friendly_ids=(friendly_id)
     self.values = Value.where(friendly_id:)
   end
@@ -161,6 +169,28 @@ class Attribute < ApplicationRecord
         }
       end,
       "values" => values.map do
+        {
+          "id" => _1.gid,
+          "name" => _1.name(locale:),
+          "handle" => _1.handle,
+        }
+      end,
+    }
+  end
+
+  def as_json_for_docs(locale: "en")
+    {
+      "id" => gid,
+      "name" => name(locale:),
+      "handle" => handle,
+      "description" => description,
+      "extended_attributes" => extended_attributes.map do
+        {
+          "name" => _1.name(locale:),
+          "handle" => _1.handle,
+        }
+      end,
+      "values" => sorted_values.map do
         {
           "id" => _1.gid,
           "name" => _1.name(locale:),
