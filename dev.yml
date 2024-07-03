@@ -8,6 +8,10 @@ type: ruby
 
 up:
   - ruby
+  - custom:
+      name: "Include optional gems with bundle install"
+      met?: 'cat .bundle/config | grep "BUNDLE_WITH: \"optional\""'
+      meet: bundle config set --local with 'optional'
   - bundler
   - custom:
       name: "Remove old cue version"

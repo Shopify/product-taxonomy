@@ -11,8 +11,10 @@ gem "tzinfo-data", platforms: [:windows, :jruby]
 gem "bootsnap", require: false
 gem "rubocop-shopify", require: false
 
-source "https://pkgs.shopify.io/basic/gems/ruby" do
-  gem "filter_values_sorter", require: false
+group :optional, optional: true do
+  source "https://pkgs.shopify.io/basic/gems/ruby" do
+    gem "filter_values_sorter"
+  end
 end
 
 group :development, :test do
