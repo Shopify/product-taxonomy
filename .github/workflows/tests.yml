@@ -22,7 +22,7 @@ jobs:
       with:
         bundler-cache: true
       env:
-        BUNDLE_PKGS__SHOPIFY__IO: token:${{ secrets.CLOUDSMITH_RUBY_TOKEN_RO }}
+        BUNDLE_PKGS__SHOPIFY__IO: ${{ secrets.RUBYGEMS_SERVER_PKGS_SHOPIFY_IO_USERNAME }}:${{ secrets.RUBYGEMS_SERVER_PKGS_SHOPIFY_IO_PASSWORD }}
         BUNDLE_WITH: optional
     - uses: cue-lang/setup-cue@v1.0.0
       with:
