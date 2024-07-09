@@ -30,8 +30,10 @@ class Value < ApplicationRecord
       new(row_from_data(data))
     end
 
-    def insert_all_from_data(data, ...)
-      insert_all!(Array(data).map { row_from_data(_1) }, ...)
+    def insert_all_from_data(data, base_attributes_data, ...)
+      base_attributes_by_friendly_id = base_attributes_data.index_by { _1["friendly_id"] }
+
+      insert_all!(Array(data).map { row_from_data_with_position(_1, base_attributes_by_friendly_id) }, ...)
     end
 
     def localizations
@@ -69,6 +71,16 @@ class Value < ApplicationRecord
 
     private
 
+    def row_from_data_with_position(data, base_attributes_by_friendly_id)
+      row = row_from_data(data)
+
+      matching_attribute = base_attributes_by_friendly_id[row["primary_attribute_friendly_id"]]
+
+      return row unless matching_attribute["sorting"] == "custom"
+
+      row.merge("position" => matching_attribute["values"].index { _1 == row["friendly_id"] })
+    end
+
     def row_from_data(data)
       {
         "id" => data["id"],
@@ -76,6 +88,7 @@ class Value < ApplicationRecord
         "handle" => data["handle"],
         "friendly_id" => data["friendly_id"],
         "primary_attribute_friendly_id" => data["friendly_id"].split("__").first,
+        "position" => nil,
       }
     end
   end

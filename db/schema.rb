@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.1].define do
     t.string(:friendly_id, null: false)
     t.string(:handle, null: false)
     t.string(:primary_attribute_friendly_id) # nullable to avoid cyclic dependency
+    t.integer(:position)
 
     t.index(:friendly_id, unique: true)
     t.index(:primary_attribute_friendly_id)

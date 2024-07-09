@@ -164,6 +164,32 @@ class AttributeTest < ActiveSupport::TestCase
     )
   end
 
+  test ".as_json returns distribution json with values sorted in predetermined custom order" do
+    small = build(:value, name: "Small (S)", handle: "size__small-s", friendly_id: "size__small_s", position: 0)
+    medium = build(:value, name: "Medium (M)", handle: "size__medium-m", friendly_id: "size__medium_m", position: 1)
+    large = build(:value, name: "Large (L)", handle: "size__large-l", friendly_id: "size__large_l", position: 2)
+    size = create(:attribute, name: "Size", values: [large, medium, small])
+
+    attributes_json = Attribute.as_json([size], version: 1)
+
+    assert_equal ["Small (S)", "Medium (M)", "Large (L)"],
+      attributes_json.dig("attributes", 0, "values").map { _1["name"] }
+  end
+
+  test ".as_json returns distribution json with values sorted in predetermined custom order for other locales" do
+    Value.unstub(:localizations)
+
+    small = build(:value, name: "Small (S)", handle: "size__small-s", friendly_id: "size__small_s", position: 0)
+    medium = build(:value, name: "Medium (M)", handle: "size__medium-m", friendly_id: "size__medium_m", position: 1)
+    large = build(:value, name: "Large (L)", handle: "size__large-l", friendly_id: "size__large_l", position: 2)
+    size = create(:attribute, name: "Size", values: [large, medium, small])
+
+    attributes_json = Attribute.as_json([size], version: 1, locale: "fr")
+
+    assert_equal ["Petite taille (S)", "Taille moyenne (M)", "Taille large (L)"],
+      attributes_json.dig("attributes", 0, "values").map { _1["name"] }
+  end
+
   test ".as_txt returns padded and version string representation" do
     color = create(:attribute, name: "Color")
     size = create(:attribute, name: "Size")
@@ -215,6 +241,43 @@ class AttributeTest < ActiveSupport::TestCase
       },
       swatch_color.as_json_for_data,
     )
+  end
+
+  test "#as_json returns attributes' values sorted alphanumerically" do
+    red = build(:value, name: "Red", handle: "color__red", friendly_id: "color__red")
+    blue = build(:value, name: "Blue", handle: "color__blue", friendly_id: "color__blue")
+    green = build(:value, name: "Green", handle: "color__green", friendly_id: "color__green")
+    color = create(:attribute, name: "Color", values: [blue, green, red])
+
+    color_json = color.as_json["values"]
+
+    assert_equal ["Blue", "Green", "Red"], color_json.map { _1["name"] }
+  end
+
+  test "#as_json returns attributes' values sorted alphanumerically for all locales" do
+    Value.unstub(:localizations)
+
+    red = build(:value, name: "Red", handle: "color__red", friendly_id: "color__red")
+    blue = build(:value, name: "Blue", handle: "color__blue", friendly_id: "color__blue")
+    green = build(:value, name: "Green", handle: "color__green", friendly_id: "color__green")
+    color = create(:attribute, name: "Color", values: [blue, green, red])
+
+    color_json = color.as_json(locale: "fr")["values"]
+
+    assert_equal ["Bleu", "Rouge", "Vert"], color_json.map { _1["name"] }
+  end
+
+  test "#as_json returns attributes' values with `other` listed last for all locales" do
+    Value.unstub(:localizations)
+
+    animal = build(:value, name: "Animal", handle: "pattern__animal", friendly_id: "pattern__animal")
+    striped = build(:value, name: "Striped", handle: "pattern__striped", friendly_id: "pattern__striped")
+    other = build(:value, name: "Other", handle: "pattern__other", friendly_id: "pattern__other")
+    pattern = create(:attribute, name: "Pattern", values: [striped, animal, other])
+
+    pattern_json = pattern.as_json(locale: "fr")["values"]
+
+    assert_equal ["Animal", "Rayé", "Autre"], pattern_json.map { _1["name"] }
   end
 
   private
