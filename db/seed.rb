@@ -29,7 +29,7 @@ module DB
 
       vputs("  → Attributes and values")
       Attribute.insert_all_from_data(attributes_data["base_attributes"])
-      Value.insert_all_from_data(values_data)
+      Value.insert_all_from_data(values_data, attributes_data["base_attributes"])
       AttributesValue.insert_all_from_data(attributes_data["base_attributes"])
 
       inserted_attributes = Attribute.insert_all_from_data(

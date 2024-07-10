@@ -66,14 +66,67 @@ class ValueTest < ActiveSupport::TestCase
     assert_equal "color", attribute_value.primary_attribute_friendly_id
   end
 
-  test ".insert_all_from_data creates multiple categories" do
+  test ".insert_all_from_data creates multiple values" do
     data = [
-      { "id" => 1, "name" => "Gold", "handle" => "gold", "friendly_id" => "color__gold" },
-      { "id" => 2, "name" => "Red", "handle" => "red", "friendly_id" => "color__red" },
+      {
+        "id" => 1,
+        "name" => "Gold",
+        "handle" => "gold",
+        "friendly_id" => "color__gold",
+        "primary_attribute_friendly_id" => "color",
+      },
+      {
+        "id" => 2,
+        "name" => "Red",
+        "handle" => "red",
+        "friendly_id" => "color__red",
+        "primary_attribute_friendly_id" => "color",
+      },
+    ]
+
+    base_attributes = [{ "id" => 1, "name" => "Color", "friendly_id" => "color" }]
+
+    assert_difference -> { Value.count }, 2 do
+      Value.insert_all_from_data(data, base_attributes)
+
+      assert_nil Value.find_by(friendly_id: "color__gold").position
+      assert_nil Value.find_by(friendly_id: "color__red").position
+    end
+  end
+
+  test ".insert_all_from_data assigns positions to pre-sorted values" do
+    data = [
+      {
+        "id" => 1,
+        "name" => "Small (S)",
+        "handle" => "size__small-s",
+        "friendly_id" => "size__small_s",
+        "primary_attribute_friendly_id" => "size",
+      },
+      {
+        "id" => 2,
+        "name" => "Medium (M)",
+        "handle" => "size__medium-m",
+        "friendly_id" => "size__medium_m",
+        "primary_attribute_friendly_id" => "size",
+      },
+    ]
+
+    base_attributes = [
+      {
+        "id" => 1,
+        "name" => "Size",
+        "friendly_id" => "size",
+        "sorting" => "custom",
+        "values" => ["size__small_s", "size__medium_m"],
+      },
     ]
 
     assert_difference -> { Value.count }, 2 do
-      Value.insert_all_from_data(data)
+      Value.insert_all_from_data(data, base_attributes)
+
+      assert_equal 0, Value.find_by(friendly_id: "size__small_s").position
+      assert_equal 1, Value.find_by(friendly_id: "size__medium_m").position
     end
   end
 
