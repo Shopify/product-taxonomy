@@ -18,7 +18,7 @@
   - [🕹️ Interactive explorer](#️-interactive-explorer)
 - [🧭 Getting started](#-getting-started)
   - [🧩 1. Integrators: How to integrate with the taxonomy](#-1-integrators-how-to-integrate-with-the-taxonomy)
-    - [🗺️ Mapping to other taxonomies](#-mapping-to-other-taxonomies)
+    - [🗺️ Mapping to other taxonomies](#️-mapping-to-other-taxonomies)
   - [🧑🏼‍🏫 2. Taxonomists: How to make changes to the taxonomy](#-2-taxonomists-how-to-make-changes-to-the-taxonomy)
   - [👩🏼‍💻 3. Developers: How to evolve the system](#-3-developers-how-to-evolve-the-system)
     - [🛠️ Setup and dependencies](#️-setup-and-dependencies)
