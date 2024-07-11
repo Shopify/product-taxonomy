@@ -6,6 +6,7 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 gem "sqlite3", "~> 1.7"
 gem "puma", ">= 5.0"
 gem "jekyll", "~> 4.3"
+gem "jekyll-redirect-from", "~> 0.16"
 gem "tzinfo-data", platforms: [:windows, :jruby]
 
 gem "bootsnap", require: false
