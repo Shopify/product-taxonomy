@@ -25,9 +25,13 @@ attribute_data = taxonomy_data.fetch("attributes")
 mappings_json = cli.parse_json("dist/en/integrations/all_mappings.json").fetch("mappings")
 mappings_data = mappings.reverse_shopify_mapping_rules(mappings_json)
 
-DATA_TARGET = "docs/_data/#{cli.options.version}"
-cli.write_file("#{DATA_TARGET}/sibling_groups.yml") do |file|
-  file.write(Category.as_json_for_docs_siblings(category_data).to_yaml(line_width: 1000))
+DATA_TARGET = cli.options.version ? "docs/_data/#{cli.options.version}" : "docs/_data/unstable"
+cli.write_file("#{DATA_TARGET}/reversed_attributes.yml") do |file|
+  file.write(Attribute.as_json_for_docs.to_yaml(line_width: -1))
+  file.write("\n")
+end
+cli.write_file("#{DATA_TARGET}/attributes_search_index.json") do |file|
+  file.write(JSON.fast_generate(Attribute.as_json_for_docs_search))
   file.write("\n")
 end
 cli.write_file("#{DATA_TARGET}/search_index.json") do |file|
