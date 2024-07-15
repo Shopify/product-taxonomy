@@ -23,7 +23,7 @@ jobs:
         version: 'v0.7.0'
     - name: Generate distribution files
       run: make VERBOSE=1
-    - name: Ensure there are no uncommitted distrubtion file changes
+    - name: Ensure there are no uncommitted distribution file changes
       id: ensure-dist-committed
       run: |
         git diff --exit-code || (echo "Please commit the changes made by the build process" && exit 1)
