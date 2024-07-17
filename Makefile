@@ -17,11 +17,15 @@ CATEGORIES_DATA  := $(DATA_PATH)/categories/*.yml
 ATTRIBUTES_DATA  := $(DATA_PATH)/attributes.yml
 VALUES_DATA      := $(DATA_PATH)/values.yml
 
+LOCALIZATION_SOURCES := $(shell find ${DATA_PATH} -maxdepth 2 -type f \( -path "${DATA_PATH}/*" -o -path "${DATA_PATH}/categories/*" \))
+
 # Generated files
 GENERATED_DOCS_SENTINEL  := $(TMP_PATH)/.docs_generated_sentinel
 GENERATED_DOCS           := $(DOCS_PATH)/_data/unstable
 
 GENERATED_DIST_SENTINEL  := $(TMP_PATH)/.dist_generated_sentinel
+GENERATED_LOCALIZATION_SENTINEL := $(TMP_PATH)/.localization_updated_sentinel
+
 TAXONOMY_JSON            := $(DIST_PATH)/en/taxonomy.json
 CATEGORIES_JSON          := $(DIST_PATH)/en/categories.json
 ATTRIBUTES_JSON          := $(DIST_PATH)/en/attributes.json
@@ -59,7 +63,7 @@ default: build
 .PHONY: default
 
 # Build targets
-build: $(GENERATED_DIST_SENTINEL) $(GENERATED_DOCS_SENTINEL)
+build: $(GENERATED_DIST_SENTINEL) $(GENERATED_DOCS_SENTINEL) ${GENERATED_LOCALIZATION_SENTINEL}
 .PHONY: build
 
 $(GENERATED_DIST_SENTINEL): $(DB_DEV)
@@ -70,6 +74,11 @@ $(GENERATED_DIST_SENTINEL): $(DB_DEV)
 $(GENERATED_DOCS_SENTINEL): $(GENERATED_DIST_SENTINEL)
 	@$(LOG_BUILD) "Building Docs" "$(GENERATED_DOCS)/*"
 	$(V) bin/generate_docs $(VERBOSE_ARG)
+	$(V) touch $@
+
+$(GENERATED_LOCALIZATION_SENTINEL): $(LOCALIZATION_SOURCES)
+	@$(LOG_BUILD) "Syncing English Localizations"
+	$(V) bin/sync_en_localizations $(VERBOSE_ARG)
 	$(V) touch $@
 
 # Release target
@@ -83,8 +92,8 @@ clean: clean_sentinels clean_dbs clean_docs
 .PHONY: clean
 
 clean_sentinels:
-	@$(LOG_CLEAN) "Cleaning sentinels" "$(GENERATED_DIST_SENTINEL) $(GENERATED_DOCS_SENTINEL)"
-	$(V) rm -f $(GENERATED_DIST_SENTINEL) $(GENERATED_DOCS_SENTINEL)
+	@$(LOG_CLEAN) "Cleaning sentinels" "$(GENERATED_DIST_SENTINEL) $(GENERATED_DOCS_SENTINEL) $(GENERATED_LOCALIZATION_SENTINEL)"
+	$(V) rm -f $(GENERATED_DIST_SENTINEL) $(GENERATED_DOCS_SENTINEL) $(GENERATED_LOCALIZATION_SENTINEL)
 .PHONY: clean_sentinels
 
 clean_dbs:

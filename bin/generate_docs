@@ -27,7 +27,7 @@ mappings_data = mappings.reverse_shopify_mapping_rules(mappings_json)
 
 DATA_TARGET = "docs/_data/#{cli.options.version}"
 cli.write_file("#{DATA_TARGET}/sibling_groups.yml") do |file|
-  file.write(Category.as_json_for_docs_siblings(category_data).to_yaml(line_width: 1000))
+  file.write(Category.as_json_for_docs_siblings(category_data).to_yaml(line_width: -1))
   file.write("\n")
 end
 cli.write_file("#{DATA_TARGET}/search_index.json") do |file|
@@ -35,11 +35,11 @@ cli.write_file("#{DATA_TARGET}/search_index.json") do |file|
   file.write("\n")
 end
 cli.write_file("#{DATA_TARGET}/attributes.yml") do |file|
-  file.write(attribute_data.to_yaml(line_width: 1000))
+  file.write(attribute_data.to_yaml(line_width: -1))
   file.write("\n")
 end
 cli.write_file("#{DATA_TARGET}/mappings.yml") do |file|
-  file.write(mappings_data.to_yaml(line_width: 1000))
+  file.write(mappings_data.to_yaml(line_width: -1))
   file.write("\n")
 end
 
