@@ -38,6 +38,7 @@ class MappingValidationTest < ActiveSupport::TestCase
       shopify_category_lack_mappings << {
         input_taxonomy: mapping["input_taxonomy"],
         output_taxonomy: mapping["output_taxonomy"],
+        count_of_shopify_category_ids_lack_mappings: shopify_category_ids_diff.size,
         shopify_category_ids_lack_mappings: shopify_category_ids_diff,
       }
     end
