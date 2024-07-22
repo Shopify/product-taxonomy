@@ -13,6 +13,8 @@ let cachedElements = {
   categoryNodeElements: undefined,
   selectedCategoryContainerElements: undefined,
   attributeValuesElement: undefined,
+  selectedCategoryTitle: undefined,
+  categoryAttributesTitle: undefined,
 };
 
 const yieldToMain = () => {
@@ -69,6 +71,26 @@ const readAttributeValuesElement = () => {
   }
 };
 
+const readSelectedCategoryTitle = () => {
+  if (cachedElements.selectedCategoryTitle) {
+    return cachedElements.selectedCategoryTitle;
+  } else {
+    return (cachedElements.selectedCategoryTitle = q(
+      '#selected-category-title',
+    ));
+  }
+};
+
+const readCategoryAttributesTitle = () => {
+  if (cachedElements.categoryAttributesTitle) {
+    return cachedElements.categoryAttributesTitle;
+  } else {
+    return (cachedElements.categoryAttributesTitle = q(
+      '#category-attributes-title',
+    ));
+  }
+};
+
 const toggleExpandedCategories = () => {
   const categoryLevelElements = readCategoryLevelElements();
 
@@ -103,11 +125,19 @@ const toggleSelectedCategory = () => {
 const toggleVisibleSelectedCategory = () => {
   const selectedCategoryContainerElements =
     readSelectedCategoryContainerElements();
+  const selectedCategoryTitle = readSelectedCategoryTitle();
+  const categoryAttributesTitle = readCategoryAttributesTitle();
 
   selectedCategoryContainerElements.forEach((element) => {
     const nodeId = element.id;
     const classes = element.classList;
+
     if (selectedNode === nodeId) {
+      const selectedNodeTitle =
+        element.firstElementChild.firstElementChild.dataset
+          .selectedCategoryName;
+      selectedCategoryTitle.innerText = selectedNodeTitle;
+      categoryAttributesTitle.innerText = `${selectedNodeTitle} attributes`;
       classes.replace(className.hidden, className.visible);
     } else {
       classes.replace(className.visible, className.hidden);

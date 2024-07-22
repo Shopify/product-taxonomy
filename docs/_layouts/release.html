@@ -48,17 +48,17 @@ layout: default
   </div>
   <div class="column">
     <div class="selected-category-wrapper">
-      <h2>Selected Shopify Category</h2>
+      <h2 id="selected-category-title">Selected Shopify Category</h2>
       {% for sibling_group in site.data[page.target].sibling_groups %}
         {% for categories in sibling_group[1] %}
           {% for category in categories[1] %}
             <div class="selected-category hidden" id="{{category.id}}">
               <div class="box">
-                <h3>{{ category.name }}</h3>
+                <h3 data-selected-category-name="{{ category.name }}">Taxonomy ID</h3>
                 <span class="id selected-category--id">{{ category.id }}</span>
               </div>
               <div class="box">
-                <h3>Breadcrumb</h3>
+                <h3>Taxonomy Breadcrumb</h3>
                 <p>{{ category.fully_qualified_type }}</p>
               </div>
             </div>
@@ -67,7 +67,7 @@ layout: default
       {% endfor %}
     </div>
     <div class="values-wrapper box">
-      <h3>Category attributes</h3>
+      <h3 id="category-attributes-title">Category Attributes</h3>
       {% for attribute in site.data[page.target].attributes %}
         <div class="value-container attribute-values hidden" id="{{ attribute.id }}">
           <h4 class="value-title attribute-title" tabindex="0">
@@ -96,7 +96,7 @@ layout: default
     </div>
   </div>
   <div class="column">
-    <h2>Category mappings</h2>
+    <h2>Channel mappings</h2>
     {% assign mappings = site.data[page.target].mappings %}
     {% for mapping in mappings %}
       <div class="value-container">
@@ -107,7 +107,11 @@ layout: default
         {% assign output_version = output_title_and_version[1] %}
         {% assign rules = mapping.rules %}
         <h3 class="value-title value-title--box mapping-title" tabindex="0">
-          {{ output_title }}
+          {% if output_title == "shopify" %}
+            {{ output_title }} (Previous Versions)
+          {% else %}
+            {{ output_title }}
+          {% endif %}
           <span class="chevron"></span>
         </h3>
         <div class="values-container values-container--box">
