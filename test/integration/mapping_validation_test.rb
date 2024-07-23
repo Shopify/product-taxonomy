@@ -89,12 +89,10 @@ class MappingValidationTest < ActiveSupport::TestCase
   end
 
   def category_ids_from_taxonomy(input_or_output_taxonomy)
-    return if input_or_output_taxonomy.include?("shopify/2022-02")
+    cli = CLI.new
 
-    sys = System.new
-
-    if input_or_output_taxonomy.include?("shopify")
-      categories_json_data = sys.parse_json("dist/en/categories.json")
+    if input_or_output_taxonomy.include?("shopify") && !input_or_output_taxonomy.include?("shopify/2022-02")
+      categories_json_data = cli.parse_json("dist/en/categories.json")
       shopify_category_ids = Set.new
       categories_json_data["verticals"].each do |vertical|
         vertical["categories"].each do |category|
