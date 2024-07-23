@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "../test_helper"
-require_relative "../../config/cli"
+require_relative "../../lib/cli"
 require_relative "../../db/seed"
 
 class AllDataFilesImportTest < ActiveSupport::TestCase

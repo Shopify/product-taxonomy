@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 require_relative "../../config/environment"
-require_relative "../../config/cli"
+require_relative "../../lib/cli"
 
 @cli = CLI.new([:name, :id, :parent_id]) do |opts|
   opts.on("-n NAME", "--name=NAME", String, "Name of new category")

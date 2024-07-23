@@ -3,7 +3,7 @@
 
 require "English"
 require_relative "../config/boot"
-require_relative "../config/cli"
+require_relative "../lib/cli"
 
 cli = CLI.new([:version]) do |opts|
   opts.on("-V VERSION", "--version=VERSION", "Version of the documentation")
