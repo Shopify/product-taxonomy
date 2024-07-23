@@ -153,8 +153,9 @@ class Category < ApplicationRecord
     ancestors.reverse.map { _1.name(locale:) }.push(name(locale:)).join(" > ")
   end
 
+  # should never use translations
   def handleized_name
-    "#{id}_#{name.downcase.gsub(%r{[^a-z0-9\s\-_/\.\+#]}, "").gsub(/[\s\-\.]+/, "_")}"
+    "#{id}_#{self[:name].downcase.gsub(%r{[^a-z0-9\s\-_/\.\+#]}, "").gsub(/[\s\-\.]+/, "_")}"
   end
 
   def root?
@@ -210,7 +211,7 @@ class Category < ApplicationRecord
   def as_json_for_data
     {
       "id" => id,
-      "name" => name,
+      "name" => self[:name], # avoid localization
       "children" => children.sort_by(&:id_parts).map(&:id),
       "attributes" => AlphanumericSorter.sort(related_attributes.map(&:friendly_id), other_last: true),
     }

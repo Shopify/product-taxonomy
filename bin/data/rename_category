@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative "../../config/environment"
+require_relative "../../config/cli"
+
+@cli = CLI.new([:name, :id]) do |opts|
+  opts.on("-n NAME", "--name=NAME", String, "New name for the category")
+  opts.on("-i ID", "--id=ID", String, "ID of the new category")
+end
+@cli.parse!(ARGV)
+@cli.options_status
+
+fail "Missing required option: --name" unless @cli.options.name
+fail "Missing required option: --id" unless @cli.options.id
+
+category = Category.find_by(id: @cli.options.id)
+fail "Category `#{@cli.options.id}` not found" unless category
+
+original_name = category[:name] # skip localizations
+original_handle = category.handleized_name
+category.update!(name: @cli.options.name)
+@cli.vputs("Updated category `#{category.id}` to `#{category[:name]}` from `#{original_name}` in DB")
+
+if category.handleized_name != original_handle
+  @cli.vputs("Renaming category file from `#{original_handle}.yml` to `#{category.handleized_name}.yml`")
+  @cli.move_file!("data/categories/#{original_handle}.yml", "data/categories/#{category.handleized_name}.yml")
+end
+
+vertical = category.root
+@cli.write_file!("data/categories/#{vertical.handleized_name}.yml") do |file|
+  file.write(vertical.as_json_for_data_with_descendants.to_yaml)
+end
+
+sync_command = CLI.path("bin/sync_en_localizations").to_s
+puts "→ Running `#{sync_command}`"
+exec(CLI.path("bin/sync_en_localizations").to_s) # TODO: evolve sync_en to be easier to target
