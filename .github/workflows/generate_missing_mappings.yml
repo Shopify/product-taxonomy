@@ -1,0 +1,31 @@
+name: Generate and commit mapping changes to requested PR
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  generate_missing_mappings:
+    runs-on: ubuntu-latest
+    if: ${{github.event.issue.pull_request && github.event.comment.body == '/generate_mappings'}}
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Checkout PR
+      run: gh pr checkout $ISSUE
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ISSUE: ${{ github.event.issue.html_url }}
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
+    - name: Generate missing mappings
+      run: |
+        echo "world" > hello
+    - name: Commit mapping changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add hello
+        git commit -m "🤖 Update missing mappings" || exit 0 # Exit gracefully if no changes
+        git push
