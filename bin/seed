@@ -2,12 +2,5 @@
 # frozen_string_literal: true
 
 require_relative "../config/environment"
-require_relative "../lib/cli"
-require_relative "../db/seed"
 
-cli = CLI.new
-cli.parse!(ARGV)
-
-puts("Seeding database...")
-cli.options_status
-DB::Seed.from_data_files!(cli)
+SeedLocalCommand.run

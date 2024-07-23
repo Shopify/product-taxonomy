@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 require_relative "../test_helper"
-require_relative "../../lib/cli"
-require_relative "../../db/seed"
 
 class AllDataFilesImportTest < ActiveSupport::TestCase
   include Minitest::Hooks
@@ -17,15 +15,15 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     Integration.delete_all
     MappingRule.delete_all
 
-    cli = CLI.new
-    @raw_values_data = cli.parse_yaml("data/values.yml")
-    @raw_attributes_data = cli.parse_yaml("data/attributes.yml")
-    @raw_verticals_data = cli.glob("data/categories/*.yml").map { cli.parse_yaml(_1) }
-    @raw_integrations_data = cli.parse_yaml("data/integrations/integrations.yml")
-    mapping_rule_files = cli.glob("data/integrations/*/*/mappings/*_shopify.yml")
-    @raw_mapping_rules_data = mapping_rule_files.map { { content: cli.parse_yaml(_1), file_name: _1 } }
+    sys = System.new
+    @raw_values_data = sys.parse_yaml("data/values.yml")
+    @raw_attributes_data = sys.parse_yaml("data/attributes.yml")
+    @raw_verticals_data = sys.glob("data/categories/*.yml").map { sys.parse_yaml(_1) }
+    @raw_integrations_data = sys.parse_yaml("data/integrations/integrations.yml")
+    mapping_rule_files = sys.glob("data/integrations/*/*/mappings/*_shopify.yml")
+    @raw_mapping_rules_data = mapping_rule_files.map { { content: sys.parse_yaml(_1), file_name: _1 } }
 
-    DB::Seed.from_data_files!(cli)
+    SeedLocalCommand.new(quiet: true).run
   end
 
   def after_all

@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 require_relative "../test_helper"
-require_relative "../../lib/cli"
 
 class MappingValidationTest < ActiveSupport::TestCase
   test "category IDs in mappings are valid" do
-    mappings_json_data = CLI.new.parse_json("dist/en/integrations/all_mappings.json")
+    mappings_json_data = System.new.parse_json("dist/en/integrations/all_mappings.json")
     invalid_categories = []
     mappings_json_data["mappings"].each do |mapping|
       res = validate_mapping_category_ids(mapping["rules"], "input", mapping["input_taxonomy"])
@@ -52,10 +51,10 @@ class MappingValidationTest < ActiveSupport::TestCase
   def category_ids_from_taxonomy(input_or_output_taxonomy)
     return if input_or_output_taxonomy.include?("shopify/2022-02")
 
-    cli = CLI.new
+    sys = System.new
 
     if input_or_output_taxonomy.include?("shopify")
-      categories_json_data = cli.parse_json("dist/en/categories.json")
+      categories_json_data = sys.parse_json("dist/en/categories.json")
       shopify_category_ids = Set.new
       categories_json_data["verticals"].each do |vertical|
         vertical["categories"].each do |category|
@@ -66,7 +65,7 @@ class MappingValidationTest < ActiveSupport::TestCase
     else
       channel_category_ids = Set.new
       file_path = "data/integrations/#{input_or_output_taxonomy}/full_names.yml"
-      channel_taxonomy = cli.parse_yaml(file_path)
+      channel_taxonomy = sys.parse_yaml(file_path)
       channel_taxonomy.each do |entry|
         channel_category_ids.add(entry["id"].to_s)
       end
