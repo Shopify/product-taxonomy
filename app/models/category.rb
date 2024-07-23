@@ -32,6 +32,10 @@ class Category < ApplicationRecord
       "gid://shopify/TaxonomyCategory/#{id}"
     end
 
+    def id_parts(id)
+      id.split("-").map { _1 =~ /^\d+$/ ? _1.to_i : _1 }
+    end
+
     def localizations
       @localizations ||= Dir.glob(LOCALIZATION_PATH).each_with_object({}) do |file, localizations|
         locale = File.basename(file, ".yml")
@@ -137,12 +141,20 @@ class Category < ApplicationRecord
     self.class.gid(id)
   end
 
+  def id_parts
+    self.class.id_parts(id)
+  end
+
   def name(locale: "en")
     self.class.find_localization(locale, id, "name") || super()
   end
 
   def full_name(locale: "en")
     ancestors.reverse.map { _1.name(locale:) }.push(name(locale:)).join(" > ")
+  end
+
+  def handleized_name
+    "#{id}_#{name.downcase.gsub(%r{[^a-z0-9\s\-_/\.\+#]}, "").gsub(/[\s\-\.]+/, "_")}"
   end
 
   def root?
@@ -182,6 +194,12 @@ class Category < ApplicationRecord
     [self] + descendants
   end
 
+  def next_child_id
+    largest_child_id = children.map { _1.id.split("-").last.to_i }.max || 0
+
+    "#{id}-#{largest_child_id + 1}"
+  end
+
   def related_attribute_friendly_ids=(ids)
     self.related_attributes = Attribute.where(friendly_id: ids)
   end
@@ -193,9 +211,13 @@ class Category < ApplicationRecord
     {
       "id" => id,
       "name" => name,
-      "children" => children.map(&:id),
-      "attributes" => related_attributes.reorder(:id).map(&:friendly_id),
+      "children" => children.sort_by(&:id_parts).map(&:id),
+      "attributes" => AlphanumericSorter.sort(related_attributes.map(&:friendly_id), other_last: true),
     }
+  end
+
+  def as_json_for_data_with_descendants
+    descendants_and_self.sort_by(&:id_parts).map(&:as_json_for_data)
   end
 
   #

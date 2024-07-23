@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative "../../config/environment"
+require_relative "../../config/cli"
+
+@cli = CLI.new
+@cli.parse!(ARGV)
+@cli.options_status
+
+puts "Dumping categories to data/categories/*.yml"
+
+Category.verticals.each do |vertical|
+  @cli.write_file!("data/categories/#{vertical.name_for_file}.yml") do |file|
+    file.write(vertical.as_json_for_data_with_descendants.to_yaml)
+  end
+end
