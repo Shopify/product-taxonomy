@@ -87,6 +87,15 @@ class CLI
     File.open(path, "w", &)
   end
 
+  def move_file!(target_from_root, new_path_from_root)
+    target = path_for(target_from_root)
+    path = path_for(new_path_from_root)
+    vputs("→ Moving `#{target}` to `#{path}`")
+
+    FileUtils.mkdir_p(File.dirname(path))
+    File.rename(target, path)
+  end
+
   private
 
   def new_or_forced?(path_from_root)
