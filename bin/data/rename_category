@@ -11,19 +11,19 @@ end
 @cli.parse!(ARGV)
 @cli.options_status
 
-fail "Missing required option: --name" unless @cli.options.name
-fail "Missing required option: --id" unless @cli.options.id
+raise "Missing required option: --name" unless @cli.options.name
+raise "Missing required option: --id" unless @cli.options.id
 
 category = Category.find_by(id: @cli.options.id)
-fail "Category `#{@cli.options.id}` not found" unless category
+raise "Category `#{@cli.options.id}` not found" unless category
 
 original_name = category[:name] # skip localizations
 original_handle = category.handleized_name
 category.update!(name: @cli.options.name)
 @cli.vputs("Updated category `#{category.id}` to `#{category[:name]}` from `#{original_name}` in DB")
 
-if category.handleized_name != original_handle
-  @cli.vputs("Renaming category file from `#{original_handle}.yml` to `#{category.handleized_name}.yml`")
+if category.root? && category.handleized_name != original_handle
+  @cli.vputs("Renaming category vertical file from `#{original_handle}.yml` to `#{category.handleized_name}.yml`")
   @cli.move_file!("data/categories/#{original_handle}.yml", "data/categories/#{category.handleized_name}.yml")
 end
 

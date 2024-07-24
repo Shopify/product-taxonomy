@@ -12,14 +12,14 @@ end
 @cli.parse!(ARGV)
 @cli.options_status
 
-fail "Missing required option: --name" unless @cli.options.name
-fail "Missing required option: --parent_id" unless @cli.options.parent_id
+raise "Missing required option: --name" unless @cli.options.name
+raise "Missing required option: --parent_id" unless @cli.options.parent_id
 
 parent = Category.find_by(id: @cli.options.parent_id)
-fail "Parent category <#{@cli.options.parent_id}> not found" unless parent
+raise "Parent category <#{@cli.options.parent_id}> not found" unless parent
 
 @cli.options.id ||= parent.next_child_id
-fail "Malformed ID <#{@cli.options.id}>" unless @cli.options.id.starts_with?(@cli.options.parent_id)
+raise "Malformed ID <#{@cli.options.id}>" unless @cli.options.id.starts_with?(@cli.options.parent_id)
 
 new_category = Category
   .create_with(id: @cli.options.id)
