@@ -31,11 +31,26 @@ class MappingValidationTest < ActiveSupport::TestCase
       all_shopify_category_ids = category_ids_from_taxonomy(mapping["input_taxonomy"])
       next if all_shopify_category_ids.nil?
 
+      excluded_category_ids = excluded_category_ids(
+        mapping["input_taxonomy"],
+        mapping["input_taxonomy"],
+        mapping["output_taxonomy"],
+      )
+
+      excluded_category_ids = if !excluded_category_ids.nil? &&
+          all_shopify_category_ids.first.include?("gid://shopify/TaxonomyCategory/")
+        excluded_category_ids.map { |id| "gid://shopify/TaxonomyCategory/#{id}" }.to_set
+      end
+
       shopify_category_ids_from_mappings_input = mapping["rules"]
         .map { _1.dig("input", "category", "id") }
         .to_set
 
-      unmapped_category_ids = all_shopify_category_ids - shopify_category_ids_from_mappings_input
+      unmapped_category_ids = if excluded_category_ids.nil?
+        all_shopify_category_ids - shopify_category_ids_from_mappings_input
+      else
+        all_shopify_category_ids - shopify_category_ids_from_mappings_input - excluded_category_ids
+      end
 
       next if unmapped_category_ids.empty?
 
@@ -107,5 +122,30 @@ class MappingValidationTest < ActiveSupport::TestCase
       end
       channel_category_ids
     end
+  end
+
+  def excluded_category_ids(excluded_taxonomy_version, mappings_input_taxonomy, mappings_output_taxonomy)
+    integration_version_path = if mappings_input_taxonomy.include?("shopify") &&
+        mappings_output_taxonomy.include?("shopify")
+      "shopify/2022-02"
+    elsif mappings_input_taxonomy.include?("shopify")
+      mappings_output_taxonomy
+    else
+      mappings_input_taxonomy
+    end
+
+    file_path = "data/integrations/#{integration_version_path}/excluded_taxonomy_for_mappings.yml"
+    return unless File.exist?(file_path)
+
+    excluded_taxonomy_for_mappings = CLI.new.parse_yaml(file_path)
+
+    excluded_category_ids = nil
+    excluded_taxonomy_for_mappings.each do |entry|
+      if entry["input_taxonomy"] == excluded_taxonomy_version
+        excluded_category_ids = entry["product_category_ids"]
+        break
+      end
+    end
+    excluded_category_ids
   end
 end
