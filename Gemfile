@@ -2,15 +2,22 @@
 
 source "https://rubygems.org"
 
+# core app
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 gem "sqlite3", "~> 1.7"
 gem "puma", ">= 5.0"
-gem "jekyll", "~> 4.3"
-gem "jekyll-redirect-from", "~> 0.16"
 gem "tzinfo-data", platforms: [:windows, :jruby]
 
 gem "bootsnap", require: false
 gem "rubocop-shopify", require: false
+
+# docs
+gem "jekyll", "~> 4.3"
+gem "jekyll-redirect-from", "~> 0.16"
+
+# command line
+gem "cli-ui", "~> 2.2"
+gem "tty-option", "~> 0.3"
 
 group :development, :test do
   gem "debug", platforms: [:mri, :windows]

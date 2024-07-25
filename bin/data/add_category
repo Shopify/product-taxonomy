@@ -2,34 +2,5 @@
 # frozen_string_literal: true
 
 require_relative "../../config/environment"
-require_relative "../../config/cli"
 
-@cli = CLI.new([:name, :id, :parent_id]) do |opts|
-  opts.on("-n NAME", "--name=NAME", String, "Name of new category")
-  opts.on("-p PARENT_ID", "--parent_id=PARENT_ID", String, "Parent ID")
-  opts.on("-i ID", "--id=ID", String, "Statically defined ID")
-end
-@cli.parse!(ARGV)
-@cli.options_status
-
-raise "Missing required option: --name" unless @cli.options.name
-raise "Missing required option: --parent_id" unless @cli.options.parent_id
-
-parent = Category.find_by(id: @cli.options.parent_id)
-raise "Parent category <#{@cli.options.parent_id}> not found" unless parent
-
-@cli.options.id ||= parent.next_child_id
-raise "Malformed ID <#{@cli.options.id}>" unless @cli.options.id.starts_with?(@cli.options.parent_id)
-
-new_category = Category
-  .create_with(id: @cli.options.id)
-  .find_or_create_by!(
-    name: @cli.options.name,
-    parent_id: @cli.options.parent_id,
-  )
-@cli.vputs("Created category `#{new_category.name}` with id=`#{new_category.id}` in DB")
-
-vertical = new_category.root
-@cli.write_file!("data/categories/#{vertical.handleized_name}.yml") do |file|
-  file.write(vertical.as_json_for_data_with_descendants.to_yaml)
-end
+NewDataCategoryCommand.run

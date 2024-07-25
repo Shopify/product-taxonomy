@@ -5,7 +5,10 @@ require "json"
 require "optparse"
 require "yaml"
 
-class CLI
+# TODO: Rename to ??? to avoid collision with `system` method
+class System
+  include Loggable
+
   ROOT = File.expand_path("..", __dir__)
   private_constant :ROOT
 
@@ -19,45 +22,22 @@ class CLI
     end
   end
 
-  attr_reader :options
+  attr_reader :force
 
-  def initialize(options = [], &parser_options)
-    @options = Struct.new(*options, :verbose, :force).new
-    @options.verbose = false
-    @options.force = false
-
-    @parser = OptionParser.new(&parser_options)
-    @parser.banner = "Usage: #{File.basename($PROGRAM_NAME)} [options]"
-    @parser.on("-v", "--[no-]verbose", "Run verbosely")
-    @parser.on("-f", "--force", "Overwrite files if they exist")
-    @parser.on_tail("-h", "--help", "Prints this help") do
-      puts @parser
-      exit
-    end
-  end
-
-  def parse!(input)
-    @parser.parse!(input, into: options)
-  end
-
-  def options_status
-    vputs("Options: #{options.to_h}")
-  end
-
-  def vputs(...)
-    puts(...) if options.verbose
+  def initialize(force: false)
+    @force = force
   end
 
   def read_file(path_from_root)
     path = path_for(path_from_root)
-    vputs("→ Reading `#{path}`")
+    logger.debug("→ Reading `#{path}`")
 
     File.read(path)
   end
 
   def glob(path_from_root)
     path = path_for(path_from_root)
-    vputs("→ Globbing `#{path}`")
+    logger.debug("→ Globbing `#{path}`")
 
     Dir.glob(path)
   end
@@ -75,31 +55,33 @@ class CLI
     if new_or_forced?(path)
       write_file!(path, &)
     else
-      vputs("→ Skipping `#{path}`")
+      logger.debug("→ Skipping `#{path}`")
     end
   end
 
-  def write_file!(path_from_root, &)
+  def write_file!(path_from_root, &file_block)
     path = path_for(path_from_root)
-    vputs("→ Writing `#{path}`")
+    logger.debug("→ Writing `#{path}`")
 
     FileUtils.mkdir_p(File.dirname(path))
-    File.open(path, "w", &)
+    File.open(path, "w", &file_block)
+    logger.success("Wrote `#{path}`")
   end
 
   def move_file!(target_from_root, new_path_from_root)
     target = path_for(target_from_root)
     path = path_for(new_path_from_root)
-    vputs("→ Moving `#{target}` to `#{path}`")
+    logger.debug("→ Moving `#{target}` to `#{path}`")
 
     FileUtils.mkdir_p(File.dirname(path))
     File.rename(target, path)
+    logger.success("Moved `#{target}` to `#{path}`")
   end
 
   private
 
   def new_or_forced?(path_from_root)
-    options.force || !File.exist?(path_for(path_from_root))
+    force || !File.exist?(path_for(path_from_root))
   end
 
   def path_for(from_root_or_path)

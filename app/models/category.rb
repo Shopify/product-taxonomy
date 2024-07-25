@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Category < ApplicationRecord
+  ID_REGEX = /\A[a-z]{2}(-\d+)*\z/
+
   default_scope { order(:name) }
 
   scope :verticals, -> { where(parent_id: nil) }
@@ -17,7 +19,7 @@ class Category < ApplicationRecord
 
   validates :id,
     presence: { strict: true },
-    format: { with: /\A[a-z]{2}(-\d+)*\z/ }
+    format: { with: ID_REGEX }
   validates :name,
     presence: { strict: true }
   validate :id_matches_depth
