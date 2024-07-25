@@ -1,6 +1,7 @@
 name: Taxonomy Tree Requests
 description: File a request to change the Taxonomy Tree
 title: "[Taxonomy Tree]: "
+assignees: ricardotejedorsanz,ornanatan
 labels:
   - "taxonomy-tree-requests"
 body:
@@ -8,16 +9,17 @@ body:
     id: taxonomy_field
     attributes:
       label: Taxonomy Field
-      multiple: false
+      multiple: true
       options:
-        - Category
-        - Attribute
-        - Value
+        - Categories
+        - Attributes
+        - Values
+        - Other
   - type: dropdown
     id: vertical
     attributes:
       label: Vertical
-      multiple: false
+      multiple: true
       options:
         - Animals & Pet Supplies
         - Apparel & Accessories
@@ -68,7 +70,7 @@ body:
     id: description
     attributes:
       label: Description
-      description: "Describe your experience in more detail. For example: 'I didn't find a suitable category or fitting attributes for my product, even though we have one for Baseball Caps.'"
+      description: "Tell us more about your experience and how these changes will improve our taxonomy. For example: 'I didn't find a suitable category or fitting attributes for my product, even though we have one for Baseball Caps.'"
     validations:
       required: true
   - type: textarea
@@ -82,6 +84,6 @@ body:
     id: merchant_store
     attributes:
       label: Merchant Store
-      description: If you'd like us to review your store or another merchant's store, please link it here.
+      description: Please share a link to your store or any other relevant link to help us review and support your request.
     validations:
       required: false
