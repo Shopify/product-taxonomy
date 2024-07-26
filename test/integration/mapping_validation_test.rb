@@ -31,33 +31,31 @@ class MappingValidationTest < ActiveSupport::TestCase
       all_shopify_category_ids = category_ids_from_taxonomy(mapping["input_taxonomy"])
       next if all_shopify_category_ids.nil?
 
-      excluded_category_ids = excluded_category_ids(
-        mapping["input_taxonomy"],
+      unmapped_category_ids = unmapped_category_ids_for_mappings(
         mapping["input_taxonomy"],
         mapping["output_taxonomy"],
       )
 
-      excluded_category_ids = if !excluded_category_ids.nil? &&
+      unmapped_category_ids = if !unmapped_category_ids.nil? &&
           all_shopify_category_ids.first.include?("gid://shopify/TaxonomyCategory/")
-        excluded_category_ids.map { |id| "gid://shopify/TaxonomyCategory/#{id}" }.to_set
+        unmapped_category_ids.map { |id| "gid://shopify/TaxonomyCategory/#{id}" }.to_set
       end
 
       shopify_category_ids_from_mappings_input = mapping["rules"]
         .map { _1.dig("input", "category", "id") }
         .to_set
 
-      unmapped_category_ids = if excluded_category_ids.nil?
-        all_shopify_category_ids - shopify_category_ids_from_mappings_input
-      else
-        all_shopify_category_ids - shopify_category_ids_from_mappings_input - excluded_category_ids
+      missing_category_ids = all_shopify_category_ids - shopify_category_ids_from_mappings_input
+      unless unmapped_category_ids.nil?
+        missing_category_ids -= unmapped_category_ids
       end
 
-      next if unmapped_category_ids.empty?
+      next if missing_category_ids.empty?
 
       shopify_categories_lack_mappings << {
         input_taxonomy: mapping["input_taxonomy"],
         output_taxonomy: mapping["output_taxonomy"],
-        unmapped_category_ids: unmapped_category_ids,
+        missing_category_ids: missing_category_ids.map { |id| id.split("/").last },
       }
     end
 
@@ -65,12 +63,50 @@ class MappingValidationTest < ActiveSupport::TestCase
       puts "Shopify Categories are missing mappings for the following integrations:"
       shopify_categories_lack_mappings.each_with_index do |mapping, index|
         puts ""
-        puts "[#{index + 1}] #{mapping[:input_taxonomy]} to #{mapping[:output_taxonomy]} (#{mapping[:unmapped_category_ids].size} missing)"
-        mapping[:unmapped_category_ids].each do |category_id|
+        puts "[#{index + 1}] #{mapping[:input_taxonomy]} to #{mapping[:output_taxonomy]} (#{mapping[:missing_category_ids].size} missing)"
+        mapping[:missing_category_ids].each do |category_id|
           puts " - #{category_id}"
         end
       end
       assert(shopify_categories_lack_mappings.empty?, "Shopify Categories are missing mappings.")
+    end
+  end
+
+  test "category IDs cannot be presented in the rules input and unmapped_product_category_ids at the same time" do
+    overlapped_category_ids_in_mappings = []
+    @mappings_json_data["mappings"].each do |mapping|
+      category_ids_from_mappings_input = mapping["rules"]
+        .map { _1.dig("input", "category", "id").split("/").last }
+        .to_set
+
+      unmapped_category_ids = unmapped_category_ids_for_mappings(
+        mapping["input_taxonomy"],
+        mapping["output_taxonomy"],
+      ).to_set
+
+      overlapped_category_ids = category_ids_from_mappings_input & unmapped_category_ids
+      next if overlapped_category_ids.empty?
+
+      overlapped_category_ids_in_mappings << {
+        input_taxonomy: mapping["input_taxonomy"],
+        output_taxonomy: mapping["output_taxonomy"],
+        overlapped_category_ids: overlapped_category_ids,
+      }
+    end
+
+    unless overlapped_category_ids_in_mappings.empty?
+      puts "Category IDs cannot be presented in both rules input and unmapped_product_category_ids at the same time for the following integrations:"
+      overlapped_category_ids_in_mappings.each_with_index do |mapping, index|
+        puts ""
+        puts "[#{index + 1}] #{mapping[:input_taxonomy]} to #{mapping[:output_taxonomy]} (#{mapping[:overlapped_category_ids].size} overlapped)"
+        mapping[:overlapped_category_ids].each do |category_id|
+          puts " - #{category_id}"
+        end
+      end
+      assert(
+        overlapped_category_ids_in_mappings.empty?,
+        "Category IDs cannot be presented in both rules input and unmapped_product_category_ids at the same time for the following integrations.",
+      )
     end
   end
 
@@ -124,28 +160,27 @@ class MappingValidationTest < ActiveSupport::TestCase
     end
   end
 
-  def excluded_category_ids(excluded_taxonomy_version, mappings_input_taxonomy, mappings_output_taxonomy)
-    integration_version_path = if mappings_input_taxonomy.include?("shopify") &&
+  def unmapped_category_ids_for_mappings(mappings_input_taxonomy, mappings_output_taxonomy)
+    integration_mapping_path = if mappings_input_taxonomy.include?("shopify") &&
         mappings_output_taxonomy.include?("shopify")
-      "shopify/2022-02"
+      integration_version = "shopify/2022-02"
+      if mappings_input_taxonomy == "shopify/2022-02"
+        "#{integration_version}/mappings/to_shopify.yml"
+      else
+        "#{integration_version}/mappings/from_shopify.yml"
+      end
     elsif mappings_input_taxonomy.include?("shopify")
-      mappings_output_taxonomy
+      integration_version = mappings_output_taxonomy
+      "#{integration_version}/mappings/from_shopify.yml"
     else
-      mappings_input_taxonomy
+      integration_version = mappings_input_taxonomy
+      "#{integration_version}/mappings/to_shopify.yml"
     end
 
-    file_path = "data/integrations/#{integration_version_path}/excluded_taxonomy_for_mappings.yml"
+    file_path = "data/integrations/#{integration_mapping_path}"
     return unless File.exist?(file_path)
 
-    excluded_taxonomy_for_mappings = CLI.new.parse_yaml(file_path)
-
-    excluded_category_ids = nil
-    excluded_taxonomy_for_mappings.each do |entry|
-      if entry["input_taxonomy"] == excluded_taxonomy_version
-        excluded_category_ids = entry["product_category_ids"]
-        break
-      end
-    end
-    excluded_category_ids
+    mappings = CLI.new.parse_yaml(file_path)
+    mappings["unmapped_product_category_ids"] if mappings.key?("unmapped_product_category_ids")
   end
 end
