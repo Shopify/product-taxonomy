@@ -43,7 +43,7 @@ This repository is the home of Shopify's Standard Product Taxonomy. It houses th
 You can think of this repository serving 3 primary users:
 
 1. **Integrators**: Those who integrate the taxonomy into other systems. You want **stable distribution files**.
-2. **Taxonomists**: Those who want to evolve the taxonomy itself. You want to work with the **source-of-truth data files**.
+2. **Taxonomists**: Those who want to evolve the taxonomy itself. You can work directly with the **source-of-truth data files** or create an issue from a template.
 3. **Developers**: Those who want to evolve _how this ETL pipeline_ works, or add richer tooling for other users. You work with the **application files**.
 
 ### 🧩 1. Integrators: How to integrate with the taxonomy
@@ -60,7 +60,7 @@ To make it easier to integrate with the taxonomy, we have also included a set of
 
 Everything comes from the source-of-truth files in [`data/`](./data).
 
-You may submit PRs against these files to change the taxonomy itself.
+You may submit PRs against these files to change the taxonomy itself. Alternatively, you can use a [template](https://github.com/Shopify/product-taxonomy/issues/new?labels=taxonomy-tree-requests&projects=&template=taxonomy-tree-requests.yml&title=%5BTaxonomy+Tree%5D%3A+) to create an issue describing your suggested changes.
 
 If you make changes to any files in [`data/`](./data), you'll need to update the distribution files. There are two ways:
 1. Make a PR comment of `/generate_dist` to have CI commit the changes for you 🤖
@@ -128,7 +128,7 @@ This is a rails app after all, so we'll give a map of the _novel_ pieces of our 
 
 ## 🧑‍💻 Contributing
 
-We welcome contributions! Before we can merge any changes you submit, you'll need to sign the Shopify CLA (a friendly robot will help when you open your first PR 🤖).
+We welcome contributions! Before we can merge any changes you submit via PR, you'll need to sign the Shopify CLA (a friendly robot will help when you open your first PR 🤖).
 
 ## 📅 Releases
 
