@@ -58,9 +58,9 @@ To make it easier to integrate with the taxonomy, we have also included a set of
 
 ### 🧑🏼‍🏫 2. Taxonomists: How to make changes to the taxonomy
 
-Everything comes from the source-of-truth files in [`data/`](./data).
+Submit a [taxonomy tree change request](https://github.com/Shopify/product-taxonomy/issues/new?labels=taxonomy-tree-requests&projects=&template=taxonomy-tree-requests.yml&title=%5BTaxonomy+Tree%5D%3A+) to give us insight and evolve the taxonomy. This is the simplest way to effect change. 
 
-You may submit PRs against these files to change the taxonomy itself. Alternatively, you can use a [template](https://github.com/Shopify/product-taxonomy/issues/new?labels=taxonomy-tree-requests&projects=&template=taxonomy-tree-requests.yml&title=%5BTaxonomy+Tree%5D%3A+) to create an issue describing your suggested changes.
+Alternatively, you may submit PRs directly yourself against the source-of-truth files in [`data/`](./data).
 
 If you make changes to any files in [`data/`](./data), you'll need to update the distribution files. There are two ways:
 1. Make a PR comment of `/generate_dist` to have CI commit the changes for you 🤖
