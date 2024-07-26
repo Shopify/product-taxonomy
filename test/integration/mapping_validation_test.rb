@@ -82,9 +82,10 @@ class MappingValidationTest < ActiveSupport::TestCase
       unmapped_category_ids = unmapped_category_ids_for_mappings(
         mapping["input_taxonomy"],
         mapping["output_taxonomy"],
-      ).to_set
+      )
+      next if unmapped_category_ids.nil?
 
-      overlapped_category_ids = category_ids_from_mappings_input & unmapped_category_ids
+      overlapped_category_ids = category_ids_from_mappings_input & unmapped_category_ids.to_set
       next if overlapped_category_ids.empty?
 
       overlapped_category_ids_in_mappings << {
@@ -180,7 +181,7 @@ class MappingValidationTest < ActiveSupport::TestCase
     file_path = "data/integrations/#{integration_mapping_path}"
     return unless File.exist?(file_path)
 
-    mappings = CLI.new.parse_yaml(file_path)
+    mappings = @sys.parse_yaml(file_path)
     mappings["unmapped_product_category_ids"] if mappings.key?("unmapped_product_category_ids")
   end
 end
