@@ -3,9 +3,9 @@
 require_relative "../test_helper"
 
 class MappingValidationTest < ActiveSupport::TestCase
-  include Minitest::Hooks
   def setup
-    @mappings_json_data = CLI.new.parse_json("dist/en/integrations/all_mappings.json")
+    @sys = System.new
+    @mappings_json_data = @sys.parse_json("dist/en/integrations/all_mappings.json")
   end
 
   test "category IDs in mappings are valid" do
@@ -89,10 +89,8 @@ class MappingValidationTest < ActiveSupport::TestCase
   end
 
   def category_ids_from_taxonomy(input_or_output_taxonomy)
-    cli = CLI.new
-
     if input_or_output_taxonomy.include?("shopify") && !input_or_output_taxonomy.include?("shopify/2022-02")
-      categories_json_data = cli.parse_json("dist/en/categories.json")
+      categories_json_data = @sys.parse_json("dist/en/categories.json")
       shopify_category_ids = Set.new
       categories_json_data["verticals"].each do |vertical|
         vertical["categories"].each do |category|
@@ -103,7 +101,7 @@ class MappingValidationTest < ActiveSupport::TestCase
     else
       channel_category_ids = Set.new
       file_path = "data/integrations/#{input_or_output_taxonomy}/full_names.yml"
-      channel_taxonomy = sys.parse_yaml(file_path)
+      channel_taxonomy = @sys.parse_yaml(file_path)
       channel_taxonomy.each do |entry|
         channel_category_ids.add(entry["id"].to_s)
       end
