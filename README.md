@@ -43,7 +43,7 @@ This repository is the home of Shopify's Standard Product Taxonomy. It houses th
 You can think of this repository serving 3 primary users:
 
 1. **Integrators**: Those who integrate the taxonomy into other systems. You want **stable distribution files**.
-2. **Taxonomists**: Those who want to evolve the taxonomy itself. You can work directly with the **source-of-truth data files** or create an issue from a template.
+2. **Taxonomists**: Those who want to evolve the taxonomy itself. Submit a change request or work directly with the **source-of-truth data files** themselves.
 3. **Developers**: Those who want to evolve _how this ETL pipeline_ works, or add richer tooling for other users. You work with the **application files**.
 
 ### 🧩 1. Integrators: How to integrate with the taxonomy
