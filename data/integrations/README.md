@@ -38,6 +38,9 @@ dist/{locale}/integrations/
 ### Mappings
 The primary concern of integrations are mappings. Mappings are a set of rules that help us convert to and from the Shopify taxonomy and the taxonomy of that integration.
 
+#### Use tooling to generate taxonomy mappings
+Automate your taxonomy mapping with this tool. Install dependencies using `make setup-mapping-generation-tool`, then run `bin/generate_missing_mappings` to create mappings. It uses AI to assist in generating accurate mappings and reducing manual effort.
+
 #### Examples of mapping rules
 
 ```yaml

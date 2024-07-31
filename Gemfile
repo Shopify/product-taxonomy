@@ -20,8 +20,7 @@ gem "cli-ui", "~> 2.2"
 gem "tty-option", "~> 0.3"
 
 # generate taxonomy mappings
-gem "qdrant-ruby"
-gem "bigdecimal"
+gem "qdrant-ruby", require: "qdrant"
 gem "ruby-openai"
 
 group :development, :test do
