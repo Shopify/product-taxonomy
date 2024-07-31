@@ -2,11 +2,6 @@
 # frozen_string_literal: true
 
 require_relative "../config/environment"
-require "qdrant"
-require "bigdecimal"
-require "openai"
-require "csv"
-require "yaml"
 
 class TaxonomyMapper
   MAX_RETRIES = 3
@@ -21,8 +16,7 @@ class TaxonomyMapper
   end
 
   def run
-    mappings_json_data = System.new.parse_json("dist/en/integrations/all_mappings.json")
-    shopify_categories_missing_mapping_groups = find_unmapped_shopify_categories(mappings_json_data)
+    shopify_categories_missing_mapping_groups = find_unmapped_shopify_categories
     return if shopify_categories_missing_mapping_groups.empty?
 
     shopify_categories_missing_mapping_groups.each do |missing_mapping_group|
@@ -54,59 +48,29 @@ class TaxonomyMapper
     puts "Started Qdrant server in the background with PID #{pid}."
   end
 
-  def find_unmapped_shopify_categories(mappings_json_data)
+  def find_unmapped_shopify_categories
     shopify_categories_lack_mappings = []
-    mappings_json_data["mappings"].each do |mapping|
-      next unless mapping["input_taxonomy"] == LATEST_SHOPIFY_VERSION
-
-      all_shopify_category_ids = category_ids_from_taxonomy(mapping["input_taxonomy"])
-      next if all_shopify_category_ids.nil?
-
-      shopify_category_ids_from_mappings_input = mapping["rules"]
-        .map { |rule| rule.dig("input", "category", "id") }
-        .to_set
-
+    all_shopify_category_ids = Set.new(Category.all.pluck(:id))
+    MappingRule.where(input_version: LATEST_SHOPIFY_VERSION).group_by(&:output_version).each do |output_version, mappings|
+      shopify_category_ids_from_mappings_input = Set.new(
+        mappings.map do |mapping|
+          mapping.input.product_category_id.split("/").last
+        end,
+      )
       unmapped_category_ids = all_shopify_category_ids - shopify_category_ids_from_mappings_input
-      unmapped_category_ids.map! { |id| id.split("/").last }
-      category_ids_full_names = get_category_full_names(unmapped_category_ids)
-
+      category_ids_full_names = unmapped_category_ids.sort.map do |id|
+        category_full_name = Category.find(id)&.full_name
+        [id, category_full_name] if category_full_name
+      end.compact.to_h
       next if category_ids_full_names.empty?
 
       shopify_categories_lack_mappings << {
-        input_taxonomy: mapping["input_taxonomy"],
-        output_taxonomy: mapping["output_taxonomy"],
+        input_taxonomy: mappings.first.input_version,
+        output_taxonomy: output_version,
         category_ids_full_names: category_ids_full_names,
       }
     end
     shopify_categories_lack_mappings
-  end
-
-  def category_ids_from_taxonomy(input_or_output_taxonomy)
-    if input_or_output_taxonomy.include?("shopify") && !input_or_output_taxonomy.include?("shopify/2022-02")
-      shopify_category_ids_from_json
-    else
-      channel_category_ids_from_yaml(input_or_output_taxonomy)
-    end
-  end
-
-  def shopify_category_ids_from_json
-    categories_json_data = System.new.parse_json("dist/en/categories.json")
-    categories_json_data["verticals"].flat_map do |vertical|
-      vertical["categories"].map { |category| category["id"] }
-    end.to_set
-  end
-
-  def channel_category_ids_from_yaml(taxonomy)
-    file_path = "data/integrations/#{taxonomy}/full_names.yml"
-    channel_taxonomy = System.new.parse_yaml(file_path)
-    channel_taxonomy.map { |entry| entry["id"].to_s }.to_set
-  end
-
-  def get_category_full_names(category_ids)
-    category_ids.each_with_object({}) do |id, hash|
-      category_full_name = Category.find(id)&.full_name
-      hash[id] = category_full_name if category_full_name
-    end
   end
 
   def load_embedding_data(output_taxonomy)
