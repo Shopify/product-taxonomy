@@ -124,6 +124,8 @@ class SeedLocalCommand < ApplicationCommand
   # TODO: this needs to be simplified
   def mapping_rules_from(data)
     mapping_rules = []
+    shopify_taxonomy_version = "shopify/" + sys.read_file("VERSION").strip
+
     data.each do |file|
       logger.debug("→ #{file}")
       from_shopify = File.basename(file, ".*").split("_")[0] == "from"
@@ -143,6 +145,18 @@ class SeedLocalCommand < ApplicationCommand
         input_type, output_type = output_type, input_type
       end
       rules = raw_mappings["rules"]
+      input_taxonomy = if raw_mappings["input_taxonomy"] == "shopify"
+        shopify_taxonomy_version
+      else
+        raw_mappings["input_taxonomy"]
+      end
+
+      output_taxonomy = if raw_mappings["output_taxonomy"] == "shopify"
+        shopify_taxonomy_version
+      else
+        raw_mappings["output_taxonomy"]
+      end
+
       rules.each do |rule|
         input_product_category_id = rule["input"]["product_category_id"]
         input_product_category_full_name = if from_shopify
@@ -180,8 +194,8 @@ class SeedLocalCommand < ApplicationCommand
           output_id: output_product.id,
           input_type: input_type,
           output_type: output_type,
-          input_version: raw_mappings["input_taxonomy"],
-          output_version: raw_mappings["output_taxonomy"],
+          input_version: input_taxonomy,
+          output_version: output_taxonomy,
         }
       end
     end
