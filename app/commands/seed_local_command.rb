@@ -13,8 +13,14 @@ class SeedLocalCommand < ApplicationCommand
     permit ["taxonomy", "integrations"]
   end
 
+  option :version do
+    desc "Distribution version"
+    short "-V"
+    long "--version string"
+  end
+
   def execute
-    params[:targets] ||= ["taxonomy", "integrations"]
+    setup_options
     frame("Seeding database") do
       import_taxonomy if params[:targets].include?("taxonomy")
       import_integrations if params[:targets].include?("integrations")
@@ -23,6 +29,11 @@ class SeedLocalCommand < ApplicationCommand
   end
 
   private
+
+  def setup_options
+    params[:targets] ||= ["taxonomy", "integrations"]
+    params[:version] ||= sys.read_file("VERSION").strip
+  end
 
   def import_taxonomy
     frame("Importing taxonomy") do
@@ -124,7 +135,7 @@ class SeedLocalCommand < ApplicationCommand
   # TODO: this needs to be simplified
   def mapping_rules_from(data)
     mapping_rules = []
-    shopify_taxonomy_version = "shopify/" + sys.read_file("VERSION").strip
+    shopify_taxonomy_version = "shopify/" + params[:version]
 
     data.each do |file|
       logger.debug("→ #{file}")
