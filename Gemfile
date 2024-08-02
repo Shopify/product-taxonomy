@@ -16,8 +16,8 @@ gem "jekyll", "~> 4.3"
 gem "jekyll-redirect-from", "~> 0.16"
 
 # command line
-gem "cli-ui", "~> 2.2"
-gem "tty-option", "~> 0.3"
+gem "cli-ui", "~> 2.2", require: false
+gem "tty-option", "~> 0.3", require: false
 
 # generate taxonomy mappings
 gem "qdrant-ruby", require: "qdrant"
