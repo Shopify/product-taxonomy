@@ -9,7 +9,8 @@ _category_reference: {
 	name!: string
 }
 
-version!: string & =~"^\\d+.\\d+.\\d+$"
+#version_regex: "^\\d{4}-\\d{2}(-unstable)?$"
+version!: string & =~#version_regex
 verticals!: [...{
 	name!:   string
 	prefix!: string & =~"^[a-zA-Z]{2}$"
