@@ -2,13 +2,5 @@
 # frozen_string_literal: true
 
 require_relative "../../config/environment"
-require_relative "../../lib/system"
 
-sys = System.new
-sys.logger.info("Dumping categories to data/categories/*.yml")
-
-Category.verticals.each do |vertical|
-  sys.write_file!("data/categories/#{vertical.handleized_name}.yml") do |file|
-    file.write(vertical.as_json_for_data_with_descendants.to_yaml)
-  end
-end
+Source::DumpVerticalCommand.run
