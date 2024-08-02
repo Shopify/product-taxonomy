@@ -40,8 +40,6 @@ class GenerateMissingMappingsCommand < ApplicationCommand
   end
 
   def execute
-    @embeddings = {}
-
     setup_options
     frame("Generating missing mappings") do
       logger.headline("Target Shopify version: #{params[:version]}")
@@ -72,52 +70,50 @@ class GenerateMissingMappingsCommand < ApplicationCommand
         # TODO: Where is #product_category_id defined? AFAICT #input returns a hash
         found_shopify_ids = Set.new(mappings.map { _1.input.product_category_id.split("/").last })
         unmapped_ids = all_shopify_ids - found_shopify_ids
-        category_ids_full_names = Category.where(id: unmapped_ids).pluck(:id, :full_name).to_h
-        next if category_ids_full_names.empty?
+        id_name_map = Category.where(id: unmapped_ids).pluck(:id, :full_name).to_h
+        next if id_name_map.empty?
 
-        { output_taxonomy:, category_ids_full_names: }
+        { output_taxonomy:, id_name_map: }
       end
     end
   end
 
   def generate_missing_mappings
     frame("Generating missing mappings") do
-      @unmapped_categories.each do |unmapped_category_group|
-        output_taxonomy = unmapped_category_group[:output_taxonomy]
-        index_name = output_taxonomy.gsub(%r{[/\-]}, "_")
+      @unmapped_categories.each do |unmapped_category|
+        output_taxonomy = unmapped_category[:output_taxonomy]
 
         frame("Generating mappings to #{output_taxonomy}") do
           embedding_data = load_embedding_data(output_taxonomy)
-          index_embedding_data(embedding_data:, index_name:)
-          generate_and_evaluate_mappings_for_group(
-            unmapped_category_group:,
-            index_name:,
-          )
+          embedding_collection = output_taxonomy.gsub(%r{[/\-]}, "_")
+
+          index_embedding_data(embedding_data:, embedding_collection:)
+          generate_and_evaluate_mappings_for_group(unmapped_category:, embedding_collection:, )
         end
       end
     end
   end
 
   def load_embedding_data(output_taxonomy)
-    spinner("Loading embeddings for #{output_taxonomy}") do |sp|
+    spinner("Loading embeddings") do |sp|
       files = sys.glob("data/integrations/#{output_taxonomy}/embeddings/_*.txt")
-      sp.update_title("Parsing #{files.size}} parts for #{output_taxonomy}")
+      sp.update_title("Parsing #{files.size}} parts")
 
       files.each_with_object({}) do |partition, embedding_data|
         sys.read_file(partition).each_line do |line|
           word, vector_str = line.chomp.split(":", 2)
           vector = vector_str.split(", ").map { BigDecimal(_1).to_f }
           embedding_data[word] = vector
-        end.tap { sp.update_title("Loaded embeddings for #{output_taxonomy}") }
+        end.tap { sp.update_title("Loaded embeddings") }
       end
     end
   end
 
-  def index_embedding_data(embedding_data:, index_name:)
-    spinner("Indexing embeddings for #{index_name}") do
-      qdrant_client.collections.delete(collection_name: index_name)
+  def index_embedding_data(embedding_data:, embedding_collection:)
+    spinner("Indexing embeddings") do |sp|
+      qdrant_client.collections.delete(collection_name: embedding_collection)
       qdrant_client.collections.create(
-        collection_name: index_name,
+        collection_name: embedding_collection,
         vectors: { size: 1536, distance: "Cosine" },
       )
 
@@ -125,42 +121,40 @@ class GenerateMissingMappingsCommand < ApplicationCommand
         {
           id: index + 1,
           vector: value,
-          payload: { index_name => key },
+          payload: { embedding_collection => key },
         }
       end
 
       points.each_slice(100) do |batch|
         qdrant_client.points.upsert(
-          collection_name: index_name,
+          collection_name: embedding_collection,
           points: batch,
         )
       end
+      sp.update_title("Indexed embeddings")
     end
   end
 
-  def generate_and_evaluate_mappings_for_group(
-    unmapped_category_group:,
-    index_name:
-  )
-    spinner("Generating and evaluating mappings for each Shopify category") do
-      destination_taxonomy_ids_by_full_name = load_destination_taxonomy_ids(unmapped_category_group[:output_taxonomy])
-      mapping_file_path = "data/integrations/#{unmapped_category_group[:output_taxonomy]}/mappings/from_shopify.yml"
-      mapping_data = YAML.load_file(mapping_file_path)
-
+  def generate_and_evaluate_mappings_for_group(unmapped_category:, embedding_collection:)
+    frame("Generating and evaluating mappings for each Shopify category") do
+      destination_name_id_map = sys.parse_yaml(full_names_path(unmapped_category)).slice("full_name", "id")
+      mapping_data = sys.parse_yaml(mapping_file_path(unmapped_category))
       disagree_messages = []
-      unmapped_category_group[:category_ids_full_names].each do |source_category_id, source_category_name|
+
+      unmapped_category[:id_name_map].each do |source_category_id, source_category_name|
         generated_mapping = generate_mapping(
           source_category_id:,
           source_category_name:,
-          index_name:,
-          destination_taxonomy_ids_by_full_name:,
+          embedding_collection:,
+          destination_name_id_map:,
         )
+
         mapping_data["rules"] << generated_mapping[:new_entry]
         disagree_messages << generated_mapping[:mapping_to_be_graded] if generated_mapping[:grading_result] == "No"
       end
 
       mapping_data["rules"].sort_by! { |rule| rule["input"]["product_category_id"] }
-      sys.write_file(mapping_file_path) do |file|
+      sys.write_file(mapping_file_path(unmapped_category)) do |file|
         file.write(mapping_data.to_yaml)
       end
 
@@ -168,50 +162,75 @@ class GenerateMissingMappingsCommand < ApplicationCommand
     end
   end
 
-  def load_destination_taxonomy_ids(output_taxonomy)
-    logger.debug("Loading destination taxonomy IDs for #{output_taxonomy}")
-    YAML.load_file("data/integrations/#{output_taxonomy}/full_names.yml").each_with_object({}) do |category, hash|
-      hash[category["full_name"]] = category["id"]
-    end
+  def full_names_path(unmapped_category)
+    "data/integrations/#{unmapped_category[:output_taxonomy]}/full_names.yml"
   end
 
-  def generate_mapping(
-    source_category_id:,
-    source_category_name:,
-    index_name:,
-    destination_taxonomy_ids_by_full_name:
-  )
-    logger.debug("Generating mapping for #{source_category_name}")
-    category_embedding = get_embeddings(source_category_name)
-    top_candidate = search_top_candidate(query_embedding: category_embedding, index_name:)
-    destination_category_id = destination_taxonomy_ids_by_full_name[top_candidate]
+  def mapping_file_path(unmapped_category)
+    "data/integrations/#{unmapped_category[:output_taxonomy]}/mappings/from_shopify.yml"
+  end
 
-    new_entry = {
-      "input" => { "product_category_id" => source_category_id },
-      "output" => { "product_category_id" => [destination_category_id.to_s] },
-    }
+  def generate_mapping(source_category_id:, source_category_name:, embedding_collection:, destination_name_id_map: )
+    category_embedding = request_embeddings(source_category_name)
+    top_candidate = search_top_candidate(query_embedding: category_embedding, embedding_collection:)
 
+    destination_category_id = destination_name_id_map[top_candidate].to_s
     mapping_to_be_graded = {
       from_category_id: source_category_id,
       from_category: source_category_name,
-      to_category_id: destination_category_id.to_s,
+      to_category_id: destination_category_id,
       to_category: top_candidate,
     }
-
-    logger.debug("Grading mapping for #{source_category_name} -> #{top_candidate}")
     grading_result = grade_taxonomy_mapping(mapping_to_be_graded)
 
-    { new_entry: new_entry, mapping_to_be_graded: mapping_to_be_graded, grading_result: grading_result }
+    new_entry = {
+      "input" => { "product_category_id" => source_category_id },
+      "output" => { "product_category_id" => [destination_category_id] },
+    }
+
+    { new_entry:, mapping_to_be_graded:, grading_result: }
   end
 
-  def search_top_candidate(query_embedding:, index_name:)
+  def request_embeddings(category_name)
+    spinner.spin("Generating mapping for #{category_name}") do |sp|
+      with_retries do
+        response = openai_client.embeddings(
+          parameters: {
+            model: EMBEDDING_MODEL,
+            input: category_name,
+          },
+        )
+        response.dig("data", 0, "embedding")
+      end
+    end
+  end
+
+  def search_top_candidate(query_embedding:, embedding_collection:)
     result = qdrant_client.points.search(
-      collection_name: index_name,
+      collection_name: embedding_collection,
       vector: query_embedding,
       with_payload: true,
       limit: 1,
     )
-    result["result"].first["payload"][index_name]
+    result["result"].first["payload"][embedding_collection]
+  end
+
+  def grade_taxonomy_mapping(mapping)
+    spinner.spin("Grading mapping for #{mapping[:from_category]} -> #{mapping[:to_category]}") do |sp|
+      with_retries do
+        response = openai_client.chat(
+          parameters: {
+            model: MAPPING_GRADER_GPT_MODEL,
+            messages: [
+              { role: "system", content: SYSTEM_PROMPT },
+              { role: "user", content: [mapping].to_json },
+            ],
+            temperature: 0,
+          },
+        )
+        sys.parse_json(response.dig("choices", 0, "message", "content")).first["agree_with_mapping"]
+      end
+    end
   end
 
   def write_disagree_messages(disagree_messages)
@@ -221,34 +240,6 @@ class GenerateMissingMappingsCommand < ApplicationCommand
         mapping.each { |key, value| file.puts "#{key}:#{value}" }
         file.puts
       end
-    end
-  end
-
-  def grade_taxonomy_mapping(mapping)
-    with_retries do
-      response = openai_client.chat(
-        parameters: {
-          model: MAPPING_GRADER_GPT_MODEL,
-          messages: [
-            { role: "system", content: SYSTEM_PROMPT },
-            { role: "user", content: [mapping].to_json },
-          ],
-          temperature: 0,
-        },
-      )
-      JSON.parse(response.dig("choices", 0, "message", "content")).first["agree_with_mapping"]
-    end
-  end
-
-  def get_embeddings(text)
-    with_retries do
-      response = openai_client.embeddings(
-        parameters: {
-          model: EMBEDDING_MODEL,
-          input: text,
-        },
-      )
-      response.dig("data", 0, "embedding")
     end
   end
 
@@ -330,7 +321,7 @@ class GenerateMissingMappingsCommand < ApplicationCommand
 
   def qdrant_client
     @qdrant_client ||= begin
-      ensure_qdrant_server_running
+      ensure_qdrant_server_running # TODO: Remove once handled by makefile
       Qdrant::Client.new(url: params[:qdrant_url])
     end
   end
