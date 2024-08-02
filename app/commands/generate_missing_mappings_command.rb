@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class GenerateMissingMappingsCommand < ApplicationCommand
-  MAX_RETRIES = 3
-  QDRANT_PORT = 6333
+  UNSTABLE = "unstable"
   EMBEDDING_MODEL = "text-embedding-3-small"
   MAPPING_GRADER_GPT_MODEL = "gpt-4"
 
@@ -10,59 +9,108 @@ class GenerateMissingMappingsCommand < ApplicationCommand
     no_command
   end
 
-  def execute
-    frame("Generating missing mappings") do
-      find_unmapped_categories
-      return if @unmapped_category_groups.empty?
+  environment :openai_api_key do
+    desc "OpenAI API key for mappings generation"
+    required
+  end
 
-      generate_missing_mappings_for_groups
+  environment :openai_url do
+    desc "OpenAI API URL for mappings generation"
+    default "https://openai-proxy.shopify.ai/v1" # TODO: we should probably not have this in this repo
+  end
+
+  environment :qdrant_url do
+    desc "Qdrant API URL for embeddings search"
+    default "http://localhost:6333"
+  end
+
+  option :shopify_version do
+    desc "Target shopify taxonomy version"
+    short "-V"
+    long "--version string"
+    default UNSTABLE
+  end
+
+  option :retries do
+    desc "Number of retries for OpenAI API"
+    short "-r"
+    long "--retries integer"
+    default 3
+    convert :to_i
+  end
+
+  def execute
+    @embeddings = {}
+
+    setup_options
+    frame("Generating missing mappings") do
+      logger.headline("Target Shopify version: #{params[:version]}")
+      logger.headline("OpenAI url: #{params[:openai_url]}")
+      logger.headline("Qdrant url: #{params[:qdrant_url]}")
+
+      find_unmapped_categories
+      return if @unmapped_categories.empty?
+
+      generate_missing_mappings
     end
   end
 
   private
 
+  def setup_options
+    params[:shopify_version] ||= sys.read_file("VERSION").strip
+  end
+
   def find_unmapped_categories
-    spinner("Searching Shopify categories that lack mappings") do
-      @unmapped_category_groups = []
-      all_shopify_category_ids = Set.new(Category.all.pluck(:id))
-      latest_shopify_version = "shopify/#{sys.read_file("VERSION").strip}"
-      MappingRule.where(
-        input_version: latest_shopify_version,
-      ).group_by(&:output_version).each do |output_version, mappings|
-        shopify_category_ids_from_mappings_input = Set.new(
-          mappings.map do |mapping|
-            mapping.input.product_category_id.split("/").last
-          end,
-        )
-        unmapped_category_ids = all_shopify_category_ids - shopify_category_ids_from_mappings_input
-        category_ids_full_names = unmapped_category_ids.sort.map do |id|
-          category_full_name = Category.find(id)&.full_name
-          [id, category_full_name] if category_full_name
-        end.compact.to_h
+    spinner("Finding Shopify categories that are unmapped") do
+      all_shopify_ids = Set.new(Category.all.pluck(:id))
+      mappings_by_output = MappingRule
+        .where(input_version: "shopify/#{params[:shopify_version]}")
+        .group_by(&:output_version)
+      @unmapped_categories = mappings_by_output.filter_map do |output_taxonomy, mappings|
+        # Can this be an ActiveRecord call? Should it?
+        # TODO: Where is #product_category_id defined? AFAICT #input returns a hash
+        found_shopify_ids = Set.new(mappings.map { _1.input.product_category_id.split("/").last })
+        unmapped_ids = all_shopify_ids - found_shopify_ids
+        category_ids_full_names = Category.where(id: unmapped_ids).pluck(:id, :full_name).to_h
         next if category_ids_full_names.empty?
 
-        @unmapped_category_groups << {
-          input_taxonomy: mappings.first.input_version,
-          output_taxonomy: output_version,
-          category_ids_full_names: category_ids_full_names,
-        }
+        { output_taxonomy:, category_ids_full_names: }
+      end
+    end
+  end
+
+  def generate_missing_mappings
+    frame("Generating missing mappings") do
+      @unmapped_categories.each do |unmapped_category_group|
+        output_taxonomy = unmapped_category_group[:output_taxonomy]
+        index_name = output_taxonomy.gsub(%r{[/\-]}, "_")
+
+        frame("Generating mappings to #{output_taxonomy}") do
+          embedding_data = load_embedding_data(output_taxonomy)
+          index_embedding_data(embedding_data:, index_name:)
+          generate_and_evaluate_mappings_for_group(
+            unmapped_category_group:,
+            index_name:,
+          )
+        end
       end
     end
   end
 
   def load_embedding_data(output_taxonomy)
-    embeddings = nil
-    spinner("Loading embeddings for #{output_taxonomy}") do
+    spinner("Loading embeddings for #{output_taxonomy}") do |sp|
       files = sys.glob("data/integrations/#{output_taxonomy}/embeddings/_*.txt")
-      embeddings = files.each_with_object({}) do |partition, embedding_data|
+      sp.update_title("Parsing #{files.size}} parts for #{output_taxonomy}")
+
+      files.each_with_object({}) do |partition, embedding_data|
         sys.read_file(partition).each_line do |line|
           word, vector_str = line.chomp.split(":", 2)
-          vector = vector_str.split(", ").map { |num| BigDecimal(num).to_f }
+          vector = vector_str.split(", ").map { BigDecimal(_1).to_f }
           embedding_data[word] = vector
-        end
+        end.tap { sp.update_title("Loaded embeddings for #{output_taxonomy}") }
       end
     end
-    embeddings
   end
 
   def index_embedding_data(embedding_data:, index_name:)
@@ -127,22 +175,6 @@ class GenerateMissingMappingsCommand < ApplicationCommand
     end
   end
 
-  def generate_missing_mappings_for_groups
-    @unmapped_category_groups.each do |unmapped_category_group|
-      input_taxonomy = unmapped_category_group[:input_taxonomy]
-      output_taxonomy = unmapped_category_group[:output_taxonomy]
-      index_name = output_taxonomy.gsub(%r{[/\-]}, "_")
-      frame("Generating mappings for #{input_taxonomy} -> #{output_taxonomy}") do
-        embedding_data = load_embedding_data(output_taxonomy)
-        index_embedding_data(embedding_data:, index_name:)
-        generate_and_evaluate_mappings_for_group(
-          unmapped_category_group:,
-          index_name:,
-        )
-      end
-    end
-  end
-
   def generate_mapping(
     source_category_id:,
     source_category_name:,
@@ -198,7 +230,7 @@ class GenerateMissingMappingsCommand < ApplicationCommand
         parameters: {
           model: MAPPING_GRADER_GPT_MODEL,
           messages: [
-            { role: "system", content: system_prompts_of_taxonomy_mapping_grader },
+            { role: "system", content: SYSTEM_PROMPT },
             { role: "user", content: [mapping].to_json },
           ],
           temperature: 0,
@@ -226,88 +258,89 @@ class GenerateMissingMappingsCommand < ApplicationCommand
       yield
     rescue StandardError => e
       retries += 1
-      if retries <= MAX_RETRIES
-        logger.debug("Received error: #{e.message}. Retrying (#{retries}/#{MAX_RETRIES})...")
+      if retries <= params[:retries]
+        logger.debug("Received error: #{e.message}. Retrying (#{retries}/#{params[:retries]]})...")
         sleep(1)
         retry
       else
-        logger.fatal("Failed after #{MAX_RETRIES} retries.")
+        logger.fatal("Failed after #{params[:retries]]} retries.")
         raise
       end
     end
   end
 
-  def system_prompts_of_taxonomy_mapping_grader
-    <<~CONTEXT
-      You are a taxonomy mapping expert who evaluate the accuracy of product category mappings between two taxonomies.
-      Your task is to review and grade the accuracy of the mappings, Yes or No, based on the following criteria:
-      1. Mark a mapping as Yes, i.e. correct, if two categories of a mapping are highly relevant to each other and similar
-        in terms of product type, function, or purpose.
-        For example:
-          - "Apparel & Accessories" and "Clothing, Shoes & Jewelry"
-          - "Apparel & Accessories > Clothing > One-Pieces" and "Clothing, Shoes & Accessories > Women > Women's Clothing > Jumpsuits & Rompers"
-      2. Mark a mapping as No, i.e. incorrect, if two categories of a mapping are irrevant to each other
-        in terms of product type, function, or purpose.
-        For example:
-          - "Apparel & Accessories > Clothing > Dresses" and "Clothing, Shoes & Jewelry>Shoe, Jewelry & Watch Accessories"
-          - "Apparel & Accessories" and "Clothing, Shoes & Jewelry>Luggage & Travel Gear"
-      Note, the character ">" in a category name indicates the start of a new category level. For example:
-      "sporting goods > exercise & fitness > cardio equipment"'s ancestor categories are "sporting goods > exercise & fitness" and "sporting goods".
-      You will receive a list of mappings. Each mapping contains a from_category name and a to_category name.
-      e.g. user's prompt in json format:
-      [
-        {
-          "from_category_id": "111",
-          "from_category": "Apparel & Accessories > Jewelry > Smart Watches",
-          "to_category_id": "222",
-          "to_category": "Clothing, Shoes & Jewelry>Men's Fashion>Men's Watches>Men's Smartwatches",
-          },
-        {
-          "from_category_id": "333",
-          "from_category": "Apparel & Accessories > Clothing > One-Pieces",
-          "to_category_id": "444",
-          "to_category": "Clothing, Shoes & Accessories > Women > Women's Clothing > Outfits & Sets",
-          },
-      ]
-      You evaluate accuracy of every mapping and reply in the following format. Do not change the order of mappings in your reply.
-      e.g. your response in json format:
-      [
-        {
-          "from_category_id": "111",
-          "from_category": "Apparel & Accessories > Jewelry > Smart Watches",
-          "to_category_id": "222",
-          "to_category": "Clothing, Shoes & Jewelry>Men's Fashion>Men's Watches>Men's Smartwatches",
-          "agree_with_mapping": "Yes",
+  SYSTEM_PROMPT = <<~PROMPT
+    You are a taxonomy mapping expert who evaluate the accuracy of product category mappings between two taxonomies.
+    Your task is to review and grade the accuracy of the mappings, Yes or No, based on the following criteria:
+    1. Mark a mapping as Yes, i.e. correct, if two categories of a mapping are highly relevant to each other and similar
+      in terms of product type, function, or purpose.
+      For example:
+        - "Apparel & Accessories" and "Clothing, Shoes & Jewelry"
+        - "Apparel & Accessories > Clothing > One-Pieces" and "Clothing, Shoes & Accessories > Women > Women's Clothing > Jumpsuits & Rompers"
+    2. Mark a mapping as No, i.e. incorrect, if two categories of a mapping are irrevant to each other
+      in terms of product type, function, or purpose.
+      For example:
+        - "Apparel & Accessories > Clothing > Dresses" and "Clothing, Shoes & Jewelry>Shoe, Jewelry & Watch Accessories"
+        - "Apparel & Accessories" and "Clothing, Shoes & Jewelry>Luggage & Travel Gear"
+    Note, the character ">" in a category name indicates the start of a new category level. For example:
+    "sporting goods > exercise & fitness > cardio equipment"'s ancestor categories are "sporting goods > exercise & fitness" and "sporting goods".
+    You will receive a list of mappings. Each mapping contains a from_category name and a to_category name.
+    e.g. user's prompt in json format:
+    [
+      {
+        "from_category_id": "111",
+        "from_category": "Apparel & Accessories > Jewelry > Smart Watches",
+        "to_category_id": "222",
+        "to_category": "Clothing, Shoes & Jewelry>Men's Fashion>Men's Watches>Men's Smartwatches",
         },
-        {
+      {
         "from_category_id": "333",
-          "from_category": "Apparel & Accessories > Clothing > One-Pieces",
-          "to_category_id": "444",
-          "to_category": "Clothing, Shoes & Accessories > Women > Women's Clothing > Outfits & Sets",
-          "agree_with_mapping": "No",
+        "from_category": "Apparel & Accessories > Clothing > One-Pieces",
+        "to_category_id": "444",
+        "to_category": "Clothing, Shoes & Accessories > Women > Women's Clothing > Outfits & Sets",
         },
-      ]
-    CONTEXT
-  end
+    ]
+    You evaluate accuracy of every mapping and reply in the following format. Do not change the order of mappings in your reply.
+    e.g. your response in json format:
+    [
+      {
+        "from_category_id": "111",
+        "from_category": "Apparel & Accessories > Jewelry > Smart Watches",
+        "to_category_id": "222",
+        "to_category": "Clothing, Shoes & Jewelry>Men's Fashion>Men's Watches>Men's Smartwatches",
+        "agree_with_mapping": "Yes",
+      },
+      {
+      "from_category_id": "333",
+        "from_category": "Apparel & Accessories > Clothing > One-Pieces",
+        "to_category_id": "444",
+        "to_category": "Clothing, Shoes & Accessories > Women > Women's Clothing > Outfits & Sets",
+        "agree_with_mapping": "No",
+      },
+    ]
+  PROMPT
 
   def openai_client
     @openai_client ||= OpenAI::Client.new(
-      access_token: ENV["OPENAI_API_KEY"],
-      uri_base: "https://openai-proxy.shopify.ai/v1",
+      access_token: params[:openai_api_key],
+      uri_base: params[:openai_url],
       request_timeout: 10,
     )
   end
 
   def qdrant_client
-    ensure_qdrant_server_running
-
-    @qdrant_client ||= Qdrant::Client.new(url: "http://localhost:#{QDRANT_PORT}")
+    @qdrant_client ||= begin
+      ensure_qdrant_server_running
+      Qdrant::Client.new(url: params[:qdrant_url])
+    end
   end
 
+  # TODO: move to makefile; ruby should not need to think abuot service setup
   def ensure_qdrant_server_running
-    return if system("lsof -i:#{QDRANT_PORT}", out: "/dev/null")
+    qdrant_port = URI.parse(params[:qdrant_url]).port
+    return if system("lsof -i:#{qdrant_port}", out: "/dev/null")
 
-    command = "podman run -p #{QDRANT_PORT}:#{QDRANT_PORT} qdrant/qdrant"
+    command = "podman run -p #{qdrant_port}:#{qdrant_port} qdrant/qdrant"
     pid = Process.spawn(command, out: "/dev/null", err: "/dev/null")
     Process.detach(pid)
     logger.info("Started Qdrant server in the background with PID #{pid}.")
