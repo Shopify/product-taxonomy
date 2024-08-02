@@ -39,6 +39,10 @@ dist/{locale}/integrations/
 The primary concern of integrations are mappings. Mappings are a set of rules that help us convert to and from the Shopify taxonomy and the taxonomy of that integration.
 
 #### Use tooling to generate taxonomy mappings
+Automate your taxonomy mapping with this tool. Make sure `podman` is installed using `homebrew`, then run `make generate_mappings OPENAI_API_BASE=<base URI>  OPENAI_API_KEY=<API acceess token>` to create mappings. It uses AI to assist in generating accurate mappings and reducing manual effort.
+
+
+#### Use tooling to generate taxonomy mappings
 Automate your taxonomy mapping with this tool. Install dependencies using `make setup-mapping-generation-tool`, then run `bin/generate_missing_mappings` to create mappings. It uses AI to assist in generating accurate mappings and reducing manual effort.
 
 #### Examples of mapping rules
@@ -122,14 +126,14 @@ For the example above, `dist/en/integrations/all_mappings.json` would contain th
 </details>
 
 #### Unmapped Product Categories
-In cases where certain product categories from the source do not align with any available categories in the target taxonomy, these should be clearly listed in the `unmapped_product_category_ids` field. This field is optional and can be included in mapping files such as `from_shopify.yml` or `to_shopify.yml`. It should be positioned at the same hierarchical level as the `rules` field. 
+In cases where certain product categories from the source do not align with any available categories in the target taxonomy, these should be clearly listed in the `unmapped_product_category_ids` field. This field is optional and can be included in mapping files such as `from_shopify.yml` or `to_shopify.yml`. It should be positioned at the same hierarchical level as the `rules` field.
 
 
 #### Examples of unmapped product category ids
 ```yaml
 
 # Mapping rules from Shopify taxonomy to Google taxonomy
-rules: 
+rules:
   - input:
     product_category_id: aa # Apparel & Accessories (Shopify)
   - output:
@@ -138,7 +142,7 @@ rules:
   ...
 
 # product category ids without a corresponding match in Google taxonomy.
-unmapped_product_category_ids: 
+unmapped_product_category_ids:
   - ae-2-2-4-1-5 # Shotguns (Shopify)
   - ae-2-2-4-1-3 # Replica Guns (Shopify)
   ...

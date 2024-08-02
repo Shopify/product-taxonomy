@@ -5,7 +5,7 @@ class GenerateMissingMappingsCommand < ApplicationCommand
   EMBEDDING_MODEL = "text-embedding-3-small"
   MAPPING_GRADER_GPT_MODEL = "gpt-4"
   SYSTEM_PROMPT = <<~PROMPT
-    You are a taxonomy mapping expert who evaluate the accuracy of product category mappings between two taxonomies.
+    You are a taxonomy mapping expert who evaluates the accuracy of product category mappings between two taxonomies.
     Your task is to review and grade the accuracy of the mappings, Yes or No, based on the following criteria:
     1. Mark a mapping as Yes, i.e. correct, if two categories of a mapping are highly relevant to each other and similar
       in terms of product type, function, or purpose.
@@ -213,7 +213,7 @@ class GenerateMissingMappingsCommand < ApplicationCommand
     spinner("Writing updated mappings to #{mapping_file_path(unmapped_category)}") do
       mapping_data["rules"].sort_by! { Category.id_parts(_1["input"]["product_category_id"]) }
       sys.write_file!(mapping_file_path(unmapped_category)) do |file|
-        puts "Updateing mapping file: #{file.path}"
+        puts "Updating mapping file: #{file.path}"
         file.write(mapping_data.to_yaml)
       end
     end

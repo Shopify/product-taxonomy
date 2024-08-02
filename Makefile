@@ -37,9 +37,6 @@ DB_DEV                   := $(DB_PATH)/development.sqlite3
 LOCALES ?= en
 VERBOSE ?= 0
 
-# Mapping generation tool setup
-SHADOWENV_ENABLED := $(shell grep -q "eval \"\$$(shadowenv init zsh)\"" ~/.zshrc && echo "true" || echo "false")
-
 # Formatting helpers
 ifeq ($(VERBOSE),1)
 	V           :=
@@ -170,47 +167,22 @@ vet_schema_dist:
 	$(V) cue vet $(SCHEMA_PATH)/dist/mappings_schema.cue $(MAPPINGS_JSON)
 .PHONY: vet_schema_dist
 
-setup-mapping-generation-tool:
-	@$(LOG_CMD) "Setting up Mapping Generation Tool"
-	$(V) if ! command -v brew &> /dev/null; then \
-		$(LOG_ADVISORY) "Homebrew is not installed. Please install Homebrew first."; \
-		exit 1; \
-	fi
-	@$(LOG_BUILD) "Installing Shadow Env" ""
-	$(V) if ! command -v shadowenv &> /dev/null; then \
-		brew install shadowenv; \
-	else \
-		echo "Shadow Env is already installed."; \
-	fi
-	@$(LOG_BUILD) "Enabling Shadow Env" ""
-	$(V) if [ "$(SHADOWENV_ENABLED)" = "false" ]; then \
-		echo 'eval "$$(shadowenv init zsh)"' >> ~/.zshrc; \
-		echo "Shadow Env has been enabled in ~/.zshrc"; \
-	else \
-		echo "Shadow Env is already enabled in ~/.zshrc"; \
-	fi
-	@$(LOG_BUILD) "Installing Podman" ""
-	$(V) if ! command -v podman &> /dev/null; then \
-		brew install podman; \
-		podman machine init; \
-		podman machine start; \
-	else \
-		echo "Podman is already installed."; \
-	fi
-	@$(LOG_ADVISORY) "Setup complete. Please restart your terminal or run 'source ~/.zshrc' to apply Shadow Env changes."
-.PHONY: setup-mapping-generation-tool
+generate_mappings:
+	@$(LOG_CMD) "Generating missing taxonomy mappings"
+	$(V) bin/generate_missing_mappings $(VERBOSE_ARG)
+.PHONY: generate_mappings
 
-# Help target
+# Update the help target to include the new command
 help:
 	@echo "Makefile targets:"
-	@echo "  default:                       Build the project"
-	@echo "  build:                         Build distribution and documentation"
-	@echo "  release:                       Prepare a release"
-	@echo "  clean:                         Clean all generated files"
-	@echo "  run_docs:                      Run the documentation server"
-	@echo "  console:                       Run the application console"
-	@echo "  seed:                          Seed the database"
-	@echo "  setup-mapping-generation-tool: Install and configure mapping generation tool"
-	@echo "  test:                          Run all tests"
-	@echo "  vet_schema:                    Validate schemas"
+	@echo "  default:           Build the project"
+	@echo "  build:             Build distribution and documentation"
+	@echo "  release:           Prepare a release"
+	@echo "  clean:             Clean all generated files"
+	@echo "  run_docs:          Run the documentation server"
+	@echo "  console:           Run the application console"
+	@echo "  seed:              Seed the database"
+	@echo "  test:              Run all tests"
+	@echo "  vet_schema:        Validate schemas"
+	@echo "  generate_mappings: Generate missing taxonomy mappings"
 .PHONY: help
