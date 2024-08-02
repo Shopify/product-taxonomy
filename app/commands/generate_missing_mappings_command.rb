@@ -211,7 +211,7 @@ class GenerateMissingMappingsCommand < ApplicationCommand
     end
 
     spinner("Writing updated mappings to #{mapping_file_path(unmapped_category)}") do
-      mapping_data["rules"].sort_by! { |rule| Category.id_parts(rule["input"]["product_category_id"]) }
+      mapping_data["rules"].sort_by! { Category.id_parts(_1["input"]["product_category_id"]) }
       sys.write_file!(mapping_file_path(unmapped_category)) do |file|
         puts "Updateing mapping file: #{file.path}"
         file.write(mapping_data.to_yaml)
