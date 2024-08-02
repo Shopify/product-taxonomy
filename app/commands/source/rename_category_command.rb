@@ -48,24 +48,15 @@ module Source
 
     def update_vertical_file!
       if @category.root?
-        logger.info("Category is a vertical, renaming data file")
-        sys.move_file!("data/categories/#{@original_handle}.yml", "data/categories/#{@category.handleized_name}.yml")
+        logger.info("Category is a vertical, deleting original data file")
+        sys.delete_file!("data/categories/#{@original_handle}.yml")
       end
 
-      spinner("Updating vertical file") do |sp|
-        vertical = @category.root
-        sys.write_file!("data/categories/#{vertical.handleized_name}.yml") do |file|
-          file.write(vertical.as_json_for_data_with_descendants.to_yaml)
-        end
-        sp.update_title("Updated vertical `#{vertical.name}`")
-      end
+      DumpVerticalCommand.new(verticals: [@category.root.id], interactive: true, **params.to_h).execute
     end
 
     def sync_localizations!
-      spinner("Syncing localizations") do |sp|
-        SyncEnLocalizationsCommand.new(**params.to_h).execute
-        sp.update_title("Synced localizations")
-      end
+      SyncEnLocalizationsCommand.new(interactive: true, **params.to_h).execute
     end
   end
 end

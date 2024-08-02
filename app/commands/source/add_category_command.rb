@@ -63,13 +63,7 @@ module Source
     end
 
     def update_vertical_file!
-      spinner("Updating vertical file") do |sp|
-        vertical = @new_category.root
-        sys.write_file!("data/categories/#{vertical.handleized_name}.yml") do |file|
-          file.write(vertical.as_json_for_data_with_descendants.to_yaml)
-        end
-        sp.update_title("Updated vertical `#{vertical.name}`")
-      end
+      DumpVerticalCommand.new(verticals: [@new_category.root.id], interactive: true, **params.to_h).execute
     end
   end
 end
