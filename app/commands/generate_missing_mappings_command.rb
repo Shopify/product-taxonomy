@@ -40,7 +40,6 @@ class GenerateMissingMappingsCommand < ApplicationCommand
   end
 
   def execute
-    setup_options
     frame("Generating missing mappings") do
       logger.headline("Target Shopify version: #{params[:version]}")
       logger.headline("OpenAI url: #{params[:openai_url]}")
@@ -55,10 +54,6 @@ class GenerateMissingMappingsCommand < ApplicationCommand
 
   private
 
-  def setup_options
-    params[:shopify_version] ||= sys.read_file("VERSION").strip
-  end
-
   def find_unmapped_categories
     spinner("Finding Shopify categories that are unmapped") do
       all_shopify_ids = Set.new(Category.all.pluck(:id))
@@ -66,8 +61,6 @@ class GenerateMissingMappingsCommand < ApplicationCommand
         .where(input_version: "shopify/#{params[:shopify_version]}")
         .group_by(&:output_version)
       @unmapped_categories = mappings_by_output.filter_map do |output_taxonomy, mappings|
-        # Can this be an ActiveRecord call? Should it?
-        # TODO: Where is #product_category_id defined? AFAICT #input returns a hash
         found_shopify_ids = Set.new(mappings.map { _1.input.product_category_id.split("/").last })
         unmapped_ids = all_shopify_ids - found_shopify_ids
         id_name_map = Category.where(id: unmapped_ids).pluck(:id, :full_name).to_h
