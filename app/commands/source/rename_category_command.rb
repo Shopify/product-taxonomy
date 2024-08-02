@@ -6,7 +6,7 @@ module Source
       no_command
     end
 
-    keyword :id do
+    keyword :category do
       desc "The target category ID"
       required
       validate { _1 =~ Category::ID_REGEX }
