@@ -4,6 +4,56 @@ class GenerateMissingMappingsCommand < ApplicationCommand
   UNSTABLE = "unstable"
   EMBEDDING_MODEL = "text-embedding-3-small"
   MAPPING_GRADER_GPT_MODEL = "gpt-4"
+  SYSTEM_PROMPT = <<~PROMPT
+    You are a taxonomy mapping expert who evaluate the accuracy of product category mappings between two taxonomies.
+    Your task is to review and grade the accuracy of the mappings, Yes or No, based on the following criteria:
+    1. Mark a mapping as Yes, i.e. correct, if two categories of a mapping are highly relevant to each other and similar
+      in terms of product type, function, or purpose.
+      For example:
+        - "Apparel & Accessories" and "Clothing, Shoes & Jewelry"
+        - "Apparel & Accessories > Clothing > One-Pieces" and "Clothing, Shoes & Accessories > Women > Women's Clothing > Jumpsuits & Rompers"
+    2. Mark a mapping as No, i.e. incorrect, if two categories of a mapping are irrevant to each other
+      in terms of product type, function, or purpose.
+      For example:
+        - "Apparel & Accessories > Clothing > Dresses" and "Clothing, Shoes & Jewelry>Shoe, Jewelry & Watch Accessories"
+        - "Apparel & Accessories" and "Clothing, Shoes & Jewelry>Luggage & Travel Gear"
+    Note, the character ">" in a category name indicates the start of a new category level. For example:
+    "sporting goods > exercise & fitness > cardio equipment"'s ancestor categories are "sporting goods > exercise & fitness" and "sporting goods".
+    You will receive a list of mappings. Each mapping contains a from_category name and a to_category name.
+    e.g. user's prompt in json format:
+    [
+      {
+        "from_category_id": "111",
+        "from_category": "Apparel & Accessories > Jewelry > Smart Watches",
+        "to_category_id": "222",
+        "to_category": "Clothing, Shoes & Jewelry>Men's Fashion>Men's Watches>Men's Smartwatches",
+        },
+      {
+        "from_category_id": "333",
+        "from_category": "Apparel & Accessories > Clothing > One-Pieces",
+        "to_category_id": "444",
+        "to_category": "Clothing, Shoes & Accessories > Women > Women's Clothing > Outfits & Sets",
+        },
+    ]
+    You evaluate accuracy of every mapping and reply in the following format. Do not change the order of mappings in your reply.
+    e.g. your response in json format:
+    [
+      {
+        "from_category_id": "111",
+        "from_category": "Apparel & Accessories > Jewelry > Smart Watches",
+        "to_category_id": "222",
+        "to_category": "Clothing, Shoes & Jewelry>Men's Fashion>Men's Watches>Men's Smartwatches",
+        "agree_with_mapping": "Yes",
+      },
+      {
+      "from_category_id": "333",
+        "from_category": "Apparel & Accessories > Clothing > One-Pieces",
+        "to_category_id": "444",
+        "to_category": "Clothing, Shoes & Accessories > Women > Women's Clothing > Outfits & Sets",
+        "agree_with_mapping": "No",
+      },
+    ]
+  PROMPT
 
   usage do
     no_command
@@ -57,9 +107,9 @@ class GenerateMissingMappingsCommand < ApplicationCommand
   def find_unmapped_categories
     spinner("Finding Shopify categories that are unmapped") do
       all_shopify_ids = Set.new(Category.all.pluck(:id))
-      mappings_by_output = MappingRule
-        .where(input_version: "shopify/#{params[:shopify_version]}")
-        .group_by(&:output_version)
+      input_version = "shopify/#{params[:shopify_version]}"
+      mappings_by_output = MappingRule.where(input_version:).group_by(&:output_version)
+
       @unmapped_categories = mappings_by_output.filter_map do |output_taxonomy, mappings|
         found_shopify_ids = Set.new(mappings.map { _1.input.product_category_id.split("/").last })
         unmapped_ids = all_shopify_ids - found_shopify_ids
@@ -81,7 +131,7 @@ class GenerateMissingMappingsCommand < ApplicationCommand
           embedding_collection = output_taxonomy.gsub(%r{[/\-]}, "_")
 
           index_embedding_data(embedding_data:, embedding_collection:)
-          generate_and_evaluate_mappings_for_group(unmapped_category:, embedding_collection:, )
+          generate_and_evaluate_mappings_for_group(unmapped_category:, embedding_collection:)
         end
       end
     end
@@ -163,7 +213,7 @@ class GenerateMissingMappingsCommand < ApplicationCommand
     "data/integrations/#{unmapped_category[:output_taxonomy]}/mappings/from_shopify.yml"
   end
 
-  def generate_mapping(source_category_id:, source_category_name:, embedding_collection:, destination_name_id_map: )
+  def generate_mapping(source_category_id:, source_category_name:, embedding_collection:, destination_name_id_map:)
     category_embedding = request_embeddings(source_category_name)
     top_candidate = search_top_candidate(query_embedding: category_embedding, embedding_collection:)
 
@@ -252,57 +302,6 @@ class GenerateMissingMappingsCommand < ApplicationCommand
       end
     end
   end
-
-  SYSTEM_PROMPT = <<~PROMPT
-    You are a taxonomy mapping expert who evaluate the accuracy of product category mappings between two taxonomies.
-    Your task is to review and grade the accuracy of the mappings, Yes or No, based on the following criteria:
-    1. Mark a mapping as Yes, i.e. correct, if two categories of a mapping are highly relevant to each other and similar
-      in terms of product type, function, or purpose.
-      For example:
-        - "Apparel & Accessories" and "Clothing, Shoes & Jewelry"
-        - "Apparel & Accessories > Clothing > One-Pieces" and "Clothing, Shoes & Accessories > Women > Women's Clothing > Jumpsuits & Rompers"
-    2. Mark a mapping as No, i.e. incorrect, if two categories of a mapping are irrevant to each other
-      in terms of product type, function, or purpose.
-      For example:
-        - "Apparel & Accessories > Clothing > Dresses" and "Clothing, Shoes & Jewelry>Shoe, Jewelry & Watch Accessories"
-        - "Apparel & Accessories" and "Clothing, Shoes & Jewelry>Luggage & Travel Gear"
-    Note, the character ">" in a category name indicates the start of a new category level. For example:
-    "sporting goods > exercise & fitness > cardio equipment"'s ancestor categories are "sporting goods > exercise & fitness" and "sporting goods".
-    You will receive a list of mappings. Each mapping contains a from_category name and a to_category name.
-    e.g. user's prompt in json format:
-    [
-      {
-        "from_category_id": "111",
-        "from_category": "Apparel & Accessories > Jewelry > Smart Watches",
-        "to_category_id": "222",
-        "to_category": "Clothing, Shoes & Jewelry>Men's Fashion>Men's Watches>Men's Smartwatches",
-        },
-      {
-        "from_category_id": "333",
-        "from_category": "Apparel & Accessories > Clothing > One-Pieces",
-        "to_category_id": "444",
-        "to_category": "Clothing, Shoes & Accessories > Women > Women's Clothing > Outfits & Sets",
-        },
-    ]
-    You evaluate accuracy of every mapping and reply in the following format. Do not change the order of mappings in your reply.
-    e.g. your response in json format:
-    [
-      {
-        "from_category_id": "111",
-        "from_category": "Apparel & Accessories > Jewelry > Smart Watches",
-        "to_category_id": "222",
-        "to_category": "Clothing, Shoes & Jewelry>Men's Fashion>Men's Watches>Men's Smartwatches",
-        "agree_with_mapping": "Yes",
-      },
-      {
-      "from_category_id": "333",
-        "from_category": "Apparel & Accessories > Clothing > One-Pieces",
-        "to_category_id": "444",
-        "to_category": "Clothing, Shoes & Accessories > Women > Women's Clothing > Outfits & Sets",
-        "agree_with_mapping": "No",
-      },
-    ]
-  PROMPT
 
   def openai_client
     @openai_client ||= OpenAI::Client.new(
