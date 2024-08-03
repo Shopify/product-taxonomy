@@ -64,7 +64,7 @@ module Source
     def update_data_files!
       DumpVerticalCommand.new(interactive: true, verticals: [@category.root.id], **params.to_h).execute
       # DumpAttributesCommand.new(interactive: true, **params.to_h).execute
-      SyncEnLocalizationsCommand.new(interactive: true, **params.to_h).execute
+      SyncEnLocalizationsCommand.new(interactive: true, targets: ["categories", "attributes"], **params.to_h).execute
     end
   end
 end

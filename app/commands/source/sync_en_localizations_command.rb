@@ -7,11 +7,20 @@ module Source
       no_command
     end
 
+    option :targets do
+      desc "Which model types to sync. Syncs all if not specified."
+      short "-t"
+      long "--target string"
+      arity zero_or_more
+      permit ["categories", "attributes", "values"]
+    end
+
     def execute
+      params[:targets] ||= ["categories", "attributes", "values"]
       frame("Syncing EN localizations") do
-        sync_categories
-        sync_attributes
-        sync_values
+        sync_categories if params[:targets].include?("categories")
+        sync_attributes if params[:targets].include?("attributes")
+        sync_values if params[:targets].include?("values")
       end
     end
 

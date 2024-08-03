@@ -56,7 +56,7 @@ module Source
     end
 
     def sync_localizations!
-      SyncEnLocalizationsCommand.new(interactive: true, **params.to_h).execute
+      SyncEnLocalizationsCommand.new(interactive: true, targets: ["categories"], **params.to_h).execute
     end
   end
 end

@@ -29,6 +29,7 @@ module Source
         validate_id!
         create_category!
         update_vertical_file!
+        sync_localizations!
       end
     end
 
@@ -64,6 +65,10 @@ module Source
 
     def update_vertical_file!
       DumpVerticalCommand.new(verticals: [@new_category.root.id], interactive: true, **params.to_h).execute
+    end
+
+    def sync_localizations!
+      SyncEnLocalizationsCommand.new(interactive: true, targets: ["categories"], **params.to_h).execute
     end
   end
 end
