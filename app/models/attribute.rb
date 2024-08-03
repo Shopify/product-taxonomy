@@ -83,6 +83,17 @@ class Attribute < ApplicationRecord
       ].join("\n")
     end
 
+    #
+    # `data/localizations/` serialization
+
+    def as_json_for_localization(attributes)
+      {
+        "en" => {
+          "attributes" => attributes.sort_by(&:friendly_id).reduce({}) { _1.merge!(_2.as_json_for_localization) },
+        },
+      }
+    end
+
     private
 
     def row_from_data(data)
@@ -105,8 +116,13 @@ class Attribute < ApplicationRecord
     end
   end
 
+  # english ignores localization files, since they're derived from this source
   def name(locale: "en")
-    self.class.find_localization(locale, friendly_id, "name") || super()
+    if locale == "en"
+      super()
+    else
+      self.class.find_localization(locale, friendly_id, "name") || super()
+    end
   end
 
   def base?
@@ -147,6 +163,18 @@ class Attribute < ApplicationRecord
         "values_from" => base_friendly_id,
       }
     end
+  end
+
+  #
+  # `data/localizations/` serialization
+
+  def as_json_for_localization
+    {
+      friendly_id => {
+        "name" => name,
+        "description" => description,
+      },
+    }
   end
 
   #

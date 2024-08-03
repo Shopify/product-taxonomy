@@ -85,6 +85,17 @@ class Category < ApplicationRecord
     end
 
     #
+    # `data/localizations/` serialization
+
+    def as_json_for_localization(categories)
+      {
+        "en" => {
+          "categories" => categories.sort_by(&:id_parts).reduce({}) { _1.merge!(_2.as_json_for_localization) },
+        },
+      }
+    end
+
+    #
     # `docs/` parsing
 
     def as_json_for_docs_siblings(distribution_verticals)
@@ -149,17 +160,21 @@ class Category < ApplicationRecord
     self.class.id_parts(id)
   end
 
+  # english ignores localization files, since they're derived from this source
   def name(locale: "en")
-    self.class.find_localization(locale, id, "name") || super()
+    if locale == "en"
+      super()
+    else
+      self.class.find_localization(locale, id, "name") || super()
+    end
   end
 
   def full_name(locale: "en")
     ancestors.reverse.map { _1.name(locale:) }.push(name(locale:)).join(" > ")
   end
 
-  # should never use translations
   def handleized_name
-    "#{id}_#{self[:name].downcase.gsub(%r{[^a-z0-9\s\-_/\.\+#]}, "").gsub(/[\s\-\.]+/, "_")}"
+    "#{id}_#{name.downcase.gsub(%r{[^a-z0-9\s\-_/\.\+#]}, "").gsub(/[\s\-\.]+/, "_")}"
   end
 
   def root?
@@ -250,7 +265,7 @@ class Category < ApplicationRecord
   def as_json_for_data
     {
       "id" => id,
-      "name" => self[:name], # avoid localization
+      "name" => name,
       "children" => children.sort_by(&:id_parts).map(&:id),
       "attributes" => AlphanumericSorter.sort(related_attributes.map(&:friendly_id), other_last: true),
     }
@@ -258,6 +273,18 @@ class Category < ApplicationRecord
 
   def as_json_for_data_with_descendants
     descendants_and_self.sort_by(&:id_parts).map(&:as_json_for_data)
+  end
+
+  #
+  # `data/localizations/` serialization
+
+  def as_json_for_localization
+    {
+      id => {
+        "name" => name,
+        "context" => full_name,
+      },
+    }
   end
 
   #

@@ -86,6 +86,9 @@ class CategoryTest < ActiveSupport::TestCase
   end
 
   test "#ascendant_of? checks if a category is a descendant" do
+    grandchild.save!
+    parent.reload
+
     assert parent.ancestor_of?(child)
     assert parent.ancestor_of?(grandchild)
 
