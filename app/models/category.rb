@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Category < ApplicationRecord
+  ReparentError = Class.new(StandardError)
+
   ID_REGEX = /\A[a-z]{2}(-\d+)*\z/
 
   default_scope { order(:name) }
@@ -188,6 +190,10 @@ class Category < ApplicationRecord
     [self] + ancestors
   end
 
+  def ancestor_of?(category)
+    descendants.include?(category)
+  end
+
   # depth-first given that matches how we want to use this
   def descendants
     children.flat_map { |child| [child] + child.descendants }
@@ -197,10 +203,41 @@ class Category < ApplicationRecord
     [self] + descendants
   end
 
+  def descendant_of?(category)
+    ancestors.include?(category)
+  end
+
   def next_child_id
     largest_child_id = children.map { _1.id.split("-").last.to_i }.max || 0
 
     "#{id}-#{largest_child_id + 1}"
+  end
+
+  def reparent_to!(new_parent, new_id: new_parent.next_child_id)
+    if root?
+      raise ReparentError, "Cannot reparent a vertical"
+    elsif new_parent.descendant_of?(self)
+      raise ReparentError, "new_parent `#{new_parent.name}` is a descendant"
+    elsif !new_id.start_with?(new_parent.id)
+      raise ReparentError, "new_id `#{new_id}` is invalid for parent's id `#{new_parent.id}`"
+    elsif Category.exists?(id: new_id)
+      raise ReparentError, "new_id `#{new_id}` is already taken"
+    end
+
+    ActiveRecord::Base.transaction do
+      original_id = id
+
+      # update self
+      update_columns(id: new_id, parent_id: new_parent.id)
+      # update children
+      Category.where(parent_id: original_id).update_all(parent_id: new_id)
+      Category.where("id LIKE ?", "#{original_id}-%")
+        .update_all("id = REPLACE(id, '#{original_id}', '#{new_id}')")
+      # update attributes
+      CategoriesAttribute.where(category_id: original_id).update_all(category_id: new_id)
+      CategoriesAttribute.where("category_id LIKE ?", "#{original_id}-%")
+        .update_all("category_id = REPLACE(category_id, '#{original_id}', '#{new_id}')")
+    end
   end
 
   def related_attribute_friendly_ids=(ids)

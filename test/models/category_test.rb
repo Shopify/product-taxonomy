@@ -68,7 +68,8 @@ class CategoryTest < ActiveSupport::TestCase
     assert_equal "aa-12_child", build(:category, id: "aa-12", name: "Child", parent:).handleized_name
     # some real examples
     assert_equal "aa_apparel_accessories", build(:category, id: "aa", name: "Apparel & Accessories").handleized_name
-    assert_equal "fb_food_beverages_tobacco", build(:category, id: "fb", name: "Food, Beverages & Tobacco").handleized_name
+    assert_equal "fb_food_beverages_tobacco",
+      build(:category, id: "fb", name: "Food, Beverages & Tobacco").handleized_name
   end
 
   test "#root returns the top-most category node" do
@@ -82,6 +83,14 @@ class CategoryTest < ActiveSupport::TestCase
 
   test "#ancestors_and_self includes self" do
     assert_equal [grandchild, child, parent], grandchild.ancestors_and_self
+  end
+
+  test "#ascendant_of? checks if a category is a descendant" do
+    assert parent.ancestor_of?(child)
+    assert parent.ancestor_of?(grandchild)
+
+    refute child.ancestor_of?(parent)
+    refute grandchild.ancestor_of?(parent)
   end
 
   test "#children are sorted by name" do
@@ -106,6 +115,67 @@ class CategoryTest < ActiveSupport::TestCase
     parent.reload
 
     assert_equal [parent, child, grandchild], parent.descendants_and_self
+  end
+
+  test "#descendant_of? checks if a category is an ancestor" do
+    assert child.descendant_of?(parent)
+    assert grandchild.descendant_of?(parent)
+
+    refute parent.descendant_of?(child)
+    refute parent.descendant_of?(grandchild)
+  end
+
+  test "#reparent_to! reparents category and its descendents" do
+    grandchild.save!
+
+    child.reparent_to!(create(:category, id: "bb"))
+    child.reload
+
+    assert_equal "bb-1", child.id
+    assert_equal "bb-1-1", child.children.first.id
+  end
+
+  test "#reparent_to! reparents with manually set new id" do
+    grandchild.save!
+
+    child.reparent_to!(create(:category, id: "bb"), new_id: "bb-42")
+    child.reload
+
+    assert_predicate Category.find("bb"), :valid?
+    assert_equal "bb-42", child.id
+    assert_equal "bb-42-1", child.children.first.id
+  end
+
+  test "#reparent_to! updates all relationships across descendants" do
+    color = build(:attribute, name: "Color")
+    size = build(:attribute, name: "Size")
+    child.related_attributes = [color]
+    grandchild.related_attributes = [color, size]
+    grandchild.save!
+
+    child.reparent_to!(create(:category, id: "bb"))
+    child.reload
+
+    assert_empty parent.children
+    assert_equal Category.find("bb"), child.parent
+    assert_equal child, child.children.first.parent
+    assert_equal [color], child.related_attributes
+    assert_equal [color, size].sort, child.children.first.related_attributes.sort
+  end
+
+  test "#reparent_to! ensures sensible targets" do
+    other_parent = create(:category, id: "bb")
+    create(:category, id: "bb-1", parent: other_parent)
+
+    vertical_error = assert_raises(Category::ReparentError) { parent.reparent_to!(other_parent) }
+    descendant_error = assert_raises(Category::ReparentError) { child.reparent_to!(grandchild) }
+    invalid_id_error = assert_raises(Category::ReparentError) { child.reparent_to!(other_parent, new_id: "cc-1") }
+    id_taken_error = assert_raises(Category::ReparentError) { child.reparent_to!(other_parent, new_id: "bb-1") }
+
+    assert_match(/vertical/, vertical_error.message)
+    assert_match(/descendant/, descendant_error.message)
+    assert_match(/new_id .* is invalid for parent/, invalid_id_error.message)
+    assert_match(/new_id .* is already taken/, id_taken_error.message)
   end
 
   test ".new_from_data creates a new category" do

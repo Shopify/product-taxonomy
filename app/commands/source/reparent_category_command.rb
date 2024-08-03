@@ -19,65 +19,51 @@ module Source
     end
 
     def execute
-      find_and_verify_category!
-      find_and_verify_parent!
+      find_category!
+      find_parent!
 
       frame("Reparenting category") do
         logger.headline("Category: #{@category.name}")
         logger.headline("Parent: #{@parent.name}")
 
         update_category!
-        update_vertical_file!
-        sync_localizations!
+        update_data_files!
       end
     end
 
     private
 
-    def find_and_verify_category!
+    def find_category!
       @category = Category.find_by(id: params[:category])
+      return if @category.nil?
 
-      if @category.nil?
-        logger.fatal("Category `#{params[:category]}` not found")
-        exit(1)
-      elsif @category.root?
-        logger.fatal("Cannot reparent a vertical")
-        exit(1)
-      end
+      logger.fatal("Category `#{params[:category]}` not found")
+      exit(1)
     end
 
-    def find_and_verify_parent!
+    def find_parent!
       @parent = Category.find_by(id: params[:parent])
+      return if @parent.nil?
 
-      if @parent.nil?
-        logger.fatal("Parent category `#{params[:parent]}` not found")
-        exit(1)
-      elsif @category.descendants.include?(@parent)
-        logger.fatal("Cannot reparent to a descendant category")
-        exit(1)
-      end
+      logger.fatal("Parent category `#{params[:parent]}` not found")
+      exit(1)
     end
 
     def update_category!
       spinner("Updating category") do |sp|
-        Category.transaction do
-          original_id = @category.id
-          new_id = @parent.next_child_id
-          @category.update_columns(id: new_id, parent_id: @parent.id)
-          # TODO: need to refresh all children IDs iteratively so the ID structure is respected
-          Category.where(parent_id: original_id).update_all(parent_id: new_id)
-        end
+        @category.reparent_to!(@parent)
         @category.reload
 
         sp.update_title("Updated #{@category.name} to belong to `#{@parent.name}`")
       end
+    rescue Category::ReparentError => e
+      logger.fatal("Failed to reparent category: #{e.message}")
+      exit(1)
     end
 
-    def update_vertical_file!
-      DumpVerticalCommand.new(verticals: [@category.root.id], interactive: true, **params.to_h).execute
-    end
-
-    def sync_localizations!
+    def update_data_files!
+      DumpVerticalCommand.new(interactive: true, verticals: [@category.root.id], **params.to_h).execute
+      # DumpAttributesCommand.new(interactive: true, **params.to_h).execute
       SyncEnLocalizationsCommand.new(interactive: true, **params.to_h).execute
     end
   end
