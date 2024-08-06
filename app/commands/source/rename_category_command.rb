@@ -21,8 +21,7 @@ module Source
       frame("Renaming existing category") do
         find_category!
         update_category!
-        update_vertical_file!
-        sync_localizations!
+        update_data_files!
       end
     end
 
@@ -46,17 +45,15 @@ module Source
       end
     end
 
-    def update_vertical_file!
+    def update_data_files!
       if @category.root?
         logger.info("Category is a vertical, deleting original data file")
         sys.delete_file!("data/categories/#{@original_handle}.yml")
       end
 
       DumpVerticalsCommand.new(verticals: [@category.root.id], interactive: true, **params.to_h).execute
-    end
-
-    def sync_localizations!
       SyncEnLocalizationsCommand.new(interactive: true, targets: ["categories"], **params.to_h).execute
+      GenerateDocsCommand.new(interactive: true, **params.to_h).execute
     end
   end
 end

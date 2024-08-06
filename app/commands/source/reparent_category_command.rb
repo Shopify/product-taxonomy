@@ -65,6 +65,7 @@ module Source
       DumpVerticalsCommand.new(interactive: true, verticals: [@category.root.id], **params.to_h).execute
       DumpAttributesCommand.new(interactive: true, **params.to_h).execute
       SyncEnLocalizationsCommand.new(interactive: true, targets: ["categories", "attributes"], **params.to_h).execute
+      GenerateDocsCommand.new(interactive: true, **params.to_h).execute
     end
   end
 end
