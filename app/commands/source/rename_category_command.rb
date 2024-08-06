@@ -52,7 +52,7 @@ module Source
         sys.delete_file!("data/categories/#{@original_handle}.yml")
       end
 
-      DumpVerticalCommand.new(verticals: [@category.root.id], interactive: true, **params.to_h).execute
+      DumpVerticalsCommand.new(verticals: [@category.root.id], interactive: true, **params.to_h).execute
     end
 
     def sync_localizations!

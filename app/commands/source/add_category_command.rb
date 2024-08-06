@@ -64,7 +64,7 @@ module Source
     end
 
     def update_vertical_file!
-      DumpVerticalCommand.new(verticals: [@new_category.root.id], interactive: true, **params.to_h).execute
+      DumpVerticalsCommand.new(verticals: [@new_category.root.id], interactive: true, **params.to_h).execute
     end
 
     def sync_localizations!

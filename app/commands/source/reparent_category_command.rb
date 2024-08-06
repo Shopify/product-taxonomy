@@ -35,7 +35,7 @@ module Source
 
     def find_category!
       @category = Category.find_by(id: params[:category])
-      return if @category.nil?
+      return if @category
 
       logger.fatal("Category `#{params[:category]}` not found")
       exit(1)
@@ -43,7 +43,7 @@ module Source
 
     def find_parent!
       @parent = Category.find_by(id: params[:parent])
-      return if @parent.nil?
+      return if @parent
 
       logger.fatal("Parent category `#{params[:parent]}` not found")
       exit(1)
@@ -62,8 +62,8 @@ module Source
     end
 
     def update_data_files!
-      DumpVerticalCommand.new(interactive: true, verticals: [@category.root.id], **params.to_h).execute
-      # DumpAttributesCommand.new(interactive: true, **params.to_h).execute
+      DumpVerticalsCommand.new(interactive: true, verticals: [@category.root.id], **params.to_h).execute
+      DumpAttributesCommand.new(interactive: true, **params.to_h).execute
       SyncEnLocalizationsCommand.new(interactive: true, targets: ["categories", "attributes"], **params.to_h).execute
     end
   end

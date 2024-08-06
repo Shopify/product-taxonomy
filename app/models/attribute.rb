@@ -84,6 +84,16 @@ class Attribute < ApplicationRecord
     end
 
     #
+    # `data/` serialization
+
+    def as_json_for_data
+      {
+        "base_attributes" => base.reorder(:id).map(&:as_json_for_data),
+        "extended_attributes" => extended.reorder(:id).map(&:as_json_for_data),
+      }
+    end
+
+    #
     # `data/localizations/` serialization
 
     def as_json_for_localization(attributes)
@@ -146,13 +156,14 @@ class Attribute < ApplicationRecord
 
   def as_json_for_data
     if base?
+      # TODO: add in "sorting: custom"
       {
         "id" => id,
         "name" => name,
+        "description" => description,
         "friendly_id" => friendly_id,
         "handle" => handle,
-        "description" => description,
-        "values" => values.reorder(:id).map(&:friendly_id),
+        "values" => sorted_values.map(&:friendly_id),
       }
     else
       {

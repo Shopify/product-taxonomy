@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Source
-  class DumpVerticalCommand < ApplicationCommand
+  class DumpVerticalsCommand < ApplicationCommand
     usage do
       no_command
     end
@@ -28,7 +28,7 @@ module Source
       spinner("Updating `#{vertical.name}`") do |sp|
         path = "data/categories/#{vertical.handleized_name}.yml"
         sys.write_file!(path) do |file|
-          file.write(vertical.as_json_for_data_with_descendants.to_yaml)
+          file.write(vertical.as_json_for_data_with_descendants.to_yaml(line_width: -1))
         end
         sp.update_title("Updated `#{path}`")
       end
