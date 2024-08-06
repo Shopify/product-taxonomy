@@ -114,7 +114,8 @@ class Attribute < ApplicationRecord
         "description" => data["description"],
         "friendly_id" => data["friendly_id"],
         "base_friendly_id" => data["values_from"],
-      }.compact
+        "sorting" => data["sorting"],
+      }
     end
   end
 
@@ -143,6 +144,10 @@ class Attribute < ApplicationRecord
     !base?
   end
 
+  def manually_sorted?
+    sorting == "custom"
+  end
+
   def sorted_values(locale: "en")
     ValueSorter.sort(values, locale:)
   end
@@ -156,15 +161,15 @@ class Attribute < ApplicationRecord
 
   def as_json_for_data
     if base?
-      # TODO: add in "sorting: custom"
       {
         "id" => id,
         "name" => name,
         "description" => description,
         "friendly_id" => friendly_id,
         "handle" => handle,
+        "sorting" => sorting,
         "values" => sorted_values.map(&:friendly_id),
-      }
+      }.compact
     else
       {
         "name" => name,

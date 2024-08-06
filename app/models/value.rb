@@ -73,7 +73,7 @@ class Value < ApplicationRecord
     # `data/` serialization
 
     def as_json_for_data
-      all.map(&:as_json_for_data)
+      reorder(:id).map(&:as_json_for_data)
     end
 
     #
