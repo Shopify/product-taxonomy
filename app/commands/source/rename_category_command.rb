@@ -9,7 +9,7 @@ module Source
     keyword :category do
       desc "The target category ID"
       required
-      validate { _1 =~ Category::ID_REGEX }
+      validate -> { _1 =~ Category::ID_REGEX }
     end
 
     keyword :name do
@@ -29,11 +29,11 @@ module Source
     private
 
     def find_category!
-      @category = Category.find_by(id: params[:id])
+      @category = Category.find_by(id: params[:category])
       @original_handle = @category&.handleized_name
       return if @category
 
-      logger.fatal("Category `#{params[:id]}` not found")
+      logger.fatal("Category `#{params[:category]}` not found")
       exit(1)
     end
 
