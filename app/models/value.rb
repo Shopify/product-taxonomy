@@ -69,6 +69,24 @@ class Value < ApplicationRecord
       ].join("\n")
     end
 
+    #
+    # `data/` serialization
+
+    def as_json_for_data
+      reorder(:id).map(&:as_json_for_data)
+    end
+
+    #
+    # `data/localizations/` serialization
+
+    def as_json_for_localization(values)
+      {
+        "en" => {
+          "values" => values.sort_by(&:friendly_id).reduce({}) { _1.merge!(_2.as_json_for_localization) },
+        },
+      }
+    end
+
     private
 
     def row_from_data_with_position(data, base_attributes_by_friendly_id)
@@ -97,8 +115,13 @@ class Value < ApplicationRecord
     "gid://shopify/TaxonomyValue/#{id}"
   end
 
+  # english ignores localization files, since they're derived from this source
   def name(locale: "en")
-    self.class.find_localization(locale, friendly_id, "name") || super()
+    if locale == "en"
+      super()
+    else
+      self.class.find_localization(locale, friendly_id, "name") || super()
+    end
   end
 
   def full_name(locale: "en")
@@ -118,6 +141,18 @@ class Value < ApplicationRecord
       "name" => name,
       "friendly_id" => friendly_id,
       "handle" => handle,
+    }
+  end
+
+  #
+  # `data/localizations/` serialization
+
+  def as_json_for_localization
+    {
+      friendly_id => {
+        "name" => name,
+        "context" => primary_attribute.name,
+      },
     }
   end
 

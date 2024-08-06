@@ -78,6 +78,12 @@ class System
     logger.success("Moved `#{target}` to `#{path}`")
   end
 
+  def delete_file!(path_from_root)
+    logger.debug("→ Deleting `#{path_from_root}`")
+    File.delete(path_for(path_from_root))
+    logger.success("Deleted `#{path_from_root}`")
+  end
+
   private
 
   def new_or_forced?(path_from_root)

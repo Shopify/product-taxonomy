@@ -5,10 +5,19 @@ class SeedLocalCommand < ApplicationCommand
     no_command
   end
 
+  option :targets do
+    desc "Which systems to sync. Syncs all if not specified."
+    short "-t"
+    long "--target string"
+    arity zero_or_more
+    permit ["taxonomy", "integrations"]
+  end
+
   def execute
+    params[:targets] ||= ["taxonomy", "integrations"]
     frame("Seeding database") do
-      import_taxonomy
-      import_integrations
+      import_taxonomy if params[:targets].include?("taxonomy")
+      import_integrations if params[:targets].include?("integrations")
       validate_import
     end
   end

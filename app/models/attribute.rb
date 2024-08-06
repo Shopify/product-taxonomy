@@ -83,6 +83,27 @@ class Attribute < ApplicationRecord
       ].join("\n")
     end
 
+    #
+    # `data/` serialization
+
+    def as_json_for_data
+      {
+        "base_attributes" => base.reorder(:id).map(&:as_json_for_data),
+        "extended_attributes" => extended.reorder(:id).map(&:as_json_for_data),
+      }
+    end
+
+    #
+    # `data/localizations/` serialization
+
+    def as_json_for_localization(attributes)
+      {
+        "en" => {
+          "attributes" => attributes.sort_by(&:friendly_id).reduce({}) { _1.merge!(_2.as_json_for_localization) },
+        },
+      }
+    end
+
     private
 
     def row_from_data(data)
@@ -93,7 +114,8 @@ class Attribute < ApplicationRecord
         "description" => data["description"],
         "friendly_id" => data["friendly_id"],
         "base_friendly_id" => data["values_from"],
-      }.compact
+        "sorting" => data["sorting"],
+      }
     end
   end
 
@@ -105,8 +127,13 @@ class Attribute < ApplicationRecord
     end
   end
 
+  # english ignores localization files, since they're derived from this source
   def name(locale: "en")
-    self.class.find_localization(locale, friendly_id, "name") || super()
+    if locale == "en"
+      super()
+    else
+      self.class.find_localization(locale, friendly_id, "name") || super()
+    end
   end
 
   def base?
@@ -115,6 +142,10 @@ class Attribute < ApplicationRecord
 
   def extended?
     !base?
+  end
+
+  def manually_sorted?
+    sorting == "custom"
   end
 
   def sorted_values(locale: "en")
@@ -133,11 +164,12 @@ class Attribute < ApplicationRecord
       {
         "id" => id,
         "name" => name,
+        "description" => description,
         "friendly_id" => friendly_id,
         "handle" => handle,
-        "description" => description,
-        "values" => values.reorder(:id).map(&:friendly_id),
-      }
+        "sorting" => sorting,
+        "values" => sorted_values.map(&:friendly_id),
+      }.compact
     else
       {
         "name" => name,
@@ -147,6 +179,18 @@ class Attribute < ApplicationRecord
         "values_from" => base_friendly_id,
       }
     end
+  end
+
+  #
+  # `data/localizations/` serialization
+
+  def as_json_for_localization
+    {
+      friendly_id => {
+        "name" => name,
+        "description" => description,
+      },
+    }
   end
 
   #

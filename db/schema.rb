@@ -14,6 +14,8 @@ ActiveRecord::Schema[7.1].define do
     t.string(:handle, null: false)
     t.string(:description, null: false)
 
+    t.string(:sorting)
+
     t.index(:friendly_id, unique: true)
   end
   create_table :values, force: :cascade do |t|

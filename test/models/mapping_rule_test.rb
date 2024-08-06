@@ -21,29 +21,29 @@ class MappingRuleTest < ActiveSupport::TestCase
     assert_equal(
       {
         "version" => 1,
-        "mappings"=>[
+        "mappings" => [
           {
-            "input_taxonomy"=>"shopify/2022-02",
-            "output_taxonomy"=>"google/2021-09-21",
+            "input_taxonomy" => "shopify/2022-02",
+            "output_taxonomy" => "google/2021-09-21",
             "rules" => [
               {
                 "input" => {
                   "category" => {
                     "id" => "gid://shopify/TaxonomyCategory/aa",
-                    "full_name" => "Apparel & Accessories"
-                  }
+                    "full_name" => "Apparel & Accessories",
+                  },
                 },
                 "output" => {
                   "category" => [
                     {
                       "id" => "166",
-                      "full_name" => "Apparel & Accessories"
-                    }
-                  ]
-                }
-              }
-            ]
-          }
+                      "full_name" => "Apparel & Accessories",
+                    },
+                  ],
+                },
+              },
+            ],
+          },
         ],
       },
       MappingRule.as_json([mapping_rule], version: 1),
@@ -57,17 +57,17 @@ class MappingRuleTest < ActiveSupport::TestCase
         "input" => {
           "category" => {
             "id" => "gid://shopify/TaxonomyCategory/aa",
-            "full_name" => "Apparel & Accessories"
-          }
+            "full_name" => "Apparel & Accessories",
+          },
         },
         "output" => {
           "category" => [
             {
               "id" => "166",
-              "full_name" => "Apparel & Accessories"
-            }
-          ]
-        }
+              "full_name" => "Apparel & Accessories",
+            },
+          ],
+        },
       },
       mapping_rule.as_json,
     )
@@ -83,18 +83,18 @@ class MappingRuleTest < ActiveSupport::TestCase
         "input" => {
           "category" => {
             "id" => "gid://shopify/TaxonomyCategory/aa",
-            "full_name" => "Apparel & Accessories"
+            "full_name" => "Apparel & Accessories",
           },
-          "attributes" => [{ "attribute" => attribute.gid, "value" => value.gid }]
+          "attributes" => [{ "attribute" => attribute.gid, "value" => value.gid }],
         },
         "output" => {
           "category" => [
             {
               "id" => "166",
-              "full_name" => "Apparel & Accessories"
-            }
-          ]
-        }
+              "full_name" => "Apparel & Accessories",
+            },
+          ],
+        },
       },
       mapping_rule_with_attributes.as_json.sort.to_h,
     )
@@ -212,7 +212,7 @@ class MappingRuleTest < ActiveSupport::TestCase
     @shopify_product_with_attributes ||= build(
       :product,
       payload: {
-        "properties" => [{ "attribute" => attribute.friendly_id, "value" => value.friendly_id }] ,
+        "properties" => [{ "attribute" => attribute.friendly_id, "value" => value.friendly_id }],
         "product_category_id" => "gid://shopify/TaxonomyCategory/aa",
       },
     )
@@ -227,14 +227,14 @@ class MappingRuleTest < ActiveSupport::TestCase
   end
 
   def attribute
-    @attribute ||= build(:attribute,)
+    @attribute ||= build(:attribute)
   end
 
   def category
-    @category ||= build(:category, id: "aa")
+    @category ||= build(:category, id: "aa", name: "Apparel & Accessories")
   end
 
   def value
-    @value ||= build(:value,)
+    @value ||= build(:value)
   end
 end

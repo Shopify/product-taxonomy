@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Category < ApplicationRecord
+  ReparentError = Class.new(StandardError)
+
   ID_REGEX = /\A[a-z]{2}(-\d+)*\z/
 
   default_scope { order(:name) }
@@ -83,6 +85,17 @@ class Category < ApplicationRecord
     end
 
     #
+    # `data/localizations/` serialization
+
+    def as_json_for_localization(categories)
+      {
+        "en" => {
+          "categories" => categories.sort_by(&:id_parts).reduce({}) { _1.merge!(_2.as_json_for_localization) },
+        },
+      }
+    end
+
+    #
     # `docs/` parsing
 
     def as_json_for_docs_siblings(distribution_verticals)
@@ -147,17 +160,21 @@ class Category < ApplicationRecord
     self.class.id_parts(id)
   end
 
+  # english ignores localization files, since they're derived from this source
   def name(locale: "en")
-    self.class.find_localization(locale, id, "name") || super()
+    if locale == "en"
+      super()
+    else
+      self.class.find_localization(locale, id, "name") || super()
+    end
   end
 
   def full_name(locale: "en")
     ancestors.reverse.map { _1.name(locale:) }.push(name(locale:)).join(" > ")
   end
 
-  # should never use translations
   def handleized_name
-    "#{id}_#{self[:name].downcase.gsub(%r{[^a-z0-9\s\-_/\.\+#]}, "").gsub(/[\s\-\.]+/, "_")}"
+    "#{id}_#{name.downcase.gsub(%r{[^a-z0-9\s\-_/\.\+#]}, "").gsub(/[\s\-\.]+/, "_")}"
   end
 
   def root?
@@ -188,6 +205,10 @@ class Category < ApplicationRecord
     [self] + ancestors
   end
 
+  def ancestor_of?(category)
+    descendants.include?(category)
+  end
+
   # depth-first given that matches how we want to use this
   def descendants
     children.flat_map { |child| [child] + child.descendants }
@@ -197,10 +218,41 @@ class Category < ApplicationRecord
     [self] + descendants
   end
 
+  def descendant_of?(category)
+    ancestors.include?(category)
+  end
+
   def next_child_id
     largest_child_id = children.map { _1.id.split("-").last.to_i }.max || 0
 
     "#{id}-#{largest_child_id + 1}"
+  end
+
+  def reparent_to!(new_parent, new_id: new_parent.next_child_id)
+    if root?
+      raise ReparentError, "Cannot reparent a vertical"
+    elsif new_parent.descendant_of?(self)
+      raise ReparentError, "new_parent `#{new_parent.name}` is a descendant"
+    elsif !new_id.start_with?(new_parent.id)
+      raise ReparentError, "new_id `#{new_id}` is invalid for parent's id `#{new_parent.id}`"
+    elsif Category.exists?(id: new_id)
+      raise ReparentError, "new_id `#{new_id}` is already taken"
+    end
+
+    ActiveRecord::Base.transaction do
+      original_id = id
+
+      # update self
+      update_columns(id: new_id, parent_id: new_parent.id)
+      # update children
+      Category.where(parent_id: original_id).update_all(parent_id: new_id)
+      Category.where("id LIKE ?", "#{original_id}-%")
+        .update_all("id = REPLACE(id, '#{original_id}', '#{new_id}')")
+      # update attributes
+      CategoriesAttribute.where(category_id: original_id).update_all(category_id: new_id)
+      CategoriesAttribute.where("category_id LIKE ?", "#{original_id}-%")
+        .update_all("category_id = REPLACE(category_id, '#{original_id}', '#{new_id}')")
+    end
   end
 
   def related_attribute_friendly_ids=(ids)
@@ -213,7 +265,7 @@ class Category < ApplicationRecord
   def as_json_for_data
     {
       "id" => id,
-      "name" => self[:name], # avoid localization
+      "name" => name,
       "children" => children.sort_by(&:id_parts).map(&:id),
       "attributes" => AlphanumericSorter.sort(related_attributes.map(&:friendly_id), other_last: true),
     }
@@ -221,6 +273,18 @@ class Category < ApplicationRecord
 
   def as_json_for_data_with_descendants
     descendants_and_self.sort_by(&:id_parts).map(&:as_json_for_data)
+  end
+
+  #
+  # `data/localizations/` serialization
+
+  def as_json_for_localization
+    {
+      id => {
+        "name" => name,
+        "context" => full_name,
+      },
+    }
   end
 
   #
