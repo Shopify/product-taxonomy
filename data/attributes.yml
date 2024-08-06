@@ -1330,15 +1330,15 @@ base_attributes:
   - racket_gauge__13
   - racket_gauge__14
   - racket_gauge__15
-  - racket_gauge__15l
   - racket_gauge__16
-  - racket_gauge__16l
   - racket_gauge__17
   - racket_gauge__18
   - racket_gauge__19
   - racket_gauge__20
   - racket_gauge__21
   - racket_gauge__22
+  - racket_gauge__15l
+  - racket_gauge__16l
 - id: 1228
   name: Swing style
   description: Classifies based on swing technique, typically for tennis rackets; e.g. long strokes
@@ -9589,6 +9589,7 @@ base_attributes:
   - audio_codecs/formats_supported__3gpp
   - audio_codecs/formats_supported__3g2
   - audio_codecs/formats_supported__3gpp2
+  - audio_codecs/formats_supported___law
   - audio_codecs/formats_supported__aac
   - audio_codecs/formats_supported__aac_he
   - audio_codecs/formats_supported__aac+
@@ -9688,7 +9689,6 @@ base_attributes:
   - audio_codecs/formats_supported__wmv
   - audio_codecs/formats_supported__wve
   - audio_codecs/formats_supported__xmf
-  - audio_codecs/formats_supported___law
   - audio_codecs/formats_supported__other
 - id: 1823
   name: Media format
@@ -17052,8 +17052,8 @@ base_attributes:
   - denomination__100_dollars
   - denomination__500_dollars
   - denomination__1000_dollars
-  - denomination__5000_dollars
   - denomination__10000_dollars
+  - denomination__5000_dollars
   - denomination__aemi
 - id: 2366
   name: Card attributes
@@ -17635,13 +17635,13 @@ base_attributes:
   values:
   - time_signatures__3/8
   - time_signatures__2/4
-  - time_signatures__6/8
   - time_signatures__3/4
+  - time_signatures__6/8
   - time_signatures__4/4
   - time_signatures__9/8
   - time_signatures__5/4
-  - time_signatures__6/4
   - time_signatures__12/8
+  - time_signatures__6/4
   - time_signatures__7/4
 - id: 2404
   name: Height adjustment
@@ -19702,17 +19702,11 @@ base_attributes:
   - scalpel_blade_number__6
   - scalpel_blade_number__9
   - scalpel_blade_number__10
-  - scalpel_blade_number__10a
   - scalpel_blade_number__11
-  - scalpel_blade_number__11p
   - scalpel_blade_number__12
-  - scalpel_blade_number__12d
   - scalpel_blade_number__13
   - scalpel_blade_number__14
   - scalpel_blade_number__15
-  - scalpel_blade_number__15a
-  - scalpel_blade_number__15c
-  - scalpel_blade_number__15t
   - scalpel_blade_number__16
   - scalpel_blade_number__17
   - scalpel_blade_number__18
@@ -19720,17 +19714,23 @@ base_attributes:
   - scalpel_blade_number__20
   - scalpel_blade_number__21
   - scalpel_blade_number__22
-  - scalpel_blade_number__22a
   - scalpel_blade_number__23
   - scalpel_blade_number__24
   - scalpel_blade_number__25
-  - scalpel_blade_number__25a
   - scalpel_blade_number__26
   - scalpel_blade_number__27
   - scalpel_blade_number__34
   - scalpel_blade_number__36
   - scalpel_blade_number__40
   - scalpel_blade_number__60
+  - scalpel_blade_number__10a
+  - scalpel_blade_number__15a
+  - scalpel_blade_number__22a
+  - scalpel_blade_number__25a
+  - scalpel_blade_number__15c
+  - scalpel_blade_number__12d
+  - scalpel_blade_number__11p
+  - scalpel_blade_number__15t
   - scalpel_blade_number__d/15
   - scalpel_blade_number__e11
   - scalpel_blade_number__e/11
@@ -20686,8 +20686,8 @@ base_attributes:
   friendly_id: national/regional_rating
   handle: national-regional-rating
   values:
-  - national/regional_rating__0/1
   - national/regional_rating__0
+  - national/regional_rating__0/1
   - national/regional_rating__2
   - national/regional_rating__3
   - national/regional_rating__4
@@ -30211,1557 +30211,1557 @@ base_attributes:
   - vehicle_fluid_type__prediluted
 extended_attributes:
 - name: Dog house features
+  handle: dog-house-features
   description: Describes special characteristics of a dog house, like adjustable dimensions or UV protection
   friendly_id: dog_house_features
-  handle: dog-house-features
   values_from: outdoor_equipment_features
 - name: Frame material
+  handle: frame-material
   description: Defines the material used in the product's frame, such as wood or plastic
   friendly_id: frame_material
-  handle: frame-material
   values_from: furniture/fixture_material
 - name: Stripper application
+  handle: stripper-application
   description: Specifies the coating or adhesive material that a product is designed to remove or dissolve, e.g. epoxy. paint
   friendly_id: stripper_application
-  handle: stripper-application
   values_from: solvent/thinner_application
 - name: Supported language
+  handle: supported-language
   description: Specifies the languages a software product supports, such as English or Spanish
   friendly_id: supported_language
-  handle: supported-language
   values_from: language
 - name: Dog pen features
+  handle: dog-pen-features
   description: Describes the special features of dog pens, such as UV protection or weather resistant
   friendly_id: dog_pen_features
-  handle: dog-pen-features
   values_from: outdoor_equipment_features
 - name: Rod pattern
+  handle: rod-pattern
   description: Describes the design or print on a fishing rod, such as camouflage or striped
   friendly_id: rod_pattern
-  handle: rod-pattern
   values_from: pattern
 - name: Seat upholstery material
+  handle: seat-upholstery-material
   description: Defines the fabric or material used for sofa coverings, such as microfiber or leatherette
   friendly_id: seat_upholstery_material
-  handle: seat-upholstery-material
   values_from: upholstery_material
 - name: Seat upholstery color
+  handle: seat-upholstery-color
   description: Identifies the color of a furniture item's seat upholstery, such as beige or blue
   friendly_id: seat_upholstery_color
-  handle: seat-upholstery-color
   values_from: color
 - name: Dog kennel/run features
+  handle: dog-kennel-run-features
   description: Highlights the unique features of a dog kennel/run, e.g. weather resistant, portable
   friendly_id: dog_kennel/run_features
-  handle: dog-kennel-run-features
   values_from: outdoor_equipment_features
 - name: Backrest upholstery pattern
+  handle: backrest-upholstery-pattern
   description: Identifies the pattern on the sofa's backrest fabric, e.g. striped, checkered
   friendly_id: backrest_upholstery_pattern
-  handle: backrest-upholstery-pattern
   values_from: pattern
 - name: Shell/Frame color
+  handle: shell-frame-color
   description: Specifies the color of the shell or frame on items like skates or helmets, e.g. black, blue
   friendly_id: shell/frame_color
-  handle: shell-frame-color
   values_from: color
 - name: Riser color
+  handle: riser-color
   description: Identifies the color of the riser in archery bows, such as black or blue
   friendly_id: riser_color
-  handle: riser-color
   values_from: color
 - name: Core pattern
+  handle: core-pattern
   description: Describes the main design on a bow or crossbow's core, such as camouflage or birds
   friendly_id: core_pattern
-  handle: core-pattern
   values_from: pattern
 - name: Riser material
+  handle: riser-material
   description: Specifies the material in a bow or crossbow riser, such as carbon fiber or wood
   friendly_id: riser_material
-  handle: riser-material
   values_from: bow_material
 - name: Riser pattern
+  handle: riser-pattern
   description: Describes the design or motif on the riser of bows and crossbows, like camouflage or texture
   friendly_id: riser_pattern
-  handle: riser-pattern
   values_from: pattern
 - name: String color
+  handle: string-color
   description: Identifies the string color on bows and crossbows, such as clear
   friendly_id: string_color
-  handle: string-color
   values_from: color
 - name: Blanket pattern
+  handle: blanket-pattern
   description: Describes the design or motif on a blanket, such as floral or geometric
   friendly_id: blanket_pattern
-  handle: blanket-pattern
   values_from: pattern
 - name: Core material
+  handle: core-material
   description: Specifies the primary material used, typically for bows and crossbows; e.g. fiberglass, wood
   friendly_id: core_material
-  handle: core-material
   values_from: bow_material
 - name: Core color
+  handle: core-color
   description: Identifies the primary color of a bow or crossbow's core, such as black or blue
   friendly_id: core_color
-  handle: core-color
   values_from: color
 - name: String pattern
+  handle: string-pattern
   description: Describes the design on archery string, such as striped
   friendly_id: string_pattern
-  handle: string-pattern
   values_from: pattern
 - name: Bow features
+  handle: bow-features
   description: Identifies unique features of archery bows, e.g. adjustable draw, illuminated scope
   friendly_id: bow_features
-  handle: bow-features
   values_from: bow/crossbow_features
 - name: Bolt material
+  handle: bolt-material
   description: Identifies the composition of archery bolts, such as bamboo or fiberglass
   friendly_id: bolt_material
-  handle: bolt-material
   values_from: arrow/bolt_material
 - name: Blanket color
+  handle: blanket-color
   description: Identifies the primary color of a blanket, such as navy or multicolor
   friendly_id: blanket_color
-  handle: blanket-color
   values_from: color
 - name: Arrow material
+  handle: arrow-material
   description: Identifies the composition of arrows, such as bamboo or fiberglass
   friendly_id: arrow_material
-  handle: arrow-material
   values_from: arrow/bolt_material
 - name: Solvent application
+  handle: solvent-application
   description: Specifies the coating or adhesive material that a product is designed to dissolve, e.g. epoxy, paint
   friendly_id: solvent_application
-  handle: solvent-application
   values_from: solvent/thinner_application
 - name: Sofa features
+  handle: sofa-features
   description: Describes special characteristics of a sofa, such as adjustable armrests or pet friendly
   friendly_id: sofa_features
-  handle: sofa-features
   values_from: chair/sofa_features
 - name: Paintball equipment included
+  handle: paintball-equipment-included
   description: Specifies the additional items included with a paintball product, like batteries or charger
   friendly_id: paintball_equipment_included
-  handle: paintball-equipment-included
   values_from: paintball/airsoft_equipment_included
 - name: Seat upholstery pattern
+  handle: seat-upholstery-pattern
   description: Identifies the design or motif on a sofa's fabric, such as paisley or swirl
   friendly_id: seat_upholstery_pattern
-  handle: seat-upholstery-pattern
   values_from: pattern
 - name: Paint form
+  handle: paint-form
   description: Identifies the form of craft paint, for instance, gel or powder
   friendly_id: paint_form
-  handle: paint-form
   values_from: paint/dye_form
 - name: Diaper features
+  handle: diaper-features
   description: Describes special characteristics of diapers, such as leakproof or hypoallergenic
   friendly_id: diaper_features
-  handle: diaper-features
   values_from: absorbent_hygiene_product_features
 - name: Dog diaper size
+  handle: dog-diaper-size
   description: Specifies the size of dog diapers, e.g. Extra large (XL), Small (S)
   friendly_id: dog_diaper_size
-  handle: dog-diaper-size
   values_from: accessory_size
 - name: Footwear color
+  handle: footwear-color
   description: Specifies the main color of the shoe, such as white or red
   friendly_id: footwear_color
-  handle: footwear-color
   values_from: color
 - name: Footwear pattern
+  handle: footwear-pattern
   description: Describes the visual motif on shoes, for example, stripes or leaves
   friendly_id: footwear_pattern
-  handle: footwear-pattern
   values_from: pattern
 - name: Liner features
+  handle: liner-features
   description: Describes specific characteristics of liners, such as leakproof or biodegradable
   friendly_id: liner_features
-  handle: liner-features
   values_from: absorbent_hygiene_product_features
 - name: Airsoft equipment included
+  handle: airsoft-equipment-included
   description: Specifies extra gear provided with airsoft products, such as protective eyewear or tactical vest
   friendly_id: airsoft_equipment_included
-  handle: airsoft-equipment-included
   values_from: paintball/airsoft_equipment_included
 - name: Wipe dispenser features
+  handle: wipe-dispenser-features
   description: Describes special characteristics of wipe dispensers, such as dispensing mechanism or LED indicator
   friendly_id: wipe_dispenser_features
-  handle: wipe-dispenser-features
   values_from: wipe_dispenser/warmer_features
 - name: Page size
+  handle: page-size
   description: Determines the dimensions of a product, like 11" x 17" or A4
   friendly_id: page_size
-  handle: page-size
   values_from: paper_size
 - name: Desk size
+  handle: desk-size
   description: Indicates the size category of a desk, such as small (S) or large (L)
   friendly_id: desk_size
-  handle: desk-size
   values_from: accessory_size
 - name: Toilet mounting type
+  handle: toilet-mounting-type
   description: Specifies the method of toilet installation, e.g. wall-mounted, floor-mounted
   friendly_id: toilet_mounting_type
-  handle: toilet-mounting-type
   values_from: toilet/bidet_mounting_type
 - name: Bidet mounting type
+  handle: bidet-mounting-type
   description: Specifies how the bidet is installed, such as wall-mounted or floor-mounted
   friendly_id: bidet_mounting_type
-  handle: bidet-mounting-type
   values_from: toilet/bidet_mounting_type
 - name: Sink shape
+  handle: sink-shape
   description: Defines the geometric design of sinks, such as oval or rectangular
   friendly_id: sink_shape
-  handle: sink-shape
   values_from: shape
 - name: Beater head size
+  handle: beater-head-size
   description: Specifies the dimension of the bass drum beater head, such as medium (M) or large (L)
   friendly_id: beater_head_size
-  handle: beater-head-size
   values_from: accessory_size
 - name: Application area
+  handle: application-area
   description: Specifies the body part or area where the product is applied, e.g. lips, full body
   friendly_id: application_area
-  handle: application-area
   values_from: body_area
 - name: Tank pattern
+  handle: tank-pattern
   description: Identifies the visual motif on toilet tanks, such as solid or abstract
   friendly_id: tank_pattern
-  handle: tank-pattern
   values_from: pattern
 - name: Tank color
+  handle: tank-color
   description: Identifies the color of a product, typically toilet tanks; e.g. black, white
   friendly_id: tank_color
-  handle: tank-color
   values_from: color
 - name: Flush plate pattern
+  handle: flush-plate-pattern
   description: Describes the design or motif on a toilet flush plate, such as floral or plaid
   friendly_id: flush_plate_pattern
-  handle: flush-plate-pattern
   values_from: pattern
 - name: Frog material
+  handle: frog-material
   description: Identifies the material used in the frog of a string instrument bow, like ebony wood or silver
   friendly_id: frog_material
-  handle: frog-material
   values_from: instrument_part_material
 - name: Scent
+  handle: scent
   description: Specifies the fragrance or aroma of a product, such as vanilla or citrus
   friendly_id: scent
-  handle: scent
   values_from: fragrance
 - name: Food supplement form
+  handle: food-supplement-form
   description: Specifies the format of a health supplement, such as liquid or tablets
   friendly_id: food_supplement_form
-  handle: food-supplement-form
   values_from: medicine/supplement_form
 - name: Lip plate material
+  handle: lip-plate-material
   description: Identifies the material used for the lip plate of a flute, like silver or wood
   friendly_id: lip_plate_material
-  handle: lip-plate-material
   values_from: instrument_part_material
 - name: Flush plate color
+  handle: flush-plate-color
   description: Identifies the color of the flush plate on toilet tanks, such as white or silver
   friendly_id: flush_plate_color
-  handle: flush-plate-color
   values_from: color
 - name: Bell size
+  handle: bell-size
   description: Indicates the size of a musical instrument's bell, such as large (L) or medium (M)
   friendly_id: bell_size
-  handle: bell-size
   values_from: accessory_size
 - name: Housing pattern
+  handle: housing-pattern
   description: Describes the design or motif on a product's exterior, like abstract or logo
   friendly_id: housing_pattern
-  handle: housing-pattern
   values_from: pattern
 - name: Suction cup pattern
+  handle: suction-cup-pattern
   description: Describes the design or motif on the suction cup of tools like plungers, e.g. floral, geometric
   friendly_id: suction_cup_pattern
-  handle: suction-cup-pattern
   values_from: pattern
 - name: Suction cup material
+  handle: suction-cup-material
   description: Identifies the material used in the suction cup, like rubber or silicone
   friendly_id: suction_cup_material
-  handle: suction-cup-material
   values_from: accessory_material
 - name: Stencil/Cut shape
+  handle: stencil-cut-shape
   description: Describes the shape or design of stencils and die cuts, such as round or butterfly
   friendly_id: stencil/cut_shape
-  handle: stencil-cut-shape
   values_from: mold/cut_shape
 - name: Suction cup color
+  handle: suction-cup-color
   description: Identifies the color of the suction cup, such as black or blue
   friendly_id: suction_cup_color
-  handle: suction-cup-color
   values_from: color
 - name: Shaft pattern
+  handle: shaft-pattern
   description: Indicates the visual motif on the shaft of items, typically plungers; e.g. leaves, birds
   friendly_id: shaft_pattern
-  handle: shaft-pattern
   values_from: pattern
 - name: Shaft material
+  handle: shaft-material
   description: Identifies the material used in the shaft of tools, like wood or metal
   friendly_id: shaft_material
-  handle: shaft-material
   values_from: accessory_material
 - name: Shaft color
+  handle: shaft-color
   description: Specifies the hue of the shaft on items like plungers, e.g. silver or red
   friendly_id: shaft_color
-  handle: shaft-color
   values_from: color
 - name: Crafting stretcher features
+  handle: crafting-stretcher-features
   description: Describes the key features of a crafting stretcher, like adjustable tension or lightweight
   friendly_id: crafting_stretcher_features
-  handle: crafting-stretcher-features
   values_from: crafting_frame/stretcher_features
 - name: Crafting frame features
+  handle: crafting-frame-features
   description: Describes the unique characteristics of crafting frames, like adjustable tension or lightweight
   friendly_id: crafting_frame_features
-  handle: crafting-frame-features
   values_from: crafting_frame/stretcher_features
 - name: Crafting hoop features
+  handle: crafting-hoop-features
   description: Highlights the features of embroidery hoops, e.g. secure grip, smooth surface
   friendly_id: crafting_hoop_features
-  handle: crafting-hoop-features
   values_from: crafting_frame/stretcher_features
 - name: Glue gun operation
+  handle: glue-gun-operation
   description: Identifies the power source of a glue gun, such as corded or cordless
   friendly_id: glue_gun_operation
-  handle: glue-gun-operation
   values_from: tool_mobility
 - name: Mold shape
+  handle: mold-shape
   description: Describes the form or pattern of a craft mold, such as round or letter
   friendly_id: mold_shape
-  handle: mold-shape
   values_from: mold/cut_shape
 - name: Measuring tool features
+  handle: measuring-tool-features
   description: Describes special characteristics of measuring tools, like a built-in camera or portable
   friendly_id: measuring_tool_features
-  handle: measuring-tool-features
   values_from: sensor/measuring_tool_features
 - name: Compatible operating system
+  handle: compatible-operating-system
   description: Defines the software compatibility of a product, e.g. Windows, macOS
   friendly_id: compatible_operating_system
-  handle: compatible-operating-system
   values_from: operating_system
 - name: Sport
+  handle: sport
   description: Specifies the sport for which the product is intended, such as basketball or skiing
   friendly_id: sport
-  handle: sport
   values_from: activity
 - name: Backing pattern
+  handle: backing-pattern
   description: Identifies the pattern on a product's reverse side, typically for sanding accessories; e.g. abstract, text
   friendly_id: backing_pattern
-  handle: backing-pattern
   values_from: pattern
 - name: Backing color
+  handle: backing-color
   description: Identifies the color of a product's backing or underside, such as beige or black
   friendly_id: backing_color
-  handle: backing-color
   values_from: color
 - name: Urinal mounting type
+  handle: urinal-mounting-type
   description: Specifies how a urinal is installed, such as wall-mounted or floor-mounted
   friendly_id: urinal_mounting_type
-  handle: urinal-mounting-type
   values_from: toilet/bidet_mounting_type
 - name: Doll features
+  handle: doll-features
   description: Describes special characteristics of dolls, like articulated joints or realistic details
   friendly_id: doll_features
-  handle: doll-features
   values_from: doll/playset_features
 - name: Toy figure features
+  handle: toy-figure-features
   description: Highlights special characteristics of toy figures, like articulated joints or realistic details
   friendly_id: toy_figure_features
-  handle: toy-figure-features
   values_from: doll/playset_features
 - name: Housing color
+  handle: housing-color
   description: Identifies the color of a product's outer casing, like beige or clear
   friendly_id: housing_color
-  handle: housing-color
   values_from: color
 - name: Suitable for gas type
+  handle: suitable-for-gas-type
   description: Identifies the type of gas a product is compatible with, such as propane or ethanol
   friendly_id: suitable_for_gas_type
-  handle: suitable-for-gas-type
   values_from: fuel_source
 - name: Jumping surface pattern
+  handle: jumping-surface-pattern
   description: Identifies the design or print on a trampoline's jumping surface, such as stars or stripes
   friendly_id: jumping_surface_pattern
-  handle: jumping-surface-pattern
   values_from: pattern
 - name: Jumping surface color
+  handle: jumping-surface-color
   description: Identifies the color of the trampoline's jumping surface, such as blue or black
   friendly_id: jumping_surface_color
-  handle: jumping-surface-color
   values_from: color
 - name: Medicine/Drug form
+  handle: medicine-drug-form
   description: Identifies the physical form of a medicine or drug, such as tablets or liquid
   friendly_id: medicine/drug_form
-  handle: medicine-drug-form
   values_from: medicine/supplement_form
 - name: Electronic game genre
+  handle: electronic-game-genre
   description: Identifies the category of an electronic game, such as fitness or puzzle
   friendly_id: electronic_game_genre
-  handle: electronic-game-genre
   values_from: video_game_genre
 - name: Slip texture
+  handle: slip-texture
   description: Describes the feel of pottery slips, such as medium or smooth
   friendly_id: slip_texture
-  handle: slip-texture
   values_from: clay/slip_texture
 - name: Door application
+  handle: door-application
   description: Specifies the application of doors or hinges, such as internal or external
   friendly_id: door_application
-  handle: door-application
   values_from: door/frame_application
 - name: Baby equipment safety features
+  handle: baby-equipment-safety-features
   description: Identifies safety aspects of baby gear, like 3-point harness or non-slip base
   friendly_id: baby_equipment_safety_features
-  handle: baby-equipment-safety-features
   values_from: baby/toddler_equipment_safety_features
 - name: Garage door material
+  handle: garage-door-material
   description: Identifies the construction material of garage doors, such as steel or wood
   friendly_id: garage_door_material
-  handle: garage-door-material
   values_from: door_material
 - name: Door frame application
+  handle: door-frame-application
   description: Identifies where the door frame is intended to be used, e.g. internal, external
   friendly_id: door_frame_application
-  handle: door-frame-application
   values_from: door/frame_application
 - name: Baby/Toddler car seat features
+  handle: baby-toddler-car-seat-features
   description: Highlights key features of baby/toddler car seats, like 5-point harness or side-impact protection
   friendly_id: baby/toddler_car_seat_features
-  handle: baby-toddler-car-seat-features
   values_from: baby/toddler_equipment_safety_features
 - name: Door closer application
+  handle: door-closer-application
   description: Specifies the application of door closers, such as internal or external
   friendly_id: door_closer_application
-  handle: door-closer-application
   values_from: door/frame_application
 - name: Thinner application
+  handle: thinner-application
   description: Describes the type of substance a thinner is used for, like paint or epoxy
   friendly_id: thinner_application
-  handle: thinner-application
   values_from: solvent/thinner_application
 - name: Shell/Frame pattern
+  handle: shell-frame-pattern
   description: Describes the design or print on the shell or frame of a product, typically inline skates
   friendly_id: shell/frame_pattern
-  handle: shell-frame-pattern
   values_from: pattern
 - name: Instrument bow material
+  handle: instrument-bow-material
   description: Identifies the material used in the construction of a musical instrument's bow, such as carbon fiber or brazilwood
   friendly_id: instrument_bow_material
-  handle: instrument-bow-material
   values_from: instrument_material
 - name: Vehicle engine features
+  handle: vehicle-engine-features
   description: Describes specific characteristics of a vehicle's engine, like high performance or fuel efficient
   friendly_id: vehicle_engine_features
-  handle: vehicle-engine-features
   values_from: vehicle_engine/part_features
 - name: Vehicle engine part features
+  handle: vehicle-engine-part-features
   description: Indicates the unique features of motor vehicle engine parts, such as fuel efficient or performance upgrade
   friendly_id: vehicle_engine_part_features
-  handle: vehicle-engine-part-features
   values_from: vehicle_engine/part_features
 - name: Fingerboard color
+  handle: fingerboard-color
   description: Specifies the fingerboard color on string instruments, e.g. silver, white
   friendly_id: fingerboard_color
-  handle: fingerboard-color
   values_from: color
 - name: Fingerboard material
+  handle: fingerboard-material
   description: Specifies the type of material used for the fingerboard on guitars, such as ebony wood or synthetic
   friendly_id: fingerboard_material
-  handle: fingerboard-material
   values_from: instrument_part_material
 - name: Fingerboard pattern
+  handle: fingerboard-pattern
   description: Describes the design or motif on a guitar's fingerboard, like floral or geometric
   friendly_id: fingerboard_pattern
-  handle: fingerboard-pattern
   values_from: pattern
 - name: Instrument color
+  handle: instrument-color
   description: Identifies the color of a musical instrument, such as black or silver
   friendly_id: instrument_color
-  handle: instrument-color
   values_from: color
 - name: Instrument pattern
+  handle: instrument-pattern
   description: Describes the visual design or motif on a musical instrument, such as solid or texture
   friendly_id: instrument_pattern
-  handle: instrument-pattern
   values_from: pattern
 - name: Instrument string color
+  handle: instrument-string-color
   description: Identifies the color of the strings on musical instruments, like gold or silver
   friendly_id: instrument_string_color
-  handle: instrument-string-color
   values_from: color
 - name: Instrument string pattern
+  handle: instrument-string-pattern
   description: Indicates the pattern on guitar strings, such as solid or geometric
   friendly_id: instrument_string_pattern
-  handle: instrument-string-pattern
   values_from: pattern
 - name: Neck color
+  handle: neck-color
   description: Identifies the color of the neck area on a guitar, such as white or multicolor
   friendly_id: neck_color
-  handle: neck-color
   values_from: color
 - name: Neck material
+  handle: neck-material
   description: Identifies the material used in the neck of string instruments, like maple wood or rosewood
   friendly_id: neck_material
-  handle: neck-material
   values_from: instrument_part_material
 - name: Neck pattern
+  handle: neck-pattern
   description: Identifies the design or print on a guitar's neck, like floral or striped
   friendly_id: neck_pattern
-  handle: neck-pattern
   values_from: pattern
 - name: Card size
+  handle: card-size
   description: Used to indicate the size of greeting or note cards, e.g. A4, letter
   friendly_id: card_size
-  handle: card-size
   values_from: paper_size
 - name: Cocktail decoration material
+  handle: cocktail-decoration-material
   description: Specifies the substance cocktail decorations are made from, like plastic or paper
   friendly_id: cocktail_decoration_material
-  handle: cocktail-decoration-material
   values_from: accessory_material
 - name: Incontinence aid features
+  handle: incontinence-aid-features
   description: Describes special characteristics of incontinence aids, like leakproof or hypoallergenic
   friendly_id: incontinence_aid_features
-  handle: incontinence-aid-features
   values_from: absorbent_hygiene_product_features
 - name: Sensor features
+  handle: sensor-features
   description: Describes the specific features of a product's sensor, such as backlighting or built-in camera
   friendly_id: sensor_features
-  handle: sensor-features
   values_from: sensor/measuring_tool_features
 - name: Playset features
+  handle: playset-features
   description: Highlights special aspects of a playset, e.g. limited edition, waterproof
   friendly_id: playset_features
-  handle: playset-features
   values_from: doll/playset_features
 - name: Camera lens material
+  handle: camera-lens-material
   description: Specifies the composition of camera or video camera lenses, such as glass or plastic
   friendly_id: camera_lens_material
-  handle: camera-lens-material
   values_from: lens/slide_material
 - name: Notepad cover type
+  handle: notepad-cover-type
   description: Identifies the kind of cover on a notepad, such as hardcover or paperback
   friendly_id: notepad_cover_type
-  handle: notepad-cover-type
   values_from: book_cover_type
 - name: Sheet pattern
+  handle: sheet-pattern
   description: 'Describes the design or print on a paper products, such as plaid or rainbow '
   friendly_id: sheet_pattern
-  handle: sheet-pattern
   values_from: pattern
 - name: Sheet color
+  handle: sheet-color
   description: Identifies the color of paper products, e.g. white, blue
   friendly_id: sheet_color
-  handle: sheet-color
   values_from: color
 - name: Folder/Report cover material
+  handle: folder-report-cover-material
   description: Identifies the material used in making folders or report covers, such as paper or leather
   friendly_id: folder/report_cover_material
-  handle: folder-report-cover-material
   values_from: book/file_cover_material
 - name: Binocular design
+  handle: binocular-design
   description: Describes the specific use or functionality of binoculars, such as hunting or astronomy
   friendly_id: binocular_design
-  handle: binocular-design
   values_from: binocular/monocular_design
 - name: Patch shape
+  handle: patch-shape
   description: Describes the form or design of a patch, such as animal or geometric
   friendly_id: patch_shape
-  handle: patch-shape
   values_from: applique/patch_shape
 - name: Monocular design
+  handle: monocular-design
   description: Identifies the functionality of a monocular, like zoom or night vision
   friendly_id: monocular_design
-  handle: monocular-design
   values_from: binocular/monocular_design
 - name: Applique shape
+  handle: applique-shape
   description: Describes the shape of applique items, such as floral or animal
   friendly_id: applique_shape
-  handle: applique-shape
   values_from: applique/patch_shape
 - name: Book cover material
+  handle: book-cover-material
   description: Identifies the material used for book covers, such as leather or paper
   friendly_id: book_cover_material
-  handle: book-cover-material
   values_from: book/file_cover_material
 - name: Download format
+  handle: download-format
   description: Specifies the file format for digital music downloads, such as MP3 or WAV
   friendly_id: download_format
-  handle: download-format
   values_from: audio_codecs/formats_supported
 - name: Radio features
+  handle: radio-features
   description: Specifies the unique capabilities of a radio, such as GPS support or MP3 playback
   friendly_id: radio_features
-  handle: radio-features
   values_from: audio_player/recorder_features
 - name: SIM card type 1
+  handle: sim-card-type-1
   description: Specifies compatible SIM card format for a mobile phone's slot 1, such as a Nano SIM
   friendly_id: sim_card_type_1
-  handle: sim-card-type-1
   values_from: sim_card_type
 - name: SIM card type 2
+  handle: sim-card-type-2
   description: Specifies compatible SIM card format for a mobile phone's slot 2, such as a Nano SIM
   friendly_id: sim_card_type_2
-  handle: sim-card-type-2
   values_from: sim_card_type
 - name: Audio converter features
+  handle: audio-converter-features
   description: Outlines main features of an audio converter, such as AI-powered or analog support
   friendly_id: audio_converter_features
-  handle: audio-converter-features
   values_from: audio/scan_converter_features
 - name: Scan converter features
+  handle: scan-converter-features
   description: Highlights the unique features of a scan converter, like automatic image calibration or remote control
   friendly_id: scan_converter_features
-  handle: scan-converter-features
   values_from: audio/scan_converter_features
 - name: Sequin shape
+  handle: sequin-shape
   description: Defines the shape of sequin, like round or flower
   friendly_id: sequin_shape
-  handle: sequin-shape
   values_from: sequin/glitter_shape
 - name: Diaper bag style
+  handle: diaper-bag-style
   description: Describes the design or form of a diaper bag, such as backpack or crossbody
   friendly_id: diaper_bag_style
-  handle: diaper-bag-style
   values_from: bag_style
 - name: Luggage/Bag closure
+  handle: luggage-bag-closure
   description: Identifies the type of closure used on luggage or bags, such as zipper or snap
   friendly_id: luggage/bag_closure
-  handle: luggage-bag-closure
   values_from: bag_closure
 - name: Glitter shape
+  handle: glitter-shape
   description: Defines the shape of glitter, like heart or star
   friendly_id: glitter_shape
-  handle: glitter-shape
   values_from: sequin/glitter_shape
 - name: Player specialized features
+  handle: player-specialized-features
   description: Identifies unique capabilities of video players, like 4K support or HDR support
   friendly_id: player_specialized_features
-  handle: player-specialized-features
   values_from: player/recorder_specialized_features
 - name: Flower pattern
+  handle: flower-pattern
   description: Describes the pattern found in flowers, e.g. striped, dots
   friendly_id: flower_pattern
-  handle: flower-pattern
   values_from: pattern
 - name: Flower color
+  handle: flower-color
   description: Specifies the color of the flower, such as pink or multicolor
   friendly_id: flower_color
-  handle: flower-color
   values_from: color
 - name: Pole pattern
+  handle: pole-pattern
   description: Describes the design or motif on the pole of an umbrella, such as floral or geometric
   friendly_id: pole_pattern
-  handle: pole-pattern
   values_from: pattern
 - name: Band pattern
+  handle: band-pattern
   description: Indicates the visual theme on the band of items like watches, e.g. striped, logo
   friendly_id: band_pattern
-  handle: band-pattern
   values_from: pattern
 - name: Laser pattern
+  handle: laser-pattern
   description: Identifies the design or motif produced by a laser, such as stars or animal
   friendly_id: laser_pattern
-  handle: laser-pattern
   values_from: pattern
 - name: Scalpel blade material
+  handle: scalpel-blade-material
   description: Identifies the composition of scalpel blades, such as stainless steel or titanium
   friendly_id: scalpel_blade_material
-  handle: scalpel-blade-material
   values_from: blade_material
 - name: Laser color
+  handle: laser-color
   description: Identifies the color of a laser pointer, like red or green
   friendly_id: laser_color
-  handle: laser-color
   values_from: color
 - name: Knitting project type
+  handle: knitting-project-type
   description: Specifies the type of knitting project, such as pillow making or stuffed toy making
   friendly_id: knitting_project_type
-  handle: knitting-project-type
   values_from: knitting/padding_project_type
 - name: Needle housing material
+  handle: needle-housing-material
   description: Identifies the material of the needle housing, such as plastic or stainless steel
   friendly_id: needle_housing_material
-  handle: needle-housing-material
   values_from: accessory_material
 - name: Currencies supported
+  handle: currencies-supported
   description: Identifies the types of currency accepted by a product, e.g. Canadian Dollar (CAD), Chinese Yuan (CNY)
   friendly_id: currencies_supported
-  handle: currencies-supported
   values_from: currency
 - name: Housing material
+  handle: housing-material
   description: Specifies the material used in the product's outer layer, e.g. stainless steel, wood
   friendly_id: housing_material
-  handle: housing-material
   values_from: furniture/fixture_material
 - name: Shopping bag material
+  handle: shopping-bag-material
   description: Specifies the type of material used in shopping bags, e.g. paper, biodegradable materials
   friendly_id: shopping_bag_material
-  handle: shopping-bag-material
   values_from: disposable/reusable_item_material
 - name: Felt tip design
+  handle: felt-tip-design
   description: Describes the thickness of the pen's felt tip, such as medium or fine
   friendly_id: felt_tip_design
-  handle: felt-tip-design
   values_from: pen/felt_tip_design
 - name: Pen pattern
+  handle: pen-pattern
   description: Identifies the visual theme on pens, such as camouflage or checkered
   friendly_id: pen_pattern
-  handle: pen-pattern
   values_from: pattern
 - name: Pen features
+  handle: pen-features
   description: Describes unique characteristics of pens, such as retractable or scented
   friendly_id: pen_features
-  handle: pen-features
   values_from: pen/pencil_features
 - name: Pen color
+  handle: pen-color
   description: Identifies the color of the pen's ink, e.g. red, blue
   friendly_id: pen_color
-  handle: pen-color
   values_from: color
 - name: Pencil features
+  handle: pencil-features
   description: Identifies specific characteristics of pencils, such as eraser or retractable
   friendly_id: pencil_features
-  handle: pencil-features
   values_from: pen/pencil_features
 - name: Bulb type
+  handle: bulb-type
   description: Specifies the type of bulb used in lighting products, e.g. LED, halogen
   friendly_id: bulb_type
-  handle: bulb-type
   values_from: light_source
 - name: Microscope slide material
+  handle: microscope-slide-material
   description: Specifies the type of material used in microscope slides, such as glass or plastic
   friendly_id: microscope_slide_material
-  handle: microscope-slide-material
   values_from: lens/slide_material
 - name: Microscope features
+  handle: microscope-features
   description: Highlights unique aspects of microscopes, such as portability or memory function
   friendly_id: microscope_features
-  handle: microscope-features
   values_from: sensor/measuring_tool_features
 - name: Dental water jet operation
+  handle: dental-water-jet-operation
   description: Specifies the power source for a dental water jet, such as corded or cordless
   friendly_id: dental_water_jet_operation
-  handle: dental-water-jet-operation
   values_from: tool_mobility
 - name: Pen tip design
+  handle: pen-tip-design
   description: Describes the style of a pen's tip, such as medium or fine
   friendly_id: pen_tip_design
-  handle: pen-tip-design
   values_from: pen/felt_tip_design
 - name: Text plate material
+  handle: text-plate-material
   description: Identifies the material of the text plate on office stamps, such as metal or rubber
   friendly_id: text_plate_material
-  handle: text-plate-material
   values_from: accessory_material
 - name: Lens color
+  handle: lens-color
   description: Specifies the color of eyewear lenses, such as yellow or black
   friendly_id: lens_color
-  handle: lens-color
   values_from: color
 - name: Ink pattern
+  handle: ink-pattern
   description: Identifies the visual theme of pens or stamps, e.g. geometric, Christmas
   friendly_id: ink_pattern
-  handle: ink-pattern
   values_from: pattern
 - name: Ink color
+  handle: ink-color
   description: Identifies the color of ink, typically for office supplies; e.g. black, silver
   friendly_id: ink_color
-  handle: ink-color
   values_from: color
 - name: Customization
+  handle: customization
   description: Identifies the type of personalization available on office stamps, such as custom text or logo engraving
   friendly_id: customization
-  handle: customization
   values_from: engraving
 - name: Lens pattern
+  handle: lens-pattern
   description: Describes the design or visual appearance on eyewear lenses, such as solid or texture
   friendly_id: lens_pattern
-  handle: lens-pattern
   values_from: pattern
 - name: Dental repair kit certifications
+  handle: dental-repair-kit-certifications
   description: Identifies the certifications a dental repair kit has, such as FDA approved or BPA-free
   friendly_id: dental_repair_kit_certifications
-  handle: dental-repair-kit-certifications
   values_from: dental_mouthguard_certifications
 - name: Transcriber/Dictation system features
+  handle: transcriber-dictation-system-features
   description: Identifies special features of transcribers or dictation systems, like AI-powered or noise reduction
   friendly_id: transcriber/dictation_system_features
-  handle: transcriber-dictation-system-features
   values_from: audio_player/recorder_features
 - name: Case color
+  handle: case-color
   description: Specifies the color of a product's case, such as clear or white
   friendly_id: case_color
-  handle: case-color
   values_from: color
 - name: Case pattern
+  handle: case-pattern
   description: Describes the design or motif on a product's case, such as floral or geometric
   friendly_id: case_pattern
-  handle: case-pattern
   values_from: pattern
 - name: Dial color
+  handle: dial-color
   description: Specifies the color of a watch's dial or face, such as gold or multicolor
   friendly_id: dial_color
-  handle: dial-color
   values_from: color
 - name: Dial pattern
+  handle: dial-pattern
   description: Describes the design or motif on a watch's dial, such as dots or tie-dye
   friendly_id: dial_pattern
-  handle: dial-pattern
   values_from: pattern
 - name: Cover color
+  handle: cover-color
   description: Specifies the primary color of a product's cover, e.g. clear, navy
   friendly_id: cover_color
-  handle: cover-color
   values_from: color
 - name: Watch material
+  handle: watch-material
   description: Specifies the type of material used for the watch, such as titanium or silicone
   friendly_id: watch_material
-  handle: watch-material
   values_from: watch/band_material
 - name: Cover pattern
+  handle: cover-pattern
   description: Specifies the visual motif or design on an item's cover, such as floral or tie-dye
   friendly_id: cover_pattern
-  handle: cover-pattern
   values_from: pattern
 - name: Band material
+  handle: band-material
   description: Specifies the material used in the watch band, such as leather or stainless steel
   friendly_id: band_material
-  handle: band-material
   values_from: watch/band_material
 - name: Washing machine features
+  handle: washing-machine-features
   description: Identifies special functions of a washing machine, like child lock or delayed start timer
   friendly_id: washing_machine_features
-  handle: washing-machine-features
   values_from: washer/dryer_features
 - name: Compatible battery size
+  handle: compatible-battery-size
   description: Identifies the battery sizes that a product is compatible with, e.g. AAA, CR2032
   friendly_id: compatible_battery_size
-  handle: compatible-battery-size
   values_from: battery_size
 - name: Dryer features
+  handle: dryer-features
   description: Specifies unique characteristics of a laundry dryer, like self-cleaning or inverter technology
   friendly_id: dryer_features
-  handle: dryer-features
   values_from: washer/dryer_features
 - name: Output connection
+  handle: output-connection
   description: Specifies the type of output connection for audio cables, such as 3.5mm or RCA
   friendly_id: output_connection
-  handle: output-connection
   values_from: device_interface
 - name: Door mat base color
+  handle: door-mat-base-color
   description: Identifies the primary color of a door mat's base, such as beige or black
   friendly_id: door_mat_base_color
-  handle: door-mat-base-color
   values_from: color
 - name: Systems supported
+  handle: systems-supported
   description: Specifies the gaming platforms a product is compatible with; e.g Xbox, Nintendo switch
   friendly_id: systems_supported
-  handle: systems-supported
   values_from: console_system
 - name: Door mat base material
+  handle: door-mat-base-material
   description: Specifies the material at the bottom of a door mat, such as jute or latex
   friendly_id: door_mat_base_material
-  handle: door-mat-base-material
   values_from: mat_base_material
 - name: Keyboard language
+  handle: keyboard-language
   description: Specifies the language layout of a keyboard, such as ENG (English) or DEU (German)
   friendly_id: keyboard_language
-  handle: keyboard-language
   values_from: language_version
 - name: Door mat base pattern
+  handle: door-mat-base-pattern
   description: Describes the design or motif on the base of a door mat, such as floral or geometric
   friendly_id: door_mat_base_pattern
-  handle: door-mat-base-pattern
   values_from: pattern
 - name: Screen specialized features
+  handle: screen-specialized-features
   description: Identifies unique capabilities of a computer screen, like anti-glare or touchscreen
   friendly_id: screen_specialized_features
-  handle: screen-specialized-features
   values_from: monitor/screen_specialized_features
 - name: Throw pillow shape
+  handle: throw-pillow-shape
   description: Identifies the shape of decorative pillows, such as bolster or rectangular
   friendly_id: throw_pillow_shape
-  handle: throw-pillow-shape
   values_from: pillow_shape
 - name: Door mat surface material
+  handle: door-mat-surface-material
   description: Specifies the material on a door mat's surface, like seagrass or rubber
   friendly_id: door_mat_surface_material
-  handle: door-mat-surface-material
   values_from: rug/mat_material
 - name: Rug shape
+  handle: rug-shape
   description: Identifies the geometric design of rugs, such as square or runner
   friendly_id: rug_shape
-  handle: rug-shape
   values_from: mat/rug_shape
 - name: Rug material
+  handle: rug-material
   description: Identifies the material used in a rug's construction, such as wool or jute
   friendly_id: rug_material
-  handle: rug-material
   values_from: rug/mat_material
 - name: Rug features
+  handle: rug-features
   description: Describes specific characteristics of rugs, such as anti-slip base or UV resistant colors
   friendly_id: rug_features
-  handle: rug-features
   values_from: rug/mat_features
 - name: Mat features
+  handle: mat-features
   description: Describes specific characteristics of home or office mats, such as anti-slip base or waterproof
   friendly_id: mat_features
-  handle: mat-features
   values_from: rug/mat_features
 - name: Post material
+  handle: post-material
   description: Specifies the type of material for posts in various categories, e.g. aluminum or fiberglass
   friendly_id: post_material
-  handle: post-material
   values_from: pole/post_material
 - name: Pole material
+  handle: pole-material
   description: Specifies the material used in pole construction, e.g. steel, wood
   friendly_id: pole_material
-  handle: pole-material
   values_from: pole/post_material
 - name: Pole color
+  handle: pole-color
   description: Identifies the color of the pole in products like umbrellas, e.g. black, bronze
   friendly_id: pole_color
-  handle: pole-color
   values_from: color
 - name: Canopy pattern
+  handle: canopy-pattern
   description: Identifies the visual motif on umbrella or parasol canopies, like checkered or art
   friendly_id: canopy_pattern
-  handle: canopy-pattern
   values_from: pattern
 - name: Canopy color
+  handle: canopy-color
   description: Specifies the shade of the umbrella or parasol's canopy, such as black
   friendly_id: canopy_color
-  handle: canopy-color
   values_from: color
 - name: Recorder specialized features
+  handle: recorder-specialized-features
   description: Identifies advanced features in video recorders, e.g. smart, Dolby Atmos support
   friendly_id: recorder_specialized_features
-  handle: recorder-specialized-features
   values_from: player/recorder_specialized_features
 - name: 3D glasses material
+  handle: 3d-glasses-material
   description: Specifies the material used for 3D glasses, like bamboo or stainless steel
   friendly_id: 3d_glasses_material
-  handle: 3d-glasses-material
   values_from: accessory_material
 - name: Suitable for skin tone
+  handle: suitable-for-skin-tone
   description: Matches products to specific skin tones, such as fair or dark skin
   friendly_id: suitable_for_skin_tone
-  handle: suitable-for-skin-tone
   values_from: skin_tone
 - name: Television shape
+  handle: television-shape
   description: Defines the physical contour of the television screen, such as curved or flat
   friendly_id: television_shape
-  handle: television-shape
   values_from: monitor_shape
 - name: Monitor specialized features
+  handle: monitor-specialized-features
   description: Highlights unique features of a computer monitor, such as 3D support or adjustable viewing angle
   friendly_id: monitor_specialized_features
-  handle: monitor-specialized-features
   values_from: monitor/screen_specialized_features
 - name: Tank material
+  handle: tank-material
   description: Specifies the material of a product's tank, typically for gardening tools; e.g. metal, plastic
   friendly_id: tank_material
-  handle: tank-material
   values_from: accessory_material
 - name: Teeth material
+  handle: teeth-material
   description: Identifies the material used in teeth, usually for gardening tools; e.g. plastic, metal
   friendly_id: teeth_material
-  handle: teeth-material
   values_from: blade_material
 - name: Compatible paper size
+  handle: compatible-paper-size
   description: Specifies the paper sizes a device can accommodate, typically for printers; e.g. A4, postcard
   friendly_id: compatible_paper_size
-  handle: compatible-paper-size
   values_from: paper_size
 - name: Eyewear frame shape
+  handle: eyewear-frame-shape
   description: Describes the shape of eyeglasses, like round or square
   friendly_id: eyewear_frame_shape
-  handle: eyewear-frame-shape
   values_from: shape
 - name: Filament type
+  handle: filament-type
   description: Identifies the type of filament used in 3D printing, such as resin or food-safe
   friendly_id: filament_type
-  handle: filament-type
   values_from: compatible_filament
 - name: Temple color
+  handle: temple-color
   description: Specifies the color of arm or temple on eyewear, such as red or clear
   friendly_id: temple_color
-  handle: temple-color
   values_from: color
 - name: Temple pattern
+  handle: temple-pattern
   description: Describes the design or motif on the temple of eyewear, like logo or checkered
   friendly_id: temple_pattern
-  handle: temple-pattern
   values_from: pattern
 - name: Bag/Case closure
+  handle: bag-case-closure
   description: Identifies the type of closure used on bags or cases, e.g. key lock, velcro
   friendly_id: bag/case_closure
-  handle: bag-case-closure
   values_from: bag_closure
 - name: Rug/Mat shape
+  handle: rug-mat-shape
   description: Specifies the shape of mats and rugs, e.g. runner, square
   friendly_id: rug/mat_shape
-  handle: rug-mat-shape
   values_from: mat/rug_shape
 - name: Input connection
+  handle: input-connection
   description: Specifies the type of input connection for audio cables, such as 3.5mm or RCA
   friendly_id: input_connection
-  handle: input-connection
   values_from: device_interface
 - name: Compatible lock type
+  handle: compatible-lock-type
   description: Identifies the lock types a product can work with, such as combination lock or electronic
   friendly_id: compatible_lock_type
-  handle: compatible-lock-type
   values_from: lock_type
 - name: Plug type (output)
+  handle: plug-type-output
   description: Specifies the plug a power adapter or converter can accommodate as output, based on country or territory code; e.g. US, EU
   friendly_id: plug_type_output
-  handle: plug-type-output
   values_from: plug_type
 - name: Cookware features
+  handle: cookware-features
   description: Highlights unique features of cookware items, such as oven safe or stay cool handle
   friendly_id: cookware_features
-  handle: cookware-features
   values_from: cookware/bakeware_features
 - name: Plug type (input)
+  handle: plug-type-input
   description: Specifies the plug a power adapter or converter can accommodate, based on country or territory code; e.g. US, EU
   friendly_id: plug_type_input
-  handle: plug-type-input
   values_from: plug_type
 - name: Charging method
+  handle: charging-method
   description: Specifies how an electronic device is charged, e.g. wireless, wired
   friendly_id: charging_method
-  handle: charging-method
   values_from: connectivity_technology
 - name: Bakeware features
+  handle: bakeware-features
   description: Highlights special characteristics of bakeware items, like non-stick coating or oven safe
   friendly_id: bakeware_features
-  handle: bakeware-features
   values_from: cookware/bakeware_features
 - name: Band color
+  handle: band-color
   description: Specifies the color of a watch band, e.g. multicolor, rose gold
   friendly_id: band_color
-  handle: band-color
   values_from: color
 - name: Pet apparel features
+  handle: pet-apparel-features
   description: Highlights special characteristics of pet clothing, such as vegan friendly or waterproof
   friendly_id: pet_apparel_features
-  handle: pet-apparel-features
   values_from: pet_apparel/bedding_features
 - name: Tabletop shape
+  handle: tabletop-shape
   description: Describes the geometric shape of a table's top, e.g. square, kidney-shaped
   friendly_id: tabletop_shape
-  handle: tabletop-shape
   values_from: shape
 - name: Treatment area
+  handle: treatment-area
   description: Specifies the body part targeted by a product, typically for massage items; e.g. back, neck
   friendly_id: treatment_area
-  handle: treatment-area
   values_from: body_area
 - name: Pet bedding features
+  handle: pet-bedding-features
   description: Describes unique properties of pet bedding, like orthopedic or waterproof
   friendly_id: pet_bedding_features
-  handle: pet-bedding-features
   values_from: pet_apparel/bedding_features
 - name: Pottery/Sculpting project type
+  handle: pottery-sculpting-project-type
   description: Identifies the specific type of pottery or sculpting project, like modeling or mask making
   friendly_id: pottery/sculpting_project_type
-  handle: pottery-sculpting-project-type
   values_from: craft/sculpting_project_type
 - name: Leg pattern
+  handle: leg-pattern
   description: 'Defines the design or print on the product''s legs, such as animals or geometric '
   friendly_id: leg_pattern
-  handle: leg-pattern
   values_from: pattern
 - name: Leg material
+  handle: leg-material
   description: Specifies the material used for the legs of a product, such as cherry wood or bamboo
   friendly_id: leg_material
-  handle: leg-material
   values_from: furniture/fixture_material
 - name: Leg color
+  handle: leg-color
   description: Defines the hue of a product's legs, e.g. white, brown
   friendly_id: leg_color
-  handle: leg-color
   values_from: color
 - name: Top pattern
+  handle: top-pattern
   description: Describes the design or print on the surface of a product, like floral or striped
   friendly_id: top_pattern
-  handle: top-pattern
   values_from: pattern
 - name: Glucose meter features
+  handle: glucose-meter-features
   description: Describes the special characteristics of glucose meters, like portable or memory function
   friendly_id: glucose_meter_features
-  handle: glucose-meter-features
   values_from: sensor/measuring_tool_features
 - name: Kneeboard features
+  handle: kneeboard-features
   description: Describes specific characteristics of a kneeboard, like adjustable strap or anti-slip
   friendly_id: kneeboard_features
-  handle: kneeboard-features
   values_from: surfboard_features
 - name: Waveski features
+  handle: waveski-features
   description: Describes the unique characteristics of a waveski, such as adjustable strap or anti-slip
   friendly_id: waveski_features
-  handle: waveski-features
   values_from: surfboard_features
 - name: Serum target areas
+  handle: serum-target-areas
   description: Specifies the intended application areas for a serum, such as eyes or face
   friendly_id: serum_target_areas
-  handle: serum-target-areas
   values_from: face_area
 - name: Diaper bag material
+  handle: diaper-bag-material
   description: Specifies the type of material a diaper bag is made from, such as leather or canvas
   friendly_id: diaper_bag_material
-  handle: diaper-bag-material
   values_from: bag/case_material
 - name: Paddleboard features
+  handle: paddleboard-features
   description: Describes specific characteristics of a paddleboard, such as inflatable or hard top
   friendly_id: paddleboard_features
-  handle: paddleboard-features
   values_from: surfboard_features
 - name: Bodyboard features
+  handle: bodyboard-features
   description: Describes unique aspects of a bodyboard, such as hard top or inflatable
   friendly_id: bodyboard_features
-  handle: bodyboard-features
   values_from: surfboard_features
 - name: Wet bag features
+  handle: wet-bag-features
   description: Describes specific characteristics of diaper wet bags, such as leakproof or eco-friendly
   friendly_id: wet_bag_features
-  handle: wet-bag-features
   values_from: disposable/reusable_bag_features
 - name: Top material
+  handle: top-material
   description: Defines the material of a product's top surface, e.g. wood, glass
   friendly_id: top_material
-  handle: top-material
   values_from: furniture/fixture_material
 - name: Top color
+  handle: top-color
   description: Defines the primary color of a product's top surface, e.g. clear, bronze
   friendly_id: top_color
-  handle: top-color
   values_from: color
 - name: Suitable for bug type
+  handle: suitable-for-bug-type
   description: Specifies which insects the product repels, e.g. mosquitoes, ticks
   friendly_id: suitable_for_bug_type
-  handle: suitable-for-bug-type
   values_from: bug_type
 - name: Door pattern
+  handle: door-pattern
   description: Describes the design or motif on a door, typically for buffets and sideboards
   friendly_id: door_pattern
-  handle: door-pattern
   values_from: pattern
 - name: Door color
+  handle: door-color
   description: Specifies the color of a product's door, such as red or black
   friendly_id: door_color
-  handle: door-color
   values_from: color
 - name: Bottle material
+  handle: bottle-material
   description: Identifies the substance used in the construction of a bottle, such as glass or plastic
   friendly_id: bottle_material
-  handle: bottle-material
   values_from: accessory_material
 - name: Seat pattern
+  handle: seat-pattern
   description: Specifies the visual motif on seating products, such as stars or dots
   friendly_id: seat_pattern
-  handle: seat-pattern
   values_from: pattern
 - name: Seat color
+  handle: seat-color
   description: Specifies the color of a product's seating area, like black or green
   friendly_id: seat_color
-  handle: seat-color
   values_from: color
 - name: Shampoo/Conditioner items included
+  handle: shampoo-conditioner-items-included
   description: Identifies the type of items in a shampoo and conditioner set, e.g. 2 in 1 shampoo
   friendly_id: shampoo/conditioner_items_included
-  handle: shampoo-conditioner-items-included
   values_from: shampoo_type
 - name: Rod color
+  handle: rod-color
   description: Identifies the color of a fishing rod, e.g. black or blue
   friendly_id: rod_color
-  handle: rod-color
   values_from: color
 - name: Dog kennel features
+  handle: dog-kennel-features
   description: Describes specific characteristics of a dog kennel, such as lockable or foldable
   friendly_id: dog_kennel_features
-  handle: dog-kennel-features
   values_from: outdoor_equipment_features
 - name: Butt cap pattern
+  handle: butt-cap-pattern
   description: Describes the design or motif on a fish rod's end cap, such as camouflage or floral
   friendly_id: butt_cap_pattern
-  handle: butt-cap-pattern
   values_from: pattern
 - name: Butt cap color
+  handle: butt-cap-color
   description: Specifies the color of the butt cap on fishing rods, such as black or blue
   friendly_id: butt_cap_color
-  handle: butt-cap-color
   values_from: color
 - name: Spool pattern
+  handle: spool-pattern
   description: Describes the design or motif on a fishing reel's spool, such as camouflage or solid
   friendly_id: spool_pattern
-  handle: spool-pattern
   values_from: pattern
 - name: Backrest upholstery material
+  handle: backrest-upholstery-material
   description: Identifies the fabric type on the backrest of furniture, such as velvet or wicker
   friendly_id: backrest_upholstery_material
-  handle: backrest-upholstery-material
   values_from: upholstery_material
 - name: Spool color
+  handle: spool-color
   description: Identifies the color of the spool in fishing reels, such as clear or green
   friendly_id: spool_color
-  handle: spool-color
   values_from: color
 - name: Wipe warmer features
+  handle: wipe-warmer-features
   description: Details the specific features of a wipe warmer, such as travel friendly or moisture retention
   friendly_id: wipe_warmer_features
-  handle: wipe-warmer-features
   values_from: wipe_dispenser/warmer_features
 - name: Body pattern
+  handle: body-pattern
   description: Describes the visual design or motif on the primary surface of a product, e.g. floral, geometric
   friendly_id: body_pattern
-  handle: body-pattern
   values_from: pattern
 - name: Changing mat features
+  handle: changing-mat-features
   description: Describes special characteristics of baby changing mats, like built-in compartments or portable
   friendly_id: changing_mat_features
-  handle: changing-mat-features
   values_from: changing_mat/tray_features
 - name: Body color
+  handle: body-color
   description: Specifies the primary color of vehicles or parts, for example, white or silver
   friendly_id: body_color
-  handle: body-color
   values_from: color
 - name: Backrest upholstery color
+  handle: backrest-upholstery-color
   description: Identifies the color of the backrest upholstery on furniture, such as beige or blue
   friendly_id: backrest_upholstery_color
-  handle: backrest-upholstery-color
   values_from: color
 - name: Eyebrow enhancer color
+  handle: eyebrow-enhancer-color
   description: Specifies the color of eyebrow enhancer products, such as black or light blonde
   friendly_id: eyebrow_enhancer_color
-  handle: eyebrow-enhancer-color
   values_from: hair_color/shade
 - name: Changing tray features
+  handle: changing-tray-features
   description: Describes the special characteristics of a baby changing tray, like built-in compartments or a safety strap
   friendly_id: changing_tray_features
-  handle: changing-tray-features
   values_from: changing_mat/tray_features
 - name: Tabletop pattern
+  handle: tabletop-pattern
   description: Defines the design or print on a tabletop surface, such as Christmas or solid
   friendly_id: tabletop_pattern
-  handle: tabletop-pattern
   values_from: pattern
 - name: Face powder color
+  handle: face-powder-color
   description: Specifies the shade of face powder, such as rose gold or deep brown
   friendly_id: face_powder_color
-  handle: face-powder-color
   values_from: makeup_color/shade
 - name: Tabletop material
+  handle: tabletop-material
   description: Identifies the composition of the tabletop surface, e.g. plywood, concrete
   friendly_id: tabletop_material
-  handle: tabletop-material
   values_from: furniture/fixture_material
 - name: Disposable bag features
+  handle: disposable-bag-features
   description: Highlights unique features of diaper pail refills, such as odor control or scented
   friendly_id: disposable_bag_features
-  handle: disposable-bag-features
   values_from: disposable/reusable_bag_features
 - name: Saddle seat pattern
+  handle: saddle-seat-pattern
   description: Describes the design or print on a bicycle saddle seat, such as floral or geometric
   friendly_id: saddle_seat_pattern
-  handle: saddle-seat-pattern
   values_from: pattern
 - name: Saddle seat material
+  handle: saddle-seat-material
   description: Identifies the material used in the construction of a bicycle saddle, such as leather or nylon
   friendly_id: saddle_seat_material
-  handle: saddle-seat-material
   values_from: saddle_material
 - name: Saddle seat color
+  handle: saddle-seat-color
   description: Specifies the color of a bicycle saddle seat, like silver or red
   friendly_id: saddle_seat_color
-  handle: saddle-seat-color
   values_from: color
 - name: Saddle base pattern
+  handle: saddle-base-pattern
   description: Describes the design or print on a bicycle saddle base, such as abstract or logo
   friendly_id: saddle_base_pattern
-  handle: saddle-base-pattern
   values_from: pattern
 - name: Saddle base material
+  handle: saddle-base-material
   description: Identifies the material used in the base of a bicycle saddle, like steel or carbon fiber
   friendly_id: saddle_base_material
-  handle: saddle-base-material
   values_from: saddle_material
 - name: Saddle base color
+  handle: saddle-base-color
   description: Identifies the primary color of a bicycle saddle base, like black or blue
   friendly_id: saddle_base_color
-  handle: saddle-base-color
   values_from: color
 - name: Tabletop color
+  handle: tabletop-color
   description: Specifies the color of a table's top surface, such as black or white
   friendly_id: tabletop_color
-  handle: tabletop-color
   values_from: color
 - name: Waste bag material
+  handle: waste-bag-material
   description: Identifies the material of waste bags, like plastic or biodegradable materials
   friendly_id: waste_bag_material
-  handle: waste-bag-material
   values_from: disposable/reusable_item_material
 - name: Bottle sterilizer features
+  handle: bottle-sterilizer-features
   description: Highlights specific functions of bottle sterilizers, like auto power-off or defrost function
   friendly_id: bottle_sterilizer_features
-  handle: bottle-sterilizer-features
   values_from: bottle_warmer/sterilizer_features
 - name: Clay texture
+  handle: clay-texture
   description: Describes the feel and consistency of clay products, such as medium or smooth
   friendly_id: clay_texture
-  handle: clay-texture
   values_from: clay/slip_texture
 - name: Prop theme
+  handle: prop-theme
   description: Identifies the style or genre of film and television props, such as historical or sci-fi
   friendly_id: prop_theme
-  handle: prop-theme
   values_from: costume_theme
 - name: Disposable tableware material
+  handle: disposable-tableware-material
   description: Identifies the material used in disposable tableware, such as plastic or paper
   friendly_id: disposable_tableware_material
-  handle: disposable-tableware-material
   values_from: disposable/reusable_item_material
 - name: Furniture/Fixture color
+  handle: furniture-fixture-color
   description: Identifies the color of furniture or fixtures, such as beige or black
   friendly_id: furniture/fixture_color
-  handle: furniture-fixture-color
   values_from: color
 - name: Furniture/Fixture pattern
+  handle: furniture-fixture-pattern
   description: Identifies the visual theme on furniture items, such as striped or checkered
   friendly_id: furniture/fixture_pattern
-  handle: furniture-fixture-pattern
   values_from: pattern
 - name: Shelf color
+  handle: shelf-color
   description: Describes the color of a product's shelf, such as beige or black
   friendly_id: shelf_color
-  handle: shelf-color
   values_from: color
 - name: Shelf pattern
+  handle: shelf-pattern
   description: Describes the design or motif on industrial shelves, such as abstract or chevron
   friendly_id: shelf_pattern
-  handle: shelf-pattern
   values_from: pattern
 - name: Bottom surface material
+  handle: bottom-surface-material
   description: Identifies the material of the product's bottom surface, such as metal or glass
   friendly_id: bottom_surface_material
-  handle: bottom-surface-material
   values_from: cookware/bakeware_material
 - name: Massage area
+  handle: massage-area
   description: Specifies the body part the product is designed to massage, such as feet or neck
   friendly_id: massage_area
-  handle: massage-area
   values_from: body_area
 - name: Coverage area
+  handle: coverage-area
   description: Indicates the geographical coverage countries or territories for GPS software, such as United States or Canada
   friendly_id: coverage_area
-  handle: coverage-area
   values_from: country
 - name: Burner material
+  handle: burner-material
   description: Identifies the material used in the construction of a stove or grill burner, such as cast iron or stainless steel
   friendly_id: burner_material
-  handle: burner-material
   values_from: cookware/bakeware_material
 - name: Lid material
+  handle: lid-material
   description: Identifies the type of material used in the product's lid, such as glass or stainless steel
   friendly_id: lid_material
-  handle: lid-material
   values_from: cookware/bakeware_material
 - name: Handle color
+  handle: handle-color
   description: Specifies the color of a product's handle, such as black or blue
   friendly_id: handle_color
-  handle: handle-color
   values_from: color
 - name: Handle pattern
+  handle: handle-pattern
   description: Describes the design or motif on a product's handle, like floral or geometric
   friendly_id: handle_pattern
-  handle: handle-pattern
   values_from: pattern
 - name: Jaw material
+  handle: jaw-material
   description: Identifies the material used in the jaw of a tool, like steel or titanium
   friendly_id: jaw_material
-  handle: jaw-material
   values_from: blade_material
 - name: Scale material
+  handle: scale-material
   description: Identifies the material used in a scale, typically tree calipers; e.g. stainless steel, plastic
   friendly_id: scale_material
-  handle: scale-material
   values_from: blade_material
 - name: Chair features
+  handle: chair-features
   description: Highlights special functions of a chair, such as massage function or power reclining
   friendly_id: chair_features
-  handle: chair-features
   values_from: chair/sofa_features
 - name: Aromatherapy
+  handle: aromatherapy
   description: Specifies the scent or essential oil used, e.g. eucalyptus, lavender
   friendly_id: aromatherapy
-  handle: aromatherapy
   values_from: fragrance
 - name: Frame color
+  handle: frame-color
   description: Specifies the color of a product's frame, such as clear or gold
   friendly_id: frame_color
-  handle: frame-color
   values_from: color
 - name: Frame pattern
+  handle: frame-pattern
   description: Describes the visual design or style of a product's frame, such as geometric or striped
   friendly_id: frame_pattern
-  handle: frame-pattern
   values_from: pattern
 - name: Dye form
+  handle: dye-form
   description: Describes the physical state of craft dyes, such as gel or powder
   friendly_id: dye_form
-  handle: dye-form
   values_from: paint/dye_form
 - name: Filling/Padding project type
+  handle: filling-padding-project-type
   description: Specifies the intended use of filling or padding material, e.g. stuffed toy making
   friendly_id: filling/padding_project_type
-  handle: filling-padding-project-type
   values_from: knitting/padding_project_type
 - name: Moving/Shipping box material
+  handle: moving-shipping-box-material
   description: Identifies the material used in moving or shipping boxes, such as cardboard or plastic
   friendly_id: moving/shipping_box_material
-  handle: moving-shipping-box-material
   values_from: accessory_material
 - name: Equipment operation
+  handle: equipment-operation
   description: Describes how a piece of medical equipment operates, such as manual or powered
   friendly_id: equipment_operation
-  handle: equipment-operation
   values_from: tool_operation
 - name: Upholstery pattern
+  handle: upholstery-pattern
   description: Describes the visual design on furniture fabric, for example, stripes or checkered
   friendly_id: upholstery_pattern
-  handle: upholstery-pattern
   values_from: pattern
 - name: Stopwatch features
+  handle: stopwatch-features
   description: Highlights the features of a stopwatch, e.g. illuminated, memory function
   friendly_id: stopwatch_features
-  handle: stopwatch-features
   values_from: timepiece_features
 - name: Timer features
+  handle: timer-features
   description: Describes the special functions of a timer, like adjustable duration or built-in display
   friendly_id: timer_features
-  handle: timer-features
   values_from: timepiece_features
 - name: Compatible shoe size
+  handle: compatible-shoe-size
   description: Matches products to specific shoe sizes, e.g. 12, 42
   friendly_id: compatible_shoe_size
-  handle: compatible-shoe-size
   values_from: shoe_size
 - name: Pet pad features
+  handle: pet-pad-features
   description: Highlights the unique features of pet training pads, like hypoallergenic or easy to clean
   friendly_id: pet_pad_features
-  handle: pet-pad-features
   values_from: absorbent_hygiene_product_features
 - name: Upholstery color
+  handle: upholstery-color
   description: Identifies the color of a product's upholstery, such as red or beige
   friendly_id: upholstery_color
-  handle: upholstery-color
   values_from: color
 - name: Compatible hair color
+  handle: compatible-hair-color
   description: Matches products to specific hair colors, e.g. silver, blonde
   friendly_id: compatible_hair_color
-  handle: compatible-hair-color
   values_from: hair_color/shade
 - name: Slat pattern
+  handle: slat-pattern
   description: Identifies the visual pattern of slats on items like mattress foundations, e.g. striped, floral
   friendly_id: slat_pattern
-  handle: slat-pattern
   values_from: pattern
 - name: Eyewear lens pattern
+  handle: eyewear-lens-pattern
   description: Describes the design or print on eyewear lenses, such as hearts or paisley
   friendly_id: eyewear_lens_pattern
-  handle: eyewear-lens-pattern
   values_from: pattern
 - name: Eyewear lens color
+  handle: eyewear-lens-color
   description: Identifies the color of the lens in eyewear, such as clear or orange
   friendly_id: eyewear_lens_color
-  handle: eyewear-lens-color
   values_from: color
 - name: Eyewear frame pattern
+  handle: eyewear-frame-pattern
   description: Identifies the pattern on glasses frames, for example, striped or checkered
   friendly_id: eyewear_frame_pattern
-  handle: eyewear-frame-pattern
   values_from: pattern
 - name: Eyewear frame color
+  handle: eyewear-frame-color
   description: Identifies the color of the eyewear's frame, such as black or gold
   friendly_id: eyewear_frame_color
-  handle: eyewear-frame-color
   values_from: color
 - name: Disposable bag material
+  handle: disposable-bag-material
   description: Specifies the composition of disposable bags, e.g. plastic, biodegradable materials
   friendly_id: disposable_bag_material
-  handle: disposable-bag-material
   values_from: disposable/reusable_item_material
 - name: Exercise mat material
+  handle: exercise-mat-material
   description: Specifies the type of material used in exercise mats, such as PVC or cork
   friendly_id: exercise_mat_material
-  handle: exercise-mat-material
   values_from: mat_base_material
 - name: Waste bag features
+  handle: waste-bag-features
   description: Describes special characteristics of pet waste bags, like biodegradable or leakproof
   friendly_id: waste_bag_features
-  handle: waste-bag-features
   values_from: disposable/reusable_bag_features
 - name: Slat color
+  handle: slat-color
   description: Specifies the color of slats in mattress foundations, such as beige or black
   friendly_id: slat_color
-  handle: slat-color
   values_from: color
 - name: Foundation pattern
+  handle: foundation-pattern
   description: Describes the design or motif on a mattress foundation, such as chevron or damask
   friendly_id: foundation_pattern
-  handle: foundation-pattern
   values_from: pattern
 - name: Foundation color
+  handle: foundation-color
   description: Identifies the color of a mattress foundation, such as beige or black
   friendly_id: foundation_color
-  handle: foundation-color
   values_from: color
 - name: Light color
+  handle: light-color
   description: Defines the color or hue of light, such as white or multicolor
   friendly_id: light_color
-  handle: light-color
   values_from: color
 - name: Compatible mattress size
+  handle: compatible-mattress-size
   description: Specifies the mattress size that fits the product; i.e. king, twin
   friendly_id: compatible_mattress_size
-  handle: compatible-mattress-size
   values_from: bedding_size
 - name: Light pattern
+  handle: light-pattern
   description: Defines the visual theme of lighting products, for example, geometric or rainbow
   friendly_id: light_pattern
-  handle: light-pattern
   values_from: pattern
 - name: Bottle warmer features
+  handle: bottle-warmer-features
   description: Highlights unique features of bottle warmers, such as LCD display or timer
   friendly_id: bottle_warmer_features
-  handle: bottle-warmer-features
   values_from: bottle_warmer/sterilizer_features
 - name: Crib features
+  handle: crib-features
   description: Highlights unique features of baby cribs, such as convertible or storage options
   friendly_id: crib_features
-  handle: crib-features
   values_from: crib/toddler_bed_features
 - name: Toddler bed features
+  handle: toddler-bed-features
   description: Describes special characteristics of toddler beds, like adjustable height or built-in nightlight
   friendly_id: toddler_bed_features
-  handle: toddler-bed-features
   values_from: crib/toddler_bed_features
 - name: Small animal dietary requirements
+  handle: small-animal-dietary-requirements
   description: Indicates special diet for small animals, like hairball control or kidney care
   friendly_id: small_animal_dietary_requirements
-  handle: small-animal-dietary-requirements
   values_from: pet_dietary_requirements
 - name: Shampoo/Conditioner effect
+  handle: shampoo-conditioner-effect
   description: Describes the intended result of using the shampoo or conditioner, such as anti-dandruff or moisturizing
   friendly_id: shampoo/conditioner_effect
-  handle: shampoo-conditioner-effect
   values_from: conditioner_effect
