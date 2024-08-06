@@ -100,7 +100,7 @@ class GenerateMissingMappingsCommand < ApplicationCommand
       logger.headline("Qdrant url: #{params[:qdrant_api_base]}")
 
       find_unmapped_categories
-      return if @unmapped_categories.empty?
+      return if @unmapped_categories_groups.empty?
 
       generate_missing_mappings
     end
@@ -114,30 +114,33 @@ class GenerateMissingMappingsCommand < ApplicationCommand
       input_version = "shopify/#{params[:shopify_version]}"
       mappings_by_output = MappingRule.where(input_version:).group_by(&:output_version)
 
-      @unmapped_categories = mappings_by_output.filter_map do |output_taxonomy, mappings|
+      @unmapped_categories_groups = mappings_by_output.filter_map do |output_taxonomy, mappings|
         found_shopify_ids = Set.new(mappings.map { _1.input.product_category_id.split("/").last })
-        unmapped_ids = all_shopify_ids - found_shopify_ids
+        excluded_category_ids = Set.new(
+          sys.parse_yaml(mapping_file_path(output_taxonomy))["unmapped_product_category_ids"],
+        )
+        unmapped_ids = all_shopify_ids - found_shopify_ids - excluded_category_ids
         id_name_map = Category.where(id: unmapped_ids).map { [_1.id, _1.full_name] }.to_h
         next if id_name_map.empty?
 
         { output_taxonomy:, id_name_map: }
       end
 
-      sp.update_title("Found #{@unmapped_categories.sum { _1[:id_name_map].size }} unmapped Shopify categories")
+      sp.update_title("Found #{@unmapped_categories_groups.sum { _1[:id_name_map].size }} unmapped Shopify categories")
     end
   end
 
   def generate_missing_mappings
     frame("Generating missing mappings") do
-      @unmapped_categories.each do |unmapped_category|
-        output_taxonomy = unmapped_category[:output_taxonomy]
+      @unmapped_categories_groups.each do |unmapped_categories|
+        output_taxonomy = unmapped_categories[:output_taxonomy]
 
         frame("Generating mappings to #{output_taxonomy}") do
           embedding_data = load_embedding_data(output_taxonomy)
           embedding_collection = output_taxonomy.gsub(%r{[/\-]}, "_")
 
           index_embedding_data(embedding_data:, embedding_collection:)
-          generate_and_evaluate_mappings_for_group(unmapped_category:, embedding_collection:)
+          generate_and_evaluate_mappings_for_group(unmapped_categories:, embedding_collection:)
         end
       end
     end
@@ -188,16 +191,16 @@ class GenerateMissingMappingsCommand < ApplicationCommand
     end
   end
 
-  def generate_and_evaluate_mappings_for_group(unmapped_category:, embedding_collection:)
+  def generate_and_evaluate_mappings_for_group(unmapped_categories:, embedding_collection:)
     mapping_data = nil
     disagree_messages = []
 
     frame("Generating and evaluating mappings for each Shopify category") do
-      destination_name_id_map = sys.parse_yaml(full_names_path(unmapped_category)).pluck("full_name", "id").to_h
-      mapping_data = sys.parse_yaml(mapping_file_path(unmapped_category))
+      destination_name_id_map = sys.parse_yaml(full_names_path(unmapped_categories)).pluck("full_name", "id").to_h
+      mapping_data = sys.parse_yaml(mapping_file_path(unmapped_categories[:output_taxonomy]))
 
       # TODO: parallelize
-      unmapped_category[:id_name_map].each do |source_category_id, source_category_name|
+      unmapped_categories[:id_name_map].each do |source_category_id, source_category_name|
         generated_mapping = generate_mapping(
           source_category_id:,
           source_category_name:,
@@ -210,9 +213,9 @@ class GenerateMissingMappingsCommand < ApplicationCommand
       end
     end
 
-    spinner("Writing updated mappings to #{mapping_file_path(unmapped_category)}") do
+    spinner("Writing updated mappings to #{mapping_file_path(unmapped_categories[:output_taxonomy])}") do
       mapping_data["rules"].sort_by! { Category.id_parts(_1["input"]["product_category_id"]) }
-      sys.write_file!(mapping_file_path(unmapped_category)) do |file|
+      sys.write_file!(mapping_file_path(unmapped_categories[:output_taxonomy])) do |file|
         puts "Updating mapping file: #{file.path}"
         file.write(mapping_data.to_yaml)
       end
@@ -221,12 +224,12 @@ class GenerateMissingMappingsCommand < ApplicationCommand
     write_disagree_messages(disagree_messages) if disagree_messages.any?
   end
 
-  def full_names_path(unmapped_category)
-    "data/integrations/#{unmapped_category[:output_taxonomy]}/full_names.yml"
+  def full_names_path(unmapped_categories)
+    "data/integrations/#{unmapped_categories[:output_taxonomy]}/full_names.yml"
   end
 
-  def mapping_file_path(unmapped_category)
-    "data/integrations/#{unmapped_category[:output_taxonomy]}/mappings/from_shopify.yml"
+  def mapping_file_path(output_taxonomy)
+    "data/integrations/#{output_taxonomy}/mappings/from_shopify.yml"
   end
 
   def generate_mapping(source_category_id:, source_category_name:, embedding_collection:, destination_name_id_map:)
