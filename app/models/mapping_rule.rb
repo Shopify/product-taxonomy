@@ -47,12 +47,16 @@ class MappingRule < ApplicationRecord
     end
 
     def mapping_blocks_as_json(input_version, output_version, mapping_rules)
+      rules = mapping_rules
+        .filter_map { _1.as_json if _1.input_version == input_version && _1.output_version == output_version }
+        .compact_blank
+      if input_version.include?("shopify")
+        rules.sort_by! { Category.id_parts(_1["input"]["category"]["id"]) }
+      end
       {
         "input_taxonomy" => input_version,
         "output_taxonomy" => output_version,
-        "rules" => mapping_rules.select do
-          _1.input_version == input_version && _1.output_version == output_version
-        end.map(&:as_json).compact_blank,
+        "rules" => rules,
       }
     end
   end

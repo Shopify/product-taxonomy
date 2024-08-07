@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require "cli/ui"
+require "tty-option"
+
 class ApplicationCommand
   include TTY::Option
   include Loggable

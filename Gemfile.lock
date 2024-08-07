@@ -92,17 +92,26 @@ GEM
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    dotenv (3.1.2)
     drb (2.2.1)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     erubi (1.12.0)
+    event_stream_parser (1.0.0)
     eventmachine (1.2.7)
     factory_bot (6.4.6)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.4.3)
       factory_bot (~> 6.4)
       railties (>= 5.0.0)
+    faraday (2.10.0)
+      faraday-net_http (>= 2.0, < 3.2)
+      logger
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
+    faraday-net_http (3.1.1)
+      net-http
     ffi (1.16.3)
     forwardable-extended (2.6.0)
     globalid (1.2.1)
@@ -158,6 +167,7 @@ GEM
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
+    logger (1.6.0)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -175,7 +185,10 @@ GEM
     mocha (2.3.0)
       ruby2_keywords (>= 0.0.5)
     msgpack (1.7.2)
+    multipart-post (2.4.1)
     mutex_m (0.2.0)
+    net-http (0.4.1)
+      uri
     net-imap (0.4.11)
       date
       net-protocol
@@ -209,6 +222,8 @@ GEM
     public_suffix (5.0.5)
     puma (6.4.2)
       nio4r (~> 2.0)
+    qdrant-ruby (0.9.7)
+      faraday (>= 2.0.1, < 3)
     racc (1.8.0)
     rack (3.0.11)
     rack-session (2.0.0)
@@ -275,6 +290,10 @@ GEM
       parser (>= 3.3.1.0)
     rubocop-shopify (2.15.1)
       rubocop (~> 1.51)
+    ruby-openai (7.1.0)
+      event_stream_parser (>= 0.3.0, < 2.0.0)
+      faraday (>= 1)
+      faraday-multipart (>= 1)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     safe_yaml (1.0.5)
@@ -314,6 +333,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
+    uri (0.13.0)
     webrick (1.8.1)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
@@ -340,14 +360,17 @@ DEPENDENCIES
   bootsnap
   cli-ui (~> 2.2)
   debug
+  dotenv
   factory_bot_rails (~> 6.4)
   jekyll (~> 4.3)
   jekyll-redirect-from (~> 0.16)
   minitest-hooks (~> 1.5)
   mocha
   puma (>= 5.0)
+  qdrant-ruby
   rails (~> 7.1.3, >= 7.1.3.2)
   rubocop-shopify
+  ruby-openai
   sqlite3 (~> 1.7)
   tty-option (~> 0.3)
   tzinfo-data

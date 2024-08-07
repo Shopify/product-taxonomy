@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "cli/ui"
+
 module Loggable
   class CLIUILogger
     LEVELS = [:debug, :info, :warn, :error, :fatal]

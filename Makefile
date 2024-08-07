@@ -33,6 +33,10 @@ MAPPINGS_JSON            := $(DIST_PATH)/en/integrations/all_mappings.json
 
 DB_DEV                   := $(DB_PATH)/development.sqlite3
 
+# Taxonomy mapping generation tooling
+QDRANT_PORT := 6333
+QDRANT_CONTAINER_NAME := qdrant_taxonomy_mappings
+
 # Input variables
 LOCALES ?= en
 VERBOSE ?= 0
@@ -167,16 +171,27 @@ vet_schema_dist:
 	$(V) cue vet $(SCHEMA_PATH)/dist/mappings_schema.cue $(MAPPINGS_JSON)
 .PHONY: vet_schema_dist
 
-# Help target
+generate_mappings:
+	@$(LOG_CMD) "Starting Qdrant server"
+	@podman run -d --name $(QDRANT_CONTAINER_NAME) -p $(QDRANT_PORT):$(QDRANT_PORT) qdrant/qdrant > /dev/null 2>&1 || true
+	@$(LOG_CMD) "Generating missing taxonomy mappings"
+	@$(V) bin/generate_missing_mappings $(VERBOSE_ARG)
+	@$(LOG_CMD) "Stopping Qdrant server"
+	@podman stop $(QDRANT_CONTAINER_NAME) > /dev/null 2>&1 || true
+	@podman rm $(QDRANT_CONTAINER_NAME) > /dev/null 2>&1 || true
+.PHONY: generate_mappings
+
+# Update the help target to include the new command
 help:
 	@echo "Makefile targets:"
-	@echo "  default:        Build the project"
-	@echo "  build:          Build distribution and documentation"
-	@echo "  release:        Prepare a release"
-	@echo "  clean:          Clean all generated files"
-	@echo "  run_docs:       Run the documentation server"
-	@echo "  console:        Run the application console"
-	@echo "  seed:           Seed the database"
-	@echo "  test:           Run all tests"
-	@echo "  vet_schema:     Validate schemas"
+	@echo "  default:           Build the project"
+	@echo "  build:             Build distribution and documentation"
+	@echo "  release:           Prepare a release"
+	@echo "  clean:             Clean all generated files"
+	@echo "  run_docs:          Run the documentation server"
+	@echo "  console:           Run the application console"
+	@echo "  seed:              Seed the database"
+	@echo "  test:              Run all tests"
+	@echo "  vet_schema:        Validate schemas"
+	@echo "  generate_mappings: Generate missing taxonomy mappings"
 .PHONY: help
