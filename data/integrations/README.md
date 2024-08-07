@@ -39,7 +39,15 @@ dist/{locale}/integrations/
 The primary concern of integrations are mappings. Mappings are a set of rules that help us convert to and from the Shopify taxonomy and the taxonomy of that integration.
 
 #### Use tooling to generate taxonomy mappings
-Automate your taxonomy mapping with this tool. Make sure `podman` is installed using `homebrew`, then run `make generate_mappings OPENAI_API_BASE=<base URI>  OPENAI_API_KEY=<API acceess token>` to create mappings. It uses AI to assist in generating accurate mappings and reducing manual effort.
+Automate your taxonomy mapping with the CLI-based tooling. Make sure `podman` is installed using `homebrew`, set up local environment variables OPENAI_API_BASE and OPENAI_API_KEY in `.env.development.local`:
+```shell
+OPENAI_API_BASE="<base URI>"
+OPENAI_API_KEY="<API acceess token>"
+```
+and run the following command to generate mappings:
+```shell
+make generate_mappings
+```
 
 #### Examples of mapping rules
 

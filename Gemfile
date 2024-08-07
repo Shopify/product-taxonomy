@@ -22,6 +22,7 @@ gem "tty-option", "~> 0.3", require: false
 # generate taxonomy mappings
 gem "qdrant-ruby", require: "qdrant"
 gem "ruby-openai"
+gem 'dotenv', groups: [:development, :test]
 
 group :development, :test do
   gem "debug", platforms: [:mri, :windows]

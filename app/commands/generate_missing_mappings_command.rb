@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class GenerateMissingMappingsCommand < ApplicationCommand
-  PREVIOUS_RELEASE = "2024-07" # TODO: read from git tags
+  PREVIOUS_RELEASE = "2024-10-unstable" # TODO: read from git tags
   EMBEDDING_MODEL = "text-embedding-3-small"
   MAPPING_GRADER_GPT_MODEL = "gpt-4"
   SYSTEM_PROMPT = <<~PROMPT
