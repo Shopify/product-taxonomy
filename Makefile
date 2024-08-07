@@ -33,6 +33,10 @@ MAPPINGS_JSON            := $(DIST_PATH)/en/integrations/all_mappings.json
 
 DB_DEV                   := $(DB_PATH)/development.sqlite3
 
+# Taxonomy mapping generation tooling
+QDRANT_PORT := 6333
+QDRANT_CONTAINER_NAME := qdrant_taxonomy_mappings
+
 # Input variables
 LOCALES ?= en
 VERBOSE ?= 0
@@ -168,8 +172,13 @@ vet_schema_dist:
 .PHONY: vet_schema_dist
 
 generate_mappings:
+	@$(LOG_CMD) "Starting Qdrant server"
+	@podman run -d --name $(QDRANT_CONTAINER_NAME) -p $(QDRANT_PORT):$(QDRANT_PORT) qdrant/qdrant > /dev/null 2>&1 || true
 	@$(LOG_CMD) "Generating missing taxonomy mappings"
-	$(V) bin/generate_missing_mappings $(VERBOSE_ARG)
+	@$(V) bin/generate_missing_mappings $(VERBOSE_ARG)
+	@$(LOG_CMD) "Stopping Qdrant server"
+	@podman stop $(QDRANT_CONTAINER_NAME) > /dev/null 2>&1 || true
+	@podman rm $(QDRANT_CONTAINER_NAME) > /dev/null 2>&1 || true
 .PHONY: generate_mappings
 
 # Update the help target to include the new command

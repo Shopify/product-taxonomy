@@ -340,23 +340,9 @@ class GenerateMissingMappingsCommand < ApplicationCommand
   end
 
   def qdrant_client
-    @qdrant_client ||= begin
-      ensure_qdrant_server_running # TODO: Remove once handled by makefile
-      Qdrant::Client.new(
-        url: params[:qdrant_api_base],
-        api_key: params[:qdrant_api_key],
-      )
-    end
-  end
-
-  # TODO: move to makefile; ruby should not need to think abuot service setup
-  def ensure_qdrant_server_running
-    qdrant_port = URI.parse(params[:qdrant_api_base]).port
-    return if system("lsof -i:#{qdrant_port}", out: "/dev/null")
-
-    command = "podman run -p #{qdrant_port}:#{qdrant_port} qdrant/qdrant"
-    pid = Process.spawn(command, out: "/dev/null", err: "/dev/null")
-    Process.detach(pid)
-    logger.info("Started Qdrant server in the background with PID #{pid}.")
+    @qdrant_client ||= Qdrant::Client.new(
+      url: params[:qdrant_api_base],
+      api_key: params[:qdrant_api_key],
+    )
   end
 end
