@@ -95,11 +95,15 @@ class GenerateDistCommand < ApplicationCommand
     end
   end
 
+  def release_version_for_mappings
+    params[:version].delete_suffix("-unstable")
+  end
+
   def generate_mapping_files(locale)
     frame("Generating mapping files") do
       spinner("Generating all_mappings.json") do |sp|
         sys.write_file!("dist/#{locale}/integrations/all_mappings.json") do |file|
-          file.write(JSON.pretty_generate(MappingRule.as_json(MappingRule.all, version: params[:version])))
+          file.write(JSON.pretty_generate(MappingRule.as_json(MappingRule.all, version: release_version_for_mappings)))
           file.write("\n")
         end
         sp.update_title("Generated all_mappings.json")
@@ -114,6 +118,8 @@ class GenerateDistCommand < ApplicationCommand
 
   def generate_mapping_group_files(locale, records)
     directory_path = "dist/#{locale}/integrations/#{records.first.integration.name}"
+    FileUtils.rm_rf(Dir.glob("#{directory_path}/*")) if directory_path.present?
+
     input_version = records.first.input_version.gsub("/", "_")
     output_version = records.first.output_version.gsub("/", "_")
 
@@ -121,8 +127,8 @@ class GenerateDistCommand < ApplicationCommand
       spinner("Generating #{input_version}_to_#{output_version}.#{ext}") do |sp|
         sys.write_file!("#{directory_path}/#{input_version}_to_#{output_version}.#{ext}") do |file|
           data = case ext
-          when "txt" then MappingRule.as_txt(records, version: params[:version])
-          when "json" then JSON.pretty_generate(MappingRule.as_json(records, version: params[:version]))
+          when "txt" then MappingRule.as_txt(records, version: release_version_for_mappings)
+          when "json" then JSON.pretty_generate(MappingRule.as_json(records, version: release_version_for_mappings))
           end
 
           file.write(data)
