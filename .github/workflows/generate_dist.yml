@@ -9,13 +9,11 @@ concurrency:
   group: "dist"
   cancel-in-progress: false
 
-permissions:
-  contents: write
-
 jobs:
-  generate_dist:
+  prepare_dist:
     runs-on: ubuntu-latest
-    if: ${{ github.event.issue.pull_request && github.event.comment.body == '/generate_dist' }}
+    permissions:
+      contents: read
     steps:
     - uses: actions/checkout@v4
     - name: Checkout PR
@@ -31,6 +29,26 @@ jobs:
         version: 'v0.7.0'
     - name: Generate distribution files
       run: make VERBOSE=1
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: dist
+        path: ./
+  generate_dist:
+    runs-on: ubuntu-latest
+    needs: prepare_dist
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout PR
+      run: gh pr checkout $ISSUE
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ISSUE: ${{ github.event.issue.html_url }}
+    - name: Download dist
+      uses: actions/download-artifact@v4
+      with:
+        name: dist
     - name: Commit distribution files
       run: |
         git config --local user.name "GitHub Action"
