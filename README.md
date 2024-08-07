@@ -143,3 +143,4 @@ Formal releases are published as Github releases and available on the [interacti
 ## 📜 License
 
 Shopify's Product Taxonomy is released under the [MIT License](./LICENSE). So go ahead, explore, play, and build something awesome!
+
