@@ -111,6 +111,37 @@ class MappingValidationTest < ActiveSupport::TestCase
     end
   end
 
+  test "Shopify taxonomy version is in consistent between VERSION file and mappings in the /data folder" do
+    shopify_taxonomy_version_from_file = "shopify/" + @sys.read_file("VERSION").strip
+    mapping_rule_files = @sys.glob("data/integrations/*/*/mappings/*_shopify.yml")
+    files_include_inconsistent_shopify_taxonomy_version = []
+    mapping_rule_files.each do |file|
+      raw_mappings = @sys.parse_yaml(file)
+      [raw_mappings["input_taxonomy"], raw_mappings["output_taxonomy"]].each do |taxonomy_version|
+        next if !taxonomy_version.include?("shopify") || taxonomy_version.include?("shopify/2022-02")
+
+        next if taxonomy_version == shopify_taxonomy_version_from_file
+
+        files_include_inconsistent_shopify_taxonomy_version << {
+          file_path: file,
+          taxonomy_version: taxonomy_version,
+        }
+      end
+    end
+
+    unless files_include_inconsistent_shopify_taxonomy_version.empty?
+      puts "The Shopify taxonomy version should be #{shopify_taxonomy_version_from_file} based on the VERSION file"
+      puts "We detected inconsistent Shopify taxonomy versions in the following mapping files in the /data folder:"
+      files_include_inconsistent_shopify_taxonomy_version.each_with_index do |item|
+        puts "- mapping file #{item[:file_path]} has inconsistent Shopify taxonomy version #{item[:taxonomy_version]}"
+      end
+      assert(
+        files_include_inconsistent_shopify_taxonomy_version.empty?,
+        "Shopify taxonomy version is inconsistent between VERSION file and mappings in the /data folder.",
+      )
+    end
+  end
+
   def validate_mapping_category_ids(mapping_rules, input_or_output, input_or_output_taxonomy)
     category_ids = category_ids_from_taxonomy(input_or_output_taxonomy)
 
