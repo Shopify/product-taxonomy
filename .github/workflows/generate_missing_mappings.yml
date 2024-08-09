@@ -1,0 +1,80 @@
+name: Generate and commit taxonomy mapping changes to requested PR
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  generate_missing_mappings:
+    runs-on: ubuntu-latest
+    if: ${{github.event.issue.pull_request && github.event.comment.body == '/generate_mappings'}}
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Checkout PR
+      run: gh pr checkout $ISSUE
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ISSUE: ${{ github.event.issue.html_url }}
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
+    - name: Set up Podman
+      run: |
+        sudo apt-get update
+        sudo apt-get -y install podman
+    - name: Launch Qdrant server
+      run: |
+        port=6333
+        podman run -d -p ${port}:${port} qdrant/qdrant
+        echo "Waiting for Qdrant server to be ready..."
+        sleep 25
+    - uses: cue-lang/setup-cue@v1.0.0
+      with:
+        version: 'v0.7.0'
+    - name: Generate distribution files to gather all published mappings in in json format
+      run: make VERBOSE=1
+    - name: Generate missing mappings
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        OPENAI_API_BASE: https://openai-proxy.shopify.ai/v1
+      run: |
+        make generate_mappings
+    - name: Clean cache and re-generate mapping distribution files
+      run: |
+        make clean
+        make VERBOSE=1
+    - name: Commit mapping changes
+      id: commit_changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add dist/*/integrations
+        git add data/integrations
+        commit_output=$(git commit -m "🤖 Update missing mappings" || echo "No changes to commit")
+        echo "$commit_output"
+        echo "::set-output name=commit_message::$commit_output"
+        git push || echo "No changes to push"
+    - name: Read disagree mapping entries
+      id: read_content
+      run: |
+        if [ -f tmp/mappings_with_low_confidence.txt ]; then
+          low_confidence_mappings=$(cat tmp/mappings_with_low_confidence.txt)
+        else
+          low_confidence_mappings="No meaningful content provided."
+        fi
+        echo "low_confidence_mappings<<EOF" >> $GITHUB_ENV
+        echo "$low_confidence_mappings" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
+    - name: Add mapping grading comment to PR
+      if: steps.commit_changes.outputs.commit_message != 'No changes to commit'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const body = process.env.low_confidence_mappings;
+          github.rest.issues.createComment({
+            issue_number: ${{ github.event.issue.number }},
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: body
+          })
