@@ -31,7 +31,7 @@ jobs:
       if: ${{ failure() && steps.ensure-dist-committed.outcome == 'failure' }}
       run: |
         # Comment to send
-        COMMENT="Hi there! It looks like your pull request changes taxonomy \`data/*\` files, but is missing updates to \`dist/*\` files.<br /><br />**⏭️ How to fix**<br />Run \`make\` locally and commit the changes yourself."
+        COMMENT="Hi there! It looks like your pull request changes taxonomy \`data/*\` files, but is missing updates to \`dist/*\` files.<br /><br />**⏭️ How to fix**<br />Make a PR comment of \`/generate_dist\`, and I will fix this for you :robot:. Alternatively, you can run \`make\` locally and commit the changes yourself."
 
         # GitHub API Token and PR URL
         GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
