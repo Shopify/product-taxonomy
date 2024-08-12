@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      pull-requests: read
     if: ${{github.event.issue.pull_request && github.event.comment.body == '/generate_mappings'}}
 
     steps:
@@ -64,6 +65,7 @@ jobs:
     needs: generate_missing_mappings
     permissions:
       contents: write
+      pull-requests: write
     steps:
     - uses: actions/checkout@v4
     - name: Checkout PR
