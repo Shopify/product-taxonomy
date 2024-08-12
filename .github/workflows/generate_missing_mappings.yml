@@ -4,9 +4,15 @@ on:
   issue_comment:
     types: [created]
 
+concurrency:
+  group: "generate_mappings"
+  cancel-in-progress: false
+
 jobs:
   generate_missing_mappings:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     if: ${{github.event.issue.pull_request && github.event.comment.body == '/generate_mappings'}}
 
     steps:
@@ -32,7 +38,7 @@ jobs:
     - uses: cue-lang/setup-cue@v1.0.0
       with:
         version: 'v0.7.0'
-    - name: Generate distribution files to gather all published mappings in in json format
+    - name: Generate distribution files to gather all published mappings in json format
       run: make VERBOSE=1
     - name: Generate missing mappings
       env:
@@ -44,6 +50,31 @@ jobs:
       run: |
         make clean
         make VERBOSE=1
+    - name: Upload generated files
+      uses: actions/upload-artifact@v2
+      with:
+        name: generated-mappings
+        path: |
+          dist/*/integrations
+          data/integrations
+          tmp/mappings_with_low_confidence.txt
+
+  commit_changes:
+    runs-on: ubuntu-latest
+    needs: generate_missing_mappings
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - name: Checkout PR
+      run: gh pr checkout $ISSUE
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ISSUE: ${{ github.event.issue.html_url }}
+    - name: Download generated files
+      uses: actions/download-artifact@v2
+      with:
+        name: generated-mappings
     - name: Commit mapping changes
       id: commit_changes
       run: |
