@@ -3,20 +3,21 @@
 # TODO: add params to control what gets synced
 module Source
   class SyncEnLocalizationsCommand < ApplicationCommand
+    PERMITTED_TARGETS = ["categories", "attributes", "values"].freeze
+
     usage do
       no_command
     end
 
     option :targets do
       desc "Which model types to sync. Syncs all if not specified."
-      short "-t"
-      long "--target string"
-      arity zero_or_more
-      permit ["categories", "attributes", "values"]
+      long "--target list"
+      convert :list
+      default PERMITTED_TARGETS.join(",")
+      validate -> { PERMITTED_TARGETS.include?(_1) }
     end
 
     def execute
-      params[:targets] ||= ["categories", "attributes", "values"]
       frame("Syncing EN localizations") do
         sync_categories if params[:targets].include?("categories")
         sync_attributes if params[:targets].include?("attributes")
