@@ -24,9 +24,8 @@ module Source
     end
 
     def execute
+      setup!
       frame("Adding new category") do
-        find_parent!
-        validate_id!
         create_category!
         update_data_files!
       end
@@ -34,19 +33,12 @@ module Source
 
     private
 
-    def find_parent!
+    def setup!
       @parent = Category.find_by(id: params[:parent_id])
+      params[:id] ||= @parent.next_child_id
       return @parent if @parent
 
       logger.fatal("Parent category `#{params[:parent_id]}` not found")
-      exit(1)
-    end
-
-    def validate_id!
-      params[:id] ||= @parent.next_child_id
-      return if params[:id].start_with?(params[:parent_id])
-
-      logger.fatal("ID `#{params[:id]}` does not start with parent ID `#{params[:parent_id]}`")
       exit(1)
     end
 
