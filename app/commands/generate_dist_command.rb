@@ -7,13 +7,11 @@ class GenerateDistCommand < ApplicationCommand
 
   option :version do
     desc "Distribution version"
-    short "-V"
     long "--version string"
   end
 
   option :locales do
     desc "Locales to generate"
-    short "-l"
     long "--locales list"
     default "en"
     convert -> { _1.downcase.split(",") }

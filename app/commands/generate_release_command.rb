@@ -7,7 +7,6 @@ class GenerateReleaseCommand < ApplicationCommand
 
   option :version do
     desc "Release version"
-    short "-V"
     long "--version VERSION"
   end
 
