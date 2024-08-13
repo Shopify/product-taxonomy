@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class CategoriesAttribute < ApplicationRecord
+  self.primary_key = [:category_id, :attribute_friendly_id]
+
   belongs_to :category
   belongs_to :related_attribute, class_name: "Attribute", foreign_key: :attribute_friendly_id, primary_key: :friendly_id
 

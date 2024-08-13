@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class AttributesValue < ApplicationRecord
+  self.primary_key = [:attribute_id, :value_friendly_id]
+
   belongs_to :related_attribute, class_name: "Attribute", foreign_key: :attribute_id, primary_key: :id
   belongs_to :value, foreign_key: :value_friendly_id, primary_key: :friendly_id
 

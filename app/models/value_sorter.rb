@@ -3,8 +3,12 @@
 module ValueSorter
   class << self
     def sort(values, locale: "en")
-      if values.first.position.present?
-        values.sort_by(&:position)
+      return values if values.length <= 1
+
+      if values.any? { _1.position.present? }
+        values.sort_by do |v|
+          v.position || values.map(&:position).compact.max + 1
+        end
       else
         sort_by_localized_name(values, locale:)
       end
