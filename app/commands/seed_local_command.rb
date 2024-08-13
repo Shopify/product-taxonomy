@@ -14,7 +14,7 @@ class SeedLocalCommand < ApplicationCommand
     default PERMITTED_TARGETS.join(",")
     validate -> { PERMITTED_TARGETS.include?(_1) }
   end
-  
+
   def execute
     setup_options
     frame("Seeding database") do
