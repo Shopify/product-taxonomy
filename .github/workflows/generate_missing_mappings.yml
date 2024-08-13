@@ -23,6 +23,25 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ISSUE: ${{ github.event.issue.html_url }}
+    - name: Get changed files
+      id: changed-files
+      uses: tj-actions/changed-files@v44
+    - name: Check for Makefile changes
+      id: check_files
+      run: |
+        changed_files="${{ steps.changed-files.outputs.all_changed_files }}"
+        if echo "$changed_files" | grep -qE "^(Makefile)$"; then
+          echo "Makefile changed, stopping workflow"
+          echo "skip_workflow=true" >> $GITHUB_OUTPUT
+        else
+          echo "No Makefile changes, proceeding with workflow"
+          echo "skip_workflow=false" >> $GITHUB_OUTPUT
+        fi
+    - name: Early return if Makefile changed
+      if: steps.check_files.outputs.skip_workflow == 'true'
+      run: |
+        echo "Workflow stopped due to Makefile changes"
+        exit 0
     - uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
@@ -39,8 +58,8 @@ jobs:
     - uses: cue-lang/setup-cue@v1.0.0
       with:
         version: 'v0.7.0'
-    - name: Generate distribution files to gather all published mappings in json format
-      run: make VERBOSE=1
+    - name: Seed database
+      run: make seed
     - name: Generate missing mappings
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -94,7 +113,7 @@ jobs:
         if [ -f tmp/mappings_with_low_confidence.txt ]; then
           low_confidence_mappings=$(cat tmp/mappings_with_low_confidence.txt)
         else
-          low_confidence_mappings="No meaningful content provided."
+          low_confidence_mappings="All generated mappings are high confidence."
         fi
         echo "low_confidence_mappings<<EOF" >> $GITHUB_ENV
         echo "$low_confidence_mappings" >> $GITHUB_ENV
