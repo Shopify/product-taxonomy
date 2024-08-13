@@ -173,8 +173,8 @@ class Category < ApplicationRecord
     ancestors.reverse.map { _1.name(locale:) }.push(name(locale:)).join(" > ")
   end
 
-  def handleized_name
-    "#{id}_#{name.downcase.gsub(%r{[^a-z0-9\s\-_/\.\+#]}, "").gsub(/[\s\-\.]+/, "_")}"
+  def friendly_name
+    "#{id}_#{self.class.generate_friendly_id(name)}"
   end
 
   def root?

@@ -40,48 +40,29 @@ module Source
         "Primary attribute `#{params[:attribute_friendly_id]}` not found" if @primary_attribute.nil?
 
       @extended_attributes = @primary_attribute.extended_attributes
-      @manually_sorted = @primary_attribute.manually_sorted?
     end
 
     def create_value!
-      value_identifier = "#{@primary_attribute.handle}__#{params[:name]}"
-      friendly_id = StringTransformer.generate_friendly_id(value_identifier)
+      @new_value = Value.find_or_create_for_attribute(@primary_attribute, params[:name])
 
-      existing_value = Value.find_by(friendly_id: friendly_id)
+      return if @new_value.persisted?
 
-      raise ActiveRecord::Rollback,
-        "Value `#{friendly_id}` already exists" if existing_value
-
-      position = @primary_attribute.values.map(&:position).compact.max + 1 if @manually_sorted
-
-      @new_value = Value
-        .create(
-          name: params[:name],
-          primary_attribute: @primary_attribute,
-          friendly_id: friendly_id,
-          handle: StringTransformer.generate_handle(friendly_id),
-          position: position,
-        )
-
-      unless @new_value.persisted?
-        raise ActiveRecord::Rollback,
-          "Failed to create value: #{@new_value.errors.full_messages.to_sentence}"
-      end
+      raise ActiveRecord::Rollback, "Failed to create value: #{@new_value.errors.full_messages.to_sentence}"
     end
 
     def create_attributes_value!
       attributes = [@primary_attribute, *@extended_attributes]
 
       attributes.each do |attribute|
-        attributes_value = AttributesValue.create(
+        attributes_value = AttributesValue.find_or_create_by(
           related_attribute: attribute,
           value: @new_value,
         )
 
-        unless attributes_value.persisted?
-          raise ActiveRecord::Rollback,
-            "Failed to link value to attribute: #{attributes_value.errors.full_messages.to_sentence}"
-        end
+        next if attributes_value.persisted?
+
+        raise ActiveRecord::Rollback,
+          "Failed to link value to attribute: #{attributes_value.errors.full_messages.to_sentence}"
       end
     end
 
@@ -93,7 +74,7 @@ module Source
 
       logger.warn(
         "Attribute has custom sorting, please ensure your new value is in the right position in data/attributes.yml",
-      ) if @manually_sorted
+      ) if @primary_attribute.manually_sorted?
     end
   end
 end

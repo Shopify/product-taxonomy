@@ -30,6 +30,19 @@ class Value < ApplicationRecord
       new(row_from_data(data))
     end
 
+    def find_or_create_for_attribute(attribute, name)
+      friendly_id = generate_friendly_id("#{attribute.friendly_id}__#{name}")
+
+      find_or_create_by(
+        friendly_id: friendly_id,
+      ) do |v|
+        v.name = name
+        v.handle = generate_handle(friendly_id)
+        v.primary_attribute = attribute
+        v.position = attribute.next_position
+      end
+    end
+
     def insert_all_from_data(data, base_attributes_data, ...)
       base_attributes_by_friendly_id = base_attributes_data.index_by { _1["friendly_id"] }
 

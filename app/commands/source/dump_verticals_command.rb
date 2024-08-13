@@ -27,7 +27,7 @@ module Source
     def update_vertical_file(vertical_id)
       vertical = Category.find_by!(id: vertical_id)
       spinner("Updating `#{vertical.name}`") do |sp|
-        path = "data/categories/#{vertical.handleized_name}.yml"
+        path = "data/categories/#{vertical.friendly_name}.yml"
         sys.write_file!(path) do |file|
           file.write(vertical.as_json_for_data_with_descendants.to_yaml(line_width: -1))
         end

@@ -29,7 +29,7 @@ module Source
 
     def find_category!
       @category = Category.find_by(id: params[:id])
-      @original_handle = @category&.handleized_name
+      @original_handle = @category&.friendly_name
       return if @category
 
       logger.fatal("Category `#{params[:id]}` not found")

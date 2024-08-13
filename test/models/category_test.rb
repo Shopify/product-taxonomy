@@ -63,13 +63,13 @@ class CategoryTest < ActiveSupport::TestCase
     assert_equal "aa-1-2", child.next_child_id
   end
 
-  test "#handleized_name handleizes just right" do
-    assert_equal "aa_category", build(:category, id: "aa", name: "Category").handleized_name
-    assert_equal "aa-12_child", build(:category, id: "aa-12", name: "Child", parent:).handleized_name
+  test "#friendly_name handleizes just right" do
+    assert_equal "aa_category", build(:category, id: "aa", name: "Category").friendly_name
+    assert_equal "aa-12_child", build(:category, id: "aa-12", name: "Child", parent:).friendly_name
     # some real examples
-    assert_equal "aa_apparel_accessories", build(:category, id: "aa", name: "Apparel & Accessories").handleized_name
+    assert_equal "aa_apparel_accessories", build(:category, id: "aa", name: "Apparel & Accessories").friendly_name
     assert_equal "fb_food_beverages_tobacco",
-      build(:category, id: "fb", name: "Food, Beverages & Tobacco").handleized_name
+      build(:category, id: "fb", name: "Food, Beverages & Tobacco").friendly_name
   end
 
   test "#root returns the top-most category node" do
