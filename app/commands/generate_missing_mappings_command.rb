@@ -80,7 +80,6 @@ class GenerateMissingMappingsCommand < ApplicationCommand
 
   option :shopify_version do
     desc "Target shopify taxonomy version"
-    short "-V"
     long "--version string"
     default PREVIOUS_RELEASE
   end

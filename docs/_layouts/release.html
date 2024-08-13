@@ -54,11 +54,11 @@ layout: default
           {% for category in categories[1] %}
             <div class="selected-category hidden" id="{{category.id}}">
               <div class="box">
-                <h3 data-selected-category-name="{{ category.name }}">Taxonomy ID</h3>
+                <h3 data-selected-category-name="{{ category.name }}">Category ID</h3>
                 <span class="id selected-category--id">{{ category.id }}</span>
               </div>
               <div class="box">
-                <h3>Taxonomy Breadcrumb</h3>
+                <h3>Category breadcrumb</h3>
                 <p>{{ category.fully_qualified_type }}</p>
               </div>
             </div>
@@ -122,11 +122,11 @@ layout: default
               {% for output in outputs %}
                 <li class="mapped-category hidden" id="{{ input_id }}">
                   <div class="mapped-category__id">
-                    <h4 class="mapped-category__title">{{ output_title }} Taxonomy ID</h4>
+                    <h4 class="mapped-category__title">{{ output_title }} Category ID</h4>
                     <span class="id">{{ output.id }}</span>
                   </div>
                   <div class="mapped-category__version">ver {{ output_version }}</div>
-                  <h4 class="mapped-category__title">Breadcrumb</h4>
+                  <h4 class="mapped-category__title">Category breadcrumb</h4>
                   {{ output.full_name }}
                 </li>
               {% endfor %}

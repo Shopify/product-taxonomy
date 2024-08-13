@@ -9,7 +9,6 @@ class GenerateDocsCommand < ApplicationCommand
 
   option :version do
     desc "Documentation version"
-    short "-V"
     long "--version string"
     default UNSTABLE
   end

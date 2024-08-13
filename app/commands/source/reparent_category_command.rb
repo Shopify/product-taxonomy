@@ -6,13 +6,13 @@ module Source
       no_command
     end
 
-    keyword :category do
+    keyword :category_id do
       desc "The target category ID"
       required
       validate { _1 =~ Category::ID_REGEX }
     end
 
-    keyword :parent do
+    keyword :parent_id do
       desc "The new parent category ID"
       required
       validate { _1 =~ Category::ID_REGEX }
@@ -34,18 +34,18 @@ module Source
     private
 
     def find_category!
-      @category = Category.find_by(id: params[:category])
+      @category = Category.find_by(id: params[:category_id])
       return if @category
 
-      logger.fatal("Category `#{params[:category]}` not found")
+      logger.fatal("Category `#{params[:category_id]}` not found")
       exit(1)
     end
 
     def find_parent!
-      @parent = Category.find_by(id: params[:parent])
+      @parent = Category.find_by(id: params[:parent_id])
       return if @parent
 
-      logger.fatal("Parent category `#{params[:parent]}` not found")
+      logger.fatal("Parent category `#{params[:parent_id]}` not found")
       exit(1)
     end
 

@@ -6,11 +6,12 @@ module Source
       no_command
     end
 
-    keyword :verticals do
+    option :verticals do
       desc "Verticals to export to data/"
+      long "--verticals list"
       convert :list
-      default -> { Category.verticals.map(&:id).join(",") }
-      validate -> { Category.verticals.map(&:id).include?(_1) }
+      default -> { Category.verticals.pluck(:id).join(",") }
+      validate -> { Category.verticals.pluck(:id).include?(_1) }
     end
 
     def execute

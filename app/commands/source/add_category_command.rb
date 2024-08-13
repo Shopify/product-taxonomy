@@ -7,47 +7,38 @@ module Source
     end
 
     keyword :name do
-      desc "Category name to create"
+      desc "Name for the new category"
       required
     end
 
-    keyword :parent do
-      desc "Parent category ID"
+    keyword :parent_id do
+      desc "Parent category ID for the new category"
       required
     end
 
     option :id do
-      desc "ID for the created category. Inferred if not specified"
+      desc "Override the created categories ID"
       short "-i"
       long "--id string"
       validate { _1 =~ Category::ID_REGEX }
     end
 
     def execute
+      setup!
       frame("Adding new category") do
-        find_parent!
-        validate_id!
         create_category!
         update_data_files!
-        sync_localizations!
       end
     end
 
     private
 
-    def find_parent!
-      @parent = Category.find_by(id: params[:parent])
+    def setup!
+      @parent = Category.find_by(id: params[:parent_id])
+      params[:id] ||= @parent.next_child_id
       return @parent if @parent
 
-      logger.fatal("Parent category `#{params[:parent]}` not found")
-      exit(1)
-    end
-
-    def validate_id!
-      params[:id] ||= @parent.next_child_id
-      return if params[:id].start_with?(params[:parent])
-
-      logger.fatal("ID `#{params[:id]}` does not start with parent ID `#{params[:parent]}`")
+      logger.fatal("Parent category `#{params[:parent_id]}` not found")
       exit(1)
     end
 
@@ -55,11 +46,17 @@ module Source
       spinner("Creating category") do |sp|
         @new_category = Category
           .create_with(id: params[:id])
-          .find_or_create_by!(
+          .find_or_create_by(
             name: params[:name],
-            parent_id: params[:parent],
+            parent_id: params[:parent_id],
           )
-        sp.update_title("Created category `#{@new_category.name}` with id=`#{@new_category.id}`")
+
+        if @new_category.valid?
+          sp.update_title("Created category `#{@new_category.name}` with id=`#{@new_category.id}`")
+        else
+          logger.fatal("Failed to create category: #{new_category.errors.full_messages.to_sentence}")
+          exit(1)
+        end
       end
     end
 

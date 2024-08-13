@@ -6,14 +6,14 @@ module Source
       no_command
     end
 
-    keyword :category do
-      desc "The target category ID"
+    keyword :id do
+      desc "ID of the target category"
       required
       validate -> { _1 =~ Category::ID_REGEX }
     end
 
-    keyword :name do
-      desc "Updated category name"
+    keyword :new_name do
+      desc "Name to rename the category to"
       required
     end
 
@@ -28,20 +28,23 @@ module Source
     private
 
     def find_category!
-      @category = Category.find_by(id: params[:category])
+      @category = Category.find_by(id: params[:id])
       @original_handle = @category&.handleized_name
       return if @category
 
-      logger.fatal("Category `#{params[:category]}` not found")
+      logger.fatal("Category `#{params[:id]}` not found")
       exit(1)
     end
 
     def update_category!
       spinner("Updating category") do |sp|
         original_name = @category.name
-        @category.update!(name: params[:name])
-
-        sp.update_title("Updated category `#{original_name}` to `#{params[:name]}`")
+        if @category.update(name: params[:new_name])
+          sp.update_title("Updated category `#{original_name}` to `#{params[:new_name]}`")
+        else
+          logger.fatal("Failed to update category: #{category.errors.full_messages.join(", ")}")
+          exit(1)
+        end
       end
     end
 

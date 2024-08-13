@@ -63,7 +63,8 @@ Submit a [taxonomy tree change request](https://github.com/Shopify/product-taxon
 Alternatively, you may submit PRs directly yourself against the source-of-truth files in [`data/`](./data).
 
 If you make changes to any files in [`data/`](./data), you'll need to update the distribution files. There are two ways:
-1. Run `make` locally and commit the changes yourself
+1. Make a PR comment of `/generate_dist` to have CI commit the changes for you 🤖
+2. Run `make` locally and commit the changes yourself
 
 ### 👩🏼‍💻 3. Developers: How to evolve the system
 

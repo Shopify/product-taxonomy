@@ -1,18 +1,20 @@
 # frozen_string_literal: true
 
 class SeedLocalCommand < ApplicationCommand
+  PERMITTED_TARGETS = ["taxonomy", "integrations"].freeze
+
   usage do
     no_command
   end
 
   option :targets do
     desc "Which systems to sync. Syncs all if not specified."
-    short "-t"
-    long "--target string"
-    arity zero_or_more
-    permit ["taxonomy", "integrations"]
+    long "--target list"
+    convert :list
+    default PERMITTED_TARGETS.join(",")
+    validate -> { PERMITTED_TARGETS.include?(_1) }
   end
-
+  
   def execute
     setup_options
     frame("Seeding database") do
