@@ -148,17 +148,6 @@ class SeedLocalCommand < ApplicationCommand
         input_type, output_type = output_type, input_type
       end
       rules = raw_mappings["rules"]
-      input_taxonomy = if raw_mappings["input_taxonomy"].include?("unstable")
-        raw_mappings["input_taxonomy"].delete_suffix("-unstable")
-      else
-        raw_mappings["input_taxonomy"]
-      end
-
-      output_taxonomy = if raw_mappings["output_taxonomy"].include?("unstable")
-        raw_mappings["output_taxonomy"].delete_suffix("-unstable")
-      else
-        raw_mappings["output_taxonomy"]
-      end
 
       rules.each do |rule|
         input_product_category_id = rule["input"]["product_category_id"]
@@ -197,8 +186,8 @@ class SeedLocalCommand < ApplicationCommand
           output_id: output_product.id,
           input_type: input_type,
           output_type: output_type,
-          input_version: input_taxonomy,
-          output_version: output_taxonomy,
+          input_version: raw_mappings["input_taxonomy"],
+          output_version: raw_mappings["output_taxonomy"],
         }
       end
     end
