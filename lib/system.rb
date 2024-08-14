@@ -86,7 +86,7 @@ class System
 
   def delete_files!(directory_path_from_root)
     logger.debug("→ Deleting files under directory `#{directory_path_from_root}`")
-    FileUtils.rm_rf(Dir.glob("#{directory_path_from_root}/*"))
+    FileUtils.rm_rf(Dir.glob(path_for("#{directory_path_from_root}/*")))
     logger.success("Deleted files under directory`#{directory_path_from_root}`")
   end
 
