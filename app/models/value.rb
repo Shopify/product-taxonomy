@@ -30,16 +30,27 @@ class Value < ApplicationRecord
       new(row_from_data(data))
     end
 
-    def find_or_create_for_attribute(attribute, name)
+    def find_or_create_for_attribute!(attribute, name)
       friendly_id = generate_friendly_id("#{attribute.friendly_id}__#{name}")
 
-      find_or_create_by(
-        friendly_id: friendly_id,
-      ) do |v|
-        v.name = name
-        v.handle = generate_handle(friendly_id)
-        v.primary_attribute = attribute
-        v.position = attribute.next_position
+      existing_value = find_by(friendly_id: friendly_id)
+
+      return existing_value if existing_value
+
+      ActiveRecord::Base.transaction do
+        value = create!(
+          name: name,
+          friendly_id: friendly_id,
+          handle: generate_handle(friendly_id),
+          primary_attribute: attribute,
+          position: attribute.next_value_position,
+        )
+
+        attributes = [attribute, *attribute.extended_attributes]
+
+        attributes.each do |attribute|
+          value.attributes_values.create!(related_attribute: attribute, value:)
+        end
       end
     end
 

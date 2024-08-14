@@ -148,7 +148,7 @@ class Attribute < ApplicationRecord
     sorting == "custom"
   end
 
-  def next_position
+  def next_value_position
     return unless manually_sorted?
 
     values.max_by(&:position).position + 1
