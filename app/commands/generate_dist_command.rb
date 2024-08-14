@@ -112,7 +112,7 @@ class GenerateDistCommand < ApplicationCommand
 
   def generate_mapping_group_files(locale, records)
     directory_path = "dist/#{locale}/integrations/#{records.first.integration.name}"
-    FileUtils.rm_rf(Dir.glob("#{directory_path}/*")) if directory_path.present?
+    sys.delete_files!(directory_path) if directory_path.present?
 
     input_version = records.first.input_version.gsub("/", "_")
     output_version = records.first.output_version.gsub("/", "_")

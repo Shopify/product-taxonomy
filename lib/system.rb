@@ -84,6 +84,12 @@ class System
     logger.success("Deleted `#{path_from_root}`")
   end
 
+  def delete_files!(directory_path_from_root)
+    logger.debug("→ Deleting files under directory `#{directory_path_from_root}`")
+    FileUtils.rm_rf(Dir.glob("#{directory_path_from_root}/*"))
+    logger.success("Deleted files under directory`#{directory_path_from_root}`")
+  end
+
   private
 
   def new_or_forced?(path_from_root)
