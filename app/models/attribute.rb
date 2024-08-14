@@ -148,6 +148,12 @@ class Attribute < ApplicationRecord
     sorting == "custom"
   end
 
+  def next_value_position
+    return unless manually_sorted?
+
+    values.max_by(&:position).position + 1
+  end
+
   def sorted_values(locale: "en")
     ValueSorter.sort(values, locale:)
   end
