@@ -112,8 +112,17 @@ class GenerateDistCommand < ApplicationCommand
 
   def generate_mapping_group_files(locale, records)
     directory_path = "dist/#{locale}/integrations/#{records.first.integration.name}"
+    sys.delete_files!(directory_path)
+
     input_version = records.first.input_version.gsub("/", "_")
     output_version = records.first.output_version.gsub("/", "_")
+    if input_version.include?("-unstable")
+      input_version = input_version.delete_suffix("-unstable")
+    end
+
+    if output_version.include?("-unstable")
+      output_version = output_version.delete_suffix("-unstable")
+    end
 
     ["txt", "json"].each do |ext|
       spinner("Generating #{input_version}_to_#{output_version}.#{ext}") do |sp|

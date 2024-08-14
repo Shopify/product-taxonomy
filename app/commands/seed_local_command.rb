@@ -15,11 +15,6 @@ class SeedLocalCommand < ApplicationCommand
     validate -> { PERMITTED_TARGETS.include?(_1) }
   end
 
-  option :version do
-    desc "Distribution version"
-    long "--version string"
-  end
-
   def execute
     setup_options
     frame("Seeding database") do
@@ -33,7 +28,6 @@ class SeedLocalCommand < ApplicationCommand
 
   def setup_options
     params[:targets] ||= ["taxonomy", "integrations"]
-    params[:version] ||= sys.read_file("VERSION").strip
   end
 
   def import_taxonomy
@@ -136,7 +130,6 @@ class SeedLocalCommand < ApplicationCommand
   # TODO: this needs to be simplified
   def mapping_rules_from(data)
     mapping_rules = []
-    shopify_taxonomy_version = "shopify/" + params[:version]
 
     data.each do |file|
       logger.debug("→ #{file}")
@@ -157,17 +150,6 @@ class SeedLocalCommand < ApplicationCommand
         input_type, output_type = output_type, input_type
       end
       rules = raw_mappings["rules"]
-      input_taxonomy = if raw_mappings["input_taxonomy"] == "shopify"
-        shopify_taxonomy_version
-      else
-        raw_mappings["input_taxonomy"]
-      end
-
-      output_taxonomy = if raw_mappings["output_taxonomy"] == "shopify"
-        shopify_taxonomy_version
-      else
-        raw_mappings["output_taxonomy"]
-      end
 
       rules.each do |rule|
         input_product_category_id = rule["input"]["product_category_id"]
@@ -206,8 +188,8 @@ class SeedLocalCommand < ApplicationCommand
           output_id: output_product.id,
           input_type: input_type,
           output_type: output_type,
-          input_version: input_taxonomy,
-          output_version: output_taxonomy,
+          input_version: raw_mappings["input_taxonomy"],
+          output_version: raw_mappings["output_taxonomy"],
         }
       end
     end
