@@ -10,17 +10,48 @@ class MappingValidationTest < ActiveSupport::TestCase
 
   test "category IDs in mappings are valid" do
     invalid_categories = []
-    @mappings_json_data["mappings"].each do |mapping|
-      res = validate_mapping_category_ids(mapping["rules"], "input", mapping["input_taxonomy"])
-      invalid_categories.concat(res)
-
-      res = validate_mapping_category_ids(mapping["rules"], "output", mapping["output_taxonomy"])
-      invalid_categories.concat(res)
+    raw_mappings_list = []
+    mapping_rule_files = @sys.glob("data/integrations/*/*/mappings/*_shopify.yml")
+    mapping_rule_files.each do |file|
+      raw_mappings_list << @sys.parse_yaml(file)
     end
 
-    assert invalid_categories.empty?,
-      "The following category ids in mappings are invalid:
-      #{invalid_categories}"
+    raw_mappings_list.each do |mapping|
+      ["input", "output"].each do |input_or_output|
+        input_or_output_taxonomy = if input_or_output == "input"
+          mapping["input_taxonomy"]
+        else
+          mapping["output_taxonomy"]
+        end
+
+        invalid_category_ids = validate_mapping_category_ids(
+          mapping["rules"],
+          input_or_output,
+          input_or_output_taxonomy,
+        )
+        next if invalid_category_ids.empty?
+
+        invalid_categories << {
+          input_taxonomy: mapping["input_taxonomy"],
+          output_taxonomy: mapping["output_taxonomy"],
+          rules_input_or_output: input_or_output,
+          invalid_category_ids: invalid_category_ids,
+        }
+      end
+    end
+
+    unless invalid_categories.empty?
+      puts "Invalid category ids are found in mappings for the following integrations:"
+      invalid_categories.each_with_index do |item, index|
+        puts ""
+        puts "[#{index + 1}] #{item[:input_taxonomy]} to #{item[:output_taxonomy]} in the rules #{item[:rules_input_or_output]} (#{item[:invalid_category_ids].size} invalid ids)"
+
+        item[:invalid_category_ids].each do |category_id|
+          puts " - #{category_id}"
+        end
+      end
+      assert(invalid_categories.empty?, "Invalid category ids are found in mappings.")
+    end
   end
 
   test "every Shopify category has corresponding channel mappings" do
@@ -143,32 +174,21 @@ class MappingValidationTest < ActiveSupport::TestCase
   end
 
   def validate_mapping_category_ids(mapping_rules, input_or_output, input_or_output_taxonomy)
-    category_ids = category_ids_from_taxonomy(input_or_output_taxonomy)
-
+    category_ids = category_ids_from_taxonomy(input_or_output_taxonomy).map { _1.split("/").last }
     return [] if category_ids.nil?
 
     invalid_category_ids = Set.new
 
     mapping_rules.each do |rule|
-      product_categories = rule[input_or_output]["category"]
-      product_categories = [product_categories] unless product_categories.is_a?(Array)
+      product_category_ids = rule[input_or_output]["product_category_id"]
+      product_category_ids = [product_category_ids] unless product_category_ids.is_a?(Array)
 
-      product_categories.each do |product_category|
-        invalid_category_ids.add(product_category["id"]) unless category_ids.include?(product_category["id"])
+      product_category_ids.each do |product_category_id|
+        invalid_category_ids.add(product_category_id) unless category_ids.include?(product_category_id.to_s)
       end
     end
 
-    if invalid_category_ids.empty?
-      []
-    else
-      [
-        {
-          taxonomy_version: input_or_output_taxonomy,
-          input_or_output: input_or_output,
-          category_ids: invalid_category_ids,
-        },
-      ]
-    end
+    invalid_category_ids
   end
 
   def category_ids_from_taxonomy(input_or_output_taxonomy)
