@@ -106,6 +106,7 @@ jobs:
             exit 1
           fi
         done
+        rm -f *.b3 *.sig
     - name: Set up short SHA
       id: short_sha
       run: echo "sha=$(git rev-parse --short ${{ github.sha }})" >> $GITHUB_OUTPUT
