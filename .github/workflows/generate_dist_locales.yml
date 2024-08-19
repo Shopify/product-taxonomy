@@ -71,7 +71,7 @@ jobs:
       with:
         name: ${{ matrix.locale }}
         path: |
-          dist/${{ matrix.locale }}
+          dist/${{ matrix.locale }}/
           ${{ matrix.locale }}_manifest.b3
           ${{ matrix.locale }}_manifest.b3.sig
 
@@ -83,6 +83,7 @@ jobs:
     - uses: actions/download-artifact@v4
       with:
         path: .
+        merge-multiple: true
     - name: Cache b3sum
       id: cache-b3sum
       uses: actions/cache@v3
