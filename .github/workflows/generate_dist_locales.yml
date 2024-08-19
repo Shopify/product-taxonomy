@@ -98,16 +98,14 @@ jobs:
         sudo mv b3sum /usr/local/bin/
     - name: Verify file integrity
       run: |
-        rm -f manifest.b3
-        for manifest in $(ls *_manifest.b3 | sort); do
-          echo -n "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed "$manifest" > verify.sig
-          cmp -s "$manifest" verify.sig && cat "$manifest" >> manifest.b3
-        done
+        for locale in $(ls -d dist/*/ | sed 's#dist/##' | sed 's#/##'); do
+          echo -n "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed "${locale}_manifest.b3" > verify.sig
 
-        if ! b3sum dist --check manifest.b3; then
-          echo "Error: Integrity check failed. Manifest signature or file integrity mismatch."
-          exit 1
-        fi
+          if ! (cmp -s "${locale}_manifest.b3.sig" "verify.sig" && b3sum --check "${locale}_manifest.b3"); then
+            echo "Error: Integrity check failed for ${locale}. Manifest signature or file integrity mismatched."
+            exit 1
+          fi
+        done
     - name: Set up short SHA
       id: short_sha
       run: echo "sha=$(git rev-parse --short ${{ github.sha }})" >> $GITHUB_OUTPUT
