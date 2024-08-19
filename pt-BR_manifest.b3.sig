@@ -1,0 +1,1 @@
+d5f071b8fb7cf4446f8d07131f56b3b07562c53d4aa0392bc9d1aa65ef43e857  pt-BR_manifest.b3

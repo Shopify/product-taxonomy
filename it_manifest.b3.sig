@@ -1,0 +1,1 @@
+ee1306fd8fe3c06daafe8dec457d7ef5230efc10895598a3f10ab6711f135576  it_manifest.b3

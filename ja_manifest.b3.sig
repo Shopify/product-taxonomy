@@ -1,0 +1,1 @@
+5655af9d9f481d7d738199e2f03a30c05cbd1ee8382b89839fb7b03aa6de3ee2  ja_manifest.b3

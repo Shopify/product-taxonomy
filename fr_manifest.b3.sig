@@ -1,0 +1,1 @@
+bb0818f24ff4a2ad8ddf12f434dc9b24238f3d079e6fd1979461eb855a6dac16  fr_manifest.b3
