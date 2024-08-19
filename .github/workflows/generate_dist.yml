@@ -11,7 +11,10 @@ concurrency:
 
 jobs:
   generate_dist:
-    if: ${{ github.event.issue.pull_request && github.event.comment.body == '/generate_dist' }}
+    if: |
+      github.repository_owner == 'Shopify' &&
+      github.event.issue.pull_request &&
+      github.event.comment.body == '/generate_dist'
     runs-on: ubuntu-latest
     permissions:
       contents: read

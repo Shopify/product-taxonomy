@@ -16,6 +16,7 @@ permissions:
 
 jobs:
   generate_locales:
+    if: github.repository_owner == 'Shopify'
     runs-on: ubuntu-latest
     outputs:
       LOCALES: ${{ steps.retrieve_locales.outputs.locales }}
