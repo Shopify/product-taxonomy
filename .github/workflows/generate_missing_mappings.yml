@@ -10,98 +10,118 @@ concurrency:
 
 jobs:
   generate_missing_mappings:
+    if: |
+      github.repository_owner == 'Shopify' &&
+      github.event.issue.pull_request &&
+      github.event.comment.body == '/generate_mappings'
     runs-on: ubuntu-latest
     permissions:
       contents: read
       pull-requests: read
-    if: ${{github.event.issue.pull_request && github.event.comment.body == '/generate_mappings'}}
-    outputs:
-      skip_workflow: ${{ steps.check_files.outputs.skip_workflow }}
 
     steps:
     - uses: actions/checkout@v4
     - name: Checkout PR
-      run: gh pr checkout $ISSUE
+      run: gh pr checkout ${{ github.event.issue.number }}
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ISSUE: ${{ github.event.issue.html_url }}
-    - name: Get changed files
-      id: changed-files
-      uses: tj-actions/changed-files@v44
-    - name: Check for Makefile changes
-      id: check_files
-      run: |
-        changed_files="${{ steps.changed-files.outputs.all_changed_files }}"
-        if echo "$changed_files" | grep -qE "^(Makefile)$"; then
-          echo "Makefile changed, stopping workflow"
-          echo "skip_workflow=true" >> $GITHUB_OUTPUT
-        else
-          echo "No Makefile changes, proceeding with workflow"
-          echo "skip_workflow=false" >> $GITHUB_OUTPUT
-        fi
     - uses: ruby/setup-ruby@v1
-      if: steps.check_files.outputs.skip_workflow != 'true'
       with:
         bundler-cache: true
     - name: Set up Podman
-      if: steps.check_files.outputs.skip_workflow != 'true'
       run: |
         sudo apt-get update
         sudo apt-get -y install podman
     - name: Launch Qdrant server
-      if: steps.check_files.outputs.skip_workflow != 'true'
       run: |
         port=6333
         podman run -d -p ${port}:${port} qdrant/qdrant
         echo "Waiting for Qdrant server to be ready..."
         sleep 25
     - uses: cue-lang/setup-cue@v1.0.0
-      if: steps.check_files.outputs.skip_workflow != 'true'
       with:
         version: 'v0.7.0'
+    - name: Cache b3sum
+      id: cache-b3sum
+      uses: actions/cache@v3
+      with:
+        path: /usr/local/bin/b3sum
+        key: ${{ runner.os }}-b3sum-1.5.3
+    - name: Install b3sum
+      if: steps.cache-b3sum.outputs.cache-hit != 'true'
+      run: |
+        curl -L https://github.com/BLAKE3-team/BLAKE3/releases/download/1.5.3/b3sum_linux_x64_bin -o b3sum
+        chmod +x b3sum
+        sudo mv b3sum /usr/local/bin/
+
+    - name: Keep only data/*.yml files
+      run: |
+        git fetch origin main:main
+        git checkout main -- .
+        git checkout HEAD -- data/**/*.yml
+        git reset
     - name: Seed database
-      if: steps.check_files.outputs.skip_workflow != 'true'
       run: make seed
     - name: Generate missing mappings
-      if: steps.check_files.outputs.skip_workflow != 'true'
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         OPENAI_API_BASE: https://openai-proxy.shopify.ai/v1
       run: |
         make generate_mappings
     - name: Clean cache and re-generate mapping distribution files
-      if: steps.check_files.outputs.skip_workflow != 'true'
       run: |
         make clean
         make VERBOSE=1
-    - name: Upload generated files
-      if: steps.check_files.outputs.skip_workflow != 'true'
-      uses: actions/upload-artifact@v3
+    - name: Create distribution manifest
+      run: |
+        find dist -type f -print0 | sort -z | xargs -0 b3sum > manifest.b3
+        echo "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed - manifest.b3 > manifest.b3.sig
+    - uses: actions/upload-artifact@v4
       with:
         name: generated-mappings
         path: |
           dist/*/integrations
           data/integrations
           tmp/mappings_with_low_confidence.txt
+          manifest.b3
+          manifest.b3.sig
 
   commit_changes:
     runs-on: ubuntu-latest
     needs: generate_missing_mappings
-    if: ${{ needs.generate_missing_mappings.outputs.skip_workflow != 'true' }}
     permissions:
       contents: write
       pull-requests: write
     steps:
     - uses: actions/checkout@v4
     - name: Checkout PR
-      run: gh pr checkout $ISSUE
+      run: gh pr checkout ${{ github.event.issue.number }}
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ISSUE: ${{ github.event.issue.html_url }}
-    - name: Download generated files
-      uses: actions/download-artifact@v3
+    # Verify and apply distribution files
+    - uses: actions/download-artifact@v4
       with:
         name: generated-mappings
+        path: .
+    - name: Cache b3sum
+      id: cache-b3sum
+      uses: actions/cache@v3
+      with:
+        path: /usr/local/bin/b3sum
+        key: ${{ runner.os }}-b3sum-1.5.3
+    - name: Install b3sum
+      if: steps.cache-b3sum.outputs.cache-hit != 'true'
+      run: |
+        curl -L https://github.com/BLAKE3-team/BLAKE3/releases/download/1.5.3/b3sum_linux_x64_bin -o b3sum
+        chmod +x b3sum
+        sudo mv b3sum /usr/local/bin/
+    - name: Verify file integrity
+      run: |
+        echo "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed - manifest.b3 > verify.sig
+        if ! (cmp -s manifest.b3.sig verify.sig && b3sum dist --check manifest.b3); then
+          echo "Error: Integrity check failed. Manifest signature or file integrity mismatch."
+          exit 1
+        fi
     - name: Commit mapping changes
       id: commit_changes
       run: |
