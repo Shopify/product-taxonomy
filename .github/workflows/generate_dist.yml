@@ -44,10 +44,11 @@ jobs:
         sudo mv b3sum /usr/local/bin/
 
     # Generate distribution files
-    - name: Fetch Makefile from main
+    - name: Keep only data/*.yml files
       run: |
         git fetch origin main:main
-        git checkout main -- Makefile
+        git checkout main -- .
+        git checkout HEAD -- data/**/*.yml
         git reset
     - name: Generate distribution files
       run: VERBOSE=1 make build
