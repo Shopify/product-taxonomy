@@ -60,7 +60,7 @@ jobs:
     - name: Create distribution manifest
       run: |
         find dist -type f -print0 | sort -z | xargs -0 b3sum > manifest.b3
-        echo "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed - manifest.b3 > manifest.b3.sig
+        echo -n "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed manifest.b3 > manifest.b3.sig
     - uses: actions/upload-artifact@v4
       with:
         name: dist
@@ -100,7 +100,7 @@ jobs:
         sudo mv b3sum /usr/local/bin/
     - name: Verify file integrity
       run: |
-        echo "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed - manifest.b3 > verify.sig
+        echo -n "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed manifest.b3 > verify.sig
         if ! (cmp -s manifest.b3.sig verify.sig && b3sum dist --check manifest.b3); then
           echo "Error: Integrity check failed. Manifest signature or file integrity mismatch."
           exit 1
