@@ -20,11 +20,19 @@ jobs:
       pull-requests: read
 
     steps:
+    # Checkout only the changed data files
     - uses: actions/checkout@v4
     - name: Checkout PR
       run: gh pr checkout ${{ github.event.issue.number }}
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Keep only data/*.yml files
+      run: |
+        git fetch origin main:main
+        git reset --hard origin/main
+        git checkout HEAD@{1} -- 'data/**/*.yml'
+
+    # Setup dependencies
     - uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
@@ -41,37 +49,24 @@ jobs:
     - uses: cue-lang/setup-cue@v1.0.0
       with:
         version: 'v0.7.0'
-    - name: Cache b3sum
-      id: cache-b3sum
-      uses: actions/cache@v3
-      with:
-        path: /usr/local/bin/b3sum
-        key: ${{ runner.os }}-b3sum-1.5.3
     - name: Install b3sum
-      if: steps.cache-b3sum.outputs.cache-hit != 'true'
       run: |
         curl -L https://github.com/BLAKE3-team/BLAKE3/releases/download/1.5.3/b3sum_linux_x64_bin -o b3sum
         chmod +x b3sum
         sudo mv b3sum /usr/local/bin/
 
-    - name: Keep only data/*.yml files
-      run: |
-        git fetch origin main:main
-        git checkout main -- .
-        git checkout HEAD -- data/**/*.yml
-        git reset
     - name: Seed database
-      run: make seed
+      run: make --file=Makefile seed
     - name: Generate missing mappings
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        OPENAI_API_BASE: https://openai-proxy.shopify.ai/v1
+        OPENAI_API_BASE: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        make generate_mappings
+        make --file=Makefile generate_mappings
     - name: Clean cache and re-generate mapping distribution files
       run: |
-        make clean
-        make VERBOSE=1
+        make --file=Makefile clean
+        VERBOSE=1 make --file=Makefile build
     - name: Create distribution manifest
       run: |
         target="dist"
@@ -107,14 +102,7 @@ jobs:
       with:
         name: generated-mappings
         path: .
-    - name: Cache b3sum
-      id: cache-b3sum
-      uses: actions/cache@v3
-      with:
-        path: /usr/local/bin/b3sum
-        key: ${{ runner.os }}-b3sum-1.5.3
     - name: Install b3sum
-      if: steps.cache-b3sum.outputs.cache-hit != 'true'
       run: |
         curl -L https://github.com/BLAKE3-team/BLAKE3/releases/download/1.5.3/b3sum_linux_x64_bin -o b3sum
         chmod +x b3sum
