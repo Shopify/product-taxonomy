@@ -59,8 +59,12 @@ jobs:
     # Create manifest and upload everything
     - name: Create distribution manifest
       run: |
-        find dist -type f -print0 | sort -z | xargs -0 b3sum > manifest.b3
-        echo -n "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed manifest.b3 > manifest.b3.sig
+        target="dist"
+        manifest="manifest.b3"
+        manifest_sig="${manifest}.sig"
+
+        find "$target" -type f -print0 | sort -z | xargs -0 b3sum > "$manifest"
+        echo -n "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed "$manifest" > "$manifest_sig"
     - uses: actions/upload-artifact@v4
       with:
         name: dist
@@ -100,11 +104,25 @@ jobs:
         sudo mv b3sum /usr/local/bin/
     - name: Verify file integrity
       run: |
-        echo -n "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed manifest.b3 > verify.sig
-        if ! (cmp -s manifest.b3.sig verify.sig && b3sum dist --check manifest.b3); then
-          echo "Error: Integrity check failed. Manifest signature or file integrity mismatch."
+        manifest="manifest.b3"
+        manifest_sig="${manifest}.sig"
+        verify_sig="verify.b3.sig"
+
+        echo -n "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed "$manifest" > "$verify_sig"
+
+        echo "Vetting $manifest_sig with generated $verify_sig"
+        if ! (cmp -s "$manifest_sig" "$verify_sig"); then
+          echo "Error: Integrity failure. Invalid key used to generate ${verify_sig}."
           exit 1
         fi
+        rm -f "$manifest_sig" "$verify_sig"
+
+        echo "Vetting $manifest"
+        if ! (b3sum --check "$manifest"); then
+          echo "Error: Integrity failure. Files are inconsistent with ${manifest}."
+          exit 1
+        fi
+        rm -f "$manifest"
     - name: Commit distribution files
       run: |
         git config --local user.name "GitHub Action"

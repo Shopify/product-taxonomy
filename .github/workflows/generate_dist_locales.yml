@@ -65,8 +65,12 @@ jobs:
     # Create manifest and upload everything
     - name: Create distribution manifest
       run: |
-        find dist/${{ matrix.locale }} -type f -print0 | sort -z | xargs -0 b3sum > ${{ matrix.locale }}_manifest.b3
-        echo -n "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed ${{ matrix.locale }}_manifest.b3 > ${{ matrix.locale }}_manifest.b3.sig
+        target="dist/${{ matrix.locale }}"
+        manifest="${{ matrix.locale }}_manifest.b3"
+        manifest_sig="${manifest}.sig"
+
+        find "$target" -type f -print0 | sort -z | xargs -0 b3sum > "$manifest"
+        echo -n "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed "$manifest" > "$manifest_sig"
     - uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.locale }}
@@ -98,15 +102,37 @@ jobs:
         sudo mv b3sum /usr/local/bin/
     - name: Verify file integrity
       run: |
-        for locale in $(ls -d dist/*/ | sed 's#dist/##' | sed 's#/##'); do
-          echo -n "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed "${locale}_manifest.b3" > verify.sig
+        find dist -maxdepth 1 -mindepth 1 -type d | while read -r locale_path; do
+          locale=$(basename "$locale_path")
+          manifest="${locale}_manifest.b3"
+          manifest_sig="${manifest}.sig"
+          verify_sig="${locale}_verify.b3.sig"
 
-          if ! (cmp -s "${locale}_manifest.b3.sig" "verify.sig" && b3sum --check "${locale}_manifest.b3"); then
-            echo "Error: Integrity check failed for ${locale}. Manifest signature or file integrity mismatched."
+          echo -n "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed "$manifest" > "$verify_sig"
+
+          echo "Vetting $manifest_sig with generated $verify_sig"
+          if ! (cmp -s "$manifest_sig" "$verify_sig"); then
+            echo "Error: Integrity failure for ${locale}. Invalid key used to generate ${verify_sig}."
             exit 1
           fi
+          rm -f "$manifest_sig" "$verify_sig"
+
+          echo "Vetting $manifest"
+          if ! (b3sum --check "$manifest"); then
+            echo "Error: Integrity failure for ${locale}. Files are inconsistent with ${manifest}."
+            exit 1
+          fi
+          rm -f "$manifest"
         done
-        rm -f *.b3 *.sig
+
+        # Check for any remaining manifest files
+        unchecked_manifests=$(find . -maxdepth 1 -name '*_manifest.b3')
+        if [ -n "$unchecked_manifests" ]; then
+          echo "Error: Unchecked manifest files found:"
+          echo "$unchecked_manifests"
+          exit 1
+        fi
+
     - name: Set up short SHA
       id: short_sha
       run: echo "sha=$(git rev-parse --short ${{ github.sha }})" >> $GITHUB_OUTPUT
