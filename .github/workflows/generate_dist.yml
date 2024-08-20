@@ -19,12 +19,18 @@ jobs:
     permissions:
       contents: read
     steps:
-    # Checkout code
+    # Checkout only the changed data files
     - uses: actions/checkout@v4
     - name: Checkout PR
       run: gh pr checkout ${{ github.event.issue.number }}
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Keep only data/ files
+      run: |
+        git fetch origin main:main
+        git checkout main -- .
+        git checkout HEAD -- data/**/*.yml
+        git reset
 
     # Setup dependencies
     - uses: ruby/setup-ruby@v1
@@ -46,17 +52,9 @@ jobs:
         chmod +x b3sum
         sudo mv b3sum /usr/local/bin/
 
-    # Generate distribution files
-    - name: Keep only data/*.yml files
-      run: |
-        git fetch origin main:main
-        git checkout main -- .
-        git checkout HEAD -- data/**/*.yml
-        git reset
+    # Generate distribution files and manifests
     - name: Generate distribution files
       run: VERBOSE=1 make build
-
-    # Create manifest and upload everything
     - name: Create distribution manifest
       run: |
         target="dist"
