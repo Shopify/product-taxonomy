@@ -28,9 +28,8 @@ jobs:
     - name: Keep only data/ files
       run: |
         git fetch origin main:main
-        git checkout main -- .
-        git checkout HEAD -- data/**/*.yml
-        git reset
+        git reset --hard origin/main
+        git checkout HEAD@{1} -- 'data/**/*.yml'
 
     # Setup dependencies
     - uses: ruby/setup-ruby@v1
