@@ -27,7 +27,7 @@ jobs:
       with:
         version: 'v0.7.0'
     - name: Generate dist & docs
-      run: make VERBOSE=1
+      run: VERBOSE=1 make --file=Makefile build
     - name: Upload data
       uses: actions/upload-artifact@v4
       with:

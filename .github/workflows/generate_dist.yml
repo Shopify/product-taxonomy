@@ -19,12 +19,17 @@ jobs:
     permissions:
       contents: read
     steps:
-    # Checkout code
+    # Checkout only the changed data files
     - uses: actions/checkout@v4
     - name: Checkout PR
       run: gh pr checkout ${{ github.event.issue.number }}
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Keep only data/ files
+      run: |
+        git fetch origin main:main
+        git reset --hard origin/main
+        git checkout HEAD@{1} -- 'data/**/*.yml'
 
     # Setup dependencies
     - uses: ruby/setup-ruby@v1
@@ -33,30 +38,15 @@ jobs:
     - uses: cue-lang/setup-cue@v1.0.0
       with:
         version: 'v0.7.0'
-    - name: Cache b3sum
-      id: cache-b3sum
-      uses: actions/cache@v3
-      with:
-        path: /usr/local/bin/b3sum
-        key: ${{ runner.os }}-b3sum-1.5.3
     - name: Install b3sum
-      if: steps.cache-b3sum.outputs.cache-hit != 'true'
       run: |
         curl -L https://github.com/BLAKE3-team/BLAKE3/releases/download/1.5.3/b3sum_linux_x64_bin -o b3sum
         chmod +x b3sum
         sudo mv b3sum /usr/local/bin/
 
-    # Generate distribution files
-    - name: Keep only data/*.yml files
-      run: |
-        git fetch origin main:main
-        git checkout main -- .
-        git checkout HEAD -- data/**/*.yml
-        git reset
+    # Generate distribution files and manifests
     - name: Generate distribution files
-      run: VERBOSE=1 make build
-
-    # Create manifest and upload everything
+      run: VERBOSE=1 make --file=Makefile build
     - name: Create distribution manifest
       run: |
         target="dist"
@@ -90,14 +80,7 @@ jobs:
       with:
         name: dist
         path: .
-    - name: Cache b3sum
-      id: cache-b3sum
-      uses: actions/cache@v3
-      with:
-        path: /usr/local/bin/b3sum
-        key: ${{ runner.os }}-b3sum-1.5.3
     - name: Install b3sum
-      if: steps.cache-b3sum.outputs.cache-hit != 'true'
       run: |
         curl -L https://github.com/BLAKE3-team/BLAKE3/releases/download/1.5.3/b3sum_linux_x64_bin -o b3sum
         chmod +x b3sum
