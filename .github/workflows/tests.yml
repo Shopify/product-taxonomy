@@ -25,4 +25,4 @@ jobs:
     - uses: cue-lang/setup-cue@v1.0.0
       with:
         version: 'v0.7.0'
-    - run: make ${{ matrix.test }} VERBOSE=1
+    - run: VERBOSE=1 make --file=Makefile ${{ matrix.test }}

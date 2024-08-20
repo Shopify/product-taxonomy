@@ -53,7 +53,7 @@ jobs:
 
     # Generate distribution files
     - name: Generate local-specific distribution files
-      run: VERBOSE=1 LOCALES=${{ matrix.locale }} make build
+      run: VERBOSE=1 LOCALES=${{ matrix.locale }} make --file=Makefile build
 
     # Create manifest and upload everything
     - name: Create distribution manifest

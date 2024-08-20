@@ -46,7 +46,7 @@ jobs:
 
     # Generate distribution files and manifests
     - name: Generate distribution files
-      run: VERBOSE=1 make build
+      run: VERBOSE=1 make --file=Makefile build
     - name: Create distribution manifest
       run: |
         target="dist"
