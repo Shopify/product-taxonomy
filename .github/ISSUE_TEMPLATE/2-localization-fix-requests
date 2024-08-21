@@ -1,0 +1,103 @@
+name: Localization Fix Requests
+description: File a request to fix translated text in the Taxonomy Tree
+title: "[Localization Fix]: "
+assignees: aalexandreia,MRodriguezRod
+labels:
+  - "localization-fix-requests"
+body:
+  - type: dropdown
+    id: localization_issue_type
+    attributes:
+      label: Are you reporting a Mixed Language Experience (MLX) or a Translation Quality issue?
+      multiple: false
+      options:
+        - Translation Quality issue
+        - MLX (English text in another language)
+  - type: dropdown
+    id: target_language
+    attributes:
+      label: Target Language(s)
+      multiple: true
+      options:
+        - All languages
+        - Chinese (Simplified)
+        - Chinese (Traditional)
+        - Czech
+        - Danish
+        - Dutch
+        - Finnish
+        - French
+        - German
+        - Italian
+        - Japanese
+        - Korean
+        - Norwegian
+        - Polish
+        - Portuguese (Brazil)
+        - Portuguese (Portugal)
+        - Spanish
+        - Swedish
+        - Thai
+        - Turkish
+        - Vietnamese
+        - Other
+  - type: dropdown
+    id: taxonomy_field
+    attributes:
+      label: Taxonomy Field
+      multiple: true
+      options:
+        - Categories
+        - Attributes
+        - Values
+        - Other
+  - type: dropdown
+    id: vertical
+    attributes:
+      label: Vertical
+      multiple: true
+      options:
+        - Animals & Pet Supplies
+        - Apparel & Accessories
+        - Arts & Entertainment
+        - Baby & Toddler
+        - Business & Industrial
+        - Cameras & Optics
+        - Electronics
+        - Food, Beverages & Tobacco
+        - Furniture
+        - Hardware
+        - Health & Beauty
+        - Home & Garden
+        - Luggage & Bags
+        - Mature
+        - Media
+        - Office Supplies
+        - Religious & Ceremonial
+        - Services
+        - Software
+        - Sporting Goods
+        - Toys & Games
+        - Vehicles & Parts
+        - Product Add-ons
+  - type: textarea
+    id: issue
+    attributes:
+      label: Issue
+      description: "Provide a brief summary of your issue. For example: 'Wrong translation for T-Shirts in Italian.'"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "Tell us more about your experience and the changes you want to see. For example: 'The 'T-Shirts' category is mistranslated in Italian as 'Camicette'. The correct term is 'T-Shirt'.'"
+    validations:
+      required: true
+  - type: textarea
+    id: video_screenshot
+    attributes:
+      label: Video/Screenshot
+      description: Attach any relevant videos or screenshots to this text area.
+    validations:
+      required: false
