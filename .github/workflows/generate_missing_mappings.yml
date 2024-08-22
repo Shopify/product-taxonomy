@@ -60,7 +60,7 @@ jobs:
     - name: Generate missing mappings
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        OPENAI_API_BASE: ${{ secrets.OPENAI_API_KEY }}
+        OPENAI_API_BASE: ${{ secrets.OPENAI_API_BASE }}
       run: |
         make --file=Makefile generate_mappings
     - name: Clean cache and re-generate mapping distribution files
