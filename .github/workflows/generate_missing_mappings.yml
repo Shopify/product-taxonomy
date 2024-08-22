@@ -11,7 +11,7 @@ concurrency:
 jobs:
   generate_missing_mappings:
     if: |
-      github.repository_owner == 'Shopify' &&
+      contains('["OWNER", "COLLABORATOR", "MEMBER"]', github.event.comment.author_association) &&
       github.event.issue.pull_request &&
       github.event.comment.body == '/generate_mappings'
     runs-on: ubuntu-latest
