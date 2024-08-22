@@ -58,7 +58,7 @@ To make it easier to integrate with the taxonomy, we have also included a set of
 
 ### 🧑🏼‍🏫 2. Taxonomists: How to make changes to the taxonomy
 
-Submit a [taxonomy tree change request](https://github.com/Shopify/product-taxonomy/issues/new?labels=taxonomy-tree-requests&projects=&template=taxonomy-tree-requests.yml&title=%5BTaxonomy+Tree%5D%3A+) to give us insight and evolve the taxonomy. This is the simplest way to effect change.
+Submit a [taxonomy tree change request](https://github.com/Shopify/product-taxonomy/issues/new?template=1-taxonomy-tree-requests.yml) to give us insight and evolve the taxonomy. This is the simplest way to effect change. For translation issues (non-English text), submit a [localization fix request](https://github.com/Shopify/product-taxonomy/issues/new?template=2-localization-fix-requests.yml) instead.
 
 Alternatively, you may submit PRs directly yourself against the source-of-truth files in [`data/`](./data).
 
