@@ -58,13 +58,17 @@ To make it easier to integrate with the taxonomy, we have also included a set of
 
 ### 🧑🏼‍🏫 2. Taxonomists: How to make changes to the taxonomy
 
-Submit a [taxonomy tree change request](https://github.com/Shopify/product-taxonomy/issues/new?labels=taxonomy-tree-requests&projects=&template=taxonomy-tree-requests.yml&title=%5BTaxonomy+Tree%5D%3A+) to give us insight and evolve the taxonomy. This is the simplest way to effect change.
+Submit a [taxonomy tree change request](https://github.com/Shopify/product-taxonomy/issues/new?template=1-taxonomy-tree-requests.yml) to give us insight and evolve the taxonomy. This is the simplest way to effect change.
 
 Alternatively, you may submit PRs directly yourself against the source-of-truth files in [`data/`](./data).
 
 If you make changes to any files in [`data/`](./data), you'll need to update the distribution files. There are two ways:
 1. Make a PR comment of `/generate_dist` to have CI commit the changes for you 🤖
 2. Run `make` locally and commit the changes yourself
+
+#### 🌐 Localization to other languages
+
+Our taxonomy supports translations to various languages in the [`localizations`](https://github.com/Shopify/product-taxonomy/tree/main/data/localizations) directory. To report a translation issue (non-English text), submit a [localization fix request](https://github.com/Shopify/product-taxonomy/issues/new?template=2-localization-fix-requests.yml).
 
 ### 👩🏼‍💻 3. Developers: How to evolve the system
 
