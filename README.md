@@ -109,7 +109,7 @@ If you want to add a new distribution format, you'll need to do 3 things:
 
 #### 📂 Navigating this repository
 
-This is a rails app after all, so we'll give a map of the _novel_ pieces of our system:
+This is a Rails app after all, so we'll give a map of the _novel_ pieces of our system:
 
 ```
 ├── Makefile             # key dev and build commands
