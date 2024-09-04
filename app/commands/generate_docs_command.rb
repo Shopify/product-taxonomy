@@ -46,12 +46,12 @@ class GenerateDocsCommand < ApplicationCommand
       sp.update_title("Generated sibling groups")
     end
 
-    spinner("Generating search index") do |sp|
+    spinner("Generating category search index") do |sp|
       sys.write_file("#{data_target}/search_index.json") do |file|
         file.write(JSON.fast_generate(Category.as_json_for_docs_search(category_data)))
         file.write("\n")
       end
-      sp.update_title("Generated search index")
+      sp.update_title("Generated category search index")
     end
 
     spinner("Generating attributes") do |sp|
@@ -72,6 +72,22 @@ class GenerateDocsCommand < ApplicationCommand
         file.write("\n")
       end
       sp.update_title("Generated mappings")
+    end
+
+    spinner("Generating attributes with categories") do |sp|
+      sys.write_file("#{data_target}/reversed_attributes.yml") do |file|
+        file.write(Attribute.as_json_for_docs.to_yaml(line_width: -1))
+        file.write("\n")
+      end
+      sp.update_title("Generated attributes with categories")
+    end
+
+    spinner("Generating attribute with categories search index") do |sp|
+      sys.write_file("#{data_target}/attribute_search_index.json") do |file|
+        file.write(JSON.fast_generate(Attribute.as_json_for_docs_search))
+        file.write("\n")
+      end
+      sp.update_title("Generated attribute with categories search index")
     end
   end
 
