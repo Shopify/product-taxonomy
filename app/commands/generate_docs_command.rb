@@ -2,6 +2,8 @@
 
 class GenerateDocsCommand < ApplicationCommand
   UNSTABLE = "unstable"
+  ATTRIBUTE_KEYS = ["id", "name", "handle"].freeze
+  VALUE_KEYS = ["id", "name"].freeze
 
   usage do
     no_command
@@ -54,7 +56,7 @@ class GenerateDocsCommand < ApplicationCommand
 
     spinner("Generating attributes") do |sp|
       sys.write_file("#{data_target}/attributes.yml") do |file|
-        file.write(attribute_data.to_yaml(line_width: -1))
+        file.write(generate_extended_attributes(attribute_data).to_yaml(line_width: -1))
         file.write("\n")
       end
       sp.update_title("Generated attributes")
@@ -84,5 +86,23 @@ class GenerateDocsCommand < ApplicationCommand
       end
       sp.update_title("Generated release file")
     end
+  end
+
+  def generate_extended_attributes(attribute_data)
+    result = attribute_data.each_with_object([]) do |attribute, acc|
+      if attribute["extended_attributes"].any?
+        attribute["extended_attributes"].each do |extended_attribute|
+          acc << attribute.slice(*ATTRIBUTE_KEYS).merge(
+            "handle" => extended_attribute.fetch("handle"),
+            "extended_name" => extended_attribute.fetch("name"),
+            "values" => attribute.fetch("values").map { |value| value.slice(*VALUE_KEYS) },
+          )
+        end
+      end
+      acc << attribute.slice(*ATTRIBUTE_KEYS).merge(
+        "values" => attribute.fetch("values").map { |value| value.slice(*VALUE_KEYS) },
+      )
+    end
+    result
   end
 end

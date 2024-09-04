@@ -145,7 +145,7 @@ const toggleVisibleSelectedCategory = () => {
   });
 };
 
-const toggleVisibleAtrributes = () => {
+const toggleVisibleAttributes = () => {
   const attributeElements = readAttributeValuesElement();
   const documentNode = q(`.category-node[id="${selectedNode}"]`);
 
@@ -155,11 +155,10 @@ const toggleVisibleAtrributes = () => {
     );
   }
 
-  const attributeIds = documentNode.dataset.attributeIds;
-  const attributesList = attributeIds.split(',');
-
+  const attributeHandles = documentNode.dataset.attributeHandles;
+  const attributesList = attributeHandles.split(',');
   attributeElements.forEach((element) => {
-    const valueId = element.id;
+    const valueId = element.dataset.handle;
     const classes = element.classList;
     if (attributesList.includes(valueId)) {
       classes.replace(className.hidden, className.visible);
@@ -232,7 +231,7 @@ const renderWithYieldToMain = () => {
     toggleSelectedCategory,
     toggleExpandedCategories,
     toggleVisibleSelectedCategory,
-    toggleVisibleAtrributes,
+    toggleVisibleAttributes,
     toggleMappedCategories,
   ];
 
@@ -243,7 +242,7 @@ const renderWithScheduler = () => {
   scheduler.postTask(toggleSelectedCategory, {priority: 'user-blocking'});
   scheduler.postTask(toggleExpandedCategories, {priority: 'user-blocking'});
   scheduler.postTask(toggleVisibleSelectedCategory);
-  scheduler.postTask(toggleVisibleAtrributes);
+  scheduler.postTask(toggleVisibleAttributes);
   scheduler.postTask(toggleMappedCategories);
 };
 

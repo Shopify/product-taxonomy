@@ -36,7 +36,7 @@ layout: default
                 id="{{ category.id }}"
                 class="category-node"
                 data-ancestor-ids="{{ category.ancestor_ids }}"
-                data-attribute-ids="{{ category.attribute_ids }}"
+                data-attribute-handles="{{ category.attribute_handles }}"
               >
                 {{ category.name }}
               </li>
@@ -69,10 +69,14 @@ layout: default
     <div class="values-wrapper box">
       <h3 id="category-attributes-title">Category Attributes</h3>
       {% for attribute in site.data[page.target].attributes %}
-        <div class="value-container attribute-values hidden" id="{{ attribute.id }}">
+        <div class="value-container attribute-values hidden" data-handle="{{ attribute.handle }}">
           <h4 class="value-title attribute-title" tabindex="0">
             <div class="value-title__text">
-              {{ attribute.name }}
+              {% if attribute.extended_name %}
+                {{ attribute.extended_name }} <span class="value-title__text--subdued">extended from</span> {{ attribute.name }}
+              {% else %}
+                {{ attribute.name }}
+              {% endif %}
             </div>
             <div class="value-container__id">
               <span class="id">{{ attribute.id }}</span>
