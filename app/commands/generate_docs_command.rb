@@ -21,7 +21,7 @@ class GenerateDocsCommand < ApplicationCommand
       logger.headline("Version: #{params[:version]}")
 
       generate_data_files
-      generate_release_file unless params[:version] == UNSTABLE
+      generate_release_folder unless params[:version] == UNSTABLE
     end
   end
 
@@ -91,16 +91,23 @@ class GenerateDocsCommand < ApplicationCommand
     end
   end
 
-  def generate_release_file
-    spinner("Generating release file") do |sp|
-      sys.write_file("docs/_releases/#{params[:version]}.html") do |file|
-        content = sys.read_file("docs/_releases/_template.html")
+  def generate_release_folder
+    spinner("Generating release folder") do |sp|
+      sys.write_file("docs/_releases/#{params[:version]}/index.html") do |file|
+        content = sys.read_file("docs/_releases/_index_template.html")
         content.gsub!("TITLE", params[:version].upcase)
         content.gsub!("TARGET", params[:version])
         content.gsub!("GH_URL", "https://github.com/Shopify/product-taxonomy/releases/tag/v#{params[:version]}")
         file.write(content)
       end
-      sp.update_title("Generated release file")
+      sys.write_file("docs/_releases/#{params[:version]}/attributes.html") do |file|
+        content = sys.read_file("docs/_releases/_attributes_template.html")
+        content.gsub!("TITLE", params[:version].upcase)
+        content.gsub!("TARGET", params[:version])
+        content.gsub!("GH_URL", "https://github.com/Shopify/product-taxonomy/releases/tag/v#{params[:version]}")
+        file.write(content)
+      end
+      sp.update_title("Generated release folder")
     end
   end
 
