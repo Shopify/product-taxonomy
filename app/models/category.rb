@@ -110,7 +110,7 @@ class Category < ApplicationRecord
             "parent_id" => parent_id,
             "node_type" => data["level"].zero? ? "root" : "leaf",
             "ancestor_ids" => data["ancestors"].map { _1["id"] }.join(","),
-            "attribute_ids" => data["attributes"].map { _1["id"] }.join(","),
+            "attribute_handles" => data["attributes"].map { _1["handle"] }.join(","),
           }
 
           groups[data["level"]] ||= {}
