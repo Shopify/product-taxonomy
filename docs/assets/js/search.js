@@ -1,44 +1,56 @@
 import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.mjs';
-import { q } from './util.js';
+import {q} from './util.js';
+import {resetToCategory} from './nodes.js';
 
-let fuseInstance = null;
+const getFuse = (() => {
+  let fuse;
+  return () => {
+    if (fuse) return fuse;
+    fuse = getSearchIndex().then(
+      (searchIndex) =>
+        new Fuse(searchIndex, {
+          includeMatches: true,
+          minMatchCharLength: 2,
+          keys: [
+            {name: 'title', score: 0.5},
+            {name: 'category.name', score: 1},
+            {name: 'category.id', score: 0.8},
+          ],
+        }),
+    );
+    return fuse;
+  };
+})();
 
-const initializeSearchIndex = async (filename) => {
-  const response = await fetch(filename);
-  return response.json();
-};
-
-const initializeFuse = async (filename, keys) => {
-  if (!fuseInstance) {
-    const searchIndex = await initializeSearchIndex(filename);
-    fuseInstance = new Fuse(searchIndex, {
-      includeMatches: true,
-      minMatchCharLength: 2,
-      keys: keys,
-    });
-  }
-  return fuseInstance;
-};
+const getSearchIndex = (() => {
+  let searchIndex;
+  return () => {
+    if (searchIndex) return searchIndex;
+    // intentionally local so each release has its own search index
+    searchIndex = fetch('./search_index.json').then((res) => res.json());
+    return searchIndex;
+  };
+})();
 
 const searchDebounceMs = 200;
 
-export const setupSearch = async (inputId, resultsId, filename, resetResource, searchLimit, keys) => {
-  await initializeFuse(filename, keys);
+export const setupSearch = async () => {
+  // wait for fuse/searchIndex to load before setting up listeners
+  await getFuse();
 
-  const searchInput = q(`#${inputId}`);
-  const searchResults = q(`#${resultsId}`);
+  const searchInput = q('#category-search');
+  const searchResults = q('#category-search-results');
 
-  searchInput.placeholder = 'Search';
+  searchInput.placeholder = 'Search for categories';
 
   let timeoutId;
   searchInput.addEventListener('input', (e) => {
-    resetSearch({ inputId, resultsId });
+    resetSearch();
     clearTimeout(timeoutId);
     timeoutId = setTimeout(() => {
-      search(e.target.value, resultsId, resetResource, searchLimit);
+      categorySearch(e.target.value);
     }, searchDebounceMs);
   });
-
   searchInput.addEventListener('focus', () => {
     clearTimeout(timeoutId);
   });
@@ -46,29 +58,27 @@ export const setupSearch = async (inputId, resultsId, filename, resetResource, s
   const handleBlur = (e) => {
     if (searchResults.contains(e.relatedTarget)) return;
     clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => resetSearch({ clearInput: true, inputId, resultsId }), 200);
+    timeoutId = setTimeout(() => resetSearch({clearInput: true}), 200);
   };
-
   searchResults.addEventListener('blur', handleBlur);
   searchInput.addEventListener('blur', handleBlur);
 };
 
-const resetSearch = ({ clearInput, focusInput, inputId, resultsId } = {}) => {
-  const searchInput = q(`#${inputId}`);
-  const searchContainer = q(`#${resultsId}`);
-  if (clearInput) searchInput.value = '';
-  if (focusInput) searchInput.focus();
+const resetSearch = ({clearInput, focusInput} = {}) => {
+  if (clearInput) q('#category-search').value = '';
+  if (focusInput) q('#category-search').focus();
+  const searchContainer = q('#category-search-results');
   searchContainer.innerHTML = '';
   searchContainer.style.display = 'none';
 };
 
-const search = async (query, resultsId, resetResource, searchLimit) => {
+async function categorySearch(query) {
   if (!query.trim()) return;
-  const searchContainer = q(`#${resultsId}`);
+  const searchContainer = q('#category-search-results');
   searchContainer.style.display = 'block';
 
-  const results = fuseInstance.search(query, { limit: searchLimit });
-
+  const fuse = await getFuse();
+  const results = fuse.search(query, {limit: 5});
   if (results.length === 0) {
     const noResults = document.createElement('li');
     noResults.textContent = 'No results found';
@@ -77,7 +87,7 @@ const search = async (query, resultsId, resetResource, searchLimit) => {
     return;
   }
 
-  results.forEach(({ item }) => {
+  results.forEach(({item}) => {
     const searchResult = document.createElement('li');
     const searchLink = document.createElement('a');
 
@@ -85,10 +95,10 @@ const search = async (query, resultsId, resetResource, searchLimit) => {
     searchLink.href = item.url;
     searchLink.onclick = (e) => {
       e.preventDefault();
-      resetResource(item.searchIdentifier);
-      resetSearch({ clearInput: true, focusInput: e.detail === 0, inputId: resultsId, resultsId });
+      resetToCategory(item.category.id);
+      resetSearch({clearInput: true, focusInput: e.detail === 0});
     };
     searchResult.appendChild(searchLink);
     searchContainer.appendChild(searchResult);
   });
-};
+}
