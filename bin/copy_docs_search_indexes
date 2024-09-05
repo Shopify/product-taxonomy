@@ -8,6 +8,11 @@ do
   target="$root/_site/releases/$(basename $dir)/search_index.json"
   echo "Copying $src to $target"
   cp $src $target
+
+  src="${dir}attribute_search_index.json"
+  target="$root/_site/releases/$(basename $dir)/attribute_search_index.json"
+  echo "Copying $src to $target"
+  cp $src $target
 done
 
 exit 0
