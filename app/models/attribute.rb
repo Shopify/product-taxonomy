@@ -104,27 +104,6 @@ class Attribute < ApplicationRecord
       }
     end
 
-    #
-    # `docs/` serialization
-    def as_json_for_docs(locale: "en")
-      {
-        "attributes" => all.map { _1.as_json_for_docs(locale:) },
-      }
-    end
-
-    def as_json_for_docs_search
-      all.map do |data|
-        {
-          "searchIdentifier" => data["handle"],
-          "title" => data["name"],
-          "url" => "?attributeHandle=#{data["handle"]}",
-          "attribute" => {
-            "handle" => data["handle"],
-          },
-        }
-      end
-    end
-
     private
 
     def row_from_data(data)
@@ -247,28 +226,6 @@ class Attribute < ApplicationRecord
 
   def as_txt(padding: 0, locale: "en")
     "#{gid.ljust(padding)} : #{name(locale:)}"
-  end
-
-  #
-  # `docs/` serialization
-  def as_json_for_docs(locale: "en")
-    {
-      "id" => id,
-      "handle" => handle,
-      "name" => name(locale:),
-      "categories" => categories.sort_by { _1.full_name(locale:) }.map do
-        {
-          "id" => _1.gid,
-          "full_name" => _1.full_name(locale:),
-        }
-      end,
-      "values" => values.map do
-        {
-          "id" => _1.gid,
-          "name" => _1.name(locale:),
-        }
-      end,
-    }
   end
 
   private
