@@ -124,6 +124,7 @@ class Category < ApplicationRecord
       distribution_verticals.flat_map do |vertical|
         vertical["categories"].map do |data|
           {
+            "searchIdentifier" => data["id"],
             "title" => data["full_name"],
             "url" => "?categoryId=#{CGI.escapeURIComponent(data["id"])}",
             "category" => {
