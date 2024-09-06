@@ -17,7 +17,8 @@ layout: default
 <div class="content-container">
   <div class="column">
     <h2>Releases</h2>
-    {% for release in site.releases %}
+    {% assign filtered_releases = site.releases | where: "include_in_release_list", true %}
+    {% for release in filtered_releases %}
       <ul>
         <li>
           <a href="{{ release.url | relative_url }}">Explore {{ release.title | titleize }}</a> (sourced from <a href="{{ release.github_url }}" target="_blank">GitHub</a>)
