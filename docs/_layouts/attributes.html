@@ -16,7 +16,11 @@ layout: default
     <div class="attributes-wrapper box">
       <div class="value-container attribute-values">
         <h3>
+        {% if attribute.base_name %}
+          {{ attribute.name }} <span class="value-title__text--subdued">extended from</span> {{ attribute.base_name }}
+        {% else %}
           {{ attribute.name }}
+        {% endif %}
         </h3>
         <div class="value-container__id">
           <span class="id">{{ attribute.id }}</span>
