@@ -253,9 +253,10 @@ class Attribute < ApplicationRecord
   # `docs/` serialization
   def as_json_for_docs(locale: "en")
     {
-      "id" => id,
+      "id" => gid,
       "handle" => handle,
       "name" => name(locale:),
+      "base_name" => base_attribute&.name(locale:),
       "categories" => categories.sort_by { _1.full_name(locale:) }.map do
         {
           "id" => _1.gid,
