@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+{% include header.html %}
+<div class="attribute-search-wrapper">
+  <div class="search-container">
+    <label for="attribute-search" class="search-container__label">Attribute Search:</label>
+    <input class="search-container__input" type="text" id="attribute-search" placeholder="Loading…">
+    <ul class="search-container__ul" id="attribute-search-results"></ul>
+  </div>
+</div>
+{% for attribute in site.data[page.target].reversed_attributes.attributes %}
+<div class="attribute-container hidden" data-handle="{{ attribute.handle }}" >
+  <div class="column">
+    <div class="attributes-wrapper box">
+      <div class="value-container attribute-values">
+        <h3>
+          {{ attribute.name }}
+        </h3>
+        <div class="value-container__id">
+          <span class="id">{{ attribute.id }}</span>
+        </div>
+        <div>
+          <ul class="values-container__list">
+            {% for value in attribute.values %}
+            <li class="values-container__list-item">
+              <div class="values-container__list-item-content">
+                {{ value.name }}
+                <div class="id">{{ value.id }}</div>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="attribute-categories-wrapper box">
+      <div class="categories-container attribute-categories">
+        <h3>
+          Categories
+        </h3>
+        <div>
+          <ul class="values-container__list">
+            {% for category in attribute.categories %}
+            <li class="values-container__list-item">
+              <div class="values-container__list-item-content">
+                {{ category.full_name }}
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+<script type="module" src="{{ site.baseurl }}/assets/js/attribute_release.js"></script>
