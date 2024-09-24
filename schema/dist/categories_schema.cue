@@ -9,7 +9,7 @@ _category_reference: {
 	name!: string
 }
 
-#version_regex: "^\\d{4}-\\d{2}(-unstable)?$"
+#version_regex: "^\\d{4}-\\d{2}(-(unstable|beta\\d+))?$"
 version!: string & =~#version_regex
 verticals!: [...{
 	name!:   string

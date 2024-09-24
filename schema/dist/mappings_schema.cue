@@ -4,7 +4,7 @@
 #attribute_gid_regex: "^gid://shopify/TaxonomyAttribute/\\d+$"
 #value_gid_regex:     "^gid://shopify/TaxonomyValue/\\d+$"
 
-#version_regex: "^\\d{4}-\\d{2}(-unstable)?$"
+#version_regex: "^\\d{4}-\\d{2}(-(unstable|beta\\d+))?$"
 version!: string & =~#version_regex
 mappings!: [
 	...{
