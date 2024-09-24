@@ -50,6 +50,38 @@ class Attribute < ApplicationRecord
       insert_all!(Array(data).map { row_from_data(_1) }, ...)
     end
 
+    def find_or_create!(name, description, base_attribute: nil, value_names: nil)
+      raise "Value names are not allowed when extending a base attribute" if base_attribute && value_names&.any?
+      raise "Value names are required when creating a base attribute" if value_names&.empty? && base_attribute.nil?
+
+      friendly_id = generate_friendly_id(name)
+
+      existing_attribute = find_by(friendly_id: friendly_id)
+      raise "Attribute already exists" if existing_attribute
+
+      ActiveRecord::Base.transaction do
+        attribute = Attribute.new(
+          name: name,
+          description: description,
+          friendly_id: friendly_id,
+          handle: generate_handle(friendly_id),
+          base_attribute: base_attribute,
+        )
+
+        if base_attribute
+          base_attribute&.values&.each do |value|
+            attribute.values << value
+          end
+        else
+          value_names.each do |value_name|
+            Value.find_or_create_for_attribute!(attribute, value_name)
+          end
+        end
+
+        attribute.save!
+      end
+    end
+
     def localizations
       @localizations ||= Dir.glob(LOCALIZATION_PATH).each_with_object({}) do |file, localizations|
         locale = File.basename(file, ".yml")
