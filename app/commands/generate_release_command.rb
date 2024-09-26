@@ -11,6 +11,7 @@ class GenerateReleaseCommand < ApplicationCommand
   end
 
   def execute
+    validate_localizations
     setup_options
     frame("Generating release") do
       logger.headline("Version: #{params[:version]}")
@@ -24,6 +25,10 @@ class GenerateReleaseCommand < ApplicationCommand
   end
 
   private
+
+  def validate_localizations
+    LocalizationsValidator.new.call
+  end
 
   def setup_options
     @version_from_file = sys.read_file("VERSION").strip
