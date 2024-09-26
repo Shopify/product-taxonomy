@@ -1,0 +1,20 @@
+source_language: en
+target_languages: [cs, da, de, es, fi, fr, it, ja, ko, nb, nl, pl, pt-BR, pt-PT, sv, th, tr, vi, zh-CN, zh-TW]
+components:
+  - name: 'Attributes'
+    audience: [buyer, merchant, partner]
+    owners: ['@Shopify/taxonomy-tree-squad']
+    paths:
+      - data/localizations/attributes/{{language}}.yml
+
+  - name: 'Categories'
+    audience: [buyer, merchant, partner]
+    owners: ['@Shopify/taxonomy-tree-squad']
+    paths:
+      - data/localizations/categories/{{language}}.yml
+
+  - name: 'Values'
+    audience: [buyer, merchant, partner]
+    owners: ['@Shopify/taxonomy-tree-squad']
+    paths:
+      - data/localizations/values/{{language}}.yml
