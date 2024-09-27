@@ -280,6 +280,63 @@ class AttributeTest < ActiveSupport::TestCase
     assert_equal ["Animal", "Rayé", "Autre"], pattern_json.map { _1["name"] }
   end
 
+  test "raises error when value names are provided with base attribute" do
+    base_attribute = create(:attribute)
+    assert_raises(RuntimeError, "Value names are not allowed when extending a base attribute") do
+      Attribute.find_or_create!(
+        "Test Attribute",
+        "Description",
+        base_attribute: base_attribute,
+        value_names: ["Value1"],
+      )
+    end
+  end
+
+  test "raises error when value names are missing for base attribute creation" do
+    assert_raises(RuntimeError, "Value names are required when creating a base attribute") do
+      Attribute.find_or_create!("Test Attribute", "Description", value_names: [])
+    end
+  end
+
+  test "raises error when attribute already exists" do
+    create(:attribute, name: "Material")
+    assert_raises(RuntimeError, "Attribute already exists") do
+      Attribute.find_or_create!("Material", "Description", value_names: ["Value1"])
+    end
+  end
+
+  test "creates a new base attribute with values" do
+    assert_difference "Attribute.count", 1 do
+      assert_difference "Value.count", 2 do
+        Attribute.find_or_create!("Test Attribute", "Description", value_names: ["Value1", "Value2"])
+      end
+    end
+    attribute = Attribute.find_by(friendly_id: "test_attribute")
+    assert_not_nil attribute
+    assert_equal ["Value1", "Value2"], attribute.values.map(&:name)
+  end
+
+  test "creates a new extended attribute from base attribute" do
+    base_attribute = Attribute.new_from_data(
+      "id" => 1,
+      "name" => "Color",
+      "friendly_id" => "color",
+      "handle" => "color",
+    )
+
+    Value.find_or_create_for_attribute!(base_attribute, "Blue")
+    Value.find_or_create_for_attribute!(base_attribute, "Green")
+
+    assert_difference "Attribute.count", 1 do
+      assert_no_difference "Value.count" do
+        Attribute.find_or_create!("Extended Attribute", "Description", base_attribute: base_attribute)
+      end
+    end
+    attribute = Attribute.find_by(friendly_id: "extended_attribute")
+    assert_not_nil attribute
+    assert_equal ["Blue", "Green"], attribute.values.map(&:name)
+  end
+
   private
 
   def base_attribute
