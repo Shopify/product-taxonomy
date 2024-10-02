@@ -49,6 +49,7 @@
   - ae-2-1-1-7
   - ae-2-1-1-8
   - ae-2-1-1-9
+  - ae-2-1-1-10
   attributes:
   - age_group
 - id: ae-2-1-1-1
@@ -124,6 +125,11 @@
   children: []
   attributes:
   - age_group
+- id: ae-2-1-1-10
+  name: Perfume Making Kits
+  children: []
+  attributes:
+  - perfume_kit_items_included
 - id: ae-2-1-2
   name: Art & Crafting Materials
   children:
@@ -139,10 +145,8 @@
   - ae-2-1-2-10
   - ae-2-1-2-11
   - ae-2-1-2-12
-  - ae-2-1-2-13
   - ae-2-1-2-14
-  - ae-2-1-2-15
-  - ae-2-1-2-16
+  - ae-2-1-2-17
   attributes:
   - color
   - pattern
@@ -1727,53 +1731,6 @@
   - color
   - pattern
   - slip_texture
-- id: ae-2-1-2-13
-  name: Raw Candle Wax
-  children:
-  - ae-2-1-2-13-1
-  - ae-2-1-2-13-2
-  - ae-2-1-2-13-3
-  - ae-2-1-2-13-4
-  - ae-2-1-2-13-5
-  attributes:
-  - color
-  - pattern
-  - scent
-- id: ae-2-1-2-13-1
-  name: Beeswax
-  children: []
-  attributes:
-  - color
-  - pattern
-  - scent
-- id: ae-2-1-2-13-2
-  name: Gel Wax
-  children: []
-  attributes:
-  - color
-  - pattern
-  - scent
-- id: ae-2-1-2-13-3
-  name: Palm Wax
-  children: []
-  attributes:
-  - color
-  - pattern
-  - scent
-- id: ae-2-1-2-13-4
-  name: Paraffin
-  children: []
-  attributes:
-  - color
-  - pattern
-  - scent
-- id: ae-2-1-2-13-5
-  name: Soy Wax
-  children: []
-  attributes:
-  - color
-  - pattern
-  - scent
 - id: ae-2-1-2-14
   name: Textiles
   children:
@@ -2064,44 +2021,135 @@
   - compatible_printer
   - paper_size
   - pattern
-- id: ae-2-1-2-15
+- id: ae-2-1-2-17
+  name: Olfactory Arts Materials
+  children:
+  - ae-2-1-2-17-1
+  - ae-2-1-2-17-2
+  attributes: []
+- id: ae-2-1-2-17-1
+  name: Candle Making Materials
+  children:
+  - ae-2-1-2-17-1-1
+  - ae-2-1-2-17-1-2
+  - ae-2-1-2-17-1-3
+  attributes:
+  - color
+  - pattern
+- id: ae-2-1-2-17-1-1
+  name: Raw Candle Wax
+  children:
+  - ae-2-1-2-17-1-1-1
+  - ae-2-1-2-17-1-1-2
+  - ae-2-1-2-17-1-1-3
+  - ae-2-1-2-17-1-1-4
+  - ae-2-1-2-17-1-1-5
+  attributes:
+  - color
+  - pattern
+  - scent
+- id: ae-2-1-2-17-1-1-1
+  name: Beeswax
+  children: []
+  attributes:
+  - color
+  - pattern
+  - scent
+- id: ae-2-1-2-17-1-1-2
+  name: Gel Wax
+  children: []
+  attributes:
+  - color
+  - pattern
+  - scent
+- id: ae-2-1-2-17-1-1-3
+  name: Palm Wax
+  children: []
+  attributes:
+  - color
+  - pattern
+  - scent
+- id: ae-2-1-2-17-1-1-4
+  name: Paraffin
+  children: []
+  attributes:
+  - color
+  - pattern
+  - scent
+- id: ae-2-1-2-17-1-1-5
+  name: Soy Wax
+  children: []
+  attributes:
+  - color
+  - pattern
+  - scent
+- id: ae-2-1-2-17-1-2
   name: Wick Tabs
   children:
-  - ae-2-1-2-15-1
-  - ae-2-1-2-15-3
+  - ae-2-1-2-17-1-2-1
+  - ae-2-1-2-17-1-2-2
   attributes:
   - accessory_size
   - material
-- id: ae-2-1-2-15-1
+- id: ae-2-1-2-17-1-2-1
   name: Metal Wick Tabs
   children: []
   attributes:
   - accessory_size
   - material
-- id: ae-2-1-2-15-3
+- id: ae-2-1-2-17-1-2-2
   name: Self-Adhesive Wick Tabs
   children: []
   attributes:
   - accessory_size
   - material
-- id: ae-2-1-2-16
+- id: ae-2-1-2-17-1-3
   name: Wicks
   children:
-  - ae-2-1-2-16-1
-  - ae-2-1-2-16-2
+  - ae-2-1-2-17-1-3-1
+  - ae-2-1-2-17-1-3-2
   attributes:
   - material
-- id: ae-2-1-2-16-1
+- id: ae-2-1-2-17-1-3-1
   name: Pre-Waxed Wicks
   children: []
   attributes:
   - material
-- id: ae-2-1-2-16-2
+- id: ae-2-1-2-17-1-3-2
   name: Pre-Tabbed Wicks
   children: []
   attributes:
   - accessory_size
   - material
+- id: ae-2-1-2-17-2
+  name: Fragrance Ingredients
+  children:
+  - ae-2-1-2-17-2-1
+  - ae-2-1-2-17-2-2
+  - ae-2-1-2-17-2-3
+  attributes: []
+- id: ae-2-1-2-17-2-1
+  name: Bases
+  children: []
+  attributes:
+  - fragrance_base_type
+  - fragrance_level
+- id: ae-2-1-2-17-2-2
+  name: Natural Ingredients
+  children: []
+  attributes:
+  - concentration
+  - fragrance_family
+  - perfume_note_function
+  - perfume_note_type
+- id: ae-2-1-2-17-2-3
+  name: Synthetic Ingredients
+  children: []
+  attributes:
+  - concentration
+  - fragrance_family
+  - perfume_note_function
+  - perfume_note_type
 - id: ae-2-1-3
   name: Art & Crafting Tool Accessories
   children:
@@ -2294,6 +2342,7 @@
   - ae-2-1-4-16
   - ae-2-1-4-17
   - ae-2-1-4-18
+  - ae-2-1-4-19
   attributes:
   - color
   - pattern
@@ -3303,6 +3352,37 @@
   children: []
   attributes:
   - material
+- id: ae-2-1-4-19
+  name: Olfactory Arts Tools
+  children:
+  - ae-2-1-4-19-1
+  - ae-2-1-4-19-2
+  - ae-2-1-4-19-3
+  attributes:
+  - color
+  - material
+  - pattern
+- id: ae-2-1-4-19-1
+  name: Candle Making Tools
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+- id: ae-2-1-4-19-2
+  name: Incense Making Tools
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+- id: ae-2-1-4-19-3
+  name: Perfume Making Tools
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: ae-2-1-5
   name: Craft Organization
   children:
