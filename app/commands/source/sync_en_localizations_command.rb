@@ -51,7 +51,7 @@ module Source
     def write_localizations(type, localizations, sp)
       file_path = "data/localizations/#{type}/en.yml"
       sys.write_file!(file_path) do |file|
-        file.puts "# This file is auto-generated using bin/sync_en_localizations. Do not edit directly."
+        file.puts "# This file is auto-generated. Do not edit directly."
         file.write(localizations.to_yaml(line_width: -1))
       end
       sp.update_title("Wrote #{type} localizations to #{file_path}")
