@@ -19,6 +19,9 @@ class GenerateDistCommand < ApplicationCommand
 
   def execute
     setup_options
+    frame("Validating Data Files") do
+      validate_data_files
+    end
     frame("Generating distribution files") do
       logger.headline("Version: #{params[:version]}")
       logger.headline("Locales: #{params[:locales].join(", ")}")
@@ -34,6 +37,13 @@ class GenerateDistCommand < ApplicationCommand
     if params[:locales].include?("all")
       params[:locales] = sys.glob("data/localizations/categories/*.yml").map { File.basename(_1, ".yml") }
     end
+  end
+
+  def validate_data_files
+    LocalizationsValidator.new.call(params[:locales])
+  rescue LocalizationsValidator::LocalizationError => e
+    logger.info(e.message)
+    exit(0)
   end
 
   def generate_dist_files(locale)

@@ -11,8 +11,10 @@ class GenerateReleaseCommand < ApplicationCommand
   end
 
   def execute
-    validate_localizations
     setup_options
+    frame("Validating Data Files") do
+      validate_data_files
+    end
     frame("Generating release") do
       logger.headline("Version: #{params[:version]}")
 
@@ -26,13 +28,16 @@ class GenerateReleaseCommand < ApplicationCommand
 
   private
 
-  def validate_localizations
-    LocalizationsValidator.new.call
-  end
-
   def setup_options
     @version_from_file = sys.read_file("VERSION").strip
     params[:version] ||= @version_from_file
+  end
+
+  def validate_data_files
+    LocalizationsValidator.new.call(params[:locales])
+  rescue LocalizationsValidator::LocalizationError => e
+    logger.fatal(e.message)
+    exit(1)
   end
 
   def version_mismatch?
