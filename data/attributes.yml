@@ -19021,13 +19021,13 @@ base_attributes:
   - language_version__cro_croatian
   - language_version__cym_welsh
   - language_version__dan_danish
+  - language_version__deu_german
   - language_version__deu_be_german_belgium
   - language_version__deu_ch_german_switzerland
-  - language_version__deu_german
   - language_version__ell_greek
+  - language_version__eng_english
   - language_version__eng_au_english_australia
   - language_version__eng_ca_english_canada
-  - language_version__eng_english
   - language_version__eng_gb_english_united_kingdom
   - language_version__eng_hk_english_hong_kong
   - language_version__eng_in_english_india
@@ -19044,10 +19044,10 @@ base_attributes:
   - language_version__fas_persian
   - language_version__fil_filipino
   - language_version__fin_finnish
+  - language_version__fra_french
   - language_version__fra_be_french_belgium
   - language_version__fra_ca_french_canada
   - language_version__fra_ch_french_switzerland
-  - language_version__fra_french
   - language_version__gle_irish
   - language_version__glg_galician
   - language_version__grc_ancient_greek
@@ -19096,8 +19096,8 @@ base_attributes:
   - language_version__mya_burmese
   - language_version__nav_navajo
   - language_version__nep_nepali
-  - language_version__nld_be_dutch_belgium
   - language_version__nld_dutch
+  - language_version__nld_be_dutch_belgium
   - language_version__nno_norwegian_nynorsk
   - language_version__nob_norwegian_bokmal
   - language_version__nor_norwegian
@@ -19105,8 +19105,8 @@ base_attributes:
   - language_version__orm_oromo
   - language_version__pan_punjabi
   - language_version__pol_polish
-  - language_version__por_br_portuguese_brazil
   - language_version__por_portuguese
+  - language_version__por_br_portuguese_brazil
   - language_version__pus_pashto
   - language_version__que_quechua
   - language_version__roh_romansh
@@ -19119,9 +19119,9 @@ base_attributes:
   - language_version__smo_samoan
   - language_version__som_somali
   - language_version__sot_southern_sotho
+  - language_version__spa_spanish
   - language_version__spa_latam_spanish_latin_american
   - language_version__spa_mx_spanish_mexico
-  - language_version__spa_spanish
   - language_version__sqi_albanian
   - language_version__srp_serbian
   - language_version__sun_sundanese
@@ -30294,6 +30294,19 @@ base_attributes:
   - chocolate_type__dark_chocolate
   - chocolate_type__milk_chocolate
   - chocolate_type__white_chocolate
+- id: 3425
+  name: Microphone design
+  description: Defines the design category for microphones, e.g. condenser, dynamic
+  friendly_id: microphone_design
+  handle: microphone-design
+  values:
+  - microphone_design__boundary
+  - microphone_design__condenser
+  - microphone_design__dynamic
+  - microphone_design__lavalier
+  - microphone_design__parabolic
+  - microphone_design__ribbon
+  - microphone_design__other
 extended_attributes:
 - name: Dog house features
   handle: dog-house-features
