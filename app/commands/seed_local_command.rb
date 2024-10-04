@@ -139,6 +139,8 @@ class SeedLocalCommand < ApplicationCommand
       next if integration_id.nil?
 
       raw_mappings = sys.parse_yaml(file)
+      next if raw_mappings["rules"].nil?
+
       full_name_file_dir = File.expand_path("..", File.dirname(file))
       full_names = {}
       sys.parse_yaml(File.join(full_name_file_dir, "full_names.yml")).each do |category|

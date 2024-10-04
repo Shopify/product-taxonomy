@@ -165,7 +165,10 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
       unless from_shopify
         input_type, output_type = output_type, input_type
       end
-      raw[:content].fetch("rules").each do |raw_rule|
+      raw_rules = raw[:content].fetch("rules")
+      next if raw_rules.nil?
+
+      raw_rules.each do |raw_rule|
         input_id = Product.find_from_data(raw_rule["input"], type: input_type).id
         output_id = Product.find_from_data(raw_rule["output"], type: output_type).id
 

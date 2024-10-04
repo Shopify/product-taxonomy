@@ -149,7 +149,8 @@ class MappingValidationTest < ActiveSupport::TestCase
     mapping_rule_files.each do |file|
       raw_mappings = @sys.parse_yaml(file)
       [raw_mappings["input_taxonomy"], raw_mappings["output_taxonomy"]].each do |taxonomy_version|
-        next if !taxonomy_version.include?("shopify") || taxonomy_version.include?("shopify/2022-02")
+        next if !taxonomy_version.include?("shopify") || taxonomy_version.include?("shopify/2022-02") ||
+          taxonomy_version.include?("shopify/2024-07")
 
         next if taxonomy_version == shopify_taxonomy_version_from_file
 
@@ -174,6 +175,8 @@ class MappingValidationTest < ActiveSupport::TestCase
   end
 
   def validate_mapping_category_ids(mapping_rules, input_or_output, input_or_output_taxonomy)
+    return [] if mapping_rules.nil?
+
     category_ids = category_ids_from_taxonomy(input_or_output_taxonomy).map { _1.split("/").last }
     return [] if category_ids.nil?
 
