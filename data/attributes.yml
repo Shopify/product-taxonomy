@@ -30338,7 +30338,7 @@ base_attributes:
   - chocolate_type__white_chocolate
 - id: 3413
   name: Comic edition
-  description: Indicates the specific release version or edition of a comic book, influencing its rarity and collectible value within the market
+  description: Indicates the specific release version or edition of a comic book, which can influence its rarity and collectible value - e.g. first edition, variant cover
   friendly_id: comic_edition
   handle: comic-edition
   values:
@@ -30351,9 +30351,10 @@ base_attributes:
   - comic_edition__reprint
   - comic_edition__signed_edition
   - comic_edition__variant_cover
+  - comic_edition__other
 - id: 3414
   name: Comic tradition
-  description: The Comic tradition embodies the unique style and themes in comic books
+  description: Indicates the cultural or regional tradition from which the comic originates, such as Chinese comics or manga
   friendly_id: comic_tradition
   handle: comic-tradition
   values:
@@ -30362,9 +30363,9 @@ base_attributes:
   - comic_tradition__franco_belgian_bd
   - comic_tradition__german_comics
   - comic_tradition__indian_comics
-  - comic_tradition__indonesian_comics_(maquita)
+  - comic_tradition__indonesian_comics_maquita
   - comic_tradition__italian_comics
-  - comic_tradition__korean_comics_(manhwa)
+  - comic_tradition__korean_comics_manhwa
   - comic_tradition__malaysian_comics
   - comic_tradition__manga
   - comic_tradition__philippine_comics
