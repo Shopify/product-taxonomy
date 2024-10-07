@@ -30328,6 +30328,89 @@ base_attributes:
   - mesh_type__spacer
   - mesh_type__tulle
   - mesh_type__other
+- id: 4049
+  name: Cooking compartments
+  description: Specifies the number of cooking areas in kitchen appliances such as air fryers, e.g. single or double
+  friendly_id: cooking_compartments
+  handle: cooking-compartments
+  values:
+  - cooking_compartments__double
+  - cooking_compartments__single
+- id: 4050
+  name: Air fryer functions
+  description: Lists the various cooking modes available in an air fryer or similar appliance, e.g. air fry, bake
+  friendly_id: air_fryer_functions
+  handle: air-fryer-functions
+  values:
+  - air_fryer_functions__air_broil
+  - air_fryer_functions__air_fry
+  - air_fryer_functions__bake
+  - air_fryer_functions__broil
+  - air_fryer_functions__convection
+  - air_fryer_functions__crisp
+  - air_fryer_functions__dehydrate
+  - air_fryer_functions__ferment
+  - air_fryer_functions__grill
+  - air_fryer_functions__keep_warm
+  - air_fryer_functions__pizza
+  - air_fryer_functions__proof
+  - air_fryer_functions__reheat
+  - air_fryer_functions__roast
+  - air_fryer_functions__rotisserie
+  - air_fryer_functions__sear
+  - air_fryer_functions__slow_cook
+  - air_fryer_functions__steam
+  - air_fryer_functions__toast
+  - air_fryer_functions__yogurt
+  - air_fryer_functions__other
+- id: 4051
+  name: PH level
+  description: Indicates the acidity or alkalinity of a substance, measured on a scale from 0 to 14, e.g. 6.5 (slightly acidic) or 7.0 (neutral)
+  friendly_id: ph_level
+  handle: ph-level
+  values:
+  - ph_level__4_0_moderately_acidic
+  - ph_level__4_5_moderately_acidic
+  - ph_level__5_0_moderately_acidic
+  - ph_level__9_0_moderately_alkaline
+  - ph_level__9_5_moderately_alkaline
+  - ph_level__10_0_moderately_alkaline
+  - ph_level__10_5_moderately_alkaline
+  - ph_level__7_0_neutral
+  - ph_level__5_5_slightly_acidic
+  - ph_level__6_0_slightly_acidic
+  - ph_level__6_5_slightly_acidic
+  - ph_level__7_5_slightly_alkaline
+  - ph_level__8_0_slightly_alkaline
+  - ph_level__8_5_slightly_alkaline
+  - ph_level__0_0_strongly_acidic
+  - ph_level__0_5_strongly_acidic
+  - ph_level__1_0_strongly_acidic
+  - ph_level__1_5_strongly_acidic
+  - ph_level__2_0_strongly_acidic
+  - ph_level__2_5_strongly_acidic
+  - ph_level__3_0_strongly_acidic
+  - ph_level__3_5_strongly_acidic
+  - ph_level__11_0_strongly_alkaline
+  - ph_level__11_5_strongly_alkaline
+  - ph_level__12_0_strongly_alkaline
+  - ph_level__12_5_strongly_alkaline
+  - ph_level__13_0_strongly_alkaline
+  - ph_level__13_5_strongly_alkaline
+  - ph_level__14_0_strongly_alkaline
+- id: 4052
+  name: Plant stage
+  description: Identifies the specific phase of a plant's growth cycle that a product is designed to support, e.g. seedling, vegetative
+  friendly_id: plant_stage
+  handle: plant-stage
+  values:
+  - plant_stage__cloning
+  - plant_stage__flowering
+  - plant_stage__fruiting
+  - plant_stage__germination
+  - plant_stage__seedling
+  - plant_stage__transition
+  - plant_stage__vegetative
 extended_attributes:
 - name: Dog house features
   handle: dog-house-features
