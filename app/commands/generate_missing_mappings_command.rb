@@ -192,6 +192,7 @@ class GenerateMissingMappingsCommand < ApplicationCommand
 
   def generate_and_evaluate_mappings_for_group(unmapped_categories:, embedding_collection:)
     mapping_data = nil
+    all_generated_mappings = []
     disagree_messages = []
 
     frame("Generating and evaluating mappings for each Shopify category") do
@@ -208,6 +209,7 @@ class GenerateMissingMappingsCommand < ApplicationCommand
         )
 
         mapping_data["rules"] << generated_mapping[:new_entry]
+        all_generated_mappings << generated_mapping[:mapping_to_be_graded]
         disagree_messages << generated_mapping[:mapping_to_be_graded] if generated_mapping[:grading_result] == "No"
       end
     end
@@ -221,7 +223,10 @@ class GenerateMissingMappingsCommand < ApplicationCommand
     end
 
     write_summary_message(
-      all_generated_mappings, disagree_messages, mapping_data["rules"].size, unmapped_categories[:id_name_map].size
+      all_generated_mappings:,
+      disagree_messages:,
+      total_count: mapping_data["rules"].size,
+      current_iteration_count: unmapped_categories[:id_name_map].size,
     )
   end
 
@@ -301,7 +306,12 @@ class GenerateMissingMappingsCommand < ApplicationCommand
   end
 
   # TODO: This will be overwritten if we are ever generating for more than 1 taxonomy
-  def write_summary_message(all_generated_mappings, disagree_messages, total_count, current_iteration_count)
+  def write_summary_message(
+    all_generated_mappings:,
+    disagree_messages:,
+    total_count:,
+    current_iteration_count:
+  )
     spinner("Writing tmp/summary_message.txt") do
       sys.write_file!("tmp/summary_message.txt") do |file|
         file.puts "## 🤖 Automatic Taxonomy Mapping Update"
