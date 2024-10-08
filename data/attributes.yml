@@ -12467,7 +12467,7 @@ base_attributes:
   friendly_id: coffee_product_form
   handle: coffee-product-form
   values:
-  - coffee_product_form__coffee_beans
+  - coffee_product_form__whole_bean
   - coffee_product_form__ground
   - coffee_product_form__other
 - id: 1978
@@ -30322,6 +30322,28 @@ base_attributes:
   - chocolate_type__dark_chocolate
   - chocolate_type__milk_chocolate
   - chocolate_type__white_chocolate
+- id: 3415
+  name: Caffeine content
+  description: Indicates the amount of caffeine present in a product, e.g. decaffeinated, low caffeine
+  friendly_id: caffeine_content
+  handle: caffeine-content
+  values:
+  - caffeine_content__low_caffeine
+  - caffeine_content__decaf
+  - caffeine_content__regular
+- id: 3416
+  name: Grind size
+  description: Indicates the coarseness or fineness of coffee grounds, such as extra coarse or fine
+  friendly_id: grind_size
+  handle: grind-size
+  values:
+  - grind_size__extra_coarse
+  - grind_size__coarse
+  - grind_size__medium_coarse
+  - grind_size__medium
+  - grind_size__medium_fine
+  - grind_size__fine
+  - grind_size__extra_fine
 - id: 3418
   name: Dance style
   description: Indicates the specific genre or types of dance, e.g. flamenco, ballet
