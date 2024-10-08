@@ -10782,6 +10782,8 @@
   - sg-4-9-1-6
   - sg-4-9-1-7
   - sg-4-9-1-8
+  - sg-4-9-1-9
+  - sg-4-9-1-10
   attributes:
   - color
   - pattern
@@ -10791,7 +10793,9 @@
   attributes:
   - accessory_size
   - age_group
+  - archery_style
   - color
+  - hand_side
   - pattern
 - id: sg-4-9-1-2
   name: Archery Gloves & Releases
@@ -10799,8 +10803,10 @@
   attributes:
   - accessory_size
   - age_group
+  - archery_style
   - color
   - handwear_material
+  - hand_side
   - pattern
   - target_gender
 - id: sg-4-9-1-3
@@ -10901,6 +10907,7 @@
   attributes:
   - archery_style
   - broadhead/field_point_material
+  - broadhead_design
   - color
   - pattern
 - id: sg-4-9-1-4-3-2
@@ -10916,6 +10923,7 @@
   children:
   - sg-4-9-1-5-1
   - sg-4-9-1-5-2
+  - sg-4-9-1-5-3
   attributes:
   - age_group
   - archery_style
@@ -10940,16 +10948,64 @@
   - bolt_material
   - color
   - pattern
+- id: sg-4-9-1-5-3
+  name: Arrow Shafts
+  children: []
+  attributes:
+  - age_group
+  - archery_style
+  - arrow_material
+  - color
+  - pattern
 - id: sg-4-9-1-6
   name: Bow & Crossbow Accessories
   children:
   - sg-4-9-1-6-1
+  - sg-4-9-1-6-2
+  - sg-4-9-1-6-3
+  - sg-4-9-1-6-4
+  - sg-4-9-1-6-5
   attributes:
   - archery_activity
   - color
   - pattern
 - id: sg-4-9-1-6-1
   name: Bow & Crossbow Targets
+  children: []
+  attributes:
+  - archery_activity
+  - color
+  - pattern
+- id: sg-4-9-1-6-2
+  name: Arrow Rests
+  children: []
+  attributes:
+  - archery_activity
+  - color
+  - pattern
+- id: sg-4-9-1-6-3
+  name: Bow & Crossbow Cases & Covers
+  children: []
+  attributes:
+  - archery_activity
+  - color
+  - pattern
+- id: sg-4-9-1-6-4
+  name: Bow & Crossbow Hardware & Parts
+  children: []
+  attributes:
+  - archery_activity
+  - color
+  - pattern
+- id: sg-4-9-1-6-5
+  name: Bow & Crossbow Scopes & Sights
+  children: []
+  attributes:
+  - archery_activity
+  - color
+  - pattern
+- id: sg-4-9-1-6-6
+  name: Bow & Crossbow Stabilizers
   children: []
   attributes:
   - archery_activity
@@ -11081,6 +11137,49 @@
   - hand_side
   - pattern
   - quiver_style
+- id: sg-4-9-1-9
+  name: Archery Range Accessories
+  children: []
+  attributes:
+  - archery_style
+  - color
+  - hand_side
+  - pattern
+- id: sg-4-9-1-10
+  name: Archery Tools & Equipment
+  children:
+  - sg-4-9-1-10-1
+  - sg-4-9-1-10-2
+  - sg-4-9-1-10-3
+  attributes:
+  - archery_style
+  - color
+  - hand_side
+  - pattern
+- id: sg-4-9-1-10-1
+  name: Archery Tool Accessories
+  children: []
+  attributes:
+  - archery_style
+  - color
+  - hand_side
+  - pattern
+- id: sg-4-9-1-10-2
+  name: Archery Tools
+  children: []
+  attributes:
+  - archery_style
+  - color
+  - hand_side
+  - pattern
+- id: sg-4-9-1-10-3
+  name: Bow Presses
+  children: []
+  attributes:
+  - archery_style
+  - color
+  - hand_side
+  - pattern
 - id: sg-4-9-2
   name: Clay Pigeon Shooting
   children:
