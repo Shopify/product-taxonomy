@@ -1,7 +1,7 @@
 ## 2024-10
 
 #### 📚 Taxonomy Updates
-Expanded taxonomy with new categories, attributes and values to enhance coverage and categorization accuracy, informed by user feedback and data analysis.
+Expanded taxonomy with new categories, attributes and values to enhance coverage and categorization accuracy, informed by user feedback and market insights.
 
 ##### Apparel & Accessories
 
@@ -44,7 +44,7 @@ Expanded taxonomy with new categories, attributes and values to enhance coverage
 ##### Home & Garden
 
 - Adds `Paintings` with the attributes `Art medium`, `Art movement` and `Artwork authenticity` in the Visual Artwork area.
-- Adds `Diffusers`.
+- Adds `Diffusers` ('Electric', 'Plug-In', 'Ultrasonic') and 'Reed Diffuser Sticks'.
 - Adds `Air Fryers` with the attributes `Cooking compartment` and `Air fryer functions`.
 - Adds `Food Processors`.
 - Adds `Champagne`, `Cocktail` and `Wine Glasses` with the attribute `Drinkware shape` in the Stemware area.
