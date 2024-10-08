@@ -30308,6 +30308,80 @@ base_attributes:
   - microphone_design__parabolic
   - microphone_design__ribbon
   - microphone_design__other
+- id: 3428
+  name: Painting medium
+  description: Indicates the primary material or technique used in a painting, e.g. acrylic, oil
+  friendly_id: painting_medium
+  handle: painting-medium
+  values:
+  - painting_medium__acrylic
+  - painting_medium__airbrush
+  - painting_medium__alkyd
+  - painting_medium__casein
+  - painting_medium__charcoal
+  - painting_medium__collage
+  - painting_medium__digital
+  - painting_medium__dye
+  - painting_medium__egg_tempera
+  - painting_medium__enamel
+  - painting_medium__encaustic
+  - painting_medium__fresco
+  - painting_medium__gouache
+  - painting_medium__graphite
+  - painting_medium__ink
+  - painting_medium__latex
+  - painting_medium__marker
+  - painting_medium__mixed_media
+  - painting_medium__oil
+  - painting_medium__pastel
+  - painting_medium__resin
+  - painting_medium__spray_paint
+  - painting_medium__sumi_e
+  - painting_medium__tempera
+  - painting_medium__texturizing_paste
+  - painting_medium__water_miscible_oil
+  - painting_medium__watercolor
+  - painting_medium__other
+- id: 3429
+  name: Art movement
+  description: Defines the stylistic approach or art movement of a painting, e.g. Impressionism, Expressionism
+  friendly_id: art_movement
+  handle: art-movement
+  values:
+  - art_movement__abstract
+  - art_movement__art_deco
+  - art_movement__art_nouveau
+  - art_movement__baroque
+  - art_movement__bauhaus
+  - art_movement__classicism
+  - art_movement__cubism
+  - art_movement__dadaism
+  - art_movement__expressionism
+  - art_movement__fauvism
+  - art_movement__futurism
+  - art_movement__gothic
+  - art_movement__impressionism
+  - art_movement__minimalism
+  - art_movement__modernism
+  - art_movement__neoclassicism
+  - art_movement__pop_art
+  - art_movement__post_impressionism
+  - art_movement__realism
+  - art_movement__renaissance
+  - art_movement__rococo
+  - art_movement__romanticism
+  - art_movement__surrealism
+  - art_movement__symbolism
+  - art_movement__victorian
+  - art_movement__other
+- id: 3430
+  name: Artwork authenticity
+  description: Indicates the authenticity of the artwork, specifying whether it is an original creation or a reproduction
+  friendly_id: artwork_authenticity
+  handle: artwork-authenticity
+  values:
+  - artwork_authenticity__original
+  - artwork_authenticity__reproduction
 - id: 3737
   name: Mesh type
   description: Specifies the style or construction of mesh fabric, indicating its intended use or characteristics, e.g. athletic, brushed
@@ -30413,11 +30487,11 @@ base_attributes:
   - plant_stage__transition
   - plant_stage__vegetative
 extended_attributes:
-- name: Dog house features
-  handle: dog-house-features
-  description: Describes special characteristics of a dog house, like adjustable dimensions or UV protection
-  friendly_id: dog_house_features
-  values_from: outdoor_equipment_features
+- name: Shampoo/Conditioner effect
+  handle: shampoo-conditioner-effect
+  description: Describes the intended result of using the shampoo or conditioner, such as anti-dandruff or moisturizing
+  friendly_id: shampoo/conditioner_effect
+  values_from: conditioner_effect
 - name: Frame material
   handle: frame-material
   description: Defines the material used in the product's frame, such as wood or plastic
@@ -31963,8 +32037,8 @@ extended_attributes:
   description: Indicates special diet for small animals, like hairball control or kidney care
   friendly_id: small_animal_dietary_requirements
   values_from: pet_dietary_requirements
-- name: Shampoo/Conditioner effect
-  handle: shampoo-conditioner-effect
-  description: Describes the intended result of using the shampoo or conditioner, such as anti-dandruff or moisturizing
-  friendly_id: shampoo/conditioner_effect
-  values_from: conditioner_effect
+- name: Dog house features
+  handle: dog-house-features
+  description: Describes special characteristics of a dog house, like adjustable dimensions or UV protection
+  friendly_id: dog_house_features
+  values_from: outdoor_equipment_features
