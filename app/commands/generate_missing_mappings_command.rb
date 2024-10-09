@@ -100,9 +100,7 @@ class GenerateMissingMappingsCommand < ApplicationCommand
 
       find_unmapped_categories
       if @unmapped_categories_groups.empty?
-        write_summary_message(
-          all_generated_mappings: [], disagree_messages: [], total_count: 0, current_iteration_count: 0
-        )
+        write_summary_message(all_generated_mappings: [])
       else
         generate_missing_mappings
       end
@@ -197,7 +195,7 @@ class GenerateMissingMappingsCommand < ApplicationCommand
   def generate_and_evaluate_mappings_for_group(unmapped_categories:, embedding_collection:)
     mapping_data = nil
     all_generated_mappings = []
-    disagree_messages = []
+    low_confidence_mappings = []
 
     frame("Generating and evaluating mappings for each Shopify category") do
       destination_name_id_map = sys.parse_yaml(full_names_path(unmapped_categories)).pluck("full_name", "id").to_h
@@ -214,7 +212,9 @@ class GenerateMissingMappingsCommand < ApplicationCommand
 
         mapping_data["rules"] << generated_mapping[:new_entry]
         all_generated_mappings << generated_mapping[:mapping_to_be_graded]
-        disagree_messages << generated_mapping[:mapping_to_be_graded] if generated_mapping[:grading_result] == "No"
+        if generated_mapping[:grading_result] == "No"
+          low_confidence_mappings << generated_mapping[:mapping_to_be_graded]
+        end
       end
     end
 
@@ -228,9 +228,8 @@ class GenerateMissingMappingsCommand < ApplicationCommand
 
     write_summary_message(
       all_generated_mappings:,
-      disagree_messages:,
-      total_count: mapping_data["rules"].size,
-      current_iteration_count: unmapped_categories[:id_name_map].size,
+      low_confidence_mappings:,
+      total_mapping_count: mapping_data["rules"].size,
     )
   end
 
@@ -312,9 +311,8 @@ class GenerateMissingMappingsCommand < ApplicationCommand
   # TODO: This will be overwritten if we are ever generating for more than 1 taxonomy
   def write_summary_message(
     all_generated_mappings:,
-    disagree_messages:,
-    total_count:,
-    current_iteration_count:
+    low_confidence_mappings: [],
+    total_mapping_count: 0
   )
     spinner("Writing tmp/summary_message.txt") do
       sys.write_file!("tmp/summary_message.txt") do |file|
@@ -322,39 +320,38 @@ class GenerateMissingMappingsCommand < ApplicationCommand
         if all_generated_mappings.empty?
           file.puts "No unmapped Shopify categories were found. As a result, **no changes have been made to this PR.**"
         else
-          file.puts "We have identified and created mappings for **#{current_iteration_count}** previously missing categories, resulting in a total of **#{total_count}** mappings. **Please review and confirm their accuracy before proceeding with the merge.**"
+          starting_num_of_unmapped_categories = all_generated_mappings.size
+          file.puts "We have identified and created mappings for **#{starting_num_of_unmapped_categories}** previously missing categories, resulting in a total of **#{total_mapping_count}** mappings. **Please review and confirm their accuracy before proceeding with the merge.**"
           file.puts
 
-          if current_iteration_count > 0
-            file.puts "### ✅ New Mappings Added"
-            file.puts "The following mappings were automatically generated and added to this PR:"
-            file.puts
+          file.puts "### ✅ New Mappings Added"
+          file.puts "The following mappings were automatically generated and added to this PR:"
+          file.puts
+          file.puts "```"
+
+          all_generated_mappings.sort_by { Category.id_parts(_1[:from_category_id]) }.each_with_index do |mapping, index|
+            from = "#{mapping[:from_category_id]} (#{mapping[:from_category]})"
+            to = "#{mapping[:to_category_id]} (#{mapping[:to_category]})"
+            file.puts "→ #{from}\n⇒ #{to}"
+            file.puts if index < all_generated_mappings.size - 1
+          end
+
+          file.puts "```"
+          file.puts
+
+          if low_confidence_mappings.present?
+            file.puts "> [!WARNING]"
+            file.puts "Some of the generated mappings have been assigned a **low confidence** rating. As a part of your review, please pay special attention to the following mappings:"
             file.puts "```"
 
-            all_generated_mappings.sort_by { Category.id_parts(_1[:from_category_id]) }.each_with_index do |mapping, index|
+            low_confidence_mappings.sort_by { Category.id_parts(_1[:from_category_id]) }.each_with_index do |mapping, index|
               from = "#{mapping[:from_category_id]} (#{mapping[:from_category]})"
               to = "#{mapping[:to_category_id]} (#{mapping[:to_category]})"
               file.puts "→ #{from}\n⇒ #{to}"
-              file.puts if index < all_generated_mappings.size - 1
+              file.puts if index < low_confidence_mappings.size - 1
             end
 
             file.puts "```"
-            file.puts
-
-            if disagree_messages.present?
-              file.puts "> [!WARNING]"
-              file.puts "Some of the generated mappings have been assigned a **low confidence** rating. As a part of your review, please pay special attention to the following mappings:"
-              file.puts "```"
-
-              disagree_messages.sort_by { Category.id_parts(_1[:from_category_id]) }.each_with_index do |mapping, index|
-                from = "#{mapping[:from_category_id]} (#{mapping[:from_category]})"
-                to = "#{mapping[:to_category_id]} (#{mapping[:to_category]})"
-                file.puts "→ #{from}\n⇒ #{to}"
-                file.puts if index < disagree_messages.size - 1
-              end
-
-              file.puts "```"
-            end
           end
         end
       end
