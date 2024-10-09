@@ -99,9 +99,13 @@ class GenerateMissingMappingsCommand < ApplicationCommand
       logger.headline("Qdrant url: #{params[:qdrant_api_base]}")
 
       find_unmapped_categories
-      return if @unmapped_categories_groups.empty?
-
-      generate_missing_mappings
+      if @unmapped_categories_groups.empty?
+        write_summary_message(
+          all_generated_mappings: [], disagree_messages: [], total_count: 0, current_iteration_count: 0
+        )
+      else
+        generate_missing_mappings
+      end
     end
   end
 
@@ -315,38 +319,42 @@ class GenerateMissingMappingsCommand < ApplicationCommand
     spinner("Writing tmp/summary_message.txt") do
       sys.write_file!("tmp/summary_message.txt") do |file|
         file.puts "## 🤖 Automatic Taxonomy Mapping Update"
-        file.puts "We have identified and created mappings for **#{current_iteration_count}** previously missing categories, resulting in a total of **#{total_count}** mappings. **Please review and confirm their accuracy before proceeding with the merge.**"
-        file.puts
-
-        if current_iteration_count > 0
-          file.puts "### ✅ New Mappings Added"
-          file.puts "The following mappings were automatically generated and added to this PR:"
-          file.puts
-          file.puts "```"
-
-          all_generated_mappings.sort_by { Category.id_parts(_1[:from_category_id]) }.each_with_index do |mapping, index|
-            from = "#{mapping[:from_category_id]} (#{mapping[:from_category]})"
-            to = "#{mapping[:to_category_id]} (#{mapping[:to_category]})"
-            file.puts "→ #{from}\n⇒ #{to}"
-            file.puts if index < all_generated_mappings.size - 1
-          end
-
-          file.puts "```"
+        if all_generated_mappings.empty?
+          file.puts "No unmapped Shopify categories were found. As a result, **no changes have been made to this PR.**"
+        else
+          file.puts "We have identified and created mappings for **#{current_iteration_count}** previously missing categories, resulting in a total of **#{total_count}** mappings. **Please review and confirm their accuracy before proceeding with the merge.**"
           file.puts
 
-          if disagree_messages.present?
-            file.puts "> [!WARNING]"
-            file.puts "Some of the generated mappings have been assigned a **low confidence** rating. As a part of your review, please pay special attention to the following mappings:"
+          if current_iteration_count > 0
+            file.puts "### ✅ New Mappings Added"
+            file.puts "The following mappings were automatically generated and added to this PR:"
+            file.puts
             file.puts "```"
 
-            disagree_messages.sort_by { Category.id_parts(_1[:from_category_id]) }.each_with_index do |mapping, index|
+            all_generated_mappings.sort_by { Category.id_parts(_1[:from_category_id]) }.each_with_index do |mapping, index|
               from = "#{mapping[:from_category_id]} (#{mapping[:from_category]})"
               to = "#{mapping[:to_category_id]} (#{mapping[:to_category]})"
               file.puts "→ #{from}\n⇒ #{to}"
-              file.puts if index < disagree_messages.size - 1
+              file.puts if index < all_generated_mappings.size - 1
             end
 
             file.puts "```"
+            file.puts
+
+            if disagree_messages.present?
+              file.puts "> [!WARNING]"
+              file.puts "Some of the generated mappings have been assigned a **low confidence** rating. As a part of your review, please pay special attention to the following mappings:"
+              file.puts "```"
+
+              disagree_messages.sort_by { Category.id_parts(_1[:from_category_id]) }.each_with_index do |mapping, index|
+                from = "#{mapping[:from_category_id]} (#{mapping[:from_category]})"
+                to = "#{mapping[:to_category_id]} (#{mapping[:to_category]})"
+                file.puts "→ #{from}\n⇒ #{to}"
+                file.puts if index < disagree_messages.size - 1
+              end
+
+              file.puts "```"
+            end
           end
         end
       end
