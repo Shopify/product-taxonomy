@@ -1,3 +1,79 @@
+## 2024-10-unstable
+
+#### 📚 Taxonomy Updates
+Expanded taxonomy with new categories, attributes and values to enhance coverage and categorization accuracy, informed by user feedback and market insights.
+
+##### Apparel & Accessories
+
+- Adds `Leotards & Unitards`, `Fashion Face Masks` and `Hair Bands`.
+- Adds `Clothing Sewing Materials`.
+
+##### Arts & Entertainment
+
+- Adds `Comic Books` with the attributes `Comic tradition` and `Comic edition` in the Collectibles area.
+- Adds `Guitar Pedals`.
+- Adds the attribute `Mesh type` in the Fabrics area.
+
+##### Baby & Toddler
+
+- Adds `Feeding Essentials` (`Feeding Bowls`, `Plates`, `Spoons` and `Flatware Sets`).
+
+##### Business & Industrial
+
+- Adds `Raw Structural Components` in the Construction area.
+- Adds `Heavy Machinery Parts & Accessories`.
+
+##### Electronics
+
+- Adds `Gaming Computers`.
+- Adds the attribute `Microphone design` in the Microphones category.
+
+##### Food, Beverages & Tobacco
+
+- Adds the attributes `Grind size` and `Caffeine content` in the Coffee area.
+- Adds the attribute `Chocolate type` in the Chocolate category.
+
+##### Hardware
+
+- Adds `Micrometers` and `Micrometer Accessories` with the attribute `Micrometer type`.
+
+##### Health & Beauty
+
+- Adds `Medical Face Masks`.
+
+##### Home & Garden
+
+- Adds `Paintings` with the attributes `Art medium`, `Art movement` and `Artwork authenticity` in the Visual Artwork area.
+- Adds `Diffusers` ('Electric', 'Plug-In', 'Ultrasonic') and 'Reed Diffuser Sticks'.
+- Adds `Air Fryers` with the attributes `Cooking compartment` and `Air fryer functions`.
+- Adds `Food Processors`.
+- Adds `Champagne`, `Cocktail` and `Wine Glasses` with the attribute `Drinkware shape` in the Stemware area.
+- Adds a `Hydroponics` area, including:
+  - `Growing Media` (`Clay Pebbles`, `Coconut Coir`, `Perlite`, `Rockwool` and `Vermiculite`) with the attributes `pH level` and `Plant stage`;
+  - `Grow Lights` (`Fluorescent`, `HID` and `LED`);
+  - `Hydroponic Systems` (`Aeroponics`, `Aquaponics`, `DWC`, `Drip Systems`, `Ebb & Flow` and `NFT`); and
+  - `Nutrients & Supplements` (`Nutrient Solutions`, `pH Adjusters` and `Supplements`).
+- Adds `Irrigation Systems`.
+- Adds `Head Towels` and `Hand Towels`.
+
+##### Luggage & Bags
+
+- Adds `Hiking Backpacks`, `Military Backpacks`, `Laptop Backpacks` and `Laptop Bags`.
+
+##### Sporting Goods
+
+- Adds `American Football Shoes`, `Basketball Shoes`, `Cricket Shoes`, `Dancing Shoes` (with the attribute `Dance style`), `Field Hockey & Lacrosse Shoes`, `Racquetball & Squash Shoes`, `Rugby Shoes`, `Soccer Shoes`, `Tennis Shoes`, `Cycling Shoes`, `Golf Shoes`, `Badminton Shoes` and `Climbing Shoes`.
+- Adds `Camping Hammocks` and `Camping Hammock Accessories`.
+- In the Archery area, adds `Arrow Shafts`, `Arrow Rests`, `Bow & Crossbow Cases & Covers`, `Hardware & Parts`, `Scopes & Sights`, `Stabilizers`, `Range Accessories` and `Tools & Equipment` (including `Tool Accessories`, `Tools` and `Bow Presses`), along with the attributes `Archery target type` and `Broadhead design`.
+- Adds the attributes `Racket head balance` and `Racket shape` to Racket Sports categories.
+
+##### Miscellaneous
+
+- Expands the `Language version` attribute to include more languages and regional variations.
+- Expands the `Size` attribute to include options for babies and toddlers.
+- Extends existing attributes to additional categories.
+- Includes other value additions.
+
 ## 2024-07
 - The first stable release of "Shopify's Standard Product Taxonomy". 
 
