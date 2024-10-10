@@ -1,4 +1,4 @@
-## 2024-10
+## 2024-10-unstable
 
 #### 📚 Taxonomy Updates
 Expanded taxonomy with new categories, attributes and values to enhance coverage and categorization accuracy, informed by user feedback and market insights.
