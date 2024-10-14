@@ -6,12 +6,12 @@ Expanded taxonomy with new categories, attributes and values to enhance coverage
 ##### Apparel & Accessories
 
 - Adds `Leotards & Unitards`, `Fashion Face Masks` and `Hair Bands`.
-- Adds `Clothing Sewing Materials`.
 
 ##### Arts & Entertainment
 
 - Adds `Comic Books` with the attributes `Comic tradition` and `Comic edition` in the Collectibles area.
 - Adds `Guitar Pedals`.
+- Adds `Clothing Sewing Materials`.
 - Adds the attribute `Mesh type` in the Fabrics area.
 
 ##### Baby & Toddler
@@ -44,7 +44,7 @@ Expanded taxonomy with new categories, attributes and values to enhance coverage
 ##### Home & Garden
 
 - Adds `Paintings` with the attributes `Art medium`, `Art movement` and `Artwork authenticity` in the Visual Artwork area.
-- Adds `Diffusers` ('Electric', 'Plug-In', 'Ultrasonic') and 'Reed Diffuser Sticks'.
+- Adds `Diffusers` (`Electric`, `Plug-In`, `Ultrasonic`, `Reed Diffusers`) and `Reed Diffuser Sticks`.
 - Adds `Air Fryers` with the attributes `Cooking compartment` and `Air fryer functions`.
 - Adds `Food Processors`.
 - Adds `Champagne`, `Cocktail` and `Wine Glasses` with the attribute `Drinkware shape` in the Stemware area.
