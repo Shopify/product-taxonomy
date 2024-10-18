@@ -12,7 +12,7 @@ module Source
     end
 
     def execute
-      version = params[:version] || latest_version
+      version = params[:version] || latest_stable_version
       frame("Processing categories for version #{version}") do
         ensure_exports_directory
         delete_previous_exports(version)
@@ -23,7 +23,7 @@ module Source
 
     private
 
-    def latest_version
+    def latest_stable_version
       # Get the list of directories and sort them to find the latest version
       versions = Dir.glob('data/integrations/shopify/*').select do |f|
         File.directory?(f) && f.match(/\d{4}-\d{2}/)
