@@ -1,5 +1,5 @@
 {
-  "version": "2024-07",
+  "version": "2024-10-unstable",
   "attributes": [
     {
       "id": "gid://shopify/TaxonomyAttribute/2649",
@@ -271,7 +271,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2972",
       "name": "Características do produto de higiene absorvente",
       "handle": "absorbent-hygiene-product-features",
-      "description": "Standard definition for Absorbent hygiene product features",
+      "description": "Identifies special characteristics of hygiene products, like leakproof or hypoallergenic",
       "extended_attributes": [
         {
           "name": "Características da bolsa fraldas",
@@ -303,12 +303,12 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/22582",
-          "name": "Biodegradáveis",
+          "name": "Biodegradável",
           "handle": "absorbent-hygiene-product-features__biodegradable"
         },
         {
           "id": "gid://shopify/TaxonomyValue/22590",
-          "name": "Controle de odor",
+          "name": "Controlo de odores",
           "handle": "absorbent-hygiene-product-features__odor-control"
         },
         {
@@ -408,7 +408,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2956",
       "name": "Material dos acessórios",
       "handle": "accessory-material",
-      "description": "Standard definition for Accessory material",
+      "description": "Specifies the type of material in accessories, typically for shipping supplies; i.e. plastic, cardboard",
       "extended_attributes": [
         {
           "name": "Material de óculos 3D",
@@ -803,6 +803,11 @@
           "handle": "activewear-clothing-features__high-visibility-accents"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/22756",
+          "name": "Adequado para veganos",
+          "handle": "activewear-clothing-features__vegan-friendly"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/22738",
           "name": "Ajuste do contorno corporal",
           "handle": "activewear-clothing-features__body-contouring-fit"
@@ -831,11 +836,6 @@
           "id": "gid://shopify/TaxonomyValue/22735",
           "name": "Cinta ajustável",
           "handle": "activewear-clothing-features__adjustable-waistband"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/22756",
-          "name": "Compatível com veganos",
-          "handle": "activewear-clothing-features__vegan-friendly"
         },
         {
           "id": "gid://shopify/TaxonomyValue/22740",
@@ -879,7 +879,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/22749",
-          "name": "Reflexivo",
+          "name": "Refletor",
           "handle": "activewear-clothing-features__reflective"
         },
         {
@@ -1873,6 +1873,122 @@
       ]
     },
     {
+      "id": "gid://shopify/TaxonomyAttribute/4050",
+      "name": "Funções da Air fryer",
+      "handle": "air-fryer-functions",
+      "description": "Lists the various cooking modes available in an air fryer or similar appliance, e.g. air fry, bake",
+      "extended_attributes": [
+
+      ],
+      "values": [
+        {
+          "id": "gid://shopify/TaxonomyValue/26333",
+          "name": "Alourar",
+          "handle": "air-fryer-functions__sear"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26321",
+          "name": "Assar",
+          "handle": "air-fryer-functions__broil"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26331",
+          "name": "Assar",
+          "handle": "air-fryer-functions__roast"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26377",
+          "name": "Assar na Airfryer",
+          "handle": "air-fryer-functions__air-broil"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26332",
+          "name": "Churrasco",
+          "handle": "air-fryer-functions__rotisserie"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26322",
+          "name": "Convecção",
+          "handle": "air-fryer-functions__convection"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26320",
+          "name": "Cozer",
+          "handle": "air-fryer-functions__bake"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26334",
+          "name": "Cozimento lento",
+          "handle": "air-fryer-functions__slow-cook"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26323",
+          "name": "Crisp",
+          "handle": "air-fryer-functions__crisp"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26324",
+          "name": "Desidratar",
+          "handle": "air-fryer-functions__dehydrate"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26325",
+          "name": "Fermentar",
+          "handle": "air-fryer-functions__ferment"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26319",
+          "name": "Fritar na Airfryer",
+          "handle": "air-fryer-functions__air-fry"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26326",
+          "name": "Grill",
+          "handle": "air-fryer-functions__grill"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26337",
+          "name": "Iogurte",
+          "handle": "air-fryer-functions__yogurt"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26327",
+          "name": "Manter quente",
+          "handle": "air-fryer-functions__keep-warm"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26328",
+          "name": "Pizza",
+          "handle": "air-fryer-functions__pizza"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26330",
+          "name": "Reaquecer",
+          "handle": "air-fryer-functions__reheat"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26329",
+          "name": "Reduzir",
+          "handle": "air-fryer-functions__proof"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26336",
+          "name": "Tostar",
+          "handle": "air-fryer-functions__toast"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26335",
+          "name": "Vapor",
+          "handle": "air-fryer-functions__steam"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26338",
+          "name": "Outro",
+          "handle": "air-fryer-functions__other"
+        }
+      ]
+    },
+    {
       "id": "gid://shopify/TaxonomyAttribute/3182",
       "name": "Características de colchão de ar",
       "handle": "air-mattress-features",
@@ -2643,6 +2759,11 @@
       ],
       "values": [
         {
+          "id": "gid://shopify/TaxonomyValue/15835",
+          "name": "Crumbles",
+          "handle": "animal-feed-form__crumbles"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/7409",
           "name": "Cubos",
           "handle": "animal-feed-form__cubes"
@@ -2671,11 +2792,6 @@
           "id": "gid://shopify/TaxonomyValue/21426",
           "name": "Pasta",
           "handle": "animal-feed-form__paste"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/15835",
-          "name": "Pedaços",
-          "handle": "animal-feed-form__crumbles"
         },
         {
           "id": "gid://shopify/TaxonomyValue/21427",
@@ -3501,7 +3617,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2969",
       "name": "Material de seta/parafuso",
       "handle": "arrow-bolt-material",
-      "description": "Standard definition for Arrow/Bolt material",
+      "description": "Identifies the construction material of arrows or bolts, such as aluminum or bamboo",
       "extended_attributes": [
         {
           "name": "Material da flecha",
@@ -6083,7 +6199,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/23085",
-          "name": "Monitorização de temperatura",
+          "name": "Monitorização da temperatura",
           "handle": "baby-monitor-features__temperature-monitoring"
         },
         {
@@ -6215,7 +6331,7 @@
       "id": "gid://shopify/TaxonomyAttribute/3029",
       "name": "Características de segurança de equipamentos para bebés/crianças",
       "handle": "baby-toddler-equipment-safety-features",
-      "description": "Standard definition for Baby/Toddler equipment safety features",
+      "description": "Specifies protective features in baby or toddler gear, such as non-slip base",
       "extended_attributes": [
         {
           "name": "Características de segurança de equipamentos para bebé",
@@ -6330,7 +6446,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/23661",
-          "name": "Mecanismo de balanço",
+          "name": "Mecanismo de oscilação",
           "handle": "baby-toddler-furniture-features__rocking-mechanism"
         },
         {
@@ -6415,6 +6531,11 @@
           "handle": "baby-toddler-furniture-items-included__dresser"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/25315",
+          "name": "Estante",
+          "handle": "baby-toddler-furniture-items-included__bookshelf"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/25324",
           "name": "Guarda-roupa",
           "handle": "baby-toddler-furniture-items-included__wardrobe"
@@ -6426,13 +6547,8 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25316",
-          "name": "Mesas muda-fraldas",
+          "name": "Mesa muda-fraldas",
           "handle": "baby-toddler-furniture-items-included__changing-table"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/25315",
-          "name": "Prateleira",
-          "handle": "baby-toddler-furniture-items-included__bookshelf"
         }
       ]
     },
@@ -6738,7 +6854,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2958",
       "name": "Fecho da bolsa",
       "handle": "bag-closure",
-      "description": "Standard definition for Bag closure",
+      "description": "Describes how a bag is secured, i.e. drawstring, buckle",
       "extended_attributes": [
         {
           "name": "Fecho de saco/estojo",
@@ -6862,14 +6978,14 @@
           "handle": "bag-strap-type__adjustable"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/14619",
-          "name": "De ombro cruzada",
-          "handle": "bag-strap-type__crossbody"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/20830",
           "name": "Ombro",
           "handle": "bag-strap-type__shoulder"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/14619",
+          "name": "Tiracolo",
+          "handle": "bag-strap-type__crossbody"
         }
       ]
     },
@@ -6877,7 +6993,7 @@
       "id": "gid://shopify/TaxonomyAttribute/3365",
       "name": "Estilo de bolsa",
       "handle": "bag-style",
-      "description": "Standard definition for Bag style",
+      "description": "Describes the design or type of a bag, such as backpack or clutch",
       "extended_attributes": [
         {
           "name": "Estilo da bolsa de fraldas",
@@ -6983,6 +7099,11 @@
           "handle": "bag-case-features__dustproof"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/22877",
+          "name": "Adequado para veganos",
+          "handle": "bag-case-features__vegan-friendly"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/22863",
           "name": "Antirroubo",
           "handle": "bag-case-features__anti-theft"
@@ -6998,14 +7119,14 @@
           "handle": "bag-case-features__lockable"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/22877",
-          "name": "Compatível com veganos",
-          "handle": "bag-case-features__vegan-friendly"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/22864",
           "name": "Conversível",
           "handle": "bag-case-features__convertible"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/22869",
+          "name": "Enchimento interno",
+          "handle": "bag-case-features__internal-padding"
         },
         {
           "id": "gid://shopify/TaxonomyValue/22872",
@@ -7033,18 +7154,13 @@
           "handle": "bag-case-features__lightweight"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/22869",
-          "name": "Preenchimento interno",
-          "handle": "bag-case-features__internal-padding"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/22874",
           "name": "Proteção RFID",
           "handle": "bag-case-features__rfid-protection"
         },
         {
           "id": "gid://shopify/TaxonomyValue/22873",
-          "name": "Reflexivo",
+          "name": "Refletor",
           "handle": "bag-case-features__reflective"
         },
         {
@@ -8559,11 +8675,6 @@
           "handle": "base-type__clamp"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/18649",
-          "name": "Mesa",
-          "handle": "base-type__tabletop"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/18648",
           "name": "Redondo",
           "handle": "base-type__round"
@@ -8577,6 +8688,11 @@
           "id": "gid://shopify/TaxonomyValue/11537",
           "name": "Rodado ponderado",
           "handle": "base-type__round-weighted"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/18649",
+          "name": "Tampo de mesa",
+          "handle": "base-type__tabletop"
         },
         {
           "id": "gid://shopify/TaxonomyValue/18650",
@@ -8951,11 +9067,6 @@
           "handle": "bathroom-furniture-items-included__bench"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/25333",
-          "name": "Banco",
-          "handle": "bathroom-furniture-items-included__stool"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/25325",
           "name": "Carrinho de casa de banho",
           "handle": "bathroom-furniture-items-included__bathroom-cart"
@@ -8969,6 +9080,11 @@
           "id": "gid://shopify/TaxonomyValue/25330",
           "name": "Espelho",
           "handle": "bathroom-furniture-items-included__mirror"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/25333",
+          "name": "Fezes",
+          "handle": "bathroom-furniture-items-included__stool"
         },
         {
           "id": "gid://shopify/TaxonomyValue/25331",
@@ -9293,14 +9409,14 @@
           "handle": "battery-management-features__current-monitoring"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/24304",
+          "name": "Monitorização da temperatura",
+          "handle": "battery-management-features__temperature-monitoring"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/24306",
           "name": "Monitorização da tensão",
           "handle": "battery-management-features__voltage-monitoring"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/24304",
-          "name": "Monitorização de temperatura",
-          "handle": "battery-management-features__temperature-monitoring"
         },
         {
           "id": "gid://shopify/TaxonomyValue/24301",
@@ -11017,7 +11133,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2959",
       "name": "Design binocular/monocular",
       "handle": "binocular-monocular-design",
-      "description": "Standard definition for Binocular/Monocular design",
+      "description": "Describes the specific use for binoculars or monoculars, such as astronomy or hunting",
       "extended_attributes": [
         {
           "name": "Design de binóculos",
@@ -11356,7 +11472,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/24541",
-          "name": "Fruta",
+          "name": "Frutado",
           "handle": "bird-treat-type__fruit"
         },
         {
@@ -11463,7 +11579,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25193",
-          "name": "Purpurina",
+          "name": "Purpurinas",
           "handle": "birthday-candle-type__glitter"
         },
         {
@@ -12776,7 +12892,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2966",
       "name": "Material da capa de livro/arquivo",
       "handle": "book-file-cover-material",
-      "description": "Standard definition for Book/File cover material",
+      "description": "Identifies the material used in book or file covers, such as cardboard or leather",
       "extended_attributes": [
         {
           "name": "Material da capa do livro",
@@ -13162,7 +13278,7 @@
       "id": "gid://shopify/TaxonomyAttribute/3044",
       "name": "Características do aquecedor/esterilizador do biberão",
       "handle": "bottle-warmer-sterilizer-features",
-      "description": "Standard definition for Bottle warmer/sterilizer features",
+      "description": "Highlights special features of bottle warmers or sterilizers, like auto power-off or timer",
       "extended_attributes": [
         {
           "name": "Características do esterilizador do biberão",
@@ -13262,7 +13378,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2970",
       "name": "Material do arco",
       "handle": "bow-material",
-      "description": "Standard definition for Bow material",
+      "description": "Specifies the type of material used in archery bows, i.e. aluminum, fiberglass",
       "extended_attributes": [
         {
           "name": "Material de base",
@@ -13520,7 +13636,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/393",
-          "name": "Desportiva",
+          "name": "Desportivo",
           "handle": "bra-strap-type__racerback"
         },
         {
@@ -13571,7 +13687,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/24783",
-          "name": "Convertível",
+          "name": "Conversível",
           "handle": "bra-style__convertible"
         },
         {
@@ -13631,7 +13747,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/24793",
-          "name": "Triangular",
+          "name": "Triângulo",
           "handle": "bra-style__triangle"
         }
       ]
@@ -13698,7 +13814,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/24901",
-          "name": "Deslizador",
+          "name": "Deslizante",
           "handle": "bracelet-design__slider"
         },
         {
@@ -14242,7 +14358,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25094",
-          "name": "Tinta",
+          "name": "Pintura",
           "handle": "brush-application__paint"
         }
       ]
@@ -15328,11 +15444,6 @@
           "handle": "cabinet-type__inflatable"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/18638",
-          "name": "Mesa",
-          "handle": "cabinet-type__tabletop"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/11436",
           "name": "Mini arcade",
           "handle": "cabinet-type__mini-arcade"
@@ -15356,6 +15467,11 @@
           "id": "gid://shopify/TaxonomyValue/18639",
           "name": "Reto",
           "handle": "cabinet-type__upright"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/18638",
+          "name": "Tampo de mesa",
+          "handle": "cabinet-type__tabletop"
         },
         {
           "id": "gid://shopify/TaxonomyValue/11440",
@@ -15528,14 +15644,14 @@
           "handle": "calculator-accessory-type__printer-adapter"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/25680",
+          "name": "Caixa de transporte",
+          "handle": "calculator-accessory-type__carrying-case"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/25681",
           "name": "Fitas de tinta",
           "handle": "calculator-accessory-type__ink-ribbon"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/25680",
-          "name": "Mala de transporte",
-          "handle": "calculator-accessory-type__carrying-case"
         },
         {
           "id": "gid://shopify/TaxonomyValue/25682",
@@ -15698,7 +15814,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25819",
-          "name": "Dual",
+          "name": "Duplo",
           "handle": "cam-system__dual"
         },
         {
@@ -17290,6 +17406,11 @@
           "handle": "carry-options__backpack-strap"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/20835",
+          "name": "Alça de ombro",
+          "handle": "carry-options__shoulder-strap"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/24872",
           "name": "Alça de peito/cintura",
           "handle": "carry-options__chest-waist-strap"
@@ -17303,11 +17424,6 @@
           "id": "gid://shopify/TaxonomyValue/24874",
           "name": "Alça removível",
           "handle": "carry-options__detachable-strap"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/20835",
-          "name": "Correias de ombro",
-          "handle": "carry-options__shoulder-strap"
         },
         {
           "id": "gid://shopify/TaxonomyValue/24876",
@@ -17367,14 +17483,14 @@
           "handle": "carrying-type__backpack-strap"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/13617",
+          "name": "Alça de ombro",
+          "handle": "carrying-type__shoulder-strap"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/13615",
           "name": "Cintura",
           "handle": "carrying-type__belt-loop"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/13617",
-          "name": "Correias de ombro",
-          "handle": "carrying-type__shoulder-strap"
         },
         {
           "id": "gid://shopify/TaxonomyValue/18488",
@@ -17942,7 +18058,7 @@
       "id": "gid://shopify/TaxonomyAttribute/3049",
       "name": "Características da cadeira/sofá",
       "handle": "chair-sofa-features",
-      "description": "Standard definition for Chair/Sofa features",
+      "description": "Identifies unique characteristics of seating furniture, such as stain resistant or power reclining",
       "extended_attributes": [
         {
           "name": "Características da cadeira",
@@ -18101,7 +18217,7 @@
       "id": "gid://shopify/TaxonomyAttribute/3035",
       "name": "Características dos tapetes de mudas e tabuleiros",
       "handle": "changing-mat-tray-features",
-      "description": "Standard definition for Changing mat/tray features",
+      "description": "Describes special features of changing mats/trays, like built-in compartments or portable",
       "extended_attributes": [
         {
           "name": "Características dos tapetes de mudas",
@@ -18740,6 +18856,32 @@
       ]
     },
     {
+      "id": "gid://shopify/TaxonomyAttribute/3412",
+      "name": "Tipo de chocolate",
+      "handle": "chocolate-type",
+      "description": "Defines the variety of chocolate based on its ingredients and cocoa content, e.g. dark chocolate, milk chocolate",
+      "extended_attributes": [
+
+      ],
+      "values": [
+        {
+          "id": "gid://shopify/TaxonomyValue/26106",
+          "name": "Chocolate de leite",
+          "handle": "chocolate-type__milk-chocolate"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26105",
+          "name": "Chocolate negro",
+          "handle": "chocolate-type__dark-chocolate"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26107",
+          "name": "Chocolate quente",
+          "handle": "chocolate-type__white-chocolate"
+        }
+      ]
+    },
+    {
       "id": "gid://shopify/TaxonomyAttribute/2192",
       "name": "Tipo de mandril",
       "handle": "chuck-type",
@@ -19037,7 +19179,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2954",
       "name": "Textura Argila/Deslizante",
       "handle": "clay-slip-texture",
-      "description": "Standard definition for Clay/Slip texture",
+      "description": "Describes the feel and consistency of clay or slip, like coarse or smooth",
       "extended_attributes": [
         {
           "name": "Textura de argila",
@@ -19682,13 +19824,8 @@
           "handle": "clothing-features__moisture-wicking"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/22805",
-          "name": "Com isolamento",
-          "handle": "clothing-features__insulated"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/22811",
-          "name": "Compatível com veganos",
+          "name": "Adequado para veganos",
           "handle": "clothing-features__vegan-friendly"
         },
         {
@@ -19700,6 +19837,11 @@
           "id": "gid://shopify/TaxonomyValue/22804",
           "name": "Hipoalergénico",
           "handle": "clothing-features__hypoallergenic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/22805",
+          "name": "Isolado",
+          "handle": "clothing-features__insulated"
         },
         {
           "id": "gid://shopify/TaxonomyValue/22810",
@@ -19985,7 +20127,7 @@
       "values": [
         {
           "id": "gid://shopify/TaxonomyValue/8285",
-          "name": "Grãos de café",
+          "name": "Coffee beans",
           "handle": "coffee-product-form__coffee-beans"
         },
         {
@@ -20667,6 +20809,32 @@
           "id": "gid://shopify/TaxonomyValue/18495",
           "name": "Normal",
           "handle": "color-saturation__normal"
+        }
+      ]
+    },
+    {
+      "id": "gid://shopify/TaxonomyAttribute/4364",
+      "name": "Edições de banda desenhada",
+      "handle": "comic-edition",
+      "description": "Indicates the specific release version or edition of a comic book, influencing its rarity and collectible value within the market",
+      "extended_attributes": [
+
+      ],
+      "values": [
+        {
+          "id": "gid://shopify/TaxonomyValue/26378",
+          "name": "Edição de aniversário",
+          "handle": "comic-edition__anniversary-issue"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26379",
+          "name": "Edição de colecionador",
+          "handle": "comic-edition__collectors-edition"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26380",
+          "name": "Edição digital",
+          "handle": "comic-edition__digital-edition"
         }
       ]
     },
@@ -22818,17 +22986,17 @@
       "values": [
         {
           "id": "gid://shopify/TaxonomyValue/11526",
-          "name": "1/4 pol.-20",
+          "name": "1/4\"-20",
           "handle": "compatible-microphone-thread__1-4-20"
         },
         {
           "id": "gid://shopify/TaxonomyValue/11527",
-          "name": "3/8 pol.-16",
+          "name": "3/8\"-16",
           "handle": "compatible-microphone-thread__3-8-16"
         },
         {
           "id": "gid://shopify/TaxonomyValue/11528",
-          "name": "5/8 pol.-27",
+          "name": "5/8\"-27",
           "handle": "compatible-microphone-thread__5-8-27"
         },
         {
@@ -24287,7 +24455,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/20549",
-          "name": "Portátil",
+          "name": "Dispositivo portátil",
           "handle": "compatible-vacuum-type__handheld"
         },
         {
@@ -26019,22 +26187,22 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/16493",
-          "name": "Playstation 2",
+          "name": "PlayStation 2",
           "handle": "console-system__playstation-2"
         },
         {
           "id": "gid://shopify/TaxonomyValue/16494",
-          "name": "Playstation 3",
+          "name": "PlayStation 3",
           "handle": "console-system__playstation-3"
         },
         {
           "id": "gid://shopify/TaxonomyValue/16495",
-          "name": "Playstation 4",
+          "name": "PlayStation 4",
           "handle": "console-system__playstation-4"
         },
         {
           "id": "gid://shopify/TaxonomyValue/16496",
-          "name": "Playstation 5",
+          "name": "PlayStation 5",
           "handle": "console-system__playstation-5"
         },
         {
@@ -26084,7 +26252,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/16926",
-          "name": "Xbox Série x",
+          "name": "Xbox Série XS",
           "handle": "console-system__xbox-series-xs"
         },
         {
@@ -27237,6 +27405,27 @@
       ]
     },
     {
+      "id": "gid://shopify/TaxonomyAttribute/4049",
+      "name": "Compartimentos de cozedura",
+      "handle": "cooking-compartments",
+      "description": "Specifies the number of cooking areas in kitchen appliances such as air fryers, e.g. single or double",
+      "extended_attributes": [
+
+      ],
+      "values": [
+        {
+          "id": "gid://shopify/TaxonomyValue/26375",
+          "name": "Duplo",
+          "handle": "cooking-compartments__double"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26376",
+          "name": "Único",
+          "handle": "cooking-compartments__single"
+        }
+      ]
+    },
+    {
       "id": "gid://shopify/TaxonomyAttribute/1493",
       "name": "Método de cozedura",
       "handle": "cooking-method",
@@ -27463,7 +27652,7 @@
       "id": "gid://shopify/TaxonomyAttribute/3147",
       "name": "Características de utensílios de cozinha/assadeiras",
       "handle": "cookware-bakeware-features",
-      "description": "Standard definition for Cookware/Bakeware features",
+      "description": "Identifies special features of cookware or bakeware, such as non-stick coating or oven safe",
       "extended_attributes": [
         {
           "name": "Características de assadeiras",
@@ -27757,14 +27946,14 @@
       ],
       "values": [
         {
+          "id": "gid://shopify/TaxonomyValue/22150",
+          "name": "Dispositivo portátil",
+          "handle": "corsage-boutonniere-design__handheld"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/15600",
           "name": "Fixação",
           "handle": "corsage-boutonniere-design__pin-on"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/22150",
-          "name": "Portátil",
-          "handle": "corsage-boutonniere-design__handheld"
         },
         {
           "id": "gid://shopify/TaxonomyValue/22151",
@@ -28223,7 +28412,7 @@
     },
     {
       "id": "gid://shopify/TaxonomyAttribute/2364",
-      "name": "País",
+      "name": "Country",
       "handle": "country",
       "description": "Specifies the country associated with the product, such as Japan or Germany",
       "extended_attributes": [
@@ -29667,14 +29856,14 @@
           "handle": "cover-material__neoprene"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/19470",
+          "name": "Pele",
+          "handle": "cover-material__fur"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/19474",
           "name": "Pele",
           "handle": "cover-material__leather"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/19470",
-          "name": "Peles",
-          "handle": "cover-material__fur"
         },
         {
           "id": "gid://shopify/TaxonomyValue/19465",
@@ -32059,14 +32248,14 @@
           "handle": "cutting-method__anvil"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/8437",
+          "name": "Bypass",
+          "handle": "cutting-method__bypass"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/8438",
           "name": "Tesoura",
           "handle": "cutting-method__scissor"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/8437",
-          "name": "Tesoura bypass",
-          "handle": "cutting-method__bypass"
         }
       ]
     },
@@ -33134,7 +33323,7 @@
       "values": [
         {
           "id": "gid://shopify/TaxonomyValue/25575",
-          "name": "Full",
+          "name": "Completo",
           "handle": "denture-coverage__full"
         },
         {
@@ -36150,7 +36339,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2994",
       "name": "Características da bolsa descartável/reutilizável",
       "handle": "disposable-reusable-bag-features",
-      "description": "Standard definition for Disposable/Reusable bag features",
+      "description": "Describes the key characteristics of pet waste bags, such as biodegradable or leakproof",
       "extended_attributes": [
         {
           "name": "Características da bolsa descartável",
@@ -36188,7 +36377,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/22732",
-          "name": "Controle de odor",
+          "name": "Controlo de odores",
           "handle": "disposable-reusable-bag-features__odor-control"
         },
         {
@@ -36217,7 +36406,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2950",
       "name": "Material de item descartável/reutilizável",
       "handle": "disposable-reusable-item-material",
-      "description": "Standard definition for Disposable/Reusable item material",
+      "description": "Identifies if a product's material is disposable or reusable, i.e. biodegradable materials, paper",
       "extended_attributes": [
         {
           "name": "Material da bolsa descartável",
@@ -36363,7 +36552,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/11074",
-          "name": "Cão júnior",
+          "name": "Cachorrinho",
           "handle": "dog-age-group__puppy"
         },
         {
@@ -37179,7 +37368,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/14061",
-          "name": "interno",
+          "name": "Interno",
           "handle": "door-frame-application__internal"
         }
       ]
@@ -37495,7 +37684,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/24744",
-          "name": "Deslizar",
+          "name": "Deslizante",
           "handle": "dress-style__slip"
         },
         {
@@ -39054,7 +39243,7 @@
       "values": [
         {
           "id": "gid://shopify/TaxonomyValue/10863",
-          "name": "Dormir",
+          "name": "A dormir",
           "handle": "earplug-use__sleeping"
         },
         {
@@ -39574,7 +39763,7 @@
     },
     {
       "id": "gid://shopify/TaxonomyAttribute/2288",
-      "name": "Enfeites",
+      "name": "Adornos",
       "handle": "embellishments",
       "description": "Identifies added decorative elements on a product, like sequins or buttons",
       "extended_attributes": [
@@ -41534,14 +41723,14 @@
           "handle": "fabric__neoprene"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/63",
+          "name": "Pele",
+          "handle": "fabric__fur"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/16988",
           "name": "Pele",
           "handle": "fabric__leather"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/63",
-          "name": "Peles",
-          "handle": "fabric__fur"
         },
         {
           "id": "gid://shopify/TaxonomyValue/594",
@@ -41655,7 +41844,7 @@
       "id": "gid://shopify/TaxonomyAttribute/3342",
       "name": "Área do rosto",
       "handle": "face-area",
-      "description": "Standard definition for Face area",
+      "description": "Specifies the area of the face a skincare product targets, such as eyes or neck",
       "extended_attributes": [
         {
           "name": "Áreas alvo do soro",
@@ -41700,14 +41889,14 @@
           "handle": "face-powder-type__setting"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/25468",
+          "name": "Para infusão",
+          "handle": "face-powder-type__loose"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/25469",
           "name": "Pressionado",
           "handle": "face-powder-type__pressed"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/25468",
-          "name": "Solto",
-          "handle": "face-powder-type__loose"
         }
       ]
     },
@@ -43017,7 +43206,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/8017",
-          "name": "Adesivo",
+          "name": "Auto-aderente",
           "handle": "film-application-method__self-adhesive"
         }
       ]
@@ -43916,14 +44105,14 @@
           "handle": "fishing-rod-power__medium"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/7460",
+          "name": "Médio-pesado",
+          "handle": "fishing-rod-power__medium-heavy"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/21470",
           "name": "Meio-leve",
           "handle": "fishing-rod-power__medium-light"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/7460",
-          "name": "Meio-pesado",
-          "handle": "fishing-rod-power__medium-heavy"
         },
         {
           "id": "gid://shopify/TaxonomyValue/7458",
@@ -47854,14 +48043,14 @@
       ],
       "values": [
         {
+          "id": "gid://shopify/TaxonomyValue/20564",
+          "name": "Dispositivo portátil",
+          "handle": "garment-steamer-design__handheld"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/8073",
           "name": "Escova de vapor",
           "handle": "garment-steamer-design__steam-brush"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/20564",
-          "name": "Portátil",
-          "handle": "garment-steamer-design__handheld"
         },
         {
           "id": "gid://shopify/TaxonomyValue/20565",
@@ -48143,14 +48332,14 @@
           "handle": "gear-material__paper"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/18264",
+          "name": "Pele",
+          "handle": "gear-material__fur"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/18268",
           "name": "Pele",
           "handle": "gear-material__leather"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/18264",
-          "name": "Peles",
-          "handle": "gear-material__fur"
         },
         {
           "id": "gid://shopify/TaxonomyValue/18260",
@@ -49692,7 +49881,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25176",
-          "name": "Sela",
+          "name": "Selim",
           "handle": "guitar-fitting-part-type__saddle"
         },
         {
@@ -49712,19 +49901,19 @@
       ],
       "values": [
         {
-          "id": "gid://shopify/TaxonomyValue/22147",
-          "name": "3/4",
-          "handle": "guitar-size__3-4"
+          "id": "gid://shopify/TaxonomyValue/22146",
+          "name": "1/4",
+          "handle": "guitar-size__1-4"
         },
         {
           "id": "gid://shopify/TaxonomyValue/22145",
-          "name": "2-Jan",
+          "name": "1/2",
           "handle": "guitar-size__1-2"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/22146",
-          "name": "4-Jan",
-          "handle": "guitar-size__1-4"
+          "id": "gid://shopify/TaxonomyValue/22147",
+          "name": "3/4",
+          "handle": "guitar-size__3-4"
         },
         {
           "id": "gid://shopify/TaxonomyValue/18020",
@@ -50110,7 +50299,7 @@
       "id": "gid://shopify/TaxonomyAttribute/3332",
       "name": "Cor/tom do cabelo",
       "handle": "hair-color-shade",
-      "description": "Standard definition for Hair color/shade",
+      "description": "Identifies the color or shade of hair care products, such as blonde or dark brown",
       "extended_attributes": [
         {
           "name": "Coloração do cabelo compatível",
@@ -50139,7 +50328,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25404",
-          "name": "Brown",
+          "name": "Castanho",
           "handle": "hair-color-shade__brown"
         },
         {
@@ -50171,11 +50360,6 @@
           "id": "gid://shopify/TaxonomyValue/25419",
           "name": "Castanho-avermelhado médio",
           "handle": "hair-color-shade__medium-auburn"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/25411",
-          "name": "Cinzento",
-          "handle": "hair-color-shade__gray"
         },
         {
           "id": "gid://shopify/TaxonomyValue/25430",
@@ -50213,6 +50397,11 @@
           "handle": "hair-color-shade__medium-taupe"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/25411",
+          "name": "Grisalho",
+          "handle": "hair-color-shade__gray"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/25425",
           "name": "Laranja",
           "handle": "hair-color-shade__orange"
@@ -50239,7 +50428,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25429",
-          "name": "Prateado",
+          "name": "Prata",
           "handle": "hair-color-shade__silver"
         },
         {
@@ -50263,14 +50452,14 @@
           "handle": "hair-color-shade__dark-auburn"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/25428",
+          "name": "Tinto",
+          "handle": "hair-color-shade__red"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/25412",
           "name": "Verde",
           "handle": "hair-color-shade__green"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/25428",
-          "name": "Vermelho",
-          "handle": "hair-color-shade__red"
         },
         {
           "id": "gid://shopify/TaxonomyValue/25417",
@@ -50289,7 +50478,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25433",
-          "name": "Outra",
+          "name": "Outro",
           "handle": "hair-color-shade__other"
         }
       ]
@@ -50335,11 +50524,6 @@
           "handle": "hair-shear-type__thinning"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/25532",
-          "name": "Enrolado",
-          "handle": "hair-shear-type__swivel"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/25531",
           "name": "Liso",
           "handle": "hair-shear-type__straight"
@@ -50348,6 +50532,11 @@
           "id": "gid://shopify/TaxonomyValue/25533",
           "name": "Texturização capilar",
           "handle": "hair-shear-type__texturizing"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/25532",
+          "name": "Torniquete",
+          "handle": "hair-shear-type__swivel"
         }
       ]
     },
@@ -50983,12 +51172,12 @@
       "values": [
         {
           "id": "gid://shopify/TaxonomyValue/10989",
-          "name": "De fios",
+          "name": "Com fios",
           "handle": "handset-type__corded"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12292",
-          "name": "Sem fio",
+          "name": "Sem fios",
           "handle": "handset-type__cordless"
         }
       ]
@@ -52991,7 +53180,7 @@
       "id": "gid://shopify/TaxonomyAttribute/3289",
       "name": "Design do humidificador",
       "handle": "humidifier-design",
-      "description": "Standard definition for Humidifier design",
+      "description": "Describes the style of a humidifier, like attachable or portable",
       "extended_attributes": [
 
       ],
@@ -53003,7 +53192,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25180",
-          "name": "Portátil",
+          "name": "Portáteis",
           "handle": "humidifier-design__portable"
         },
         {
@@ -53397,6 +53586,21 @@
       ],
       "values": [
         {
+          "id": "gid://shopify/TaxonomyValue/22215",
+          "name": "1/4",
+          "handle": "image-sensor-size__1-4"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/13807",
+          "name": "1/3",
+          "handle": "image-sensor-size__1-3"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/22214",
+          "name": "1/2",
+          "handle": "image-sensor-size__1-2"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/13809",
           "name": "2/3",
           "handle": "image-sensor-size__2-3"
@@ -53405,6 +53609,11 @@
           "id": "gid://shopify/TaxonomyValue/18515",
           "name": "1",
           "handle": "image-sensor-size__1"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/13808",
+          "name": "4/3",
+          "handle": "image-sensor-size__4-3"
         },
         {
           "id": "gid://shopify/TaxonomyValue/18547",
@@ -53490,26 +53699,6 @@
           "id": "gid://shopify/TaxonomyValue/13810",
           "name": "1/5.8",
           "handle": "image-sensor-size__1-5-8"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/22214",
-          "name": "2-Jan",
-          "handle": "image-sensor-size__1-2"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/13808",
-          "name": "3-Apr",
-          "handle": "image-sensor-size__4-3"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/13807",
-          "name": "3-Jan",
-          "handle": "image-sensor-size__1-3"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/22215",
-          "name": "4-Jan",
-          "handle": "image-sensor-size__1-4"
         },
         {
           "id": "gid://shopify/TaxonomyValue/13696",
@@ -53661,7 +53850,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25029",
-          "name": "Outra",
+          "name": "Outro",
           "handle": "incense-kit-items-included__other"
         }
       ]
@@ -55906,6 +56095,11 @@
           "handle": "jewelry-finding-type__crimp-bead"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/25066",
+          "name": "Etiqueta",
+          "handle": "jewelry-finding-type__tag"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/25058",
           "name": "Fecho de joias",
           "handle": "jewelry-finding-type__jewelry-clasp"
@@ -55924,11 +56118,6 @@
           "id": "gid://shopify/TaxonomyValue/25057",
           "name": "Gancho de brincos",
           "handle": "jewelry-finding-type__earring-hook"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/25066",
-          "name": "Marcação",
-          "handle": "jewelry-finding-type__tag"
         },
         {
           "id": "gid://shopify/TaxonomyValue/25050",
@@ -55955,6 +56144,11 @@
           "id": "gid://shopify/TaxonomyValue/22840",
           "name": "Acetinado",
           "handle": "jewelry-material__satin"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26008",
+          "name": "Aço inoxidável",
+          "handle": "jewelry-material__stainless-steel"
         },
         {
           "id": "gid://shopify/TaxonomyValue/17169",
@@ -56147,14 +56341,14 @@
           "handle": "jewelry-material__palladium"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/22832",
+          "name": "Pele",
+          "handle": "jewelry-material__fur"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/17183",
           "name": "Pele",
           "handle": "jewelry-material__leather"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/22832",
-          "name": "Peles",
-          "handle": "jewelry-material__fur"
         },
         {
           "id": "gid://shopify/TaxonomyValue/22830",
@@ -56560,7 +56754,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25788",
-          "name": "Normal",
+          "name": "Tradicionais",
           "handle": "jump-rope-design__regular"
         }
       ]
@@ -56782,7 +56976,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25187",
-          "name": "Pesada",
+          "name": "Pesadas",
           "handle": "keyboard-key-type__weighted"
         },
         {
@@ -57422,7 +57616,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2953",
       "name": "Tipo de projeto de tricô/enchimento",
       "handle": "knitting-padding-project-type",
-      "description": "Standard definition for Knitting/Padding project type",
+      "description": "Identifies the intended use of knitting or padding materials, such as quilting or pillow making",
       "extended_attributes": [
         {
           "name": "Tipo de projeto de enchimento/estofagem",
@@ -58384,14 +58578,24 @@
       ],
       "values": [
         {
+          "id": "gid://shopify/TaxonomyValue/26010",
+          "name": "AAR - Afar",
+          "handle": "language-version__aar-afar"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/12713",
           "name": "AFR – Afrikaans",
           "handle": "language-version__afr-afrikaans"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/12714",
-          "name": "ALB – Albanês",
-          "handle": "language-version__alb-albanian"
+          "id": "gid://shopify/TaxonomyValue/26011",
+          "name": "AKA - Akan",
+          "handle": "language-version__aka-akan"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26012",
+          "name": "AMH - Amárico",
+          "handle": "language-version__amh-amharic"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12715",
@@ -58399,19 +58603,84 @@
           "handle": "language-version__ara-arabic"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/12716",
-          "name": "ARM – Arménio",
-          "handle": "language-version__arm-armenian"
+          "id": "gid://shopify/TaxonomyValue/26013",
+          "name": "ARA-EG - Árabe (Egito)",
+          "handle": "language-version__ara-eg-arabic-egypt"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/12717",
-          "name": "BAQ – Basco",
-          "handle": "language-version__baq-basque"
+          "id": "gid://shopify/TaxonomyValue/26014",
+          "name": "ARA-GUL - Árabe (Golfo)",
+          "handle": "language-version__ara-gul-arabic-gulf"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26015",
+          "name": "ARA-IQ - Árabe (Iraque)",
+          "handle": "language-version__ara-iq-arabic-iraq"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26016",
+          "name": "ARA-LEV - Árabe (levantino)",
+          "handle": "language-version__ara-lev-arabic-levantine"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26017",
+          "name": "ARA-MAG - Árabe (magrebino)",
+          "handle": "language-version__ara-mag-arabic-maghrebi"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26018",
+          "name": "ARA-SUD - Árabe (sudanês)",
+          "handle": "language-version__ara-sud-arabic-sudanese"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/12716",
+          "name": "ARM - Arménio",
+          "handle": "language-version__hye-armenian"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26019",
+          "name": "ASM - Assamês",
+          "handle": "language-version__asm-assamese"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26020",
+          "name": "AYM - Aimará",
+          "handle": "language-version__aym-aymara"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26021",
+          "name": "AZE - Azeri",
+          "handle": "language-version__aze-azerbaijani"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26022",
+          "name": "BEL - Bielorrusso",
+          "handle": "language-version__bel-belarusian"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26023",
+          "name": "BEN - Bengali",
+          "handle": "language-version__ben-bengali"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/12786",
+          "name": "BOD - Tibetano",
+          "handle": "language-version__bod-tibetan"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26024",
+          "name": "BOS - Bósnio",
+          "handle": "language-version__bos-bosnian"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12718",
           "name": "BRA – Português do Brasil",
           "handle": "language-version__bra-brazilian-portuguese"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26025",
+          "name": "BRE - Bretão",
+          "handle": "language-version__bre-breton"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12719",
@@ -58424,14 +58693,9 @@
           "handle": "language-version__cat-catalan"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/12721",
-          "name": "CHI (simpl) – Chinês (simplificado)",
-          "handle": "language-version__chi-simpl-chinese-simplified"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/12722",
-          "name": "CHI (tr) – Chinês (tradicional)",
-          "handle": "language-version__chi-tr-chinese-traditional"
+          "id": "gid://shopify/TaxonomyValue/12724",
+          "name": "CES - Checo",
+          "handle": "language-version__ces-czech"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12723",
@@ -58439,9 +58703,9 @@
           "handle": "language-version__cro-croatian"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/12724",
-          "name": "CZE – Checo",
-          "handle": "language-version__cze-czech"
+          "id": "gid://shopify/TaxonomyValue/26026",
+          "name": "CYM - Galês",
+          "handle": "language-version__cym-welsh"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12725",
@@ -58464,14 +58728,9 @@
           "handle": "language-version__deu-ch-german-switzerland"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/12729",
-          "name": "DUT – Neerlandês",
-          "handle": "language-version__dut-dutch"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/12730",
-          "name": "DUT-BE – Neerlandês (Bélgica)",
-          "handle": "language-version__dut-be-dutch-belgium"
+          "id": "gid://shopify/TaxonomyValue/12746",
+          "name": "ELL - Grego",
+          "handle": "language-version__ell-greek"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12731",
@@ -58479,9 +58738,34 @@
           "handle": "language-version__eng-english"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/26027",
+          "name": "ENG-AU - Inglês (Austrália)",
+          "handle": "language-version__eng-au-english-australia"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26028",
+          "name": "ENG-CA - Inglês (Canadá)",
+          "handle": "language-version__eng-ca-english-canada"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26029",
+          "name": "ENG-GB - Inglês (Reino Unido)",
+          "handle": "language-version__eng-gb-english-united-kingdom"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26030",
+          "name": "ENG-HK - Inglês (Hong Kong)",
+          "handle": "language-version__eng-hk-english-hong-kong"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/12732",
           "name": "ENG-ING – Inglês (Índia)",
           "handle": "language-version__eng-in-english-india"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26031",
+          "name": "ENG-NZ - Inglês (Nova Zelândia)",
+          "handle": "language-version__eng-nz-english-new-zealand"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12733",
@@ -58494,14 +58778,14 @@
           "handle": "language-version__eng-us-english-united-states"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/26032",
+          "name": "ENG-ZA - Inglês (África do Sul)",
+          "handle": "language-version__eng-za-english-south-africa"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/12735",
           "name": "EPO – Esperanto",
           "handle": "language-version__epo-esperanto"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/12736",
-          "name": "ESP – Espanhol",
-          "handle": "language-version__esp-spanish"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12738",
@@ -58509,14 +58793,34 @@
           "handle": "language-version__est-estonian"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/12737",
-          "name": "EST-MS – Espanhol (México)",
-          "handle": "language-version__esp-mx-spanish-mexico"
+          "id": "gid://shopify/TaxonomyValue/12717",
+          "name": "EUS - Basco",
+          "handle": "language-version__eus-basque"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26033",
+          "name": "EWE - Ewe",
+          "handle": "language-version__ewe-ewe"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26034",
+          "name": "FAO - Faroense",
+          "handle": "language-version__fao-faroese"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/12771",
+          "name": "FAS - Persa",
+          "handle": "language-version__fas-persian"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12739",
           "name": "FAS – Farsi",
           "handle": "language-version__fas-farsi"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/12772",
+          "name": "FIL - Filipino",
+          "handle": "language-version__fil-filipino"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12740",
@@ -58525,23 +58829,28 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/12741",
-          "name": "FRE – French",
-          "handle": "language-version__fre-french"
+          "name": "FRA - Francês",
+          "handle": "language-version__fra-french"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26035",
+          "name": "FRA-CA - Francês (Canadá)",
+          "handle": "language-version__fra-ca-french-canada"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12742",
-          "name": "FRE-BE – Francês (Bélgica)",
-          "handle": "language-version__fre-be-french-belgium"
+          "name": "FRE-BE - Francês (Bélgica)",
+          "handle": "language-version__fra-be-french-belgium"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12743",
-          "name": "FRE-CH – Francês (Suíça)",
-          "handle": "language-version__fre-ch-french-switzerland"
+          "name": "FRE-CH - Francês (Suíça)",
+          "handle": "language-version__fra-ch-french-switzerland"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/12744",
-          "name": "GEO – Georgiano",
-          "handle": "language-version__geo-georgian"
+          "id": "gid://shopify/TaxonomyValue/26036",
+          "name": "GLE - Irlandês",
+          "handle": "language-version__gle-irish"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12745",
@@ -58549,14 +58858,29 @@
           "handle": "language-version__glg-galician"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/12746",
-          "name": "GRE – Grego",
-          "handle": "language-version__gre-greek"
+          "id": "gid://shopify/TaxonomyValue/26037",
+          "name": "GRC - Grego antigo",
+          "handle": "language-version__grc-ancient-greek"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26038",
+          "name": "GRN - Guarani",
+          "handle": "language-version__grn-guarani"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12747",
           "name": "GSW – Alemão Suíço",
           "handle": "language-version__gsw-swiss-german"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26039",
+          "name": "GUJ - Gujaráti",
+          "handle": "language-version__guj-gujarati"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26040",
+          "name": "HAU - Haúça",
+          "handle": "language-version__hau-hausa"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12748",
@@ -58579,9 +58903,9 @@
           "handle": "language-version__hun-hungarian"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/12752",
-          "name": "ICE – Islandês",
-          "handle": "language-version__ice-icelandic"
+          "id": "gid://shopify/TaxonomyValue/26041",
+          "name": "IBO - Ibo",
+          "handle": "language-version__ibo-igbo"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12753",
@@ -58599,9 +58923,19 @@
           "handle": "language-version__ira-iranian"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/12752",
+          "name": "ISL - Islandês",
+          "handle": "language-version__isl-icelandic"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/12756",
           "name": "ITA – Italiano",
           "handle": "language-version__ita-italian"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26042",
+          "name": "JAV - Javanês",
+          "handle": "language-version__jav-javanese"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12757",
@@ -58609,9 +58943,34 @@
           "handle": "language-version__jpn-japanese"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/26043",
+          "name": "KAL - Gronelandês",
+          "handle": "language-version__kal-greenlandic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26044",
+          "name": "KAN - Kannada",
+          "handle": "language-version__kan-kannada"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/12744",
+          "name": "KAT - Georgiano",
+          "handle": "language-version__kat-georgian"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/12758",
           "name": "KAZ – Cazaque",
           "handle": "language-version__kaz-kazakh"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26045",
+          "name": "KHM - Cmere",
+          "handle": "language-version__khm-khmer"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26046",
+          "name": "KIN - Quiniaruanda",
+          "handle": "language-version__kin-kinyarwanda"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12759",
@@ -58629,6 +58988,11 @@
           "handle": "language-version__kur-kurdish"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/26047",
+          "name": "LAO - Laociano",
+          "handle": "language-version__lao-lao"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/12762",
           "name": "LAT – Latim",
           "handle": "language-version__lat-latin"
@@ -58639,14 +59003,29 @@
           "handle": "language-version__lav-latvian"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/26048",
+          "name": "LIN - Lingala",
+          "handle": "language-version__lin-lingala"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/12764",
           "name": "LIT – Lituano",
           "handle": "language-version__lit-lithuanian"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/12765",
-          "name": "MAL – Malaio",
-          "handle": "language-version__mal-malay"
+          "id": "gid://shopify/TaxonomyValue/26049",
+          "name": "LTZ - Luxemburguês",
+          "handle": "language-version__ltz-luxembourgish"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26050",
+          "name": "MAL - Malaiala",
+          "handle": "language-version__mal-malayalam"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26051",
+          "name": "MAR - Marati",
+          "handle": "language-version__mar-marathi"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12766",
@@ -58654,9 +59033,34 @@
           "handle": "language-version__mdr-mandar"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/26052",
+          "name": "MKD - Macedónio",
+          "handle": "language-version__mkd-macedonian"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26053",
+          "name": "MLG - Malgaxe",
+          "handle": "language-version__mlg-malagasy"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26054",
+          "name": "MLT - Maltês",
+          "handle": "language-version__mlt-maltese"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/12767",
           "name": "MON – Mongol",
           "handle": "language-version__mon-mongolian"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26055",
+          "name": "MRI - Maori",
+          "handle": "language-version__mri-maori"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/12765",
+          "name": "MSA - Malaio",
+          "handle": "language-version__msa-malay"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12768",
@@ -58664,9 +59068,39 @@
           "handle": "language-version__multilingual-multilingual-not-specific-to-one-language"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/26056",
+          "name": "MYA - Birmanês",
+          "handle": "language-version__mya-burmese"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26057",
+          "name": "NAV - Navajo",
+          "handle": "language-version__nav-navajo"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/12769",
           "name": "NEP – Nepalês",
           "handle": "language-version__nep-nepali"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/12729",
+          "name": "NLD - Neerlandês",
+          "handle": "language-version__nld-dutch"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/12730",
+          "name": "NLD-BE - Neerlandês (Bélgica)",
+          "handle": "language-version__nld-be-dutch-belgium"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26058",
+          "name": "NNO - Norueguês (Nynorsk)",
+          "handle": "language-version__nno-norwegian-nynorsk"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26059",
+          "name": "NOB - Norueguês (Bokmål)",
+          "handle": "language-version__nob-norwegian-bokmal"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12770",
@@ -58674,14 +59108,19 @@
           "handle": "language-version__nor-norwegian"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/12771",
-          "name": "PER – Persa",
-          "handle": "language-version__per-persian"
+          "id": "gid://shopify/TaxonomyValue/26060",
+          "name": "NYA - Chichewa",
+          "handle": "language-version__nya-chichewa"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/12772",
-          "name": "PHI – Filipino",
-          "handle": "language-version__phi-filipino"
+          "id": "gid://shopify/TaxonomyValue/26061",
+          "name": "ORM - Oromo",
+          "handle": "language-version__orm-oromo"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26062",
+          "name": "PAN - Punjabi",
+          "handle": "language-version__pan-punjabi"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12773",
@@ -58695,8 +59134,18 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/12775",
-          "name": "POR-BRA – Português (Brasil)",
-          "handle": "language-version__por-bra-portuguese-brazil"
+          "name": "POR-BR - Português (Brasil)",
+          "handle": "language-version__por-br-portuguese-brazil"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26063",
+          "name": "PUS - Pastó",
+          "handle": "language-version__pus-pashto"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26064",
+          "name": "QUE - Quíchua",
+          "handle": "language-version__que-quechua"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12776",
@@ -58705,8 +59154,8 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/12777",
-          "name": "RUM – Romeno",
-          "handle": "language-version__rum-romanian"
+          "name": "RON - Romeno",
+          "handle": "language-version__ron-romanian"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12778",
@@ -58729,14 +59178,79 @@
           "handle": "language-version__slv-slovenian"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/26065",
+          "name": "SME - Sámi do Norte",
+          "handle": "language-version__sme-northern-sami"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26066",
+          "name": "SMO - Samoano",
+          "handle": "language-version__smo-samoan"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26067",
+          "name": "SOM - Somaliano",
+          "handle": "language-version__som-somali"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26068",
+          "name": "SOT - Soto do Sul",
+          "handle": "language-version__sot-southern-sotho"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/12736",
+          "name": "SPA - Espanhol",
+          "handle": "language-version__spa-spanish"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26069",
+          "name": "SPA-LATAM - Espanhol (América Latina)",
+          "handle": "language-version__spa-latam-spanish-latin-american"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/12737",
+          "name": "SPA-MX - Espanhol (México)",
+          "handle": "language-version__spa-mx-spanish-mexico"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/12714",
+          "name": "SQI - Albanês",
+          "handle": "language-version__sqi-albanian"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/12782",
           "name": "SRP – Sérvio",
           "handle": "language-version__srp-serbian"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/26070",
+          "name": "SUN - Sudanês",
+          "handle": "language-version__sun-sundanese"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26071",
+          "name": "SWA - Suaíli",
+          "handle": "language-version__swa-swahili"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/12783",
           "name": "SWE – Sueco",
           "handle": "language-version__swe-swedish"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26072",
+          "name": "TAM - Tâmil",
+          "handle": "language-version__tam-tamil"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26073",
+          "name": "TEL - Telugo",
+          "handle": "language-version__tel-telugu"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26074",
+          "name": "TGK - Tajique",
+          "handle": "language-version__tgk-tajik"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12784",
@@ -58749,9 +59263,14 @@
           "handle": "language-version__tha-thai"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/12786",
-          "name": "TIB – Tibetano",
-          "handle": "language-version__tib-tibetan"
+          "id": "gid://shopify/TaxonomyValue/26075",
+          "name": "TON - Tonganês",
+          "handle": "language-version__ton-tongan"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26076",
+          "name": "TUK - Turquemeno",
+          "handle": "language-version__tuk-turkmen"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12787",
@@ -58759,14 +59278,64 @@
           "handle": "language-version__tur-turkish"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/26077",
+          "name": "UIG - Uigure",
+          "handle": "language-version__uig-uyghur"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/12788",
           "name": "UKR – Ucraniano",
           "handle": "language-version__ukr-ukrainian"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/26078",
+          "name": "URD - Urdu",
+          "handle": "language-version__urd-urdu"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26079",
+          "name": "UZB - Usbeque",
+          "handle": "language-version__uzb-uzbek"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/12789",
           "name": "VIE – Vietnamita",
           "handle": "language-version__vie-vietnamese"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26080",
+          "name": "WOL - Uolofe",
+          "handle": "language-version__wol-wolof"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26081",
+          "name": "XHO - Xossa",
+          "handle": "language-version__xho-xhosa"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26082",
+          "name": "YID - Ídiche",
+          "handle": "language-version__yid-yiddish"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26083",
+          "name": "YOR - Ioruba",
+          "handle": "language-version__yor-yoruba"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/12721",
+          "name": "ZHO (simpl) - Chinês (simplificado)",
+          "handle": "language-version__zho-simpl-chinese-simplified"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/12722",
+          "name": "ZHO (tr) - Chinês (tradicional)",
+          "handle": "language-version__zho-tr-chinese-traditional"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26084",
+          "name": "ZUL - Zulu",
+          "handle": "language-version__zul-zulu"
         },
         {
           "id": "gid://shopify/TaxonomyValue/20867",
@@ -59106,14 +59675,14 @@
           "handle": "lectern-mounting-type__floor"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/21044",
-          "name": "Mesa",
-          "handle": "lectern-mounting-type__tabletop"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/21043",
           "name": "Sem suporte",
           "handle": "lectern-mounting-type__free-standing"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/21044",
+          "name": "Tampo de mesa",
+          "handle": "lectern-mounting-type__tabletop"
         }
       ]
     },
@@ -59401,7 +59970,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25238",
-          "name": "Estojo para cintura",
+          "name": "Coldre",
           "handle": "lens-storage-type__holster"
         },
         {
@@ -59461,7 +60030,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2957",
       "name": "Material da lente/slide",
       "handle": "lens-slide-material",
-      "description": "Standard definition for Lens/Slide material",
+      "description": "Specifies the material used in the making of lenses or slides, like plastic or glass",
       "extended_attributes": [
         {
           "name": "Material da lente da câmara",
@@ -60386,7 +60955,7 @@
       "values": [
         {
           "id": "gid://shopify/TaxonomyValue/14194",
-          "name": "Serviços de peso médio",
+          "name": "Peso médio",
           "handle": "load-capacity__medium-duty"
         },
         {
@@ -61310,7 +61879,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25461",
-          "name": "Prateado",
+          "name": "Prata",
           "handle": "makeup-color-shade__silver"
         },
         {
@@ -61349,18 +61918,18 @@
           "handle": "makeup-color-shade__purple"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/25459",
+          "name": "Tinto",
+          "handle": "makeup-color-shade__red"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/25443",
           "name": "Verde",
           "handle": "makeup-color-shade__green"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/25459",
-          "name": "Vermelho",
-          "handle": "makeup-color-shade__red"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/25466",
-          "name": "Outra",
+          "name": "Outro",
           "handle": "makeup-color-shade__other"
         }
       ]
@@ -62045,7 +62614,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2964",
       "name": "Material da base do tapete",
       "handle": "mat-base-material",
-      "description": "Standard definition for Mat base material",
+      "description": "Specifies the type of material used for the base of mats, i.e. cork, memory foam",
       "extended_attributes": [
         {
           "name": "Material de base do tapete da porta",
@@ -62467,14 +63036,14 @@
           "handle": "material__stone"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/22517",
+          "name": "Pele",
+          "handle": "material__fur"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/558",
           "name": "Pele",
           "handle": "material__leather"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/22517",
-          "name": "Peles",
-          "handle": "material__fur"
         },
         {
           "id": "gid://shopify/TaxonomyValue/22513",
@@ -63742,6 +64311,11 @@
           "handle": "media-theme__outdoor-adventure"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/26009",
+          "name": "Banda desenhada",
+          "handle": "media-theme__comics"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/15774",
           "name": "Casa e decoração",
           "handle": "media-theme__home-decor"
@@ -64091,7 +64665,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2963",
       "name": "Forma de suplemento/medicamento alimentar",
       "handle": "medicine-supplement-form",
-      "description": "Standard definition for Medicine/Supplement form",
+      "description": "Identifies the physical form of a medicine or supplement, like capsules or liquid",
       "extended_attributes": [
         {
           "name": "Formulário de suplemento alimentar",
@@ -64197,7 +64771,7 @@
     },
     {
       "id": "gid://shopify/TaxonomyAttribute/2362",
-      "name": "Meio",
+      "name": "Médio",
       "handle": "medium",
       "description": "Identifies the type of collectible, such as memorabilia or trading card",
       "extended_attributes": [
@@ -64633,6 +65207,92 @@
       ]
     },
     {
+      "id": "gid://shopify/TaxonomyAttribute/3737",
+      "name": "Tipo de malha",
+      "handle": "mesh-type",
+      "description": "Specifies the style or construction of mesh fabric, indicating its intended use or characteristics, e.g. athletic, brushed",
+      "extended_attributes": [
+
+      ],
+      "values": [
+        {
+          "id": "gid://shopify/TaxonomyValue/26301",
+          "name": "Airtex",
+          "handle": "mesh-type__airtex"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26302",
+          "name": "Atlético",
+          "handle": "mesh-type__athletic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26303",
+          "name": "Balístico",
+          "handle": "mesh-type__ballistic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26311",
+          "name": "Energia",
+          "handle": "mesh-type__power"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26304",
+          "name": "Escovado",
+          "handle": "mesh-type__brushed"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26313",
+          "name": "Espaçador",
+          "handle": "mesh-type__spacer"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26306",
+          "name": "Hexagonal",
+          "handle": "mesh-type__hex"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26308",
+          "name": "Micromalha",
+          "handle": "mesh-type__micro-mesh"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26310",
+          "name": "Náilon",
+          "handle": "mesh-type__nylon"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26312",
+          "name": "Raschel",
+          "handle": "mesh-type__raschel"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26309",
+          "name": "Rede",
+          "handle": "mesh-type__netting"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26305",
+          "name": "Rede de pesca",
+          "handle": "mesh-type__fishnet"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26307",
+          "name": "Rendilhado",
+          "handle": "mesh-type__lace"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26314",
+          "name": "Tule",
+          "handle": "mesh-type__tulle"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26315",
+          "name": "Outro",
+          "handle": "mesh-type__other"
+        }
+      ]
+    },
+    {
       "id": "gid://shopify/TaxonomyAttribute/3050",
       "name": "Características do detetor de metais",
       "handle": "metal-detector-features",
@@ -64767,6 +65427,52 @@
       ]
     },
     {
+      "id": "gid://shopify/TaxonomyAttribute/3425",
+      "name": "Tipo de microfone",
+      "handle": "microphone-design",
+      "description": "Defines the design category for microphones, e.g. condenser, dynamic",
+      "extended_attributes": [
+
+      ],
+      "values": [
+        {
+          "id": "gid://shopify/TaxonomyValue/26225",
+          "name": "Condensador",
+          "handle": "microphone-design__condenser"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26226",
+          "name": "Dinâmico",
+          "handle": "microphone-design__dynamic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26229",
+          "name": "Fita",
+          "handle": "microphone-design__ribbon"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26224",
+          "name": "Limite",
+          "handle": "microphone-design__boundary"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26227",
+          "name": "Microfone de lapela",
+          "handle": "microphone-design__lavalier"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26228",
+          "name": "Parabólica",
+          "handle": "microphone-design__parabolic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26230",
+          "name": "Outro",
+          "handle": "microphone-design__other"
+        }
+      ]
+    },
+    {
       "id": "gid://shopify/TaxonomyAttribute/1796",
       "name": "Fio de microfone",
       "handle": "microphone-thread",
@@ -64777,17 +65483,17 @@
       "values": [
         {
           "id": "gid://shopify/TaxonomyValue/22229",
-          "name": "1/4 pol.-20",
+          "name": "1/4\"-20",
           "handle": "microphone-thread__1-4-20"
         },
         {
           "id": "gid://shopify/TaxonomyValue/22230",
-          "name": "3/8 pol.-16",
+          "name": "3/8\"-16",
           "handle": "microphone-thread__3-8-16"
         },
         {
           "id": "gid://shopify/TaxonomyValue/22231",
-          "name": "5/8 pol.-27",
+          "name": "5/8\"-27",
           "handle": "microphone-thread__5-8-27"
         },
         {
@@ -65606,7 +66312,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2955",
       "name": "Forma de molde/corte",
       "handle": "mold-cut-shape",
-      "description": "Standard definition for Mold/Cut shape",
+      "description": "Describes the shape or design of a craft mold or cut, like star or animal",
       "extended_attributes": [
         {
           "name": "Formato de molde",
@@ -65977,7 +66683,7 @@
       "id": "gid://shopify/TaxonomyAttribute/3085",
       "name": "Características especializadas de monitor/ecrã",
       "handle": "monitor-screen-specialized-features",
-      "description": "Standard definition for Monitor/Screen specialized features",
+      "description": "Details specific features of a screen, such as built-in speakers or suitable for gaming",
       "extended_attributes": [
         {
           "name": "Características especializadas de monitor",
@@ -66760,6 +67466,11 @@
           "handle": "mounting-hardware__suction-cup"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/8055",
+          "name": "Dispositivo portátil",
+          "handle": "mounting-hardware__handheld"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/20425",
           "name": "Gancho",
           "handle": "mounting-hardware__hook"
@@ -66768,11 +67479,6 @@
           "id": "gid://shopify/TaxonomyValue/20029",
           "name": "Parafusos",
           "handle": "mounting-hardware__screws"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/8055",
-          "name": "Portátil",
-          "handle": "mounting-hardware__handheld"
         },
         {
           "id": "gid://shopify/TaxonomyValue/20028",
@@ -66811,11 +67517,6 @@
           "handle": "mounting-type__built-in"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/7192",
-          "name": "Mesa",
-          "handle": "mounting-type__tabletop"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/14542",
           "name": "Móvel",
           "handle": "mounting-type__mobile"
@@ -66844,6 +67545,11 @@
           "id": "gid://shopify/TaxonomyValue/18443",
           "name": "Suspenso",
           "handle": "mounting-type__hanging"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/7192",
+          "name": "Tampo de mesa",
+          "handle": "mounting-type__tabletop"
         },
         {
           "id": "gid://shopify/TaxonomyValue/7057",
@@ -67095,14 +67801,14 @@
       "id": "gid://shopify/TaxonomyAttribute/3381",
       "name": "Design de protetor bucal",
       "handle": "mouthgard-design",
-      "description": "Standard definition for Mouthgard design",
+      "description": "Identifies the design of sports mouthguards, such as single or double",
       "extended_attributes": [
 
       ],
       "values": [
         {
           "id": "gid://shopify/TaxonomyValue/25786",
-          "name": "Duplicado",
+          "name": "Duplo",
           "handle": "mouthgard-design__double"
         },
         {
@@ -67737,7 +68443,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25166",
-          "name": "Portátil",
+          "name": "Portáteis",
           "handle": "music-stand-design__portable"
         },
         {
@@ -68675,14 +69381,14 @@
       ],
       "values": [
         {
-          "id": "gid://shopify/TaxonomyValue/23929",
-          "name": "Mesa",
-          "handle": "nebulizer-design__tabletop"
+          "id": "gid://shopify/TaxonomyValue/23930",
+          "name": "Dispositivo portátil",
+          "handle": "nebulizer-design__handheld"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/23930",
-          "name": "Portátil",
-          "handle": "nebulizer-design__handheld"
+          "id": "gid://shopify/TaxonomyValue/23929",
+          "name": "Tampo de mesa",
+          "handle": "nebulizer-design__tabletop"
         }
       ]
     },
@@ -68803,6 +69509,11 @@
           "handle": "neckline__boat"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/6707",
+          "name": "Capuz",
+          "handle": "neckline__cowl"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/6709",
           "name": "Com capuz",
           "handle": "neckline__hooded"
@@ -68826,11 +69537,6 @@
           "id": "gid://shopify/TaxonomyValue/6708",
           "name": "Decote com alças",
           "handle": "neckline__halter"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/6707",
-          "name": "Decote drapeado",
-          "handle": "neckline__cowl"
         },
         {
           "id": "gid://shopify/TaxonomyValue/6714",
@@ -69218,14 +69924,14 @@
           "handle": "needlecraft-kit-type__crochet"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/25033",
-          "name": "Malhas",
-          "handle": "needlecraft-kit-type__knitting"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/25031",
           "name": "Ponto de cruz",
           "handle": "needlecraft-kit-type__cross-stitch"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/25033",
+          "name": "Tricô",
+          "handle": "needlecraft-kit-type__knitting"
         }
       ]
     },
@@ -71225,14 +71931,14 @@
       ],
       "values": [
         {
+          "id": "gid://shopify/TaxonomyValue/24760",
+          "name": "Body",
+          "handle": "one-piece-style__bodysuit"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/24766",
           "name": "Collant",
           "handle": "one-piece-style__leotard"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/24760",
-          "name": "Fato de treino",
-          "handle": "one-piece-style__bodysuit"
         },
         {
           "id": "gid://shopify/TaxonomyValue/24761",
@@ -71699,7 +72405,7 @@
           "handle": "dog-kennel-run-features"
         },
         {
-          "name": "Características  de cerca para cães",
+          "name": "Características de cerca para cães",
           "handle": "dog-pen-features"
         }
       ],
@@ -72072,14 +72778,14 @@
           "handle": "output-waveform__complex"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/12004",
-          "name": "De pulso",
-          "handle": "output-waveform__pulse"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/12005",
           "name": "Em ziguezague",
           "handle": "output-waveform__sawtooth"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/12004",
+          "name": "Pulso",
+          "handle": "output-waveform__pulse"
         },
         {
           "id": "gid://shopify/TaxonomyValue/18794",
@@ -72239,6 +72945,162 @@
           "id": "gid://shopify/TaxonomyValue/21112",
           "name": "18",
           "handle": "pegi-rating__18"
+        }
+      ]
+    },
+    {
+      "id": "gid://shopify/TaxonomyAttribute/4051",
+      "name": "Nível de PH",
+      "handle": "ph-level",
+      "description": "Indicates the acidity or alkalinity of a substance, measured on a scale from 0 to 14, e.g. 6.5 (slightly acidic) or 7.0 (neutral)",
+      "extended_attributes": [
+
+      ],
+      "values": [
+        {
+          "id": "gid://shopify/TaxonomyValue/26353",
+          "name": "7.0 (neutro)",
+          "handle": "ph-level__7-0-neutral"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26339",
+          "name": "0,0 (fortemente ácido)",
+          "handle": "ph-level__0-0-strongly-acidic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26340",
+          "name": "0,5 (fortemente ácido)",
+          "handle": "ph-level__0-5-strongly-acidic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26341",
+          "name": "1,0 (fortemente ácido)",
+          "handle": "ph-level__1-0-strongly-acidic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26342",
+          "name": "1,5 (fortemente ácido)",
+          "handle": "ph-level__1-5-strongly-acidic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26359",
+          "name": "10,0 (moderadamente alcalino)",
+          "handle": "ph-level__10-0-moderately-alkaline"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26360",
+          "name": "10,5 (moderadamente alcalino)",
+          "handle": "ph-level__10-5-moderately-alkaline"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26361",
+          "name": "11,0 (fortemente alcalino)",
+          "handle": "ph-level__11-0-strongly-alkaline"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26362",
+          "name": "11,5 (fortemente alcalino)",
+          "handle": "ph-level__11-5-strongly-alkaline"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26363",
+          "name": "12,0 (fortemente alcalino)",
+          "handle": "ph-level__12-0-strongly-alkaline"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26364",
+          "name": "12,5 (fortemente alcalino)",
+          "handle": "ph-level__12-5-strongly-alkaline"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26365",
+          "name": "13,0 (fortemente alcalino)",
+          "handle": "ph-level__13-0-strongly-alkaline"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26366",
+          "name": "13,5 (fortemente alcalino)",
+          "handle": "ph-level__13-5-strongly-alkaline"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26367",
+          "name": "14,0 (fortemente alcalino)",
+          "handle": "ph-level__14-0-strongly-alkaline"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26343",
+          "name": "2,0 (fortemente ácido)",
+          "handle": "ph-level__2-0-strongly-acidic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26344",
+          "name": "2,5 (fortemente ácido)",
+          "handle": "ph-level__2-5-strongly-acidic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26345",
+          "name": "3,0 (fortemente ácido)",
+          "handle": "ph-level__3-0-strongly-acidic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26346",
+          "name": "3,5 (fortemente ácido)",
+          "handle": "ph-level__3-5-strongly-acidic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26347",
+          "name": "4,0 (moderadamente ácido)",
+          "handle": "ph-level__4-0-moderately-acidic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26348",
+          "name": "4,5 (moderadamente ácido)",
+          "handle": "ph-level__4-5-moderately-acidic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26349",
+          "name": "5,0 (moderadamente ácido)",
+          "handle": "ph-level__5-0-moderately-acidic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26350",
+          "name": "5,5 (ligeiramente ácido)",
+          "handle": "ph-level__5-5-slightly-acidic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26351",
+          "name": "6,0 (ligeiramente ácido)",
+          "handle": "ph-level__6-0-slightly-acidic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26352",
+          "name": "6,5 (ligeiramente ácido)",
+          "handle": "ph-level__6-5-slightly-acidic"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26354",
+          "name": "7,5 (ligeiramente alcalino)",
+          "handle": "ph-level__7-5-slightly-alkaline"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26355",
+          "name": "8,0 (ligeiramente alcalino)",
+          "handle": "ph-level__8-0-slightly-alkaline"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26356",
+          "name": "8,5 (ligeiramente alcalino)",
+          "handle": "ph-level__8-5-slightly-alkaline"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26357",
+          "name": "9,0 (moderadamente alcalino)",
+          "handle": "ph-level__9-0-moderately-alkaline"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26358",
+          "name": "9,5 (moderadamente alcalino)",
+          "handle": "ph-level__9-5-moderately-alkaline"
         }
       ]
     },
@@ -72620,7 +73482,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25792",
-          "name": "Compósito",
+          "name": "Composto",
           "handle": "paddle-oar-material__composite"
         },
         {
@@ -72939,7 +73801,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2952",
       "name": "Forma de tinta/tintura",
       "handle": "paint-dye-form",
-      "description": "Standard definition for Paint/Dye form",
+      "description": "Describes the consistency or type of a paint or dye, such as gel or spray",
       "extended_attributes": [
         {
           "name": "Forma de coloração",
@@ -73735,7 +74597,7 @@
       "values": [
         {
           "id": "gid://shopify/TaxonomyValue/25671",
-          "name": "Adesivo",
+          "name": "Auto-aderente",
           "handle": "paper-type__self-adhesive"
         },
         {
@@ -74433,7 +75295,7 @@
       "id": "gid://shopify/TaxonomyAttribute/3",
       "name": "Padrão",
       "handle": "pattern",
-      "description": "Standard definition for Pattern",
+      "description": "Describes the design or motif of a product, such as floral or striped",
       "extended_attributes": [
         {
           "name": "Padrão de fundo",
@@ -74675,7 +75537,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/24479",
-          "name": "Artístico",
+          "name": "Arte",
           "handle": "pattern__art"
         },
         {
@@ -74900,7 +75762,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/24509",
-          "name": "Outra",
+          "name": "Outro",
           "handle": "pattern__other"
         }
       ]
@@ -74997,7 +75859,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2967",
       "name": "Design do bico de caneta/caneta de feltro",
       "handle": "pen-felt-tip-design",
-      "description": "Standard definition for Pen/Felt tip design",
+      "description": "Describes the thickness and style of a pen's tip, like bold or fine",
       "extended_attributes": [
         {
           "name": "Design de ponta de feltro",
@@ -75348,7 +76210,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2984",
       "name": "Características de roupas de cama/roupas para animais de estimação",
       "handle": "pet-apparel-bedding-features",
-      "description": "Standard definition for Pet apparel/bedding features",
+      "description": "Highlights unique features of pet items, such as orthopedic or eco-friendly",
       "extended_attributes": [
         {
           "name": "Características de roupas para animais de estimação",
@@ -75372,7 +76234,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/22661",
-          "name": "Anti-derrapante",
+          "name": "Antiderrapante",
           "handle": "pet-apparel-bedding-features__slip-resistant"
         },
         {
@@ -76003,14 +76865,14 @@
           "handle": "pet-medical-collar-design__inflatable"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/24650",
-          "name": "Macio",
-          "handle": "pet-medical-collar-design__soft"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/24649",
           "name": "Roupa pós-cirúrgica",
           "handle": "pet-medical-collar-design__recovery-suit"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/24650",
+          "name": "Suave",
+          "handle": "pet-medical-collar-design__soft"
         }
       ]
     },
@@ -76407,11 +77269,6 @@
           "handle": "pet-treat-type__interactive"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/24568",
-          "name": "Macio",
-          "handle": "pet-treat-type__soft"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/24565",
           "name": "Para os dentes",
           "handle": "pet-treat-type__dental"
@@ -76420,6 +77277,11 @@
           "id": "gid://shopify/TaxonomyValue/24567",
           "name": "Sementes",
           "handle": "pet-treat-type__seeds"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/24568",
+          "name": "Suave",
+          "handle": "pet-treat-type__soft"
         },
         {
           "id": "gid://shopify/TaxonomyValue/24569",
@@ -78503,6 +79365,52 @@
       ]
     },
     {
+      "id": "gid://shopify/TaxonomyAttribute/4052",
+      "name": "Estágio de plantas",
+      "handle": "plant-stage",
+      "description": "Identifies the specific phase of a plant's growth cycle that a product is designed to support, e.g. seedling, vegetative",
+      "extended_attributes": [
+
+      ],
+      "values": [
+        {
+          "id": "gid://shopify/TaxonomyValue/26368",
+          "name": "Clonagem",
+          "handle": "plant-stage__cloning"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26369",
+          "name": "Florescente",
+          "handle": "plant-stage__flowering"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26370",
+          "name": "Frutificação",
+          "handle": "plant-stage__fruiting"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26371",
+          "name": "Germinação",
+          "handle": "plant-stage__germination"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26372",
+          "name": "Plântula",
+          "handle": "plant-stage__seedling"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26373",
+          "name": "Transição",
+          "handle": "plant-stage__transition"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/26374",
+          "name": "Vegetativo",
+          "handle": "plant-stage__vegetative"
+        }
+      ]
+    },
+    {
       "id": "gid://shopify/TaxonomyAttribute/2822",
       "name": "Material de suporte para plantas",
       "handle": "plant-support-material",
@@ -78641,7 +79549,7 @@
       "values": [
         {
           "id": "gid://shopify/TaxonomyValue/25839",
-          "name": "Dual",
+          "name": "Duplo",
           "handle": "play-slide-design__dual"
         },
         {
@@ -79547,7 +80455,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2965",
       "name": "Material do poste",
       "handle": "pole-post-material",
-      "description": "Standard definition for Pole/Post material",
+      "description": "Specifies the construction material of parasol or umbrella poles, such as fiberglass or steel",
       "extended_attributes": [
         {
           "name": "Material do poste",
@@ -81814,7 +82722,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/15803",
-          "name": " Material de escritório",
+          "name": "Material de escritório",
           "handle": "product-manual-area__office-supplies"
         },
         {
@@ -85678,7 +86586,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/7032",
-          "name": "Muito elevada",
+          "name": "Muito pesado",
           "handle": "resistance-level__very-heavy"
         }
       ]
@@ -85964,11 +86872,6 @@
       ],
       "values": [
         {
-          "id": "gid://shopify/TaxonomyValue/16889",
-          "name": "A pedal",
-          "handle": "riding-toy-propulsion-type__pedal"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/21646",
           "name": "Alimentado por bateria",
           "handle": "riding-toy-propulsion-type__battery-powered"
@@ -85987,6 +86890,11 @@
           "id": "gid://shopify/TaxonomyValue/21648",
           "name": "Manual",
           "handle": "riding-toy-propulsion-type__manual"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/16889",
+          "name": "Pedal",
+          "handle": "riding-toy-propulsion-type__pedal"
         },
         {
           "id": "gid://shopify/TaxonomyValue/21650",
@@ -88378,11 +89286,6 @@
           "handle": "scale-model-kit-type__ambulance"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/25149",
-          "name": "Anfíbio",
-          "handle": "scale-model-kit-type__watercraft"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/25112",
           "name": "Autocarro",
           "handle": "scale-model-kit-type__bus"
@@ -88476,6 +89379,11 @@
           "id": "gid://shopify/TaxonomyValue/25120",
           "name": "Dinossauro",
           "handle": "scale-model-kit-type__dinosaur"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/25149",
+          "name": "Embarcação",
+          "handle": "scale-model-kit-type__watercraft"
         },
         {
           "id": "gid://shopify/TaxonomyValue/25121",
@@ -89086,11 +89994,6 @@
           "handle": "scarf-shawl-style__infinity"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/24842",
-          "name": "Normal",
-          "handle": "scarf-shawl-style__regular"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/24841",
           "name": "Pashmina",
           "handle": "scarf-shawl-style__pashmina"
@@ -89102,8 +90005,13 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/24845",
-          "name": "Quadrada",
+          "name": "Quadrado",
           "handle": "scarf-shawl-style__square"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/24842",
+          "name": "Tradicionais",
+          "handle": "scarf-shawl-style__regular"
         },
         {
           "id": "gid://shopify/TaxonomyValue/24843",
@@ -90671,7 +91579,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2988",
       "name": "Características da ferramenta do sensor/ medição",
       "handle": "sensor-measuring-tool-features",
-      "description": "Standard definition for Sensor/Measuring tool features",
+      "description": "Describes unique characteristics of a sensor or measuring tool, such as portable or smart",
       "extended_attributes": [
         {
           "name": "Características do medidor de glicose",
@@ -91525,11 +92433,6 @@
           "handle": "sheen-gloss-level__extra-matte"
         },
         {
-          "id": "gid://shopify/TaxonomyValue/14011",
-          "name": "Hammerite",
-          "handle": "sheen-gloss-level__hammer"
-        },
-        {
           "id": "gid://shopify/TaxonomyValue/14019",
           "name": "Lustro suave",
           "handle": "sheen-gloss-level__soft-sheen"
@@ -91538,6 +92441,11 @@
           "id": "gid://shopify/TaxonomyValue/22318",
           "name": "Macio",
           "handle": "sheen-gloss-level__smooth"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/14011",
+          "name": "Martelo",
+          "handle": "sheen-gloss-level__hammer"
         },
         {
           "id": "gid://shopify/TaxonomyValue/22312",
@@ -94509,7 +95417,7 @@
       "values": [
         {
           "id": "gid://shopify/TaxonomyValue/25830",
-          "name": "Novidade",
+          "name": "Original",
           "handle": "slot-machine-type__novelty"
         },
         {
@@ -99409,44 +100317,44 @@
           "handle": "string-instrument-size__1-32"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/15545",
+          "name": "1/16",
+          "handle": "string-instrument-size__1-16"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/15544",
+          "name": "1/10",
+          "handle": "string-instrument-size__1-10"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/15543",
+          "name": "1/8",
+          "handle": "string-instrument-size__1-8"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/13749",
+          "name": "1/4",
+          "handle": "string-instrument-size__1-4"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/13800",
+          "name": "1/2",
+          "handle": "string-instrument-size__1-2"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/22143",
           "name": "3/4",
           "handle": "string-instrument-size__3-4"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/15546",
+          "name": "7/8",
+          "handle": "string-instrument-size__7-8"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/22144",
           "name": "4/4",
           "handle": "string-instrument-size__4-4"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/15544",
-          "name": "10-Jan",
-          "handle": "string-instrument-size__1-10"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/15545",
-          "name": "16-Jan",
-          "handle": "string-instrument-size__1-16"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/13800",
-          "name": "2-Jan",
-          "handle": "string-instrument-size__1-2"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/13749",
-          "name": "4-Jan",
-          "handle": "string-instrument-size__1-4"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/15543",
-          "name": "8-Jan",
-          "handle": "string-instrument-size__1-8"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/15546",
-          "name": "8-Jul",
-          "handle": "string-instrument-size__7-8"
         },
         {
           "id": "gid://shopify/TaxonomyValue/15548",
@@ -99879,6 +100787,11 @@
           "handle": "suitable-for-angling-type__saltwater"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/12973",
+          "name": "Caiaque",
+          "handle": "suitable-for-angling-type__kayak"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/12972",
           "name": "Com mosca",
           "handle": "suitable-for-angling-type__fly"
@@ -99892,11 +100805,6 @@
           "id": "gid://shopify/TaxonomyValue/19160",
           "name": "Em água doce",
           "handle": "suitable-for-angling-type__freshwater"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/12973",
-          "name": "Em caiaque",
-          "handle": "suitable-for-angling-type__kayak"
         },
         {
           "id": "gid://shopify/TaxonomyValue/12971",
@@ -103022,14 +103930,19 @@
       ],
       "values": [
         {
-          "id": "gid://shopify/TaxonomyValue/25514",
-          "name": "Leve",
-          "handle": "tampon-absorbency-level__light"
+          "id": "gid://shopify/TaxonomyValue/25518",
+          "name": "Elevada",
+          "handle": "tampon-absorbency-level__heavy"
         },
         {
           "id": "gid://shopify/TaxonomyValue/25515",
           "name": "Leve-médio",
           "handle": "tampon-absorbency-level__light-medium"
+        },
+        {
+          "id": "gid://shopify/TaxonomyValue/25514",
+          "name": "Ligeira",
+          "handle": "tampon-absorbency-level__light"
         },
         {
           "id": "gid://shopify/TaxonomyValue/25516",
@@ -103045,11 +103958,6 @@
           "id": "gid://shopify/TaxonomyValue/25520",
           "name": "Muito pesado",
           "handle": "tampon-absorbency-level__very-heavy"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/25518",
-          "name": "Pesado",
-          "handle": "tampon-absorbency-level__heavy"
         },
         {
           "id": "gid://shopify/TaxonomyValue/25519",
@@ -105333,6 +106241,11 @@
           "handle": "time-signatures__3-8"
         },
         {
+          "id": "gid://shopify/TaxonomyValue/15303",
+          "name": "2/4",
+          "handle": "time-signatures__2-4"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/22118",
           "name": "3/4",
           "handle": "time-signatures__3-4"
@@ -105371,11 +106284,6 @@
           "id": "gid://shopify/TaxonomyValue/15307",
           "name": "7/4",
           "handle": "time-signatures__7-4"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/15303",
-          "name": "4-Feb",
-          "handle": "time-signatures__2-4"
         }
       ]
     },
@@ -105409,7 +106317,7 @@
       "id": "gid://shopify/TaxonomyAttribute/3042",
       "name": "Características do relógio",
       "handle": "timepiece-features",
-      "description": "Standard definition for Timepiece features",
+      "description": "Identifies special characteristics of a timepiece, like adjustable duration or illuminated",
       "extended_attributes": [
         {
           "name": "Características do cronómetro",
@@ -105583,7 +106491,7 @@
       "values": [
         {
           "id": "gid://shopify/TaxonomyValue/25186",
-          "name": "Abrir",
+          "name": "Aberto",
           "handle": "tip-opening__open"
         },
         {
@@ -105967,7 +106875,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2961",
       "name": "Tipo de montagem de sanita/bidé",
       "handle": "toilet-bidet-mounting-type",
-      "description": "Standard definition for Toilet/Bidet mounting type",
+      "description": "Identifies how a toilet or bidet is installed, such as floor-mounted or wall-mounted",
       "extended_attributes": [
         {
           "name": "Tipo de montagem de bidé",
@@ -105997,7 +106905,7 @@
     },
     {
       "id": "gid://shopify/TaxonomyAttribute/2472",
-      "name": "Design de timbalão ",
+      "name": "Design de timbalão",
       "handle": "tom-tom-design",
       "description": "Describes the type of tom-tom drum, such as floor or rack",
       "extended_attributes": [
@@ -106091,7 +106999,7 @@
       "id": "gid://shopify/TaxonomyAttribute/3280",
       "name": "Mobilidade de ferramentas",
       "handle": "tool-mobility",
-      "description": "Standard definition for Tool mobility",
+      "description": "Describes if a tool is corded or cordless, typically for dental products",
       "extended_attributes": [
         {
           "name": "Funcionamento de jato de água odontológico",
@@ -107740,14 +108648,14 @@
       ],
       "values": [
         {
+          "id": "gid://shopify/TaxonomyValue/23211",
+          "name": "1/4",
+          "handle": "tripod-monopod-attachment-type__1-4"
+        },
+        {
           "id": "gid://shopify/TaxonomyValue/23212",
           "name": "3/8",
           "handle": "tripod-monopod-attachment-type__3-8"
-        },
-        {
-          "id": "gid://shopify/TaxonomyValue/23211",
-          "name": "4-Jan",
-          "handle": "tripod-monopod-attachment-type__1-4"
         },
         {
           "id": "gid://shopify/TaxonomyValue/23213",
@@ -110198,7 +111106,7 @@
         },
         {
           "id": "gid://shopify/TaxonomyValue/25932",
-          "name": "Pára-choques",
+          "name": "Pára-choque",
           "handle": "vehicle-mirror-type__fender"
         },
         {
@@ -112668,7 +113576,7 @@
       "id": "gid://shopify/TaxonomyAttribute/3141",
       "name": "Características da máquina de lavar/secar",
       "handle": "washer-dryer-features",
-      "description": "Standard definition for Washer/Dryer features",
+      "description": "Highlights unique features of laundry appliances, i.e. child lock, self-cleaning",
       "extended_attributes": [
         {
           "name": "Características da máquina de secar",
@@ -113141,7 +114049,7 @@
       "id": "gid://shopify/TaxonomyAttribute/2951",
       "name": "Material do relógio e da correia",
       "handle": "watch-band-material",
-      "description": "Standard definition for Watch/Band material",
+      "description": "Specifies the type of material for watch bands, such as nylon or silicone",
       "extended_attributes": [
         {
           "name": "Material da base",
@@ -114484,7 +115392,7 @@
       "id": "gid://shopify/TaxonomyAttribute/3032",
       "name": "Recursos do dispensador/aquecedor de lenços humedecidos",
       "handle": "wipe-dispenser-warmer-features",
-      "description": "Standard definition for Wipe dispenser/warmer features",
+      "description": "Describes the special features of wipe dispensers and warmers, i.e. travel friendly",
       "extended_attributes": [
         {
           "name": "Características do dispensador de toalhetes húmidos",
