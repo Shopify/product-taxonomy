@@ -29,7 +29,7 @@ module Source
       spinner("Updating `#{vertical.name}`") do |sp|
         path = "data/categories/#{vertical.friendly_name}.yml"
         sys.write_file!(path) do |file|
-          file.write(vertical.as_json_for_data_with_descendants.to_yaml(line_width: -1))
+          file.write(YamlSerializer.dump(vertical.as_json_for_data_with_descendants))
         end
         sp.update_title("Updated `#{path}`")
       end

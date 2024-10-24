@@ -40,7 +40,7 @@ class GenerateDocsCommand < ApplicationCommand
 
     spinner("Generating sibling groups") do |sp|
       sys.write_file("#{data_target}/sibling_groups.yml") do |file|
-        file.write(Category.as_json_for_docs_siblings(category_data).to_yaml(line_width: -1))
+        file.write(YamlSerializer.dump(Category.as_json_for_docs_siblings(category_data)))
         file.write("\n")
       end
       sp.update_title("Generated sibling groups")
@@ -56,7 +56,7 @@ class GenerateDocsCommand < ApplicationCommand
 
     spinner("Generating attributes") do |sp|
       sys.write_file("#{data_target}/attributes.yml") do |file|
-        file.write(generate_extended_attributes(attribute_data).to_yaml(line_width: -1))
+        file.write(YamlSerializer.dump(generate_extended_attributes(attribute_data)))
         file.write("\n")
       end
       sp.update_title("Generated attributes")
@@ -68,7 +68,7 @@ class GenerateDocsCommand < ApplicationCommand
       mappings_data = mappings.reverse_shopify_mapping_rules(mappings_json)
 
       sys.write_file("#{data_target}/mappings.yml") do |file|
-        file.write(mappings_data.to_yaml(line_width: -1))
+        file.write(YamlSerializer.dump(mappings_data))
         file.write("\n")
       end
       sp.update_title("Generated mappings")
@@ -76,7 +76,7 @@ class GenerateDocsCommand < ApplicationCommand
 
     spinner("Generating attributes with categories") do |sp|
       sys.write_file("#{data_target}/reversed_attributes.yml") do |file|
-        file.write(Attribute.as_json_for_docs.to_yaml(line_width: -1))
+        file.write(YamlSerializer.dump(Attribute.as_json_for_docs))
         file.write("\n")
       end
       sp.update_title("Generated attributes with categories")

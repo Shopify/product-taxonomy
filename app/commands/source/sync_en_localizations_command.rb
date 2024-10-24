@@ -52,7 +52,7 @@ module Source
       file_path = "data/localizations/#{type}/en.yml"
       sys.write_file!(file_path) do |file|
         file.puts "# This file is auto-generated. Do not edit directly."
-        file.write(localizations.to_yaml(line_width: -1))
+        file.write(YamlSerializer.dump(localizations))
       end
       sp.update_title("Wrote #{type} localizations to #{file_path}")
     end

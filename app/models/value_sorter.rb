@@ -14,6 +14,7 @@ module ValueSorter
 
     def sort_by_localized_name(values, locale:)
       values.sort_by.with_index do |value, idx|
+        puts value.name
         [
           value.name(locale: "en").downcase == "other" ? 1 : 0,
           *AlphanumericSorter.normalize_value(value.name(locale:)),
