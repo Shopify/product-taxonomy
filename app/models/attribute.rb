@@ -208,6 +208,7 @@ class Attribute < ApplicationRecord
   end
 
   def sorted_values(locale: "en")
+    puts "--" + name
     ValueSorter.sort(values, locale:)
   end
 

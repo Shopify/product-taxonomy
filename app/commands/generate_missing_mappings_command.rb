@@ -218,7 +218,7 @@ class GenerateMissingMappingsCommand < ApplicationCommand
       mapping_data["rules"].sort_by! { Category.id_parts(_1["input"]["product_category_id"]) }
       sys.write_file!(mapping_file_path(unmapped_categories[:output_taxonomy])) do |file|
         puts "Updating mapping file: #{file.path}"
-        file.write(mapping_data.to_yaml)
+        file.write(YamlSerializer.dump(mapping_data))
       end
     end
 
@@ -324,7 +324,9 @@ class GenerateMissingMappingsCommand < ApplicationCommand
           file.puts
           file.puts "```"
 
-          all_generated_mappings.sort_by { Category.id_parts(_1[:from_category_id]) }.each_with_index do |mapping, index|
+          all_generated_mappings.sort_by do
+            Category.id_parts(_1[:from_category_id])
+          end.each_with_index do |mapping, index|
             from = "#{mapping[:from_category_id]} (#{mapping[:from_category]})"
             to = "#{mapping[:to_category_id]} (#{mapping[:to_category]})"
             file.puts "→ #{from}\n⇒ #{to}"
