@@ -9,7 +9,7 @@ require "yaml"
 class System
   include Loggable
 
-  ROOT = File.expand_path("..", __dir__)
+  ROOT = File.expand_path("../..", __dir__)
   private_constant :ROOT
 
   class << self

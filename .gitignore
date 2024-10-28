@@ -2,40 +2,40 @@
 /_site
 /docs/_data/unstable
 /docs/.jekyll-metadata
-node_modules
-.jekyll-cache
+/node_modules
+/dev/.jekyll-cache
 
 # Ignore bundler config.
-/.bundle
+/dev/.bundle
 
 # Ignore all environment files (except templates).
-/.env*
-!/.env*.erb
+/dev/.env*
+!/dev/.env*.erb
 
 # Ignore all environment-specific local overrides
-.env.development.local
-.env.test.local
+/dev/.env.development.local
+/dev/.env.test.local
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
+/dev/log/*
+/dev/tmp/*
 
 # Ignore pidfiles, but keep the directory.
-/tmp/pids/*
+/dev/tmp/pids/*
 
 # Ignore storage (uploaded files in development and any SQLite databases).
-/storage/*
-/tmp/storage/*
+/dev/storage/*
+/dev/tmp/storage/*
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+/dev/config/master.key
 
 # Ignore build manifests
-*.b3
-*.b3.sig
+/dev/*.b3
+/dev/*.b3.sig
 
 # Ignore local scripts folder and its contents
-/local_scripts
+/dev/local_scripts
 
 # Ignore exports folder and its contents
-/exports
+/dev/exports

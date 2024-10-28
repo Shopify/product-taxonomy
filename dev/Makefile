@@ -5,9 +5,9 @@
 ###############################################################################
 
 # Paths
-DATA_PATH    := data
-DIST_PATH    := dist
-DOCS_PATH    := docs
+DATA_PATH    := ../data
+DIST_PATH    := ../dist
+DOCS_PATH    := ../docs
 DB_PATH      := storage
 SCHEMA_PATH  := schema
 TMP_PATH     := tmp
