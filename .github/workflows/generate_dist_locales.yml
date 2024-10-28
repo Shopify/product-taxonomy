@@ -14,6 +14,10 @@ permissions:
   contents: write
   pull-requests: write
 
+defaults:
+  run:
+    working-directory: ./dev
+
 jobs:
   generate_locales:
     if: github.repository_owner == 'Shopify'

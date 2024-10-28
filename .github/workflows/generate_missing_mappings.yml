@@ -8,6 +8,10 @@ concurrency:
   group: "generate_mappings"
   cancel-in-progress: false
 
+defaults:
+  run:
+    working-directory: ./dev
+
 jobs:
   generate_missing_mappings:
     if: |

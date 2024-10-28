@@ -8,7 +8,11 @@ on:
   pull_request:
     branches:
       - main
-    types: [opened, synchronize, reopened, target]
+    types: [opened, synchronize, reopened]
+
+defaults:
+  run:
+    working-directory: ./dev
 
 jobs:
   test:

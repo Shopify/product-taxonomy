@@ -15,6 +15,10 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+defaults:
+  run:
+    working-directory: ./dev
+
 jobs:
   generate_docs:
     runs-on: ubuntu-latest
