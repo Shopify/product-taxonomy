@@ -149,7 +149,7 @@ class AllDataFilesImportTest < ActiveSupport::TestCase
     assert_equal "snowboard_construction", snowboard_construction.friendly_id
 
     real_value_friendly_ids = snowboard_construction.values.pluck(:friendly_id)
-    assert_equal 4, real_value_friendly_ids.size
+    assert_equal 5, real_value_friendly_ids.size
     assert_includes real_value_friendly_ids, "snowboard_construction__camber"
     assert_includes real_value_friendly_ids, "snowboard_construction__flat"
     assert_includes real_value_friendly_ids, "snowboard_construction__hybrid"
