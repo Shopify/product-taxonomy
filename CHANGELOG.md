@@ -35,7 +35,8 @@ Expanded taxonomy with new categories, attributes and values to enhance coverage
 
 ##### Hardware
 
-- Adds `Micrometers` and `Micrometer Accessories` with the attribute `Micrometer type`.
+- Adds `Micrometers` and `Micrometer Accessories`.
+- Adds the attribute `Micrometer type` in the Micrometers category.
 
 ##### Health & Beauty
 
@@ -65,7 +66,7 @@ Expanded taxonomy with new categories, attributes and values to enhance coverage
 - Adds `American Football Shoes`, `Basketball Shoes`, `Cricket Shoes`, `Dancing Shoes` (with the attribute `Dance style`), `Field Hockey & Lacrosse Shoes`, `Racquetball & Squash Shoes`, `Rugby Shoes`, `Soccer Shoes`, `Tennis Shoes`, `Cycling Shoes`, `Golf Shoes`, `Badminton Shoes` and `Climbing Shoes`.
 - Adds `Camping Hammocks` and `Camping Hammock Accessories`.
 - In the Archery area, adds `Arrow Shafts`, `Arrow Rests`, `Bow & Crossbow Cases & Covers`, `Hardware & Parts`, `Scopes & Sights`, `Stabilizers`, `Range Accessories` and `Tools & Equipment` (including `Tool Accessories`, `Tools` and `Bow Presses`), along with the attributes `Archery target type` and `Broadhead design`.
-- Adds the attributes `Racket head balance` and `Racket shape` to Racket Sports categories.
+- Adds the attributes `Racket balance` and `Racket head shape` to Racket Sports categories.
 
 ##### Miscellaneous
 
