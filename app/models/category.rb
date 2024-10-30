@@ -311,7 +311,7 @@ class Category < ApplicationRecord
           "id" => _1.gid,
           "name" => _1.name(locale:),
           "handle" => _1.handle,
-          "description" => _1.description,
+          "description" => _1.description(locale:),
           "extended" => _1.extended?,
         }
       end,
