@@ -189,6 +189,14 @@ class Attribute < ApplicationRecord
     end
   end
 
+  def description(locale: "en")
+    if locale == "en"
+      super()
+    else
+      self.class.find_localization(locale, friendly_id, "description") || super()
+    end
+  end
+
   def base?
     base_attribute.nil?
   end
@@ -260,7 +268,7 @@ class Attribute < ApplicationRecord
       "id" => gid,
       "name" => name(locale:),
       "handle" => handle,
-      "description" => description,
+      "description" => description(locale:),
       "extended_attributes" => extended_attributes.map do
         {
           "name" => _1.name(locale:),
