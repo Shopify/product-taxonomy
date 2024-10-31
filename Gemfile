@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 # core app
-
+gem "activemodel", "~> 7.1"
 gem "rubocop-shopify", require: false
 
 # docs

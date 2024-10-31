@@ -2,6 +2,8 @@
 
 module ProductTaxonomy
   class Value
+    include ActiveModel::Validations
+
     class << self
       def load_from_source(file: "data/values.yml")
         YAML.safe_load_file(file).each_with_object({}) do |value_data, value_hash|
@@ -16,6 +18,10 @@ module ProductTaxonomy
     end
 
     attr_reader :id, :name, :friendly_id, :handle
+
+    validates :name, presence: true
+    validates :friendly_id, presence: true
+    validates :handle, presence: true
 
     def initialize(id:, name:, friendly_id:, handle:)
       @id = id

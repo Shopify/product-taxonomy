@@ -2,6 +2,8 @@
 
 module ProductTaxonomy
   class Taxonomy
+    include ActiveModel::Validations
+
     class << self
       def load_from_source(files: Dir.glob("data/categories/*.yml"))
         values = Value.load_from_source
@@ -12,12 +14,22 @@ module ProductTaxonomy
 
     attr_reader :verticals
 
+    validate :validate_verticals
+
     def initialize(verticals:)
       @verticals = verticals
     end
 
     def to_s
       verticals.map(&:to_s).join("\n")
+    end
+
+    def validate_verticals
+      verticals.each do |vertical|
+        unless vertical.valid?
+          errors.add(:verticals, vertical.errors.full_messages.join("\n"))
+        end
+      end
     end
   end
 end

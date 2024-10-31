@@ -10,12 +10,18 @@ module ProductTaxonomy
   class CLI
     class << self
       def start(args)
-        Benchmark.bm(7) do |x|
-          x.report("Total") do
-            taxonomy = Taxonomy.load_from_source
-            puts taxonomy
-          end
+        taxonomy = nil
+        elapsed_time = Benchmark.realtime do
+          taxonomy = Taxonomy.load_from_source
         end
+        puts taxonomy
+
+        if taxonomy.valid?
+          puts "Taxonomy is valid"
+        else
+          puts "Invalid taxonomy: #{taxonomy.errors.full_messages.join(", ")}"
+        end
+        puts "Elapsed time: #{elapsed_time} seconds"
       end
 
       def build_tree(yaml_data, parent = nil)

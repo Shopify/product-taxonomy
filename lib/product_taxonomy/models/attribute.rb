@@ -2,6 +2,8 @@
 
 module ProductTaxonomy
   class Attribute
+    include ActiveModel::Validations
+
     class << self
       def load_from_source(values:, file: "data/attributes.yml")
         parsed_yaml = YAML.safe_load_file(file)
@@ -28,6 +30,11 @@ module ProductTaxonomy
     end
 
     attr_reader :id, :name, :description, :friendly_id, :handle, :values
+
+    validates :name, presence: true
+    validates :friendly_id, presence: true
+    validates :handle, presence: true
+    validates :description, presence: true
 
     def initialize(id:, name:, description:, friendly_id:, handle:, values:)
       @id = id

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "active_model"
 require "debug"
 
 require_relative "product_taxonomy/version"
