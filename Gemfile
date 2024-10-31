@@ -17,3 +17,5 @@ gem "tty-option", "~> 0.3", require: false
 gem "qdrant-ruby", require: "qdrant"
 gem "ruby-openai"
 gem "dotenv", groups: [:development, :test]
+
+gem "debug", ">= 1.0.0"
