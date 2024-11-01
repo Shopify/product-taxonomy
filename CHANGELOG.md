@@ -1,4 +1,4 @@
-## 2024-10-unstable
+## 2024-10
 
 #### 📚 Taxonomy Updates
 Expanded taxonomy with new categories, attributes and values to enhance coverage and categorization accuracy, informed by user feedback and market insights.
@@ -76,7 +76,7 @@ Expanded taxonomy with new categories, attributes and values to enhance coverage
 - Includes other value additions.
 
 ## 2024-07
-- The first stable release of "Shopify's Standard Product Taxonomy". 
+- The first stable release of "Shopify's Standard Product Taxonomy".
 
 ## Pre-Stable Changelog
 
