@@ -24,6 +24,10 @@ module ProductTaxonomy
       verticals.map(&:to_s).join("\n")
     end
 
+    def to_a
+      verticals.flat_map(&:to_a)
+    end
+
     def validate_verticals
       verticals.each do |vertical|
         unless vertical.valid?
@@ -39,7 +43,7 @@ module ProductTaxonomy
           {
             name: vertical.name,
             prefix: vertical.id,
-            categories: traverse_categories(vertical).map do |category|
+            categories: vertical.to_a.map do |category|
               {
                 id: category.id,
                 name: category.name,
@@ -71,16 +75,6 @@ module ProductTaxonomy
           }
         end,
       }
-    end
-
-    private
-
-    def traverse_categories(category)
-      result = [category]
-      category.children.each do |child|
-        result.concat(traverse_categories(child))
-      end
-      result
     end
   end
 end

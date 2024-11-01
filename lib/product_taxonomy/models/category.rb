@@ -4,6 +4,8 @@ module ProductTaxonomy
   class Category
     include ActiveModel::Validations
 
+    ReparentError = Class.new(StandardError)
+
     class << self
       def load_from_source(attributes:, file:)
         categories = YAML.safe_load_file(file)
@@ -63,6 +65,29 @@ module ProductTaxonomy
       child.parent = self
     end
 
+    def update_id_prefix(new_prefix)
+      @id = new_prefix + "-" + id.split("-").last
+      children.each { _1.update_id_prefix(id) }
+    end
+
+    def reparent!(new_parent)
+      if root?
+        raise ReparentError, "Cannot reparent a vertical"
+      elsif new_parent.descendant_of?(self)
+        raise ReparentError, "new_parent `#{new_parent.name}` is a descendant"
+        # elsif !new_id.start_with?(new_parent.id)
+        #   raise ReparentError, "new_id `#{new_id}` is invalid for parent's id `#{new_parent.id}`"
+        # elsif Category.exists?(id: new_id)
+        #   raise ReparentError, "new_id `#{new_id}` is already taken"
+      end
+
+      parent.children.delete(self)
+      @parent = new_parent
+      @id = new_parent.next_child_id
+      new_parent.add_child(self)
+      children.each { _1.update_id_prefix(id) }
+    end
+
     def to_s
       result = "#{id}: #{name}"
       children.each do |child|
@@ -97,6 +122,20 @@ module ProductTaxonomy
       else
         [parent] + parent.ancestors
       end
+    end
+
+    def descendant_of?(category)
+      ancestors.include?(category)
+    end
+
+    def to_a
+      [self] + children.flat_map(&:to_a)
+    end
+
+    def next_child_id
+      largest_child_id = children.map { _1.id.split("-").last.to_i }.max || 0
+
+      "#{id}-#{largest_child_id + 1}"
     end
 
     def id_matches_depth

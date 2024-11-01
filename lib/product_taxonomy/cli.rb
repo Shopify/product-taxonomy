@@ -20,5 +20,14 @@ module ProductTaxonomy
       puts taxonomy
       puts "Built taxonomy tree in #{elapsed_time} seconds"
     end
+
+    desc "reparent CATEGORY_ID NEW_PARENT_ID", "Move a category to a new parent"
+    def reparent(category_id, parent_id)
+      taxonomy = Taxonomy.load_from_source
+      category = taxonomy.to_a.find { _1.id == category_id }
+      new_parent = taxonomy.to_a.find { _1.id == parent_id }
+      category.reparent!(new_parent)
+      puts taxonomy
+    end
   end
 end
