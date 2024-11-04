@@ -124,6 +124,12 @@ module ProductTaxonomy
       end
     end
 
+    def full_name
+      return name if root?
+
+      parent.full_name + " > " + name
+    end
+
     def descendant_of?(category)
       ancestors.include?(category)
     end
