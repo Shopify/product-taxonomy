@@ -1,0 +1,9 @@
+name: "Check Sensitive Info"
+description: "Checks for sensitive information in issues, pull requests, and comments."
+inputs:
+  slack_webhook_url:
+    description: "The Slack webhook URL to send notifications."
+    required: true
+runs:
+  using: "node12"
+  main: "dist/index.js"
