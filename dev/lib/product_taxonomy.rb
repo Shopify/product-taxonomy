@@ -1,9 +1,7 @@
-# typed: strict
 # frozen_string_literal: true
 
 require "thor"
 require "active_support/all"
-require "sorbet-runtime"
 
 require_relative "product_taxonomy/cli"
 require_relative "product_taxonomy/models/attribute"

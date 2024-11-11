@@ -1,11 +1,9 @@
-# typed: strict
 # frozen_string_literal: true
 
 module ProductTaxonomy
   class Taxonomy
-    extend T::Sig
+    attr_reader :verticals
 
-    sig { params(verticals: T::Array[Category]).void }
     def initialize(verticals:)
       @verticals = verticals
     end
