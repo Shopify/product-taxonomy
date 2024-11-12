@@ -21,7 +21,6 @@ module ProductTaxonomy
     #   uniqueness checks.
     # @param hashed_by [Array<String>] The fields by which to hash the models for fast lookups by field value.
     def initialize(model_class, hashed_by: [])
-      @models = []
       @hashed_models = Array(hashed_by).each_with_object({}) { |field, hash| hash[field] = {} }
       @unique_fields = unique_fields(model_class)
       @unique_fields_seen = @unique_fields.each_with_object({}) { |field, hash| hash[field] = Set.new }
@@ -31,7 +30,6 @@ module ProductTaxonomy
     #
     # @param model [Object] The model to add to the index.
     def add(model)
-      @models << model
       @hashed_models.keys.each do |field|
         @hashed_models[field][model.send(field)] = model
       end
@@ -67,7 +65,7 @@ module ProductTaxonomy
     #
     # @return [Integer] The number of models in the index.
     def size
-      @models.size
+      @hashed_models.first[1].values.size
     end
 
     private
