@@ -16,8 +16,17 @@ module ProductTaxonomy
         raise ArgumentError, "source_data must contain keys \"base_attributes\" and \"extended_attributes\"" unless
           source_data.keys.sort == ["base_attributes", "extended_attributes"]
 
-        ["base_attributes", "extended_attributes"].each do |type|
-          load_attributes(type, source_data, model_index, values)
+        source_data.each do |type, attributes|
+          attributes.each do |attribute_data|
+            raise ArgumentError, "source_data must contain hashes" unless attribute_data.is_a?(Hash)
+
+            attribute = case type
+            when "base_attributes" then attribute_from(attribute_data:, values:, model_index:)
+            when "extended_attributes" then extended_attribute_from(attribute_data:, model_index:)
+            end
+            attribute.validate!
+            model_index.add(attribute)
+          end
         end
 
         model_index
@@ -25,36 +34,29 @@ module ProductTaxonomy
 
       private
 
-      def load_attributes(type, source_data, model_index, values)
-        source_data[type].each do |attribute_data|
-          raise ArgumentError, "source_data must contain hashes" unless attribute_data.is_a?(Hash)
+      def attribute_from(attribute_data:, values:, model_index:)
+        values_by_friendly_id = attribute_data["values"]&.map { values[_1] || _1 }
+        Attribute.new(
+          id: attribute_data["id"],
+          name: attribute_data["name"],
+          description: attribute_data["description"],
+          friendly_id: attribute_data["friendly_id"],
+          handle: attribute_data["handle"],
+          values: values_by_friendly_id,
+          uniqueness_context: model_index,
+        )
+      end
 
-          attribute = if type == "base_attributes"
-            values_by_friendly_id = attribute_data["values"]&.map { values[_1] || _1 }
-            Attribute.new(
-              id: attribute_data["id"],
-              name: attribute_data["name"],
-              description: attribute_data["description"],
-              friendly_id: attribute_data["friendly_id"],
-              handle: attribute_data["handle"],
-              values: values_by_friendly_id,
-              uniqueness_context: model_index,
-            )
-          else
-            value_friendly_id = attribute_data["values_from"]
-            ExtendedAttribute.new(
-              name: attribute_data["name"],
-              handle: attribute_data["handle"],
-              description: attribute_data["description"],
-              friendly_id: attribute_data["friendly_id"],
-              values_from: model_index.hashed_by(:friendly_id)[value_friendly_id] || value_friendly_id,
-              uniqueness_context: model_index,
-            )
-          end
-
-          attribute.validate!
-          model_index.add(attribute)
-        end
+      def extended_attribute_from(attribute_data:, model_index:)
+        value_friendly_id = attribute_data["values_from"]
+        ExtendedAttribute.new(
+          name: attribute_data["name"],
+          handle: attribute_data["handle"],
+          description: attribute_data["description"],
+          friendly_id: attribute_data["friendly_id"],
+          values_from: model_index.hashed_by(:friendly_id)[value_friendly_id] || value_friendly_id,
+          uniqueness_context: model_index,
+        )
       end
     end
 
@@ -91,11 +93,13 @@ module ProductTaxonomy
 
     def values_valid?
       values&.each do |value|
+        next if value.is_a?(Value)
+
         errors.add(
           :values,
           :not_found,
           message: "could not be resolved for friendly ID \"#{value}\"",
-        ) unless value.is_a?(Value)
+        )
       end
     end
   end
