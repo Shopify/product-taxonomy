@@ -32403,6 +32403,27 @@ base_attributes:
   - vehicle_floor_configuration__low_floor
   - vehicle_floor_configuration__semi_low_floor
   - vehicle_floor_configuration__other
+- id: 4678
+  name: Aircraft engine type
+  description: Specifies the type of engine powering the aircraft, such as jet or turboprop
+  friendly_id: aircraft_engine_type
+  handle: aircraft-engine-type
+  values:
+  - aircraft_engine_type__electric
+  - aircraft_engine_type__jet
+  - aircraft_engine_type__piston
+  - aircraft_engine_type__turboprop
+  - aircraft_engine_type__other
+- id: 4679
+  name: Aircraft engine configuration
+  description: Specifies the number of engines of the aircraft, such as single or twin
+  friendly_id: aircraft_engine_configuration
+  handle: aircraft-engine-configuration
+  values:
+  - aircraft_engine_configuration__quad
+  - aircraft_engine_configuration__single
+  - aircraft_engine_configuration__twin
+  - aircraft_engine_configuration__other
 extended_attributes:
 - name: Shampoo/Conditioner effect
   handle: shampoo-conditioner-effect
