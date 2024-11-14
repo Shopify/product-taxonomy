@@ -88,9 +88,16 @@ module ProductTaxonomy
         extended_attributes: []
       YAML
 
-      assert_raises(ActiveModel::ValidationError) do
+      error = assert_raises(ActiveModel::ValidationError) do
         Attribute.load_from_source(source_data: YAML.safe_load(yaml_content), values: {})
       end
+      expected_errors = {
+        friendly_id: [{ error: :blank }],
+        handle: [{ error: :blank }],
+        description: [{ error: :blank }],
+        values: [{ error: :blank }],
+      }
+      assert_equal expected_errors, error.model.errors.details
     end
 
     test "load_from_source raises an error if the source data contains attributes with empty values" do
@@ -106,9 +113,13 @@ module ProductTaxonomy
         extended_attributes: []
       YAML
 
-      assert_raises(ActiveModel::ValidationError) do
+      error = assert_raises(ActiveModel::ValidationError) do
         Attribute.load_from_source(source_data: YAML.safe_load(yaml_content), values: {})
       end
+      expected_errors = {
+        values: [{ error: :blank }],
+      }
+      assert_equal expected_errors, error.model.errors.details
     end
 
     test "load_from_source raises an error if the source data contains attributes with values that are not found" do
@@ -125,9 +136,13 @@ module ProductTaxonomy
         extended_attributes: []
       YAML
 
-      assert_raises(ActiveModel::ValidationError) do
+      error = assert_raises(ActiveModel::ValidationError) do
         Attribute.load_from_source(source_data: YAML.safe_load(yaml_content), values: {})
       end
+      expected_errors = {
+        values: [{ error: :not_found }],
+      }
+      assert_equal expected_errors, error.model.errors.details
     end
 
     test "load_from_source raises an error if the source data contains incomplete extended attributes" do
@@ -140,9 +155,15 @@ module ProductTaxonomy
           description: Defines the primary color or pattern, such as blue or striped
       YAML
 
-      assert_raises(ActiveModel::ValidationError) do
+      error = assert_raises(ActiveModel::ValidationError) do
         Attribute.load_from_source(source_data: YAML.safe_load(yaml_content), values: {})
       end
+      expected_errors = {
+        friendly_id: [{ error: :blank }],
+        handle: [{ error: :blank }],
+        values_from: [{ error: :not_found }],
+      }
+      assert_equal expected_errors, error.model.errors.details
     end
 
     test "load_from_source raises an error if the source data contains extended attributes with values_from that is not found" do
@@ -158,9 +179,13 @@ module ProductTaxonomy
           values_from: foo
       YAML
 
-      assert_raises(ActiveModel::ValidationError) do
+      error = assert_raises(ActiveModel::ValidationError) do
         Attribute.load_from_source(source_data: YAML.safe_load(yaml_content), values: {})
       end
+      expected_errors = {
+        values_from: [{ error: :not_found }],
+      }
+      assert_equal expected_errors, error.model.errors.details
     end
 
     test "load_from_source raises an error if the source data contains duplicate friendly IDs" do
@@ -195,12 +220,16 @@ module ProductTaxonomy
       YAML
       values_model_index = Value.load_from_source(source_data: YAML.safe_load(values_yaml_content))
 
-      assert_raises(ActiveModel::ValidationError) do
+      error = assert_raises(ActiveModel::ValidationError) do
         Attribute.load_from_source(
           source_data: YAML.safe_load(attributes_yaml_content),
           values: values_model_index.hashed_by(:friendly_id),
         )
       end
+      expected_errors = {
+        friendly_id: [{ error: :taken }],
+      }
+      assert_equal expected_errors, error.model.errors.details
     end
 
     test "load_from_source raises an error if the source data contains an invalid ID" do
@@ -224,12 +253,16 @@ module ProductTaxonomy
       YAML
       values_model_index = Value.load_from_source(source_data: YAML.safe_load(values_yaml_content))
 
-      assert_raises(ActiveModel::ValidationError) do
+      error = assert_raises(ActiveModel::ValidationError) do
         Attribute.load_from_source(
           source_data: YAML.safe_load(attributes_yaml_content),
           values: values_model_index.hashed_by(:friendly_id),
         )
       end
+      expected_errors = {
+        id: [{ error: :not_a_number, value: "foo" }],
+      }
+      assert_equal expected_errors, error.model.errors.details
     end
   end
 end

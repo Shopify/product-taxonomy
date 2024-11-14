@@ -16,7 +16,7 @@ module ProductTaxonomy
           handle: color__blue
       YAML
 
-      values = Value.load_from_source(source_data: YAML.safe_load(yaml_content))
+      values = Value.load_from_source(source_data: YAML.safe_load(yaml_content)).hashed_by(:friendly_id)
 
       assert_equal 2, values.size
 
@@ -65,7 +65,13 @@ module ProductTaxonomy
           handle: color__blue
       YAML
 
-      assert_raises(ActiveModel::ValidationError) { Value.load_from_source(source_data: YAML.safe_load(yaml_content)) }
+      error = assert_raises(ActiveModel::ValidationError) do
+        Value.load_from_source(source_data: YAML.safe_load(yaml_content))
+      end
+      expected_errors = {
+        friendly_id: [{ error: :taken }],
+      }
+      assert_equal expected_errors, error.model.errors.details
     end
 
     test "load_from_source raises an error if the source data contains an invalid ID" do
@@ -76,7 +82,13 @@ module ProductTaxonomy
           handle: color__black
       YAML
 
-      assert_raises(ActiveModel::ValidationError) { Value.load_from_source(source_data: YAML.safe_load(yaml_content)) }
+      error = assert_raises(ActiveModel::ValidationError) do
+        Value.load_from_source(source_data: YAML.safe_load(yaml_content))
+      end
+      expected_errors = {
+        id: [{ error: :not_a_number, value: "foo" }],
+      }
+      assert_equal expected_errors, error.model.errors.details
     end
 
     test "load_from_source raises an error if the source data contains duplicate handles" do
@@ -91,7 +103,13 @@ module ProductTaxonomy
           handle: color__black
       YAML
 
-      assert_raises(ActiveModel::ValidationError) { Value.load_from_source(source_data: YAML.safe_load(yaml_content)) }
+      error = assert_raises(ActiveModel::ValidationError) do
+        Value.load_from_source(source_data: YAML.safe_load(yaml_content))
+      end
+      expected_errors = {
+        handle: [{ error: :taken }],
+      }
+      assert_equal expected_errors, error.model.errors.details
     end
 
     test "load_from_source raises an error if the source data contains duplicate IDs" do
@@ -106,7 +124,13 @@ module ProductTaxonomy
           handle: color__blue
       YAML
 
-      assert_raises(ActiveModel::ValidationError) { Value.load_from_source(source_data: YAML.safe_load(yaml_content)) }
+      error = assert_raises(ActiveModel::ValidationError) do
+        Value.load_from_source(source_data: YAML.safe_load(yaml_content))
+      end
+      expected_errors = {
+        id: [{ error: :taken }],
+      }
+      assert_equal expected_errors, error.model.errors.details
     end
   end
 end

@@ -4,6 +4,8 @@ module ProductTaxonomy
   class ExtendedAttribute < Attribute
     validate :values_from_valid?
 
+    attr_reader :values_from
+
     # @param name [String] The name of the attribute.
     # @param handle [String] The handle of the attribute.
     # @param description [String] The description of the attribute.
@@ -29,8 +31,9 @@ module ProductTaxonomy
     def values_from_valid?
       errors.add(
         :values_from,
-        "Attribute with friendly ID \"#{@values_from}\" was not found",
-      ) unless @values_from.is_a?(Attribute)
+        :not_found,
+        message: "could not be resolved for friendly ID \"#{values_from}\"",
+      ) unless values_from.is_a?(Attribute)
     end
   end
 end

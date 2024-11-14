@@ -91,7 +91,11 @@ module ProductTaxonomy
 
     def values_valid?
       values&.each do |value|
-        errors.add(:values, "Value with friendly ID \"#{value}\" was not found") unless value.is_a?(Value)
+        errors.add(
+          :values,
+          :not_found,
+          message: "could not be resolved for friendly ID \"#{value}\"",
+        ) unless value.is_a?(Value)
       end
     end
   end
