@@ -38,7 +38,11 @@ module ProductTaxonomy
       )
 
       refute new_value.valid?
-      assert_equal ["\"color__black\" has already been used"], new_value.errors[:friendly_id]
+      expected_errors = {
+        friendly_id: [{ error: :taken }],
+        handle: [{ error: :taken }],
+      }
+      assert_equal expected_errors, new_value.errors.details
     end
 
     test "hashed_by returns a hash of models indexed by the specified field" do

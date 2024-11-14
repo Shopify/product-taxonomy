@@ -12,7 +12,7 @@ module ProductTaxonomy
         return if context.blank?
 
         if context.exists?(attribute => value)
-          record.errors.add(attribute, "\"#{value}\" has already been used")
+          record.errors.add(attribute, :taken, message: "\"#{value}\" has already been used")
         end
       end
     end

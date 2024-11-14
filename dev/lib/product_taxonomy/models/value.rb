@@ -10,7 +10,7 @@ module ProductTaxonomy
       # Load values from source data. By default, this data is deserialized from a YAML file in the `data` directory.
       #
       # @param source_data [Array<Hash>] The source data to load values from.
-      # @return [Hash<String, Value>] A hash of values keyed by their friendly ID.
+      # @return [ModelIndex<Value>] A model index of {Value} objects.
       def load_from_source(source_data:)
         model_index = ModelIndex.new(self, hashed_by: :friendly_id)
 
@@ -30,7 +30,7 @@ module ProductTaxonomy
           model_index.add(value)
         end
 
-        model_index.hashed_by(:friendly_id)
+        model_index
       end
     end
 
@@ -42,7 +42,12 @@ module ProductTaxonomy
 
     attr_reader :id, :name, :friendly_id, :handle, :uniqueness_context
 
-    def initialize(id:, name:, friendly_id:, handle:, uniqueness_context:)
+    # @param id [Integer] The ID of the value.
+    # @param name [String] The name of the value.
+    # @param friendly_id [String] The friendly ID of the value.
+    # @param handle [String] The handle of the value.
+    # @param uniqueness_context [ModelIndex] The uniqueness context for the value.
+    def initialize(id:, name:, friendly_id:, handle:, uniqueness_context: nil)
       @id = id
       @name = name
       @friendly_id = friendly_id
