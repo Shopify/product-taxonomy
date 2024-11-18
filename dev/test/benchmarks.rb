@@ -19,5 +19,21 @@ module ProductTaxonomy
         values: values_model_index.hashed_by(:friendly_id),
       )
     end
+
+    x.report("Load values, attributes, and categories") do
+      values_model_index = Value.load_from_source(source_data: YAML.safe_load_file("../data/values.yml"))
+
+      attributes_model_index = Attribute.load_from_source(
+        source_data: YAML.safe_load_file("../data/attributes.yml"),
+        values: values_model_index.hashed_by(:friendly_id),
+      )
+      categories_source_data = Dir.glob("../data/categories/*.yml").each_with_object([]) do |file, array|
+        array.concat(YAML.safe_load_file(file))
+      end
+      Category.load_from_source(
+        source_data: categories_source_data,
+        attributes: attributes_model_index.hashed_by(:friendly_id),
+      )
+    end
   end
 end
