@@ -5,7 +5,7 @@ require "test_helper"
 module ProductTaxonomy
   class ModelIndexTest < ActiveSupport::TestCase
     setup do
-      @model_index = ModelIndex.new(Value, hashed_by: [:friendly_id])
+      @model_index = ModelIndex.new(Value)
       @models = [Value.new(
         id: 1,
         name: "Black",
@@ -20,15 +20,53 @@ module ProductTaxonomy
       assert_equal 1, @model_index.size
     end
 
-    test "exists? returns true if the value exists" do
-      assert @model_index.exists?(handle: "color__black")
+    test "duplicate? returns true if the value exists and the model has not yet been added to the index" do
+      model = Value.new(
+        id: 2,
+        name: "Black",
+        friendly_id: "color__black",
+        handle: "color__black",
+        uniqueness_context: @model_index,
+      )
+      assert @model_index.duplicate?(model:, field: :friendly_id)
     end
 
-    test "exists? returns false if the value does not exist" do
-      refute @model_index.exists?(handle: "color__blue")
+    test "duplicate? returns false if the value does not exist and the model has not yet been added to the index" do
+      model = Value.new(
+        id: 2,
+        name: "Blue",
+        friendly_id: "color__blue",
+        handle: "color__blue",
+        uniqueness_context: @model_index,
+      )
+      refute @model_index.duplicate?(model:, field: :friendly_id)
     end
 
-    test "errors are added to a record with a uniqueness violation" do
+    test "duplicate? returns true if the value exists and the model is already in the index" do
+      model = Value.new(
+        id: 2,
+        name: "Black",
+        friendly_id: "color__black",
+        handle: "color__black",
+        uniqueness_context: @model_index,
+      )
+      @model_index.add(model)
+      assert @model_index.duplicate?(model:, field: :friendly_id)
+    end
+
+    test "duplicate? returns false if the value does not exist and the model is already in the index" do
+      model = Value.new(
+        id: 2,
+        name: "Blue",
+        friendly_id: "color__blue",
+        handle: "color__blue",
+        uniqueness_context: @model_index,
+      )
+      @model_index.add(model)
+      refute @model_index.duplicate?(model:, field: :friendly_id)
+    end
+
+    test "errors are added to a record with a uniqueness violation when the record is not in the index yet" do
       new_value = Value.new(
         id: 2,
         name: "Black",
@@ -36,6 +74,24 @@ module ProductTaxonomy
         handle: "color__black",
         uniqueness_context: @model_index,
       )
+
+      refute new_value.valid?
+      expected_errors = {
+        friendly_id: [{ error: :taken }],
+        handle: [{ error: :taken }],
+      }
+      assert_equal expected_errors, new_value.errors.details
+    end
+
+    test "errors are added to a record with a uniqueness violation when the record is already in the index" do
+      new_value = Value.new(
+        id: 2,
+        name: "Black",
+        friendly_id: "color__black",
+        handle: "color__black",
+        uniqueness_context: @model_index,
+      )
+      @model_index.add(new_value)
 
       refute new_value.valid?
       expected_errors = {

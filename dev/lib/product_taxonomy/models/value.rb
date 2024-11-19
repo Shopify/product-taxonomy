@@ -12,7 +12,7 @@ module ProductTaxonomy
       # @param source_data [Array<Hash>] The source data to load values from.
       # @return [ModelIndex<Value>] A model index of {Value} objects.
       def load_from_source(source_data:)
-        model_index = ModelIndex.new(self, hashed_by: :friendly_id)
+        model_index = ModelIndex.new(self)
 
         raise ArgumentError, "source_data must be an array" unless source_data.is_a?(Array)
 
@@ -26,8 +26,8 @@ module ProductTaxonomy
             handle: value_data["handle"],
             uniqueness_context: model_index,
           )
-          value.validate!
           model_index.add(value)
+          value.validate!
         end
 
         model_index

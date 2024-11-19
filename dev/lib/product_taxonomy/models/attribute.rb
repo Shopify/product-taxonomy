@@ -11,7 +11,7 @@ module ProductTaxonomy
       # @param values [Hash<String, Value>] A hash of {Value} objects keyed by their friendly ID.
       # @return [ModelIndex<Attribute>] A model index of {Attribute} objects.
       def load_from_source(source_data:, values:)
-        model_index = ModelIndex.new(self, hashed_by: :friendly_id)
+        model_index = ModelIndex.new(self)
         raise ArgumentError, "source_data must be a hash" unless source_data.is_a?(Hash)
         raise ArgumentError, "source_data must contain keys \"base_attributes\" and \"extended_attributes\"" unless
           source_data.keys.sort == ["base_attributes", "extended_attributes"]
@@ -24,8 +24,8 @@ module ProductTaxonomy
             when "base_attributes" then attribute_from(attribute_data:, values:, model_index:)
             when "extended_attributes" then extended_attribute_from(attribute_data:, model_index:)
             end
-            attribute.validate!
             model_index.add(attribute)
+            attribute.validate!
           end
         end
 
