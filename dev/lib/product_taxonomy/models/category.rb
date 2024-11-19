@@ -148,11 +148,9 @@ module ProductTaxonomy
     #
     # @return [Array<Category>]
     def ancestors
-      if root?
-        []
-      else
-        [parent] + parent.ancestors
-      end
+      return [] if root?
+
+      [parent] + parent.ancestors
     end
 
     # The full name of the category
