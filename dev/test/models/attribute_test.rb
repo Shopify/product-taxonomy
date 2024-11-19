@@ -264,5 +264,46 @@ module ProductTaxonomy
       }
       assert_equal expected_errors, error.model.errors.details
     end
+
+    test "localized attributes are returned correctly" do
+      fr_yaml = <<~YAML
+        fr:
+          attributes:
+            color:
+              name: "Nom en français"
+              description: "Description en français"
+      YAML
+      es_yaml = <<~YAML
+        es:
+          attributes:
+            color:
+              name: "Nombre en español"
+              description: "Descripción en español"
+      YAML
+      Dir.expects(:glob)
+        .with(File.join(DATA_PATH, "localizations", "attributes", "*.yml"))
+        .returns(["fake/path/fr.yml", "fake/path/es.yml"])
+      YAML.expects(:safe_load_file).with("fake/path/fr.yml").returns(YAML.safe_load(fr_yaml))
+      YAML.expects(:safe_load_file).with("fake/path/es.yml").returns(YAML.safe_load(es_yaml))
+
+      attribute = Attribute.new(
+        id: 1,
+        name: "Raw name",
+        description: "Raw description",
+        friendly_id: "color",
+        handle: "color",
+        values: [],
+      )
+      assert_equal "Raw name", attribute.name
+      assert_equal "Raw description", attribute.description
+      assert_equal "Raw name", attribute.name(locale: "en")
+      assert_equal "Raw description", attribute.description(locale: "en")
+      assert_equal "Nom en français", attribute.name(locale: "fr")
+      assert_equal "Description en français", attribute.description(locale: "fr")
+      assert_equal "Nombre en español", attribute.name(locale: "es")
+      assert_equal "Descripción en español", attribute.description(locale: "es")
+      assert_equal "Raw name", attribute.name(locale: "cs") # fall back to en
+      assert_equal "Raw description", attribute.description(locale: "cs") # fall back to en
+    end
   end
 end

@@ -3,6 +3,7 @@
 module ProductTaxonomy
   class Category
     include ActiveModel::Validations
+    extend Localized
 
     class << self
       # Load categories from source data.
@@ -64,7 +65,9 @@ module ProductTaxonomy
     validate :secondary_children_found?
     validates_with ProductTaxonomy::ModelIndex::UniquenessValidator, attributes: [:id]
 
-    attr_reader :id, :name, :children, :secondary_children, :attributes, :uniqueness_context
+    localized_attr_reader :name, keyed_by: :id
+
+    attr_reader :id, :children, :secondary_children, :attributes, :uniqueness_context
     attr_accessor :parent, :secondary_parents
 
     # @param id [String] The ID of the category.

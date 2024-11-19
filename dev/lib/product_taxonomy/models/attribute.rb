@@ -3,6 +3,7 @@
 module ProductTaxonomy
   class Attribute
     include ActiveModel::Validations
+    extend Localized
 
     class << self
       # Load attributes from source data. By default, this data is deserialized from a YAML file in the `data` directory.
@@ -69,7 +70,9 @@ module ProductTaxonomy
     validates_with ProductTaxonomy::ModelIndex::UniquenessValidator, attributes: [:friendly_id]
     validate :values_valid?
 
-    attr_reader :id, :name, :description, :friendly_id, :handle, :values, :uniqueness_context
+    localized_attr_reader :name, :description
+
+    attr_reader :id, :friendly_id, :handle, :values, :uniqueness_context
 
     # @param id [Integer] The ID of the attribute.
     # @param name [String] The name of the attribute.

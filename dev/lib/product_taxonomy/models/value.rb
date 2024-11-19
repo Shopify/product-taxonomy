@@ -5,6 +5,7 @@ module ProductTaxonomy
   # attribute called "Color" could have values "Red", "Blue", and "Green".
   class Value
     include ActiveModel::Validations
+    extend Localized
 
     class << self
       # Load values from source data. By default, this data is deserialized from a YAML file in the `data` directory.
@@ -40,7 +41,9 @@ module ProductTaxonomy
     validates :handle, presence: true
     validates_with ProductTaxonomy::ModelIndex::UniquenessValidator, attributes: [:friendly_id, :handle, :id]
 
-    attr_reader :id, :name, :friendly_id, :handle, :uniqueness_context
+    localized_attr_reader :name
+
+    attr_reader :id, :friendly_id, :handle, :uniqueness_context
 
     # @param id [Integer] The ID of the value.
     # @param name [String] The name of the value.
