@@ -2440,9 +2440,9 @@ base_attributes:
   - archery_style__3d_archery
   - archery_style__bowhunting
   - archery_style__compound_target
+  - archery_style__olympic_recurve
   - archery_style__recreational
   - archery_style__traditional
-  - archery_style__olympic_recurve
   - archery_style__other
 - id: 1306
   name: String material
@@ -13068,8 +13068,8 @@ base_attributes:
   friendly_id: coffee_product_form
   handle: coffee-product-form
   values:
-  - coffee_product_form__whole_bean
   - coffee_product_form__ground
+  - coffee_product_form__whole_bean
   - coffee_product_form__other
 - id: 1978
   name: Food product form
@@ -32059,8 +32059,8 @@ base_attributes:
   friendly_id: caffeine_content
   handle: caffeine-content
   values:
-  - caffeine_content__low_caffeine
   - caffeine_content__decaf
+  - caffeine_content__low_caffeine
   - caffeine_content__regular
   - caffeine_content__other
 - id: 3416
@@ -32069,13 +32069,13 @@ base_attributes:
   friendly_id: grind_size
   handle: grind-size
   values:
-  - grind_size__extra_coarse
   - grind_size__coarse
-  - grind_size__medium_coarse
-  - grind_size__medium
-  - grind_size__medium_fine
-  - grind_size__fine
+  - grind_size__extra_coarse
   - grind_size__extra_fine
+  - grind_size__fine
+  - grind_size__medium
+  - grind_size__medium_coarse
+  - grind_size__medium_fine
   - grind_size__other
 - id: 3418
   name: Dance style
@@ -32089,10 +32089,10 @@ base_attributes:
   - dance_style__flamenco
   - dance_style__hip_hop
   - dance_style__irish_dance
+  - dance_style__jazz
   - dance_style__salsa
   - dance_style__swing_dance
   - dance_style__tap_dance
-  - dance_style__jazz
   - dance_style__other
 - id: 3425
   name: Microphone design
@@ -32352,6 +32352,15 @@ base_attributes:
   - broadhead_design__fixed_blade
   - broadhead_design__mechanical
   - broadhead_design__other
+- id: 4678
+  name: Video game format
+  description: Specifies the method of delivery and type of media for video games, such as digital or physical.
+  friendly_id: video_game_format
+  handle: video-game-format
+  values:
+  - video_game_format__digital
+  - video_game_format__physical
+  - video_game_format__other
 extended_attributes:
 - name: Shampoo/Conditioner effect
   handle: shampoo-conditioner-effect
