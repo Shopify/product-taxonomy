@@ -12,8 +12,7 @@ module ProductTaxonomy
     # @param friendly_id [String] The friendly ID of the attribute.
     # @param values_from [Attribute, String] A resolved {Attribute} object. When resolving fails, pass the friendly ID
     #   instead.
-    # @param uniqueness_context [ModelIndex] The uniqueness context for the attribute.
-    def initialize(name:, handle:, description:, friendly_id:, values_from:, uniqueness_context: nil)
+    def initialize(name:, handle:, description:, friendly_id:, values_from:)
       @values_from = values_from
       super(
         id: nil,
@@ -22,7 +21,6 @@ module ProductTaxonomy
         description:,
         friendly_id:,
         values: values_from.is_a?(Attribute) ? values_from.values : nil,
-        uniqueness_context:,
       )
     end
 

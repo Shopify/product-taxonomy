@@ -16,18 +16,18 @@ module ProductTaxonomy
           handle: color__blue
       YAML
 
-      values = Value.load_from_source(source_data: YAML.safe_load(yaml_content)).hashed_by(:friendly_id)
+      Value.load_from_source(YAML.safe_load(yaml_content))
 
-      assert_equal 2, values.size
+      assert_equal 2, Value.size
 
-      black = values["color__black"]
+      black = Value.find_by(friendly_id: "color__black")
       assert_instance_of Value, black
       assert_equal 1, black.id
       assert_equal "Black", black.name
       assert_equal "color__black", black.friendly_id
       assert_equal "color__black", black.handle
 
-      blue = values["color__blue"]
+      blue = Value.find_by(friendly_id: "color__blue")
       assert_instance_of Value, blue
       assert_equal 2, blue.id
       assert_equal "Blue", blue.name
@@ -41,7 +41,7 @@ module ProductTaxonomy
         foo=bar
       YAML
 
-      assert_raises(ArgumentError) { Value.load_from_source(source_data: YAML.safe_load(yaml_content)) }
+      assert_raises(ArgumentError) { Value.load_from_source(YAML.safe_load(yaml_content)) }
     end
 
     test "load_from_source raises an error if the source data contains incomplete values" do
@@ -50,7 +50,7 @@ module ProductTaxonomy
           name: Black
       YAML
 
-      assert_raises(ActiveModel::ValidationError) { Value.load_from_source(source_data: YAML.safe_load(yaml_content)) }
+      assert_raises(ActiveModel::ValidationError) { Value.load_from_source(YAML.safe_load(yaml_content)) }
     end
 
     test "load_from_source raises an error if the source data contains duplicate friendly IDs" do
@@ -66,7 +66,7 @@ module ProductTaxonomy
       YAML
 
       error = assert_raises(ActiveModel::ValidationError) do
-        Value.load_from_source(source_data: YAML.safe_load(yaml_content))
+        Value.load_from_source(YAML.safe_load(yaml_content))
       end
       expected_errors = {
         friendly_id: [{ error: :taken }],
@@ -83,7 +83,7 @@ module ProductTaxonomy
       YAML
 
       error = assert_raises(ActiveModel::ValidationError) do
-        Value.load_from_source(source_data: YAML.safe_load(yaml_content))
+        Value.load_from_source(YAML.safe_load(yaml_content))
       end
       expected_errors = {
         id: [{ error: :not_a_number, value: "foo" }],
@@ -104,7 +104,7 @@ module ProductTaxonomy
       YAML
 
       error = assert_raises(ActiveModel::ValidationError) do
-        Value.load_from_source(source_data: YAML.safe_load(yaml_content))
+        Value.load_from_source(YAML.safe_load(yaml_content))
       end
       expected_errors = {
         handle: [{ error: :taken }],
@@ -125,7 +125,7 @@ module ProductTaxonomy
       YAML
 
       error = assert_raises(ActiveModel::ValidationError) do
-        Value.load_from_source(source_data: YAML.safe_load(yaml_content))
+        Value.load_from_source(YAML.safe_load(yaml_content))
       end
       expected_errors = {
         id: [{ error: :taken }],

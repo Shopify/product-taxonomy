@@ -162,11 +162,10 @@ module ProductTaxonomy
     end
 
     test "raises validation error for duplicate id" do
-      uniqueness_context = ModelIndex.new(Category)
-      root = Category.new(id: "aa", name: "Root", uniqueness_context:)
-      uniqueness_context.add(root)
-      child = Category.new(id: "aa", name: "Child", uniqueness_context:)
-      uniqueness_context.add(child)
+      root = Category.new(id: "aa", name: "Root")
+      Category.add(root)
+      child = Category.new(id: "aa", name: "Child")
+      Category.add(child)
       error = assert_raises(ActiveModel::ValidationError) { child.validate! }
       expected_errors = {
         id: [{ error: :taken }],
@@ -189,6 +188,7 @@ module ProductTaxonomy
 
     test "load_from_source loads categories from deserialized YAML" do
       value = Value.new(id: 1, name: "Black", friendly_id: "black", handle: "black")
+      Value.add(value)
       attribute = Attribute.new(
         id: 1,
         name: "Color",
@@ -197,6 +197,7 @@ module ProductTaxonomy
         description: "Defines the primary color or pattern, such as blue or striped",
         values: [value],
       )
+      Attribute.add(attribute)
       yaml_content = <<~YAML
         ---
         - id: aa
@@ -212,18 +213,17 @@ module ProductTaxonomy
           - color
       YAML
 
-      categories = Category.load_from_source(
-        source_data: YAML.safe_load(yaml_content),
-        attributes: { "color" => attribute },
-      )
+      Category.load_from_source(YAML.safe_load(yaml_content))
 
-      assert_equal 1, categories.size
-      assert_equal "aa", categories.first.id
-      assert_equal "Apparel & Accessories", categories.first.name
-      assert_equal [attribute], categories.first.attributes
-      assert_equal 1, categories.first.children.size
-      assert_equal "aa-1", categories.first.children.first.id
-      assert_equal [attribute], categories.first.children.first.attributes
+      aa_root = Category.verticals.first
+      aa_clothing = aa_root.children.first
+      assert_equal 2, Category.size
+      assert_equal "aa", aa_root.id
+      assert_equal "Apparel & Accessories", aa_root.name
+      assert_equal [attribute], aa_root.attributes
+      assert_equal 1, aa_root.children.size
+      assert_equal "aa-1", aa_clothing.id
+      assert_equal [attribute], aa_clothing.attributes
     end
 
     test "load_from_source raises validation error if attribute is not found" do
@@ -237,7 +237,7 @@ module ProductTaxonomy
       YAML
 
       error = assert_raises(ActiveModel::ValidationError) do
-        Category.load_from_source(source_data: YAML.safe_load(yaml_content), attributes: {})
+        Category.load_from_source(YAML.safe_load(yaml_content))
       end
       expected_errors = {
         attributes: [{ error: :not_found }],
@@ -256,7 +256,7 @@ module ProductTaxonomy
       YAML
 
       error = assert_raises(ActiveModel::ValidationError) do
-        Category.load_from_source(source_data: YAML.safe_load(yaml_content), attributes: {})
+        Category.load_from_source(YAML.safe_load(yaml_content))
       end
       expected_errors = {
         children: [{ error: :not_found }],
@@ -275,7 +275,7 @@ module ProductTaxonomy
       YAML
 
       error = assert_raises(ActiveModel::ValidationError) do
-        Category.load_from_source(source_data: YAML.safe_load(yaml_content), attributes: {})
+        Category.load_from_source(YAML.safe_load(yaml_content))
       end
       expected_errors = {
         secondary_children: [{ error: :not_found }],
@@ -296,7 +296,7 @@ module ProductTaxonomy
       YAML
 
       error = assert_raises(ActiveModel::ValidationError) do
-        Category.load_from_source(source_data: YAML.safe_load(yaml_content), attributes: {})
+        Category.load_from_source(YAML.safe_load(yaml_content))
       end
       expected_errors = {
         base: [{ error: :orphan }],
@@ -306,6 +306,7 @@ module ProductTaxonomy
 
     test "load_from_source loads categories with multiple paths from deserialized YAML" do
       value = Value.new(id: 1, name: "Black", friendly_id: "black", handle: "black")
+      Value.add(value)
       attribute = Attribute.new(
         id: 1,
         name: "Color",
@@ -314,6 +315,7 @@ module ProductTaxonomy
         description: "Defines the primary color or pattern, such as blue or striped",
         values: [value],
       )
+      Attribute.add(attribute)
       yaml_content = <<~YAML
         ---
         - id: aa
@@ -346,14 +348,11 @@ module ProductTaxonomy
           - color
       YAML
 
-      categories = Category.load_from_source(
-        source_data: YAML.safe_load(yaml_content),
-        attributes: { "color" => attribute },
-      )
+      Category.load_from_source(YAML.safe_load(yaml_content))
 
-      aa_root = categories.first
+      aa_root = Category.verticals.first
       aa_clothing = aa_root.children.first
-      bi_root = categories.second
+      bi_root = Category.verticals.second
       bi_medical = bi_root.children.first
       bi_scrubs = bi_medical.children.first
 

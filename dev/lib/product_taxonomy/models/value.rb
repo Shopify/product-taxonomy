@@ -6,15 +6,13 @@ module ProductTaxonomy
   class Value
     include ActiveModel::Validations
     extend Localized
+    extend Indexed
 
     class << self
       # Load values from source data. By default, this data is deserialized from a YAML file in the `data` directory.
       #
       # @param source_data [Array<Hash>] The source data to load values from.
-      # @return [ModelIndex<Value>] A model index of {Value} objects.
-      def load_from_source(source_data:)
-        model_index = ModelIndex.new(self)
-
+      def load_from_source(source_data)
         raise ArgumentError, "source_data must be an array" unless source_data.is_a?(Array)
 
         source_data.each do |value_data|
@@ -25,13 +23,10 @@ module ProductTaxonomy
             name: value_data["name"],
             friendly_id: value_data["friendly_id"],
             handle: value_data["handle"],
-            uniqueness_context: model_index,
           )
-          model_index.add(value)
+          Value.add(value)
           value.validate!
         end
-
-        model_index
       end
     end
 
@@ -39,23 +34,21 @@ module ProductTaxonomy
     validates :name, presence: true
     validates :friendly_id, presence: true
     validates :handle, presence: true
-    validates_with ProductTaxonomy::ModelIndex::UniquenessValidator, attributes: [:friendly_id, :handle, :id]
+    validates_with ProductTaxonomy::Indexed::UniquenessValidator, attributes: [:friendly_id, :handle, :id]
 
     localized_attr_reader :name
 
-    attr_reader :id, :friendly_id, :handle, :uniqueness_context
+    attr_reader :id, :friendly_id, :handle
 
     # @param id [Integer] The ID of the value.
     # @param name [String] The name of the value.
     # @param friendly_id [String] The friendly ID of the value.
     # @param handle [String] The handle of the value.
-    # @param uniqueness_context [ModelIndex] The uniqueness context for the value.
-    def initialize(id:, name:, friendly_id:, handle:, uniqueness_context: nil)
+    def initialize(id:, name:, friendly_id:, handle:)
       @id = id
       @name = name
       @friendly_id = friendly_id
       @handle = handle
-      @uniqueness_context = uniqueness_context
     end
   end
 end

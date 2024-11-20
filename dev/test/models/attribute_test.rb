@@ -40,29 +40,26 @@ module ProductTaxonomy
           friendly_id: pattern__abstract
           handle: pattern__abstract
       YAML
-      values_model_index = Value.load_from_source(source_data: YAML.safe_load(values_yaml_content))
-      attributes = Attribute.load_from_source(
-        source_data: YAML.safe_load(attributes_yaml_content),
-        values: values_model_index.hashed_by(:friendly_id),
-      ).hashed_by(:friendly_id)
+      Value.load_from_source(YAML.safe_load(values_yaml_content))
+      Attribute.load_from_source(YAML.safe_load(attributes_yaml_content))
 
-      assert_equal 3, attributes.size
+      assert_equal 3, Attribute.size
 
-      color = attributes["color"]
+      color = Attribute.find_by(friendly_id: "color")
       assert_instance_of Attribute, color
       assert_equal "color", color.handle
       assert_instance_of Array, color.values
       assert_instance_of Value, color.values.first
       assert_equal ["color__black"], color.values.map(&:friendly_id)
 
-      pattern = attributes["pattern"]
+      pattern = Attribute.find_by(friendly_id: "pattern")
       assert_instance_of Attribute, pattern
       assert_equal "pattern", pattern.handle
       assert_instance_of Array, pattern.values
       assert_instance_of Value, pattern.values.first
       assert_equal ["pattern__abstract"], pattern.values.map(&:friendly_id)
 
-      clothing_pattern = attributes["clothing_pattern"]
+      clothing_pattern = Attribute.find_by(friendly_id: "clothing_pattern")
       assert_instance_of ExtendedAttribute, clothing_pattern
       assert_equal "clothing_pattern", clothing_pattern.handle
       assert_instance_of Array, clothing_pattern.values
@@ -76,7 +73,7 @@ module ProductTaxonomy
         foo=bar
       YAML
 
-      assert_raises(ArgumentError) { Attribute.load_from_source(source_data: YAML.safe_load(yaml_content), values: {}) }
+      assert_raises(ArgumentError) { Attribute.load_from_source(YAML.safe_load(yaml_content)) }
     end
 
     test "load_from_source raises an error if the source data contains incomplete attributes" do
@@ -89,7 +86,7 @@ module ProductTaxonomy
       YAML
 
       error = assert_raises(ActiveModel::ValidationError) do
-        Attribute.load_from_source(source_data: YAML.safe_load(yaml_content), values: {})
+        Attribute.load_from_source(YAML.safe_load(yaml_content))
       end
       expected_errors = {
         friendly_id: [{ error: :blank }],
@@ -114,7 +111,7 @@ module ProductTaxonomy
       YAML
 
       error = assert_raises(ActiveModel::ValidationError) do
-        Attribute.load_from_source(source_data: YAML.safe_load(yaml_content), values: {})
+        Attribute.load_from_source(YAML.safe_load(yaml_content))
       end
       expected_errors = {
         values: [{ error: :blank }],
@@ -137,7 +134,7 @@ module ProductTaxonomy
       YAML
 
       error = assert_raises(ActiveModel::ValidationError) do
-        Attribute.load_from_source(source_data: YAML.safe_load(yaml_content), values: {})
+        Attribute.load_from_source(YAML.safe_load(yaml_content))
       end
       expected_errors = {
         values: [{ error: :not_found }],
@@ -156,7 +153,7 @@ module ProductTaxonomy
       YAML
 
       error = assert_raises(ActiveModel::ValidationError) do
-        Attribute.load_from_source(source_data: YAML.safe_load(yaml_content), values: {})
+        Attribute.load_from_source(YAML.safe_load(yaml_content))
       end
       expected_errors = {
         friendly_id: [{ error: :blank }],
@@ -180,7 +177,7 @@ module ProductTaxonomy
       YAML
 
       error = assert_raises(ActiveModel::ValidationError) do
-        Attribute.load_from_source(source_data: YAML.safe_load(yaml_content), values: {})
+        Attribute.load_from_source(YAML.safe_load(yaml_content))
       end
       expected_errors = {
         values_from: [{ error: :not_found }],
@@ -218,13 +215,10 @@ module ProductTaxonomy
           friendly_id: pattern__abstract
           handle: pattern__abstract
       YAML
-      values_model_index = Value.load_from_source(source_data: YAML.safe_load(values_yaml_content))
+      Value.load_from_source(YAML.safe_load(values_yaml_content))
 
       error = assert_raises(ActiveModel::ValidationError) do
-        Attribute.load_from_source(
-          source_data: YAML.safe_load(attributes_yaml_content),
-          values: values_model_index.hashed_by(:friendly_id),
-        )
+        Attribute.load_from_source(YAML.safe_load(attributes_yaml_content))
       end
       expected_errors = {
         friendly_id: [{ error: :taken }],
@@ -251,13 +245,10 @@ module ProductTaxonomy
           friendly_id: color__black
           handle: color__black
       YAML
-      values_model_index = Value.load_from_source(source_data: YAML.safe_load(values_yaml_content))
+      Value.load_from_source(YAML.safe_load(values_yaml_content))
 
       error = assert_raises(ActiveModel::ValidationError) do
-        Attribute.load_from_source(
-          source_data: YAML.safe_load(attributes_yaml_content),
-          values: values_model_index.hashed_by(:friendly_id),
-        )
+        Attribute.load_from_source(YAML.safe_load(attributes_yaml_content))
       end
       expected_errors = {
         id: [{ error: :not_a_number, value: "foo" }],

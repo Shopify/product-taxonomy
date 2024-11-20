@@ -4,15 +4,13 @@ module ProductTaxonomy
   class Attribute
     include ActiveModel::Validations
     extend Localized
+    extend Indexed
 
     class << self
       # Load attributes from source data. By default, this data is deserialized from a YAML file in the `data` directory.
       #
       # @param source_data [Array<Hash>] The source data to load attributes from.
-      # @param values [Hash<String, Value>] A hash of {Value} objects keyed by their friendly ID.
-      # @return [ModelIndex<Attribute>] A model index of {Attribute} objects.
-      def load_from_source(source_data:, values:)
-        model_index = ModelIndex.new(self)
+      def load_from_source(source_data)
         raise ArgumentError, "source_data must be a hash" unless source_data.is_a?(Hash)
         raise ArgumentError, "source_data must contain keys \"base_attributes\" and \"extended_attributes\"" unless
           source_data.keys.sort == ["base_attributes", "extended_attributes"]
@@ -22,21 +20,19 @@ module ProductTaxonomy
             raise ArgumentError, "source_data must contain hashes" unless attribute_data.is_a?(Hash)
 
             attribute = case type
-            when "base_attributes" then attribute_from(attribute_data:, values:, model_index:)
-            when "extended_attributes" then extended_attribute_from(attribute_data:, model_index:)
+            when "base_attributes" then attribute_from(attribute_data)
+            when "extended_attributes" then extended_attribute_from(attribute_data)
             end
-            model_index.add(attribute)
+            Attribute.add(attribute)
             attribute.validate!
           end
         end
-
-        model_index
       end
 
       private
 
-      def attribute_from(attribute_data:, values:, model_index:)
-        values_by_friendly_id = attribute_data["values"]&.map { values[_1] || _1 }
+      def attribute_from(attribute_data)
+        values_by_friendly_id = attribute_data["values"]&.map { Value.find_by(friendly_id: _1) || _1 }
         Attribute.new(
           id: attribute_data["id"],
           name: attribute_data["name"],
@@ -44,19 +40,17 @@ module ProductTaxonomy
           friendly_id: attribute_data["friendly_id"],
           handle: attribute_data["handle"],
           values: values_by_friendly_id,
-          uniqueness_context: model_index,
         )
       end
 
-      def extended_attribute_from(attribute_data:, model_index:)
+      def extended_attribute_from(attribute_data)
         value_friendly_id = attribute_data["values_from"]
         ExtendedAttribute.new(
           name: attribute_data["name"],
           handle: attribute_data["handle"],
           description: attribute_data["description"],
           friendly_id: attribute_data["friendly_id"],
-          values_from: model_index.hashed_by(:friendly_id)[value_friendly_id] || value_friendly_id,
-          uniqueness_context: model_index,
+          values_from: Attribute.find_by(friendly_id: value_friendly_id) || value_friendly_id,
         )
       end
     end
@@ -67,12 +61,12 @@ module ProductTaxonomy
     validates :handle, presence: true
     validates :description, presence: true
     validates :values, presence: true, if: -> { self.class == Attribute }
-    validates_with ProductTaxonomy::ModelIndex::UniquenessValidator, attributes: [:friendly_id]
+    validates_with ProductTaxonomy::Indexed::UniquenessValidator, attributes: [:friendly_id]
     validate :values_valid?
 
     localized_attr_reader :name, :description
 
-    attr_reader :id, :friendly_id, :handle, :values, :uniqueness_context
+    attr_reader :id, :friendly_id, :handle, :values
 
     # @param id [Integer] The ID of the attribute.
     # @param name [String] The name of the attribute.
@@ -81,15 +75,13 @@ module ProductTaxonomy
     # @param handle [String] The handle of the attribute.
     # @param values [Array<Value, String>] An array of resolved {Value} objects. When resolving fails, use the friendly
     # ID instead.
-    # @param uniqueness_context [ModelIndex] The uniqueness context for the attribute.
-    def initialize(id:, name:, description:, friendly_id:, handle:, values:, uniqueness_context: nil)
+    def initialize(id:, name:, description:, friendly_id:, handle:, values:)
       @id = id
       @name = name
       @description = description
       @friendly_id = friendly_id
       @handle = handle
       @values = values
-      @uniqueness_context = uniqueness_context
     end
 
     private
