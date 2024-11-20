@@ -366,5 +366,32 @@ module ProductTaxonomy
       assert_equal bi_medical, bi_scrubs.parent
       assert_equal aa_clothing, bi_scrubs.secondary_parents.first
     end
+
+    test "localized attributes are returned correctly" do
+      fr_yaml = <<~YAML
+        fr:
+          categories:
+            aa:
+              name: "Nom en français"
+      YAML
+      es_yaml = <<~YAML
+        es:
+          categories:
+            aa:
+              name: "Nombre en español"
+      YAML
+      Dir.expects(:glob)
+        .with(File.join(DATA_PATH, "localizations", "categories", "*.yml"))
+        .returns(["fake/path/fr.yml", "fake/path/es.yml"])
+      YAML.expects(:safe_load_file).with("fake/path/fr.yml").returns(YAML.safe_load(fr_yaml))
+      YAML.expects(:safe_load_file).with("fake/path/es.yml").returns(YAML.safe_load(es_yaml))
+
+      category = Category.new(id: "aa", name: "Raw name")
+      assert_equal "Raw name", category.name
+      assert_equal "Raw name", category.name(locale: "en")
+      assert_equal "Nom en français", category.name(locale: "fr")
+      assert_equal "Nombre en español", category.name(locale: "es")
+      assert_equal "Raw name", category.name(locale: "cs") # fall back to en
+    end
   end
 end
