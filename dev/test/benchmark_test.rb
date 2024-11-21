@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "test_helper"
-require "minitest/benchmark"
 
 module ProductTaxonomy
   class BenchmarkTest < Minitest::Benchmark
@@ -13,10 +12,12 @@ module ProductTaxonomy
 
     def bench_load_values
       source_data = YAML.safe_load_file("../data/values.yml")
-      Value.load_from_source(source_data: source_data.first(10)) # prime caches
+      Value.load_from_source(source_data.first(10)) # warmup
+      Value.reset
 
       assert_performance_linear do |n|
-        Value.load_from_source(source_data: source_data.first(n))
+        Value.load_from_source(source_data.first(n))
+        Value.reset
       end
     end
   end

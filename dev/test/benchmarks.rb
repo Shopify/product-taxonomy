@@ -9,31 +9,27 @@ module ProductTaxonomy
   # make assertions about them.
   Benchmark.bm(40) do |x|
     x.report("Load values") do
-      Value.load_from_source(source_data: YAML.safe_load_file("../data/values.yml"))
+      Value.load_from_source(YAML.safe_load_file("../data/values.yml"))
+      Value.reset
     end
 
     x.report("Load values and attributes") do
-      values_model_index = Value.load_from_source(source_data: YAML.safe_load_file("../data/values.yml"))
-      Attribute.load_from_source(
-        source_data: YAML.safe_load_file("../data/attributes.yml"),
-        values: values_model_index.hashed_by(:friendly_id),
-      )
+      Value.load_from_source(YAML.safe_load_file("../data/values.yml"))
+      Attribute.load_from_source(YAML.safe_load_file("../data/attributes.yml"))
+      Value.reset
+      Attribute.reset
     end
 
     x.report("Load values, attributes, and categories") do
-      values_model_index = Value.load_from_source(source_data: YAML.safe_load_file("../data/values.yml"))
-
-      attributes_model_index = Attribute.load_from_source(
-        source_data: YAML.safe_load_file("../data/attributes.yml"),
-        values: values_model_index.hashed_by(:friendly_id),
-      )
+      Value.load_from_source(YAML.safe_load_file("../data/values.yml"))
+      Attribute.load_from_source(YAML.safe_load_file("../data/attributes.yml"))
       categories_source_data = Dir.glob("../data/categories/*.yml").each_with_object([]) do |file, array|
         array.concat(YAML.safe_load_file(file))
       end
-      Category.load_from_source(
-        source_data: categories_source_data,
-        attributes: attributes_model_index.hashed_by(:friendly_id),
-      )
+      Category.load_from_source(categories_source_data)
+      Value.reset
+      Attribute.reset
+      Category.reset
     end
   end
 end

@@ -4,49 +4,47 @@ module ProductTaxonomy
   class Category
     include ActiveModel::Validations
     extend Localized
+    extend Indexed
 
     class << self
+      attr_reader :verticals
+
       # Load categories from source data.
       #
       # @param source_data [Array<Hash>] The source data to load categories from.
-      # @param attributes [Hash<String, Attribute>] The attributes of the categories, keyed by friendly ID.
-      # @return Array<Category> The root categories (verticals) of the category tree.
-      def load_from_source(source_data:, attributes:)
-        model_index = ModelIndex.new(self)
-
+      def load_from_source(source_data)
         raise ArgumentError, "source_data must be an array" unless source_data.is_a?(Array)
 
-        # First pass: Create all nodes and add to model index
+        # First pass: Create all nodes and add to index
         source_data.each do |item|
           node = Category.new(
             id: item["id"],
             name: item["name"],
-            attributes: item["attributes"]&.map { attributes[_1] || _1 },
-            uniqueness_context: model_index,
+            attributes: item["attributes"]&.map { Attribute.find_by(friendly_id: _1) || _1 },
           )
-          model_index.add(node)
+          Category.add(node)
         end
 
         # Second pass: Build relationships
-        nodes_by_id = model_index.hashed_by(:id)
         source_data.each do |item|
-          parent = nodes_by_id[item["id"]]
-          add_children(type: "children", nodes: nodes_by_id, item:, parent:)
-          add_children(type: "secondary_children", nodes: nodes_by_id, item:, parent:)
+          parent = Category.find_by(id: item["id"])
+          add_children(type: "children", item:, parent:)
+          add_children(type: "secondary_children", item:, parent:)
         end
 
-        # Third pass: Validate all nodes and collect root nodes
-        nodes_by_id.values.each_with_object([]) do |node, root_nodes|
+        # Third pass: Validate all nodes and collect root nodes for verticals
+        @verticals = Category.all.each_with_object([]) do |node, root_nodes|
           node.validate!
           root_nodes << node if node.root?
         end
+        @verticals.sort_by!(&:id)
       end
 
       private
 
-      def add_children(type:, nodes:, item:, parent:)
+      def add_children(type:, item:, parent:)
         item[type]&.each do |child_id|
-          child = nodes[child_id] || child_id
+          child = Category.find_by(id: child_id) || child_id
 
           case type
           when "children" then parent.add_child(child)
@@ -63,19 +61,18 @@ module ProductTaxonomy
     validate :attributes_found?
     validate :children_found?
     validate :secondary_children_found?
-    validates_with ProductTaxonomy::ModelIndex::UniquenessValidator, attributes: [:id]
+    validates_with ProductTaxonomy::Indexed::UniquenessValidator, attributes: [:id]
 
     localized_attr_reader :name, keyed_by: :id
 
-    attr_reader :id, :children, :secondary_children, :attributes, :uniqueness_context
+    attr_reader :id, :children, :secondary_children, :attributes
     attr_accessor :parent, :secondary_parents
 
     # @param id [String] The ID of the category.
     # @param name [String] The name of the category.
     # @param attributes [Array<Attribute>] The attributes of the category.
-    # @param uniqueness_context [ModelIndex] The uniqueness context for the category.
     # @param parent [Category] The parent category of the category.
-    def initialize(id:, name:, attributes: [], uniqueness_context: nil, parent: nil)
+    def initialize(id:, name:, attributes: [], parent: nil)
       @id = id
       @name = name
       @children = []
@@ -83,7 +80,6 @@ module ProductTaxonomy
       @attributes = attributes
       @parent = parent
       @secondary_parents = []
-      @uniqueness_context = uniqueness_context
     end
 
     #
