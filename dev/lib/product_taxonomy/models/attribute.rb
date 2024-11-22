@@ -29,6 +29,41 @@ module ProductTaxonomy
         end
       end
 
+      # Get the JSON representation of all attributes.
+      #
+      # @param version [String] The version of the taxonomy.
+      # @param locale [String] The locale to use for localized attributes.
+      # @return [Hash] The JSON representation of all attributes.
+      def to_json(version:, locale: "en")
+        {
+          "version" => version,
+          "attributes" => all.filter_map { _1.extended? ? nil : _1.to_json(locale:) },
+        }
+      end
+
+      # Get the TXT representation of all attributes.
+      #
+      # @param version [String] The version of the taxonomy.
+      # @param locale [String] The locale to use for localized attributes.
+      # @param padding [Integer] The padding to use for the GID. Defaults to the length of the longest GID.
+      # @return [String] The TXT representation of all attributes.
+      def to_txt(version:, locale: "en", padding: longest_gid_length)
+        header = <<~HEADER
+          # Shopify Product Taxonomy - Attributes: #{version}
+          # Format: {GID} : {Attribute name}
+        HEADER
+        [
+          header,
+          *all.filter_map { _1.extended? ? nil : _1.to_txt(padding:, locale:) },
+        ].join("\n")
+      end
+
+      # Reset all class-level state
+      def reset
+        @localizations = nil
+        @hashed_models = nil
+      end
+
       private
 
       def attribute_from(attribute_data)
@@ -53,6 +88,10 @@ module ProductTaxonomy
           values_from: Attribute.find_by(friendly_id: value_friendly_id) || value_friendly_id,
         )
       end
+
+      def longest_gid_length
+        all.filter_map { _1.extended? ? nil : _1.gid.length }.max
+      end
     end
 
     validates :id, presence: true, numericality: { only_integer: true }, if: -> { self.class == Attribute }
@@ -66,7 +105,7 @@ module ProductTaxonomy
 
     localized_attr_reader :name, :description
 
-    attr_reader :id, :friendly_id, :handle, :values
+    attr_reader :id, :friendly_id, :handle, :values, :extended_attributes
 
     # @param id [Integer] The ID of the attribute.
     # @param name [String] The name of the attribute.
@@ -82,6 +121,55 @@ module ProductTaxonomy
       @friendly_id = friendly_id
       @handle = handle
       @values = values
+      @extended_attributes = []
+    end
+
+    # Add an extended attribute to the attribute.
+    #
+    # @param extended_attribute [ExtendedAttribute] The extended attribute to add.
+    def add_extended_attribute(extended_attribute)
+      @extended_attributes << extended_attribute
+    end
+
+    # The global ID of the attribute
+    #
+    # @return [String]
+    def gid
+      "gid://shopify/TaxonomyAttribute/#{id}"
+    end
+
+    def extended?
+      is_a?(ExtendedAttribute)
+    end
+
+    #
+    # Serialization
+    #
+
+    def to_json(locale: "en")
+      {
+        "id" => gid,
+        "name" => name(locale:),
+        "handle" => handle,
+        "description" => description(locale:),
+        "extended_attributes" => extended_attributes.map do
+          {
+            "name" => _1.name(locale:),
+            "handle" => _1.handle,
+          }
+        end,
+        "values" => values.map do
+          {
+            "id" => _1.gid,
+            "name" => _1.name(locale:),
+            "handle" => _1.handle,
+          }
+        end,
+      }
+    end
+
+    def to_txt(padding: 0, locale: "en")
+      "#{gid.ljust(padding)} : #{name(locale:)}"
     end
 
     private

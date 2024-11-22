@@ -367,30 +367,227 @@ module ProductTaxonomy
     end
 
     test "localized attributes are returned correctly" do
+      stub_localizations
+
+      category = Category.new(id: "aa", name: "Raw name")
+      assert_equal "Raw name", category.name
+      assert_equal "Raw name", category.name(locale: "en")
+      assert_equal "Root en français", category.name(locale: "fr")
+      assert_equal "Root en español", category.name(locale: "es")
+      assert_equal "Raw name", category.name(locale: "cs") # fall back to en
+    end
+
+    test "full_name returns the localized full name of the category" do
+      stub_localizations
+
+      assert_equal "Root en français", @root.full_name(locale: "fr")
+      assert_equal "Root en français > Child en français", @child.full_name(locale: "fr")
+      assert_equal "Root en français > Child en français > Grandchild en français", @grandchild.full_name(locale: "fr")
+    end
+
+    test "gid returns the GID of the category" do
+      assert_equal "gid://shopify/TaxonomyCategory/aa", @root.gid
+    end
+
+    test "descendants returns the descendants of the category" do
+      assert_equal [@child, @grandchild], @root.descendants
+    end
+
+    test "descendants_and_self returns the descendants and self of the category" do
+      assert_equal [@root, @child, @grandchild], @root.descendants_and_self
+    end
+
+    test "to_json returns the JSON representation of the category for root node" do
+      expected_json = {
+        "id" => "gid://shopify/TaxonomyCategory/aa",
+        "level" => 0,
+        "name" => "Root",
+        "full_name" => "Root",
+        "parent_id" => nil,
+        "attributes" => [],
+        "children" => [{
+          "id" => "gid://shopify/TaxonomyCategory/aa-1",
+          "name" => "Child",
+        }],
+        "ancestors" => [],
+      }
+      assert_equal expected_json, @root.to_json
+    end
+
+    test "to_json returns the JSON representation of the category for child node" do
+      expected_json = {
+        "id" => "gid://shopify/TaxonomyCategory/aa-1",
+        "level" => 1,
+        "name" => "Child",
+        "full_name" => "Root > Child",
+        "parent_id" => "gid://shopify/TaxonomyCategory/aa",
+        "attributes" => [],
+        "children" => [{
+          "id" => "gid://shopify/TaxonomyCategory/aa-1-1",
+          "name" => "Grandchild",
+        }],
+        "ancestors" => [{
+          "id" => "gid://shopify/TaxonomyCategory/aa",
+          "name" => "Root",
+        }],
+      }
+      assert_equal expected_json, @child.to_json
+    end
+
+    test "to_json returns the JSON representation of the category for grandchild node" do
+      expected_json = {
+        "id" => "gid://shopify/TaxonomyCategory/aa-1-1",
+        "level" => 2,
+        "name" => "Grandchild",
+        "full_name" => "Root > Child > Grandchild",
+        "parent_id" => "gid://shopify/TaxonomyCategory/aa-1",
+        "attributes" => [],
+        "children" => [],
+        "ancestors" => [
+          {
+            "id" => "gid://shopify/TaxonomyCategory/aa-1",
+            "name" => "Child",
+          },
+          {
+            "id" => "gid://shopify/TaxonomyCategory/aa",
+            "name" => "Root",
+          },
+        ],
+      }
+      assert_equal expected_json, @grandchild.to_json
+    end
+
+    test "to_json returns the localized JSON representation of the category for root node" do
+      stub_localizations
+
+      expected_json = {
+        "id" => "gid://shopify/TaxonomyCategory/aa",
+        "level" => 0,
+        "name" => "Root en français",
+        "full_name" => "Root en français",
+        "parent_id" => nil,
+        "attributes" => [],
+        "children" => [{
+          "id" => "gid://shopify/TaxonomyCategory/aa-1",
+          "name" => "Child en français",
+        }],
+        "ancestors" => [],
+      }
+      assert_equal expected_json, @root.to_json(locale: "fr")
+    end
+
+    test "Category.to_json returns the JSON representation of all categories" do
+      stub_localizations
+      Category.stubs(:verticals).returns([@root])
+
+      expected_json = {
+        "version" => "1.0",
+        "verticals" => [{
+          "name" => "Root",
+          "prefix" => "aa",
+          "categories" => [
+            {
+              "id" => "gid://shopify/TaxonomyCategory/aa",
+              "level" => 0,
+              "name" => "Root",
+              "full_name" => "Root",
+              "parent_id" => nil,
+              "attributes" => [],
+              "children" => [{ "id" => "gid://shopify/TaxonomyCategory/aa-1", "name" => "Child" }],
+              "ancestors" => [],
+            },
+            {
+              "id" => "gid://shopify/TaxonomyCategory/aa-1",
+              "level" => 1,
+              "name" => "Child",
+              "full_name" => "Root > Child",
+              "parent_id" => "gid://shopify/TaxonomyCategory/aa",
+              "attributes" => [],
+              "children" => [{ "id" => "gid://shopify/TaxonomyCategory/aa-1-1", "name" => "Grandchild" }],
+              "ancestors" => [{ "id" => "gid://shopify/TaxonomyCategory/aa", "name" => "Root" }],
+            },
+            {
+              "id" => "gid://shopify/TaxonomyCategory/aa-1-1",
+              "level" => 2,
+              "name" => "Grandchild",
+              "full_name" => "Root > Child > Grandchild",
+              "parent_id" => "gid://shopify/TaxonomyCategory/aa-1",
+              "attributes" => [],
+              "children" => [],
+              "ancestors" => [
+                { "id" => "gid://shopify/TaxonomyCategory/aa-1", "name" => "Child" },
+                { "id" => "gid://shopify/TaxonomyCategory/aa", "name" => "Root" },
+              ],
+            },
+          ],
+        }],
+      }
+      assert_equal expected_json, Category.to_json(version: "1.0")
+    end
+
+    test "to_txt returns the TXT representation of the category" do
+      assert_equal "gid://shopify/TaxonomyCategory/aa : Root", @root.to_txt
+    end
+
+    test "to_txt returns the localized TXT representation of the category" do
+      stub_localizations
+
+      assert_equal "gid://shopify/TaxonomyCategory/aa : Root en français", @root.to_txt(locale: "fr")
+    end
+
+    test "Category.to_txt returns the TXT representation of all categories with correct padding" do
+      stub_localizations
+      Category.stubs(:verticals).returns([@root])
+      Category.add(@root)
+      Category.add(@child)
+      Category.add(@grandchild)
+
+      expected_txt = <<~TXT
+        # Shopify Product Taxonomy - Categories: 1.0
+        # Format: {GID} : {Ancestor name} > ... > {Category name}
+
+        gid://shopify/TaxonomyCategory/aa     : Root
+        gid://shopify/TaxonomyCategory/aa-1   : Root > Child
+        gid://shopify/TaxonomyCategory/aa-1-1 : Root > Child > Grandchild
+      TXT
+      assert_equal expected_txt.strip, Category.to_txt(version: "1.0")
+    end
+
+    private
+
+    def stub_localizations
       fr_yaml = <<~YAML
         fr:
           categories:
             aa:
-              name: "Nom en français"
+              name: "Root en français"
+            aa-1:
+              name: "Child en français"
+            aa-1-1:
+              name: "Grandchild en français"
       YAML
       es_yaml = <<~YAML
         es:
           categories:
             aa:
-              name: "Nombre en español"
+              name: "Root en español"
+            aa-1:
+              name: "Child en español"
+            aa-1-1:
+              name: "Grandchild en español"
       YAML
-      Dir.expects(:glob)
+      Dir.stubs(:glob)
         .with(File.join(DATA_PATH, "localizations", "categories", "*.yml"))
         .returns(["fake/path/fr.yml", "fake/path/es.yml"])
-      YAML.expects(:safe_load_file).with("fake/path/fr.yml").returns(YAML.safe_load(fr_yaml))
-      YAML.expects(:safe_load_file).with("fake/path/es.yml").returns(YAML.safe_load(es_yaml))
+      YAML.stubs(:safe_load_file).with("fake/path/fr.yml").returns(YAML.safe_load(fr_yaml))
+      YAML.stubs(:safe_load_file).with("fake/path/es.yml").returns(YAML.safe_load(es_yaml))
 
-      category = Category.new(id: "aa", name: "Raw name")
-      assert_equal "Raw name", category.name
-      assert_equal "Raw name", category.name(locale: "en")
-      assert_equal "Nom en français", category.name(locale: "fr")
-      assert_equal "Nombre en español", category.name(locale: "es")
-      assert_equal "Raw name", category.name(locale: "cs") # fall back to en
+      Dir.stubs(:glob)
+        .with(File.join(DATA_PATH, "localizations", "attributes", "*.yml"))
+        .returns([])
+      Dir.stubs(:glob)
+        .with(File.join(DATA_PATH, "localizations", "values", "*.yml"))
+        .returns([])
     end
   end
 end
