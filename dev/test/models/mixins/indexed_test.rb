@@ -8,6 +8,12 @@ module ProductTaxonomy
       include ActiveModel::Validations
       extend Indexed
 
+      class << self
+        def reset
+          @hashed_models = nil
+        end
+      end
+
       validates_with ProductTaxonomy::Indexed::UniquenessValidator, attributes: [:id]
 
       attr_reader :id
