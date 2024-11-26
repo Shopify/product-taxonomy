@@ -3,7 +3,7 @@
 module ProductTaxonomy
   module Localized
     def localizations
-      return @localizations if defined?(@localizations)
+      return @localizations if @localizations
 
       humanized_name = name.split("::").last.humanize.downcase.pluralize
       localization_path = File.join(DATA_PATH, "localizations", humanized_name, "*.yml")
