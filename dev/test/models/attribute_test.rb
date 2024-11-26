@@ -4,6 +4,30 @@ require "test_helper"
 
 module ProductTaxonomy
   class AttributeTest < ActiveSupport::TestCase
+    setup do
+      @value = Value.new(
+        id: 1,
+        name: "Black",
+        friendly_id: "color__black",
+        handle: "color__black",
+      )
+      @attribute = Attribute.new(
+        id: 1,
+        name: "Color",
+        description: "Defines the primary color or pattern, such as blue or striped",
+        friendly_id: "color",
+        handle: "color",
+        values: [@value],
+      )
+      @extended_attribute = ExtendedAttribute.new(
+        name: "Clothing Color",
+        description: "Color of the clothing",
+        friendly_id: "clothing_color",
+        handle: "clothing_color",
+        values_from: @attribute,
+      )
+    end
+
     test "load_from_source loads attributes from deserialized YAML" do
       attributes_yaml_content = <<~YAML
         ---
@@ -257,25 +281,7 @@ module ProductTaxonomy
     end
 
     test "localized attributes are returned correctly" do
-      fr_yaml = <<~YAML
-        fr:
-          attributes:
-            color:
-              name: "Nom en français"
-              description: "Description en français"
-      YAML
-      es_yaml = <<~YAML
-        es:
-          attributes:
-            color:
-              name: "Nombre en español"
-              description: "Descripción en español"
-      YAML
-      Dir.expects(:glob)
-        .with(File.join(DATA_PATH, "localizations", "attributes", "*.yml"))
-        .returns(["fake/path/fr.yml", "fake/path/es.yml"])
-      YAML.expects(:safe_load_file).with("fake/path/fr.yml").returns(YAML.safe_load(fr_yaml))
-      YAML.expects(:safe_load_file).with("fake/path/es.yml").returns(YAML.safe_load(es_yaml))
+      stub_localizations
 
       attribute = Attribute.new(
         id: 1,
@@ -295,6 +301,164 @@ module ProductTaxonomy
       assert_equal "Descripción en español", attribute.description(locale: "es")
       assert_equal "Raw name", attribute.name(locale: "cs") # fall back to en
       assert_equal "Raw description", attribute.description(locale: "cs") # fall back to en
+    end
+
+    test "extended attributes are added to the base attribute specified in values_from" do
+      assert_equal 1, @attribute.extended_attributes.size
+      assert_equal @extended_attribute, @attribute.extended_attributes.first
+    end
+
+    test "gid returns the global ID" do
+      assert_equal "gid://shopify/TaxonomyAttribute/1", @attribute.gid
+    end
+
+    test "extended? returns true if the attribute is extended" do
+      assert @extended_attribute.extended?
+    end
+
+    test "extended? returns false if the attribute is not extended" do
+      refute @attribute.extended?
+    end
+
+    test "to_json returns the JSON representation of the attribute" do
+      expected_json = {
+        "id" => "gid://shopify/TaxonomyAttribute/1",
+        "name" => "Color",
+        "handle" => "color",
+        "description" => "Defines the primary color or pattern, such as blue or striped",
+        "extended_attributes" => [
+          {
+            "name" => "Clothing Color",
+            "handle" => "clothing_color",
+          },
+        ],
+        "values" => [
+          {
+            "id" => "gid://shopify/TaxonomyValue/1",
+            "name" => "Black",
+            "handle" => "color__black",
+          },
+        ],
+      }
+      assert_equal expected_json, @attribute.to_json
+    end
+
+    test "to_json returns the localized JSON representation of the attribute" do
+      stub_localizations
+
+      expected_json = {
+        "id" => "gid://shopify/TaxonomyAttribute/1",
+        "name" => "Nom en français",
+        "handle" => "color",
+        "description" => "Description en français",
+        "extended_attributes" => [
+          {
+            "name" => "Nom en français (extended)",
+            "handle" => "clothing_color",
+          },
+        ],
+        "values" => [
+          {
+            "id" => "gid://shopify/TaxonomyValue/1",
+            "name" => "Black",
+            "handle" => "color__black",
+          },
+        ],
+      }
+      assert_equal expected_json, @attribute.to_json(locale: "fr")
+    end
+
+    test "Attribute.to_json returns the JSON representation of all attributes" do
+      Attribute.add(@attribute)
+      expected_json = {
+        "version" => "1.0",
+        "attributes" => [{
+          "id" => "gid://shopify/TaxonomyAttribute/1",
+          "name" => "Color",
+          "handle" => "color",
+          "description" => "Defines the primary color or pattern, such as blue or striped",
+          "extended_attributes" => [
+            {
+              "name" => "Clothing Color",
+              "handle" => "clothing_color",
+            },
+          ],
+          "values" => [
+            {
+              "id" => "gid://shopify/TaxonomyValue/1",
+              "name" => "Black",
+              "handle" => "color__black",
+            },
+          ],
+        }],
+      }
+      assert_equal expected_json, Attribute.to_json(version: "1.0")
+    end
+
+    test "to_txt returns the TXT representation of the attribute" do
+      assert_equal "gid://shopify/TaxonomyAttribute/1 : Color", @attribute.to_txt
+    end
+
+    test "to_txt returns the localized TXT representation of the attribute" do
+      stub_localizations
+
+      assert_equal "gid://shopify/TaxonomyAttribute/1 : Nom en français", @attribute.to_txt(locale: "fr")
+    end
+
+    test "Attribute.to_txt returns the TXT representation of all attributes with correct padding" do
+      attribute2 = Attribute.new(
+        id: 123456,
+        name: "Pattern",
+        description: "Describes the design or motif of a product, such as floral or striped",
+        friendly_id: "pattern",
+        handle: "pattern",
+        values: [],
+      )
+      Attribute.add(@attribute)
+      Attribute.add(attribute2)
+
+      expected_txt = <<~TXT
+        # Shopify Product Taxonomy - Attributes: 1.0
+        # Format: {GID} : {Attribute name}
+
+        gid://shopify/TaxonomyAttribute/1      : Color
+        gid://shopify/TaxonomyAttribute/123456 : Pattern
+      TXT
+      assert_equal expected_txt.strip, Attribute.to_txt(version: "1.0")
+    end
+
+    private
+
+    def stub_localizations
+      fr_yaml = <<~YAML
+        fr:
+          attributes:
+            color:
+              name: "Nom en français"
+              description: "Description en français"
+            clothing_color:
+              name: "Nom en français (extended)"
+              description: "Description en français (extended)"
+      YAML
+      es_yaml = <<~YAML
+        es:
+          attributes:
+            color:
+              name: "Nombre en español"
+              description: "Descripción en español"
+            clothing_color:
+              name: "Nombre en español (extended)"
+              description: "Descripción en español (extended)"
+      YAML
+      Dir.stubs(:glob)
+        .with(File.join(DATA_PATH, "localizations", "attributes", "*.yml"))
+        .returns(["fake/path/fr.yml", "fake/path/es.yml"])
+      YAML.stubs(:safe_load_file).with("fake/path/fr.yml").returns(YAML.safe_load(fr_yaml))
+      YAML.stubs(:safe_load_file).with("fake/path/es.yml").returns(YAML.safe_load(es_yaml))
+
+      Dir.stubs(:glob)
+        .with(File.join(DATA_PATH, "localizations", "values", "*.yml"))
+        .returns([])
     end
   end
 end
