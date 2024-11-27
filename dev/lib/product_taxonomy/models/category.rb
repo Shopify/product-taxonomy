@@ -40,6 +40,48 @@ module ProductTaxonomy
         @verticals.sort_by!(&:id)
       end
 
+      # Get the JSON representation of all verticals.
+      #
+      # @param version [String] The version of the taxonomy.
+      # @param locale [String] The locale to use for localized attributes.
+      # @return [Hash] The JSON representation of all verticals.
+      def to_json(version:, locale: "en")
+        {
+          "version" => version,
+          "verticals" => verticals.map do
+            {
+              "name" => _1.name(locale:),
+              "prefix" => _1.id,
+              "categories" => _1.descendants_and_self.map { |category| category.to_json(locale:) },
+            }
+          end,
+        }
+      end
+
+      # Get the TXT representation of all verticals.
+      #
+      # @param version [String] The version of the taxonomy.
+      # @param locale [String] The locale to use for localized attributes.
+      # @param padding [Integer] The padding to use for the GID. Defaults to the length of the longest GID.
+      # @return [String] The TXT representation of all verticals.
+      def to_txt(version:, locale: "en", padding: longest_gid_length)
+        header = <<~HEADER
+          # Shopify Product Taxonomy - Categories: #{version}
+          # Format: {GID} : {Ancestor name} > ... > {Category name}
+        HEADER
+        [
+          header,
+          *verticals.flat_map(&:descendants_and_self).map { _1.to_txt(padding:, locale:) },
+        ].join("\n")
+      end
+
+      # Reset all class-level state
+      def reset
+        @localizations = nil
+        @hashed_models = nil
+        @verticals = nil
+      end
+
       private
 
       def add_children(type:, item:, parent:)
@@ -51,6 +93,10 @@ module ProductTaxonomy
           when "secondary_children" then parent.add_secondary_child(child)
           end
         end
+      end
+
+      def longest_gid_length
+        all.max_by { _1.gid.length }.gid.length
       end
     end
 
@@ -155,10 +201,17 @@ module ProductTaxonomy
     # The full name of the category
     #
     # @return [String]
-    def full_name
-      return name if root?
+    def full_name(locale: "en")
+      return name(locale:) if root?
 
-      parent.full_name + " > " + name
+      parent.full_name(locale:) + " > " + name(locale:)
+    end
+
+    # The global ID of the category
+    #
+    # @return [String]
+    def gid
+      "gid://shopify/TaxonomyCategory/#{id}"
     end
 
     # Whether the category is a descendant of another category
@@ -175,6 +228,57 @@ module ProductTaxonomy
     def traverse(&block)
       yield self
       children.each { _1.traverse(&block) }
+    end
+
+    # The descendants of the category
+    def descendants
+      children.flat_map { |child| [child] + child.descendants }
+    end
+
+    # The descendants of the category and the category itself
+    #
+    # @return [Array<Category>]
+    def descendants_and_self
+      [self] + descendants
+    end
+
+    #
+    # Serialization
+    #
+
+    def to_json(locale: "en")
+      {
+        "id" => gid,
+        "level" => level,
+        "name" => name(locale:),
+        "full_name" => full_name(locale:),
+        "parent_id" => parent&.gid,
+        "attributes" => attributes.map do
+          {
+            "id" => _1.gid,
+            "name" => _1.name(locale:),
+            "handle" => _1.handle,
+            "description" => _1.description(locale:),
+            "extended" => _1.is_a?(ExtendedAttribute),
+          }
+        end,
+        "children" => children.map do
+          {
+            "id" => _1.gid,
+            "name" => _1.name(locale:),
+          }
+        end,
+        "ancestors" => ancestors.map do
+          {
+            "id" => _1.gid,
+            "name" => _1.name(locale:),
+          }
+        end,
+      }
+    end
+
+    def to_txt(padding: 0, locale: "en")
+      "#{gid.ljust(padding)} : #{full_name(locale:)}"
     end
 
     private
