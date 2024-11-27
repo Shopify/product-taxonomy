@@ -47,6 +47,16 @@ module ProductTaxonomy
       hashed_models[field][value]
     end
 
+    # Get the hash of models indexed by a given field. Only works for fields marked unique.
+    #
+    # @param field [Symbol] The field to get the hash for.
+    # @return [Hash] The hash of models indexed by the given field.
+    def hashed_by(field)
+      raise ArgumentError, "Field not hashed: #{field}" unless hashed_models.key?(field)
+
+      hashed_models[field]
+    end
+
     # Get all models in the index.
     #
     # @return [Array<Object>] All models in the index.
@@ -59,11 +69,6 @@ module ProductTaxonomy
     # @return [Integer] The number of models in the index.
     def size
       all.size
-    end
-
-    # Reset the index.
-    def reset
-      @hashed_models = nil
     end
 
     private

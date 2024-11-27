@@ -4,6 +4,19 @@ require "test_helper"
 
 module ProductTaxonomy
   class ValueTest < ActiveSupport::TestCase
+    setup do
+      @value = Value.new(id: 1, name: "Black", friendly_id: "color__black", handle: "color__black")
+      @attribute = Attribute.new(
+        id: 1,
+        name: "Color",
+        friendly_id: "color",
+        handle: "color",
+        description: "Color",
+        values: [@value],
+      )
+      Attribute.add(@attribute)
+    end
+
     test "load_from_source loads values from deserialized YAML" do
       yaml_content = <<~YAML
         - id: 1
@@ -134,6 +147,110 @@ module ProductTaxonomy
     end
 
     test "localized attributes are returned correctly" do
+      stub_localizations
+
+      value = Value.new(id: 1, name: "Raw name", friendly_id: "color__black", handle: "color__black")
+      assert_equal "Raw name", value.name
+      assert_equal "Raw name", value.name(locale: "en")
+      assert_equal "Nom en français", value.name(locale: "fr")
+      assert_equal "Nombre en español", value.name(locale: "es")
+      assert_equal "Raw name", value.name(locale: "cs") # fall back to en
+    end
+
+    test "primary_attribute returns the attribute for the value" do
+      Attribute.reset
+      value = Value.new(id: 1, name: "Black", friendly_id: "color__black", handle: "color__black")
+
+      assert_nil value.primary_attribute
+
+      attribute = Attribute.new(
+        id: 1,
+        name: "Color",
+        friendly_id: "color",
+        handle: "color",
+        description: "Color",
+        values: [value],
+      )
+      Attribute.add(attribute)
+
+      assert_equal attribute, value.primary_attribute
+    end
+
+    test "primary_attribute returns nil if the attribute is not found" do
+      Attribute.reset
+      assert_nil @value.primary_attribute
+    end
+
+    test "full_name returns the name of the value and its primary attribute" do
+      assert_equal "Black [Color]", @value.full_name
+    end
+
+    test "to_json returns the JSON representation of the value" do
+      expected_json = {
+        "id" => "gid://shopify/TaxonomyValue/1",
+        "name" => "Black",
+        "handle" => "color__black",
+      }
+      assert_equal expected_json, @value.to_json
+    end
+
+    test "to_json returns the localized JSON representation of the value" do
+      stub_localizations
+
+      expected_json = {
+        "id" => "gid://shopify/TaxonomyValue/1",
+        "name" => "Nom en français",
+        "handle" => "color__black",
+      }
+      assert_equal expected_json, @value.to_json(locale: "fr")
+    end
+
+    test "Value.to_json returns the JSON representation of all values" do
+      Value.add(@value)
+
+      expected_json = {
+        "version" => "1.0",
+        "values" => [
+          {
+            "id" => "gid://shopify/TaxonomyValue/1",
+            "name" => "Black",
+            "handle" => "color__black",
+          },
+        ],
+      }
+      assert_equal expected_json, Value.to_json(version: "1.0")
+    end
+
+    test "to_txt returns the text representation of the value" do
+      expected_txt = "gid://shopify/TaxonomyValue/1 : Black [Color]"
+      assert_equal expected_txt, @value.to_txt
+    end
+
+    test "to_txt returns the localized text representation of the value" do
+      stub_localizations
+
+      expected_txt = "gid://shopify/TaxonomyValue/1 : Nom en français [Color]"
+      assert_equal expected_txt, @value.to_txt(locale: "fr")
+    end
+
+    test "Value.to_txt returns the text representation of all values with correct padding" do
+      value2 = Value.new(id: 123456, name: "Blue", friendly_id: "color__blue", handle: "color__blue")
+      Value.add(@value)
+      Value.add(value2)
+
+      expected_txt = <<~TXT
+        # Shopify Product Taxonomy - Attribute Values: 1.0
+        # Format: {GID} : {Value name} [{Attribute name}]
+
+        gid://shopify/TaxonomyValue/1      : Black [Color]
+        gid://shopify/TaxonomyValue/123456 : Blue [Color]
+      TXT
+      assert_equal expected_txt.strip, Value.to_txt(version: "1.0")
+    end
+
+    private
+
+    def stub_localizations
       fr_yaml = <<~YAML
         fr:
           values:
@@ -146,18 +263,15 @@ module ProductTaxonomy
             color__black:
               name: "Nombre en español"
       YAML
-      Dir.expects(:glob)
+      Dir.stubs(:glob)
         .with(File.join(DATA_PATH, "localizations", "values", "*.yml"))
         .returns(["fake/path/fr.yml", "fake/path/es.yml"])
-      YAML.expects(:safe_load_file).with("fake/path/fr.yml").returns(YAML.safe_load(fr_yaml))
-      YAML.expects(:safe_load_file).with("fake/path/es.yml").returns(YAML.safe_load(es_yaml))
+      YAML.stubs(:safe_load_file).with("fake/path/fr.yml").returns(YAML.safe_load(fr_yaml))
+      YAML.stubs(:safe_load_file).with("fake/path/es.yml").returns(YAML.safe_load(es_yaml))
 
-      value = Value.new(id: 1, name: "Raw name", friendly_id: "color__black", handle: "color__black")
-      assert_equal "Raw name", value.name
-      assert_equal "Raw name", value.name(locale: "en")
-      assert_equal "Nom en français", value.name(locale: "fr")
-      assert_equal "Nombre en español", value.name(locale: "es")
-      assert_equal "Raw name", value.name(locale: "cs") # fall back to en
+      Dir.stubs(:glob)
+        .with(File.join(DATA_PATH, "localizations", "attributes", "*.yml"))
+        .returns([])
     end
   end
 end
