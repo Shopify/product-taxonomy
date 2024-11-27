@@ -2,6 +2,12 @@
 
 module ProductTaxonomy
   class ExtendedAttribute < Attribute
+    class << self
+      def localizations
+        superclass.localizations # Extended attribute localizations are defined in the same place as attributes
+      end
+    end
+
     validate :values_from_valid?
 
     attr_reader :values_from
@@ -14,6 +20,7 @@ module ProductTaxonomy
     #   instead.
     def initialize(name:, handle:, description:, friendly_id:, values_from:)
       @values_from = values_from
+      values_from.add_extended_attribute(self) if values_from.is_a?(Attribute)
       super(
         id: nil,
         name:,
