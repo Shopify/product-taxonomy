@@ -11,6 +11,8 @@ require_relative "product_taxonomy/models/extended_attribute"
 require_relative "product_taxonomy/models/value"
 require_relative "product_taxonomy/models/category"
 require_relative "product_taxonomy/models/taxonomy"
+require_relative "product_taxonomy/models/mapping_rule"
+require_relative "product_taxonomy/models/integration_version"
 require_relative "product_taxonomy/commands/command"
 require_relative "product_taxonomy/commands/generate_dist_command"
 
