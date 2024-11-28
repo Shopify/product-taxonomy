@@ -4701,12 +4701,13 @@
   - van_type
   - vehicle_features
 - id: vp-2-2-1-4
-  name: Antique & Classic Vehicles
+  name: Vintage & Classic Vehicles
   children:
   - vp-2-2-1-4-1
   - vp-2-2-1-4-2
   - vp-2-2-1-4-3
   attributes:
+  - antique_vehicle_era
   - body_color
   - body_pattern
   - fuel_supply
@@ -4716,84 +4717,11 @@
   - upholstery_pattern
   - vehicle_features
 - id: vp-2-2-1-4-1
-  name: Antique & Classic Cars
-  children:
-  - vp-2-2-1-4-1-1
-  - vp-2-2-1-4-1-2
-  - vp-2-2-1-4-1-3
-  - vp-2-2-1-4-1-4
-  - vp-2-2-1-4-1-5
-  attributes:
-  - body_color
-  - body_pattern
-  - car_type
-  - drive_type
-  - fuel_supply
-  - item_condition
-  - transmission_type
-  - upholstery_color
-  - upholstery_pattern
-  - vehicle_features
-- id: vp-2-2-1-4-1-1
-  name: Pre-War Cars
+  name: Vintage & Classic Cars
   children: []
   attributes:
-  - body_color
-  - body_pattern
-  - car_type
-  - drive_type
-  - fuel_supply
-  - item_condition
-  - transmission_type
-  - upholstery_color
-  - upholstery_pattern
-  - vehicle_features
-- id: vp-2-2-1-4-1-2
-  name: Post-War Cars
-  children: []
-  attributes:
-  - body_color
-  - body_pattern
-  - car_type
-  - drive_type
-  - fuel_supply
-  - item_condition
-  - transmission_type
-  - upholstery_color
-  - upholstery_pattern
-  - vehicle_features
-- id: vp-2-2-1-4-1-3
-  name: Muscle Cars
-  children: []
-  attributes:
-  - body_color
-  - body_pattern
-  - car_type
-  - drive_type
-  - fuel_supply
-  - item_condition
-  - transmission_type
-  - upholstery_color
-  - upholstery_pattern
-  - vehicle_features
-- id: vp-2-2-1-4-1-4
-  name: Hot Rod Cars
-  children: []
-  attributes:
-  - body_color
-  - body_pattern
-  - car_type
-  - drive_type
-  - fuel_supply
-  - item_condition
-  - transmission_type
-  - upholstery_color
-  - upholstery_pattern
-  - vehicle_features
-- id: vp-2-2-1-4-1-5
-  name: Vintage Cars
-  children: []
-  attributes:
+  - antique_car_design
+  - antique_vehicle_era
   - body_color
   - body_pattern
   - car_type
@@ -4805,9 +4733,10 @@
   - upholstery_pattern
   - vehicle_features
 - id: vp-2-2-1-4-2
-  name: Antique & Classic Trucks
+  name: Vintage & Classic Trucks
   children: []
   attributes:
+  - antique_vehicle_era
   - body_color
   - body_pattern
   - drive_type
@@ -4819,9 +4748,10 @@
   - upholstery_pattern
   - vehicle_features
 - id: vp-2-2-1-4-3
-  name: Antique & Classic Vans
+  name: Vintage & Classic Vans
   children: []
   attributes:
+  - antique_vehicle_era
   - body_color
   - body_pattern
   - drive_type
