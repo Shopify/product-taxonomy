@@ -32403,6 +32403,68 @@ base_attributes:
   - vehicle_floor_configuration__low_floor
   - vehicle_floor_configuration__semi_low_floor
   - vehicle_floor_configuration__other
+- id: 4682
+  name: Aircraft engine type
+  description: Specifies the type of engine powering the aircraft, such as jet or turboprop
+  friendly_id: aircraft_engine_type
+  handle: aircraft-engine-type
+  values:
+  - aircraft_engine_type__electric
+  - aircraft_engine_type__jet
+  - aircraft_engine_type__piston
+  - aircraft_engine_type__turboprop
+  - aircraft_engine_type__other
+- id: 4683
+  name: Aircraft engine configuration
+  description: Specifies the number of engines powering the aircraft, such as single or twin
+  friendly_id: aircraft_engine_configuration
+  handle: aircraft-engine-configuration
+  values:
+  - aircraft_engine_configuration__quad
+  - aircraft_engine_configuration__single
+  - aircraft_engine_configuration__twin
+  - aircraft_engine_configuration__other
+- id: 4684
+  name: Drone features
+  description: Specifies the various functional and design features available in a drone, such as GPS navigation or obstacle avoidance
+  friendly_id: drone_features
+  handle: drone-features
+  values:
+  - drone_features__360_degree_camera_rotation
+  - drone_features__adjustable_speed
+  - drone_features__altitude_hold
+  - drone_features__auto_takeoff_land
+  - drone_features__autonomous_flight_modes
+  - drone_features__built_in_camera
+  - drone_features__first_person_view
+  - drone_features__foldable
+  - drone_features__follow_me_mode
+  - drone_features__geofencing
+  - drone_features__gps_support
+  - drone_features__headless_mode
+  - drone_features__live_video_feed
+  - drone_features__long_battery_life
+  - drone_features__long_range_control
+  - drone_features__night_vision
+  - drone_features__obstacle_avoidance
+  - drone_features__position_hold
+  - drone_features__ready_to_fly
+  - drone_features__return_to_home
+  - drone_features__thermal_imaging_camera
+  - drone_features__waypoint_navigation
+  - drone_features__other
+- id: 4685
+  name: Cockpit type
+  description: Specifies the design and technology used in an aircraft's cockpit, such as analog or hybrid
+  friendly_id: cockpit_type
+  handle: cockpit-type
+  values:
+  - cockpit_type__analog
+  - cockpit_type__glass
+  - cockpit_type__hybrid
+  - cockpit_type__integrated
+  - cockpit_type__specialized
+  - cockpit_type__other
 extended_attributes:
 - name: Shampoo/Conditioner effect
   handle: shampoo-conditioner-effect
