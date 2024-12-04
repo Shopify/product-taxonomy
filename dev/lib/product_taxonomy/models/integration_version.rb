@@ -11,19 +11,28 @@ module ProductTaxonomy
       # Generate all distribution files for all integration versions.
       #
       # @param output_path [String] The path to the output directory.
-      def generate_all_distributions(output_path:, logger:, base_path: nil)
-        load_all_from_source(base_path:).each { _1.generate_distributions(output_path:, logger:) }
+      # @param logger [Logger] The logger to use for logging messages.
+      # @param current_shopify_version [String] The current version of the Shopify taxonomy.
+      # @param base_path [String] The path to the base directory containing integration versions.
+      def generate_all_distributions(output_path:, logger:, current_shopify_version:, base_path: nil)
+        integration_versions = load_all_from_source(current_shopify_version:, base_path:)
+        all_mappings = integration_versions.each_with_object([]) do |integration_version, all_mappings|
+          logger.info("Generating integration mappings for #{integration_version.name}/#{integration_version.version}")
+          integration_version.generate_distributions(output_path:)
+          all_mappings.concat(integration_version.to_json(direction: :both))
+        end
+        generate_all_mappings_file(mappings: all_mappings, current_shopify_version:, output_path:)
       end
 
       # Load all integration versions from the source data directory.
       #
       # @return [Array<IntegrationVersion>]
-      def load_all_from_source(base_path: nil)
+      def load_all_from_source(current_shopify_version:, base_path: nil)
         base_path ||= File.expand_path("integrations", ProductTaxonomy::DATA_PATH)
         integration_versions = Dir.glob("*/*", base: base_path)
         integration_versions.map do |integration_version|
           integration_path = File.expand_path(integration_version, base_path)
-          load_from_source(integration_path:)
+          load_from_source(integration_path:, current_shopify_version:)
         end
       end
 
@@ -31,7 +40,7 @@ module ProductTaxonomy
       #
       # @param integration_path [String] The path to the integration version source data directory.
       # @return [IntegrationVersion]
-      def load_from_source(integration_path:)
+      def load_from_source(integration_path:, current_shopify_version:)
         full_names = YAML.safe_load_file(File.expand_path("full_names.yml", integration_path))
         full_names_by_id = full_names.each_with_object({}) { |data, hash| hash[data["id"].to_s] = data }
 
@@ -54,25 +63,66 @@ module ProductTaxonomy
           full_names_by_id:,
           from_shopify_mappings:,
           to_shopify_mappings:,
+          current_shopify_version:,
         )
+      end
+
+      # Generate a JSON file containing all mappings for all integration versions.
+      #
+      # @param mappings [Array<Hash>] The mappings to include in the file.
+      # @param version [String] The current version of the Shopify taxonomy.
+      # @param output_path [String] The path to the output directory.
+      def generate_all_mappings_file(mappings:, current_shopify_version:, output_path:)
+        File.write(
+          File.expand_path("all_mappings.json", integrations_output_path(output_path)),
+          JSON.pretty_generate(to_json(mappings:, current_shopify_version:)),
+        )
+      end
+
+      # Generate a JSON representation for a given set of mappings and version of the Shopify taxonomy.
+      #
+      # @param version [String] The current version of the Shopify taxonomy.
+      # @param mappings [Array<Hash>] The mappings to include in the file.
+      # @return [Hash]
+      def to_json(current_shopify_version:, mappings:)
+        {
+          version: current_shopify_version,
+          mappings:,
+        }
+      end
+
+      # Generate the path to the integrations output directory.
+      #
+      # @param base_output_path [String] The base path to the output directory.
+      # @return [String]
+      def integrations_output_path(base_output_path)
+        File.expand_path("en/integrations", base_output_path)
       end
     end
 
-    attr_reader :name, :version
+    attr_reader :name, :version, :from_shopify_mappings, :to_shopify_mappings
 
-    def initialize(name:, version:, full_names_by_id:, from_shopify_mappings: nil, to_shopify_mappings: nil)
+    def initialize(
+      name:,
+      version:,
+      full_names_by_id:,
+      current_shopify_version:,
+      from_shopify_mappings: nil,
+      to_shopify_mappings: nil
+    )
       @name = name
       @version = version
       @full_names_by_id = full_names_by_id
+      @current_shopify_version = current_shopify_version
       @from_shopify_mappings = from_shopify_mappings
       @to_shopify_mappings = to_shopify_mappings
+      @to_json = {} # memoized by direction
     end
 
     # Generate all distribution files for the integration version.
     #
     # @param output_path [String] The path to the output directory.
-    def generate_distributions(output_path:, logger:)
-      logger.info("Generating integration mappings for #{@name}/#{@version}")
+    def generate_distributions(output_path:)
       generate_distribution(output_path:, direction: :from_shopify) if @from_shopify_mappings.present?
       generate_distribution(output_path:, direction: :to_shopify) if @to_shopify_mappings.present?
     end
@@ -82,12 +132,13 @@ module ProductTaxonomy
     # @param output_path [String] The path to the output directory.
     # @param direction [Symbol] The direction of the distribution file to generate (:from_shopify or :to_shopify).
     def generate_distribution(output_path:, direction:)
-      output_dir = File.expand_path("en/integrations/#{@name}", output_path)
+      output_dir = File.expand_path(@name, self.class.integrations_output_path(output_path))
       FileUtils.mkdir_p(output_dir)
 
+      json = self.class.to_json(mappings: [to_json(direction:)], current_shopify_version: @current_shopify_version)
       File.write(
         File.expand_path("#{distribution_filename(direction:)}.json", output_dir),
-        JSON.pretty_generate(to_json(direction:)),
+        JSON.pretty_generate(json),
       )
       File.write(
         File.expand_path("#{distribution_filename(direction:)}.txt", output_dir),
@@ -98,17 +149,22 @@ module ProductTaxonomy
     # Generate a JSON representation of the integration version for a single direction.
     #
     # @param direction [Symbol] The direction of the distribution file to generate (:from_shopify or :to_shopify).
-    # @return [Hash]
+    # @return [Hash, Array<Hash>, nil]
     def to_json(direction:)
-      mappings = direction == :from_shopify ? @from_shopify_mappings : @to_shopify_mappings
-      {
-        version: current_shopify_version,
-        mappings: [{
-          input_taxonomy: input_name_and_version(direction:),
-          output_taxonomy: output_name_and_version(direction:),
-          rules: mappings.map(&:to_json),
-        }],
-      }
+      if @to_json.key?(direction)
+        @to_json[direction]
+      elsif direction == :both
+        [to_json(direction: :from_shopify), to_json(direction: :to_shopify)].compact
+      else
+        mappings = direction == :from_shopify ? @from_shopify_mappings : @to_shopify_mappings
+        @to_json[direction] = if mappings.present?
+          {
+            input_taxonomy: input_name_and_version(direction:),
+            output_taxonomy: output_name_and_version(direction:),
+            rules: mappings.map(&:to_json),
+          }
+        end
+      end
     end
 
     # Generate a TXT representation of the integration version for a single direction.
@@ -141,11 +197,7 @@ module ProductTaxonomy
     end
 
     def shopify_name_and_version
-      "shopify/#{current_shopify_version}"
-    end
-
-    def current_shopify_version
-      @current_shopify_version ||= File.read(File.expand_path("../VERSION", ProductTaxonomy::DATA_PATH)).strip
+      "shopify/#{@current_shopify_version}"
     end
 
     def input_name_and_version(direction:)
