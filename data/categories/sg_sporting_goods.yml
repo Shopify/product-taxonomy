@@ -6938,14 +6938,16 @@
   - color
   - pattern
 - id: sg-4-1-10
-  name: Wingfoils
+  name: Wingfoiling
   children:
   - sg-4-1-10-1
   - sg-4-1-10-2
   - sg-4-1-10-3
   - sg-4-1-10-4
   - sg-4-1-10-5
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: sg-4-1-10-1
   name: Wingfoil Wings
   children: []
@@ -6967,7 +6969,11 @@
   children:
   - sg-4-1-10-3-1
   - sg-4-1-10-3-2
-  attributes: []
+  - sg-4-1-10-3-3
+  - sg-4-1-10-3-4
+  attributes:
+  - color
+  - pattern
 - id: sg-4-1-10-3-1
   name: Wing Parts
   children: []
@@ -6976,7 +6982,21 @@
   - pattern
   - material
 - id: sg-4-1-10-3-2
-  name: Foil Parts
+  name: Foil Masts
+  children: []
+  attributes:
+  - color
+  - pattern
+  - material
+- id: sg-4-1-10-3-3
+  name: Foil Fuselages
+  children: []
+  attributes:
+  - color
+  - pattern
+  - material
+- id: sg-4-1-10-3-4
+  name: Foil Stabilizers
   children: []
   attributes:
   - color
@@ -6987,7 +7007,9 @@
   children:
   - sg-4-1-10-4-1
   - sg-4-1-10-4-2
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: sg-4-1-10-4-1
   name: Wingfoil Carry Bags & Covers
   children: []
@@ -6997,9 +7019,11 @@
   - color
   - pattern
 - id: sg-4-1-10-4-2
-  name: Wingfoil Protective Gear
+  name: Wingfoiling Protective Gear
   children: []
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: sg-4-1-10-5
   name: Wingfoil Boards
   children: []
@@ -7009,14 +7033,16 @@
   - material
   - recommended_skill_level
 - id: sg-4-1-11
-  name: Windfoil
+  name: Windfoiling
   children:
   - sg-4-1-11-1
   - sg-4-1-11-2
   - sg-4-1-11-3
   - sg-4-1-11-4
   - sg-4-1-11-5
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: sg-4-1-11-1
   name: Windfoil Boards
   children: []
@@ -7047,8 +7073,9 @@
   - sg-4-1-11-4-1
   - sg-4-1-11-4-2
   - sg-4-1-11-4-3
-  - sg-4-1-11-4-4
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: sg-4-1-11-4-1
   name: Foil Masts
   children: []
@@ -7064,13 +7091,6 @@
   - pattern
   - material
 - id: sg-4-1-11-4-3
-  name: Foil Wings
-  children: []
-  attributes:
-  - color
-  - pattern
-  - material
-- id: sg-4-1-11-4-4
   name: Foil Stabilizers
   children: []
   attributes:
@@ -7082,7 +7102,9 @@
   children:
   - sg-4-1-11-5-1
   - sg-4-1-11-5-2
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: sg-4-1-11-5-1
   name: Windfoil Carry Bags & Covers
   children: []
@@ -7092,12 +7114,11 @@
   - color
   - pattern
 - id: sg-4-1-11-5-2
-  name: Windfoil Protective Gear
+  name: Windfoiling Protective Gear
   children: []
   attributes:
   - color
   - pattern
-  - material
 - id: sg-4-2
   name: Camping & Hiking
   children:
