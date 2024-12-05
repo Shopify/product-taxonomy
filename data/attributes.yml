@@ -30929,45 +30929,45 @@ base_attributes:
   - body_paint/foundation_type__special_effects_makeup
   - body_paint/foundation_type__other
 - id: 3332
-  name: Hair color/shade
+  name: Hair color
   description: Identifies the color or shade of hair care products, such as blonde or dark brown
-  friendly_id: hair_color/shade
+  friendly_id: hair_color
   handle: hair-color-shade
   values:
-  - hair_color/shade__auburn
-  - hair_color/shade__black
-  - hair_color/shade__blonde
-  - hair_color/shade__blue
-  - hair_color/shade__brown
-  - hair_color/shade__dark_auburn
-  - hair_color/shade__dark_blonde
-  - hair_color/shade__dark_brown
-  - hair_color/shade__dark_gray
-  - hair_color/shade__dark_red
-  - hair_color/shade__dark_taupe
-  - hair_color/shade__gray
-  - hair_color/shade__green
-  - hair_color/shade__light_auburn
-  - hair_color/shade__light_blonde
-  - hair_color/shade__light_brown
-  - hair_color/shade__light_gray
-  - hair_color/shade__light_red
-  - hair_color/shade__light_taupe
-  - hair_color/shade__medium_auburn
-  - hair_color/shade__medium_blonde
-  - hair_color/shade__medium_brown
-  - hair_color/shade__medium_gray
-  - hair_color/shade__medium_red
-  - hair_color/shade__medium_taupe
-  - hair_color/shade__orange
-  - hair_color/shade__pink
-  - hair_color/shade__purple
-  - hair_color/shade__red
-  - hair_color/shade__silver
-  - hair_color/shade__taupe
-  - hair_color/shade__white
-  - hair_color/shade__yellow
-  - hair_color/shade__other
+  - hair_color__auburn
+  - hair_color__black
+  - hair_color__blonde
+  - hair_color__blue
+  - hair_color__brown
+  - hair_color__dark_auburn
+  - hair_color__dark_blonde
+  - hair_color__dark_brown
+  - hair_color__dark_gray
+  - hair_color__dark_red
+  - hair_color__dark_taupe
+  - hair_color__gray
+  - hair_color__green
+  - hair_color__light_auburn
+  - hair_color__light_blonde
+  - hair_color__light_brown
+  - hair_color__light_gray
+  - hair_color__light_red
+  - hair_color__light_taupe
+  - hair_color__medium_auburn
+  - hair_color__medium_blonde
+  - hair_color__medium_brown
+  - hair_color__medium_gray
+  - hair_color__medium_red
+  - hair_color__medium_taupe
+  - hair_color__orange
+  - hair_color__pink
+  - hair_color__purple
+  - hair_color__red
+  - hair_color__silver
+  - hair_color__taupe
+  - hair_color__white
+  - hair_color__yellow
+  - hair_color__other
 - id: 3333
   name: Eyelash type
   description: Specifies the type of false eyelashes, e.g. strip eyelash, extension
@@ -30979,41 +30979,41 @@ base_attributes:
   - eyelash_type__strip_eyelash
   - eyelash_type__other
 - id: 3334
-  name: Makeup color/shade
+  name: Makeup shade
   description: Describes the hue of cosmetics, such as medium pink or deep brown
-  friendly_id: makeup_color/shade
+  friendly_id: makeup_shade
   handle: makeup-color-shade
   values:
-  - makeup_color/shade__beige
-  - makeup_color/shade__blue
-  - makeup_color/shade__brown
-  - makeup_color/shade__deep_beige
-  - makeup_color/shade__deep_brown
-  - makeup_color/shade__gold
-  - makeup_color/shade__green
-  - makeup_color/shade__light_beige
-  - makeup_color/shade__light_gold
-  - makeup_color/shade__light_peach
-  - makeup_color/shade__light_pink
-  - makeup_color/shade__light_rose_gold
-  - makeup_color/shade__medium_beige
-  - makeup_color/shade__medium_gold
-  - makeup_color/shade__medium_peach
-  - makeup_color/shade__medium_pink
-  - makeup_color/shade__medium_rose_gold
-  - makeup_color/shade__multicolor
-  - makeup_color/shade__natural
-  - makeup_color/shade__peach
-  - makeup_color/shade__pink
-  - makeup_color/shade__purple
-  - makeup_color/shade__red
-  - makeup_color/shade__rose_gold
-  - makeup_color/shade__silver
-  - makeup_color/shade__tan_beige
-  - makeup_color/shade__tan_brown
-  - makeup_color/shade__white
-  - makeup_color/shade__yellow
-  - makeup_color/shade__other
+  - makeup_shade__beige
+  - makeup_shade__blue
+  - makeup_shade__brown
+  - makeup_shade__deep_beige
+  - makeup_shade__deep_brown
+  - makeup_shade__gold
+  - makeup_shade__green
+  - makeup_shade__light_beige
+  - makeup_shade__light_gold
+  - makeup_shade__light_peach
+  - makeup_shade__light_pink
+  - makeup_shade__light_rose_gold
+  - makeup_shade__medium_beige
+  - makeup_shade__medium_gold
+  - makeup_shade__medium_peach
+  - makeup_shade__medium_pink
+  - makeup_shade__medium_rose_gold
+  - makeup_shade__multicolor
+  - makeup_shade__natural
+  - makeup_shade__peach
+  - makeup_shade__pink
+  - makeup_shade__purple
+  - makeup_shade__red
+  - makeup_shade__rose_gold
+  - makeup_shade__silver
+  - makeup_shade__tan_beige
+  - makeup_shade__tan_brown
+  - makeup_shade__white
+  - makeup_shade__yellow
+  - makeup_shade__other
 - id: 3335
   name: Face powder type
   description: Identifies the kind of face powder, such as finishing or loose
@@ -33710,7 +33710,7 @@ extended_attributes:
   handle: eyebrow-enhancer-color
   description: Specifies the color of eyebrow enhancer products, such as black or light blonde
   friendly_id: eyebrow_enhancer_color
-  values_from: hair_color/shade
+  values_from: hair_color
 - name: Changing tray features
   handle: changing-tray-features
   description: Describes the special characteristics of a baby changing tray, like built-in compartments or a safety strap
@@ -33725,7 +33725,7 @@ extended_attributes:
   handle: face-powder-color
   description: Specifies the shade of face powder, such as rose gold or deep brown
   friendly_id: face_powder_color
-  values_from: makeup_color/shade
+  values_from: makeup_shade
 - name: Tabletop material
   handle: tabletop-material
   description: Identifies the composition of the tabletop surface, e.g. plywood, concrete
@@ -33935,7 +33935,7 @@ extended_attributes:
   handle: compatible-hair-color
   description: Matches products to specific hair colors, e.g. silver, blonde
   friendly_id: compatible_hair_color
-  values_from: hair_color/shade
+  values_from: hair_color
 - name: Slat pattern
   handle: slat-pattern
   description: Identifies the visual pattern of slats on items like mattress foundations, e.g. striped, floral
