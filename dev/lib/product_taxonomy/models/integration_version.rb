@@ -102,6 +102,14 @@ module ProductTaxonomy
 
     attr_reader :name, :version, :from_shopify_mappings, :to_shopify_mappings
 
+    # @param name [String] The name of the integration.
+    # @param version [String] The version of the integration.
+    # @param full_names_by_id [Hash<String, Hash>] A hash of full names by ID.
+    # @param current_shopify_version [String] The current version of the Shopify taxonomy.
+    # @param from_shopify_mappings [Array<MappingRule>] The mappings from the Shopify taxonomy to the integration's
+    #   taxonomy.
+    # @param to_shopify_mappings [Array<MappingRule>] The mappings from the integration's taxonomy to the Shopify
+    #   taxonomy.
     def initialize(
       name:,
       version:,
@@ -156,7 +164,12 @@ module ProductTaxonomy
       elsif direction == :both
         [to_json(direction: :from_shopify), to_json(direction: :to_shopify)].compact
       else
-        mappings = direction == :from_shopify ? @from_shopify_mappings : @to_shopify_mappings
+        mappings = if direction == :from_shopify
+          @from_shopify_mappings&.sort_by { _1.input_category.id_parts }
+        else
+          @to_shopify_mappings
+        end
+
         @to_json[direction] = if mappings.present?
           {
             input_taxonomy: input_name_and_version(direction:),
@@ -181,7 +194,14 @@ module ProductTaxonomy
         # ⇒ {mapped taxonomy category name}
 
       TXT
-      header + mappings.map(&:to_txt).join("\n")
+
+      visible_mappings = mappings.filter_map do |mapping|
+        next if @name == "shopify" && direction == :to_shopify && mapping.input_txt_equals_output_txt?
+
+        mapping.to_txt
+      end
+
+      header + visible_mappings.sort.join("\n").chomp
     end
 
     private
