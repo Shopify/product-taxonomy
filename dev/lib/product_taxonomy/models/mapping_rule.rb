@@ -41,6 +41,8 @@ module ProductTaxonomy
       end
     end
 
+    attr_reader :input_category, :output_category
+
     def initialize(input_category:, output_category:)
       @input_category = input_category
       @output_category = output_category
@@ -70,15 +72,27 @@ module ProductTaxonomy
       TXT
     end
 
+    # Whether the input and output categories have the same full name.
+    #
+    # @return [Boolean]
+    def input_txt_equals_output_txt?
+      category_txt(@input_category) == category_txt(@output_category)
+    end
+
     private
 
     def category_json(category)
-      return category if category.is_a?(Hash)
-
-      {
-        id: category.gid,
-        full_name: category.full_name,
-      }
+      if category.is_a?(Hash)
+        {
+          id: category["id"].to_s,
+          full_name: category["full_name"],
+        }
+      else
+        {
+          id: category.gid,
+          full_name: category.full_name,
+        }
+      end
     end
 
     def category_txt(category)

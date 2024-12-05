@@ -553,6 +553,12 @@ module ProductTaxonomy
       assert_equal expected_txt.strip, Category.to_txt(version: "1.0")
     end
 
+    test "id_parts returns the parts of the ID" do
+      assert_equal ["aa"], @root.id_parts
+      assert_equal ["aa", 1], @child.id_parts
+      assert_equal ["aa", 1, 1], @grandchild.id_parts
+    end
+
     private
 
     def stub_localizations

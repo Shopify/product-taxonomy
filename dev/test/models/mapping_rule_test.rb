@@ -248,5 +248,24 @@ module ProductTaxonomy
       TXT
       assert_equal expected_txt, rule.to_txt
     end
+
+    test "input_txt_equals_output_txt? returns true if the input and output categories have the same full name" do
+      rule = MappingRule.new(
+        input_category: @shopify_category,
+        output_category: {
+          "id" => "166",
+          "full_name" => "Shopify category",
+        },
+      )
+      assert rule.input_txt_equals_output_txt?
+    end
+
+    test "input_txt_equals_output_txt? returns false if the input and output categories have different full names" do
+      rule = MappingRule.new(
+        input_category: @shopify_category,
+        output_category: @integration_category,
+      )
+      refute rule.input_txt_equals_output_txt?
+    end
   end
 end
