@@ -27,7 +27,11 @@ module ProductTaxonomy
 
       @locales.each { generate_dist_files(_1) }
 
-      IntegrationVersion.generate_all_distributions(output_path: OUTPUT_PATH, logger:)
+      IntegrationVersion.generate_all_distributions(
+        output_path: OUTPUT_PATH,
+        logger:,
+        current_shopify_version: @version,
+      )
     end
 
     private
