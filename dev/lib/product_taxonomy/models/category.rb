@@ -32,12 +32,13 @@ module ProductTaxonomy
           add_children(type: "secondary_children", item:, parent:)
         end
 
-        # Third pass: Validate all nodes and collect root nodes for verticals
+        # Third pass: Validate all nodes, sort children, and collect root nodes for verticals
         @verticals = Category.all.each_with_object([]) do |node, root_nodes|
           node.validate!
+          node.children.sort_by!(&:name)
           root_nodes << node if node.root?
         end
-        @verticals.sort_by!(&:id)
+        @verticals.sort_by!(&:name)
       end
 
       # Get the JSON representation of all verticals.
