@@ -476,6 +476,80 @@ module ProductTaxonomy
       assert_equal expected_json, @root.to_json(locale: "fr")
     end
 
+    test "to_json returns the JSON representation of the category with children sorted by name" do
+      yaml_content = <<~YAML
+        ---
+        - id: aa
+          name: Root
+          children:
+          - aa-1
+          - aa-2
+          - aa-3
+          attributes: []
+        - id: aa-1
+          name: Cccc
+          children: []
+          attributes: []
+        - id: aa-2
+          name: Bbbb
+          children: []
+          attributes: []
+        - id: aa-3
+          name: Aaaa
+          children: []
+          attributes: []
+      YAML
+
+      Category.load_from_source(YAML.safe_load(yaml_content))
+
+      assert_equal ["Aaaa", "Bbbb", "Cccc"], Category.verticals.first.to_json["children"].map { _1["name"] }
+    end
+
+    test "to_json returns the JSON representation of the category with attributes sorted by name" do
+      value = Value.new(id: 1, name: "Black", friendly_id: "black", handle: "black")
+      Value.add(value)
+      attribute1 = Attribute.new(
+        id: 1,
+        name: "Aaaa",
+        friendly_id: "aaaa",
+        handle: "aaaa",
+        description: "Aaaa",
+        values: [value],
+      )
+      attribute2 = Attribute.new(
+        id: 2,
+        name: "Bbbb",
+        friendly_id: "bbbb",
+        handle: "bbbb",
+        description: "Bbbb",
+        values: [value],
+      )
+      attribute3 = Attribute.new(
+        id: 3,
+        name: "Cccc",
+        friendly_id: "cccc",
+        handle: "cccc",
+        description: "Cccc",
+        values: [value],
+      )
+      Attribute.add(attribute1)
+      Attribute.add(attribute2)
+      Attribute.add(attribute3)
+      yaml_content = <<~YAML
+        ---
+        - id: aa
+          name: Root
+          attributes:
+          - cccc
+          - bbbb
+          - aaaa
+          children: []
+      YAML
+
+      Category.load_from_source(YAML.safe_load(yaml_content))
+      assert_equal ["Aaaa", "Bbbb", "Cccc"], Category.verticals.first.to_json["attributes"].map { _1["name"] }
+    end
+
     test "Category.to_json returns the JSON representation of all categories" do
       stub_localizations
       Category.stubs(:verticals).returns([@root])

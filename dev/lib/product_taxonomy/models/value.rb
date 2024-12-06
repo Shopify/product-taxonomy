@@ -37,7 +37,7 @@ module ProductTaxonomy
       def to_json(version:, locale: "en")
         {
           "version" => version,
-          "values" => all.map { _1.to_json(locale:) },
+          "values" => all_values_sorted(locale:).map { _1.to_json(locale:) },
         }
       end
 
@@ -54,7 +54,7 @@ module ProductTaxonomy
         HEADER
         [
           header,
-          *all.map { _1.to_txt(padding:, locale:) },
+          *all_values_sorted(locale:).map { _1.to_txt(padding:, locale:) },
         ].join("\n")
       end
 
@@ -64,11 +64,30 @@ module ProductTaxonomy
         @hashed_models = nil
       end
 
+      # Sort values by their localized name.
+      #
+      # @param values [Array<Value>] The values to sort.
+      # @param locale [String] The locale to sort by.
+      # @return [Array<Value>] The sorted values.
+      def sort_by_localized_name(values, locale: "en")
+        values.sort_by.with_index do |value, idx|
+          [
+            value.name(locale: "en").downcase == "other" ? 1 : 0,
+            *AlphanumericSorter.normalize_value(value.name(locale:)),
+            idx,
+          ]
+        end
+      end
+
       private
 
       def longest_gid_length
         largest_id = hashed_by(:id).keys.max
         find_by(id: largest_id).gid.length
+      end
+
+      def all_values_sorted(locale: "en")
+        all.sort_by { |value| [value.name(locale:) == "Other" ? 1 : 0, value.name(locale:), value.id] }
       end
     end
 
