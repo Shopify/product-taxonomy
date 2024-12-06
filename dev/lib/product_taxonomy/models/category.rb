@@ -214,6 +214,14 @@ module ProductTaxonomy
       "gid://shopify/TaxonomyCategory/#{id}"
     end
 
+    # Split an ID into its parts.
+    #
+    # @return [Array<String, Integer>] The parts of the ID.
+    def id_parts
+      parts = id.split("-")
+      [parts.first] + parts[1..].map(&:to_i)
+    end
+
     # Whether the category is a descendant of another category
     #
     # @param [Category] category
