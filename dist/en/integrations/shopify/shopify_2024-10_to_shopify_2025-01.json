@@ -1,0 +1,41 @@
+{
+  "version": "2025-01-unstable",
+  "mappings": [
+    {
+      "input_taxonomy": "shopify/2025-01-unstable",
+      "output_taxonomy": "google/2021-09-21",
+      "rules": [
+
+      ]
+    },
+    {
+      "input_taxonomy": "shopify/2022-02",
+      "output_taxonomy": "shopify/2025-01-unstable",
+      "rules": [
+
+      ]
+    },
+    {
+      "input_taxonomy": "shopify/2024-10",
+      "output_taxonomy": "shopify/2025-01-unstable",
+      "rules": [
+        {
+          "input": {
+            "category": {
+              "id": "bi-19-10",
+              "full_name": "Business & Industrial > Medical > Scrubs"
+            }
+          },
+          "output": {
+            "category": [
+              {
+                "id": "gid://shopify/TaxonomyCategory/aa-1-21-9",
+                "full_name": "Apparel & Accessories > Clothing > Uniforms & Workwear > Scrubs"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
