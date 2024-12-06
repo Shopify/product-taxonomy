@@ -37,7 +37,7 @@ module ProductTaxonomy
       def to_json(version:, locale: "en")
         {
           "version" => version,
-          "attributes" => all.filter_map { _1.extended? ? nil : _1.to_json(locale:) },
+          "attributes" => sorted_base_attributes.map { _1.to_json(locale:) },
         }
       end
 
@@ -54,7 +54,7 @@ module ProductTaxonomy
         HEADER
         [
           header,
-          *all.filter_map { _1.extended? ? nil : _1.to_txt(padding:, locale:) },
+          *sorted_base_attributes.map { _1.to_txt(padding:, locale:) },
         ].join("\n")
       end
 
@@ -91,6 +91,10 @@ module ProductTaxonomy
 
       def longest_gid_length
         all.filter_map { _1.extended? ? nil : _1.gid.length }.max
+      end
+
+      def sorted_base_attributes
+        all.reject(&:extended?).sort_by(&:name)
       end
     end
 
@@ -152,7 +156,7 @@ module ProductTaxonomy
         "name" => name(locale:),
         "handle" => handle,
         "description" => description(locale:),
-        "extended_attributes" => extended_attributes.map do
+        "extended_attributes" => extended_attributes.sort_by(&:name).map do
           {
             "name" => _1.name(locale:),
             "handle" => _1.handle,
