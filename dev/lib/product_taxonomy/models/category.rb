@@ -17,10 +17,13 @@ module ProductTaxonomy
 
         # First pass: Create all nodes and add to index
         source_data.each do |item|
+          attributes = item["attributes"]
+            &.map { |attr_id| Attribute.find_by(friendly_id: attr_id) || attr_id }
+            &.sort_by { _1.is_a?(Attribute) ? _1.name : _1 }
           node = Category.new(
             id: item["id"],
             name: item["name"],
-            attributes: item["attributes"]&.map { Attribute.find_by(friendly_id: _1) || _1 },
+            attributes:,
           )
           Category.add(node)
         end
@@ -32,12 +35,13 @@ module ProductTaxonomy
           add_children(type: "secondary_children", item:, parent:)
         end
 
-        # Third pass: Validate all nodes and collect root nodes for verticals
+        # Third pass: Validate all nodes, sort children, and collect root nodes for verticals
         @verticals = Category.all.each_with_object([]) do |node, root_nodes|
           node.validate!
+          node.children.sort_by!(&:name)
           root_nodes << node if node.root?
         end
-        @verticals.sort_by!(&:id)
+        @verticals.sort_by!(&:name)
       end
 
       # Get the JSON representation of all verticals.

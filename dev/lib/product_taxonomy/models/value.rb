@@ -37,7 +37,7 @@ module ProductTaxonomy
       def to_json(version:, locale: "en")
         {
           "version" => version,
-          "values" => all.map { _1.to_json(locale:) },
+          "values" => all_values_sorted(locale:).map { _1.to_json(locale:) },
         }
       end
 
@@ -54,7 +54,7 @@ module ProductTaxonomy
         HEADER
         [
           header,
-          *all.map { _1.to_txt(padding:, locale:) },
+          *all_values_sorted(locale:).map { _1.to_txt(padding:, locale:) },
         ].join("\n")
       end
 
@@ -69,6 +69,10 @@ module ProductTaxonomy
       def longest_gid_length
         largest_id = hashed_by(:id).keys.max
         find_by(id: largest_id).gid.length
+      end
+
+      def all_values_sorted(locale: "en")
+        all.sort_by { |value| [value.name(locale:) == "Other" ? 1 : 0, value.name(locale:), value.id] }
       end
     end
 

@@ -22,12 +22,13 @@ module ProductTaxonomy
       @values_from = values_from
       values_from.add_extended_attribute(self) if values_from.is_a?(Attribute)
       super(
-        id: nil,
+        id: values_from&.id,
         name:,
         handle:,
         description:,
         friendly_id:,
         values: values_from.is_a?(Attribute) ? values_from.values : nil,
+        is_manually_sorted: values_from.manually_sorted?,
       )
     end
 
