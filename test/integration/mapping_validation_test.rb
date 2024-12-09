@@ -144,7 +144,7 @@ class MappingValidationTest < ActiveSupport::TestCase
 
   test "Shopify taxonomy version is in consistent between VERSION file and mappings in the /data folder" do
     shopify_taxonomy_version_from_file = "shopify/" + @sys.read_file("VERSION").strip
-    allowed_shopify_legacy_source_taxonomies = ["shopify/2022-02", "shopify/2024-07"]
+    allowed_shopify_legacy_source_taxonomies = ["shopify/2022-02", "shopify/2024-07", "shopify/2024-10"]
     mapping_rule_files = @sys.glob("data/integrations/*/*/mappings/*_shopify.yml")
     files_include_inconsistent_shopify_taxonomy_version = []
     mapping_rule_files.each do |file|
@@ -158,7 +158,7 @@ class MappingValidationTest < ActiveSupport::TestCase
 
       files_include_inconsistent_shopify_taxonomy_version << {
         file_path: file,
-        taxonomy_version: taxonomy_version,
+        taxonomy_version: shopify_taxonomy_version_from_file,
       }
     end
 
