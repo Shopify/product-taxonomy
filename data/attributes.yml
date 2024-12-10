@@ -32476,6 +32476,27 @@ base_attributes:
   - mandolin_back_shape__bowl_back
   - mandolin_back_shape__flat_back
   - mandolin_back_shape__other
+- id: 4994
+  name: Scooter brake type
+  description: Specifies the mechanism and design of scooter brakes, such as disc or drum
+  friendly_id: scooter_brake_type
+  handle: scooter-brake-type
+  values:
+  - scooter_brake_type__combination
+  - scooter_brake_type__disc
+  - scooter_brake_type__drum
+  - scooter_brake_type__foot
+  - scooter_brake_type__regenerative
+  - scooter_brake_type__other
+- id: 4995
+  name: Electric scooter motor type
+  description: Specifies the type and configuration of scooter motors, such as brushed DC or brushless dc
+  friendly_id: electric_scooter_motor_type
+  handle: electric-scooter-motor-type
+  values:
+  - electric_scooter_motor_type__brushed_dc_motor
+  - electric_scooter_motor_type__brushless_dc_motor
+  - electric_scooter_motor_type__other
 extended_attributes:
 - name: Shampoo/Conditioner effect
   handle: shampoo-conditioner-effect
