@@ -1818,10 +1818,7 @@
   name: Nursing & Feeding
   children:
   - bt-10-1
-  - bt-10-2
-  - bt-10-3
   - bt-10-4
-  - bt-10-5
   - bt-10-6
   - bt-10-7
   - bt-10-8
@@ -1831,7 +1828,6 @@
   - bt-10-12
   - bt-10-13
   - bt-10-14
-  - bt-10-15
   - bt-10-16
   attributes: []
 - id: bt-10-1
@@ -1926,108 +1922,6 @@
   - baby_food_flavor
   - dietary_preferences
   - infant_age_group
-- id: bt-10-2
-  name: Baby Bottle Nipples & Liners
-  children:
-  - bt-10-2-1
-  - bt-10-2-2
-  attributes:
-  - material
-- id: bt-10-2-1
-  name: Baby Bottle Liners
-  children: []
-  attributes:
-  - color
-  - compatible_baby_bottle_design
-  - material
-  - pattern
-  - usage_type
-- id: bt-10-2-2
-  name: Baby Bottle Nipples
-  children:
-  - bt-10-2-2-1
-  - bt-10-2-2-2
-  - bt-10-2-2-3
-  attributes:
-  - color
-  - material
-  - pattern
-- id: bt-10-2-2-1
-  name: Orthodontic Nipples
-  children: []
-  attributes:
-  - color
-  - compatible_baby_bottle_design
-  - flow_rate_type
-  - material
-  - nipple_shape
-  - pattern
-  - stage
-- id: bt-10-2-2-2
-  name: Standard Nipples
-  children: []
-  attributes:
-  - color
-  - compatible_baby_bottle_design
-  - flow_rate_type
-  - material
-  - nipple_shape
-  - pattern
-  - stage
-- id: bt-10-2-2-3
-  name: Wide Neck Nipples
-  children: []
-  attributes:
-  - color
-  - compatible_baby_bottle_design
-  - flow_rate_type
-  - material
-  - nipple_shape
-  - pattern
-  - stage
-- id: bt-10-3
-  name: Baby Bottles
-  children:
-  - bt-10-3-1
-  - bt-10-3-2
-  - bt-10-3-3
-  attributes: []
-- id: bt-10-3-1
-  name: Anti Colic Bottles
-  children: []
-  attributes:
-  - bottle_design
-  - bottle_material
-  - color
-  - flow_rate_type
-  - nipple_material
-  - nipple_type
-  - pattern
-  - product_certifications_standards
-- id: bt-10-3-2
-  name: Standard Bottles
-  children: []
-  attributes:
-  - bottle_design
-  - bottle_material
-  - color
-  - flow_rate_type
-  - nipple_material
-  - nipple_type
-  - pattern
-  - product_certifications_standards
-- id: bt-10-3-3
-  name: Wide Neck Bottles
-  children: []
-  attributes:
-  - bottle_design
-  - bottle_material
-  - color
-  - flow_rate_type
-  - nipple_material
-  - nipple_type
-  - pattern
-  - product_certifications_standards
 - id: bt-10-4
   name: Baby Care Timers
   children:
@@ -2057,17 +1951,6 @@
   - pattern
   - power_source
   - timer_features
-- id: bt-10-5
-  name: Bibs
-  children: []
-  attributes:
-  - bib_design
-  - care_instructions
-  - closure_type
-  - color
-  - cover_features
-  - material
-  - pattern
 - id: bt-10-6
   name: Bottle Warmers & Sterilizers
   children:
@@ -2315,17 +2198,6 @@
   - material
   - nursing_pillow_shape
   - pattern
-- id: bt-10-15
-  name: Sippy Cups
-  children: []
-  attributes:
-  - cleaning_instructions
-  - color
-  - lid_type
-  - material
-  - pattern
-  - product_certifications_standards
-  - spout_type
 - id: bt-10-16
   name: Feeding Essentials
   children:
@@ -2333,6 +2205,10 @@
   - bt-10-16-2
   - bt-10-16-3
   - bt-10-16-4
+  - bt-10-16-5
+  - bt-10-16-6
+  - bt-10-16-7
+  - bt-10-16-8
   attributes:
   - cleaning_instructions
   - color
@@ -2375,6 +2251,130 @@
   - material
   - pattern
   - product_certifications_standards
+- id: bt-10-16-5
+  name: Baby Bottle Nipples & Liners
+  children:
+  - bt-10-16-5-1
+  - bt-10-16-5-2
+  attributes:
+  - material
+- id: bt-10-16-5-1
+  name: Baby Bottle Liners
+  children: []
+  attributes:
+  - color
+  - compatible_baby_bottle_design
+  - material
+  - pattern
+  - usage_type
+- id: bt-10-16-5-2
+  name: Baby Bottle Nipples
+  children:
+  - bt-10-16-5-2-1
+  - bt-10-16-5-2-2
+  - bt-10-16-5-2-3
+  attributes:
+  - color
+  - material
+  - pattern
+- id: bt-10-16-5-2-1
+  name: Orthodontic Nipples
+  children: []
+  attributes:
+  - color
+  - compatible_baby_bottle_design
+  - flow_rate_type
+  - material
+  - nipple_shape
+  - pattern
+  - stage
+- id: bt-10-16-5-2-2
+  name: Standard Nipples
+  children: []
+  attributes:
+  - color
+  - compatible_baby_bottle_design
+  - flow_rate_type
+  - material
+  - nipple_shape
+  - pattern
+  - stage
+- id: bt-10-16-5-2-3
+  name: Wide Neck Nipples
+  children: []
+  attributes:
+  - color
+  - compatible_baby_bottle_design
+  - flow_rate_type
+  - material
+  - nipple_shape
+  - pattern
+  - stage
+- id: bt-10-16-6
+  name: Baby Bottles
+  children:
+  - bt-10-16-6-1
+  - bt-10-16-6-2
+  - bt-10-16-6-3
+  attributes: []
+- id: bt-10-16-6-1
+  name: Anti Colic Bottles
+  children: []
+  attributes:
+  - bottle_design
+  - bottle_material
+  - color
+  - flow_rate_type
+  - nipple_material
+  - nipple_type
+  - pattern
+  - product_certifications_standards
+- id: bt-10-16-6-2
+  name: Standard Bottles
+  children: []
+  attributes:
+  - bottle_design
+  - bottle_material
+  - color
+  - flow_rate_type
+  - nipple_material
+  - nipple_type
+  - pattern
+  - product_certifications_standards
+- id: bt-10-16-6-3
+  name: Wide Neck Bottles
+  children: []
+  attributes:
+  - bottle_design
+  - bottle_material
+  - color
+  - flow_rate_type
+  - nipple_material
+  - nipple_type
+  - pattern
+  - product_certifications_standards
+- id: bt-10-16-7
+  name: Bibs
+  children: []
+  attributes:
+  - bib_design
+  - care_instructions
+  - closure_type
+  - color
+  - cover_features
+  - material
+  - pattern
+- id: bt-10-16-8
+  name: Sippy Cups
+  children: []
+  attributes:
+  - cleaning_instructions
+  - color
+  - lid_type
+  - material
+  - pattern
+  - product_certifications_standards
+  - spout_type
 - id: bt-11
   name: Potty Training
   children:
