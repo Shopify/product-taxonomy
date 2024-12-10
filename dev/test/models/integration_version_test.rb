@@ -48,7 +48,7 @@ module ProductTaxonomy
         output_taxonomy: "shopify/2025-01-unstable",
         rules: [
           {
-            input: { category: { "id" => 1, "full_name" => "Animals & Pet Supplies (old shopify)" } },
+            input: { category: { id: "1", full_name: "Animals & Pet Supplies (old shopify)" } },
             output: {
               category: [{
                 id: "gid://shopify/TaxonomyCategory/ap",
@@ -59,8 +59,8 @@ module ProductTaxonomy
           {
             input: {
               category: {
-                "id" => 2,
-                "full_name" => "Animals & Pet Supplies > Live Animals (old shopify)",
+                id: "2",
+                full_name: "Animals & Pet Supplies > Live Animals (old shopify)",
               },
             },
             output: {
@@ -84,8 +84,8 @@ module ProductTaxonomy
             input: { category: { id: "gid://shopify/TaxonomyCategory/ap", full_name: "Animals & Pet Supplies" } },
             output: {
               category: [{
-                "id" => 1,
-                "full_name" => "Animals & Pet Supplies (foocommerce)",
+                id: "1",
+                full_name: "Animals & Pet Supplies (foocommerce)",
               }],
             },
           },
@@ -98,8 +98,8 @@ module ProductTaxonomy
             },
             output: {
               category: [{
-                "id" => 2,
-                "full_name" => "Animals & Pet Supplies > Live Animals (foocommerce)",
+                id: "2",
+                full_name: "Animals & Pet Supplies > Live Animals (foocommerce)",
               }],
             },
           },
@@ -121,7 +121,7 @@ module ProductTaxonomy
         → Animals & Pet Supplies > Live Animals (old shopify)
         ⇒ Animals & Pet Supplies > Live Animals
       TXT
-      assert_equal expected_txt, @shopify_integration.to_txt(direction: :to_shopify)
+      assert_equal expected_txt.chomp, @shopify_integration.to_txt(direction: :to_shopify)
     end
 
     test "to_txt returns the TXT representation of a mapping from Shopify" do
@@ -137,7 +137,7 @@ module ProductTaxonomy
         → Animals & Pet Supplies > Live Animals
         ⇒ Animals & Pet Supplies > Live Animals (foocommerce)
       TXT
-      assert_equal expected_txt, @external_integration.to_txt(direction: :from_shopify)
+      assert_equal expected_txt.chomp, @external_integration.to_txt(direction: :from_shopify)
     end
 
     test "generate_distribution generates the distribution files for a mapping to Shopify" do
@@ -197,7 +197,7 @@ module ProductTaxonomy
           output_taxonomy: "shopify/2025-01-unstable",
           rules: [
             {
-              input: { category: { id: 1, full_name: "Animals & Pet Supplies (old shopify)" } },
+              input: { category: { id: "1", full_name: "Animals & Pet Supplies (old shopify)" } },
             },
           ],
         },
