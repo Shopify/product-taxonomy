@@ -32107,6 +32107,61 @@ base_attributes:
   - dance_style__swing_dance
   - dance_style__tap_dance
   - dance_style__other
+- id: 3419
+  name: Perfumery instruments included
+  description: Specifies the instruments provided in a perfume making kit, such as scent strips or pipettes
+  friendly_id: perfumery_instruments_included
+  handle: perfumery-instruments-included
+  values:
+  - perfumery_instruments_included__beaker
+  - perfumery_instruments_included__bottles
+  - perfumery_instruments_included__eye_droppers
+  - perfumery_instruments_included__filter_paper
+  - perfumery_instruments_included__flacons
+  - perfumery_instruments_included__funnel
+  - perfumery_instruments_included__magnet_bars
+  - perfumery_instruments_included__magnetic_stirrer
+  - perfumery_instruments_included__measuring_scale
+  - perfumery_instruments_included__perfume_labels
+  - perfumery_instruments_included__pipettes
+  - perfumery_instruments_included__plain_caps
+  - perfumery_instruments_included__scent_strip_holders
+  - perfumery_instruments_included__scent_strips
+  - perfumery_instruments_included__spatula
+  - perfumery_instruments_included__spray_caps
+  - perfumery_instruments_included__spray_pumps
+  - perfumery_instruments_included__stirring_rods
+  - perfumery_instruments_included__other
+- id: 3422
+  name: Olfactory family
+  description: Defines the overall olfactory category to which a fragrance belongs, e.g. aldehydic, animalic
+  friendly_id: olfactory_family
+  handle: olfactory-family
+  values:
+  - olfactory_family__aldehydic
+  - olfactory_family__animalic
+  - olfactory_family__aquatic
+  - olfactory_family__aromatic
+  - olfactory_family__balsamic
+  - olfactory_family__chypre
+  - olfactory_family__citrus
+  - olfactory_family__earthy
+  - olfactory_family__eccentric
+  - olfactory_family__floral
+  - olfactory_family__fougere
+  - olfactory_family__fresh
+  - olfactory_family__fruity
+  - olfactory_family__gourmand
+  - olfactory_family__green
+  - olfactory_family__herbal
+  - olfactory_family__leather
+  - olfactory_family__musky
+  - olfactory_family__oriental
+  - olfactory_family__powdery
+  - olfactory_family__resinous
+  - olfactory_family__spicy
+  - olfactory_family__woody
+  - olfactory_family__other
 - id: 3425
   name: Microphone design
   description: Defines the design category for microphones, e.g. condenser, dynamic
@@ -34065,3 +34120,8 @@ extended_attributes:
   description: Describes special characteristics of a dog house, like adjustable dimensions or UV protection
   friendly_id: dog_house_features
   values_from: outdoor_equipment_features
+- name: Ingredient pathway
+  handle: ingredient-pathway
+  description: Indicates whether perfumery ingredients are derived naturally via physical separation from biomass without chemical alteration, or synthesized by other methods
+  friendly_id: ingredient_pathway
+  values_from: ingredient_origin
