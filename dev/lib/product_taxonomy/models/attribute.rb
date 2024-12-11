@@ -37,7 +37,7 @@ module ProductTaxonomy
       def to_json(version:, locale: "en")
         {
           "version" => version,
-          "attributes" => all.filter_map { _1.extended? ? nil : _1.to_json(locale:) },
+          "attributes" => sorted_base_attributes.map { _1.to_json(locale:) },
         }
       end
 
@@ -54,7 +54,7 @@ module ProductTaxonomy
         HEADER
         [
           header,
-          *all.filter_map { _1.extended? ? nil : _1.to_txt(padding:, locale:) },
+          *sorted_base_attributes.map { _1.to_txt(padding:, locale:) },
         ].join("\n")
       end
 
@@ -75,6 +75,7 @@ module ProductTaxonomy
           friendly_id: attribute_data["friendly_id"],
           handle: attribute_data["handle"],
           values: values_by_friendly_id,
+          is_manually_sorted: attribute_data["sorting"] == "custom",
         )
       end
 
@@ -91,6 +92,10 @@ module ProductTaxonomy
 
       def longest_gid_length
         all.filter_map { _1.extended? ? nil : _1.gid.length }.max
+      end
+
+      def sorted_base_attributes
+        all.reject(&:extended?).sort_by(&:name)
       end
     end
 
@@ -114,7 +119,7 @@ module ProductTaxonomy
     # @param handle [String] The handle of the attribute.
     # @param values [Array<Value, String>] An array of resolved {Value} objects. When resolving fails, use the friendly
     # ID instead.
-    def initialize(id:, name:, description:, friendly_id:, handle:, values:)
+    def initialize(id:, name:, description:, friendly_id:, handle:, values:, is_manually_sorted: false)
       @id = id
       @name = name
       @description = description
@@ -122,6 +127,7 @@ module ProductTaxonomy
       @handle = handle
       @values = values
       @extended_attributes = []
+      @is_manually_sorted = is_manually_sorted
     end
 
     # Add an extended attribute to the attribute.
@@ -138,8 +144,30 @@ module ProductTaxonomy
       "gid://shopify/TaxonomyAttribute/#{id}"
     end
 
+    # Whether the attribute is an extended attribute.
+    #
+    # @return [Boolean]
     def extended?
       is_a?(ExtendedAttribute)
+    end
+
+    # Whether the attribute is manually sorted.
+    #
+    # @return [Boolean]
+    def manually_sorted?
+      @is_manually_sorted
+    end
+
+    # Get the sorted values of the attribute.
+    #
+    # @param locale [String] The locale to sort by.
+    # @return [Array<Value>] The sorted values.
+    def sorted_values(locale: "en")
+      if manually_sorted?
+        values
+      else
+        Value.sort_by_localized_name(values, locale:)
+      end
     end
 
     #
@@ -152,13 +180,13 @@ module ProductTaxonomy
         "name" => name(locale:),
         "handle" => handle,
         "description" => description(locale:),
-        "extended_attributes" => extended_attributes.map do
+        "extended_attributes" => extended_attributes.sort_by(&:name).map do
           {
             "name" => _1.name(locale:),
             "handle" => _1.handle,
           }
         end,
-        "values" => values.map do
+        "values" => sorted_values(locale:).map do
           {
             "id" => _1.gid,
             "name" => _1.name(locale:),

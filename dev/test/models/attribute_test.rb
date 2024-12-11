@@ -72,6 +72,7 @@ module ProductTaxonomy
       color = Attribute.find_by(friendly_id: "color")
       assert_instance_of Attribute, color
       assert_equal "color", color.handle
+      refute color.manually_sorted?
       assert_instance_of Array, color.values
       assert_instance_of Value, color.values.first
       assert_equal ["color__black"], color.values.map(&:friendly_id)
@@ -79,6 +80,7 @@ module ProductTaxonomy
       pattern = Attribute.find_by(friendly_id: "pattern")
       assert_instance_of Attribute, pattern
       assert_equal "pattern", pattern.handle
+      refute pattern.manually_sorted?
       assert_instance_of Array, pattern.values
       assert_instance_of Value, pattern.values.first
       assert_equal ["pattern__abstract"], pattern.values.map(&:friendly_id)
@@ -86,6 +88,7 @@ module ProductTaxonomy
       clothing_pattern = Attribute.find_by(friendly_id: "clothing_pattern")
       assert_instance_of ExtendedAttribute, clothing_pattern
       assert_equal "clothing_pattern", clothing_pattern.handle
+      refute clothing_pattern.manually_sorted?
       assert_instance_of Array, clothing_pattern.values
       assert_instance_of Value, clothing_pattern.values.first
       assert_equal ["pattern__abstract"], clothing_pattern.values.map(&:friendly_id)
@@ -280,6 +283,32 @@ module ProductTaxonomy
       assert_equal expected_errors, error.model.errors.details
     end
 
+    test "load_from_source correctly loads attribute with manually sorted values" do
+      attributes_yaml_content = <<~YAML
+        ---
+        base_attributes:
+        - id: 1
+          name: Color
+          description: Defines the primary color or pattern, such as blue or striped
+          friendly_id: color
+          handle: color
+          sorting: custom
+          values:
+          - color__black
+        extended_attributes: []
+      YAML
+      values_yaml_content = <<~YAML
+        - id: 1
+          name: Black
+          friendly_id: color__black
+          handle: color__black
+      YAML
+      Value.load_from_source(YAML.safe_load(values_yaml_content))
+
+      Attribute.load_from_source(YAML.safe_load(attributes_yaml_content))
+      assert Attribute.find_by(friendly_id: "color").manually_sorted?
+    end
+
     test "localized attributes are returned correctly" do
       stub_localizations
 
@@ -395,6 +424,41 @@ module ProductTaxonomy
       assert_equal expected_json, Attribute.to_json(version: "1.0")
     end
 
+    test "Attribute.to_json returns the JSON representation of all attributes sorted by name" do
+      add_attributes_for_sorting
+
+      expected_json = {
+        "version" => "1.0",
+        "attributes" => [
+          {
+            "id" => "gid://shopify/TaxonomyAttribute/3",
+            "name" => "Aaaa",
+            "handle" => "aaaa",
+            "description" => "Aaaa",
+            "extended_attributes" => [],
+            "values" => [],
+          },
+          {
+            "id" => "gid://shopify/TaxonomyAttribute/2",
+            "name" => "Bbbb",
+            "handle" => "bbbb",
+            "description" => "Bbbb",
+            "extended_attributes" => [],
+            "values" => [],
+          },
+          {
+            "id" => "gid://shopify/TaxonomyAttribute/1",
+            "name" => "Cccc",
+            "handle" => "cccc",
+            "description" => "Cccc",
+            "extended_attributes" => [],
+            "values" => [],
+          },
+        ],
+      }
+      assert_equal expected_json, Attribute.to_json(version: "1.0")
+    end
+
     test "to_txt returns the TXT representation of the attribute" do
       assert_equal "gid://shopify/TaxonomyAttribute/1 : Color", @attribute.to_txt
     end
@@ -425,6 +489,93 @@ module ProductTaxonomy
         gid://shopify/TaxonomyAttribute/123456 : Pattern
       TXT
       assert_equal expected_txt.strip, Attribute.to_txt(version: "1.0")
+    end
+
+    test "Attribute.to_txt returns the TXT representation of all attributes sorted by name" do
+      add_attributes_for_sorting
+
+      expected_txt = <<~TXT
+        # Shopify Product Taxonomy - Attributes: 1.0
+        # Format: {GID} : {Attribute name}
+
+        gid://shopify/TaxonomyAttribute/3 : Aaaa
+        gid://shopify/TaxonomyAttribute/2 : Bbbb
+        gid://shopify/TaxonomyAttribute/1 : Cccc
+      TXT
+      assert_equal expected_txt.strip, Attribute.to_txt(version: "1.0")
+    end
+
+    test "to_json calls Value.sort_by_localized_name when sorting is not custom" do
+      attribute = Attribute.new(
+        id: 1,
+        name: "Color",
+        description: "Defines the primary color or pattern, such as blue or striped",
+        friendly_id: "color",
+        handle: "color",
+        values: [@value],
+        is_manually_sorted: false,
+      )
+      Value.expects(:sort_by_localized_name)
+        .with(attribute.values, locale: "en")
+        .returns([@value])
+      attribute.to_json
+    end
+
+    test "to_json does not call Value.sort_by_localized_name when sorting is custom" do
+      attribute = Attribute.new(
+        id: 1,
+        name: "Color",
+        description: "Defines the primary color or pattern, such as blue or striped",
+        friendly_id: "color",
+        handle: "color",
+        values: [@value],
+        is_manually_sorted: true,
+      )
+      Value.expects(:sort_by_localized_name).with(attribute.values, locale: "en").never
+      attribute.to_json
+    end
+
+    test "to_json returns extended attributes sorted by name" do
+      attr = Attribute.new(
+        id: 1,
+        name: "Color",
+        description: "Defines the primary color or pattern, such as blue or striped",
+        friendly_id: "color",
+        handle: "color",
+        values: [@value],
+      )
+      ExtendedAttribute.new(name: "Cccc", handle: "cccc", description: "Cccc", friendly_id: "cccc", values_from: attr)
+      ExtendedAttribute.new(name: "Bbbb", handle: "bbbb", description: "Bbbb", friendly_id: "bbbb", values_from: attr)
+      ExtendedAttribute.new(name: "Aaaa", handle: "aaaa", description: "Aaaa", friendly_id: "aaaa", values_from: attr)
+
+      expected_json = {
+        "id" => "gid://shopify/TaxonomyAttribute/1",
+        "name" => "Color",
+        "handle" => "color",
+        "description" => "Defines the primary color or pattern, such as blue or striped",
+        "extended_attributes" => [
+          {
+            "name" => "Aaaa",
+            "handle" => "aaaa",
+          },
+          {
+            "name" => "Bbbb",
+            "handle" => "bbbb",
+          },
+          {
+            "name" => "Cccc",
+            "handle" => "cccc",
+          },
+        ],
+        "values" => [
+          {
+            "id" => "gid://shopify/TaxonomyValue/1",
+            "name" => "Black",
+            "handle" => "color__black",
+          },
+        ],
+      }
+      assert_equal expected_json, attr.to_json
     end
 
     private
@@ -459,6 +610,14 @@ module ProductTaxonomy
       Dir.stubs(:glob)
         .with(File.join(DATA_PATH, "localizations", "values", "*.yml"))
         .returns([])
+    end
+
+    def add_attributes_for_sorting
+      [
+        Attribute.new(id: 1, name: "Cccc", description: "Cccc", friendly_id: "cccc", handle: "cccc", values: []),
+        Attribute.new(id: 2, name: "Bbbb", description: "Bbbb", friendly_id: "bbbb", handle: "bbbb", values: []),
+        Attribute.new(id: 3, name: "Aaaa", description: "Aaaa", friendly_id: "aaaa", handle: "aaaa", values: []),
+      ].each { Attribute.add(_1) }
     end
   end
 end
