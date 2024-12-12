@@ -98,6 +98,12 @@ vi:
     airbrush_operation_method:
       name: Phương pháp vận hành phun sơn
       description: "Chỉ định kiểu hoạt động của airbrush, ví dụ: hành động kép hoặc hành động đơn lẻ"
+    aircraft_engine_configuration:
+      name: Cấu hình động cơ máy bay
+      description: "Chỉ định số lượng động cơ cung cấp năng lượng cho máy bay, chẳng hạn như động cơ đơn hoặc động cơ đôi"
+    aircraft_engine_type:
+      name: Loại động cơ máy bay
+      description: "Chỉ định loại động cơ cung cấp năng lượng cho máy bay, chẳng hạn như động cơ phản lực hoặc động cơ tua-bin cánh quạt"
     airsoft_equipment_included:
       name: Bao gồm thiết bị súng hơi hạng nhẹ
       description: "Chỉ định các thiết bị bổ sung được cung cấp cùng với các sản phẩm súng hơi hạng nhẹ, chẳng hạn như kính bảo hộ hoặc áo chiến thuật"
@@ -155,6 +161,12 @@ vi:
     antifreeze_type:
       name: Loại chất chống đông
       description: "Chỉ định loại chất chống đông để bảo dưỡng phương tiện, ví dụ như cô đặc, pha loãng trước"
+    antique_car_design:
+      name: Thiết kế xe cổ
+      description: "Mô tả phong cách thiết kế chính của một chiếc xe cổ, chẳng hạn như xe t-bucket hoặc xe grand tourer"
+    antique_vehicle_era:
+      name: Thời đại xe cổ
+      description: "Mô tả giai đoạn lịch sử của một chiếc xe cổ, chẳng hạn như Thời đại Đồng thau hoặc Thời đại Cổ điển"
     application_area:
       name: Khu vực ứng dụng
       description: "Chỉ định bộ phận cơ thể hoặc vùng cần thoa sản phẩm, ví dụ như môi, toàn thân"
@@ -1241,6 +1253,9 @@ vi:
     coating/sealant_application:
       name: Ứng dụng lớp phủ/chất bịt kín
       description: "Mô tả chức năng của lớp phủ và chất bịt kín bảo vệ, ví dụ như chống chịu thời tiết, chống rỉ sét"
+    cockpit_type:
+      name: Kiểu buồng lái
+      description: "Chỉ định thiết kế và công nghệ được sử dụng trong buồng lái của máy bay, chẳng hạn như tương tự hoặc kết hợp"
     cocktail_decoration_design:
       name: Đồ trang trí cocktail
       description: "Xác định kiểu mẫu hoặc kiểu dáng của đồ dùng cho tiệc cocktail, như chấm bi hoặc hình dạng mới lạ"
@@ -2120,6 +2135,9 @@ vi:
     drive_type:
       name: Loại dẫn động
       description: "Xác định loại hệ thống truyền động trong xe hoặc máy móc hạng nặng, như 2WD hoặc 4WD"
+    drone_features:
+      name: Tính năng máy quay trên không
+      description: "Chỉ định các đặc điểm thiết kế và chức năng khác nhau có sẵn trong máy quay trên không, chẳng hạn như định vị GPS hoặc tránh chướng ngại vật"
     drum_configuration:
       name: Hình dạng trống
       description: "Dùng để biểu thị cách lắp đặt bộ trống, chẳng hạn như bộ 7 trống hoặc gói vỏ trống"
@@ -2210,6 +2228,9 @@ vi:
     egg_turning:
       name: Ấp trứng
       description: "Mô tả phương pháp đảo trứng trong máy ấp, tự động hoặc thủ công"
+    electric_scooter_motor_type:
+      name: Loại động cơ xe máy điện
+      description: "Chỉ định loại và cấu hình của động cơ xe máy, chẳng hạn như DC có chổi than hoặc DC không không chổi than"
     electronic_drum_components:
       name: Linh kiện trống điện tử
       description: "Chỉ định các thành phần của bộ trống điện tử, chẳng hạn như mô-đun trống hoặc miếng đệm trống"
@@ -2918,9 +2939,9 @@ vi:
     hair_care_technology:
       name: Công nghệ chăm sóc tóc
       description: "Xác định công nghệ được sử dụng trong các sản phẩm chăm sóc tóc, ví dụ như hơi nước, nhiệt phân"
-    hair_color/shade:
+    hair_color:
       name: Màu tóc
-      description: "Xác định màu sắc hoặc sắc thái của các sản phẩm chăm sóc tóc, như màu vàng hoe hoặc màu nâu sẫm"
+      description: "Xác định màu hoặc sắc thái của các sản phẩm chăm sóc tóc, như màu vàng hoe hoặc màu nâu sẫm"
     hair_loss_type:
       name: Loại rụng tóc
       description: "Sắp xếp các sản phẩm dựa trên loại rụng tóc, ví dụ như rụng tóc từng vùng, hói đầu ở nam giới"
@@ -3194,6 +3215,9 @@ vi:
     ingredient_origin:
       name: Nguồn gốc thành phần
       description: "Chỉ định nguồn nguyên liệu sản phẩm, ví dụ tự nhiên, tổng hợp"
+    ingredient_pathway:
+      name: Quá trình thành phần
+      description: Chỉ ra liệu các thành phần nước hoa có được lấy tự nhiên thông qua quá trình tách vật lý khỏi sinh khối mà không cần biến đổi hóa học hay được tổng hợp bằng các phương pháp khác
     ingredients:
       name: Nguyên liệu
       description: "Chỉ định các thành phần được sử dụng trong công thức của sản phẩm, ví dụ như oxit kẽm, lô hội"
@@ -3641,15 +3665,18 @@ vi:
     magnification:
       name: Độ phóng đại
       description: "Chỉ định khả năng phóng to của sản phẩm, chẳng hạn như 1x hoặc 100x"
-    makeup_color/shade:
-      name: Màu trang điểm
-      description: "Mô tả màu sắc của mỹ phẩm, chẳng hạn như màu hồng vừa hoặc nâu đậm"
     makeup_features:
       name: Tính năng trang điểm
       description: "Nêu bật các đặc điểm chính của mỹ phẩm, chẳng hạn như lên màu tốt hoặc không hương liệu"
+    makeup_shade:
+      name: Màu trang điểm
+      description: "Mô tả màu sắc của mỹ phẩm, chẳng hạn như màu hồng vừa hoặc màu nâu đậm"
     mallet_material:
       name: Vật liệu búa gỗ
       description: "Xác định loại vật liệu được sử dụng trong dùi gõ, chẳng hạn như đồng thau hoặc cao su"
+    mandolin_back_shape:
+      name: Hình dạng mặt sau đàn măng cầm
+      description: "Chỉ định độ cong và thiết kế của mặt sau đàn măng cầm, chẳng hạn như mặt sau phẳng hoặc mặt cong"
     manufacturer_type:
       name: Loại nhà sản xuất
       description: "Chỉ định nguồn gốc của các bộ phận hoặc phụ kiện xe, chẳng hạn như chính hãng hoặc bên thứ ba"
@@ -4133,6 +4160,9 @@ vi:
     oil_type:
       name: Loại dầu
       description: "Chỉ định loại dầu được sử dụng trong sản phẩm, ví dụ: parafin, dầu hỏa"
+    olfactory_family:
+      name: Họ khứu giác
+      description: "Xác định xem một loại nước hoa thuộc về loại khứu giác tổng thể nào, ví dụ như aldehydic, animalic"
     one_piece_style:
       name: Kiểu liền thân
       description: "Xác định phong cách cụ thể của trang phục liền mảnh, chẳng hạn như bộ áo liền quần hoặc áo liền quần"
@@ -4382,6 +4412,9 @@ vi:
     performance_metrics:
       name: Số liệu hiệu suất
       description: "Nêu bật các lĩnh vực hiệu quả và hiệu quả chính của AI và phần mềm học máy, chẳng hạn như thời gian đào tạo và tốc độ suy luận"
+    perfumery_instruments_included:
+      name: Bao gồm dụng cụ làm nước hoa
+      description: "Chỉ định các dụng cụ được cung cấp trong bộ dụng cụ làm nước hoa, chẳng hạn như dải mùi hương hoặc ống nhỏ giọt"
     peroxide_content:
       name: Hàm lượng peroxide
       description: "Cho biết loại peroxide được sử dụng trong các sản phẩm chăm sóc cá nhân, chẳng hạn như carbamide hoặc không chứa peroxide"
@@ -5171,6 +5204,9 @@ vi:
     scissor_blade_type:
       name: Loại lưỡi kéo
       description: "Mô tả hình dạng và kiểu dáng của lưỡi kéo, chẳng hạn như lưỡi cong hoặc hình vỏ sò"
+    scooter_brake_type:
+      name: Loại phanh xe máy
+      description: "Chỉ định cơ chế và thiết kế của phanh xe máy, chẳng hạn như phanh đĩa hoặc phanh tang trống"
     scope/sight_design:
       name: Thiết kế phạm vi/tầm nhìn
       description: "Mô tả kiểu thiết kế cho phạm vi hoặc điểm ngắm của vũ khí, ví dụ như tầm nhìn ban đêm, laser"
@@ -6551,6 +6587,9 @@ vi:
     vehicle_features:
       name: Tính năng xe
       description: "Mô tả các đặc điểm hoặc thiết bị đặc biệt trên xe, như ghế sưởi hoặc hệ thống định vị"
+    vehicle_floor_configuration:
+      name: Cấu hình sàn xe
+      description: "Chỉ định thiết kế và bố cục sàn của phương tiện đi lại, chẳng hạn như sàn thấp hoặc sàn bán thấp"
     vehicle_fluid_features:
       name: Tính năng chất lỏng của xe
       description: "Mô tả các đặc tính đặc biệt của chất lỏng trong xe, như chống đóng băng hoặc phân hủy sinh học"
@@ -6602,6 +6641,9 @@ vi:
     video_game_content_features:
       name: Tính năng nội dung trò chơi điện tử
       description: "Xác định các tính năng đặc biệt của phần mềm trò chơi điện tử, ví dụ như nội dung có thể tải xuống (DLC), quyền truy cập sớm"
+    video_game_format:
+      name: Định dạng trò chơi điện tử
+      description: "Chỉ định phương thức phân phối và loại phương tiện truyền thông cho trò chơi điện tử, chẳng hạn như kỹ thuật số hoặc vật lý."
     video_game_genre:
       name: Thể loại trò chơi điện tử
       description: "Phân loại trò chơi điện tử, chẳng hạn như gia đình hoặc sinh tồn"
