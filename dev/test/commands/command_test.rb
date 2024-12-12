@@ -3,7 +3,7 @@
 require "test_helper"
 
 module ProductTaxonomy
-  class CommandTest < ActiveSupport::TestCase
+  class CommandTest < TestCase
     class TestCommand < Command
       def execute
         logger.debug("Debug message")

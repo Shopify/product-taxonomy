@@ -3,7 +3,7 @@
 require "test_helper"
 
 module ProductTaxonomy
-  class LocalizedTest < ActiveSupport::TestCase
+  class LocalizedTest < TestCase
     class TestClass
       extend Localized
 

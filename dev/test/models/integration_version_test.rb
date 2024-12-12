@@ -3,7 +3,7 @@
 require "test_helper"
 
 module ProductTaxonomy
-  class IntegrationVersionTest < ActiveSupport::TestCase
+  class IntegrationVersionTest < TestCase
     DATA_PATH = File.expand_path("../fixtures/data", __dir__)
 
     setup do

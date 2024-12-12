@@ -3,7 +3,7 @@
 require "test_helper"
 
 module ProductTaxonomy
-  class ValueTest < ActiveSupport::TestCase
+  class ValueTest < TestCase
     setup do
       @value = Value.new(id: 1, name: "Black", friendly_id: "color__black", handle: "color__black")
       @attribute = Attribute.new(

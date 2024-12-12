@@ -3,7 +3,7 @@
 require "test_helper"
 
 module ProductTaxonomy
-  class CategoryTest < ActiveSupport::TestCase
+  class CategoryTest < TestCase
     setup do
       @root = Category.new(id: "aa", name: "Root")
       @child = Category.new(id: "aa-1", name: "Child")

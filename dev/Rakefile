@@ -13,3 +13,10 @@ desc "Run benchmarks"
 task :benchmark do
   ruby "test/benchmarks.rb"
 end
+
+desc "Run integration tests"
+Rake::TestTask.new do |t|
+  t.name = "integration"
+  t.libs << "test"
+  t.pattern = "test/integration/**/*_test.rb"
+end
