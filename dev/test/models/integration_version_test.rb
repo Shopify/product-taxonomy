@@ -254,5 +254,28 @@ module ProductTaxonomy
         base_path: File.expand_path("integrations", DATA_PATH),
       )
     end
+
+    test "unmapped_external_category_ids returns IDs of external categories not mapped from the Shopify taxonomy" do
+      external_category1 = { "id" => "1", "full_name" => "External category 1" }
+      from_shopify_mappings = [
+        MappingRule.new(
+          input_category: Category.new(id: "aa", name: "aa"),
+          output_category: external_category1,
+        ),
+      ]
+      full_names_by_id = {
+        "1" => external_category1,
+        "2" => { "id" => "2", "full_name" => "External category 2" },
+        "3" => { "id" => "3", "full_name" => "External category 3" },
+      }
+      integration_version = IntegrationVersion.new(
+        name: "test",
+        version: "1.0.0",
+        from_shopify_mappings:,
+        full_names_by_id:,
+      )
+
+      assert_equal ["2", "3"], integration_version.unmapped_external_category_ids
+    end
   end
 end
