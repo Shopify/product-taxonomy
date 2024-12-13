@@ -3,7 +3,7 @@
 require "test_helper"
 
 module ProductTaxonomy
-  class MappingRuleTest < ActiveSupport::TestCase
+  class MappingRuleTest < TestCase
     setup do
       @shopify_category = Category.new(id: "aa", name: "Shopify category")
       @integration_category = {

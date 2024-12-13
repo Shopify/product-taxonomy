@@ -6,10 +6,11 @@ require "product_taxonomy"
 require "active_support/testing/autorun"
 require "minitest/benchmark"
 require "minitest/pride"
+require "minitest/hooks/default"
 require "mocha/minitest"
 
-module ActiveSupport
-  class TestCase
+module ProductTaxonomy
+  class TestCase < ActiveSupport::TestCase
     teardown do
       ProductTaxonomy::Value.reset
       ProductTaxonomy::Attribute.reset

@@ -3,7 +3,7 @@
 require "test_helper"
 
 module ProductTaxonomy
-  class IndexedTest < ActiveSupport::TestCase
+  class IndexedTest < TestCase
     class Model
       include ActiveModel::Validations
       extend Indexed

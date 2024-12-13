@@ -3,7 +3,7 @@
 require "test_helper"
 
 module ProductTaxonomy
-  class ExtendedAttributeTest < ActiveSupport::TestCase
+  class ExtendedAttributeTest < TestCase
     test "validates values_from is an attribute" do
       extended_attribute = ExtendedAttribute.new(
         name: "Clothing Color",
