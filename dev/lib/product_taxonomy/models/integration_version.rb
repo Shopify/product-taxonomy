@@ -7,6 +7,8 @@ module ProductTaxonomy
   # - The full names of categories in the integration's taxonomy.
   # - The mapping rules for converting between the integration's taxonomy and Shopify's taxonomy.
   class IntegrationVersion
+    INTEGRATIONS_PATH = File.expand_path("integrations", ProductTaxonomy::DATA_PATH)
+
     class << self
       # Generate all distribution files for all integration versions.
       #
@@ -14,7 +16,7 @@ module ProductTaxonomy
       # @param logger [Logger] The logger to use for logging messages.
       # @param current_shopify_version [String] The current version of the Shopify taxonomy.
       # @param base_path [String] The path to the base directory containing integration versions.
-      def generate_all_distributions(output_path:, logger:, current_shopify_version:, base_path: nil)
+      def generate_all_distributions(output_path:, logger:, current_shopify_version:, base_path: INTEGRATIONS_PATH)
         integration_versions = load_all_from_source(current_shopify_version:, base_path:)
         all_mappings = integration_versions.each_with_object([]) do |integration_version, all_mappings|
           logger.info("Generating integration mappings for #{integration_version.name}/#{integration_version.version}")
@@ -27,10 +29,9 @@ module ProductTaxonomy
       # Load all integration versions from the source data directory.
       #
       # @return [Array<IntegrationVersion>]
-      def load_all_from_source(current_shopify_version:, base_path: nil)
-        base_path ||= File.expand_path("integrations", ProductTaxonomy::DATA_PATH)
-        integration_versions = Dir.glob("*/*", base: base_path)
-        integration_versions.map do |integration_version|
+      def load_all_from_source(current_shopify_version:, base_path: INTEGRATIONS_PATH)
+        integrations = YAML.safe_load_file(File.expand_path("integrations.yml", base_path))
+        integrations.pluck("available_versions").flatten.map do |integration_version|
           integration_path = File.expand_path(integration_version, base_path)
           load_from_source(integration_path:, current_shopify_version:)
         end
