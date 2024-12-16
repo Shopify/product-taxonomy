@@ -2,7 +2,7 @@
 
 module ProductTaxonomy
   class GenerateDistCommand < Command
-    OUTPUT_PATH = File.expand_path("../../../dist", __dir__)
+    OUTPUT_PATH = File.expand_path("../../../../dist", __dir__)
 
     def initialize(options)
       super
