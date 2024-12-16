@@ -16,7 +16,7 @@ module ProductTaxonomy
       # @param logger [Logger] The logger to use for logging messages.
       # @param current_shopify_version [String] The current version of the Shopify taxonomy.
       # @param base_path [String] The path to the base directory containing integration versions.
-      def generate_all_distributions(output_path:, logger:, current_shopify_version:, base_path: INTEGRATIONS_PATH)
+      def generate_all_distributions(output_path:, logger:, current_shopify_version: nil, base_path: INTEGRATIONS_PATH)
         integration_versions = load_all_from_source(current_shopify_version:, base_path:)
         all_mappings = integration_versions.each_with_object([]) do |integration_version, all_mappings|
           logger.info("Generating integration mappings for #{integration_version.name}/#{integration_version.version}")
@@ -29,7 +29,7 @@ module ProductTaxonomy
       # Load all integration versions from the source data directory.
       #
       # @return [Array<IntegrationVersion>]
-      def load_all_from_source(current_shopify_version:, base_path: INTEGRATIONS_PATH)
+      def load_all_from_source(current_shopify_version: nil, base_path: INTEGRATIONS_PATH)
         integrations = YAML.safe_load_file(File.expand_path("integrations.yml", base_path))
         integrations.pluck("available_versions").flatten.map do |integration_version|
           integration_path = File.expand_path(integration_version, base_path)
@@ -41,7 +41,7 @@ module ProductTaxonomy
       #
       # @param integration_path [String] The path to the integration version source data directory.
       # @return [IntegrationVersion]
-      def load_from_source(integration_path:, current_shopify_version:)
+      def load_from_source(integration_path:, current_shopify_version: nil)
         full_names = YAML.safe_load_file(File.expand_path("full_names.yml", integration_path))
         full_names_by_id = full_names.each_with_object({}) { |data, hash| hash[data["id"].to_s] = data }
 
@@ -101,7 +101,7 @@ module ProductTaxonomy
       end
     end
 
-    attr_reader :name, :version, :from_shopify_mappings, :to_shopify_mappings
+    attr_reader :name, :version, :from_shopify_mappings, :to_shopify_mappings, :full_names_by_id
 
     # @param name [String] The name of the integration.
     # @param version [String] The version of the integration.
@@ -115,7 +115,7 @@ module ProductTaxonomy
       name:,
       version:,
       full_names_by_id:,
-      current_shopify_version:,
+      current_shopify_version: nil,
       from_shopify_mappings: nil,
       to_shopify_mappings: nil
     )
@@ -153,6 +153,17 @@ module ProductTaxonomy
         File.expand_path("#{distribution_filename(direction:)}.txt", output_dir),
         to_txt(direction:),
       )
+    end
+
+    # For a mapping to an external taxonomy, get the IDs of external categories that are not mapped from Shopify.
+    #
+    # @return [Array<String>] IDs of external categories not mapped from the Shopify taxonomy. Empty if there are no
+    #   mappings from Shopify.
+    def unmapped_external_category_ids
+      return [] if @from_shopify_mappings.blank?
+
+      mappings_by_output_category_id = @from_shopify_mappings.index_by { _1.output_category["id"].to_s }
+      @full_names_by_id.keys - mappings_by_output_category_id.keys
     end
 
     # Generate a JSON representation of the integration version for a single direction.

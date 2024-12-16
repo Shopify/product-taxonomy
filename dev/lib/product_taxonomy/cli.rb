@@ -19,5 +19,12 @@ module ProductTaxonomy
     def dist
       GenerateDistCommand.new(options).run
     end
+
+    desc "unmapped_external_categories",
+      "Find categories in an external taxonomy that are not mapped from the Shopify taxonomy"
+    option :external_taxonomy, type: :string, desc: "The external taxonomy to find unmapped categories in"
+    def unmapped_external_categories(name_and_version)
+      FindUnmappedExternalCategoriesCommand.new(options).run(name_and_version)
+    end
   end
 end

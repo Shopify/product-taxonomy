@@ -15,14 +15,14 @@ module ProductTaxonomy
       @logger.level = :error if options[:quiet]
     end
 
-    def run
+    def run(...)
       elapsed = Benchmark.realtime do
-        execute
+        execute(...)
       end
       logger.info("Completed in #{elapsed.round(2)} seconds")
     end
 
-    def execute
+    def execute(...)
       raise NotImplementedError, "#{self.class}#execute must be implemented"
     end
 
