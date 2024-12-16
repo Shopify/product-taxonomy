@@ -53,7 +53,7 @@ module ProductTaxonomy
       when "attribute_values" then Value.to_txt(version: @version, locale:)
       end
 
-      File.write("#{OUTPUT_PATH}/#{locale}/#{type}.txt", txt_data)
+      File.write("#{OUTPUT_PATH}/#{locale}/#{type}.txt", txt_data + "\n")
     end
 
     def generate_json_file(locale:, type:)
@@ -68,7 +68,7 @@ module ProductTaxonomy
         Value.to_json(version: @version, locale:)
       end
 
-      File.write("#{OUTPUT_PATH}/#{locale}/#{type}.json", JSON.pretty_generate(json_data))
+      File.write("#{OUTPUT_PATH}/#{locale}/#{type}.json", JSON.pretty_generate(json_data) + "\n")
     end
   end
 end

@@ -76,7 +76,7 @@ module ProductTaxonomy
       def generate_all_mappings_file(mappings:, current_shopify_version:, output_path:)
         File.write(
           File.expand_path("all_mappings.json", integrations_output_path(output_path)),
-          JSON.pretty_generate(to_json(mappings:, current_shopify_version:)),
+          JSON.pretty_generate(to_json(mappings:, current_shopify_version:)) + "\n",
         )
       end
 
@@ -147,11 +147,11 @@ module ProductTaxonomy
       json = self.class.to_json(mappings: [to_json(direction:)], current_shopify_version: @current_shopify_version)
       File.write(
         File.expand_path("#{distribution_filename(direction:)}.json", output_dir),
-        JSON.pretty_generate(json),
+        JSON.pretty_generate(json) + "\n",
       )
       File.write(
         File.expand_path("#{distribution_filename(direction:)}.txt", output_dir),
-        to_txt(direction:),
+        to_txt(direction:) + "\n",
       )
     end
 
