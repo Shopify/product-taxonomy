@@ -1,4 +1,4 @@
-## 2025-01
+## 2025-01 (unstable)
 
 #### 📚 Taxonomy Updates
 Expanded taxonomy with new categories, attributes and values, along with relocated categories for better product discoverability.
