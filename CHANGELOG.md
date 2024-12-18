@@ -1,3 +1,94 @@
+## 2025-01 (unstable)
+
+#### 📚 Taxonomy Updates
+Expanded taxonomy with new categories, attributes and values, along with relocated categories for better product discoverability.
+
+##### Apparel & Accessories
+
+- Relocates `Uniforms` and its subcategories into `Uniforms & Workwear`.
+- Relocates `Scrubs` from Business & Industrial into `Uniforms & Workwear`.
+
+##### Arts & Entertainment
+
+- Adds `Perfume Making Kits` with the attribute `Perfumery instruments included`.
+- Adds an `Olfactory Arts Materials` area, including `Candle Making Materials` and `Perfumery Ingredients` (`Bases` and `Fragrance Ingredients`, with the attributes `Olfactory family` and `Ingredient pathway`).
+- Relocates `Raw Candle Wax`, `Wick Tabs` and `Wicks` with their subcategories into `Candle Making Materials`; replaces `Pre-Tabbed Wick Tabs` with `Pre-Tabbed Wicks`.
+- Adds `Olfactory Arts Tools` (`Candle Making Tools`, `Incense Making Tools` and `Perfume Making Tools`).
+- Adds `Banjos` (`4-String`, `5-String` and `6-String`).
+- Adds `Mandolins` (`A-Style`, `F-Style` and `Electric`) with the attribute `Mandolin back shape`.
+- Adds `Ukeleles` (`Baritone`, `Bass`, `Concert`, `Electric`, `Pocket`, `Soprano` and `Tenor`).
+
+##### Baby & Toddler
+
+- Relocates `Baby Bottle Nipples & Liners` and `Baby Bottles` with their subcategories, along with `Bibs` and `Sippy Cups`, into `Feeding Essentials`.
+
+##### Furniture
+
+- Adds `Closet Parts & Accessories`, and relocates into this area `Closet Baskets`, `Closet Bins`, `Closet Doors`, `Closet Drawers`, `Closet Rods` and `Closet Shelves`.
+
+##### Health & Beauty
+
+- Adds a `Weight Loss` area, including `Weight Loss Detox & Cleanse Products`, `Weight Loss Meal Replacements` and `Weight Loss Supplements`.
+- In the Medical Tests area, adds `COVID-19 Tests`, `Flu Tests` and `Helicobacter Pylori Test Kits`.
+- Adds `Hand Creams` and `Feminine Intimate Wash`.
+- Renames `Makeup color/shade` as `Makeup shade` and `Hair color/shade` as `Hair color`.
+
+##### Home & Garden
+
+- Adds `Outdoor Kitchens`.
+
+##### Services
+
+- Adds an `Environmental Services` area, including `Waste Management Services`.
+- Adds `Tax Services`.
+
+##### Software
+
+- Adds the attribute `Video game format` in the Video Game Software area.
+
+##### Sporting Goods
+
+- Adds `Racing Canoes` and relocates `Marathon Canoes` and `Sprint Canoes` into this area.
+- Adds `Racing Kayaks`.
+- Adds `Boating & Water Sport Protective Gear`, including `Boating & Water Sport Eye Protection`; relocates `Water Sport Helmets` into this area.
+- Adds a `Windfoiling` area, including `Boards`, `Foils`, `Parts` (`Foil Fuselages`, `Foil Masts` and `Foil Stabilizers`), `Sails` and `Accessories` (`Carry Bags & Covers` and `Protective Gear`).
+- Adds a `Wingfoiling` area, including `Boards`, `Foils`, `Parts` (`Foil Fuselages`, `Foil Masts`, `Foil Stabilizers` and `Wing Parts`), `Wings` and `Accessories` (`Carry Bags & Covers` and `Protective Gear`).
+- Adds `Archery Accessories` and relocates `Archery Armguards`, `Archery Gloves & Releases`, `Archery Range Accessories`, `Archery Targets` and `Quivers` into this area.
+- In the E-Scooters area, adds `Commuter E-Scooters`, `Off-Road E-Scooters`, `Performance E-Scooters` and `Youth E-Scooters`.
+- Adds an `E-Scooters Parts` area, including `Batteries & Chargers`, `Braking Systems`, `Electric Motors`, `Electrical Components`, `Frames & Body Parts`, `Handlebars & Controls` and `Wheels & Tires`, with the attributes `Scooter brake type` and `Electric scooter motor type`.
+
+##### Vehicles & Parts
+
+- In the `Motor Vehicle Braking` area, adds `Back Plates`, `Brake Drums`, `Brake Hoses`, `Brake Light Switches`, `Brake Shoes` and `Wheel Cylinders`.
+- Adds a `Motor Vehicle Cooling Systems` area, including `Expansion Tank Caps`, `Expansion Tanks`, `Fan Shrouds`, `Hose Fittings`, `Radiator Caps`, `Radiator Fans`, `Radiator Hoses`, `Radiator Overflow Tanks`, `Radiator Panels`, `Radiators`, `Thermostats`, `Water Necks` and `Water Pumps`.
+- In the `Motor Vehicle Engine Parts` area, adds `Distributor Parts`, `Distributors`, `Glow Plugs`, `Ignition Coils` and `Ignition Leads`.
+- In the `Motor Vehicle Frame & Body Parts` area, adds `Door Handles`, `Door Seals`, `Fuel Doors`, `Gas Struts` and `Side Panels`.
+- In the `Motor Vehicle Power & Electrical Systems` area, adds `Alternator Parts` and `Ignition Switches`.
+- In the `Motor Vehicle Sensors & Gauges` area, adds `Air Intake Temperature Sensors`, `Coolant Temperature Sensors`, `Knock Sensors`, `Manifold Absolute Pressure (MAP) Sensors`, `Mass Air Flow (MAF) Sensors`, `Parking Sensors` and `Rain Sensors`.
+- In the `Motor Vehicle Transmission & Drivetrain Parts` area, adds `CV Boots`, `CV Joints`, `Clutch Discs`, `Clutch Lines`, `Clutch Master Cylinders`, `Clutch Pressure Plates`, `Clutch Release Bearings`, `Clutch Slave Cylinders`, `Flywheels`, `Propshafts` and `Transmission Filters`.
+- In the `Motor Vehicle Window Parts & Accessories` area, adds `Window Glass`, `Window Regulators`, `Window Seals` and `Windshield Wiper Systems & Components` (`Wiper Systems`, `Arms`, `Blades` and `Motors`).
+- Adds an `Aircraft Protective Gear` area, including `Aircraft Anti-G Suits`, `Aircraft Emergency Oxygen Systems`, `Aircraft Emergency Parachutes`, `Aircraft Fire Suppression Gear`, `Aircraft Safety Flight Suits`, `Airline Life Vests` and `Pilot Helmets`.
+- Adds an `Off-Road & Motor Sports Vehicle Protective Gear` area, including `Racing Balaclavas`, `Chest Guards`, `Gloves`, `Googles`, `Helmets`, `Impact Guards`, `Neck Supports`, `Protective Shorts` and `Racing Suits`, along with `ATV & UTV Body Armor`, `Boots`, `Gloves`, `Googles` and `Helmets`.
+- Relocates `Off-Road & All-Terrain Vehicle Protective Gear` and its subcategory under `Off-Road & Motor Sports Vehicle Protective Gear`.
+- Adds a `Watercraft Safety Equipment` area, including `Distress Beacons and EPIRBs`, `Emergency Marine Flares`, `Life Rafts`, `Lifebuoys`, `Man Overboard Systems` and `Throw Ropes`.
+- In the Aircraft area, adds:
+  - `Heavier-Than-Air Aircraft` (`Autogyros`, `Drones`, `Gliders`, `Helicopters`, `Large Jets`, `Light Aircraft`, `Light Jets`, `Long Range Jets`, `Mid-Size Jets`, `Super Mid-Size Jets`, `Ultralights` and `Very Light Jets`) with the attributes `Aircraft engine type`, `Aircraft engine configuration`, `Cockpit type` and `Drone features`; and
+  - `Lighter-Than-Air Aircraft` (`Airships & Dirigibles` and `Hot Air Balloons`).
+- In the Motor Vehicles area, adds:
+  - `Commercial Vehicles`, including `Taxis` and `Buses` (`Articulated`, `City Buses`, `Coaches`, `Double Decker`, `Minibuses`, `School Buses` and `Trolleybuses`, with the attribute `Vehicle floor configuration`);
+  - `Motor Sports Vehicles`, including `Race Cars` (`Drag Racing`, `Drift Cars`, `Formula Cars`, `GT Cars`, `Rally Cars`, `Sports Prototypes`, `Stock Cars` and `Touring Cars`), `Racing Karts`, `Racing Motorcycles` (`Enduro Bikes`, `Motocross Bikes`, `Speedway Bikes` and `Trials Bikes`), `Racing Sidecars` and `Racing Trucks`; and
+  - `Service & Utility Vehicles`, including `Emergency Vehicles` (`Ambulances`, `Fire Trucks` and `Police Vehicles` with subcategories `Police Cars`, `Police Trucks` and `Police Vans`) and `Military Vehicles`.
+- In the Cars, Trucks & Vans area, adds:
+  - `Hybrid Vehicles` (`Hybrid Cars`, `Hybrid Trucks` and `Hybrid Vans`); and
+  - `Vintage & Classic Vehicles` (`Vintage & Classic Cars`, `Vintage & Classic Trucks` and `Vintage & Classic Vans`) with the attributes `Antique car era` and `Antique car design`.
+- In the Off-Road and All-Terrain Vehicles area, adds `Monster Trucks`.
+
+##### Miscellaneous
+
+- Introduces `Bundles` as a new overarching category.
+- Extends existing attributes to additional categories.
+- Includes other value additions.
+
 ## 2024-10
 
 #### 📚 Taxonomy Updates
