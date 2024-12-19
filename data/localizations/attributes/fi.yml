@@ -98,6 +98,12 @@ fi:
     airbrush_operation_method:
       name: Airbrush-toimintatapa
       description: "Määrittää airbrush-ruiskujen toimintatavan, esimerkiksi kaksinkertainen toiminta tai yksittäinen toiminta"
+    aircraft_engine_configuration:
+      name: Lentokoneen moottorin kokoonpano
+      description: "Määrittää lentokonetta käyttävien moottoreiden määrän, kuten yksi- tai kaksimoottorinen"
+    aircraft_engine_type:
+      name: Lentokoneen moottorityyppi
+      description: "Määrittää lentokoneen moottorin tyypin, kuten suihkukone tai potkuturbiini"
     airsoft_equipment_included:
       name: Airsoft-varusteet mukana
       description: "Määrittää airsoft-tuotteiden mukana toimitettavat lisävarusteet, kuten suojalasit tai taktisen liivin"
@@ -155,6 +161,12 @@ fi:
     antifreeze_type:
       name: Pakkasnestetyyppi
       description: "Määrittää jäätymisenestoaineen tyypin ajoneuvon huoltoa varten, esim. tiiviste, esilaimennettu"
+    antique_car_design:
+      name: Antiikkiauton muotoilu
+      description: "Kuvaa antiikkiauton ensisijaista muotoilutyyliä, kuten t-bucket tai grand tourer"
+    antique_vehicle_era:
+      name: Antiikkiauton aikakausi
+      description: "Kuvaa antiikkiauton historiallista ajanjaksoa, kuten pronssiaikakausi tai vintage-aikakausi"
     application_area:
       name: Sovellusalue
       description: "Määrittää kehon osan tai alueen, jolle tuotetta levitetään, esim. huulet, koko vartalo"
@@ -1241,6 +1253,9 @@ fi:
     coating/sealant_application:
       name: Pinnoitteen/tiivisteen levittäminen
       description: "Kuvaa suojapinnoitteiden ja tiivisteiden toiminnan, esim. säänkesto, ruosteenesto"
+    cockpit_type:
+      name: Ohjaamon tyyppi
+      description: "Määrittää lentokoneen ohjaamon muotoilun ja tekniikan, kuten analoginen tai hybridi"
     cocktail_decoration_design:
       name: Cocktailkoristeiden muotoilu
       description: "Tunnistaa cocktailjuhlatarvikkeiden kuvion tai tyylin, kuten pilkkuja tai erikoiset muodot"
@@ -2120,6 +2135,9 @@ fi:
     drive_type:
       name: Levyasematyyppi
       description: "Tunnistaa ajoneuvojen tai raskaiden koneiden vetojärjestelmän tyypin, kuten 2WD tai 4WD"
+    drone_features:
+      name: Droonin ominaisuudet
+      description: "Määrittää droonissa käytettävissä olevat erilaiset toiminnalliset ja muotoiluominaisuudet, kuten GPS-navigoinnin tai esteiden välttämisen"
     drum_configuration:
       name: Rummun konfiguraatio
       description: "Käytetään osoittamaan rumpusarjan kokoonpanoa, kuten 7-osainen tai kuoripakkaus"
@@ -2210,6 +2228,9 @@ fi:
     egg_turning:
       name: Munan kääntäminen
       description: "Kuvaa menetelmää munien inkubaattorissa pyörittämisen menetelmää, kuten automaattinen tai manuaalinen"
+    electric_scooter_motor_type:
+      name: Sähköskootterin moottorityyppi
+      description: "Määrittää skootterin moottoreiden tyypin ja kokoonpanon, kuten harjattu DC-moottori tai harjaton DC-moottori"
     electronic_drum_components:
       name: Elektroniset rumpukomponentit
       description: "Määrittää elektronisen rumpusetin elementit, kuten rumpumoduulin tai rumputyynyt"
@@ -2918,9 +2939,9 @@ fi:
     hair_care_technology:
       name: Hiustenhoitotekniikka
       description: "Määrittää hiustenhoitotuotteissa käytettävän teknologian, esim. höyry, termolyysi"
-    hair_color/shade:
-      name: Hiusten väri/sävy
-      description: "Tunnistaa hiustenhoitotuotteiden värin tai sävyn, kuten vaalea tai tummanruskea"
+    hair_color:
+      name: Hiusväri
+      description: "Tunnistaa hiustenhoitotuotteiden värin tai sävyn, kuten blondi tai tummanruskea"
     hair_loss_type:
       name: Hiustenlähtötyyppi
       description: "Järjestää tuotteet hiustenlähtötyypin mukaan, esim. alopecia areata, miesten kaljuuntuminen"
@@ -3194,6 +3215,9 @@ fi:
     ingredient_origin:
       name: Ainesosan alkuperä
       description: "Määrittää tuotteen ainesosien lähteen, esim. luonnollinen, synteettinen"
+    ingredient_pathway:
+      name: Ainesosien reitti
+      description: "Ilmoittaa, onko hajuvesien ainesosat johdettu luonnollisesti erottamalla ne fyysisesti biomassasta ilman kemiallisia muutoksia vai syntetisoituvatko ne muilla menetelmillä"
     ingredients:
       name: Ainesosat
       description: "Määrittää tuotteen koostumuksessa käytetyt komponentit, esim. sinkkioksidi, aloe vera"
@@ -3641,15 +3665,18 @@ fi:
     magnification:
       name: Suurennus
       description: "Määrittää tuotteen suurennustehon, kuten 1x tai 100x"
-    makeup_color/shade:
-      name: Meikin väri/sävy
-      description: "Kuvaa kosmetiikan sävyä, kuten keskivaaleanpunainen tai tummanruskea"
     makeup_features:
       name: Meikkiominaisuudet
       description: "Korostaa kosmetiikan tärkeimpiä ominaisuuksia, kuten korkea pigmentti tai hajusteeton"
+    makeup_shade:
+      name: Meikkisävy
+      description: "Kuvaa kosmetiikan sävyä, kuten keskivaaleanpunainen tai tummanruskea"
     mallet_material:
       name: Malletin materiaali
       description: "Tunnistaa perkussiokapuloissa käytetyn materiaalin tyypin, kuten messinki tai kumi"
+    mandolin_back_shape:
+      name: Mandoliinin selän muoto
+      description: "Määrittää mandoliinin selän kaarevuuden ja muotoilun, kuten flat-back tai archtop"
     manufacturer_type:
       name: Valmistajatyyppi
       description: "Määrittää ajoneuvon osien tai lisävarusteiden lähteen, kuten alkuperäiset tai kolmannen osapuolen valmistamat osat"
@@ -4133,6 +4160,9 @@ fi:
     oil_type:
       name: Öljyn tyyppi
       description: "Määrittää tuotteessa käytetyn öljyn tyypin, esim. parafiini, kerosiini"
+    olfactory_family:
+      name: Hajuperhe
+      description: "Määrittää yleisen hajuluokan, johon tuoksu kuuluu, esim. aldehydinen, eläimellinen"
     one_piece_style:
       name: Yksiosainen tyyli
       description: "Yksilöi yksiosaisen vaatteen tyylin, kuten haalari tai potkupuku"
@@ -4382,6 +4412,9 @@ fi:
     performance_metrics:
       name: Suorituskykymittarit
       description: "Korostaa tekoälyn ja koneoppimisohjelmiston tehokkuutta ja tehokkuuden eri osa-alueita, kuten harjoitusaikaa ja päättelynopeutta"
+    perfumery_instruments_included:
+      name: Mukana tulevat hajuvesivälineet
+      description: "Määrittää hajuveden valmistussetin mukana tulevat välineet, kuten testiliuskat tai pipetit"
     peroxide_content:
       name: Peroksidipitoisuus
       description: "Osoittaa henkilökohtaisessa hygieniatuotteissa käytetyn peroksidin tyypin, kuten karbamidi tai peroksiditon"
@@ -5171,6 +5204,9 @@ fi:
     scissor_blade_type:
       name: Saksien terän tyyppi
       description: "Kuvaa saksien terien muotoa ja tyyliä, kuten kaareva tai kampasimpukka"
+    scooter_brake_type:
+      name: Skootterin jarrutyyppi
+      description: "Määrittää skootterin jarrujen mekanismin ja rakenteen, kuten levy- tai rumpujarrut"
     scope/sight_design:
       name: Tähystyslaitteen/tähtäimen muotoilu
       description: "Kuvaa aseiden tähtäinten suunnittelutyyppiä, esim. pimeänäkö, laser"
@@ -6551,6 +6587,9 @@ fi:
     vehicle_features:
       name: Ajoneuvon ominaisuudet
       description: "Kuvaa ajoneuvon erityisominaisuuksia tai varusteita, kuten lämmitetyt istuimet tai navigointijärjestelmä"
+    vehicle_floor_configuration:
+      name: Ajoneuvon lattiakokoonpano
+      description: "Määrittää lähiliikenteen ajoneuvon lattian suunnittelun ja asettelun, kuten matala lattia tai puolimatala lattia"
     vehicle_fluid_features:
       name: Ajoneuvon nesteiden ominaisuudet
       description: "Kuvaa ajoneuvon nesteiden erityisominaisuuksia, kuten jäätymisenesto tai biohajoava"
@@ -6602,6 +6641,9 @@ fi:
     video_game_content_features:
       name: Videopelien sisällön ominaisuudet
       description: "Tunnistaa videopeliohjelmiston erityispiirteet, esim. ladattava sisältö (DLC), varhainen käyttöoikeus"
+    video_game_format:
+      name: Videopelin formaatti
+      description: "Määrittää videopelien toimitustavan ja mediatyypin, kuten digitaalinen tai fyysinen"
     video_game_genre:
       name: Videopelilajityyppi
       description: "Luokittaa videopelin tyypin, kuten perhe tai selviytyminen"
