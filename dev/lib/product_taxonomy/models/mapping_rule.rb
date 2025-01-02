@@ -29,7 +29,10 @@ module ProductTaxonomy
 
           is_to_shopify = direction == :to_shopify
           input_category = is_to_shopify ? full_names_by_id[input_id] : Category.find_by(id: input_id)
-          output_category = is_to_shopify ? Category.find_by(id: output_id) : full_names_by_id[output_id]
+          # We set output_category to be the raw output ID if is_to_shopify is true, with an expectation that it will
+          # be resolved to a `Category` before the rule is serialized to JSON or TXT.
+          # See `IntegrationVersion#resolve_to_shopify_mappings`.
+          output_category = is_to_shopify ? output_id : full_names_by_id[output_id]
 
           raise ArgumentError, "Input category not found for mapping rule: #{rule}" unless input_category
           raise ArgumentError, "Output category not found for mapping rule: #{rule}" unless output_category
@@ -41,7 +44,8 @@ module ProductTaxonomy
       end
     end
 
-    attr_reader :input_category, :output_category
+    attr_reader :input_category
+    attr_accessor :output_category
 
     def initialize(input_category:, output_category:)
       @input_category = input_category
@@ -87,19 +91,23 @@ module ProductTaxonomy
           id: category["id"].to_s,
           full_name: category["full_name"],
         }
-      else
+      elsif category.is_a?(Category)
         {
           id: category.gid,
           full_name: category.full_name,
         }
+      else
+        raise ArgumentError, "Mapping rule category not resolved. Raw value: #{category}"
       end
     end
 
     def category_txt(category)
       if category.is_a?(Hash)
         category["full_name"]
-      else
+      elsif category.is_a?(Category)
         category.full_name
+      else
+        raise ArgumentError, "Mapping rule category not resolved. Raw value: #{category}"
       end
     end
   end

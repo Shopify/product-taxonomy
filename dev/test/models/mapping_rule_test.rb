@@ -112,12 +112,12 @@ module ProductTaxonomy
       end
     end
 
-    test "load_rules_from_source raises an error if the output category is not found" do
+    test "load_rules_from_source raises an error if the output category is missing" do
       File.expects(:exist?).with("/fake/data/integrations/google/2021-09-21/mappings/to_shopify.yml").returns(true)
       YAML.expects(:safe_load_file)
         .with("/fake/data/integrations/google/2021-09-21/mappings/to_shopify.yml")
         .returns("rules" => [
-          { "input" => { "product_category_id" => "166" }, "output" => { "product_category_id" => ["bb"] } },
+          { "input" => { "product_category_id" => "166" }, "output" => { "product_category_id" => [] } },
         ])
 
       assert_raises(ArgumentError) do
@@ -266,6 +266,26 @@ module ProductTaxonomy
         output_category: @integration_category,
       )
       refute rule.input_txt_equals_output_txt?
+    end
+
+    test "to_txt raises an error if the output category is not resolved" do
+      rule = MappingRule.new(
+        input_category: @shopify_category,
+        output_category: "aa",
+      )
+      assert_raises(ArgumentError) do
+        rule.to_txt
+      end
+    end
+
+    test "to_json raises an error if the output category is not resolved" do
+      rule = MappingRule.new(
+        input_category: @shopify_category,
+        output_category: "aa",
+      )
+      assert_raises(ArgumentError) do
+        rule.to_json
+      end
     end
   end
 end

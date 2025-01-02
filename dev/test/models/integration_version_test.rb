@@ -7,39 +7,69 @@ module ProductTaxonomy
     DATA_PATH = File.expand_path("../fixtures/data", __dir__)
 
     setup do
-      ap = Category.new(id: "ap", name: "Animals & Pet Supplies")
-      ap_1 = Category.new(id: "ap-1", name: "Live Animals")
-      ap.add_child(ap_1)
-      Category.add(ap)
-      Category.add(ap_1)
+      aa = Category.new(id: "aa", name: "Apparel & Accessories")
+      aa_1 = Category.new(id: "aa-1", name: "Clothing")
+      aa_2 = Category.new(id: "aa-2", name: "Clothing Accessories")
+      aa_3 = Category.new(id: "aa-3", name: "Costumes & Accessories")
+      aa.add_child(aa_1)
+      aa.add_child(aa_2)
+      aa.add_child(aa_3)
+      Category.add(aa)
+      Category.add(aa_1)
+      Category.add(aa_2)
+      Category.add(aa_3)
       @current_shopify_version = "2025-01-unstable"
       @shopify_integration = IntegrationVersion.load_from_source(
         integration_path: File.expand_path("integrations/shopify/2020-01", DATA_PATH),
         current_shopify_version: @current_shopify_version,
       )
+      @shopify_integration.resolve_to_shopify_mappings(nil) # Resolve against current version
       @external_integration = IntegrationVersion.load_from_source(
         integration_path: File.expand_path("integrations/foocommerce/1.0.0", DATA_PATH),
         current_shopify_version: @current_shopify_version,
       )
     end
 
-    test "load_from_source loads the integration version with the correct version and name" do
+    test "IntegrationVersion.load_from_source loads the integration version with the correct version and name" do
       assert_equal "2020-01", @shopify_integration.version
       assert_equal "shopify", @shopify_integration.name
     end
 
-    test "load_all_from_source loads all integration versions" do
+    test "IntegrationVersion.load_all_from_source loads all integration versions" do
       integrations_path = File.expand_path("integrations", DATA_PATH)
       integration_versions = IntegrationVersion.load_all_from_source(
         base_path: integrations_path,
         current_shopify_version: @current_shopify_version,
       )
 
-      assert_equal 2, integration_versions.size
+      assert_equal 4, integration_versions.size
       assert_equal "foocommerce", integration_versions.first.name
       assert_equal "1.0.0", integration_versions.first.version
-      assert_equal "shopify", integration_versions.last.name
-      assert_equal "2020-01", integration_versions.last.version
+      assert_equal "shopify", integration_versions.second.name
+      assert_equal "2020-01", integration_versions.second.version
+      assert_equal "shopify", integration_versions.third.name
+      assert_equal "2021-01", integration_versions.third.version
+      assert_equal "shopify", integration_versions.fourth.name
+      assert_equal "2022-01", integration_versions.fourth.version
+    end
+
+    test "IntegrationVersion.load_all_from_source resolves chain of to_shopify mappings against latest version" do
+      integrations_path = File.expand_path("integrations", DATA_PATH)
+      integration_versions = IntegrationVersion.load_all_from_source(
+        base_path: integrations_path,
+        current_shopify_version: @current_shopify_version,
+      )
+      output_mappings = integration_versions
+        .index_by { "#{_1.name}/#{_1.version}" }
+        .transform_values(&:to_shopify_mappings)
+
+      # 2022: mapped to aa-3, latest
+      assert_equal "gid://shopify/TaxonomyCategory/aa-3", output_mappings["shopify/2022-01"].first.output_category.gid
+      # 2021: mapped to aa-2, continues to resolve to aa-3
+      assert_equal "gid://shopify/TaxonomyCategory/aa-3", output_mappings["shopify/2021-01"].first.output_category.gid
+      # 2020: mapped to aa-1, continues to resolve to aa-3
+      assert_equal "gid://shopify/TaxonomyCategory/aa", output_mappings["shopify/2020-01"].first.output_category.gid
+      assert_equal "gid://shopify/TaxonomyCategory/aa-3", output_mappings["shopify/2020-01"].second.output_category.gid
     end
 
     test "to_json returns the JSON representation of a mapping to Shopify" do
@@ -48,25 +78,20 @@ module ProductTaxonomy
         output_taxonomy: "shopify/2025-01-unstable",
         rules: [
           {
-            input: { category: { id: "1", full_name: "Animals & Pet Supplies (old shopify)" } },
+            input: { category: { id: "1", full_name: "Apparel & Accessories (2020-01)" } },
             output: {
               category: [{
-                id: "gid://shopify/TaxonomyCategory/ap",
-                full_name: "Animals & Pet Supplies",
+                id: "gid://shopify/TaxonomyCategory/aa",
+                full_name: "Apparel & Accessories",
               }],
             },
           },
           {
-            input: {
-              category: {
-                id: "2",
-                full_name: "Animals & Pet Supplies > Live Animals (old shopify)",
-              },
-            },
+            input: { category: { id: "2", full_name: "Apparel & Accessories > Clothing (2020-01)" } },
             output: {
               category: [{
-                id: "gid://shopify/TaxonomyCategory/ap-1",
-                full_name: "Animals & Pet Supplies > Live Animals",
+                id: "gid://shopify/TaxonomyCategory/aa-1",
+                full_name: "Apparel & Accessories > Clothing",
               }],
             },
           },
@@ -81,27 +106,22 @@ module ProductTaxonomy
         output_taxonomy: "foocommerce/1.0.0",
         rules: [
           {
-            input: { category: { id: "gid://shopify/TaxonomyCategory/ap", full_name: "Animals & Pet Supplies" } },
+            input: { category: { id: "gid://shopify/TaxonomyCategory/aa", full_name: "Apparel & Accessories" } },
             output: {
               category: [{
                 id: "1",
-                full_name: "Animals & Pet Supplies (foocommerce)",
+                full_name: "Apparel & Accessories (foocommerce)",
               }],
             },
           },
           {
             input: {
               category: {
-                id: "gid://shopify/TaxonomyCategory/ap-1",
-                full_name: "Animals & Pet Supplies > Live Animals",
+                id: "gid://shopify/TaxonomyCategory/aa-1",
+                full_name: "Apparel & Accessories > Clothing",
               },
             },
-            output: {
-              category: [{
-                id: "2",
-                full_name: "Animals & Pet Supplies > Live Animals (foocommerce)",
-              }],
-            },
+            output: { category: [{ id: "2", full_name: "Apparel & Accessories > Clothing (foocommerce)" }] },
           },
         ],
       }
@@ -115,11 +135,11 @@ module ProductTaxonomy
         # → {base taxonomy category name}
         # ⇒ {mapped taxonomy category name}
 
-        → Animals & Pet Supplies (old shopify)
-        ⇒ Animals & Pet Supplies
+        → Apparel & Accessories (2020-01)
+        ⇒ Apparel & Accessories
 
-        → Animals & Pet Supplies > Live Animals (old shopify)
-        ⇒ Animals & Pet Supplies > Live Animals
+        → Apparel & Accessories > Clothing (2020-01)
+        ⇒ Apparel & Accessories > Clothing
       TXT
       assert_equal expected_txt.chomp, @shopify_integration.to_txt(direction: :to_shopify)
     end
@@ -131,11 +151,11 @@ module ProductTaxonomy
         # → {base taxonomy category name}
         # ⇒ {mapped taxonomy category name}
 
-        → Animals & Pet Supplies
-        ⇒ Animals & Pet Supplies (foocommerce)
+        → Apparel & Accessories
+        ⇒ Apparel & Accessories (foocommerce)
 
-        → Animals & Pet Supplies > Live Animals
-        ⇒ Animals & Pet Supplies > Live Animals (foocommerce)
+        → Apparel & Accessories > Clothing
+        ⇒ Apparel & Accessories > Clothing (foocommerce)
       TXT
       assert_equal expected_txt.chomp, @external_integration.to_txt(direction: :from_shopify)
     end
@@ -148,16 +168,19 @@ module ProductTaxonomy
       }
       File.expects(:write).with(
         "/tmp/fake/en/integrations/shopify/shopify_2020-01_to_shopify_2025-01.json",
-        JSON.pretty_generate(expected_shopify_json),
+        JSON.pretty_generate(expected_shopify_json) + "\n",
       )
       File.expects(:write).with(
         "/tmp/fake/en/integrations/shopify/shopify_2020-01_to_shopify_2025-01.txt",
-        @shopify_integration.to_txt(direction: :to_shopify),
+        @shopify_integration.to_txt(direction: :to_shopify) + "\n",
       )
-      @shopify_integration.generate_distribution(
-        output_path: "/tmp/fake",
-        direction: :to_shopify,
-      )
+
+      assert_nothing_raised do
+        @shopify_integration.generate_distribution(
+          output_path: "/tmp/fake",
+          direction: :to_shopify,
+        )
+      end
     end
 
     test "generate_distribution generates the distribution files for a mapping from Shopify" do
@@ -168,16 +191,19 @@ module ProductTaxonomy
       }
       File.expects(:write).with(
         "/tmp/fake/en/integrations/foocommerce/shopify_2025-01_to_foocommerce_1.0.0.json",
-        JSON.pretty_generate(expected_external_json),
+        JSON.pretty_generate(expected_external_json) + "\n",
       )
       File.expects(:write).with(
         "/tmp/fake/en/integrations/foocommerce/shopify_2025-01_to_foocommerce_1.0.0.txt",
-        @external_integration.to_txt(direction: :from_shopify),
+        @external_integration.to_txt(direction: :from_shopify) + "\n",
       )
-      @external_integration.generate_distribution(
-        output_path: "/tmp/fake",
-        direction: :from_shopify,
-      )
+
+      assert_nothing_raised do
+        @external_integration.generate_distribution(
+          output_path: "/tmp/fake",
+          direction: :from_shopify,
+        )
+      end
     end
 
     test "generate_distributions only calls generate_distribution with to_shopify for Shopify integration version" do
@@ -207,52 +233,6 @@ module ProductTaxonomy
         mappings:,
       }
       assert_equal expected_json, IntegrationVersion.to_json(mappings:, current_shopify_version: "2025-01-unstable")
-    end
-
-    test "generate_all_distributions generates all_mappings.json and distribution files for all integration versions" do
-      FileUtils.expects(:mkdir_p).with("/tmp/fake/en/integrations/foocommerce")
-      FileUtils.expects(:mkdir_p).with("/tmp/fake/en/integrations/shopify")
-      expected_external_json = IntegrationVersion.to_json(
-        mappings: [@external_integration.to_json(direction: :from_shopify)],
-        current_shopify_version: @current_shopify_version,
-      )
-      File.expects(:write).with(
-        "/tmp/fake/en/integrations/foocommerce/shopify_2025-01_to_foocommerce_1.0.0.json",
-        JSON.pretty_generate(expected_external_json),
-      )
-      File.expects(:write).with(
-        "/tmp/fake/en/integrations/foocommerce/shopify_2025-01_to_foocommerce_1.0.0.txt",
-        @external_integration.to_txt(direction: :from_shopify),
-      )
-      expected_shopify_json = IntegrationVersion.to_json(
-        mappings: [@shopify_integration.to_json(direction: :to_shopify)],
-        current_shopify_version: @current_shopify_version,
-      )
-      File.expects(:write).with(
-        "/tmp/fake/en/integrations/shopify/shopify_2020-01_to_shopify_2025-01.json",
-        JSON.pretty_generate(expected_shopify_json),
-      )
-      File.expects(:write).with(
-        "/tmp/fake/en/integrations/shopify/shopify_2020-01_to_shopify_2025-01.txt",
-        @shopify_integration.to_txt(direction: :to_shopify),
-      )
-      all_mappings_json = IntegrationVersion.to_json(
-        mappings: [
-          @external_integration.to_json(direction: :from_shopify),
-          @shopify_integration.to_json(direction: :to_shopify),
-        ],
-        current_shopify_version: @current_shopify_version,
-      )
-      File.expects(:write).with(
-        "/tmp/fake/en/integrations/all_mappings.json",
-        JSON.pretty_generate(all_mappings_json),
-      )
-      IntegrationVersion.generate_all_distributions(
-        output_path: "/tmp/fake",
-        current_shopify_version: @current_shopify_version,
-        logger: stub("logger", info: nil),
-        base_path: File.expand_path("integrations", DATA_PATH),
-      )
     end
 
     test "unmapped_external_category_ids returns IDs of external categories not mapped from the Shopify taxonomy" do

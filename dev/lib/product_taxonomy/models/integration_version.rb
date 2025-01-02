@@ -30,10 +30,32 @@ module ProductTaxonomy
       #
       # @return [Array<IntegrationVersion>]
       def load_all_from_source(current_shopify_version: nil, base_path: INTEGRATIONS_PATH)
-        integrations = YAML.safe_load_file(File.expand_path("integrations.yml", base_path))
-        integrations.pluck("available_versions").flatten.map do |integration_version|
-          integration_path = File.expand_path(integration_version, base_path)
-          load_from_source(integration_path:, current_shopify_version:)
+        integrations_yaml = YAML.safe_load_file(File.expand_path("integrations.yml", base_path))
+        integrations_yaml.flat_map do |integration_yaml|
+          versions = integration_yaml["available_versions"].sort.map do |version_path|
+            load_from_source(
+              integration_path: File.expand_path(version_path, base_path),
+              current_shopify_version:,
+            )
+          end
+
+          resolve_to_shopify_mappings_chain(versions) if integration_yaml["name"] == "shopify"
+
+          versions
+        end
+      end
+
+      # Resolve a set of IntegrationVersion to_shopify mappings so that each one maps to the latest version of the
+      # Shopify taxonomy.
+      #
+      # @param versions [Array<IntegrationVersion>] The versions to resolve, ordered from oldest to newest.
+      def resolve_to_shopify_mappings_chain(versions)
+        # Resolve newest version against current taxonomy
+        versions.last.resolve_to_shopify_mappings(nil)
+
+        # Resolve each older version against the one following it
+        versions.each_cons(2).reverse_each do |previous, next_version|
+          previous.resolve_to_shopify_mappings(next_version)
         end
       end
 
@@ -153,6 +175,19 @@ module ProductTaxonomy
         File.expand_path("#{distribution_filename(direction:)}.txt", output_dir),
         to_txt(direction:) + "\n",
       )
+    end
+
+    # Resolve the output categories of to_shopify mappings to the next version of the Shopify taxonomy.
+    #
+    # @param next_integration_version [IntegrationVersion | nil] The IntegrationVersion defining mappings to the next
+    #   newer version of the Shopify taxonomy. If nil, the latest version of the Shopify taxonomy is used.
+    def resolve_to_shopify_mappings(next_integration_version)
+      @to_shopify_mappings.each do |mapping|
+        newer_mapping = next_integration_version&.to_shopify_mappings&.find do
+          _1.input_category["id"] == mapping.output_category
+        end
+        mapping.output_category = newer_mapping&.output_category || Category.find_by(id: mapping.output_category)
+      end
     end
 
     # For a mapping to an external taxonomy, get the IDs of external categories that are not mapped from Shopify.
