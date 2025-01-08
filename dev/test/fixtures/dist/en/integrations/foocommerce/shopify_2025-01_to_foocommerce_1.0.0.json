@@ -1,0 +1,43 @@
+{
+  "version": "2025-01-unstable",
+  "mappings": [
+    {
+      "input_taxonomy": "shopify/2025-01-unstable",
+      "output_taxonomy": "foocommerce/1.0.0",
+      "rules": [
+        {
+          "input": {
+            "category": {
+              "id": "gid://shopify/TaxonomyCategory/aa",
+              "full_name": "Apparel & Accessories"
+            }
+          },
+          "output": {
+            "category": [
+              {
+                "id": "1",
+                "full_name": "Apparel & Accessories (foocommerce)"
+              }
+            ]
+          }
+        },
+        {
+          "input": {
+            "category": {
+              "id": "gid://shopify/TaxonomyCategory/aa-1",
+              "full_name": "Apparel & Accessories > Clothing"
+            }
+          },
+          "output": {
+            "category": [
+              {
+                "id": "2",
+                "full_name": "Apparel & Accessories > Clothing (foocommerce)"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

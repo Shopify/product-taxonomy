@@ -1,0 +1,125 @@
+{
+  "version": "2025-01-unstable",
+  "mappings": [
+    {
+      "input_taxonomy": "shopify/2025-01-unstable",
+      "output_taxonomy": "foocommerce/1.0.0",
+      "rules": [
+        {
+          "input": {
+            "category": {
+              "id": "gid://shopify/TaxonomyCategory/aa",
+              "full_name": "Apparel & Accessories"
+            }
+          },
+          "output": {
+            "category": [
+              {
+                "id": "1",
+                "full_name": "Apparel & Accessories (foocommerce)"
+              }
+            ]
+          }
+        },
+        {
+          "input": {
+            "category": {
+              "id": "gid://shopify/TaxonomyCategory/aa-1",
+              "full_name": "Apparel & Accessories > Clothing"
+            }
+          },
+          "output": {
+            "category": [
+              {
+                "id": "2",
+                "full_name": "Apparel & Accessories > Clothing (foocommerce)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "input_taxonomy": "shopify/2020-01",
+      "output_taxonomy": "shopify/2025-01-unstable",
+      "rules": [
+        {
+          "input": {
+            "category": {
+              "id": "1",
+              "full_name": "Apparel & Accessories (2020-01)"
+            }
+          },
+          "output": {
+            "category": [
+              {
+                "id": "gid://shopify/TaxonomyCategory/aa",
+                "full_name": "Apparel & Accessories"
+              }
+            ]
+          }
+        },
+        {
+          "input": {
+            "category": {
+              "id": "2",
+              "full_name": "Apparel & Accessories > Clothing (2020-01)"
+            }
+          },
+          "output": {
+            "category": [
+              {
+                "id": "gid://shopify/TaxonomyCategory/aa-3",
+                "full_name": "Apparel & Accessories > Costumes & Accessories"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "input_taxonomy": "shopify/2021-01",
+      "output_taxonomy": "shopify/2025-01-unstable",
+      "rules": [
+        {
+          "input": {
+            "category": {
+              "id": "aa-1",
+              "full_name": "Apparel & Accessories > Clothing (2021-01)"
+            }
+          },
+          "output": {
+            "category": [
+              {
+                "id": "gid://shopify/TaxonomyCategory/aa-3",
+                "full_name": "Apparel & Accessories > Costumes & Accessories"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "input_taxonomy": "shopify/2022-01",
+      "output_taxonomy": "shopify/2025-01-unstable",
+      "rules": [
+        {
+          "input": {
+            "category": {
+              "id": "aa-2",
+              "full_name": "Apparel & Accessories > Clothing Accessories (2022-01)"
+            }
+          },
+          "output": {
+            "category": [
+              {
+                "id": "gid://shopify/TaxonomyCategory/aa-3",
+                "full_name": "Apparel & Accessories > Costumes & Accessories"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
