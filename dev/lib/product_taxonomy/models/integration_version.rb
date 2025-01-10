@@ -50,12 +50,9 @@ module ProductTaxonomy
       #
       # @param versions [Array<IntegrationVersion>] The versions to resolve, ordered from oldest to newest.
       def resolve_to_shopify_mappings_chain(versions)
-        # Resolve newest version against current taxonomy
-        versions.last.resolve_to_shopify_mappings(nil)
-
-        # Resolve each older version against the one following it
-        versions.each_cons(2).reverse_each do |previous, next_version|
-          previous.resolve_to_shopify_mappings(next_version)
+        versions.reverse.each_with_object([]) do |version, resolved_versions|
+          version.resolve_to_shopify_mappings(resolved_versions)
+          resolved_versions.prepend(version)
         end
       end
 
@@ -177,16 +174,23 @@ module ProductTaxonomy
       )
     end
 
-    # Resolve the output categories of to_shopify mappings to the next version of the Shopify taxonomy.
+    # Resolve the output categories of to_shopify mappings to the current version of the Shopify taxonomy, taking into
+    # any mappings from later versions.
     #
-    # @param next_integration_version [IntegrationVersion | nil] The IntegrationVersion defining mappings to the next
-    #   newer version of the Shopify taxonomy. If nil, the latest version of the Shopify taxonomy is used.
-    def resolve_to_shopify_mappings(next_integration_version)
+    # @param next_integration_versions [Array<IntegrationVersion>] An array of Shopify integration versions coming
+    #   after the current version.
+    def resolve_to_shopify_mappings(next_integration_versions)
       @to_shopify_mappings.each do |mapping|
-        newer_mapping = next_integration_version&.to_shopify_mappings&.find do
-          _1.input_category["id"] == mapping.output_category
+        newer_mapping = next_integration_versions.flat_map(&:to_shopify_mappings).find do |mapping_rule|
+          mapping_rule.input_category["id"] == mapping.output_category
         end
         mapping.output_category = newer_mapping&.output_category || Category.find_by(id: mapping.output_category)
+
+        next unless mapping.output_category.nil?
+
+        raise ArgumentError, "Failed to resolve Shopify mapping: " \
+          "\"#{mapping.input_category["id"]}\" to \"#{mapping.output_category}\" " \
+          "(input version: #{version})"
       end
     end
 

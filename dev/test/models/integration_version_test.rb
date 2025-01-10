@@ -23,7 +23,7 @@ module ProductTaxonomy
         integration_path: File.expand_path("integrations/shopify/2020-01", DATA_PATH),
         current_shopify_version: @current_shopify_version,
       )
-      @shopify_integration.resolve_to_shopify_mappings(nil) # Resolve against current version
+      @shopify_integration.resolve_to_shopify_mappings([]) # Resolve against current version
       @external_integration = IntegrationVersion.load_from_source(
         integration_path: File.expand_path("integrations/foocommerce/1.0.0", DATA_PATH),
         current_shopify_version: @current_shopify_version,
@@ -236,7 +236,7 @@ module ProductTaxonomy
     end
 
     test "unmapped_external_category_ids returns IDs of external categories not mapped from the Shopify taxonomy" do
-      external_category1 = { "id" => "1", "full_name" => "External category 1" }
+      external_category1 = category_hash("1")
       from_shopify_mappings = [
         MappingRule.new(
           input_category: Category.new(id: "aa", name: "aa"),
@@ -256,6 +256,154 @@ module ProductTaxonomy
       )
 
       assert_equal ["2", "3"], integration_version.unmapped_external_category_ids
+    end
+
+    test "resolve_to_shopify_mappings resolves mappings to the latest version of the Shopify taxonomy" do
+      mapping = MappingRule.new(input_category: category_hash("aa-1"), output_category: "aa-2")
+      integration_version = IntegrationVersion.new(
+        name: "shopify",
+        version: "2020-01",
+        to_shopify_mappings: [mapping],
+        full_names_by_id: {},
+      )
+      integration_version.resolve_to_shopify_mappings([])
+      assert_equal "gid://shopify/TaxonomyCategory/aa-2", mapping.output_category.gid
+    end
+
+    test "resolve_to_shopify_mappings raises an error if a mapping cannot be resolved" do
+      mapping = MappingRule.new(input_category: category_hash("aa-1"), output_category: "invalid")
+      integration_version = IntegrationVersion.new(
+        name: "shopify",
+        version: "2020-01",
+        to_shopify_mappings: [mapping],
+        full_names_by_id: {},
+      )
+      assert_raises(ArgumentError) { integration_version.resolve_to_shopify_mappings([]) }
+    end
+
+    test "IntegrationVersion.resolve_to_shopify_mappings_chain resolves mappings to the current version of the Shopify taxonomy" do
+      version = IntegrationVersion.new(
+        name: "shopify",
+        version: "2020-01",
+        to_shopify_mappings: [MappingRule.new(input_category: category_hash("aa-1"), output_category: "aa-2")],
+        full_names_by_id: {},
+      )
+      IntegrationVersion.resolve_to_shopify_mappings_chain([version])
+      assert_equal "gid://shopify/TaxonomyCategory/aa-2", version.to_shopify_mappings[0].output_category.gid
+    end
+
+    test "IntegrationVersion.resolve_to_shopify_mappings_chain resolves mappings through two versions without chained mappings" do
+      versions = [
+        IntegrationVersion.new(
+          name: "shopify",
+          version: "2020-01",
+          to_shopify_mappings: [MappingRule.new(input_category: category_hash("aa-1"), output_category: "aa-2")],
+          full_names_by_id: {},
+        ),
+        IntegrationVersion.new(
+          name: "shopify",
+          version: "2021-01",
+          to_shopify_mappings: [MappingRule.new(input_category: category_hash("bb-1"), output_category: "aa-1")],
+          full_names_by_id: {},
+        ),
+      ]
+      IntegrationVersion.resolve_to_shopify_mappings_chain(versions)
+      assert_equal "gid://shopify/TaxonomyCategory/aa-2", versions[0].to_shopify_mappings[0].output_category.gid
+      assert_equal "gid://shopify/TaxonomyCategory/aa-1", versions[1].to_shopify_mappings[0].output_category.gid
+    end
+
+    test "IntegrationVersion.resolve_to_shopify_mappings_chain resolves mappings through two versions with chained mappings" do
+      versions = [
+        IntegrationVersion.new(
+          name: "shopify",
+          version: "2020-01",
+          to_shopify_mappings: [MappingRule.new(input_category: category_hash("aa-1"), output_category: "aa-2")],
+          full_names_by_id: {},
+        ),
+        IntegrationVersion.new(
+          name: "shopify",
+          version: "2021-01",
+          to_shopify_mappings: [MappingRule.new(input_category: category_hash("aa-2"), output_category: "aa-3")],
+          full_names_by_id: {},
+        ),
+      ]
+      IntegrationVersion.resolve_to_shopify_mappings_chain(versions)
+      assert_equal "gid://shopify/TaxonomyCategory/aa-3", versions[0].to_shopify_mappings[0].output_category.gid
+      assert_equal "gid://shopify/TaxonomyCategory/aa-3", versions[1].to_shopify_mappings[0].output_category.gid
+    end
+
+    test "IntegrationVersion.resolve_to_shopify_mappings_chain resolves mappings through four versions with non-consecutive chained mappings" do
+      versions = [
+        IntegrationVersion.new(
+          name: "shopify",
+          version: "2020-01",
+          to_shopify_mappings: [MappingRule.new(input_category: category_hash("aa-1"), output_category: "aa-2")],
+          full_names_by_id: {},
+        ),
+        IntegrationVersion.new(
+          name: "shopify",
+          version: "2021-01",
+          to_shopify_mappings: [],
+          full_names_by_id: {},
+        ),
+        IntegrationVersion.new(
+          name: "shopify",
+          version: "2022-01",
+          to_shopify_mappings: [MappingRule.new(input_category: category_hash("aa-2"), output_category: "aa-3")],
+          full_names_by_id: {},
+        ),
+        IntegrationVersion.new(
+          name: "shopify",
+          version: "2023-01",
+          to_shopify_mappings: [],
+          full_names_by_id: {},
+        ),
+      ]
+      IntegrationVersion.resolve_to_shopify_mappings_chain(versions)
+      assert_equal "gid://shopify/TaxonomyCategory/aa-3", versions[0].to_shopify_mappings[0].output_category.gid
+      assert_equal "gid://shopify/TaxonomyCategory/aa-3", versions[2].to_shopify_mappings[0].output_category.gid
+    end
+
+    test "IntegrationVersion.resolve_to_shopify_mappings_chain resolves mappings through four versions with a mix of chained and non-chained mappings" do
+      versions = [
+        IntegrationVersion.new(
+          name: "shopify",
+          version: "2020-01",
+          to_shopify_mappings: [
+            MappingRule.new(input_category: category_hash("aa-1"), output_category: "aa-2"),
+            MappingRule.new(input_category: category_hash("bb-1"), output_category: "aa-1"),
+          ],
+          full_names_by_id: {},
+        ),
+        IntegrationVersion.new(
+          name: "shopify",
+          version: "2021-01",
+          to_shopify_mappings: [MappingRule.new(input_category: category_hash("cc-1"), output_category: "aa-1")],
+          full_names_by_id: {},
+        ),
+        IntegrationVersion.new(
+          name: "shopify",
+          version: "2022-01",
+          to_shopify_mappings: [MappingRule.new(input_category: category_hash("aa-2"), output_category: "aa-3")],
+          full_names_by_id: {},
+        ),
+        IntegrationVersion.new(
+          name: "shopify",
+          version: "2023-01",
+          to_shopify_mappings: [MappingRule.new(input_category: category_hash("dd-1"), output_category: "aa-2")],
+          full_names_by_id: {},
+        ),
+      ]
+      IntegrationVersion.resolve_to_shopify_mappings_chain(versions)
+      assert_equal "gid://shopify/TaxonomyCategory/aa-3", versions[0].to_shopify_mappings[0].output_category.gid
+      assert_equal "gid://shopify/TaxonomyCategory/aa-1", versions[0].to_shopify_mappings[1].output_category.gid
+      assert_equal "gid://shopify/TaxonomyCategory/aa-1", versions[1].to_shopify_mappings[0].output_category.gid
+      assert_equal "gid://shopify/TaxonomyCategory/aa-3", versions[2].to_shopify_mappings[0].output_category.gid
+      assert_equal "gid://shopify/TaxonomyCategory/aa-2", versions[3].to_shopify_mappings[0].output_category.gid
+    end
+
+    def category_hash(id)
+      { "id" => id, "full_name" => "Category #{id}" }
     end
   end
 end
