@@ -60,6 +60,7 @@ module ProductTaxonomy
       shopify_categories_lack_mappings = []
       @mappings_json_data["mappings"].each do |mapping|
         next unless mapping["input_taxonomy"].include?("shopify")
+        next if mapping["output_taxonomy"].include?("shopify") && mapping["output_taxonomy"] != "shopify/2022-02"
 
         all_shopify_category_ids = category_ids_from_taxonomy(mapping["input_taxonomy"])
         next if all_shopify_category_ids.nil?
@@ -144,9 +145,10 @@ module ProductTaxonomy
       end
     end
 
-    test "Shopify taxonomy version is in consistent between VERSION file and mappings in the /data folder" do
-      shopify_taxonomy_version_from_file = "shopify/" + File.read(File.expand_path("../VERSION", DATA_PATH)).strip
+    test "Shopify taxonomy version is consistent between VERSION file and mappings in the /data folder" do
+      shopify_taxonomy_version_from_file = "shopify/" + current_shopify_taxonomy_version
       allowed_shopify_legacy_source_taxonomies = ["shopify/2022-02", "shopify/2024-07", "shopify/2024-10"]
+      all_shopify_taxonomies = allowed_shopify_legacy_source_taxonomies + [shopify_taxonomy_version_from_file]
       mapping_rule_files = Dir.glob(File.expand_path("integrations/*/*/mappings/*_shopify.yml", DATA_PATH))
       files_include_inconsistent_shopify_taxonomy_version = []
       mapping_rule_files.each do |file|
@@ -155,8 +157,10 @@ module ProductTaxonomy
         output_taxonomy = raw_mappings["output_taxonomy"]
         next if input_taxonomy == shopify_taxonomy_version_from_file
 
-        next if allowed_shopify_legacy_source_taxonomies.include?(input_taxonomy) &&
-          output_taxonomy == shopify_taxonomy_version_from_file
+        if allowed_shopify_legacy_source_taxonomies.include?(input_taxonomy)
+          expected_output_taxonomy = all_shopify_taxonomies[all_shopify_taxonomies.index(input_taxonomy) + 1]
+          next if expected_output_taxonomy == output_taxonomy
+        end
 
         files_include_inconsistent_shopify_taxonomy_version << {
           file_path: file,
@@ -165,7 +169,7 @@ module ProductTaxonomy
       end
 
       unless files_include_inconsistent_shopify_taxonomy_version.empty?
-        puts "The Shopify taxonomy version should be #{shopify_taxonomy_version_from_file} based on the VERSION file"
+        puts "The Shopify taxonomy version is #{shopify_taxonomy_version_from_file} based on the VERSION file"
         puts "We detected inconsistent Shopify taxonomy versions in the following mapping files in the /data folder:"
         files_include_inconsistent_shopify_taxonomy_version.each_with_index do |item|
           puts "- mapping file #{item[:file_path]} has inconsistent Shopify taxonomy version #{item[:taxonomy_version]}"
@@ -180,6 +184,8 @@ module ProductTaxonomy
     def validate_mapping_category_ids(mapping_rules, input_or_output, input_or_output_taxonomy)
       category_ids = category_ids_from_taxonomy(input_or_output_taxonomy).map { _1.split("/").last }
       return [] if category_ids.nil?
+      return [] if input_or_output == "output" && input_or_output_taxonomy.include?("shopify") &&
+        input_or_output_taxonomy != "shopify/#{current_shopify_taxonomy_version}"
 
       invalid_category_ids = Set.new
 
@@ -196,7 +202,7 @@ module ProductTaxonomy
     end
 
     def category_ids_from_taxonomy(input_or_output_taxonomy)
-      if input_or_output_taxonomy.include?("shopify") && !input_or_output_taxonomy.include?("shopify/2022-02")
+      if input_or_output_taxonomy == "shopify/#{current_shopify_taxonomy_version}"
         categories_json_data = JSON.parse(File.read(File.expand_path("en/categories.json", DIST_PATH)))
         shopify_category_ids = Set.new
         categories_json_data["verticals"].each do |vertical|
@@ -238,6 +244,10 @@ module ProductTaxonomy
 
       mappings = YAML.safe_load_file(file_path)
       mappings["unmapped_product_category_ids"] if mappings.key?("unmapped_product_category_ids")
+    end
+
+    def current_shopify_taxonomy_version
+      @current_shopify_taxonomy_version ||= File.read(File.expand_path("../VERSION", DATA_PATH)).strip
     end
   end
 end
