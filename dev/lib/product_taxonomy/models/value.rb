@@ -37,7 +37,7 @@ module ProductTaxonomy
       def to_json(version:, locale: "en")
         {
           "version" => version,
-          "values" => all_values_sorted(locale:).map { _1.to_json(locale:) },
+          "values" => all_values_sorted.map { _1.to_json(locale:) },
         }
       end
 
@@ -54,7 +54,7 @@ module ProductTaxonomy
         HEADER
         [
           header,
-          *all_values_sorted(locale:).map { _1.to_txt(padding:, locale:) },
+          *all_values_sorted.map { _1.to_txt(padding:, locale:) },
         ].join("\n")
       end
 
@@ -86,8 +86,14 @@ module ProductTaxonomy
         find_by(id: largest_id).gid.length
       end
 
-      def all_values_sorted(locale: "en")
-        all.sort_by { |value| [value.name(locale:) == "Other" ? 1 : 0, value.name(locale:), value.id] }
+      def all_values_sorted
+        all.sort_by do |value|
+          [
+            value.name(locale: "en").downcase == "other" ? 1 : 0,
+            value.name(locale: "en"),
+            value.id,
+          ]
+        end
       end
     end
 

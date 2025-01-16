@@ -221,13 +221,13 @@ module ProductTaxonomy
       assert_equal expected_json, Value.to_json(version: "1.0")
     end
 
-    test "Value.to_json returns the JSON representation of all values sorted by name" do
+    test "Value.to_json returns the JSON representation of all values sorted by name with 'Other' at the end" do
       add_values_for_sorting
       expected_json = {
         "version" => "1.0",
         "values" => [
           {
-            "id" => "gid://shopify/TaxonomyValue/3",
+            "id" => "gid://shopify/TaxonomyValue/4",
             "name" => "Aaaa",
             "handle" => "color__aaa",
           },
@@ -241,9 +241,46 @@ module ProductTaxonomy
             "name" => "Cccc",
             "handle" => "color__ccc",
           },
+          {
+            "id" => "gid://shopify/TaxonomyValue/3",
+            "name" => "Other",
+            "handle" => "color__other",
+          },
         ],
       }
       assert_equal expected_json, Value.to_json(version: "1.0")
+    end
+
+    test "Value.to_json sorts localized values according to their sort order in English" do
+      add_values_for_sorting
+      stub_localizations_for_sorting
+
+      expected_json = {
+        "version" => "1.0",
+        "values" => [
+          {
+            "id" => "gid://shopify/TaxonomyValue/4",
+            "name" => "Zzzz",
+            "handle" => "color__aaa",
+          },
+          {
+            "id" => "gid://shopify/TaxonomyValue/2",
+            "name" => "Xxxx",
+            "handle" => "color__bbb",
+          },
+          {
+            "id" => "gid://shopify/TaxonomyValue/1",
+            "name" => "Yyyy",
+            "handle" => "color__ccc",
+          },
+          {
+            "id" => "gid://shopify/TaxonomyValue/3",
+            "name" => "Autre",
+            "handle" => "color__other",
+          },
+        ],
+      }
+      assert_equal expected_json, Value.to_json(version: "1.0", locale: "fr")
     end
 
     test "to_txt returns the text representation of the value" do
@@ -273,18 +310,35 @@ module ProductTaxonomy
       assert_equal expected_txt.strip, Value.to_txt(version: "1.0")
     end
 
-    test "Value.to_txt returns the text representation of all values sorted by name" do
+    test "Value.to_txt returns the text representation of all values sorted by name with 'Other' at the end" do
       add_values_for_sorting
 
       expected_txt = <<~TXT
         # Shopify Product Taxonomy - Attribute Values: 1.0
         # Format: {GID} : {Value name} [{Attribute name}]
 
-        gid://shopify/TaxonomyValue/3 : Aaaa [Color]
+        gid://shopify/TaxonomyValue/4 : Aaaa [Color]
         gid://shopify/TaxonomyValue/2 : Bbbb [Color]
         gid://shopify/TaxonomyValue/1 : Cccc [Color]
+        gid://shopify/TaxonomyValue/3 : Other [Color]
       TXT
       assert_equal expected_txt.strip, Value.to_txt(version: "1.0")
+    end
+
+    test "Value.to_txt sorts localized values according to their sort order in English" do
+      add_values_for_sorting
+      stub_localizations_for_sorting
+
+      expected_txt = <<~TXT
+        # Shopify Product Taxonomy - Attribute Values: 1.0
+        # Format: {GID} : {Value name} [{Attribute name}]
+
+        gid://shopify/TaxonomyValue/4 : Zzzz [Color]
+        gid://shopify/TaxonomyValue/2 : Xxxx [Color]
+        gid://shopify/TaxonomyValue/1 : Yyyy [Color]
+        gid://shopify/TaxonomyValue/3 : Autre [Color]
+      TXT
+      assert_equal expected_txt.strip, Value.to_txt(version: "1.0", locale: "fr")
     end
 
     test "Value.sort_by_localized_name sorts values alphanumerically" do
@@ -345,8 +399,32 @@ module ProductTaxonomy
       [
         Value.new(id: 1, name: "Cccc", friendly_id: "color__ccc", handle: "color__ccc"),
         Value.new(id: 2, name: "Bbbb", friendly_id: "color__bbb", handle: "color__bbb"),
-        Value.new(id: 3, name: "Aaaa", friendly_id: "color__aaa", handle: "color__aaa"),
+        Value.new(id: 3, name: "Other", friendly_id: "color__other", handle: "color__other"),
+        Value.new(id: 4, name: "Aaaa", friendly_id: "color__aaa", handle: "color__aaa"),
       ].each { Value.add(_1) }
+    end
+
+    def stub_localizations_for_sorting
+      fr_yaml = <<~YAML
+        fr:
+          values:
+            color__aaa:
+              name: "Zzzz"
+            color__bbb:
+              name: "Xxxx"
+            color__ccc:
+              name: "Yyyy"
+            color__other:
+              name: "Autre"
+      YAML
+      Dir.stubs(:glob)
+        .with(File.join(DATA_PATH, "localizations", "values", "*.yml"))
+        .returns(["fake/path/fr.yml"])
+      YAML.stubs(:safe_load_file).with("fake/path/fr.yml").returns(YAML.safe_load(fr_yaml))
+
+      Dir.stubs(:glob)
+        .with(File.join(DATA_PATH, "localizations", "attributes", "*.yml"))
+        .returns([])
     end
 
     def stub_color_values
