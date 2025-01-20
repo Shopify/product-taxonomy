@@ -34,7 +34,7 @@ Our taxonomy is an open-source comprehensive, global standard for product classi
 
 ### 🕹️ Interactive explorer
 
-Ready to dive in? [Explore our taxonomy interactively](https://shopify.github.io/product-taxonomy/releases/2024-07/?categoryId=sg-4-17-2-17) to visualize and discover what's published across the many categories, attributes, and values.
+Ready to dive in? [Explore our taxonomy interactively](https://shopify.github.io/product-taxonomy/releases/latest/?categoryId=sg-4-17-2-17) to visualize and discover what's published across the many categories, attributes, and values.
 
 ## 🧭 Getting started
 
