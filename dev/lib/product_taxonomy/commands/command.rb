@@ -42,5 +42,17 @@ module ProductTaxonomy
       end
       ProductTaxonomy::Category.load_from_source(categories_source_data)
     end
+
+    def validate_and_sanitize_version!(version)
+      return version if version.nil?
+
+      sanitized_version = version.to_s.strip
+      unless sanitized_version.match?(/\A[a-zA-Z0-9.-]+\z/) && !sanitized_version.include?("..")
+        raise ArgumentError,
+          "Invalid version format. Version can only contain alphanumeric characters, dots, and dashes."
+      end
+
+      sanitized_version
+    end
   end
 end

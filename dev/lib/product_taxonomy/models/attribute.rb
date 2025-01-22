@@ -64,6 +64,13 @@ module ProductTaxonomy
         @hashed_models = nil
       end
 
+      # Get base attributes only, sorted by name.
+      #
+      # @return [Array<Attribute>] The sorted base attributes.
+      def sorted_base_attributes
+        all.reject(&:extended?).sort_by(&:name)
+      end
+
       private
 
       def attribute_from(attribute_data)
@@ -92,10 +99,6 @@ module ProductTaxonomy
 
       def longest_gid_length
         all.filter_map { _1.extended? ? nil : _1.gid.length }.max
-      end
-
-      def sorted_base_attributes
-        all.reject(&:extended?).sort_by(&:name)
       end
     end
 

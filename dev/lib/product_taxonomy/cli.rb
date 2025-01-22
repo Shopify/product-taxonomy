@@ -26,5 +26,11 @@ module ProductTaxonomy
     def unmapped_external_categories(name_and_version)
       FindUnmappedExternalCategoriesCommand.new(options).run(name_and_version)
     end
+
+    desc "docs", "Generate documentation files"
+    option :version, type: :string, desc: "The version of the documentation to generate"
+    def docs
+      GenerateDocsCommand.new(options).run
+    end
   end
 end
