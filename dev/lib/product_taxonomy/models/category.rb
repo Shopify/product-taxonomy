@@ -73,7 +73,7 @@ module ProductTaxonomy
         HEADER
         [
           header,
-          *verticals.flat_map(&:descendants_and_self).map { _1.to_txt(padding:, locale:) },
+          *all_depth_first.map { _1.to_txt(padding:, locale:) },
         ].join("\n")
       end
 
@@ -82,6 +82,13 @@ module ProductTaxonomy
         @localizations = nil
         @hashed_models = nil
         @verticals = nil
+      end
+
+      # Get all categories in depth-first order.
+      #
+      # @return [Array<Category>] The categories in depth-first order.
+      def all_depth_first
+        verticals.flat_map(&:descendants_and_self)
       end
 
       private

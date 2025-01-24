@@ -12,6 +12,8 @@ module ProductTaxonomy
 
     attr_reader :values_from
 
+    alias_method :base_attribute, :values_from
+
     # @param name [String] The name of the attribute.
     # @param handle [String] The handle of the attribute.
     # @param description [String] The description of the attribute.
