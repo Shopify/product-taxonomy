@@ -6,7 +6,7 @@ module ProductTaxonomy
       return @localizations if @localizations
 
       humanized_name = name.split("::").last.humanize.downcase.pluralize
-      localization_path = File.join(DATA_PATH, "localizations", humanized_name, "*.yml")
+      localization_path = File.join(ProductTaxonomy.data_path, "localizations", humanized_name, "*.yml")
       @localizations = Dir.glob(localization_path).each_with_object({}) do |file, localizations|
         locale = File.basename(file, ".yml")
         localizations[locale] = YAML.safe_load_file(file).dig(locale, humanized_name)

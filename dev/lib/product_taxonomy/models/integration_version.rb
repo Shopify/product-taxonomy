@@ -7,7 +7,7 @@ module ProductTaxonomy
   # - The full names of categories in the integration's taxonomy.
   # - The mapping rules for converting between the integration's taxonomy and Shopify's taxonomy.
   class IntegrationVersion
-    INTEGRATIONS_PATH = File.expand_path("integrations", ProductTaxonomy::DATA_PATH)
+    INTEGRATIONS_PATH = File.expand_path("integrations", ProductTaxonomy.data_path)
 
     class << self
       # Generate all distribution files for all integration versions.

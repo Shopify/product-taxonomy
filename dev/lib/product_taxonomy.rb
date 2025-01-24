@@ -6,6 +6,11 @@ require "active_model"
 
 module ProductTaxonomy
   DATA_PATH = File.expand_path("../../data", __dir__)
+  private_constant :DATA_PATH
+
+  class << self
+    def data_path = DATA_PATH
+  end
 end
 
 require_relative "product_taxonomy/cli"
