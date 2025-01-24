@@ -3,7 +3,7 @@ Integrations maintain the rules for how the Shopify Product Taxonomy interacts w
 
 ## Supported Integrations
 - Google (2021-09-21)
-- Shopify (2022-02)
+- Shopify (from 2022-02 onwards)
 
 ## How this works
 ### Overview
