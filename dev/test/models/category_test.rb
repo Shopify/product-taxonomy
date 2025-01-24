@@ -657,16 +657,16 @@ module ProductTaxonomy
               name: "Grandchild en español"
       YAML
       Dir.stubs(:glob)
-        .with(File.join(DATA_PATH, "localizations", "categories", "*.yml"))
+        .with(File.join(ProductTaxonomy.data_path, "localizations", "categories", "*.yml"))
         .returns(["fake/path/fr.yml", "fake/path/es.yml"])
       YAML.stubs(:safe_load_file).with("fake/path/fr.yml").returns(YAML.safe_load(fr_yaml))
       YAML.stubs(:safe_load_file).with("fake/path/es.yml").returns(YAML.safe_load(es_yaml))
 
       Dir.stubs(:glob)
-        .with(File.join(DATA_PATH, "localizations", "attributes", "*.yml"))
+        .with(File.join(ProductTaxonomy.data_path, "localizations", "attributes", "*.yml"))
         .returns([])
       Dir.stubs(:glob)
-        .with(File.join(DATA_PATH, "localizations", "values", "*.yml"))
+        .with(File.join(ProductTaxonomy.data_path, "localizations", "values", "*.yml"))
         .returns([])
     end
   end

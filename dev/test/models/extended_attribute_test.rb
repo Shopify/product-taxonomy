@@ -53,7 +53,7 @@ module ProductTaxonomy
               description: "Descripción en español"
       YAML
       Dir.expects(:glob)
-        .with(File.join(DATA_PATH, "localizations", "attributes", "*.yml"))
+        .with(File.join(ProductTaxonomy.data_path, "localizations", "attributes", "*.yml"))
         .returns(["fake/path/fr.yml", "fake/path/es.yml"])
       YAML.expects(:safe_load_file).with("fake/path/fr.yml").returns(YAML.safe_load(fr_yaml))
       YAML.expects(:safe_load_file).with("fake/path/es.yml").returns(YAML.safe_load(es_yaml))

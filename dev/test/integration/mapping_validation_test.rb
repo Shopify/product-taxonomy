@@ -13,7 +13,10 @@ module ProductTaxonomy
     test "category IDs in mappings are valid" do
       invalid_categories = []
       raw_mappings_list = []
-      mapping_rule_files = Dir.glob(File.expand_path("integrations/*/*/mappings/*_shopify.yml", DATA_PATH))
+      mapping_rule_files = Dir.glob(File.expand_path(
+        "integrations/*/*/mappings/*_shopify.yml",
+        ProductTaxonomy.data_path,
+      ))
       mapping_rule_files.each do |file|
         raw_mappings_list << YAML.safe_load_file(file)
       end
@@ -149,7 +152,10 @@ module ProductTaxonomy
       shopify_taxonomy_version_from_file = "shopify/" + current_shopify_taxonomy_version
       allowed_shopify_legacy_source_taxonomies = ["shopify/2022-02", "shopify/2024-07", "shopify/2024-10"]
       all_shopify_taxonomies = allowed_shopify_legacy_source_taxonomies + [shopify_taxonomy_version_from_file]
-      mapping_rule_files = Dir.glob(File.expand_path("integrations/*/*/mappings/*_shopify.yml", DATA_PATH))
+      mapping_rule_files = Dir.glob(File.expand_path(
+        "integrations/*/*/mappings/*_shopify.yml",
+        ProductTaxonomy.data_path,
+      ))
       files_include_inconsistent_shopify_taxonomy_version = []
       mapping_rule_files.each do |file|
         raw_mappings = YAML.safe_load_file(file)
@@ -213,7 +219,10 @@ module ProductTaxonomy
         shopify_category_ids
       else
         channel_category_ids = Set.new
-        file_path = File.expand_path("integrations/#{input_or_output_taxonomy}/full_names.yml", DATA_PATH)
+        file_path = File.expand_path(
+          "integrations/#{input_or_output_taxonomy}/full_names.yml",
+          ProductTaxonomy.data_path,
+        )
         channel_taxonomy = YAML.safe_load_file(file_path)
         channel_taxonomy.each do |entry|
           channel_category_ids.add(entry["id"].to_s)
@@ -239,7 +248,7 @@ module ProductTaxonomy
         "#{integration_version}/mappings/to_shopify.yml"
       end
 
-      file_path = File.expand_path("integrations/#{integration_mapping_path}", DATA_PATH)
+      file_path = File.expand_path("integrations/#{integration_mapping_path}", ProductTaxonomy.data_path)
       return unless File.exist?(file_path)
 
       mappings = YAML.safe_load_file(file_path)
@@ -247,7 +256,7 @@ module ProductTaxonomy
     end
 
     def current_shopify_taxonomy_version
-      @current_shopify_taxonomy_version ||= File.read(File.expand_path("../VERSION", DATA_PATH)).strip
+      @current_shopify_taxonomy_version ||= File.read(File.expand_path("../VERSION", ProductTaxonomy.data_path)).strip
     end
   end
 end

@@ -385,13 +385,13 @@ module ProductTaxonomy
               name: "Nombre en español"
       YAML
       Dir.stubs(:glob)
-        .with(File.join(DATA_PATH, "localizations", "values", "*.yml"))
+        .with(File.join(ProductTaxonomy.data_path, "localizations", "values", "*.yml"))
         .returns(["fake/path/fr.yml", "fake/path/es.yml"])
       YAML.stubs(:safe_load_file).with("fake/path/fr.yml").returns(YAML.safe_load(fr_yaml))
       YAML.stubs(:safe_load_file).with("fake/path/es.yml").returns(YAML.safe_load(es_yaml))
 
       Dir.stubs(:glob)
-        .with(File.join(DATA_PATH, "localizations", "attributes", "*.yml"))
+        .with(File.join(ProductTaxonomy.data_path, "localizations", "attributes", "*.yml"))
         .returns([])
     end
 
@@ -418,12 +418,12 @@ module ProductTaxonomy
               name: "Autre"
       YAML
       Dir.stubs(:glob)
-        .with(File.join(DATA_PATH, "localizations", "values", "*.yml"))
+        .with(File.join(ProductTaxonomy.data_path, "localizations", "values", "*.yml"))
         .returns(["fake/path/fr.yml"])
       YAML.stubs(:safe_load_file).with("fake/path/fr.yml").returns(YAML.safe_load(fr_yaml))
 
       Dir.stubs(:glob)
-        .with(File.join(DATA_PATH, "localizations", "attributes", "*.yml"))
+        .with(File.join(ProductTaxonomy.data_path, "localizations", "attributes", "*.yml"))
         .returns([])
     end
 
@@ -439,7 +439,7 @@ module ProductTaxonomy
               name: "Vert"
       YAML
       Dir.stubs(:glob)
-        .with(File.join(DATA_PATH, "localizations", "values", "*.yml"))
+        .with(File.join(ProductTaxonomy.data_path, "localizations", "values", "*.yml"))
         .returns(["fake/path/fr.yml"])
       YAML.stubs(:safe_load_file).with("fake/path/fr.yml").returns(YAML.safe_load(fr_yaml))
 
@@ -462,7 +462,7 @@ module ProductTaxonomy
               name: "Autre"
       YAML
       Dir.stubs(:glob)
-        .with(File.join(DATA_PATH, "localizations", "values", "*.yml"))
+        .with(File.join(ProductTaxonomy.data_path, "localizations", "values", "*.yml"))
         .returns(["fake/path/fr.yml"])
       YAML.stubs(:safe_load_file).with("fake/path/fr.yml").returns(YAML.safe_load(fr_yaml))
 

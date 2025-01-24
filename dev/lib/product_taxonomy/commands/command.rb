@@ -29,14 +29,14 @@ module ProductTaxonomy
     def load_taxonomy
       ProductTaxonomy::Value.load_from_source(YAML.load_file(File.expand_path(
         "values.yml",
-        ProductTaxonomy::DATA_PATH,
+        ProductTaxonomy.data_path,
       )))
       ProductTaxonomy::Attribute.load_from_source(YAML.load_file(File.expand_path(
         "attributes.yml",
-        ProductTaxonomy::DATA_PATH,
+        ProductTaxonomy.data_path,
       )))
 
-      glob = Dir.glob(File.expand_path("categories/*.yml", ProductTaxonomy::DATA_PATH))
+      glob = Dir.glob(File.expand_path("categories/*.yml", ProductTaxonomy.data_path))
       categories_source_data = glob.each_with_object([]) do |file, array|
         array.concat(YAML.safe_load_file(file))
       end

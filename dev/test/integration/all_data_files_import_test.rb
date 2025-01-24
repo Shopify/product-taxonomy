@@ -11,17 +11,17 @@ module ProductTaxonomy
     i_suck_and_my_tests_are_order_dependent!
 
     def before_all
-      @raw_values_data = YAML.safe_load_file(File.expand_path("values.yml", ProductTaxonomy::DATA_PATH))
-      @raw_attributes_data = YAML.safe_load_file(File.expand_path("attributes.yml", ProductTaxonomy::DATA_PATH))
-      @raw_verticals_data = Dir.glob(File.expand_path("categories/*.yml", ProductTaxonomy::DATA_PATH))
+      @raw_values_data = YAML.safe_load_file(File.expand_path("values.yml", ProductTaxonomy.data_path))
+      @raw_attributes_data = YAML.safe_load_file(File.expand_path("attributes.yml", ProductTaxonomy.data_path))
+      @raw_verticals_data = Dir.glob(File.expand_path("categories/*.yml", ProductTaxonomy.data_path))
         .map { |file| YAML.safe_load_file(file) }
       @raw_integrations_data = YAML.safe_load_file(File.expand_path(
         "integrations/integrations.yml",
-        ProductTaxonomy::DATA_PATH,
+        ProductTaxonomy.data_path,
       ))
       mapping_rule_files = Dir.glob(File.expand_path(
         "integrations/*/*/mappings/*_shopify.yml",
-        ProductTaxonomy::DATA_PATH,
+        ProductTaxonomy.data_path,
       ))
       @raw_mapping_rules_data = mapping_rule_files.map { { content: YAML.safe_load_file(_1), file_name: _1 } }
 

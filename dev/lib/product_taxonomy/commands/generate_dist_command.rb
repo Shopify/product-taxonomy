@@ -9,7 +9,7 @@ module ProductTaxonomy
 
       @version = options[:version] || File.read(File.expand_path("../../../../VERSION", __dir__)).strip
       @locales = if options[:locales] == ["all"]
-        glob = Dir.glob(File.expand_path("localizations/categories/*.yml", ProductTaxonomy::DATA_PATH))
+        glob = Dir.glob(File.expand_path("localizations/categories/*.yml", ProductTaxonomy.data_path))
         glob.map { File.basename(_1, ".yml") }
       else
         options[:locales]
