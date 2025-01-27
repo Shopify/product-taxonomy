@@ -1,6 +1,12 @@
 ## 2025-01 (unstable)
 
-#### 📚 Taxonomy Updates
+#### 🌐 Localization
+Added support for the following languages: `bg-BG`, `el`, `hr-HR`, `hu`, `id-ID`, `lt-LT`, `ro-RO`, `ru`, `sk-SK` and `sl-SI`.
+
+#### 🛠️ Development Tools
+Streamlined the structure of the ETL app to facilitate contributions from integrators and taxonomists.
+
+#### 📚 Taxonomy Tree
 Expanded taxonomy with new categories, attributes and values, along with relocated categories for better product discoverability.
 
 ##### Apparel & Accessories
@@ -16,7 +22,7 @@ Expanded taxonomy with new categories, attributes and values, along with relocat
 - Adds `Olfactory Arts Tools` (`Candle Making Tools`, `Incense Making Tools` and `Perfume Making Tools`).
 - Adds `Banjos` (`4-String`, `5-String` and `6-String`).
 - Adds `Mandolins` (`A-Style`, `F-Style` and `Electric`) with the attribute `Mandolin back shape`.
-- Adds `Ukeleles` (`Baritone`, `Bass`, `Concert`, `Electric`, `Pocket`, `Soprano` and `Tenor`).
+- Adds `Ukuleles` (`Baritone`, `Bass`, `Concert`, `Electric`, `Pocket`, `Soprano` and `Tenor`).
 
 ##### Baby & Toddler
 
