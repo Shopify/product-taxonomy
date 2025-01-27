@@ -1,7 +1,7 @@
 ## 2025-01 (unstable)
 
 #### 🌐 Localization
-Added support for the following languages: `bg-BG`, `el`, `hr-HR`, `hu`, `id-ID`, `lt-LT`, `ro-RO`, `ru`, `sk-SK` and `sl-SI`.
+Added support for the following languages: `Bulgarian`, `Greek`, `Croatian`, `Hungarian`, `Indonesian`, `Lithuanian`, `Romanian`, `Russian`, `Slovak` and `Slovenian`.
 
 #### 🛠️ Development Tools
 Streamlined the structure of the ETL app to facilitate contributions from integrators and taxonomists.
