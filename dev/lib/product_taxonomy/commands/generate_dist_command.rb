@@ -25,6 +25,9 @@ module ProductTaxonomy
 
       load_taxonomy
 
+      logger.info("Validating localizations")
+      LocalizationsValidator.validate!(@locales)
+
       @locales.each { generate_dist_files(_1) }
 
       IntegrationVersion.generate_all_distributions(
