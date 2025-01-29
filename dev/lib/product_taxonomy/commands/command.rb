@@ -20,6 +20,9 @@ module ProductTaxonomy
         execute(...)
       end
       logger.info("Completed in #{elapsed.round(2)} seconds")
+    rescue => e
+      logger.error("\e[1;31mError:\e[0m #{e.message}")
+      exit(1)
     end
 
     def execute(...)
@@ -27,6 +30,8 @@ module ProductTaxonomy
     end
 
     def load_taxonomy
+      return if ProductTaxonomy::Category.all.any?
+
       ProductTaxonomy::Value.load_from_source(YAML.load_file(File.expand_path(
         "values.yml",
         ProductTaxonomy.data_path,
@@ -53,6 +58,15 @@ module ProductTaxonomy
       end
 
       sanitized_version
+    end
+
+    def version_file_path
+      File.expand_path("../VERSION", ProductTaxonomy.data_path)
+    end
+
+    def locales_defined_in_data_path
+      glob = Dir.glob(File.expand_path("localizations/categories/*.yml", ProductTaxonomy.data_path))
+      glob.map { File.basename(_1, ".yml") }
     end
   end
 end
