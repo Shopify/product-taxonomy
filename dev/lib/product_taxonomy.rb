@@ -15,6 +15,7 @@ end
 
 require_relative "product_taxonomy/cli"
 require_relative "product_taxonomy/alphanumeric_sorter"
+require_relative "product_taxonomy/localizations_validator"
 require_relative "product_taxonomy/models/mixins/localized"
 require_relative "product_taxonomy/models/mixins/indexed"
 require_relative "product_taxonomy/models/attribute"
