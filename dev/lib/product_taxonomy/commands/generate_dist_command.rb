@@ -7,7 +7,7 @@ module ProductTaxonomy
     def initialize(options)
       super
 
-      @version = options[:version] || File.read(File.expand_path("../../../../VERSION", __dir__)).strip
+      @version = options[:version] || File.read(version_file_path).strip
       @locales = if options[:locales] == ["all"]
         glob = Dir.glob(File.expand_path("localizations/categories/*.yml", ProductTaxonomy.data_path))
         glob.map { File.basename(_1, ".yml") }

@@ -32,5 +32,12 @@ module ProductTaxonomy
     def docs
       GenerateDocsCommand.new(options).run
     end
+
+    desc "release", "Generate a release"
+    option :version, type: :string, desc: "The version of the release to generate"
+    option :locales, type: :array, default: ["en"], desc: "The locales to generate"
+    def release
+      GenerateReleaseCommand.new(options).run
+    end
   end
 end
