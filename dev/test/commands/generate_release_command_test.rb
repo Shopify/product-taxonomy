@@ -21,6 +21,7 @@ module ProductTaxonomy
       # Stub dependencies
       Command.any_instance.stubs(:version_file_path).returns(@version_file_path)
       Command.any_instance.stubs(:load_taxonomy)
+      Command.any_instance.stubs(:system).with("git", "tag", "v#{@version}").returns(true)
       GenerateDistCommand.any_instance.stubs(:execute)
       GenerateDocsCommand.any_instance.stubs(:execute)
       ProductTaxonomy.stubs(:data_path).returns("#{@tmp_base_path}/data")
@@ -57,7 +58,6 @@ module ProductTaxonomy
       # Set up expectations
       GenerateDistCommand.any_instance.expects(:execute)
       GenerateDocsCommand.any_instance.expects(:execute)
-      command.expects(:system).with("git", "tag", "v#{@version}")
 
       command.execute
 

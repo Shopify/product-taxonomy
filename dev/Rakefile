@@ -2,21 +2,88 @@
 
 require "rake/testtask"
 
-Rake::TestTask.new do |t|
-  t.libs << "test"
-  t.pattern = "test/**/*_test.rb"
+REPO_ROOT = File.expand_path("../", __dir__)
+DOCS_PATH = File.expand_path("docs", REPO_ROOT)
+
+namespace :test do
+  desc "Run unit tests"
+  Rake::TestTask.new(:unit) do |t|
+    t.libs << "test"
+    t.test_files = FileList["test/**/*_test.rb"].exclude("test/integration/**/*_test.rb", "test/benchmark_test.rb")
+  end
+
+  desc "Run integration tests"
+  Rake::TestTask.new(:integration) do |t|
+    t.libs << "test"
+    t.pattern = "test/integration/**/*_test.rb"
+  end
+
+  desc "Run benchmark tests"
+  Rake::TestTask.new(:benchmark) do |t|
+    t.libs << "test"
+    t.test_files = FileList["test/benchmark_test.rb"]
+  end
+
+  desc "Run all tests"
+  task all: [:unit, :integration, :benchmark]
 end
 
-task default: :test
+task test: "test:all"
+
+namespace :docs do
+  desc "Clean generated docs"
+  task :clean do
+    FileUtils.remove_entry("#{DOCS_PATH}/_data/unstable")
+  end
+
+  desc "Serve documentation files using Jekyll"
+  task :serve do
+    destination = File.expand_path("_site", REPO_ROOT)
+    system("bundle exec jekyll serve --source #{DOCS_PATH} --destination #{destination}")
+  end
+end
+
+namespace :schema do
+  desc "Check if cue is installed"
+  task :ensure_cue do
+    unless system("cue version", out: File::NULL, err: File::NULL)
+      abort "cue CLI must be installed but was not found.\nSee: https://github.com/cue-lang/cue#download-and-install"
+    end
+  end
+
+  desc "Validate all schemas"
+  task vet: [:ensure_cue, :vet_data, :vet_dist]
+
+  desc "Validate data schemas"
+  task vet_data: :ensure_cue do
+    puts "Validating attributes schema"
+    system("cue vet schema/data/attributes_schema.cue ../data/attributes.yml") or abort
+
+    puts "Validating categories schema"
+    system("cue vet schema/data/categories_schema.cue -d '#schema' ../data/categories/*.yml") or abort
+
+    puts "Validating values schema"
+    system("cue vet schema/data/values_schema.cue -d '#schema' ../data/values.yml") or abort
+  end
+
+  desc "Validate distribution schemas"
+  task vet_dist: :ensure_cue do
+    puts "Validating attributes.json schema"
+    system("cue vet schema/dist/attributes_schema.cue ../dist/en/attributes.json") or abort
+
+    puts "Validating categories.json schema"
+    system("cue vet schema/dist/categories_schema.cue ../dist/en/categories.json") or abort
+
+    puts "Validating taxonomy.json schema"
+    system("cue vet schema/dist/attributes_schema.cue ../dist/en/taxonomy.json") or abort
+    system("cue vet schema/dist/categories_schema.cue ../dist/en/taxonomy.json") or abort
+
+    puts "Validating mappings.json schema"
+    system("cue vet schema/dist/mappings_schema.cue ../dist/en/integrations/all_mappings.json") or abort
+  end
+end
 
 desc "Run benchmarks"
 task :benchmark do
   ruby "test/benchmarks.rb"
-end
-
-desc "Run integration tests"
-Rake::TestTask.new do |t|
-  t.name = "integration"
-  t.libs << "test"
-  t.pattern = "test/integration/**/*_test.rb"
 end

@@ -22,15 +22,17 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
-        working-directory: ${{ matrix.test == 'test_integration' && 'dev' || '.' }}
+        working-directory: dev
     - uses: cue-lang/setup-cue@v1.0.0
       with:
         version: 'v0.7.0'
     - name: Run tests
-      working-directory: ${{ matrix.test == 'test_integration' && 'dev' || '.' }}
+      working-directory: dev
       run: |
         if [ "${{ matrix.test }}" = "test_integration" ]; then
-          bundle exec rake integration
+          bundle exec rake test:integration
+        elif [ "${{ matrix.test }}" = "test_unit" ]; then
+          bundle exec rake test:unit
         else
-          VERBOSE=1 make --file=Makefile ${{ matrix.test }}
+          bundle exec rake schema:vet
         fi
