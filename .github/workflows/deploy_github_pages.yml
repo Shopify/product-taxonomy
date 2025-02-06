@@ -23,11 +23,11 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
-    - uses: cue-lang/setup-cue@v1.0.0
-      with:
-        version: 'v0.7.0'
-    - name: Generate dist & docs
-      run: VERBOSE=1 make --file=Makefile build
+        working-directory: dev
+    - name: Generate docs
+      run: |
+        cd dev
+        bundle exec bin/product_taxonomy docs
     - name: Upload data
       uses: actions/upload-artifact@v4
       with:
@@ -39,18 +39,22 @@ jobs:
     needs: generate_docs
     steps:
       - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          working-directory: dev
       - uses: actions/download-artifact@v4
         with:
           name: data
           path: docs/_data
       - uses: actions/configure-pages@v4
-      - uses: actions/jekyll-build-pages@v1
-        with:
-          source: docs
-          destination: _site
-      - name: Copy search indexes
-        run: sudo bin/copy_docs_search_indexes
+      - name: Build with Jekyll
+        run: |
+          cd dev
+          bundle exec jekyll build --source ../docs --destination ../_site
       - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
 
   deploy:
     environment:
