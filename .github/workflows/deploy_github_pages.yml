@@ -51,7 +51,7 @@ jobs:
       - name: Build with Jekyll
         run: |
           cd dev
-          bundle exec jekyll build --source ../docs --destination ../_site
+          bundle exec jekyll build --source ../docs --destination ../_site --baseurl /product-taxonomy
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
