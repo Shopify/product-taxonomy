@@ -62,9 +62,13 @@ Submit a [taxonomy tree change request](https://github.com/Shopify/product-taxon
 
 Alternatively, you may submit PRs directly yourself against the source-of-truth files in [`data/`](./data).
 
-If you make changes to any files in [`data/`](./data), you'll need to update the distribution files. There are two ways:
-1. Make a PR comment of `/generate_dist` to have CI commit the changes for you 🤖
-2. Run `make` locally and commit the changes yourself
+If you make changes to any files in [`data/`](./data), you'll need to update the distribution files by running:
+
+```
+cd dev
+bundle install
+bin/product_taxonomy dist
+```
 
 #### 🌐 Localization to other languages
 
@@ -74,60 +78,56 @@ Our taxonomy supports translations to various languages in the [`localizations`]
 
 Everything else is how we manage the taxonomy and generate distributions. This is where the magic happens.
 
-This is a simple ETL app composed of a few core models. The app is built on Rails and Jekyll:
-- Rails is used to generate distribution files from `data/` and ensure the correctness of results.
-- Jekyll is used to serve the documentation locally and on GitHub pages.
+In the `dev/` subfolder is a simple ETL app composed of a few core models. Jekyll is used to serve the documentation locally and on GitHub pages.
 
 #### 🛠️ Setup and dependencies
 
-For Shopify employees or folks with [`minidev`](https://github.com/burke/minidev):
-- Run `dev up`
-
-For everyone else you'll need to:
-- Install `ruby`, version matching `.ruby-version`
+- Install `ruby`, version matching `dev/.ruby-version`
 - Install [`cue`](https://github.com/cue-lang/cue?tab=readme-ov-file#download-and-install), version 0.7.x or higher
-- Install `make`
-- Run `bundle install`
+- Run `cd dev && bundle install`
 
 #### ⛰️ Common tasks
 
 Here are the commands you'll use most often:
 
 ```sh
-make [build]  # build the dist and documentation files
-make clean    # remove sentinels and generated files
-make seed     # parse data/ into local db
-make console  # irb with dependencies loaded
-make test     # run ruby tests and cue schema verification
-make run_docs # http://localhost:4000 interactive view of dist/
-```
+cd dev
 
-If you want to add a new distribution format, you'll need to do 3 things:
-1. Add new serialization methods to relevant models (e.g., `Category#as_json`, `Category#as_pkl`)
-2. Extend `bin/generate_dist` to write files in the new format
-3. Extend the `Makefile` to add the new file format to the clean target
+# Download dependencies
+bundle install
+
+# Commands to manage the taxonomy
+bin/product-taxonomy dist     # build the dist files
+bin/product-taxonomy docs     # build the documentation files
+bin/product-taxonomy release  # generate a release
+
+# Development tasks (via Rake)
+bundle exec rake test              # run all tests
+bundle exec rake test:unit         # run unit tests only
+bundle exec rake test:integration  # run integration tests only
+bundle exec rake benchmark         # run benchmarks
+
+# Docs
+bundle exec rake docs:serve        # start Jekyll server for doc microsite
+
+# Schema validation tasks
+bundle exec rake schema:vet        # validate all schemas (data and dist)
+bundle exec rake schema:vet_data   # validate data schemas only
+bundle exec rake schema:vet_dist   # validate distribution schemas only
+```
 
 #### 📂 Navigating this repository
 
-This is a Rails app after all, so we'll give a map of the _novel_ pieces of our system:
-
 ```
-├── Makefile             # key dev and build commands
-├── app/                 # rails standard
-├── bin/
-│   ├── generate_dist    # primary entrypoint for generating dist/
-│   └── generate_docs    # primary entrypoint for generating docs/
-├── db/
-│   ├── schema.rb        # because this is a local-only app, we don't use migrations
-│   └── seed.rb          # a custom seed script to load data/ into the local db
-├── dist/                # generated distribution files
-├── data/
-│   ├── integrations/    # integrations and mappings between taxonomies
-│   └── localizations/   # localizations for categories, attributes, and values
-│   ├── categories/      # source-of-truth for categories
-│   ├── attributes.yml   # source-of-truth for attributes
-│   └── values.yml       # source-of-truth for values
-└── test/                # rails standard
+├── data
+│   ├── attributes.yml   # source-of-truth for attributes
+│   ├── categories       # source-of-truth for categories
+│   ├── integrations     # integrations and mappings between taxonomies
+│   ├── localizations    # localizations for categories, attributes, and values
+│   └── values.yml       # source-of-truth for values
+├── dev                  # ETL app for managing the taxonomy
+├── dist                 # generated distribution files
+└── docs                 # documentation microsite served with Jekyll
 ```
 
 ## 🧑‍💻 Contributing
