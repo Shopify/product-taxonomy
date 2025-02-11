@@ -1,0 +1,30 @@
+name: Check Sensitive Info
+on:
+  issue_comment:
+    types: [created, edited]
+  issues:
+    types: [opened, edited]
+  pull_request:
+    types: [opened, edited]
+  pull_request_review:
+    types: [submitted, edited]
+  pull_request_review_comment:
+    types: [created, edited]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./.github/actions/check-sensitive-info
+
+      - name: Run Check for Sensitive Info
+        run: node dist/index.js
+        working-directory: ./.github/actions/check-sensitive-info
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
