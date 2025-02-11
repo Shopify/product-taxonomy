@@ -259,6 +259,13 @@ module ProductTaxonomy
       [self] + descendants
     end
 
+    # The friendly name of the category
+    #
+    # @return [String]
+    def friendly_name
+      "#{id}_#{IdentifierFormatter.format_friendly_id(name)}"
+    end
+
     #
     # Serialization
     #

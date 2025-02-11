@@ -39,5 +39,11 @@ module ProductTaxonomy
     def release
       GenerateReleaseCommand.new(options).run
     end
+
+    desc "dump_categories", "Dump category verticals to YAML files"
+    option :verticals, type: :array, desc: "List of vertical IDs to dump (defaults to all verticals)"
+    def dump_categories
+      DumpCategoriesCommand.new(options).run
+    end
   end
 end
