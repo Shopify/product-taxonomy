@@ -45,5 +45,11 @@ module ProductTaxonomy
     def dump_categories
       DumpCategoriesCommand.new(options).run
     end
+
+    desc "sync_en_localizations", "Sync English localizations for categories, attributes, and values"
+    option :targets, type: :string, desc: "List of targets to sync. Valid targets are: categories, attributes, values"
+    def sync_en_localizations
+      SyncEnLocalizationsCommand.new(options).run
+    end
   end
 end
