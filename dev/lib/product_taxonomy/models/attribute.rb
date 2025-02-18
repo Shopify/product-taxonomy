@@ -29,35 +29,6 @@ module ProductTaxonomy
         end
       end
 
-      # Get the JSON representation of all attributes.
-      #
-      # @param version [String] The version of the taxonomy.
-      # @param locale [String] The locale to use for localized attributes.
-      # @return [Hash] The JSON representation of all attributes.
-      def to_json(version:, locale: "en")
-        {
-          "version" => version,
-          "attributes" => sorted_base_attributes.map { _1.to_json(locale:) },
-        }
-      end
-
-      # Get the TXT representation of all attributes.
-      #
-      # @param version [String] The version of the taxonomy.
-      # @param locale [String] The locale to use for localized attributes.
-      # @param padding [Integer] The padding to use for the GID. Defaults to the length of the longest GID.
-      # @return [String] The TXT representation of all attributes.
-      def to_txt(version:, locale: "en", padding: longest_gid_length)
-        header = <<~HEADER
-          # Shopify Product Taxonomy - Attributes: #{version}
-          # Format: {GID} : {Attribute name}
-        HEADER
-        [
-          header,
-          *sorted_base_attributes.map { _1.to_txt(padding:, locale:) },
-        ].join("\n")
-      end
-
       # Reset all class-level state
       def reset
         @localizations = nil
@@ -95,10 +66,6 @@ module ProductTaxonomy
           friendly_id: attribute_data["friendly_id"],
           values_from: Attribute.find_by(friendly_id: value_friendly_id) || value_friendly_id,
         )
-      end
-
-      def longest_gid_length
-        all.filter_map { _1.extended? ? nil : _1.gid.length }.max
       end
     end
 
@@ -171,36 +138,6 @@ module ProductTaxonomy
       else
         Value.sort_by_localized_name(values, locale:)
       end
-    end
-
-    #
-    # Serialization
-    #
-
-    def to_json(locale: "en")
-      {
-        "id" => gid,
-        "name" => name(locale:),
-        "handle" => handle,
-        "description" => description(locale:),
-        "extended_attributes" => extended_attributes.sort_by(&:name).map do
-          {
-            "name" => _1.name(locale:),
-            "handle" => _1.handle,
-          }
-        end,
-        "values" => sorted_values(locale:).map do
-          {
-            "id" => _1.gid,
-            "name" => _1.name(locale:),
-            "handle" => _1.handle,
-          }
-        end,
-      }
-    end
-
-    def to_txt(padding: 0, locale: "en")
-      "#{gid.ljust(padding)} : #{name(locale:)}"
     end
 
     private
