@@ -29,35 +29,6 @@ module ProductTaxonomy
         end
       end
 
-      # Get the JSON representation of all values.
-      #
-      # @param version [String] The version of the taxonomy.
-      # @param locale [String] The locale to use for localized attributes.
-      # @return [Hash] The JSON representation of all values.
-      def to_json(version:, locale: "en")
-        {
-          "version" => version,
-          "values" => all_values_sorted.map { _1.to_json(locale:) },
-        }
-      end
-
-      # Get the TXT representation of all values.
-      #
-      # @param version [String] The version of the taxonomy.
-      # @param locale [String] The locale to use for localized attributes.
-      # @param padding [Integer] The padding to use for the GID. Defaults to the length of the longest GID.
-      # @return [String] The TXT representation of all values.
-      def to_txt(version:, locale: "en", padding: longest_gid_length)
-        header = <<~HEADER
-          # Shopify Product Taxonomy - Attribute Values: #{version}
-          # Format: {GID} : {Value name} [{Attribute name}]
-        HEADER
-        [
-          header,
-          *all_values_sorted.map { _1.to_txt(padding:, locale:) },
-        ].join("\n")
-      end
-
       # Reset all class-level state
       def reset
         @localizations = nil
@@ -79,13 +50,10 @@ module ProductTaxonomy
         end
       end
 
-      private
-
-      def longest_gid_length
-        largest_id = hashed_by(:id).keys.max
-        find_by(id: largest_id).gid.length
-      end
-
+      # Sort values according to their English name, taking "other" into account.
+      #
+      # @param values [Array<Value>] The values to sort.
+      # @return [Array<Value>] The sorted values.
       def all_values_sorted
         all.sort_by do |value|
           [
@@ -135,21 +103,6 @@ module ProductTaxonomy
     # @return [String] The full name of the value.
     def full_name(locale: "en")
       "#{name(locale:)} [#{primary_attribute.name(locale:)}]"
-    end
-
-    #
-    # Serialization
-    #
-    def to_json(locale: "en")
-      {
-        "id" => gid,
-        "name" => name(locale:),
-        "handle" => handle,
-      }
-    end
-
-    def to_txt(padding: 0, locale: "en")
-      "#{gid.ljust(padding)} : #{full_name(locale:)}"
     end
   end
 end
