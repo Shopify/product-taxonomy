@@ -51,7 +51,7 @@ module ProductTaxonomy
     def generate_txt_file(locale:, type:)
       txt_data = case type
       when "categories" then Category.to_txt(version: @version, locale:)
-      when "attributes" then Attribute.to_txt(version: @version, locale:)
+      when "attributes" then Serializers::Attribute::Dist::TxtSerializer.serialize_all(version: @version, locale:)
       when "taxonomy" then return
       when "attribute_values" then Serializers::Value::Dist::TxtSerializer.serialize_all(version: @version, locale:)
       end
@@ -64,7 +64,10 @@ module ProductTaxonomy
       when "categories"
         @categories_json_by_locale[locale] ||= Category.to_json(version: @version, locale:)
       when "attributes"
-        @attributes_json_by_locale[locale] ||= Attribute.to_json(version: @version, locale:)
+        @attributes_json_by_locale[locale] ||= Serializers::Attribute::Dist::JsonSerializer.serialize_all(
+          version: @version,
+          locale:,
+        )
       when "taxonomy"
         @categories_json_by_locale[locale].merge(@attributes_json_by_locale[locale])
       when "attribute_values"

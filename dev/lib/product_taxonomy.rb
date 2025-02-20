@@ -34,6 +34,8 @@ require_relative "product_taxonomy/models/serializers/attribute/data/localizatio
 require_relative "product_taxonomy/models/serializers/attribute/docs/base_and_extended_serializer"
 require_relative "product_taxonomy/models/serializers/attribute/docs/reversed_serializer"
 require_relative "product_taxonomy/models/serializers/attribute/docs/search_serializer"
+require_relative "product_taxonomy/models/serializers/attribute/dist/json_serializer"
+require_relative "product_taxonomy/models/serializers/attribute/dist/txt_serializer"
 require_relative "product_taxonomy/models/serializers/value/data/localizations_serializer"
 require_relative "product_taxonomy/models/serializers/value/dist/json_serializer"
 require_relative "product_taxonomy/models/serializers/value/dist/txt_serializer"
