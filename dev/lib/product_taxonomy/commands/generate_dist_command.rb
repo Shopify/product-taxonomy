@@ -53,7 +53,7 @@ module ProductTaxonomy
       when "categories" then Category.to_txt(version: @version, locale:)
       when "attributes" then Attribute.to_txt(version: @version, locale:)
       when "taxonomy" then return
-      when "attribute_values" then Value.to_txt(version: @version, locale:)
+      when "attribute_values" then Serializers::Value::Dist::TxtSerializer.serialize_all(version: @version, locale:)
       end
 
       File.write("#{OUTPUT_PATH}/#{locale}/#{type}.txt", txt_data + "\n")
@@ -68,7 +68,7 @@ module ProductTaxonomy
       when "taxonomy"
         @categories_json_by_locale[locale].merge(@attributes_json_by_locale[locale])
       when "attribute_values"
-        Value.to_json(version: @version, locale:)
+        Serializers::Value::Dist::JsonSerializer.serialize_all(version: @version, locale:)
       end
 
       File.write("#{OUTPUT_PATH}/#{locale}/#{type}.json", JSON.pretty_generate(json_data) + "\n")
