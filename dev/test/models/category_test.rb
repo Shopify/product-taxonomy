@@ -403,6 +403,34 @@ module ProductTaxonomy
       assert_equal ["aa", 1, 1], @grandchild.id_parts
     end
 
+    test "next_child_id returns id-1 for category with no children" do
+      category = Category.new(id: "aa", name: "Root")
+
+      assert_equal "aa-1", category.next_child_id
+    end
+
+    test "next_child_id returns next sequential id based on largest child id" do
+      root = Category.new(id: "aa", name: "Root")
+      child1 = Category.new(id: "aa-1", name: "Child 1")
+      child2 = Category.new(id: "aa-2", name: "Child 2")
+      child3 = Category.new(id: "aa-5", name: "Child 3") # Note gap in sequence
+      root.add_child(child1)
+      root.add_child(child2)
+      root.add_child(child3)
+
+      assert_equal "aa-6", root.next_child_id
+    end
+
+    test "next_child_id ignores secondary children when determining next id" do
+      root = Category.new(id: "aa", name: "Root")
+      child = Category.new(id: "aa-1", name: "Child")
+      secondary = Category.new(id: "bb-5", name: "Secondary")
+      root.add_child(child)
+      root.add_secondary_child(secondary)
+
+      assert_equal "aa-2", root.next_child_id
+    end
+
     private
 
     def stub_localizations
