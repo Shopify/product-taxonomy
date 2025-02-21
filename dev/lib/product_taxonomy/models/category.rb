@@ -227,6 +227,15 @@ module ProductTaxonomy
       "#{id}_#{IdentifierFormatter.format_friendly_id(name)}"
     end
 
+    # The next child ID for the category
+    #
+    # @return [String]
+    def next_child_id
+      largest_child_id = children.map { _1.id.split("-").last.to_i }.max || 0
+
+      "#{id}-#{largest_child_id + 1}"
+    end
+
     private
 
     #

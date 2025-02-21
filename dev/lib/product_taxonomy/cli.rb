@@ -51,5 +51,11 @@ module ProductTaxonomy
     def sync_en_localizations
       SyncEnLocalizationsCommand.new(options).run
     end
+
+    desc "add_category NAME PARENT_ID", "Add a new category to the taxonomy with NAME, as a child of PARENT_ID"
+    option :id, type: :string, desc: "Override the created category's ID"
+    def add_category(name, parent_id)
+      AddCategoryCommand.new(options.merge(name:, parent_id:)).run
+    end
   end
 end
