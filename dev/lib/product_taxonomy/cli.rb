@@ -67,5 +67,10 @@ module ProductTaxonomy
     def add_category(name, parent_id)
       AddCategoryCommand.new(options.merge(name:, parent_id:)).run
     end
+
+    desc "add_value NAME ATTRIBUTE_FRIENDLY_ID", "Add a new value with NAME to the primary attribute with ATTRIBUTE_FRIENDLY_ID"
+    def add_value(name, attribute_friendly_id)
+      AddValueCommand.new(options.merge(name:, attribute_friendly_id:)).run
+    end
   end
 end
