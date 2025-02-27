@@ -349,6 +349,38 @@ module ProductTaxonomy
       refute @attribute.extended?
     end
 
+    test "next_id returns 1 when there are no attributes" do
+      Attribute.reset
+      assert_equal 1, Attribute.next_id
+    end
+
+    test "next_id returns max id + 1 when there are attributes" do
+      Attribute.reset
+
+      attribute1 = Attribute.new(
+        id: 5,
+        name: "Size",
+        description: "Defines the size of the product",
+        friendly_id: "size",
+        handle: "size",
+        values: [@value],
+      )
+
+      attribute2 = Attribute.new(
+        id: 10,
+        name: "Material",
+        description: "Defines the material of the product",
+        friendly_id: "material",
+        handle: "material",
+        values: [@value],
+      )
+
+      Attribute.add(attribute1)
+      Attribute.add(attribute2)
+
+      assert_equal 11, Attribute.next_id
+    end
+
     private
 
     def stub_localizations

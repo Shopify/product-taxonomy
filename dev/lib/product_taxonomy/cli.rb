@@ -68,6 +68,13 @@ module ProductTaxonomy
       AddCategoryCommand.new(options.merge(name:, parent_id:)).run
     end
 
+    desc "add_attribute NAME DESCRIPTION", "Add a new attribute to the taxonomy with NAME and DESCRIPTION"
+    option :values, type: :string, desc: "A comma separated list of values to add to the attribute"
+    option :base_attribute_friendly_id, type: :string, desc: "Create an extended attribute by extending the attribute with this friendly ID"
+    def add_attribute(name, description)
+      AddAttributeCommand.new(options.merge(name:, description:)).run
+    end
+
     desc "add_value NAME ATTRIBUTE_FRIENDLY_ID", "Add a new value with NAME to the primary attribute with ATTRIBUTE_FRIENDLY_ID"
     def add_value(name, attribute_friendly_id)
       AddValueCommand.new(options.merge(name:, attribute_friendly_id:)).run
