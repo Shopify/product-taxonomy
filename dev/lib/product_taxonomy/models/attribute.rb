@@ -42,6 +42,11 @@ module ProductTaxonomy
         all.reject(&:extended?).sort_by(&:name)
       end
 
+      # Get the next ID for a newly created attribute.
+      #
+      # @return [Integer] The next ID.
+      def next_id = (all.max_by(&:id)&.id || 0) + 1
+
       private
 
       def attribute_from(attribute_data)
