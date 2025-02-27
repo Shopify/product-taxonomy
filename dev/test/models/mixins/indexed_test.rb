@@ -23,6 +23,10 @@ module ProductTaxonomy
       end
     end
 
+    # Subclass of Model to test inheritance behavior with hashed_models
+    class SubModel < Model
+    end
+
     setup do
       @model = Model.new(id: 1)
       Model.add(@model)
@@ -92,6 +96,43 @@ module ProductTaxonomy
 
     test "all returns all models in the index" do
       assert_equal [@model], Model.all
+    end
+
+    test "self.extended sets @is_indexed to true on the extended class" do
+      assert_equal true, Model.instance_variable_get(:@is_indexed)
+    end
+
+    test "create_validate_and_add! creates, validates, and adds a model to the index" do
+      Model.reset
+      model = Model.create_validate_and_add!(id: 2)
+
+      assert_equal 2, model.id
+      assert_equal 1, Model.size
+      assert_equal model, Model.find_by(id: 2)
+    end
+
+    test "create_validate_and_add! raises an error if the model is not valid" do
+      assert_raises(ActiveModel::ValidationError) do
+        Model.create_validate_and_add!(id: 1)
+      end
+    end
+
+    test "subclass shares hashed_models with parent class" do
+      parent_model = Model.new(id: 2)
+      Model.add(parent_model)
+
+      sub_model = SubModel.new(id: 3)
+      SubModel.add(sub_model)
+
+      assert_equal 3, Model.size
+      assert_equal 3, SubModel.size
+
+      assert_equal parent_model, Model.find_by(id: 2)
+      assert_equal sub_model, Model.find_by(id: 3)
+      assert_equal parent_model, SubModel.find_by(id: 2)
+      assert_equal sub_model, SubModel.find_by(id: 3)
+
+      assert_same Model.hashed_models, SubModel.hashed_models
     end
   end
 end
