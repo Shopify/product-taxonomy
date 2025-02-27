@@ -107,6 +107,13 @@ module ProductTaxonomy
       @extended_attributes << extended_attribute
     end
 
+    # Add a value to the attribute.
+    #
+    # @param value [Value] The value to add.
+    def add_value(value)
+      @values << value
+    end
+
     # The global ID of the attribute
     #
     # @return [String]

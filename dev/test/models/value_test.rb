@@ -213,6 +213,32 @@ module ProductTaxonomy
       assert_equal ["Animal", "Rayé", "Autre"], sorted_values.map { _1.name(locale: "fr") }
     end
 
+    test "next_id returns 1 when there are no values" do
+      Value.reset
+      assert_equal 1, Value.next_id
+    end
+
+    test "next_id returns max id + 1 when there are existing values" do
+      Value.reset
+      Value.add(Value.new(id: 5, name: "Red", friendly_id: "color__red", handle: "color__red"))
+      Value.add(Value.new(id: 10, name: "Blue", friendly_id: "color__blue", handle: "color__blue"))
+      Value.add(Value.new(id: 3, name: "Green", friendly_id: "color__green", handle: "color__green"))
+
+      assert_equal 11, Value.next_id
+    end
+
+    test "next_id returns correct value after values have been reset" do
+      Value.reset
+      Value.add(Value.new(id: 5, name: "Red", friendly_id: "color__red", handle: "color__red"))
+      assert_equal 6, Value.next_id
+
+      Value.reset
+      assert_equal 1, Value.next_id
+
+      Value.add(Value.new(id: 3, name: "Blue", friendly_id: "color__blue", handle: "color__blue"))
+      assert_equal 4, Value.next_id
+    end
+
     private
 
     def stub_localizations

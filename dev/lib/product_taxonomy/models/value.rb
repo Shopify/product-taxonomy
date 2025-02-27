@@ -63,6 +63,11 @@ module ProductTaxonomy
           ]
         end
       end
+
+      # Get the next ID for a newly created value.
+      #
+      # @return [Integer] The next ID.
+      def next_id = (all.max_by(&:id)&.id || 0) + 1
     end
 
     validates :id, presence: true, numericality: { only_integer: true }
