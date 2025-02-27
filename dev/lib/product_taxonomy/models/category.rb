@@ -278,7 +278,7 @@ module ProductTaxonomy
         errors.add(
           :attributes,
           :not_found,
-          message: "could not be resolved for friendly ID \"#{attribute}\"",
+          message: "not found for friendly ID \"#{attribute}\"",
         )
       end
     end
@@ -290,7 +290,7 @@ module ProductTaxonomy
         errors.add(
           :children,
           :not_found,
-          message: "could not be resolved for friendly ID \"#{child}\"",
+          message: "not found for friendly ID \"#{child}\"",
         )
       end
     end
@@ -302,7 +302,7 @@ module ProductTaxonomy
         errors.add(
           :secondary_children,
           :not_found,
-          message: "could not be resolved for friendly ID \"#{child}\"",
+          message: "not found for friendly ID \"#{child}\"",
         )
       end
     end

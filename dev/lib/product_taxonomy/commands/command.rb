@@ -20,9 +20,6 @@ module ProductTaxonomy
         execute(...)
       end
       logger.info("Completed in #{elapsed.round(2)} seconds")
-    rescue => e
-      logger.error("\e[1;31mError:\e[0m #{e.message}")
-      exit(1)
     end
 
     def execute(...)

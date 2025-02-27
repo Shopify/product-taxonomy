@@ -17,7 +17,7 @@ module ProductTaxonomy
         extended_attribute.validate!
       end
       expected_errors = {
-        values_from: [{ error: :not_found }],
+        base_attribute: [{ error: :not_found }],
       }
       assert_equal expected_errors, error.model.errors.details
     end

@@ -185,7 +185,7 @@ module ProductTaxonomy
       expected_errors = {
         friendly_id: [{ error: :blank }],
         handle: [{ error: :blank }],
-        values_from: [{ error: :not_found }],
+        base_attribute: [{ error: :not_found }],
       }
       assert_equal expected_errors, error.model.errors.details
     end
@@ -207,7 +207,7 @@ module ProductTaxonomy
         Attribute.load_from_source(YAML.safe_load(yaml_content))
       end
       expected_errors = {
-        values_from: [{ error: :not_found }],
+        base_attribute: [{ error: :not_found }],
       }
       assert_equal expected_errors, error.model.errors.details
     end

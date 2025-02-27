@@ -161,7 +161,7 @@ module ProductTaxonomy
         errors.add(
           :values,
           :not_found,
-          message: "could not be resolved for friendly ID \"#{value}\"",
+          message: "not found for friendly ID \"#{value}\"",
         )
       end
     end
