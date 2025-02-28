@@ -31,6 +31,34 @@ module ProductTaxonomy
       assert_equal [root, root2], child.secondary_parents
     end
 
+    test "add_attribute adds multiple attributes to category's attributes" do
+      category = Category.new(id: "aa", name: "Root")
+      color_attribute = Attribute.new(
+        id: 1,
+        name: "Color",
+        friendly_id: "color",
+        handle: "color",
+        description: "Defines the primary color",
+        values: []
+      )
+
+      size_attribute = Attribute.new(
+        id: 2,
+        name: "Size",
+        friendly_id: "size",
+        handle: "size",
+        description: "Defines the size",
+        values: []
+      )
+
+      category.add_attribute(color_attribute)
+      category.add_attribute(size_attribute)
+
+      assert_includes category.attributes, color_attribute
+      assert_includes category.attributes, size_attribute
+      assert_equal 2, category.attributes.size
+    end
+
     test "root? is true for root node" do
       assert @root.root?
     end

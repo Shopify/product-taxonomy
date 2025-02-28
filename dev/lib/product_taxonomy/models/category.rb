@@ -124,6 +124,13 @@ module ProductTaxonomy
       child.secondary_parents << self
     end
 
+    # Add an attribute to the category
+    #
+    # @param [Attribute] attribute
+    def add_attribute(attribute)
+      @attributes << attribute
+    end
+
     #
     # Information
     #
