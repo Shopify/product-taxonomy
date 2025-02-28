@@ -75,6 +75,13 @@ module ProductTaxonomy
       AddAttributeCommand.new(options.merge(name:, description:)).run
     end
 
+    desc "add_attributes_to_categories ATTRIBUTE_FRIENDLY_IDS CATEGORY_IDS",
+      "Add one or more attributes to one or more categories. ATTRIBUTE_FRIENDLY_IDS is a comma-separated list of attribute friendly IDs."
+    option :include_descendants, type: :boolean, desc: "When set, the attributes will be added to all descendants of the specified categories"
+    def add_attributes_to_categories(attribute_friendly_ids, category_ids)
+      AddAttributesToCategoriesCommand.new(options.merge(attribute_friendly_ids:, category_ids:)).run
+    end
+
     desc "add_value NAME ATTRIBUTE_FRIENDLY_ID", "Add a new value with NAME to the primary attribute with ATTRIBUTE_FRIENDLY_ID"
     def add_value(name, attribute_friendly_id)
       AddValueCommand.new(options.merge(name:, attribute_friendly_id:)).run
