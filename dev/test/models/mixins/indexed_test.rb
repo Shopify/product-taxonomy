@@ -94,6 +94,16 @@ module ProductTaxonomy
       assert_raises(ArgumentError) { Model.find_by(name: "test") }
     end
 
+    test "find_by! returns the model with the specified field value" do
+      assert_equal @model, Model.find_by!(id: 1)
+    end
+
+    test "find_by! raises NotFoundError if the model with the specified field value is not in the index" do
+      assert_raises(ProductTaxonomy::Indexed::NotFoundError) do
+        Model.find_by!(id: 2)
+      end
+    end
+
     test "all returns all models in the index" do
       assert_equal [@model], Model.all
     end

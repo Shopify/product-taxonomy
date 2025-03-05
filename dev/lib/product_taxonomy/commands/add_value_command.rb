@@ -17,8 +17,7 @@ module ProductTaxonomy
     private
 
     def create_value!
-      @attribute = Attribute.find_by(friendly_id: @attribute_friendly_id)
-      raise "Attribute `#{@attribute_friendly_id}` not found" if @attribute.nil?
+      @attribute = Attribute.find_by!(friendly_id: @attribute_friendly_id)
       if @attribute.extended?
         raise "Attribute `#{@attribute.name}` is an extended attribute, please use a primary attribute instead"
       end
