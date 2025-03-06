@@ -137,7 +137,7 @@ module ProductTaxonomy
     end
 
     test "execute raises error when attribute is not found" do
-      assert_raises(RuntimeError) do
+      assert_raises(Indexed::NotFoundError) do
         AddAttributesToCategoriesCommand.new(
           attribute_friendly_ids: "nonexistent",
           category_ids: "aa-1",
@@ -147,7 +147,7 @@ module ProductTaxonomy
     end
 
     test "execute raises error when category is not found" do
-      assert_raises(RuntimeError) do
+      assert_raises(Indexed::NotFoundError) do
         AddAttributesToCategoriesCommand.new(
           attribute_friendly_ids: "color",
           category_ids: "nonexistent",

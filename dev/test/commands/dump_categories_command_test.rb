@@ -54,7 +54,7 @@ module ProductTaxonomy
       Category.stubs(:find_by).with(id: "nonexistent").returns(nil)
 
       command = DumpCategoriesCommand.new(verticals: ["nonexistent"])
-      assert_raises(RuntimeError) do
+      assert_raises(Indexed::NotFoundError) do
         command.execute
       end
     end

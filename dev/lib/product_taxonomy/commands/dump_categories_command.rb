@@ -12,8 +12,7 @@ module ProductTaxonomy
       logger.info("Dumping #{@verticals.size} verticals")
 
       @verticals.each do |vertical_id|
-        vertical_root = Category.find_by(id: vertical_id)
-        raise "Vertical not found: #{vertical_id}" unless vertical_root
+        vertical_root = Category.find_by!(id: vertical_id)
         raise "Category #{vertical_id} is not a vertical" unless vertical_root.root?
 
         logger.info("Updating `#{vertical_root.name}`...")
