@@ -1346,6 +1346,7 @@
   - hb-3-2-1-8
   - hb-3-2-1-9
   - hb-3-2-1-10
+  - hb-3-2-1-11
   attributes:
   - scent
 - id: hb-3-2-1-1
@@ -1423,6 +1424,15 @@
   attributes:
   - color
   - material
+  - pattern
+  - scent
+- id: hb-3-2-1-11
+  name: Bath Bombs
+  children: []
+  attributes:
+  - age_group
+  - color
+  - constitutive_ingredients
   - pattern
   - scent
 - id: hb-3-2-2
@@ -2136,6 +2146,7 @@
   - hb-3-2-9-20
   - hb-3-2-9-21
   - hb-3-2-9-22
+  - hb-3-2-9-23
   attributes:
   - product_certifications_standards
   - product_form
@@ -2435,6 +2446,32 @@
   - dispenser_type
   - product_form
   - skin_care_effect
+  - suitable_for_skin_type
+- id: hb-3-2-9-23
+  name: Body Butters & Balms
+  children:
+  - hb-3-2-9-23-1
+  - hb-3-2-9-23-2
+  attributes:
+  - active_ingredient
+  - product_certifications_standards
+  - product_form
+  - suitable_for_skin_type
+- id: hb-3-2-9-23-1
+  name: Body Butters
+  children: []
+  attributes:
+  - active_ingredient
+  - product_certifications_standards
+  - product_form
+  - suitable_for_skin_type
+- id: hb-3-2-9-23-2
+  name: Body Balms
+  children: []
+  attributes:
+  - active_ingredient
+  - product_certifications_standards
+  - product_form
   - suitable_for_skin_type
 - id: hb-3-3
   name: Cotton Balls
@@ -2779,6 +2816,7 @@
   - hb-3-10-11
   - hb-3-10-12
   - hb-3-10-13
+  - hb-3-10-14
   attributes:
   - target_gender
 - id: hb-3-10-1
@@ -3039,6 +3077,49 @@
   - product_certifications_standards
   - product_form
   - shampoo_type
+  - suitable_for_hair_type
+  - target_gender
+- id: hb-3-10-14
+  name: Hair Treatments
+  children:
+  - hb-3-10-14-1
+  - hb-3-10-14-2
+  - hb-3-10-14-3
+  attributes:
+  - compatible_hair_color
+  - constitutive_ingredients
+  - product_certifications_standards
+  - product_form
+  - suitable_for_hair_type
+  - target_gender
+- id: hb-3-10-14-1
+  name: Hair Masks
+  children: []
+  attributes:
+  - compatible_hair_color
+  - constitutive_ingredients
+  - product_certifications_standards
+  - product_form
+  - suitable_for_hair_type
+  - target_gender
+- id: hb-3-10-14-2
+  name: Hair Oils
+  children: []
+  attributes:
+  - compatible_hair_color
+  - constitutive_ingredients
+  - product_certifications_standards
+  - product_form
+  - suitable_for_hair_type
+  - target_gender
+- id: hb-3-10-14-3
+  name: Hair Serums
+  children: []
+  attributes:
+  - compatible_hair_color
+  - constitutive_ingredients
+  - product_certifications_standards
+  - product_form
   - suitable_for_hair_type
   - target_gender
 - id: hb-3-11
