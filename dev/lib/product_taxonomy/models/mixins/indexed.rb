@@ -3,6 +3,8 @@
 module ProductTaxonomy
   # Mixin providing indexing for a model, using hashes to support fast uniqueness checks and lookups by field value.
   module Indexed
+    NotFoundError = Class.new(StandardError)
+
     class << self
       # Keep track of which model class used "extend Indexed" so that the model can be subclassed while still storing
       # model objects in a shared index on the superclass.
@@ -65,6 +67,20 @@ module ProductTaxonomy
       raise ArgumentError, "Field not hashed: #{field}" unless hashed_models.key?(field)
 
       hashed_models[field][value]
+    end
+
+    # Find a model by field value. Returns the first matching record or raises an error if not found. Only works for
+    # fields marked unique.
+    #
+    # @param conditions [Hash] Hash of field-value pairs to search by
+    # @return [Object] The matching model
+    def find_by!(**conditions)
+      record = find_by(**conditions)
+      return record if record
+
+      field, value = conditions.first
+      field = field.to_s.humanize(capitalize: false, keep_id_suffix: true)
+      raise NotFoundError, "#{self.name.demodulize} with #{field} \"#{value}\" not found"
     end
 
     # Get the hash of models indexed by a given field. Only works for fields marked unique.

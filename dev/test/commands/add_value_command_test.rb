@@ -57,7 +57,7 @@ module ProductTaxonomy
     end
 
     test "execute raises error when attribute not found" do
-      assert_raises(RuntimeError) do
+      assert_raises(Indexed::NotFoundError) do
         AddValueCommand.new(name: "Blue", attribute_friendly_id: "nonexistent").execute
       end
     end

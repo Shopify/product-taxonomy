@@ -18,20 +18,8 @@ module ProductTaxonomy
     private
 
     def add_attributes_to_categories!
-      @attributes = attribute_friendly_ids.map do |friendly_id|
-        attribute = Attribute.find_by(friendly_id:)
-        next attribute if attribute
-
-        raise "Attribute with friendly ID `#{friendly_id}` not found"
-      end
-
-      @categories = category_ids.map do |id|
-        category = Category.find_by(id:)
-        next category if category
-
-        raise "Category with ID `#{id}` not found"
-      end
-
+      @attributes = attribute_friendly_ids.map { |friendly_id| Attribute.find_by!(friendly_id:) }
+      @categories = category_ids.map { |id| Category.find_by!(id:) }
       @categories = @categories.flat_map(&:descendants_and_self) if @include_descendants
 
       @categories.each do |category|

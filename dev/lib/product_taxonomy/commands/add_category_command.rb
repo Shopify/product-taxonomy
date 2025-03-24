@@ -18,9 +18,7 @@ module ProductTaxonomy
     private
 
     def create_category!
-      parent = Category.find_by(id: @parent_id)
-      raise "Parent category `#{@parent_id}` not found" if parent.nil?
-
+      parent = Category.find_by!(id: @parent_id)
       @new_category = Category.new(id: @id || parent.next_child_id, name: @name, parent:)
       raise "Failed to create category: #{@new_category.errors.full_messages.to_sentence}" unless @new_category.valid?
 

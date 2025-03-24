@@ -44,7 +44,7 @@ module ProductTaxonomy
     end
 
     test "execute raises error when parent category not found" do
-      assert_raises(RuntimeError) do
+      assert_raises(Indexed::NotFoundError) do
         AddCategoryCommand.new(name: "New Category", parent_id: "nonexistent").execute
       end
     end
