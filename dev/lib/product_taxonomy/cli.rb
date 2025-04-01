@@ -56,6 +56,12 @@ module ProductTaxonomy
       DumpValuesCommand.new(options).run
     end
 
+    desc "dump_integration_full_names", "Dump `full_names.yml` from current taxonomy for integrations"
+    option :version, type: :string, desc: "Version with which to label the dumped data"
+    def dump_integration_full_names
+      DumpIntegrationFullNamesCommand.new(options).run
+    end
+
     desc "sync_en_localizations", "Sync English localizations for categories, attributes, and values"
     option :targets, type: :string, desc: "List of targets to sync. Valid targets are: categories, attributes, values"
     def sync_en_localizations
