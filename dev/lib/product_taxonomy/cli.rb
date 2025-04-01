@@ -2,6 +2,10 @@
 
 module ProductTaxonomy
   class Cli < Thor
+    class << self
+      def exit_on_failure? = true
+    end
+
     class_option :quiet,
       type: :boolean,
       default: false,

@@ -38,9 +38,9 @@ module ProductTaxonomy
 
     def values_from_valid?
       errors.add(
-        :values_from,
+        :base_attribute,
         :not_found,
-        message: "could not be resolved for friendly ID \"#{values_from}\"",
+        message: "not found for friendly ID \"#{values_from}\"",
       ) unless values_from.is_a?(Attribute)
     end
   end
