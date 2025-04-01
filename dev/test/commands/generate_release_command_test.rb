@@ -8,23 +8,55 @@ module ProductTaxonomy
     setup do
       @tmp_base_path = Dir.mktmpdir
       @version = "2024-01"
+      @next_version = "2024-02-unstable"
       @version_file_path = File.expand_path("VERSION", @tmp_base_path)
+      @release_branch = "release-v#{@version}"
 
       # Create test files and directories
       FileUtils.mkdir_p(File.expand_path("dist", @tmp_base_path))
+      FileUtils.mkdir_p(File.expand_path("data/integrations/shopify/mappings", @tmp_base_path))
+
+      # Create VERSION file
       File.write(@version_file_path, "2023-12")
+
+      # Create README files
+      File.write(
+        File.expand_path("README.md", @tmp_base_path),
+        '<img src="https://img.shields.io/badge/Version-2023--12-blue.svg" alt="Version">',
+      )
       File.write(
         File.expand_path("dist/README.md", @tmp_base_path),
         '<img src="https://img.shields.io/badge/Version-2023--12-blue.svg" alt="Version">',
       )
 
+      # Create test mapping files
+      File.write(
+        File.expand_path("data/integrations/shopify/mappings/to_shopify.yml", @tmp_base_path),
+        "output_version: 2023-12-unstable"
+      )
+      File.write(
+        File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path),
+        "input_version: 2023-12-unstable"
+      )
+
       # Stub dependencies
       Command.any_instance.stubs(:version_file_path).returns(@version_file_path)
       Command.any_instance.stubs(:load_taxonomy)
-      Command.any_instance.stubs(:system).with("git", "tag", "v#{@version}").returns(true)
+      ProductTaxonomy.stubs(:data_path).returns("#{@tmp_base_path}/data")
+
+      # Stub git operations
+      command_stub = GenerateReleaseCommand.any_instance
+      command_stub.stubs(:run_git_command).returns(true)
+      command_stub.stubs(:get_commit_hash).returns("abc1234")
+
+      # Stub git branch and status check to pass by default
+      command_stub.stubs(:`).with("git rev-parse --abbrev-ref HEAD").returns("main\n")
+      command_stub.stubs(:`).with("git status --porcelain").returns("")
+
+      # Stub command executions
       GenerateDistCommand.any_instance.stubs(:execute)
       GenerateDocsCommand.any_instance.stubs(:execute)
-      ProductTaxonomy.stubs(:data_path).returns("#{@tmp_base_path}/data")
+      DumpIntegrationFullNamesCommand.any_instance.stubs(:execute)
     end
 
     teardown do
@@ -32,46 +64,137 @@ module ProductTaxonomy
     end
 
     test "initialize sets version from options if provided" do
-      command = GenerateReleaseCommand.new(version: @version)
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
       assert_equal @version, command.instance_variable_get(:@version)
+      assert_equal @next_version, command.instance_variable_get(:@next_version)
     end
 
-    test "initialize reads version from file if not provided in options" do
-      command = GenerateReleaseCommand.new({})
-      assert_equal "2023-12", command.instance_variable_get(:@version)
+    test "initialize raises error if next_version doesn't end with -unstable" do
+      assert_raises ArgumentError do
+        GenerateReleaseCommand.new(next_version: "2024-02")
+      end
     end
 
     test "initialize sets all locales when 'all' is specified" do
       Command.any_instance.stubs(:locales_defined_in_data_path).returns(["en", "fr", "es"])
-      command = GenerateReleaseCommand.new(locales: ["all"])
+      command = GenerateReleaseCommand.new(next_version: @next_version, locales: ["all"])
       assert_equal ["en", "fr", "es"], command.instance_variable_get(:@locales)
     end
 
     test "initialize sets specific locales when provided" do
-      command = GenerateReleaseCommand.new(locales: ["en", "fr"])
+      command = GenerateReleaseCommand.new(next_version: @next_version, locales: ["en", "fr"])
       assert_equal ["en", "fr"], command.instance_variable_get(:@locales)
     end
 
-    test "execute performs all required steps in order" do
-      command = GenerateReleaseCommand.new(version: @version, locales: ["en"])
+    test "execute performs release version steps and next version steps" do
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version, locales: ["en"])
 
-      # Set up expectations
-      GenerateDistCommand.any_instance.expects(:execute)
-      GenerateDocsCommand.any_instance.expects(:execute)
+      command.expects(:run_git_command).with("pull")
+      command.expects(:run_git_command).with("checkout", "-b", @release_branch)
+      command.expects(:run_git_command).with("add", ".").times(2)
+      command.expects(:run_git_command).with("commit", "-m", "Release version #{@version}")
+      command.expects(:run_git_command).with("commit", "-m", "Bump version to #{@next_version}")
+      command.expects(:run_git_command).with("tag", "v#{@version}")
+      GenerateDistCommand.any_instance.expects(:execute).times(2)
+      GenerateDocsCommand.any_instance.expects(:execute).times(2)
+      DumpIntegrationFullNamesCommand.any_instance.expects(:execute)
 
       command.execute
 
-      # Verify VERSION file was updated
-      assert_equal @version, File.read(@version_file_path)
+      assert_equal @next_version, File.read(@version_file_path)
     end
 
-    test "execute updates README.md version badge" do
-      command = GenerateReleaseCommand.new(version: @version)
+    test "execute raises error when not on main branch" do
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+
+      command.unstub(:`);
+      command.stubs(:`).with("git rev-parse --abbrev-ref HEAD").returns("feature/new-stuff\n")
+      command.stubs(:`).with("git status --porcelain").returns("")
+
+      assert_raises(RuntimeError) do
+        command.execute
+      end
+    end
+
+    test "execute raises error when working directory is not clean" do
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+
+      command.unstub(:`);
+      command.stubs(:`).with("git rev-parse --abbrev-ref HEAD").returns("main\n")
+      command.stubs(:`).with("git status --porcelain").returns(" M dev/lib/product_taxonomy/commands/generate_release_command.rb\n")
+
+      assert_raises(RuntimeError) do
+        command.execute
+      end
+    end
+
+    test "execute updates integration mapping files" do
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
 
       command.execute
 
-      readme_content = File.read(File.expand_path("dist/README.md", @tmp_base_path))
-      assert_equal '<img src="https://img.shields.io/badge/Version-2024--01-blue.svg" alt="Version">', readme_content
+      to_shopify_content = File.read(File.expand_path("data/integrations/shopify/mappings/to_shopify.yml", @tmp_base_path))
+      from_shopify_content = File.read(File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path))
+
+      assert_equal "output_version: #{@version}", to_shopify_content
+      assert_equal "input_version: #{@version}", from_shopify_content
+    end
+
+    test "execute updates both README files version badges" do
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+
+      command.execute
+
+      root_readme_content = File.read(File.expand_path("README.md", @tmp_base_path))
+      dist_readme_content = File.read(File.expand_path("dist/README.md", @tmp_base_path))
+
+      expected_badge = '<img src="https://img.shields.io/badge/Version-2024--01-blue.svg" alt="Version">'
+      assert_equal expected_badge, root_readme_content
+      assert_equal expected_badge, dist_readme_content
+    end
+
+    test "print_summary outputs expected format" do
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+      expected_output = <<~OUTPUT
+
+        ====== Release Summary ======
+        - Created commit (abc1234): Release version 2024-01
+        - Created commit (abc1234): Bump version to 2024-02-unstable
+        - Created tag: v2024-01
+
+        Inspect changes with:
+          git show abc1234
+          git show abc1234
+          git show v2024-01
+
+        Next steps:
+          1. If the changes look good, push the branch
+             * Run `git push origin release-v2024-01`
+          2. Open a PR and follow the usual process to get approval and merge
+             * https://github.com/Shopify/product-taxonomy/pull/new/release-v2024-01
+          3. Once the PR is merged, push the tag that was created
+             * Run `git push origin v2024-01`
+          4. Create a release on GitHub
+             * https://github.com/Shopify/product-taxonomy/releases/new?tag=v2024-01
+      OUTPUT
+      log_string = StringIO.new
+      logger = Logger.new(log_string)
+      logger.formatter = proc { |_, _, _, msg| "#{msg}\n" }
+      command.instance_variable_set(:@logger, logger)
+
+      command.send(:print_summary, "abc1234", "abc1234")
+
+      assert_equal expected_output, log_string.string
+    end
+
+    test "run_git_command raises error when git command fails" do
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+
+      GenerateReleaseCommand.any_instance.unstub(:run_git_command)
+      command.expects(:system).with("git", "checkout", "main").returns(false)
+      command.expects(:raise).with(regexp_matches(/Git command failed/))
+
+      command.send(:run_git_command, "checkout", "main")
     end
   end
 end
