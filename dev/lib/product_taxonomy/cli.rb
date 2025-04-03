@@ -37,11 +37,10 @@ module ProductTaxonomy
       GenerateDocsCommand.new(options).run
     end
 
-    desc "release", "Generate a release"
-    option :version, type: :string, desc: "The version of the release to generate"
-    option :locales, type: :array, default: ["en"], desc: "The locales to generate"
-    def release
-      GenerateReleaseCommand.new(options).run
+    desc "release CURRENT_VERSION NEXT_VERSION", "Generate a release for CURRENT_VERSION and move to NEXT_VERSION (must end with '-unstable')"
+    option :locales, type: :array, default: ["all"], desc: "The locales to generate"
+    def release(current_version, next_version)
+      GenerateReleaseCommand.new(options.merge(current_version:, next_version:)).run
     end
 
     desc "dump_categories", "Dump category verticals to YAML files"
