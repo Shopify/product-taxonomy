@@ -42,7 +42,7 @@ module ProductTaxonomy
         current_shopify_version: @current_shopify_version,
       )
 
-      assert_equal 4, integration_versions.size
+      assert_equal 5, integration_versions.size
       assert_equal "foocommerce", integration_versions.first.name
       assert_equal "1.0.0", integration_versions.first.version
       assert_equal "shopify", integration_versions.second.name
@@ -51,6 +51,8 @@ module ProductTaxonomy
       assert_equal "2021-01", integration_versions.third.version
       assert_equal "shopify", integration_versions.fourth.name
       assert_equal "2022-01", integration_versions.fourth.version
+      assert_equal "shopify", integration_versions.fifth.name
+      assert_equal "2023-01", integration_versions.fifth.version
     end
 
     test "IntegrationVersion.load_all_from_source resolves chain of to_shopify mappings against latest version" do

@@ -180,8 +180,8 @@ module ProductTaxonomy
     # @param next_integration_versions [Array<IntegrationVersion>] An array of Shopify integration versions coming
     #   after the current version.
     def resolve_to_shopify_mappings(next_integration_versions)
-      @to_shopify_mappings.each do |mapping|
-        newer_mapping = next_integration_versions.flat_map(&:to_shopify_mappings).find do |mapping_rule|
+      @to_shopify_mappings&.each do |mapping|
+        newer_mapping = next_integration_versions.flat_map(&:to_shopify_mappings).compact.find do |mapping_rule|
           mapping_rule.input_category["id"] == mapping.output_category
         end
         mapping.output_category = newer_mapping&.output_category || Category.find_by(id: mapping.output_category)
