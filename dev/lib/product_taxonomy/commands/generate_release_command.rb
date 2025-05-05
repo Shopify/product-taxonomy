@@ -22,13 +22,18 @@ module ProductTaxonomy
     def execute
       check_git_state!
 
-      logger.info("Generating release for version: #{@version}")
-      release_commit_hash = generate_release_version!
+      begin
+        logger.info("Generating release for version: #{@version}")
+        release_commit_hash = generate_release_version!
 
-      logger.info("Moving to next unstable version: #{@next_version}")
-      next_version_commit_hash = move_to_next_version!
+        logger.info("Moving to next unstable version: #{@next_version}")
+        next_version_commit_hash = move_to_next_version!
 
-      print_summary(release_commit_hash, next_version_commit_hash)
+        print_summary(release_commit_hash, next_version_commit_hash)
+      rescue StandardError
+        print_rollback_instructions
+        raise
+      end
     end
 
     private
@@ -96,9 +101,13 @@ module ProductTaxonomy
     end
 
     def run_git_command(*args)
-      result = system("git", *args)
+      result = system("git", *args, chdir: git_repo_root)
 
       raise "Git command failed." unless result
+    end
+
+    def git_repo_root
+      @git_repo_root ||= `git rev-parse --show-toplevel`.strip
     end
 
     def get_commit_hash(ref)
@@ -147,6 +156,23 @@ module ProductTaxonomy
       logger.info("     * Run `git push origin v#{@version}`")
       logger.info("  4. Create a release on GitHub")
       logger.info("     * https://github.com/Shopify/product-taxonomy/releases/new?tag=v#{@version}")
+    end
+
+    def print_rollback_instructions
+      logger.info("\n====== Rollback Instructions ======")
+      logger.info("The release was aborted due to an error.")
+      logger.info("You can use the following commands to roll back to the original state:")
+      logger.info("  git reset --hard main")
+
+      # Check if branch exists before suggesting deletion
+      if system("git", "show-ref", "--verify", "--quiet", "refs/heads/release-v#{@version}")
+        logger.info("  git branch -D release-v#{@version}")
+      end
+
+      # Check if tag exists before suggesting deletion
+      if system("git", "show-ref", "--verify", "--quiet", "refs/tags/v#{@version}")
+        logger.info("  git tag -d v#{@version}")
+      end
     end
   end
 end

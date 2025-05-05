@@ -48,6 +48,7 @@ module ProductTaxonomy
       command_stub = GenerateReleaseCommand.any_instance
       command_stub.stubs(:run_git_command).returns(true)
       command_stub.stubs(:get_commit_hash).returns("abc1234")
+      command_stub.stubs(:git_repo_root).returns(@tmp_base_path)
 
       # Stub git branch and status check to pass by default
       command_stub.stubs(:`).with("git rev-parse --abbrev-ref HEAD").returns("main\n")
@@ -187,14 +188,85 @@ module ProductTaxonomy
       assert_equal expected_output, log_string.string
     end
 
+    test "print_rollback_instructions outputs expected format when branch and tag exist" do
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+      expected_output = <<~OUTPUT
+
+        ====== Rollback Instructions ======
+        The release was aborted due to an error.
+        You can use the following commands to roll back to the original state:
+          git reset --hard main
+          git branch -D release-v2024-01
+          git tag -d v2024-01
+      OUTPUT
+      log_string = StringIO.new
+      logger = Logger.new(log_string)
+      logger.formatter = proc { |_, _, _, msg| "#{msg}\n" }
+      command.instance_variable_set(:@logger, logger)
+
+      # Stub system calls to simulate branch and tag existing
+      command.stubs(:system).with("git", "show-ref", "--verify", "--quiet", "refs/heads/release-v#{@version}").returns(true)
+      command.stubs(:system).with("git", "show-ref", "--verify", "--quiet", "refs/tags/v#{@version}").returns(true)
+
+      command.send(:print_rollback_instructions)
+
+      assert_equal expected_output, log_string.string
+    end
+
+    test "print_rollback_instructions outputs expected format when branch and tag don't exist" do
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+      expected_output = <<~OUTPUT
+
+        ====== Rollback Instructions ======
+        The release was aborted due to an error.
+        You can use the following commands to roll back to the original state:
+          git reset --hard main
+      OUTPUT
+      log_string = StringIO.new
+      logger = Logger.new(log_string)
+      logger.formatter = proc { |_, _, _, msg| "#{msg}\n" }
+      command.instance_variable_set(:@logger, logger)
+
+      # Stub system calls to simulate branch and tag not existing
+      command.stubs(:system).with("git", "show-ref", "--verify", "--quiet", "refs/heads/release-v#{@version}").returns(false)
+      command.stubs(:system).with("git", "show-ref", "--verify", "--quiet", "refs/tags/v#{@version}").returns(false)
+
+      command.send(:print_rollback_instructions)
+
+      assert_equal expected_output, log_string.string
+    end
+
+    test "execute handles errors and prints rollback instructions" do
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+
+      # Simulate failure during execution
+      command.expects(:generate_release_version!).raises(StandardError.new("Test error"))
+      command.expects(:print_rollback_instructions)
+
+      assert_raises(StandardError) do
+        command.execute
+      end
+    end
+
     test "run_git_command raises error when git command fails" do
       command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
 
       GenerateReleaseCommand.any_instance.unstub(:run_git_command)
-      command.expects(:system).with("git", "checkout", "main").returns(false)
+      command.stubs(:git_repo_root).returns(@tmp_base_path)
+      command.expects(:system).with("git", "checkout", "main", chdir: @tmp_base_path).returns(false)
       command.expects(:raise).with(regexp_matches(/Git command failed/))
 
       command.send(:run_git_command, "checkout", "main")
+    end
+
+    test "git_repo_root memoizes git repository root path" do
+      GenerateReleaseCommand.any_instance.unstub(:git_repo_root)
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+
+      command.expects(:`).with("git rev-parse --show-toplevel").returns("/repo/path\n").once
+
+      assert_equal "/repo/path", command.send(:git_repo_root)
+      assert_equal "/repo/path", command.send(:git_repo_root) # Should use memoized value
     end
   end
 end
