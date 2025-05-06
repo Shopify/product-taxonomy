@@ -1,4 +1,4 @@
-## 2025-03-rc1 (pre-release)
+## 2025-03
 
 #### 🌐 Localization
 Added support for the following languages: `Bulgarian`, `Greek`, `Croatian`, `Hungarian`, `Indonesian`, `Lithuanian`, `Romanian`, `Russian`, `Slovak` and `Slovenian`.

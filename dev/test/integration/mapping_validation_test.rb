@@ -150,7 +150,12 @@ module ProductTaxonomy
 
     test "Shopify taxonomy version is consistent between VERSION file and mappings in the /data folder" do
       shopify_taxonomy_version_from_file = "shopify/" + current_shopify_taxonomy_version
-      allowed_shopify_legacy_source_taxonomies = ["shopify/2022-02", "shopify/2024-07", "shopify/2024-10"]
+      allowed_shopify_legacy_source_taxonomies = [
+        "shopify/2022-02",
+        "shopify/2024-07",
+        "shopify/2024-10",
+        "shopify/2025-03"
+      ]
       all_shopify_taxonomies = allowed_shopify_legacy_source_taxonomies + [shopify_taxonomy_version_from_file]
       mapping_rule_files = Dir.glob(File.expand_path(
         "integrations/*/*/mappings/*_shopify.yml",
