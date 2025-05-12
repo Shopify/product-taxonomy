@@ -102,6 +102,7 @@ module ProductTaxonomy
         Generating release folder...
         Generating index.html...
         Generating attributes.html...
+        Generating latest.html...
         Completed in 0.1 seconds
       OUTPUT
 
@@ -186,6 +187,39 @@ module ProductTaxonomy
         ---
       CONTENT
       assert_equal expected_attributes_content, File.read("#{release_path}/attributes.html")
+    end
+
+    test "execute generates latest.html for versioned release" do
+      latest_html_path = File.expand_path("docs/_releases/latest.html", @tmp_base_path)
+
+      # Ensure file does not exist before running
+      FileUtils.rm_f(latest_html_path)
+
+      command = GenerateDocsCommand.new(version: "2024-01")
+      command.execute
+
+      expected_content = <<~HTML
+        ---
+        title: latest
+        include_in_release_list: true
+        redirect_to: /releases/2024-01/
+        ---
+      HTML
+      assert File.exist?(latest_html_path), "latest.html should be generated"
+      assert_equal expected_content, File.read(latest_html_path)
+    end
+
+    test "execute does not generate latest.html redirect for unstable version" do
+      latest_html_path = File.expand_path("docs/_releases/latest.html", @tmp_base_path)
+
+      # Ensure file does not exist before running
+      FileUtils.rm_f(latest_html_path)
+
+      command = GenerateDocsCommand.new({})
+      command.execute
+
+      # File should not be created for unstable release
+      refute File.exist?(latest_html_path), "latest.html should not be generated for unstable version"
     end
 
     test "reverse_shopify_mapping_rules correctly reverses mappings" do
