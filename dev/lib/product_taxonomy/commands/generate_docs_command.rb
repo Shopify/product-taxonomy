@@ -83,16 +83,11 @@ module ProductTaxonomy
       content.gsub!("GH_URL", "https://github.com/Shopify/product-taxonomy/releases/tag/v#{@version}")
       File.write("#{release_path}/attributes.html", content)
 
-      logger.info("Generating latest.html...")
+      logger.info("Updating latest.html redirect...")
       latest_html_path = File.expand_path("_releases/latest.html", self.class.docs_path)
-      latest_html_content = <<~HTML
-        ---
-        title: latest
-        include_in_release_list: true
-        redirect_to: /releases/#{@version}/
-        ---
-      HTML
-      File.write(latest_html_path, latest_html_content)
+      content = File.read(latest_html_path)
+      content.gsub!(%r{redirect_to: /releases/.*?/}, "redirect_to: /releases/#{@version}/")
+      File.write(latest_html_path, content)
     end
 
     def reverse_shopify_mapping_rules(mappings)
