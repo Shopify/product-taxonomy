@@ -202,15 +202,6 @@ module ProductTaxonomy
 
     test "execute updates latest.html redirect for versioned release" do
       latest_html_path = File.expand_path("docs/_releases/latest.html", @tmp_base_path)
-      initial_content = <<~HTML
-        ---
-        title: latest
-        include_in_release_list: true
-        redirect_to: /releases/setup/
-        ---
-      HTML
-      # Verify the initial content written by setup
-      assert_equal initial_content, File.read(latest_html_path)
 
       command = GenerateDocsCommand.new(version: "2024-01")
       command.execute
@@ -227,15 +218,7 @@ module ProductTaxonomy
 
     test "execute does not update latest.html redirect for unstable version" do
       latest_html_path = File.expand_path("docs/_releases/latest.html", @tmp_base_path)
-      initial_content = <<~HTML
-        ---
-        title: latest
-        include_in_release_list: true
-        redirect_to: /releases/setup/
-        ---
-      HTML
-      # Verify the initial content written by setup
-      assert_equal initial_content, File.read(latest_html_path)
+      initial_content = File.read(latest_html_path)
 
       command = GenerateDocsCommand.new({})
       command.execute
