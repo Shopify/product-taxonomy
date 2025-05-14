@@ -89,8 +89,23 @@ layout: default
   </div>
   <div class="column">
     <h2>Channel mappings</h2>
-    {% assign mappings = site.data[page.target].mappings %}
-    {% for mapping in mappings %}
+    {% assign all_mappings = site.data[page.target].mappings %}
+
+    {% assign shopify_mappings = "" | split: "" %}
+    {% assign other_mappings = "" | split: "" %}
+
+    {% comment %} Separates mappings into Shopify and non-Shopify mappings by checking if output taxonomy starts with "shopify/" {% endcomment %}
+    {% for mapping_item in all_mappings %}
+      {% assign temp_output_taxonomy_parts = mapping_item.output_taxonomy | split: '/' %}
+      {% assign temp_output_title = temp_output_taxonomy_parts[0] %}
+      {% if temp_output_title == "shopify" %}
+        {% assign shopify_mappings = shopify_mappings | push: mapping_item %}
+      {% else %}
+        {% assign other_mappings = other_mappings | push: mapping_item %}
+      {% endif %}
+    {% endfor %}
+
+    {% for mapping in other_mappings %}
       <div class="value-container">
         {% assign input_taxonomy = mapping.input_taxonomy %}
         {% assign output_taxonomy = mapping.output_taxonomy %}
@@ -99,11 +114,7 @@ layout: default
         {% assign output_version = output_title_and_version[1] %}
         {% assign rules = mapping.rules %}
         <h3 class="value-title value-title--box mapping-title" tabindex="0">
-          {% if output_title == "shopify" %}
-            {{ output_title }} (Legacy)
-          {% else %}
-            {{ output_title }}
-          {% endif %}
+          {{ output_title }}
           <span class="chevron"></span>
         </h3>
         <div class="values-container values-container--box">
@@ -127,6 +138,41 @@ layout: default
         </div>
       </div>
     {% endfor %}
+
+    {% comment %} Section only for legacy Shopify mappings {% endcomment %}
+    <div class="value-container">
+      <h3 class="value-title value-title--box mapping-title" tabindex="0">
+        Shopify (Legacy)
+        <span class="chevron"></span>
+      </h3>
+      <div class="values-container values-container--box">
+        <ul class="values-container__list values-container__list--box">
+          {% for mapping in shopify_mappings %}
+            {% assign input_taxonomy = mapping.input_taxonomy %}
+            {% assign output_taxonomy = mapping.output_taxonomy %}
+            {% assign output_title_and_version = output_taxonomy | split: "/" %}
+            {% assign output_title = output_title_and_version[0] %}
+            {% assign output_version = output_title_and_version[1] %}
+            {% assign rules = mapping.rules %}
+            {% for rule in rules %}
+              {% assign input_id = rule.input.category.id %}
+              {% assign outputs = rule.output.category %}
+              {% for output in outputs %}
+                <li class="mapped-category hidden" id="{{ input_id }}">
+                  <div class="mapped-category__id">
+                    <h4 class="mapped-category__title">{{ output_title }} Category ID</h4>
+                    <span class="id">{{ output.id }}</span>
+                  </div>
+                  <div class="mapped-category__version">ver {{ output_version }}</div>
+                  <h4 class="mapped-category__title">Category breadcrumb</h4>
+                  {{ output.full_name }}
+                </li>
+              {% endfor %}
+            {% endfor %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
