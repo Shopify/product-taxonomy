@@ -1,0 +1,24 @@
+{% assign mapping = include.mapping %}
+
+{% assign input_taxonomy = mapping.input_taxonomy %}
+{% assign output_taxonomy = mapping.output_taxonomy %}
+{% assign output_title_and_version = output_taxonomy | split: "/" %}
+{% assign output_title = output_title_and_version[0] %}
+{% assign output_version = output_title_and_version[1] %}
+{% assign rules = mapping.rules %}
+
+{% for rule in rules %}
+  {% assign input_id = rule.input.category.id %}
+  {% assign outputs = rule.output.category %}
+  {% for output in outputs %}
+    <li class="mapped-category hidden" id="{{ input_id }}">
+      <div class="mapped-category__id">
+        <h4 class="mapped-category__title">{{ output_title }} Category ID</h4>
+        <span class="id">{{ output.id }}</span>
+      </div>
+      <div class="mapped-category__version">ver {{ output_version }}</div>
+      <h4 class="mapped-category__title">Category breadcrumb</h4>
+      {{ output.full_name }}
+    </li>
+  {% endfor %}
+{% endfor %}

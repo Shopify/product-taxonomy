@@ -107,33 +107,15 @@ layout: default
 
     {% for mapping in other_mappings %}
       <div class="value-container">
-        {% assign input_taxonomy = mapping.input_taxonomy %}
-        {% assign output_taxonomy = mapping.output_taxonomy %}
-        {% assign output_title_and_version = output_taxonomy | split: "/" %}
-        {% assign output_title = output_title_and_version[0] %}
-        {% assign output_version = output_title_and_version[1] %}
-        {% assign rules = mapping.rules %}
+        {% assign temp_output_taxonomy_parts = mapping.output_taxonomy | split: '/' %}
+        {% assign temp_output_title = temp_output_taxonomy_parts[0] %}
         <h3 class="value-title value-title--box mapping-title" tabindex="0">
-          {{ output_title }}
+          {{ temp_output_title }}
           <span class="chevron"></span>
         </h3>
         <div class="values-container values-container--box">
           <ul class="values-container__list values-container__list--box">
-            {% for rule in rules %}
-              {% assign input_id = rule.input.category.id %}
-              {% assign outputs = rule.output.category %}
-              {% for output in outputs %}
-                <li class="mapped-category hidden" id="{{ input_id }}">
-                  <div class="mapped-category__id">
-                    <h4 class="mapped-category__title">{{ output_title }} Category ID</h4>
-                    <span class="id">{{ output.id }}</span>
-                  </div>
-                  <div class="mapped-category__version">ver {{ output_version }}</div>
-                  <h4 class="mapped-category__title">Category breadcrumb</h4>
-                  {{ output.full_name }}
-                </li>
-              {% endfor %}
-            {% endfor %}
+            {% include mapping_rules.html mapping=mapping %}
           </ul>
         </div>
       </div>
@@ -148,27 +130,7 @@ layout: default
       <div class="values-container values-container--box">
         <ul class="values-container__list values-container__list--box">
           {% for mapping in shopify_mappings %}
-            {% assign input_taxonomy = mapping.input_taxonomy %}
-            {% assign output_taxonomy = mapping.output_taxonomy %}
-            {% assign output_title_and_version = output_taxonomy | split: "/" %}
-            {% assign output_title = output_title_and_version[0] %}
-            {% assign output_version = output_title_and_version[1] %}
-            {% assign rules = mapping.rules %}
-            {% for rule in rules %}
-              {% assign input_id = rule.input.category.id %}
-              {% assign outputs = rule.output.category %}
-              {% for output in outputs %}
-                <li class="mapped-category hidden" id="{{ input_id }}">
-                  <div class="mapped-category__id">
-                    <h4 class="mapped-category__title">{{ output_title }} Category ID</h4>
-                    <span class="id">{{ output.id }}</span>
-                  </div>
-                  <div class="mapped-category__version">ver {{ output_version }}</div>
-                  <h4 class="mapped-category__title">Category breadcrumb</h4>
-                  {{ output.full_name }}
-                </li>
-              {% endfor %}
-            {% endfor %}
+            {% include mapping_rules.html mapping=mapping %}
           {% endfor %}
         </ul>
       </div>
