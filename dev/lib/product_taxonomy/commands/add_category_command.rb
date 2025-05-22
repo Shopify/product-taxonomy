@@ -20,7 +20,11 @@ module ProductTaxonomy
     def create_category!
       parent = Category.find_by!(id: @parent_id)
       @new_category = Category.new(id: @id || parent.next_child_id, name: @name, parent:)
-      raise "Failed to create category: #{@new_category.errors.full_messages.to_sentence}" unless @new_category.valid?
+      begin
+        @new_category.validate!(:create)
+      rescue ActiveModel::ValidationError => e
+        raise ActiveModel::ValidationError.new(e.model), "Failed to create category: #{e.message}"
+      end
 
       parent.add_child(@new_category)
       Category.add(@new_category)

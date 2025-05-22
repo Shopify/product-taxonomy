@@ -5,6 +5,7 @@ module ProductTaxonomy
   # attribute called "Color" could have values "Red", "Blue", and "Green".
   class Value
     include ActiveModel::Validations
+    include FormattedValidationErrors
     extend Localized
     extend Indexed
 
@@ -18,14 +19,12 @@ module ProductTaxonomy
         source_data.each do |value_data|
           raise ArgumentError, "source_data must contain hashes" unless value_data.is_a?(Hash)
 
-          value = Value.new(
+          Value.create_validate_and_add!(
             id: value_data["id"],
             name: value_data["name"],
             friendly_id: value_data["friendly_id"],
             handle: value_data["handle"],
           )
-          Value.add(value)
-          value.validate!
         end
       end
 
@@ -70,11 +69,11 @@ module ProductTaxonomy
       def next_id = (all.max_by(&:id)&.id || 0) + 1
     end
 
-    validates :id, presence: true, numericality: { only_integer: true }
-    validates :name, presence: true
-    validates :friendly_id, presence: true
-    validates :handle, presence: true
-    validates_with ProductTaxonomy::Indexed::UniquenessValidator, attributes: [:friendly_id, :handle, :id]
+    validates :id, presence: true, numericality: { only_integer: true }, on: :create
+    validates :name, presence: true, on: :create
+    validates :friendly_id, presence: true, on: :create
+    validates :handle, presence: true, on: :create
+    validates_with ProductTaxonomy::Indexed::UniquenessValidator, attributes: [:friendly_id, :handle, :id], on: :create
 
     localized_attr_reader :name
 

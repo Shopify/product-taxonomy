@@ -27,7 +27,8 @@ module ProductTaxonomy
     # @param model [Object] The model to add to the index.
     def add(model)
       hashed_models.keys.each do |field|
-        hashed_models[field][model.send(field)] ||= model
+        hashed_models[field][model.send(field)] ||= []
+        hashed_models[field][model.send(field)] << model
       end
     end
 
@@ -38,7 +39,7 @@ module ProductTaxonomy
     # @return [Object] The created model.
     def create_validate_and_add!(...)
       model = new(...)
-      model.validate!
+      model.validate!(:create)
       add(model)
       model
     end
@@ -52,10 +53,10 @@ module ProductTaxonomy
     def duplicate?(model:, field:)
       raise ArgumentError, "Field not hashed: #{field}" unless hashed_models.key?(field)
 
-      existing_model = hashed_models[field][model.send(field)]
-      return false if existing_model.nil?
+      existing_models = hashed_models[field][model.send(field)]
+      return false if existing_models.nil?
 
-      model != existing_model
+      existing_models.first != model
     end
 
     # Find a model by field value. Returns the first matching record or nil. Only works for fields marked unique.
@@ -66,7 +67,7 @@ module ProductTaxonomy
       field, value = conditions.first
       raise ArgumentError, "Field not hashed: #{field}" unless hashed_models.key?(field)
 
-      hashed_models[field][value]
+      hashed_models[field][value]&.first
     end
 
     # Find a model by field value. Returns the first matching record or raises an error if not found. Only works for
@@ -97,7 +98,7 @@ module ProductTaxonomy
     #
     # @return [Array<Object>] All models in the index.
     def all
-      hashed_models.first[1].values
+      hashed_models.first[1].values.flatten
     end
 
     # Get the number of models in the index.

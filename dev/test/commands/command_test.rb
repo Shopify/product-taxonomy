@@ -32,5 +32,38 @@ module ProductTaxonomy
         TestCommand.new(verbose: true).run
       end
     end
+
+    test "load_taxonomy loads taxonomy resources and runs post-loading validations" do
+      ProductTaxonomy::Category.stubs(:all).returns([])
+
+      ProductTaxonomy.stubs(:data_path).returns("/fake/path")
+      YAML.stubs(:load_file).returns({})
+      Dir.stubs(:glob).returns(["/fake/path/categories/test.yml"])
+      YAML.stubs(:safe_load_file).returns([])
+
+      ProductTaxonomy::Value.expects(:load_from_source).once
+      ProductTaxonomy::Attribute.expects(:load_from_source).once
+      ProductTaxonomy::Category.expects(:load_from_source).once
+
+      command = TestCommand.new({})
+      mock_value = mock("value")
+      ProductTaxonomy::Value.expects(:all).returns([mock_value])
+      mock_value.expects(:validate!).with(:taxonomy_loaded)
+
+      command.load_taxonomy
+    end
+
+    test "load_taxonomy skips loading if categories already exist" do
+      ProductTaxonomy::Category.stubs(:all).returns([Category.new(id: "aa", name: "Test")])
+
+      ProductTaxonomy::Value.expects(:load_from_source).never
+      ProductTaxonomy::Attribute.expects(:load_from_source).never
+      ProductTaxonomy::Category.expects(:load_from_source).never
+
+      command = TestCommand.new({})
+      command.expects(:run_taxonomy_loaded_validations).never
+
+      command.load_taxonomy
+    end
   end
 end

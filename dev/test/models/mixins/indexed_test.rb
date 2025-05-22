@@ -40,26 +40,28 @@ module ProductTaxonomy
       assert_equal 1, Model.size
     end
 
-    test "duplicate? returns true if the value exists and the model has not yet been added to the index" do
-      model = Model.new(id: 1)
-      assert Model.duplicate?(model:, field: :id)
+    test "add stores models in arrays" do
+      second_model = Model.new(id: 2)
+      Model.add(second_model)
+
+      assert_instance_of Array, Model.hashed_models[:id][1]
+      assert_instance_of Array, Model.hashed_models[:id][2]
+      assert_equal [@model], Model.hashed_models[:id][1]
+      assert_equal [second_model], Model.hashed_models[:id][2]
     end
 
-    test "duplicate? returns false if the value does not exist and the model has not yet been added to the index" do
+    test "duplicate? returns true if the value exists and refers to a different model" do
+      different_model = Model.new(id: 1)
+      assert Model.duplicate?(model: different_model, field: :id)
+    end
+
+    test "duplicate? returns false if the value does not exist" do
       model = Model.new(id: 2)
       refute Model.duplicate?(model:, field: :id)
     end
 
-    test "duplicate? returns true if the value exists and the model is already in the index" do
-      model = Model.new(id: 1)
-      Model.add(model)
-      assert Model.duplicate?(model:, field: :id)
-    end
-
-    test "duplicate? returns false if the value does not exist and the model is already in the index" do
-      model = Model.new(id: 2)
-      Model.add(model)
-      refute Model.duplicate?(model:, field: :id)
+    test "duplicate? returns false if the value exists but refers to the same model" do
+      refute Model.duplicate?(model: @model, field: :id)
     end
 
     test "errors are added to a record with a uniqueness violation when the record is not in the index yet" do
@@ -82,7 +84,7 @@ module ProductTaxonomy
       assert_equal expected_errors, new_model.errors.details
     end
 
-    test "find_by returns the model with the specified field value" do
+    test "find_by returns the first model with the specified field value" do
       assert_equal @model, Model.find_by(id: 1)
     end
 
@@ -94,7 +96,7 @@ module ProductTaxonomy
       assert_raises(ArgumentError) { Model.find_by(name: "test") }
     end
 
-    test "find_by! returns the model with the specified field value" do
+    test "find_by! returns the first model with the specified field value" do
       assert_equal @model, Model.find_by!(id: 1)
     end
 
@@ -108,6 +110,16 @@ module ProductTaxonomy
       assert_equal [@model], Model.all
     end
 
+    test "all returns flattened array when multiple models exist" do
+      second_model = Model.new(id: 2)
+      Model.add(second_model)
+
+      all_models = Model.all
+      assert_equal 2, all_models.size
+      assert_includes all_models, @model
+      assert_includes all_models, second_model
+    end
+
     test "self.extended sets @is_indexed to true on the extended class" do
       assert_equal true, Model.instance_variable_get(:@is_indexed)
     end
@@ -119,6 +131,16 @@ module ProductTaxonomy
       assert_equal 2, model.id
       assert_equal 1, Model.size
       assert_equal model, Model.find_by(id: 2)
+    end
+
+    test "create_validate_and_add! validates with :create context" do
+      Model.reset
+
+      model_instance = Model.new(id: 2)
+      Model.stubs(:new).returns(model_instance)
+      model_instance.expects(:validate!).with(:create)
+
+      Model.create_validate_and_add!(id: 2)
     end
 
     test "create_validate_and_add! raises an error if the model is not valid" do

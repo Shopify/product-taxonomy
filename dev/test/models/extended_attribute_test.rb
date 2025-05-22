@@ -14,7 +14,7 @@ module ProductTaxonomy
       )
 
       error = assert_raises(ActiveModel::ValidationError) do
-        extended_attribute.validate!
+        extended_attribute.validate!(:create)
       end
       expected_errors = {
         base_attribute: [{ error: :not_found }],
