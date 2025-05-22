@@ -44,24 +44,32 @@ module ProductTaxonomy
     end
 
     test "execute raises error when parent category not found" do
+      stub_commands
+
       assert_raises(Indexed::NotFoundError) do
         AddCategoryCommand.new(name: "New Category", parent_id: "nonexistent").execute
       end
     end
 
     test "execute raises error when category ID already exists" do
+      stub_commands
+
       assert_raises(RuntimeError) do
         AddCategoryCommand.new(name: "Duplicate ID", parent_id: "aa", id: "aa-1").execute
       end
     end
 
     test "execute raises error when category ID format is invalid" do
+      stub_commands
+
       assert_raises(RuntimeError) do
         AddCategoryCommand.new(name: "Invalid ID", parent_id: "aa", id: "aa-custom").execute
       end
     end
 
     test "execute raises error when category name is invalid" do
+      stub_commands
+
       assert_raises(RuntimeError) do
         AddCategoryCommand.new(name: "", parent_id: "aa").execute
       end
@@ -81,9 +89,7 @@ module ProductTaxonomy
     end
 
     test "execute generates sequential IDs correctly" do
-      DumpCategoriesCommand.any_instance.stubs(:execute)
-      SyncEnLocalizationsCommand.any_instance.stubs(:execute)
-      GenerateDocsCommand.any_instance.stubs(:execute)
+      stub_commands
 
       AddCategoryCommand.new(name: "First New", parent_id: "aa").execute
       AddCategoryCommand.new(name: "Second New", parent_id: "aa").execute
@@ -96,6 +102,14 @@ module ProductTaxonomy
       assert_equal "Second New", new_categories[1].name
       assert_not_nil Category.find_by(id: "aa-2")
       assert_not_nil Category.find_by(id: "aa-3")
+    end
+
+    private
+
+    def stub_commands
+      DumpCategoriesCommand.any_instance.stubs(:execute)
+      SyncEnLocalizationsCommand.any_instance.stubs(:execute)
+      GenerateDocsCommand.any_instance.stubs(:execute)
     end
   end
 end

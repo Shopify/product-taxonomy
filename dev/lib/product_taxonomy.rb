@@ -3,6 +3,7 @@
 require "thor"
 require "active_support/all"
 require "active_model"
+require "debug"
 
 module ProductTaxonomy
   DATA_PATH = File.expand_path("../../data", __dir__)
