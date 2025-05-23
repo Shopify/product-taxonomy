@@ -3,6 +3,7 @@
 module ProductTaxonomy
   class Attribute
     include ActiveModel::Validations
+    include FormattedValidationErrors
     extend Localized
     extend Indexed
 
@@ -24,7 +25,7 @@ module ProductTaxonomy
             when "extended_attributes" then extended_attribute_from(attribute_data)
             end
             Attribute.add(attribute)
-            attribute.validate!
+            attribute.validate!(:create)
           end
         end
       end
@@ -74,14 +75,14 @@ module ProductTaxonomy
       end
     end
 
-    validates :id, presence: true, numericality: { only_integer: true }, if: -> { self.class == Attribute }
-    validates :name, presence: true
-    validates :friendly_id, presence: true
-    validates :handle, presence: true
-    validates :description, presence: true
-    validates :values, presence: true, if: -> { self.class == Attribute }
-    validates_with ProductTaxonomy::Indexed::UniquenessValidator, attributes: [:friendly_id]
-    validate :values_valid?
+    validates :id, presence: true, numericality: { only_integer: true }, if: -> { self.class == Attribute }, on: :create
+    validates :name, presence: true, on: :create
+    validates :friendly_id, presence: true, on: :create
+    validates :handle, presence: true, on: :create
+    validates :description, presence: true, on: :create
+    validates :values, presence: true, if: -> { self.class == Attribute }, on: :create
+    validates_with ProductTaxonomy::Indexed::UniquenessValidator, attributes: [:friendly_id], on: :create
+    validate :values_valid?, on: :create
 
     localized_attr_reader :name, :description
 

@@ -3,6 +3,7 @@
 module ProductTaxonomy
   class Category
     include ActiveModel::Validations
+    include FormattedValidationErrors
     extend Localized
     extend Indexed
 
@@ -17,12 +18,11 @@ module ProductTaxonomy
 
         # First pass: Create all nodes and add to index
         source_data.each do |item|
-          node = Category.new(
+          Category.create_validate_and_add!(
             id: item["id"],
             name: item["name"],
             attributes: Array(item["attributes"]).map { Attribute.find_by(friendly_id: _1) || _1 },
           )
-          Category.add(node)
         end
 
         # Second pass: Build relationships
@@ -34,7 +34,7 @@ module ProductTaxonomy
 
         # Third pass: Validate all nodes, sort contents, and collect root nodes for verticals
         @verticals = Category.all.each_with_object([]) do |node, root_nodes|
-          node.validate!
+          node.validate!(:category_tree_loaded)
           node.children.sort_by!(&:name)
           node.attributes.sort_by!(&:name)
           root_nodes << node if node.root?
@@ -70,14 +70,17 @@ module ProductTaxonomy
       end
     end
 
-    validates :id, format: { with: /\A[a-z]{2}(-\d+)*\z/ }
-    validates :name, presence: true
-    validate :id_matches_depth
-    validate :id_starts_with_parent_id, unless: :root?
-    validate :attributes_found?
-    validate :children_found?
-    validate :secondary_children_found?
-    validates_with ProductTaxonomy::Indexed::UniquenessValidator, attributes: [:id]
+    # Validations that can be performed as soon as the category is created.
+    validates :id, format: { with: /\A[a-z]{2}(-\d+)*\z/ }, on: :create
+    validates :name, presence: true, on: :create
+    validate :attributes_found?, on: :create
+    validates_with ProductTaxonomy::Indexed::UniquenessValidator, attributes: [:id], on: :create
+
+    # Validations that can only be performed after the category tree has been loaded.
+    validate :id_matches_depth, on: :category_tree_loaded
+    validate :id_starts_with_parent_id, unless: :root?, on: :category_tree_loaded
+    validate :children_found?, on: :category_tree_loaded
+    validate :secondary_children_found?, on: :category_tree_loaded
 
     localized_attr_reader :name, keyed_by: :id
 

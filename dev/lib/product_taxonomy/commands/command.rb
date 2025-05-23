@@ -43,6 +43,11 @@ module ProductTaxonomy
         array.concat(YAML.safe_load_file(file))
       end
       ProductTaxonomy::Category.load_from_source(categories_source_data)
+
+      # Run validations that can only be run after the taxonomy has been loaded.
+      # Right now, only the `Value` model has validations that run in this context. If other models begin to use this
+      # validation context, they should be added here too.
+      ProductTaxonomy::Value.all.each { |model| model.validate!(:taxonomy_loaded) }
     end
 
     def validate_and_sanitize_version!(version)

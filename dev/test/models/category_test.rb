@@ -150,7 +150,7 @@ module ProductTaxonomy
 
     test "raises validation error if id is invalid" do
       category = Category.new(id: "foo", name: "Test")
-      error = assert_raises(ActiveModel::ValidationError) { category.validate! }
+      error = assert_raises(ActiveModel::ValidationError) { category.validate!(:create) }
       expected_errors = {
         id: [{ error: :invalid, value: "foo" }],
       }
@@ -159,7 +159,7 @@ module ProductTaxonomy
 
     test "raises validation error if name is blank" do
       category = Category.new(id: "aa", name: "")
-      error = assert_raises(ActiveModel::ValidationError) { category.validate! }
+      error = assert_raises(ActiveModel::ValidationError) { category.validate!(:create) }
       expected_errors = {
         name: [{ error: :blank }],
       }
@@ -170,7 +170,7 @@ module ProductTaxonomy
       # A root category should have format "aa"
       parent = Category.new(id: "aa", name: "Root")
       category = Category.new(id: "aa-1-1", name: "Test", parent:)
-      error = assert_raises(ActiveModel::ValidationError) { category.validate! }
+      error = assert_raises(ActiveModel::ValidationError) { category.validate!(:category_tree_loaded) }
       expected_errors = {
         id: [{ error: :depth_mismatch }],
       }
@@ -182,7 +182,7 @@ module ProductTaxonomy
       child = Category.new(id: "bb-1", name: "Child")
       root.add_child(child)
 
-      error = assert_raises(ActiveModel::ValidationError) { child.validate! }
+      error = assert_raises(ActiveModel::ValidationError) { child.validate!(:category_tree_loaded) }
       expected_errors = {
         id: [{ error: :prefix_mismatch }],
       }
@@ -194,7 +194,7 @@ module ProductTaxonomy
       Category.add(root)
       child = Category.new(id: "aa", name: "Child")
       Category.add(child)
-      error = assert_raises(ActiveModel::ValidationError) { child.validate! }
+      error = assert_raises(ActiveModel::ValidationError) { child.validate!(:create) }
       expected_errors = {
         id: [{ error: :taken }],
       }
@@ -203,14 +203,14 @@ module ProductTaxonomy
 
     test "validates correct id format examples" do
       assert_nothing_raised do
-        Category.new(id: "aa", name: "Root").validate!
+        Category.new(id: "aa", name: "Root").validate!(:create)
         root = Category.new(id: "bb", name: "Root")
         child = Category.new(id: "bb-1", name: "Child")
         root.add_child(child)
-        child.validate!
+        child.validate!(:create)
         grandchild = Category.new(id: "bb-1-1", name: "Grandchild")
         child.add_child(grandchild)
-        grandchild.validate!
+        grandchild.validate!(:create)
       end
     end
 

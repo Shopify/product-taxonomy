@@ -54,7 +54,7 @@ module ProductTaxonomy
     test "execute raises error when category ID already exists" do
       stub_commands
 
-      assert_raises(RuntimeError) do
+      assert_raises(ActiveModel::ValidationError) do
         AddCategoryCommand.new(name: "Duplicate ID", parent_id: "aa", id: "aa-1").execute
       end
     end
@@ -62,7 +62,7 @@ module ProductTaxonomy
     test "execute raises error when category ID format is invalid" do
       stub_commands
 
-      assert_raises(RuntimeError) do
+      assert_raises(ActiveModel::ValidationError) do
         AddCategoryCommand.new(name: "Invalid ID", parent_id: "aa", id: "aa-custom").execute
       end
     end
@@ -70,7 +70,7 @@ module ProductTaxonomy
     test "execute raises error when category name is invalid" do
       stub_commands
 
-      assert_raises(RuntimeError) do
+      assert_raises(ActiveModel::ValidationError) do
         AddCategoryCommand.new(name: "", parent_id: "aa").execute
       end
     end
