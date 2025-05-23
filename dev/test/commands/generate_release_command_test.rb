@@ -32,11 +32,11 @@ module ProductTaxonomy
       # Create test mapping files
       File.write(
         File.expand_path("data/integrations/shopify/mappings/to_shopify.yml", @tmp_base_path),
-        "output_version: 2023-12-unstable"
+        "output_taxonomy: shopify/2023-12-unstable"
       )
       File.write(
         File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path),
-        "input_version: 2023-12-unstable"
+        "input_taxonomy: shopify/2023-12-unstable"
       )
 
       # Stub dependencies
@@ -137,8 +137,48 @@ module ProductTaxonomy
       to_shopify_content = File.read(File.expand_path("data/integrations/shopify/mappings/to_shopify.yml", @tmp_base_path))
       from_shopify_content = File.read(File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path))
 
-      assert_equal "output_version: #{@version}", to_shopify_content
-      assert_equal "input_version: #{@version}", from_shopify_content
+      # to_shopify should have the stable version
+      assert_equal "output_taxonomy: shopify/#{@version}", to_shopify_content
+      # from_shopify should have the next unstable version after full execute
+      assert_equal "input_taxonomy: shopify/#{@next_version}", from_shopify_content
+    end
+
+    test "execute updates taxonomy fields in mapping files" do
+      File.write(
+        File.expand_path("data/integrations/shopify/mappings/to_shopify.yml", @tmp_base_path),
+        <<~YAML
+          output_taxonomy: shopify/2023-12-unstable
+          rules:
+            - input:
+                product_category_id: "1"
+              output:
+                product_category_id: ["aa-1"]
+        YAML
+      )
+      File.write(
+        File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path),
+        <<~YAML
+          input_taxonomy: shopify/2023-12-unstable
+          rules:
+            - input:
+                product_category_id: "aa-1"
+              output:
+                product_category_id: ["1"]
+        YAML
+      )
+
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+      command.execute
+
+      # After execute, to_shopify should have the stable version
+      to_shopify_content = File.read(File.expand_path("data/integrations/shopify/mappings/to_shopify.yml", @tmp_base_path))
+      assert_match "output_taxonomy: shopify/#{@version}", to_shopify_content
+      refute_match "output_taxonomy: shopify/2023-12-unstable", to_shopify_content
+
+      # After execute, from_shopify should have the next unstable version
+      from_shopify_content = File.read(File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path))
+      assert_match "input_taxonomy: shopify/#{@next_version}", from_shopify_content
+      refute_match "input_taxonomy: shopify/2023-12-unstable", from_shopify_content
     end
 
     test "execute updates both README files version badges" do
