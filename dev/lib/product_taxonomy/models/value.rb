@@ -69,11 +69,16 @@ module ProductTaxonomy
       def next_id = (all.max_by(&:id)&.id || 0) + 1
     end
 
+    # Validations that run when the value is created
     validates :id, presence: true, numericality: { only_integer: true }, on: :create
     validates :name, presence: true, on: :create
     validates :friendly_id, presence: true, on: :create
     validates :handle, presence: true, on: :create
     validates_with ProductTaxonomy::Indexed::UniquenessValidator, attributes: [:friendly_id, :handle, :id], on: :create
+
+    # Validations that run when the taxonomy has been loaded
+    validate :friendly_id_prefix_resolves_to_attribute?, on: :taxonomy_loaded
+    validate :handle_prefix_matches_attribute?, on: :taxonomy_loaded
 
     localized_attr_reader :name
 
@@ -98,7 +103,7 @@ module ProductTaxonomy
     #
     # @return [ProductTaxonomy::Attribute] The primary attribute for this value.
     def primary_attribute
-      @primary_attribute ||= Attribute.find_by(friendly_id: friendly_id.split("__").first)
+      @primary_attribute ||= Attribute.find_by(friendly_id: primary_attribute_friendly_id)
     end
 
     # Get the full name of the value, including the primary attribute.
@@ -107,6 +112,36 @@ module ProductTaxonomy
     # @return [String] The full name of the value.
     def full_name(locale: "en")
       "#{name(locale:)} [#{primary_attribute.name(locale:)}]"
+    end
+
+    private
+
+    def primary_attribute_friendly_id = friendly_id.split("__").first
+
+    #
+    # Validation
+    #
+    def friendly_id_prefix_resolves_to_attribute?
+      return if primary_attribute
+
+      errors.add(
+        :friendly_id,
+        :invalid_prefix,
+        message: "prefix \"#{primary_attribute_friendly_id}\" does not match the friendly_id of any attribute",
+      )
+    end
+
+    def handle_prefix_matches_attribute?
+      return if primary_attribute.nil?
+
+      handle_prefix = handle.split("__").first
+      return if primary_attribute && primary_attribute.handle == handle_prefix
+
+      errors.add(
+        :handle,
+        :invalid_prefix,
+        message: "prefix \"#{handle_prefix}\" does not match primary attribute handle \"#{primary_attribute.handle}\"",
+      )
     end
   end
 end
