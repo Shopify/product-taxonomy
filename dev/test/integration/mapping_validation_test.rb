@@ -150,13 +150,14 @@ module ProductTaxonomy
 
     test "Shopify taxonomy version is consistent between VERSION file and mappings in the /data folder" do
       shopify_taxonomy_version_from_file = "shopify/" + current_shopify_taxonomy_version
-      allowed_shopify_legacy_source_taxonomies = [
-        "shopify/2022-02",
-        "shopify/2024-07",
-        "shopify/2024-10",
-        "shopify/2025-03"
-      ]
-      all_shopify_taxonomies = allowed_shopify_legacy_source_taxonomies + [shopify_taxonomy_version_from_file]
+      integration_versions_path = File.expand_path("integrations/shopify/*", ProductTaxonomy.data_path)
+      all_shopify_taxonomy_versions_on_disk = Dir.glob(integration_versions_path).map do |path|
+        version_name = File.basename(path)
+        "shopify/#{version_name}" if version_name.match?(/^\d{4}-\d{2}$/)
+      end.compact.sort
+      
+      all_shopify_taxonomy_versions_on_disk << shopify_taxonomy_version_from_file
+
       mapping_rule_files = Dir.glob(File.expand_path(
         "integrations/*/*/mappings/*_shopify.yml",
         ProductTaxonomy.data_path,
@@ -168,8 +169,8 @@ module ProductTaxonomy
         output_taxonomy = raw_mappings["output_taxonomy"]
         next if input_taxonomy == shopify_taxonomy_version_from_file
 
-        if allowed_shopify_legacy_source_taxonomies.include?(input_taxonomy)
-          expected_output_taxonomy = all_shopify_taxonomies[all_shopify_taxonomies.index(input_taxonomy) + 1]
+        if all_shopify_taxonomy_versions_on_disk.include?(input_taxonomy)
+          expected_output_taxonomy = all_shopify_taxonomy_versions_on_disk[all_shopify_taxonomy_versions_on_disk.index(input_taxonomy) + 1]
           next if expected_output_taxonomy == output_taxonomy
         end
 
