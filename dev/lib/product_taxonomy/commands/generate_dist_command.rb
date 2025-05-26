@@ -30,6 +30,8 @@ module ProductTaxonomy
 
       @locales.each { generate_dist_files(_1) }
 
+      clear_shopify_integrations_directory
+
       IntegrationVersion.generate_all_distributions(
         output_path: OUTPUT_PATH,
         logger:,
@@ -38,6 +40,16 @@ module ProductTaxonomy
     end
 
     private
+
+    def clear_shopify_integrations_directory
+      shopify_integrations_path = File.join(OUTPUT_PATH, "en/integrations/shopify")
+      if Dir.exist?(shopify_integrations_path)
+        logger.info("Clearing Shopify integrations directory: #{shopify_integrations_path}")
+        # Note: currently we only generate json and txt files in this directory
+        # If anything changes in the future, this needs to be updated
+        FileUtils.rm_rf(Dir.glob(File.join(shopify_integrations_path, "*")))
+      end
+    end
 
     def generate_dist_files(locale)
       logger.info("Generating files for #{locale}")
