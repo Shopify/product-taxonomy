@@ -14,8 +14,6 @@ module ProductTaxonomy
       super
 
       @version = validate_and_sanitize_version!(options[:version]) || UNSTABLE
-      # Versions ending with -unstable should just be "unstable" in docs
-      @version = UNSTABLE if @version.end_with?("-unstable")
     end
 
     def execute

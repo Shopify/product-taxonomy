@@ -1,0 +1,173 @@
+name: Test All Commits in PR
+
+# This workflow ensures that every commit in a PR passes tests independently.
+# This is crucial for:
+# 1. Release PRs where the release commit must be valid on its own
+# 2. Maintaining a clean git history
+# 3. Enabling git bisect for debugging
+#
+# To make this check required:
+# 1. Go to Settings > Branches > Branch protection rules
+# 2. Edit the rule for 'main'
+# 3. Add 'all-commits-pass' to the required status checks
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  test-all-commits:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # Fetch all history so we can checkout each commit
+          fetch-depth: 0
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: false # We'll handle bundler per commit
+          working-directory: dev
+
+      - name: Get commit range
+        id: commits
+        run: |
+          # Get the base and head commits for the PR
+          BASE_SHA=${{ github.event.pull_request.base.sha }}
+          HEAD_SHA=${{ github.event.pull_request.head.sha }}
+
+          # Get all commits in the PR (excluding the base commit)
+          COMMITS=$(git rev-list $BASE_SHA..$HEAD_SHA)
+
+          # Count the commits
+          COMMIT_COUNT=$(echo "$COMMITS" | wc -l)
+          echo "Found $COMMIT_COUNT commits in this PR"
+
+          # Check if any commits look like release commits
+          HAS_RELEASE_COMMIT="false"
+          for COMMIT in $COMMITS; do
+            MSG=$(git log --format=%s -n 1 $COMMIT)
+            if echo "$MSG" | grep -qE "^(Release version|Bump version to)"; then
+              HAS_RELEASE_COMMIT="true"
+              break
+            fi
+          done
+
+          # Save for later steps
+          echo "commits<<EOF" >> $GITHUB_OUTPUT
+          echo "$COMMITS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          echo "count=$COMMIT_COUNT" >> $GITHUB_OUTPUT
+          echo "has_release=$HAS_RELEASE_COMMIT" >> $GITHUB_OUTPUT
+
+      - name: Check if we should test all commits
+        id: should_test
+        run: |
+          COMMIT_COUNT=${{ steps.commits.outputs.count }}
+          HAS_RELEASE=${{ steps.commits.outputs.has_release }}
+
+          # Always test if:
+          # 1. PR has 5 or fewer commits
+          # 2. PR contains release commits
+          # 3. PR title contains [test-all-commits]
+
+          if [ "$COMMIT_COUNT" -le 5 ] || [ "$HAS_RELEASE" == "true" ] || [[ "${{ github.event.pull_request.title }}" == *"[test-all-commits]"* ]]; then
+            echo "should_test=true" >> $GITHUB_OUTPUT
+            if [ "$HAS_RELEASE" == "true" ]; then
+              echo "::notice::This PR contains release commits - testing all commits individually"
+            else
+              echo "::notice::Testing all $COMMIT_COUNT commits individually"
+            fi
+          else
+            echo "should_test=false" >> $GITHUB_OUTPUT
+            echo "::notice::Skipping individual commit tests (PR has $COMMIT_COUNT commits and no release commits)"
+            echo "::notice::Add '[test-all-commits]' to the PR title to force testing all commits"
+          fi
+
+      - name: Test each commit
+        if: steps.should_test.outputs.should_test == 'true'
+        run: |
+          # Read the commits
+          COMMITS="${{ steps.commits.outputs.commits }}"
+          FAILED_COMMITS=""
+          TESTED_COUNT=0
+
+          echo "::notice::Testing ${{ steps.commits.outputs.count }} commits individually to ensure each one passes CI"
+
+          # Test each commit individually (in chronological order)
+          for COMMIT in $(echo "$COMMITS" | tac); do
+            TESTED_COUNT=$((TESTED_COUNT + 1))
+            echo "::group::[Commit $TESTED_COUNT/${{ steps.commits.outputs.count }}] Testing $COMMIT"
+            
+            # Checkout the commit
+            git checkout $COMMIT
+            
+            # Get commit message for logging
+            COMMIT_MSG=$(git log --format=%s -n 1 $COMMIT)
+            COMMIT_AUTHOR=$(git log --format=%an -n 1 $COMMIT)
+            echo "Commit: $COMMIT"
+            echo "Author: $COMMIT_AUTHOR"
+            echo "Message: $COMMIT_MSG"
+            
+            # Check if this looks like a release commit
+            if echo "$COMMIT_MSG" | grep -q "^Release version"; then
+              echo "::warning::This is a RELEASE COMMIT - it must pass all tests!"
+            fi
+            
+            # Run the tests
+            cd dev
+            
+            # Install dependencies for this commit's Gemfile.lock
+            if bundle install; then
+              echo "✅ Bundle install successful"
+              
+              # Run tests
+              if bundle exec rake test:unit && bundle exec rake test:integration; then
+                echo "✅ Commit $COMMIT passed all tests"
+              else
+                echo "❌ Commit $COMMIT failed tests"
+                FAILED_COMMITS="${FAILED_COMMITS}❌ $COMMIT: $COMMIT_MSG (by $COMMIT_AUTHOR)\n"
+              fi
+            else
+              echo "❌ Commit $COMMIT failed bundle install"
+              FAILED_COMMITS="${FAILED_COMMITS}❌ $COMMIT: $COMMIT_MSG - Failed bundle install\n"
+            fi
+            
+            cd ..
+            echo "::endgroup::"
+          done
+
+          # Check if any commits failed
+          if [ -n "$FAILED_COMMITS" ]; then
+            echo ""
+            echo "::error::The following commits have failing tests:"
+            echo -e "$FAILED_COMMITS"
+            echo ""
+            echo "Each commit in a PR must pass tests independently. This is especially important for:"
+            echo "- Release commits (which must be valid on their own)"
+            echo "- Maintaining a clean git history"
+            echo "- Enabling git bisect for debugging"
+            exit 1
+          else
+            echo ""
+            echo "✅ All $TESTED_COUNT commits passed tests!"
+          fi
+
+  # Add a required status check
+  all-commits-pass:
+    needs: test-all-commits
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Ensure all commits pass
+        run: |
+          if [ "${{ needs.test-all-commits.result }}" == "success" ]; then
+            echo "✅ All commits in this PR pass tests independently!"
+            echo "This PR is safe to merge - each commit maintains a working state."
+          else
+            echo "::error::Not all commits pass tests. Please ensure each commit is independently valid."
+            echo "::error::This is a required check to prevent broken commits from being merged."
+            exit 1
+          fi

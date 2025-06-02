@@ -61,7 +61,7 @@ module ProductTaxonomy
       File.write(version_file_path, @version)
 
       logger.info("Updating integration mappings...")
-      update_integration_mappings
+      update_integration_mappings(mode: :release)
 
       logger.info("Dumping integration full names...")
       DumpIntegrationFullNamesCommand.new({}).execute
@@ -89,13 +89,13 @@ module ProductTaxonomy
       File.write(version_file_path, @next_version)
 
       logger.info("Updating input_taxonomy in from_shopify.yml mappings to #{@next_version}...")
-      update_taxonomy_in_from_shopify_mappings!(@next_version, :unstable)
+      update_integration_mappings(mode: :next_unstable)
 
       logger.info("Generating distribution files...")
       GenerateDistCommand.new(version: @next_version, locales: @locales).execute
 
       logger.info("Generating documentation files...")
-      GenerateDocsCommand.new(version: @next_version, locales: @locales).execute
+      GenerateDocsCommand.new(locales: @locales).execute
 
       run_git_command("add", ".")
       run_git_command("commit", "-m", next_version_commit_message)
@@ -117,63 +117,50 @@ module ProductTaxonomy
       `git rev-parse --short #{ref}`.strip
     end
 
-    def update_integration_mappings
-      logger.info("Updating to_shopify.yml mappings...")
-      Dir.glob(File.expand_path("integrations/**/mappings/to_shopify.yml", ProductTaxonomy.data_path)).each do |file|
-        logger.info("Processing file: #{file}")
-        content = File.read(file)
-        logger.debug("Original content of #{file}:\n#{content}")
-
-        # Update output_taxonomy to the stable version (e.g., shopify/YYYY-MM)
-        stable_taxonomy_version = @version.gsub(/-unstable$/, '')
-        content.gsub!(/output_taxonomy: shopify\/.*?-unstable/, "output_taxonomy: shopify/#{stable_taxonomy_version}")
-
-        logger.info("Writing updated content to #{file}...")
-        File.write(file, content)
-        logger.debug("Updated content of #{file}:\n#{File.read(file)}")
-      end
-
-      logger.info("Updating from_shopify.yml mappings...")
-      Dir.glob(File.expand_path("integrations/**/mappings/from_shopify.yml", ProductTaxonomy.data_path)).each do |file|
-        logger.info("Processing file: #{file}")
-        content = File.read(file)
-        logger.debug("Original content of #{file}:\n#{content}")
-
-        # Update input_taxonomy to the stable version (e.g., shopify/YYYY-MM)
-        stable_taxonomy_version = @version.gsub(/-unstable$/, '')
-        content.gsub!(/input_taxonomy: shopify\/.*?-unstable/, "input_taxonomy: shopify/#{stable_taxonomy_version}")
-        
-        logger.info("Writing updated content to #{file}...")
-        File.write(file, content)
-        logger.debug("Updated content of #{file}:\n#{File.read(file)}")
-      end
-    end
-
-    def update_taxonomy_in_from_shopify_mappings!(target_version, stability)
-      version_date_match = target_version.match(/(\d{4}-\d{2})/)
-      unless version_date_match
-        logger.error "Could not extract YYYY-MM from version: #{target_version}"
-        raise ArgumentError, "Invalid version format: #{target_version}. Expected format: YYYY-MM or YYYY-MM-unstable"
-      end
-      version_date_part = version_date_match[1]
-
-      taxonomy_prefix = "shopify/#{version_date_part}"
-      new_taxonomy_value = if stability == :unstable
-        "#{taxonomy_prefix}-unstable"
+    def update_integration_mappings(mode:)
+      case mode
+      when :release
+        logger.info("Updating mapping files for stable release version: #{@version}")
+        # Ensure the version string used for taxonomy is stable (e.g., "2024-07" from "2024-07" or "2024-07-unstable")
+        stable_taxonomy_base = @version.gsub(/-unstable$/, '')
+        final_shopify_taxonomy_string = "shopify/#{stable_taxonomy_base}"
+        update_to_shopify_output = true
+        update_from_shopify_input = true
+      when :next_unstable
+        logger.info("Updating input_taxonomy in from_shopify.yml files for next unstable version: #{@next_version}")
+        version_date_match = @next_version.match(/(\d{4}-\d{2})/)
+        unless version_date_match
+          logger.error "Could not extract YYYY-MM from version: #{@next_version}"
+          raise ArgumentError, "Invalid version format: #{@next_version}. Expected YYYY-MM or YYYY-MM-unstable"
+        end
+        version_date_part = version_date_match[1]
+        final_shopify_taxonomy_string = "shopify/#{version_date_part}-unstable" # Ensures "shopify/YYYY-MM-unstable"
+        update_to_shopify_output = false # Only update from_shopify.yml for this mode
+        update_from_shopify_input = true
       else
-        taxonomy_prefix
+        raise ArgumentError, "Unknown mode for update_integration_mappings: #{mode}"
       end
 
-      Dir.glob(File.expand_path("integrations/**/mappings/from_shopify.yml", ProductTaxonomy.data_path)).each do |file|
-        logger.info("Processing file for taxonomy update: #{file}")
-        content = File.read(file)
-        logger.debug("Original content of #{file} (for taxonomy update):\n#{content}")
+      if update_to_shopify_output
+        logger.info("Updating to_shopify.yml files -> output_taxonomy: #{final_shopify_taxonomy_string}")
+        Dir.glob(File.expand_path("integrations/**/mappings/to_shopify.yml", ProductTaxonomy.data_path)).each do |file|
+          logger.info("Processing file: #{file}")
+          content = File.read(file)
+          # Replace any shopify/YYYY-MM or shopify/YYYY-MM-unstable
+          content.gsub!(/output_taxonomy: shopify\/\d{4}-\d{2}(-unstable)?/, "output_taxonomy: #{final_shopify_taxonomy_string}")
+          File.write(file, content)
+        end
+      end
 
-        content.gsub!(/input_taxonomy: shopify\/\d{4}-\d{2}(-unstable)?/, "input_taxonomy: #{new_taxonomy_value}")
-
-        logger.info("Writing updated taxonomy content to #{file}...")
-        File.write(file, content)
-        logger.debug("Updated content of #{file} (for taxonomy update):\n#{File.read(file)}")
+      if update_from_shopify_input
+        logger.info("Updating from_shopify.yml files -> input_taxonomy: #{final_shopify_taxonomy_string}")
+        Dir.glob(File.expand_path("integrations/**/mappings/from_shopify.yml", ProductTaxonomy.data_path)).each do |file|
+          logger.info("Processing file for input_taxonomy update: #{file}")
+          content = File.read(file)
+          # Replace any shopify/YYYY-MM or shopify/YYYY-MM-unstable
+          content.gsub!(/input_taxonomy: shopify\/\d{4}-\d{2}(-unstable)?/, "input_taxonomy: #{final_shopify_taxonomy_string}")
+          File.write(file, content)
+        end
       end
     end
 
