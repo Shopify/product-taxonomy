@@ -35,10 +35,8 @@ module ProductTaxonomy
       def clear_shopify_integrations_directory(output_path:, logger:)
         shopify_integrations_path = File.join(integrations_output_path(output_path), "shopify")
         if Dir.exist?(shopify_integrations_path)
-          logger.info("Clearing Shopify integrations directory: #{shopify_integrations_path}")
-          # Note: currently we only generate json and txt files in this directory
-          # If anything changes in the future, this needs to be updated
-          FileUtils.rm_rf(Dir.glob(File.join(shopify_integrations_path, "*")))
+          FileUtils.rm_rf(shopify_integrations_path)
+          FileUtils.mkdir_p(shopify_integrations_path)
         end
       end
 

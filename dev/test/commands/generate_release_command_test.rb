@@ -32,11 +32,11 @@ module ProductTaxonomy
       # Create test mapping files
       File.write(
         File.expand_path("data/integrations/shopify/mappings/to_shopify.yml", @tmp_base_path),
-        "output_taxonomy: shopify/2023-12-unstable"
+        "output_taxonomy: shopify/2023-12-unstable",
       )
       File.write(
         File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path),
-        "input_taxonomy: shopify/2023-12-unstable"
+        "input_taxonomy: shopify/2023-12-unstable",
       )
 
       # Stub dependencies
@@ -70,20 +70,26 @@ module ProductTaxonomy
       assert_equal @next_version, command.instance_variable_get(:@next_version)
     end
 
+    test "initialize raises error if current_version ends with -unstable" do
+      assert_raises ArgumentError do
+        GenerateReleaseCommand.new(current_version: "2024-01-unstable", next_version: @next_version)
+      end
+    end
+
     test "initialize raises error if next_version doesn't end with -unstable" do
       assert_raises ArgumentError do
-        GenerateReleaseCommand.new(next_version: "2024-02")
+        GenerateReleaseCommand.new(current_version: @version, next_version: "2024-02")
       end
     end
 
     test "initialize sets all locales when 'all' is specified" do
       Command.any_instance.stubs(:locales_defined_in_data_path).returns(["en", "fr", "es"])
-      command = GenerateReleaseCommand.new(next_version: @next_version, locales: ["all"])
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version, locales: ["all"])
       assert_equal ["en", "fr", "es"], command.instance_variable_get(:@locales)
     end
 
     test "initialize sets specific locales when provided" do
-      command = GenerateReleaseCommand.new(next_version: @next_version, locales: ["en", "fr"])
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version, locales: ["en", "fr"])
       assert_equal ["en", "fr"], command.instance_variable_get(:@locales)
     end
 
@@ -108,7 +114,7 @@ module ProductTaxonomy
     test "execute raises error when not on main branch" do
       command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
 
-      command.unstub(:`);
+      command.unstub(:`)
       command.stubs(:`).with("git rev-parse --abbrev-ref HEAD").returns("feature/new-stuff\n")
       command.stubs(:`).with("git status --porcelain").returns("")
 
@@ -120,7 +126,7 @@ module ProductTaxonomy
     test "execute raises error when working directory is not clean" do
       command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
 
-      command.unstub(:`);
+      command.unstub(:`)
       command.stubs(:`).with("git rev-parse --abbrev-ref HEAD").returns("main\n")
       command.stubs(:`).with("git status --porcelain").returns(" M dev/lib/product_taxonomy/commands/generate_release_command.rb\n")
 
@@ -137,36 +143,11 @@ module ProductTaxonomy
       to_shopify_content = File.read(File.expand_path("data/integrations/shopify/mappings/to_shopify.yml", @tmp_base_path))
       from_shopify_content = File.read(File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path))
 
-      # to_shopify should have the stable version
       assert_equal "output_taxonomy: shopify/#{@version}", to_shopify_content
-      # from_shopify should have the next unstable version after full execute
       assert_equal "input_taxonomy: shopify/#{@next_version}", from_shopify_content
     end
 
     test "execute updates taxonomy fields in mapping files" do
-      File.write(
-        File.expand_path("data/integrations/shopify/mappings/to_shopify.yml", @tmp_base_path),
-        <<~YAML
-          output_taxonomy: shopify/2023-12-unstable
-          rules:
-            - input:
-                product_category_id: "1"
-              output:
-                product_category_id: ["aa-1"]
-        YAML
-      )
-      File.write(
-        File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path),
-        <<~YAML
-          input_taxonomy: shopify/2023-12-unstable
-          rules:
-            - input:
-                product_category_id: "aa-1"
-              output:
-                product_category_id: ["1"]
-        YAML
-      )
-
       command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
       command.execute
 
@@ -179,6 +160,51 @@ module ProductTaxonomy
       from_shopify_content = File.read(File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path))
       assert_match "input_taxonomy: shopify/#{@next_version}", from_shopify_content
       refute_match "input_taxonomy: shopify/2023-12-unstable", from_shopify_content
+    end
+
+    test "execute updates input and output taxonomies for integrations in two stages" do
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+
+      # Initial state (from setup) for reference:
+      # to_shopify.yml contains "output_taxonomy: shopify/2023-12-unstable"
+      # from_shopify.yml contains "input_taxonomy: shopify/2023-12-unstable"
+
+      # Basically the call sequence for execute is:
+      # 1. check_git_state!
+      # 2. generate_release_version!
+      # 3. move_to_next_version!
+      command.send(:check_git_state!)
+      command.send(:generate_release_version!)
+
+      to_shopify_content_stage1 = File.read(File.expand_path("data/integrations/shopify/mappings/to_shopify.yml", @tmp_base_path))
+      from_shopify_content_stage1 = File.read(File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path))
+
+      assert_match "output_taxonomy: shopify/#{@version}",
+        to_shopify_content_stage1,
+        "After stage 1, to_shopify.yml output_taxonomy should be stable version (#{@version})"
+      assert_match "input_taxonomy: shopify/#{@version}",
+        from_shopify_content_stage1,
+        "After stage 1, from_shopify.yml input_taxonomy should be stable version (#{@version})"
+
+      refute_match "shopify/2023-12-unstable", to_shopify_content_stage1 unless "shopify/#{@version}" == "shopify/2023-12-unstable"
+      refute_match "shopify/2023-12-unstable", from_shopify_content_stage1 unless "shopify/#{@version}" == "shopify/2023-12-unstable"
+
+      command.send(:move_to_next_version!)
+
+      to_shopify_content_stage2 = File.read(File.expand_path("data/integrations/shopify/mappings/to_shopify.yml", @tmp_base_path))
+      from_shopify_content_stage2 = File.read(File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path))
+
+      assert_match "output_taxonomy: shopify/#{@version}",
+        to_shopify_content_stage2,
+        "After stage 2, to_shopify.yml output_taxonomy should remain stable version (#{@version})"
+      refute_match "shopify/#{@next_version}",
+        to_shopify_content_stage2,
+        "After stage 2, to_shopify.yml output_taxonomy should NOT be next_version (#{@next_version})"
+
+      assert_match "input_taxonomy: shopify/#{@next_version}",
+        from_shopify_content_stage2,
+        "After stage 2, from_shopify.yml input_taxonomy should be next unstable version (#{@next_version})"
+      refute_match "input_taxonomy: shopify/#{@version}", from_shopify_content_stage2 unless @version == @next_version.gsub(/-unstable$/, "")
     end
 
     test "execute updates both README files version badges" do
