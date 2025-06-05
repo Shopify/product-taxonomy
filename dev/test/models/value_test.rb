@@ -239,6 +239,38 @@ module ProductTaxonomy
       assert_equal 4, Value.next_id
     end
 
+    test "validates friendly_id prefix does not resolve to attribute on taxonomy_loaded" do
+      Attribute.reset
+      value = Value.new(id: 1, name: "Black", friendly_id: "color__black", handle: "color__black")
+
+      expected_errors = {
+        friendly_id: [{ error: :invalid_prefix }],
+      }
+      refute value.valid?(:taxonomy_loaded)
+      assert_equal expected_errors, value.errors.details
+    end
+
+    test "validates handle prefix does not match attribute on taxonomy_loaded" do
+      value = Value.new(id: 1, name: "Black", friendly_id: "color__black", handle: "size__black")
+
+      expected_errors = {
+        handle: [{ error: :invalid_prefix }],
+      }
+      refute value.valid?(:taxonomy_loaded)
+      assert_equal expected_errors, value.errors.details
+    end
+
+    test "validates handle and friendly_id prefix on taxonomy_loaded when primary_attribute is nil" do
+      Attribute.reset
+      value = Value.new(id: 1, name: "Black", friendly_id: "color__black", handle: "color__black")
+
+      expected_errors = {
+        friendly_id: [{ error: :invalid_prefix }],
+      }
+      refute value.valid?(:taxonomy_loaded)
+      assert_equal expected_errors, value.errors.details
+    end
+
     private
 
     def stub_localizations
