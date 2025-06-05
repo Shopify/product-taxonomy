@@ -404,6 +404,28 @@ module ProductTaxonomy
       assert_equal "gid://shopify/TaxonomyCategory/aa-2", versions[3].to_shopify_mappings[0].output_category.gid
     end
 
+    test "IntegrationVersion.clear_shopify_integrations_directory removes existing directory and recreates it" do
+      output_path = "/tmp/fake"
+      shopify_integrations_path = "/tmp/fake/en/integrations/shopify"
+      
+      Dir.expects(:exist?).with(shopify_integrations_path).returns(true)
+      FileUtils.expects(:rm_rf).with(shopify_integrations_path)
+      FileUtils.expects(:mkdir_p).with(shopify_integrations_path)
+      
+      IntegrationVersion.clear_shopify_integrations_directory(output_path: output_path, logger: mock)
+    end
+
+    test "IntegrationVersion.clear_shopify_integrations_directory does nothing if directory doesn't exist" do
+      output_path = "/tmp/fake"
+      shopify_integrations_path = "/tmp/fake/en/integrations/shopify"
+      
+      Dir.expects(:exist?).with(shopify_integrations_path).returns(false)
+      FileUtils.expects(:rm_rf).never
+      FileUtils.expects(:mkdir_p).never
+      
+      IntegrationVersion.clear_shopify_integrations_directory(output_path: output_path, logger: mock)
+    end
+
     def category_hash(id)
       { "id" => id, "full_name" => "Category #{id}" }
     end

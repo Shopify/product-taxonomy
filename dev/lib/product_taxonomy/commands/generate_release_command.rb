@@ -8,6 +8,10 @@ module ProductTaxonomy
       @version = validate_and_sanitize_version!(options[:current_version])
       @next_version = validate_and_sanitize_version!(options[:next_version])
 
+      if @version.end_with?("-unstable")
+        raise ArgumentError, "Version must not end with '-unstable' suffix"
+      end
+
       unless @next_version.end_with?("-unstable")
         raise ArgumentError, "Next version must end with '-unstable' suffix"
       end
@@ -39,12 +43,12 @@ module ProductTaxonomy
     private
 
     def check_git_state!
-      current_branch = `git rev-parse --abbrev-ref HEAD`.strip
+      current_branch = %x(git rev-parse --abbrev-ref HEAD).strip
       unless current_branch == "main"
         raise "Must be on main branch to create a release. Current branch: #{current_branch}"
       end
 
-      status_output = `git status --porcelain`.strip
+      status_output = %x(git status --porcelain).strip
       unless status_output.empty?
         raise "Working directory is not clean. Please commit or stash changes before creating a release."
       end
@@ -61,7 +65,7 @@ module ProductTaxonomy
       File.write(version_file_path, @version)
 
       logger.info("Updating integration mappings...")
-      update_integration_mappings
+      update_integration_mappings_stable_release
 
       logger.info("Dumping integration full names...")
       DumpIntegrationFullNamesCommand.new({}).execute
@@ -88,11 +92,14 @@ module ProductTaxonomy
       logger.info("Updating VERSION file to #{@next_version}...")
       File.write(version_file_path, @next_version)
 
+      logger.info("Updating integration mappings...")
+      update_integration_mappings_next_unstable
+
       logger.info("Generating distribution files...")
       GenerateDistCommand.new(version: @next_version, locales: @locales).execute
 
       logger.info("Generating documentation files...")
-      GenerateDocsCommand.new(version: @next_version, locales: @locales).execute
+      GenerateDocsCommand.new(locales: @locales).execute
 
       run_git_command("add", ".")
       run_git_command("commit", "-m", next_version_commit_message)
@@ -107,23 +114,26 @@ module ProductTaxonomy
     end
 
     def git_repo_root
-      @git_repo_root ||= `git rev-parse --show-toplevel`.strip
+      @git_repo_root ||= %x(git rev-parse --show-toplevel).strip
     end
 
     def get_commit_hash(ref)
-      `git rev-parse --short #{ref}`.strip
+      %x(git rev-parse --short #{ref}).strip
     end
 
-    def update_integration_mappings
-      Dir.glob(File.expand_path("integrations/**/mappings/to_shopify.yml", ProductTaxonomy.data_path)).each do |file|
-        content = File.read(file)
-        content.gsub!(/output_version: .*?-unstable/, "output_version: #{@version}")
-        File.write(file, content)
-      end
+    def update_integration_mappings_stable_release
+      update_mapping_files("to_shopify.yml", "output_taxonomy", "shopify/#{@version}")
+      update_mapping_files("from_shopify.yml", "input_taxonomy", "shopify/#{@version}")
+    end
 
-      Dir.glob(File.expand_path("integrations/**/mappings/from_shopify.yml", ProductTaxonomy.data_path)).each do |file|
+    def update_integration_mappings_next_unstable
+      update_mapping_files("from_shopify.yml", "input_taxonomy", "shopify/#{@next_version}")
+    end
+
+    def update_mapping_files(filename, field_name, new_value)
+      Dir.glob(File.expand_path("integrations/**/mappings/#{filename}", ProductTaxonomy.data_path)).each do |file|
         content = File.read(file)
-        content.gsub!(/input_version: .*?-unstable/, "input_version: #{@version}")
+        content.gsub!(%r{#{field_name}: shopify/\d{4}-\d{2}(-unstable)?}, "#{field_name}: #{new_value}")
         File.write(file, content)
       end
     end
