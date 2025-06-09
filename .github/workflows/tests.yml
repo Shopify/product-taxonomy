@@ -29,9 +29,9 @@ jobs:
         # Get all commits in this PR
         PR_COMMITS=$(git log --format='%H %s' origin/main..HEAD)
         
-        # Check for release commit pattern
-        RELEASE_COMMIT=$(echo "$PR_COMMITS" | grep -E '^[a-f0-9]+ Release version [0-9]+\.[0-9]+\.[0-9]+' | head -1 | cut -d' ' -f1 || true)
-        BUMP_COMMIT=$(echo "$PR_COMMITS" | grep -E '^[a-f0-9]+ Bump version to [0-9]+\.[0-9]+\.[0-9]+-unstable' | head -1 | cut -d' ' -f1 || true)
+        # Check for release commit pattern (with [release-commit] tag)
+        RELEASE_COMMIT=$(echo "$PR_COMMITS" | grep -E '^[a-f0-9]+ Release version [0-9]+\.[0-9]+\.[0-9]+ \[release-commit\]' | head -1 | cut -d' ' -f1 || true)
+        BUMP_COMMIT=$(echo "$PR_COMMITS" | grep -E '^[a-f0-9]+ Bump version to [0-9]+\.[0-9]+\.[0-9]+-unstable \[release-commit\]' | head -1 | cut -d' ' -f1 || true)
         
         if [ -n "$RELEASE_COMMIT" ] && [ -n "$BUMP_COMMIT" ]; then
           # Test both the release commit and the latest commit (bump version)
