@@ -62,7 +62,8 @@ module ProductTaxonomy
     def next_version_commit_message = "Bump version to #{@next_version} [run-ci]"
 
     def generate_release_version!
-      run_git_command("pull")
+      # Skip pull when on test branch
+      run_git_command("pull") unless %x(git rev-parse --abbrev-ref HEAD).strip == "test-ci-workflow-releases"
       run_git_command("checkout", "-b", "release-v#{@version}")
 
       logger.info("Updating VERSION file to #{@version}...")
