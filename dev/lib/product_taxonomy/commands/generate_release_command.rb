@@ -89,6 +89,8 @@ module ProductTaxonomy
     end
 
     def move_to_next_version!
+      run_git_command("checkout", "-b", "bump-v#{@next_version}")
+
       logger.info("Updating VERSION file to #{@next_version}...")
       File.write(version_file_path, @next_version)
 
@@ -122,6 +124,7 @@ module ProductTaxonomy
     end
 
     def update_integration_mappings_stable_release
+      create_previous_version_mappings
       update_mapping_files("to_shopify.yml", "output_taxonomy", "shopify/#{@version}")
       update_mapping_files("from_shopify.yml", "input_taxonomy", "shopify/#{@version}")
     end
@@ -130,8 +133,38 @@ module ProductTaxonomy
       update_mapping_files("from_shopify.yml", "input_taxonomy", "shopify/#{@next_version}")
     end
 
+    def create_previous_version_mappings
+      shopify_dir = File.expand_path("integrations/shopify", ProductTaxonomy.data_path)
+      
+      version_dirs = Dir.glob(File.join(shopify_dir, "*")).select { |d| File.directory?(d) }
+        .select { |d| File.basename(d).match?(/^\d{4}-\d{2}$/) }
+        .sort
+
+      # Find the latest version without a mappings directory (should be the most recent)
+      previous_version_dir = version_dirs.reverse.find do |dir|
+        !File.exist?(File.join(dir, "mappings"))
+      end
+
+      return unless previous_version_dir
+
+      previous_version = File.basename(previous_version_dir)
+      mappings_dir = File.join(previous_version_dir, "mappings")
+
+      FileUtils.mkdir_p(mappings_dir)
+
+      to_shopify_file = File.join(mappings_dir, "to_shopify.yml")
+      File.write(to_shopify_file, <<~YAML)
+        ---
+        input_taxonomy: shopify/#{previous_version}
+        output_taxonomy: shopify/#{@version}
+        rules: []
+      YAML
+    end
+
     def update_mapping_files(filename, field_name, new_value)
       Dir.glob(File.expand_path("integrations/**/mappings/#{filename}", ProductTaxonomy.data_path)).each do |file|
+        next if file.match?(%r{/integrations/shopify/\d{4}-\d{2}/})
+        
         content = File.read(file)
         content.gsub!(%r{#{field_name}: shopify/\d{4}-\d{2}(-unstable)?}, "#{field_name}: #{new_value}")
         File.write(file, content)
@@ -149,22 +182,33 @@ module ProductTaxonomy
 
     def print_summary(release_commit_hash, next_version_commit_hash)
       logger.info("\n====== Release Summary ======")
-      logger.info("- Created commit (#{release_commit_hash}): #{release_commit_message}")
-      logger.info("- Created commit (#{next_version_commit_hash}): #{next_version_commit_message}")
-      logger.info("- Created tag: v#{@version}")
+      logger.info("- Created branch: release-v#{@version}")
+      logger.info("  - Commit (#{release_commit_hash}): #{release_commit_message}")
+      logger.info("  - Tag: v#{@version}")
+      logger.info("- Created branch: bump-v#{@next_version}")
+      logger.info("  - Commit (#{next_version_commit_hash}): #{next_version_commit_message}")
       logger.info("\nInspect changes with:")
       logger.info("  git show #{release_commit_hash}")
       logger.info("  git show #{next_version_commit_hash}")
       logger.info("  git show v#{@version}")
 
       logger.info("\nNext steps:")
-      logger.info("  1. If the changes look good, push the branch")
+      logger.info("  1. If the changes look good, push both branches")
       logger.info("     * Run `git push origin release-v#{@version}`")
-      logger.info("  2. Open a PR and follow the usual process to get approval and merge")
+      logger.info("     * Run `git push origin bump-v#{@next_version}`")
+      logger.info("  2. Open a PR and follow the usual process to get approval and merge the release branch")
       logger.info("     * https://github.com/Shopify/product-taxonomy/pull/new/release-v#{@version}")
-      logger.info("  3. Once the PR is merged, push the tag that was created")
+      logger.info("     * Target: main")
+      logger.info("  3. Open a PR and follow the usual process to get approval and merge the bump branch")
+      logger.info("     * https://github.com/Shopify/product-taxonomy/pull/new/bump-v#{@next_version}")
+      logger.info("     * Target: release-v#{@version} (NOT main)")
+      logger.info("     * This PR should be set to merge into release-v#{@version}")
+      logger.info("  4. Merge PRs in order")
+      logger.info("     * First: Merge the release PR into main")
+      logger.info("     * Second: Update the bump PR to target main, then merge")
+      logger.info("  5. Once the PRs are merged, push the tag that was created")
       logger.info("     * Run `git push origin v#{@version}`")
-      logger.info("  4. Create a release on GitHub")
+      logger.info("  6. Create a release on GitHub")
       logger.info("     * https://github.com/Shopify/product-taxonomy/releases/new?tag=v#{@version}")
     end
 
@@ -172,11 +216,16 @@ module ProductTaxonomy
       logger.info("\n====== Rollback Instructions ======")
       logger.info("The release was aborted due to an error.")
       logger.info("You can use the following commands to roll back to the original state:")
-      logger.info("  git reset --hard main")
+      logger.info("  git checkout main")
+      logger.info("  git reset --hard origin/main")
 
-      # Check if branch exists before suggesting deletion
+      # Check if branches exist before suggesting deletion
       if system("git", "show-ref", "--verify", "--quiet", "refs/heads/release-v#{@version}")
         logger.info("  git branch -D release-v#{@version}")
+      end
+
+      if system("git", "show-ref", "--verify", "--quiet", "refs/heads/bump-v#{@next_version}")
+        logger.info("  git branch -D bump-v#{@next_version}")
       end
 
       # Check if tag exists before suggesting deletion
