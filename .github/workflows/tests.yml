@@ -5,20 +5,62 @@ on:
   push:
     branches:
       - main
+      - 'release-v*'  # Also trigger on release branches
   pull_request:
     branches:
       - main
-    types: [opened, synchronize, reopened, target]
+    types: [opened, synchronize, reopened]
 
 jobs:
+  # Check if this is a release PR with multiple commits
+  check-release-commits:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    outputs:
+      commits: ${{ steps.get-commits.outputs.commits }}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch all history for the branch
+    
+    - name: Get commits to test
+      id: get-commits
+      run: |
+        # Get all commits in this PR
+        PR_COMMITS=$(git log --format='%H %s' origin/main..HEAD)
+        
+        # Check for release commit pattern (with [release-commit] tag)
+        RELEASE_COMMIT=$(echo "$PR_COMMITS" | grep 'Release version.*\[release-commit\]' | head -1 | awk '{print $1}' || true)
+        BUMP_COMMIT=$(echo "$PR_COMMITS" | grep 'Bump version to.*\[release-commit\]' | head -1 | awk '{print $1}' || true)
+        
+        if [ -n "$RELEASE_COMMIT" ] && [ -n "$BUMP_COMMIT" ]; then
+          # Test both the release commit and the latest commit (bump version)
+          echo "Found release PR with commits: $RELEASE_COMMIT and $BUMP_COMMIT"
+          echo "commits=[\"$RELEASE_COMMIT\", \"HEAD\"]" >> $GITHUB_OUTPUT
+        else
+          # Just test HEAD for non-release PRs
+          echo "commits=[\"HEAD\"]" >> $GITHUB_OUTPUT
+        fi
+
   test:
+    needs: [check-release-commits]
+    if: always()  # Run even if check-release-commits is skipped
     strategy:
       fail-fast: true
       matrix:
         test: [test_unit, test_integration, vet_schema]
+        commit: ${{ (github.event_name == 'pull_request' && fromJSON(needs.check-release-commits.outputs.commits)) || fromJSON('["HEAD"]') }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+      with:
+        ref: ${{ matrix.commit }}
+    
+    - name: Show current commit
+      run: |
+        echo "Testing commit: ${{ matrix.commit }}"
+        git log -1 --oneline
+    
     - uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
