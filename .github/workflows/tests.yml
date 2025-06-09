@@ -36,10 +36,10 @@ jobs:
         if [ -n "$RELEASE_COMMIT" ] && [ -n "$BUMP_COMMIT" ]; then
           # Test both the release commit and the latest commit (bump version)
           echo "Found release PR with commits: $RELEASE_COMMIT and $BUMP_COMMIT"
-          echo "commits=[\"$RELEASE_COMMIT\", \"HEAD\"]" >> $GITHUB_OUTPUT
+          echo "commits=[\"$RELEASE_COMMIT\", \"${{ github.event.pull_request.head.sha }}\"]" >> $GITHUB_OUTPUT
         else
-          # Just test HEAD for non-release PRs
-          echo "commits=[\"HEAD\"]" >> $GITHUB_OUTPUT
+          # Just test the PR head SHA for non-release PRs
+          echo "commits=[\"${{ github.event.pull_request.head.sha }}\"]" >> $GITHUB_OUTPUT
         fi
 
   test:
@@ -49,7 +49,7 @@ jobs:
       fail-fast: true
       matrix:
         test: [test_unit, test_integration, vet_schema]
-        commit: ${{ (github.event_name == 'pull_request' && fromJSON(needs.check-release-commits.outputs.commits)) || fromJSON('["HEAD"]') }}
+        commit: ${{ (github.event_name == 'pull_request' && fromJSON(needs.check-release-commits.outputs.commits)) || fromJSON(format('["{0}"]', github.sha)) }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
