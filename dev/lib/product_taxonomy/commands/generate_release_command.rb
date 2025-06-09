@@ -43,6 +43,10 @@ module ProductTaxonomy
     private
 
     def check_git_state!
+      # TEMPORARY: Disabled for testing CI workflow
+      # This modification is ONLY in the test-ci-workflow-releases branch
+      return if %x(git rev-parse --abbrev-ref HEAD).strip == "test-ci-workflow-releases"
+      
       current_branch = %x(git rev-parse --abbrev-ref HEAD).strip
       unless current_branch == "main"
         raise "Must be on main branch to create a release. Current branch: #{current_branch}"
