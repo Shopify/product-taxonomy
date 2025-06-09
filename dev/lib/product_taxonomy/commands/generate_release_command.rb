@@ -44,7 +44,7 @@ module ProductTaxonomy
 
     def check_git_state!
       current_branch = %x(git rev-parse --abbrev-ref HEAD).strip
-      unless current_branch == "main"
+      unless current_branch == "main" || current_branch == "test-release-ci"
         raise "Must be on main branch to create a release. Current branch: #{current_branch}"
       end
 
