@@ -99,8 +99,8 @@ module ProductTaxonomy
       command.expects(:run_git_command).with("pull")
       command.expects(:run_git_command).with("checkout", "-b", @release_branch)
       command.expects(:run_git_command).with("add", ".").times(2)
-      command.expects(:run_git_command).with("commit", "-m", "Release version #{@version}")
-      command.expects(:run_git_command).with("commit", "-m", "Bump version to #{@next_version}")
+      command.expects(:run_git_command).with("commit", "-m", "Release version #{@version} [run-ci]")
+      command.expects(:run_git_command).with("commit", "-m", "Bump version to #{@next_version} [run-ci]")
       command.expects(:run_git_command).with("tag", "v#{@version}")
       GenerateDistCommand.any_instance.expects(:execute).times(2)
       GenerateDocsCommand.any_instance.expects(:execute).times(2)
@@ -225,8 +225,8 @@ module ProductTaxonomy
       expected_output = <<~OUTPUT
 
         ====== Release Summary ======
-        - Created commit (abc1234): Release version 2024-01
-        - Created commit (abc1234): Bump version to 2024-02-unstable
+        - Created commit (abc1234): Release version 2024-01 [run-ci]
+        - Created commit (abc1234): Bump version to 2024-02-unstable [run-ci]
         - Created tag: v2024-01
 
         Inspect changes with:

@@ -54,8 +54,8 @@ module ProductTaxonomy
       end
     end
 
-    def release_commit_message = "Release version #{@version}"
-    def next_version_commit_message = "Bump version to #{@next_version}"
+    def release_commit_message = "Release version #{@version} [run-ci]"
+    def next_version_commit_message = "Bump version to #{@next_version} [run-ci]"
 
     def generate_release_version!
       run_git_command("pull")
