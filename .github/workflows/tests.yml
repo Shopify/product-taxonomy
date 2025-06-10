@@ -5,17 +5,46 @@ on:
   push:
     branches:
       - main
+      - "release-v*"
   pull_request:
     branches:
       - main
     types: [opened, synchronize, reopened]
 
 jobs:
+  check-release-commits:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    outputs:
+      commits: ${{ steps.get-commits.outputs.commits }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get commits to test
+        id: get-commits
+        run: |
+          PR_COMMITS=$(git log --format='%H %s' origin/main..HEAD)
+
+          RELEASE_COMMIT=$(echo "$PR_COMMITS" | grep 'Release version.*\[run-ci\]' | head -1 | awk '{print $1}' || true)
+          BUMP_COMMIT=$(echo "$PR_COMMITS" | grep 'Bump version to.*\[run-ci\]' | head -1 | awk '{print $1}' || true)
+
+          if [ -n "$RELEASE_COMMIT" ] && [ -n "$BUMP_COMMIT" ]; then
+            echo "Found release PR with commits: $RELEASE_COMMIT and $BUMP_COMMIT"
+            echo "commits=[\"$RELEASE_COMMIT\", \"${{ github.event.pull_request.head.sha }}\"]" >> $GITHUB_OUTPUT
+          else
+            echo "commits=[\"${{ github.event.pull_request.head.sha }}\"]" >> $GITHUB_OUTPUT
+          fi
+
   test:
+    needs: [check-release-commits]
+    if: always()
     strategy:
       fail-fast: true
       matrix:
         test: [test_unit, test_integration, vet_schema]
+        commit: ${{ (github.event_name == 'pull_request' && fromJSON(needs.check-release-commits.outputs.commits)) || fromJSON(format('["{0}"]', github.sha)) }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
