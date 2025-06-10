@@ -124,7 +124,6 @@ module ProductTaxonomy
     end
 
     def update_integration_mappings_stable_release
-      create_previous_version_mappings
       update_mapping_files("to_shopify.yml", "output_taxonomy", "shopify/#{@version}")
       update_mapping_files("from_shopify.yml", "input_taxonomy", "shopify/#{@version}")
     end
@@ -133,38 +132,8 @@ module ProductTaxonomy
       update_mapping_files("from_shopify.yml", "input_taxonomy", "shopify/#{@next_version}")
     end
 
-    def create_previous_version_mappings
-      shopify_dir = File.expand_path("integrations/shopify", ProductTaxonomy.data_path)
-      
-      version_dirs = Dir.glob(File.join(shopify_dir, "*")).select { |d| File.directory?(d) }
-        .select { |d| File.basename(d).match?(/^\d{4}-\d{2}$/) }
-        .sort
-
-      # Find the latest version without a mappings directory (should be the most recent)
-      previous_version_dir = version_dirs.reverse.find do |dir|
-        !File.exist?(File.join(dir, "mappings"))
-      end
-
-      return unless previous_version_dir
-
-      previous_version = File.basename(previous_version_dir)
-      mappings_dir = File.join(previous_version_dir, "mappings")
-
-      FileUtils.mkdir_p(mappings_dir)
-
-      to_shopify_file = File.join(mappings_dir, "to_shopify.yml")
-      File.write(to_shopify_file, <<~YAML)
-        ---
-        input_taxonomy: shopify/#{previous_version}
-        output_taxonomy: shopify/#{@version}
-        rules: []
-      YAML
-    end
-
     def update_mapping_files(filename, field_name, new_value)
       Dir.glob(File.expand_path("integrations/**/mappings/#{filename}", ProductTaxonomy.data_path)).each do |file|
-        next if file.match?(%r{/integrations/shopify/\d{4}-\d{2}/})
-        
         content = File.read(file)
         content.gsub!(%r{#{field_name}: shopify/\d{4}-\d{2}(-unstable)?}, "#{field_name}: #{new_value}")
         File.write(file, content)
