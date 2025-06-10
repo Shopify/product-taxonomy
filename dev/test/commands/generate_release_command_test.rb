@@ -325,6 +325,50 @@ module ProductTaxonomy
       command.send(:run_git_command, "checkout", "main")
     end
 
+    test "update_mapping_files skips shopify version directories" do
+      FileUtils.mkdir_p(File.expand_path("data/integrations/shopify/2023-11/mappings", @tmp_base_path))
+      shopify_version_file = File.expand_path("data/integrations/shopify/2023-11/mappings/to_shopify.yml", @tmp_base_path)
+      File.write(shopify_version_file, "output_taxonomy: shopify/2023-12-unstable")
+
+      FileUtils.mkdir_p(File.expand_path("data/integrations/other/mappings", @tmp_base_path))
+      other_integration_file = File.expand_path("data/integrations/other/mappings/to_shopify.yml", @tmp_base_path)
+      File.write(other_integration_file, "output_taxonomy: shopify/2023-12-unstable")
+
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+      command.send(:update_mapping_files, "to_shopify.yml", "output_taxonomy", "shopify/#{@version}")
+
+      assert_equal "output_taxonomy: shopify/2023-12-unstable", File.read(shopify_version_file)
+      assert_equal "output_taxonomy: shopify/#{@version}", File.read(other_integration_file)
+    end
+
+    test "create_previous_version_mappings creates mappings for latest version without mappings" do
+      FileUtils.mkdir_p(File.expand_path("data/integrations/shopify/2023-10/mappings", @tmp_base_path))
+      FileUtils.mkdir_p(File.expand_path("data/integrations/shopify/2023-11", @tmp_base_path))
+      FileUtils.mkdir_p(File.expand_path("data/integrations/shopify/2023-12", @tmp_base_path))
+
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+      command.send(:create_previous_version_mappings)
+
+      mappings_file = File.expand_path("data/integrations/shopify/2023-12/mappings/to_shopify.yml", @tmp_base_path)
+      assert File.exist?(mappings_file), "Mappings file should be created"
+      
+      content = File.read(mappings_file)
+      assert_match "input_taxonomy: shopify/2023-12", content
+      assert_match "output_taxonomy: shopify/#{@version}", content
+      assert_match "rules: []", content
+    end
+
+    test "create_previous_version_mappings does nothing if all versions have mappings" do
+      FileUtils.mkdir_p(File.expand_path("data/integrations/shopify/2023-10/mappings", @tmp_base_path))
+      FileUtils.mkdir_p(File.expand_path("data/integrations/shopify/2023-11/mappings", @tmp_base_path))
+      FileUtils.mkdir_p(File.expand_path("data/integrations/shopify/2023-12/mappings", @tmp_base_path))
+
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+      command.send(:create_previous_version_mappings)
+
+      assert true, "Should complete without error"
+    end
+
     test "git_repo_root memoizes git repository root path" do
       GenerateReleaseCommand.any_instance.unstub(:git_repo_root)
       command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
