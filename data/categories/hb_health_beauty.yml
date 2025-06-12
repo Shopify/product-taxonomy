@@ -35,7 +35,8 @@
   - hb-1-24
   - hb-1-25
   - hb-1-26
-  attributes: []
+  attributes:
+  - age_group
 - id: hb-1-1
   name: Acupuncture
   children:
@@ -407,6 +408,7 @@
   name: Nutrition Bars
   children: []
   attributes:
+  - allergen_information
   - dietary_preferences
   - dietary_use
   - flavor
@@ -414,6 +416,8 @@
   name: Nutrition Drinks & Shakes
   children: []
   attributes:
+  - age_group
+  - detailed_ingredients
   - dietary_preferences
   - dietary_use
   - flavor
@@ -533,10 +537,12 @@
   - age_group
   - detailed_ingredients
   - dietary_preferences
+  - dietary_use
   - flavor
   - food_supplement_form
   - ingredient_category
   - product_certifications_standards
+  - target_gender
 - id: hb-1-9-6-9
   name: Single Vitamins
   children: []
@@ -830,6 +836,7 @@
   name: Medicine & Drugs
   children: []
   attributes:
+  - age_group
   - medicine/drug_form
 - id: hb-1-17
   name: Mobility & Accessibility
@@ -1045,7 +1052,9 @@
   children:
   - hb-1-18-1
   - hb-1-18-2
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: hb-1-18-1
   name: Electrical Muscle Stimulators
   children: []
@@ -1258,11 +1267,16 @@
   - hb-2-3-3
   - hb-2-3-4
   - hb-2-3-5
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: hb-2-3-1
   name: Jewelry Boxes
   children: []
-  attributes: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: hb-2-3-2
   name: Jewelry Stands
   children: []
@@ -1270,11 +1284,15 @@
 - id: hb-2-3-3
   name: Jewelry Trays
   children: []
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: hb-2-3-4
   name: Ring Holders
   children: []
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: hb-2-3-5
   name: Wall-Mounted Jewelry Organizers
   children: []
@@ -1310,7 +1328,10 @@
   - hb-3-17
   - hb-3-18
   - hb-3-19
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - pattern
 - id: hb-3-1
   name: Back Care
   children:
@@ -1319,7 +1340,9 @@
 - id: hb-3-1-1
   name: Back & Lumbar Support Cushions
   children: []
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: hb-3-2
   name: Cosmetics
   children:
@@ -1332,7 +1355,8 @@
   - hb-3-2-7
   - hb-3-2-8
   - hb-3-2-9
-  attributes: []
+  attributes:
+  - target_gender
 - id: hb-3-2-1
   name: Bath & Body
   children:
@@ -1347,13 +1371,21 @@
   - hb-3-2-1-9
   - hb-3-2-1-10
   attributes:
+  - age_group
+  - constitutive_ingredients
   - scent
 - id: hb-3-2-1-1
   name: Bar Soap
   children: []
   attributes:
   - age_group
+  - color
+  - constitutive_ingredients
+  - package_type
+  - pattern
+  - product_certifications_standards
   - scent
+  - skin_care_effect
   - suitable_for_skin_type
 - id: hb-3-2-1-2
   name: Bath Additives
@@ -1374,17 +1406,23 @@
   children: []
   attributes:
   - age_group
+  - color
   - material
+  - pattern
   - scent
 - id: hb-3-2-1-5
   name: Body Wash
   children: []
   attributes:
   - age_group
+  - constitutive_ingredients
+  - cosmetic_function
   - package_type
+  - product_certifications_standards
   - product_form
   - scent
   - suitable_for_skin_type
+  - target_gender
 - id: hb-3-2-1-6
   name: Hand Sanitizers & Wipes
   children: []
@@ -1406,8 +1444,10 @@
   children: []
   attributes:
   - age_group
+  - color
   - constitutive_ingredients
   - package_type
+  - pattern
   - product_form
   - scent
   - suitable_for_skin_type
@@ -1429,6 +1469,9 @@
   name: Bath & Body Gift Sets
   children: []
   attributes:
+  - age_group
+  - color
+  - pattern
   - scent
   - suitable_for_skin_type
   - target_gender
@@ -1436,6 +1479,11 @@
   name: Cosmetic Sets
   children: []
   attributes:
+  - color
+  - constitutive_ingredients
+  - pattern
+  - product_form
+  - skin_care_effect
   - suitable_for_skin_type
   - target_gender
 - id: hb-3-2-4
@@ -1450,7 +1498,9 @@
   - hb-3-2-5-1
   - hb-3-2-5-2
   - hb-3-2-5-3
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: hb-3-2-5-1
   name: Makeup Tools
   children:
@@ -1464,7 +1514,9 @@
   - hb-3-2-5-1-10
   - hb-3-2-5-1-11
   - hb-3-2-5-1-12
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: hb-3-2-5-1-3
   name: Eyebrow Stencils
   children: []
@@ -1488,7 +1540,9 @@
   name: Face Mirrors
   children: []
   attributes:
+  - color
   - mounting_hardware
+  - pattern
   - shape
 - id: hb-3-2-5-1-7
   name: Facial Blotting Paper
@@ -1500,7 +1554,9 @@
   - hb-3-2-5-1-8-1
   - hb-3-2-5-1-8-2
   - hb-3-2-5-1-8-3
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: hb-3-2-5-1-8-1
   name: False Eyelash Adhesive
   children: []
@@ -1538,7 +1594,9 @@
   name: Refillable Makeup Palettes & Cases
   children: []
   attributes:
+  - color
   - compatible_makeup
+  - pattern
 - id: hb-3-2-5-1-12
   name: Double Eyelid Glue & Tape
   children: []
@@ -1556,7 +1614,9 @@
   - hb-3-2-5-2-8
   - hb-3-2-5-2-9
   - hb-3-2-5-2-10
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: hb-3-2-5-2-1
   name: Cuticle Pushers
   children: []
@@ -1623,7 +1683,9 @@
   - hb-3-2-5-3-6
   - hb-3-2-5-3-7
   - hb-3-2-5-3-8
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: hb-3-2-5-3-1
   name: Facial Saunas
   children: []
@@ -1686,8 +1748,11 @@
   - hb-3-2-6-6
   - hb-3-2-6-7
   attributes:
+  - cosmetic_finish
+  - dispenser_type
   - makeup_features
   - product_certifications_standards
+  - product_form
 - id: hb-3-2-6-1
   name: Body Makeup
   children:
@@ -1830,6 +1895,7 @@
   - hb-3-2-6-4-5
   attributes:
   - cosmetic_finish
+  - dispenser_type
   - makeup_features
   - product_certifications_standards
   - product_form
@@ -1992,7 +2058,9 @@
   - hb-3-2-7-10
   - hb-3-2-7-11
   attributes:
+  - color
   - nail_care_features
+  - pattern
   - product_certifications_standards
 - id: hb-3-2-7-1
   name: Cuticle Creams & Oil
@@ -2024,6 +2092,7 @@
   - color
   - false_nail_application_method
   - finish
+  - nail_art_items_included
   - nail_care_features
   - nail_design
   - nail_shape
@@ -2079,7 +2148,9 @@
   - hb-3-2-8-3
   - hb-3-2-8-4
   attributes:
+  - age_group
   - occasion
+  - product_form
   - scent
   - season
   - target_gender
@@ -2090,6 +2161,7 @@
   - occasion
   - scent
   - season
+  - target_gender
 - id: hb-3-2-8-2
   name: Colognes
   children: []
@@ -2097,13 +2169,17 @@
   - occasion
   - scent
   - season
+  - target_gender
 - id: hb-3-2-8-3
   name: Eaux de Parfum
   children: []
   attributes:
+  - color
   - occasion
+  - pattern
   - scent
   - season
+  - target_gender
 - id: hb-3-2-8-4
   name: Eaux De Toilette
   children: []
@@ -2111,6 +2187,7 @@
   - occasion
   - scent
   - season
+  - target_gender
 - id: hb-3-2-9
   name: Skin Care
   children:
@@ -2137,34 +2214,58 @@
   - hb-3-2-9-21
   - hb-3-2-9-22
   attributes:
+  - active_ingredient
+  - age_group
+  - constitutive_ingredients
+  - cosmetic_function
+  - dispenser_type
+  - fragrance_level
+  - moisturizer_type
+  - package_type
   - product_certifications_standards
   - product_form
   - skin_care_effect
+  - skin_care_features
   - suitable_for_skin_type
+  - target_gender
 - id: hb-3-2-9-1
   name: Acne Treatments & Kits
   children: []
   attributes:
   - constitutive_ingredients
+  - cosmetic_function
   - fragrance_level
+  - package_type
   - product_certifications_standards
+  - product_form
+  - skin_care_effect
   - skin_care_features
+  - suitable_for_skin_type
 - id: hb-3-2-9-2
   name: Anti-Aging Skin Care
   children: []
   attributes:
+  - age_group
   - anti_agin_skin_care_type
   - constitutive_ingredients
+  - dispenser_type
+  - fragrance_level
+  - moisturizer_type
+  - package_type
   - product_certifications_standards
   - product_form
   - skin_care_effect
+  - skin_care_features
   - suitable_for_skin_type
+  - target_gender
 - id: hb-3-2-9-3
   name: Body Oil
   children: []
   attributes:
   - age_group
   - constitutive_ingredients
+  - cosmetic_function
+  - package_type
   - product_certifications_standards
   - product_form
   - skin_care_effect
@@ -2189,17 +2290,24 @@
   - product_form
   - skin_care_effect
   - skin_care_features
+  - skin_care_mask_type
   - suitable_for_skin_type
 - id: hb-3-2-9-6
   name: Facial Cleansers
   children: []
   attributes:
+  - age_group
   - constitutive_ingredients
+  - cosmetic_function
+  - dispenser_type
+  - fragrance_level
   - package_type
   - product_certifications_standards
   - product_form
   - skin_care_effect
+  - skin_care_features
   - suitable_for_skin_type
+  - target_gender
 - id: hb-3-2-9-7
   name: Facial Cleansing Kits
   children: []
@@ -2226,7 +2334,9 @@
   - hb-3-2-9-9-1
   - hb-3-2-9-9-2
   attributes:
+  - color
   - package_type
+  - pattern
   - product_certifications_standards
   - product_form
   - suitable_for_skin_type
@@ -2265,14 +2375,21 @@
   - age_group
   - constitutive_ingredients
   - cosmetic_function
+  - dispenser_type
+  - moisturizer_type
   - package_type
   - product_certifications_standards
   - product_form
+  - scent
+  - skin_care_effect
+  - skin_care_features
   - suitable_for_skin_type
+  - target_gender
 - id: hb-3-2-9-11
   name: Makeup Removers
   children: []
   attributes:
+  - constitutive_ingredients
   - cosmetic_function
   - package_type
   - product_certifications_standards
@@ -2290,10 +2407,14 @@
   name: Skin Care Masks & Peels
   children: []
   attributes:
+  - age_group
   - allergens
   - constitutive_ingredients
+  - cosmetic_function
   - fragrance_level
+  - package_type
   - product_certifications_standards
+  - product_form
   - skin_care_effect
   - skin_care_features
   - skin_care_mask_type
@@ -2314,8 +2435,10 @@
   - age_group
   - application_area
   - constitutive_ingredients
+  - cosmetic_function
   - dispenser_type
   - fragrance_level
+  - package_type
   - product_certifications_standards
   - product_form
   - skin_care_effect
@@ -2371,6 +2494,7 @@
   - package_type
   - product_certifications_standards
   - product_form
+  - skin_care_effect
   - suitable_for_skin_type
 - id: hb-3-2-9-17-1
   name: Astringents
@@ -2391,6 +2515,7 @@
   - package_type
   - product_certifications_standards
   - product_form
+  - skin_care_effect
   - suitable_for_skin_type
 - id: hb-3-2-9-18
   name: Wart Removers
@@ -2406,27 +2531,47 @@
   attributes:
   - active_ingredient
   - dispenser_type
+  - package_type
+  - product_certifications_standards
   - product_form
   - skin_care_effect
   - suitable_for_skin_type
+  - target_gender
 - id: hb-3-2-9-20
   name: Face Moisturizers
   children: []
   attributes:
   - active_ingredient
+  - age_group
+  - cosmetic_function
+  - dispenser_type
   - fragrance_level
   - moisturizer_type
+  - package_type
+  - product_certifications_standards
   - product_form
+  - skin_care_effect
+  - skin_care_features
   - suitable_for_skin_type
+  - target_gender
 - id: hb-3-2-9-21
   name: Face Serums
   children: []
   attributes:
   - active_ingredient
+  - age_group
+  - cosmetic_function
+  - dispenser_type
+  - fragrance_level
+  - moisturizer_type
+  - package_type
+  - product_certifications_standards
   - product_form
   - serum_target_areas
   - skin_care_effect
+  - skin_care_features
   - suitable_for_skin_type
+  - target_gender
 - id: hb-3-2-9-22
   name: Hand Creams
   children: []
@@ -2473,6 +2618,7 @@
   attributes:
   - dispenser_type
   - product_certifications_standards
+  - product_form
   - scent
   - target_gender
 - id: hb-3-6
@@ -2731,7 +2877,9 @@
   attributes:
   - body_area
   - clothing_accessory_material
+  - color
   - compatible_shoe_size
+  - pattern
   - treatment_objective
 - id: hb-3-9-4-1
   name: Arch Supports
@@ -2780,12 +2928,23 @@
   - hb-3-10-12
   - hb-3-10-13
   attributes:
+  - age_group
+  - hair_care_finish
+  - hair_type
+  - product_certifications_standards
+  - suitable_for_hair_type
   - target_gender
+  - treatment_type
 - id: hb-3-10-1
   name: Hair Care Kits
   children: []
   attributes:
+  - age_group
+  - color
+  - constitutive_ingredients
   - hair_care_items_included
+  - pattern
+  - product_form
   - suitable_for_hair_type
   - target_gender
 - id: hb-3-10-2
@@ -2820,7 +2979,12 @@
   name: Hair Loss Treatments
   children: []
   attributes:
+  - age_group
+  - constitutive_ingredients
   - hair_loss_type
+  - product_certifications_standards
+  - product_form
+  - suitable_for_hair_type
   - target_gender
   - treatment_type
 - id: hb-3-10-7
@@ -2848,11 +3012,14 @@
   name: Hair Styling Products
   children: []
   attributes:
+  - age_group
   - constitutive_ingredients
   - hair_care_finish
+  - hair_care_items_included
   - hair_type
   - hold_level
   - product_form
+  - suitable_for_hair_type
   - target_gender
 - id: hb-3-10-11
   name: Hair Styling Tool Accessories
@@ -2860,7 +3027,9 @@
   - hb-3-10-11-1
   - hb-3-10-11-2
   - hb-3-10-11-3
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: hb-3-10-11-1
   name: Hair Curler Clips & Pins
   children:
@@ -2984,7 +3153,9 @@
   name: Hair Straighteners
   children: []
   attributes:
+  - color
   - heat_settings
+  - pattern
   - plate_type
 - id: hb-3-10-12-9
   name: Hair Styling Tool Sets
@@ -3004,7 +3175,9 @@
   attributes:
   - age_group
   - compatible_hair_color
+  - constitutive_ingredients
   - product_certifications_standards
+  - product_form
   - suitable_for_hair_type
   - target_gender
 - id: hb-3-10-13-1
@@ -3015,6 +3188,7 @@
   - compatible_hair_color
   - conditioner_effect
   - constitutive_ingredients
+  - hair_type
   - product_certifications_standards
   - suitable_for_hair_type
   - target_gender
@@ -3024,7 +3198,9 @@
   attributes:
   - age_group
   - compatible_hair_color
+  - conditioner_effect
   - constitutive_ingredients
+  - product_certifications_standards
   - shampoo/conditioner_effect
   - shampoo/conditioner_items_included
   - suitable_for_hair_type
@@ -3036,6 +3212,7 @@
   - age_group
   - compatible_hair_color
   - constitutive_ingredients
+  - package_type
   - product_certifications_standards
   - product_form
   - shampoo_type
@@ -3079,8 +3256,10 @@
   name: Massage Oil
   children: []
   attributes:
+  - age_group
   - aromatherapy
   - base_oil
+  - constitutive_ingredients
   - texture
 - id: hb-3-11-5
   name: Massage Stone Warmers
@@ -3113,13 +3292,17 @@
   children: []
   attributes:
   - application_area
+  - color
   - massage_technique
+  - pattern
   - power_source
 - id: hb-3-11-8-2
   name: Manual Massage Tools
   children: []
   attributes:
+  - color
   - massage_technique
+  - pattern
 - id: hb-3-11-8-3
   name: Massage Cushions
   children: []
@@ -3490,6 +3673,8 @@
   - hb-3-14-4-2
   - hb-3-14-4-3
   attributes:
+  - color
+  - pattern
   - razor_flexibility
   - razor_head_design
   - usage_conditions
@@ -3515,7 +3700,9 @@
   name: Hair Clipper & Trimmer Accessories
   children: []
   attributes:
+  - color
   - material
+  - pattern
 - id: hb-3-14-6
   name: Hair Clippers & Trimmers
   children: []
@@ -3632,7 +3819,9 @@
   - hb-3-15-2
   - hb-3-15-3
   - hb-3-15-4
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: hb-3-15-1
   name: Eye Masks
   children: []
@@ -3692,6 +3881,8 @@
   name: Travel Pillows
   children: []
   attributes:
+  - color
+  - pattern
   - travel_pillow_shape
 - id: hb-3-15-4
   name: White Noise Machines
@@ -3817,8 +4008,10 @@
   name: Eyeglasses
   children: []
   attributes:
+  - age_group
   - color
   - eyewear_frame_color
+  - eyewear_frame_design
   - eyewear_frame_material
   - eyewear_frame_pattern
   - eyewear_frame_shape
@@ -3829,6 +4022,7 @@
   - lens_type
   - optical_frame_design
   - pattern
+  - target_gender
   - temple_color
   - temple_pattern
 - id: hb-3-19-5
@@ -3846,6 +4040,8 @@
   - accessory_size
   - bag/case_material
   - closure_type
+  - color
+  - pattern
 - id: hb-3-19-5-2
   name: Eyewear Lens Cleaning Solutions
   children: []
