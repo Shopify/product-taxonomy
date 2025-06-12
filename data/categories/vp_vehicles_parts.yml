@@ -16,7 +16,12 @@
   - vp-1-6
   - vp-1-7
   - vp-1-8
-  attributes: []
+  attributes:
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - vehicle_application_area
+  - vehicle_type
 - id: vp-1-1
   name: Aircraft Parts & Accessories
   children: []
@@ -659,9 +664,13 @@
   - vp-1-4-22
   attributes:
   - color
+  - fit_type
   - item_condition
+  - item_material
   - manufacturer_type
+  - material
   - pattern
+  - vehicle_type
 - id: vp-1-4-1
   name: Motor Vehicle Braking
   children:
@@ -1461,11 +1470,13 @@
   - vp-1-4-9-13
   attributes:
   - color
+  - fit_type
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
   - vehicle_frame/body_features
+  - vehicle_type
 - id: vp-1-4-9-1
   name: Bumpers
   children: []
@@ -1697,6 +1708,7 @@
   - manufacturer_type
   - motor_vehicle_type
   - pattern
+  - vehicle_type
 - id: vp-1-4-11-1
   name: Car Mirrors
   children: []
@@ -2194,6 +2206,7 @@
   attributes:
   - color
   - item_condition
+  - item_material
   - manufacturer_type
   - motor_vehicle_placement
   - pattern
@@ -3334,6 +3347,7 @@
   - color
   - decoration_material
   - pattern
+  - scent
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -3996,7 +4010,9 @@
   - vp-1-6-1-10
   attributes:
   - accessory_size
+  - color
   - gear_material
+  - pattern
   - target_gender
   - vehicle_type
 - id: vp-1-6-1-1
@@ -4056,7 +4072,9 @@
   children: []
   attributes:
   - accessory_size
+  - color
   - gear_material
+  - pattern
   - protective_gear_features
   - target_gender
   - vehicle_type
@@ -4310,6 +4328,8 @@
   - vp-1-6-4-9
   - vp-1-6-4-10
   attributes:
+  - color
+  - pattern
   - product_certifications_standards
   - safety_equipment_material
   - vehicle_type
@@ -4695,7 +4715,9 @@
   - vp-1-7-8
   - vp-1-7-9
   attributes:
+  - color
   - item_condition
+  - pattern
   - vehicle_type
 - id: vp-1-7-1
   name: Motor Vehicle Cargo Nets
@@ -4772,9 +4794,11 @@
   - vp-1-7-3-8
   - vp-1-7-3-9
   attributes:
+  - color
   - features
   - item_condition
   - material
+  - pattern
   - vehicle_type
 - id: vp-1-7-3-1
   name: Vehicle Base Rack Systems
@@ -4924,7 +4948,9 @@
   - bag_type
   - care_instructions
   - carry_options
+  - color
   - item_condition
+  - pattern
   - vehicle_type
 - id: vp-1-7-7
   name: Truck Bed Storage Boxes & Organizers
@@ -4946,9 +4972,11 @@
   name: Vehicle Organizers
   children: []
   attributes:
+  - color
   - item_condition
   - material
   - organizer_type
+  - pattern
   - vehicle_type
 - id: vp-1-8
   name: Watercraft Parts & Accessories
@@ -4963,8 +4991,10 @@
   - vp-1-8-8
   - vp-1-8-9
   attributes:
+  - color
   - item_condition
   - item_material
+  - pattern
   - watercraft_type
 - id: vp-1-8-1
   name: Docking & Anchoring
@@ -5881,9 +5911,11 @@
   attributes:
   - body_color
   - body_pattern
+  - color
   - fuel_supply
   - item_condition
   - motorcycle_drive_type
+  - pattern
   - transmission_type
   - upholstery_color
   - upholstery_pattern

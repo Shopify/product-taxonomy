@@ -25,7 +25,9 @@
   - ae-2-6
   - ae-2-7
   - ae-2-8
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: ae-2-1
   name: Arts & Crafts
   children:
@@ -36,7 +38,10 @@
   - ae-2-1-5
   - ae-2-1-6
   - ae-2-1-7
-  attributes: []
+  attributes:
+  - color
+  - material
+  - pattern
 - id: ae-2-1-1
   name: Art & Craft Kits
   children:
@@ -52,6 +57,9 @@
   - ae-2-1-1-10
   attributes:
   - age_group
+  - color
+  - material
+  - pattern
 - id: ae-2-1-1-1
   name: Candle Making Kits
   children: []
@@ -65,7 +73,9 @@
   children: []
   attributes:
   - age_group
+  - color
   - drawing/painting_kit_items_included
+  - pattern
 - id: ae-2-1-1-3
   name: Fabric Repair Kits
   children: []
@@ -87,7 +97,9 @@
   children: []
   attributes:
   - age_group
+  - color
   - jewelry_set_type
+  - pattern
 - id: ae-2-1-1-6
   name: Mosaic Kits
   children: []
@@ -98,8 +110,10 @@
   children: []
   attributes:
   - age_group
+  - color
   - material
   - needlecraft_kit_type
+  - pattern
 - id: ae-2-1-1-8
   name: Scrapbooking & Stamping Kits
   children: []
@@ -115,6 +129,8 @@
   - ae-2-1-1-9-2
   attributes:
   - age_group
+  - color
+  - pattern
 - id: ae-2-1-1-9-1
   name: Doll Making Kits
   children: []
@@ -731,7 +747,9 @@
   - ae-2-1-2-6-3
   - ae-2-1-2-6-4
   attributes:
+  - color
   - fabric
+  - pattern
 - id: ae-2-1-2-6-1
   name: Jewelry & Beading Cord
   children:
@@ -1295,6 +1313,7 @@
   name: Crystals
   children: []
   attributes:
+  - authenticity
   - color
   - pattern
   - stone_shape
@@ -1749,7 +1768,9 @@
   - ae-2-1-2-14-1-3
   attributes:
   - canvas_material
+  - color
   - paper_size
+  - pattern
 - id: ae-2-1-2-14-1-1
   name: Needlecraft Canvas
   children:
@@ -1790,6 +1811,7 @@
   - ae-2-1-2-14-1-2-3
   attributes:
   - canvas_finish
+  - canvas_material
   - canvas_texture
   - color
   - painting_canvas_material
@@ -1888,6 +1910,7 @@
   attributes:
   - care_instructions
   - color
+  - fabric
   - mesh_type
   - pattern
 - id: ae-2-1-2-14-2-3
@@ -1896,6 +1919,7 @@
   attributes:
   - care_instructions
   - color
+  - fabric
   - pattern
 - id: ae-2-1-2-14-2-4
   name: Flannel
@@ -2149,7 +2173,9 @@
   - ae-2-1-3-6
   - ae-2-1-3-7
   attributes:
+  - color
   - material
+  - pattern
 - id: ae-2-1-3-1
   name: Craft Knife Blades
   children: []
@@ -2540,7 +2566,9 @@
   children: []
   attributes:
   - art/crafting_tool_material
+  - color
   - craft_cutter/embosser_type
+  - pattern
 - id: ae-2-1-4-4-3
   name: Craft Knives
   children: []
@@ -2555,6 +2583,8 @@
   - ae-2-1-4-4-4-2
   attributes:
   - art/crafting_tool_material
+  - color
+  - pattern
 - id: ae-2-1-4-4-4-1
   name: Craft Scoring Boards
   children: []
@@ -2651,7 +2681,9 @@
   - bristle_shape
   - brush_application
   - brush_size
+  - color
   - handle_material
+  - pattern
 - id: ae-2-1-4-6-2
   name: Brayer Rollers
   children: []
@@ -2715,6 +2747,8 @@
   children: []
   attributes:
   - art/crafting_tool_material
+  - color
+  - pattern
   - stencil/cut_shape
   - suitable_for_crafting_material
 - id: ae-2-1-4-6-8
@@ -3378,7 +3412,9 @@
   - ae-2-1-5-2
   - ae-2-1-5-3
   attributes:
+  - color
   - material
+  - pattern
 - id: ae-2-1-5-1
   name: Needle, Pin & Hook Organizers
   children:
@@ -3516,8 +3552,10 @@
   name: Craft Molds
   children: []
   attributes:
+  - color
   - material
   - mold_shape
+  - pattern
 - id: ae-2-1-6-3
   name: Felting Molds
   children:
@@ -3575,6 +3613,8 @@
   name: Accessory Sewing Patterns
   children: []
   attributes:
+  - color
+  - pattern
   - pattern_distribution_format
   - skill_level
 - id: ae-2-1-6-5-2
@@ -3613,7 +3653,9 @@
   - ae-2-2-11
   - ae-2-2-12
   attributes:
+  - color
   - condition
+  - pattern
 - id: ae-2-2-1
   name: Autographs
   children: []
@@ -3683,6 +3725,9 @@
   - condition
   - grading
   - rarity
+  - recommended_age_group
+  - sports_theme
+  - theme
   - trading_card_packaging
 - id: ae-2-2-3-1
   name: Entertainment Cards
@@ -3702,6 +3747,7 @@
   - condition
   - grading
   - rarity
+  - recommended_age_group
   - trading_card_packaging
 - id: ae-2-2-3-3
   name: Non-Sports Trading Cards
@@ -3969,11 +4015,13 @@
   - ae-2-2-6-4
   attributes:
   - authenticity
+  - color
   - condition
   - crystal_system
   - fossil_type
   - geological_era
   - mineral_class
+  - pattern
   - rarity
   - rock_composition
   - rock_formation
@@ -3995,11 +4043,13 @@
   children: []
   attributes:
   - authenticity
+  - color
   - condition
   - crystal_system
   - fossil_type
   - geological_era
   - mineral_class
+  - pattern
   - rarity
   - rock_composition
   - rock_formation
@@ -4008,11 +4058,13 @@
   children: []
   attributes:
   - authenticity
+  - color
   - condition
   - crystal_system
   - fossil_type
   - geological_era
   - mineral_class
+  - pattern
   - rarity
   - rock_composition
   - rock_formation
@@ -4021,11 +4073,13 @@
   children: []
   attributes:
   - authenticity
+  - color
   - condition
   - crystal_system
   - fossil_type
   - geological_era
   - mineral_class
+  - pattern
   - rarity
   - rock_composition
   - rock_formation
@@ -4033,8 +4087,10 @@
   name: Scale Model Accessories
   children: []
   attributes:
+  - color
   - condition
   - material
+  - pattern
   - scale_model_accessory_type
   - scale_model_theme
 - id: ae-2-2-8
@@ -4055,8 +4111,11 @@
   - ae-2-2-8-13
   - ae-2-2-8-14
   attributes:
+  - color
   - condition
   - kit_construction_type
+  - pattern
+  - recommended_age_group
   - scale_model_material
   - skill_level
 - id: ae-2-2-8-1
@@ -4204,7 +4263,9 @@
   - ae-2-2-10-1-15
   - ae-2-2-10-1-16
   attributes:
+  - color
   - condition
+  - pattern
   - sport
   - sports_logo
 - id: ae-2-2-10-1-1
@@ -4218,7 +4279,12 @@
   name: Caps
   children: []
   attributes:
+  - accessory_size
+  - age_group
+  - color
   - condition
+  - headwear_features
+  - pattern
   - sport
   - sports_logo
 - id: ae-2-2-10-1-3
@@ -4257,6 +4323,7 @@
   - color
   - condition
   - fabric
+  - headwear_features
   - pattern
   - sport
   - sports_logo
@@ -4299,14 +4366,18 @@
   name: Keychains
   children: []
   attributes:
+  - color
   - condition
+  - pattern
   - sport
   - sports_logo
 - id: ae-2-2-10-1-10
   name: Pins
   children: []
   attributes:
+  - color
   - condition
+  - pattern
   - sport
   - sports_logo
 - id: ae-2-2-10-1-11
@@ -4370,8 +4441,10 @@
   children: []
   attributes:
   - art_style
+  - color
   - condition
   - material
+  - pattern
 - id: ae-2-2-12
   name: Comic Books
   children: []
@@ -4590,6 +4663,8 @@
   name: Magic & Novelties
   children: []
   attributes:
+  - color
+  - pattern
   - skill_level
 - id: ae-2-6
   name: Model Making
@@ -4599,6 +4674,8 @@
   - ae-2-6-3
   - ae-2-6-4
   attributes:
+  - color
+  - pattern
   - skill_level
 - id: ae-2-6-1
   name: Model Rocketry
@@ -4686,6 +4763,9 @@
   name: Scale Model Kits
   children: []
   attributes:
+  - color
+  - pattern
+  - recommended_age_group
   - scale_model_kit_type
   - scale_model_material
   - skill_level
@@ -8687,8 +8767,14 @@
   attributes:
   - arrangement
   - color
+  - flower_color
   - pattern
+  - plant_characteristics
+  - plant_class
+  - plant_name
   - stem_length
+  - suitable_space
+  - sunlight
 - id: ae-3-1-3-1
   name: Daisies
   children: []
@@ -8746,7 +8832,9 @@
   - ae-3-1-5-4
   - ae-3-1-5-5
   attributes:
+  - color
   - material
+  - pattern
 - id: ae-3-1-5-1
   name: Gift Bags
   children: []
@@ -8755,6 +8843,7 @@
   - bag/case_material
   - color
   - gift_bag_handle_design
+  - material
   - pattern
 - id: ae-3-1-5-2
   name: Gift Boxes & Tins
@@ -8797,7 +8886,9 @@
   attributes:
   - card_size
   - celebration_type
+  - color
   - item_style
+  - pattern
   - personalization_design
 - id: ae-3-1-6-2
   name: Greeting Cards
@@ -8805,15 +8896,20 @@
   attributes:
   - card_size
   - celebration_type
+  - color
   - item_style
+  - pattern
   - personalization_design
+  - theme
 - id: ae-3-1-6-3
   name: Note Cards
   children: []
   attributes:
   - card_size
   - celebration_type
+  - color
   - item_style
+  - pattern
   - personalization_design
 - id: ae-3-1-6-4
   name: Thank You Cards
@@ -8856,7 +8952,9 @@
   - ae-3-2-28
   - ae-3-2-29
   attributes:
+  - celebration_type
   - color
+  - material
   - pattern
 - id: ae-3-2-1
   name: Advice Cards
@@ -8887,6 +8985,8 @@
   attributes:
   - banner_design
   - celebration_type
+  - color
+  - pattern
 - id: ae-3-2-5
   name: Birthday Candles
   children: []
@@ -9125,14 +9225,18 @@
   children: []
   attributes:
   - celebration_type
+  - color
   - material
+  - pattern
   - theme
 - id: ae-3-2-19
   name: Party Games
   children: []
   attributes:
   - age_group
+  - color
   - game_difficulty
+  - pattern
 - id: ae-3-2-20
   name: Party Hats
   children: []
@@ -9186,6 +9290,8 @@
   children: []
   attributes:
   - celebration_type
+  - color
+  - pattern
 - id: ae-3-2-23
   name: Piñatas
   children: []

@@ -29,6 +29,7 @@
   - allergen_information
   - dietary_preferences
   - dietary_supplements
+  - flavor
 - id: fb-1-1
   name: Alcoholic Beverages
   children:
@@ -41,6 +42,7 @@
   - fb-1-1-7
   attributes:
   - allergen_information
+  - country
   - dietary_preferences
   - dietary_supplements
 - id: fb-1-1-1
@@ -304,6 +306,7 @@
   - fb-1-3-4
   attributes:
   - allergen_information
+  - coffee_product_form
   - caffeine_content
   - coffee_roast
   - country
@@ -318,11 +321,11 @@
   - caffeine_content
   - coffee_product_form
   - coffee_roast
-  - grind_size
   - country
   - dietary_preferences
   - dietary_supplements
   - flavor
+  - grind_size
 - id: fb-1-3-2
   name: Coffee Pods & Capsules
   children: []
@@ -420,6 +423,7 @@
   - allergen_information
   - dietary_preferences
   - dietary_supplements
+  - flavor
   - fruit_source
   - package_type
 - id: fb-1-8
@@ -531,6 +535,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - flavor
 - id: fb-1-12
   name: Soda
   children: []
@@ -560,6 +565,7 @@
   - beverage_product_form
   - dietary_preferences
   - dietary_supplements
+  - flavor
   - package_type
 - id: fb-1-13-2
   name: Sports Drinks
@@ -695,6 +701,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - flavor
+  - food_product_form
 - id: fb-2-1
   name: Bakery
   children:
@@ -716,6 +724,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - flavor
   - flour/grain_type
 - id: fb-2-1-1
   name: Bagels
@@ -739,6 +748,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - flavor
   - flour/grain_type
 - id: fb-2-1-4
   name: Cakes & Dessert Bars
@@ -1745,7 +1755,9 @@
   children: []
   attributes:
   - allergen_information
+  - color
   - dietary_preferences
+  - pattern
 - id: fb-2-9
   name: Frozen Desserts & Novelties
   children:
@@ -1824,6 +1836,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - food_product_form
 - id: fb-2-10-1
   name: Canned & Jarred Fruits
   children: []
@@ -3098,6 +3111,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - food_product_form
 - id: fb-2-12-2-1
   name: Canned Meats
   children: []
@@ -3275,6 +3289,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - food_product_form
 - id: fb-2-16-1
   name: Herbs & Spices
   children: []
@@ -3325,6 +3340,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - flavor
+  - food_product_form
 - id: fb-2-17-1
   name: Breadsticks
   children: []
@@ -3345,6 +3362,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - flavor
 - id: fb-2-17-2-2
   name: Granola Bars
   children: []
@@ -3539,6 +3557,8 @@
   name: Smoking Pipes
   children: []
   attributes:
+  - color
+  - pattern
   - pipe_shape
   - tobacco_type
 - id: fb-3-7
@@ -3558,8 +3578,10 @@
   name: E-Liquid
   children: []
   attributes:
+  - color
   - e_liquid_flavor
   - e_liquid_variety
+  - pattern
   - vg/pg_ratio
 - id: fb-3-7-2
   name: Electronic Cigarettes
@@ -3584,4 +3606,6 @@
 - id: fb-3-8
   name: Rolling Papers
   children: []
-  attributes: []
+  attributes:
+  - color
+  - pattern
