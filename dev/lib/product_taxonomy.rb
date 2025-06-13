@@ -3,6 +3,7 @@
 require "thor"
 require "active_support/all"
 require "active_model"
+require "debug"
 
 module ProductTaxonomy
   DATA_PATH = File.expand_path("../../data", __dir__)
@@ -19,6 +20,7 @@ require_relative "product_taxonomy/identifier_formatter"
 require_relative "product_taxonomy/localizations_validator"
 require_relative "product_taxonomy/models/mixins/localized"
 require_relative "product_taxonomy/models/mixins/indexed"
+require_relative "product_taxonomy/models/mixins/formatted_validation_errors"
 require_relative "product_taxonomy/models/attribute"
 require_relative "product_taxonomy/models/extended_attribute"
 require_relative "product_taxonomy/models/value"

@@ -90,6 +90,8 @@ module ProductTaxonomy
     end
 
     test "execute raises error when creating base attribute without values" do
+      stub_commands
+
       assert_raises(RuntimeError) do
         AddAttributeCommand.new(
           name: "Material",
@@ -100,6 +102,8 @@ module ProductTaxonomy
     end
 
     test "execute raises error when creating extended attribute with values" do
+      stub_commands
+
       assert_raises(RuntimeError) do
         AddAttributeCommand.new(
           name: "Clothing Color",
@@ -111,6 +115,8 @@ module ProductTaxonomy
     end
 
     test "execute raises error when base attribute for extended attribute doesn't exist" do
+      stub_commands
+
       assert_raises(ActiveModel::ValidationError) do
         AddAttributeCommand.new(
           name: "Clothing Material",
@@ -121,6 +127,8 @@ module ProductTaxonomy
     end
 
     test "execute raises error when attribute with same friendly_id already exists" do
+      stub_commands
+
       assert_raises(ActiveModel::ValidationError) do
         AddAttributeCommand.new(
           name: "Color", # This will generate the same friendly_id as @base_attribute
@@ -131,10 +139,7 @@ module ProductTaxonomy
     end
 
     test "execute creates values with correct friendly_ids and handles" do
-      DumpAttributesCommand.any_instance.stubs(:execute)
-      DumpValuesCommand.any_instance.stubs(:execute)
-      SyncEnLocalizationsCommand.any_instance.stubs(:execute)
-      GenerateDocsCommand.any_instance.stubs(:execute)
+      stub_commands
 
       AddAttributeCommand.new(
         name: "Material Type",
@@ -165,10 +170,7 @@ module ProductTaxonomy
       )
       Value.add(existing_value)
 
-      DumpAttributesCommand.any_instance.stubs(:execute)
-      DumpValuesCommand.any_instance.stubs(:execute)
-      SyncEnLocalizationsCommand.any_instance.stubs(:execute)
-      GenerateDocsCommand.any_instance.stubs(:execute)
+      stub_commands
 
       AddAttributeCommand.new(
         name: "Material Type",
@@ -200,6 +202,15 @@ module ProductTaxonomy
         description: "Product size information",
         values: "Small, Medium, Large",
       ).execute
+    end
+
+    private
+
+    def stub_commands
+      DumpAttributesCommand.any_instance.stubs(:execute)
+      DumpValuesCommand.any_instance.stubs(:execute)
+      SyncEnLocalizationsCommand.any_instance.stubs(:execute)
+      GenerateDocsCommand.any_instance.stubs(:execute)
     end
   end
 end

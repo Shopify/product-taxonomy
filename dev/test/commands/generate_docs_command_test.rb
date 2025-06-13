@@ -37,6 +37,17 @@ module ProductTaxonomy
         File.expand_path("docs/_releases/_attributes_template.html", @tmp_base_path),
       )
 
+      # Create a dummy latest.html for tests that update it
+      latest_html_dir = File.expand_path("docs/_releases", @tmp_base_path)
+      FileUtils.mkdir_p(latest_html_dir)
+      File.write(File.join(latest_html_dir, "latest.html"), <<~HTML)
+        ---
+        title: latest
+        include_in_release_list: true
+        redirect_to: /releases/setup/
+        ---
+      HTML
+
       GenerateDocsCommand.stubs(:docs_path).returns(File.expand_path("docs", @tmp_base_path))
       Command.any_instance.stubs(:load_taxonomy)
       Serializers::Category::Docs::SiblingsSerializer.stubs(:serialize_all).returns({ "siblings" => "foo" })
@@ -102,6 +113,7 @@ module ProductTaxonomy
         Generating release folder...
         Generating index.html...
         Generating attributes.html...
+        Updating latest.html redirect...
         Completed in 0.1 seconds
       OUTPUT
 
@@ -186,6 +198,33 @@ module ProductTaxonomy
         ---
       CONTENT
       assert_equal expected_attributes_content, File.read("#{release_path}/attributes.html")
+    end
+
+    test "execute updates latest.html redirect for versioned release" do
+      latest_html_path = File.expand_path("docs/_releases/latest.html", @tmp_base_path)
+
+      command = GenerateDocsCommand.new(version: "2024-01")
+      command.execute
+
+      expected_content = <<~HTML
+        ---
+        title: latest
+        include_in_release_list: true
+        redirect_to: /releases/2024-01/
+        ---
+      HTML
+      assert_equal expected_content, File.read(latest_html_path)
+    end
+
+    test "execute does not update latest.html redirect for unstable version" do
+      latest_html_path = File.expand_path("docs/_releases/latest.html", @tmp_base_path)
+      initial_content = File.read(latest_html_path)
+
+      command = GenerateDocsCommand.new({})
+      command.execute
+
+      # Content should remain unchanged
+      assert_equal initial_content, File.read(latest_html_path)
     end
 
     test "reverse_shopify_mapping_rules correctly reverses mappings" do

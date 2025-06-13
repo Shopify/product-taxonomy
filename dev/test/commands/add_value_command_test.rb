@@ -57,18 +57,24 @@ module ProductTaxonomy
     end
 
     test "execute raises error when attribute not found" do
+      stub_commands
+
       assert_raises(Indexed::NotFoundError) do
         AddValueCommand.new(name: "Blue", attribute_friendly_id: "nonexistent").execute
       end
     end
 
     test "execute raises error when trying to add value to extended attribute" do
+      stub_commands
+
       assert_raises(RuntimeError) do
         AddValueCommand.new(name: "Blue", attribute_friendly_id: "clothing_color").execute
       end
     end
 
     test "execute raises error when value already exists" do
+      stub_commands
+
       assert_raises(ActiveModel::ValidationError) do
         AddValueCommand.new(name: "Black", attribute_friendly_id: "color").execute
       end
@@ -77,10 +83,7 @@ module ProductTaxonomy
     test "execute warns when attribute has custom sorting" do
       @attribute.stubs(:manually_sorted?).returns(true)
 
-      DumpAttributesCommand.any_instance.stubs(:execute)
-      DumpValuesCommand.any_instance.stubs(:execute)
-      SyncEnLocalizationsCommand.any_instance.stubs(:execute)
-      GenerateDocsCommand.any_instance.stubs(:execute)
+      stub_commands
 
       logger = mock
       logger.expects(:info).once
@@ -95,10 +98,7 @@ module ProductTaxonomy
     end
 
     test "execute generates correct friendly_id and handle" do
-      DumpAttributesCommand.any_instance.stubs(:execute)
-      DumpValuesCommand.any_instance.stubs(:execute)
-      SyncEnLocalizationsCommand.any_instance.stubs(:execute)
-      GenerateDocsCommand.any_instance.stubs(:execute)
+      stub_commands
 
       IdentifierFormatter.expects(:format_friendly_id).with("color__Multi Word").returns("color__multi_word")
       IdentifierFormatter.expects(:format_handle).with("color__multi_word").returns("color__multi_word")
@@ -123,10 +123,7 @@ module ProductTaxonomy
     end
 
     test "execute assigns sequential IDs correctly" do
-      DumpAttributesCommand.any_instance.stubs(:execute)
-      DumpValuesCommand.any_instance.stubs(:execute)
-      SyncEnLocalizationsCommand.any_instance.stubs(:execute)
-      GenerateDocsCommand.any_instance.stubs(:execute)
+      stub_commands
 
       AddValueCommand.new(name: "Blue", attribute_friendly_id: "color").execute
       AddValueCommand.new(name: "Green", attribute_friendly_id: "color").execute
@@ -139,6 +136,15 @@ module ProductTaxonomy
       assert_equal "Green", new_values[1].name
       assert_not_nil Value.find_by(friendly_id: "color__blue")
       assert_not_nil Value.find_by(friendly_id: "color__green")
+    end
+
+    private
+
+    def stub_commands
+      DumpAttributesCommand.any_instance.stubs(:execute)
+      DumpValuesCommand.any_instance.stubs(:execute)
+      SyncEnLocalizationsCommand.any_instance.stubs(:execute)
+      GenerateDocsCommand.any_instance.stubs(:execute)
     end
   end
 end

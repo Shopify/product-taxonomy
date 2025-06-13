@@ -45,6 +45,9 @@ GEM
     crass (1.0.6)
     csv (3.3.2)
     date (3.4.1)
+    debug (1.10.0)
+      irb (~> 1.10)
+      reline (>= 0.3.8)
     drb (2.2.1)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
@@ -114,12 +117,12 @@ GEM
       sass-embedded (~> 1.75)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    json (2.11.3)
+    json (2.12.2)
     kramdown (2.5.1)
       rexml (>= 3.3.9)
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
-    language_server-protocol (3.17.0.4)
+    language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     liquid (4.0.4)
     listen (3.9.0)
@@ -134,6 +137,8 @@ GEM
     minitest (5.25.5)
     minitest-hooks (1.5.2)
       minitest (> 5.3)
+    minitest-silence (0.2.4)
+      minitest (~> 5.12)
     mocha (2.7.1)
       ruby2_keywords (>= 0.0.5)
     nokogiri (1.18.8)
@@ -170,7 +175,7 @@ GEM
       stringio
     public_suffix (6.0.1)
     racc (1.8.1)
-    rack (3.1.14)
+    rack (3.1.16)
     rack-session (2.1.1)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
@@ -194,7 +199,7 @@ GEM
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
-    rake (13.2.1)
+    rake (13.3.0)
     rb-fsevent (0.11.2)
     rb-inotify (0.11.1)
       ffi (~> 1.0)
@@ -205,7 +210,7 @@ GEM
       io-console (~> 0.5)
     rexml (3.4.0)
     rouge (4.5.1)
-    rubocop (1.75.2)
+    rubocop (1.76.1)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -213,13 +218,13 @@ GEM
       parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 2.9.3, < 3.0)
-      rubocop-ast (>= 1.44.0, < 2.0)
+      rubocop-ast (>= 1.45.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
-    rubocop-ast (1.44.1)
+    rubocop-ast (1.45.1)
       parser (>= 3.3.7.2)
       prism (~> 1.4)
-    rubocop-shopify (2.17.0)
+    rubocop-shopify (2.17.1)
       rubocop (~> 1.62)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
@@ -304,11 +309,13 @@ PLATFORMS
 DEPENDENCIES
   activemodel
   activesupport
+  debug (>= 1.0.0)
   jekyll (~> 4.3)
   jekyll-redirect-from (~> 0.16)
-  json (~> 2.11.3)
+  json (~> 2.12.2)
   minitest
   minitest-hooks
+  minitest-silence
   mocha
   railties
   rake

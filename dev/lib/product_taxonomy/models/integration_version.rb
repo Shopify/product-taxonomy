@@ -17,6 +17,8 @@ module ProductTaxonomy
       # @param current_shopify_version [String] The current version of the Shopify taxonomy.
       # @param base_path [String] The path to the base directory containing integration versions.
       def generate_all_distributions(output_path:, logger:, current_shopify_version: nil, base_path: INTEGRATIONS_PATH)
+        clear_shopify_integrations_directory(output_path:, logger:)
+        
         integration_versions = load_all_from_source(current_shopify_version:, base_path:)
         all_mappings = integration_versions.each_with_object([]) do |integration_version, all_mappings|
           logger.info("Generating integration mappings for #{integration_version.name}/#{integration_version.version}")
@@ -24,6 +26,18 @@ module ProductTaxonomy
           all_mappings.concat(integration_version.to_json(direction: :both))
         end
         generate_all_mappings_file(mappings: all_mappings, current_shopify_version:, output_path:)
+      end
+
+      # Clear the Shopify integrations directory before generating new files.
+      #
+      # @param output_path [String] The path to the output directory.
+      # @param logger [Logger] The logger to use for logging messages.
+      def clear_shopify_integrations_directory(output_path:, logger:)
+        shopify_integrations_path = File.join(integrations_output_path(output_path), "shopify")
+        if Dir.exist?(shopify_integrations_path)
+          FileUtils.rm_rf(shopify_integrations_path)
+          FileUtils.mkdir_p(shopify_integrations_path)
+        end
       end
 
       # Load all integration versions from the source data directory.
