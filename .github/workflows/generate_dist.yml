@@ -32,7 +32,7 @@ jobs:
         git checkout HEAD@{1} -- 'data/**/*.yml'
 
     # Setup dependencies
-    - uses: ruby/setup-ruby@e34163cd15f4bb403dcd72d98e295997e6a55798 # v1.238.0
+    - uses: ruby/setup-ruby@a4effe49ee8ee5b8b5091268c473a4628afb5651 # v1.245.0
       with:
         bundler-cache: true
     - uses: cue-lang/setup-cue@1713281ae501e533ff06108005dffeab9e2e5203 # v1.0.0
