@@ -14,7 +14,10 @@ module ProductTaxonomy
 
       # Create test files and directories
       FileUtils.mkdir_p(File.expand_path("dist", @tmp_base_path))
-      FileUtils.mkdir_p(File.expand_path("data/integrations/shopify/mappings", @tmp_base_path))
+      FileUtils.mkdir_p(File.expand_path("data/integrations/shopify/2023-12/mappings", @tmp_base_path))
+      FileUtils.mkdir_p(File.expand_path("data/integrations/shopify/2022-01/mappings", @tmp_base_path))
+      FileUtils.mkdir_p(File.expand_path("data/integrations/shopify/2022-10/mappings", @tmp_base_path))
+      FileUtils.mkdir_p(File.expand_path("data/integrations/google/2023-12/mappings", @tmp_base_path))
 
       # Create VERSION file
       File.write(@version_file_path, "2023-12")
@@ -31,11 +34,19 @@ module ProductTaxonomy
 
       # Create test mapping files
       File.write(
-        File.expand_path("data/integrations/shopify/mappings/to_shopify.yml", @tmp_base_path),
+        File.expand_path("data/integrations/shopify/2023-12/mappings/to_shopify.yml", @tmp_base_path),
         "output_taxonomy: shopify/2023-12-unstable",
       )
       File.write(
-        File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path),
+        File.expand_path("data/integrations/shopify/2022-01/mappings/to_shopify.yml", @tmp_base_path),
+        "input_taxonomy: shopify/2022-01-unstable",
+      )
+      File.write(
+        File.expand_path("data/integrations/shopify/2022-10/mappings/to_shopify.yml", @tmp_base_path),
+        "input_taxonomy: shopify/2022-07-unstable",
+      )
+      File.write(
+        File.expand_path("data/integrations/google/2023-12/mappings/from_shopify.yml", @tmp_base_path),
         "input_taxonomy: shopify/2023-12-unstable",
       )
 
@@ -140,8 +151,8 @@ module ProductTaxonomy
 
       command.execute
 
-      to_shopify_content = File.read(File.expand_path("data/integrations/shopify/mappings/to_shopify.yml", @tmp_base_path))
-      from_shopify_content = File.read(File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path))
+      to_shopify_content = File.read(File.expand_path("data/integrations/shopify/2023-12/mappings/to_shopify.yml", @tmp_base_path))
+      from_shopify_content = File.read(File.expand_path("data/integrations/google/2023-12/mappings/from_shopify.yml", @tmp_base_path))
 
       assert_equal "output_taxonomy: shopify/#{@version}", to_shopify_content
       assert_equal "input_taxonomy: shopify/#{@next_version}", from_shopify_content
@@ -152,12 +163,12 @@ module ProductTaxonomy
       command.execute
 
       # After execute, to_shopify should have the stable version
-      to_shopify_content = File.read(File.expand_path("data/integrations/shopify/mappings/to_shopify.yml", @tmp_base_path))
+      to_shopify_content = File.read(File.expand_path("data/integrations/shopify/2023-12/mappings/to_shopify.yml", @tmp_base_path))
       assert_match "output_taxonomy: shopify/#{@version}", to_shopify_content
       refute_match "output_taxonomy: shopify/2023-12-unstable", to_shopify_content
 
       # After execute, from_shopify should have the next unstable version
-      from_shopify_content = File.read(File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path))
+      from_shopify_content = File.read(File.expand_path("data/integrations/google/2023-12/mappings/from_shopify.yml", @tmp_base_path))
       assert_match "input_taxonomy: shopify/#{@next_version}", from_shopify_content
       refute_match "input_taxonomy: shopify/2023-12-unstable", from_shopify_content
     end
@@ -176,8 +187,8 @@ module ProductTaxonomy
       command.send(:check_git_state!)
       command.send(:generate_release_version!)
 
-      to_shopify_content_stage1 = File.read(File.expand_path("data/integrations/shopify/mappings/to_shopify.yml", @tmp_base_path))
-      from_shopify_content_stage1 = File.read(File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path))
+      to_shopify_content_stage1 = File.read(File.expand_path("data/integrations/shopify/2023-12/mappings/to_shopify.yml", @tmp_base_path))
+      from_shopify_content_stage1 = File.read(File.expand_path("data/integrations/google/2023-12/mappings/from_shopify.yml", @tmp_base_path))
 
       assert_match "output_taxonomy: shopify/#{@version}",
         to_shopify_content_stage1,
@@ -191,8 +202,8 @@ module ProductTaxonomy
 
       command.send(:move_to_next_version!)
 
-      to_shopify_content_stage2 = File.read(File.expand_path("data/integrations/shopify/mappings/to_shopify.yml", @tmp_base_path))
-      from_shopify_content_stage2 = File.read(File.expand_path("data/integrations/shopify/mappings/from_shopify.yml", @tmp_base_path))
+      to_shopify_content_stage2 = File.read(File.expand_path("data/integrations/shopify/2023-12/mappings/to_shopify.yml", @tmp_base_path))
+      from_shopify_content_stage2 = File.read(File.expand_path("data/integrations/google/2023-12/mappings/from_shopify.yml", @tmp_base_path))
 
       assert_match "output_taxonomy: shopify/#{@version}",
         to_shopify_content_stage2,
@@ -333,6 +344,44 @@ module ProductTaxonomy
 
       assert_equal "/repo/path", command.send(:git_repo_root)
       assert_equal "/repo/path", command.send(:git_repo_root) # Should use memoized value
+    end
+
+    test "update_mapping_files handles to_shopify.yml files specially" do
+      older_shopify_version = "2022-10"
+      latest_shopify_version = "2023-12"
+
+      older_shopify_dir = File.expand_path("data/integrations/shopify/#{older_shopify_version}/mappings", @tmp_base_path)
+      latest_shopify_dir = File.expand_path("data/integrations/shopify/#{latest_shopify_version}/mappings", @tmp_base_path)
+
+      FileUtils.mkdir_p(older_shopify_dir)
+      FileUtils.mkdir_p(latest_shopify_dir)
+
+      older_shopify_file = File.join(older_shopify_dir, "to_shopify.yml")
+      latest_shopify_file = File.join(latest_shopify_dir, "to_shopify.yml")
+
+      File.write(older_shopify_file, "output_taxonomy: shopify/#{older_shopify_version}-unstable")
+      File.write(latest_shopify_file, "output_taxonomy: shopify/#{latest_shopify_version}-unstable")
+
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+      command.send(:update_mapping_files, "to_shopify.yml", "output_taxonomy", "shopify/#{@version}")
+
+      assert_equal "output_taxonomy: shopify/#{older_shopify_version}-unstable", File.read(older_shopify_file)
+      assert_equal "output_taxonomy: shopify/#{@version}", File.read(latest_shopify_file)
+    end
+
+    test "update_mapping_files updates all from_shopify.yml files in non-shopify integrations" do
+      other_integration_dir = File.expand_path("data/integrations/other/mappings", @tmp_base_path)
+
+      FileUtils.mkdir_p(other_integration_dir)
+
+      other_integration_file = File.join(other_integration_dir, "from_shopify.yml")
+
+      File.write(other_integration_file, "input_taxonomy: shopify/2023-12-unstable")
+
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+      command.send(:update_mapping_files, "from_shopify.yml", "input_taxonomy", "shopify/#{@version}")
+
+      assert_equal "input_taxonomy: shopify/#{@version}", File.read(other_integration_file)
     end
   end
 end
