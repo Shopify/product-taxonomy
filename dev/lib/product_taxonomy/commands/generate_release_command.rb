@@ -131,7 +131,11 @@ module ProductTaxonomy
     end
 
     def update_mapping_files(filename, field_name, new_value)
-      Dir.glob(File.expand_path("integrations/**/mappings/#{filename}", ProductTaxonomy.data_path)).each do |file|
+      files = Dir.glob(File.expand_path("integrations/**/mappings/#{filename}", ProductTaxonomy.data_path))
+
+      files = [files.sort.last] if filename == "to_shopify.yml"
+
+      files.each do |file|
         content = File.read(file)
         content.gsub!(%r{#{field_name}: shopify/\d{4}-\d{2}(-unstable)?}, "#{field_name}: #{new_value}")
         File.write(file, content)

@@ -20,7 +20,7 @@ jobs:
       contents: read
     steps:
     # Checkout only the changed data files
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
     - name: Checkout PR
       run: gh pr checkout ${{ github.event.issue.number }}
       env:
@@ -32,10 +32,10 @@ jobs:
         git checkout HEAD@{1} -- 'data/**/*.yml'
 
     # Setup dependencies
-    - uses: ruby/setup-ruby@v1
+    - uses: ruby/setup-ruby@a4effe49ee8ee5b8b5091268c473a4628afb5651 # v1.245.0
       with:
         bundler-cache: true
-    - uses: cue-lang/setup-cue@v1.0.0
+    - uses: cue-lang/setup-cue@a93fa358375740cd8b0078f76355512b9208acb1 # v1.0.1
       with:
         version: 'v0.7.0'
     - name: Install b3sum
@@ -55,7 +55,7 @@ jobs:
 
         find "$target" -type f -print0 | sort -z | xargs -0 b3sum > "$manifest"
         echo -n "${{ secrets.MANIFEST_KEY }}" | b3sum --keyed "$manifest" > "$manifest_sig"
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
       with:
         name: dist
         path: |
@@ -70,13 +70,13 @@ jobs:
       contents: write
     steps:
     # Checkout code
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
     - name: Checkout PR
       run: gh pr checkout ${{ github.event.issue.number }}
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     # Verify and apply distribution files
-    - uses: actions/download-artifact@v4
+    - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
       with:
         name: dist
         path: .
