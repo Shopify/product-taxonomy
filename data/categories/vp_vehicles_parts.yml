@@ -1579,7 +1579,7 @@
 - id: vp-1-4-9-12
   name: Side Panels
   children: []
-  attributes: 
+  attributes:
   - color
   - item_condition
   - item_material
@@ -2735,7 +2735,7 @@
   - manufacturer_type
   - pattern
 - id: vp-1-4-21-1
-  name: Windows Glass
+  name: Window Glass
   children: []
   attributes:
   - color
@@ -2841,7 +2841,7 @@
   - motor_vehicle_type
 - id: vp-1-4-22-2
   name: Fan Shrouds
-  children:  []
+  children: []
   attributes:
   - item_condition
   - item_material
@@ -3781,6 +3781,7 @@
   - vp-1-5-7-8
   - vp-1-5-7-9
   - vp-1-5-7-10
+  - vp-1-5-7-11
   attributes:
   - color
   - pattern
@@ -3937,6 +3938,35 @@
   children: []
   attributes:
   - color
+  - pattern
+  - power_source
+  - vehicle_type
+- id: vp-1-5-7-11
+  name: Vehicle Lifts & Stands
+  children:
+  - vp-1-5-7-11-1
+  - vp-1-5-7-11-2
+  attributes:
+  - color
+  - material
+  - pattern
+  - power_source
+  - vehicle_type
+- id: vp-1-5-7-11-1
+  name: Vehicle Lifts
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - power_source
+  - vehicle_type
+- id: vp-1-5-7-11-2
+  name: Vehicle Stands
+  children: []
+  attributes:
+  - color
+  - material
   - pattern
   - power_source
   - vehicle_type
@@ -4371,7 +4401,7 @@
 - id: vp-1-6-5-1
   name: Pilot Helmets
   children: []
-  attributes: 
+  attributes:
   - accessory_size
   - color
   - gear_material
@@ -4381,7 +4411,7 @@
 - id: vp-1-6-5-2
   name: Aircraft Safety Flight Suits
   children: []
-  attributes: 
+  attributes:
   - accessory_size
   - color
   - gear_material
@@ -4540,7 +4570,7 @@
 - id: vp-1-6-7-5
   name: ATV & UTV Body Armor
   children: []
-  attributes: 
+  attributes:
   - accessory_size
   - color
   - gear_material
@@ -4564,7 +4594,7 @@
 - id: vp-1-6-7-7
   name: Racing Suits
   children: []
-  attributes: 
+  attributes:
   - accessory_size
   - color
   - gear_material
@@ -4583,7 +4613,7 @@
 - id: vp-1-6-7-9
   name: Racing Helmets
   children: []
-  attributes: 
+  attributes:
   - accessory_size
   - color
   - gear_material
@@ -4605,7 +4635,7 @@
 - id: vp-1-6-7-11
   name: Racing Neck Supports
   children: []
-  attributes: 
+  attributes:
   - accessory_size
   - color
   - gear_material

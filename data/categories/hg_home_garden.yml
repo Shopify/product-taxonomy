@@ -6313,6 +6313,7 @@
   - hg-11-6-30
   - hg-11-6-31
   - hg-11-6-32
+  - hg-11-6-33
   attributes:
   - color
   - pattern
@@ -7625,6 +7626,13 @@
   children: []
   attributes:
   - color
+  - pattern
+- id: hg-11-6-33
+  name: Air Fryer Accessories
+  children: []
+  attributes:
+  - color
+  - material
   - pattern
 - id: hg-11-7
   name: Kitchen Appliances
@@ -9788,7 +9796,7 @@
   - pattern
 - id: hg-11-10-5-7
   name: Stemware
-  children: 
+  children:
   - hg-11-10-5-7-1
   - hg-11-10-5-7-2
   - hg-11-10-5-7-3
@@ -9801,28 +9809,28 @@
   children: []
   attributes:
   - color
-  - drinkware_shape
   - drinkware_material
-  - style
+  - drinkware_shape
   - pattern
+  - style
 - id: hg-11-10-5-7-2
   name: Cocktail Glasses
   children: []
   attributes:
   - color
-  - drinkware_shape
   - drinkware_material
-  - style
+  - drinkware_shape
   - pattern
+  - style
 - id: hg-11-10-5-7-3
   name: Wine Glasses
   children: []
   attributes:
   - color
-  - drinkware_shape
   - drinkware_material
-  - style
+  - drinkware_shape
   - pattern
+  - style
 - id: hg-11-10-5-8
   name: Tumblers
   children: []
@@ -9894,14 +9902,95 @@
   - pattern
 - id: hg-11-10-6-5
   name: Forks
-  children: []
+  children:
+  - hg-11-10-6-5-1
+  - hg-11-10-6-5-2
+  - hg-11-10-6-5-3
+  - hg-11-10-6-5-4
+  - hg-11-10-6-5-5
   attributes:
   - accessory_size
   - color
   - flatware_material
   - pattern
+- id: hg-11-10-6-5-1
+  name: Dinner Forks
+  children: []
+  attributes:
+  - color
+  - flatware_material
+  - pattern
+- id: hg-11-10-6-5-2
+  name: Salad Forks
+  children: []
+  attributes:
+  - color
+  - flatware_material
+  - pattern
+- id: hg-11-10-6-5-3
+  name: Dessert Forks
+  children: []
+  attributes:
+  - color
+  - flatware_material
+  - pattern
+- id: hg-11-10-6-5-4
+  name: Fish Forks
+  children: []
+  attributes:
+  - color
+  - flatware_material
+  - pattern
+- id: hg-11-10-6-5-5
+  name: Cocktail Forks
+  children: []
+  attributes:
+  - color
+  - flatware_material
+  - pattern
 - id: hg-11-10-6-6
   name: Spoons
+  children:
+  - hg-11-10-6-6-1
+  - hg-11-10-6-6-2
+  - hg-11-10-6-6-3
+  - hg-11-10-6-6-4
+  - hg-11-10-6-6-5
+  attributes:
+  - accessory_size
+  - color
+  - flatware_material
+  - pattern
+- id: hg-11-10-6-6-1
+  name: Teaspoons
+  children: []
+  attributes:
+  - color
+  - flatware_material
+  - pattern
+- id: hg-11-10-6-6-2
+  name: Tablespoons
+  children: []
+  attributes:
+  - color
+  - flatware_material
+  - pattern
+- id: hg-11-10-6-6-3
+  name: Dessert Spoons
+  children: []
+  attributes:
+  - color
+  - flatware_material
+  - pattern
+- id: hg-11-10-6-6-4
+  name: Coffee Spoons
+  children: []
+  attributes:
+  - color
+  - flatware_material
+  - pattern
+- id: hg-11-10-6-6-5
+  name: Salt Spoons
   children: []
   attributes:
   - accessory_size
@@ -10692,50 +10781,50 @@
   - hg-12-1-19-1-6
   attributes:
   - color
-  - power_source
   - pattern
+  - power_source
 - id: hg-12-1-19-1-1
   name: Deep Water Culture (DWC)
   children: []
   attributes:
   - color
-  - power_source
   - pattern
+  - power_source
 - id: hg-12-1-19-1-2
   name: Ebb & Flow
   children: []
   attributes:
   - color
-  - power_source
   - pattern
+  - power_source
 - id: hg-12-1-19-1-3
   name: Nutrient Film Technique (NFT)
   children: []
   attributes:
   - color
-  - power_source
   - pattern
+  - power_source
 - id: hg-12-1-19-1-4
   name: Drip Systems
   children: []
   attributes:
   - color
-  - power_source
   - pattern
+  - power_source
 - id: hg-12-1-19-1-5
   name: Aeroponics
   children: []
   attributes:
   - color
-  - power_source
   - pattern
+  - power_source
 - id: hg-12-1-19-1-6
   name: Aquaponics
   children: []
   attributes:
   - color
-  - power_source
   - pattern
+  - power_source
 - id: hg-12-1-19-2
   name: Growing Media
   children:
@@ -11491,12 +11580,48 @@
   - power_source
 - id: hg-12-3-14
   name: Tractors
-  children: []
+  children:
+  - hg-12-3-14-1
+  - hg-12-3-14-2
+  - hg-12-3-14-3
   attributes:
   - color
   - engine_type
   - pattern
   - power_source
+  - tractor_accessories_included
+- id: hg-12-3-14-1
+  name: Garden Tractors
+  children: []
+  attributes:
+  - color
+  - drive_type
+  - engine_type
+  - fuel_supply
+  - item_condition
+  - pattern
+  - tractor_accessories_included
+- id: hg-12-3-14-2
+  name: Lawn Tractors
+  children: []
+  attributes:
+  - color
+  - drive_type
+  - engine_type
+  - fuel_supply
+  - item_condition
+  - pattern
+  - tractor_accessories_included
+- id: hg-12-3-14-3
+  name: Sub-Compact Tractors
+  children: []
+  attributes:
+  - color
+  - drive_type
+  - engine_type
+  - fuel_supply
+  - item_condition
+  - pattern
   - tractor_accessories_included
 - id: hg-12-3-15
   name: Weed Trimmers

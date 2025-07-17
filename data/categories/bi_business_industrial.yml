@@ -275,6 +275,7 @@
   name: Agriculture
   children:
   - bi-2-1
+  - bi-2-2
   attributes:
   - color
   - pattern
@@ -285,6 +286,9 @@
   - bi-2-1-2
   - bi-2-1-3
   - bi-2-1-4
+  - bi-2-1-5
+  - bi-2-1-6
+  - bi-2-1-7
   attributes:
   - color
   - pattern
@@ -394,6 +398,167 @@
   - material
   - pattern
   - suitable_for_animal_type
+- id: bi-2-1-5
+  name: Beekeeping
+  children:
+  - bi-2-1-5-1
+  - bi-2-1-5-2
+  - bi-2-1-5-3
+  attributes:
+  - color
+  - material
+  - pattern
+- id: bi-2-1-5-1
+  name: Bee Hives
+  children: []
+  attributes:
+  - material
+- id: bi-2-1-5-2
+  name: Bee Feed
+  children: []
+  attributes: []
+- id: bi-2-1-5-3
+  name: Beekeeping Equipment
+  children:
+  - bi-2-1-5-3-1
+  - bi-2-1-5-3-2
+  attributes: []
+- id: bi-2-1-5-3-1
+  name: Beekeeping Protective Gear
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - gear_material
+  - pattern
+  - protective_gear_features
+  - target_gender
+- id: bi-2-1-5-3-2
+  name: Honey Extraction Equipment
+  children: []
+  attributes:
+  - material
+- id: bi-2-1-6
+  name: Health & Veterinary Supplies
+  children:
+  - bi-2-1-6-1
+  - bi-2-1-6-2
+  - bi-2-1-6-3
+  attributes: []
+- id: bi-2-1-6-1
+  name: Vaccines & Medications
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+- id: bi-2-1-6-2
+  name: Surgical Supplies
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+- id: bi-2-1-6-3
+  name: Diagnostic Equipment
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+- id: bi-2-1-7
+  name: Smart Farming Systems
+  children:
+  - bi-2-1-7-1
+  - bi-2-1-7-2
+  - bi-2-1-7-3
+  attributes: []
+- id: bi-2-1-7-1
+  name: Livestock Monitoring Systems
+  children: []
+  attributes:
+  - connectivity_technology
+- id: bi-2-1-7-2
+  name: Automated Feeders
+  children: []
+  attributes:
+  - connectivity_technology
+- id: bi-2-1-7-3
+  name: Digital Water Management Systems
+  children: []
+  attributes:
+  - connectivity_technology
+- id: bi-2-2
+  name: Agriculture Machinery
+  children:
+  - bi-2-2-1
+  attributes: []
+- id: bi-2-2-1
+  name: Tillage
+  children:
+  - bi-2-2-1-1
+  - bi-2-2-1-2
+  - bi-2-2-1-3
+  - bi-2-2-1-4
+  - bi-2-2-1-5
+  - bi-2-2-1-6
+  - bi-2-2-1-7
+  attributes:
+  - color
+  - material
+  - pattern
+- id: bi-2-2-1-1
+  name: Disc Harrows
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+- id: bi-2-2-1-2
+  name: Rotary Tillers
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+- id: bi-2-2-1-3
+  name: Chisel Plows
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+- id: bi-2-2-1-4
+  name: Moldboard Plows
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+- id: bi-2-2-1-5
+  name: Spike Harrows
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+- id: bi-2-2-1-6
+  name: Subsoilers
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+- id: bi-2-2-1-7
+  name: Vertical Tillage
+  children: []
+  attributes:
+  - blade_curve
+  - blade_design
+  - blade_type
+  - color
+  - material
+  - pattern
 - id: bi-3
   name: Automation Control Components
   children:
@@ -1176,6 +1341,9 @@
   - bi-11-15
   - bi-11-16
   - bi-11-17
+  - bi-11-18
+  - bi-11-19
+  - bi-11-20
   attributes:
   - color
   - pattern
@@ -1361,6 +1529,10 @@
   - bi-11-12-2
   - bi-11-12-3
   - bi-11-12-4
+  - bi-11-12-5
+  - bi-11-12-6
+  - bi-11-12-7
+  - bi-11-12-8
   attributes:
   - color
   - drive_type
@@ -1370,28 +1542,88 @@
   children: []
   attributes:
   - color
+  - engine_type
+  - fuel_supply
+  - item_condition
   - pattern
+  - tractor_accessories_included
 - id: bi-11-12-2
   name: Compact Tractors
   children: []
   attributes:
   - color
   - drive_type
+  - engine_type
+  - fuel_supply
+  - item_condition
   - pattern
+  - tractor_accessories_included
 - id: bi-11-12-3
   name: Row Crop Tractors
   children: []
   attributes:
   - color
   - drive_type
+  - engine_type
+  - fuel_supply
+  - item_condition
   - pattern
+  - tractor_accessories_included
 - id: bi-11-12-4
   name: Utility Tractors
   children: []
   attributes:
   - color
   - drive_type
+  - engine_type
+  - fuel_supply
+  - item_condition
   - pattern
+  - tractor_accessories_included
+- id: bi-11-12-5
+  name: Orchard Tractors
+  children: []
+  attributes:
+  - color
+  - drive_type
+  - engine_type
+  - fuel_supply
+  - item_condition
+  - pattern
+  - tractor_accessories_included
+- id: bi-11-12-6
+  name: High-Crop Tractors
+  children: []
+  attributes:
+  - color
+  - drive_type
+  - engine_type
+  - fuel_supply
+  - item_condition
+  - pattern
+  - tractor_accessories_included
+- id: bi-11-12-7
+  name: Vineyard Tractors
+  children: []
+  attributes:
+  - color
+  - drive_type
+  - engine_type
+  - fuel_supply
+  - item_condition
+  - pattern
+  - tractor_accessories_included
+- id: bi-11-12-8
+  name: Track Tractors
+  children: []
+  attributes:
+  - color
+  - drive_type
+  - engine_type
+  - fuel_supply
+  - item_condition
+  - pattern
+  - tractor_accessories_included
 - id: bi-11-13
   name: Trenchers
   children:
@@ -1454,9 +1686,150 @@
   - propulsion_type
 - id: bi-11-17
   name: Heavy Machinery Parts & Accessories
+  children:
+  - bi-11-17-1
+  - bi-11-17-2
+  - bi-11-17-3
+  - bi-11-17-4
+  - bi-11-17-5
+  - bi-11-17-6
+  - bi-11-17-7
+  attributes:
+  - color
+  - pattern
+- id: bi-11-17-1
+  name: Buckets
   children: []
   attributes:
   - color
+  - item_condition
+  - material
+  - pattern
+- id: bi-11-17-2
+  name: Hydraulic Hammers
+  children: []
+  attributes:
+  - color
+  - item_condition
+  - material
+  - pattern
+- id: bi-11-17-3
+  name: Quick Couplers
+  children: []
+  attributes:
+  - color
+  - item_condition
+  - material
+  - pattern
+- id: bi-11-17-4
+  name: Compactors & Rollers
+  children: []
+  attributes:
+  - color
+  - item_condition
+  - material
+  - pattern
+- id: bi-11-17-5
+  name: Thumbs
+  children: []
+  attributes:
+  - color
+  - item_condition
+  - material
+  - pattern
+- id: bi-11-17-6
+  name: Rippers
+  children: []
+  attributes:
+  - color
+  - item_condition
+  - material
+  - pattern
+- id: bi-11-17-7
+  name: Grapples & Grabs
+  children: []
+  attributes:
+  - color
+  - item_condition
+  - material
+  - pattern
+- id: bi-11-18
+  name: Cranes
+  children:
+  - bi-11-18-1
+  - bi-11-18-2
+  - bi-11-18-3
+  - bi-11-18-4
+  - bi-11-18-5
+  - bi-11-18-6
+  attributes:
+  - color
+  - item_condition
+  - material
+  - pattern
+- id: bi-11-18-1
+  name: Tower Cranes
+  children: []
+  attributes:
+  - color
+  - item_condition
+  - material
+  - pattern
+- id: bi-11-18-2
+  name: Truck Cranes
+  children: []
+  attributes:
+  - color
+  - item_condition
+  - material
+  - pattern
+- id: bi-11-18-3
+  name: Crawler Cranes
+  children: []
+  attributes:
+  - color
+  - item_condition
+  - material
+  - pattern
+- id: bi-11-18-4
+  name: Rough Terrain Cranes
+  children: []
+  attributes:
+  - color
+  - item_condition
+  - material
+  - pattern
+- id: bi-11-18-5
+  name: Telescopic Cranes
+  children: []
+  attributes:
+  - color
+  - item_condition
+  - material
+  - pattern
+- id: bi-11-18-6
+  name: All Terrain Cranes
+  children: []
+  attributes:
+  - color
+  - item_condition
+  - material
+  - pattern
+- id: bi-11-19
+  name: Electric & Hybrid Machinery
+  children: []
+  attributes:
+  - color
+  - item_condition
+  - material
+  - pattern
+- id: bi-11-20
+  name: Concrete Mixers
+  children: []
+  attributes:
+  - color
+  - item_condition
+  - material
   - pattern
 - id: bi-12
   name: Hotel & Hospitality
@@ -4359,6 +4732,7 @@
   - bi-25-10
   - bi-25-11
   - bi-25-12
+  - bi-25-13
   attributes:
   - color
   - pattern
@@ -4683,3 +5057,19 @@
   - color
   - gear_material
   - pattern
+- id: bi-25-13
+  name: Safety Boots
+  children: []
+  attributes:
+  - age_group
+  - care_instructions
+  - closure_type
+  - color
+  - footwear_material
+  - heel_height_type
+  - pattern
+  - shoe_features
+  - shoe_fit
+  - shoe_size
+  - target_gender
+  - toe_style
