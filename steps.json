@@ -1,0 +1,665 @@
+{
+  "version": "2025-08-22",
+  "steps": [
+    {
+      "op": "add_attribute",
+      "name": "Bluetooth version",
+      "description": "Specifies the Bluetooth specification version implemented, affecting compatibility, range, and power efficiency.",
+      "values": [
+        "2.0",
+        "2.1",
+        "3.0",
+        "4.0",
+        "4.1",
+        "4.2",
+        "5.0",
+        "5.1",
+        "5.2",
+        "5.3"
+      ]
+    },
+    {
+      "op": "add_attribute",
+      "name": "Ingress protection rating",
+      "description": "Indicates the IP (Ingress Protection) rating according to the IEC 60529 standard, classifying dust and water resistance of the device or accessory housing.",
+      "values": [
+        "IP20",
+        "IP22",
+        "IP44",
+        "IP52",
+        "IP54",
+        "IP55",
+        "IP56",
+        "IP57",
+        "IP58",
+        "IP64",
+        "IP65",
+        "IP66",
+        "IP67",
+        "IP68",
+        "IP69",
+        "IP69K",
+        "IPX0",
+        "IPX1",
+        "IPX2",
+        "IPX3",
+        "IPX4",
+        "IPX5",
+        "IPX6",
+        "IPX7",
+        "IPX8",
+        "Not rated",
+        "Other"
+      ]
+    },
+    {
+      "op": "add_attribute",
+      "name": "Number of items included",
+      "description": "Specifies the number of individual components or products included in a bundle or package, such as handsets or lenses.",
+      "values": []
+    },
+    {
+      "op": "add_attribute",
+      "name": "Number of telephone lines supported",
+      "description": "Indicates the number of telephone lines or jacks a device can support, whether they are analog, SIP/VoIP, or RJ-style ports.",
+      "values": []
+    },
+    {
+      "op": "add_attribute",
+      "name": "Standby time",
+      "description": "Specifies the maximum duration a device can remain powered on in idle mode on a single charge.",
+      "values": []
+    },
+    {
+      "op": "add_attribute",
+      "name": "Talk time",
+      "description": "Specifies the maximum continuous voice call duration the device can provide on a single battery charge.",
+      "values": [
+        "hours (h)",
+        "minutes (min)"
+      ]
+    },
+    {
+      "op": "add_attribute",
+      "name": "Compatible phone brand",
+      "description": "Identifies the smartphone brand(s) this accessory or part is designed to fit.",
+      "values": [
+        "Apple",
+        "Samsung",
+        "Google",
+        "Huawei",
+        "Xiaomi",
+        "OnePlus",
+        "Oppo",
+        "Sony",
+        "Motorola",
+        "Nokia",
+        "LG",
+        "Vivo",
+        "Asus",
+        "HTC",
+        "Realme",
+        "Honor",
+        "ZTE",
+        "Infinix",
+        "Tecno",
+        "Lenovo",
+        "Nothing",
+        "BlackBerry",
+        "Other",
+        "Universal"
+      ]
+    },
+    {
+      "op": "add_attribute",
+      "name": "Pack quantity",
+      "description": "Number of individual items included in the retail package.",
+      "values": []
+    },
+    {
+      "op": "add_attribute",
+      "name": "Wireless charging standard",
+      "description": "Specifies the wireless charging protocol supported by the product.",
+      "values": [
+        "None",
+        "Qi",
+        "Qi2",
+        "MagSafe",
+        "PMA",
+        "Powermat",
+        "AirFuel",
+        "Proprietary",
+        "Other"
+      ]
+    },
+    {
+      "op": "add_attribute",
+      "name": "Gimbal stabilization axes",
+      "description": "Specifies the number and type of axes the gimbal stabilizes, including options for continuous rotation.",
+      "values": [
+        "1-axis",
+        "2-axis",
+        "3-axis",
+        "4-axis",
+        "360° continuous rotation"
+      ]
+    },
+    {
+      "op": "add_attribute",
+      "name": "MagSafe compatibility",
+      "description": "Indicates if an accessory supports Apple's MagSafe magnetic attachment system.",
+      "values": [
+        "MagSafe compatible",
+        "Not MagSafe compatible",
+        "Requires adhesive ring"
+      ]
+    },
+    {
+      "op": "add_attribute",
+      "name": "Mobile network operator",
+      "description": "Names the carrier or mobile virtual network operator (MVNO) associated with a SIM card or prepaid service, enabling connectivity.",
+      "values": [
+        "AT&T",
+        "Verizon",
+        "T-Mobile",
+        "Vodafone",
+        "Orange",
+        "Telefónica",
+        "Telstra",
+        "Rogers",
+        "EE",
+        "Airtel",
+        "China Mobile",
+        "NTT Docomo",
+        "Globe",
+        "MTN",
+        "Optus",
+        "KPN",
+        "TELUS",
+        "SK Telecom",
+        "O2",
+        "Digicel",
+        "Swisscom",
+        "TIM",
+        "Telkomsel",
+        "Movistar",
+        "Du",
+        "Etisalat",
+        "KT"
+      ]
+    },
+    {
+      "op": "add_attribute",
+      "name": "Plan type",
+      "description": "Defines the prepaid plan based on the services or bundles available such as voice, data, SMS or combinations thereof.",
+      "values": [
+        "Data only",
+        "Voice only",
+        "SMS only",
+        "Voice & data",
+        "Voice & SMS",
+        "Data & SMS",
+        "Voice, data & SMS",
+        "Unlimited plan",
+        "International calling card",
+        "Top-up/credit",
+        "Add-on/booster",
+        "eSIM day pass",
+        "Subscription voucher",
+        "Satellite airtime"
+      ]
+    },
+    {
+      "op": "add_attribute",
+      "name": "SMS allowance",
+      "description": "Specifies the number of SMS messages included in the plan before additional charges apply.",
+      "values": [
+        "None",
+        "Pay-per-message",
+        "50",
+        "100",
+        "250",
+        "500",
+        "1000",
+        "Unlimited"
+      ]
+    },
+    {
+      "op": "add_attribute",
+      "name": "Activation method",
+      "description": "Describes how prepaid credit, SIM, or card is activated or applied by the user.",
+      "values": [
+        "Automatic on first use",
+        "USSD code",
+        "Voucher or PIN entry",
+        "Online portal",
+        "Mobile app",
+        "QR code scan",
+        "Customer service call",
+        "In-store activation",
+        "SIM toolkit menu",
+        "Scratch-Off PIN",
+        "Dial-In PIN",
+        "Automatic Top-Up",
+        "Other"
+      ]
+    },
+    {
+      "op": "add_attribute",
+      "name": "Data allowance",
+      "description": "Specifies the volume of high-speed mobile data included with the plan, expressed in gigabytes (GB).",
+      "values": [
+        "megabytes (MB)",
+        "gigabytes (GB)"
+      ]
+    },
+    {
+      "op": "add_attribute",
+      "name": "Number of SMS messages included",
+      "description": "Specifies the number of SMS/text messages bundled with a prepaid plan or SIM card.",
+      "values": []
+    },
+    {
+      "op": "add_attribute",
+      "name": "Validity period",
+      "description": "Specifies the duration in days for which the credit, SIM, or plan remains active after activation.",
+      "values": [
+        "days (d)"
+      ]
+    },
+    {
+      "op": "add_attribute",
+      "name": "Voice minutes included",
+      "description": "Indicates the number of voice-call minutes included with the prepaid product, which may be used for domestic or in-network calls.",
+      "values": [
+        "30",
+        "60",
+        "90",
+        "100",
+        "120",
+        "200",
+        "300",
+        "500",
+        "1000",
+        "Unlimited"
+      ]
+    },
+    {
+      "op": "add_attribute",
+      "name": "Warranty period",
+      "description": "Specifies the length of the warranty provided with the product.",
+      "values": [
+        "days (d)",
+        "months (mo)",
+        "years (yr)"
+      ]
+    },
+    {
+      "op": "add_attribute",
+      "name": "Front camera resolution",
+      "description": "Maximum resolution of the front-facing camera, measured in megapixels (MP).",
+      "values": []
+    },
+    {
+      "op": "add_category",
+      "name": "Emergency Phones",
+      "parent_id": "el-4-8"
+    },
+    {
+      "op": "add_category",
+      "name": "PBX Systems & Components",
+      "parent_id": "el-4-8"
+    },
+    {
+      "op": "add_attributes_to_categories",
+      "attribute_friendly_ids": [
+        "bluetooth-version",
+        "ingress-protection-rating"
+      ],
+      "category_ids": [
+        "el-4-8-1"
+      ],
+      "include_descendants": true
+    },
+    {
+      "op": "add_category",
+      "name": "Analog Landline Phones",
+      "parent_id": "el-4-8-2"
+    },
+    {
+      "op": "add_category",
+      "name": "VoIP Phones",
+      "parent_id": "el-4-8-2"
+    },
+    {
+      "op": "add_category",
+      "name": "Cordless Phone Handsets",
+      "parent_id": "el-4-8-3"
+    },
+    {
+      "op": "add_attributes_to_categories",
+      "attribute_friendly_ids": [
+        "ingress-protection-rating",
+        "number-of-telephone-lines-supported",
+        "standby-time",
+        "talk-time"
+      ],
+      "category_ids": [
+        "el-4-8-3"
+      ],
+      "include_descendants": true
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone Armbands",
+      "parent_id": "el-4-8-4"
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone Car Mounts",
+      "parent_id": "el-4-8-4"
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone Grips & Holders",
+      "parent_id": "el-4-8-4"
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone Repair Tools",
+      "parent_id": "el-4-8-4"
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone Screen Protectors",
+      "parent_id": "el-4-8-4"
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone Skins & Wraps",
+      "parent_id": "el-4-8-4"
+    },
+    {
+      "op": "add_attributes_to_categories",
+      "attribute_friendly_ids": [
+        "compatible-phone-brand",
+        "pack-quantity",
+        "wireless-charging-standard"
+      ],
+      "category_ids": [
+        "el-4-8-4"
+      ],
+      "include_descendants": true
+    },
+    {
+      "op": "add_category",
+      "name": "Lens Protectors",
+      "parent_id": "el-4-8-4-1"
+    },
+    {
+      "op": "add_attributes_to_categories",
+      "attribute_friendly_ids": [
+        "compatible-phone-brand",
+        "gimbal-stabilization-axes",
+        "magsafe-compatibility",
+        "pack-quantity"
+      ],
+      "category_ids": [
+        "el-4-8-4-1"
+      ],
+      "include_descendants": true
+    },
+    {
+      "op": "add_category",
+      "name": "Lens Filters",
+      "parent_id": "el-4-8-4-1-1"
+    },
+    {
+      "op": "add_category",
+      "name": "Lens Protectors",
+      "parent_id": "el-4-8-4-1-1"
+    },
+    {
+      "op": "add_attributes_to_categories",
+      "attribute_friendly_ids": [
+        "magsafe-compatibility"
+      ],
+      "category_ids": [
+        "el-4-8-4-1-2"
+      ],
+      "include_descendants": true
+    },
+    {
+      "op": "add_attributes_to_categories",
+      "attribute_friendly_ids": [
+        "bluetooth-version"
+      ],
+      "category_ids": [
+        "el-4-8-4-1-3"
+      ],
+      "include_descendants": true
+    },
+    {
+      "op": "add_attributes_to_categories",
+      "attribute_friendly_ids": [
+        "bluetooth-version",
+        "gimbal-stabilization-axes"
+      ],
+      "category_ids": [
+        "el-4-8-4-1-4"
+      ],
+      "include_descendants": true
+    },
+    {
+      "op": "add_category",
+      "name": "Battery Phone Cases",
+      "parent_id": "el-4-8-4-2"
+    },
+    {
+      "op": "add_attributes_to_categories",
+      "attribute_friendly_ids": [
+        "magsafe-compatibility"
+      ],
+      "category_ids": [
+        "el-4-8-4-2"
+      ],
+      "include_descendants": true
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone Charms",
+      "parent_id": "el-4-8-4-3"
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone Lanyards & Straps",
+      "parent_id": "el-4-8-4-3"
+    },
+    {
+      "op": "add_category",
+      "name": "eSIMs",
+      "parent_id": "el-4-8-4-4"
+    },
+    {
+      "op": "add_attributes_to_categories",
+      "attribute_friendly_ids": [
+        "mobile-network-operator",
+        "plan-type",
+        "sms-allowance"
+      ],
+      "category_ids": [
+        "el-4-8-4-4"
+      ],
+      "include_descendants": true
+    },
+    {
+      "op": "add_attributes_to_categories",
+      "attribute_friendly_ids": [
+        "activation-method",
+        "data-allowance",
+        "number-of-sms-messages-included",
+        "plan-type",
+        "validity-period",
+        "voice-minutes-included"
+      ],
+      "category_ids": [
+        "el-4-8-4-4-1"
+      ],
+      "include_descendants": true
+    },
+    {
+      "op": "add_attributes_to_categories",
+      "attribute_friendly_ids": [
+        "data-allowance",
+        "mobile-network-operator",
+        "sms-allowance",
+        "validity-period"
+      ],
+      "category_ids": [
+        "el-4-8-4-4-2"
+      ],
+      "include_descendants": true
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone Adhesives & Tapes",
+      "parent_id": "el-4-8-4-5"
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone Audio & Speaker Parts",
+      "parent_id": "el-4-8-4-5"
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone Buttons & Flex Cables",
+      "parent_id": "el-4-8-4-5"
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone Camera Parts",
+      "parent_id": "el-4-8-4-5"
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone Connectors & Charging Ports",
+      "parent_id": "el-4-8-4-5"
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone Housings & Back Covers",
+      "parent_id": "el-4-8-4-5"
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone Logic Boards",
+      "parent_id": "el-4-8-4-5"
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone Screens & Screen Digitizers",
+      "parent_id": "el-4-8-4-5"
+    },
+    {
+      "op": "add_category",
+      "name": "Mobile Phone SIM & MicroSD Card Trays",
+      "parent_id": "el-4-8-4-5"
+    },
+    {
+      "op": "add_attributes_to_categories",
+      "attribute_friendly_ids": [
+        "compatible-phone-brand",
+        "warranty-period"
+      ],
+      "category_ids": [
+        "el-4-8-4-5"
+      ],
+      "include_descendants": true
+    },
+    {
+      "op": "add_category",
+      "name": "Feature Phones",
+      "parent_id": "el-4-8-5"
+    },
+    {
+      "op": "add_category",
+      "name": "Smart Phones",
+      "parent_id": "el-4-8-5"
+    },
+    {
+      "op": "add_attributes_to_categories",
+      "attribute_friendly_ids": [
+        "bluetooth-version",
+        "front-camera-resolution",
+        "ingress-protection-rating",
+        "warranty-period",
+        "wireless-charging-standard"
+      ],
+      "category_ids": [
+        "el-4-8-5"
+      ],
+      "include_descendants": true
+    },
+    {
+      "op": "add_category",
+      "name": "Satellite Communicators & Messengers",
+      "parent_id": "el-4-8-6"
+    },
+    {
+      "op": "add_category",
+      "name": "Satellite Phone Accessories",
+      "parent_id": "el-4-8-6"
+    },
+    {
+      "op": "add_category",
+      "name": "Satellite Phone Pre-Paid Cards & SIM Cards",
+      "parent_id": "el-4-8-6"
+    },
+    {
+      "op": "add_attributes_to_categories",
+      "attribute_friendly_ids": [
+        "ingress-protection-rating",
+        "standby-time",
+        "talk-time"
+      ],
+      "category_ids": [
+        "el-4-8-6"
+      ],
+      "include_descendants": true
+    },
+    {
+      "op": "add_category",
+      "name": "Call Blockers",
+      "parent_id": "el-4-8-7"
+    },
+    {
+      "op": "add_category",
+      "name": "DSL Filters",
+      "parent_id": "el-4-8-7"
+    },
+    {
+      "op": "add_attributes_to_categories",
+      "attribute_friendly_ids": [
+        "compatible-phone-brand",
+        "pack-quantity"
+      ],
+      "category_ids": [
+        "el-4-8-7"
+      ],
+      "include_descendants": true
+    },
+    {
+      "op": "add_attributes_to_categories",
+      "attribute_friendly_ids": [
+        "activation-method",
+        "data-allowance",
+        "number-of-sms-messages-included",
+        "validity-period"
+      ],
+      "category_ids": [
+        "el-4-8-7-1"
+      ],
+      "include_descendants": true
+    }
+  ]
+}
