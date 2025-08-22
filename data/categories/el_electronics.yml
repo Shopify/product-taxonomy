@@ -1604,6 +1604,8 @@
   - el-4-8-5
   - el-4-8-6
   - el-4-8-7
+  - el-4-8-8
+  - el-4-8-9
   attributes:
   - color
   - pattern
@@ -1616,22 +1618,37 @@
   - pattern
 - id: el-4-8-2
   name: Corded Phones
-  children: []
+  children:
+  - el-4-8-2-1
+  - el-4-8-2-2
   attributes:
   - color
   - communication_device_features
   - handset_type
   - pattern
   - telephone_style
+- id: el-4-8-2-1
+  name: Analog Landline Phones
+  children: []
+  attributes: []
+- id: el-4-8-2-2
+  name: VoIP Phones
+  children: []
+  attributes: []
 - id: el-4-8-3
   name: Cordless Phones
-  children: []
+  children:
+  - el-4-8-3-1
   attributes:
   - color
   - communication_device_features
   - handset_type
   - pattern
   - telephone_style
+- id: el-4-8-3-1
+  name: Cordless Phone Handsets
+  children: []
+  attributes: []
 - id: el-4-8-4
   name: Mobile & Smart Phone Accessories
   children:
@@ -1642,6 +1659,12 @@
   - el-4-8-4-5
   - el-4-8-4-6
   - el-4-8-4-7
+  - el-4-8-4-8
+  - el-4-8-4-9
+  - el-4-8-4-10
+  - el-4-8-4-11
+  - el-4-8-4-12
+  - el-4-8-4-13
   attributes:
   - color
   - pattern
@@ -1652,18 +1675,29 @@
   - el-4-8-4-1-2
   - el-4-8-4-1-3
   - el-4-8-4-1-4
+  - el-4-8-4-1-5
   attributes:
   - color
   - device_interface
   - pattern
 - id: el-4-8-4-1-1
   name: Lenses
-  children: []
+  children:
+  - el-4-8-4-1-1-1
+  - el-4-8-4-1-1-2
   attributes:
   - camera_lens_type
   - color
   - device_interface
   - pattern
+- id: el-4-8-4-1-1-1
+  name: Lens Filters
+  children: []
+  attributes: []
+- id: el-4-8-4-1-1-2
+  name: Lens Protectors
+  children: []
+  attributes: []
 - id: el-4-8-4-1-2
   name: Lighting Kits
   children: []
@@ -1692,9 +1726,14 @@
   - material
   - mount/stand_features
   - pattern
+- id: el-4-8-4-1-5
+  name: Lens Protectors
+  children: []
+  attributes: []
 - id: el-4-8-4-2
   name: Mobile Phone Cases
-  children: []
+  children:
+  - el-4-8-4-2-1
   attributes:
   - bag/case_material
   - case_type
@@ -1703,17 +1742,32 @@
   - mobile_phone_case_features
   - pattern
   - product_certifications_standards
+- id: el-4-8-4-2-1
+  name: Battery Phone Cases
+  children: []
+  attributes: []
 - id: el-4-8-4-3
   name: Mobile Phone Charms & Straps
-  children: []
+  children:
+  - el-4-8-4-3-1
+  - el-4-8-4-3-2
   attributes:
   - color
   - pattern
+- id: el-4-8-4-3-1
+  name: Mobile Phone Charms
+  children: []
+  attributes: []
+- id: el-4-8-4-3-2
+  name: Mobile Phone Lanyards & Straps
+  children: []
+  attributes: []
 - id: el-4-8-4-4
   name: Mobile Phone Pre-Paid Cards & SIM Cards
   children:
   - el-4-8-4-4-1
   - el-4-8-4-4-2
+  - el-4-8-4-4-3
   attributes:
   - color
   - currency
@@ -1733,12 +1787,61 @@
   - currency
   - pattern
   - sim_card_type
+- id: el-4-8-4-4-3
+  name: eSIMs
+  children: []
+  attributes: []
 - id: el-4-8-4-5
   name: Mobile Phone Replacement Parts
-  children: []
+  children:
+  - el-4-8-4-5-1
+  - el-4-8-4-5-2
+  - el-4-8-4-5-3
+  - el-4-8-4-5-4
+  - el-4-8-4-5-5
+  - el-4-8-4-5-6
+  - el-4-8-4-5-7
+  - el-4-8-4-5-8
+  - el-4-8-4-5-9
   attributes:
   - color
   - pattern
+- id: el-4-8-4-5-1
+  name: Mobile Phone Adhesives & Tapes
+  children: []
+  attributes: []
+- id: el-4-8-4-5-2
+  name: Mobile Phone Audio & Speaker Parts
+  children: []
+  attributes: []
+- id: el-4-8-4-5-3
+  name: Mobile Phone Buttons & Flex Cables
+  children: []
+  attributes: []
+- id: el-4-8-4-5-4
+  name: Mobile Phone Camera Parts
+  children: []
+  attributes: []
+- id: el-4-8-4-5-5
+  name: Mobile Phone Connectors & Charging Ports
+  children: []
+  attributes: []
+- id: el-4-8-4-5-6
+  name: Mobile Phone Housings & Back Covers
+  children: []
+  attributes: []
+- id: el-4-8-4-5-7
+  name: Mobile Phone Logic Boards
+  children: []
+  attributes: []
+- id: el-4-8-4-5-8
+  name: Mobile Phone Screens & Screen Digitizers
+  children: []
+  attributes: []
+- id: el-4-8-4-5-9
+  name: Mobile Phone SIM & MicroSD Card Trays
+  children: []
+  attributes: []
 - id: el-4-8-4-6
   name: Mobile Phone Stands
   children: []
@@ -1752,9 +1855,35 @@
   attributes:
   - color
   - pattern
+- id: el-4-8-4-8
+  name: Mobile Phone Armbands
+  children: []
+  attributes: []
+- id: el-4-8-4-9
+  name: Mobile Phone Car Mounts
+  children: []
+  attributes: []
+- id: el-4-8-4-10
+  name: Mobile Phone Grips & Holders
+  children: []
+  attributes: []
+- id: el-4-8-4-11
+  name: Mobile Phone Repair Tools
+  children: []
+  attributes: []
+- id: el-4-8-4-12
+  name: Mobile Phone Screen Protectors
+  children: []
+  attributes: []
+- id: el-4-8-4-13
+  name: Mobile Phone Skins & Wraps
+  children: []
+  attributes: []
 - id: el-4-8-5
   name: Mobile & Smart Phones
-  children: []
+  children:
+  - el-4-8-5-1
+  - el-4-8-5-2
   attributes:
   - battery_technology
   - color
@@ -1768,9 +1897,20 @@
   - sim_card_type_1
   - sim_card_type_2
   - subscription_type
+- id: el-4-8-5-1
+  name: Feature Phones
+  children: []
+  attributes: []
+- id: el-4-8-5-2
+  name: Smart Phones
+  children: []
+  attributes: []
 - id: el-4-8-6
   name: Satellite Phones
-  children: []
+  children:
+  - el-4-8-6-1
+  - el-4-8-6-2
+  - el-4-8-6-3
   attributes:
   - color
   - communication_device_features
@@ -1780,10 +1920,24 @@
   - satellite_coverage_area
   - satellite_network_type
   - subscription_type
+- id: el-4-8-6-1
+  name: Satellite Communicators & Messengers
+  children: []
+  attributes: []
+- id: el-4-8-6-2
+  name: Satellite Phone Accessories
+  children: []
+  attributes: []
+- id: el-4-8-6-3
+  name: Satellite Phone Pre-Paid Cards & SIM Cards
+  children: []
+  attributes: []
 - id: el-4-8-7
   name: Telephone Accessories
   children:
   - el-4-8-7-1
+  - el-4-8-7-2
+  - el-4-8-7-3
   attributes:
   - color
   - pattern
@@ -1794,6 +1948,22 @@
   - color
   - currency
   - pattern
+- id: el-4-8-7-2
+  name: Call Blockers
+  children: []
+  attributes: []
+- id: el-4-8-7-3
+  name: DSL Filters
+  children: []
+  attributes: []
+- id: el-4-8-8
+  name: Emergency Phones
+  children: []
+  attributes: []
+- id: el-4-8-9
+  name: PBX Systems & Components
+  children: []
+  attributes: []
 - id: el-4-9
   name: Video Conferencing
   children: []
