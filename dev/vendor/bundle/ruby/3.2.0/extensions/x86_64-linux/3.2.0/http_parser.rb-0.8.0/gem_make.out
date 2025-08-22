@@ -1,0 +1,31 @@
+current directory: /home/runner/work/product-taxonomy/product-taxonomy/dev/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+/opt/hostedtoolcache/Ruby/3.2.9/x64/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/runner/work/product-taxonomy/product-taxonomy/dev/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250822-2122-22r4cx sitelibdir\=./.gem.20250822-2122-22r4cx clean
+
+current directory: /home/runner/work/product-taxonomy/product-taxonomy/dev/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250822-2122-22r4cx sitelibdir\=./.gem.20250822-2122-22r4cx
+compiling ruby_http_parser.c
+ruby_http_parser.c: In function ‘Parser_execute’:
+ruby_http_parser.c:365:17: warning: comparison of integer expressions of different signedness: ‘size_t’ {aka ‘long unsigned int’} and ‘long int’ [-Wsign-compare]
+  365 |     if (nparsed < len)
+      |                 ^
+ruby_http_parser.c: In function ‘Init_ruby_http_parser’:
+ruby_http_parser.c:507:6: warning: old-style function definition [-Wold-style-definition]
+  507 | void Init_ruby_http_parser() {
+      |      ^~~~~~~~~~~~~~~~~~~~~
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-self-assign’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-parentheses-equality’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-constant-logical-operand’ may have been intended to silence earlier diagnostics
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.so
+
+current directory: /home/runner/work/product-taxonomy/product-taxonomy/dev/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250822-2122-22r4cx sitelibdir\=./.gem.20250822-2122-22r4cx install
+/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20250822-2122-22r4cx
+
+current directory: /home/runner/work/product-taxonomy/product-taxonomy/dev/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250822-2122-22r4cx sitelibdir\=./.gem.20250822-2122-22r4cx clean

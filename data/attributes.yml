@@ -32564,6 +32564,255 @@ base_attributes:
   - electric_scooter_motor_type__brushed_dc_motor
   - electric_scooter_motor_type__brushless_dc_motor
   - electric_scooter_motor_type__other
+- id: 4996
+  name: Bluetooth version
+  description: Specifies the Bluetooth specification version implemented, affecting compatibility, range, and power efficiency.
+  friendly_id: bluetooth_version
+  handle: bluetooth-version
+  values:
+  - bluetooth_version__2_0
+  - bluetooth_version__2_1
+  - bluetooth_version__3_0
+  - bluetooth_version__4_0
+  - bluetooth_version__4_1
+  - bluetooth_version__4_2
+  - bluetooth_version__5_0
+  - bluetooth_version__5_1
+  - bluetooth_version__5_2
+  - bluetooth_version__5_3
+- id: 4997
+  name: Ingress protection rating
+  description: Indicates the IP (Ingress Protection) rating according to the IEC 60529 standard, classifying dust and water resistance of the device or accessory housing.
+  friendly_id: ingress_protection_rating
+  handle: ingress-protection-rating
+  values:
+  - ingress_protection_rating__ip20
+  - ingress_protection_rating__ip22
+  - ingress_protection_rating__ip44
+  - ingress_protection_rating__ip52
+  - ingress_protection_rating__ip54
+  - ingress_protection_rating__ip55
+  - ingress_protection_rating__ip56
+  - ingress_protection_rating__ip57
+  - ingress_protection_rating__ip58
+  - ingress_protection_rating__ip64
+  - ingress_protection_rating__ip65
+  - ingress_protection_rating__ip66
+  - ingress_protection_rating__ip67
+  - ingress_protection_rating__ip68
+  - ingress_protection_rating__ip69
+  - ingress_protection_rating__ip69k
+  - ingress_protection_rating__ipx0
+  - ingress_protection_rating__ipx1
+  - ingress_protection_rating__ipx2
+  - ingress_protection_rating__ipx3
+  - ingress_protection_rating__ipx4
+  - ingress_protection_rating__ipx5
+  - ingress_protection_rating__ipx6
+  - ingress_protection_rating__ipx7
+  - ingress_protection_rating__ipx8
+  - ingress_protection_rating__not_rated
+  - ingress_protection_rating__other
+- id: 4998
+  name: Talk time
+  description: Specifies the maximum continuous voice call duration the device can provide on a single battery charge.
+  friendly_id: talk_time
+  handle: talk-time
+  values:
+  - talk_time__hours_h
+  - talk_time__minutes_min
+- id: 4999
+  name: Compatible phone brand
+  description: Identifies the smartphone brand(s) this accessory or part is designed to fit.
+  friendly_id: compatible_phone_brand
+  handle: compatible-phone-brand
+  values:
+  - compatible_phone_brand__apple
+  - compatible_phone_brand__asus
+  - compatible_phone_brand__blackberry
+  - compatible_phone_brand__google
+  - compatible_phone_brand__honor
+  - compatible_phone_brand__htc
+  - compatible_phone_brand__huawei
+  - compatible_phone_brand__infinix
+  - compatible_phone_brand__lenovo
+  - compatible_phone_brand__lg
+  - compatible_phone_brand__motorola
+  - compatible_phone_brand__nokia
+  - compatible_phone_brand__nothing
+  - compatible_phone_brand__oneplus
+  - compatible_phone_brand__oppo
+  - compatible_phone_brand__realme
+  - compatible_phone_brand__samsung
+  - compatible_phone_brand__sony
+  - compatible_phone_brand__tecno
+  - compatible_phone_brand__universal
+  - compatible_phone_brand__vivo
+  - compatible_phone_brand__xiaomi
+  - compatible_phone_brand__zte
+  - compatible_phone_brand__other
+- id: 5000
+  name: Wireless charging standard
+  description: Specifies the wireless charging protocol supported by the product.
+  friendly_id: wireless_charging_standard
+  handle: wireless-charging-standard
+  values:
+  - wireless_charging_standard__airfuel
+  - wireless_charging_standard__magsafe
+  - wireless_charging_standard__none
+  - wireless_charging_standard__pma
+  - wireless_charging_standard__powermat
+  - wireless_charging_standard__proprietary
+  - wireless_charging_standard__qi
+  - wireless_charging_standard__qi2
+  - wireless_charging_standard__other
+- id: 5001
+  name: Gimbal stabilization axes
+  description: Specifies the number and type of axes the gimbal stabilizes, including options for continuous rotation.
+  friendly_id: gimbal_stabilization_axes
+  handle: gimbal-stabilization-axes
+  values:
+  - gimbal_stabilization_axes__360_continuous_rotation
+  - gimbal_stabilization_axes__1_axis
+  - gimbal_stabilization_axes__2_axis
+  - gimbal_stabilization_axes__3_axis
+  - gimbal_stabilization_axes__4_axis
+- id: 5002
+  name: MagSafe compatibility
+  description: Indicates if an accessory supports Apple's MagSafe magnetic attachment system.
+  friendly_id: magsafe_compatibility
+  handle: magsafe-compatibility
+  values:
+  - magsafe_compatibility__magsafe_compatible
+  - magsafe_compatibility__not_magsafe_compatible
+  - magsafe_compatibility__requires_adhesive_ring
+- id: 5003
+  name: Mobile network operator
+  description: Names the carrier or mobile virtual network operator (MVNO) associated with a SIM card or prepaid service, enabling connectivity.
+  friendly_id: mobile_network_operator
+  handle: mobile-network-operator
+  values:
+  - mobile_network_operator__airtel
+  - mobile_network_operator__att
+  - mobile_network_operator__china_mobile
+  - mobile_network_operator__digicel
+  - mobile_network_operator__du
+  - mobile_network_operator__ee
+  - mobile_network_operator__etisalat
+  - mobile_network_operator__globe
+  - mobile_network_operator__kpn
+  - mobile_network_operator__kt
+  - mobile_network_operator__movistar
+  - mobile_network_operator__mtn
+  - mobile_network_operator__ntt_docomo
+  - mobile_network_operator__o2
+  - mobile_network_operator__optus
+  - mobile_network_operator__orange
+  - mobile_network_operator__rogers
+  - mobile_network_operator__sk_telecom
+  - mobile_network_operator__swisscom
+  - mobile_network_operator__t_mobile
+  - mobile_network_operator__telefonica
+  - mobile_network_operator__telkomsel
+  - mobile_network_operator__telstra
+  - mobile_network_operator__telus
+  - mobile_network_operator__tim
+  - mobile_network_operator__verizon
+  - mobile_network_operator__vodafone
+- id: 5004
+  name: Plan type
+  description: Defines the prepaid plan based on the services or bundles available such as voice, data, SMS or combinations thereof.
+  friendly_id: plan_type
+  handle: plan-type
+  values:
+  - plan_type__add_on/booster
+  - plan_type__data_sms
+  - plan_type__data_sms
+  - plan_type__data_only
+  - plan_type__esim_day_pass
+  - plan_type__international_calling_card
+  - plan_type__satellite_airtime
+  - plan_type__sms_only
+  - plan_type__subscription_voucher
+  - plan_type__top_up/credit
+  - plan_type__unlimited_plan
+  - plan_type__voice
+  - plan_type__voice_data
+  - plan_type__voice_sms
+  - plan_type__voice_only
+- id: 5005
+  name: SMS allowance
+  description: Specifies the number of SMS messages included in the plan before additional charges apply.
+  friendly_id: sms_allowance
+  handle: sms-allowance
+  values:
+  - sms_allowance__50
+  - sms_allowance__100
+  - sms_allowance__250
+  - sms_allowance__500
+  - sms_allowance__1000
+  - sms_allowance__none
+  - sms_allowance__pay_per_message
+  - sms_allowance__unlimited
+- id: 5006
+  name: Activation method
+  description: Describes how prepaid credit, SIM, or card is activated or applied by the user.
+  friendly_id: activation_method
+  handle: activation-method
+  values:
+  - activation_method__automatic_on_first_use
+  - activation_method__automatic_top_up
+  - activation_method__customer_service_call
+  - activation_method__dial_in_pin
+  - activation_method__in_store_activation
+  - activation_method__mobile_app
+  - activation_method__online_portal
+  - activation_method__qr_code_scan
+  - activation_method__scratch_off_pin
+  - activation_method__sim_toolkit_menu
+  - activation_method__ussd_code
+  - activation_method__voucher_or_pin_entry
+  - activation_method__other
+- id: 5007
+  name: Data allowance
+  description: Specifies the volume of high-speed mobile data included with the plan, expressed in gigabytes (GB).
+  friendly_id: data_allowance
+  handle: data-allowance
+  values:
+  - data_allowance__gigabytes_gb
+  - data_allowance__megabytes_mb
+- id: 5008
+  name: Validity period
+  description: Specifies the duration in days for which the credit, SIM, or plan remains active after activation.
+  friendly_id: validity_period
+  handle: validity-period
+  values:
+  - validity_period__days_d
+- id: 5009
+  name: Voice minutes included
+  description: Indicates the number of voice-call minutes included with the prepaid product, which may be used for domestic or in-network calls.
+  friendly_id: voice_minutes_included
+  handle: voice-minutes-included
+  values:
+  - voice_minutes_included__30
+  - voice_minutes_included__60
+  - voice_minutes_included__90
+  - voice_minutes_included__100
+  - voice_minutes_included__120
+  - voice_minutes_included__200
+  - voice_minutes_included__300
+  - voice_minutes_included__500
+  - voice_minutes_included__1000
+  - voice_minutes_included__unlimited
+- id: 5010
+  name: Warranty period
+  description: Specifies the length of the warranty provided with the product.
+  friendly_id: warranty_period
+  handle: warranty-period
+  values:
+  - warranty_period__days_d
+  - warranty_period__months_mo
+  - warranty_period__years_yr
 extended_attributes:
 - name: Shampoo/Conditioner effect
   handle: shampoo-conditioner-effect
