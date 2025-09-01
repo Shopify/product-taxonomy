@@ -540,6 +540,8 @@
   - hg-3-76
   attributes:
   - color
+  - decoration_material
+  - material
   - pattern
 - id: hg-3-1
   name: Address Signs
@@ -609,8 +611,12 @@
   - hg-3-4-2
   - hg-3-4-3
   attributes:
+  - artwork_frame_material
   - color
+  - condition
+  - decoration_material
   - pattern
+  - theme
 - id: hg-3-4-1
   name: Decorative Tapestries
   children: []
@@ -654,6 +660,7 @@
   name: Visual Artwork
   children: []
   attributes:
+  - artwork_authenticity
   - artwork_frame_material
   - color
   - frame_style
@@ -1069,17 +1076,20 @@
   - color
   - decoration_material
   - pattern
+  - shape
 - id: hg-3-26
   name: Door Mats
   children: []
   attributes:
   - allergy_friendly_features
   - care_instructions
+  - color
   - door_mat_base_color
   - door_mat_base_material
   - door_mat_base_pattern
   - door_mat_surface_material
   - mat_features
+  - pattern
   - pile_type
   - shape
   - suitable_space
@@ -1233,6 +1243,7 @@
   children: []
   attributes:
   - color
+  - decoration_material
   - pattern
   - theme
 - id: hg-3-39
@@ -1246,18 +1257,21 @@
   - hg-3-39-6
   attributes:
   - color
+  - material
   - pattern
 - id: hg-3-39-1
   name: Candle & Oil Warmers
   children: []
   attributes:
   - color
+  - material
   - pattern
 - id: hg-3-39-2
   name: Candle Holders
   children: []
   attributes:
   - color
+  - decoration_material
   - material
   - pattern
 - id: hg-3-39-3
@@ -1280,11 +1294,15 @@
   - hg-3-39-5-1
   - hg-3-39-5-2
   - hg-3-39-5-3
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: hg-3-39-5-1
   name: Electric Diffusers
   children: []
-  attributes: []
+  attributes:
+  - color
+  - pattern
 - id: hg-3-39-5-2
   name: Plug-In Diffusers
   children: []
@@ -1324,6 +1342,7 @@
   attributes:
   - candle_type
   - color
+  - decoration_material
   - pattern
   - scent
 - id: hg-3-40-3
@@ -1357,7 +1376,10 @@
 - id: hg-3-40-7
   name: Reed Diffusers
   children: []
-  attributes: []
+  attributes:
+  - color
+  - pattern
+  - scent
 - id: hg-3-41
   name: Hourglasses
   children: []
@@ -1500,6 +1522,7 @@
   attributes:
   - color
   - decoration_material
+  - frame_style
   - pattern
   - shape
 - id: hg-3-53
@@ -1579,7 +1602,10 @@
   - hg-3-58-12
   attributes:
   - color
+  - decoration_material
+  - material
   - pattern
+  - theme
 - id: hg-3-58-1
   name: Advent Calendars
   children: []
@@ -1626,6 +1652,8 @@
   - color
   - decoration_material
   - pattern
+  - shape
+  - theme
 - id: hg-3-58-8
   name: Holiday Stocking Hangers
   children: []
@@ -1697,6 +1725,7 @@
   name: Throw Pillows
   children: []
   attributes:
+  - care_instructions
   - cover_color
   - cover_material
   - cover_pattern
@@ -4861,6 +4890,7 @@
   children: []
   attributes:
   - color
+  - material
   - pattern
 - id: hg-10-16-7
   name: Household Storage Drawers
@@ -8325,7 +8355,9 @@
   children: []
   attributes:
   - air_fryer_functions
+  - color
   - cooking_compartments
+  - pattern
 - id: hg-11-7-54
   name: Food Processors
   children: []
@@ -9641,6 +9673,7 @@
   attributes:
   - coffee/tea_set_pieces_included
   - color
+  - drinkware_material
   - pattern
 - id: hg-11-10-1-2
   name: Tea Sets
@@ -9648,6 +9681,7 @@
   attributes:
   - coffee/tea_set_pieces_included
   - color
+  - drinkware_material
   - pattern
 - id: hg-11-10-2
   name: Coffee Servers & Teapots
@@ -9718,7 +9752,9 @@
   children: []
   attributes:
   - color
+  - dinnerware_pieces_included
   - pattern
+  - shape
   - tableware_material
 - id: hg-11-10-4-2
   name: Dinnerware Sets
@@ -10891,6 +10927,7 @@
   name: Supplements
   children: []
   attributes:
+  - age_group
   - application_method
   - plant_stage
 - id: hg-12-1-19-4
@@ -12330,6 +12367,7 @@
   - light_color
   - light_pattern
   - light_temperature
+  - mounting_type
   - pattern
 - id: hg-13-1
   name: Emergency Lighting
@@ -12395,6 +12433,7 @@
   - light_color
   - light_pattern
   - light_temperature
+  - mounting_type
   - pattern
 - id: hg-13-5-1
   name: Bedside Lamps
@@ -12455,6 +12494,7 @@
   - light_color
   - light_pattern
   - light_temperature
+  - mounting_type
   - pattern
 - id: hg-13-6
   name: Landscape Pathway Lighting
@@ -12594,6 +12634,7 @@
   - light_color
   - light_pattern
   - light_temperature
+  - material
   - mounting_type
   - pattern
 - id: hg-13-9-3
@@ -12636,7 +12677,9 @@
   - light_color
   - light_pattern
   - light_temperature
+  - mounting_type
   - pattern
+  - power_source
 - id: hg-13-11
   name: Picture Lights
   children: []
@@ -12830,6 +12873,7 @@
   - hg-15-1-10
   attributes:
   - bedding_size
+  - care_instructions
   - color
   - fabric
   - pattern
@@ -12848,6 +12892,7 @@
   attributes:
   - bedding_pieces_included
   - bedding_size
+  - care_instructions
   - color
   - fabric
   - pattern
@@ -12864,6 +12909,7 @@
   name: Blankets
   children: []
   attributes:
+  - age_group
   - bedding_size
   - care_instructions
   - color
@@ -12927,11 +12973,13 @@
   attributes:
   - bedding_size
   - care_instructions
+  - color
   - cover_color
   - cover_material
   - cover_pattern
   - filler_material
   - filler_support
+  - pattern
 - id: hg-15-1-10
   name: Quilts & Comforters
   children: []
@@ -13109,9 +13157,11 @@
   attributes:
   - color
   - pattern
+  - plant_characteristics
   - plant_class
   - plant_name
   - suitable_space
+  - sunlight
 - id: hg-17-1
   name: Aquatic Plants
   children: []
@@ -13127,8 +13177,11 @@
   name: Flowers
   children: []
   attributes:
+  - arrangement
+  - color
   - flower_color
   - flower_pattern
+  - pattern
   - plant_characteristics
   - plant_class
   - plant_name
@@ -13144,9 +13197,11 @@
   attributes:
   - color
   - pattern
+  - plant_characteristics
   - plant_class
   - plant_name
   - suitable_space
+  - sunlight
 - id: hg-17-3-1
   name: Bushes & Shrubs
   children:
@@ -13228,8 +13283,10 @@
   name: Potted Houseplants
   children: []
   attributes:
+  - color
   - flower_color
   - flower_pattern
+  - pattern
   - plant_characteristics
   - plant_class
   - plant_name

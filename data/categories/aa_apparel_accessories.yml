@@ -41,9 +41,13 @@
   - aa-1-23
   - aa-1-24
   attributes:
+  - age_group
+  - care_instructions
+  - clothing_features
   - color
   - fabric
   - pattern
+  - size
   - target_gender
 - id: aa-1-1
   name: Activewear
@@ -59,6 +63,7 @@
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
   - color
   - fabric
   - pattern
@@ -78,8 +83,10 @@
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
   - color
   - fabric
+  - fit
   - pants_length_type
   - pattern
   - size
@@ -91,8 +98,10 @@
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
   - color
   - fabric
+  - fit
   - pants_length_type
   - pattern
   - size
@@ -104,8 +113,10 @@
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
   - color
   - fabric
+  - fit
   - pants_length_type
   - pattern
   - size
@@ -117,8 +128,10 @@
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
   - color
   - fabric
+  - fit
   - pants_length_type
   - pattern
   - size
@@ -130,8 +143,10 @@
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
   - color
   - fabric
+  - fit
   - pants_length_type
   - pattern
   - size
@@ -156,6 +171,7 @@
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
   - color
   - fabric
   - pants_length_type
@@ -198,48 +214,61 @@
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
+  - clothing_features
   - color
   - fabric
+  - neckline
   - pattern
   - size
   - sleeve_length_type
   - target_gender
+  - top_length_type
 - id: aa-1-1-2-1
   name: Crop Tops
   children: []
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
   - color
   - fabric
+  - neckline
   - pattern
   - size
   - sleeve_length_type
   - target_gender
+  - top_length_type
 - id: aa-1-1-2-2
   name: T-Shirts
   children: []
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
   - color
   - fabric
+  - neckline
   - pattern
   - size
   - sleeve_length_type
   - target_gender
+  - top_length_type
 - id: aa-1-1-2-3
   name: Tank Tops
   children: []
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
   - color
   - fabric
+  - neckline
   - pattern
   - size
   - sleeve_length_type
   - target_gender
+  - top_length_type
 - id: aa-1-1-4
   name: Boxing Shorts
   children: []
@@ -255,6 +284,7 @@
   children: []
   attributes:
   - activewear_clothing_features
+  - age_group
   - color
   - fabric
   - pattern
@@ -266,14 +296,20 @@
   name: Sports Bras
   children: []
   attributes:
+  - activewear_clothing_features
+  - age_group
+  - bra_closure_type
+  - bra_coverage
   - bra_features
   - bra_strap_type
+  - bra_style
   - bra_support_level
   - care_instructions
   - color
   - cup_size
   - fabric
   - pattern
+  - size
   - target_gender
 - id: aa-1-1-7
   name: Activewear Sweatshirts & Hoodies
@@ -284,11 +320,13 @@
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
   - color
   - fabric
   - neckline
   - pattern
   - size
+  - sleeve_length_type
   - target_gender
 - id: aa-1-1-7-2
   name: Hoodies
@@ -296,6 +334,7 @@
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
   - color
   - fabric
   - neckline
@@ -303,12 +342,14 @@
   - size
   - sleeve_length_type
   - target_gender
+  - top_length_type
 - id: aa-1-1-7-4
   name: Sweatshirts
   children: []
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
   - color
   - fabric
   - neckline
@@ -316,6 +357,7 @@
   - size
   - sleeve_length_type
   - target_gender
+  - top_length_type
 - id: aa-1-1-7-5
   name: Track Jackets
   children: []
@@ -337,6 +379,7 @@
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
   - color
   - fabric
   - pattern
@@ -349,8 +392,10 @@
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
   - color
   - fabric
+  - neckline
   - pattern
   - size
   - target_gender
@@ -360,17 +405,22 @@
   attributes:
   - activewear_clothing_features
   - activity
+  - age_group
+  - care_instructions
   - color
   - fabric
+  - neckline
   - pattern
   - size
   - sleeve_length_type
   - target_gender
+  - top_length_type
 - id: aa-1-1-9
   name: Leotards & Unitards
   children: []
   attributes:
   - activewear_clothing_features
+  - activity
   - age_group
   - color
   - fabric
@@ -396,6 +446,7 @@
   - color
   - fabric
   - pattern
+  - size
   - target_gender
 - id: aa-1-2-1
   name: Baby & Toddler Bottoms
@@ -547,6 +598,7 @@
   - dress_occasion
   - dress_style
   - fabric
+  - neckline
   - pattern
   - size
   - skirt/dress_length_type
@@ -588,6 +640,7 @@
   - care_instructions
   - color
   - fabric
+  - neckline
   - outerwear_clothing_features
   - pattern
   - size
@@ -806,6 +859,7 @@
   - fabric
   - pattern
   - size
+  - sleeve_length_type
   - target_gender
 - id: aa-1-2-6
   name: Baby & Toddler Sleepwear
@@ -817,6 +871,7 @@
   - fabric
   - pattern
   - size
+  - sleeve_length_type
   - target_gender
 - id: aa-1-2-7
   name: Baby & Toddler Socks & Tights
@@ -1009,6 +1064,7 @@
   - baby/toddler_clothing_features
   - color
   - fabric
+  - neckline
   - pattern
   - size
   - sleeve_length_type
@@ -1021,6 +1077,7 @@
   - baby/toddler_clothing_features
   - color
   - fabric
+  - one_piece_style
   - pattern
   - size
   - sleeve_length_type
@@ -1069,6 +1126,7 @@
   - baby/toddler_clothing_features
   - color
   - fabric
+  - neckline
   - pattern
   - size
   - sleeve_length_type
@@ -1081,6 +1139,7 @@
   - baby/toddler_clothing_features
   - color
   - fabric
+  - neckline
   - pattern
   - size
   - sleeve_length_type
@@ -1130,6 +1189,7 @@
   - baby/toddler_clothing_features
   - color
   - fabric
+  - neckline
   - pattern
   - size
   - sleeve_length_type
@@ -1142,12 +1202,14 @@
   - baby/toddler_clothing_features
   - color
   - fabric
+  - neckline
   - one_piece_style
   - pants_length_type
   - pattern
   - size
   - sleeve_length_type
   - target_gender
+  - top_length_type
 - id: aa-1-2-11
   name: Toddler Underwear
   children:
@@ -1335,6 +1397,7 @@
   children: []
   attributes:
   - age_group
+  - care_instructions
   - clothing_features
   - color
   - dress_occasion
@@ -1346,6 +1409,7 @@
   - skirt/dress_length_type
   - sleeve_length_type
   - target_gender
+  - top_length_type
 - id: aa-1-5
   name: Girls' Underwear
   children:
@@ -1537,6 +1601,7 @@
   - aa-1-6-12
   - aa-1-6-13
   attributes:
+  - age_group
   - care_instructions
   - color
   - fabric
@@ -1620,10 +1685,12 @@
   name: Camisoles
   children: []
   attributes:
+  - age_group
   - care_instructions
   - color
   - fabric
   - intimate_apparel_features
+  - neckline
   - pattern
   - size
   - target_gender
@@ -2501,6 +2568,7 @@
   - size
   - sleeve_length_type
   - target_gender
+  - top_length_type
 - id: aa-1-10
   name: Outerwear
   children:
@@ -2557,6 +2625,7 @@
   attributes:
   - age_group
   - care_instructions
+  - clothing_features
   - color
   - fabric
   - neckline
@@ -2565,6 +2634,7 @@
   - size
   - sleeve_length_type
   - target_gender
+  - top_length_type
 - id: aa-1-10-2-1
   name: Bolero Jackets
   children: []
@@ -2836,10 +2906,12 @@
   - care_instructions
   - color
   - fabric
+  - neckline
   - outerwear_clothing_features
   - pattern
   - size
   - target_gender
+  - top_length_type
 - id: aa-1-10-7
   name: Motorcycle Outerwear
   children: []
@@ -2859,12 +2931,16 @@
   children: []
   attributes:
   - age_group
+  - care_instructions
   - clothing_features
   - color
   - fabric
+  - neckline
   - pattern
   - size
+  - sleeve_length_type
   - target_gender
+  - top_length_type
 - id: aa-1-12
   name: Pants
   children:
@@ -2877,6 +2953,7 @@
   - aa-1-12-11
   attributes:
   - age_group
+  - care_instructions
   - clothing_features
   - color
   - fabric
@@ -2919,6 +2996,7 @@
   children: []
   attributes:
   - age_group
+  - care_instructions
   - clothing_features
   - color
   - fabric
@@ -2975,6 +3053,7 @@
   children: []
   attributes:
   - age_group
+  - care_instructions
   - clothing_features
   - color
   - fabric
@@ -3001,6 +3080,7 @@
   - aa-1-13-14
   attributes:
   - age_group
+  - care_instructions
   - clothing_features
   - color
   - fabric
@@ -3015,6 +3095,7 @@
   children: []
   attributes:
   - age_group
+  - care_instructions
   - clothing_features
   - color
   - fabric
@@ -3033,6 +3114,7 @@
   - color
   - fabric
   - neckline
+  - one_piece_style
   - pattern
   - size
   - sleeve_length_type
@@ -3043,6 +3125,7 @@
   children: []
   attributes:
   - age_group
+  - care_instructions
   - clothing_features
   - color
   - fabric
@@ -3085,12 +3168,14 @@
   children: []
   attributes:
   - age_group
+  - care_instructions
   - clothing_features
   - color
   - fabric
   - neckline
   - pattern
   - size
+  - sleeve_length_type
   - target_gender
   - top_length_type
 - id: aa-1-13-8
@@ -3098,6 +3183,7 @@
   children: []
   attributes:
   - age_group
+  - care_instructions
   - clothing_features
   - color
   - fabric
@@ -3112,6 +3198,7 @@
   children: []
   attributes:
   - age_group
+  - care_instructions
   - clothing_features
   - color
   - fabric
@@ -3140,25 +3227,30 @@
   children: []
   attributes:
   - age_group
+  - care_instructions
   - clothing_features
   - color
   - fabric
   - neckline
   - pattern
   - size
+  - sleeve_length_type
   - target_gender
   - top_length_type
 - id: aa-1-13-13
   name: Hoodies
   children: []
   attributes:
+  - activity
   - age_group
+  - care_instructions
   - clothing_features
   - color
   - fabric
   - neckline
   - pattern
   - size
+  - sleeve_length_type
   - target_gender
   - top_length_type
 - id: aa-1-13-14
@@ -3166,12 +3258,14 @@
   children: []
   attributes:
   - age_group
+  - care_instructions
   - clothing_features
   - color
   - fabric
   - neckline
   - pattern
   - size
+  - sleeve_length_type
   - target_gender
   - top_length_type
 - id: aa-1-14
@@ -3187,6 +3281,7 @@
   - aa-1-14-8
   attributes:
   - age_group
+  - care_instructions
   - clothing_features
   - color
   - fabric
@@ -3256,6 +3351,7 @@
   - color
   - fabric
   - fit
+  - pants_length_type
   - pattern
   - size
   - target_gender
@@ -3303,7 +3399,9 @@
   name: Skirts
   children: []
   attributes:
+  - age_group
   - best_uses
+  - care_instructions
   - clothing_features
   - color
   - fabric
@@ -3312,6 +3410,7 @@
   - skirt/dress_length_type
   - skirt_style
   - target_gender
+  - waist_rise
 - id: aa-1-16
   name: Skorts
   children: []
@@ -3333,6 +3432,7 @@
   - aa-1-17-5
   - aa-1-17-6
   attributes:
+  - age_group
   - clothing_features
   - color
   - fabric
@@ -3397,6 +3497,7 @@
   name: Joggers
   children: []
   attributes:
+  - age_group
   - clothing_features
   - color
   - fabric
@@ -3423,6 +3524,7 @@
   name: Shorts
   children: []
   attributes:
+  - age_group
   - clothing_features
   - color
   - fabric
@@ -3436,6 +3538,7 @@
   name: Skirts
   children: []
   attributes:
+  - age_group
   - clothing_features
   - color
   - fabric
@@ -3479,9 +3582,12 @@
   - clothing_features
   - color
   - fabric
+  - neckline
   - pattern
   - size
+  - sleeve_length_type
   - target_gender
+  - top_length_type
 - id: aa-1-17-5
   name: Robes
   children: []
@@ -3521,6 +3627,7 @@
   attributes:
   - accessory_size
   - activity
+  - age_group
   - clothing_features
   - color
   - fabric
@@ -3644,10 +3751,14 @@
   - aa-1-19-3
   attributes:
   - age_group
+  - care_instructions
+  - clothing_features
   - color
   - fabric
+  - neckline
   - pattern
   - size
+  - sleeve_length_type
   - target_gender
 - id: aa-1-19-1
   name: Pant Suits
@@ -3707,6 +3818,7 @@
   - fabric
   - pattern
   - size
+  - sleeve_length_type
   - swimwear_features
   - target_gender
 - id: aa-1-20-2
@@ -3773,6 +3885,7 @@
   - age_group
   - color
   - fabric
+  - neckline
   - pattern
   - size
   - sleeve_length_type
@@ -3855,7 +3968,9 @@
   - aa-1-22-1
   - aa-1-22-2
   attributes:
+  - age_group
   - color
+  - dress_occasion
   - dress_style
   - fabric
   - neckline
@@ -3868,8 +3983,10 @@
   name: Bridal Party Dresses
   children: []
   attributes:
+  - age_group
   - clothing_features
   - color
+  - dress_occasion
   - dress_style
   - fabric
   - neckline
@@ -3901,8 +4018,10 @@
   - age_group
   - color
   - fabric
+  - neckline
   - pattern
   - size
+  - sleeve_length_type
   - target_gender
 - id: aa-1-23-1
   name: Kimonos
@@ -3913,6 +4032,7 @@
   - fabric
   - pattern
   - size
+  - sleeve_length_type
   - target_gender
 - id: aa-1-23-2
   name: Saris & Lehengas
@@ -4085,6 +4205,7 @@
   - aa-2-31
   - aa-2-32
   attributes:
+  - accessory_size
   - age_group
   - color
   - pattern
@@ -4135,6 +4256,7 @@
   name: Baby & Toddler Hats
   children: []
   attributes:
+  - accessory_size
   - baby/toddler_hat_style
   - color
   - fabric
@@ -4192,6 +4314,7 @@
   name: Bridal Accessories
   children: []
   attributes:
+  - age_group
   - color
   - fabric
   - pattern
@@ -4328,6 +4451,7 @@
   - age_group
   - color
   - fabric
+  - material
   - pattern
   - target_gender
 - id: aa-2-14-7
@@ -4438,6 +4562,7 @@
   - fabric
   - headwear_features
   - pattern
+  - size
   - target_gender
 - id: aa-2-17-1
   name: Baseball Caps
@@ -4622,6 +4747,8 @@
   - aa-2-18-2
   - aa-2-18-3
   attributes:
+  - accessory_size
+  - age_group
   - color
   - fabric
   - pattern
@@ -4721,7 +4848,9 @@
   name: Scarves & Shawls
   children: []
   attributes:
+  - accessory_size
   - age_group
+  - care_instructions
   - clothing_features
   - color
   - fabric
@@ -4736,7 +4865,9 @@
   - color
   - eyewear_frame_color
   - eyewear_frame_design
+  - eyewear_frame_material
   - eyewear_frame_pattern
+  - eyewear_lens_material
   - fabric
   - lens_color
   - lens_pattern
@@ -4803,6 +4934,8 @@
   - aa-3-4
   attributes:
   - age_group
+  - color
+  - pattern
   - target_gender
 - id: aa-3-1
   name: Costume Accessories
@@ -4810,6 +4943,8 @@
   attributes:
   - accessory_size
   - age_group
+  - color
+  - pattern
   - target_gender
 - id: aa-3-2
   name: Costume Shoes
@@ -4873,6 +5008,8 @@
   - aa-4-2
   - aa-4-3
   attributes:
+  - age_group
+  - carry_options
   - color
   - pattern
   - target_gender
@@ -4881,6 +5018,7 @@
   children: []
   attributes:
   - color
+  - material
   - pattern
   - target_gender
 - id: aa-4-2
@@ -4906,9 +5044,12 @@
   - aa-5-4
   - aa-5-5
   attributes:
+  - age_group
+  - carry_options
   - color
   - pattern
   - target_gender
+  - wallet_features
 - id: aa-5-1
   name: Badge & Pass Holders
   children: []
@@ -4959,6 +5100,7 @@
   - aa-5-4-19
   - aa-5-4-20
   attributes:
+  - accessory_size
   - age_group
   - bag/case_closure
   - bag/case_features
@@ -5057,6 +5199,7 @@
   name: Cross Body Bags
   children: []
   attributes:
+  - accessory_size
   - age_group
   - bag/case_closure
   - bag/case_features
@@ -5211,6 +5354,7 @@
   name: Shopper Bags
   children: []
   attributes:
+  - accessory_size
   - age_group
   - bag/case_closure
   - bag/case_features
@@ -5221,6 +5365,7 @@
   - color
   - pattern
   - target_gender
+  - tote_handle_type
 - id: aa-5-4-19
   name: Shoulder Bags
   children: []
@@ -5265,6 +5410,7 @@
   name: Card Cases
   children: []
   attributes:
+  - age_group
   - clothing_accessory_material
   - color
   - pattern
@@ -5274,6 +5420,7 @@
   name: Coin Purses
   children: []
   attributes:
+  - age_group
   - clothing_accessory_material
   - color
   - pattern
@@ -5310,6 +5457,8 @@
   name: Wallets
   children: []
   attributes:
+  - age_group
+  - carry_options
   - clothing_accessory_material
   - color
   - pattern
@@ -5340,6 +5489,7 @@
   - aa-6-11
   - aa-6-12
   attributes:
+  - age_group
   - color
   - jewelry_material
   - jewelry_type
@@ -5364,6 +5514,7 @@
   - body_jewelry_type
   - color
   - jewelry_material
+  - jewelry_type
   - pattern
   - target_gender
 - id: aa-6-3
@@ -5375,6 +5526,7 @@
   - color
   - jewelry_material
   - jewelry_type
+  - necklace_design
   - pattern
   - target_gender
 - id: aa-6-4
@@ -5416,6 +5568,7 @@
   - color
   - jewelry_material
   - jewelry_type
+  - necklace_design
   - pattern
   - ring_size
   - target_gender
@@ -5513,6 +5666,7 @@
   - smart_watch_features
   - target_gender
   - watch_display
+  - watch_features
   - watch_material
 - id: aa-7
   name: Shoe Accessories
@@ -5658,6 +5812,7 @@
   - closure_type
   - color
   - footwear_material
+  - heel_height_type
   - occasion_style
   - pattern
   - shoe_features
@@ -5824,6 +5979,7 @@
   - color
   - footwear_material
   - heel_height_type
+  - occasion_style
   - pattern
   - shoe_features
   - shoe_fit
@@ -5876,6 +6032,7 @@
   - closure_type
   - color
   - footwear_material
+  - heel_height_type
   - heel_shoe_type
   - occasion_style
   - pattern
