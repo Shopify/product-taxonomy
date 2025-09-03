@@ -1454,6 +1454,7 @@
   - el-4-7
   - el-4-8
   - el-4-9
+  - el-4-10
   attributes:
   - color
   - pattern
@@ -1604,6 +1605,9 @@
   - el-4-8-5
   - el-4-8-6
   - el-4-8-7
+  - el-4-8-8
+  - el-4-8-9
+  - el-4-8-10
   attributes:
   - color
   - pattern
@@ -1611,26 +1615,82 @@
   name: Conference Phones
   children: []
   attributes:
+  - audio_codecs/formats_supported
   - color
   - communication_device_features
+  - connectivity_technology
+  - display_resolution
+  - display_technology
+  - ingress_protection_ip_rating
   - pattern
+  - poe_standard
+  - power_source
+  - pstn_connectivity_options
+  - security_algorithms
+  - speaker_features
+  - uc_platform_certification
+  - usb_connector_type
+  - voip_protocol_support
+  - wi_fi_standard
 - id: el-4-8-2
   name: Corded Phones
-  children: []
+  children:
+  - el-4-8-2-1
+  - el-4-8-2-2
   attributes:
   - color
   - communication_device_features
+  - connectivity_technology
+  - dialing_method
+  - display_color_mode
   - handset_type
+  - headset_connection_type
+  - mounting_type
   - pattern
+  - power_source
+  - telephone_cable_interface
   - telephone_style
+- id: el-4-8-2-1
+  name: Analog Landline Phones
+  children: []
+  attributes:
+  - color
+  - connectivity_technology
+  - dialing_method
+  - display_color_mode
+  - headset_connection_type
+  - mounting_type
+  - pattern
+  - power_source
+  - telephone_cable_interface
+- id: el-4-8-2-2
+  name: VoIP Phones
+  children: []
+  attributes:
+  - color
+  - connectivity_technology
+  - dialing_method
+  - display_color_mode
+  - headset_connection_type
+  - mounting_type
+  - pattern
+  - power_source
+  - telephone_cable_interface
 - id: el-4-8-3
   name: Cordless Phones
   children: []
   attributes:
+  - accessibility_design_features
+  - battery_technology
   - color
   - communication_device_features
+  - connectivity_technology
+  - cordless_phone_frequency_band
   - handset_type
+  - ingress_protection_ip_rating
+  - mounting_type
   - pattern
+  - power_source
   - telephone_style
 - id: el-4-8-4
   name: Mobile & Smart Phone Accessories
@@ -1642,9 +1702,16 @@
   - el-4-8-4-5
   - el-4-8-4-6
   - el-4-8-4-7
+  - el-4-8-4-8
+  - el-4-8-4-9
+  - el-4-8-4-10
+  - el-4-8-4-11
+  - el-4-8-4-12
+  - el-4-8-4-13
   attributes:
   - color
   - pattern
+  - theme
 - id: el-4-8-4-1
   name: Mobile Phone Camera Accessories
   children:
@@ -1652,138 +1719,579 @@
   - el-4-8-4-1-2
   - el-4-8-4-1-3
   - el-4-8-4-1-4
+  - el-4-8-4-1-5
+  - el-4-8-4-1-6
+  - el-4-8-4-1-7
+  - el-4-8-4-1-8
   attributes:
+  - camera_mounting_type
   - color
+  - compatible_device
   - device_interface
+  - finish
+  - magsafe_compatibility
+  - material
   - pattern
+  - theme
 - id: el-4-8-4-1-1
   name: Lenses
   children: []
   attributes:
+  - anamorphic_squeeze_ratio
   - camera_lens_type
+  - camera_mounting_type
   - color
+  - compatible_device
   - device_interface
+  - finish
+  - lens_kit_accessories_included
+  - lens_material
+  - magnification
+  - magsafe_compatibility
+  - material
   - pattern
+  - theme
 - id: el-4-8-4-1-2
   name: Lighting Kits
   children: []
   attributes:
+  - camera_mounting_type
+  - charging_interface_type
   - color
+  - compatible_device
   - connection_type
+  - connectivity_technology
+  - control_type
+  - finish
+  - light_design
+  - light_temperature
   - lighting_features
+  - magsafe_compatibility
+  - material
   - pattern
+  - power_source
+  - remote_technology
+  - theme
 - id: el-4-8-4-1-3
   name: Remote Shutters
   children: []
   attributes:
+  - camera_mounting_type
+  - charging_interface_type
   - color
+  - compatible_device
+  - connectivity_technology
   - device_interface
+  - durability_features
+  - finish
+  - magsafe_compatibility
+  - material
+  - operating_system_compatibility
   - pairing_method
   - pattern
+  - power_source
+  - remote_control_functions
+  - remote_shutter_form_factor
+  - remote_technology
+  - theme
 - id: el-4-8-4-1-4
   name: Selfie Sticks
   children: []
   attributes:
+  - angles_supported
+  - camera_mounting_type
   - color
+  - compatible_device
+  - connectivity_technology
   - device_interface
+  - durability_features
   - feet_type
+  - finish
+  - gimbal_stabilization_axes
   - leg_lock_type
   - leg_sections
+  - lighting_features
+  - magsafe_compatibility
   - material
   - mount/stand_features
+  - mounting_mechanism
   - pattern
+  - power_source
+  - selfie_stick_functionality_type
+  - theme
+- id: el-4-8-4-1-5
+  name: Gimbals & Stabilizers
+  children: []
+  attributes:
+  - camera_mounting_type
+  - color
+  - compatible_device
+  - connectivity_technology
+  - finish
+  - magsafe_compatibility
+  - material
+  - pattern
+  - power_source
+  - theme
+- id: el-4-8-4-1-6
+  name: Grips & Cages
+  children: []
+  attributes:
+  - camera_mounting_type
+  - color
+  - compatible_device
+  - finish
+  - magsafe_compatibility
+  - pattern
+  - theme
+- id: el-4-8-4-1-7
+  name: Lens Filters
+  children: []
+  attributes:
+  - camera_mounting_type
+  - color
+  - compatible_device
+  - finish
+  - magsafe_compatibility
+  - material
+  - pattern
+  - theme
+- id: el-4-8-4-1-8
+  name: Lens Protectors
+  children: []
+  attributes:
+  - camera_mounting_type
+  - color
+  - compatible_device
+  - finish
+  - hardness_rating_pencil_scale
+  - lens_protector_coverage_style
+  - lens_protector_features
+  - magsafe_compatibility
+  - material
+  - pattern
+  - theme
 - id: el-4-8-4-2
   name: Mobile Phone Cases
-  children: []
+  children:
+  - el-4-8-4-2-1
   attributes:
   - bag/case_material
+  - case_transparency_level
   - case_type
+  - closure_type
   - color
+  - finish
   - hand_side
+  - ingress_protection_ip_rating
+  - integrated_stand_type
+  - magsafe_compatibility
   - mobile_phone_case_features
   - pattern
+  - personalization_options
+  - power_source
   - product_certifications_standards
-- id: el-4-8-4-3
-  name: Mobile Phone Charms & Straps
+  - sustainability
+  - theme
+  - wallet_features
+- id: el-4-8-4-2-1
+  name: Battery Phone Cases
   children: []
   attributes:
+  - case_transparency_level
   - color
+  - closure_type
+  - finish
+  - ingress_protection_ip_rating
+  - integrated_stand_type
+  - magsafe_compatibility
   - pattern
+  - personalization_options
+  - sustainability
+  - theme
+  - wallet_features
+- id: el-4-8-4-3
+  name: Mobile Phone Charms & Straps
+  children:
+  - el-4-8-4-3-1
+  - el-4-8-4-3-2
+  attributes:
+  - clasp_type
+  - color
+  - finish
+  - hardware_finish
+  - magsafe_compatibility
+  - material
+  - pattern
+  - phone_strap_accessories_included
+  - theme
+- id: el-4-8-4-3-1
+  name: Mobile Phone Charms
+  children: []
+  attributes:
+  - clasp_type
+  - color
+  - finish
+  - hardware_finish
+  - magsafe_compatibility
+  - material
+  - pattern
+  - phone_strap_accessories_included
+  - theme
+- id: el-4-8-4-3-2
+  name: Mobile Phone Lanyards & Straps
+  children: []
+  attributes:
+  - clasp_type
+  - color
+  - finish
+  - hardware_finish
+  - magsafe_compatibility
+  - material
+  - pattern
+  - phone_strap_accessories_included
+  - theme
 - id: el-4-8-4-4
   name: Mobile Phone Pre-Paid Cards & SIM Cards
   children:
   - el-4-8-4-4-1
   - el-4-8-4-4-2
+  - el-4-8-4-4-3
   attributes:
   - color
+  - coverage_region
   - currency
+  - data_network_generation
+  - data_rollover_policy
   - pattern
+  - plan_service_type
+  - supported_countries
+  - top_up_method
+  - usage_type
 - id: el-4-8-4-4-1
   name: Mobile Phone Pre-Paid Cards
   children: []
   attributes:
+  - activation_method
   - color
+  - coverage_country
+  - coverage_region
   - currency
+  - data_network_generation
+  - data_rollover_policy
+  - denomination
+  - finish
   - pattern
+  - phone_card_delivery_format
+  - plan_service_type
+  - satellite_network_type
+  - sim_card_type
+  - supported_countries
+  - theme
+  - top_up_method
+  - usage_type
 - id: el-4-8-4-4-2
   name: SIM Cards
   children: []
   attributes:
   - color
+  - coverage_region
   - currency
+  - data_network
+  - data_network_generation
+  - data_rollover_policy
+  - finish
   - pattern
+  - plan_service_type
   - sim_card_type
+  - subscription_type
+  - supported_countries
+  - theme
+  - top_up_method
+  - usage_type
+- id: el-4-8-4-4-3
+  name: eSIMs
+  children: []
+  attributes:
+  - coverage_region
+  - data_network_generation
+  - data_rollover_policy
+  - plan_service_type
+  - supported_countries
+  - top_up_method
+  - usage_type
 - id: el-4-8-4-5
   name: Mobile Phone Replacement Parts
+  children:
+  - el-4-8-4-5-1
+  - el-4-8-4-5-2
+  - el-4-8-4-5-3
+  - el-4-8-4-5-4
+  - el-4-8-4-5-5
+  - el-4-8-4-5-6
+  - el-4-8-4-5-7
+  - el-4-8-4-5-8
+  - el-4-8-4-5-9
+  attributes:
+  - color
+  - finish
+  - item_condition
+  - material
+  - mobile_phone_connector_type
+  - pattern
+- id: el-4-8-4-5-1
+  name: Mobile Phone Adhesives & Tapes
   children: []
   attributes:
   - color
+  - finish
+  - item_condition
+  - material
   - pattern
+  - theme
+- id: el-4-8-4-5-2
+  name: Mobile Phone Audio & Speaker Parts
+  children: []
+  attributes:
+  - color
+  - connectivity_technology
+  - finish
+  - item_condition
+  - material
+  - mobile_phone_connector_type
+  - pattern
+  - theme
+- id: el-4-8-4-5-3
+  name: Mobile Phone Buttons & Flex Cables
+  children: []
+  attributes:
+  - color
+  - finish
+  - item_condition
+  - material
+  - pattern
+  - theme
+- id: el-4-8-4-5-4
+  name: Mobile Phone Camera Parts
+  children: []
+  attributes:
+  - color
+  - finish
+  - item_condition
+  - material
+  - mobile_phone_connector_type
+  - pattern
+  - theme
+- id: el-4-8-4-5-5
+  name: Mobile Phone Connectors & Charging Ports
+  children: []
+  attributes:
+  - color
+  - finish
+  - item_condition
+  - material
+  - mobile_phone_connector_type
+  - pattern
+  - theme
+- id: el-4-8-4-5-6
+  name: Mobile Phone Housings & Back Covers
+  children: []
+  attributes:
+  - color
+  - finish
+  - item_condition
+  - material
+  - mobile_phone_connector_type
+  - pattern
+  - theme
+- id: el-4-8-4-5-7
+  name: Mobile Phone Logic Boards
+  children: []
+  attributes:
+  - color
+  - finish
+  - item_condition
+  - material
+  - mobile_phone_connector_type
+  - pattern
+  - theme
+- id: el-4-8-4-5-8
+  name: Mobile Phone Screens & Screen Digitizers
+  children: []
+  attributes:
+  - color
+  - connectivity_technology
+  - display_technology
+  - finish
+  - item_condition
+  - material
+  - mobile_phone_connector_type
+  - pattern
+  - theme
+- id: el-4-8-4-5-9
+  name: Mobile Phone SIM & MicroSD Card Trays
+  children: []
+  attributes:
+  - color
+  - item_condition
+  - material
+  - pattern
+  - theme
 - id: el-4-8-4-6
   name: Mobile Phone Stands
   children: []
   attributes:
   - color
+  - connectivity_technology
+  - finish
+  - magsafe_compatibility
   - mount/stand_features
   - pattern
+  - power_source
+  - theme
 - id: el-4-8-4-7
   name: SIM Card Ejection Tools
   children: []
   attributes:
   - color
+  - finish
   - pattern
-- id: el-4-8-5
-  name: Mobile & Smart Phones
+  - theme
+- id: el-4-8-4-8
+  name: Mobile Phone Armbands
   children: []
   attributes:
-  - battery_technology
   - color
+  - finish
+  - magsafe_compatibility
+  - pattern
+  - theme
+- id: el-4-8-4-9
+  name: Mobile Phone Car Mounts
+  children: []
+  attributes:
+  - color
+  - connectivity_technology
+  - finish
+  - magsafe_compatibility
+  - pattern
+  - power_source
+  - theme
+- id: el-4-8-4-10
+  name: Mobile Phone Grips & Holders
+  children: []
+  attributes:
+  - color
+  - finish
+  - pattern
+  - magsafe_compatibility
+  - theme
+- id: el-4-8-4-11
+  name: Mobile Phone Repair Tools
+  children: []
+  attributes:
+  - color
+  - finish
+  - pattern
+  - theme
+- id: el-4-8-4-12
+  name: Mobile Phone Screen Protectors
+  children: []
+  attributes:
+  - color
+  - finish
+  - magsafe_compatibility
+  - pattern
+  - theme
+- id: el-4-8-4-13
+  name: Mobile Phone Skins & Wraps
+  children: []
+  attributes:
+  - color
+  - finish
+  - magsafe_compatibility
+  - pattern
+  - theme
+- id: el-4-8-5
+  name: Mobile & Smart Phones
+  children:
+  - el-4-8-5-1
+  - el-4-8-5-2
+  attributes:
+  - battery_technology
+  - biometric_authentication_method
+  - charging_interface_type
+  - color
+  - connectivity_technology
   - cosmetic_condition
   - data_network
   - display_resolution
+  - display_technology
+  - headphone_jack_type
+  - ingress_protection_ip_rating
+  - mobile_phone_form_factor
   - operating_system
   - pattern
+  - power_source
   - removable_storage_formats_supported
   - sim_card_capability
   - sim_card_type_1
   - sim_card_type_2
   - subscription_type
+  - wireless_charging_standard
+- id: el-4-8-5-1
+  name: Feature Phones
+  children: []
+  attributes:
+  - biometric_authentication_method
+  - charging_interface_type
+  - color
+  - connectivity_technology
+  - display_technology
+  - headphone_jack_type
+  - ingress_protection_ip_rating
+  - mobile_phone_form_factor
+  - pattern
+  - power_source
+  - wireless_charging_standard
+- id: el-4-8-5-2
+  name: Smart Phones
+  children: []
+  attributes:
+  - biometric_authentication_method
+  - charging_interface_type
+  - color
+  - connectivity_technology
+  - display_technology
+  - headphone_jack_type
+  - ingress_protection_ip_rating
+  - mobile_phone_form_factor
+  - pattern
+  - power_source
+  - wireless_charging_standard
 - id: el-4-8-6
   name: Satellite Phones
   children: []
   attributes:
+  - antenna_type
   - color
   - communication_device_features
   - connectivity_technology
   - data_network
+  - ingress_protection_ip_rating
+  - operating_system
   - pattern
+  - power_source
   - satellite_coverage_area
+  - satellite_navigation_systems_supported
   - satellite_network_type
   - subscription_type
 - id: el-4-8-7
   name: Telephone Accessories
   children:
   - el-4-8-7-1
+  - el-4-8-7-2
+  - el-4-8-7-3
   attributes:
   - color
   - pattern
@@ -1791,9 +2299,80 @@
   name: Phone Cards
   children: []
   attributes:
+  - activation_method
+  - card_rechargeability
   - color
+  - country_of_issue
+  - coverage_region
   - currency
+  - data_network
+  - denomination
   - pattern
+  - phone_card_delivery_format
+  - theme
+- id: el-4-8-7-2
+  name: Call Blockers
+  children: []
+  attributes:
+  - color
+  - connection_type
+  - connectivity_technology
+  - dsl_standard_compatibility
+  - pattern
+  - poe_standard
+  - power_source
+  - telephone_cable_interface
+  - telephone_cord_style
+- id: el-4-8-7-3
+  name: DSL Filters
+  children: []
+  attributes:
+  - color
+  - connection_type
+  - connectivity_technology
+  - dsl_standard_compatibility
+  - pattern
+  - poe_standard
+  - power_source
+- id: el-4-8-8
+  name: Emergency Phones
+  children: []
+  attributes:
+  - color
+  - connectivity_technology
+  - mounting_type
+  - pattern
+  - power_source
+- id: el-4-8-9
+  name: PBX Systems & Components
+  children: []
+  attributes:
+  - color
+  - connectivity_technology
+  - mounting_type
+  - pattern
+  - power_source
+- id: el-4-8-10
+  name: Satellite Phone Accessories
+  children:
+  - el-4-8-10-1
+  attributes:
+  - color
+  - pattern
+- id: el-4-8-10-1
+  name: Satellite Phone Pre-Paid Cards & SIM Cards
+  children: []
+  attributes:
+  - color
+  - coverage_region
+  - currency
+  - data_network_generation
+  - data_rollover_policy
+  - pattern
+  - plan_service_type
+  - supported_countries
+  - top_up_method
+  - usage_type
 - id: el-4-9
   name: Video Conferencing
   children: []
@@ -1803,6 +2382,10 @@
   - connectivity_technology
   - display_resolution
   - pattern
+- id: el-4-10
+  name: Satellite Communicators & Messengers
+  children: []
+  attributes: []
 - id: el-5
   name: Components
   children:
