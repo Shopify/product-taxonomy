@@ -95,5 +95,11 @@ module ProductTaxonomy
     def add_value(name, attribute_friendly_id)
       AddValueCommand.new(options.merge(name:, attribute_friendly_id:)).run
     end
+
+    desc "compare_categories VERSION_FOLDER", "Compare category changes between full_names.yml and categories.txt"
+    option :output_dir, type: :string, default: "exports", desc: "Output directory for CSV file"
+    def compare_categories(version_folder)
+      CompareCategoriesCommand.new(options).run(version_folder)
+    end
   end
 end
