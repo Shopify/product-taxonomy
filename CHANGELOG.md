@@ -1,3 +1,83 @@
+## 2025-09
+
+#### 📚 Taxonomy Tree
+Expanded taxonomy with over 100 new categories and 30+ new attributes, plus extensive attribute expansions to existing categories, with significant focus on telephony, agriculture machinery, sporting goods, and enhanced product filtering capabilities across multiple verticals.
+
+##### Apparel & Accessories
+
+- Adds `Period Swimwear`.
+
+##### Arts & Entertainment
+
+- Adds `Didgeridoos` in the Musical Instruments area.
+
+##### Business & Industrial
+
+- Adds `Agriculture Machinery` area, including `Tillage` (`Chisel Plows`, `Disc Harrows`, `Moldboard Plows`, `Rotary Tillers`, `Spike Harrows`, `Subsoilers` and `Vertical Tillage`).
+- Adds `Beekeeping` area, including `Bee Feed`, `Bee Hives` and `Beekeeping Equipment` (`Beekeeping Protective Gear` and `Honey Extraction Equipment`).
+- Adds `Health & Veterinary Supplies` area, including `Diagnostic Equipment`, `Surgical Supplies` and `Vaccines & Medications`.
+- Adds `Smart Farming Systems` area, including `Automated Feeders`, `Digital Water Management Systems` and `Livestock Monitoring Systems`.
+- In the Heavy Machinery area, adds `Concrete Mixers`, `Cranes` (`All Terrain Cranes`, `Crawler Cranes`, `Rough Terrain Cranes`, `Telescopic Cranes`, `Tower Cranes` and `Truck Cranes`) and `Electric & Hybrid Machinery`.
+- In the Heavy Machinery Parts & Accessories area, adds `Buckets`, `Compactors & Rollers`, `Grapples & Grabs`, `Hydraulic Hammers`, `Quick Couplers`, `Rippers` and `Thumbs`.
+- In the Tractors area, adds `High-Crop Tractors`, `Orchard Tractors`, `Track Tractors` and `Vineyard Tractors`.
+- Adds `Safety Boots` in the Work Safety Protective Gear area.
+
+##### Electronics
+
+- Adds `Satellite Communicators & Messengers`.
+- In the Telephony area, adds:
+  - `Corded Phones` (`Analog Landline Phones` and `VoIP Phones`);
+  - `Emergency Phones`;
+  - `Mobile & Smart Phone Accessories` (`Mobile Phone Armbands`, `Mobile Phone Camera Accessories` (`Gimbals & Stabilizers`, `Grips & Cages`, `Lens Filters` and `Lens Protectors`), `Mobile Phone Car Mounts`, `Mobile Phone Cases` (`Battery Phone Cases`), `Mobile Phone Charms & Straps` (`Mobile Phone Charms` and `Mobile Phone Lanyards & Straps`), `Mobile Phone Grips & Holders`, `Mobile Phone Pre-Paid Cards & SIM Cards` (`eSIMs`), `Mobile Phone Repair Tools`, `Mobile Phone Replacement Parts` (`Mobile Phone Adhesives & Tapes`, `Mobile Phone Audio & Speaker Parts`, `Mobile Phone Buttons & Flex Cables`, `Mobile Phone Camera Parts`, `Mobile Phone Connectors & Charging Ports`, `Mobile Phone Housings & Back Covers`, `Mobile Phone Logic Boards`, `Mobile Phone SIM & MicroSD Card Trays` and `Mobile Phone Screens & Screen Digitizers`), `Mobile Phone Screen Protectors` and `Mobile Phone Skins & Wraps`);
+  - `Mobile & Smart Phones` (`Feature Phones` and `Smart Phones`);
+  - `PBX Systems & Components`;
+  - `Satellite Phone Accessories` (`Satellite Phone Pre-Paid Cards & SIM Cards`); and
+  - `Telephone Accessories` (`Call Blockers` and `DSL Filters`).
+- In the 3D Printer Accessories area, adds `Resins`.
+- Adds comprehensive telephony attributes including `Accessibility design features`, `Biometric authentication method`, `Charging interface type`, `Cordless phone frequency band`, `Dialing method`, `Headset connection type`, `Ingress protection (IP) rating`, `Mobile phone form factor`, `Satellite navigation systems supported`, `UC platform certification`, `USB connector type` and `Wireless charging standard` across phone categories.
+- Adds mobile phone accessory attributes including `Anamorphic squeeze ratio`, `Case transparency level`, `Gimbal stabilization axes`, `Hardness rating (pencil scale)`, `Integrated stand type`, `Lens kit accessories included`, `Lens protector features`, `MagSafe compatibility`, `Mounting mechanism`, `Phone strap accessories included` and `Remote control functions` across mobile phone accessory categories.
+- Adds SIM card and prepaid service attributes including `Activation method`, `Card rechargeability`, `Data rollover policy`, `Phone card delivery format`, `Plan service type` and `Top-up method` across SIM card and prepaid service categories.
+
+##### Food, Beverages & Tobacco
+
+- In the Coffee area, adds `Ready-To-Drink Coffee`.
+- In the Hot Chocolate area, adds `Ready-To-Drink Hot Chocolate`.
+- In the Tea & Infusions area, adds `Ready-To-Drink Herbal Infusions & Tea`.
+- Renames `On Choy` as `Ong Choy` in the Fresh & Frozen Vegetables area.
+
+##### Health & Beauty
+
+- In the Bath & Body area, adds `Bath Bombs`.
+- In the Skin Care area, adds `Body Butters & Balms` (`Body Balms` and `Body Butters`).
+- In the Hair Care area, adds `Hair Treatments` (`Hair Masks`, `Hair Oils` and `Hair Serums`).
+
+##### Home & Garden
+
+- In the Kitchen Appliance Accessories area, adds `Air Fryer Accessories`.
+- In the Flatware area, adds:
+  - `Forks` (`Cocktail Forks`, `Dessert Forks`, `Dinner Forks`, `Fish Forks` and `Salad Forks`); and
+  - `Spoons` (`Coffee Spoons`, `Dessert Spoons`, `Salt Spoons`, `Tablespoons` and `Teaspoons`).
+- In the Tractors area, adds `Garden Tractors`, `Lawn Tractors` and `Sub-Compact Tractors`.
+
+##### Sporting Goods
+
+- Adds `Curling` area, including `Curling Brooms`, `Curling Shoes`, `Curling Stones` and `Curling Training Aids`.
+- Renames `Football Table Players` as `Foosball Table Players` and `Football Table Rods` as `Foosball Table Rods` in the Foosball Table Parts & Accessories area.
+- Renames `Goggles Lenses` as `Goggle Lenses` in the Swim Goggle & Mask Accessories area.
+
+##### Toys & Games
+
+- Adds `Sensory Toys`.
+
+##### Vehicles & Parts
+
+- Renames `Windows Glass` as `Window Glass` in the Motor Vehicle Window Parts & Accessories area.
+- In the Vehicle Repair & Specialty Tools area, adds `Vehicle Lifts & Stands` (`Vehicle Lifts` and `Vehicle Stands`).
+
+##### Miscellaneous
+
+- Extends existing attributes to additional categories, with significant expansions of core attributes like `Color` and `Pattern` to over 120 categories each, `Age group` to 60+ categories, and `Target gender` to 25+ categories to better support merchant product categorization and customer filtering needs.
+
 ## 2025-03
 
 #### 🌐 Localization
