@@ -1,4 +1,4 @@
-## 2025-09-unstable
+## 2025-09
 
 #### 📚 Taxonomy Tree
 Expanded taxonomy with over 100 new categories and 30+ new attributes, plus extensive attribute expansions to existing categories, with significant focus on telephony, agriculture machinery, sporting goods, and enhanced product filtering capabilities across multiple verticals.
