@@ -33263,6 +33263,63 @@ base_attributes:
   - robe_style__spa_robe
   - robe_style__wrap
   - robe_style__other
+- id: 5033
+  name: Journey type
+  description: Specifies the type of journey covered by the ticket based on trip count and travel direction.
+  friendly_id: journey_type
+  handle: journey-type
+  values:
+  - journey_type__multi_journey
+  - journey_type__open_return
+  - journey_type__return/round_trip
+  - journey_type__single_journey
+  - journey_type__unlimited_travel_pass
+- id: 5034
+  name: Pass duration
+  description: Specifies the validity period or lifespan of the travel pass or ticket.
+  friendly_id: pass_duration
+  handle: pass-duration
+  values:
+  - pass_duration__annual
+  - pass_duration__day
+  - pass_duration__month
+  - pass_duration__other
+  - pass_duration__week
+- id: 5035
+  name: Seat reservation
+  description: Specifies whether the ticket includes a seat assignment or requires advance reservation.
+  friendly_id: seat_reservation
+  handle: seat-reservation
+  values:
+  - seat_reservation__not_applicable
+  - seat_reservation__optional_reservation
+  - seat_reservation__reserved_seat
+  - seat_reservation__unreserved
+- id: 5036
+  name: Ticket class
+  description: Specifies the service level or seating class provided with the ticket.
+  friendly_id: ticket_class
+  handle: ticket-class
+  values:
+  - ticket_class__business_class
+  - ticket_class__first_class
+  - ticket_class__other
+  - ticket_class__premium_class
+  - ticket_class__standard/economy_class
+- id: 5037
+  name: Transport type
+  description: Specifies the mode of public transportation for which the ticket or pass is valid.
+  friendly_id: transport_type
+  handle: transport-type
+  values:
+  - transport_type__bus
+  - transport_type__ferry
+  - transport_type__metro/subway
+  - transport_type__multi_modal
+  - transport_type__other
+  - transport_type__plane
+  - transport_type__train
+  - transport_type__tram
 extended_attributes:
 - name: Shampoo/Conditioner effect
   handle: shampoo-conditioner-effect
