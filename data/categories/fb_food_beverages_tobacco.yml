@@ -306,8 +306,8 @@
   - fb-1-3-4
   attributes:
   - allergen_information
-  - coffee_product_form
   - caffeine_content
+  - coffee_product_form
   - coffee_roast
   - country
   - dietary_preferences
@@ -3029,6 +3029,22 @@
   - dietary_preferences
 - id: fb-2-11-7
   name: Oats, Grits & Hot Cereal
+  children:
+  - fb-2-11-7-1
+  - fb-2-11-7-2
+  attributes:
+  - allergen_information
+  - dietary_preferences
+  - flavor
+- id: fb-2-11-7-1
+  name: Muesli
+  children: []
+  attributes:
+  - allergen_information
+  - dietary_preferences
+  - flavor
+- id: fb-2-11-7-2
+  name: Porridge
   children: []
   attributes:
   - allergen_information
