@@ -35,6 +35,10 @@
   - hb-1-24
   - hb-1-25
   - hb-1-26
+  - hb-1-27
+  - hb-1-28
+  - hb-1-29
+  - hb-1-30
   attributes:
   - age_group
 - id: hb-1-1
@@ -42,6 +46,11 @@
   children:
   - hb-1-1-1
   - hb-1-1-2
+  - hb-1-1-3
+  - hb-1-1-4
+  - hb-1-1-5
+  - hb-1-1-6
+  - hb-1-1-7
   attributes: []
 - id: hb-1-1-1
   name: Acupuncture Models
@@ -55,6 +64,26 @@
   children: []
   attributes:
   - needle_material
+- id: hb-1-1-3
+  name: Acupressure Bands & Devices
+  children: []
+  attributes: []
+- id: hb-1-1-4
+  name: Acupuncture Charts & Reference Materials
+  children: []
+  attributes: []
+- id: hb-1-1-5
+  name: Ear Seeds & Auriculotherapy Supplies
+  children: []
+  attributes: []
+- id: hb-1-1-6
+  name: Electronic Acupuncture Pens & Stimulators
+  children: []
+  attributes: []
+- id: hb-1-1-7
+  name: Moxibustion Supplies
+  children: []
+  attributes: []
 - id: hb-1-2
   name: Bed Pans
   children: []
@@ -68,6 +97,10 @@
   - hb-1-3-2
   - hb-1-3-3
   - hb-1-3-4
+  - hb-1-3-5
+  - hb-1-3-6
+  - hb-1-3-7
+  - hb-1-3-8
   attributes:
   - biometric_monitor_accessory_features
   - color
@@ -76,19 +109,37 @@
   - pattern
 - id: hb-1-3-1
   name: Activity Monitor Accessories
-  children: []
+  children:
+  - hb-1-3-1-1
+  - hb-1-3-1-2
+  - hb-1-3-1-3
   attributes:
   - biometric_monitor_accessory_features
   - color
   - connectivity_technology
   - control_type
   - pattern
+- id: hb-1-3-1-1
+  name: Activity Monitor Bands & Straps
+  children: []
+  attributes: []
+- id: hb-1-3-1-2
+  name: Activity Monitor Chargers & Batteries
+  children: []
+  attributes: []
+- id: hb-1-3-1-3
+  name: Activity Monitor Patches & Electrodes
+  children: []
+  attributes: []
 - id: hb-1-3-2
   name: Blood Glucose Meter Accessories
   children:
   - hb-1-3-2-1
   - hb-1-3-2-2
   - hb-1-3-2-3
+  - hb-1-3-2-4
+  - hb-1-3-2-5
+  - hb-1-3-2-6
   attributes:
   - biometric_monitor_accessory_features
   - color
@@ -122,10 +173,25 @@
   - connectivity_technology
   - control_type
   - pattern
+- id: hb-1-3-2-4
+  name: Blood Glucose Meter Cases
+  children: []
+  attributes: []
+- id: hb-1-3-2-5
+  name: Blood Glucose Meter Skins & Stickers
+  children: []
+  attributes: []
+- id: hb-1-3-2-6
+  name: Lancets
+  children: []
+  attributes: []
 - id: hb-1-3-3
   name: Blood Pressure Monitor Accessories
   children:
   - hb-1-3-3-1
+  - hb-1-3-3-2
+  - hb-1-3-3-3
+  - hb-1-3-3-4
   attributes:
   - biometric_monitor_accessory_features
   - color
@@ -141,6 +207,18 @@
   - connectivity_technology
   - control_type
   - pattern
+- id: hb-1-3-3-2
+  name: Blood Pressure Monitor Carrying Cases
+  children: []
+  attributes: []
+- id: hb-1-3-3-3
+  name: Blood Pressure Monitor Cuff Hoses & Inflation Bulbs
+  children: []
+  attributes: []
+- id: hb-1-3-3-4
+  name: Blood Pressure Monitor Power Adapters
+  children: []
+  attributes: []
 - id: hb-1-3-4
   name: Body Weight Scale Accessories
   children: []
@@ -150,6 +228,22 @@
   - connectivity_technology
   - control_type
   - pattern
+- id: hb-1-3-5
+  name: Continuous Glucose Monitor (CGM) Accessories
+  children: []
+  attributes: []
+- id: hb-1-3-6
+  name: Medical Thermometer Accessories
+  children: []
+  attributes: []
+- id: hb-1-3-7
+  name: Prenatal Heart Rate Monitor Accessories
+  children: []
+  attributes: []
+- id: hb-1-3-8
+  name: Pulse Oximeter Accessories
+  children: []
+  attributes: []
 - id: hb-1-4
   name: Biometric Monitors
   children:
@@ -164,6 +258,8 @@
   - hb-1-4-9
   - hb-1-4-10
   - hb-1-4-11
+  - hb-1-4-12
+  - hb-1-4-13
   attributes:
   - color
   - display_technology
@@ -183,13 +279,23 @@
   - tracking_metrics
 - id: hb-1-4-2
   name: Blood Glucose Meters
-  children: []
+  children:
+  - hb-1-4-2-1
+  - hb-1-4-2-2
   attributes:
   - biometric_monitor_accessory_features
   - color
   - connectivity_technology
   - display_technology
   - pattern
+- id: hb-1-4-2-1
+  name: Continuous Glucose Monitors
+  children: []
+  attributes: []
+- id: hb-1-4-2-2
+  name: Non-Invasive Glucose Monitors
+  children: []
+  attributes: []
 - id: hb-1-4-3
   name: Blood Pressure Monitors
   children: []
@@ -199,13 +305,23 @@
   - pattern
 - id: hb-1-4-4
   name: Body Fat Analyzers
-  children: []
+  children:
+  - hb-1-4-4-1
+  - hb-1-4-4-2
   attributes:
   - color
   - display_technology
   - measuring_method
   - metrics_supported
   - pattern
+- id: hb-1-4-4-1
+  name: Body Fat Calipers
+  children: []
+  attributes: []
+- id: hb-1-4-4-2
+  name: Body Fat Scales
+  children: []
+  attributes: []
 - id: hb-1-4-5
   name: Body Weight Scales
   children: []
@@ -241,12 +357,22 @@
   - test_format
 - id: hb-1-4-8-1
   name: Fertility Tests & Monitors
-  children: []
+  children:
+  - hb-1-4-8-1-1
+  - hb-1-4-8-1-2
   attributes:
   - color
   - display_technology
   - pattern
   - test_format
+- id: hb-1-4-8-1-1
+  name: Basal Thermometers
+  children: []
+  attributes: []
+- id: hb-1-4-8-1-2
+  name: Sperm Test Kits
+  children: []
+  attributes: []
 - id: hb-1-4-8-2
   name: Ovulation Tests
   children: []
@@ -256,7 +382,11 @@
   - test_format
 - id: hb-1-4-9
   name: Medical Thermometers
-  children: []
+  children:
+  - hb-1-4-9-1
+  - hb-1-4-9-2
+  - hb-1-4-9-3
+  - hb-1-4-9-4
   attributes:
   - color
   - control_type
@@ -265,6 +395,22 @@
   - pattern
   - temperature_measurement
   - test_sample
+- id: hb-1-4-9-1
+  name: Digital Stick Thermometers
+  children: []
+  attributes: []
+- id: hb-1-4-9-2
+  name: Disposable Thermometer Strips
+  children: []
+  attributes: []
+- id: hb-1-4-9-3
+  name: Ear Thermometers
+  children: []
+  attributes: []
+- id: hb-1-4-9-4
+  name: Forehead & No-Touch Thermometers
+  children: []
+  attributes: []
 - id: hb-1-4-10
   name: Prenatal Heart Rate Monitors
   children: []
@@ -276,11 +422,34 @@
   - pattern
 - id: hb-1-4-11
   name: Pulse Oximeters
-  children: []
+  children:
+  - hb-1-4-11-1
+  - hb-1-4-11-2
+  - hb-1-4-11-3
   attributes:
   - color
   - display_technology
   - pattern
+- id: hb-1-4-11-1
+  name: Fingertip Pulse Oximeters
+  children: []
+  attributes: []
+- id: hb-1-4-11-2
+  name: Handheld Pulse Oximeters
+  children: []
+  attributes: []
+- id: hb-1-4-11-3
+  name: Pulse Oximeter Sensors & Modules
+  children: []
+  attributes: []
+- id: hb-1-4-12
+  name: Breathalyzer Accessories
+  children: []
+  attributes: []
+- id: hb-1-4-13
+  name: Heart Rate Monitors
+  children: []
+  attributes: []
 - id: hb-1-5
   name: Condoms
   children: []
@@ -298,6 +467,16 @@
   - package_type
 - id: hb-1-7
   name: Contraceptive Cases
+  children:
+  - hb-1-7-1
+  - hb-1-7-2
+  attributes: []
+- id: hb-1-7-1
+  name: Birth Control Pill Cases
+  children: []
+  attributes: []
+- id: hb-1-7-2
+  name: Condom Cases
   children: []
   attributes: []
 - id: hb-1-8
@@ -309,16 +488,37 @@
   - hb-1-8-4
   - hb-1-8-5
   - hb-1-8-6
+  - hb-1-8-7
+  - hb-1-8-8
+  - hb-1-8-9
+  - hb-1-8-10
+  - hb-1-8-11
+  - hb-1-8-12
   attributes:
   - usage_type
 - id: hb-1-8-1
   name: Antiseptics & Cleaning Supplies
-  children: []
+  children:
+  - hb-1-8-1-1
+  - hb-1-8-1-2
+  - hb-1-8-1-3
   attributes:
   - dispenser_type
   - product_form
   - suitable_for_skin_type
   - usage_type
+- id: hb-1-8-1-1
+  name: Antiseptic Gels & Sprays
+  children: []
+  attributes: []
+- id: hb-1-8-1-2
+  name: Antiseptic Liquids
+  children: []
+  attributes: []
+- id: hb-1-8-1-3
+  name: Antiseptic Wipes & Pads
+  children: []
+  attributes: []
 - id: hb-1-8-2
   name: Cast & Bandage Protectors
   children: []
@@ -328,25 +528,58 @@
   - usage_type
 - id: hb-1-8-3
   name: Eye Wash Supplies
-  children: []
+  children:
+  - hb-1-8-3-1
+  - hb-1-8-3-2
+  - hb-1-8-3-3
   attributes:
   - dispenser_type
   - usage_type
+- id: hb-1-8-3-1
+  name: Eye Wash Additives & Preservatives
+  children: []
+  attributes: []
+- id: hb-1-8-3-2
+  name: Eye Wash Solutions
+  children: []
+  attributes: []
+- id: hb-1-8-3-3
+  name: Eye Wash Stations
+  children: []
+  attributes: []
 - id: hb-1-8-4
   name: First Aid Kits
-  children: []
+  children:
+  - hb-1-8-4-1
+  - hb-1-8-4-2
+  - hb-1-8-4-3
   attributes:
   - bag/case_material
   - case_color
   - case_pattern
   - first_aid_kit_usage
   - usage_type
+- id: hb-1-8-4-1
+  name: First Aid Bags & Empty Cases
+  children: []
+  attributes: []
+- id: hb-1-8-4-2
+  name: First Aid Kit Refills & Restock Packs
+  children: []
+  attributes: []
+- id: hb-1-8-4-3
+  name: Trauma First Aid Kits
+  children: []
+  attributes: []
 - id: hb-1-8-5
   name: Hot & Cold Therapies
   children:
   - hb-1-8-5-1
   - hb-1-8-5-2
   - hb-1-8-5-3
+  - hb-1-8-5-4
+  - hb-1-8-5-5
+  - hb-1-8-5-6
   attributes:
   - body_area
   - color
@@ -383,15 +616,81 @@
   - pattern
   - treatment_objective
   - usage_type
+- id: hb-1-8-5-4
+  name: Cold Sprays
+  children: []
+  attributes: []
+- id: hb-1-8-5-5
+  name: Hot & Cold Packs
+  children: []
+  attributes: []
+- id: hb-1-8-5-6
+  name: Hot Water Bottles
+  children: []
+  attributes: []
 - id: hb-1-8-6
   name: Medical Tape & Bandages
-  children: []
+  children:
+  - hb-1-8-6-1
+  - hb-1-8-6-2
+  - hb-1-8-6-3
+  - hb-1-8-6-4
+  - hb-1-8-6-5
+  - hb-1-8-6-6
   attributes:
   - color
   - medical_tape_material
   - pattern
   - product_sterility
   - usage_type
+- id: hb-1-8-6-1
+  name: Adhesive Bandages & Plasters
+  children: []
+  attributes: []
+- id: hb-1-8-6-2
+  name: Cohesive & Self-Adherent Bandages
+  children: []
+  attributes: []
+- id: hb-1-8-6-3
+  name: Compression Bandages
+  children: []
+  attributes: []
+- id: hb-1-8-6-4
+  name: Gauze & Wound Dressings
+  children: []
+  attributes: []
+- id: hb-1-8-6-5
+  name: Kinesiology Tape
+  children: []
+  attributes: []
+- id: hb-1-8-6-6
+  name: Medical Tape
+  children: []
+  attributes: []
+- id: hb-1-8-7
+  name: Bleeding Control & Hemostatic Supplies
+  children: []
+  attributes: []
+- id: hb-1-8-8
+  name: Burn Care
+  children: []
+  attributes: []
+- id: hb-1-8-9
+  name: Eye Wash Accessories
+  children: []
+  attributes: []
+- id: hb-1-8-10
+  name: First Aid Tools & Instruments
+  children: []
+  attributes: []
+- id: hb-1-8-11
+  name: Resuscitation & Airway Management Supplies
+  children: []
+  attributes: []
+- id: hb-1-8-12
+  name: Splints & Immobilization Supplies
+  children: []
+  attributes: []
 - id: hb-1-9
   name: Fitness & Nutrition
   children:
@@ -402,32 +701,73 @@
   - hb-1-9-5
   - hb-1-9-6
   - hb-1-9-7
+  - hb-1-9-8
   attributes:
   - dietary_preferences
 - id: hb-1-9-1
   name: Nutrition Bars
-  children: []
+  children:
+  - hb-1-9-1-1
+  - hb-1-9-1-2
+  - hb-1-9-1-3
   attributes:
   - allergen_information
   - dietary_preferences
   - dietary_use
   - flavor
+- id: hb-1-9-1-1
+  name: Energy Bars
+  children: []
+  attributes: []
+- id: hb-1-9-1-2
+  name: Meal Replacement Bars
+  children: []
+  attributes: []
+- id: hb-1-9-1-3
+  name: Protein Bars
+  children: []
+  attributes: []
 - id: hb-1-9-2
   name: Nutrition Drinks & Shakes
-  children: []
+  children:
+  - hb-1-9-2-1
+  - hb-1-9-2-2
+  - hb-1-9-2-3
   attributes:
   - age_group
   - detailed_ingredients
   - dietary_preferences
   - dietary_use
   - flavor
+- id: hb-1-9-2-1
+  name: Pre-Workout Drinks & Powders
+  children: []
+  attributes: []
+- id: hb-1-9-2-2
+  name: Protein & Meal Replacement Shakes
+  children: []
+  attributes: []
+- id: hb-1-9-2-3
+  name: Weight Gainer Shakes
+  children: []
+  attributes: []
 - id: hb-1-9-3
   name: Nutrition Gels & Chews
-  children: []
+  children:
+  - hb-1-9-3-1
+  - hb-1-9-3-2
   attributes:
   - dietary_preferences
   - dietary_use
   - flavor
+- id: hb-1-9-3-1
+  name: Energy Chews & Gummies
+  children: []
+  attributes: []
+- id: hb-1-9-3-2
+  name: Energy Gels
+  children: []
+  attributes: []
 - id: hb-1-9-4
   name: Nutritional Food Purées
   children: []
@@ -452,6 +792,8 @@
   - hb-1-9-6-8
   - hb-1-9-6-9
   - hb-1-9-6-10
+  - hb-1-9-6-11
+  - hb-1-9-6-12
   attributes:
   - age_group
   - dietary_preferences
@@ -461,7 +803,9 @@
   - product_certifications_standards
 - id: hb-1-9-6-1
   name: Amino Acids
-  children: []
+  children:
+  - hb-1-9-6-1-1
+  - hb-1-9-6-1-2
   attributes:
   - age_group
   - detailed_ingredients
@@ -469,6 +813,14 @@
   - flavor
   - food_supplement_form
   - product_certifications_standards
+- id: hb-1-9-6-1-1
+  name: Branched-Chain Amino Acid (BCAA)
+  children: []
+  attributes: []
+- id: hb-1-9-6-1-2
+  name: Single Amino Acid Supplements
+  children: []
+  attributes: []
 - id: hb-1-9-6-2
   name: Collagen
   children: []
@@ -491,7 +843,12 @@
   - product_certifications_standards
 - id: hb-1-9-6-4
   name: Digestive Supplements
-  children: []
+  children:
+  - hb-1-9-6-4-1
+  - hb-1-9-6-4-2
+  - hb-1-9-6-4-3
+  - hb-1-9-6-4-4
+  - hb-1-9-6-4-5
   attributes:
   - age_group
   - detailed_ingredients
@@ -499,9 +856,31 @@
   - flavor
   - food_supplement_form
   - product_certifications_standards
+- id: hb-1-9-6-4-1
+  name: Activated Charcoal & Binders
+  children: []
+  attributes: []
+- id: hb-1-9-6-4-2
+  name: Colon Cleanses
+  children: []
+  attributes: []
+- id: hb-1-9-6-4-3
+  name: Digestive Enzymes
+  children: []
+  attributes: []
+- id: hb-1-9-6-4-4
+  name: Prebiotics & Fiber
+  children: []
+  attributes: []
+- id: hb-1-9-6-4-5
+  name: Probiotics
+  children: []
+  attributes: []
 - id: hb-1-9-6-5
   name: Herbal Supplements
-  children: []
+  children:
+  - hb-1-9-6-5-1
+  - hb-1-9-6-5-2
   attributes:
   - age_group
   - detailed_ingredients
@@ -509,9 +888,22 @@
   - flavor
   - food_supplement_form
   - product_certifications_standards
+- id: hb-1-9-6-5-1
+  name: Flower Essence Remedies
+  children: []
+  attributes: []
+- id: hb-1-9-6-5-2
+  name: Kratom Supplements
+  children: []
+  attributes: []
 - id: hb-1-9-6-6
   name: Minerals
-  children: []
+  children:
+  - hb-1-9-6-6-1
+  - hb-1-9-6-6-2
+  - hb-1-9-6-6-3
+  - hb-1-9-6-6-4
+  - hb-1-9-6-6-5
   attributes:
   - age_group
   - detailed_ingredients
@@ -519,6 +911,26 @@
   - flavor
   - food_supplement_form
   - product_certifications_standards
+- id: hb-1-9-6-6-1
+  name: Calcium
+  children: []
+  attributes: []
+- id: hb-1-9-6-6-2
+  name: Iron
+  children: []
+  attributes: []
+- id: hb-1-9-6-6-3
+  name: Magnesium
+  children: []
+  attributes: []
+- id: hb-1-9-6-6-4
+  name: Multimineral Supplements
+  children: []
+  attributes: []
+- id: hb-1-9-6-6-5
+  name: Zinc
+  children: []
+  attributes: []
 - id: hb-1-9-6-7
   name: Multivitamin Supplements
   children: []
@@ -545,7 +957,14 @@
   - target_gender
 - id: hb-1-9-6-9
   name: Single Vitamins
-  children: []
+  children:
+  - hb-1-9-6-9-1
+  - hb-1-9-6-9-2
+  - hb-1-9-6-9-3
+  - hb-1-9-6-9-4
+  - hb-1-9-6-9-5
+  - hb-1-9-6-9-6
+  - hb-1-9-6-9-7
   attributes:
   - age_group
   - detailed_ingredients
@@ -553,6 +972,34 @@
   - flavor
   - food_supplement_form
   - product_certifications_standards
+- id: hb-1-9-6-9-1
+  name: CoQ10
+  children: []
+  attributes: []
+- id: hb-1-9-6-9-2
+  name: Vitamin A
+  children: []
+  attributes: []
+- id: hb-1-9-6-9-3
+  name: Vitamin B
+  children: []
+  attributes: []
+- id: hb-1-9-6-9-4
+  name: Vitamin C
+  children: []
+  attributes: []
+- id: hb-1-9-6-9-5
+  name: Vitamin D
+  children: []
+  attributes: []
+- id: hb-1-9-6-9-6
+  name: Vitamin E
+  children: []
+  attributes: []
+- id: hb-1-9-6-9-7
+  name: Vitamin K
+  children: []
+  attributes: []
 - id: hb-1-9-6-10
   name: CBD Supplements
   children: []
@@ -562,12 +1009,23 @@
   - dietary_preferences
   - flavor
   - food_supplement_form
+- id: hb-1-9-6-11
+  name: Omega Fatty Acids
+  children: []
+  attributes: []
+- id: hb-1-9-6-12
+  name: Sleep Supplements
+  children: []
+  attributes: []
 - id: hb-1-9-7
   name: Weight Loss
   children:
   - hb-1-9-7-1
   - hb-1-9-7-2
   - hb-1-9-7-3
+  - hb-1-9-7-4
+  - hb-1-9-7-5
+  - hb-1-9-7-6
   attributes: []
 - id: hb-1-9-7-1
   name: Weight Loss Supplements
@@ -585,10 +1043,36 @@
   - dietary_preferences
 - id: hb-1-9-7-3
   name: Weight Loss Detox & Cleanse Products
-  children: []
+  children:
+  - hb-1-9-7-3-1
+  - hb-1-9-7-3-2
   attributes:
   - detailed_ingredients
   - dietary_preferences
+- id: hb-1-9-7-3-1
+  name: Detox & Cleanse Patches
+  children: []
+  attributes: []
+- id: hb-1-9-7-3-2
+  name: Detox & Cleanse Programs
+  children: []
+  attributes: []
+- id: hb-1-9-7-4
+  name: Weight Loss Journals & Trackers
+  children: []
+  attributes: []
+- id: hb-1-9-7-5
+  name: Weight Loss Programs & Coaching
+  children: []
+  attributes: []
+- id: hb-1-9-7-6
+  name: Weight Loss Topical & Patch Treatments
+  children: []
+  attributes: []
+- id: hb-1-9-8
+  name: Fitness & Workout Programs
+  children: []
+  attributes: []
 - id: hb-1-10
   name: Hearing Aids
   children:
@@ -602,6 +1086,7 @@
   - hb-1-10-8
   - hb-1-10-9
   - hb-1-10-10
+  - hb-1-10-11
   attributes:
   - age_group
   - battery_type
@@ -698,12 +1183,21 @@
   - hearing_aid_features
   - hearing_aid_material
   - technology_level
+- id: hb-1-10-11
+  name: Receiver-In-Canal (RIC) Hearing Aids
+  children: []
+  attributes: []
 - id: hb-1-11
   name: Incontinence Aids
   children:
   - hb-1-11-6
   - hb-1-11-7
   - hb-1-11-8
+  - hb-1-11-9
+  - hb-1-11-10
+  - hb-1-11-11
+  - hb-1-11-12
+  - hb-1-11-13
   attributes:
   - absorbency_level
   - accessory_size
@@ -733,6 +1227,26 @@
   - absorbency_level
   - accessory_size
   - material
+- id: hb-1-11-9
+  name: Catheter Drainage Bags
+  children: []
+  attributes: []
+- id: hb-1-11-10
+  name: Incontinence Underwear & Briefs
+  children: []
+  attributes: []
+- id: hb-1-11-11
+  name: Incontinence Wipes & Cleansers
+  children: []
+  attributes: []
+- id: hb-1-11-12
+  name: Portable Urinals
+  children: []
+  attributes: []
+- id: hb-1-11-13
+  name: Urinary Catheters
+  children: []
+  attributes: []
 - id: hb-1-12
   name: Light Therapy Lamps
   children: []
@@ -740,10 +1254,40 @@
   - light_spectrum
 - id: hb-1-13
   name: Medical Alarm Systems
-  children: []
+  children:
+  - hb-1-13-1
+  - hb-1-13-2
+  - hb-1-13-3
+  - hb-1-13-4
+  - hb-1-13-5
+  - hb-1-13-6
   attributes:
   - medical_alarm_features
   - system_range
+- id: hb-1-13-1
+  name: Bed Exit Alarm Systems
+  children: []
+  attributes: []
+- id: hb-1-13-2
+  name: Caregiver Pager Systems
+  children: []
+  attributes: []
+- id: hb-1-13-3
+  name: Chair Exit Alarm Systems
+  children: []
+  attributes: []
+- id: hb-1-13-4
+  name: Floor Mat Alarm Systems
+  children: []
+  attributes: []
+- id: hb-1-13-5
+  name: Medical Alarm Watches
+  children: []
+  attributes: []
+- id: hb-1-13-6
+  name: Personal Medical Alert Devices
+  children: []
+  attributes: []
 - id: hb-1-14
   name: Medical Identification Tags & Jewelry
   children: []
@@ -834,10 +1378,45 @@
   - test_sample
 - id: hb-1-16
   name: Medicine & Drugs
-  children: []
+  children:
+  - hb-1-16-1
+  - hb-1-16-2
+  - hb-1-16-3
+  - hb-1-16-4
+  - hb-1-16-5
+  - hb-1-16-6
+  - hb-1-16-7
   attributes:
   - age_group
   - medicine/drug_form
+- id: hb-1-16-1
+  name: Allergy & Hay Fever Medicines
+  children: []
+  attributes: []
+- id: hb-1-16-2
+  name: Cough, Cold & Flu Medicines
+  children: []
+  attributes: []
+- id: hb-1-16-3
+  name: Digestive Health Medicines
+  children: []
+  attributes: []
+- id: hb-1-16-4
+  name: Pain Relief & Fever Reducers
+  children: []
+  attributes: []
+- id: hb-1-16-5
+  name: Sleep Aids & Relaxants
+  children: []
+  attributes: []
+- id: hb-1-16-6
+  name: Smoking Cessation Aids
+  children: []
+  attributes: []
+- id: hb-1-16-7
+  name: Topical Skin Treatments
+  children: []
+  attributes: []
 - id: hb-1-17
   name: Mobility & Accessibility
   children:
@@ -854,6 +1433,7 @@
   - hb-1-17-1-2
   - hb-1-17-1-3
   - hb-1-17-1-4
+  - hb-1-17-1-5
   attributes:
   - color
   - material
@@ -880,12 +1460,22 @@
   - staircase_type
 - id: hb-1-17-1-3
   name: Transfer Boards & Sheets
-  children: []
+  children:
+  - hb-1-17-1-3-1
+  - hb-1-17-1-3-2
   attributes:
   - color
   - material
   - pattern
   - transfer_boards_surface_type
+- id: hb-1-17-1-3-1
+  name: Slide Sheets
+  children: []
+  attributes: []
+- id: hb-1-17-1-3-2
+  name: Transfer Boards
+  children: []
+  attributes: []
 - id: hb-1-17-1-4
   name: Wheelchairs
   children: []
@@ -896,19 +1486,44 @@
   - mobility/accessibility_equipment_features
   - pattern
   - wheelchair_type
+- id: hb-1-17-1-5
+  name: Stair Lift Accessories
+  children: []
+  attributes: []
 - id: hb-1-17-2
   name: Accessibility Equipment Accessories
-  children: []
+  children:
+  - hb-1-17-2-1
+  - hb-1-17-2-2
+  - hb-1-17-2-3
   attributes:
   - age_group
   - attachment_type
   - color
   - material
   - pattern
+- id: hb-1-17-2-1
+  name: Mobility Scooter Accessories
+  children: []
+  attributes: []
+- id: hb-1-17-2-2
+  name: Prosthetic & Orthotic Accessories
+  children: []
+  attributes: []
+- id: hb-1-17-2-3
+  name: Wheelchair Accessories
+  children: []
+  attributes: []
 - id: hb-1-17-3
   name: Accessibility Furniture & Fixtures
   children:
   - hb-1-17-3-1
+  - hb-1-17-3-2
+  - hb-1-17-3-3
+  - hb-1-17-3-4
+  - hb-1-17-3-5
+  - hb-1-17-3-6
+  - hb-1-17-3-7
   attributes:
   - age_group
   - color
@@ -973,20 +1588,61 @@
   - furniture/fixture_material
   - mounting_type
   - pattern
+- id: hb-1-17-3-2
+  name: Bed Safety Rails
+  children: []
+  attributes: []
+- id: hb-1-17-3-3
+  name: Commodes & Commode Chairs
+  children: []
+  attributes: []
+- id: hb-1-17-3-4
+  name: Lift Chairs & Riser Recliners
+  children: []
+  attributes: []
+- id: hb-1-17-3-5
+  name: Overbed Tables
+  children: []
+  attributes: []
+- id: hb-1-17-3-6
+  name: Raised Toilet Seats
+  children: []
+  attributes: []
+- id: hb-1-17-3-7
+  name: Toilet Safety Frames & Rails
+  children: []
+  attributes: []
 - id: hb-1-17-4
   name: Walking Aid Accessories
-  children: []
+  children:
+  - hb-1-17-4-1
+  - hb-1-17-4-2
+  - hb-1-17-4-3
   attributes:
   - age_group
   - color
   - compatible_walking_aid_equipment
   - pattern
+- id: hb-1-17-4-1
+  name: Walker Wheels
+  children: []
+  attributes: []
+- id: hb-1-17-4-2
+  name: Walking Aid Bags, Baskets & Pouches
+  children: []
+  attributes: []
+- id: hb-1-17-4-3
+  name: Walking Aid Replacement Tips
+  children: []
+  attributes: []
 - id: hb-1-17-5
   name: Walking Aids
   children:
   - hb-1-17-5-1
   - hb-1-17-5-2
   - hb-1-17-5-3
+  - hb-1-17-5-4
+  - hb-1-17-5-5
   attributes:
   - age_group
   - color
@@ -998,6 +1654,9 @@
   - hb-1-17-5-1-2
   - hb-1-17-5-1-3
   - hb-1-17-5-1-4
+  - hb-1-17-5-1-5
+  - hb-1-17-5-1-6
+  - hb-1-17-5-1-7
   attributes:
   - age_group
   - color
@@ -1031,6 +1690,18 @@
   - color
   - material
   - pattern
+- id: hb-1-17-5-1-5
+  name: Seat Canes
+  children: []
+  attributes: []
+- id: hb-1-17-5-1-6
+  name: Tripod Canes
+  children: []
+  attributes: []
+- id: hb-1-17-5-1-7
+  name: White Canes
+  children: []
+  attributes: []
 - id: hb-1-17-5-2
   name: Crutches
   children: []
@@ -1047,11 +1718,28 @@
   - color
   - mobility/accessibility_equipment_features
   - pattern
+- id: hb-1-17-5-4
+  name: Knee Walkers & Scooters
+  children: []
+  attributes: []
+- id: hb-1-17-5-5
+  name: Rollators
+  children: []
+  attributes: []
 - id: hb-1-18
   name: Occupational & Physical Therapy Equipment
   children:
   - hb-1-18-1
   - hb-1-18-2
+  - hb-1-18-3
+  - hb-1-18-4
+  - hb-1-18-5
+  - hb-1-18-6
+  - hb-1-18-7
+  - hb-1-18-8
+  - hb-1-18-9
+  - hb-1-18-10
+  - hb-1-18-11
   attributes:
   - color
   - pattern
@@ -1063,9 +1751,60 @@
   - power_source
 - id: hb-1-18-2
   name: Therapeutic Swings
-  children: []
+  children:
+  - hb-1-18-2-1
+  - hb-1-18-2-2
+  - hb-1-18-2-3
   attributes:
   - age_group
+- id: hb-1-18-2-1
+  name: Hammock Therapeutic Swings
+  children: []
+  attributes: []
+- id: hb-1-18-2-2
+  name: Platform Therapeutic Swings
+  children: []
+  attributes: []
+- id: hb-1-18-2-3
+  name: Tube Therapeutic Swings
+  children: []
+  attributes: []
+- id: hb-1-18-3
+  name: Balance Boards
+  children: []
+  attributes: []
+- id: hb-1-18-4
+  name: Compression Therapy Devices
+  children: []
+  attributes: []
+- id: hb-1-18-5
+  name: Cupping Therapy Sets
+  children: []
+  attributes: []
+- id: hb-1-18-6
+  name: Electrical Muscle Stimulator Accessories
+  children: []
+  attributes: []
+- id: hb-1-18-7
+  name: Hand Therapy & Exercise Tools
+  children: []
+  attributes: []
+- id: hb-1-18-8
+  name: Resistance Bands
+  children: []
+  attributes: []
+- id: hb-1-18-9
+  name: Shockwave Therapy Devices
+  children: []
+  attributes: []
+- id: hb-1-18-10
+  name: Therapy Balls
+  children: []
+  attributes: []
+- id: hb-1-18-11
+  name: Therapy Putty
+  children: []
+  attributes: []
 - id: hb-1-19
   name: Pillboxes
   children: []
@@ -1078,6 +1817,12 @@
   - hb-1-20-3
   - hb-1-20-4
   - hb-1-20-5
+  - hb-1-20-6
+  - hb-1-20-7
+  - hb-1-20-8
+  - hb-1-20-9
+  - hb-1-20-10
+  - hb-1-20-11
   attributes: []
 - id: hb-1-20-1
   name: Nebulizers
@@ -1121,6 +1866,35 @@
   - mask_type
 - id: hb-1-20-5
   name: Steam Inhalers
+  children:
+  - hb-1-20-5-1
+  attributes: []
+- id: hb-1-20-5-1
+  name: Steam Inhaler Solutions
+  children: []
+  attributes: []
+- id: hb-1-20-6
+  name: Nebulizer Accessories
+  children: []
+  attributes: []
+- id: hb-1-20-7
+  name: Oxygen Concentrators
+  children: []
+  attributes: []
+- id: hb-1-20-8
+  name: Oxygen Tanks Accessories
+  children: []
+  attributes: []
+- id: hb-1-20-9
+  name: PAP Mask Replacement Parts
+  children: []
+  attributes: []
+- id: hb-1-20-10
+  name: Spirometers
+  children: []
+  attributes: []
+- id: hb-1-20-11
+  name: Steam Inhaler Accessories
   children: []
   attributes: []
 - id: hb-1-21
@@ -1147,6 +1921,11 @@
   - hb-1-24-4
   - hb-1-24-5
   - hb-1-24-6
+  - hb-1-24-7
+  - hb-1-24-8
+  - hb-1-24-9
+  - hb-1-24-10
+  - hb-1-24-11
   attributes:
   - closure_type
   - color
@@ -1154,20 +1933,40 @@
   - support/brace_material
 - id: hb-1-24-1
   name: Ankle Supports
-  children: []
+  children:
+  - hb-1-24-1-1
+  - hb-1-24-1-2
   attributes:
   - closure_type
   - color
   - pattern
   - support/brace_material
+- id: hb-1-24-1-1
+  name: Ankle-Foot Orthoses (AFOs)
+  children: []
+  attributes: []
+- id: hb-1-24-1-2
+  name: Medical Walking Boots
+  children: []
+  attributes: []
 - id: hb-1-24-2
   name: Back Braces
-  children: []
+  children:
+  - hb-1-24-2-1
+  - hb-1-24-2-2
   attributes:
   - closure_type
   - color
   - pattern
   - support/brace_material
+- id: hb-1-24-2-1
+  name: Lumbar Support Belts
+  children: []
+  attributes: []
+- id: hb-1-24-2-2
+  name: Sacroiliac Belts
+  children: []
+  attributes: []
 - id: hb-1-24-3
   name: Elbow Supports
   children: []
@@ -1200,6 +1999,26 @@
   - color
   - pattern
   - support/brace_material
+- id: hb-1-24-7
+  name: Abdominal & Hernia Supports
+  children: []
+  attributes: []
+- id: hb-1-24-8
+  name: Calf & Shin Supports
+  children: []
+  attributes: []
+- id: hb-1-24-9
+  name: Finger & Thumb Braces
+  children: []
+  attributes: []
+- id: hb-1-24-10
+  name: Hip & Groin Supports
+  children: []
+  attributes: []
+- id: hb-1-24-11
+  name: Shoulder Supports
+  children: []
+  attributes: []
 - id: hb-1-25
   name: Surgical Lubricants
   children: []
@@ -1208,11 +2027,42 @@
   - product_form
 - id: hb-1-26
   name: Medical Face Masks
-  children: []
+  children:
+  - hb-1-26-1
+  - hb-1-26-2
+  - hb-1-26-3
   attributes:
   - age_group
   - color
   - pattern
+- id: hb-1-26-1
+  name: Respirator Masks
+  children: []
+  attributes: []
+- id: hb-1-26-2
+  name: Reusable Cloth & Nano Masks
+  children: []
+  attributes: []
+- id: hb-1-26-3
+  name: Surgical & Procedure Masks
+  children: []
+  attributes: []
+- id: hb-1-27
+  name: Insulin Pump Accessories
+  children: []
+  attributes: []
+- id: hb-1-28
+  name: Insulin Pumps
+  children: []
+  attributes: []
+- id: hb-1-29
+  name: Mask Accessories
+  children: []
+  attributes: []
+- id: hb-1-30
+  name: Medical Gloves
+  children: []
+  attributes: []
 - id: hb-2
   name: Jewelry Cleaning & Care
   children:
@@ -1221,6 +2071,8 @@
   - hb-2-3
   - hb-2-4
   - hb-2-5
+  - hb-2-6
+  - hb-2-7
   attributes:
   - suitable_for_precious_material
 - id: hb-2-1
@@ -1267,26 +2119,68 @@
   - hb-2-3-3
   - hb-2-3-4
   - hb-2-3-5
+  - hb-2-3-6
+  - hb-2-3-7
   attributes:
   - color
   - pattern
 - id: hb-2-3-1
   name: Jewelry Boxes
-  children: []
+  children:
+  - hb-2-3-1-1
+  - hb-2-3-1-2
+  - hb-2-3-1-3
+  - hb-2-3-1-4
   attributes:
   - color
   - material
   - pattern
+- id: hb-2-3-1-1
+  name: Musical Jewelry Boxes
+  children: []
+  attributes: []
+- id: hb-2-3-1-2
+  name: Ring Boxes
+  children: []
+  attributes: []
+- id: hb-2-3-1-3
+  name: Travel Jewelry Cases
+  children: []
+  attributes: []
+- id: hb-2-3-1-4
+  name: Watch Boxes
+  children: []
+  attributes: []
 - id: hb-2-3-2
   name: Jewelry Stands
   children: []
   attributes: []
 - id: hb-2-3-3
   name: Jewelry Trays
-  children: []
+  children:
+  - hb-2-3-3-1
+  - hb-2-3-3-2
+  - hb-2-3-3-3
+  - hb-2-3-3-4
   attributes:
   - color
   - pattern
+- id: hb-2-3-3-1
+  name: Bracelet Trays
+  children: []
+  attributes: []
+- id: hb-2-3-3-2
+  name: Jewelry Dishes
+  children: []
+  attributes: []
+- id: hb-2-3-3-3
+  name: Necklace Trays
+  children: []
+  attributes: []
+- id: hb-2-3-3-4
+  name: Ring Trays
+  children: []
+  attributes: []
 - id: hb-2-3-4
   name: Ring Holders
   children: []
@@ -1297,6 +2191,14 @@
   name: Wall-Mounted Jewelry Organizers
   children: []
   attributes: []
+- id: hb-2-3-6
+  name: Earring Holders
+  children: []
+  attributes: []
+- id: hb-2-3-7
+  name: Jewelry Rolls
+  children: []
+  attributes: []
 - id: hb-2-4
   name: Jewelry Steam Cleaners
   children: []
@@ -1304,6 +2206,14 @@
   - suitable_for_precious_material
 - id: hb-2-5
   name: Watch Repair Kits
+  children: []
+  attributes: []
+- id: hb-2-6
+  name: Jewelry Repair & Resizing Services
+  children: []
+  attributes: []
+- id: hb-2-7
+  name: Jewelry Sizing Tools
   children: []
   attributes: []
 - id: hb-3
@@ -1328,6 +2238,7 @@
   - hb-3-17
   - hb-3-18
   - hb-3-19
+  - hb-3-20
   attributes:
   - age_group
   - color
@@ -1336,13 +2247,33 @@
   name: Back Care
   children:
   - hb-3-1-1
+  - hb-3-1-2
+  - hb-3-1-3
   attributes: []
 - id: hb-3-1-1
   name: Back & Lumbar Support Cushions
-  children: []
+  children:
+  - hb-3-1-1-1
+  - hb-3-1-1-2
   attributes:
   - color
   - pattern
+- id: hb-3-1-1-1
+  name: Lumbar Roll Cushions
+  children: []
+  attributes: []
+- id: hb-3-1-1-2
+  name: Seat & Tailbone Support Cushions
+  children: []
+  attributes: []
+- id: hb-3-1-2
+  name: Back Stretchers
+  children: []
+  attributes: []
+- id: hb-3-1-3
+  name: Posture Correctors
+  children: []
+  attributes: []
 - id: hb-3-2
   name: Cosmetics
   children:
@@ -1355,6 +2286,7 @@
   - hb-3-2-7
   - hb-3-2-8
   - hb-3-2-9
+  - hb-3-2-10
   attributes:
   - target_gender
 - id: hb-3-2-1
@@ -1371,6 +2303,7 @@
   - hb-3-2-1-9
   - hb-3-2-1-10
   - hb-3-2-1-11
+  - hb-3-2-1-12
   attributes:
   - age_group
   - constitutive_ingredients
@@ -1390,10 +2323,25 @@
   - suitable_for_skin_type
 - id: hb-3-2-1-2
   name: Bath Additives
-  children: []
+  children:
+  - hb-3-2-1-2-1
+  - hb-3-2-1-2-2
+  - hb-3-2-1-2-3
   attributes:
   - age_group
   - scent
+- id: hb-3-2-1-2-1
+  name: Bath Melts & Teas
+  children: []
+  attributes: []
+- id: hb-3-2-1-2-2
+  name: Bath Salts & Soaks
+  children: []
+  attributes: []
+- id: hb-3-2-1-2-3
+  name: Bubble Bath & Foam
+  children: []
+  attributes: []
 - id: hb-3-2-1-3
   name: Bath Brushes
   children: []
@@ -1404,13 +2352,28 @@
   - scent
 - id: hb-3-2-1-4
   name: Bath Sponges & Loofahs
-  children: []
+  children:
+  - hb-3-2-1-4-1
+  - hb-3-2-1-4-2
+  - hb-3-2-1-4-3
   attributes:
   - age_group
   - color
   - material
   - pattern
   - scent
+- id: hb-3-2-1-4-1
+  name: Exfoliating Washcloths & Towels
+  children: []
+  attributes: []
+- id: hb-3-2-1-4-2
+  name: Soap Saver Bags & Pouches
+  children: []
+  attributes: []
+- id: hb-3-2-1-4-3
+  name: Soap-Infused Sponges & Buffers
+  children: []
+  attributes: []
 - id: hb-3-2-1-5
   name: Body Wash
   children: []
@@ -1435,11 +2398,21 @@
   - scent
 - id: hb-3-2-1-7
   name: Hygienic Wipes
-  children: []
+  children:
+  - hb-3-2-1-7-1
+  - hb-3-2-1-7-2
   attributes:
   - age_group
   - scent
   - wipe_packaging
+- id: hb-3-2-1-7-1
+  name: Body Cleansing Wipes
+  children: []
+  attributes: []
+- id: hb-3-2-1-7-2
+  name: Flushable Personal Wipes
+  children: []
+  attributes: []
 - id: hb-3-2-1-8
   name: Liquid Hand Soap
   children: []
@@ -1475,6 +2448,10 @@
   - constitutive_ingredients
   - pattern
   - scent
+- id: hb-3-2-1-12
+  name: Body Scrubs & Exfoliants
+  children: []
+  attributes: []
 - id: hb-3-2-2
   name: Bath & Body Gift Sets
   children: []
@@ -1498,16 +2475,37 @@
   - target_gender
 - id: hb-3-2-4
   name: Cosmetic Tool Cleansers
-  children: []
+  children:
+  - hb-3-2-4-1
+  - hb-3-2-4-2
+  - hb-3-2-4-3
+  - hb-3-2-4-4
   attributes:
   - compatible_cosmetic_tools
   - product_form
+- id: hb-3-2-4-1
+  name: Brush Cleaning Mats & Pads
+  children: []
+  attributes: []
+- id: hb-3-2-4-2
+  name: Brush Cleaning Solutions
+  children: []
+  attributes: []
+- id: hb-3-2-4-3
+  name: Electric Brush Cleaners
+  children: []
+  attributes: []
+- id: hb-3-2-4-4
+  name: Lash & Brow Tool Cleansers
+  children: []
+  attributes: []
 - id: hb-3-2-5
   name: Cosmetic Tools
   children:
   - hb-3-2-5-1
   - hb-3-2-5-2
   - hb-3-2-5-3
+  - hb-3-2-5-4
   attributes:
   - color
   - pattern
@@ -1524,6 +2522,10 @@
   - hb-3-2-5-1-10
   - hb-3-2-5-1-11
   - hb-3-2-5-1-12
+  - hb-3-2-5-1-13
+  - hb-3-2-5-1-14
+  - hb-3-2-5-1-15
+  - hb-3-2-5-1-16
   attributes:
   - color
   - pattern
@@ -1548,12 +2550,32 @@
   - pattern
 - id: hb-3-2-5-1-6
   name: Face Mirrors
-  children: []
+  children:
+  - hb-3-2-5-1-6-1
+  - hb-3-2-5-1-6-2
+  - hb-3-2-5-1-6-3
+  - hb-3-2-5-1-6-4
   attributes:
   - color
   - mounting_hardware
   - pattern
   - shape
+- id: hb-3-2-5-1-6-1
+  name: Compact & Pocket Mirrors
+  children: []
+  attributes: []
+- id: hb-3-2-5-1-6-2
+  name: Handheld Mirrors
+  children: []
+  attributes: []
+- id: hb-3-2-5-1-6-3
+  name: Tabletop Makeup Mirrors
+  children: []
+  attributes: []
+- id: hb-3-2-5-1-6-4
+  name: Wall-Mounted Makeup Mirrors
+  children: []
+  attributes: []
 - id: hb-3-2-5-1-7
   name: Facial Blotting Paper
   children: []
@@ -1564,16 +2586,36 @@
   - hb-3-2-5-1-8-1
   - hb-3-2-5-1-8-2
   - hb-3-2-5-1-8-3
+  - hb-3-2-5-1-8-4
+  - hb-3-2-5-1-8-5
+  - hb-3-2-5-1-8-6
+  - hb-3-2-5-1-8-7
+  - hb-3-2-5-1-8-8
   attributes:
   - color
   - pattern
 - id: hb-3-2-5-1-8-1
   name: False Eyelash Adhesive
-  children: []
+  children:
+  - hb-3-2-5-1-8-1-1
+  - hb-3-2-5-1-8-1-2
+  - hb-3-2-5-1-8-1-3
   attributes:
   - color
   - drying_speed
   - pattern
+- id: hb-3-2-5-1-8-1-1
+  name: Eyelash Extension Adhesives
+  children: []
+  attributes: []
+- id: hb-3-2-5-1-8-1-2
+  name: Lash Lift Adhesives
+  children: []
+  attributes: []
+- id: hb-3-2-5-1-8-1-3
+  name: Strip Eyelash Adhesive
+  children: []
+  attributes: []
 - id: hb-3-2-5-1-8-2
   name: False Eyelash Applicators
   children: []
@@ -1586,6 +2628,26 @@
   children: []
   attributes:
   - product_form
+- id: hb-3-2-5-1-8-4
+  name: False Eyelash Bonders & Sealants
+  children: []
+  attributes: []
+- id: hb-3-2-5-1-8-5
+  name: False Eyelash Brushes & Wands
+  children: []
+  attributes: []
+- id: hb-3-2-5-1-8-6
+  name: False Eyelash Cleansers & Primers
+  children: []
+  attributes: []
+- id: hb-3-2-5-1-8-7
+  name: False Eyelash Pads & Shields
+  children: []
+  attributes: []
+- id: hb-3-2-5-1-8-8
+  name: False Eyelash Storage Cases
+  children: []
+  attributes: []
 - id: hb-3-2-5-1-9
   name: Makeup Brushes
   children: []
@@ -1609,6 +2671,32 @@
   - pattern
 - id: hb-3-2-5-1-12
   name: Double Eyelid Glue & Tape
+  children:
+  - hb-3-2-5-1-12-1
+  - hb-3-2-5-1-12-2
+  attributes: []
+- id: hb-3-2-5-1-12-1
+  name: Double Eyelid Glue & Film
+  children: []
+  attributes: []
+- id: hb-3-2-5-1-12-2
+  name: Double Eyelid Tapes
+  children: []
+  attributes: []
+- id: hb-3-2-5-1-13
+  name: Cosmetic Pencil Sharpeners
+  children: []
+  attributes: []
+- id: hb-3-2-5-1-14
+  name: Cosmetic Spatulas & Mixing Tools
+  children: []
+  attributes: []
+- id: hb-3-2-5-1-15
+  name: Makeup Mixing Palettes
+  children: []
+  attributes: []
+- id: hb-3-2-5-1-16
+  name: Makeup Powder Puffs
   children: []
   attributes: []
 - id: hb-3-2-5-2
@@ -1624,6 +2712,10 @@
   - hb-3-2-5-2-8
   - hb-3-2-5-2-9
   - hb-3-2-5-2-10
+  - hb-3-2-5-2-11
+  - hb-3-2-5-2-12
+  - hb-3-2-5-2-13
+  - hb-3-2-5-2-14
   attributes:
   - color
   - pattern
@@ -1682,6 +2774,22 @@
   children: []
   attributes:
   - material
+- id: hb-3-2-5-2-11
+  name: Cuticle Nippers
+  children: []
+  attributes: []
+- id: hb-3-2-5-2-12
+  name: Nail Brushes
+  children: []
+  attributes: []
+- id: hb-3-2-5-2-13
+  name: Nail Forms & Molds
+  children: []
+  attributes: []
+- id: hb-3-2-5-2-14
+  name: Nail Stamping Plates
+  children: []
+  attributes: []
 - id: hb-3-2-5-3
   name: Skin Care Tools
   children:
@@ -1693,6 +2801,11 @@
   - hb-3-2-5-3-6
   - hb-3-2-5-3-7
   - hb-3-2-5-3-8
+  - hb-3-2-5-3-9
+  - hb-3-2-5-3-10
+  - hb-3-2-5-3-11
+  - hb-3-2-5-3-12
+  - hb-3-2-5-3-13
   attributes:
   - color
   - pattern
@@ -1721,10 +2834,20 @@
   - pattern
 - id: hb-3-2-5-3-5
   name: Skin Care Extractors
-  children: []
+  children:
+  - hb-3-2-5-3-5-1
+  - hb-3-2-5-3-5-2
   attributes:
   - extractor_tip_style
   - material
+- id: hb-3-2-5-3-5-1
+  name: Manual Comedone Extractors
+  children: []
+  attributes: []
+- id: hb-3-2-5-3-5-2
+  name: Pore Vacuum Extractors
+  children: []
+  attributes: []
 - id: hb-3-2-5-3-6
   name: Skin Care Rollers
   children: []
@@ -1747,6 +2870,30 @@
   attributes:
   - power_source
   - speed_settings
+- id: hb-3-2-5-3-9
+  name: Dermaplaning Tools
+  children: []
+  attributes: []
+- id: hb-3-2-5-3-10
+  name: Facial Sauna Accessories
+  children: []
+  attributes: []
+- id: hb-3-2-5-3-11
+  name: LED Light Therapy Devices
+  children: []
+  attributes: []
+- id: hb-3-2-5-3-12
+  name: Microcurrent & EMS Facial Devices
+  children: []
+  attributes: []
+- id: hb-3-2-5-3-13
+  name: Reusable Facial Cloths & Pads
+  children: []
+  attributes: []
+- id: hb-3-2-5-4
+  name: Cosmetic Packaging & Containers
+  children: []
+  attributes: []
 - id: hb-3-2-6
   name: Makeup
   children:
@@ -1757,6 +2904,7 @@
   - hb-3-2-6-5
   - hb-3-2-6-6
   - hb-3-2-6-7
+  - hb-3-2-6-8
   attributes:
   - cosmetic_finish
   - dispenser_type
@@ -1768,6 +2916,7 @@
   children:
   - hb-3-2-6-1-2
   - hb-3-2-6-1-4
+  - hb-3-2-6-1-5
   attributes:
   - makeup_features
   - product_certifications_standards
@@ -1793,6 +2942,10 @@
   - makeup_features
   - product_certifications_standards
   - product_form
+- id: hb-3-2-6-1-5
+  name: Body Bronzers & Tints
+  children: []
+  attributes: []
 - id: hb-3-2-6-2
   name: Costume & Stage Makeup
   children: []
@@ -1828,7 +2981,11 @@
   - skin_care_effect
 - id: hb-3-2-6-3-2
   name: Eye Shadows
-  children: []
+  children:
+  - hb-3-2-6-3-2-1
+  - hb-3-2-6-3-2-2
+  - hb-3-2-6-3-2-3
+  - hb-3-2-6-3-2-4
   attributes:
   - color
   - cosmetic_finish
@@ -1837,6 +2994,22 @@
   - pattern
   - product_certifications_standards
   - product_form
+- id: hb-3-2-6-3-2-1
+  name: Eye Shadow Palettes
+  children: []
+  attributes: []
+- id: hb-3-2-6-3-2-2
+  name: Liquid & Cream Eye Shadows
+  children: []
+  attributes: []
+- id: hb-3-2-6-3-2-3
+  name: Loose Pigments & Glitter Eye Shadows
+  children: []
+  attributes: []
+- id: hb-3-2-6-3-2-4
+  name: Single Eyeshadows
+  children: []
+  attributes: []
 - id: hb-3-2-6-3-3
   name: Eyebrow Enhancers
   children: []
@@ -1903,6 +3076,7 @@
   - hb-3-2-6-4-3
   - hb-3-2-6-4-4
   - hb-3-2-6-4-5
+  - hb-3-2-6-4-6
   attributes:
   - cosmetic_finish
   - dispenser_type
@@ -1912,7 +3086,10 @@
   - suitable_for_skin_type
 - id: hb-3-2-6-4-1
   name: Blushes & Bronzers
-  children: []
+  children:
+  - hb-3-2-6-4-1-1
+  - hb-3-2-6-4-1-2
+  - hb-3-2-6-4-1-3
   attributes:
   - color
   - cosmetic_finish
@@ -1923,6 +3100,18 @@
   - product_certifications_standards
   - product_form
   - suitable_for_skin_type
+- id: hb-3-2-6-4-1-1
+  name: Blushes
+  children: []
+  attributes: []
+- id: hb-3-2-6-4-1-2
+  name: Bronzers
+  children: []
+  attributes: []
+- id: hb-3-2-6-4-1-3
+  name: Contour
+  children: []
+  attributes: []
 - id: hb-3-2-6-4-2
   name: Face Powder
   children: []
@@ -1951,7 +3140,11 @@
   - suitable_for_skin_type
 - id: hb-3-2-6-4-4
   name: Foundations & Concealers
-  children: []
+  children:
+  - hb-3-2-6-4-4-1
+  - hb-3-2-6-4-4-2
+  - hb-3-2-6-4-4-3
+  - hb-3-2-6-4-4-4
   attributes:
   - cosmetic_finish
   - dispenser_type
@@ -1963,6 +3156,22 @@
   - skin_tone
   - skin_undertone
   - suitable_for_skin_type
+- id: hb-3-2-6-4-4-1
+  name: BB & CC Creams
+  children: []
+  attributes: []
+- id: hb-3-2-6-4-4-2
+  name: Color Correctors
+  children: []
+  attributes: []
+- id: hb-3-2-6-4-4-3
+  name: Concealers
+  children: []
+  attributes: []
+- id: hb-3-2-6-4-4-4
+  name: Foundations
+  children: []
+  attributes: []
 - id: hb-3-2-6-4-5
   name: Highlighters & Luminizers
   children: []
@@ -1974,6 +3183,10 @@
   - product_certifications_standards
   - product_form
   - suitable_for_skin_type
+- id: hb-3-2-6-4-6
+  name: Face Palettes
+  children: []
+  attributes: []
 - id: hb-3-2-6-5
   name: Lip Makeup
   children:
@@ -1982,6 +3195,10 @@
   - hb-3-2-6-5-3
   - hb-3-2-6-5-5
   - hb-3-2-6-5-6
+  - hb-3-2-6-5-7
+  - hb-3-2-6-5-8
+  - hb-3-2-6-5-9
+  - hb-3-2-6-5-10
   attributes:
   - color
   - cosmetic_finish
@@ -2032,7 +3249,9 @@
   - texture
 - id: hb-3-2-6-5-6
   name: Lipsticks
-  children: []
+  children:
+  - hb-3-2-6-5-6-1
+  - hb-3-2-6-5-6-2
   attributes:
   - color
   - cosmetic_finish
@@ -2041,6 +3260,30 @@
   - pattern
   - product_certifications_standards
   - texture
+- id: hb-3-2-6-5-6-1
+  name: Lipstick Refills
+  children: []
+  attributes: []
+- id: hb-3-2-6-5-6-2
+  name: Liquid Lipsticks
+  children: []
+  attributes: []
+- id: hb-3-2-6-5-7
+  name: Lip Makeup Kits & Sets
+  children: []
+  attributes: []
+- id: hb-3-2-6-5-8
+  name: Lip Oils
+  children: []
+  attributes: []
+- id: hb-3-2-6-5-9
+  name: Lip Plumpers
+  children: []
+  attributes: []
+- id: hb-3-2-6-5-10
+  name: Permanent Makeup Lip Pigments
+  children: []
+  attributes: []
 - id: hb-3-2-6-6
   name: Makeup Finishing Sprays
   children: []
@@ -2056,6 +3299,10 @@
   - makeup_features
   - pattern
   - product_certifications_standards
+- id: hb-3-2-6-8
+  name: Makeup Kits & Sets
+  children: []
+  attributes: []
 - id: hb-3-2-7
   name: Nail Care
   children:
@@ -2067,6 +3314,8 @@
   - hb-3-2-7-9
   - hb-3-2-7-10
   - hb-3-2-7-11
+  - hb-3-2-7-12
+  - hb-3-2-7-13
   attributes:
   - color
   - nail_care_features
@@ -2077,6 +3326,7 @@
   children:
   - hb-3-2-7-1-1
   - hb-3-2-7-1-2
+  - hb-3-2-7-1-3
   attributes:
   - constitutive_ingredients
   - nail_care_features
@@ -2095,9 +3345,15 @@
   - constitutive_ingredients
   - nail_care_features
   - product_certifications_standards
+- id: hb-3-2-7-1-3
+  name: Cuticle Removers & Softeners
+  children: []
+  attributes: []
 - id: hb-3-2-7-2
   name: False Nails
-  children: []
+  children:
+  - hb-3-2-7-2-1
+  - hb-3-2-7-2-2
   attributes:
   - color
   - false_nail_application_method
@@ -2108,6 +3364,14 @@
   - nail_shape
   - pattern
   - product_certifications_standards
+- id: hb-3-2-7-2-1
+  name: Nail Tips
+  children: []
+  attributes: []
+- id: hb-3-2-7-2-2
+  name: Nail Wraps & Strips
+  children: []
+  attributes: []
 - id: hb-3-2-7-3
   name: Manicure Glue
   children: []
@@ -2117,12 +3381,32 @@
   - product_certifications_standards
 - id: hb-3-2-7-4
   name: Nail Art Kits & Accessories
-  children: []
+  children:
+  - hb-3-2-7-4-1
+  - hb-3-2-7-4-2
+  - hb-3-2-7-4-3
+  - hb-3-2-7-4-4
   attributes:
   - color
   - nail_art_items_included
   - pattern
   - product_certifications_standards
+- id: hb-3-2-7-4-1
+  name: Nail Art Brushes & Dotting Tools
+  children: []
+  attributes: []
+- id: hb-3-2-7-4-2
+  name: Nail Stickers & Decals
+  children: []
+  attributes: []
+- id: hb-3-2-7-4-3
+  name: Nail Wraps & Foils
+  children: []
+  attributes: []
+- id: hb-3-2-7-4-4
+  name: Rhinestones & Nail Charms
+  children: []
+  attributes: []
 - id: hb-3-2-7-8
   name: Nail Polish Drying Drops & Sprays
   children: []
@@ -2150,6 +3434,14 @@
   - cosmetic_finish
   - pattern
   - product_benefits
+- id: hb-3-2-7-12
+  name: Nail Primers & Prep Liquids
+  children: []
+  attributes: []
+- id: hb-3-2-7-13
+  name: Nail Treatments
+  children: []
+  attributes: []
 - id: hb-3-2-8
   name: Perfumes & Colognes
   children:
@@ -2157,6 +3449,12 @@
   - hb-3-2-8-2
   - hb-3-2-8-3
   - hb-3-2-8-4
+  - hb-3-2-8-5
+  - hb-3-2-8-6
+  - hb-3-2-8-7
+  - hb-3-2-8-8
+  - hb-3-2-8-9
+  - hb-3-2-8-10
   attributes:
   - age_group
   - occasion
@@ -2198,6 +3496,30 @@
   - scent
   - season
   - target_gender
+- id: hb-3-2-8-5
+  name: Attars
+  children: []
+  attributes: []
+- id: hb-3-2-8-6
+  name: Hair Perfumes
+  children: []
+  attributes: []
+- id: hb-3-2-8-7
+  name: Perfume Extracts
+  children: []
+  attributes: []
+- id: hb-3-2-8-8
+  name: Perfume Oils
+  children: []
+  attributes: []
+- id: hb-3-2-8-9
+  name: Perfume Sample & Discovery Sets
+  children: []
+  attributes: []
+- id: hb-3-2-8-10
+  name: Solid Perfumes
+  children: []
+  attributes: []
 - id: hb-3-2-9
   name: Skin Care
   children:
@@ -2224,6 +3546,8 @@
   - hb-3-2-9-21
   - hb-3-2-9-22
   - hb-3-2-9-23
+  - hb-3-2-9-24
+  - hb-3-2-9-25
   attributes:
   - active_ingredient
   - age_group
@@ -2241,7 +3565,9 @@
   - target_gender
 - id: hb-3-2-9-1
   name: Acne Treatments & Kits
-  children: []
+  children:
+  - hb-3-2-9-1-1
+  - hb-3-2-9-1-2
   attributes:
   - constitutive_ingredients
   - cosmetic_function
@@ -2252,6 +3578,14 @@
   - skin_care_effect
   - skin_care_features
   - suitable_for_skin_type
+- id: hb-3-2-9-1-1
+  name: Acne Patches
+  children: []
+  attributes: []
+- id: hb-3-2-9-1-2
+  name: Acne Spot Treatments
+  children: []
+  attributes: []
 - id: hb-3-2-9-2
   name: Anti-Aging Skin Care
   children: []
@@ -2344,6 +3678,8 @@
   children:
   - hb-3-2-9-9-1
   - hb-3-2-9-9-2
+  - hb-3-2-9-9-3
+  - hb-3-2-9-9-4
   attributes:
   - color
   - package_type
@@ -2379,6 +3715,14 @@
   - scent
   - suitable_for_skin_type
   - target_gender
+- id: hb-3-2-9-9-3
+  name: Lip Masks
+  children: []
+  attributes: []
+- id: hb-3-2-9-9-4
+  name: Lip Scrubs
+  children: []
+  attributes: []
 - id: hb-3-2-9-10
   name: Lotions & Moisturizers
   children: []
@@ -2460,6 +3804,10 @@
   children:
   - hb-3-2-9-16-1
   - hb-3-2-9-16-2
+  - hb-3-2-9-16-3
+  - hb-3-2-9-16-4
+  - hb-3-2-9-16-5
+  - hb-3-2-9-16-6
   attributes:
   - application_area
   - dispenser_type
@@ -2494,6 +3842,22 @@
   - skin_care_effect
   - skin_care_features
   - tan_type
+- id: hb-3-2-9-16-3
+  name: Tan Extenders & After-Sun Care
+  children: []
+  attributes: []
+- id: hb-3-2-9-16-4
+  name: Tan Removers
+  children: []
+  attributes: []
+- id: hb-3-2-9-16-5
+  name: Tanning Accelerators
+  children: []
+  attributes: []
+- id: hb-3-2-9-16-6
+  name: Tanning Prep & Primers
+  children: []
+  attributes: []
 - id: hb-3-2-9-17
   name: Toners & Astringents
   children:
@@ -2618,6 +3982,18 @@
   - product_certifications_standards
   - product_form
   - suitable_for_skin_type
+- id: hb-3-2-9-24
+  name: After-Sun Skin Care
+  children: []
+  attributes: []
+- id: hb-3-2-9-25
+  name: Skin Care Kits & Sets
+  children: []
+  attributes: []
+- id: hb-3-2-10
+  name: Cosmetic Raw Ingredients
+  children: []
+  attributes: []
 - id: hb-3-3
   name: Cotton Balls
   children: []
@@ -2669,6 +4045,8 @@
   - hb-3-6-6
   - hb-3-6-7
   - hb-3-6-8
+  - hb-3-6-9
+  - hb-3-6-10
   attributes: []
 - id: hb-3-6-1
   name: Ear Candles
@@ -2724,6 +4102,7 @@
   - hb-3-6-8-1
   - hb-3-6-8-2
   - hb-3-6-8-3
+  - hb-3-6-8-4
   attributes:
   - accessory_size
   - age_group
@@ -2750,12 +4129,44 @@
   - accessory_size
   - earplug_use
   - material
+- id: hb-3-6-8-4
+  name: Electronic Earplugs
+  children: []
+  attributes: []
+- id: hb-3-6-9
+  name: Ear Patches & Supports
+  children: []
+  attributes: []
+- id: hb-3-6-10
+  name: Ear Pressure Relief Devices
+  children: []
+  attributes: []
 - id: hb-3-7
   name: Enema Kits & Supplies
-  children: []
+  children:
+  - hb-3-7-1
+  - hb-3-7-2
+  - hb-3-7-3
+  - hb-3-7-4
   attributes:
   - material
   - treatment_objective
+- id: hb-3-7-1
+  name: Disposable Enemas
+  children: []
+  attributes: []
+- id: hb-3-7-2
+  name: Enema Accessories
+  children: []
+  attributes: []
+- id: hb-3-7-3
+  name: Enema Bulbs
+  children: []
+  attributes: []
+- id: hb-3-7-4
+  name: Shower & Hose Enema Attachments
+  children: []
+  attributes: []
 - id: hb-3-8
   name: Feminine Sanitary Supplies
   children:
@@ -2765,6 +4176,9 @@
   - hb-3-8-5
   - hb-3-8-6
   - hb-3-8-7
+  - hb-3-8-8
+  - hb-3-8-9
+  - hb-3-8-10
   attributes: []
 - id: hb-3-8-2
   name: Feminine Deodorants
@@ -2874,6 +4288,18 @@
   - constitutive_ingredients
   - product_form
   - scent
+- id: hb-3-8-8
+  name: Feminine Moisturizers & Oils
+  children: []
+  attributes: []
+- id: hb-3-8-9
+  name: Feminine Wipes
+  children: []
+  attributes: []
+- id: hb-3-8-10
+  name: Menstrual Discs
+  children: []
+  attributes: []
 - id: hb-3-9
   name: Foot Care
   children:
@@ -2882,16 +4308,33 @@
   - hb-3-9-3
   - hb-3-9-4
   - hb-3-9-5
+  - hb-3-9-6
+  - hb-3-9-7
+  - hb-3-9-8
+  - hb-3-9-9
+  - hb-3-9-10
+  - hb-3-9-11
+  - hb-3-9-12
   attributes:
   - body_area
 - id: hb-3-9-1
   name: Bunion Care Supplies
-  children: []
+  children:
+  - hb-3-9-1-1
+  - hb-3-9-1-2
   attributes:
   - accessory_size
   - body_area
   - color
   - pattern
+- id: hb-3-9-1-1
+  name: Bunion Pads
+  children: []
+  attributes: []
+- id: hb-3-9-1-2
+  name: Bunion Splints & Correctors
+  children: []
+  attributes: []
 - id: hb-3-9-2
   name: Corn & Callus Care Supplies
   children: []
@@ -2948,6 +4391,34 @@
   attributes:
   - accessory_size
   - body_area
+- id: hb-3-9-6
+  name: Antifungal Foot Treatments
+  children: []
+  attributes: []
+- id: hb-3-9-7
+  name: Blister Care Supplies
+  children: []
+  attributes: []
+- id: hb-3-9-8
+  name: Foot Creams & Balms
+  children: []
+  attributes: []
+- id: hb-3-9-9
+  name: Foot Masks & Peels
+  children: []
+  attributes: []
+- id: hb-3-9-10
+  name: Foot Scrubs & Exfoliants
+  children: []
+  attributes: []
+- id: hb-3-9-11
+  name: Foot Soaks & Salts
+  children: []
+  attributes: []
+- id: hb-3-9-12
+  name: Pedicure Kits
+  children: []
+  attributes: []
 - id: hb-3-10
   name: Hair Care
   children:
@@ -3008,11 +4479,26 @@
   - target_gender
 - id: hb-3-10-5
   name: Hair Loss Concealers
-  children: []
+  children:
+  - hb-3-10-5-1
+  - hb-3-10-5-2
+  - hb-3-10-5-3
   attributes:
   - product_form
   - suitable_for_hair_type
   - target_gender
+- id: hb-3-10-5-1
+  name: Hair Building Fibers
+  children: []
+  attributes: []
+- id: hb-3-10-5-2
+  name: Root Concealer Powders & Sticks
+  children: []
+  attributes: []
+- id: hb-3-10-5-3
+  name: Root Concealer Sprays
+  children: []
+  attributes: []
 - id: hb-3-10-6
   name: Hair Loss Treatments
   children: []
@@ -3027,11 +4513,31 @@
   - treatment_type
 - id: hb-3-10-7
   name: Hair Permanents & Straighteners
-  children: []
+  children:
+  - hb-3-10-7-1
+  - hb-3-10-7-2
+  - hb-3-10-7-3
+  - hb-3-10-7-4
   attributes:
   - product_form
   - suitable_for_hair_type
   - target_gender
+- id: hb-3-10-7-1
+  name: Hair Perm Solutions & Kits
+  children: []
+  attributes: []
+- id: hb-3-10-7-2
+  name: Hair Relaxers
+  children: []
+  attributes: []
+- id: hb-3-10-7-3
+  name: Hair Texturizers & Softening Systems
+  children: []
+  attributes: []
+- id: hb-3-10-7-4
+  name: Keratin & Smoothing Treatments
+  children: []
+  attributes: []
 - id: hb-3-10-8
   name: Hair Shears
   children: []
@@ -3041,14 +4547,30 @@
   - target_gender
 - id: hb-3-10-9
   name: Hair Steamers & Heat Caps
-  children: []
+  children:
+  - hb-3-10-9-1
+  - hb-3-10-9-2
   attributes:
   - color
   - pattern
   - target_gender
+- id: hb-3-10-9-1
+  name: Hair Heat Caps
+  children: []
+  attributes: []
+- id: hb-3-10-9-2
+  name: Hair Steamers
+  children: []
+  attributes: []
 - id: hb-3-10-10
   name: Hair Styling Products
-  children: []
+  children:
+  - hb-3-10-10-1
+  - hb-3-10-10-2
+  - hb-3-10-10-3
+  - hb-3-10-10-4
+  - hb-3-10-10-5
+  - hb-3-10-10-6
   attributes:
   - age_group
   - constitutive_ingredients
@@ -3059,12 +4581,40 @@
   - product_form
   - suitable_for_hair_type
   - target_gender
+- id: hb-3-10-10-1
+  name: Hair Creams & Lotions
+  children: []
+  attributes: []
+- id: hb-3-10-10-2
+  name: Hair Gels
+  children: []
+  attributes: []
+- id: hb-3-10-10-3
+  name: Hair Mousses & Foams
+  children: []
+  attributes: []
+- id: hb-3-10-10-4
+  name: Hair Pomades & Waxes
+  children: []
+  attributes: []
+- id: hb-3-10-10-5
+  name: Hair Powders
+  children: []
+  attributes: []
+- id: hb-3-10-10-6
+  name: Hair Sprays
+  children: []
+  attributes: []
 - id: hb-3-10-11
   name: Hair Styling Tool Accessories
   children:
   - hb-3-10-11-1
   - hb-3-10-11-2
   - hb-3-10-11-3
+  - hb-3-10-11-4
+  - hb-3-10-11-5
+  - hb-3-10-11-6
+  - hb-3-10-11-7
   attributes:
   - color
   - pattern
@@ -3073,6 +4623,7 @@
   children:
   - hb-3-10-11-1-1
   - hb-3-10-11-1-2
+  - hb-3-10-11-1-3
   attributes:
   - accessory_size
   - material
@@ -3084,10 +4635,29 @@
   - material
 - id: hb-3-10-11-1-2
   name: Pins
-  children: []
+  children:
+  - hb-3-10-11-1-2-1
+  - hb-3-10-11-1-2-2
+  - hb-3-10-11-1-2-3
   attributes:
   - accessory_size
   - material
+- id: hb-3-10-11-1-2-1
+  name: Bobby Pins
+  children: []
+  attributes: []
+- id: hb-3-10-11-1-2-2
+  name: Ripple Pins
+  children: []
+  attributes: []
+- id: hb-3-10-11-1-2-3
+  name: Roller Pins
+  children: []
+  attributes: []
+- id: hb-3-10-11-1-3
+  name: Roller Picks
+  children: []
+  attributes: []
 - id: hb-3-10-11-2
   name: Hair Dryer Accessories
   children: []
@@ -3099,6 +4669,22 @@
   children: []
   attributes:
   - material
+- id: hb-3-10-11-4
+  name: Hair Extension Tools & Accessories
+  children: []
+  attributes: []
+- id: hb-3-10-11-5
+  name: Hair Spray Bottles
+  children: []
+  attributes: []
+- id: hb-3-10-11-6
+  name: Hair Styling Tool Cases & Pouches
+  children: []
+  attributes: []
+- id: hb-3-10-11-7
+  name: Heat Mats & Stands
+  children: []
+  attributes: []
 - id: hb-3-10-12
   name: Hair Styling Tools
   children:
@@ -3108,6 +4694,8 @@
   - hb-3-10-12-6
   - hb-3-10-12-7
   - hb-3-10-12-9
+  - hb-3-10-12-10
+  - hb-3-10-12-11
   attributes:
   - color
   - hair_care_technology
@@ -3204,6 +4792,14 @@
   - hair_styling_items_included
   - hair_styling_tool_features
   - pattern
+- id: hb-3-10-12-10
+  name: Hair Braiders
+  children: []
+  attributes: []
+- id: hb-3-10-12-11
+  name: Hair Crimpers
+  children: []
+  attributes: []
 - id: hb-3-10-13
   name: Shampoo & Conditioner
   children:
@@ -3310,6 +4906,9 @@
   - hb-3-11-6
   - hb-3-11-7
   - hb-3-11-8
+  - hb-3-11-9
+  - hb-3-11-10
+  - hb-3-11-11
   attributes:
   - heat_function
   - massage_technique
@@ -3367,29 +4966,101 @@
   - hb-3-11-8-1
   - hb-3-11-8-2
   - hb-3-11-8-3
+  - hb-3-11-8-4
   attributes: []
 - id: hb-3-11-8-1
   name: Electric Massagers
-  children: []
+  children:
+  - hb-3-11-8-1-1
+  - hb-3-11-8-1-2
   attributes:
   - application_area
   - color
   - massage_technique
   - pattern
   - power_source
+- id: hb-3-11-8-1-1
+  name: Massage & Slimming Belts
+  children: []
+  attributes: []
+- id: hb-3-11-8-1-2
+  name: Massage Guns
+  children: []
+  attributes: []
 - id: hb-3-11-8-2
   name: Manual Massage Tools
-  children: []
+  children:
+  - hb-3-11-8-2-1
+  - hb-3-11-8-2-2
+  - hb-3-11-8-2-3
+  - hb-3-11-8-2-4
+  - hb-3-11-8-2-5
+  - hb-3-11-8-2-6
+  - hb-3-11-8-2-7
   attributes:
   - color
   - massage_technique
   - pattern
+- id: hb-3-11-8-2-1
+  name: Acupressure Mats & Cushions
+  children: []
+  attributes: []
+- id: hb-3-11-8-2-2
+  name: Gua Sha Tools
+  children: []
+  attributes: []
+- id: hb-3-11-8-2-3
+  name: Massage Balls
+  children: []
+  attributes: []
+- id: hb-3-11-8-2-4
+  name: Massage Hooks
+  children: []
+  attributes: []
+- id: hb-3-11-8-2-5
+  name: Massage Rollers
+  children: []
+  attributes: []
+- id: hb-3-11-8-2-6
+  name: Massage Sticks
+  children: []
+  attributes: []
+- id: hb-3-11-8-2-7
+  name: Neck Stretchers & Traction Aids
+  children: []
+  attributes: []
 - id: hb-3-11-8-3
   name: Massage Cushions
-  children: []
+  children:
+  - hb-3-11-8-3-1
+  - hb-3-11-8-3-2
   attributes:
   - body_area
   - massage_technique
+- id: hb-3-11-8-3-1
+  name: Massage Pillows
+  children: []
+  attributes: []
+- id: hb-3-11-8-3-2
+  name: Massage Seat Cushions
+  children: []
+  attributes: []
+- id: hb-3-11-8-4
+  name: Massager Accessories
+  children: []
+  attributes: []
+- id: hb-3-11-9
+  name: Aromatherapy Mists & Sprays
+  children: []
+  attributes: []
+- id: hb-3-11-10
+  name: Massage Chair Parts & Accessories
+  children: []
+  attributes: []
+- id: hb-3-11-11
+  name: Massage Creams, Lotions & Balms
+  children: []
+  attributes: []
 - id: hb-3-12
   name: Oral Care
   children:
@@ -3413,6 +5084,13 @@
   - hb-3-12-18
   - hb-3-12-19
   - hb-3-12-20
+  - hb-3-12-21
+  - hb-3-12-22
+  - hb-3-12-23
+  - hb-3-12-24
+  - hb-3-12-25
+  - hb-3-12-26
+  - hb-3-12-27
   attributes: []
 - id: hb-3-12-1
   name: Breath Sprays
@@ -3422,13 +5100,23 @@
   - flavor
 - id: hb-3-12-2
   name: Dental Floss
-  children: []
+  children:
+  - hb-3-12-2-1
+  - hb-3-12-2-2
   attributes:
   - dental_floss_shape
   - dental_floss_thickness_level
   - dental_floss_type
   - flavor
   - material
+- id: hb-3-12-2-1
+  name: Dental Floss Picks
+  children: []
+  attributes: []
+- id: hb-3-12-2-2
+  name: Floss Refills
+  children: []
+  attributes: []
 - id: hb-3-12-3
   name: Dental Mouthguards
   children: []
@@ -3456,9 +5144,19 @@
   attributes: []
 - id: hb-3-12-7
   name: Denture Cleaners
-  children: []
+  children:
+  - hb-3-12-7-1
+  - hb-3-12-7-2
   attributes:
   - product_form
+- id: hb-3-12-7-1
+  name: Denture Cleaning Tablets & Powders
+  children: []
+  attributes: []
+- id: hb-3-12-7-2
+  name: Ultrasonic Denture Cleaners
+  children: []
+  attributes: []
 - id: hb-3-12-8
   name: Denture Repair Kits
   children: []
@@ -3467,7 +5165,9 @@
   - material
 - id: hb-3-12-9
   name: Dentures
-  children: []
+  children:
+  - hb-3-12-9-1
+  - hb-3-12-9-2
   attributes:
   - denture_base_color
   - denture_coverage
@@ -3475,6 +5175,14 @@
   - denture_teeth_color
   - material
   - target_gender
+- id: hb-3-12-9-1
+  name: Denture Storage Cases
+  children: []
+  attributes: []
+- id: hb-3-12-9-2
+  name: Snap-On Veneers
+  children: []
+  attributes: []
 - id: hb-3-12-10
   name: Gum Stimulators
   children:
@@ -3554,6 +5262,9 @@
   - hb-3-12-14-8
   - hb-3-12-14-9
   - hb-3-12-14-10
+  - hb-3-12-14-11
+  - hb-3-12-14-12
+  - hb-3-12-14-13
   attributes:
   - peroxide_content
   - usage_frequency
@@ -3565,10 +5276,20 @@
   - usage_frequency
 - id: hb-3-12-14-2
   name: LED Light Kits
-  children: []
+  children:
+  - hb-3-12-14-2-1
+  - hb-3-12-14-2-2
   attributes:
   - peroxide_content
   - usage_frequency
+- id: hb-3-12-14-2-1
+  name: LED Mouthpiece Kits
+  children: []
+  attributes: []
+- id: hb-3-12-14-2-2
+  name: Teeth Whitening Lamps
+  children: []
+  attributes: []
 - id: hb-3-12-14-3
   name: Tray Cases
   children: []
@@ -3617,6 +5338,18 @@
   attributes:
   - peroxide_content
   - usage_frequency
+- id: hb-3-12-14-11
+  name: Whitening Kits
+  children: []
+  attributes: []
+- id: hb-3-12-14-12
+  name: Whitening Serums
+  children: []
+  attributes: []
+- id: hb-3-12-14-13
+  name: Whitening Tablets
+  children: []
+  attributes: []
 - id: hb-3-12-15
   name: Tongue Scrapers
   children: []
@@ -3629,6 +5362,10 @@
   - hb-3-12-16-1
   - hb-3-12-16-2
   - hb-3-12-16-3
+  - hb-3-12-16-4
+  - hb-3-12-16-5
+  - hb-3-12-16-6
+  - hb-3-12-16-7
   attributes: []
 - id: hb-3-12-16-1
   name: Toothbrush Covers
@@ -3651,6 +5388,22 @@
   - pattern
   - power_source
   - suitable_for_toothbrush
+- id: hb-3-12-16-4
+  name: Toothbrush Batteries
+  children: []
+  attributes: []
+- id: hb-3-12-16-5
+  name: Toothbrush Chargers
+  children: []
+  attributes: []
+- id: hb-3-12-16-6
+  name: Toothbrush Travel Cases
+  children: []
+  attributes: []
+- id: hb-3-12-16-7
+  name: Toothbrushing Timers
+  children: []
+  attributes: []
 - id: hb-3-12-17
   name: Toothbrushes
   children:
@@ -3684,12 +5437,22 @@
   - pattern
 - id: hb-3-12-18
   name: Toothpaste Squeezers & Dispensers
-  children: []
+  children:
+  - hb-3-12-18-1
+  - hb-3-12-18-2
   attributes:
   - color
   - material
   - mounting_type
   - pattern
+- id: hb-3-12-18-1
+  name: Refillable Toothpaste Containers
+  children: []
+  attributes: []
+- id: hb-3-12-18-2
+  name: Toothpaste Tube Squeezers
+  children: []
+  attributes: []
 - id: hb-3-12-19
   name: Toothpaste
   children: []
@@ -3701,6 +5464,34 @@
   children: []
   attributes:
   - toothpick_design
+- id: hb-3-12-21
+  name: Toothpick Holders & Cases
+  children: []
+  attributes: []
+- id: hb-3-12-22
+  name: Interdental Brushes
+  children: []
+  attributes: []
+- id: hb-3-12-23
+  name: Oil Pulling Oils
+  children: []
+  attributes: []
+- id: hb-3-12-24
+  name: Oral Gels
+  children: []
+  attributes: []
+- id: hb-3-12-25
+  name: Oral Probiotic Lozenges & Tablets
+  children: []
+  attributes: []
+- id: hb-3-12-26
+  name: Orthodontic Wax
+  children: []
+  attributes: []
+- id: hb-3-12-27
+  name: Tooth Gems & Dental Jewelry
+  children: []
+  attributes: []
 - id: hb-3-13
   name: Personal Lubricants
   children: []
@@ -3724,6 +5515,14 @@
   - hb-3-14-11
   - hb-3-14-12
   - hb-3-14-13
+  - hb-3-14-14
+  - hb-3-14-15
+  - hb-3-14-16
+  - hb-3-14-17
+  - hb-3-14-18
+  - hb-3-14-19
+  - hb-3-14-20
+  - hb-3-14-21
   attributes: []
 - id: hb-3-14-1
   name: Aftershave
@@ -3742,11 +5541,36 @@
   - suitable_for_body/facial_hair
 - id: hb-3-14-3
   name: Electric Razor Accessories
-  children: []
+  children:
+  - hb-3-14-3-1
+  - hb-3-14-3-2
+  - hb-3-14-3-3
+  - hb-3-14-3-4
+  - hb-3-14-3-5
   attributes:
   - color
   - material
   - pattern
+- id: hb-3-14-3-1
+  name: Cleaning Cartridges & Solutions
+  children: []
+  attributes: []
+- id: hb-3-14-3-2
+  name: Electric Razor Batteries
+  children: []
+  attributes: []
+- id: hb-3-14-3-3
+  name: Electric Razor Chargers & Cables
+  children: []
+  attributes: []
+- id: hb-3-14-3-4
+  name: Electric Razor Lubricants & Oils
+  children: []
+  attributes: []
+- id: hb-3-14-3-5
+  name: Protective Cases & Travel Pouches
+  children: []
+  attributes: []
 - id: hb-3-14-4
   name: Electric Razors
   children:
@@ -3773,17 +5597,52 @@
   - razor_head_design
 - id: hb-3-14-4-3
   name: Trimmers
-  children: []
+  children:
+  - hb-3-14-4-3-1
+  - hb-3-14-4-3-2
+  - hb-3-14-4-3-3
   attributes:
   - razor_flexibility
   - razor_head_design
+- id: hb-3-14-4-3-1
+  name: Beard Trimmers
+  children: []
+  attributes: []
+- id: hb-3-14-4-3-2
+  name: Body Groomers
+  children: []
+  attributes: []
+- id: hb-3-14-4-3-3
+  name: Nose & Ear Trimmers
+  children: []
+  attributes: []
 - id: hb-3-14-5
   name: Hair Clipper & Trimmer Accessories
-  children: []
+  children:
+  - hb-3-14-5-1
+  - hb-3-14-5-2
+  - hb-3-14-5-3
+  - hb-3-14-5-4
   attributes:
   - color
   - material
   - pattern
+- id: hb-3-14-5-1
+  name: Attachment Combs & Guards
+  children: []
+  attributes: []
+- id: hb-3-14-5-2
+  name: Charging Stands & Cables
+  children: []
+  attributes: []
+- id: hb-3-14-5-3
+  name: Clipper Lubricants & Maintenance Sprays
+  children: []
+  attributes: []
+- id: hb-3-14-5-4
+  name: Hair Clipper Cleaning Brushes
+  children: []
+  attributes: []
 - id: hb-3-14-6
   name: Hair Clippers & Trimmers
   children: []
@@ -3801,6 +5660,8 @@
   - hb-3-14-7-4
   - hb-3-14-7-5
   - hb-3-14-7-6
+  - hb-3-14-7-7
+  - hb-3-14-7-8
   attributes: []
 - id: hb-3-14-7-1
   name: Depilatories
@@ -3834,6 +5695,7 @@
   children:
   - hb-3-14-7-5-1
   - hb-3-14-7-5-2
+  - hb-3-14-7-5-3
   attributes:
   - body_area
   - suitable_for_skin_tone
@@ -3849,22 +5711,99 @@
   attributes:
   - body_area
   - suitable_for_skin_tone
+- id: hb-3-14-7-5-3
+  name: Laser Hair Removal Device Accessories
+  children: []
+  attributes: []
 - id: hb-3-14-7-6
   name: Waxing Kits & Supplies
-  children: []
+  children:
+  - hb-3-14-7-6-1
+  - hb-3-14-7-6-2
+  - hb-3-14-7-6-3
+  - hb-3-14-7-6-4
+  - hb-3-14-7-6-5
   attributes:
   - suitable_for_skin_type
+- id: hb-3-14-7-6-1
+  name: Hair Removal Wax Strips
+  children: []
+  attributes: []
+- id: hb-3-14-7-6-2
+  name: Hard Wax
+  children: []
+  attributes: []
+- id: hb-3-14-7-6-3
+  name: Pre & Post Wax Care
+  children: []
+  attributes: []
+- id: hb-3-14-7-6-4
+  name: Soft & Strip Wax
+  children: []
+  attributes: []
+- id: hb-3-14-7-6-5
+  name: Wax Applicators & Spatulas
+  children: []
+  attributes: []
+- id: hb-3-14-7-7
+  name: Wax Warmer Accessories
+  children: []
+  attributes: []
+- id: hb-3-14-7-8
+  name: Electrolysis Accessories & Consumables
+  children: []
+  attributes: []
 - id: hb-3-14-8
   name: Razors & Razor Blades
-  children: []
+  children:
+  - hb-3-14-8-1
+  - hb-3-14-8-2
+  - hb-3-14-8-3
+  - hb-3-14-8-4
+  - hb-3-14-8-5
   attributes:
   - target_gender
+- id: hb-3-14-8-1
+  name: Cartridge Razors
+  children: []
+  attributes: []
+- id: hb-3-14-8-2
+  name: Disposable Razors
+  children: []
+  attributes: []
+- id: hb-3-14-8-3
+  name: Razor Blades & Refills
+  children: []
+  attributes: []
+- id: hb-3-14-8-4
+  name: Safety Razors
+  children: []
+  attributes: []
+- id: hb-3-14-8-5
+  name: Straight Razors
+  children: []
+  attributes: []
 - id: hb-3-14-9
   name: Shaving Bowls & Mugs
-  children: []
+  children:
+  - hb-3-14-9-1
+  - hb-3-14-9-2
+  - hb-3-14-9-3
   attributes:
   - color
   - pattern
+- id: hb-3-14-9-1
+  name: Shaving Bowls
+  children: []
+  attributes: []
+- id: hb-3-14-9-2
+  name: Shaving Mugs
+  children: []
+  attributes: []
+- id: hb-3-14-9-3
+  name: Shaving Scuttles
+  children: []
+  attributes: []
 - id: hb-3-14-10
   name: Shaving Brushes
   children: []
@@ -3893,6 +5832,38 @@
   attributes:
   - constitutive_ingredients
   - suitable_for_skin_type
+- id: hb-3-14-14
+  name: Beard Balms
+  children: []
+  attributes: []
+- id: hb-3-14-15
+  name: Beard Combs & Brushes
+  children: []
+  attributes: []
+- id: hb-3-14-16
+  name: Beard Conditioner
+  children: []
+  attributes: []
+- id: hb-3-14-17
+  name: Beard Oil
+  children: []
+  attributes: []
+- id: hb-3-14-18
+  name: Beard Shampoo & Wash
+  children: []
+  attributes: []
+- id: hb-3-14-19
+  name: Moustache Wax
+  children: []
+  attributes: []
+- id: hb-3-14-20
+  name: Pre-Shave Oil
+  children: []
+  attributes: []
+- id: hb-3-14-21
+  name: Shaving Soap
+  children: []
+  attributes: []
 - id: hb-3-15
   name: Sleeping Aids
   children:
@@ -3900,6 +5871,8 @@
   - hb-3-15-2
   - hb-3-15-3
   - hb-3-15-4
+  - hb-3-15-5
+  - hb-3-15-6
   attributes:
   - color
   - pattern
@@ -3919,6 +5892,9 @@
   - hb-3-15-2-4
   - hb-3-15-2-5
   - hb-3-15-2-6
+  - hb-3-15-2-7
+  - hb-3-15-2-8
+  - hb-3-15-2-9
   attributes:
   - material
   - treatment_objective
@@ -3958,6 +5934,18 @@
   attributes:
   - material
   - treatment_objective
+- id: hb-3-15-2-7
+  name: Anti-Snoring Sprays & Lozenges
+  children: []
+  attributes: []
+- id: hb-3-15-2-8
+  name: Mouth Tape
+  children: []
+  attributes: []
+- id: hb-3-15-2-9
+  name: Positional Sleep Aids
+  children: []
+  attributes: []
 - id: hb-3-15-3
   name: Travel Pillows
   children: []
@@ -3971,6 +5959,14 @@
   attributes:
   - color
   - pattern
+- id: hb-3-15-5
+  name: Sleep Patches & Topicals
+  children: []
+  attributes: []
+- id: hb-3-15-6
+  name: Sleep Sprays & Mists
+  children: []
+  attributes: []
 - id: hb-3-16
   name: Spray Tanning Tents
   children: []
@@ -3981,6 +5977,16 @@
   - pattern
 - id: hb-3-17
   name: Tanning Beds
+  children:
+  - hb-3-17-1
+  - hb-3-17-2
+  attributes: []
+- id: hb-3-17-1
+  name: Stand-Up Tanning Booths
+  children: []
+  attributes: []
+- id: hb-3-17-2
+  name: Tanning Canopies
   children: []
   attributes: []
 - id: hb-3-18
@@ -3998,6 +6004,10 @@
   - hb-3-19-4
   - hb-3-19-5
   - hb-3-19-6
+  - hb-3-19-7
+  - hb-3-19-8
+  - hb-3-19-9
+  - hb-3-19-10
   attributes: []
 - id: hb-3-19-1
   name: Contact Lens Care
@@ -4006,6 +6016,7 @@
   - hb-3-19-1-2
   - hb-3-19-1-3
   - hb-3-19-1-4
+  - hb-3-19-1-5
   attributes: []
 - id: hb-3-19-1-1
   name: Contact Lens Care Kits
@@ -4053,6 +6064,7 @@
   - hb-3-19-1-4-3
   - hb-3-19-1-4-4
   - hb-3-19-1-4-5
+  - hb-3-19-1-4-6
   attributes: []
 - id: hb-3-19-1-4-1
   name: Biweekly Contact Lenses
@@ -4072,6 +6084,14 @@
   attributes: []
 - id: hb-3-19-1-4-5
   name: Yearly Contact Lenses
+  children: []
+  attributes: []
+- id: hb-3-19-1-4-6
+  name: Quarterly Contact Lenses
+  children: []
+  attributes: []
+- id: hb-3-19-1-5
+  name: Contact Lens Handling Tools
   children: []
   attributes: []
 - id: hb-3-19-2
@@ -4113,16 +6133,29 @@
   - hb-3-19-5-2
   - hb-3-19-5-3
   - hb-3-19-5-4
+  - hb-3-19-5-5
+  - hb-3-19-5-6
+  - hb-3-19-5-7
   attributes: []
 - id: hb-3-19-5-1
   name: Eyewear Cases & Holders
-  children: []
+  children:
+  - hb-3-19-5-1-1
+  - hb-3-19-5-1-2
   attributes:
   - accessory_size
   - bag/case_material
   - closure_type
   - color
   - pattern
+- id: hb-3-19-5-1-1
+  name: Eyewear Cases
+  children: []
+  attributes: []
+- id: hb-3-19-5-1-2
+  name: Eyewear Holders & Stands
+  children: []
+  attributes: []
 - id: hb-3-19-5-2
   name: Eyewear Lens Cleaning Solutions
   children: []
@@ -4131,6 +6164,21 @@
   - solution_type
 - id: hb-3-19-5-3
   name: Eyewear Replacement Parts
+  children:
+  - hb-3-19-5-3-1
+  - hb-3-19-5-3-2
+  - hb-3-19-5-3-3
+  attributes: []
+- id: hb-3-19-5-3-1
+  name: Eyewear Nose Pads
+  children: []
+  attributes: []
+- id: hb-3-19-5-3-2
+  name: Eyewear Screws & Hinges
+  children: []
+  attributes: []
+- id: hb-3-19-5-3-3
+  name: Eyewear Temple Tips
   children: []
   attributes: []
 - id: hb-3-19-5-4
@@ -4156,6 +6204,18 @@
   - color
   - material
   - pattern
+- id: hb-3-19-5-5
+  name: Eyewear Cleaning Cloths
+  children: []
+  attributes: []
+- id: hb-3-19-5-6
+  name: Eyewear Clip-Ons
+  children: []
+  attributes: []
+- id: hb-3-19-5-7
+  name: Eyewear Repair Kits
+  children: []
+  attributes: []
 - id: hb-3-19-6
   name: Sunglass Lenses
   children: []
@@ -4165,3 +6225,23 @@
   - lens_type
   - pattern
   - uv_protection
+- id: hb-3-19-7
+  name: Eye Compresses & Masks
+  children: []
+  attributes: []
+- id: hb-3-19-8
+  name: Eye Health Supplements
+  children: []
+  attributes: []
+- id: hb-3-19-9
+  name: Eyelid Wipes & Cleansers
+  children: []
+  attributes: []
+- id: hb-3-19-10
+  name: Vision Testing & Training Tools
+  children: []
+  attributes: []
+- id: hb-3-20
+  name: Personal Care Gift Sets & Kits
+  children: []
+  attributes: []
