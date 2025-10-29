@@ -33321,6 +33321,4192 @@ base_attributes:
   - robe_style__spa_robe
   - robe_style__wrap
   - robe_style__other
+- id: 5041
+  name: Lamination type
+  description: Identifies if the chart or model surface is laminated and, if so, whether it is single- or double-sided
+  friendly_id: lamination_type
+  handle: lamination-type
+  values:
+  - lamination_type__double_sided_lamination
+  - lamination_type__none
+  - lamination_type__single_sided_lamination
+  - lamination_type__other
+- id: 5042
+  name: Model gender representation
+  description: Specifies whether the human model depicts male, female, or unisex anatomy
+  friendly_id: model_gender_representation
+  handle: model-gender-representation
+  values:
+  - model_gender_representation__female
+  - model_gender_representation__male
+  - model_gender_representation__unisex
+  - model_gender_representation__other
+- id: 5043
+  name: Anatomical detail displayed
+  description: Indicates which anatomical or meridian features are highlighted on the model
+  friendly_id: anatomical_detail_displayed
+  handle: anatomical-detail-displayed
+  values:
+  - anatomical_detail_displayed__meridian_lines
+  - anatomical_detail_displayed__muscular_anatomy
+  - anatomical_detail_displayed__nervous_system
+  - anatomical_detail_displayed__none
+  - anatomical_detail_displayed__organs
+  - anatomical_detail_displayed__skeletal_structure
+  - anatomical_detail_displayed__vascular_system
+  - anatomical_detail_displayed__other
+- id: 5044
+  name: Needle coating type
+  description: Specifies any surface coating applied to the needle shaft to improve glide or therapeutic properties
+  friendly_id: needle_coating_type
+  handle: needle-coating-type
+  values:
+  - needle_coating_type__gold
+  - needle_coating_type__none
+  - needle_coating_type__parylene
+  - needle_coating_type__silicone
+  - needle_coating_type__silver
+  - needle_coating_type__uncoated
+  - needle_coating_type__other
+- id: 5045
+  name: Ear side
+  description: Specifies whether the aid is intended for the left ear, right ear, or for use as a bilateral pair
+  friendly_id: ear_side
+  handle: ear-side
+  values:
+  - ear_side__bilateral
+  - ear_side__left
+  - ear_side__pair
+  - ear_side__right
+  - ear_side__other
+- id: 5046
+  name: Hearing aid ear side
+  description: Specifies whether the hearing aid is designed for the left ear, right ear, or both ears
+  friendly_id: hearing_aid_ear_side
+  handle: hearing-aid-ear-side
+  values:
+  - hearing_aid_ear_side__both
+  - hearing_aid_ear_side__left
+  - hearing_aid_ear_side__right
+  - hearing_aid_ear_side__other
+- id: 5047
+  name: Hearing loss level
+  description: Specifies the degree of hearing loss the hearing aid is designed to address
+  friendly_id: hearing_loss_level
+  handle: hearing-loss-level
+  values:
+  - hearing_loss_level__mild
+  - hearing_loss_level__moderate
+  - hearing_loss_level__profound
+  - hearing_loss_level__severe
+  - hearing_loss_level__other
+- id: 5048
+  name: Bone-anchored interface type
+  description: Defines how the processor attaches to the implant, distinguishing between percutaneous abutment and transcutaneous magnetic systems
+  friendly_id: bone_anchored_interface_type
+  handle: bone-anchored-interface-type
+  values:
+  - bone_anchored_interface_type__percutaneous_abutment
+  - bone_anchored_interface_type__periosteal_screwless
+  - bone_anchored_interface_type__transcutaneous_magnetic
+  - bone_anchored_interface_type__other
+- id: 5049
+  name: Intended surface
+  description: Identifies the primary surface the pad is designed to protect
+  friendly_id: intended_surface
+  handle: intended-surface
+  values:
+  - intended_surface__bed
+  - intended_surface__chair
+  - intended_surface__floor
+  - intended_surface__multi_purpose
+  - intended_surface__toilet
+  - intended_surface__wheelchair
+  - intended_surface__other
+- id: 5050
+  name: Incontinence pad type
+  description: Defines the specific style or form of the pad (e.g., liner, guard, booster pad)
+  friendly_id: incontinence_pad_type
+  handle: incontinence-pad-type
+  values:
+  - incontinence_pad_type__booster_pad
+  - incontinence_pad_type__guard
+  - incontinence_pad_type__insert_pad
+  - incontinence_pad_type__liner
+  - incontinence_pad_type__overnight_pad
+  - incontinence_pad_type__panty_protector
+  - incontinence_pad_type__rectangular_pad
+  - incontinence_pad_type__shaped_pad
+  - incontinence_pad_type__shield
+  - incontinence_pad_type__ultra_thin_pad
+  - incontinence_pad_type__other
+- id: 5051
+  name: Light therapy device form factor
+  description: Describes the physical style or configuration of the device (e.g., panel, mask, handheld)
+  friendly_id: light_therapy_device_form_factor
+  handle: light-therapy-device-form-factor
+  values:
+  - light_therapy_device_form_factor__bed
+  - light_therapy_device_form_factor__belt
+  - light_therapy_device_form_factor__blanket
+  - light_therapy_device_form_factor__glasses
+  - light_therapy_device_form_factor__handheld_torch
+  - light_therapy_device_form_factor__lamp
+  - light_therapy_device_form_factor__mask
+  - light_therapy_device_form_factor__mat
+  - light_therapy_device_form_factor__pad
+  - light_therapy_device_form_factor__panel
+  - light_therapy_device_form_factor__pod
+  - light_therapy_device_form_factor__wrap
+  - light_therapy_device_form_factor__other
+- id: 5052
+  name: Activation mechanism
+  description: Specifies the primary method that triggers the alarm
+  friendly_id: activation_mechanism
+  handle: activation-mechanism
+  values:
+  - activation_mechanism__call_button
+  - activation_mechanism__fall_detection_sensor
+  - activation_mechanism__floor_mat
+  - activation_mechanism__magnetic_switch
+  - activation_mechanism__motion_sensor
+  - activation_mechanism__pressure_sensor_pad
+  - activation_mechanism__pull_cord
+  - activation_mechanism__voice_activation
+  - activation_mechanism__other
+- id: 5053
+  name: Monitoring service type
+  description: Indicates whether the system is professionally monitored 24/7, self-monitored, or unmonitored
+  friendly_id: monitoring_service_type
+  handle: monitoring-service-type
+  values:
+  - monitoring_service_type__no_monitoring_required
+  - monitoring_service_type__optional_professional_monitoring
+  - monitoring_service_type__professional_24/7_monitoring
+  - monitoring_service_type__self_monitored
+  - monitoring_service_type__other
+- id: 5054
+  name: Medical symbol
+  description: Specifies the symbol displayed on the jewelry or tag, aiding quick recognition by first responders
+  friendly_id: medical_symbol
+  handle: medical-symbol
+  values:
+  - medical_symbol__caduceus
+  - medical_symbol__heart_with_cardiogram
+  - medical_symbol__no_symbol
+  - medical_symbol__red_cross
+  - medical_symbol__rod_of_asclepius
+  - medical_symbol__star_of_life
+  - medical_symbol__other
+- id: 5055
+  name: Product format
+  description: Indicates whether the item is delivered as a physical product or a digital download
+  friendly_id: product_format
+  handle: product-format
+  values:
+  - product_format__digital_download
+  - product_format__physical_item
+  - product_format__other
+- id: 5056
+  name: Antibody class tested
+  description: Specifies the immunoglobulin or biomarker the kit detects (e.g., IgE, IgG4)
+  friendly_id: antibody_class_tested
+  handle: antibody-class-tested
+  values:
+  - antibody_class_tested__complement_c3d
+  - antibody_class_tested__iga
+  - antibody_class_tested__ige
+  - antibody_class_tested__igg
+  - antibody_class_tested__igg4
+  - antibody_class_tested__multiple_ige_igg
+  - antibody_class_tested__total_ige
+  - antibody_class_tested__other
+- id: 5057
+  name: Blood group systems detected
+  description: Identifies which blood group systems the kit can determine
+  friendly_id: blood_group_systems_detected
+  handle: blood-group-systems-detected
+  values:
+  - blood_group_systems_detected__abo
+  - blood_group_systems_detected__abo+rhd
+  - blood_group_systems_detected__abo+rhd+duffy
+  - blood_group_systems_detected__abo+rhd+kell
+  - blood_group_systems_detected__abo+rhd+kidd
+  - blood_group_systems_detected__abo+rhd+lewis
+  - blood_group_systems_detected__abo+rhd+lutheran
+  - blood_group_systems_detected__abo+rhd+mns
+  - blood_group_systems_detected__rh_d
+  - blood_group_systems_detected__other
+- id: 5058
+  name: Detection technology
+  description: Specifies the scientific principle or biological marker the HIV test detects (e.g., antibody, antigen/antibody combo, RNA PCR)
+  friendly_id: detection_technology
+  handle: detection-technology
+  values:
+  - detection_technology__antibody
+  - detection_technology__antigen
+  - detection_technology__antigen/antibody_combo
+  - detection_technology__elisa
+  - detection_technology__lateral_flow_immunoassay
+  - detection_technology__pcr
+  - detection_technology__rapid_diagnostic_test
+  - detection_technology__rna_nat
+  - detection_technology__western_blot
+  - detection_technology__other
+- id: 5059
+  name: HIV test generation
+  description: Indicates the generation of the HIV diagnostic test, reflecting improvements in sensitivity and detection window
+  friendly_id: hiv_test_generation
+  handle: hiv-test-generation
+  values:
+  - hiv_test_generation__2nd_generation
+  - hiv_test_generation__3rd_generation
+  - hiv_test_generation__4th_generation
+  - hiv_test_generation__5th_generation
+  - hiv_test_generation__other
+- id: 5060
+  name: Helicobacter pylori detection method
+  description: Identifies the biological principle or approach the kit uses to detect Helicobacter pylori infection
+  friendly_id: helicobacter_pylori_detection_method
+  handle: helicobacter-pylori-detection-method
+  values:
+  - helicobacter_pylori_detection_method__biopsy
+  - helicobacter_pylori_detection_method__blood_antibody_igg
+  - helicobacter_pylori_detection_method__molecular_pcr
+  - helicobacter_pylori_detection_method__saliva_antibody
+  - helicobacter_pylori_detection_method__serum_antibody
+  - helicobacter_pylori_detection_method__stool_antigen
+  - helicobacter_pylori_detection_method__urea_breath
+  - helicobacter_pylori_detection_method__urine_antibody
+  - helicobacter_pylori_detection_method__other
+- id: 5061
+  name: Width adjustment
+  description: Indicates whether the equipment's width can be altered to fit different fixtures, beds, or users
+  friendly_id: width_adjustment
+  handle: width-adjustment
+  values:
+  - width_adjustment__adjustable_width
+  - width_adjustment__fixed_width
+  - width_adjustment__other
+- id: 5062
+  name: Seat swivel mechanism
+  description: Indicates whether and how the seat can pivot at landings for safer transfers
+  friendly_id: seat_swivel_mechanism
+  handle: seat-swivel-mechanism
+  values:
+  - seat_swivel_mechanism__manual_swivel
+  - seat_swivel_mechanism__none_fixed_seat
+  - seat_swivel_mechanism__powered_swivel
+  - seat_swivel_mechanism__other
+- id: 5063
+  name: Transfer aid type
+  description: Classifies the style of aid, distinguishing rigid boards from flexible sheets and air-assisted mats
+  friendly_id: transfer_aid_type
+  handle: transfer-aid-type
+  values:
+  - transfer_aid_type__air_assisted_transfer_mat
+  - transfer_aid_type__flexible_transfer_board
+  - transfer_aid_type__rigid_transfer_board
+  - transfer_aid_type__slide_sheet
+  - transfer_aid_type__transfer_sheet
+  - transfer_aid_type__other
+- id: 5064
+  name: Transfer board shape
+  description: Defines the geometric profile of the board or sheet, which influences transfer path and compatibility with different seating or bed heights
+  friendly_id: transfer_board_shape
+  handle: transfer-board-shape
+  values:
+  - transfer_board_shape__beveled
+  - transfer_board_shape__curved
+  - transfer_board_shape__flexible_sheet
+  - transfer_board_shape__one_ended_tapered
+  - transfer_board_shape__straight
+  - transfer_board_shape__tapered
+  - transfer_board_shape__tapered_both_ends
+  - transfer_board_shape__other
+- id: 5065
+  name: Compatible accessibility equipment type
+  description: Specifies the type of accessibility or mobility equipment the accessory is designed to work with
+  friendly_id: compatible_accessibility_equipment_type
+  handle: compatible-accessibility-equipment-type
+  values:
+  - compatible_accessibility_equipment_type__bath_lift
+  - compatible_accessibility_equipment_type__cane
+  - compatible_accessibility_equipment_type__crutch
+  - compatible_accessibility_equipment_type__mobility_scooter
+  - compatible_accessibility_equipment_type__patient_lift
+  - compatible_accessibility_equipment_type__ramp
+  - compatible_accessibility_equipment_type__stair_lift
+  - compatible_accessibility_equipment_type__transfer_board
+  - compatible_accessibility_equipment_type__walker
+  - compatible_accessibility_equipment_type__wheelchair
+  - compatible_accessibility_equipment_type__other
+- id: 5066
+  name: Seat rotation
+  description: Indicates if the seat swivels and the available locking positions
+  friendly_id: seat_rotation
+  handle: seat-rotation
+  values:
+  - seat_rotation__fixed
+  - seat_rotation__swivel_90_locking
+  - seat_rotation__swivel_180_locking
+  - seat_rotation__swivel_360
+  - seat_rotation__other
+- id: 5067
+  name: Commode opening type
+  description: Identifies the presence and style of any commode cut-out or bucket compatibility in the seat
+  friendly_id: commode_opening_type
+  handle: commode-opening-type
+  values:
+  - commode_opening_type__full_opening_with_bucket
+  - commode_opening_type__none
+  - commode_opening_type__opening_with_removable_insert
+  - commode_opening_type__u_shaped_cut_out
+  - commode_opening_type__other
+- id: 5068
+  name: Walking aid tip type
+  description: Specifies the style or technology of the cane's ground tip
+  friendly_id: walking_aid_tip_type
+  handle: walking-aid-tip-type
+  values:
+  - walking_aid_tip_type__ferrule
+  - walking_aid_tip_type__flex_tip
+  - walking_aid_tip_type__ice_pick
+  - walking_aid_tip_type__miniquad_tip
+  - walking_aid_tip_type__pivoting_tip
+  - walking_aid_tip_type__quad_tip
+  - walking_aid_tip_type__spike
+  - walking_aid_tip_type__standard_rubber
+  - walking_aid_tip_type__suction_tip
+  - walking_aid_tip_type__other
+- id: 5069
+  name: Cane base design
+  description: Identifies the configuration of the cane's support base
+  friendly_id: cane_base_design
+  handle: cane-base-design
+  values:
+  - cane_base_design__convertible
+  - cane_base_design__miniquad
+  - cane_base_design__quad_large_base
+  - cane_base_design__quad_small_base
+  - cane_base_design__self_standing_wide_base
+  - cane_base_design__single_point
+  - cane_base_design__tripod
+  - cane_base_design__other
+- id: 5070
+  name: Handle style
+  description: Defines the design or shape of the walking stick's handle, influencing grip comfort, ergonomics, and aesthetics
+  friendly_id: handle_style
+  handle: handle-style
+  values:
+  - handle_style__anatomical
+  - handle_style__crook
+  - handle_style__derby
+  - handle_style__ergonomic
+  - handle_style__fritz
+  - handle_style__knob
+  - handle_style__offset
+  - handle_style__palm
+  - handle_style__swan_neck
+  - handle_style__t_handle
+  - handle_style__tourist
+  - handle_style__other
+- id: 5071
+  name: Cuff style
+  description: Describes the design of the forearm cuff on forearm crutches
+  friendly_id: cuff_style
+  handle: cuff-style
+  values:
+  - cuff_style__adjustable_cuff
+  - cuff_style__closed_cuff
+  - cuff_style__full_cuff
+  - cuff_style__hinged_cuff
+  - cuff_style__open_cuff
+  - cuff_style__other
+- id: 5072
+  name: Crutch folding type
+  description: Specifies if and how the crutch folds for transport or storage
+  friendly_id: crutch_folding_type
+  handle: crutch-folding-type
+  values:
+  - crutch_folding_type__compact_tri_fold
+  - crutch_folding_type__double_fold
+  - crutch_folding_type__non_foldable
+  - crutch_folding_type__single_fold
+  - crutch_folding_type__other
+- id: 5073
+  name: Walker type
+  description: Classifies the structural style and intended usage of the walker
+  friendly_id: walker_type
+  handle: walker-type
+  values:
+  - walker_type__bariatric_walker
+  - walker_type__four_wheel_rollator
+  - walker_type__hemi_walker
+  - walker_type__knee_scooter
+  - walker_type__knee_walker
+  - walker_type__pediatric_walker
+  - walker_type__posterior_walker
+  - walker_type__standard_no_wheels
+  - walker_type__three_wheel_rollator
+  - walker_type__two_wheel_front_walker
+  - walker_type__up_right_walker
+  - walker_type__other
+- id: 5074
+  name: Walker brake type
+  description: Describes the braking mechanism incorporated in the walker
+  friendly_id: walker_brake_type
+  handle: walker-brake-type
+  values:
+  - walker_brake_type__automatic_brake
+  - walker_brake_type__cable_brake
+  - walker_brake_type__drum_brake
+  - walker_brake_type__dual_hand_brake
+  - walker_brake_type__loop_hand_brake
+  - walker_brake_type__none
+  - walker_brake_type__push_down_brake
+  - walker_brake_type__rear_glide_brake
+  - walker_brake_type__trigger_brake
+  - walker_brake_type__other
+- id: 5075
+  name: Walker seat type
+  description: Identifies whether the walker includes a seat and the seat's style
+  friendly_id: walker_seat_type
+  handle: walker-seat-type
+  values:
+  - walker_seat_type__bench_seat
+  - walker_seat_type__folding_seat
+  - walker_seat_type__no_seat
+  - walker_seat_type__padded_seat
+  - walker_seat_type__removable_seat
+  - walker_seat_type__sling_seat
+  - walker_seat_type__other
+- id: 5076
+  name: Electrode connector type
+  description: Describes the physical interface used to attach electrodes or pads
+  friendly_id: electrode_connector_type
+  handle: electrode-connector-type
+  values:
+  - electrode_connector_type__2_mm_pin
+  - electrode_connector_type__3_mm_snap
+  - electrode_connector_type__dual_snap
+  - electrode_connector_type__pigtail
+  - electrode_connector_type__proprietary
+  - electrode_connector_type__wireless
+  - electrode_connector_type__other
+- id: 5077
+  name: Electrotherapy modality
+  description: Specifies the types of stimulation technologies the device supports (e.g., TENS, EMS, IFC)
+  friendly_id: electrotherapy_modality
+  handle: electrotherapy-modality
+  values:
+  - electrotherapy_modality__combination
+  - electrotherapy_modality__ems
+  - electrotherapy_modality__heat
+  - electrotherapy_modality__ifc
+  - electrotherapy_modality__ift
+  - electrotherapy_modality__massage
+  - electrotherapy_modality__microcurrent
+  - electrotherapy_modality__nmes
+  - electrotherapy_modality__russian_current
+  - electrotherapy_modality__tens
+  - electrotherapy_modality__other
+- id: 5078
+  name: Therapeutic swing accessories included
+  description: Lists additional hardware or accessories supplied with the swing
+  friendly_id: therapeutic_swing_accessories_included
+  handle: therapeutic-swing-accessories-included
+  values:
+  - therapeutic_swing_accessories_included__anchor_bolts
+  - therapeutic_swing_accessories_included__carabiners
+  - therapeutic_swing_accessories_included__carrying_bag
+  - therapeutic_swing_accessories_included__ceiling_hooks
+  - therapeutic_swing_accessories_included__daisy_chain_straps
+  - therapeutic_swing_accessories_included__inflation_pump
+  - therapeutic_swing_accessories_included__installation_manual
+  - therapeutic_swing_accessories_included__protective_cover
+  - therapeutic_swing_accessories_included__ropes
+  - therapeutic_swing_accessories_included__safety_harness
+  - therapeutic_swing_accessories_included__other
+- id: 5079
+  name: Pillbox schedule
+  description: Describes the time regimen or labeling scheme the pillbox is designed for (e.g., daily, weekly, AM/PM)
+  friendly_id: pillbox_schedule
+  handle: pillbox-schedule
+  values:
+  - pillbox_schedule__3_times_per_day
+  - pillbox_schedule__am/pm
+  - pillbox_schedule__bi_weekly
+  - pillbox_schedule__custom
+  - pillbox_schedule__daily
+  - pillbox_schedule__hourly
+  - pillbox_schedule__monthly
+  - pillbox_schedule__single_use
+  - pillbox_schedule__weekly
+  - pillbox_schedule__other
+- id: 5080
+  name: Bed pan handle style
+  description: Describes the style of handle or grip provided for positioning and removal
+  friendly_id: bed_pan_handle_style
+  handle: bed-pan-handle-style
+  values:
+  - bed_pan_handle_style__integrated_rear_handle
+  - bed_pan_handle_style__loop_handle
+  - bed_pan_handle_style__no_handle
+  - bed_pan_handle_style__side_grips
+  - bed_pan_handle_style__other
+- id: 5081
+  name: Bed pan features
+  description: Highlights additional special design elements or functional enhancements
+  friendly_id: bed_pan_features
+  handle: bed-pan-features
+  values:
+  - bed_pan_features__anti_spill_rim
+  - bed_pan_features__disposable_liner_compatible
+  - bed_pan_features__ergonomic_handle
+  - bed_pan_features__female_contour
+  - bed_pan_features__male_contour
+  - bed_pan_features__non_stick_surface
+  - bed_pan_features__stackable
+  - bed_pan_features__other
+- id: 5082
+  name: Oxygen cylinder outlet standard
+  description: Specifies the CGA outlet connection standard of the cylinder valve
+  friendly_id: oxygen_cylinder_outlet_standard
+  handle: oxygen-cylinder-outlet-standard
+  values:
+  - oxygen_cylinder_outlet_standard__cga_540
+  - oxygen_cylinder_outlet_standard__cga_664
+  - oxygen_cylinder_outlet_standard__cga_870
+  - oxygen_cylinder_outlet_standard__cga_940
+  - oxygen_cylinder_outlet_standard__other
+- id: 5083
+  name: Cylinder size designation
+  description: Identifies the standard letter or number code used to identify an oxygen cylinder's dimensions and capacity (e.g., M6, D, E)
+  friendly_id: cylinder_size_designation
+  handle: cylinder-size-designation
+  values:
+  - cylinder_size_designation__b
+  - cylinder_size_designation__c
+  - cylinder_size_designation__d
+  - cylinder_size_designation__e
+  - cylinder_size_designation__h
+  - cylinder_size_designation__m2
+  - cylinder_size_designation__m6
+  - cylinder_size_designation__m9
+  - cylinder_size_designation__m60
+  - cylinder_size_designation__other
+- id: 5084
+  name: Humidification system
+  description: Describes the type of humidification option included with or supported by the PAP machine
+  friendly_id: humidification_system
+  handle: humidification-system
+  values:
+  - humidification_system__external_heated_humidifier
+  - humidification_system__external_humidifier_required
+  - humidification_system__external_passover_humidifier
+  - humidification_system__integrated_heated_humidifier
+  - humidification_system__integrated_passover_humidifier
+  - humidification_system__no_humidifier
+  - humidification_system__optional_heated_humidifier
+  - humidification_system__waterless_hme
+  - humidification_system__other
+- id: 5085
+  name: Therapy mode supported
+  description: Lists the breathing-therapy algorithms the device can operate in, beyond standard APAP
+  friendly_id: therapy_mode_supported
+  handle: therapy-mode-supported
+  values:
+  - therapy_mode_supported__apap
+  - therapy_mode_supported__apap_for_her
+  - therapy_mode_supported__auto_cpap
+  - therapy_mode_supported__bilevel
+  - therapy_mode_supported__cpap
+  - therapy_mode_supported__epap
+  - therapy_mode_supported__other
+- id: 5086
+  name: Mask cushion material
+  description: Details the specific material used for the mask's cushion or seal
+  friendly_id: mask_cushion_material
+  handle: mask-cushion-material
+  values:
+  - mask_cushion_material__fabric_lined_silicone
+  - mask_cushion_material__gel
+  - mask_cushion_material__memory_foam
+  - mask_cushion_material__silicone
+  - mask_cushion_material__other
+- id: 5087
+  name: Steam inhaler design
+  description: Describes the physical style and portability format of the steam inhaler
+  friendly_id: steam_inhaler_design
+  handle: steam-inhaler-design
+  values:
+  - steam_inhaler_design__full_face
+  - steam_inhaler_design__handheld
+  - steam_inhaler_design__mask_style
+  - steam_inhaler_design__tabletop
+  - steam_inhaler_design__other
+- id: 5088
+  name: Amputation level
+  description: Denotes the level of amputation the shrinker is designed for
+  friendly_id: amputation_level
+  handle: amputation-level
+  values:
+  - amputation_level__elbow_disarticulation
+  - amputation_level__hip_disarticulation
+  - amputation_level__knee_disarticulation
+  - amputation_level__partial_foot
+  - amputation_level__partial_hand
+  - amputation_level__shoulder_disarticulation
+  - amputation_level__transfemoral_above_knee
+  - amputation_level__transhumeral_above_elbow
+  - amputation_level__transradial_below_elbow
+  - amputation_level__transtibial_below_knee
+  - amputation_level__other
+- id: 5089
+  name: Body side
+  description: Defines whether the product is designed for the left side, right side, or is suitable for bilateral use
+  friendly_id: body_side
+  handle: body-side
+  values:
+  - body_side__bilateral
+  - body_side__left
+  - body_side__right
+  - body_side__other
+- id: 5090
+  name: Foot side
+  description: Indicates whether the ankle support is designed for the left foot, right foot, or can be used on either side
+  friendly_id: foot_side
+  handle: foot-side
+  values:
+  - foot_side__both_sides
+  - foot_side__left
+  - foot_side__right
+  - foot_side__other
+- id: 5091
+  name: Brace support level
+  description: Indicates the manufacturer-designated overall support or protection level offered by the brace
+  friendly_id: brace_support_level
+  handle: brace-support-level
+  values:
+  - brace_support_level__level_1_light
+  - brace_support_level__level_2_moderate
+  - brace_support_level__level_3_pro
+  - brace_support_level__level_4_maximum
+  - brace_support_level__other
+- id: 5092
+  name: Knee brace style
+  description: Defines the structural design of the brace, reflecting how it is worn and the level of support provided
+  friendly_id: knee_brace_style
+  handle: knee-brace-style
+  values:
+  - knee_brace_style__adjustable_dial
+  - knee_brace_style__closed_patella
+  - knee_brace_style__cold_therapy_cuff
+  - knee_brace_style__compression_strap_combo
+  - knee_brace_style__elastic_support
+  - knee_brace_style__heated_brace
+  - knee_brace_style__hinged
+  - knee_brace_style__immobilizer
+  - knee_brace_style__magnetic
+  - knee_brace_style__open_patella
+  - knee_brace_style__patella_band
+  - knee_brace_style__rom_brace
+  - knee_brace_style__sleeve
+  - knee_brace_style__strap
+  - knee_brace_style__wraparound
+  - knee_brace_style__other
+- id: 5093
+  name: Patella opening design
+  description: Specifies whether the brace has an open or closed patella area or a stabilizing ring
+  friendly_id: patella_opening_design
+  handle: patella-opening-design
+  values:
+  - patella_opening_design__closed_patella
+  - patella_opening_design__open_patella
+  - patella_opening_design__patella_ring
+  - patella_opening_design__other
+- id: 5094
+  name: Support level
+  description: States the overall stability or support rating offered by the brace for different injury severities or activity levels
+  friendly_id: support_level
+  handle: support-level
+  values:
+  - support_level__advanced
+  - support_level__basic
+  - support_level__maximum
+  - support_level__moderate
+  - support_level__rehabilitative
+  - support_level__other
+- id: 5095
+  name: Radiology compatibility
+  description: Indicates whether the brace can remain on the patient during imaging procedures (e.g., MRI, CT, X-ray)
+  friendly_id: radiology_compatibility
+  handle: radiology-compatibility
+  values:
+  - radiology_compatibility__ct_compatible
+  - radiology_compatibility__mri_compatible
+  - radiology_compatibility__not_compatible
+  - radiology_compatibility__x_ray_compatible
+  - radiology_compatibility__other
+- id: 5096
+  name: Therapeutic features
+  description: Lists additional therapeutic modalities integrated into the neck brace
+  friendly_id: therapeutic_features
+  handle: therapeutic-features
+  values:
+  - therapeutic_features__air_traction
+  - therapeutic_features__cooling
+  - therapeutic_features__ems
+  - therapeutic_features__heating
+  - therapeutic_features__infrared_therapy
+  - therapeutic_features__light_therapy
+  - therapeutic_features__magnetic_therapy
+  - therapeutic_features__massage_nodes
+  - therapeutic_features__none
+  - therapeutic_features__vibration
+  - therapeutic_features__other
+- id: 5097
+  name: Splint/Stay configuration
+  description: Describes the presence and type of rigid or semi-rigid stays or splints used in the brace
+  friendly_id: splint/stay_configuration
+  handle: splint-stay-configuration
+  values:
+  - splint/stay_configuration__aluminum_palmar_stay
+  - splint/stay_configuration__dorsal_stay
+  - splint/stay_configuration__dual_splints_palmar_dorsal
+  - splint/stay_configuration__none
+  - splint/stay_configuration__plastic_palmar_stay
+  - splint/stay_configuration__removable_splints
+  - splint/stay_configuration__other
+- id: 5098
+  name: Mask size
+  description: Specifies the size designation provided by the manufacturer
+  friendly_id: mask_size
+  handle: mask-size
+  values:
+  - mask_size__kids
+  - mask_size__large
+  - mask_size__medium
+  - mask_size__one_size_fits_most
+  - mask_size__petite
+  - mask_size__small
+  - mask_size__xl
+  - mask_size__xs
+  - mask_size__other
+- id: 5099
+  name: Adhesive features
+  description: Highlights special properties of the adhesive used on patches or tapes
+  friendly_id: adhesive_features
+  handle: adhesive-features
+  values:
+  - adhesive_features__breathable
+  - adhesive_features__frayproof
+  - adhesive_features__hypoallergenic
+  - adhesive_features__latex_free
+  - adhesive_features__medical_grade_adhesive
+  - adhesive_features__stretchable
+  - adhesive_features__sweatproof
+  - adhesive_features__uv_resistant
+  - adhesive_features__waterproof
+  - adhesive_features__other
+- id: 5100
+  name: Analyte measured
+  description: Identifies the biomarker(s) for which the control solution provides calibration
+  friendly_id: analyte_measured
+  handle: analyte-measured
+  values:
+  - analyte_measured__cholesterol
+  - analyte_measured__glucose
+  - analyte_measured__glucose_and_ketone
+  - analyte_measured__ketone
+  - analyte_measured__uric_acid
+  - analyte_measured__other
+- id: 5101
+  name: Control solution level
+  description: Indicates the glucose concentration level of the control solution
+  friendly_id: control_solution_level
+  handle: control-solution-level
+  values:
+  - control_solution_level__dual_pack_levels_1_3
+  - control_solution_level__high
+  - control_solution_level__level_0
+  - control_solution_level__level_1
+  - control_solution_level__level_2
+  - control_solution_level__level_3
+  - control_solution_level__level_4
+  - control_solution_level__low
+  - control_solution_level__medium
+  - control_solution_level__normal
+  - control_solution_level__other
+- id: 5102
+  name: Lancet mechanism type
+  description: Defines the operating mechanism or safety design of lancets (e.g., safety retractable, pressure-activated)
+  friendly_id: lancet_mechanism_type
+  handle: lancet-mechanism-type
+  values:
+  - lancet_mechanism_type__preloaded_drum
+  - lancet_mechanism_type__pressure_activated
+  - lancet_mechanism_type__safety_retractable
+  - lancet_mechanism_type__standard_twist_top
+  - lancet_mechanism_type__vacuum_assisted
+  - lancet_mechanism_type__other
+- id: 5103
+  name: Air tube configuration
+  description: Indicates the number or style of air-inflation tubes integrated with the cuff
+  friendly_id: air_tube_configuration
+  handle: air-tube-configuration
+  values:
+  - air_tube_configuration__coiled_tube
+  - air_tube_configuration__double_tube
+  - air_tube_configuration__no_tube_cuff_only
+  - air_tube_configuration__single_tube
+  - air_tube_configuration__other
+- id: 5104
+  name: Cuff size category
+  description: Specifies the standardized sizing class of the cuff (e.g., infant, adult, large adult)
+  friendly_id: cuff_size_category
+  handle: cuff-size-category
+  values:
+  - cuff_size_category__adult
+  - cuff_size_category__child
+  - cuff_size_category__extra_large_adult
+  - cuff_size_category__infant
+  - cuff_size_category__large_adult
+  - cuff_size_category__neonatal
+  - cuff_size_category__small_adult
+  - cuff_size_category__universal
+  - cuff_size_category__other
+- id: 5105
+  name: Cuff connector type
+  description: Defines the mechanical interface that attaches the cuff tubing to the blood-pressure monitor
+  friendly_id: cuff_connector_type
+  handle: cuff-connector-type
+  values:
+  - cuff_connector_type__b_type
+  - cuff_connector_type__bayonet
+  - cuff_connector_type__dinaclick
+  - cuff_connector_type__hp
+  - cuff_connector_type__luer
+  - cuff_connector_type__quick_release
+  - cuff_connector_type__snap
+  - cuff_connector_type__straight
+  - cuff_connector_type__threaded_screw
+  - cuff_connector_type__other
+- id: 5106
+  name: Medical device certification
+  description: Lists regulatory approvals or standards the biometric monitor complies with (e.g., CE, FDA 510(k))
+  friendly_id: medical_device_certification
+  handle: medical-device-certification
+  values:
+  - medical_device_certification__ce
+  - medical_device_certification__fda_510k
+  - medical_device_certification__health_canada
+  - medical_device_certification__iso_9001
+  - medical_device_certification__iso_13485
+  - medical_device_certification__mdd_93/42/eec
+  - medical_device_certification__mdr_2017/745
+  - medical_device_certification__other
+- id: 5107
+  name: Ultrasound probe type
+  description: Identifies design characteristics of the probe supplied with the monitor (e.g., waterproof, internal)
+  friendly_id: ultrasound_probe_type
+  handle: ultrasound-probe-type
+  values:
+  - ultrasound_probe_type__interchangeable
+  - ultrasound_probe_type__internal_intrauterine
+  - ultrasound_probe_type__standard
+  - ultrasound_probe_type__waterproof
+  - ultrasound_probe_type__other
+- id: 5108
+  name: Glucose measurement units
+  description: Indicates which measurement units (mg/dL or mmol/L) the meter can display results in
+  friendly_id: glucose_measurement_units
+  handle: glucose-measurement-units
+  values:
+  - glucose_measurement_units__both_mg/dl_mmol/l
+  - glucose_measurement_units__mg/dl_milligrams_per_deciliter
+  - glucose_measurement_units__mmol/l_millimoles_per_liter
+  - glucose_measurement_units__other
+- id: 5109
+  name: Monitoring method
+  description: Identifies the physiological technique the device uses to obtain glucose readings
+  friendly_id: monitoring_method
+  handle: monitoring-method
+  values:
+  - monitoring_method__continuous_interstitial_cgm
+  - monitoring_method__finger_stick_capillary_blood
+  - monitoring_method__non_invasive_optical/laser
+  - monitoring_method__other
+- id: 5110
+  name: Cholesterol analyte measured
+  description: Lists the specific biomarkers the device can measure or calculate in addition to total cholesterol
+  friendly_id: cholesterol_analyte_measured
+  handle: cholesterol-analyte-measured
+  values:
+  - cholesterol_analyte_measured__cholesterol_ratio
+  - cholesterol_analyte_measured__glucose
+  - cholesterol_analyte_measured__hdl_cholesterol
+  - cholesterol_analyte_measured__hemoglobin
+  - cholesterol_analyte_measured__ketone_bodies
+  - cholesterol_analyte_measured__lactate
+  - cholesterol_analyte_measured__ldl_cholesterol
+  - cholesterol_analyte_measured__total_cholesterol_tc
+  - cholesterol_analyte_measured__triglycerides
+  - cholesterol_analyte_measured__uric_acid
+  - cholesterol_analyte_measured__other
+- id: 5111
+  name: Fertility metrics measured
+  description: Lists the biological metrics or parameters the product provides to the user
+  friendly_id: fertility_metrics_measured
+  handle: fertility-metrics-measured
+  values:
+  - fertility_metrics_measured__basal_body_temperature_bbt
+  - fertility_metrics_measured__fertile_window_prediction
+  - fertility_metrics_measured__menopause_indicator_fsh
+  - fertility_metrics_measured__ovulation_prediction
+  - fertility_metrics_measured__pregnancy_confirmation
+  - fertility_metrics_measured__progressive_motile_sperm_concentration
+  - fertility_metrics_measured__sperm_concentration
+  - fertility_metrics_measured__sperm_morphology
+  - fertility_metrics_measured__sperm_motility
+  - fertility_metrics_measured__other
+- id: 5112
+  name: Lubricant effect
+  description: Indicates any functional effect or style provided by the condom's lubrication
+  friendly_id: lubricant_effect
+  handle: lubricant-effect
+  values:
+  - lubricant_effect__cooling
+  - lubricant_effect__delay
+  - lubricant_effect__extra_lubricated
+  - lubricant_effect__flavored
+  - lubricant_effect__lubricated
+  - lubricant_effect__non_lubricated
+  - lubricant_effect__spermicidal
+  - lubricant_effect__standard
+  - lubricant_effect__tingling
+  - lubricant_effect__warming
+  - lubricant_effect__other
+- id: 5113
+  name: Condom fit type
+  description: Describes the overall sizing or anatomical contour designed to improve comfort and sensation
+  friendly_id: condom_fit_type
+  handle: condom-fit-type
+  values:
+  - condom_fit_type__anatomical
+  - condom_fit_type__beaded
+  - condom_fit_type__close_fit
+  - condom_fit_type__contoured
+  - condom_fit_type__extra_large
+  - condom_fit_type__flared
+  - condom_fit_type__large
+  - condom_fit_type__regular
+  - condom_fit_type__roomy_head
+  - condom_fit_type__snug
+  - condom_fit_type__straight
+  - condom_fit_type__tapered
+  - condom_fit_type__other
+- id: 5114
+  name: Conductivity gel application
+  description: Specifies the medical or diagnostic procedure the conductivity gel or lotion is intended for
+  friendly_id: conductivity_gel_application
+  handle: conductivity-gel-application
+  values:
+  - conductivity_gel_application__defibrillation
+  - conductivity_gel_application__ecg_monitoring
+  - conductivity_gel_application__eeg_monitoring
+  - conductivity_gel_application__ekg_monitoring
+  - conductivity_gel_application__emg_monitoring
+  - conductivity_gel_application__ems_therapy
+  - conductivity_gel_application__fetal_monitoring_ctg
+  - conductivity_gel_application__iontophoresis
+  - conductivity_gel_application__ipl_procedures
+  - conductivity_gel_application__laser_procedures
+  - conductivity_gel_application__tens_therapy
+  - conductivity_gel_application__ultrasound_imaging
+  - conductivity_gel_application__other
+- id: 5115
+  name: First aid container type
+  description: Defines the primary style of container or housing supplied with the kit
+  friendly_id: first_aid_container_type
+  handle: first-aid-container-type
+  values:
+  - first_aid_container_type__backpack
+  - first_aid_container_type__cabinet
+  - first_aid_container_type__dry_sack
+  - first_aid_container_type__hard_plastic_case
+  - first_aid_container_type__metal_case
+  - first_aid_container_type__organizer_box
+  - first_aid_container_type__pelican_style_case
+  - first_aid_container_type__soft_pouch
+  - first_aid_container_type__waist_pack
+  - first_aid_container_type__other
+- id: 5116
+  name: First aid kit compliance standard
+  description: Specifies any formal standard or regulation the kit meets
+  friendly_id: first_aid_kit_compliance_standard
+  handle: first-aid-kit-compliance-standard
+  values:
+  - first_aid_kit_compliance_standard__ansi/isea_z308_1_2015_class_a
+  - first_aid_kit_compliance_standard__ansi/isea_z308_1_2021_class_a
+  - first_aid_kit_compliance_standard__ansi/isea_z308_1_2015_class_b
+  - first_aid_kit_compliance_standard__ansi/isea_z308_1_2021_class_b
+  - first_aid_kit_compliance_standard__bs_8599_1
+  - first_aid_kit_compliance_standard__csa_z1220_17
+  - first_aid_kit_compliance_standard__din_13157
+  - first_aid_kit_compliance_standard__din_13164
+  - first_aid_kit_compliance_standard__osha_29_cfr_1910_151
+  - first_aid_kit_compliance_standard__other
+- id: 5117
+  name: Therapy temperature type
+  description: Indicates whether the product provides heat therapy, cold therapy, or both
+  friendly_id: therapy_temperature_type
+  handle: therapy-temperature-type
+  values:
+  - therapy_temperature_type__cold
+  - therapy_temperature_type__hot
+  - therapy_temperature_type__hot_and_cold
+  - therapy_temperature_type__other
+- id: 5118
+  name: Formulation strength
+  description: Indicates the comparative potency of the product's formula
+  friendly_id: formulation_strength
+  handle: formulation-strength
+  values:
+  - formulation_strength__extra_strength
+  - formulation_strength__maximum_strength
+  - formulation_strength__regular
+  - formulation_strength__other
+- id: 5119
+  name: Thermal sensation
+  description: Describes the perceived temperature effect on the skin after application
+  friendly_id: thermal_sensation
+  handle: thermal-sensation
+  values:
+  - thermal_sensation__cooling
+  - thermal_sensation__cooling_then_warming
+  - thermal_sensation__neutral
+  - thermal_sensation__warming
+  - thermal_sensation__other
+- id: 5120
+  name: Heating pad features
+  description: Highlights special functional or convenience features built into the heating pad
+  friendly_id: heating_pad_features
+  handle: heating-pad-features
+  values:
+  - heating_pad_features__adjustable_strap
+  - heating_pad_features__aromatherapy_insert
+  - heating_pad_features__auto_shut_off
+  - heating_pad_features__digital_controller
+  - heating_pad_features__fast_heating
+  - heating_pad_features__reversible
+  - heating_pad_features__timer
+  - heating_pad_features__washable_cover
+  - heating_pad_features__weighted
+  - heating_pad_features__other
+- id: 5121
+  name: Heat therapy type
+  description: Indicates whether the product delivers moist heat, dry heat, or both
+  friendly_id: heat_therapy_type
+  handle: heat-therapy-type
+  values:
+  - heat_therapy_type__dry_heat
+  - heat_therapy_type__moist_heat
+  - heat_therapy_type__moist_or_dry_selectable
+  - heat_therapy_type__other
+- id: 5122
+  name: Heating pad design
+  description: Specifies the physical style or form factor of the heating pad
+  friendly_id: heating_pad_design
+  handle: heating-pad-design
+  values:
+  - heating_pad_design__adhesive_patch
+  - heating_pad_design__belt
+  - heating_pad_design__contoured
+  - heating_pad_design__eye_mask
+  - heating_pad_design__flat_pad
+  - heating_pad_design__neck_collar
+  - heating_pad_design__rectangular
+  - heating_pad_design__round
+  - heating_pad_design__shoulder_wrap
+  - heating_pad_design__square
+  - heating_pad_design__waist_wrap
+  - heating_pad_design__other
+- id: 5123
+  name: Bandage shape
+  description: Describes the pre-cut form factor of adhesive bandages or dressings
+  friendly_id: bandage_shape
+  handle: bandage-shape
+  values:
+  - bandage_shape__butterfly
+  - bandage_shape__digit_cap
+  - bandage_shape__fingertip
+  - bandage_shape__heel
+  - bandage_shape__knuckle
+  - bandage_shape__patch
+  - bandage_shape__rectangle
+  - bandage_shape__round
+  - bandage_shape__spot
+  - bandage_shape__square
+  - bandage_shape__strip
+  - bandage_shape__toe_cap
+  - bandage_shape__other
+- id: 5124
+  name: Route of administration
+  description: Identifies how the product is applied or consumed, influencing efficacy and safety (e.g., oral, topical, transdermal patch, sublingual, intramuscular injection)
+  friendly_id: route_of_administration
+  handle: route-of-administration
+  values:
+  - route_of_administration__inhalation
+  - route_of_administration__intramuscular_injection
+  - route_of_administration__intravenous_injection
+  - route_of_administration__nasal_spray
+  - route_of_administration__oral
+  - route_of_administration__subcutaneous_injection
+  - route_of_administration__sublingual
+  - route_of_administration__suppository
+  - route_of_administration__topical
+  - route_of_administration__transdermal_patch
+  - route_of_administration__other
+- id: 5125
+  name: Supplement health focus
+  description: Defines the primary wellness area the supplement is intended to support
+  friendly_id: supplement_health_focus
+  handle: supplement-health-focus
+  values:
+  - supplement_health_focus__bone_and_joint_support
+  - supplement_health_focus__brain_and_cognitive_health
+  - supplement_health_focus__digestive_health
+  - supplement_health_focus__energy_and_metabolism
+  - supplement_health_focus__eye_health
+  - supplement_health_focus__hair
+  - supplement_health_focus__heart_health
+  - supplement_health_focus__immune_support
+  - supplement_health_focus__nails
+  - supplement_health_focus__prenatal_and_maternal_health
+  - supplement_health_focus__skin_health
+  - supplement_health_focus__weight_management
+  - supplement_health_focus__other
+- id: 5126
+  name: Amino acid subtype
+  description: Specifies the primary type or profile of amino acids contained in the supplement
+  friendly_id: amino_acid_subtype
+  handle: amino-acid-subtype
+  values:
+  - amino_acid_subtype__beta_alanine
+  - amino_acid_subtype__branched_chain_amino_acids_bcaa
+  - amino_acid_subtype__citrulline
+  - amino_acid_subtype__essential_amino_acids_eaa
+  - amino_acid_subtype__glutamine
+  - amino_acid_subtype__glycine
+  - amino_acid_subtype__l_arginine
+  - amino_acid_subtype__l_carnitine
+  - amino_acid_subtype__taurine
+  - amino_acid_subtype__other
+- id: 5127
+  name: Intended effect
+  description: Describes the primary wellness benefit the CBD supplement is marketed to provide
+  friendly_id: intended_effect
+  handle: intended-effect
+  values:
+  - intended_effect__anti_inflammatory
+  - intended_effect__calm_and_relaxation
+  - intended_effect__focus_and_clarity
+  - intended_effect__immune_support
+  - intended_effect__joint_support
+  - intended_effect__mood_support
+  - intended_effect__pain_relief
+  - intended_effect__sleep_support
+  - intended_effect__stress_and_anxiety_relief
+  - intended_effect__other
+- id: 5128
+  name: Extraction method
+  description: Identifies the technique used to extract cannabinoids from the hemp plant material
+  friendly_id: extraction_method
+  handle: extraction-method
+  values:
+  - extraction_method__co_supercritical
+  - extraction_method__cold_pressed
+  - extraction_method__ethanol
+  - extraction_method__hydrocarbon
+  - extraction_method__lipid_infusion
+  - extraction_method__olive_oil_infusion
+  - extraction_method__solventless_rosin
+  - extraction_method__steam_distillation
+  - extraction_method__other
+- id: 5129
+  name: Collagen source
+  description: Identifies the primary origin of the collagen used in the supplement (e.g., bovine, marine, plant-based)
+  friendly_id: collagen_source
+  handle: collagen-source
+  values:
+  - collagen_source__bovine_beef
+  - collagen_source__chicken
+  - collagen_source__eggshell_membrane
+  - collagen_source__marine_fish
+  - collagen_source__mixed_animal
+  - collagen_source__multi_source
+  - collagen_source__plant_based
+  - collagen_source__porcine_pork
+  - collagen_source__vegan
+  - collagen_source__other
+- id: 5130
+  name: Collagen type
+  description: Specifies the collagen molecular type(s) provided by the product (e.g., Type I, II, III)
+  friendly_id: collagen_type
+  handle: collagen-type
+  values:
+  - collagen_type__multi_type
+  - collagen_type__type_i
+  - collagen_type__type_i_iii
+  - collagen_type__type_ii
+  - collagen_type__type_iii
+  - collagen_type__type_v
+  - collagen_type__type_x
+  - collagen_type__unknown
+  - collagen_type__other
+- id: 5131
+  name: Creatine type
+  description: Specifies the chemical form or specialized formulation of creatine used in the supplement
+  friendly_id: creatine_type
+  handle: creatine-type
+  values:
+  - creatine_type__buffered_creatine
+  - creatine_type__creatine_citrate
+  - creatine_type__creatine_ethyl_ester
+  - creatine_type__creatine_malate
+  - creatine_type__creatine_nitrate
+  - creatine_type__hydrochloride_hcl
+  - creatine_type__kre_alkalyn
+  - creatine_type__micronized_monohydrate
+  - creatine_type__monohydrate
+  - creatine_type__tri_creatine_malate
+  - creatine_type__other
+- id: 5132
+  name: Digestive supplement type
+  description: Classifies the specific kind of digestive supplement (e.g., probiotic, enzyme, fiber)
+  friendly_id: digestive_supplement_type
+  handle: digestive-supplement-type
+  values:
+  - digestive_supplement_type__binder
+  - digestive_supplement_type__bitter_tonic
+  - digestive_supplement_type__charcoal
+  - digestive_supplement_type__colon_cleanse
+  - digestive_supplement_type__digestive_enzyme
+  - digestive_supplement_type__fiber_supplement
+  - digestive_supplement_type__laxative
+  - digestive_supplement_type__postbiotic
+  - digestive_supplement_type__prebiotic
+  - digestive_supplement_type__probiotic
+  - digestive_supplement_type__synbiotic
+  - digestive_supplement_type__other
+- id: 5133
+  name: Herbal supplement health goal
+  description: Indicates the primary wellness objective, body system, or physiological area the herbal supplement is intended to support (e.g., immune support, stress relief, liver and detox support)
+  friendly_id: herbal_supplement_health_goal
+  handle: herbal-supplement-health-goal
+  values:
+  - herbal_supplement_health_goal__antioxidant_support
+  - herbal_supplement_health_goal__blood_sugar_support
+  - herbal_supplement_health_goal__cardiovascular_health
+  - herbal_supplement_health_goal__cognitive_health
+  - herbal_supplement_health_goal__digestive_health
+  - herbal_supplement_health_goal__energy_and_vitality
+  - herbal_supplement_health_goal__eye_health
+  - herbal_supplement_health_goal__hair_and_nail_health
+  - herbal_supplement_health_goal__immune_support
+  - herbal_supplement_health_goal__joint_and_bone_health
+  - herbal_supplement_health_goal__kidney_and_urinary_health
+  - herbal_supplement_health_goal__liver_and_detox_support
+  - herbal_supplement_health_goal__mens_health
+  - herbal_supplement_health_goal__prostate_support
+  - herbal_supplement_health_goal__respiratory_health
+  - herbal_supplement_health_goal__sexual_health
+  - herbal_supplement_health_goal__skin_health
+  - herbal_supplement_health_goal__sleep_support
+  - herbal_supplement_health_goal__stress_relief
+  - herbal_supplement_health_goal__weight_management
+  - herbal_supplement_health_goal__womens_health
+  - herbal_supplement_health_goal__other
+- id: 5134
+  name: Mineral compound form
+  description: Specifies the chemical form or chelate of the mineral (e.g., citrate, glycinate) which affects absorption
+  friendly_id: mineral_compound_form
+  handle: mineral-compound-form
+  values:
+  - mineral_compound_form__aspartate
+  - mineral_compound_form__bisglycinate
+  - mineral_compound_form__carbonate
+  - mineral_compound_form__chloride
+  - mineral_compound_form__citrate
+  - mineral_compound_form__gluconate
+  - mineral_compound_form__glycinate
+  - mineral_compound_form__l_threonate
+  - mineral_compound_form__malate
+  - mineral_compound_form__oxide
+  - mineral_compound_form__other
+- id: 5135
+  name: Protein source
+  description: Identifies the primary protein origin used in the supplement
+  friendly_id: protein_source
+  handle: protein-source
+  values:
+  - protein_source__beef
+  - protein_source__casein
+  - protein_source__collagen
+  - protein_source__egg
+  - protein_source__hemp
+  - protein_source__mixed_blend
+  - protein_source__pea
+  - protein_source__rice
+  - protein_source__soy
+  - protein_source__whey
+  - protein_source__whey_concentrate
+  - protein_source__whey_hydrolyzed
+  - protein_source__whey_isolate
+  - protein_source__other
+- id: 5136
+  name: Protein processing type
+  description: Specifies how the protein is refined or processed (e.g., isolate vs. concentrate), affecting purity, digestion rate, and consumer preference
+  friendly_id: protein_processing_type
+  handle: protein-processing-type
+  values:
+  - protein_processing_type__blend
+  - protein_processing_type__clear_protein
+  - protein_processing_type__concentrate
+  - protein_processing_type__fermented
+  - protein_processing_type__hydrolyzed
+  - protein_processing_type__isolate
+  - protein_processing_type__micellar
+  - protein_processing_type__other
+- id: 5137
+  name: Release mechanism
+  description: Indicates the delivery or absorption technology of the vitamin (e.g., sustained release, liposomal, chewable)
+  friendly_id: release_mechanism
+  handle: release-mechanism
+  values:
+  - release_mechanism__chewable
+  - release_mechanism__effervescent
+  - release_mechanism__extended_release
+  - release_mechanism__gummy
+  - release_mechanism__immediate_release
+  - release_mechanism__liposomal
+  - release_mechanism__spray
+  - release_mechanism__sublingual
+  - release_mechanism__sustained_release
+  - release_mechanism__other
+- id: 5138
+  name: Stimulant profile
+  description: Classifies the supplement by whether it relies on stimulants and which major type it contains
+  friendly_id: stimulant_profile
+  handle: stimulant-profile
+  values:
+  - stimulant_profile__caffeine_based
+  - stimulant_profile__ephedra/eca_blend
+  - stimulant_profile__other_stimulants
+  - stimulant_profile__stimulant_free
+  - stimulant_profile__synephrine/bitter_orange
+  - stimulant_profile__other
+- id: 5139
+  name: Weight loss mechanism
+  description: Identifies the primary physiological approach the supplement uses to support weight loss
+  friendly_id: weight_loss_mechanism
+  handle: weight-loss-mechanism
+  values:
+  - weight_loss_mechanism__appetite_suppressant
+  - weight_loss_mechanism__carb_blocker
+  - weight_loss_mechanism__diuretic
+  - weight_loss_mechanism__fat_burner
+  - weight_loss_mechanism__fiber_supplement
+  - weight_loss_mechanism__hormonal_regulator
+  - weight_loss_mechanism__ketosis_support
+  - weight_loss_mechanism__lipolysis_enhancer
+  - weight_loss_mechanism__metabolism_booster
+  - weight_loss_mechanism__thermogenic
+  - weight_loss_mechanism__other
+- id: 5140
+  name: Cleanse focus
+  description: Identifies the primary body system or purpose targeted by the cleanse product
+  friendly_id: cleanse_focus
+  handle: cleanse-focus
+  values:
+  - cleanse_focus__colon_cleanse
+  - cleanse_focus__digestive_cleanse
+  - cleanse_focus__diuretic_cleanse
+  - cleanse_focus__full_body_detox
+  - cleanse_focus__kidney_cleanse
+  - cleanse_focus__liver_cleanse
+  - cleanse_focus__other
+- id: 5141
+  name: Jewelry cleaning accessories included
+  description: Lists any extra tools or accessories supplied with the cleaner (e.g., brushes, trays, polishing cloths)
+  friendly_id: jewelry_cleaning_accessories_included
+  handle: jewelry-cleaning-accessories-included
+  values:
+  - jewelry_cleaning_accessories_included__basket
+  - jewelry_cleaning_accessories_included__brush
+  - jewelry_cleaning_accessories_included__dip_tray
+  - jewelry_cleaning_accessories_included__gloves
+  - jewelry_cleaning_accessories_included__microfiber_cloth
+  - jewelry_cleaning_accessories_included__polishing_cloth
+  - jewelry_cleaning_accessories_included__sponge
+  - jewelry_cleaning_accessories_included__storage_pouch
+  - jewelry_cleaning_accessories_included__tweezers
+  - jewelry_cleaning_accessories_included__other
+- id: 5142
+  name: Jewelry cleaning purpose
+  description: Indicates the primary intended function of the product (e.g., tarnish removal, polishing, protective coating)
+  friendly_id: jewelry_cleaning_purpose
+  handle: jewelry-cleaning-purpose
+  values:
+  - jewelry_cleaning_purpose__anti_tarnish_protection
+  - jewelry_cleaning_purpose__diagnostic
+  - jewelry_cleaning_purpose__luster
+  - jewelry_cleaning_purpose__metal_testing
+  - jewelry_cleaning_purpose__multi_purpose_cleaning
+  - jewelry_cleaning_purpose__piercing_aftercare
+  - jewelry_cleaning_purpose__polishing
+  - jewelry_cleaning_purpose__protective_coating
+  - jewelry_cleaning_purpose__scratch_removal
+  - jewelry_cleaning_purpose__sterilizing
+  - jewelry_cleaning_purpose__tarnish_removal
+  - jewelry_cleaning_purpose__other
+- id: 5143
+  name: Cloth treatment
+  description: Identifies whether the cloth is pre-treated and, if so, the nature of the treatment
+  friendly_id: cloth_treatment
+  handle: cloth-treatment
+  values:
+  - cloth_treatment__anti_tarnish_impregnated
+  - cloth_treatment__chemical_free_microfiber
+  - cloth_treatment__cleaning_agent_impregnated
+  - cloth_treatment__impregnated_with_polishing_compound
+  - cloth_treatment__micro_abrasive_impregnated
+  - cloth_treatment__pre_treated_with_cleaning_solution
+  - cloth_treatment__untreated
+  - cloth_treatment__other
+- id: 5144
+  name: Additional cleaning technology
+  description: Lists any cleaning technologies included beyond steam (e.g., ultrasonic, UV, ozone)
+  friendly_id: additional_cleaning_technology
+  handle: additional-cleaning-technology
+  values:
+  - additional_cleaning_technology__none
+  - additional_cleaning_technology__ozone
+  - additional_cleaning_technology__ultrasonic
+  - additional_cleaning_technology__uv
+  - additional_cleaning_technology__other
+- id: 5145
+  name: Jewelry steam cleaner features
+  description: Lists notable built-in features or safety functions that differentiate models
+  friendly_id: jewelry_steam_cleaner_features
+  handle: jewelry-steam-cleaner-features
+  values:
+  - jewelry_steam_cleaner_features__adjustable_steam
+  - jewelry_steam_cleaner_features__auto_shut_off
+  - jewelry_steam_cleaner_features__built_in_water_filter
+  - jewelry_steam_cleaner_features__digital_display
+  - jewelry_steam_cleaner_features__foot_pedal_activation
+  - jewelry_steam_cleaner_features__indicator_light
+  - jewelry_steam_cleaner_features__overheat_protection
+  - jewelry_steam_cleaner_features__portable_carry_handle
+  - jewelry_steam_cleaner_features__removable_water_tank
+  - jewelry_steam_cleaner_features__self_cleaning_mode
+  - jewelry_steam_cleaner_features__other
+- id: 5146
+  name: Interior lining material
+  description: Identifies the primary material that lines the inside of the jewelry box, protecting jewelry from scratches and wear
+  friendly_id: interior_lining_material
+  handle: interior-lining-material
+  values:
+  - interior_lining_material__faux_leather
+  - interior_lining_material__faux_suede
+  - interior_lining_material__felt
+  - interior_lining_material__linen
+  - interior_lining_material__microfiber
+  - interior_lining_material__no_lining
+  - interior_lining_material__satin
+  - interior_lining_material__silk
+  - interior_lining_material__suede
+  - interior_lining_material__velvet
+  - interior_lining_material__other
+- id: 5147
+  name: Intended jewelry type
+  description: Indicates which kinds of jewelry the stand is designed to hold or display
+  friendly_id: intended_jewelry_type
+  handle: intended-jewelry-type
+  values:
+  - intended_jewelry_type__anklets
+  - intended_jewelry_type__bangles
+  - intended_jewelry_type__body_jewelry
+  - intended_jewelry_type__bracelets
+  - intended_jewelry_type__brooches
+  - intended_jewelry_type__cufflinks
+  - intended_jewelry_type__earrings
+  - intended_jewelry_type__hair_accessories
+  - intended_jewelry_type__multi_purpose
+  - intended_jewelry_type__necklaces
+  - intended_jewelry_type__rings
+  - intended_jewelry_type__watches
+  - intended_jewelry_type__other
+- id: 5148
+  name: Support cushion features
+  description: Highlights special functional extras or enhancements offered by the cushion
+  friendly_id: support_cushion_features
+  handle: support-cushion-features
+  values:
+  - support_cushion_features__adjustable_straps
+  - support_cushion_features__breathable_mesh
+  - support_cushion_features__cooling_gel
+  - support_cushion_features__foldable
+  - support_cushion_features__heated
+  - support_cushion_features__massage_function
+  - support_cushion_features__non_slip_base
+  - support_cushion_features__removable_cover
+  - support_cushion_features__washable_cover
+  - support_cushion_features__waterproof
+  - support_cushion_features__other
+- id: 5149
+  name: Application type
+  description: Indicates whether the treatment is left in or rinsed out and any special usage mode
+  friendly_id: application_type
+  handle: application-type
+  values:
+  - application_type__heat_activated
+  - application_type__leave_in
+  - application_type__overnight_treatment
+  - application_type__pre_wash
+  - application_type__rinse_out
+  - application_type__other
+- id: 5150
+  name: Hair styling benefits
+  description: Highlights the key performance benefits or effects the product provides to hair
+  friendly_id: hair_styling_benefits
+  handle: hair-styling-benefits
+  values:
+  - hair_styling_benefits__anti_frizz
+  - hair_styling_benefits__color_protection
+  - hair_styling_benefits__curl_defining
+  - hair_styling_benefits__detangling
+  - hair_styling_benefits__flexible_hold
+  - hair_styling_benefits__glossy_finish
+  - hair_styling_benefits__heat_protection
+  - hair_styling_benefits__hold_and_set
+  - hair_styling_benefits__humidity_resistance
+  - hair_styling_benefits__lightweight_feel
+  - hair_styling_benefits__matte_finish
+  - hair_styling_benefits__moisturizing
+  - hair_styling_benefits__root_lift
+  - hair_styling_benefits__scalp_soothing
+  - hair_styling_benefits__separation
+  - hair_styling_benefits__shine_enhancing
+  - hair_styling_benefits__smoothing
+  - hair_styling_benefits__straightening
+  - hair_styling_benefits__strengthening
+  - hair_styling_benefits__strong_hold
+  - hair_styling_benefits__texturizing
+  - hair_styling_benefits__thickening
+  - hair_styling_benefits__uv_protection
+  - hair_styling_benefits__volumizing
+  - hair_styling_benefits__other
+- id: 5151
+  name: Pin tip type
+  description: Describes the design of the pin's tips, which affects comfort, safety, and hold
+  friendly_id: pin_tip_type
+  handle: pin-tip-type
+  values:
+  - pin_tip_type__ball_tipped
+  - pin_tip_type__decorative
+  - pin_tip_type__plain
+  - pin_tip_type__rubber_tipped
+  - pin_tip_type__other
+- id: 5152
+  name: Comb tooth spacing
+  description: Describes the spacing or density of the comb teeth
+  friendly_id: comb_tooth_spacing
+  handle: comb-tooth-spacing
+  values:
+  - comb_tooth_spacing__extra_wide
+  - comb_tooth_spacing__fine
+  - comb_tooth_spacing__medium
+  - comb_tooth_spacing__mixed
+  - comb_tooth_spacing__narrow
+  - comb_tooth_spacing__wide
+  - comb_tooth_spacing__other
+- id: 5153
+  name: Comb features
+  description: Lists notable performance or design characteristics of the comb
+  friendly_id: comb_features
+  handle: comb-features
+  values:
+  - comb_features__anti_static
+  - comb_features__antibacterial
+  - comb_features__chemical_resistant
+  - comb_features__eco_friendly_material
+  - comb_features__ergonomic_handle
+  - comb_features__flexible
+  - comb_features__foldable
+  - comb_features__heat_resistant
+  - comb_features__lightweight
+  - comb_features__scalp_massaging_tips
+  - comb_features__other
+- id: 5154
+  name: Comb/Brush size
+  description: Classifies the overall physical size of the brush or comb
+  friendly_id: comb/brush_size
+  handle: comb-brush-size
+  values:
+  - comb/brush_size__jumbo
+  - comb/brush_size__large
+  - comb/brush_size__medium
+  - comb/brush_size__mini
+  - comb/brush_size__small
+  - comb/brush_size__travel
+  - comb/brush_size__other
+- id: 5155
+  name: Barrel shape
+  description: Identifies the physical shape or profile of the barrel, which directly affects the style of curl or wave produced
+  friendly_id: barrel_shape
+  handle: barrel-shape
+  values:
+  - barrel_shape__bubble
+  - barrel_shape__conical
+  - barrel_shape__deep_waver
+  - barrel_shape__double_barrel
+  - barrel_shape__flat_crimper
+  - barrel_shape__pearl
+  - barrel_shape__reverse_tapered
+  - barrel_shape__spiral
+  - barrel_shape__straight_cylindrical
+  - barrel_shape__tapered
+  - barrel_shape__triple_barrel
+  - barrel_shape__other
+- id: 5156
+  name: Hair dryer motor type
+  description: Specifies the kind of motor used in the hair dryer, impacting durability, noise level, and airflow power
+  friendly_id: hair_dryer_motor_type
+  handle: hair-dryer-motor-type
+  values:
+  - hair_dryer_motor_type__ac_motor
+  - hair_dryer_motor_type__brush_motor
+  - hair_dryer_motor_type__brushless_dc_motor_bldc
+  - hair_dryer_motor_type__dc_motor
+  - hair_dryer_motor_type__digital_motor
+  - hair_dryer_motor_type__other
+- id: 5157
+  name: Hair care effect
+  description: Defines the primary benefits or results the shampoo is formulated to deliver
+  friendly_id: hair_care_effect
+  handle: hair-care-effect
+  values:
+  - hair_care_effect__anti_dandruff
+  - hair_care_effect__anti_frizz
+  - hair_care_effect__anti_hair_loss
+  - hair_care_effect__clarifying
+  - hair_care_effect__color_protection
+  - hair_care_effect__curl_enhancing
+  - hair_care_effect__deep_cleansing
+  - hair_care_effect__detoxifying
+  - hair_care_effect__hydrating
+  - hair_care_effect__moisturizing
+  - hair_care_effect__nourishing
+  - hair_care_effect__purifying
+  - hair_care_effect__repairing
+  - hair_care_effect__revitalizing
+  - hair_care_effect__shine
+  - hair_care_effect__smoothing
+  - hair_care_effect__soothing_scalp
+  - hair_care_effect__strengthening
+  - hair_care_effect__thickening
+  - hair_care_effect__toning_purple/blue
+  - hair_care_effect__uv_protection
+  - hair_care_effect__volumizing
+  - hair_care_effect__other
+- id: 5158
+  name: Hair oil effect
+  description: Indicates the primary benefits or results provided by the hair oil
+  friendly_id: hair_oil_effect
+  handle: hair-oil-effect
+  values:
+  - hair_oil_effect__anti_dandruff
+  - hair_oil_effect__anti_frizz
+  - hair_oil_effect__color_protection
+  - hair_oil_effect__damage_repair
+  - hair_oil_effect__hair_growth_support
+  - hair_oil_effect__heat_protection
+  - hair_oil_effect__moisturizing
+  - hair_oil_effect__nourishing
+  - hair_oil_effect__scalp_soothing
+  - hair_oil_effect__shine
+  - hair_oil_effect__smoothing
+  - hair_oil_effect__split_end_sealing
+  - hair_oil_effect__strengthening
+  - hair_oil_effect__thickening
+  - hair_oil_effect__uv_protection
+  - hair_oil_effect__volumizing
+  - hair_oil_effect__other
+- id: 5159
+  name: Hair oil application
+  description: Specifies how the hair oil is intended to be used or applied
+  friendly_id: hair_oil_application
+  handle: hair-oil-application
+  values:
+  - hair_oil_application__finishing_oil
+  - hair_oil_application__heat_styling_protectant
+  - hair_oil_application__hot_oil_treatment
+  - hair_oil_application__leave_in
+  - hair_oil_application__overnight_treatment
+  - hair_oil_application__pre_wash_treatment
+  - hair_oil_application__scalp_massage
+  - hair_oil_application__other
+- id: 5160
+  name: Hair treatment effect
+  description: Specifies the primary benefit(s) delivered by the hair serum
+  friendly_id: hair_treatment_effect
+  handle: hair-treatment-effect
+  values:
+  - hair_treatment_effect__anti_dandruff
+  - hair_treatment_effect__anti_frizz
+  - hair_treatment_effect__anti_hair_loss
+  - hair_treatment_effect__color_protection
+  - hair_treatment_effect__curl_defining
+  - hair_treatment_effect__detangling
+  - hair_treatment_effect__heat_protection
+  - hair_treatment_effect__moisturizing
+  - hair_treatment_effect__nourishing
+  - hair_treatment_effect__repair
+  - hair_treatment_effect__scalp_soothing
+  - hair_treatment_effect__shine
+  - hair_treatment_effect__smoothing
+  - hair_treatment_effect__strengthening
+  - hair_treatment_effect__thickening
+  - hair_treatment_effect__uv_protection
+  - hair_treatment_effect__volumizing
+  - hair_treatment_effect__other
+- id: 5161
+  name: Hair color formulation
+  description: Indicates the longevity or functional type of the product's color effect (e.g., permanent dye, toner, root touch-up)
+  friendly_id: hair_color_formulation
+  handle: hair-color-formulation
+  values:
+  - hair_color_formulation__bleach
+  - hair_color_formulation__color_depositing_mask
+  - hair_color_formulation__demi_permanent
+  - hair_color_formulation__developer
+  - hair_color_formulation__gloss
+  - hair_color_formulation__highlighting_kit
+  - hair_color_formulation__lightener
+  - hair_color_formulation__permanent
+  - hair_color_formulation__peroxide
+  - hair_color_formulation__root_touch_up
+  - hair_color_formulation__semi_permanent
+  - hair_color_formulation__temporary
+  - hair_color_formulation__toner
+  - hair_color_formulation__other
+- id: 5162
+  name: Gray coverage level
+  description: Indicates the percentage or degree of gray or white hair the product can cover or blend
+  friendly_id: gray_coverage_level
+  handle: gray-coverage-level
+  values:
+  - gray_coverage_level__blending_coverage
+  - gray_coverage_level__none
+  - gray_coverage_level__up_to_50
+  - gray_coverage_level__up_to_75
+  - gray_coverage_level__up_to_100
+  - gray_coverage_level__other
+- id: 5163
+  name: Developer strength
+  description: Specifies the peroxide concentration or volume of developers or kits to match desired lift
+  friendly_id: developer_strength
+  handle: developer-strength
+  values:
+  - developer_strength__10_vol_3
+  - developer_strength__20_vol_6
+  - developer_strength__30_vol_9
+  - developer_strength__40_vol_12
+  - developer_strength__5_vol_1_5
+  - developer_strength__other
+- id: 5164
+  name: Hair dye type removed
+  description: Specifies which kinds of hair dye the product is designed to remove (e.g., permanent, henna)
+  friendly_id: hair_dye_type_removed
+  handle: hair-dye-type-removed
+  values:
+  - hair_dye_type_removed__demi_permanent
+  - hair_dye_type_removed__direct
+  - hair_dye_type_removed__henna
+  - hair_dye_type_removed__permanent
+  - hair_dye_type_removed__semi_permanent
+  - hair_dye_type_removed__temporary
+  - hair_dye_type_removed__vivid
+  - hair_dye_type_removed__other
+- id: 5165
+  name: Hair concealer fiber material
+  description: Specifies the primary material of the product's building fibers or powders
+  friendly_id: hair_concealer_fiber_material
+  handle: hair-concealer-fiber-material
+  values:
+  - hair_concealer_fiber_material__cellulose
+  - hair_concealer_fiber_material__cotton
+  - hair_concealer_fiber_material__keratin
+  - hair_concealer_fiber_material__plant_based_blend
+  - hair_concealer_fiber_material__synthetic
+  - hair_concealer_fiber_material__other
+- id: 5166
+  name: Scalp concern
+  description: Specifies the primary scalp or hair issue the treatment is formulated to address
+  friendly_id: scalp_concern
+  handle: scalp-concern
+  values:
+  - scalp_concern__alopecia
+  - scalp_concern__damaged_hair
+  - scalp_concern__dandruff
+  - scalp_concern__dry_scalp
+  - scalp_concern__hair_loss
+  - scalp_concern__hair_thinning
+  - scalp_concern__itchy_scalp
+  - scalp_concern__oily_scalp
+  - scalp_concern__psoriasis
+  - scalp_concern__sensitive_scalp
+  - scalp_concern__other
+- id: 5167
+  name: Compatible chemical treatment strength level
+  description: Indicates the manufacturer-recommended strength or potency (e.g., mild, regular, super) of the chemical treatment
+  friendly_id: compatible_chemical_treatment_strength_level
+  handle: compatible-chemical-treatment-strength-level
+  values:
+  - compatible_chemical_treatment_strength_level__extra_strength
+  - compatible_chemical_treatment_strength_level__kids
+  - compatible_chemical_treatment_strength_level__mild
+  - compatible_chemical_treatment_strength_level__professional
+  - compatible_chemical_treatment_strength_level__regular
+  - compatible_chemical_treatment_strength_level__sensitive_scalp
+  - compatible_chemical_treatment_strength_level__super
+  - compatible_chemical_treatment_strength_level__other
+- id: 5168
+  name: Sensory effect
+  description: Indicates the immediate physical sensation the product provides when applied
+  friendly_id: sensory_effect
+  handle: sensory-effect
+  values:
+  - sensory_effect__cooling
+  - sensory_effect__neutral
+  - sensory_effect__none
+  - sensory_effect__tingling
+  - sensory_effect__warming
+  - sensory_effect__other
+- id: 5169
+  name: Massage mechanism dimensionality
+  description: Specifies the number of movement axes the massage rollers operate in (e.g., 2D, 3D, 4D, 5D)
+  friendly_id: massage_mechanism_dimensionality
+  handle: massage-mechanism-dimensionality
+  values:
+  - massage_mechanism_dimensionality__2d
+  - massage_mechanism_dimensionality__3d
+  - massage_mechanism_dimensionality__4d
+  - massage_mechanism_dimensionality__5d
+  - massage_mechanism_dimensionality__other
+- id: 5170
+  name: Oral care function
+  description: Highlights the primary dental or oral-health benefit the product addresses (e.g., whitening, sensitivity relief, gum health)
+  friendly_id: oral_care_function
+  handle: oral-care-function
+  values:
+  - oral_care_function__anti_inflammatory
+  - oral_care_function__antibacterial
+  - oral_care_function__breath_freshening
+  - oral_care_function__canker_relief
+  - oral_care_function__cavity_protection
+  - oral_care_function__denture_care
+  - oral_care_function__dry_mouth_relief
+  - oral_care_function__enamel_strengthening
+  - oral_care_function__gum_health
+  - oral_care_function__kids_teething
+  - oral_care_function__oil_pulling_detox
+  - oral_care_function__orthodontic_care
+  - oral_care_function__pain_relief
+  - oral_care_function__plaque_control
+  - oral_care_function__probiotic_support
+  - oral_care_function__remineralization
+  - oral_care_function__sensitivity_relief
+  - oral_care_function__stain_removal
+  - oral_care_function__tartar_control
+  - oral_care_function__ulcer_relief
+  - oral_care_function__whitening
+  - oral_care_function__other
+- id: 5171
+  name: Breath spray benefit
+  description: Identifies the primary oral-care benefit the breath spray claims to deliver
+  friendly_id: breath_spray_benefit
+  handle: breath-spray-benefit
+  values:
+  - breath_spray_benefit__anti_bacterial
+  - breath_spray_benefit__breath_freshening
+  - breath_spray_benefit__cavity_prevention
+  - breath_spray_benefit__dry_mouth_relief
+  - breath_spray_benefit__oral_ph_balancing
+  - breath_spray_benefit__plaque_reduction
+  - breath_spray_benefit__probiotic_support
+  - breath_spray_benefit__teeth_whitening
+  - breath_spray_benefit__throat_soothing
+  - breath_spray_benefit__other
+- id: 5172
+  name: Drainage feature
+  description: Specifies any design that allows liquid drainage or drying inside the case
+  friendly_id: drainage_feature
+  handle: drainage-feature
+  values:
+  - drainage_feature__drain_holes
+  - drainage_feature__internal_tray
+  - drainage_feature__none
+  - drainage_feature__other
+- id: 5173
+  name: Cleaning mode
+  description: Lists the specific cleaning or flossing modes available on the device
+  friendly_id: cleaning_mode
+  handle: cleaning-mode
+  values:
+  - cleaning_mode__child
+  - cleaning_mode__clean
+  - cleaning_mode__custom
+  - cleaning_mode__deep_clean
+  - cleaning_mode__massage
+  - cleaning_mode__normal
+  - cleaning_mode__pulse
+  - cleaning_mode__sensitive
+  - cleaning_mode__soft
+  - cleaning_mode__whitening
+  - cleaning_mode__other
+- id: 5174
+  name: Charcoal source material
+  description: Specifies the raw material from which the activated charcoal was derived
+  friendly_id: charcoal_source_material
+  handle: charcoal-source-material
+  values:
+  - charcoal_source_material__bamboo
+  - charcoal_source_material__bamboo_charcoal
+  - charcoal_source_material__bituminous_coal
+  - charcoal_source_material__coal
+  - charcoal_source_material__coconut_husk
+  - charcoal_source_material__coconut_shell
+  - charcoal_source_material__hardwood
+  - charcoal_source_material__mixed_plant_sources
+  - charcoal_source_material__oak_wood
+  - charcoal_source_material__peat
+  - charcoal_source_material__walnut_shell
+  - charcoal_source_material__other
+- id: 5175
+  name: LED light mode
+  description: Lists the selectable operating modes that combine different spectra or intensities (e.g., blue, red, blue and red)
+  friendly_id: led_light_mode
+  handle: led-light-mode
+  values:
+  - led_light_mode__blue
+  - led_light_mode__blue_+_red
+  - led_light_mode__infrared
+  - led_light_mode__multi_cycle
+  - led_light_mode__purple
+  - led_light_mode__red
+  - led_light_mode__uv
+  - led_light_mode__other
+- id: 5176
+  name: Tray compatibility
+  description: Identifies the style of whitening tray or mouthpiece the case is designed to fit
+  friendly_id: tray_compatibility
+  handle: tray-compatibility
+  values:
+  - tray_compatibility__dual_arch_tray
+  - tray_compatibility__led_mouthpiece_tray
+  - tray_compatibility__lower_tray
+  - tray_compatibility__universal
+  - tray_compatibility__upper_tray
+  - tray_compatibility__other
+- id: 5177
+  name: Dental appliance compatibility
+  description: Specifies which dental appliances or restorative work the foam is safe or intended for (e.g., aligners, braces, veneers)
+  friendly_id: dental_appliance_compatibility
+  handle: dental-appliance-compatibility
+  values:
+  - dental_appliance_compatibility__aligners
+  - dental_appliance_compatibility__braces
+  - dental_appliance_compatibility__caps
+  - dental_appliance_compatibility__crowns
+  - dental_appliance_compatibility__dentures
+  - dental_appliance_compatibility__implants
+  - dental_appliance_compatibility__night_guards
+  - dental_appliance_compatibility__none
+  - dental_appliance_compatibility__not_applicable
+  - dental_appliance_compatibility__retainers
+  - dental_appliance_compatibility__veneers
+  - dental_appliance_compatibility__other
+- id: 5178
+  name: Fluoride content
+  description: Indicates the presence and relative concentration of fluoride in the mouthwash
+  friendly_id: fluoride_content
+  handle: fluoride-content
+  values:
+  - fluoride_content__fluoride_free
+  - fluoride_content__high_fluoride_225_ppm
+  - fluoride_content__low_fluoride_100_ppm
+  - fluoride_content__standard_fluoride_100225_ppm
+  - fluoride_content__other
+- id: 5179
+  name: Suitable for user sensitivity level
+  description: Indicates whether the formula is intended for users with sensitive teeth
+  friendly_id: suitable_for_user_sensitivity_level
+  handle: suitable-for-user-sensitivity-level
+  values:
+  - suitable_for_user_sensitivity_level__extra_sensitive
+  - suitable_for_user_sensitivity_level__regular
+  - suitable_for_user_sensitivity_level__sensitive
+  - suitable_for_user_sensitivity_level__other
+- id: 5180
+  name: Toothbrush head type
+  description: Classifies the functional style of the head (e.g., whitening, gum care, kids)
+  friendly_id: toothbrush_head_type
+  handle: toothbrush-head-type
+  values:
+  - toothbrush_head_type__deep_clean
+  - toothbrush_head_type__gum_care
+  - toothbrush_head_type__interdental
+  - toothbrush_head_type__kids
+  - toothbrush_head_type__orthodontic
+  - toothbrush_head_type__sensitive
+  - toothbrush_head_type__standard_clean
+  - toothbrush_head_type__tongue_cleaner
+  - toothbrush_head_type__whitening
+  - toothbrush_head_type__other
+- id: 5181
+  name: Drying method
+  description: Specifies how the device dries toothbrushes after sterilization, if applicable
+  friendly_id: drying_method
+  handle: drying-method
+  values:
+  - drying_method__fan
+  - drying_method__fan_+_heat
+  - drying_method__heat
+  - drying_method__none
+  - drying_method__other
+- id: 5182
+  name: Toothbrush head size
+  description: Defines the relative size of the brushing head to suit different mouth sizes and cleaning needs
+  friendly_id: toothbrush_head_size
+  handle: toothbrush-head-size
+  values:
+  - toothbrush_head_size__compact
+  - toothbrush_head_size__full_size
+  - toothbrush_head_size__large
+  - toothbrush_head_size__medium
+  - toothbrush_head_size__small
+  - toothbrush_head_size__other
+- id: 5183
+  name: Bristle hardness
+  description: Indicates the firmness of the toothbrush bristles
+  friendly_id: bristle_hardness
+  handle: bristle-hardness
+  values:
+  - bristle_hardness__extra_soft
+  - bristle_hardness__hard
+  - bristle_hardness__medium
+  - bristle_hardness__soft
+  - bristle_hardness__other
+- id: 5184
+  name: Brushing mode
+  description: Lists the preset cleaning programs the toothbrush can cycle through (e.g., clean, sensitive, whitening)
+  friendly_id: brushing_mode
+  handle: brushing-mode
+  values:
+  - brushing_mode__clean
+  - brushing_mode__daily_clean
+  - brushing_mode__deep_clean
+  - brushing_mode__extra_sensitive
+  - brushing_mode__gum_care
+  - brushing_mode__massage
+  - brushing_mode__polish
+  - brushing_mode__sensitive
+  - brushing_mode__tongue_clean
+  - brushing_mode__whitening
+  - brushing_mode__other
+- id: 5185
+  name: Cleaning technology
+  description: Describes the primary motion or mechanism the toothbrush uses to clean teeth
+  friendly_id: cleaning_technology
+  handle: cleaning-technology
+  values:
+  - cleaning_technology__hybrid
+  - cleaning_technology__ionic
+  - cleaning_technology__oscillating
+  - cleaning_technology__pulsating
+  - cleaning_technology__rotary
+  - cleaning_technology__sonic
+  - cleaning_technology__ultrasonic
+  - cleaning_technology__other
+- id: 5186
+  name: Brush head shape
+  description: Defines the overall form factor of the brush head, which affects reach and suitability for different users
+  friendly_id: brush_head_shape
+  handle: brush-head-shape
+  values:
+  - brush_head_shape__360_degree
+  - brush_head_shape__compact_head
+  - brush_head_shape__full_head
+  - brush_head_shape__orthodontic_v_cut
+  - brush_head_shape__replaceable_module
+  - brush_head_shape__u_shaped
+  - brush_head_shape__wide_head
+  - brush_head_shape__other
+- id: 5187
+  name: Oral care items included
+  description: Lists the types of oral care products contained in the set
+  friendly_id: oral_care_items_included
+  handle: oral-care-items-included
+  values:
+  - oral_care_items_included__dental_floss
+  - oral_care_items_included__dental_mirror
+  - oral_care_items_included__floss_picks
+  - oral_care_items_included__interdental_brush
+  - oral_care_items_included__mouthwash
+  - oral_care_items_included__orthodontic_wax
+  - oral_care_items_included__tongue_scraper
+  - oral_care_items_included__toothbrush
+  - oral_care_items_included__toothpaste
+  - oral_care_items_included__toothpick
+  - oral_care_items_included__other
+- id: 5188
+  name: Dispensing operation type
+  description: Describes whether toothpaste is dispensed manually, semi-automatically, or automatically
+  friendly_id: dispensing_operation_type
+  handle: dispensing-operation-type
+  values:
+  - dispensing_operation_type__automatic
+  - dispensing_operation_type__manual
+  - dispensing_operation_type__semi_automatic
+  - dispensing_operation_type__other
+- id: 5189
+  name: Dental floss format
+  description: Identifies the overall product format or delivery style of the floss
+  friendly_id: dental_floss_format
+  handle: dental-floss-format
+  values:
+  - dental_floss_format__floss_pick
+  - dental_floss_format__floss_refill
+  - dental_floss_format__interdental_brush
+  - dental_floss_format__power_flosser_head
+  - dental_floss_format__spool
+  - dental_floss_format__string
+  - dental_floss_format__other
+- id: 5190
+  name: Dental mouthguard arch coverage
+  description: Specifies which dental arch(es) the mouthguard is designed to cover
+  friendly_id: dental_mouthguard_arch_coverage
+  handle: dental-mouthguard-arch-coverage
+  values:
+  - dental_mouthguard_arch_coverage__dual_arch
+  - dental_mouthguard_arch_coverage__full_mouth
+  - dental_mouthguard_arch_coverage__lower_arch
+  - dental_mouthguard_arch_coverage__upper_arch
+  - dental_mouthguard_arch_coverage__other
+- id: 5191
+  name: Water flosser modes
+  description: Lists the available cleaning modes the device can operate in
+  friendly_id: water_flosser_modes
+  handle: water-flosser-modes
+  values:
+  - water_flosser_modes__clean
+  - water_flosser_modes__diy
+  - water_flosser_modes__massage
+  - water_flosser_modes__normal
+  - water_flosser_modes__on_demand
+  - water_flosser_modes__powerful
+  - water_flosser_modes__pulse
+  - water_flosser_modes__sensitive
+  - water_flosser_modes__soft
+  - water_flosser_modes__standard
+  - water_flosser_modes__other
+- id: 5192
+  name: Denture arch coverage
+  description: Identifies which dental arch the denture (or snap-on veneer) is intended to cover
+  friendly_id: denture_arch_coverage
+  handle: denture-arch-coverage
+  values:
+  - denture_arch_coverage__lower
+  - denture_arch_coverage__upper
+  - denture_arch_coverage__upper_lower_set
+  - denture_arch_coverage__other
+- id: 5193
+  name: Denture retention mechanism
+  description: Specifies how the denture stays in place on the teeth or gums
+  friendly_id: denture_retention_mechanism
+  handle: denture-retention-mechanism
+  values:
+  - denture_retention_mechanism__adhesive
+  - denture_retention_mechanism__clip_on
+  - denture_retention_mechanism__magnetic
+  - denture_retention_mechanism__suction_fit
+  - denture_retention_mechanism__thermoplastic_mold
+  - denture_retention_mechanism__other
+- id: 5194
+  name: Condom compatibility
+  description: Specifies which condom materials the lubricant is safe to use with
+  friendly_id: condom_compatibility
+  handle: condom-compatibility
+  values:
+  - condom_compatibility__all_condom_types
+  - condom_compatibility__latex
+  - condom_compatibility__not_condom_compatible
+  - condom_compatibility__polyisoprene
+  - condom_compatibility__polyurethane
+  - condom_compatibility__other
+- id: 5195
+  name: Sensation effect
+  description: Describes any additional sensory effect the lubricant provides (e.g., warming, tingling)
+  friendly_id: sensation_effect
+  handle: sensation-effect
+  values:
+  - sensation_effect__cooling
+  - sensation_effect__desensitizing
+  - sensation_effect__long_lasting
+  - sensation_effect__moisturizing
+  - sensation_effect__neutral
+  - sensation_effect__numbing
+  - sensation_effect__ph_balancing
+  - sensation_effect__relaxing
+  - sensation_effect__stimulating
+  - sensation_effect__tingling
+  - sensation_effect__warming
+  - sensation_effect__other
+- id: 5196
+  name: Beard care benefits
+  description: Lists the primary functional benefits offered by the product for beard and underlying skin
+  friendly_id: beard_care_benefits
+  handle: beard-care-benefits
+  values:
+  - beard_care_benefits__anti_dandruff
+  - beard_care_benefits__conditioning
+  - beard_care_benefits__frizz_control
+  - beard_care_benefits__growth_stimulation
+  - beard_care_benefits__itch_relief
+  - beard_care_benefits__moisturizing
+  - beard_care_benefits__scented_enhancement
+  - beard_care_benefits__shine_enhancing
+  - beard_care_benefits__softening
+  - beard_care_benefits__styling_hold
+  - beard_care_benefits__other
+- id: 5197
+  name: Knot shape
+  description: Specifies the overall shape or profile of the knot or brush head
+  friendly_id: knot_shape
+  handle: knot-shape
+  values:
+  - knot_shape__bulb
+  - knot_shape__fan
+  - knot_shape__flat_top
+  - knot_shape__hybrid
+  - knot_shape__other
+- id: 5198
+  name: Bristle grade
+  description: Identifies the quality or classification of animal or synthetic hair used (e.g., silvertip badger, synthetic silvertip fiber)
+  friendly_id: bristle_grade
+  handle: bristle-grade
+  values:
+  - bristle_grade__best_badger
+  - bristle_grade__boar
+  - bristle_grade__high_mountain_white_badger
+  - bristle_grade__horsehair
+  - bristle_grade__mixed_badger
+  - bristle_grade__mixed_boar
+  - bristle_grade__mixed_hair
+  - bristle_grade__nylon
+  - bristle_grade__pure_badger
+  - bristle_grade__silvertip_badger
+  - bristle_grade__super_badger
+  - bristle_grade__synthetic
+  - bristle_grade__synthetic_plissoft
+  - bristle_grade__synthetic_silvertip_fibre
+  - bristle_grade__two_band_badger
+  - bristle_grade__other
+- id: 5199
+  name: Clipper motor type
+  description: Describes the mechanical motor design powering the device (e.g., pivot, rotary, magnetic, brushless)
+  friendly_id: clipper_motor_type
+  handle: clipper-motor-type
+  values:
+  - clipper_motor_type__brushless
+  - clipper_motor_type__magnetic
+  - clipper_motor_type__pivot
+  - clipper_motor_type__rotary
+  - clipper_motor_type__other
+- id: 5200
+  name: Pain reduction technology
+  description: Identifies any comfort-oriented features that reduce discomfort during epilation (e.g., cooling, massage rollers)
+  friendly_id: pain_reduction_technology
+  handle: pain-reduction-technology
+  values:
+  - pain_reduction_technology__comfort_system
+  - pain_reduction_technology__cooling
+  - pain_reduction_technology__hypoallergenic_discs
+  - pain_reduction_technology__ice_pack
+  - pain_reduction_technology__massage_rollers
+  - pain_reduction_technology__massaging_cap
+  - pain_reduction_technology__moisturizing_strip
+  - pain_reduction_technology__pulsating
+  - pain_reduction_technology__vibration
+  - pain_reduction_technology__other
+- id: 5201
+  name: Compatible wax container size
+  description: Lists the standard cartridge, can, or pot sizes that can be placed directly in the warmer without decanting
+  friendly_id: compatible_wax_container_size
+  handle: compatible-wax-container-size
+  values:
+  - compatible_wax_container_size__1_lb_pot
+  - compatible_wax_container_size__400_ml_can
+  - compatible_wax_container_size__500_ml_can
+  - compatible_wax_container_size__800_ml_can
+  - compatible_wax_container_size__100_ml_cartridge
+  - compatible_wax_container_size__200_ml_insert
+  - compatible_wax_container_size__125_ml_pot
+  - compatible_wax_container_size__250_ml_pot
+  - compatible_wax_container_size__1000_ml_pot
+  - compatible_wax_container_size__14_oz_can
+  - compatible_wax_container_size__other
+- id: 5202
+  name: Compatible wax form
+  description: Specifies the forms of depilatory wax the warmer is designed to melt
+  friendly_id: compatible_wax_form
+  handle: compatible-wax-form
+  values:
+  - compatible_wax_form__hard_wax_beads
+  - compatible_wax_form__hot_film_wax
+  - compatible_wax_form__paraffin_wax
+  - compatible_wax_form__roll_on_cartridge
+  - compatible_wax_form__soft_strip_wax_can
+  - compatible_wax_form__universal
+  - compatible_wax_form__wax_beans
+  - compatible_wax_form__other
+- id: 5203
+  name: Treatment modes
+  description: Lists the functional modes the device supports (e.g., HR, SHR, SR)
+  friendly_id: treatment_modes
+  handle: treatment-modes
+  values:
+  - treatment_modes__acne_treatment_ar
+  - treatment_modes__auto/glide_flash
+  - treatment_modes__hair_removal_hr
+  - treatment_modes__manual_flash
+  - treatment_modes__skin_rejuvenation_sr
+  - treatment_modes__super_hair_removal_shr
+  - treatment_modes__other
+- id: 5204
+  name: Blade edge configuration
+  description: Specifies the edge format of an individual blade (e.g., single edge, double edge, cartridge system, half blade)
+  friendly_id: blade_edge_configuration
+  handle: blade-edge-configuration
+  values:
+  - blade_edge_configuration__cartridge_system
+  - blade_edge_configuration__double_edge
+  - blade_edge_configuration__half_blade
+  - blade_edge_configuration__single_edge
+  - blade_edge_configuration__other
+- id: 5205
+  name: Blade coating
+  description: Specifies any performance coating applied to the blade for sharpness or glide (e.g., platinum, PTFE, titanium)
+  friendly_id: blade_coating
+  handle: blade-coating
+  values:
+  - blade_coating__carbon
+  - blade_coating__ceramic
+  - blade_coating__chromium
+  - blade_coating__diamond
+  - blade_coating__none
+  - blade_coating__platinum
+  - blade_coating__ptfe
+  - blade_coating__titanium
+  - blade_coating__other
+- id: 5206
+  name: Interior texture
+  description: Defines the internal surface pattern that helps create lather inside the bowl or mug
+  friendly_id: interior_texture
+  handle: interior-texture
+  values:
+  - interior_texture__bumpy
+  - interior_texture__grooved
+  - interior_texture__hammered
+  - interior_texture__indented
+  - interior_texture__ribbed
+  - interior_texture__ridged
+  - interior_texture__smooth
+  - interior_texture__spiral
+  - interior_texture__textured
+  - interior_texture__other
+- id: 5207
+  name: Adhesive strength
+  description: Specifies the bonding or lifting strength level of the nasal strip's adhesive (e.g., original, extra strength)
+  friendly_id: adhesive_strength
+  handle: adhesive-strength
+  values:
+  - adhesive_strength__50_stronger
+  - adhesive_strength__extra_forte
+  - adhesive_strength__extra_strength
+  - adhesive_strength__extra_strong
+  - adhesive_strength__gentle_sensitive_skin
+  - adhesive_strength__original
+  - adhesive_strength__regular
+  - adhesive_strength__other
+- id: 5208
+  name: Chin strap style
+  description: Specifies the structural design or configuration of the strap (e.g., single strap, full-head, halo)
+  friendly_id: chin_strap_style
+  handle: chin-strap-style
+  values:
+  - chin_strap_style__double_strap
+  - chin_strap_style__dual_band
+  - chin_strap_style__elastic_band
+  - chin_strap_style__fixed_size
+  - chin_strap_style__full_head
+  - chin_strap_style__halo
+  - chin_strap_style__multi_strap
+  - chin_strap_style__single_strap
+  - chin_strap_style__other
+- id: 5209
+  name: Mandibular device fitting method
+  description: Describes how the device is fitted or molded to the user's teeth
+  friendly_id: mandibular_device_fitting_method
+  handle: mandibular-device-fitting-method
+  values:
+  - mandibular_device_fitting_method__boil_and_bite
+  - mandibular_device_fitting_method__custom_lab_made
+  - mandibular_device_fitting_method__instant_fit
+  - mandibular_device_fitting_method__semi_custom
+  - mandibular_device_fitting_method__other
+- id: 5210
+  name: Jaw advancement adjustability
+  description: Indicates whether and how the lower-jaw position provided by the device can be adjusted by the user
+  friendly_id: jaw_advancement_adjustability
+  handle: jaw-advancement-adjustability
+  values:
+  - jaw_advancement_adjustability__boil_and_bite_single_position
+  - jaw_advancement_adjustability__custom_dentist_fit_adjustable
+  - jaw_advancement_adjustability__incremental_adjustment
+  - jaw_advancement_adjustability__micro_adjustment_1_mm_steps
+  - jaw_advancement_adjustability__non_adjustable_fixed
+  - jaw_advancement_adjustability__other
+- id: 5211
+  name: Airflow opening design
+  description: Describes the breathing or venting configuration built into the mouthpiece
+  friendly_id: airflow_opening_design
+  handle: airflow-opening-design
+  values:
+  - airflow_opening_design__dual_side_holes
+  - airflow_opening_design__multiple_airflow_channels
+  - airflow_opening_design__no_breathing_hole
+  - airflow_opening_design__single_central_hole
+  - airflow_opening_design__vented_rail_design
+  - airflow_opening_design__other
+- id: 5212
+  name: Travel pillow features
+  description: Lists special functional characteristics, accessories, or design enhancements of the travel pillow
+  friendly_id: travel_pillow_features
+  handle: travel-pillow-features
+  values:
+  - travel_pillow_features__adjustable_strap
+  - travel_pillow_features__chin_support
+  - travel_pillow_features__compression_bag_included
+  - travel_pillow_features__cooling_gel
+  - travel_pillow_features__eye_mask_included
+  - travel_pillow_features__hooded
+  - travel_pillow_features__inflatable
+  - travel_pillow_features__lightweight
+  - travel_pillow_features__machine_washable_cover
+  - travel_pillow_features__removable_cover
+  - travel_pillow_features__other
+- id: 5213
+  name: Tent setup style
+  description: Indicates how the tent is deployed or assembled
+  friendly_id: tent_setup_style
+  handle: tent-setup-style
+  values:
+  - tent_setup_style__booth_style
+  - tent_setup_style__cabana
+  - tent_setup_style__enclosed
+  - tent_setup_style__fixed_frame
+  - tent_setup_style__pop_up
+  - tent_setup_style__other
+- id: 5214
+  name: Floor configuration
+  description: Indicates whether the tent includes a floor and, if so, the type of floor provided
+  friendly_id: floor_configuration
+  handle: floor-configuration
+  values:
+  - floor_configuration__attached_floor
+  - floor_configuration__no_floor
+  - floor_configuration__removable_floor_mat
+  - floor_configuration__other
+- id: 5215
+  name: Panel transparency
+  description: Describes whether the tent includes clear panels or windows on the roof or sides to allow light in while tanning
+  friendly_id: panel_transparency
+  handle: panel-transparency
+  values:
+  - panel_transparency__clear_top
+  - panel_transparency__opaque
+  - panel_transparency__partial_clear_panels_1/3
+  - panel_transparency__windows_only
+  - panel_transparency__other
+- id: 5216
+  name: Contact lens case accessories included
+  description: Lists the supplementary items packaged with the contact lens case
+  friendly_id: contact_lens_case_accessories_included
+  handle: contact-lens-case-accessories-included
+  values:
+  - contact_lens_case_accessories_included__accessory_pouch
+  - contact_lens_case_accessories_included__cleaning_basket
+  - contact_lens_case_accessories_included__keychain
+  - contact_lens_case_accessories_included__lens_applicator
+  - contact_lens_case_accessories_included__lens_holder
+  - contact_lens_case_accessories_included__lens_insert
+  - contact_lens_case_accessories_included__lens_inserter
+  - contact_lens_case_accessories_included__mirror
+  - contact_lens_case_accessories_included__organizer_box
+  - contact_lens_case_accessories_included__solution_bottle
+  - contact_lens_case_accessories_included__storage_box
+  - contact_lens_case_accessories_included__suction_stick
+  - contact_lens_case_accessories_included__tweezers
+  - contact_lens_case_accessories_included__other
+- id: 5217
+  name: Contact lens case features
+  description: Highlights notable functional features or inclusions of the case
+  friendly_id: contact_lens_case_features
+  handle: contact-lens-case-features
+  values:
+  - contact_lens_case_features__anti_leak_seal
+  - contact_lens_case_features__built_in_neutralizing_disc
+  - contact_lens_case_features__color_coded_baskets
+  - contact_lens_case_features__left/right_indicators
+  - contact_lens_case_features__mirror_included
+  - contact_lens_case_features__reusable
+  - contact_lens_case_features__transparent_body
+  - contact_lens_case_features__travel_friendly_size
+  - contact_lens_case_features__uv_disinfection
+  - contact_lens_case_features__ventilation_port
+  - contact_lens_case_features__other
+- id: 5218
+  name: Compatible contact lens type
+  description: Identifies which categories of contact lenses can be stored or cleaned in the case
+  friendly_id: compatible_contact_lens_type
+  handle: compatible-contact-lens-type
+  values:
+  - compatible_contact_lens_type__astigmatism
+  - compatible_contact_lens_type__cosmetic_colored
+  - compatible_contact_lens_type__hybrid
+  - compatible_contact_lens_type__multifocal
+  - compatible_contact_lens_type__orthokeratology
+  - compatible_contact_lens_type__rigid_gas_permeable_rgp
+  - compatible_contact_lens_type__scleral
+  - compatible_contact_lens_type__silicone_hydrogel
+  - compatible_contact_lens_type__soft_hydrogel
+  - compatible_contact_lens_type__toric
+  - compatible_contact_lens_type__other
+- id: 5219
+  name: Lens case accessories included
+  description: Lists additional items packaged with the case (e.g., tweezers, solution bottle)
+  friendly_id: lens_case_accessories_included
+  handle: lens-case-accessories-included
+  values:
+  - lens_case_accessories_included__built_in_mirror
+  - lens_case_accessories_included__carry_pouch
+  - lens_case_accessories_included__cleaning_cloth
+  - lens_case_accessories_included__labels
+  - lens_case_accessories_included__lens_inserter
+  - lens_case_accessories_included__lens_remover
+  - lens_case_accessories_included__solution_bottle
+  - lens_case_accessories_included__suction_cup
+  - lens_case_accessories_included__travel_kit
+  - lens_case_accessories_included__tweezers
+  - lens_case_accessories_included__other
+- id: 5220
+  name: Contact lens compatibility
+  description: Indicates the types or materials of contact lenses the solution can be safely used with
+  friendly_id: contact_lens_compatibility
+  handle: contact-lens-compatibility
+  values:
+  - contact_lens_compatibility__colored_lenses
+  - contact_lens_compatibility__hard_lenses
+  - contact_lens_compatibility__hybrid_lenses
+  - contact_lens_compatibility__multifocal_lenses
+  - contact_lens_compatibility__orthokeratology_lenses
+  - contact_lens_compatibility__rigid_gas_permeable_rgp_lenses
+  - contact_lens_compatibility__scleral_lenses
+  - contact_lens_compatibility__silicone_hydrogel_lenses
+  - contact_lens_compatibility__soft_contact_lenses
+  - contact_lens_compatibility__toric_lenses
+  - contact_lens_compatibility__other
+- id: 5221
+  name: Contact lens material
+  description: Specifies the polymer formulation or material family (e.g., hydrogel, silicone hydrogel) the lens is made from
+  friendly_id: contact_lens_material
+  handle: contact-lens-material
+  values:
+  - contact_lens_material__balafilcon_a
+  - contact_lens_material__comfilcon_a
+  - contact_lens_material__etafilcon_a
+  - contact_lens_material__fanfilcon_a
+  - contact_lens_material__hydrogel
+  - contact_lens_material__lotrafilcon_b
+  - contact_lens_material__omafilcon_a
+  - contact_lens_material__polymacon
+  - contact_lens_material__senofilcon_a
+  - contact_lens_material__silicone_hydrogel
+  - contact_lens_material__other
+- id: 5222
+  name: UV blocking class
+  description: Indicates the level of UV protection built into the contact lens as defined by ISO standards
+  friendly_id: uv_blocking_class
+  handle: uv-blocking-class
+  values:
+  - uv_blocking_class__class_i_90_uva_95_uvb
+  - uv_blocking_class__class_ii_70_uva_99_uvb
+  - uv_blocking_class__none
+  - uv_blocking_class__other
+- id: 5223
+  name: Wear schedule
+  description: Specifies the maximum approved consecutive wear duration for the lens before removal
+  friendly_id: wear_schedule
+  handle: wear-schedule
+  values:
+  - wear_schedule__continuous_wear_up_to_30_nights
+  - wear_schedule__daily_wear_remove_nightly
+  - wear_schedule__extended_wear_up_to_7_nights
+  - wear_schedule__other
+- id: 5224
+  name: Lens tint type
+  description: Describes the tint applied to the lens for handling visibility or cosmetic purposes
+  friendly_id: lens_tint_type
+  handle: lens-tint-type
+  values:
+  - lens_tint_type__clear
+  - lens_tint_type__enhancement_tint
+  - lens_tint_type__opaque_tint
+  - lens_tint_type__visibility_tint
+  - lens_tint_type__other
+- id: 5225
+  name: Vision correction type
+  description: Indicates the optical design intended to correct specific vision conditions
+  friendly_id: vision_correction_type
+  handle: vision-correction-type
+  values:
+  - vision_correction_type__multifocal
+  - vision_correction_type__plano_non_prescription
+  - vision_correction_type__spherical
+  - vision_correction_type__toric
+  - vision_correction_type__toric_multifocal
+  - vision_correction_type__other
+- id: 5226
+  name: Eye condition treated
+  description: Indicates the primary ocular issue the product is formulated to relieve or treat
+  friendly_id: eye_condition_treated
+  handle: eye-condition-treated
+  values:
+  - eye_condition_treated__allergy
+  - eye_condition_treated__anesthetic
+  - eye_condition_treated__anti_inflammatory
+  - eye_condition_treated__contact_lens_rewetting
+  - eye_condition_treated__digital_eye_strain
+  - eye_condition_treated__dry_eye
+  - eye_condition_treated__glaucoma
+  - eye_condition_treated__infection
+  - eye_condition_treated__itching
+  - eye_condition_treated__numbing
+  - eye_condition_treated__post_surgery_care
+  - eye_condition_treated__pressure
+  - eye_condition_treated__redness_relief
+  - eye_condition_treated__other
+- id: 5227
+  name: Lens refractive index
+  description: Specifies the numerical refractive index (e.g., 1.50, 1.60, 1.67) which directly correlates with lens thickness and weight
+  friendly_id: lens_refractive_index
+  handle: lens-refractive-index
+  values:
+  - lens_refractive_index__1_50
+  - lens_refractive_index__1_56
+  - lens_refractive_index__1_59
+  - lens_refractive_index__1_60
+  - lens_refractive_index__1_67
+  - lens_refractive_index__1_70
+  - lens_refractive_index__1_74
+  - lens_refractive_index__1_76
+  - lens_refractive_index__other
+- id: 5228
+  name: Eyewear hinge type
+  description: Describes the hinge mechanism used on the temples, influencing durability and flexibility
+  friendly_id: eyewear_hinge_type
+  handle: eyewear-hinge-type
+  values:
+  - eyewear_hinge_type__flex_hinge
+  - eyewear_hinge_type__magnetic_hinge
+  - eyewear_hinge_type__screwless_hinge
+  - eyewear_hinge_type__spring_hinge
+  - eyewear_hinge_type__standard_screw
+  - eyewear_hinge_type__other
+- id: 5229
+  name: Compatible eyewear type
+  description: Identifies the kind of eyewear the accessory is designed to fit or work with
+  friendly_id: compatible_eyewear_type
+  handle: compatible-eyewear-type
+  values:
+  - compatible_eyewear_type__3d_glasses
+  - compatible_eyewear_type__childrens_eyewear
+  - compatible_eyewear_type__eyeglasses
+  - compatible_eyewear_type__goggles
+  - compatible_eyewear_type__prescription_glasses
+  - compatible_eyewear_type__prescription_sunglasses
+  - compatible_eyewear_type__reading_glasses
+  - compatible_eyewear_type__safety_glasses
+  - compatible_eyewear_type__sunglasses
+  - compatible_eyewear_type__virtual_reality_headset
+  - compatible_eyewear_type__other
+- id: 5230
+  name: Length adjustability
+  description: Indicates whether the strap or chain length can be altered by the user or is fixed
+  friendly_id: length_adjustability
+  handle: length-adjustability
+  values:
+  - length_adjustability__adjustable
+  - length_adjustability__fixed
+  - length_adjustability__other
+- id: 5231
+  name: Eyewear strap features
+  description: Highlights notable functional characteristics of the strap or chain (e.g., floating, reflective, quick-release)
+  friendly_id: eyewear_strap_features
+  handle: eyewear-strap-features
+  values:
+  - eyewear_strap_features__adjustable_length
+  - eyewear_strap_features__anti_slip
+  - eyewear_strap_features__detachable_ends
+  - eyewear_strap_features__floating
+  - eyewear_strap_features__glow_in_the_dark
+  - eyewear_strap_features__interchangeable_ends
+  - eyewear_strap_features__quick_release
+  - eyewear_strap_features__reflective
+  - eyewear_strap_features__sweat_resistant
+  - eyewear_strap_features__other
+- id: 5232
+  name: Eyewear strap or chain style
+  description: Specifies the primary construction style or form factor of the eyewear strap or chain (e.g., rope cord, metal link chain, neoprene strap)
+  friendly_id: eyewear_strap_or_chain_style
+  handle: eyewear-strap-or-chain-style
+  values:
+  - eyewear_strap_or_chain_style__beaded
+  - eyewear_strap_or_chain_style__chain_link
+  - eyewear_strap_or_chain_style__elastic_cord
+  - eyewear_strap_or_chain_style__fabric_cord
+  - eyewear_strap_or_chain_style__floating_neoprene
+  - eyewear_strap_or_chain_style__leather
+  - eyewear_strap_or_chain_style__metal_chain
+  - eyewear_strap_or_chain_style__neoprene
+  - eyewear_strap_or_chain_style__rope_cord
+  - eyewear_strap_or_chain_style__other
+- id: 5233
+  name: Eyewear compatibility
+  description: Indicates the type of eyewear the strap is intended for
+  friendly_id: eyewear_compatibility
+  handle: eyewear-compatibility
+  values:
+  - eyewear_compatibility__eyeglasses
+  - eyewear_compatibility__goggles
+  - eyewear_compatibility__sunglasses
+  - eyewear_compatibility__universal
+  - eyewear_compatibility__other
+- id: 5234
+  name: Lens filter category
+  description: Specifies the European standard filter category (0–4) that classifies lenses by their tint density and the lighting conditions they are suited for
+  friendly_id: lens_filter_category
+  handle: lens-filter-category
+  values:
+  - lens_filter_category__category_0
+  - lens_filter_category__category_1
+  - lens_filter_category__category_2
+  - lens_filter_category__category_3
+  - lens_filter_category__category_4
+  - lens_filter_category__other
+- id: 5235
+  name: Exfoliating agent type
+  description: Identifies the primary abrasive or chemical exfoliant used
+  friendly_id: exfoliating_agent_type
+  handle: exfoliating-agent-type
+  values:
+  - exfoliating_agent_type__apricot_seed
+  - exfoliating_agent_type__bamboo_powder
+  - exfoliating_agent_type__charcoal
+  - exfoliating_agent_type__coconut_sugar
+  - exfoliating_agent_type__coffee_grounds
+  - exfoliating_agent_type__enzyme_exfoliant
+  - exfoliating_agent_type__fruit_acids
+  - exfoliating_agent_type__jojoba_beads
+  - exfoliating_agent_type__loofah_fibers
+  - exfoliating_agent_type__microbeads_biodegradable
+  - exfoliating_agent_type__none
+  - exfoliating_agent_type__oatmeal
+  - exfoliating_agent_type__pumice
+  - exfoliating_agent_type__rice_powder
+  - exfoliating_agent_type__salt
+  - exfoliating_agent_type__sea_sand
+  - exfoliating_agent_type__strawberry_seeds
+  - exfoliating_agent_type__sugar
+  - exfoliating_agent_type__walnut_shell_powder
+  - exfoliating_agent_type__other
+- id: 5236
+  name: Soap making method
+  description: Identifies the primary production process used to create the bar soap
+  friendly_id: soap_making_method
+  handle: soap-making-method
+  values:
+  - soap_making_method__cold_process
+  - soap_making_method__glycerin
+  - soap_making_method__hot_process
+  - soap_making_method__melt_and_pour
+  - soap_making_method__pressed
+  - soap_making_method__rebatched
+  - soap_making_method__syndet
+  - soap_making_method__triple_milled
+  - soap_making_method__other
+- id: 5237
+  name: Shower cap lining material
+  description: Identifies the material used on the inner lining that contacts the hair, affecting comfort, hair health, and frizz control
+  friendly_id: shower_cap_lining_material
+  handle: shower-cap-lining-material
+  values:
+  - shower_cap_lining_material__cotton
+  - shower_cap_lining_material__ethylene_vinyl_acetate_eva
+  - shower_cap_lining_material__microfiber
+  - shower_cap_lining_material__none
+  - shower_cap_lining_material__nylon
+  - shower_cap_lining_material__plastic
+  - shower_cap_lining_material__polyester
+  - shower_cap_lining_material__satin
+  - shower_cap_lining_material__silk
+  - shower_cap_lining_material__terrycloth
+  - shower_cap_lining_material__other
+- id: 5238
+  name: Bath brush style
+  description: Describes the physical style or form factor of the exfoliating tool (e.g., long-handle brush, glove, belt)
+  friendly_id: bath_brush_style
+  handle: bath-brush-style
+  values:
+  - bath_brush_style__back_strap
+  - bath_brush_style__belt
+  - bath_brush_style__detachable_handle_brush
+  - bath_brush_style__double_sided_brush
+  - bath_brush_style__electric_brush
+  - bath_brush_style__foot_scrubber
+  - bath_brush_style__glove
+  - bath_brush_style__handheld_round
+  - bath_brush_style__long_handle_brush
+  - bath_brush_style__mat
+  - bath_brush_style__mitt
+  - bath_brush_style__pad
+  - bath_brush_style__other
+- id: 5239
+  name: Exfoliation level
+  description: Indicates how gentle or firm the exfoliating action of the sponge is
+  friendly_id: exfoliation_level
+  handle: exfoliation-level
+  values:
+  - exfoliation_level__deep
+  - exfoliation_level__dual_sided
+  - exfoliation_level__extra_firm
+  - exfoliation_level__extra_gentle
+  - exfoliation_level__firm
+  - exfoliation_level__gentle
+  - exfoliation_level__medium
+  - exfoliation_level__other
+- id: 5240
+  name: Wipe purpose
+  description: Identifies the primary intended use or benefit of the wipes
+  friendly_id: wipe_purpose
+  handle: wipe-purpose
+  values:
+  - wipe_purpose__antibacterial
+  - wipe_purpose__baby_care
+  - wipe_purpose__body_cleansing
+  - wipe_purpose__deodorizing
+  - wipe_purpose__exfoliating
+  - wipe_purpose__hand_sanitizing
+  - wipe_purpose__intimate_care
+  - wipe_purpose__makeup_removal
+  - wipe_purpose__moisturizing
+  - wipe_purpose__sensitive_skin
+  - wipe_purpose__other
+- id: 5241
+  name: Hand soap features
+  description: Highlights special characteristics or benefits of the powdered hand soap
+  friendly_id: hand_soap_features
+  handle: hand-soap-features
+  values:
+  - hand_soap_features__antibacterial
+  - hand_soap_features__antiseptic
+  - hand_soap_features__biodegradable
+  - hand_soap_features__dye_free
+  - hand_soap_features__eco_friendly
+  - hand_soap_features__exfoliating
+  - hand_soap_features__fragrance_free
+  - hand_soap_features__hypoallergenic
+  - hand_soap_features__moisturizing
+  - hand_soap_features__pumice_added
+  - hand_soap_features__refillable_packaging
+  - hand_soap_features__other
+- id: 5242
+  name: Cosmetic set type
+  description: Classifies the set by its primary focus or theme
+  friendly_id: cosmetic_set_type
+  handle: cosmetic-set-type
+  values:
+  - cosmetic_set_type__body_care_set
+  - cosmetic_set_type__brow_set
+  - cosmetic_set_type__brush_set
+  - cosmetic_set_type__contour_set
+  - cosmetic_set_type__eye_makeup_set
+  - cosmetic_set_type__face_makeup_set
+  - cosmetic_set_type__fragrance_set
+  - cosmetic_set_type__full_makeup_set
+  - cosmetic_set_type__gift_set
+  - cosmetic_set_type__hair_care_set
+  - cosmetic_set_type__hand_care_set
+  - cosmetic_set_type__highlight_set
+  - cosmetic_set_type__kids_play_makeup_set
+  - cosmetic_set_type__lip_makeup_set
+  - cosmetic_set_type__mixed_set
+  - cosmetic_set_type__multi_use_set
+  - cosmetic_set_type__nail_care_set
+  - cosmetic_set_type__nail_polish_set
+  - cosmetic_set_type__sampler_set
+  - cosmetic_set_type__skincare_set
+  - cosmetic_set_type__special_effects_makeup_set
+  - cosmetic_set_type__sun_care_set
+  - cosmetic_set_type__travel_size_set
+  - cosmetic_set_type__other
+- id: 5243
+  name: Eyebrow stencil shape
+  description: Describes the primary eyebrow shape or arch style that the stencil is intended to create
+  friendly_id: eyebrow_stencil_shape
+  handle: eyebrow-stencil-shape
+  values:
+  - eyebrow_stencil_shape__angled
+  - eyebrow_stencil_shape__curved
+  - eyebrow_stencil_shape__full_arch
+  - eyebrow_stencil_shape__high_arch
+  - eyebrow_stencil_shape__low_arch
+  - eyebrow_stencil_shape__medium_arch
+  - eyebrow_stencil_shape__rounded
+  - eyebrow_stencil_shape__slim
+  - eyebrow_stencil_shape__straight
+  - eyebrow_stencil_shape__thick
+  - eyebrow_stencil_shape__other
+- id: 5244
+  name: Curler size compatibility
+  description: Specifies the curler pad size or style that the refills fit (e.g., standard, mini, partial)
+  friendly_id: curler_size_compatibility
+  handle: curler-size-compatibility
+  values:
+  - curler_size_compatibility__large
+  - curler_size_compatibility__mini
+  - curler_size_compatibility__partial
+  - curler_size_compatibility__standard
+  - curler_size_compatibility__universal
+  - curler_size_compatibility__other
+- id: 5245
+  name: Eyelash curler type
+  description: Specifies the design or mechanism of the eyelash curler
+  friendly_id: eyelash_curler_type
+  handle: eyelash-curler-type
+  values:
+  - eyelash_curler_type__electric
+  - eyelash_curler_type__half
+  - eyelash_curler_type__heated_clamp
+  - eyelash_curler_type__heated_comb
+  - eyelash_curler_type__manual_clamp
+  - eyelash_curler_type__mini
+  - eyelash_curler_type__partial
+  - eyelash_curler_type__precision
+  - eyelash_curler_type__round
+  - eyelash_curler_type__spring_loaded
+  - eyelash_curler_type__travel
+  - eyelash_curler_type__universal
+  - eyelash_curler_type__other
+- id: 5246
+  name: Curler pad material
+  description: Identifies the material of the replaceable pad that presses against the lashes, affecting comfort, durability, and allergy considerations
+  friendly_id: curler_pad_material
+  handle: curler-pad-material
+  values:
+  - curler_pad_material__foam
+  - curler_pad_material__latex
+  - curler_pad_material__latex_free_synthetic
+  - curler_pad_material__plastic
+  - curler_pad_material__polyurethane
+  - curler_pad_material__rubber
+  - curler_pad_material__silicone
+  - curler_pad_material__silicone_rubber_blend
+  - curler_pad_material__thermoplastic_elastomer_tpe
+  - curler_pad_material__other
+- id: 5247
+  name: Mirror sides
+  description: Indicates the number or configuration of reflective surfaces a mirror has (e.g., single-sided, double-sided, tri-fold)
+  friendly_id: mirror_sides
+  handle: mirror-sides
+  values:
+  - mirror_sides__double_sided
+  - mirror_sides__multi_panel
+  - mirror_sides__single_sided
+  - mirror_sides__tri_fold
+  - mirror_sides__other
+- id: 5248
+  name: False eyelash adhesive formulation
+  description: Specifies the primary chemical formulation of the glue
+  friendly_id: false_eyelash_adhesive_formulation
+  handle: false-eyelash-adhesive-formulation
+  values:
+  - false_eyelash_adhesive_formulation__acrylate_based
+  - false_eyelash_adhesive_formulation__cyanoacrylate
+  - false_eyelash_adhesive_formulation__latex_based
+  - false_eyelash_adhesive_formulation__latex_free
+  - false_eyelash_adhesive_formulation__water_based
+  - false_eyelash_adhesive_formulation__other
+- id: 5249
+  name: Adhesive application type
+  description: Defines the intended lash service or use case for the adhesive
+  friendly_id: adhesive_application_type
+  handle: adhesive-application-type
+  values:
+  - adhesive_application_type__brow_lamination
+  - adhesive_application_type__cluster_lashes
+  - adhesive_application_type__double_eyelid
+  - adhesive_application_type__eyelash_extensions
+  - adhesive_application_type__individual_lashes
+  - adhesive_application_type__lash_lift
+  - adhesive_application_type__strip_lashes
+  - adhesive_application_type__other
+- id: 5250
+  name: Eyelash remover formulation
+  description: Identifies the primary formula type of the remover
+  friendly_id: eyelash_remover_formulation
+  handle: eyelash-remover-formulation
+  values:
+  - eyelash_remover_formulation__balm
+  - eyelash_remover_formulation__cream
+  - eyelash_remover_formulation__gel
+  - eyelash_remover_formulation__oil_based
+  - eyelash_remover_formulation__pad_soaked
+  - eyelash_remover_formulation__water_based
+  - eyelash_remover_formulation__other
+- id: 5251
+  name: Makeup brush application
+  description: Specifies the primary cosmetic use or area the brush is designed for (e.g., foundation, eyeshadow, contour)
+  friendly_id: makeup_brush_application
+  handle: makeup-brush-application
+  values:
+  - makeup_brush_application__all_over_face_brush
+  - makeup_brush_application__blending_brush
+  - makeup_brush_application__blush_brush
+  - makeup_brush_application__bronzer_brush
+  - makeup_brush_application__brow_brush
+  - makeup_brush_application__concealer_brush
+  - makeup_brush_application__contour_brush
+  - makeup_brush_application__detail_brush
+  - makeup_brush_application__eyeliner_brush
+  - makeup_brush_application__eyeshadow_brush
+  - makeup_brush_application__fan_brush
+  - makeup_brush_application__foundation_brush
+  - makeup_brush_application__highlighter_brush
+  - makeup_brush_application__kabuki_brush
+  - makeup_brush_application__lip_brush
+  - makeup_brush_application__multifunction_brush
+  - makeup_brush_application__powder_brush
+  - makeup_brush_application__precision_brush
+  - makeup_brush_application__smudge_brush
+  - makeup_brush_application__spoolie_brush
+  - makeup_brush_application__stippling_brush
+  - makeup_brush_application__other
+- id: 5252
+  name: Brush end type
+  description: Describes the structural format of the brush ends (e.g., single-ended, dual-ended, retractable)
+  friendly_id: brush_end_type
+  handle: brush-end-type
+  values:
+  - brush_end_type__dual_ended
+  - brush_end_type__retractable
+  - brush_end_type__single_ended
+  - brush_end_type__other
+- id: 5253
+  name: End design
+  description: Specifies the number of functional ends and whether they are replaceable or interchangeable
+  friendly_id: end_design
+  handle: end-design
+  values:
+  - end_design__double_ended
+  - end_design__interchangeable_heads
+  - end_design__replaceable_tip
+  - end_design__single_ended
+  - end_design__other
+- id: 5254
+  name: Rotation direction
+  description: Indicates whether the nail drill supports forward rotation, reverse rotation, or both
+  friendly_id: rotation_direction
+  handle: rotation-direction
+  values:
+  - rotation_direction__forward_and_reverse
+  - rotation_direction__forward_only
+  - rotation_direction__reverse_only
+  - rotation_direction__other
+- id: 5255
+  name: Motor type
+  description: Specifies whether the drill uses a brushed or brushless motor, impacting noise, longevity, and price
+  friendly_id: motor_type
+  handle: motor-type
+  values:
+  - motor_type__brushed_dc
+  - motor_type__brushless_dc
+  - motor_type__other
+- id: 5256
+  name: Skin care tool features
+  description: Highlights notable functional or convenience features of the tool (e.g., waterproof, adjustable intensity)
+  friendly_id: skin_care_tool_features
+  handle: skin-care-tool-features
+  values:
+  - skin_care_tool_features__adjustable_intensity
+  - skin_care_tool_features__auto_shut_off
+  - skin_care_tool_features__cordless
+  - skin_care_tool_features__dual_voltage
+  - skin_care_tool_features__ergonomic_handle
+  - skin_care_tool_features__interchangeable_heads
+  - skin_care_tool_features__led_display
+  - skin_care_tool_features__timer_function
+  - skin_care_tool_features__travel_size
+  - skin_care_tool_features__waterproof
+  - skin_care_tool_features__other
+- id: 5257
+  name: Facial steamer features
+  description: Lists key built-in functionalities that enhance the steaming treatment
+  friendly_id: facial_steamer_features
+  handle: facial-steamer-features
+  values:
+  - facial_steamer_features__adjustable_height_stand
+  - facial_steamer_features__aromatherapy_chamber
+  - facial_steamer_features__herbal_infusion_chamber
+  - facial_steamer_features__led_light_therapy
+  - facial_steamer_features__magnifying_lamp
+  - facial_steamer_features__nano_ionic_steam
+  - facial_steamer_features__ozone_sterilization
+  - facial_steamer_features__touchscreen_controls
+  - facial_steamer_features__ultrasonic_mist
+  - facial_steamer_features__other
+- id: 5258
+  name: Applicator format
+  description: Describes the physical form or style of the lotion or sunscreen applicator
+  friendly_id: applicator_format
+  handle: applicator-format
+  values:
+  - applicator_format__back_strap_applicator
+  - applicator_format__bottle_with_roller_ball
+  - applicator_format__brush
+  - applicator_format__double_sided_mitt
+  - applicator_format__glove
+  - applicator_format__mitt
+  - applicator_format__pump_dispenser
+  - applicator_format__roll_on_bottle
+  - applicator_format__spatula
+  - applicator_format__sponge
+  - applicator_format__spray_bottle
+  - applicator_format__other
+- id: 5259
+  name: Extractor items included
+  description: Lists the different extractor tools or accessories included in a set
+  friendly_id: extractor_items_included
+  handle: extractor-items-included
+  values:
+  - extractor_items_included__alcohol_wipes
+  - extractor_items_included__lancet
+  - extractor_items_included__loop_extractor
+  - extractor_items_included__mirror
+  - extractor_items_included__needle_extractor
+  - extractor_items_included__replacement_filters
+  - extractor_items_included__scoop_extractor
+  - extractor_items_included__storage_case
+  - extractor_items_included__tweezer_extractor
+  - extractor_items_included__vacuum_extractor
+  - extractor_items_included__other
+- id: 5260
+  name: Extraction technology
+  description: Describes the primary mechanism the product uses to extract impurities
+  friendly_id: extraction_technology
+  handle: extraction-technology
+  values:
+  - extraction_technology__dermaplaning
+  - extraction_technology__high_frequency_electrical
+  - extraction_technology__led_light_therapy
+  - extraction_technology__manual_loop
+  - extraction_technology__manual_needle
+  - extraction_technology__microdermabrasion
+  - extraction_technology__ultrasonic_vibration
+  - extraction_technology__vacuum_suction
+  - extraction_technology__other
+- id: 5261
+  name: Coverage level
+  description: Indicates the opacity or intensity of coverage the product provides once applied (e.g., sheer, medium, full)
+  friendly_id: coverage_level
+  handle: coverage-level
+  values:
+  - coverage_level__adjustable
+  - coverage_level__buildable
+  - coverage_level__color_correcting
+  - coverage_level__full
+  - coverage_level__high_coverage
+  - coverage_level__light
+  - coverage_level__medium
+  - coverage_level__sheer
+  - coverage_level__other
+- id: 5262
+  name: Body paint formula base
+  description: Identifies the primary formulation base, which affects durability, finish, and removal method
+  friendly_id: body_paint_formula_base
+  handle: body-paint-formula-base
+  values:
+  - body_paint_formula_base__alcohol_based
+  - body_paint_formula_base__cream_based
+  - body_paint_formula_base__gel_based
+  - body_paint_formula_base__oil_based
+  - body_paint_formula_base__powder_based
+  - body_paint_formula_base__silicone_based
+  - body_paint_formula_base__water_based
+  - body_paint_formula_base__wax_based
+  - body_paint_formula_base__other
+- id: 5263
+  name: Glitter particle size
+  description: Categorizes the particle size of the glitter, impacting sparkle intensity, texture, and ease of application
+  friendly_id: glitter_particle_size
+  handle: glitter-particle-size
+  values:
+  - glitter_particle_size__chunky
+  - glitter_particle_size__fine
+  - glitter_particle_size__medium
+  - glitter_particle_size__microfine
+  - glitter_particle_size__mixed
+  - glitter_particle_size__super_chunky
+  - glitter_particle_size__ultra_fine
+  - glitter_particle_size__other
+- id: 5264
+  name: Eye shadow palette size
+  description: Classifies products by common palette formats for quick browsing
+  friendly_id: eye_shadow_palette_size
+  handle: eye-shadow-palette-size
+  values:
+  - eye_shadow_palette_size__20+_pan
+  - eye_shadow_palette_size__5_pan
+  - eye_shadow_palette_size__6_pan
+  - eye_shadow_palette_size__8_pan
+  - eye_shadow_palette_size__10_pan
+  - eye_shadow_palette_size__12_pan
+  - eye_shadow_palette_size__15_pan
+  - eye_shadow_palette_size__duo
+  - eye_shadow_palette_size__quad
+  - eye_shadow_palette_size__single
+  - eye_shadow_palette_size__trio
+  - eye_shadow_palette_size__other
+- id: 5265
+  name: Eyebrow applicator type
+  description: Describes the applicator or tip used to apply the eyebrow product
+  friendly_id: eyebrow_applicator_type
+  handle: eyebrow-applicator-type
+  values:
+  - eyebrow_applicator_type__angled_brush
+  - eyebrow_applicator_type__comb_applicator
+  - eyebrow_applicator_type__doe_foot
+  - eyebrow_applicator_type__dropper
+  - eyebrow_applicator_type__dual_ended_pencil_and_spoolie
+  - eyebrow_applicator_type__fork_tip
+  - eyebrow_applicator_type__micro_brush
+  - eyebrow_applicator_type__roller_ball
+  - eyebrow_applicator_type__spoolie_brush
+  - eyebrow_applicator_type__twist_up_pencil
+  - eyebrow_applicator_type__other
+- id: 5266
+  name: Eyelash curl type
+  description: Specifies the curvature classification (e.g., C-curl, D-curl) of the lash fibers
+  friendly_id: eyelash_curl_type
+  handle: eyelash-curl-type
+  values:
+  - eyelash_curl_type__b
+  - eyelash_curl_type__c
+  - eyelash_curl_type__cc
+  - eyelash_curl_type__d
+  - eyelash_curl_type__dd
+  - eyelash_curl_type__j
+  - eyelash_curl_type__l
+  - eyelash_curl_type__l+
+  - eyelash_curl_type__lc
+  - eyelash_curl_type__ld
+  - eyelash_curl_type__m
+  - eyelash_curl_type__u
+  - eyelash_curl_type__other
+- id: 5267
+  name: Eyelash style
+  description: Describes the overall visual effect or design of the lash set (e.g., natural, cat-eye, dramatic)
+  friendly_id: eyelash_style
+  handle: eyelash-style
+  values:
+  - eyelash_style__cat_eye
+  - eyelash_style__cluster
+  - eyelash_style__doll_eye
+  - eyelash_style__dramatic
+  - eyelash_style__flared
+  - eyelash_style__full
+  - eyelash_style__natural
+  - eyelash_style__open_eye
+  - eyelash_style__wispy
+  - eyelash_style__other
+- id: 5268
+  name: Treatment target area
+  description: Indicates whether the product is formulated for lashes, brows, or both
+  friendly_id: treatment_target_area
+  handle: treatment-target-area
+  values:
+  - treatment_target_area__brows
+  - treatment_target_area__lashes
+  - treatment_target_area__lashes_and_brows
+  - treatment_target_area__other
+- id: 5269
+  name: Mascara brush shape
+  description: Specifies the shape or design of the built-in primer wand or brush, which strongly influences application and results
+  friendly_id: mascara_brush_shape
+  handle: mascara-brush-shape
+  values:
+  - mascara_brush_shape__ball
+  - mascara_brush_shape__comb
+  - mascara_brush_shape__cone
+  - mascara_brush_shape__corkscrew
+  - mascara_brush_shape__curved
+  - mascara_brush_shape__curved_silicone
+  - mascara_brush_shape__dual_sided
+  - mascara_brush_shape__hourglass
+  - mascara_brush_shape__molded
+  - mascara_brush_shape__skinny
+  - mascara_brush_shape__spiral
+  - mascara_brush_shape__straight
+  - mascara_brush_shape__tapered
+  - mascara_brush_shape__twisted_spiral
+  - mascara_brush_shape__other
+- id: 5270
+  name: Mascara formulation
+  description: Indicates the product's base composition or special technology (e.g., liquid, fiber-infused, tubing) that affects texture, wear, and removal
+  friendly_id: mascara_formulation
+  handle: mascara-formulation
+  values:
+  - mascara_formulation__cake
+  - mascara_formulation__cream
+  - mascara_formulation__fiber_infused
+  - mascara_formulation__gel
+  - mascara_formulation__liquid
+  - mascara_formulation__powder
+  - mascara_formulation__tubing
+  - mascara_formulation__water_based
+  - mascara_formulation__other
+- id: 5271
+  name: Lip makeup opacity
+  description: Indicates the coverage or opacity level of the product once applied
+  friendly_id: lip_makeup_opacity
+  handle: lip-makeup-opacity
+  values:
+  - lip_makeup_opacity__buildable
+  - lip_makeup_opacity__full
+  - lip_makeup_opacity__high_pigment
+  - lip_makeup_opacity__medium
+  - lip_makeup_opacity__semi_sheer
+  - lip_makeup_opacity__sheer
+  - lip_makeup_opacity__other
+- id: 5272
+  name: Lip gloss formulation
+  description: Defines the primary texture or format of the lip gloss
+  friendly_id: lip_gloss_formulation
+  handle: lip-gloss-formulation
+  values:
+  - lip_gloss_formulation__balm_gloss_hybrid
+  - lip_gloss_formulation__creme
+  - lip_gloss_formulation__gloss
+  - lip_gloss_formulation__jelly
+  - lip_gloss_formulation__lacquer
+  - lip_gloss_formulation__liquid
+  - lip_gloss_formulation__oil
+  - lip_gloss_formulation__plumper
+  - lip_gloss_formulation__stick
+  - lip_gloss_formulation__tint
+  - lip_gloss_formulation__other
+- id: 5273
+  name: Lip gloss applicator type
+  description: Identifies the style of applicator included with the lip gloss, which affects ease of application and user preference
+  friendly_id: lip_gloss_applicator_type
+  handle: lip-gloss-applicator-type
+  values:
+  - lip_gloss_applicator_type__brush
+  - lip_gloss_applicator_type__cushion_sponge
+  - lip_gloss_applicator_type__doe_foot_wand
+  - lip_gloss_applicator_type__metal_cooling_tip
+  - lip_gloss_applicator_type__pen
+  - lip_gloss_applicator_type__pot
+  - lip_gloss_applicator_type__rollerball
+  - lip_gloss_applicator_type__silicone_tip
+  - lip_gloss_applicator_type__squeeze_tube_tip
+  - lip_gloss_applicator_type__stick
+  - lip_gloss_applicator_type__other
+- id: 5274
+  name: Lipstick coverage
+  description: Describes the color opacity level delivered by the lipstick (e.g., sheer, medium, full)
+  friendly_id: lipstick_coverage
+  handle: lipstick-coverage
+  values:
+  - lipstick_coverage__buildable
+  - lipstick_coverage__full
+  - lipstick_coverage__high_pigment
+  - lipstick_coverage__medium
+  - lipstick_coverage__sheer
+  - lipstick_coverage__other
+- id: 5275
+  name: Spray purpose
+  description: Identifies the primary intended use of the facial mist (e.g., setting, priming, hydrating)
+  friendly_id: spray_purpose
+  handle: spray-purpose
+  values:
+  - spray_purpose__hydrating
+  - spray_purpose__multipurpose
+  - spray_purpose__priming
+  - spray_purpose__refreshing
+  - spray_purpose__setting
+  - spray_purpose__other
+- id: 5276
+  name: Compatible polish thinner type
+  description: Indicates the nail-coating systems the thinner is designed to work with
+  friendly_id: compatible_polish_thinner_type
+  handle: compatible-polish-thinner-type
+  values:
+  - compatible_polish_thinner_type__acrylic_systems
+  - compatible_polish_thinner_type__all_purpose
+  - compatible_polish_thinner_type__dip_powder_systems
+  - compatible_polish_thinner_type__gel_polish
+  - compatible_polish_thinner_type__led_gel_polish
+  - compatible_polish_thinner_type__regular_nail_lacquer
+  - compatible_polish_thinner_type__uv_gel_polish
+  - compatible_polish_thinner_type__other
+- id: 5277
+  name: False nail adhesive type
+  description: Identifies the kind of adhesive option supplied or required for the nails (e.g., glue, tabs, both, none)
+  friendly_id: false_nail_adhesive_type
+  handle: false-nail-adhesive-type
+  values:
+  - false_nail_adhesive_type__adhesive_tabs
+  - false_nail_adhesive_type__glue
+  - false_nail_adhesive_type__glue_and_adhesive_tabs
+  - false_nail_adhesive_type__none
+  - false_nail_adhesive_type__other
+- id: 5278
+  name: Curing method
+  description: Indicates how the glue sets or cures (e.g., air dry, UV/LED lamp, heat)
+  friendly_id: curing_method
+  handle: curing-method
+  values:
+  - curing_method__air_dry
+  - curing_method__heat_activated
+  - curing_method__led_lamp
+  - curing_method__not_required
+  - curing_method__uv_lamp
+  - curing_method__uv/led_lamp
+  - curing_method__other
+- id: 5279
+  name: Glue viscosity
+  description: Describes the thickness of the glue, impacting flow and application control
+  friendly_id: glue_viscosity
+  handle: glue-viscosity
+  values:
+  - glue_viscosity__medium
+  - glue_viscosity__thick
+  - glue_viscosity__thin
+  - glue_viscosity__other
+- id: 5280
+  name: Nail art medium type
+  description: Specifies the primary medium or material format of the nail art supply
+  friendly_id: nail_art_medium_type
+  handle: nail-art-medium-type
+  values:
+  - nail_art_medium_type__acrylic_powder
+  - nail_art_medium_type__builder_gel
+  - nail_art_medium_type__dip_powder
+  - nail_art_medium_type__gel_polish
+  - nail_art_medium_type__hard_gel
+  - nail_art_medium_type__loose_glitter
+  - nail_art_medium_type__pigment_powder
+  - nail_art_medium_type__poly_gel
+  - nail_art_medium_type__rhinestones
+  - nail_art_medium_type__stickers
+  - nail_art_medium_type__other
+- id: 5281
+  name: Removal target
+  description: Specifies which nail products the remover is designed to dissolve (e.g., gel polish, acrylic nails, dip powder)
+  friendly_id: removal_target
+  handle: removal-target
+  values:
+  - removal_target__acrylic_nails
+  - removal_target__artificial_nails
+  - removal_target__dip_powder
+  - removal_target__gel_polish
+  - removal_target__nail_glue
+  - removal_target__press_on_nails
+  - removal_target__regular_nail_polish
+  - removal_target__shellac
+  - removal_target__other
+- id: 5282
+  name: Polish remover formulation
+  description: Indicates the chemical composition of the remover, especially acetone content or alternative bases
+  friendly_id: polish_remover_formulation
+  handle: polish-remover-formulation
+  values:
+  - polish_remover_formulation__acetone_free
+  - polish_remover_formulation__high_acetone_50
+  - polish_remover_formulation__low_acetone_50
+  - polish_remover_formulation__moisturizing
+  - polish_remover_formulation__oil_based
+  - polish_remover_formulation__pure_acetone_100
+  - polish_remover_formulation__soy_based
+  - polish_remover_formulation__other
+- id: 5283
+  name: Mist application area
+  description: Indicates the intended area(s) of use for the mist (e.g., body, hair, room, linen)
+  friendly_id: mist_application_area
+  handle: mist-application-area
+  values:
+  - mist_application_area__aura
+  - mist_application_area__body
+  - mist_application_area__energy_field
+  - mist_application_area__hair
+  - mist_application_area__hair_and_body
+  - mist_application_area__universal
+  - mist_application_area__other
+- id: 5284
+  name: UVA protection grade
+  description: Indicates the UVA protection rating of the product, commonly expressed as PA grades
+  friendly_id: uva_protection_grade
+  handle: uva-protection-grade
+  values:
+  - uva_protection_grade__not_rated
+  - uva_protection_grade__pa+
+  - uva_protection_grade__pa++
+  - uva_protection_grade__pa+++
+  - uva_protection_grade__pa++++
+  - uva_protection_grade__other
+- id: 5285
+  name: Sheet mask material
+  description: Specifies the primary material or substrate of sheet or hydrogel masks
+  friendly_id: sheet_mask_material
+  handle: sheet-mask-material
+  values:
+  - sheet_mask_material__bamboo
+  - sheet_mask_material__bio_cellulose
+  - sheet_mask_material__cellulose
+  - sheet_mask_material__charcoal_infused_fabric
+  - sheet_mask_material__cotton
+  - sheet_mask_material__cupra
+  - sheet_mask_material__foil
+  - sheet_mask_material__hydrogel
+  - sheet_mask_material__microfiber
+  - sheet_mask_material__silicone
+  - sheet_mask_material__tencel
+  - sheet_mask_material__other
+- id: 5286
+  name: Sunscreen filter type
+  description: Identifies the type of UV filters used in the formula (chemical, mineral, or hybrid)
+  friendly_id: sunscreen_filter_type
+  handle: sunscreen-filter-type
+  values:
+  - sunscreen_filter_type__chemical
+  - sunscreen_filter_type__hybrid
+  - sunscreen_filter_type__mineral_physical
+  - sunscreen_filter_type__other
+- id: 5287
+  name: PA rating
+  description: Specifies the UVA protection grade of the sunscreen (e.g., PA+, PA+++, PA++++) based on the Persistent Pigment Darkening (PPD) method
+  friendly_id: pa_rating
+  handle: pa-rating
+  values:
+  - pa_rating__not_rated
+  - pa_rating__pa+
+  - pa_rating__pa++
+  - pa_rating__pa+++
+  - pa_rating__pa++++
+  - pa_rating__pa+++++
+  - pa_rating__other
+- id: 5288
+  name: Usage environment
+  description: Specifies where the tanning product is intended to be used
+  friendly_id: usage_environment
+  handle: usage-environment
+  values:
+  - usage_environment__both_indoor_and_outdoor
+  - usage_environment__indoor_tanning_bed
+  - usage_environment__outdoor_sun_exposure
+  - usage_environment__other
+- id: 5289
+  name: Tingle intensity
+  description: Describes the heat or tingle sensation level produced by the product when applied
+  friendly_id: tingle_intensity
+  handle: tingle-intensity
+  values:
+  - tingle_intensity__extreme
+  - tingle_intensity__hot
+  - tingle_intensity__none
+  - tingle_intensity__warm
+  - tingle_intensity__other
+- id: 5290
+  name: Alcohol content
+  description: Indicates whether the toner is alcohol-free or, if present, approximately how much alcohol the formula contains
+  friendly_id: alcohol_content
+  handle: alcohol-content
+  values:
+  - alcohol_content__alcohol_free
+  - alcohol_content__contains_alcohol
+  - alcohol_content__high_alcohol_10
+  - alcohol_content__low_alcohol_5
+  - alcohol_content__moderate_alcohol_510
+  - alcohol_content__other
+- id: 5291
+  name: Treatment method
+  description: Describes the mechanism or delivery technology the product uses to eliminate the lesion (e.g., cryotherapy, chemical acid, microneedle patch)
+  friendly_id: treatment_method
+  handle: treatment-method
+  values:
+  - treatment_method__acid
+  - treatment_method__botanical
+  - treatment_method__chemical_exfoliant
+  - treatment_method__cryotherapy
+  - treatment_method__herbal
+  - treatment_method__ligation_band_kit
+  - treatment_method__medicated_patch
+  - treatment_method__microneedle_patch
+  - treatment_method__pad
+  - treatment_method__pen_applicator
+  - treatment_method__spray
+  - treatment_method__other
+- id: 5292
+  name: Targeted skin concern
+  description: Indicates the specific lesion or skin condition the product is formulated to treat
+  friendly_id: targeted_skin_concern
+  handle: targeted-skin-concern
+  values:
+  - targeted_skin_concern__calluses
+  - targeted_skin_concern__common_warts
+  - targeted_skin_concern__corns
+  - targeted_skin_concern__dark_spots
+  - targeted_skin_concern__filiform_warts
+  - targeted_skin_concern__flat_warts
+  - targeted_skin_concern__genital_warts
+  - targeted_skin_concern__hyperpigmentation
+  - targeted_skin_concern__moles
+  - targeted_skin_concern__plantar_warts
+  - targeted_skin_concern__skin_tags
+  - targeted_skin_concern__other
+- id: 5293
+  name: Eye care applicator type
+  description: Defines the style of built-in applicator or dispenser tip provided with the eye treatment product
+  friendly_id: eye_care_applicator_type
+  handle: eye-care-applicator-type
+  values:
+  - eye_care_applicator_type__ceramic_tip
+  - eye_care_applicator_type__dropper
+  - eye_care_applicator_type__jar_finger
+  - eye_care_applicator_type__metal_roller_ball
+  - eye_care_applicator_type__none
+  - eye_care_applicator_type__pump
+  - eye_care_applicator_type__roller_ball
+  - eye_care_applicator_type__stick_balm
+  - eye_care_applicator_type__vibrating_tip
+  - eye_care_applicator_type__wand_applicator
+  - eye_care_applicator_type__other
+- id: 5294
+  name: Oil extraction method
+  description: Specifies how the main oil was processed or extracted (e.g., cold-pressed, refined)
+  friendly_id: oil_extraction_method
+  handle: oil-extraction-method
+  values:
+  - oil_extraction_method__cold_pressed
+  - oil_extraction_method__expeller_pressed
+  - oil_extraction_method__refined
+  - oil_extraction_method__solvent_extracted
+  - oil_extraction_method__steam_distilled
+  - oil_extraction_method__unrefined
+  - oil_extraction_method__other
+- id: 5295
+  name: Talc content
+  description: States whether the formulation contains talc, is talc-free, or uses reduced talc levels
+  friendly_id: talc_content
+  handle: talc-content
+  values:
+  - talc_content__reduced_talc
+  - talc_content__talc_based
+  - talc_content__talc_free
+  - talc_content__other
+- id: 5296
+  name: Exfoliation method
+  description: Indicates whether and how the cleanser exfoliates the skin (e.g., physical, chemical, enzyme)
+  friendly_id: exfoliation_method
+  handle: exfoliation-method
+  values:
+  - exfoliation_method__chemical_aha/bha
+  - exfoliation_method__enzyme
+  - exfoliation_method__none
+  - exfoliation_method__physical_scrub_beads
+  - exfoliation_method__powder_micro_exfoliant
+  - exfoliation_method__other
+- id: 5297
+  name: Rinse requirement
+  description: Clarifies whether the cleanser must be rinsed off, can be left on, or is no-rinse (e.g., micellar water)
+  friendly_id: rinse_requirement
+  handle: rinse-requirement
+  values:
+  - rinse_requirement__no_rinse
+  - rinse_requirement__optional_rinse
+  - rinse_requirement__rinse_off
+  - rinse_requirement__other
+- id: 5298
+  name: Cleanser type
+  description: Describes the specific texture or format of the cleanser
+  friendly_id: cleanser_type
+  handle: cleanser-type
+  values:
+  - cleanser_type__balm_cleanser
+  - cleanser_type__clay_cleanser
+  - cleanser_type__cleansing_bar
+  - cleanser_type__cleansing_milk
+  - cleanser_type__cleansing_soap
+  - cleanser_type__cream_cleanser
+  - cleanser_type__foaming_cleanser
+  - cleanser_type__gel_cleanser
+  - cleanser_type__micellar_water
+  - cleanser_type__oil_cleanser
+  - cleanser_type__powder_cleanser
+  - cleanser_type__other
+- id: 5299
+  name: Facial cleansing kit items included
+  description: Lists the specific products or tools contained in the facial cleansing kit (e.g., cleanser, toner, serum, brush, travel pouch)
+  friendly_id: facial_cleansing_kit_items_included
+  handle: facial-cleansing-kit-items-included
+  values:
+  - facial_cleansing_kit_items_included__brush_heads
+  - facial_cleansing_kit_items_included__cleanser
+  - facial_cleansing_kit_items_included__cotton_pads
+  - facial_cleansing_kit_items_included__exfoliant
+  - facial_cleansing_kit_items_included__exfoliating_pads
+  - facial_cleansing_kit_items_included__eye_cream
+  - facial_cleansing_kit_items_included__face_mask
+  - facial_cleansing_kit_items_included__face_oil
+  - facial_cleansing_kit_items_included__facial_brush
+  - facial_cleansing_kit_items_included__gua_sha_tool
+  - facial_cleansing_kit_items_included__moisturizer
+  - facial_cleansing_kit_items_included__scrub
+  - facial_cleansing_kit_items_included__serum
+  - facial_cleansing_kit_items_included__sheet_mask
+  - facial_cleansing_kit_items_included__sponge
+  - facial_cleansing_kit_items_included__sunscreen
+  - facial_cleansing_kit_items_included__toner
+  - facial_cleansing_kit_items_included__travel_pouch
+  - facial_cleansing_kit_items_included__wipes
+  - facial_cleansing_kit_items_included__other
+- id: 5300
+  name: Strip/Patch technology
+  description: Describes the primary material or technology used for the pore strip or patch
+  friendly_id: strip/patch_technology
+  handle: strip-patch-technology
+  values:
+  - strip/patch_technology__adhesive_non_hydrocolloid
+  - strip/patch_technology__bio_cellulose
+  - strip/patch_technology__charcoal_adhesive
+  - strip/patch_technology__clay_pack
+  - strip/patch_technology__foam_pad
+  - strip/patch_technology__hydrocolloid
+  - strip/patch_technology__mud_mask
+  - strip/patch_technology__peel_off_mask
+  - strip/patch_technology__silicone_pad
+  - strip/patch_technology__other
+- id: 5301
+  name: Target facial zone
+  description: Specifies the facial zone the pore strip is designed to treat (e.g., nose, chin, T-zone)
+  friendly_id: target_facial_zone
+  handle: target-facial-zone
+  values:
+  - target_facial_zone__cheeks
+  - target_facial_zone__chin
+  - target_facial_zone__forehead
+  - target_facial_zone__full_face
+  - target_facial_zone__nose
+  - target_facial_zone__t_zone
+  - target_facial_zone__other
+- id: 5302
+  name: Lip balm tint level
+  description: Classifies the level of tint or color payoff the balm provides
+  friendly_id: lip_balm_tint_level
+  handle: lip-balm-tint-level
+  values:
+  - lip_balm_tint_level__clear
+  - lip_balm_tint_level__medium_tint
+  - lip_balm_tint_level__opaque
+  - lip_balm_tint_level__sheer_tint
+  - lip_balm_tint_level__sparkle
+  - lip_balm_tint_level__other
+- id: 5303
+  name: Cotton ball size
+  description: Denotes the relative size category of each cotton ball (e.g., small, large, jumbo)
+  friendly_id: cotton_ball_size
+  handle: cotton-ball-size
+  values:
+  - cotton_ball_size__jumbo
+  - cotton_ball_size__large
+  - cotton_ball_size__medium
+  - cotton_ball_size__mini
+  - cotton_ball_size__small
+  - cotton_ball_size__other
+- id: 5304
+  name: Swab end configuration
+  description: Indicates whether the swab has one usable end or two, and if the ends differ
+  friendly_id: swab_end_configuration
+  handle: swab-end-configuration
+  values:
+  - swab_end_configuration__double_ended_same_tips
+  - swab_end_configuration__dual_ended_different_tips
+  - swab_end_configuration__single_ended
+  - swab_end_configuration__other
+- id: 5305
+  name: Anti-perspirant strength level
+  description: Denotes the antiperspirant's efficacy classification (e.g., clinical strength, sports strength)
+  friendly_id: anti_perspirant_strength_level
+  handle: anti-perspirant-strength-level
+  values:
+  - anti_perspirant_strength_level__clinical_strength
+  - anti_perspirant_strength_level__maximum_strength
+  - anti_perspirant_strength_level__regular_strength
+  - anti_perspirant_strength_level__sports_strength
+  - anti_perspirant_strength_level__other
+- id: 5306
+  name: Prescription status
+  description: Indicates whether the ear drops are available over the counter or require a prescription from a healthcare professional
+  friendly_id: prescription_status
+  handle: prescription-status
+  values:
+  - prescription_status__over_the_counter_otc
+  - prescription_status__prescription_only
+  - prescription_status__other
+- id: 5307
+  name: Ear dryer technology
+  description: Identifies the primary drying mechanism used by the product
+  friendly_id: ear_dryer_technology
+  handle: ear-dryer-technology
+  values:
+  - ear_dryer_technology__desiccant_capsule
+  - ear_dryer_technology__fan_and_uv_combination
+  - ear_dryer_technology__heat_and_uv_light
+  - ear_dryer_technology__infrared_therapy
+  - ear_dryer_technology__red_light_therapy
+  - ear_dryer_technology__warm_air_fan
+  - ear_dryer_technology__warm_air_with_temperature_control
+  - ear_dryer_technology__other
+- id: 5308
+  name: Ear pick tip style
+  description: Defines the shape or design of the working tip that removes earwax
+  friendly_id: ear_pick_tip_style
+  handle: ear-pick-tip-style
+  values:
+  - ear_pick_tip_style__brush
+  - ear_pick_tip_style__cotton_bud
+  - ear_pick_tip_style__curette
+  - ear_pick_tip_style__feather
+  - ear_pick_tip_style__loop
+  - ear_pick_tip_style__scoop
+  - ear_pick_tip_style__spiral
+  - ear_pick_tip_style__spoon
+  - ear_pick_tip_style__spring
+  - ear_pick_tip_style__tweezers
+  - ear_pick_tip_style__other
+- id: 5309
+  name: Earplug type
+  description: Classifies the construction style of the earplugs dispensed (e.g., foam, molded, filtered)
+  friendly_id: earplug_type
+  handle: earplug-type
+  values:
+  - earplug_type__custom_molded
+  - earplug_type__detectable
+  - earplug_type__filtered
+  - earplug_type__flanged
+  - earplug_type__foam
+  - earplug_type__moldable_silicone
+  - earplug_type__pre_molded
+  - earplug_type__other
+- id: 5310
+  name: Earplug shape
+  description: Describes the physical profile of the earplug, affecting comfort and fit within different ear canals
+  friendly_id: earplug_shape
+  handle: earplug-shape
+  values:
+  - earplug_shape__bell
+  - earplug_shape__bullet
+  - earplug_shape__cone
+  - earplug_shape__contoured
+  - earplug_shape__cylindrical
+  - earplug_shape__flanged
+  - earplug_shape__round
+  - earplug_shape__tapered
+  - earplug_shape__other
+- id: 5311
+  name: Earplug cord style
+  description: Indicates whether the earplugs are connected with a cord, which helps prevent loss and facilitates removal
+  friendly_id: earplug_cord_style
+  handle: earplug-cord-style
+  values:
+  - earplug_cord_style__corded
+  - earplug_cord_style__detachable_cord
+  - earplug_cord_style__uncorded
+  - earplug_cord_style__other
+- id: 5312
+  name: Hearing protection class
+  description: Specifies the local certification class that indicates attenuation performance according to regional standards
+  friendly_id: hearing_protection_class
+  handle: hearing-protection-class
+  values:
+  - hearing_protection_class__class_1
+  - hearing_protection_class__class_2
+  - hearing_protection_class__class_3
+  - hearing_protection_class__class_4
+  - hearing_protection_class__class_5
+  - hearing_protection_class__other
+- id: 5313
+  name: Enema nozzle type
+  description: Specifies the style or material of the nozzle or tip supplied with the kit (e.g., slim tip, pediatric tip, stainless steel nozzle)
+  friendly_id: enema_nozzle_type
+  handle: enema-nozzle-type
+  values:
+  - enema_nozzle_type__pediatric_tip
+  - enema_nozzle_type__plastic_nozzle
+  - enema_nozzle_type__silicone_colon_tube
+  - enema_nozzle_type__slim_tip
+  - enema_nozzle_type__soft_flexible_tip
+  - enema_nozzle_type__stainless_steel_nozzle
+  - enema_nozzle_type__standard_tip
+  - enema_nozzle_type__vaginal_douche_nozzle
+  - enema_nozzle_type__vented_tip
+  - enema_nozzle_type__wide_tip
+  - enema_nozzle_type__other
+- id: 5314
+  name: Enema device type
+  description: Classifies the primary design or delivery system of the product
+  friendly_id: enema_device_type
+  handle: enema-device-type
+  values:
+  - enema_device_type__bag
+  - enema_device_type__bucket
+  - enema_device_type__bulb_syringe
+  - enema_device_type__colon_tube
+  - enema_device_type__disposable_prefilled_bottle
+  - enema_device_type__electric_pump_device
+  - enema_device_type__gravity_set
+  - enema_device_type__hose_adapter_kit
+  - enema_device_type__shower_attachment
+  - enema_device_type__other
+- id: 5315
+  name: Pad thickness
+  description: Classifies the overall thickness profile of the pad (e.g., ultra-thin, maxi)
+  friendly_id: pad_thickness
+  handle: pad-thickness
+  values:
+  - pad_thickness__maxi
+  - pad_thickness__regular
+  - pad_thickness__super
+  - pad_thickness__thick
+  - pad_thickness__thin
+  - pad_thickness__ultra_thin
+  - pad_thickness__other
+- id: 5316
+  name: Postpartum stage
+  description: Specifies the time frame after birth for which the pad is designed
+  friendly_id: postpartum_stage
+  handle: postpartum-stage
+  values:
+  - postpartum_stage__early_2_6_weeks
+  - postpartum_stage__general_postpartum
+  - postpartum_stage__immediate_0_2_weeks
+  - postpartum_stage__late_6+_weeks
+  - postpartum_stage__night_use
+  - postpartum_stage__other
+- id: 5317
+  name: Pad wing style
+  description: Indicates whether the menstrual pad includes side wings for attachment and leak protection
+  friendly_id: pad_wing_style
+  handle: pad-wing-style
+  values:
+  - pad_wing_style__with_wings
+  - pad_wing_style__without_wings
+  - pad_wing_style__other
+- id: 5318
+  name: Panty liner style
+  description: Defines the shape or style of the panty liner (e.g., thong, curved, long)
+  friendly_id: panty_liner_style
+  handle: panty-liner-style
+  values:
+  - panty_liner_style__curved
+  - panty_liner_style__extra_long
+  - panty_liner_style__g_string
+  - panty_liner_style__large
+  - panty_liner_style__long
+  - panty_liner_style__maxi
+  - panty_liner_style__regular
+  - panty_liner_style__slim
+  - panty_liner_style__tanga
+  - panty_liner_style__thong
+  - panty_liner_style__other
+- id: 5319
+  name: Wing style
+  description: Indicates whether the pad includes stabilizing wings and, if so, what style
+  friendly_id: wing_style
+  handle: wing-style
+  values:
+  - wing_style__flexible_wings
+  - wing_style__winged
+  - wing_style__wingless
+  - wing_style__other
+- id: 5320
+  name: Cervix height suitability
+  description: Indicates which cervix height (e.g., low, average, high) the cup is optimized for to ensure proper fit
+  friendly_id: cervix_height_suitability
+  handle: cervix-height-suitability
+  values:
+  - cervix_height_suitability__all_heights
+  - cervix_height_suitability__average_cervix
+  - cervix_height_suitability__high_cervix
+  - cervix_height_suitability__low_cervix
+  - cervix_height_suitability__other
+- id: 5321
+  name: Menstrual cup stem type
+  description: Specifies the design of the cup's removal stem or handle
+  friendly_id: menstrual_cup_stem_type
+  handle: menstrual-cup-stem-type
+  values:
+  - menstrual_cup_stem_type__ball
+  - menstrual_cup_stem_type__flat_tab
+  - menstrual_cup_stem_type__hollow_tube
+  - menstrual_cup_stem_type__loop
+  - menstrual_cup_stem_type__pull_tab
+  - menstrual_cup_stem_type__ring
+  - menstrual_cup_stem_type__solid_tube
+  - menstrual_cup_stem_type__stem
+  - menstrual_cup_stem_type__stemless
+  - menstrual_cup_stem_type__toggle
+  - menstrual_cup_stem_type__trimmable_stem
+  - menstrual_cup_stem_type__other
+- id: 5322
+  name: Menstrual cup size
+  description: Indicates the manufacturer-labeled size category (e.g., small, Size 1)
+  friendly_id: menstrual_cup_size
+  handle: menstrual-cup-size
+  values:
+  - menstrual_cup_size__extra_large
+  - menstrual_cup_size__extra_small
+  - menstrual_cup_size__large
+  - menstrual_cup_size__medium
+  - menstrual_cup_size__mini
+  - menstrual_cup_size__one_size
+  - menstrual_cup_size__regular
+  - menstrual_cup_size__size_1
+  - menstrual_cup_size__size_2
+  - menstrual_cup_size__small
+  - menstrual_cup_size__teen
+  - menstrual_cup_size__other
+- id: 5323
+  name: Odor remover application area
+  description: Specifies where the product is intended to be applied for odor removal
+  friendly_id: odor_remover_application_area
+  handle: odor-remover-application-area
+  values:
+  - odor_remover_application_area__feet
+  - odor_remover_application_area__feet_and_footwear
+  - odor_remover_application_area__footwear
+  - odor_remover_application_area__socks
+  - odor_remover_application_area__other
+- id: 5324
+  name: Support rigidity level
+  description: Describes the overall firmness or structural support provided by the insole, from soft cushioning to rigid orthotic support
+  friendly_id: support_rigidity_level
+  handle: support-rigidity-level
+  values:
+  - support_rigidity_level__adjustable
+  - support_rigidity_level__cushioning_only
+  - support_rigidity_level__high
+  - support_rigidity_level__low
+  - support_rigidity_level__medium
+  - support_rigidity_level__rigid_support
+  - support_rigidity_level__semi_rigid_support
+  - support_rigidity_level__other
+- id: 5325
+  name: Insole length type
+  description: Defines the coverage or length style of the insert
+  friendly_id: insole_length_type
+  handle: insole-length-type
+  values:
+  - insole_length_type__3/4_length
+  - insole_length_type__forefoot_insert
+  - insole_length_type__full_length
+  - insole_length_type__half_length
+  - insole_length_type__heel_insert
+  - insole_length_type__metatarsal_pad
+  - insole_length_type__other
+- id: 5326
+  name: Foot arch type
+  description: Specifies the foot arch type the product is designed to support
+  friendly_id: foot_arch_type
+  handle: foot-arch-type
+  values:
+  - foot_arch_type__flat_arch
+  - foot_arch_type__high_arch
+  - foot_arch_type__low_arch
+  - foot_arch_type__medium_arch
+  - foot_arch_type__neutral_arch
+  - foot_arch_type__universal
+  - foot_arch_type__very_high_arch
+  - foot_arch_type__other
+- id: 5327
+  name: Orthotic coverage length
+  description: Defines how much of the footbed the arch support covers (e.g., full-length, 3/4 length, heel cup)
+  friendly_id: orthotic_coverage_length
+  handle: orthotic-coverage-length
+  values:
+  - orthotic_coverage_length__2/3_length
+  - orthotic_coverage_length__3/4_length
+  - orthotic_coverage_length__arch_band
+  - orthotic_coverage_length__arch_sleeve
+  - orthotic_coverage_length__full_length
+  - orthotic_coverage_length__half_length
+  - orthotic_coverage_length__heel_cup
+  - orthotic_coverage_length__metatarsal_pad_only
+  - orthotic_coverage_length__other
+- id: 5328
+  name: Cushion design
+  description: Describes the overall form factor or style of the metatarsal cushion (e.g., pad, sleeve, dome)
+  friendly_id: cushion_design
+  handle: cushion-design
+  values:
+  - cushion_design__bar
+  - cushion_design__dome
+  - cushion_design__insole
+  - cushion_design__lift
+  - cushion_design__pad
+  - cushion_design__ring
+  - cushion_design__sheet
+  - cushion_design__sleeve
+  - cushion_design__strip
+  - cushion_design__wedge
+  - cushion_design__other
 - id: 5329
   name: Backboard material
   description: Specifies the construction material of the game's backboard, affecting rebound performance, durability, and cost
