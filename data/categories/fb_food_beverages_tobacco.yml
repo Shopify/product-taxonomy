@@ -306,8 +306,8 @@
   - fb-1-3-4
   attributes:
   - allergen_information
-  - coffee_product_form
   - caffeine_content
+  - coffee_product_form
   - coffee_roast
   - country
   - dietary_preferences
@@ -418,6 +418,39 @@
   - dietary_supplements
 - id: fb-1-7
   name: Juices, Milkshakes & Smoothies
+  children:
+  - fb-1-7-1
+  - fb-1-7-2
+  - fb-1-7-3
+  attributes:
+  - allergen_information
+  - dietary_preferences
+  - dietary_supplements
+  - flavor
+  - fruit_source
+  - package_type
+- id: fb-1-7-1
+  name: Juices
+  children: []
+  attributes:
+  - allergen_information
+  - dietary_preferences
+  - dietary_supplements
+  - flavor
+  - fruit_source
+  - package_type
+- id: fb-1-7-2
+  name: Milkshakes
+  children: []
+  attributes:
+  - allergen_information
+  - dietary_preferences
+  - dietary_supplements
+  - flavor
+  - fruit_source
+  - package_type
+- id: fb-1-7-3
+  name: Smoothies
   children: []
   attributes:
   - allergen_information
@@ -1868,7 +1901,7 @@
   - allergen_information
   - dietary_preferences
 - id: fb-2-10-6
-  name: Dry Beans
+  name: Dry Legumes
   children: []
   attributes:
   - allergen_information
@@ -3029,6 +3062,22 @@
   - dietary_preferences
 - id: fb-2-11-7
   name: Oats, Grits & Hot Cereal
+  children:
+  - fb-2-11-7-1
+  - fb-2-11-7-2
+  attributes:
+  - allergen_information
+  - dietary_preferences
+  - flavor
+- id: fb-2-11-7-1
+  name: Muesli
+  children: []
+  attributes:
+  - allergen_information
+  - dietary_preferences
+  - flavor
+- id: fb-2-11-7-2
+  name: Porridge
   children: []
   attributes:
   - allergen_information
