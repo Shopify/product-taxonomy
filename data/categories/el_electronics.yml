@@ -119,8 +119,13 @@
   name: Rubber Ring Kits
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - compatible_pinball_machine_edition
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - material
   - pattern
 - id: el-1-2-6
@@ -679,6 +684,8 @@
   attributes:
   - adapter_operating_modes
   - audio_codecs/formats_supported
+  - battery_size
+  - battery_type
   - color
   - compatible_device
   - connectivity_technology
@@ -718,6 +725,8 @@
   - el-2-1-2-7
   - el-2-1-2-8
   attributes:
+  - battery_size
+  - battery_type
   - color
   - compatible_device
   - connectivity_technology
@@ -732,6 +741,8 @@
   - el-2-1-2-3-2
   attributes:
   - bag/case_material
+  - battery_size
+  - battery_type
   - carry_options
   - case_type
   - closure_type
@@ -920,6 +931,8 @@
   - el-2-1-4-5
   attributes:
   - attachment_method
+  - battery_size
+  - battery_type
   - color
   - compatible_device
   - connectivity_technology
@@ -1332,15 +1345,19 @@
   children: []
   attributes:
   - base_type
+  - battery_size
+  - battery_type
   - color
   - compatible_device
   - connectivity_technology
   - height_adjustment
+  - lumber/wood_type
   - material
   - mount/stand_features
   - mount_material
   - mounting_type
   - pattern
+  - wood_finish
 - id: el-2-1-8-5
   name: Tactile Transducers
   children: []
@@ -1385,6 +1402,8 @@
   - el-2-1-9-11
   - el-2-1-9-12
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - material
@@ -1599,6 +1618,8 @@
   - audio_component_form_factor
   - audio_connectivity
   - audio_technology
+  - battery_size
+  - battery_type
   - color
   - compatible_voice_assistant
   - connectivity_technology
@@ -1624,13 +1645,17 @@
   - audio_component_form_factor
   - audio_d/a_converter_dac
   - audio_output_channel
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - device_interface
+  - lumber/wood_type
   - material
   - maximum_bit_depth
   - pattern
   - power_source
+  - wood_finish
 - id: el-2-2-2-1
   name: Headphone Amplifiers
   children: []
@@ -1687,6 +1712,8 @@
   attributes:
   - audio_component_form_factor
   - audio_mixer_type
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - device_interface
@@ -1706,6 +1733,8 @@
   - audio_codecs/formats_supported
   - audio_component_form_factor
   - audio_output_format
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - device_interface
@@ -1722,6 +1751,8 @@
   - audio_component_form_factor
   - audio_connectivity
   - audio_output_format
+  - battery_size
+  - battery_type
   - bluetooth_functionality
   - color
   - connection_type
@@ -1813,6 +1844,8 @@
   attributes:
   - audio_component_form_factor
   - audio_connectivity
+  - battery_size
+  - battery_type
   - charging_interface_type
   - color
   - connectivity_technology
@@ -1838,6 +1871,8 @@
   attributes:
   - audio_component_form_factor
   - audio_connectivity
+  - battery_size
+  - battery_type
   - charging_interface_type
   - color
   - connectivity_technology
@@ -1857,6 +1892,8 @@
   children: []
   attributes:
   - audio_component_form_factor
+  - battery_size
+  - battery_type
   - charging_interface_type
   - color
   - connectivity_technology
@@ -1896,6 +1933,8 @@
   attributes:
   - audio_component_form_factor
   - audio_connectivity
+  - battery_size
+  - battery_type
   - charging_interface_type
   - color
   - connectivity_technology
@@ -1917,6 +1956,8 @@
   attributes:
   - audio_component_form_factor
   - audio_connectivity
+  - battery_size
+  - battery_type
   - charging_interface_type
   - color
   - connectivity_technology
@@ -1937,6 +1978,8 @@
   attributes:
   - audio_component_form_factor
   - audio_connectivity
+  - battery_size
+  - battery_type
   - charging_interface_type
   - color
   - connectivity_technology
@@ -1961,6 +2004,8 @@
   attributes:
   - audio_component_form_factor
   - audio_connectivity
+  - battery_size
+  - battery_type
   - charging_interface_type
   - color
   - connectivity_technology
@@ -2065,6 +2110,8 @@
   children: []
   attributes:
   - audio_component_form_factor
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - device_interface
@@ -2088,6 +2135,8 @@
   attributes:
   - audio_component_form_factor
   - audio_output_channel
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - device_interface
@@ -2153,6 +2202,8 @@
   - audio_bypass_type
   - audio_component_form_factor
   - audio_output_channel
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - device_interface
@@ -2171,6 +2222,8 @@
   attributes:
   - audio_component_form_factor
   - audio_output_channel
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - device_interface
@@ -2268,6 +2321,8 @@
   - audio_component_form_factor
   - audio_output_channel
   - audio_purpose
+  - battery_size
+  - battery_type
   - color
   - compatible_voice_assistant
   - connectivity_technology
@@ -2481,6 +2536,8 @@
   - audio_codecs/formats_supported
   - audio_output_channel
   - audio_player/recorder_features
+  - battery_size
+  - battery_type
   - boombox_lighting_effects
   - color
   - connectivity_technology
@@ -2503,7 +2560,9 @@
   - audio_codecs/formats_supported
   - audio_output_channel
   - audio_player/recorder_features
+  - battery_size
   - battery_technology
+  - battery_type
   - color
   - compatible_memory_cards
   - connectivity_technology
@@ -2633,6 +2692,8 @@
   - audio_codecs/formats_supported
   - audio_output_channel
   - audio_player/recorder_features
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - karaoke_modes
@@ -2673,6 +2734,7 @@
   - audio_codecs/formats_supported
   - audio_output_channel
   - battery_size
+  - battery_type
   - clock_and_alarm_features
   - color
   - connectivity_technology
@@ -2695,6 +2757,7 @@
   - audio_codecs/formats_supported
   - audio_output_channel
   - battery_size
+  - battery_type
   - charging_interface_type
   - clock_and_alarm_features
   - color
@@ -2874,6 +2937,8 @@
   - audio_codecs/formats_supported
   - audio_output_channel
   - audio_player/recorder_features
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - frequency/radio_bands_supported
@@ -2911,6 +2976,8 @@
   - audio_codecs/formats_supported
   - audio_output_channel
   - audio_player/recorder_features
+  - battery_size
+  - battery_type
   - cartridge_type
   - color
   - connectivity_technology
@@ -2971,6 +3038,8 @@
   - audio_codecs/formats_supported
   - audio_output_channel
   - audio_player/recorder_features
+  - battery_size
+  - battery_type
   - color
   - compatible_memory_cards
   - connectivity_technology
@@ -3078,6 +3147,8 @@
   attributes:
   - audio_connectivity
   - audio_output_channel
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - device_interface
@@ -3259,6 +3330,8 @@
   attributes:
   - antenna_type
   - audio_output_channel
+  - battery_size
+  - battery_type
   - color
   - connection_type
   - connectivity_technology
@@ -3841,6 +3914,8 @@
   - el-3-5-3-2
   - el-3-5-3-3
   attributes:
+  - battery_size
+  - battery_type
   - color
   - component_mounting_style
   - component_package_type
@@ -4824,12 +4899,17 @@
   children: []
   attributes:
   - audio_connectivity
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
+  - construction
   - ear_orientation
   - earphone_features
+  - embellishment/trim_material
   - headphone_style
   - headset_connection_type
+  - jewelry_material
   - microphone_type
   - pattern
   - power_source
@@ -4948,6 +5028,8 @@
   attributes:
   - antenna_connector_type
   - antenna_type
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - frequency/radio_bands_supported
@@ -4981,6 +5063,8 @@
   - el-4-4-4-3
   attributes:
   - antenna_type
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - frequency/radio_bands_supported
@@ -5303,7 +5387,9 @@
   children: []
   attributes:
   - accessibility_design_features
+  - battery_size
   - battery_technology
+  - battery_type
   - color
   - communication_device_features
   - connection_type
@@ -5334,9 +5420,14 @@
   - el-4-8-4-13
   attributes:
   - attachment_method
+  - battery_size
+  - battery_type
   - color
   - connection_type
   - connectivity_technology
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - material
   - pattern
   - power_source
@@ -5375,6 +5466,8 @@
   attributes:
   - anamorphic_squeeze_ratio
   - attachment_method
+  - battery_size
+  - battery_type
   - camera_lens_type
   - camera_mounting_type
   - color
@@ -5398,6 +5491,7 @@
   children: []
   attributes:
   - attachment_method
+  - battery_size
   - battery_type
   - camera_mounting_type
   - charging_interface_type
@@ -5599,6 +5693,8 @@
   - attachment_method
   - attachment_options
   - bag/case_material
+  - battery_size
+  - battery_type
   - case_transparency_level
   - case_type
   - closure_type
@@ -5654,13 +5750,18 @@
   attributes:
   - attachment_method
   - attachment_type
+  - battery_size
+  - battery_type
   - carrying_type
   - clasp_type
   - color
   - connection_type
   - connectivity_technology
+  - construction
+  - embellishment/trim_material
   - finish
   - hardware_finish
+  - jewelry_material
   - magsafe_compatibility
   - material
   - pattern
@@ -5760,6 +5861,8 @@
   children: []
   attributes:
   - attachment_method
+  - battery_size
+  - battery_type
   - color
   - connection_type
   - connectivity_technology
@@ -5815,6 +5918,8 @@
   - el-4-8-4-5-10
   attributes:
   - attachment_method
+  - battery_size
+  - battery_type
   - color
   - connection_type
   - connectivity_technology
@@ -6020,10 +6125,13 @@
   attributes:
   - angles_supported
   - attachment_method
+  - battery_size
+  - battery_type
   - color
   - connection_type
   - connectivity_technology
   - finish
+  - lumber/wood_type
   - magsafe_compatibility
   - material
   - mount/stand_features
@@ -6032,6 +6140,7 @@
   - power_source
   - theme
   - wireless_charging_standard
+  - wood_finish
 - id: el-4-8-4-7
   name: SIM Card Ejection Tools
   children: []
@@ -6194,7 +6303,9 @@
   - el-4-8-5-1
   - el-4-8-5-2
   attributes:
+  - battery_size
   - battery_technology
+  - battery_type
   - biometric_authentication_method
   - charging_interface_type
   - color
@@ -7110,6 +7221,8 @@
   name: E-Book Readers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - charging_interface_type
   - color
   - compatible_memory_cards
@@ -7495,6 +7608,8 @@
   name: USB Adapters
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connector_gender
   - connector_orientation
@@ -9328,6 +9443,8 @@
   - el-7-8-4-2
   - el-7-8-4-3
   attributes:
+  - battery_size
+  - battery_type
   - case_type
   - closure_type
   - color
@@ -9572,6 +9689,8 @@
   name: Keyboard & Mouse Wrist Rests
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - compatible_device
   - connector_gender
@@ -9615,6 +9734,8 @@
   name: Mouse Pads
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - compatible_device
   - connector_gender
@@ -9646,6 +9767,8 @@
   children: []
   attributes:
   - attachment_options
+  - battery_size
+  - battery_type
   - charging_interface_type
   - color
   - compatible_device
@@ -9660,12 +9783,15 @@
   children: []
   attributes:
   - angles_supported
+  - battery_size
+  - battery_type
   - color
   - compatible_device
   - connector_gender
   - device_interface
   - height_adjustment
   - locking_mechanism
+  - lumber/wood_type
   - material
   - mount/stand_features
   - mounting_type
@@ -9673,6 +9799,7 @@
   - pattern
   - power_source
   - vesa_mounting_pattern
+  - wood_finish
 - id: el-7-8-12
   name: Computer Security Locks
   children: []
@@ -10642,6 +10769,8 @@
   - el-7-9-11-4-9
   - el-7-9-11-4-10
   attributes:
+  - battery_size
+  - battery_type
   - color
   - compatible_device
   - connector_gender
@@ -11505,6 +11634,8 @@
   - el-7-9-13-10
   attributes:
   - authenticity
+  - battery_size
+  - battery_type
   - color
   - connector_gender
   - item_condition
@@ -11528,6 +11659,8 @@
   children: []
   attributes:
   - authenticity
+  - battery_size
+  - battery_type
   - color
   - connector_gender
   - finish
@@ -11661,14 +11794,18 @@
   - el-7-9-14-8
   - el-7-9-14-9
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connector_gender
   - device_interface
+  - lumber/wood_type
   - material
   - pattern
   - power_source
   - storage_drive_interface_type
   - storage_media_type
+  - wood_finish
 - id: el-7-9-14-1
   name: Disk Duplicators
   children:
@@ -11824,6 +11961,8 @@
   - el-7-9-14-2-3-2
   - el-7-9-14-2-3-3
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connector_gender
   - cooling_technology
@@ -11973,6 +12112,8 @@
   name: Hard Drives
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connector_gender
   - device_interface
@@ -12081,6 +12222,8 @@
   name: USB Flash Drives
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connector_gender
   - material
@@ -12112,6 +12255,8 @@
   - el-7-9-15-6
   - el-7-9-15-7
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connector_gender
   - material
@@ -12186,6 +12331,8 @@
   - el-7-9-15-3-2
   - el-7-9-15-3-3
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connector_gender
   - display_interface
@@ -12599,6 +12746,8 @@
   name: Flash Memory Cards
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - component_package_type
   - connector_gender
@@ -12617,6 +12766,8 @@
   name: RAM
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connector_gender
   - error_correction_type
@@ -13048,6 +13199,8 @@
   - el-7-15-2-8
   attributes:
   - battery_connector_type
+  - battery_size
+  - battery_type
   - color
   - compatible_battery_size
   - compatible_battery_technology
@@ -13063,6 +13216,8 @@
   attributes:
   - battery_charge_controller_type
   - battery_connector_type
+  - battery_size
+  - battery_type
   - color
   - compatible_battery_size
   - compatible_battery_technology
@@ -13110,6 +13265,8 @@
   children: []
   attributes:
   - battery_connector_type
+  - battery_size
+  - battery_type
   - charger_type
   - charging_interface_type
   - color
@@ -13203,6 +13360,8 @@
   - el-7-15-4-3
   - el-7-15-4-4
   attributes:
+  - battery_size
+  - battery_type
   - color
   - compatible_device
   - connector_gender
@@ -13214,6 +13373,8 @@
   name: Charger Protective Cases
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - compatible_device
   - connector_gender
@@ -13312,6 +13473,8 @@
   - el-7-15-5-5
   - el-7-15-5-6
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connector_gender
   - material
@@ -13324,6 +13487,8 @@
   name: Power Banks
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - charging_method
   - color
   - compatible_device
@@ -13338,6 +13503,8 @@
   name: Wireless Chargers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - charger_style
   - charging_interface_type
   - color
@@ -13406,6 +13573,8 @@
   - el-7-15-6-1
   - el-7-15-6-2
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connector_gender
   - ingress_protection_ip_rating
@@ -13448,6 +13617,7 @@
   name: Power Stations
   children: []
   attributes:
+  - battery_size
   - battery_technology
   - battery_type
   - color
@@ -13464,6 +13634,8 @@
   name: Power Strips & Surge Suppressors
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connector_gender
   - material
@@ -13544,7 +13716,9 @@
   name: UPS
   children: []
   attributes:
+  - battery_size
   - battery_technology
+  - battery_type
   - chassis_type
   - color
   - connectivity_technology
@@ -14631,6 +14805,8 @@
   children: []
   attributes:
   - antenna_type
+  - battery_size
+  - battery_type
   - bridge/router_advanced_features
   - color
   - data_network
@@ -15432,6 +15608,8 @@
   - el-13-3-1-7
   - el-13-3-1-8
   attributes:
+  - battery_size
+  - battery_type
   - cartridge_authenticity
   - color
   - ink_type
@@ -15440,6 +15618,7 @@
   - print_technology
   - printer_functions
   - printing_color
+  - solvent_content
   - suitable_for_printer_type
 - id: el-13-3-1-1
   name: Printer Drums & Drum Kits
@@ -15658,6 +15837,8 @@
   name: Toner & Inkjet Cartridges
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - cartridge_authenticity
   - cartridge_yield_type
   - color
@@ -15668,6 +15849,7 @@
   - print_technology
   - printer_functions
   - printing_color
+  - solvent_content
   - suitable_for_printer_type
 - id: el-13-3-1-8
   name: Printer Media & Film
@@ -15741,6 +15923,8 @@
   name: Printer, Copier & Fax Cleaning Kits
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - chemical_product_form
   - cleaning_kit_components_included
   - color
@@ -15748,6 +15932,7 @@
   - material
   - pattern
   - printer_functions
+  - solvent_content
   - suitable_for_printer_type
 - id: el-13-3-7
   name: Printer, Copier & Fax Machine Replacement Parts
@@ -15758,6 +15943,8 @@
   - el-13-3-7-4
   - el-13-3-7-5
   attributes:
+  - battery_size
+  - battery_type
   - color
   - compatible_printer
   - item_condition
@@ -15765,6 +15952,7 @@
   - material
   - pattern
   - printer_functions
+  - solvent_content
   - suitable_for_printer_type
 - id: el-13-3-7-1
   name: Fuser Units
@@ -16119,6 +16307,8 @@
   name: Portable Scanners
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - color_depth
   - compatible_paper_size
@@ -16363,6 +16553,8 @@
   name: Multimedia Projectors
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - device_interface
   - display_resolution
@@ -16441,6 +16633,8 @@
   name: Cable TV Receivers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - broadcasting_standard_supported
   - color
   - connectivity_technology
@@ -16459,6 +16653,8 @@
   name: Satellite Receivers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - broadcasting_standard_supported
   - color
   - connectivity_technology
@@ -16550,13 +16746,17 @@
   - 3d_glasses_fit_design
   - 3d_glasses_material
   - 3d_glasses_technology
+  - battery_size
   - battery_type
   - color
   - compatible_device
   - connectivity_technology
+  - construction
   - device_interface
+  - embellishment/trim_material
   - eyewear_frame_material
   - eyewear_lens_material
+  - jewelry_material
   - lens_color_combination
   - material
   - mounting_type
@@ -16573,6 +16773,8 @@
   - el-17-5-2-6
   - el-17-5-2-7
   attributes:
+  - battery_size
+  - battery_type
   - color
   - compatible_device
   - device_interface
@@ -16686,6 +16888,8 @@
   name: Projection Screens
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - compatible_device
   - display_resolution
@@ -16959,6 +17163,8 @@
   children: []
   attributes:
   - audio_codecs/formats_supported
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - device_interface
@@ -16979,6 +17185,8 @@
   - audio_codecs/formats_supported
   - audio_output_channel
   - audio_technology
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - energy_efficiency_class
@@ -17030,6 +17238,8 @@
   children: []
   attributes:
   - audio_codecs/formats_supported
+  - battery_size
+  - battery_type
   - color
   - compatible_voice_assistant
   - connectivity_technology

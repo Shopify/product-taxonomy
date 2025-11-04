@@ -128,6 +128,8 @@
   name: Electric Vehicle Batteries
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - ev_battery_features
   - ev_battery_type
   - item_condition
@@ -285,6 +287,8 @@
   name: Motor Vehicle A/V Players & In-Dash Systems
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - compatible_operating_system
   - item_condition
@@ -545,6 +549,8 @@
   name: Motor Vehicle Subwoofers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - item_condition
   - manufacturer_type
@@ -689,6 +695,8 @@
   - vp-1-4-1-13
   - vp-1-4-1-14
   attributes:
+  - battery_size
+  - battery_type
   - color
   - item_condition
   - manufacturer_type
@@ -749,6 +757,8 @@
   name: Brake Pads
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - item_condition
   - manufacturer_type
@@ -1445,6 +1455,8 @@
   name: Motor Vehicle Exhaust
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - item_condition
   - item_material
@@ -1701,6 +1713,8 @@
   - vp-1-4-11-6
   - vp-1-4-11-7
   attributes:
+  - battery_size
+  - battery_type
   - color
   - fit_type
   - item_condition
@@ -1713,6 +1727,8 @@
   name: Car Mirrors
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - fit_type
   - item_condition
@@ -1768,6 +1784,8 @@
   name: Steering Wheel Covers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - cover_material
   - fit_type
@@ -1798,6 +1816,8 @@
   - vp-1-4-12-7
   - vp-1-4-12-8
   attributes:
+  - battery_size
+  - battery_type
   - color
   - fit_type
   - item_condition
@@ -1831,6 +1851,8 @@
   name: Light Bars
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - fit_type
   - item_condition
@@ -1842,6 +1864,8 @@
   name: Light Bulbs
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - fit_type
   - item_condition
@@ -1917,6 +1941,8 @@
   - vp-1-4-14-9
   - vp-1-4-14-10
   attributes:
+  - battery_size
+  - battery_type
   - color
   - item_condition
   - manufacturer_type
@@ -1933,6 +1959,8 @@
   name: Batteries
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - item_condition
   - manufacturer_type
@@ -1957,6 +1985,8 @@
   name: Spark Plugs
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - item_condition
   - manufacturer_type
@@ -1973,6 +2003,8 @@
   name: Voltage Regulators
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - item_condition
   - manufacturer_type
@@ -2052,6 +2084,8 @@
   - vp-1-4-16-14
   - vp-1-4-16-15
   attributes:
+  - battery_size
+  - battery_type
   - color
   - gauge_type
   - item_condition
@@ -2088,6 +2122,8 @@
   name: Pressure Sensors
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - gauge_type
   - item_condition
@@ -2671,6 +2707,8 @@
   name: Motor Vehicle Tire Accessories
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - item_condition
   - item_material
@@ -2967,6 +3005,8 @@
   name: Portable Fuel Cans
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - material
   - pattern
@@ -2983,12 +3023,15 @@
   attributes:
   - color
   - pattern
+  - solvent_content
   - vehicle_application_area
   - vehicle_type
 - id: vp-1-5-2-1
   name: Car Wash Brushes
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - bristle_material
   - brush_type
   - color
@@ -3091,6 +3134,7 @@
   - color
   - package_type
   - pattern
+  - solvent_content
   - vehicle_application_area
   - vehicle_cleaning_item_features
   - vehicle_type
@@ -3115,6 +3159,7 @@
   - color
   - package_type
   - pattern
+  - solvent_content
   - vehicle_application_area
   - vehicle_cleaning_item_features
   - vehicle_type
@@ -3135,6 +3180,7 @@
   - color
   - package_type
   - pattern
+  - solvent_content
   - vehicle_application_area
   - vehicle_cleaning_item_features
   - vehicle_type
@@ -3145,6 +3191,7 @@
   - color
   - package_type
   - pattern
+  - solvent_content
   - vehicle_application_area
   - vehicle_cleaning_item_features
   - vehicle_type
@@ -3272,6 +3319,7 @@
   - cover_material
   - cover_type
   - pattern
+  - solvent_content
   - vehicle_application_area
   - vehicle_type
 - id: vp-1-5-3-6-4
@@ -3321,7 +3369,10 @@
   attributes:
   - accessory_size
   - color
+  - construction
   - decoration_material
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
@@ -3348,6 +3399,7 @@
   - decoration_material
   - pattern
   - scent
+  - solvent_content
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -3381,6 +3433,7 @@
   - color
   - decoration_material
   - pattern
+  - solvent_content
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -3390,8 +3443,12 @@
   attributes:
   - accessory_size
   - color
+  - construction
   - decoration_material
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
+  - solvent_content
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -3489,11 +3546,16 @@
   attributes:
   - accessory_size
   - color
+  - construction
   - decoration_material
+  - embellishment/trim_material
+  - jewelry_material
+  - lumber/wood_type
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
+  - wood_finish
 - id: vp-1-5-4-16
   name: Vehicle Shift Boots
   children: []
@@ -3533,7 +3595,10 @@
   attributes:
   - accessory_size
   - color
+  - construction
   - decoration_material
+  - embellishment/trim_material
+  - material
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
@@ -3757,6 +3822,7 @@
   - color
   - paint_finish
   - pattern
+  - solvent_content
   - vehicle_decor_features
   - vehicle_paint_type
   - vehicle_type
@@ -3767,6 +3833,7 @@
   - color
   - paint_finish
   - pattern
+  - solvent_content
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_paint_type
@@ -3797,9 +3864,12 @@
   - vp-1-5-7-10
   - vp-1-5-7-11
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - power_source
+  - solvent_content
   - vehicle_type
 - id: vp-1-5-7-1
   name: Motor Vehicle Brake Service Kits
@@ -3848,6 +3918,8 @@
   name: Vehicle Diagnostic Scanners
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - power_source
@@ -3856,6 +3928,8 @@
   name: Vehicle Jump Starters
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - power_source
@@ -4072,6 +4146,8 @@
   children: []
   attributes:
   - accessory_size
+  - battery_size
+  - battery_type
   - color
   - gear_material
   - pattern
@@ -4088,6 +4164,8 @@
   - vp-1-6-1-7-5
   attributes:
   - accessory_size
+  - battery_size
+  - battery_type
   - color
   - gear_material
   - pattern
@@ -4099,6 +4177,8 @@
   children: []
   attributes:
   - accessory_size
+  - battery_size
+  - battery_type
   - color
   - gear_material
   - pattern
@@ -4121,6 +4201,8 @@
   children: []
   attributes:
   - accessory_size
+  - battery_size
+  - battery_type
   - color
   - gear_material
   - pattern
@@ -4206,6 +4288,8 @@
   name: Automotive Alarm Systems
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - item_condition
   - manufacturer_type
   - power_source
@@ -4215,6 +4299,8 @@
   name: Motorcycle Alarms & Locks
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - item_condition
   - manufacturer_type
   - power_source
@@ -4278,6 +4364,8 @@
   name: Vehicle Immobilizers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - immobilizer_type
   - item_condition
   - manufacturer_type
@@ -4289,6 +4377,8 @@
   name: Vehicle Remote Keyless Systems
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - item_condition
   - manufacturer_type
   - power_source
@@ -4328,6 +4418,8 @@
   - vp-1-6-4-9
   - vp-1-6-4-10
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - product_certifications_standards
@@ -4812,6 +4904,8 @@
   name: Vehicle Bicycle Racks
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - features
   - item_condition
   - material
@@ -4959,8 +5053,10 @@
   - box_type
   - features
   - item_condition
+  - lumber/wood_type
   - material
   - vehicle_type
+  - wood_finish
 - id: vp-1-7-8
   name: Vehicle Headrest Hangers & Hooks
   children: []
@@ -5008,6 +5104,8 @@
   - vp-1-8-1-7
   - vp-1-8-1-8
   attributes:
+  - battery_size
+  - battery_type
   - control_technology
   - durability_features
   - item_condition
@@ -5037,6 +5135,8 @@
   name: Anchor Windlasses
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - control_technology
   - durability_features
   - item_condition
@@ -5078,6 +5178,8 @@
   name: Dock Cleats
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - cleat_type
   - control_technology
   - durability_features
@@ -5100,7 +5202,9 @@
   attributes:
   - item_condition
   - item_material
+  - lumber/wood_type
   - watercraft_type
+  - wood_finish
 - id: vp-1-8-3
   name: Watercraft Care
   children:
@@ -5116,6 +5220,7 @@
   attributes:
   - cleaner_purpose
   - item_material
+  - solvent_content
   - vehicle_cleaning_item_features
   - watercraft_type
 - id: vp-1-8-3-2
@@ -5124,6 +5229,7 @@
   attributes:
   - item_material
   - polish_type
+  - solvent_content
   - vehicle_cleaning_item_features
   - watercraft_type
 - id: vp-1-8-4
@@ -5139,6 +5245,8 @@
   - vp-1-8-4-8
   - vp-1-8-4-9
   attributes:
+  - battery_size
+  - battery_type
   - item_condition
   - item_material
   - vehicle_engine_part_features
@@ -5172,6 +5280,8 @@
   name: Watercraft Ignition Parts
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - item_condition
   - item_material
   - vehicle_engine_part_features
@@ -5226,6 +5336,8 @@
   - vp-1-8-5-2
   - vp-1-8-5-3
   attributes:
+  - battery_size
+  - battery_type
   - engine_type
   - fuel_supply
   - item_condition
@@ -5246,6 +5358,8 @@
   name: Outboard Motors
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - engine_type
   - fuel_supply
   - item_condition
@@ -5256,6 +5370,8 @@
   name: Trolling Motors
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - engine_type
   - fuel_supply
   - item_condition
@@ -5329,6 +5445,8 @@
   name: Watercraft Lighting
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - item_condition
   - item_material
   - light_type
@@ -5341,6 +5459,8 @@
   - vp-1-8-9-1
   - vp-1-8-9-2
   attributes:
+  - battery_size
+  - battery_type
   - item_condition
   - item_material
   - watercraft_type
@@ -5423,6 +5543,8 @@
   name: Drones
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - drone_features
   - item_condition
@@ -5909,6 +6031,8 @@
   - vp-2-2-3-1
   - vp-2-2-3-2
   attributes:
+  - battery_size
+  - battery_type
   - body_color
   - body_pattern
   - color
@@ -5924,6 +6048,8 @@
   name: Electric Motorcycles & Scooters
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - body_color
   - body_pattern
   - fuel_supply
@@ -5981,6 +6107,8 @@
   name: Go Karts & Dune Buggies
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - body_color
   - body_pattern
   - drive_type

@@ -417,6 +417,8 @@
   children: []
   attributes:
   - attachment_method
+  - battery_size
+  - battery_type
   - biometric_monitor_accessory_features
   - color
   - compatible_device
@@ -510,6 +512,8 @@
   children: []
   attributes:
   - activity_tracker_design
+  - battery_size
+  - battery_type
   - color
   - compatible_operating_system
   - connectivity_technology
@@ -571,6 +575,8 @@
   name: Blood Pressure Monitors
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - body_area
   - color
   - connectivity_technology
@@ -586,6 +592,8 @@
   - hb-1-4-4-1
   - hb-1-4-4-2
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - display_technology
@@ -628,6 +636,8 @@
   name: Body Weight Scales
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - device_technology
@@ -761,6 +771,8 @@
   - hb-1-4-9-4
   attributes:
   - age_group
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - display_technology
@@ -1018,6 +1030,7 @@
   - dispenser_type
   - product_certifications_standards
   - product_sterility
+  - solvent_content
   - suitable_for_skin_type
   - treatment_objective
   - usage_type
@@ -1171,6 +1184,8 @@
   - hb-1-8-5-6
   attributes:
   - allergy_friendly_features
+  - battery_size
+  - battery_type
   - body_area
   - color
   - pattern
@@ -1199,6 +1214,8 @@
   children: []
   attributes:
   - allergy_friendly_features
+  - battery_size
+  - battery_type
   - color
   - fragrance
   - heat_source
@@ -1276,6 +1293,7 @@
   - pattern
   - product_certifications_standards
   - product_sterility
+  - solvent_content
   - usage_type
 - id: hb-1-8-6-1
   name: Adhesive Bandages & Plasters
@@ -1610,6 +1628,7 @@
   - ingredient_category
   - product_certifications_standards
   - route_of_administration
+  - solvent_content
   - supplement_health_focus
 - id: hb-1-9-6-1
   name: Amino Acids
@@ -1810,8 +1829,11 @@
   - flavor
   - food_supplement_form
   - herbal_supplement_health_goal
+  - material_treatment
+  - plant_material
   - product_certifications_standards
   - route_of_administration
+  - solvent_content
   - target_gender
 - id: hb-1-9-6-5-1
   name: Flower Essence Remedies
@@ -2884,6 +2906,8 @@
   - hb-1-17-1-4
   - hb-1-17-1-5
   attributes:
+  - battery_size
+  - battery_type
   - color
   - height_adjustment
   - material
@@ -2896,7 +2920,9 @@
   name: Mobility Scooters
   children: []
   attributes:
+  - battery_size
   - battery_technology
+  - battery_type
   - color
   - folding_mechanism
   - height_adjustment
@@ -2974,7 +3000,9 @@
   children: []
   attributes:
   - age_group
+  - battery_size
   - battery_technology
+  - battery_type
   - color
   - height_adjustment
   - material
@@ -3004,7 +3032,9 @@
   attributes:
   - age_group
   - attachment_type
+  - battery_size
   - battery_technology
+  - battery_type
   - color
   - compatible_accessibility_equipment_type
   - hand_side
@@ -3334,11 +3364,13 @@
   - folding_mechanism
   - handle_style
   - height_adjustment
+  - lumber/wood_type
   - material
   - mobility/accessibility_equipment_features
   - pattern
   - tip_material
   - walking_aid_tip_type
+  - wood_finish
 - id: hb-1-17-5-1-1
   name: Folding Canes
   children: []
@@ -3391,11 +3423,13 @@
   - handle_material
   - handle_style
   - height_adjustment
+  - lumber/wood_type
   - material
   - mobility/accessibility_equipment_features
   - pattern
   - tip_material
   - walking_aid_tip_type
+  - wood_finish
 - id: hb-1-17-5-1-5
   name: Seat Canes
   children: []
@@ -3518,6 +3552,8 @@
   name: Electrical Muscle Stimulators
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - body_area
   - electrode_connector_type
   - electrotherapy_modality
@@ -4201,7 +4237,10 @@
   children: []
   attributes:
   - cloth_treatment
+  - construction
+  - embellishment/trim_material
   - intended_jewelry_type
+  - jewelry_material
   - material
   - product_form
   - suitable_for_precious_material
@@ -4244,12 +4283,14 @@
   - intended_jewelry_type
   - interior_lining_material
   - lock_type
+  - lumber/wood_type
   - material
   - pattern
   - personalization_options
   - power_source
   - product_form
   - shape
+  - wood_finish
 - id: hb-2-3-1-1
   name: Musical Jewelry Boxes
   children: []
@@ -4316,9 +4357,11 @@
   attributes:
   - closure_type
   - intended_jewelry_type
+  - lumber/wood_type
   - material
   - product_form
   - stand/display_type
+  - wood_finish
 - id: hb-2-3-3
   name: Jewelry Trays
   children:
@@ -4331,10 +4374,12 @@
   - color
   - intended_jewelry_type
   - interior_lining_material
+  - lumber/wood_type
   - material
   - pattern
   - product_form
   - shape
+  - wood_finish
 - id: hb-2-3-3-1
   name: Bracelet Trays
   children: []
@@ -4391,10 +4436,12 @@
   - color
   - finish
   - intended_jewelry_type
+  - lumber/wood_type
   - material
   - pattern
   - product_form
   - shape
+  - wood_finish
 - id: hb-2-3-5
   name: Wall-Mounted Jewelry Organizers
   children: []
@@ -4509,6 +4556,8 @@
   - hb-3-1-1-2
   attributes:
   - attachment_method
+  - battery_size
+  - battery_type
   - body_area
   - color
   - cover_features
@@ -4643,6 +4692,7 @@
   - shape
   - skin_care_effect
   - soap_making_method
+  - solvent_content
   - suitable_for_skin_type
 - id: hb-3-2-1-2
   name: Bath Additives
@@ -4662,6 +4712,7 @@
   - product_form
   - scent
   - skin_care_effect
+  - solvent_content
   - suitable_for_skin_type
 - id: hb-3-2-1-2-1
   name: Bath Melts & Teas
@@ -4717,6 +4768,8 @@
   attributes:
   - age_group
   - bath_brush_style
+  - battery_size
+  - battery_type
   - body_area
   - bristle_material
   - bristle_shape
@@ -4726,6 +4779,7 @@
   - handle_type
   - hardness
   - ingredients
+  - lumber/wood_type
   - material
   - package_type
   - product_certifications_standards
@@ -4733,6 +4787,7 @@
   - scent
   - skin_care_effect
   - suitable_for_skin_type
+  - wood_finish
 - id: hb-3-2-1-4
   name: Bath Sponges & Loofahs
   children:
@@ -4749,12 +4804,15 @@
   - handle_type
   - ingredients
   - material
+  - material_treatment
   - package_type
   - pattern
+  - plant_material
   - product_certifications_standards
   - product_form
   - scent
   - skin_care_effect
+  - solvent_content
   - sponge_shape
   - suitable_for_skin_type
 - id: hb-3-2-1-4-1
@@ -4838,6 +4896,7 @@
   - product_form
   - scent
   - skin_care_effect
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
   - texture
@@ -4860,6 +4919,7 @@
   - product_form
   - scent
   - skin_care_effect
+  - solvent_content
   - suitable_for_skin_type
   - usage_type
   - wipe_packaging
@@ -4940,6 +5000,7 @@
   - product_form
   - scent
   - skin_care_effect
+  - solvent_content
   - suitable_for_skin_type
   - usage_type
 - id: hb-3-2-1-9
@@ -5032,6 +5093,7 @@
   - product_certifications_standards
   - product_form
   - scent
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
 - id: hb-3-2-3
@@ -5041,9 +5103,12 @@
   - age_group
   - body_area
   - color
+  - construction
   - cosmetic_set_type
+  - embellishment/trim_material
   - fragrance
   - ingredients
+  - jewelry_material
   - material
   - occasion
   - package_type
@@ -5051,6 +5116,7 @@
   - product_certifications_standards
   - product_form
   - skin_care_effect
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
 - id: hb-3-2-4
@@ -5061,6 +5127,8 @@
   - hb-3-2-4-3
   - hb-3-2-4-4
   attributes:
+  - battery_size
+  - battery_type
   - compatible_cosmetic_tools
   - fragrance
   - ingredients
@@ -5125,15 +5193,20 @@
   - hb-3-2-5-3
   - hb-3-2-5-4
   attributes:
+  - battery_size
+  - battery_type
   - color
   - fragrance
+  - lumber/wood_type
   - material
   - pattern
   - product_certifications_standards
   - product_form
   - shape
+  - solvent_content
   - suitable_for_skin_type
   - usage_type
+  - wood_finish
 - id: hb-3-2-5-1
   name: Makeup Tools
   children:
@@ -5152,6 +5225,8 @@
   - hb-3-2-5-1-15
   - hb-3-2-5-1-16
   attributes:
+  - battery_size
+  - battery_type
   - color
   - features
   - fragrance
@@ -5160,6 +5235,7 @@
   - product_certifications_standards
   - product_form
   - shape
+  - solvent_content
   - suitable_for_skin_type
   - usage_type
 - id: hb-3-2-5-1-3
@@ -5344,6 +5420,7 @@
   - product_certifications_standards
   - product_form
   - shape
+  - solvent_content
   - suitable_for_skin_type
   - usage_type
 - id: hb-3-2-5-1-8-1
@@ -5366,6 +5443,7 @@
   - product_certifications_standards
   - product_form
   - shape
+  - solvent_content
   - suitable_for_skin_type
   - usage_type
 - id: hb-3-2-5-1-8-1-1
@@ -5438,6 +5516,7 @@
   - product_certifications_standards
   - product_form
   - shape
+  - solvent_content
   - suitable_for_skin_type
   - tip_style
   - usage_type
@@ -5454,6 +5533,7 @@
   - product_certifications_standards
   - product_form
   - shape
+  - solvent_content
   - suitable_for_skin_type
   - usage_type
 - id: hb-3-2-5-1-8-4
@@ -5530,13 +5610,19 @@
   name: Makeup Brushes
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - bristle_material
   - bristle_shape
   - brush_end_type
   - color
+  - construction
+  - embellishment/trim_material
   - features
   - fragrance
   - handle_material
+  - jewelry_material
+  - lumber/wood_type
   - makeup_brush_application
   - material
   - pattern
@@ -5545,6 +5631,7 @@
   - shape
   - suitable_for_skin_type
   - usage_type
+  - wood_finish
 - id: hb-3-2-5-1-10
   name: Makeup Sponges
   children: []
@@ -5704,12 +5791,16 @@
   attributes:
   - bristle_material
   - color
+  - construction
+  - embellishment/trim_material
   - fragrance
+  - jewelry_material
   - material
   - pattern
   - product_certifications_standards
   - product_form
   - shape
+  - solvent_content
   - suitable_for_skin_type
   - usage_type
 - id: hb-3-2-5-2-1
@@ -5721,6 +5812,7 @@
   - fragrance
   - handle_grip_texture
   - handle_material
+  - lumber/wood_type
   - material
   - product_certifications_standards
   - product_form
@@ -5729,6 +5821,7 @@
   - tip_material
   - tip_style
   - usage_type
+  - wood_finish
 - id: hb-3-2-5-2-2
   name: Cuticle Scissors
   children: []
@@ -5772,13 +5865,16 @@
   - bristle_material
   - closure_type
   - fragrance
+  - lumber/wood_type
   - material
   - product_certifications_standards
   - product_form
   - shape
+  - solvent_content
   - suitable_for_skin_type
   - tool/utensil_material
   - usage_type
+  - wood_finish
 - id: hb-3-2-5-2-5
   name: Nail Buffers
   children: []
@@ -5828,6 +5924,8 @@
   name: Nail Drills
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - bristle_material
   - fragrance
   - material
@@ -5836,6 +5934,7 @@
   - product_form
   - rotation_direction
   - shape
+  - solvent_content
   - speed_settings
   - suitable_for_skin_type
   - usage_type
@@ -5843,6 +5942,8 @@
   name: Nail Dryers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - bristle_material
   - fragrance
   - light_source
@@ -5940,6 +6041,8 @@
   - hb-3-2-5-3-12
   - hb-3-2-5-3-13
   attributes:
+  - battery_size
+  - battery_type
   - body_area
   - color
   - fragrance
@@ -6031,6 +6134,8 @@
   - hb-3-2-5-3-5-1
   - hb-3-2-5-3-5-2
   attributes:
+  - battery_size
+  - battery_type
   - body_area
   - extraction_technology
   - extractor_items_included
@@ -6082,6 +6187,8 @@
   name: Skin Care Rollers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - body_area
   - color
   - fragrance
@@ -6124,6 +6231,7 @@
   name: Skin Cleansing Brushes & Systems
   children: []
   attributes:
+  - battery_size
   - battery_type
   - body_area
   - bristle_hardness
@@ -6253,6 +6361,7 @@
   - material
   - product_certifications_standards
   - product_form
+  - solvent_content
   - spf_level
   - suitable_for_skin_type
 - id: hb-3-2-6-1
@@ -6295,6 +6404,7 @@
   - product_form
   - skin_tone
   - skin_undertone
+  - solvent_content
   - spf_level
   - suitable_for_skin_type
 - id: hb-3-2-6-1-4
@@ -6335,12 +6445,16 @@
   name: Costume & Stage Makeup
   children: []
   attributes:
+  - construction
   - coverage_level
+  - embellishment/trim_material
   - fragrance
+  - jewelry_material
   - makeup_features
   - material
   - product_certifications_standards
   - product_form
+  - solvent_content
   - spf_level
   - suitable_for_skin_type
 - id: hb-3-2-6-3
@@ -6355,6 +6469,8 @@
   - hb-3-2-6-3-7
   - hb-3-2-6-3-8
   attributes:
+  - battery_size
+  - battery_type
   - color
   - coverage_level
   - dispenser_type
@@ -6365,6 +6481,7 @@
   - pattern
   - product_certifications_standards
   - product_form
+  - solvent_content
   - spf_level
   - suitable_for_skin_type
 - id: hb-3-2-6-3-1
@@ -6393,6 +6510,8 @@
   - hb-3-2-6-3-2-3
   - hb-3-2-6-3-2-4
   attributes:
+  - battery_size
+  - battery_type
   - color
   - cosmetic_finish
   - coverage_level
@@ -6500,6 +6619,7 @@
   - material
   - product_certifications_standards
   - product_form
+  - solvent_content
   - spf_level
   - suitable_for_skin_type
 - id: hb-3-2-6-3-4
@@ -6519,6 +6639,7 @@
   - pen/felt_tip_design
   - product_certifications_standards
   - product_form
+  - solvent_content
   - spf_level
   - suitable_for_skin_type
 - id: hb-3-2-6-3-5
@@ -6540,6 +6661,7 @@
   - pattern
   - product_certifications_standards
   - product_form
+  - solvent_content
   - spf_level
   - suitable_for_skin_type
   - usage_type
@@ -6577,6 +6699,7 @@
   - pattern
   - product_certifications_standards
   - product_form
+  - solvent_content
   - spf_level
   - suitable_for_skin_type
 - id: hb-3-2-6-3-8
@@ -6721,6 +6844,7 @@
   - product_form
   - skin_tone
   - skin_undertone
+  - solvent_content
   - spf_level
   - suitable_for_skin_type
 - id: hb-3-2-6-4-3
@@ -6740,6 +6864,7 @@
   - product_form
   - skin_care_effect
   - skin_undertone
+  - solvent_content
   - spf_level
   - suitable_for_skin_type
 - id: hb-3-2-6-4-4
@@ -6900,6 +7025,7 @@
   - pattern
   - product_certifications_standards
   - product_form
+  - solvent_content
   - spf_level
   - suitable_for_skin_type
 - id: hb-3-2-6-5-1
@@ -7200,6 +7326,7 @@
   - pattern
   - product_certifications_standards
   - product_form
+  - solvent_content
   - suitable_for_skin_type
 - id: hb-3-2-7-1
   name: Cuticle Creams & Oil
@@ -7217,6 +7344,7 @@
   - product_certifications_standards
   - product_form
   - skin_care_effect
+  - solvent_content
   - suitable_for_skin_type
 - id: hb-3-2-7-1-1
   name: Cuticle Creams
@@ -7250,6 +7378,7 @@
   - product_certifications_standards
   - product_form
   - skin_care_effect
+  - solvent_content
   - suitable_for_skin_type
 - id: hb-3-2-7-1-3
   name: Cuticle Removers & Softeners
@@ -7288,6 +7417,7 @@
   - pattern
   - product_certifications_standards
   - product_form
+  - solvent_content
   - suitable_for_skin_type
   - usage_type
 - id: hb-3-2-7-2-1
@@ -7348,6 +7478,7 @@
   - material
   - product_certifications_standards
   - product_form
+  - solvent_content
   - suitable_for_skin_type
 - id: hb-3-2-7-4
   name: Nail Art Kits & Accessories
@@ -7360,8 +7491,11 @@
   - adhesive_type
   - chemical_safety_features
   - color
+  - construction
   - detailed_ingredients
+  - embellishment/trim_material
   - fragrance
+  - jewelry_material
   - material
   - nail_art_items_included
   - nail_art_medium_type
@@ -7471,6 +7605,7 @@
   - product_certifications_standards
   - product_form
   - removal_target
+  - solvent_content
   - suitable_for_skin_type
 - id: hb-3-2-7-10
   name: Nail Polish Thinners
@@ -7485,6 +7620,7 @@
   - polish_dry_form
   - product_certifications_standards
   - product_form
+  - solvent_content
   - suitable_for_skin_type
 - id: hb-3-2-7-11
   name: Nail Polishes
@@ -7500,6 +7636,7 @@
   - product_benefits
   - product_certifications_standards
   - product_form
+  - solvent_content
   - suitable_for_skin_type
 - id: hb-3-2-7-12
   name: Nail Primers & Prep Liquids
@@ -7554,6 +7691,7 @@
   - product_form
   - scent
   - season
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
 - id: hb-3-2-8-1
@@ -7571,6 +7709,7 @@
   - product_form
   - scent
   - season
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
 - id: hb-3-2-8-2
@@ -7589,6 +7728,7 @@
   - product_form
   - scent
   - season
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
 - id: hb-3-2-8-3
@@ -7607,6 +7747,7 @@
   - product_form
   - scent
   - season
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
 - id: hb-3-2-8-4
@@ -7623,6 +7764,7 @@
   - product_form
   - scent
   - season
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
 - id: hb-3-2-8-5
@@ -7770,6 +7912,7 @@
   - product_form
   - skin_care_effect
   - skin_care_features
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
   - uva_protection_grade
@@ -7792,6 +7935,7 @@
   - product_form
   - skin_care_effect
   - skin_care_features
+  - solvent_content
   - suitable_for_skin_type
   - uva_protection_grade
 - id: hb-3-2-9-1-1
@@ -7852,6 +7996,7 @@
   - product_form
   - skin_care_effect
   - skin_care_features
+  - solvent_content
   - spf_level
   - suitable_for_skin_type
   - target_gender
@@ -7874,6 +8019,7 @@
   - product_certifications_standards
   - product_form
   - skin_care_effect
+  - solvent_content
   - spf_level
   - suitable_for_skin_type
   - texture
@@ -7892,6 +8038,7 @@
   - product_certifications_standards
   - product_form
   - skin_care_effect
+  - solvent_content
   - suitable_for_skin_type
   - talc_content
   - uva_protection_grade
@@ -7935,6 +8082,7 @@
   - rinse_requirement
   - skin_care_effect
   - skin_care_features
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
   - uva_protection_grade
@@ -7951,6 +8099,7 @@
   - product_certifications_standards
   - product_form
   - skin_care_effect
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
   - uva_protection_grade
@@ -8099,6 +8248,7 @@
   - scent
   - skin_care_effect
   - skin_care_features
+  - solvent_content
   - spf_level
   - suitable_for_skin_type
   - target_gender
@@ -8140,6 +8290,8 @@
   attributes:
   - age_group
   - allergens
+  - battery_size
+  - battery_type
   - body_area
   - constitutive_ingredients
   - cosmetic_function
@@ -8156,6 +8308,7 @@
   - skin_care_effect
   - skin_care_features
   - skin_care_mask_type
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
   - uva_protection_grade
@@ -8172,6 +8325,7 @@
   - material
   - product_certifications_standards
   - product_form
+  - solvent_content
   - suitable_for_bug_type
   - suitable_for_skin_type
   - uva_protection_grade
@@ -8194,6 +8348,7 @@
   - product_form
   - skin_care_effect
   - skin_care_features
+  - solvent_content
   - spf_level
   - suitable_for_skin_type
   - sunscreen_filter_type
@@ -8218,6 +8373,7 @@
   - product_form
   - skin_care_effect
   - skin_care_features
+  - solvent_content
   - suitable_for_skin_type
   - tan_type
   - uva_protection_grade
@@ -8237,6 +8393,7 @@
   - skin_care_effect
   - skin_care_features
   - skin_tone
+  - solvent_content
   - suitable_for_skin_type
   - tan_type
   - uva_protection_grade
@@ -8350,6 +8507,7 @@
   - product_form
   - skin_care_effect
   - skin_care_features
+  - solvent_content
   - suitable_for_skin_type
   - uva_protection_grade
 - id: hb-3-2-9-17-1
@@ -8395,6 +8553,7 @@
   - product_form
   - skin_care_effect
   - skin_care_features
+  - solvent_content
   - suitable_for_skin_type
   - uva_protection_grade
 - id: hb-3-2-9-18
@@ -8453,6 +8612,7 @@
   - product_form
   - skin_care_effect
   - skin_care_features
+  - solvent_content
   - spf_level
   - suitable_for_skin_type
   - target_gender
@@ -8650,6 +8810,7 @@
   - product_certifications_standards
   - product_form
   - scent
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
 - id: hb-3-5-2
@@ -8662,6 +8823,7 @@
   - product_certifications_standards
   - product_form
   - scent
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
   - usage_type
@@ -8709,6 +8871,7 @@
   - package_type
   - prescription_status
   - product_form
+  - solvent_content
   - treatment_objective
   - usage_type
 - id: hb-3-6-3
@@ -9239,6 +9402,7 @@
   - odor_remover_application_area
   - product_form
   - skin_care_effect
+  - solvent_content
   - treatment_objective
 - id: hb-3-9-4
   name: Insoles & Inserts
@@ -9471,6 +9635,7 @@
   - pattern
   - product_form
   - scalp_concern
+  - solvent_content
   - suitable_for_hair_type
   - target_gender
 - id: hb-3-10-2
@@ -9489,6 +9654,7 @@
   - material
   - pattern
   - product_form
+  - solvent_content
   - target_gender
 - id: hb-3-10-3
   name: Hair Color Removers
@@ -9503,6 +9669,7 @@
   - hair_dye_type_removed
   - material
   - product_form
+  - solvent_content
   - suitable_for_hair_type
   - target_gender
 - id: hb-3-10-4
@@ -9586,6 +9753,7 @@
   - material
   - product_certifications_standards
   - product_form
+  - solvent_content
   - suitable_for_hair_type
   - target_gender
   - treatment_type
@@ -9662,6 +9830,8 @@
   name: Hair Shears
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - blade_material
   - edge_type
   - hair_shear_type
@@ -9865,6 +10035,8 @@
   - hb-3-10-11-7
   attributes:
   - application_type
+  - battery_size
+  - battery_type
   - color
   - conditioner_effect
   - durability_features
@@ -9872,6 +10044,7 @@
   - material
   - pattern
   - product_form
+  - solvent_content
 - id: hb-3-10-11-1
   name: Hair Curler Clips & Pins
   children:
@@ -9893,11 +10066,16 @@
   - accessory_size
   - application_type
   - conditioner_effect
+  - construction
   - durability_features
+  - embellishment/trim_material
   - fragrance
+  - jewelry_material
+  - lumber/wood_type
   - material
   - product_form
   - suitable_for_hair_type
+  - wood_finish
 - id: hb-3-10-11-1-2
   name: Pins
   children:
@@ -9909,13 +10087,18 @@
   - application_type
   - color
   - conditioner_effect
+  - construction
   - durability_features
+  - embellishment/trim_material
   - finish
   - fragrance
+  - jewelry_material
+  - lumber/wood_type
   - material
   - pin_tip_type
   - product_form
   - suitable_for_hair_type
+  - wood_finish
 - id: hb-3-10-11-1-2-1
   name: Bobby Pins
   children: []
@@ -10044,6 +10227,8 @@
   - hb-3-10-12-11
   attributes:
   - application_type
+  - battery_size
+  - battery_type
   - bristle_hardness
   - color
   - conditioner_effect
@@ -10068,22 +10253,26 @@
   attributes:
   - application_type
   - bristle_hardness
+  - bristle_material
   - color
   - comb/brush_size
   - conditioner_effect
   - fragrance
   - hair_styling_items_included
   - heat_settings
+  - lumber/wood_type
   - material
   - pattern
   - product_form
   - suitable_for_hair_type
+  - wood_finish
 - id: hb-3-10-12-2-1
   name: Hair Combs
   children: []
   attributes:
   - application_type
   - bristle_hardness
+  - bristle_material
   - color
   - comb/brush_size
   - comb_features
@@ -10092,29 +10281,37 @@
   - fragrance
   - hair_styling_items_included
   - heat_settings
+  - lumber/wood_type
   - material
   - pattern
   - product_form
   - suitable_for_hair_type
+  - wood_finish
 - id: hb-3-10-12-2-2
   name: Hairbrushes & Combs
   children: []
   attributes:
   - application_type
   - bristle_hardness
+  - bristle_material
   - bristle_shape
   - color
   - comb/brush_size
   - conditioner_effect
+  - construction
+  - embellishment/trim_material
   - fragrance
   - hair_styling_items_included
   - hair_styling_tool_features
   - handle_material
   - heat_settings
+  - jewelry_material
+  - lumber/wood_type
   - material
   - pattern
   - product_form
   - suitable_for_hair_type
+  - wood_finish
 - id: hb-3-10-12-2-3
   name: Hot Air Brushes
   children: []
@@ -10146,10 +10343,12 @@
   - hair_styling_items_included
   - handle_material
   - heat_settings
+  - lumber/wood_type
   - material
   - pattern
   - product_form
   - suitable_for_hair_type
+  - wood_finish
 - id: hb-3-10-12-2-5
   name: Round Hairbrushes
   children: []
@@ -10174,7 +10373,10 @@
   children: []
   attributes:
   - application_type
+  - battery_size
+  - battery_type
   - bristle_hardness
+  - bristle_material
   - color
   - comb/brush_size
   - conditioner_effect
@@ -10192,6 +10394,8 @@
   - application_type
   - barrel_material
   - barrel_shape
+  - battery_size
+  - battery_type
   - bristle_hardness
   - color
   - conditioner_effect
@@ -10209,6 +10413,8 @@
   children: []
   attributes:
   - application_type
+  - battery_size
+  - battery_type
   - bristle_hardness
   - color
   - conditioner_effect
@@ -10226,6 +10432,8 @@
   children: []
   attributes:
   - application_type
+  - battery_size
+  - battery_type
   - bristle_hardness
   - color
   - conditioner_effect
@@ -10244,6 +10452,8 @@
   children: []
   attributes:
   - application_type
+  - battery_size
+  - battery_type
   - bristle_hardness
   - color
   - conditioner_effect
@@ -10345,6 +10555,7 @@
   - package_type
   - product_certifications_standards
   - product_form
+  - solvent_content
   - suitable_for_hair_type
   - target_gender
 - id: hb-3-10-13-2
@@ -10509,6 +10720,8 @@
   name: Massage Chairs
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - detailed_ingredients
   - fragrance
   - heat_function
@@ -10536,6 +10749,7 @@
   - product_certifications_standards
   - product_form
   - skin_care_effect
+  - solvent_content
   - suitable_for_skin_type
   - texture
   - treatment_objective
@@ -10543,6 +10757,8 @@
   name: Massage Stone Warmers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - detailed_ingredients
   - fragrance
   - material
@@ -10572,10 +10788,12 @@
   - detailed_ingredients
   - fragrance
   - height_adjustment
+  - lumber/wood_type
   - material
   - product_form
   - treatment_objective
   - upholstery_material
+  - wood_finish
 - id: hb-3-11-8
   name: Massagers
   children:
@@ -10584,6 +10802,8 @@
   - hb-3-11-8-3
   - hb-3-11-8-4
   attributes:
+  - battery_size
+  - battery_type
   - body_area
   - detailed_ingredients
   - fragrance
@@ -10598,6 +10818,8 @@
   - hb-3-11-8-1-2
   attributes:
   - application_area
+  - battery_size
+  - battery_type
   - body_area
   - color
   - connectivity_technology
@@ -10655,6 +10877,8 @@
   - hb-3-11-8-2-6
   - hb-3-11-8-2-7
   attributes:
+  - battery_size
+  - battery_type
   - body_area
   - color
   - detailed_ingredients
@@ -10963,6 +11187,8 @@
   name: Dental Water Jets
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - dental_water_jet_operation
   - ingress_protection_ip_rating
   - material
@@ -10979,6 +11205,7 @@
   - material
   - oral_care_function
   - product_form
+  - solvent_content
 - id: hb-3-12-7
   name: Denture Cleaners
   children:
@@ -11020,12 +11247,15 @@
   - hb-3-12-9-1
   - hb-3-12-9-2
   attributes:
+  - construction
   - denture_arch_coverage
   - denture_base_color
   - denture_coverage
   - denture_design
   - denture_retention_mechanism
   - denture_teeth_color
+  - embellishment/trim_material
+  - jewelry_material
   - material
   - oral_care_function
   - product_form
@@ -11113,6 +11343,7 @@
   - material
   - oral_care_function
   - product_form
+  - solvent_content
 - id: hb-3-12-12
   name: Orthodontic Appliance Cases
   children:
@@ -11168,6 +11399,8 @@
   name: Power Flossers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - charging_interface_type
   - cleaning_mode
   - color
@@ -11194,6 +11427,8 @@
   - hb-3-12-14-12
   - hb-3-12-14-13
   attributes:
+  - battery_size
+  - battery_type
   - flavor
   - material
   - oral_care_function
@@ -11220,6 +11455,7 @@
   - hb-3-12-14-2-1
   - hb-3-12-14-2-2
   attributes:
+  - battery_size
   - battery_type
   - flavor
   - ingress_protection_ip_rating
@@ -11429,6 +11665,8 @@
   children: []
   attributes:
   - age_group
+  - battery_size
+  - battery_type
   - bristle_material
   - bristle_shape
   - cleaning_instructions
@@ -11444,6 +11682,9 @@
   name: Toothbrush Sanitizers
   children: []
   attributes:
+  - battery_size
+  - battery_type
+  - bristle_material
   - charging_interface_type
   - cleaning_instructions
   - color
@@ -11499,22 +11740,27 @@
   - hb-3-12-17-3
   attributes:
   - age_group
+  - battery_size
+  - battery_type
   - bristle_material
   - bristle_shape
   - color
   - firmness
   - handle_material
+  - lumber/wood_type
   - material
   - oral_care_function
   - pattern
   - product_form
   - toothbrush_head_size
   - usage_type
+  - wood_finish
 - id: hb-3-12-17-1
   name: Electric Toothbrushes
   children: []
   attributes:
   - age_group
+  - battery_size
   - battery_type
   - bristle_hardness
   - bristle_material
@@ -11544,6 +11790,7 @@
   - color
   - firmness
   - handle_material
+  - lumber/wood_type
   - material
   - oral_care_function
   - pattern
@@ -11551,6 +11798,7 @@
   - product_form
   - toothbrush_head_size
   - usage_type
+  - wood_finish
 - id: hb-3-12-17-3
   name: Toothbrush Sets
   children: []
@@ -11620,16 +11868,19 @@
   - oral_care_function
   - product_certifications_standards
   - product_form
+  - solvent_content
   - toothpaste_type
 - id: hb-3-12-20
   name: Toothpicks
   children: []
   attributes:
+  - lumber/wood_type
   - material
   - oral_care_function
   - product_form
   - toothpick_design
   - usage_type
+  - wood_finish
 - id: hb-3-12-21
   name: Toothpick Holders & Cases
   children: []
@@ -11738,6 +11989,7 @@
   - product_form
   - scent
   - skin_care_effect
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
 - id: hb-3-14-2
@@ -11833,6 +12085,8 @@
   - hb-3-14-4-2
   - hb-3-14-4-3
   attributes:
+  - battery_size
+  - battery_type
   - beard_care_benefits
   - color
   - material
@@ -11846,6 +12100,7 @@
   name: Foil Electric Razors
   children: []
   attributes:
+  - battery_size
   - battery_type
   - beard_care_benefits
   - ingress_protection_ip_rating
@@ -11858,6 +12113,7 @@
   name: Rotary Electric Razors
   children: []
   attributes:
+  - battery_size
   - battery_type
   - beard_care_benefits
   - charging_interface_type
@@ -11875,6 +12131,8 @@
   - hb-3-14-4-3-2
   - hb-3-14-4-3-3
   attributes:
+  - battery_size
+  - battery_type
   - beard_care_benefits
   - blade_material
   - body_area
@@ -11939,6 +12197,8 @@
   - hb-3-14-5-3
   - hb-3-14-5-4
   attributes:
+  - battery_size
+  - battery_type
   - beard_care_benefits
   - color
   - material
@@ -11991,6 +12251,7 @@
   attributes:
   - battery_size
   - battery_technology
+  - battery_type
   - beard_care_benefits
   - blade_material
   - clipper_motor_type
@@ -12013,9 +12274,13 @@
   - hb-3-14-7-7
   - hb-3-14-7-8
   attributes:
+  - battery_size
+  - battery_type
+  - lumber/wood_type
   - material
   - product_form
   - target_gender
+  - wood_finish
 - id: hb-3-14-7-1
   name: Depilatories
   children: []
@@ -12042,6 +12307,8 @@
   name: Epilators
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - body_area
   - color
   - ingress_protection_ip_rating
@@ -12057,6 +12324,8 @@
   name: Hair Removal Wax Warmers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - compatible_wax_container_size
   - compatible_wax_form
@@ -12082,7 +12351,9 @@
   name: IPL Hair Removal Devices
   children: []
   attributes:
+  - battery_size
   - battery_technology
+  - battery_type
   - body_area
   - material
   - product_form
@@ -12120,11 +12391,13 @@
   - hb-3-14-7-6-5
   attributes:
   - fragrance
+  - lumber/wood_type
   - material
   - product_certifications_standards
   - product_form
   - suitable_for_skin_type
   - target_gender
+  - wood_finish
 - id: hb-3-14-7-6-1
   name: Hair Removal Wax Strips
   children: []
@@ -12198,6 +12471,8 @@
   - hb-3-14-8-4
   - hb-3-14-8-5
   attributes:
+  - battery_size
+  - battery_type
   - beard_care_benefits
   - blade_coating
   - blade_edge_configuration
@@ -12284,10 +12559,12 @@
   - color
   - handle_type
   - interior_texture
+  - lumber/wood_type
   - material
   - pattern
   - product_form
   - target_gender
+  - wood_finish
 - id: hb-3-14-9-1
   name: Shaving Bowls
   children: []
@@ -12350,6 +12627,7 @@
   - product_form
   - scent
   - shaving_cream_formulation
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
 - id: hb-3-14-12
@@ -12364,6 +12642,7 @@
   - product_form
   - razor_type
   - shaving_kit_components
+  - solvent_content
   - suitable_for_skin_type
   - target_gender
 - id: hb-3-14-13
@@ -12464,6 +12743,8 @@
   children: []
   attributes:
   - age_group
+  - battery_size
+  - battery_type
   - closure_type
   - color
   - features
@@ -12639,6 +12920,8 @@
   children: []
   attributes:
   - age_group
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - features
@@ -12833,6 +13116,7 @@
   - product_form
   - product_sterility
   - solution_type
+  - solvent_content
   - usage_type
 - id: hb-3-19-1-4
   name: Contact Lenses
@@ -12977,6 +13261,8 @@
   attributes:
   - age_group
   - color
+  - construction
+  - embellishment/trim_material
   - eyewear_frame_color
   - eyewear_frame_design
   - eyewear_frame_material
@@ -12984,6 +13270,7 @@
   - eyewear_frame_shape
   - eyewear_hinge_type
   - eyewear_lens_material
+  - jewelry_material
   - lens_coating
   - lens_color
   - lens_pattern
@@ -13010,6 +13297,9 @@
   - attachment_method
   - color
   - compatible_eyewear_type
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - material
   - pattern
   - product_form
@@ -13084,6 +13374,7 @@
   - product_form
   - product_sterility
   - solution_type
+  - solvent_content
 - id: hb-3-19-5-3
   name: Eyewear Replacement Parts
   children:
@@ -13154,8 +13445,11 @@
   - attachment_type
   - color
   - compatible_eyewear_type
+  - construction
+  - embellishment/trim_material
   - eyewear_strap_features
   - eyewear_strap_or_chain_style
+  - jewelry_material
   - length_adjustability
   - material
   - pattern
@@ -13171,8 +13465,11 @@
   - chain_link_type
   - color
   - compatible_eyewear_type
+  - construction
+  - embellishment/trim_material
   - eyewear_strap_features
   - eyewear_strap_or_chain_style
+  - jewelry_material
   - length_adjustability
   - material
   - pattern
