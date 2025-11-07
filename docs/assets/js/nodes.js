@@ -13,8 +13,10 @@ let cachedElements = {
   categoryNodeElements: undefined,
   selectedCategoryContainerElements: undefined,
   attributeValuesElement: undefined,
+  returnReasonValuesElement: undefined,
   selectedCategoryTitle: undefined,
   categoryAttributesTitle: undefined,
+  categoryReturnReasonsTitle: undefined,
 };
 
 const yieldToMain = () => {
@@ -71,6 +73,14 @@ const readAttributeValuesElement = () => {
   }
 };
 
+const readReturnReasonValuesElement = () => {
+  if (cachedElements.returnReasonValuesElement) {
+    return cachedElements.returnReasonValuesElement;
+  } else {
+    return (cachedElements.returnReasonValuesElement = qq('.return-reason-values'));
+  }
+};
+
 const readSelectedCategoryTitle = () => {
   if (cachedElements.selectedCategoryTitle) {
     return cachedElements.selectedCategoryTitle;
@@ -87,6 +97,16 @@ const readCategoryAttributesTitle = () => {
   } else {
     return (cachedElements.categoryAttributesTitle = q(
       '#category-attributes-title',
+    ));
+  }
+};
+
+const readCategoryReturnReasonsTitle = () => {
+  if (cachedElements.categoryReturnReasonsTitle) {
+    return cachedElements.categoryReturnReasonsTitle;
+  } else {
+    return (cachedElements.categoryReturnReasonsTitle = q(
+      '#category-return-reasons-title',
     ));
   }
 };
@@ -127,6 +147,7 @@ const toggleVisibleSelectedCategory = () => {
     readSelectedCategoryContainerElements();
   const selectedCategoryTitle = readSelectedCategoryTitle();
   const categoryAttributesTitle = readCategoryAttributesTitle();
+  const categoryReturnReasonsTitle = readCategoryReturnReasonsTitle();
 
   selectedCategoryContainerElements.forEach((element) => {
     const nodeId = element.id;
@@ -138,6 +159,7 @@ const toggleVisibleSelectedCategory = () => {
           .selectedCategoryName;
       selectedCategoryTitle.innerText = selectedNodeTitle;
       categoryAttributesTitle.innerText = `${selectedNodeTitle} attributes`;
+      categoryReturnReasonsTitle.innerText = `${selectedNodeTitle} return reasons`;
       classes.replace(className.hidden, className.visible);
     } else {
       classes.replace(className.visible, className.hidden);
@@ -168,6 +190,56 @@ const toggleVisibleAttributes = () => {
   });
 };
 
+const toggleVisibleReturnReasons = () => {
+  const returnReasonElements = readReturnReasonValuesElement();
+  const documentNode = q(`.category-node[id="${selectedNode}"]`);
+
+  if (!documentNode) {
+    return returnReasonElements.forEach((element) =>
+      element.classList.replace(className.visible, className.hidden),
+    );
+  }
+
+  const returnReasonHandles = documentNode.dataset.returnReasonHandles;
+  const returnReasonsList = returnReasonHandles ? returnReasonHandles.split(',') : [];
+  
+  // Create a map of handle to desired order
+  const orderMap = {};
+  returnReasonsList.forEach((handle, index) => {
+    orderMap[handle] = index;
+  });
+  
+  // Convert NodeList to Array and sort
+  const returnReasonArray = Array.from(returnReasonElements);
+  returnReasonArray.sort((a, b) => {
+    const handleA = a.dataset.handle;
+    const handleB = b.dataset.handle;
+    const orderA = orderMap[handleA] !== undefined ? orderMap[handleA] : 999999;
+    const orderB = orderMap[handleB] !== undefined ? orderMap[handleB] : 999999;
+    return orderA - orderB;
+  });
+  
+  // Get the parent container
+  const container = returnReasonElements[0]?.parentNode;
+  if (container) {
+    // Reorder the DOM elements
+    returnReasonArray.forEach((element) => {
+      container.appendChild(element);
+    });
+  }
+  
+  // Show/hide based on inclusion in the list
+  returnReasonElements.forEach((element) => {
+    const valueId = element.dataset.handle;
+    const classes = element.classList;
+    if (returnReasonsList.includes(valueId)) {
+      classes.replace(className.hidden, className.visible);
+    } else {
+      classes.replace(className.visible, className.hidden);
+    }
+  });
+};
+
 const toggleMappedCategories = () => {
   const mappingElements = readMappingElements();
 
@@ -187,6 +259,11 @@ const toggleAttributeSelectedClass = (event) => {
   element.classList.toggle('selected');
 };
 
+const toggleReturnReasonSelectedClass = (event) => {
+  const element = event.target.closest('.return-reason-values');
+  element.classList.toggle('selected');
+};
+
 const toggleMappingSelectedClass = (event) => {
   const element = event.target.parentNode;
   element.classList.toggle('selected');
@@ -200,6 +277,11 @@ const sendMappingTitleClickAnalytics = () =>
 const sendAttributeTitleClickAnalytics = () =>
   window.gtag('event', 'app_click', {
     event_action: 'toggle_attribute_visibility',
+  });
+
+const sendReturnReasonTitleClickAnalytics = () =>
+  window.gtag('event', 'app_click', {
+    event_action: 'toggle_return_reason_visibility',
   });
 
 const valueTitleClickWithYieldToMain =
@@ -232,6 +314,7 @@ const renderWithYieldToMain = () => {
     toggleExpandedCategories,
     toggleVisibleSelectedCategory,
     toggleVisibleAttributes,
+    toggleVisibleReturnReasons,
     toggleMappedCategories,
   ];
 
@@ -243,12 +326,14 @@ const renderWithScheduler = () => {
   scheduler.postTask(toggleExpandedCategories, {priority: 'user-blocking'});
   scheduler.postTask(toggleVisibleSelectedCategory);
   scheduler.postTask(toggleVisibleAttributes);
+  scheduler.postTask(toggleVisibleReturnReasons);
   scheduler.postTask(toggleMappedCategories);
 };
 
 let scheduleRenderPage = undefined;
 let scheduleMappingTitleClick = undefined;
 let scheduleAttributeTitleClick = undefined;
+let scheduleReturnReasonTitleClick = undefined;
 
 const initSchedulerFunctions = () => {
   if ('scheduler' in window) {
@@ -261,6 +346,10 @@ const initSchedulerFunctions = () => {
       toggleAttributeSelectedClass,
       sendAttributeTitleClickAnalytics,
     );
+    scheduleReturnReasonTitleClick = valueTitleClickWithScheduler(
+      toggleReturnReasonSelectedClass,
+      sendReturnReasonTitleClickAnalytics,
+    );
     return;
   } else {
     scheduleRenderPage = renderWithYieldToMain;
@@ -271,6 +360,10 @@ const initSchedulerFunctions = () => {
     scheduleAttributeTitleClick = valueTitleClickWithYieldToMain(
       toggleAttributeSelectedClass,
       sendAttributeTitleClickAnalytics,
+    );
+    scheduleReturnReasonTitleClick = valueTitleClickWithYieldToMain(
+      toggleReturnReasonSelectedClass,
+      sendReturnReasonTitleClickAnalytics,
     );
     return;
   }
@@ -310,6 +403,7 @@ const addOnClick = (target, handler) => {
 const setupListeners = () => {
   const categoryNodeElements = readCategoryNodeElements();
   const attributeTitleElements = qq('.attribute-title');
+  const returnReasonTitleElements = qq('.return-reason-title');
   const mappingTitleElements = qq('.mapping-title');
 
   categoryNodeElements.forEach((element) => {
@@ -323,6 +417,10 @@ const setupListeners = () => {
 
   attributeTitleElements.forEach((element) =>
     addOnClick(element, scheduleAttributeTitleClick),
+  );
+
+  returnReasonTitleElements.forEach((element) =>
+    addOnClick(element, scheduleReturnReasonTitleClick),
   );
 
   mappingTitleElements.forEach((element) =>
