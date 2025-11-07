@@ -36,6 +36,17 @@ module ProductTaxonomy
         File.expand_path("docs/_releases/_attributes_template.html", @real_base_path),
         File.expand_path("docs/_releases/_attributes_template.html", @tmp_base_path),
       )
+      if File.exist?(File.expand_path("docs/_releases/_return_reasons_template.html", @real_base_path))
+        FileUtils.cp(
+          File.expand_path("docs/_releases/_return_reasons_template.html", @real_base_path),
+          File.expand_path("docs/_releases/_return_reasons_template.html", @tmp_base_path),
+        )
+      else
+        File.write(
+          File.expand_path("docs/_releases/_return_reasons_template.html", @tmp_base_path),
+          "---\nlayout: return_reasons\n\ntitle: TITLE\ntarget: TARGET\npermalink: /releases/TARGET/return_reasons/\ngithub_url: GH_URL\n---"
+        )
+      end
 
       # Create a dummy latest.html for tests that update it
       latest_html_dir = File.expand_path("docs/_releases", @tmp_base_path)
@@ -55,6 +66,9 @@ module ProductTaxonomy
       Serializers::Attribute::Docs::BaseAndExtendedSerializer.stubs(:serialize_all).returns({ "attributes" => "baz" })
       Serializers::Attribute::Docs::ReversedSerializer.stubs(:serialize_all).returns({ "reversed" => "qux" })
       Serializers::Attribute::Docs::SearchSerializer.stubs(:serialize_all).returns([{ "attribute_search" => "quux" }])
+      Serializers::ReturnReason::Docs::BaseSerializer.stubs(:serialize_all).returns({ "return_reasons" => "corge" })
+      Serializers::ReturnReason::Docs::ReversedSerializer.stubs(:serialize_all).returns({ "reversed_return_reasons" => "grault" })
+      Serializers::ReturnReason::Docs::SearchSerializer.stubs(:serialize_all).returns([{ "return_reason_search" => "garply" }])
     end
 
     teardown do
@@ -92,6 +106,9 @@ module ProductTaxonomy
         Generating mappings...
         Generating attributes with categories...
         Generating attribute with categories search index...
+        Generating return reasons...
+        Generating return reasons with categories...
+        Generating return reason search index...
         Completed in 0.1 seconds
       OUTPUT
 
@@ -110,9 +127,13 @@ module ProductTaxonomy
         Generating mappings...
         Generating attributes with categories...
         Generating attribute with categories search index...
+        Generating return reasons...
+        Generating return reasons with categories...
+        Generating return reason search index...
         Generating release folder...
         Generating index.html...
         Generating attributes.html...
+        Generating return_reasons.html...
         Updating latest.html redirect...
         Completed in 0.1 seconds
       OUTPUT
@@ -142,11 +163,17 @@ module ProductTaxonomy
       assert File.exist?("#{data_path}/mappings.yml")
       assert File.exist?("#{data_path}/reversed_attributes.yml")
       assert File.exist?("#{data_path}/attribute_search_index.json")
+      assert File.exist?("#{data_path}/return_reasons.yml")
+      assert File.exist?("#{data_path}/reversed_return_reasons.yml")
+      assert File.exist?("#{data_path}/return_reason_search_index.json")
       assert_equal "---\nsiblings: foo\n", File.read("#{data_path}/sibling_groups.yml")
       assert_equal "---\nattributes: baz\n", File.read("#{data_path}/attributes.yml")
       assert_equal "---\nreversed: qux\n", File.read("#{data_path}/reversed_attributes.yml")
       assert_equal '[{"search":"bar"}]' + "\n", File.read("#{data_path}/search_index.json")
       assert_equal '[{"attribute_search":"quux"}]' + "\n", File.read("#{data_path}/attribute_search_index.json")
+      assert_equal "---\nreturn_reasons: corge\n", File.read("#{data_path}/return_reasons.yml")
+      assert_equal "---\nreversed_return_reasons: grault\n", File.read("#{data_path}/reversed_return_reasons.yml")
+      assert_equal '[{"return_reason_search":"garply"}]' + "\n", File.read("#{data_path}/return_reason_search_index.json")
 
       release_path = File.expand_path("docs/_releases/unstable", @tmp_base_path)
       refute File.exist?(release_path)
@@ -164,15 +191,22 @@ module ProductTaxonomy
       assert File.exist?("#{data_path}/mappings.yml")
       assert File.exist?("#{data_path}/reversed_attributes.yml")
       assert File.exist?("#{data_path}/attribute_search_index.json")
+      assert File.exist?("#{data_path}/return_reasons.yml")
+      assert File.exist?("#{data_path}/reversed_return_reasons.yml")
+      assert File.exist?("#{data_path}/return_reason_search_index.json")
       assert_equal "---\nsiblings: foo\n", File.read("#{data_path}/sibling_groups.yml")
       assert_equal "---\nattributes: baz\n", File.read("#{data_path}/attributes.yml")
       assert_equal "---\nreversed: qux\n", File.read("#{data_path}/reversed_attributes.yml")
       assert_equal '[{"search":"bar"}]' + "\n", File.read("#{data_path}/search_index.json")
       assert_equal '[{"attribute_search":"quux"}]' + "\n", File.read("#{data_path}/attribute_search_index.json")
+      assert_equal "---\nreturn_reasons: corge\n", File.read("#{data_path}/return_reasons.yml")
+      assert_equal "---\nreversed_return_reasons: grault\n", File.read("#{data_path}/reversed_return_reasons.yml")
+      assert_equal '[{"return_reason_search":"garply"}]' + "\n", File.read("#{data_path}/return_reason_search_index.json")
 
       release_path = File.expand_path("docs/_releases/2024-01", @tmp_base_path)
       assert File.exist?("#{release_path}/index.html")
       assert File.exist?("#{release_path}/attributes.html")
+      assert File.exist?("#{release_path}/return_reasons.html")
 
       expected_index_content = <<~CONTENT
         ---
@@ -198,6 +232,18 @@ module ProductTaxonomy
         ---
       CONTENT
       assert_equal expected_attributes_content, File.read("#{release_path}/attributes.html")
+
+      expected_return_reasons_content = <<~CONTENT
+        ---
+        layout: return_reasons
+
+        title: 2024-01
+        target: 2024-01
+        permalink: /releases/2024-01/return_reasons/
+        github_url: https://github.com/Shopify/product-taxonomy/releases/tag/v2024-01
+        ---
+      CONTENT
+      assert_equal expected_return_reasons_content, File.read("#{release_path}/return_reasons.html")
     end
 
     test "execute updates latest.html redirect for versioned release" do

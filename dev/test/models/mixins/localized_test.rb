@@ -22,14 +22,14 @@ module ProductTaxonomy
       @test_instance = TestClass.new(id: 1, name: "Raw name", non_localized_attr: "Non-localized attr")
       @fr_yaml = <<~YAML
         fr:
-          testclasses:
+          test_classes:
             "1":
               name: "Nom en français"
       YAML
 
       @es_yaml = <<~YAML
         es:
-          testclasses:
+          test_classes:
             "1":
               name: "Nombre en español"
       YAML
@@ -85,7 +85,7 @@ module ProductTaxonomy
     test "validate_localizations! raises error when localizations are incomplete" do
       fr_yaml = <<~YAML
         fr:
-          testclasses:
+          test_classes:
             "1":
               name: # Missing name
       YAML

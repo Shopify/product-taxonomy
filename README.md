@@ -97,9 +97,9 @@ cd dev
 bundle install
 
 # Commands to manage the taxonomy
-bin/product-taxonomy dist     # build the dist files
-bin/product-taxonomy docs     # build the documentation files
-bin/product-taxonomy release  # generate a release
+bin/product_taxonomy dist     # build the dist files
+bin/product_taxonomy docs     # build the documentation files
+bin/product_taxonomy release  # generate a release
 
 # Development tasks (via Rake)
 bundle exec rake test              # run all tests
@@ -120,14 +120,15 @@ bundle exec rake schema:vet_dist   # validate distribution schemas only
 
 ```
 ├── data
-│   ├── attributes.yml   # source-of-truth for attributes
-│   ├── categories       # source-of-truth for categories
-│   ├── integrations     # integrations and mappings between taxonomies
-│   ├── localizations    # localizations for categories, attributes, and values
-│   └── values.yml       # source-of-truth for values
-├── dev                  # ETL app for managing the taxonomy
-├── dist                 # generated distribution files
-└── docs                 # documentation microsite served with Jekyll
+│   ├── attributes.yml       # source-of-truth for attributes
+│   ├── return_reasons.yml   # source-of-truth for return reasons
+│   ├── categories           # source-of-truth for categories
+│   ├── integrations         # integrations and mappings between taxonomies
+│   ├── localizations        # localizations for categories, attributes, values, and return reasons
+│   └── values.yml           # source-of-truth for values
+├── dev                      # ETL app for managing the taxonomy
+├── dist                     # generated distribution files
+└── docs                     # documentation microsite served with Jekyll
 ```
 
 ## 🧑‍💻 Contributing
