@@ -17,21 +17,13 @@ module ProductTaxonomy
     private
 
     def create_return_reason!
-      @return_reason = ReturnReason.new(
+      @return_reason = ReturnReason.create_validate_and_add!(
         id: ReturnReason.next_id,
         name: @name,
         description: @description,
         friendly_id:,
         handle:,
       )
-      
-      begin
-        @return_reason.validate!(:create)
-      rescue ActiveModel::ValidationError => e
-        raise ActiveModel::ValidationError.new(e.model), "Failed to create return reason: #{e.message}"
-      end
-
-      ReturnReason.add(@return_reason)
       logger.info("Created return reason `#{@return_reason.name}` with friendly_id=`#{@return_reason.friendly_id}`")
     end
 
@@ -50,6 +42,3 @@ module ProductTaxonomy
     end
   end
 end
-
-
-
