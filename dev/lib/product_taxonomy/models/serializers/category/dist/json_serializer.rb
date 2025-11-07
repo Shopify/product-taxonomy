@@ -38,6 +38,14 @@ module ProductTaxonomy
                     "extended" => attr.is_a?(ExtendedAttribute),
                   }
                 end,
+                "return_reasons" => category.return_reasons.map do |return_reason|
+                  {
+                    "id" => return_reason.gid,
+                    "name" => return_reason.name(locale:),
+                    "handle" => return_reason.handle,
+                    "description" => return_reason.description(locale:),
+                  }
+                end,
                 "children" => category.children.map do |child|
                   {
                     "id" => child.gid,
