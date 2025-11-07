@@ -44,6 +44,7 @@ module ProductTaxonomy
               "name" => "Root",
               "children" => ["aa-1"],
               "attributes" => [],
+              "return_reasons" => [],
             }
 
             assert_equal expected, DataSerializer.serialize(@root)
@@ -56,12 +57,14 @@ module ProductTaxonomy
                 "name" => "Root",
                 "children" => ["aa-1"],
                 "attributes" => [],
+                "return_reasons" => [],
               },
               {
                 "id" => "aa-1",
                 "name" => "Child",
                 "children" => [],
                 "attributes" => ["color"],
+                "return_reasons" => [],
               },
             ]
 
@@ -75,12 +78,14 @@ module ProductTaxonomy
                 "name" => "Root",
                 "children" => ["aa-1"],
                 "attributes" => [],
+                "return_reasons" => [],
               },
               {
                 "id" => "aa-1",
                 "name" => "Child",
                 "children" => [],
                 "attributes" => ["color"],
+                "return_reasons" => [],
               },
             ]
 
