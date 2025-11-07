@@ -17,6 +17,3 @@ module ProductTaxonomy
     end
   end
 end
-
-
-
