@@ -37,6 +37,10 @@ module ProductTaxonomy
         "attributes.yml",
         ProductTaxonomy.data_path,
       )))
+      ProductTaxonomy::ReturnReason.load_from_source(YAML.load_file(File.expand_path(
+        "return_reasons.yml",
+        ProductTaxonomy.data_path,
+      )))
 
       glob = Dir.glob(File.expand_path("categories/*.yml", ProductTaxonomy.data_path))
       categories_source_data = glob.each_with_object([]) do |file, array|

@@ -2,7 +2,7 @@
 
 module ProductTaxonomy
   class SyncEnLocalizationsCommand < Command
-    PERMITTED_TARGETS = ["categories", "attributes", "values"].freeze
+    PERMITTED_TARGETS = ["categories", "attributes", "values", "return_reasons"].freeze
 
     def initialize(options)
       super
@@ -19,6 +19,7 @@ module ProductTaxonomy
       sync_categories if @targets.include?("categories")
       sync_attributes if @targets.include?("attributes")
       sync_values if @targets.include?("values")
+      sync_return_reasons if @targets.include?("return_reasons")
     end
 
     private
@@ -41,8 +42,15 @@ module ProductTaxonomy
       write_localizations("values", localizations)
     end
 
+    def sync_return_reasons
+      logger.info("Syncing return_reasons...")
+      localizations = Serializers::ReturnReason::Data::LocalizationsSerializer.serialize_all
+      write_localizations("return_reasons", localizations)
+    end
+
     def write_localizations(type, localizations)
       file_path = File.expand_path("localizations/#{type}/en.yml", ProductTaxonomy.data_path)
+      FileUtils.mkdir_p(File.dirname(file_path))
       File.open(file_path, "w") do |file|
         file.puts "# This file is auto-generated. Do not edit directly."
         file.write(YAML.dump(localizations, line_width: -1))
