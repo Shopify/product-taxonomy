@@ -22,6 +22,7 @@ module ProductTaxonomy
             id: item["id"],
             name: item["name"],
             attributes: Array(item["attributes"]).map { Attribute.find_by(friendly_id: _1) || _1 },
+            return_reasons: Array(item["return_reasons"]).map { ReturnReason.find_by(friendly_id: _1) || _1 },
           )
         end
 
@@ -74,6 +75,7 @@ module ProductTaxonomy
     validates :id, format: { with: /\A[a-z]{2}(-\d+)*\z/ }, on: :create
     validates :name, presence: true, on: :create
     validate :attributes_found?, on: :create
+    validate :return_reasons_found?, on: :create
     validates_with ProductTaxonomy::Indexed::UniquenessValidator, attributes: [:id], on: :create
 
     # Validations that can only be performed after the category tree has been loaded.
@@ -84,19 +86,21 @@ module ProductTaxonomy
 
     localized_attr_reader :name, keyed_by: :id
 
-    attr_reader :id, :children, :secondary_children, :attributes
+    attr_reader :id, :children, :secondary_children, :attributes, :return_reasons
     attr_accessor :parent, :secondary_parents
 
     # @param id [String] The ID of the category.
     # @param name [String] The name of the category.
     # @param attributes [Array<Attribute>] The attributes of the category.
+    # @param return_reasons [Array<ReturnReason>] The return reasons for the category.
     # @param parent [Category] The parent category of the category.
-    def initialize(id:, name:, attributes: [], parent: nil)
+    def initialize(id:, name:, attributes: [], return_reasons: [], parent: nil)
       @id = id
       @name = name
       @children = []
       @secondary_children = []
       @attributes = attributes
+      @return_reasons = return_reasons
       @parent = parent
       @secondary_parents = []
     end
@@ -282,6 +286,18 @@ module ProductTaxonomy
           :attributes,
           :not_found,
           message: "not found for friendly ID \"#{attribute}\"",
+        )
+      end
+    end
+
+    def return_reasons_found?
+      return_reasons&.each do |return_reason|
+        next if return_reason.is_a?(ReturnReason)
+
+        errors.add(
+          :return_reasons,
+          :not_found,
+          message: "not found for friendly ID \"#{return_reason}\"",
         )
       end
     end

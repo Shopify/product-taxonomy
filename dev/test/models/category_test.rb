@@ -292,6 +292,24 @@ module ProductTaxonomy
       assert_equal expected_errors, error.model.errors.details
     end
 
+    test "load_from_source raises validation error if return reason is not found" do
+      yaml_content = <<~YAML
+        ---
+        - id: aa
+          name: Apparel & Accessories
+          return_reasons:
+          - foo ## This return reason does not exist
+      YAML
+
+      error = assert_raises(ActiveModel::ValidationError) do
+        Category.load_from_source(YAML.safe_load(yaml_content))
+      end
+      expected_errors = {
+        return_reasons: [{ error: :not_found }],
+      }
+      assert_equal expected_errors, error.model.errors.details
+    end
+
     test "load_from_source raises validation error if secondary child is not found" do
       yaml_content = <<~YAML
         ---
