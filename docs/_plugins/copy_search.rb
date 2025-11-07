@@ -11,7 +11,7 @@ Jekyll::Hooks.register(:site, :post_write) do |site|
     target_dir = File.join(site_dest, "releases", version)
     Dir.mkdir(target_dir) unless Dir.exist?(target_dir)
 
-    ["search_index.json", "attribute_search_index.json"].each do |file|
+    ["search_index.json", "attribute_search_index.json", "return_reason_search_index.json"].each do |file|
       source_file = File.join(version_dir, file)
       target_file = File.join(target_dir, file)
 
