@@ -111,5 +111,10 @@ module ProductTaxonomy
     def add_value(name, attribute_friendly_id)
       AddValueCommand.new(options.merge(name:, attribute_friendly_id:)).run
     end
+
+    desc "add_return_reason NAME DESCRIPTION", "Add a new return reason to the taxonomy with NAME and DESCRIPTION"
+    def add_return_reason(name, description)
+      AddReturnReasonCommand.new(options.merge(name:, description:)).run
+    end
   end
 end
