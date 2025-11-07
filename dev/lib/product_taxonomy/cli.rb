@@ -116,5 +116,10 @@ module ProductTaxonomy
     def add_return_reason(name, description)
       AddReturnReasonCommand.new(options.merge(name:, description:)).run
     end
+
+    desc "dump_return_reasons", "Dump return reasons to YAML file"
+    def dump_return_reasons
+      DumpReturnReasonsCommand.new(options).run
+    end
   end
 end
