@@ -23,7 +23,7 @@ module ProductTaxonomy
 
     test "initialize sets targets to all permitted targets when not specified" do
       command = SyncEnLocalizationsCommand.new({})
-      assert_equal ["categories", "attributes", "values"], command.instance_variable_get(:@targets)
+      assert_equal ["categories", "attributes", "values", "return_reasons"], command.instance_variable_get(:@targets)
     end
 
     test "initialize accepts custom targets" do
