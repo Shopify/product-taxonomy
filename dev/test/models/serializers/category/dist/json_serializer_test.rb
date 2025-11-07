@@ -28,6 +28,7 @@ module ProductTaxonomy
                 "name" => "Child",
               }],
               "ancestors" => [],
+              "return_reasons" => [],
             }
             assert_equal expected_json, JsonSerializer.serialize(@root)
           end
@@ -48,6 +49,7 @@ module ProductTaxonomy
                 "id" => "gid://shopify/TaxonomyCategory/aa",
                 "name" => "Root",
               }],
+              "return_reasons" => [],
             }
             assert_equal expected_json, JsonSerializer.serialize(@child)
           end
@@ -71,6 +73,7 @@ module ProductTaxonomy
                   "name" => "Root",
                 },
               ],
+              "return_reasons" => [],
             }
             assert_equal expected_json, JsonSerializer.serialize(@grandchild)
           end
@@ -90,6 +93,7 @@ module ProductTaxonomy
                 "name" => "Child en français",
               }],
               "ancestors" => [],
+              "return_reasons" => [],
             }
             assert_equal expected_json, JsonSerializer.serialize(@root, locale: "fr")
           end
@@ -193,6 +197,7 @@ module ProductTaxonomy
                     "attributes" => [],
                     "children" => [{ "id" => "gid://shopify/TaxonomyCategory/aa-1", "name" => "Child" }],
                     "ancestors" => [],
+                    "return_reasons" => [],
                   },
                   {
                     "id" => "gid://shopify/TaxonomyCategory/aa-1",
@@ -203,6 +208,7 @@ module ProductTaxonomy
                     "attributes" => [],
                     "children" => [{ "id" => "gid://shopify/TaxonomyCategory/aa-1-1", "name" => "Grandchild" }],
                     "ancestors" => [{ "id" => "gid://shopify/TaxonomyCategory/aa", "name" => "Root" }],
+                    "return_reasons" => [],
                   },
                   {
                     "id" => "gid://shopify/TaxonomyCategory/aa-1-1",
@@ -216,6 +222,7 @@ module ProductTaxonomy
                       { "id" => "gid://shopify/TaxonomyCategory/aa-1", "name" => "Child" },
                       { "id" => "gid://shopify/TaxonomyCategory/aa", "name" => "Root" },
                     ],
+                    "return_reasons" => [],
                   },
                 ],
               }],

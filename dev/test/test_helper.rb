@@ -16,6 +16,7 @@ module ProductTaxonomy
       ProductTaxonomy::Value.reset
       ProductTaxonomy::Attribute.reset
       ProductTaxonomy::Category.reset
+      ProductTaxonomy::ReturnReason.reset
     end
   end
 end

@@ -14,11 +14,20 @@ module ProductTaxonomy
             # @param [Category] category
             # @return [Hash]
             def serialize(category)
+              return_reason_ids = category.return_reasons.map(&:friendly_id)
+              has_unknown = return_reason_ids.delete('unknown')
+              has_other = return_reason_ids.delete('other')
+
+              sorted_return_reasons = AlphanumericSorter.sort(return_reason_ids)
+              sorted_return_reasons += ['unknown'] if has_unknown
+              sorted_return_reasons += ['other'] if has_other
+              
               {
                 "id" => category.id,
                 "name" => category.name,
                 "children" => category.children.sort_by(&:id_parts).map(&:id),
                 "attributes" => AlphanumericSorter.sort(category.attributes.map(&:friendly_id), other_last: true),
+                "return_reasons" => sorted_return_reasons,
               }
             end
           end
