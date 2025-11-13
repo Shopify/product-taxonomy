@@ -27847,8 +27847,6 @@ base_attributes:
   - printer/copier_specialized_features__ai_powered
   - printer/copier_specialized_features__automatic_document_feeder_adf
   - printer/copier_specialized_features__borderless_printing
-  - printer/copier_specialized_features__cloud_support
-  - printer/copier_specialized_features__duplex_printing
   - printer/copier_specialized_features__mobile_printing_support
   - printer/copier_specialized_features__paper_storage
   - printer/copier_specialized_features__voice_control
@@ -28328,8 +28326,6 @@ base_attributes:
   friendly_id: medical_alarm_features
   handle: medical-alarm-features
   values:
-  - medical_alarm_features__automatic_fall_detection
-  - medical_alarm_features__emergency_call_button
   - medical_alarm_features__long_battery_life
   - medical_alarm_features__long_range_connectivity
   - medical_alarm_features__loud_alarm
@@ -34693,7 +34689,6 @@ base_attributes:
   - release_mechanism__immediate_release
   - release_mechanism__liposomal
   - release_mechanism__spray
-  - release_mechanism__sublingual
   - release_mechanism__sustained_release
   - release_mechanism__other
 - id: 5138
@@ -35926,22 +35921,22 @@ base_attributes:
   - lens_case_accessories_included__tweezers
   - lens_case_accessories_included__other
 - id: 5220
-  name: Contact lens compatibility
+  name: Compatible contact lenses
   description: Indicates the types or materials of contact lenses the solution can be safely used with
-  friendly_id: contact_lens_compatibility
-  handle: contact-lens-compatibility
+  friendly_id: compatible_contact_lenses
+  handle: compatible-contact-lenses
   values:
-  - contact_lens_compatibility__colored_lenses
-  - contact_lens_compatibility__hard_lenses
-  - contact_lens_compatibility__hybrid_lenses
-  - contact_lens_compatibility__multifocal_lenses
-  - contact_lens_compatibility__orthokeratology_lenses
-  - contact_lens_compatibility__rigid_gas_permeable_rgp_lenses
-  - contact_lens_compatibility__scleral_lenses
-  - contact_lens_compatibility__silicone_hydrogel_lenses
-  - contact_lens_compatibility__soft_contact_lenses
-  - contact_lens_compatibility__toric_lenses
-  - contact_lens_compatibility__other
+  - compatible_contact_lenses__colored_lenses
+  - compatible_contact_lenses__hard_lenses
+  - compatible_contact_lenses__hybrid_lenses
+  - compatible_contact_lenses__multifocal_lenses
+  - compatible_contact_lenses__orthokeratology_lenses
+  - compatible_contact_lenses__rigid_gas_permeable_rgp_lenses
+  - compatible_contact_lenses__scleral_lenses
+  - compatible_contact_lenses__silicone_hydrogel_lenses
+  - compatible_contact_lenses__soft_contact_lenses
+  - compatible_contact_lenses__toric_lenses
+  - compatible_contact_lenses__other
 - id: 5221
   name: Contact lens material
   description: Specifies the polymer formulation or material family (e.g., hydrogel, silicone hydrogel) the lens is made from
@@ -38519,7 +38514,6 @@ base_attributes:
   handle: calibration-sensor-type
   values:
   - calibration_sensor_type__calibration_kit
-  - calibration_sensor_type__color_calibration_chart
   - calibration_sensor_type__color_reader
   - calibration_sensor_type__colorimeter
   - calibration_sensor_type__display_analyzer
