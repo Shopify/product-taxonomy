@@ -61,6 +61,21 @@ module ProductTaxonomy
       logger.info("Generating attribute with categories search index...")
       attribute_search_index_json = JSON.fast_generate(Serializers::Attribute::Docs::SearchSerializer.serialize_all)
       File.write("#{data_target}/attribute_search_index.json", attribute_search_index_json + "\n")
+
+      logger.info("Generating return reasons...")
+      return_reasons_yml = YAML.dump(Serializers::ReturnReason::Docs::BaseSerializer.serialize_all, line_width: -1)
+      File.write("#{data_target}/return_reasons.yml", return_reasons_yml)
+
+      logger.info("Generating return reasons with categories...")
+      reversed_return_reasons_yml = YAML.dump(
+        Serializers::ReturnReason::Docs::ReversedSerializer.serialize_all,
+        line_width: -1,
+      )
+      File.write("#{data_target}/reversed_return_reasons.yml", reversed_return_reasons_yml)
+
+      logger.info("Generating return reason search index...")
+      return_reason_search_index_json = JSON.fast_generate(Serializers::ReturnReason::Docs::SearchSerializer.serialize_all)
+      File.write("#{data_target}/return_reason_search_index.json", return_reason_search_index_json + "\n")
     end
 
     def generate_release_folder
