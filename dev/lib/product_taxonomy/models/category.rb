@@ -138,6 +138,13 @@ module ProductTaxonomy
       @attributes << attribute
     end
 
+    # Add a return reason to the category
+    #
+    # @param [ReturnReason] return_reason
+    def add_return_reason(return_reason)
+      @return_reasons << return_reason
+    end
+
     #
     # Information
     #
