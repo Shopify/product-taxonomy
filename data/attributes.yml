@@ -4110,9 +4110,12 @@ base_attributes:
   friendly_id: bristle_material
   handle: bristle-material
   values:
+  - bristle_material__badger
   - bristle_material__boar_bristle
   - bristle_material__cotton
   - bristle_material__faux_leather
+  - bristle_material__goat
+  - bristle_material__hog
   - bristle_material__horsehair
   - bristle_material__leather
   - bristle_material__linen
@@ -4123,11 +4126,14 @@ base_attributes:
   - bristle_material__plastic
   - bristle_material__polypropylene_pp
   - bristle_material__polyvinyl_chloride_pvc
+  - bristle_material__pony
   - bristle_material__rubber
+  - bristle_material__sable
   - bristle_material__silicone
   - bristle_material__stainless_steel
   - bristle_material__synthetic_bristle
   - bristle_material__teflon
+  - bristle_material__unknown
   - bristle_material__wood
   - bristle_material__other
 - id: 1410
@@ -6461,8 +6467,12 @@ base_attributes:
   friendly_id: battery_type
   handle: battery-type
   values:
+  - battery_type__contained_detachable
+  - battery_type__contained_undetachable
   - battery_type__disposable
   - battery_type__rechargeable
+  - battery_type__standalone_included
+  - battery_type__standalone_not_included
   - battery_type__other
 - id: 1572
   name: Technology level
@@ -7990,6 +8000,8 @@ base_attributes:
   - battery_size__cr3032
   - battery_size__d
   - battery_size__f
+  - battery_size__gt_100wh
+  - battery_size__large_cell_appliance/tool/ride_on_toy
   - battery_size__lr06
   - battery_size__lr14
   - battery_size__lr27a
@@ -8001,6 +8013,7 @@ base_attributes:
   - battery_size__lr60
   - battery_size__lr66
   - battery_size__lr1130
+  - battery_size__lte_100wh
   - battery_size__mn11
   - battery_size__mn21
   - battery_size__mn27
@@ -8009,6 +8022,7 @@ base_attributes:
   - battery_size__pr44
   - battery_size__pr70
   - battery_size__sc
+  - battery_size__small_household_cell_aa/aaa/coin
   - battery_size__sr41
   - battery_size__sr42
   - battery_size__sr43
@@ -8029,6 +8043,7 @@ base_attributes:
   - battery_size__sr731sw
   - battery_size__sr920sw
   - battery_size__sr936sw
+  - battery_size__unknown
   - battery_size__other
 - id: 1684
   name: Shaving cream formulation
@@ -13114,7 +13129,9 @@ base_attributes:
   - food_product_form__granules
   - food_product_form__ground
   - food_product_form__powder
+  - food_product_form__preserved
   - food_product_form__sheets
+  - food_product_form__untreated/raw
   - food_product_form__whole
   - food_product_form__other
 - id: 1979
@@ -16813,11 +16830,17 @@ base_attributes:
   - embellishments__brads
   - embellishments__buttons
   - embellishments__chipboard_elements
+  - embellishments__diamond
   - embellishments__die_cuts
   - embellishments__gems
+  - embellishments__none
+  - embellishments__precious_stone
+  - embellishments__rhinestone
   - embellishments__ribbons
+  - embellishments__semi_precious_stone
   - embellishments__sequins
   - embellishments__stickers
+  - embellishments__synthetic_pearl
   - embellishments__washi_tape
   - embellishments__other
 - id: 2289
@@ -23504,6 +23527,7 @@ base_attributes:
   values:
   - jewelry_material__acrylic
   - jewelry_material__alcantara
+  - jewelry_material__alloy
   - jewelry_material__aluminum
   - jewelry_material__bakelite
   - jewelry_material__bamboo
@@ -23543,15 +23567,18 @@ base_attributes:
   - jewelry_material__microfiber
   - jewelry_material__nickel
   - jewelry_material__nickel_plated
+  - jewelry_material__non_precious_metals
   - jewelry_material__nylon
   - jewelry_material__palladium
   - jewelry_material__palladium_plated
+  - jewelry_material__pearls
   - jewelry_material__plastic
   - jewelry_material__platinum
   - jewelry_material__platinum_plated
   - jewelry_material__polyester
   - jewelry_material__porcelain
   - jewelry_material__precious_resin
+  - jewelry_material__precious/semiprecious_stones
   - jewelry_material__red_gold
   - jewelry_material__resin
   - jewelry_material__rhodium_plated
@@ -25411,14 +25438,20 @@ base_attributes:
   - lumber/wood_type__birch_wood
   - lumber/wood_type__cedar_wood
   - lumber/wood_type__cherry_wood
+  - lumber/wood_type__cork
   - lumber/wood_type__hickory_wood
+  - lumber/wood_type__jute
   - lumber/wood_type__maple_wood
   - lumber/wood_type__medium_density_fiberboard_mdf
   - lumber/wood_type__oak_wood
+  - lumber/wood_type__palm
   - lumber/wood_type__pine_wood
   - lumber/wood_type__plywood
   - lumber/wood_type__poplar_wood
+  - lumber/wood_type__raffia
+  - lumber/wood_type__rattan
   - lumber/wood_type__redwood
+  - lumber/wood_type__straw
   - lumber/wood_type__walnut_wood
   - lumber/wood_type__wood
   - lumber/wood_type__other
@@ -42695,6 +42728,122 @@ base_attributes:
   - map_update_policy__one_time_paid_updates
   - map_update_policy__subscription_based_updates
   - map_update_policy__other
+- id: 5678
+  name: Construction
+  description: Indicates the metalwork construction method or technique used in jewelry manufacturing (e.g., plated, vermeil, filled, solid)
+  friendly_id: construction
+  handle: construction
+  values:
+  - construction__clad
+  - construction__filled
+  - construction__plated
+  - construction__solid
+  - construction__toned
+  - construction__vermeil
+  - construction__whole
+  - construction__other
+- id: 5679
+  name: Alcohol/Solvent content
+  description: Classifies the product based on alcohol or solvent content for shipping and regulatory purposes (e.g., alcohol ≤24%, alcohol >24%, solvent small container)
+  friendly_id: alcohol/solvent_content
+  handle: alcohol-solvent-content
+  values:
+  - alcohol/solvent_content__alcohol_gt_24
+  - alcohol/solvent_content__alcohol_lte_24
+  - alcohol/solvent_content__solvent_large_container_1l
+  - alcohol/solvent_content__solvent_small_container_1l
+  - alcohol/solvent_content__other
+- id: 5680
+  name: Leather type
+  description: Specifies the animal source or type of leather used in the product (e.g., cowhide, calfskin, crocodile, python, synthetic)
+  friendly_id: leather_type
+  handle: leather-type
+  values:
+  - leather_type__alligator
+  - leather_type__calfskin
+  - leather_type__cowhide
+  - leather_type__crocodile
+  - leather_type__lambskin
+  - leather_type__lizard
+  - leather_type__ostrich
+  - leather_type__python
+  - leather_type__sheepskin
+  - leather_type__stingray
+  - leather_type__synthetic
+  - leather_type__unknown
+  - leather_type__other
+- id: 5681
+  name: Material origin
+  description: Indicates the form or state in which precious materials are supplied (e.g., loose/unmounted, finished jewelry, printed/digital gift card)
+  friendly_id: material_origin
+  handle: material-origin
+  values:
+  - material_origin__finished_product_jewelry/watch
+  - material_origin__loose/unmounted
+  - material_origin__nft
+  - material_origin__printed/digital_gift_card
+  - material_origin__voucher
+  - material_origin__other
+- id: 5682
+  name: Plant material
+  description: Specifies whether plant materials are live, preserved, or artificial
+  friendly_id: plant_material
+  handle: plant-material
+  values:
+  - plant_material__artificial
+  - plant_material__dried/preserved
+  - plant_material__live
+  - plant_material__other
+- id: 5683
+  name: Product classification
+  description: Categorizes the type of precious material, currency, or valuable item (e.g., currency, bullion, precious stones, gift card, NFT)
+  friendly_id: product_classification
+  handle: product-classification
+  values:
+  - product_classification__bullion
+  - product_classification__coupon
+  - product_classification__currency
+  - product_classification__gift_card
+  - product_classification__loose_precious_stones
+  - product_classification__nft
+  - product_classification__semi_precious_stones
+  - product_classification__voucher
+  - product_classification__other
+- id: 5684
+  name: Product use
+  description: Identifies the primary intended use or purpose of precious materials or collectibles (e.g., currency/legal tender, collectible, jewelry, gift card)
+  friendly_id: product_use
+  handle: product-use
+  values:
+  - product_use__collectible/numismatic
+  - product_use__currency/legal_tender
+  - product_use__gift_card/voucher
+  - product_use__jewelry/ornament
+  - product_use__other
+- id: 5685
+  name: Wood finish
+  description: Describes the finishing treatment or construction method applied to wood products (e.g., solid wood, veneered, engineered, oiled, lacquered, painted)
+  friendly_id: wood_finish
+  handle: wood-finish
+  values:
+  - wood_finish__engineered_plywood/mdf
+  - wood_finish__lacquered/varnished
+  - wood_finish__oiled
+  - wood_finish__painted
+  - wood_finish__solid_wood
+  - wood_finish__untreated/natural
+  - wood_finish__veneered
+  - wood_finish__other
+- id: 5686
+  name: Material treatment
+  description: Specifies chemical or physical treatments applied to materials for preservation or safety (e.g., heat treated, fumigated, chemically treated)
+  friendly_id: material_treatment
+  handle: material-treatment
+  values:
+  - material_treatment__chemically_treated
+  - material_treatment__fumigated
+  - material_treatment__heat_treated
+  - material_treatment__other
 extended_attributes:
 - name: Shampoo/Conditioner effect
   handle: shampoo-conditioner-effect

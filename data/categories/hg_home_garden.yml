@@ -93,14 +93,18 @@
   attributes:
   - color
   - furniture/fixture_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-1-1-5
   name: Wall-Mounted Caddies
   children: []
   attributes:
   - color
   - furniture/fixture_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-1-2
   name: Bath Mats & Rugs
   children: []
@@ -277,8 +281,10 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - material
   - pattern
+  - wood_finish
 - id: hg-1-21-2
   name: Towel Racks
   children: []
@@ -568,8 +574,10 @@
   attributes:
   - color
   - decoration_material
+  - material_treatment
   - pattern
   - plant_class
+  - plant_material
   - plant_name
 - id: hg-3-2-2
   name: Artificial Non-Flowering Plants
@@ -577,8 +585,10 @@
   attributes:
   - color
   - decoration_material
+  - material_treatment
   - pattern
   - plant_class
+  - plant_material
   - plant_name
 - id: hg-3-2-3
   name: Artificial Shrubs
@@ -586,8 +596,10 @@
   attributes:
   - color
   - decoration_material
+  - material_treatment
   - pattern
   - plant_class
+  - plant_material
   - plant_name
 - id: hg-3-2-4
   name: Artificial Trees
@@ -595,9 +607,13 @@
   attributes:
   - color
   - decoration_material
+  - lumber/wood_type
+  - material_treatment
   - pattern
   - plant_class
+  - plant_material
   - plant_name
+  - wood_finish
 - id: hg-3-3
   name: Artificial Food
   children: []
@@ -684,9 +700,14 @@
   children: []
   attributes:
   - color
+  - construction
   - decoration_material
+  - embellishment/trim_material
+  - jewelry_material
+  - lumber/wood_type
   - pattern
   - theme
+  - wood_finish
 - id: hg-3-5
   name: Backrest Pillows
   children: []
@@ -781,10 +802,14 @@
   name: Bird Feeders
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - decoration_material
+  - lumber/wood_type
   - mounting_hardware
   - pattern
+  - wood_finish
 - id: hg-3-8-2
   name: Butterfly Feeders
   children: []
@@ -844,17 +869,21 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - material
   - mounting_hardware
   - pattern
+  - wood_finish
 - id: hg-3-10-2
   name: Birdhouses
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - material
   - mounting_hardware
   - pattern
+  - wood_finish
 - id: hg-3-10-3
   name: Butterfly Houses
   children: []
@@ -933,6 +962,9 @@
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
 - id: hg-3-16-4
   name: Clock Inserts
@@ -944,6 +976,8 @@
   name: Clock Movements
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: hg-3-17
@@ -961,6 +995,8 @@
   name: Alarm Clocks
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - material
   - pattern
@@ -971,6 +1007,8 @@
   - hg-3-17-2-1
   - hg-3-17-2-2
   attributes:
+  - battery_size
+  - battery_type
   - color
   - material
   - pattern
@@ -978,6 +1016,8 @@
   name: Desk Clocks
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - material
   - pattern
@@ -985,6 +1025,8 @@
   name: Shelf Clocks
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - material
   - pattern
@@ -1001,6 +1043,8 @@
   name: Floor Clocks
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - material
   - pattern
@@ -1008,6 +1052,8 @@
   name: Grandfather Clocks
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - material
   - pattern
@@ -1015,6 +1061,8 @@
   name: Wall Clocks
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - material
   - pattern
@@ -1198,6 +1246,8 @@
   name: Fountains
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: hg-3-35-2-3
@@ -1264,21 +1314,28 @@
   name: Candle & Oil Warmers
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
+  - lumber/wood_type
   - material
   - pattern
+  - wood_finish
 - id: hg-3-39-2
   name: Candle Holders
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - decoration_material
+  - lumber/wood_type
   - material
   - pattern
+  - wood_finish
 - id: hg-3-39-3
   name: Candle Snuffers
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - material
   - pattern
@@ -1286,9 +1343,14 @@
   name: Incense Holders
   children: []
   attributes:
+  - alcohol/solvent_content
+  - battery_size
+  - battery_type
   - color
+  - lumber/wood_type
   - material
   - pattern
+  - wood_finish
 - id: hg-3-39-5
   name: Fragrance Diffusers
   children:
@@ -1296,26 +1358,39 @@
   - hg-3-39-5-2
   - hg-3-39-5-3
   attributes:
+  - alcohol/solvent_content
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: hg-3-39-5-1
   name: Electric Diffusers
   children: []
   attributes:
+  - alcohol/solvent_content
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: hg-3-39-5-2
   name: Plug-In Diffusers
   children: []
-  attributes: []
+  attributes:
+  - alcohol/solvent_content
 - id: hg-3-39-5-3
   name: Ultrasonic Diffusers
   children: []
-  attributes: []
+  attributes:
+  - alcohol/solvent_content
+  - battery_size
+  - battery_type
 - id: hg-3-39-6
   name: Reed Diffuser Sticks
   children: []
-  attributes: []
+  attributes:
+  - alcohol/solvent_content
+  - lumber/wood_type
+  - wood_finish
 - id: hg-3-40
   name: Home Fragrances
   children:
@@ -1334,13 +1409,16 @@
   name: Air Fresheners
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - pattern
+  - product_form
   - scent
 - id: hg-3-40-2
   name: Candles
   children: []
   attributes:
+  - alcohol/solvent_content
   - candle_type
   - color
   - decoration_material
@@ -1350,6 +1428,7 @@
   name: Fragrance Oil
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - pattern
   - scent
@@ -1357,6 +1436,7 @@
   name: Incense
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - pattern
   - scent
@@ -1364,13 +1444,17 @@
   name: Potpourri
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
+  - material_treatment
   - pattern
+  - plant_material
   - scent
 - id: hg-3-40-6
   name: Wax Tarts
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - pattern
   - scent
@@ -1378,6 +1462,7 @@
   name: Reed Diffusers
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - pattern
   - scent
@@ -1407,6 +1492,8 @@
   name: Garden Sculptures
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - theme
@@ -1414,6 +1501,8 @@
   name: Lawn Ornaments
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - theme
@@ -1557,7 +1646,10 @@
   children: []
   attributes:
   - color
+  - construction
   - decoration_material
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
 - id: hg-3-54
   name: Rain Chains
@@ -1648,6 +1740,8 @@
   name: Holiday Ornament Displays & Stands
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: hg-3-58-6
@@ -1660,9 +1754,16 @@
   name: Holiday Ornaments
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
+  - construction
   - decoration_material
+  - embellishment/trim_material
+  - jewelry_material
+  - material_treatment
   - pattern
+  - plant_material
   - shape
   - theme
 - id: hg-3-58-8
@@ -1690,13 +1791,19 @@
   name: Nativity Sets
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
+  - lumber/wood_type
   - material
   - pattern
+  - wood_finish
 - id: hg-3-58-12
   name: Seasonal Village Sets & Accessories
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - decoration_material
   - pattern
@@ -1805,6 +1912,8 @@
   name: Weather Vanes
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - roof_decor_shape
@@ -1912,7 +2021,9 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-3-73-4-3
   name: Window Hooks
   children: []
@@ -2096,14 +2207,18 @@
   children: []
   attributes:
   - color
+  - material_treatment
   - pattern
+  - plant_material
   - shape
 - id: hg-3-76-2
   name: Wreaths
   children: []
   attributes:
   - color
+  - material_treatment
   - pattern
+  - plant_material
   - shape
 - id: hg-3-77
   name: Chair & Sofa Throws
@@ -2397,6 +2512,8 @@
   name: Carbon Monoxide Detectors
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - detector_operation_mode
@@ -2408,6 +2525,8 @@
   name: Smoke Detectors
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - detector_operation_mode
@@ -3045,6 +3164,8 @@
   name: Air Purifiers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - energy_efficiency_class
   - pattern
@@ -3068,6 +3189,8 @@
   - hg-9-1-5-3
   - hg-9-1-5-5
   attributes:
+  - battery_size
+  - battery_type
   - color
   - energy_efficiency_class
   - pattern
@@ -3094,6 +3217,8 @@
   - hg-9-1-6-4
   - hg-9-1-6-5
   attributes:
+  - battery_size
+  - battery_type
   - color
   - energy_efficiency_class
   - pattern
@@ -3101,6 +3226,8 @@
   name: Ceiling Fans
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - energy_efficiency_class
   - pattern
@@ -3108,6 +3235,8 @@
   name: Desk & Pedestal Fans
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - energy_efficiency_class
   - pattern
@@ -3115,6 +3244,8 @@
   name: Powered Hand Fans & Misters
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - energy_efficiency_class
   - pattern
@@ -3179,6 +3310,8 @@
   name: Humidifiers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - energy_efficiency_class
   - evaporation_technology
@@ -3187,6 +3320,8 @@
   name: Outdoor Misting Systems
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - energy_efficiency_class
   - pattern
@@ -3203,6 +3338,8 @@
   name: Space Heaters
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - energy_efficiency_class
   - pattern
@@ -3341,6 +3478,8 @@
   name: Floor Cleaners
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - energy_efficiency_class
   - pattern
@@ -3354,6 +3493,8 @@
   - hg-9-3-4-6
   - hg-9-3-4-7
   attributes:
+  - battery_size
+  - battery_type
   - color
   - energy_efficiency_class
   - pattern
@@ -3368,6 +3509,8 @@
   name: Cordless Floor Scrubbers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - energy_efficiency_class
   - pattern
@@ -3382,6 +3525,8 @@
   name: Ride-On Floor Scrubbers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - energy_efficiency_class
   - pattern
@@ -3389,6 +3534,8 @@
   name: Spin Mop Floor Scrubbers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - energy_efficiency_class
   - pattern
@@ -3396,6 +3543,8 @@
   name: Walk-Behind Floor Scrubbers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - energy_efficiency_class
   - pattern
@@ -3511,6 +3660,8 @@
   name: Garage Door Remotes
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - energy_efficiency_class
   - pattern
@@ -3678,6 +3829,8 @@
   name: Upright Vacuums
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - cleaning_surfaces
   - color
   - dirt_separating_method
@@ -3860,6 +4013,8 @@
   name: Dusters
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - material
   - pattern
@@ -3932,6 +4087,7 @@
   name: Dish Detergent & Soap
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - dispenser_type
   - ingredients
@@ -3984,6 +4140,7 @@
   name: Floor Cleaning Products
   children: []
   attributes:
+  - alcohol/solvent_content
   - cleaning_surfaces
   - color
   - dispenser_type
@@ -4019,6 +4176,7 @@
   name: Multi-surface Cleaners
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - dispenser_type
   - ingredients
@@ -4027,6 +4185,7 @@
   name: Household Disinfectants
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - dispenser_type
   - ingredients
@@ -4044,6 +4203,7 @@
   name: Pet Odor & Stain Removers
   children: []
   attributes:
+  - alcohol/solvent_content
   - cleaning_surfaces
   - color
   - dispenser_type
@@ -4149,20 +4309,26 @@
   name: Scrub Brush Heads & Refills
   children: []
   attributes:
+  - bristle_material
   - brush_material
   - cleaning_surfaces
   - color
   - dry/wet_cleaning
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-10-6-15
   name: Scrub Brushes
   children: []
   attributes:
+  - bristle_material
   - brush_material
   - cleaning_surfaces
   - color
   - dry/wet_cleaning
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-10-6-16
   name: Shop Towels & General-Purpose Cleaning Cloths
   children: []
@@ -4278,6 +4444,7 @@
   attributes:
   - color
   - features
+  - material
   - pattern
 - id: hg-10-9-4-1
   name: Drying Hangers
@@ -4292,6 +4459,7 @@
   attributes:
   - color
   - features
+  - material
   - pattern
 - id: hg-10-9-5
   name: Fabric Refreshers
@@ -4304,6 +4472,8 @@
   name: Fabric Shavers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - blade_material
   - color
   - pattern
@@ -4327,6 +4497,7 @@
   name: Fabric Softeners
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - pattern
   - scent
@@ -4334,6 +4505,7 @@
   name: Fabric Stain Removers
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - pattern
   - targeted_stains
@@ -4417,6 +4589,7 @@
   name: Laundry Detergent
   children: []
   attributes:
+  - alcohol/solvent_content
   - application_method
   - color
   - ingredients
@@ -4477,9 +4650,13 @@
   name: Fly Swatters
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
+  - lumber/wood_type
   - pattern
   - power_source
+  - wood_finish
 - id: hg-10-11-2
   name: Pest Control Traps
   children:
@@ -4498,6 +4675,8 @@
   name: Electric Traps
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - suitable_for_pest_type
@@ -4506,6 +4685,7 @@
   name: Glue Traps
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - pattern
   - suitable_for_pest_type
@@ -4551,6 +4731,7 @@
   - hg-10-11-3-4
   - hg-10-11-3-5
   attributes:
+  - alcohol/solvent_content
   - color
   - ingredients
   - pattern
@@ -4595,6 +4776,7 @@
   - hg-10-11-4-1
   - hg-10-11-4-2
   attributes:
+  - alcohol/solvent_content
   - application_method
   - color
   - ingredients
@@ -4604,6 +4786,7 @@
   name: Animal & Pet Repellents
   children: []
   attributes:
+  - alcohol/solvent_content
   - animal_type
   - application_method
   - color
@@ -4614,6 +4797,7 @@
   name: Household Insect Repellents
   children: []
   attributes:
+  - alcohol/solvent_content
   - application_method
   - bug_type
   - color
@@ -4700,7 +4884,9 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-10-14-7
   name: Shoe Polishers
   children: []
@@ -4751,6 +4937,7 @@
   name: Shoe Treatments
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - pattern
 - id: hg-10-14-11
@@ -4829,12 +5016,14 @@
   children: []
   attributes:
   - color
+  - material
   - pattern
 - id: hg-10-16-1-2-2
   name: Garment Racks
   children: []
   attributes:
   - color
+  - material
   - pattern
 - id: hg-10-16-1-3
   name: Clothes Valets
@@ -4847,6 +5036,7 @@
   children: []
   attributes:
   - color
+  - material
   - pattern
 - id: hg-10-16-1-5
   name: Hat Boxes
@@ -4876,6 +5066,7 @@
   attributes:
   - color
   - furniture/fixture_features
+  - material
   - pattern
 - id: hg-10-16-2
   name: Flatware Chests
@@ -5285,8 +5476,13 @@
   attributes:
   - barware_material
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
+  - lumber/wood_type
   - pattern
   - shape
+  - wood_finish
 - id: hg-11-1-9
   name: Cocktail & Barware Tool Sets
   children: []
@@ -5326,6 +5522,9 @@
   attributes:
   - barware_material
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
 - id: hg-11-1-10-4
   name: Cocktail Strainers
@@ -6138,7 +6337,9 @@
   attributes:
   - basket_material
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-3-9
   name: Replacement Drink Lids
   children: []
@@ -6188,8 +6389,10 @@
   attributes:
   - color
   - food_storage_material
+  - lumber/wood_type
   - pattern
   - shape
+  - wood_finish
 - id: hg-11-4-2
   name: Candy Buckets
   children: []
@@ -6212,8 +6415,10 @@
   attributes:
   - color
   - food_storage_material
+  - lumber/wood_type
   - pattern
   - shape
+  - wood_finish
 - id: hg-11-4-5
   name: Food Storage Bags
   children: []
@@ -6227,8 +6432,10 @@
   attributes:
   - color
   - food_storage_material
+  - lumber/wood_type
   - pattern
   - shape
+  - wood_finish
 - id: hg-11-4-7
   name: Food Wraps
   children:
@@ -6645,6 +6852,8 @@
   - hg-11-6-3-5
   - hg-11-6-3-6
   attributes:
+  - battery_size
+  - battery_type
   - color
   - material
   - pattern
@@ -7220,8 +7429,12 @@
   - hg-11-6-19-8
   - hg-11-6-19-9
   attributes:
+  - battery_size
+  - battery_type
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-6-19-1
   name: Barbecue Briquettes
   children:
@@ -7267,7 +7480,9 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-6-19-4
   name: Outdoor Grill Covers
   children: []
@@ -7326,6 +7541,8 @@
   name: Grill Thermometers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: hg-11-6-19-7
@@ -7361,12 +7578,14 @@
   - hg-11-6-19-9-2
   attributes:
   - color
+  - lumber/wood_type
   - pattern
 - id: hg-11-6-19-9-1
   name: Smoking Chips
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
 - id: hg-11-6-19-9-2
   name: Smoking Pellets
@@ -8157,6 +8376,8 @@
   name: Milk Frothers & Steamers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: hg-11-7-33
@@ -8480,7 +8701,9 @@
   - handle_color
   - handle_material
   - handle_pattern
+  - lumber/wood_type
   - tool/utensil_material
+  - wood_finish
 - id: hg-11-8-3
   name: Basters
   children: []
@@ -8495,6 +8718,8 @@
   - handle_color
   - handle_material
   - handle_pattern
+  - lumber/wood_type
+  - wood_finish
 - id: hg-11-8-5
   name: Beverage Dispensers
   children: []
@@ -8526,6 +8751,9 @@
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
   - tool/utensil_material
 - id: hg-11-8-8
@@ -8635,6 +8863,8 @@
   - hg-11-8-17-4
   - hg-11-8-17-5
   attributes:
+  - battery_size
+  - battery_type
   - color
   - display_technology
   - pattern
@@ -8651,6 +8881,8 @@
   name: Instant-Read Thermometers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - display_technology
   - pattern
@@ -8667,6 +8899,8 @@
   name: Probe Thermometers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - display_technology
   - pattern
@@ -8675,6 +8909,8 @@
   name: Wireless Thermometers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - display_technology
   - pattern
@@ -8683,6 +8919,8 @@
   name: Cooking Timers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: hg-11-8-19
@@ -8702,8 +8940,10 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - tool/utensil_material
+  - wood_finish
 - id: hg-11-8-22
   name: Dish Racks & Drain Boards
   children:
@@ -8717,7 +8957,9 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-22-2
   name: Drain Boards
   children: []
@@ -8749,7 +8991,10 @@
   name: Electric Knives
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
+  - construction
   - pattern
 - id: hg-11-8-26
   name: Flour Sifters
@@ -8772,7 +9017,9 @@
   - hg-11-8-28-2
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-28-1
   name: Lobster & Crab Crackers
   children:
@@ -8804,7 +9051,9 @@
   - hg-11-8-28-2-6
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-28-2-1
   name: Decorative Nutcrackers
   children: []
@@ -8822,6 +9071,9 @@
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
 - id: hg-11-8-28-2-4
   name: Lever Nutcrackers
@@ -8862,8 +9114,10 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - tool/utensil_material
+  - wood_finish
 - id: hg-11-8-30-2
   name: Food Zesters
   children: []
@@ -8889,8 +9143,12 @@
   name: Food Peelers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-32
   name: Food Steaming Bags
   children: []
@@ -8904,8 +9162,10 @@
   - hg-11-8-33-2
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - tool/utensil_material
+  - wood_finish
 - id: hg-11-8-33-1
   name: Food Skewers
   children: []
@@ -8918,8 +9178,10 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - tool/utensil_material
+  - wood_finish
 - id: hg-11-8-34
   name: Funnels
   children: []
@@ -8966,6 +9228,8 @@
   - handle_color
   - handle_material
   - handle_pattern
+  - lumber/wood_type
+  - wood_finish
 - id: hg-11-8-39-1
   name: Bread Knives
   children: []
@@ -8974,6 +9238,8 @@
   - handle_color
   - handle_material
   - handle_pattern
+  - lumber/wood_type
+  - wood_finish
 - id: hg-11-8-39-2
   name: Chef's Knives
   children: []
@@ -8982,6 +9248,8 @@
   - handle_color
   - handle_material
   - handle_pattern
+  - lumber/wood_type
+  - wood_finish
 - id: hg-11-8-39-3
   name: Paring Knives
   children: []
@@ -9006,6 +9274,8 @@
   - handle_color
   - handle_material
   - handle_pattern
+  - lumber/wood_type
+  - wood_finish
 - id: hg-11-8-40
   name: Kitchen Molds
   children: []
@@ -9032,7 +9302,9 @@
   - hg-11-8-41-14
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-41-1
   name: Can Organizers
   children: []
@@ -9050,7 +9322,9 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-41-4
   name: Kitchen Counter & Beverage Station Organizers
   children: []
@@ -9070,7 +9344,9 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-41-5-2
   name: Kitchen Utensil Racks
   children: []
@@ -9084,13 +9360,17 @@
   - hg-11-8-41-6-2
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-41-6-1
   name: Knife Blocks
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-41-6-2
   name: Knife Holders
   children: []
@@ -9124,7 +9404,9 @@
   - hg-11-8-41-8-2
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-41-8-1
   name: Paper Towel Dispensers
   children: []
@@ -9136,7 +9418,9 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-41-9
   name: Pot Racks
   children: []
@@ -9148,7 +9432,9 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-41-11
   name: Straw Holders & Dispensers
   children:
@@ -9156,7 +9442,9 @@
   - hg-11-8-41-11-2
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-41-11-1
   name: Straw Dispensers
   children: []
@@ -9174,6 +9462,9 @@
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
 - id: hg-11-8-41-13
   name: Toothpick Holders & Dispensers
@@ -9194,6 +9485,9 @@
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
 - id: hg-11-8-41-14
   name: Utensil & Flatware Trays
@@ -9202,7 +9496,12 @@
   - hg-11-8-41-14-2
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-41-14-1
   name: Flatware Trays
   children: []
@@ -9223,7 +9522,9 @@
   - hg-11-8-42-3
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-42-1
   name: Bench Scrapers
   children: []
@@ -9263,14 +9564,18 @@
   attributes:
   - color
   - kitchen_utensil_items_included
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-46
   name: Ladles
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - tool/utensil_material
+  - wood_finish
 - id: hg-11-8-47
   name: Mashers
   children: []
@@ -9317,8 +9622,10 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - tool/utensil_material
+  - wood_finish
 - id: hg-11-8-52
   name: Oil & Vinegar Dispensers
   children:
@@ -9461,14 +9768,19 @@
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
 - id: hg-11-8-62
   name: Rolling Pins
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - material
   - pattern
+  - wood_finish
 - id: hg-11-8-63
   name: Salad Dressing Mixers & Shakers
   children:
@@ -9497,8 +9809,10 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - tool/utensil_material
+  - wood_finish
 - id: hg-11-8-65
   name: Scoops
   children:
@@ -9508,8 +9822,10 @@
   - hg-11-8-65-4
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - tool/utensil_material
+  - wood_finish
 - id: hg-11-8-65-1
   name: Ice Cream Scoops
   children: []
@@ -9585,18 +9901,24 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-69
   name: Spatulas
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-70
   name: Spice Grinder Accessories
   children:
   - hg-11-8-70-5
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: hg-11-8-70-5
@@ -9610,7 +9932,9 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-8-72
   name: Spoon Rests
   children: []
@@ -9644,15 +9968,19 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - tool/utensil_material
+  - wood_finish
 - id: hg-11-8-77
   name: Whisks
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - tool/utensil_material
+  - wood_finish
 - id: hg-11-9
   name: Prefabricated Kitchens & Kitchenettes
   children: []
@@ -9905,7 +10233,12 @@
   - hg-11-10-6-7
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-10-6-1
   name: Cheese Knives
   children: []
@@ -9913,7 +10246,9 @@
   - accessory_size
   - color
   - flatware_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-10-6-2
   name: Chopstick Accessories
   children:
@@ -9947,14 +10282,21 @@
   attributes:
   - color
   - flatware_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-10-6-4
   name: Flatware Sets
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
   - flatware_pieces_included
+  - jewelry_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-10-6-5
   name: Forks
   children:
@@ -9966,8 +10308,13 @@
   attributes:
   - accessory_size
   - color
+  - construction
+  - embellishment/trim_material
   - flatware_material
+  - jewelry_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-10-6-5-1
   name: Dinner Forks
   children: []
@@ -10014,8 +10361,13 @@
   attributes:
   - accessory_size
   - color
+  - construction
+  - embellishment/trim_material
   - flatware_material
+  - jewelry_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-11-10-6-6-1
   name: Teaspoons
   children: []
@@ -10078,6 +10430,7 @@
   - hg-11-10-7-11
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - tableware_material
 - id: hg-11-10-7-1
@@ -10085,6 +10438,7 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - tableware_material
 - id: hg-11-10-7-2
@@ -10099,6 +10453,7 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - tableware_material
 - id: hg-11-10-7-4
@@ -10113,6 +10468,9 @@
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
   - tableware_material
 - id: hg-11-10-7-6
@@ -10127,6 +10485,9 @@
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
   - tableware_material
 - id: hg-11-10-7-8
@@ -10134,17 +10495,24 @@
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
+  - lumber/wood_type
   - pattern
   - shape
   - tableware_material
+  - wood_finish
 - id: hg-11-10-7-9
   name: Serving Trays
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - shape
   - tableware_material
+  - wood_finish
 - id: hg-11-10-7-10
   name: Sugar Bowls & Creamers
   children:
@@ -10231,8 +10599,13 @@
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
+  - lumber/wood_type
   - pattern
   - tableware_material
+  - wood_finish
 - id: hg-11-11
   name: Outdoor Kitchens
   children: []
@@ -10323,8 +10696,10 @@
   - application_method
   - color
   - gardening_use
+  - material_treatment
   - nutrient_content
   - pattern
+  - plant_material
   - suitable_space
 - id: hg-12-1-4
   name: Garden Pot Saucers & Trays
@@ -10340,6 +10715,8 @@
   - hg-12-1-5-2
   - hg-12-1-5-3
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: hg-12-1-5-1
@@ -10561,6 +10938,8 @@
   name: Lawn & Garden Sprayers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: hg-12-1-7-7
@@ -10595,6 +10974,8 @@
   name: Pruning Shears
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - blade_material
   - cutting_method
   - handle_color
@@ -10636,6 +11017,8 @@
   name: Spreaders
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - tank_material
@@ -10750,22 +11133,28 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - plant_support_material
+  - wood_finish
 - id: hg-12-1-14
   name: Plant Stands
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - material
   - pattern
+  - wood_finish
 - id: hg-12-1-15
   name: Pot & Planter Liners
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - plant_support_material
+  - wood_finish
 - id: hg-12-1-16
   name: Pots & Planters
   children:
@@ -10773,15 +11162,19 @@
   - hg-12-1-16-2
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - plant_support_material
+  - wood_finish
 - id: hg-12-1-16-1
   name: Planters
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - plant_support_material
+  - wood_finish
 - id: hg-12-1-16-2
   name: Pots
   children: []
@@ -10803,7 +11196,9 @@
   - hg-12-1-18-2
   attributes:
   - color
+  - material_treatment
   - pattern
+  - plant_material
 - id: hg-12-1-18-1
   name: Sand
   children: []
@@ -10967,6 +11362,8 @@
   name: LED Grow Lights
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - bulb_cap_type
   - color
   - energy_efficiency_class
@@ -11450,7 +11847,9 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: hg-12-3
   name: Outdoor Power Equipment
   children:
@@ -11477,6 +11876,8 @@
   name: Chainsaws
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - power_source
@@ -11491,6 +11892,8 @@
   name: Hedge Trimmers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - power_source
@@ -11553,6 +11956,8 @@
   name: Walk-Behind Mowers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - power_source
@@ -11567,6 +11972,8 @@
   name: Leaf Blowers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - power_source
@@ -11624,6 +12031,8 @@
   name: Pressure Washers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - power_source
@@ -11683,6 +12092,8 @@
   name: Weed Trimmers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - power_source
@@ -12217,6 +12628,8 @@
   name: Snow Shovels
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - blade_material
   - handle_color
   - handle_material
@@ -12458,6 +12871,8 @@
   name: Bedside Lamps
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - bulb_size
   - bulb_type
   - color
@@ -12470,6 +12885,8 @@
   name: Desk Lamps
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - bulb_size
   - bulb_type
   - color
@@ -12482,6 +12899,8 @@
   name: Floor Lamps
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - bulb_size
   - bulb_type
   - color
@@ -12494,6 +12913,8 @@
   name: Reading Lamps
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - bulb_size
   - bulb_type
   - color
@@ -12506,6 +12927,8 @@
   name: Table Lamps
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - bulb_size
   - bulb_type
   - color
@@ -12587,6 +13010,8 @@
   name: LED Light Bulbs
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - bulb_cap_type
   - bulb_shape
   - bulb_size
@@ -12631,6 +13056,8 @@
   name: Cabinet Light Fixtures
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - bulb_cap_type
   - bulb_size
   - bulb_type
@@ -12664,17 +13091,24 @@
   - bulb_size
   - bulb_type
   - color
+  - construction
+  - embellishment/trim_material
   - energy_efficiency_class
+  - jewelry_material
   - light_color
   - light_pattern
   - light_temperature
+  - lumber/wood_type
   - material
   - pattern
   - style
+  - wood_finish
 - id: hg-13-9-4
   name: Wall Light Fixtures
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - bulb_cap_type
   - bulb_size
   - bulb_type
@@ -13007,7 +13441,9 @@
   - care_instructions
   - color
   - fabric
+  - material_treatment
   - pattern
+  - plant_material
 - id: hg-15-2
   name: Kitchen Linens Sets
   children: []
@@ -13228,8 +13664,10 @@
   - hg-17-3-1-2
   attributes:
   - color
+  - material_treatment
   - pattern
   - plant_class
+  - plant_material
   - plant_name
   - suitable_space
 - id: hg-17-3-1-1
@@ -13238,8 +13676,10 @@
   attributes:
   - flower_color
   - flower_pattern
+  - material_treatment
   - plant_characteristics
   - plant_class
+  - plant_material
   - plant_name
   - suitable_space
   - sunlight
@@ -13249,8 +13689,10 @@
   attributes:
   - flower_color
   - flower_pattern
+  - material_treatment
   - plant_characteristics
   - plant_class
+  - plant_material
   - plant_name
   - suitable_space
   - sunlight
@@ -13261,7 +13703,9 @@
   - culinary_botanical_name
   - flower_color
   - flower_pattern
+  - material_treatment
   - plant_characteristics
+  - plant_material
   - plant_name
   - suitable_space
   - sunlight
@@ -13272,8 +13716,10 @@
   - hg-17-3-3-2
   attributes:
   - color
+  - material_treatment
   - pattern
   - plant_class
+  - plant_material
   - plant_name
   - suitable_space
 - id: hg-17-3-3-1
@@ -13282,8 +13728,10 @@
   attributes:
   - flower_color
   - flower_pattern
+  - material_treatment
   - plant_characteristics
   - plant_class
+  - plant_material
   - plant_name
   - suitable_space
   - sunlight
@@ -13293,8 +13741,10 @@
   attributes:
   - flower_color
   - flower_pattern
+  - material_treatment
   - plant_characteristics
   - plant_class
+  - plant_material
   - plant_name
   - suitable_space
   - sunlight
@@ -13305,9 +13755,11 @@
   - color
   - flower_color
   - flower_pattern
+  - material_treatment
   - pattern
   - plant_characteristics
   - plant_class
+  - plant_material
   - plant_name
   - suitable_space
   - sunlight
@@ -13337,10 +13789,13 @@
   name: Plant Growing Kits
   children: []
   attributes:
+  - alcohol/solvent_content
   - flower_color
   - flower_pattern
+  - material_treatment
   - plant_characteristics
   - plant_class
+  - plant_material
   - plant_name
   - suitable_space
   - sunlight
@@ -13362,8 +13817,10 @@
   - hg-17-5-1-2
   attributes:
   - color
+  - material_treatment
   - pattern
   - plant_class
+  - plant_material
   - plant_name
   - suitable_space
 - id: hg-17-5-1-1
@@ -13372,8 +13829,10 @@
   attributes:
   - flower_color
   - flower_pattern
+  - material_treatment
   - plant_characteristics
   - plant_class
+  - plant_material
   - plant_name
   - suitable_space
   - sunlight
@@ -13416,8 +13875,10 @@
   attributes:
   - flower_color
   - flower_pattern
+  - material_treatment
   - plant_characteristics
   - plant_class
+  - plant_material
   - plant_name
   - suitable_space
   - sunlight
@@ -13636,6 +14097,8 @@
   - hg-18-1-16-1
   - hg-18-1-16-2
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: hg-18-1-16-1
@@ -13648,6 +14111,8 @@
   name: Pool Vacuums
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: hg-18-1-17
@@ -13706,18 +14171,21 @@
   - hg-18-2-1-2
   attributes:
   - color
+  - lumber/wood_type
   - pattern
 - id: hg-18-2-1-1
   name: Sauna Buckets
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
 - id: hg-18-2-1-2
   name: Sauna Ladles
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
 - id: hg-18-2-2
   name: Sauna Heaters

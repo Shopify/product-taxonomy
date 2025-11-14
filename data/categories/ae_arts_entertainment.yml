@@ -57,9 +57,12 @@
   - ae-2-1-1-10
   attributes:
   - age_group
+  - alcohol/solvent_content
+  - battery_size
   - color
   - material
   - pattern
+  - wood_finish
 - id: ae-2-1-1-1
   name: Candle Making Kits
   children: []
@@ -73,6 +76,7 @@
   children: []
   attributes:
   - age_group
+  - alcohol/solvent_content
   - color
   - drawing/painting_kit_items_included
   - pattern
@@ -81,6 +85,7 @@
   children: []
   attributes:
   - age_group
+  - alcohol/solvent_content
   - color
   - pattern
   - suitable_for_fabric_type
@@ -98,6 +103,7 @@
   attributes:
   - age_group
   - color
+  - jewelry_material
   - jewelry_set_type
   - pattern
 - id: ae-2-1-1-6
@@ -164,6 +170,7 @@
   - ae-2-1-2-14
   - ae-2-1-2-17
   attributes:
+  - alcohol/solvent_content
   - color
   - pattern
 - id: ae-2-1-2-1
@@ -272,8 +279,13 @@
   - accessory_size
   - button/snap_closure_type
   - color
+  - construction
+  - embellishment/trim_material
   - fastener_material
+  - jewelry_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: ae-2-1-2-2-1-1
   name: Buttons
   children: []
@@ -281,7 +293,10 @@
   - accessory_size
   - button/snap_closure_type
   - color
+  - construction
+  - embellishment/trim_material
   - fastener_material
+  - jewelry_material
   - pattern
 - id: ae-2-1-2-2-1-2
   name: Snaps
@@ -297,7 +312,10 @@
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
   - fastener_material
+  - jewelry_material
   - pattern
 - id: ae-2-1-2-2-3
   name: Eyelets & Grommets
@@ -432,12 +450,14 @@
   - ae-2-1-2-3-6
   - ae-2-1-2-3-7
   attributes:
+  - alcohol/solvent_content
   - color
   - pattern
 - id: ae-2-1-2-3-1
   name: Art & Craft Paint
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - dispenser_type
   - paint_form
@@ -447,6 +467,7 @@
   name: Art Fixatives
   children: []
   attributes:
+  - alcohol/solvent_content
   - art_fixative_application_method
   - finish
   - suitable_for_crafting_material
@@ -461,6 +482,7 @@
   - ae-2-1-2-3-3-6
   - ae-2-1-2-3-3-7
   attributes:
+  - alcohol/solvent_content
   - color
   - ink_form
   - pattern
@@ -475,6 +497,7 @@
   name: Alcohol Ink
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - ink_form
   - pattern
@@ -531,12 +554,14 @@
   name: Ink Pads
   children: []
   attributes:
+  - alcohol/solvent_content
   - finish
   - ink_type
 - id: ae-2-1-2-3-7
   name: Paint Mediums
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - paint_medium_type
   - pattern
@@ -549,7 +574,12 @@
   - ae-2-1-2-4-4
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: ae-2-1-2-4-1
   name: Craft Foam & Styrofoam
   children: []
@@ -568,11 +598,13 @@
   - ae-2-1-2-4-2-7
   attributes:
   - lumber/wood_type
+  - wood_finish
 - id: ae-2-1-2-4-2-1
   name: Craft Wood Blocks
   children: []
   attributes:
   - lumber/wood_type
+  - wood_finish
 - id: ae-2-1-2-4-2-2
   name: Craft Wood Cutouts
   children: []
@@ -612,6 +644,8 @@
   name: Wreath & Floral Frames
   children: []
   attributes:
+  - material_treatment
+  - plant_material
   - shape
   - wreath_design
 - id: ae-2-1-2-5
@@ -623,6 +657,7 @@
   - ae-2-1-2-5-4
   - ae-2-1-2-5-5
   attributes:
+  - alcohol/solvent_content
   - color
   - pattern
 - id: ae-2-1-2-5-1
@@ -636,21 +671,25 @@
   - ae-2-1-2-5-1-6
   - ae-2-1-2-5-1-7
   attributes:
+  - alcohol/solvent_content
   - suitable_for_crafting_material
 - id: ae-2-1-2-5-1-1
   name: Clear Glue
   children: []
   attributes:
+  - alcohol/solvent_content
   - suitable_for_crafting_material
 - id: ae-2-1-2-5-1-2
   name: Craft Glue
   children: []
   attributes:
+  - alcohol/solvent_content
   - suitable_for_crafting_material
 - id: ae-2-1-2-5-1-3
   name: Fabric Glue
   children: []
   attributes:
+  - alcohol/solvent_content
   - suitable_for_crafting_material
 - id: ae-2-1-2-5-1-4
   name: Glue Stick
@@ -661,6 +700,7 @@
   name: Liquid Glue
   children: []
   attributes:
+  - alcohol/solvent_content
   - suitable_for_crafting_material
 - id: ae-2-1-2-5-1-6
   name: School Glue
@@ -671,6 +711,7 @@
   name: White Glue
   children: []
   attributes:
+  - alcohol/solvent_content
   - fiber_art_project_type
 - id: ae-2-1-2-5-2
   name: Craft Magnets
@@ -766,7 +807,11 @@
   name: Chain Rolls
   children: []
   attributes:
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - material
+  - product_use
 - id: ae-2-1-2-6-2
   name: Thread & Floss
   children:
@@ -884,7 +929,9 @@
   - color
   - fabric
   - knitting_project_type
+  - material_treatment
   - pattern
+  - plant_material
   - yarn_weight_category
 - id: ae-2-1-2-7
   name: Crafting Wire
@@ -908,7 +955,9 @@
   attributes:
   - color
   - floral_wire_design
+  - material_treatment
   - pattern
+  - plant_material
   - wire/rope_material
 - id: ae-2-1-2-7-3
   name: Jewelry & Beading Wire
@@ -998,7 +1047,12 @@
   - ae-2-1-2-8-12
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
+  - material_treatment
   - pattern
+  - plant_material
 - id: ae-2-1-2-8-1
   name: Appliques & Patches
   children:
@@ -1013,7 +1067,9 @@
   attributes:
   - applique/patch_shape
   - color
+  - construction
   - embellishment/trim_material
+  - jewelry_material
   - pattern
   - textile_craft_project_type
   - theme
@@ -1022,7 +1078,10 @@
   children: []
   attributes:
   - color
+  - construction
   - embellishment/trim_material
+  - jewelry_material
+  - material_origin
   - patch_shape
   - pattern
   - textile_craft_project_type
@@ -1032,7 +1091,9 @@
   children: []
   attributes:
   - color
+  - construction
   - embellishment/trim_material
+  - jewelry_material
   - patch_shape
   - pattern
   - textile_craft_project_type
@@ -1042,7 +1103,9 @@
   children: []
   attributes:
   - color
+  - construction
   - embellishment/trim_material
+  - jewelry_material
   - patch_shape
   - pattern
   - textile_craft_project_type
@@ -1053,8 +1116,10 @@
   attributes:
   - color
   - embellishment/trim_material
+  - material_treatment
   - patch_shape
   - pattern
+  - plant_material
   - textile_craft_project_type
   - theme
 - id: ae-2-1-2-8-1-5
@@ -1063,7 +1128,9 @@
   attributes:
   - applique_shape
   - color
+  - construction
   - embellishment/trim_material
+  - jewelry_material
   - pattern
   - textile_craft_project_type
   - theme
@@ -1082,9 +1149,13 @@
   children: []
   attributes:
   - color
+  - construction
   - embellishment/trim_material
+  - jewelry_material
+  - material_treatment
   - patch_shape
   - pattern
+  - plant_material
   - textile_craft_project_type
   - theme
 - id: ae-2-1-2-8-1-8
@@ -1103,8 +1174,13 @@
   attributes:
   - bead_shape
   - color
+  - construction
   - embellishment/trim_material
+  - jewelry_material
+  - material_origin
   - pattern
+  - product_classification
+  - product_use
 - id: ae-2-1-2-8-3
   name: Bows & Yo-Yos
   children: []
@@ -1120,11 +1196,16 @@
   - ae-2-1-2-8-4-4
   attributes:
   - adhesive_type
+  - alcohol/solvent_content
   - celebration_type
   - color
+  - construction
   - embellishment/trim_material
+  - jewelry_material
+  - lumber/wood_type
   - pattern
   - theme
+  - wood_finish
 - id: ae-2-1-2-8-4-1
   name: 3D Decorative Stickers
   children: []
@@ -1278,9 +1359,14 @@
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
   - jewelry_finding_type
   - jewelry_material
+  - material_origin
   - pattern
+  - product_classification
+  - product_use
 - id: ae-2-1-2-8-8
   name: Loose Stones
   children:
@@ -1293,7 +1379,10 @@
   - ae-2-1-2-8-8-7
   attributes:
   - color
+  - material_origin
   - pattern
+  - product_classification
+  - product_use
   - stone_shape
 - id: ae-2-1-2-8-8-1
   name: Acrylic Stones
@@ -1307,7 +1396,10 @@
   children: []
   attributes:
   - color
+  - material_origin
   - pattern
+  - product_classification
+  - product_use
   - stone_shape
 - id: ae-2-1-2-8-8-3
   name: Crystals
@@ -1315,7 +1407,10 @@
   attributes:
   - authenticity
   - color
+  - material_origin
   - pattern
+  - product_classification
+  - product_use
   - stone_shape
 - id: ae-2-1-2-8-8-4
   name: Druzy Stones
@@ -1336,14 +1431,23 @@
   children: []
   attributes:
   - color
+  - material_origin
   - pattern
+  - product_classification
+  - product_use
   - stone_shape
 - id: ae-2-1-2-8-8-7
   name: Pearls
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
+  - material_origin
   - pattern
+  - product_classification
+  - product_use
 - id: ae-2-1-2-8-9
   name: Rhinestones & Flatbacks
   children:
@@ -1353,6 +1457,9 @@
   - ae-2-1-2-8-9-4
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
   - stone_shape
 - id: ae-2-1-2-8-9-1
@@ -1360,6 +1467,9 @@
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
   - stone_shape
 - id: ae-2-1-2-8-9-2
@@ -1373,7 +1483,11 @@
   name: Self-Adhesive Rhinestones
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
   - stone_shape
 - id: ae-2-1-2-8-9-4
@@ -1381,6 +1495,9 @@
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
   - stone_shape
 - id: ae-2-1-2-8-10
@@ -1895,6 +2012,7 @@
   - care_instructions
   - color
   - fabric
+  - material_treatment
   - mesh_type
   - pattern
 - id: ae-2-1-2-14-2-1
@@ -1911,6 +2029,7 @@
   - care_instructions
   - color
   - fabric
+  - material_treatment
   - mesh_type
   - pattern
 - id: ae-2-1-2-14-2-3
@@ -2173,6 +2292,8 @@
   - ae-2-1-3-6
   - ae-2-1-3-7
   attributes:
+  - battery_size
+  - battery_type
   - color
   - material
   - pattern
@@ -2201,8 +2322,10 @@
   name: Sewing Machine Feet
   children: []
   attributes:
+  - lumber/wood_type
   - material
   - sewing_foot_type
+  - wood_finish
 - id: ae-2-1-3-5
   name: Sewing Machine Replacement Parts
   children: []
@@ -2359,7 +2482,10 @@
   - ae-2-1-4-19
   - ae-2-1-4-20
   attributes:
+  - battery_size
+  - battery_type
   - color
+  - lumber/wood_type
   - pattern
 - id: ae-2-1-4-1
   name: Blocking Mats
@@ -2439,6 +2565,8 @@
   - ae-2-1-4-3-2
   attributes:
   - art/crafting_tool_material
+  - battery_size
+  - battery_type
 - id: ae-2-1-4-3-1
   name: Palette Knives
   children:
@@ -2521,6 +2649,8 @@
   - ae-2-1-4-4-7
   - ae-2-1-4-4-8
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: ae-2-1-4-4-1
@@ -2623,6 +2753,8 @@
   children: []
   attributes:
   - art/crafting_tool_material
+  - battery_size
+  - battery_type
 - id: ae-2-1-4-4-8
   name: Thread & Yarn Cutters
   children:
@@ -2657,6 +2789,8 @@
   children: []
   attributes:
   - art/crafting_tool_material
+  - battery_size
+  - battery_type
   - craft_decoration_maker_type
 - id: ae-2-1-4-6
   name: Craft Measuring & Marking Tools
@@ -2673,6 +2807,7 @@
   - ae-2-1-4-6-10
   attributes:
   - color
+  - construction
   - pattern
 - id: ae-2-1-4-6-1
   name: Art Brushes
@@ -2886,6 +3021,8 @@
   name: Light Boxes
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - light_source
   - lighting_features
   - paper_size
@@ -2962,11 +3099,13 @@
   - ae-2-1-4-13-3-2
   - ae-2-1-4-13-3-3
   attributes:
+  - lumber/wood_type
   - material
 - id: ae-2-1-4-13-3-1
   name: Circular Knitting Needles
   children: []
   attributes:
+  - lumber/wood_type
   - material
 - id: ae-2-1-4-13-3-2
   name: Double-Pointed Knitting Needles
@@ -3097,6 +3236,8 @@
   - ae-2-1-4-16-4-3
   - ae-2-1-4-16-4-4
   attributes:
+  - battery_size
+  - battery_type
   - textile_craft_machine_features
 - id: ae-2-1-4-16-4-1
   name: Computerized Sewing Machines
@@ -3195,6 +3336,7 @@
   - ae-2-1-4-18-1-4
   - ae-2-1-4-18-1-5
   attributes:
+  - bristle_material
   - brush_material
 - id: ae-2-1-4-18-1-1
   name: Carding Brushes
@@ -3260,6 +3402,8 @@
   children: []
   attributes:
   - art/crafting_tool_material
+  - battery_size
+  - battery_type
 - id: ae-2-1-4-18-3-2
   name: Handheld Needle Threaders
   children: []
@@ -3523,7 +3667,9 @@
   children: []
   attributes:
   - accessory_size
+  - lumber/wood_type
   - material
+  - wood_finish
 - id: ae-2-1-5-2-2
   name: Sewing Boxes
   children: []
@@ -3558,7 +3704,9 @@
   children: []
   attributes:
   - accessory_size
+  - lumber/wood_type
   - material
+  - wood_finish
 - id: ae-2-1-5-3-3
   name: Yarn Bags
   children: []
@@ -3731,6 +3879,12 @@
   - ae-2-2-2-2
   attributes:
   - condition
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
+  - material_origin
+  - product_classification
+  - product_use
 - id: ae-2-2-2-1
   name: Collectible Banknotes
   children: []
@@ -3747,8 +3901,14 @@
   attributes:
   - coin_material
   - condition
+  - construction
   - country
   - denomination
+  - embellishment/trim_material
+  - jewelry_material
+  - material_origin
+  - product_classification
+  - product_use
 - id: ae-2-2-2-2-1
   name: Bullion Coins
   children: []
@@ -3763,8 +3923,14 @@
   attributes:
   - coin_material
   - condition
+  - construction
   - country
   - denomination
+  - embellishment/trim_material
+  - jewelry_material
+  - material_origin
+  - product_classification
+  - product_use
 - id: ae-2-2-2-2-3
   name: Rare Coins
   children: []
@@ -3784,6 +3950,8 @@
   - card_attributes
   - condition
   - grading
+  - product_classification
+  - product_use
   - rarity
   - recommended_age_group
   - sports_theme
@@ -3898,6 +4066,7 @@
   - blade_material
   - condition
   - handle_material
+  - lumber/wood_type
 - id: ae-2-2-4-2-1
   name: Custom Collectible Knives
   children: []
@@ -3940,6 +4109,7 @@
   - blade_material
   - condition
   - handle_material
+  - lumber/wood_type
 - id: ae-2-2-4-3
   name: Collectible Swords
   children:
@@ -3993,8 +4163,10 @@
   attributes:
   - accessory_size
   - condition
+  - lumber/wood_type
   - material
   - stand/display_type
+  - wood_finish
 - id: ae-2-2-5
   name: Postage Stamps
   children:
@@ -4105,11 +4277,17 @@
   - authenticity
   - color
   - condition
+  - construction
   - crystal_system
+  - embellishment/trim_material
   - fossil_type
   - geological_era
+  - jewelry_material
+  - material_origin
   - mineral_class
   - pattern
+  - product_classification
+  - product_use
   - rarity
   - rock_composition
   - rock_formation
@@ -4173,11 +4351,16 @@
   attributes:
   - color
   - condition
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - kit_construction_type
+  - lumber/wood_type
   - pattern
   - recommended_age_group
   - scale_model_material
   - skill_level
+  - wood_finish
 - id: ae-2-2-8-1
   name: Aircraft
   children: []
@@ -4238,6 +4421,8 @@
   name: Motorcycles
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - condition
   - kit_construction_type
   - scale_model_material
@@ -4303,6 +4488,8 @@
   - ae-2-2-10-1
   attributes:
   - color
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
 - id: ae-2-2-10-1
   name: Sports Fan Accessories
@@ -4352,8 +4539,10 @@
   children: []
   attributes:
   - condition
+  - lumber/wood_type
   - sport
   - sports_logo
+  - wood_finish
 - id: ae-2-2-10-1-4
   name: Flags
   children: []
@@ -4428,6 +4617,9 @@
   attributes:
   - color
   - condition
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
   - sport
   - sports_logo
@@ -4437,6 +4629,9 @@
   attributes:
   - color
   - condition
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
   - sport
   - sports_logo
@@ -4745,6 +4940,8 @@
   - ae-2-6-1-3
   - ae-2-6-1-4
   attributes:
+  - battery_size
+  - battery_type
   - material
   - skill_level
 - id: ae-2-6-1-1
@@ -4787,6 +4984,8 @@
   - ae-2-6-3-4
   - ae-2-6-3-5
   attributes:
+  - battery_size
+  - battery_type
   - model_control_technology
   - skill_level
 - id: ae-2-6-3-1
@@ -4823,6 +5022,8 @@
   name: Scale Model Kits
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - recommended_age_group
@@ -5025,6 +5226,8 @@
   name: Electronic Tuners
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - display_technology
   - power_source
   - tuner_design
@@ -5034,6 +5237,8 @@
   name: Metronomes
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - beat_subdivisions
   - display_technology
   - power_source
@@ -5198,18 +5403,24 @@
   name: Acoustic Amplifiers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - input/output_ports
   - sound_controls
 - id: ae-2-7-10-2
   name: Bass Amplifiers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - input/output_ports
   - sound_controls
 - id: ae-2-7-10-3
   name: Guitar Amplifiers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - input/output_ports
   - sound_controls
 - id: ae-2-7-10-4
@@ -5303,7 +5514,9 @@
   attributes:
   - compatible_keyboard_configuration
   - instrument_accessory_material
+  - lumber/wood_type
   - mount/stand_features
+  - wood_finish
 - id: ae-2-7-11-2-2
   name: Double Braced Stands
   children: []
@@ -5753,12 +5966,16 @@
   - ae-2-7-13-1-13
   - ae-2-7-13-1-14
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: ae-2-7-13-1-1
   name: Acoustic Guitar Pickups
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - compatible_string_instrument
   - output_level
@@ -5776,6 +5993,7 @@
   - color
   - compatible_string_instrument
   - instrument_accessory_material
+  - material
   - pattern
 - id: ae-2-7-13-1-2-1
   name: Clamp Capos
@@ -5813,6 +6031,8 @@
   name: Electric Guitar Pickups
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - compatible_string_instrument
   - magnet_type
@@ -5848,6 +6068,8 @@
   - ae-2-7-13-1-6-2
   - ae-2-7-13-1-6-3
   attributes:
+  - battery_size
+  - battery_type
   - compatible_string_instrument
   - humidifier_design
   - instrument_accessory_material
@@ -5943,6 +6165,8 @@
   name: Electric String Winders
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - compatible_string_instrument
   - winder_features
 - id: ae-2-7-13-1-11-2
@@ -5991,6 +6215,8 @@
   children: []
   attributes:
   - accessory_size
+  - battery_size
+  - battery_type
   - compatible_string_instrument
   - instrument/accessory_finish
   - power_source
@@ -6006,6 +6232,8 @@
   - ae-2-7-13-2-7
   - ae-2-7-13-2-8
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: ae-2-7-13-2-1
@@ -6098,6 +6326,8 @@
   name: Orchestral String Instrument Pickups
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - compatible_orchestral_string_instrument
   - pattern
@@ -6124,6 +6354,9 @@
   - ae-2-7-13-3-2
   - ae-2-7-13-3-3
   attributes:
+  - alcohol/solvent_content
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: ae-2-7-13-3-1
@@ -6159,6 +6392,7 @@
   name: Instrument Polish
   children: []
   attributes:
+  - alcohol/solvent_content
   - application_method
   - ingredient_origin
 - id: ae-2-7-13-3-3-3
@@ -6183,7 +6417,9 @@
   - ae-2-7-14-11
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: ae-2-7-14-1
   name: Bassoon Accessories
   children:
@@ -6388,6 +6624,8 @@
   - compatible_clarinet_type
   - instrument/accessory_finish
   - instrument_accessory_material
+  - lumber/wood_type
+  - wood_finish
 - id: ae-2-7-14-2-4-2-1
   name: Adjustable Bells
   children: []
@@ -6529,7 +6767,11 @@
   - ae-2-7-14-4-1
   - ae-2-7-14-4-2
   attributes:
+  - battery_size
+  - battery_type
   - instrument_accessory_material
+  - lumber/wood_type
+  - wood_finish
 - id: ae-2-7-14-4-1
   name: Harmonica Cases
   children: []
@@ -6554,6 +6796,9 @@
   attributes:
   - compatible_harmonica_type
   - instrument_accessory_material
+  - lumber/wood_type
+  - material
+  - wood_finish
 - id: ae-2-7-14-4-2-2
   name: Stand Holders
   children: []
@@ -6720,8 +6965,13 @@
   - ae-2-7-14-7-4-2
   - ae-2-7-14-7-4-3
   attributes:
+  - battery_size
+  - battery_type
   - color
+  - lumber/wood_type
+  - material
   - pattern
+  - wood_finish
 - id: ae-2-7-14-7-4-1
   name: Saxophone Mouthpieces
   children:
@@ -7019,6 +7269,8 @@
   - ae-2-8-4-3
   - ae-2-8-4-4
   attributes:
+  - battery_size
+  - battery_type
   - instrument_material
 - id: ae-2-8-4-1
   name: Audio Samplers
@@ -7026,6 +7278,8 @@
   - ae-2-8-4-1-1
   - ae-2-8-4-1-2
   attributes:
+  - battery_size
+  - battery_type
   - instrument_material
 - id: ae-2-8-4-1-1
   name: Drum Samplers
@@ -7043,6 +7297,8 @@
   - ae-2-8-4-2-1
   - ae-2-8-4-2-2
   attributes:
+  - battery_size
+  - battery_type
   - instrument_material
   - interface_type
 - id: ae-2-8-4-2-1
@@ -7064,6 +7320,8 @@
   - ae-2-8-4-3-3
   - ae-2-8-4-3-4
   attributes:
+  - battery_size
+  - battery_type
   - instrument_material
   - interface_type
   - keyboard_key_type
@@ -7071,6 +7329,8 @@
   name: Digital Pianos
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - instrument_material
   - interface_type
   - keyboard_key_type
@@ -7085,6 +7345,8 @@
   name: Synthesizer Keyboards
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - instrument_material
   - interface_type
   - keyboard_key_type
@@ -7096,6 +7358,8 @@
   - ae-2-8-4-4-3
   - ae-2-8-4-4-4
   attributes:
+  - battery_size
+  - battery_type
   - instrument_material
   - polyphony
   - synthesis_method
@@ -7222,6 +7486,8 @@
   attributes:
   - drum_configuration
   - instrument_material
+  - lumber/wood_type
+  - wood_finish
 - id: ae-2-8-5-3-1
   name: Acoustic Drum Kits
   children: []
@@ -7429,7 +7695,11 @@
   - ae-2-8-5-7-3-3
   - ae-2-8-5-7-3-4
   attributes:
+  - battery_size
+  - battery_type
+  - embellishment/trim_material
   - instrument_material
+  - material
 - id: ae-2-8-5-7-3-1
   name: Chimes
   children: []
@@ -7772,6 +8042,8 @@
   - ae-2-8-5-10-3
   attributes:
   - instrument_material
+  - lumber/wood_type
+  - wood_finish
 - id: ae-2-8-5-10-1
   name: Metal Snare Drums
   children: []
@@ -7813,6 +8085,8 @@
   - ae-2-8-6-3
   - ae-2-8-6-4
   attributes:
+  - battery_size
+  - battery_type
   - instrument_material
   - interface_type
   - keyboard_action
@@ -7872,6 +8146,8 @@
   - ae-2-8-7-8
   - ae-2-8-7-9
   attributes:
+  - battery_size
+  - battery_type
   - instrument_material
 - id: ae-2-8-7-1
   name: Cellos
@@ -7904,6 +8180,8 @@
   - ae-2-8-7-2-3
   - ae-2-8-7-2-4
   attributes:
+  - battery_size
+  - battery_type
   - fingerboard_color
   - fingerboard_material
   - fingerboard_pattern
@@ -7921,6 +8199,8 @@
   name: Acoustic Guitars
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - fingerboard_color
   - fingerboard_material
   - fingerboard_pattern
@@ -7938,6 +8218,8 @@
   name: Bass Guitars
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - fingerboard_color
   - fingerboard_material
   - fingerboard_pattern
@@ -7955,6 +8237,8 @@
   name: Classical Guitars
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - fingerboard_color
   - fingerboard_material
   - fingerboard_pattern
@@ -7972,6 +8256,8 @@
   name: Electric Guitars
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - fingerboard_color
   - fingerboard_material
   - fingerboard_pattern
@@ -8052,6 +8338,8 @@
   name: Violins
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - instrument_bow_material
   - instrument_material
   - string_instrument_size
@@ -8185,6 +8473,8 @@
   name: Tenor Ukuleles
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - instrument_color
   - instrument_material
   - instrument_pattern
@@ -8215,6 +8505,8 @@
   name: Bass Ukuleles
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - instrument_color
   - instrument_material
   - instrument_pattern
@@ -8361,6 +8653,8 @@
   - headjoint_cut
   - instrument/accessory_finish
   - instrument_material
+  - lumber/wood_type
+  - wood_finish
 - id: ae-2-8-8-3-1
   name: Alto Flutes
   children: []
@@ -8820,7 +9114,9 @@
   attributes:
   - color
   - corsage/boutonniere_design
+  - material_treatment
   - pattern
+  - plant_material
 - id: ae-3-1-3
   name: Fresh Cut Flowers
   children:
@@ -8834,9 +9130,11 @@
   - arrangement
   - color
   - flower_color
+  - material_treatment
   - pattern
   - plant_characteristics
   - plant_class
+  - plant_material
   - plant_name
   - stem_length
   - suitable_space
@@ -8847,7 +9145,9 @@
   attributes:
   - arrangement
   - color
+  - material_treatment
   - pattern
+  - plant_material
   - stem_length
 - id: ae-3-1-3-2
   name: Lilies
@@ -8863,7 +9163,9 @@
   attributes:
   - arrangement
   - color
+  - material_treatment
   - pattern
+  - plant_material
   - stem_length
 - id: ae-3-1-3-4
   name: Roses
@@ -8871,7 +9173,9 @@
   attributes:
   - arrangement
   - color
+  - material_treatment
   - pattern
+  - plant_material
   - stem_length
 - id: ae-3-1-3-5
   name: Sunflowers
@@ -8879,7 +9183,9 @@
   attributes:
   - arrangement
   - color
+  - material_treatment
   - pattern
+  - plant_material
   - stem_length
 - id: ae-3-1-3-6
   name: Tulips
@@ -8917,6 +9223,10 @@
   attributes:
   - accessory_size
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
+  - lumber/wood_type
   - material
   - pattern
   - shape
@@ -8925,9 +9235,11 @@
   children: []
   attributes:
   - color
+  - construction
   - material
   - pattern
   - shape
+  - wood_finish
 - id: ae-3-1-5-4
   name: Tissue Paper
   children: []
@@ -8941,6 +9253,7 @@
   children: []
   attributes:
   - color
+  - embellishment/trim_material
   - material
   - pattern
 - id: ae-3-1-6
@@ -8950,20 +9263,28 @@
   - ae-3-1-6-3
   - ae-3-1-6-4
   attributes:
+  - battery_size
+  - battery_type
   - card_size
   - celebration_type
   - color
   - item_style
+  - material_treatment
   - pattern
   - personalization_design
+  - plant_material
 - id: ae-3-1-6-2
   name: Greeting Cards
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - card_size
   - celebration_type
   - color
+  - embellishment/trim_material
   - item_style
+  - material
   - pattern
   - personalization_design
   - theme
@@ -9033,6 +9354,8 @@
   children: []
   attributes:
   - balloon_kit_items_included
+  - battery_size
+  - battery_type
   - celebration_type
   - color
   - pattern
@@ -9044,12 +9367,15 @@
   - balloon_shape
   - celebration_type
   - color
+  - material
   - pattern
 - id: ae-3-2-4
   name: Banners
   children: []
   attributes:
   - banner_design
+  - battery_size
+  - battery_type
   - celebration_type
   - color
   - pattern
@@ -9158,7 +9484,10 @@
   children: []
   attributes:
   - color
+  - embellishment/trim_material
+  - material_treatment
   - pattern
+  - plant_material
   - shape
 - id: ae-3-2-9
   name: Decorative Pom-Poms
@@ -9181,9 +9510,12 @@
   attributes:
   - accessory_size
   - color
+  - embellishment/trim_material
+  - lumber/wood_type
   - material
   - pattern
   - straw/stirrer_design
+  - wood_finish
 - id: ae-3-2-12
   name: Envelope Seals
   children: []
@@ -9237,6 +9569,7 @@
   attributes:
   - card_format
   - celebration_type
+  - embellishment/trim_material
   - invitation_personalization_design
   - item_style
 - id: ae-3-2-17
@@ -9283,6 +9616,8 @@
   name: Whistles
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - material
   - pattern
@@ -9292,9 +9627,11 @@
   attributes:
   - celebration_type
   - color
+  - lumber/wood_type
   - material
   - pattern
   - theme
+  - wood_finish
 - id: ae-3-2-19
   name: Party Games
   children: []
@@ -9350,13 +9687,19 @@
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
+  - material_treatment
   - pattern
+  - plant_material
 - id: ae-3-2-22
   name: Party Supply Kits
   children: []
   attributes:
   - celebration_type
   - color
+  - material
   - pattern
 - id: ae-3-2-23
   name: Piñatas
@@ -9372,6 +9715,9 @@
   attributes:
   - card_holder_design
   - celebration_type
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - material
 - id: ae-3-2-25
   name: Place Cards
@@ -9430,6 +9776,8 @@
   name: Fog Machines
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - fluid_type
   - sfx_control_technology
 - id: ae-3-3-3
@@ -9439,6 +9787,8 @@
   - ae-3-3-3-2
   - ae-3-3-3-3
   attributes:
+  - battery_size
+  - battery_type
   - compatible_special_effects_device
   - connection_method
   - power_source
@@ -9480,6 +9830,8 @@
   - ae-3-3-5-4
   - ae-3-3-5-5
   attributes:
+  - battery_size
+  - battery_type
   - light_color
   - light_pattern
   - mounting_type
@@ -9507,6 +9859,8 @@
   name: LED Lights
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - light_color
   - light_pattern
   - mounting_type
@@ -9546,6 +9900,8 @@
   attributes:
   - award_design
   - award_occasion
+  - lumber/wood_type
+  - wood_finish
 - id: ae-3-4-2
   name: Award Pins & Medals
   children:
@@ -9555,6 +9911,9 @@
   - ae-3-4-2-4
   attributes:
   - award_occasion
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - material
 - id: ae-3-4-2-1
   name: Award Pins
@@ -9567,12 +9926,18 @@
   children: []
   attributes:
   - award_occasion
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - material
 - id: ae-3-4-2-3
   name: Metal Medals
   children: []
   attributes:
   - award_occasion
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - material
 - id: ae-3-4-2-4
   name: Ribbon Medals
@@ -9585,7 +9950,9 @@
   children: []
   attributes:
   - award_occasion
+  - lumber/wood_type
   - material
+  - wood_finish
 - id: ae-3-4-4
   name: Award Ribbons
   children:
@@ -9618,6 +9985,11 @@
   attributes:
   - accessory_size
   - award_occasion
+  - battery_size
+  - battery_type
+  - construction
+  - embellishment/trim_material
   - engraving
+  - jewelry_material
   - material
   - trophy_design

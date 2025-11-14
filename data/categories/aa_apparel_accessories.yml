@@ -285,6 +285,8 @@
   attributes:
   - activewear_clothing_features
   - age_group
+  - battery_size
+  - battery_type
   - color
   - fabric
   - pattern
@@ -393,6 +395,8 @@
   - activewear_clothing_features
   - activity
   - age_group
+  - battery_size
+  - battery_type
   - color
   - fabric
   - neckline
@@ -4025,7 +4029,9 @@
   - clothing_features
   - color
   - dress_style
+  - embellishment/trim_material
   - fabric
+  - jewelry_material
   - neckline
   - pattern
   - size
@@ -4438,8 +4444,10 @@
   - age_group
   - bristle_material
   - color
+  - lumber/wood_type
   - pattern
   - target_gender
+  - wood_finish
 - id: aa-2-14-3
   name: Hair Extensions
   children: []
@@ -4455,9 +4463,13 @@
   attributes:
   - age_group
   - color
+  - embellishment/trim_material
   - fabric
+  - jewelry_material
+  - lumber/wood_type
   - pattern
   - target_gender
+  - wood_finish
 - id: aa-2-14-5
   name: Hair Nets
   children: []
@@ -4473,7 +4485,10 @@
   attributes:
   - age_group
   - color
+  - construction
+  - embellishment/trim_material
   - fabric
+  - jewelry_material
   - material
   - pattern
   - target_gender
@@ -4492,7 +4507,10 @@
   attributes:
   - age_group
   - color
+  - construction
+  - embellishment/trim_material
   - fabric
+  - jewelry_material
   - pattern
   - target_gender
 - id: aa-2-14-9
@@ -4510,7 +4528,10 @@
   attributes:
   - age_group
   - color
+  - construction
+  - embellishment/trim_material
   - fabric
+  - jewelry_material
   - pattern
   - target_gender
 - id: aa-2-14-11
@@ -4537,7 +4558,9 @@
   attributes:
   - age_group
   - color
+  - embellishment/trim_material
   - fabric
+  - jewelry_material
   - pattern
   - target_gender
 - id: aa-2-15
@@ -5231,8 +5254,10 @@
   - care_instructions
   - carry_options
   - color
+  - lumber/wood_type
   - pattern
   - target_gender
+  - wood_finish
 - id: aa-5-4-8
   name: Doctor Bags
   children: []
@@ -5343,6 +5368,7 @@
   - care_instructions
   - carry_options
   - color
+  - leather_type
   - pattern
   - target_gender
 - id: aa-5-4-16
@@ -5357,6 +5383,7 @@
   - care_instructions
   - carry_options
   - color
+  - leather_type
   - pattern
   - target_gender
 - id: aa-5-4-17
@@ -5484,6 +5511,7 @@
   - carry_options
   - clothing_accessory_material
   - color
+  - leather_type
   - pattern
   - target_gender
   - wallet_features
@@ -5493,6 +5521,7 @@
   attributes:
   - clothing_accessory_material
   - color
+  - leather_type
   - pattern
   - target_gender
   - wallet_features
@@ -5641,6 +5670,9 @@
   - band_material
   - clasp_type
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
   - target_gender
   - watch_accessory_style
@@ -5657,6 +5689,8 @@
   children: []
   attributes:
   - age_group
+  - battery_size
+  - battery_type
   - color
   - connectivity_technology
   - pattern

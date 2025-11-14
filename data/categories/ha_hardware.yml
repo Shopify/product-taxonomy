@@ -195,6 +195,7 @@
   name: Dry Lubricants
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - durability_features
   - lubricant_dispenser_type
@@ -204,6 +205,7 @@
   name: Grease
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - durability_features
   - lubricant_dispenser_type
@@ -213,6 +215,7 @@
   name: Oil
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - durability_features
   - lubricant_dispenser_type
@@ -340,6 +343,7 @@
   name: Paint
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - finish
   - intended_application
@@ -358,6 +362,7 @@
   name: Primers
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - finish
   - intended_application
@@ -369,6 +374,7 @@
   name: Stains
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - finish
   - intended_application
@@ -378,6 +384,7 @@
   name: Varnishes & Finishes
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - pattern
   - product_formulation
@@ -423,6 +430,7 @@
   name: Protective Coatings
   children: []
   attributes:
+  - alcohol/solvent_content
   - coating/sealant_application
   - color
   - durability_features
@@ -463,6 +471,7 @@
   name: Waterproofing Coatings
   children: []
   attributes:
+  - alcohol/solvent_content
   - coating/sealant_application
   - color
   - durability_features
@@ -711,6 +720,8 @@
   name: Door Bells & Chimes
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connection_method
   - hardware_material
@@ -753,6 +764,8 @@
   name: Door Knobs & Handles
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - door_knob_function
   - handle_material
@@ -763,8 +776,11 @@
   children: []
   attributes:
   - color
+  - construction
+  - embellishment/trim_material
   - hardware_finish
   - hardware_material
+  - jewelry_material
   - pattern
   - style
 - id: ha-2-2-7
@@ -782,7 +798,9 @@
   - color
   - door_stop_placement
   - hardware_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: ha-2-2-9
   name: Door Strikes
   children:
@@ -1228,7 +1246,9 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: ha-2-16-2
   name: Bass Traps
   children: []
@@ -1972,8 +1992,10 @@
   attributes:
   - color
   - furniture/fixture_material
+  - lumber/wood_type
   - pattern
   - style
+  - wood_finish
 - id: ha-6-2-5
   name: Cabinet Knobs & Handles
   children: []
@@ -1982,8 +2004,10 @@
   - handle_material
   - hardware_finish
   - knob/handle_design
+  - lumber/wood_type
   - pattern
   - style
+  - wood_finish
 - id: ha-6-3
   name: Casters
   children: []
@@ -2739,6 +2763,8 @@
   - ha-6-24-2-2
   - ha-6-24-2-3
   attributes:
+  - battery_size
+  - battery_type
   - clothing_accessory_material
   - color
   - pattern
@@ -2870,8 +2896,10 @@
   attributes:
   - color
   - features
+  - lumber/wood_type
   - material
   - pattern
+  - wood_finish
 - id: ha-6-24-8-1
   name: Mobile Work Benches
   children: []
@@ -3154,6 +3182,8 @@
   name: Thermostats
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - display_technology
   - housing_color
   - housing_pattern
@@ -3466,6 +3496,8 @@
   name: Gate Valves
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - material
   - pattern
@@ -3506,8 +3538,10 @@
   - ha-10-2-1-3
   attributes:
   - color
+  - lumber/wood_type
   - material
   - pattern
+  - wood_finish
 - id: ha-10-2-1-1
   name: Bathtub Bases & Feet
   children: []
@@ -4024,12 +4058,16 @@
   name: Toilet & Bidet Seats
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
+  - lumber/wood_type
   - material
   - material_firmness
   - pattern
   - toilet_cover_design
   - toilet_cover_features
+  - wood_finish
 - id: ha-10-2-8-4
   name: Toilet Seat Covers
   children: []
@@ -4314,6 +4352,8 @@
   name: Bidets
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - bidet_mounting_type
   - color
   - material
@@ -4516,6 +4556,8 @@
   - ha-10-7-4-1
   - ha-10-7-4-2
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: ha-10-7-4-1
@@ -4832,6 +4874,8 @@
   - ha-11-10-1-2
   - ha-11-10-1-3
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - switch_control_type
@@ -4839,6 +4883,8 @@
   name: Dimmer Switches
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - switch_control_type
@@ -4934,6 +4980,8 @@
   name: Portable Generators
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - ignition_system
   - pattern
@@ -4967,6 +5015,8 @@
   name: Lighting Control Kits
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: ha-11-16-3
@@ -4993,6 +5043,8 @@
   name: Phone Jacks
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: ha-11-18
@@ -5175,9 +5227,11 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - material
   - pattern
   - wall_plate_style
+  - wood_finish
 - id: ha-11-26
   name: Wall Socket Controls & Sensors
   children:
@@ -5196,6 +5250,8 @@
   name: Timer Switches
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: ha-11-27
@@ -5642,7 +5698,12 @@
   name: Electrical Testing Tool Accessories
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
+  - construction
+  - embellishment/trim_material
+  - jewelry_material
   - pattern
 - id: ha-14-13-2
   name: Gas Detector Accessories
@@ -5930,6 +5991,7 @@
   name: Jigsaw Accessories
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - pattern
 - id: ha-14-20-4
@@ -6657,7 +6719,9 @@
   - blade_design
   - color
   - hardware_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: ha-15-11-8-2
   name: Retractable Blade Knives
   children: []
@@ -6779,6 +6843,8 @@
   - ha-15-14-3-2
   - ha-15-14-3-3
   attributes:
+  - battery_size
+  - battery_type
   - chuck_type
   - color
   - drill_features
@@ -6788,6 +6854,8 @@
   name: Hammer Drills
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - chuck_type
   - color
   - drill_features
@@ -6806,6 +6874,8 @@
   name: Rotary Drills
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - chuck_type
   - color
   - drill_features
@@ -6874,6 +6944,8 @@
   - ha-15-16-1-1
   - ha-15-16-1-3
   attributes:
+  - battery_size
+  - battery_type
   - color
   - housing_material
   - light_source
@@ -6884,6 +6956,8 @@
   name: Handheld Torches
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - housing_material
   - light_source
@@ -6893,15 +6967,21 @@
   name: Lanterns
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - housing_material
   - light_source
+  - lumber/wood_type
   - pattern
   - power_source
+  - wood_finish
 - id: ha-15-16-2
   name: Headlamps
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - housing_material
   - light_source
@@ -7061,6 +7141,8 @@
   name: Rotary Hammers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - hammer_head_material
   - handle_color
   - handle_material
@@ -7239,14 +7321,18 @@
   attributes:
   - color
   - hardware_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: ha-15-27-5
   name: Work Platforms
   children: []
   attributes:
   - color
   - hardware_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: ha-15-28
   name: Lathes
   children: []
@@ -7730,6 +7816,8 @@
   - ha-15-36-5-2
   - ha-15-36-5-3
   attributes:
+  - battery_size
+  - battery_type
   - color
   - device_technology
   - display_technology
@@ -7774,6 +7862,7 @@
   children: []
   attributes:
   - battery_size
+  - battery_type
   - color
   - display_technology
   - pattern
@@ -7782,9 +7871,13 @@
   name: Dividers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - hardware_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: ha-15-36-9
   name: Electrical Testing Tools
   children:
@@ -7792,6 +7885,8 @@
   - ha-15-36-9-2
   - ha-15-36-9-3
   attributes:
+  - battery_size
+  - battery_type
   - color
   - display_technology
   - pattern
@@ -7806,6 +7901,8 @@
   name: Multimeters
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - display_technology
   - pattern
@@ -7822,6 +7919,8 @@
   - ha-15-36-10-1
   - ha-15-36-10-2
   attributes:
+  - battery_size
+  - battery_type
   - color
   - display_technology
   - hardware_material
@@ -7838,6 +7937,8 @@
   name: Liquid Flow Meters
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - display_technology
   - hardware_material
@@ -7848,6 +7949,8 @@
   - ha-15-36-11-1
   - ha-15-36-11-2
   attributes:
+  - battery_size
+  - battery_type
   - color
   - display_technology
   - gases_detected
@@ -7881,6 +7984,8 @@
   - ha-15-36-12-2
   - ha-15-36-12-3
   attributes:
+  - battery_size
+  - battery_type
   - color
   - display_technology
   - pattern
@@ -7942,6 +8047,8 @@
   name: Infrared Thermometers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - display_technology
   - pattern
@@ -7975,6 +8082,8 @@
   - ha-15-36-17-2
   - ha-15-36-17-3
   attributes:
+  - battery_size
+  - battery_type
   - color
   - orientation
   - pattern
@@ -8016,6 +8125,8 @@
   - ha-15-36-17-2-2
   - ha-15-36-17-2-3
   attributes:
+  - battery_size
+  - battery_type
   - color
   - display_technology
   - orientation
@@ -8032,6 +8143,8 @@
   name: Line & Combi Laser Levels
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - display_technology
   - orientation
@@ -8073,6 +8186,8 @@
   - ha-15-36-18-1
   - ha-15-36-18-2
   attributes:
+  - battery_size
+  - battery_type
   - color
   - display_technology
   - pattern
@@ -8080,6 +8195,8 @@
   name: Digital Scales
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - display_technology
   - pattern
@@ -8106,6 +8223,8 @@
   - ha-15-36-20-1
   - ha-15-36-20-2
   attributes:
+  - battery_size
+  - battery_type
   - color
   - display_technology
   - measuring_tool_features
@@ -8159,6 +8278,8 @@
   - ha-15-36-22-2
   - ha-15-36-22-3
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: ha-15-36-22-1
@@ -8367,12 +8488,16 @@
   name: Temperature Transducers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: ha-15-36-36
   name: UV Light Meters
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - device_technology
   - display_technology
@@ -8410,6 +8535,8 @@
   name: Weather Forecasters & Stations
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - connection_method
   - device_technology
@@ -8546,12 +8673,17 @@
   attributes:
   - airbrush_feed_type
   - airbrush_operation_method
+  - alcohol/solvent_content
+  - battery_size
+  - battery_type
+  - bristle_material
   - color
   - pattern
 - id: ha-15-42-2
   name: Paint Brushes
   children: []
   attributes:
+  - alcohol/solvent_content
   - bristle_material
   - color
   - paint_brush_design
@@ -8645,6 +8777,9 @@
   - ha-15-42-7-2
   - ha-15-42-7-3
   attributes:
+  - alcohol/solvent_content
+  - battery_size
+  - battery_type
   - color
   - pattern
   - power_source
@@ -8696,6 +8831,7 @@
   name: Paint Trays
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - hardware_material
   - pattern
@@ -9193,6 +9329,8 @@
   name: Handheld Circular Saws
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - power_source
@@ -9483,6 +9621,8 @@
   name: Power Tool Combo Sets
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
   - power_source

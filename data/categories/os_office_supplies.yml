@@ -932,6 +932,8 @@
   name: Basic Calculators
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - calculator_features
 - id: os-10-2-2
   name: Construction Calculators
@@ -1349,6 +1351,7 @@
   name: Pen Ink & Refills
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - pattern
   - pen_tip_design
@@ -1528,6 +1531,7 @@
   name: Highlighters
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - marker_tip_design
   - pattern
@@ -1535,6 +1539,7 @@
   name: Markers
   children: []
   attributes:
+  - alcohol/solvent_content
   - color
   - marker_tip_design
   - pattern
@@ -1619,16 +1624,20 @@
   - os-11-11-7-2-2
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - pencil_features
+  - wood_finish
 - id: os-11-11-7-2-1
   name: Art Pencils
   children: []
   attributes:
   - color
   - lead_grade
+  - lumber/wood_type
   - pattern
   - pencil_features
+  - wood_finish
 - id: os-11-11-7-2-2
   name: Writing Pencils
   children:
@@ -1641,16 +1650,20 @@
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - pattern
   - pencil_features
+  - wood_finish
 - id: os-11-11-7-2-2-2
   name: Wooden Pencils
   children: []
   attributes:
   - color
   - lead_grade
+  - lumber/wood_type
   - pattern
   - pencil_features
+  - wood_finish
 - id: os-11-11-7-3
   name: Pens
   children:
@@ -1662,16 +1675,20 @@
   attributes:
   - ink_color
   - ink_pattern
+  - lumber/wood_type
+  - wood_finish
 - id: os-11-11-7-3-1
   name: Ballpoint Pens
   children: []
   attributes:
   - ink_color
   - ink_pattern
+  - lumber/wood_type
   - pen_color
   - pen_features
   - pen_pattern
   - pen_tip_design
+  - wood_finish
 - id: os-11-11-7-3-2
   name: Felt Tips
   children: []
@@ -1688,10 +1705,12 @@
   attributes:
   - ink_color
   - ink_pattern
+  - lumber/wood_type
   - pen_color
   - pen_features
   - pen_pattern
   - pen_tip_design
+  - wood_finish
 - id: os-11-11-7-3-4
   name: Gel Pens
   children: []
@@ -1828,6 +1847,8 @@
   - board_mounting_type
   - display_board_features
   - frame_design
+  - lumber/wood_type
+  - wood_finish
 - id: os-13-2-3
   name: Foam Boards
   children: []
@@ -1840,6 +1861,8 @@
   attributes:
   - board_mounting_type
   - display_board_features
+  - lumber/wood_type
+  - wood_finish
 - id: os-13-2-5
   name: Poster Boards
   children: []

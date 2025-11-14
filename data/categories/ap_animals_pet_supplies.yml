@@ -81,8 +81,10 @@
   - ap-2-1-1-2
   attributes:
   - color
+  - lumber/wood_type
   - material
   - pattern
+  - wood_finish
 - id: ap-2-1-1-1
   name: Bird Cage Bird Baths
   children: []
@@ -137,14 +139,18 @@
   name: Bird Gyms & Playstands
   children: []
   attributes:
+  - lumber/wood_type
   - suitable_for_bird_type
+  - wood_finish
 - id: ap-2-1-5
   name: Bird Ladders & Perches
   children:
   - ap-2-1-5-1
   - ap-2-1-5-2
   attributes:
+  - lumber/wood_type
   - suitable_for_bird_type
+  - wood_finish
 - id: ap-2-1-5-1
   name: Ladders & Steps
   children: []
@@ -154,7 +160,9 @@
   name: Swings & Perches
   children: []
   attributes:
+  - lumber/wood_type
   - material
+  - wood_finish
 - id: ap-2-1-6
   name: Bird Toys
   children:
@@ -167,7 +175,11 @@
   - ap-2-1-6-8
   - ap-2-1-6-9
   attributes:
+  - battery_size
+  - battery_type
+  - lumber/wood_type
   - toy/game_material
+  - wood_finish
 - id: ap-2-1-6-1
   name: Balls & Fetch Toys
   children: []
@@ -182,12 +194,20 @@
   name: Chew Toys
   children: []
   attributes:
+  - battery_size
+  - battery_type
+  - lumber/wood_type
   - toy/game_material
+  - wood_finish
 - id: ap-2-1-6-4
   name: Foraging Toys
   children: []
   attributes:
+  - battery_size
+  - battery_type
+  - lumber/wood_type
   - toy/game_material
+  - wood_finish
 - id: ap-2-1-6-5
   name: Mirrors
   children: []
@@ -271,14 +291,18 @@
   attributes:
   - color
   - furniture/fixture_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: ap-2-2-2-1
   name: Cat Condos & Houses
   children: []
   attributes:
   - color
   - furniture/fixture_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: ap-2-2-2-2
   name: Cat Perches & Shelves
   children: []
@@ -292,7 +316,9 @@
   attributes:
   - color
   - furniture/fixture_material
+  - lumber/wood_type
   - pattern
+  - wood_finish
 - id: ap-2-2-2-4
   name: Cat Steps & Ramps
   children: []
@@ -335,6 +361,8 @@
   - ap-2-2-4-3
   attributes:
   - cat_litter_formula
+  - lumber/wood_type
+  - wood_finish
 - id: ap-2-2-4-1
   name: Cat Litter Box Liners
   children: []
@@ -372,8 +400,12 @@
   - ap-2-2-5-11
   - ap-2-2-5-12
   attributes:
+  - battery_size
+  - battery_type
   - color
+  - material_treatment
   - pattern
+  - plant_material
   - toy/game_material
 - id: ap-2-2-5-1
   name: Balls & Chasers
@@ -384,6 +416,10 @@
   name: Catnip Toys
   children: []
   attributes:
+  - battery_size
+  - battery_type
+  - material_treatment
+  - plant_material
   - toy/game_material
 - id: ap-2-2-5-3
   name: Chew Toys
@@ -399,11 +435,15 @@
   name: Interactive Toys
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - toy/game_material
 - id: ap-2-2-5-6
   name: Laser Toys
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - toy/game_material
 - id: ap-2-2-5-7
   name: Puzzles & Treat-Dispensing Toys
@@ -437,12 +477,14 @@
   children: []
   attributes:
   - cat_age_group
+  - material_treatment
   - package_type
   - pet_dietary_requirements
   - pet_food_flavor
   - pet_food_supplements
   - pet_supply_product_form
   - pet_treat_type
+  - plant_material
 - id: ap-2-3
   name: Dog Supplies
   children:
@@ -582,6 +624,8 @@
   name: Dog Toys
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - dog_age_group
   - dog_toy_type
@@ -747,6 +791,7 @@
   - ap-2-4-3-7
   - ap-2-4-3-8
   attributes:
+  - alcohol/solvent_content
   - compatible_aquarium
 - id: ap-2-4-3-1
   name: Algae Scrapers
@@ -804,7 +849,11 @@
   - accessory_size
   - color
   - decoration_material
+  - lumber/wood_type
+  - material_treatment
   - pattern
+  - plant_material
+  - wood_finish
 - id: ap-2-4-4-1
   name: Aquarium Backgrounds
   children: []
@@ -844,7 +893,9 @@
   - accessory_size
   - color
   - decoration_material
+  - material_treatment
   - pattern
+  - plant_material
 - id: ap-2-4-4-6
   name: Bubbling Decorations
   children: []
@@ -860,7 +911,10 @@
   - accessory_size
   - color
   - decoration_material
+  - lumber/wood_type
+  - material_treatment
   - pattern
+  - wood_finish
 - id: ap-2-4-4-8
   name: Ornaments
   children: []
@@ -868,7 +922,11 @@
   - accessory_size
   - color
   - decoration_material
+  - lumber/wood_type
+  - material_treatment
   - pattern
+  - plant_material
+  - wood_finish
 - id: ap-2-4-4-9
   name: Shipwrecks
   children: []
@@ -979,7 +1037,9 @@
   children: []
   attributes:
   - color
+  - material_treatment
   - pattern
+  - plant_material
   - substrate_features
 - id: ap-2-4-7-2
   name: Aragonite Sands
@@ -1046,22 +1106,28 @@
   - ap-2-4-10-4
   attributes:
   - color
+  - lumber/wood_type
   - material
   - pattern
+  - wood_finish
 - id: ap-2-4-10-1
   name: Box Frame Stands
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - material
   - pattern
+  - wood_finish
 - id: ap-2-4-10-2
   name: Cabinet Stands
   children: []
   attributes:
   - color
+  - lumber/wood_type
   - material
   - pattern
+  - wood_finish
 - id: ap-2-4-10-3
   name: Double Tank Stands
   children: []
@@ -1108,6 +1174,9 @@
   - ap-2-4-12-7
   - ap-2-4-12-8
   attributes:
+  - alcohol/solvent_content
+  - material_treatment
+  - plant_material
   - suitable_for_water_type
 - id: ap-2-4-12-1
   name: Algae Control
@@ -1185,7 +1254,9 @@
 - id: ap-2-4-15
   name: Fish Feeders
   children: []
-  attributes: []
+  attributes:
+  - battery_size
+  - battery_type
 - id: ap-2-4-16
   name: Fish Food
   children:
@@ -1500,6 +1571,8 @@
   attributes:
   - accessory_size
   - animal_type
+  - battery_size
+  - battery_type
   - care_instructions
   - color
   - fabric
@@ -1618,10 +1691,12 @@
   - animal_type
   - basket_material
   - color
+  - lumber/wood_type
   - pattern
   - pet_bedding_features
   - shape
   - suitable_space
+  - wood_finish
 - id: ap-2-9-2
   name: Bolster Beds
   children: []
@@ -1817,6 +1892,8 @@
   name: Pet Thermometers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - connectivity_technology
   - pet_thermometer_design
 - id: ap-2-12
@@ -1850,6 +1927,8 @@
   children: []
   attributes:
   - animal_type
+  - battery_size
+  - battery_type
   - color
   - material
   - pattern
@@ -1859,8 +1938,10 @@
   attributes:
   - animal_type
   - color
+  - lumber/wood_type
   - material
   - pattern
+  - wood_finish
 - id: ap-2-14-3
   name: Elevated Bowls
   children: []
@@ -1906,6 +1987,8 @@
   children: []
   attributes:
   - animal_type
+  - battery_size
+  - battery_type
   - color
   - material
   - pattern
@@ -2058,6 +2141,8 @@
   attributes:
   - accessory_size
   - animal_type
+  - battery_size
+  - battery_type
   - color
   - material
   - pattern
@@ -2131,6 +2216,8 @@
   children: []
   attributes:
   - animal_type
+  - battery_size
+  - battery_type
   - color
   - furniture/fixture_material
   - pattern
@@ -2140,8 +2227,10 @@
   attributes:
   - animal_type
   - color
+  - lumber/wood_type
   - material
   - pattern
+  - wood_finish
 - id: ap-2-18-3
   name: Exercise Pens
   children: []
@@ -2348,6 +2437,7 @@
   name: Flea & Tick Sprays
   children: []
   attributes:
+  - alcohol/solvent_content
   - animal_type
   - pet_supply_product_form
 - id: ap-2-23-5
@@ -2462,23 +2552,33 @@
   - ap-2-26-2-2
   - ap-2-26-2-3
   - ap-2-26-2-4
-  attributes: []
+  attributes:
+  - alcohol/solvent_content
+  - pet_supply_product_form
 - id: ap-2-26-2-1
   name: Colognes
   children: []
-  attributes: []
+  attributes:
+  - alcohol/solvent_content
+  - pet_supply_product_form
 - id: ap-2-26-2-2
   name: Deodorizer Sprays
   children: []
-  attributes: []
+  attributes:
+  - alcohol/solvent_content
+  - pet_supply_product_form
 - id: ap-2-26-2-3
   name: Odor Neutralizers
   children: []
-  attributes: []
+  attributes:
+  - alcohol/solvent_content
+  - pet_supply_product_form
 - id: ap-2-26-2-4
   name: Perfumes
   children: []
-  attributes: []
+  attributes:
+  - alcohol/solvent_content
+  - pet_supply_product_form
 - id: ap-2-26-3
   name: Pet Hair Clippers & Trimmers
   children:
@@ -2488,6 +2588,8 @@
   - ap-2-26-3-4
   - ap-2-26-3-5
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: ap-2-26-3-1
@@ -2506,18 +2608,24 @@
   name: Clippers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: ap-2-26-3-4
   name: Shears & Scissors
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: ap-2-26-3-5
   name: Trimmers
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - color
   - pattern
 - id: ap-2-26-4
@@ -2540,7 +2648,10 @@
   children: []
   attributes:
   - animal_type
+  - battery_size
+  - battery_type
   - color
+  - lumber/wood_type
   - pattern
   - pet_nail_tool_type
 - id: ap-2-26-7
@@ -3228,11 +3339,15 @@
   - accessory_size
   - animal_type
   - material
+  - material_treatment
+  - plant_material
 - id: ap-2-46-3
   name: Reptile & Amphibian Habitat Heating & Lighting
   children: []
   attributes:
   - animal_type
+  - battery_size
+  - battery_type
   - light_color
   - light_pattern
   - lighting_features
@@ -3249,6 +3364,8 @@
   - accessory_size
   - animal_type
   - habitat_material
+  - lumber/wood_type
+  - wood_finish
 - id: ap-2-46-4-1
   name: Aquariums
   children: []
@@ -3270,6 +3387,8 @@
   - accessory_size
   - animal_type
   - habitat_material
+  - material_treatment
+  - plant_material
 - id: ap-2-46-4-4
   name: Vivariums
   children: []
@@ -3283,7 +3402,9 @@
   attributes:
   - color
   - material
+  - material_treatment
   - pattern
+  - plant_material
 - id: ap-2-47
   name: Small Animal Supplies
   children:
@@ -3315,7 +3436,9 @@
   children: []
   attributes:
   - animal_type
+  - lumber/wood_type
   - material
+  - wood_finish
 - id: ap-2-47-4
   name: Small Animal Habitats & Cages
   children: []
