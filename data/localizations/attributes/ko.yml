@@ -2,9 +2,27 @@
 ---
 ko:
   attributes:
+    3d_glasses_fit_design:
+      name: 3D 안경 착용 디자인
+      description: "안경을 착용하거나 부착하는 방법을 나타냅니다(예: 클립온, 랩어라운드, 오버핏)"
     3d_glasses_material:
       name: 3D 안경 소재
       description: 대나무나 스테인레스 스틸 등 3D 안경에 사용되는 소재를 명시합니다
+    3d_glasses_technology:
+      name: 3D 안경 기술
+      description: 안경이 설계된 3D 이미지/동기화 기술을 지정하여 특정 디스플레이 또는 프로젝터와의 호환성을 결정합니다
+    3d_printer_case_style:
+      name: 3D 프린터 케이스 스타일
+      description: "쇼핑객이 소프트 캐리백, 하드쉘 케이스, 고정형 인클로저, 단순 먼지 커버를 구별할 수 있도록 전체 제품 유형을 분류합니다"
+    3d_printer_cleaning_kit_components_included:
+      name: 3D 프린터 청소 키트 포함 구성품
+      description: 쇼핑객이 정확히 무엇을 구매하는지 알 수 있도록 키트에 제공되는 개별 도구와 소모품을 나열합니다
+    3d_printing_resin_type:
+      name: 3D 프린팅 레진 유형
+      description: "쇼핑객이 레진이 표준, 엔지니어링 등급, 주조 가능 또는 기타 특수 유형인지 빠르게 식별할 수 있도록 레진의 제형 또는 의도된 용도를 지정합니다"
+    80_plus_efficiency_rating:
+      name: 80 Plus 효율 등급
+      description: PSU가 달성한 공식 80 Plus 에너지 효율 인증 레벨을 나타냅니다
     abrasive_material:
       name: 연마 재료
       description: 다이아몬드나 탄화규소 등 샌딩 도구에 사용되는 연마재 유형을 식별합니다
@@ -25,7 +43,7 @@ ko:
       description: 대학생이나 박사 학위 등 미디어 콘텐츠의 학술 수준을 명시합니다
     accessibility_design_features:
       name: 접근성 디자인 기능
-      description: "청각, 시각 또는 손재주에 문제가 있는 사용자를 돕기 위한 특별한 디자인 요소를 나열합니다."
+      description: "청각, 시각 또는 손재주에 문제가 있는 사용자를 돕기 위한 특별한 디자인 요소를 나열합니다"
     accessory_material:
       name: 액세서리 소재
       description: "일반적으로 배송 용품을 위한 액세서리의 소재 유형(예: 플라스틱, 판지)을 지정합니다"
@@ -35,9 +53,12 @@ ko:
     accordion_tuning:
       name: 아코디언 튜닝
       description: 건식 또는 콘서트 피치 등 아코디언에 사용되는 튜닝 유형을 명시합니다
+    activation_mechanism:
+      name: 작동 메커니즘
+      description: 알람을 작동시키는 주요 방법을 지정합니다
     activation_method:
       name: 활성화 방법
-      description: 사용자가 선불 크레딧이나 SIM을 활성화하는 방법을 설명합니다.
+      description: 사용자가 선불 크레딧이나 SIM을 활성화하는 방법을 설명합니다
     active_ingredient:
       name: 활성 성분
       description: "개인 위생 용품의 주요 물질(예: 비타민 A, 레티놀)을 식별합니다"
@@ -56,9 +77,24 @@ ko:
     acupuncture_model_type:
       name: 침술 인체모형 유형
       description: '침술 모델이 나타내는 신체 부위 또는 종(예: 머리, 손, 동물)을 명시합니다 '
+    adapter_directionality:
+      name: 어댑터 방향성
+      description: 어댑터가 양방향으로 신호 흐름을 지원하는지 또는 한 방향으로만 지원하는지를 나타냅니다
+    adapter_operating_modes:
+      name: 어댑터 작동 모드
+      description: "어댑터가 블루투스 수신기, 송신기 또는 둘 다로 기능하는지 지정합니다"
+    adaptive_sync_technology:
+      name: 적응형 동기화 기술
+      description: 찢김 없는 화면을 위해 모니터가 지원하는 가변 주사율(VRR) 기술을 지정합니다
+    adc_resolution:
+      name: ADC 해상도
+      description: 측정 정밀도를 정의하는 통합 아날로그-디지털 변환기의 해상도(비트)를 지정합니다
     additional_animation_software_features:
       name: 추가 애니메이션 소프트웨어 기능
       description: 캐릭터 애니메이션이나 시각 효과와 같은 애니메이션 편집 소프트웨어의 고유한 기능을 지정합니다
+    additional_cleaning_technology:
+      name: 추가 청소 기술
+      description: "스팀 외에 포함된 청소 기술을 나열합니다(예: 초음파, UV, 오존)"
     additional_design_software_type:
       name: 추가 설계 소프트웨어 기능
       description: 가상 투어 또는 조경 설계와 같은 설계 소프트웨어의 추가 기능을 지정합니다
@@ -74,6 +110,18 @@ ko:
     additional_security_software_features:
       name: 추가 보안 소프트웨어 기능
       description: "디스크 암호화, 침입 탐지 등 보안 소프트웨어의 추가 기능을 식별합니다"
+    adhesive_application_type:
+      name: 접착제 적용 유형
+      description: 접착제의 의도된 속눈썹 서비스나 사용 사례를 정의합니다
+    adhesive_features:
+      name: 접착제 특징
+      description: 패치나 테이프에 사용되는 접착제의 특수한 특성을 강조합니다
+    adhesive_format:
+      name: 접착제 형식
+      description: 수리 용도로 공급되는 접착제의 물리적 형태를 나타냅니다
+    adhesive_strength:
+      name: 접착 강도
+      description: "코 스트립 접착제의 접착 또는 리프팅 강도 수준을 지정합니다(예: 일반, 특강)"
     adhesive_type:
       name: 접착 유형
       description: 제거 가능하거나 영구적인 접착제 등 제품에 사용되는 접착제 유형을 식별합니다
@@ -98,6 +146,9 @@ ko:
     air_mattress_features:
       name: 에어매트리스의 특징
       description: 쉽게 팽창할 수 있거나 펑크에 내성이 있다는 등 에어 매트리스의 고유한 특성을 설명합니다
+    air_tube_configuration:
+      name: 공기 튜브 구성
+      description: 커프와 통합된 공기 팽창 튜브의 수나 스타일을 나타냅니다
     airbrush_feed_type:
       name: 에어브러시 피드 타입
       description: "에어브러시의 페인트 이송 방법(예: 중력식 또는 사이펀식)을 식별합니다"
@@ -110,12 +161,18 @@ ko:
     aircraft_engine_type:
       name: 항공기 엔진 유형
       description: 제트 또는 터보프롭과 같이 항공기에 동력을 공급하는 엔진의 유형을 지정합니다
+    airflow_opening_design:
+      name: 공기 흐름 개구부 설계
+      description: 마우스피스에 내장된 호흡 또는 환기 구성을 설명합니다
     airsoft_equipment_included:
       name: 에어소프트 장비 포함
       description: 보안경이나 전술 조끼 등 에어소프트 제품과 함께 제공되는 추가 장비를 명시합니다
     album_type:
       name: 앨범 유형
       description: "스프링 제본, 스크랩북 등 스크랩북 또는 스탬핑 키트의 바인딩 스타일을 설명합니다"
+    alcohol_content:
+      name: 알코올 함량
+      description: 토너가 무알코올인지 또는 존재하는 경우 포뮬러에 대략 얼마나 많은 알코올이 포함되어 있는지를 나타냅니다
     alert_type:
       name: 경고 유형
       description: "제품에서 제공하는 경고 종류(예: 가청 경보, 스마트폰 알림)를 명시합니다"
@@ -131,6 +188,9 @@ ko:
     allergy_friendly_features:
       name: 알레르기 방지 기능
       description: "제품에 라텍스 프리, 곰팡이 내성 등 알레르기에 친화적인 특성이 있는지 식별합니다"
+    amino_acid_subtype:
+      name: 아미노산 하위 유형
+      description: 보충제에 포함된 아미노산의 주요 유형이나 프로파일을 지정합니다
     amplifier/booster_suitable_location:
       name: 증폭기/부스터 적합한 위치
       description: "증폭기 또는 신호 부스터를 위한 최적의 위치(예: 차량 또는 대규모 장소)를 명시합니다"
@@ -140,9 +200,18 @@ ko:
     amplifier_configuration:
       name: 앰프 구성
       description: 2채널 또는 4채널과 같은 자동차 앰프의 설정을 명시합니다
+    amputation_level:
+      name: 절단 수준
+      description: 수축기가 설계된 절단 수준을 나타냅니다
+    analyte_measured:
+      name: 측정된 분석물
+      description: 대조 용액이 보정을 제공하는 바이오마커를 식별합니다
     anamorphic_squeeze_ratio:
       name: 아나모픽 스퀴즈 비율
-      description: "아나모픽 렌즈의 수평 압축률을 나타내며, 사용자가 원하는 압축 해제 출력에 맞는 렌즈를 선택할 수 있도록 해줍니다."
+      description: "아나모픽 렌즈의 수평 압축률을 나타내며, 사용자가 원하는 압축 해제 출력에 맞는 렌즈를 선택할 수 있도록 해줍니다"
+    anatomical_detail_displayed:
+      name: 표시된 해부학적 세부사항
+      description: 모델에서 강조 표시되는 해부학적 또는 경락 특징을 나타냅니다
     anchor_type:
       name: 앵커 유형
       description: "견인식 수상 스포츠 장비에 사용되는 앵커(예: 플루크 또는 플라우)를 정의합니다"
@@ -161,12 +230,27 @@ ko:
     animal_type:
       name: 동물 종류
       description: "제품 용도에 맞는 동물 유형(예: 오리, 사슴, 개)을 명시합니다"
+    answering_machine_type:
+      name: 자동 응답기 유형
+      description: 통합 자동 응답기의 존재 및 기술을 지정합니다
+    antenna_connector_type:
+      name: 안테나 커넥터 유형
+      description: 외부 안테나를 부착하는 데 사용되는 RF 커넥터를 지정합니다
+    antenna_rf_connector_type:
+      name: 안테나 RF 커넥터 유형
+      description: 안테나가 사용하는 RF 커넥터를 식별합니다
     antenna_type:
       name: 안테나 유형
       description: "전자 장치용 안테나 유형(예: 무지향성, 그리드)을 명시합니다"
     anti_agin_skin_care_type:
       name: 안티아진 스킨케어 타입
       description: "마스크, 토너 등 안티에이징 스킨케어 품목의 종류를 분류합니다"
+    anti_perspirant_strength_level:
+      name: 발한 억제제 강도 수준
+      description: "발한 억제제의 효능 분류를 나타냅니다(예: 임상 강도, 스포츠 강도)"
+    antibody_class_tested:
+      name: 검사된 항체 종류
+      description: "키트가 검출하는 면역글로불린 또는 바이오마커를 지정합니다(예: IgE, IgG4)"
     antifreeze_type:
       name: 부동액 유형
       description: "차량 유지 관리를 위한 부동액 유형(예: 농축액, 미리 희석된 액체)을 명시합니다"
@@ -176,12 +260,24 @@ ko:
     antique_vehicle_era:
       name: 앤틱 차량 시대
       description: 황동 시대나 빈티지 시대와 같은 앤틱 차량이 운행된 역사적 기간을 설명합니다
+    appliance_board_function:
+      name: 가전제품 보드 기능
+      description: 가전제품 내에서 보드의 기능적 역할을 지정합니다
+    appliance_unit_location:
+      name: 가전제품 장치 위치
+      description: "보드가 의도된 가전제품의 물리적 섹션을 나타냅니다(예: 실내 또는 실외 장치)"
     application_area:
       name: 도포 영역
       description: "제품을 도포하는 신체 부위 또는 부위(예: 입술, 전신)를 명시합니다"
     application_method:
       name: 도포 방식
       description: "제품을 바르거나 사용하는 방법(예: 젤, 액체, 스프레이)을 정의합니다"
+    application_type:
+      name: 적용 유형
+      description: 트리트먼트가 그대로 유지되는지 헹궈지는지와 특별한 사용 방법을 나타냅니다
+    applicator_format:
+      name: 어플리케이터 형식
+      description: 로션이나 선크림 어플리케이터의 물리적 형태나 스타일을 설명합니다
     applicator_material:
       name: 어플리케이터 소재
       description: "일반적으로 탐폰용 어플리케이터에 사용되는 소재(예: 플라스틱, 판지)를 명시합니다"
@@ -269,18 +365,39 @@ ko:
     audio/scan_converter_features:
       name: 오디오/스캔 변환기 기능
       description: 자동 변환 또는 원격 제어와 같은 오디오/스캔 변환기의 기능을 설명합니다
+    audio/video_cable_connector_type_end_a:
+      name: 오디오/비디오 케이블 커넥터 유형 (끝 A)
+      description: 케이블의 첫 번째 끝(끝 A)에 있는 정확한 커넥터 또는 인터페이스를 명시합니다
+    audio/video_cable_connector_type_end_b:
+      name: 오디오/비디오 케이블 커넥터 유형 (끝 B)
+      description: 케이블의 두 번째 끝(끝 B)에 있는 정확한 커넥터 또는 인터페이스를 명시합니다
+    audio_bypass_type:
+      name: 오디오 바이패스 유형
+      description: "이펙트가 비활성화될 때 오디오 신호가 라우팅되는 방법을 지정합니다(예: 트루 바이패스, 버퍼드, 릴레이)"
+    audio_cassette_tape_type:
+      name: 오디오 카세트 테이프 유형
+      description: 오디오 카세트의 IEC 테이프 포뮬레이션(바이어스)을 명시합니다
     audio_codecs/formats_supported:
       name: 지원되는 오디오 코덱/형식
       description: "제품에서 재생할 수 있는 오디오 파일 형식(예: WAVE, MP3)을 명시합니다"
+    audio_component_form_factor:
+      name: 오디오 컴포넌트 폼 팩터
+      description: 컴포넌트의 물리적 스타일 또는 설치 형식을 정의합니다
     audio_connectivity:
       name: 오디오 연결
       description: "제품이 지원하는 오디오 연결 유형(예: HDMI, USB)을 정의합니다"
+    audio_conversion_direction:
+      name: 오디오 변환 방향
+      description: "컨버터가 지원하는 신호 흐름(예: 아날로그-디지털, 디지털-아날로그, 양방향)을 명시합니다"
     audio_converter_features:
       name: 오디오/스캔 변환기 기능
       description: AI 기반 또는 아날로그 지원과 같은 오디오 변환기의 주요 기능을 간략하게 설명합니다
     audio_d/a_converter_dac:
       name: 오디오 D/A 변환기(DAC)
       description: "오디오 장치의 디지털-아날로그(DAC) 변환기 유형(예: USB, 광학)을 명시합니다"
+    audio_duplex_capability:
+      name: 오디오 양방향 기능
+      description: 장치가 전이중(동시 양방향) 또는 반이중 오디오 통신을 지원하는지 지정합니다
     audio_mixer_type:
       name: 오디오 믹서 타입
       description: 아날로그 또는 스트리밍과 같은 오디오 믹서 유형을 식별합니다
@@ -296,6 +413,15 @@ ko:
     audio_purpose:
       name: 오디오 용도
       description: "오디오 제품의 용도 또는 위치(예: 자동차 오디오, 홈시네마)를 명시합니다"
+    audio_return_channel_support:
+      name: 오디오 리턴 채널 지원
+      description: 장치가 디스플레이에서 AVR 또는 사운드바로 오디오를 라우팅하기 위한 ARC 또는 eARC 패스스루를 지원하는지 명시합니다
+    audio_signal_configuration:
+      name: 오디오 신호 구성
+      description: "케이블이 모노, 스테레오, 밸런스드 또는 다채널(예: TRRS, 디지털) 오디오를 전달하는지 명시합니다"
+    audio_system:
+      name: 오디오 시스템
+      description: "VCR이 지원하는 오디오 재생/녹음 시스템을 정의합니다(예: Hi-Fi 스테레오, 모노)"
     audio_technology:
       name: 오디오 기술
       description: "오디오 장치에 사용되는 기술(예: AAC 또는 Dolby atmos)을 명시합니다"
@@ -386,6 +512,9 @@ ko:
     back_type:
       name: 스툴 등받이 유형
       description: "좌석의 등받이 스타일(예: 등받이 없음 또는 낮은 등받이)을 정의합니다"
+    backboard_material:
+      name: 백보드 소재
+      description: "리바운드 성능, 내구성 및 비용에 영향을 미치는 게임 백보드의 구조 소재를 지정합니다"
     background_design:
       name: 배경 디자인
       description: 인쇄 또는 크로마키와 같은 스튜디오 배경의 시각적 디자인 또는 패턴을 설명합니다
@@ -398,6 +527,9 @@ ko:
     backing_pattern:
       name: 뒷면 패턴
       description: "일반적으로 샌딩 액세서리의 경우 제품 뒷면의 패턴을 식별합니다. 예: 추상, 텍스"
+    backlighting_type:
+      name: 백라이팅 유형
+      description: 포함된 키보드나 마우스에 제공되는 조명 스타일을 설명합니다
     backrest_type:
       name: 등받이 유형
       description: "의자 등받이의 재질 또는 스타일(예: 메시, 패딩)을 명시합니다"
@@ -479,12 +611,18 @@ ko:
     band_strength:
       name: 밴드 강도
       description: 표준 또는 헤비 듀티와 같은 고무밴드의 내구성을 설명합니다
+    bandage_shape:
+      name: 붕대 형태
+      description: 접착 붕대나 드레싱의 사전 절단된 형태를 설명합니다
     banner_design:
       name: 배너 디자인
       description: 태슬이나 화환과 같은 파티 배너의 디자인 기능을 명시합니다
     bar_mounting_type:
       name: 바 장착 타입
       description: 문이나 들보 등 운동용 바의 설정 방법을 명시합니다
+    barcode_scanner_form_factor:
+      name: 바코드 스캐너 폼 팩터
+      description: "바코드 스캐너의 물리적 디자인 스타일(예: 휴대용, 프레젠테이션, 링)을 명시합니다"
     barcode_scanner_interface:
       name: 바코드 스캐너 인터페이스
       description: "바코드 스캐너의 통신 방식(예: USB, Bluetooth)을 정의합니다"
@@ -494,6 +632,9 @@ ko:
     barrel_material:
       name: 배럴 소재
       description: "헤어 제품 배럴에 사용되는 소재(예: 티타늄, 세라믹)를 명시합니다"
+    barrel_shape:
+      name: 배럴 형태
+      description: 생성되는 컬이나 웨이브 스타일에 직접적으로 영향을 미치는 배럴의 물리적 형태나 프로파일을 식별합니다
     barware_items_included:
       name: 바웨어 품목 포함
       description: "칵테일 셰이커, 냉각 큐브 등 칵테일 및 바 도구 세트의 구성 요소에 대해 자세히 설명합니다"
@@ -527,6 +668,9 @@ ko:
     bat_standard:
       name: 배트 표준
       description: "야구 또는 소프트볼 배트의 인증(예: 리틀 리그 또는 NCAA)을 정의합니다"
+    bath_brush_style:
+      name: 목욕 브러시 스타일
+      description: "각질 제거 도구의 물리적 스타일이나 형태를 설명합니다(예: 긴 손잡이 브러시, 장갑, 벨트)"
     bathroom_furniture_items_included:
       name: 욕실 가구 품목 포함
       description: 화장대 캐비닛이나 거울 등 욕실 가구 세트에 포함된 특정 항목을 식별합니다
@@ -545,24 +689,39 @@ ko:
     battery_cell_type:
       name: 배터리 셀 유형
       description: "배터리의 화학적 조성(예: 알카라인 또는 리튬-공기)을 명시합니다"
+    battery_charge_controller_type:
+      name: 배터리 충전 컨트롤러 유형
+      description: 컨트롤러가 사용하는 기본 조정 또는 충전 기술이나 토폴로지를 명시합니다
+    battery_connector_type:
+      name: 배터리 커넥터 유형
+      description: 배터리를 충전하거나 방전하는 데 사용되는 주요 커넥터 또는 단자 스타일을 식별합니다
     battery_features:
       name: 배터리 기능
       description: 고속 충전이나 내열성과 같은 배터리의 특별한 특성을 설명합니다
     battery_management_features:
       name: 배터리 관리 기능
       description: 결함 감지 또는 원격 모니터링과 같은 배터리 관리 시스템의 기능을 식별합니다
+    battery_mounting_type:
+      name: 배터리 장착 유형
+      description: 배터리 팩의 물리적 장착 또는 연결 표준을 식별합니다
     battery_size:
       name: 배터리 크기
       description: "제품에 대한 배터리 호환성(예: AAA, 9V)을 나타냅니다"
     battery_technology:
       name: 배터리 기술
       description: "전자 장치에 사용되는 배터리 유형(예: 알카라인 또는 리튬 이온)을 명시합니다"
+    battery_terminal_type:
+      name: 배터리 단자 유형
+      description: 배터리 단자의 물리적 커넥터 스타일을 명시합니다
     battery_type:
       name: 배터리 유형
       description: '배터리 유형(예: 일회용 또는 충전식)을 구별합니다 '
     bead_shape:
       name: 비즈 모양
       description: 원형 또는 사각형 등 비즈의 모양이나 디자인을 설명합니다
+    beard_care_benefits:
+      name: 수염 관리 혜택
+      description: 수염과 그 아래 피부에 대해 제품이 제공하는 주요 기능적 혜택을 나열합니다
     beat_subdivisions:
       name: 비트 분할
       description: 4분음표나 8분음표와 같은 메트로놈 비트의 리듬 구분을 명시합니다
@@ -572,6 +731,15 @@ ko:
     bed/frame_features:
       name: 침대/프레임 기능
       description: 저장 옵션이나 포함된 헤드보드 등 침대와 프레임의 독특한 특징을 강조합니다
+    bed_leveling_type:
+      name: 베드 레벨링 유형
+      description: 프린터가 인쇄 전 빌드 표면을 레벨링하는 데 사용하는 방법을 지정합니다
+    bed_pan_features:
+      name: 변기 기능
+      description: 추가적인 특별한 디자인 요소나 기능적 개선 사항을 강조합니다
+    bed_pan_handle_style:
+      name: 변기 손잡이 스타일
+      description: 위치 조정 및 제거를 위해 제공되는 손잡이나 그립의 스타일을 설명합니다
     bed_pan_type:
       name: 환자용 간이 변기 유형
       description: "침대 팬의 디자인(예: 표준형, 비만형)을 명시합니다"
@@ -637,7 +805,10 @@ ko:
       description: 사냥이나 천문학 등 쌍안경의 구체적인 용도나 기능을 설명합니다
     biometric_authentication_method:
       name: 생체인증 방식
-      description: 지문 센서나 얼굴 인식 등 휴대폰에 내장된 생체 인식 보안 옵션을 나열합니다.
+      description: 지문 센서나 얼굴 인식 등 휴대폰에 내장된 생체 인식 보안 옵션을 나열합니다
+    biometric_certifications:
+      name: 생체 인증
+      description: "장치가 충족하는 공식 산업 또는 정부 생체 인증(예: FBI PIV, FIPS 201)을 나열합니다"
     biometric_monitor_accessory_features:
       name: 생체 인식 모니터 액세서리 기능
       description: 심박 측정기나 보수계와 같은 생체신호 모니터 부대용품의 특수 기능을 식별합니다
@@ -665,12 +836,18 @@ ko:
     bitter_variety:
       name: 비터 종류
       description: "맛 프로필(예: 꽃맛, 매운맛)을 기준으로 쓴맛을 분류합니다"
+    blade_coating:
+      name: 날 코팅
+      description: "날카로움이나 활공을 위해 날에 적용된 성능 코팅을 지정합니다(예: 플래티넘, PTFE, 티타늄)"
     blade_curve:
       name: 블레이드 커브
       description: "하키 스틱의 블레이드 곡선(예: 오픈, 토우)을 명시합니다"
     blade_design:
       name: 블레이드 디자인
       description: 면도칼이나 잘라 쓰는 칼날과 같은 만능 나이프의 칼날 스타일을 명시합니다
+    blade_edge_configuration:
+      name: 날 가장자리 구성
+      description: "개별 날의 가장자리 형식을 지정합니다(예: 싱글 에지, 더블 에지, 카트리지 시스템, 하프 블레이드)"
     blade_material:
       name: 블레이드 소재
       description: "블레이드 구성에 사용되는 소재(예: 강철 또는 알루미늄)를 명시합니다"
@@ -689,9 +866,18 @@ ko:
     blind/shade_style:
       name: 블라인드/셰이드 스타일
       description: 롤러 블라인드나 수직 블라인드와 같은 블라인드 또는 셰이드의 디자인이나 유형을 식별합니다
+    blocked_signal_types:
+      name: 차단되는 신호 유형
+      description: 재머가 차단할 수 있는 무선 신호의 범주를 명시합니다
+    blood_group_systems_detected:
+      name: 검출된 혈액형 시스템
+      description: 키트가 결정할 수 있는 혈액형 시스템을 식별합니다
     blood_test_kit_components:
       name: 혈액 검사 키트 구성품
       description: "혈액 검사 키트에 포함된 품목(예: 거즈 패드, 접착 붕대)을 명시합니다"
+    bluetooth_functionality:
+      name: 블루투스 기능
+      description: "장치가 송신기, 수신기 또는 둘 다(트랜시버)로 작동하는지 나타냅니다"
     board_concave_shape:
       name: 오목 보드 모양
       description: "서핑보드나 패들보드의 오목한 곡선(예: V-오목형, 평면형)을 정의합니다"
@@ -737,9 +923,15 @@ ko:
     body_paint/foundation_type:
       name: 보디 페인트/파운데이션 타입
       description: "파운데이션, 가짜 혈액 등 보디 메이크업 제품의 카테고리를 명시합니다"
+    body_paint_formula_base:
+      name: 바디 페인트 포뮬러 베이스
+      description: "내구성, 마무리 및 제거 방법에 영향을 미치는 주요 제형 베이스를 식별합니다"
     body_pattern:
       name: 보디 패턴
       description: "제품의 기본 표면에 있는 시각적 디자인이나 모티프(예: 꽃무늬, 기하학적 무늬)를 설명합니다"
+    body_side:
+      name: 신체 측면
+      description: "제품이 왼쪽, 오른쪽 또는 양측 사용에 적합한지를 정의합니다"
     bodyboard_features:
       name: 보디보드 기능
       description: 하드톱이나 공기주입식 등 바디보드의 고유한 측면을 설명합니다
@@ -752,6 +944,9 @@ ko:
     bolt_material:
       name: 볼트 소재
       description: 대나무 또는 유리섬유 등 양궁 볼트 화살의 조성을 식별합니다
+    bone_anchored_interface_type:
+      name: 골 고정 인터페이스 유형
+      description: "프로세서가 임플란트에 부착되는 방법을 정의하며, 경피 지대 시스템과 경피 자기 시스템을 구분합니다"
     book/file_cover_material:
       name: 책/파일 표지 소재
       description: "책이나 서류 표지에 사용된 재료(예: 판지나 가죽)를 식별합니다"
@@ -767,6 +962,9 @@ ko:
     bookmark_shape:
       name: 북마크 모양
       description: 원형 또는 사각형 등 북마크의 형태나 윤곽선을 설명합니다
+    boombox_lighting_effects:
+      name: 붐박스 조명 효과
+      description: 스피커에 통합된 내장 LED 또는 RGB 라이트 쇼의 존재와 스타일을 설명합니다
     boot_style:
       name: 부츠 스타일
       description: "부츠 스타일(예: 부티즈)을 명시합니다"
@@ -836,15 +1034,27 @@ ko:
     bra_support_level:
       name: 브래지어 지지력 수준
       description: "브래지어의 지지력 수준(예: 낮음, 보통, 높음)을 나타냅니다"
+    brace_support_level:
+      name: 보조기 지지 수준
+      description: 보조기가 제공하는 제조업체 지정 전체 지지 또는 보호 수준을 나타냅니다
     bracelet_design:
       name: 팔찌 디자인
       description: 참이나 커프와 같은 팔찌의 디자인을 지정합니다
     bracket/brace_design:
       name: 브래킷/브레이스 디자인
       description: "직각 브래킷, 꺾쇠와 같은 브래킷 또는 버팀대의 스타일을 설명합니다"
+    bracket_profile:
+      name: 브래킷 프로필
+      description: "카드와 함께 제공된 물리적 브래킷 스타일을 나타내며, 섀시 호환성을 결정합니다"
     brandy_variety:
       name: 브랜디 종류
       description: "다양한 브랜디 스타일(예: 코냑, 그라파)을 구별합니다"
+    breadboard_type:
+      name: 브레드보드 유형
+      description: 기본 빌드 또는 크기 스타일별로 브레드보드를 분류합니다
+    breath_spray_benefit:
+      name: 구강 스프레이 혜택
+      description: 구강 스프레이가 제공한다고 주장하는 주요 구강 관리 혜택을 식별합니다
     breath_sprays_certifications:
       name: 구강 청정 스프레이 인증
       description: "호흡 스프레이가 충족하는 기준(예: 공정 무역, 글루텐 프리)을 명시합니다"
@@ -854,12 +1064,24 @@ ko:
     brightness_levels:
       name: 밝기 수준
       description: 중간 또는 높음과 같은 제품의 광 출력 범위를 명시합니다
+    bristle_grade:
+      name: 솔털 등급
+      description: "사용된 동물성 또는 합성 모의 품질이나 분류를 식별합니다(예: 실버팁 오소리, 합성 실버팁 섬유)"
+    bristle_hardness:
+      name: 칫솔모 강도
+      description: 칫솔모의 단단함을 나타냅니다
     bristle_material:
       name: 모 소재
       description: "브러시 강모의 구성(예: 나일론 또는 말털)을 식별합니다"
     bristle_shape:
       name: 강모 모양
       description: "브러시 강모의 형태(예: 편평한 형태, 각진 형태)를 정의합니다"
+    broadcast_video_standard:
+      name: 방송 비디오 표준
+      description: VCR이 호환되는 아날로그 방송 표준을 나타냅니다
+    broadcasting_standard_supported:
+      name: 지원 방송 표준
+      description: "제품이 디코딩하거나 처리할 수 있는 텔레비전 방송 또는 변조 표준(위성, 케이블, 지상파)을 지정합니다"
     broadhead/field_point_material:
       name: 브로드헤드/필드 포인트 소재
       description: 스테인레스 스틸이나 탄소강과 같이 양궁 브로드헤드 또는 필드 포인트에 사용되는 소재를 식별합니다
@@ -869,6 +1091,12 @@ ko:
     brush_application:
       name: 브러시 어플리케이션
       description: 아크릴이나 수채화 같은 미술 붓의 용도를 설명합니다
+    brush_end_type:
+      name: 브러시 끝 유형
+      description: "브러시 끝의 구조적 형식을 설명합니다(예: 단일 끝, 이중 끝, 접이식)"
+    brush_head_shape:
+      name: 브러시 헤드 형태
+      description: "브러시 헤드의 전체적인 형태를 정의하며, 도달 범위와 다양한 사용자에 대한 적합성에 영향을 미칩니다"
     brush_head_usage:
       name: 브러시 헤드 용도
       description: "일반적으로 화장품용 브러시 헤드의 용도(예: 딥 클렌징, 각질 제거)를 명시합니다"
@@ -881,6 +1109,9 @@ ko:
     brush_type:
       name: 브러시 유형
       description: "면도 브러시에 사용되는 소재(예: 합성 또는 오소리 털)를 명시합니다"
+    brushing_mode:
+      name: 양치 모드
+      description: "칫솔이 순환할 수 있는 사전 설정된 청소 프로그램을 나열합니다(예: 클린, 민감, 미백)"
     bug_type:
       name: 버그 유형
       description: "제품이 대상으로 삼는 곤충 종(예: 개미 또는 말벌)을 명시합니다"
@@ -917,6 +1148,9 @@ ko:
     bullion_form:
       name: 괴 형태
       description: 원형 또는 바 등 지금의 유형을 명시합니다
+    bungee_arm_mechanism:
+      name: 번지 암 메커니즘
+      description: "마우스 케이블을 매달고 안내하는 데 사용되는 기술(예: 스프링 암, 탄성 코드, 자기 서스펜션)을 정의합니다"
     burner_material:
       name: 버너 소재
       description: 주철 또는 스테인리스 스틸과 같이 스토브나 그릴 버너의 구성에 사용되는 소재를 식별합니다
@@ -932,18 +1166,39 @@ ko:
     button/snap_closure_type:
       name: 버튼/스냅 잠금 방식
       description: 자기식 또는 인비저블 등 고정 메커니즘의 스타일을 설명합니다
+    button_surface_profile:
+      name: 버튼 표면 프로필
+      description: 인체공학과 시각적 스타일에 영향을 미치는 버튼 플런저 표면의 물리적 윤곽을 설명합니다
     cabinet_type:
       name: 캐비닛 유형
       description: "아케이드 게임의 디자인 및 폼 팩터(예: 바탑 또는 미니 아케이드)를 명시합니다"
+    cable_form_factor:
+      name: 케이블 폼 팩터
+      description: 케이블의 물리적 디자인 스타일 또는 모양을 설명합니다
     cable_housing_material:
       name: 케이블 하우징 소재
       description: 나일론이나 PVC 등 케이블 하우징에 사용되는 재료를 식별합니다
+    cable_jacket_rating:
+      name: 케이블 재킷 등급
+      description: "케이블 외부 재킷의 환경 또는 안전 등급(예: 플레넘, 직접 매설, UV 저항)을 명시합니다"
     cable_shielding:
       name: 케이블 차폐
       description: "케이블에 사용되는 보호 유형(예: 편조(STP), 포일(FTP))을 명시합니다"
+    cable_style:
+      name: 케이블 스타일
+      description: "케이블의 물리적 디자인(예: 브레이드, 플랫, 코일, 리트랙터블)을 설명합니다"
+    cable_tie_type:
+      name: 케이블 타이 유형
+      description: 케이블 타이의 구조 스타일 또는 고정 메커니즘을 명시합니다
+    cable_tray_style:
+      name: 케이블 트레이 스타일
+      description: 환기 및 케이블 지지 방법을 결정하는 케이블 트레이 섹션의 구조적 스타일을 설명합니다
     cable_type:
       name: 케이블 유형
       description: "일반적으로 사이클링 장비에 사용되는 다양한 케이블(예: 브레이크, 기어)을 분류합니다"
+    cache_level:
+      name: 캐시 레벨
+      description: "캐시의 계층 위치(예: L1, L2, L3)를 나타내며, 크기, 대기 시간 및 프로세서 코어와의 근접성에 영향을 미칩니다"
     caffeine_content:
       name: 카페인 함량
       description: "제품에 존재하는 카페인의 양(예: 디카페인, 저카페인)을 나타냅니다"
@@ -962,6 +1217,18 @@ ko:
     calendar_format:
       name: 달력 형태
       description: 일별 또는 월별 등 캘린더 제품의 기간을 명시합니다
+    calibration_sensor_type:
+      name: 교정 센서 유형
+      description: 교정기의 기본 하드웨어 기술 또는 폼 팩터를 지정합니다
+    call_blocking_method:
+      name: 통화 차단 방식
+      description: 장치가 원치 않는 통화를 식별하고 차단하는 방법을 명시합니다
+    caller_id_compatibility:
+      name: 발신자 표시 호환성
+      description: 전화가 전화 네트워크에서 제공하는 발신자 표시 서비스를 지원하는지 여부를 나타냅니다
+    caller_id_standard_compatibility:
+      name: 발신자 표시 표준 호환성
+      description: 장치가 디코딩할 수 있는 발신자 표시 신호 형식을 나타냅니다
     cam_system:
       name: 캠 시스템
       description: "양궁 장비에 사용되는 캠 시스템(예: 하이브리드, 싱글)을 지정합니다"
@@ -1013,6 +1280,9 @@ ko:
     candle_type:
       name: 캔들 유형
       description: 테이퍼 또는 티라이트와 같은 양초의 디자인을 지정합니다
+    cane_base_design:
+      name: 지팡이 베이스 디자인
+      description: 지팡이의 지지 베이스 구성을 식별합니다
     canned_meat_variety:
       name: 통조림 고기 종류
       description: "통조림 고기 종류(예: 칠면조 또는 햄)를 구별합니다"
@@ -1025,6 +1295,9 @@ ko:
     canopy_pattern:
       name: 캐노피 패턴
       description: 체크 무늬나 예술 작품과 같은 우산이나 파라솔 캐노피의 시각적 모티브를 식별합니다
+    cantilever_material:
+      name: 캔틸레버 재질
+      description: 스타일러스를 고정하는 캔틸레버의 재질을 나타내어 트래킹 능력과 음향 특성에 영향을 미칩니다
     canvas_finish:
       name: 캔버스 마감
       description: "캔버스에 페인팅할 준비가 되었는지 나타냅니다(예: 젯소처리됨, 젯소 미처리)"
@@ -1034,6 +1307,15 @@ ko:
     canvas_texture:
       name: 캔버스 질감
       description: 매끄럽거나 중간 결과 같은 캔버스의 표면 느낌을 설명합니다
+    capacitance_tolerance:
+      name: 정전 용량 허용 오차
+      description: 공칭값에서 실제 정전 용량의 허용 편차를 백분율로 나타냅니다
+    capacitor_application:
+      name: 커패시터 용도
+      description: "커패시터의 주요 의도된 사용 또는 용도 클래스를 나타냅니다(예: 모터 런, 오디오, 스너버)"
+    capacitor_polarity:
+      name: 커패시터 극성
+      description: "커패시터가 극성, 무극성 또는 양극성인지 명시하여 설치 방향과 적합한 회로 위치에 영향을 미칩니다"
     car_freshener_fragrance:
       name: 차량 방향제 향
       description: "라벤더, 새 차 등 차량 방향제의 향을 지정합니다"
@@ -1067,12 +1349,18 @@ ko:
     card_holder_design:
       name: 카드 홀더 디자인
       description: 클립온 또는 스탠드업과 같은 좌석표 홀더의 스타일이나 형태를 설명합니다
+    card_interface_type:
+      name: 카드 인터페이스 유형
+      description: "리더가 물리적 접점, 비접촉 RF 또는 둘 다를 통해 통신하는지 설명합니다"
     card_rechargeability:
       name: 카드 충전 가능
-      description: 최초 크레딧 사용 후 카드 잔액을 다시 충전할 수 있는지 여부와 주요 충전 방법을 나타냅니다.
+      description: 최초 크레딧 사용 후 카드 잔액을 다시 충전할 수 있는지 여부와 주요 충전 방법을 나타냅니다
     card_size:
       name: 카드 크기
       description: "인사말 카드나 메모 카드(예: A4, Letter)의 사이즈를 나타내는 데 사용됩니다"
+    card_usage_status:
+      name: 카드 사용 상태
+      description: 전화 카드의 크레딧이 사용되었는지 또는 그대로 남아 있는지를 나타냅니다
     care_instructions:
       name: 취급 지침
       description: "손세탁, 드라이클리닝 등 제품 관리에 대한 지침을 제공합니다"
@@ -1091,9 +1379,18 @@ ko:
     cart_type:
       name: 카트 유형
       description: "전기, 가스 등 골프 카트의 동력원을 식별합니다"
+    cartridge_authenticity:
+      name: 카트리지 정품 여부
+      description: "소모품이 정품 제조사, 호환품, 재제조품 또는 리필품인지 식별합니다"
+    cartridge_mounting_style:
+      name: 카트리지 장착 스타일
+      description: "카트리지가 톤암 또는 헤드셸에 부착되는 방법을 지정하여(예: 하프인치 마운트, P-마운트) 기계적 호환성을 보장합니다"
     cartridge_type:
       name: 카트리지 유형
       description: "레코드 플레이어의 카트리지 기술(예: 세라믹 또는 자기)을 식별합니다"
+    cartridge_yield_type:
+      name: 카트리지 용량 유형
+      description: "카트리지의 제조사 정의 용량 등급을 나타냅니다(예: 표준, 고용량)"
     case_color:
       name: 케이스 색상
       description: "제품 케이스의 색상(예: 투명색, 흰색)을 명시합니다"
@@ -1102,7 +1399,7 @@ ko:
       description: "꽃무늬, 기하학 등 제품 케이스의 디자인 또는 모티브를 설명합니다"
     case_transparency_level:
       name: 케이스 투명성 수준
-      description: 케이스가 얼마나 투명한지를 나타냅니다.
+      description: 케이스가 얼마나 투명한지를 나타냅니다
     case_type:
       name: 케이스 유형
       description: "전자제품 및 액세서리의 케이스 종류(예: 지갑 또는 책 스타일)를 명시합니다"
@@ -1121,6 +1418,12 @@ ko:
     celebration_type:
       name: 축하 유형
       description: 크리스마스나 졸업식 등 제품이 적합한 행사를 지정합니다
+    cellular_capability:
+      name: 셀룰러 기능
+      description: 모델이 Wi-Fi 외에 모바일 네트워크를 지원하는지 나타냅니다
+    cervix_height_suitability:
+      name: 자궁경부 높이 적합성
+      description: "적절한 착용감을 보장하기 위해 컵이 최적화된 자궁경부 높이를 나타냅니다(예: 낮음, 평균, 높음)"
     chain_link_type:
       name: 체인 링크 유형
       description: "장신구의 체인 링크 스타일(예: 로프 또는 플랫)을 정의합니다"
@@ -1145,6 +1448,12 @@ ko:
     changing_tray_features:
       name: 기저귀 교체 트레이 기능
       description: 내장형 수납공간이나 안전끈 등 기저귀 교환대의 특별한 특성을 설명합니다
+    charcoal_source_material:
+      name: 숯 원료
+      description: 활성탄이 유래한 원재료를 지정합니다
+    charger_style:
+      name: 충전기 스타일
+      description: 무선 충전기의 물리적 폼 팩터 또는 전체 디자인을 정의합니다
     charger_type:
       name: 충전기 유형
       description: "수동, 스마트 등 차량 배터리 충전기 유형을 식별합니다"
@@ -1153,7 +1462,7 @@ ko:
       description: "레벨 3, 어댑터 등 EV 충전 케이블의 종류를 지정합니다"
     charging_interface_type:
       name: 충전 인터페이스 유형
-      description: "조명 키트를 충전하는 데 사용되는 물리적 포트 또는 방법(예: USB-C, Micro-USB, 무선 충전)을 지정합니다."
+      description: "조명 키트를 충전하는 데 사용되는 물리적 포트 또는 방법(예: USB-C, Micro-USB, 무선 충전)을 지정합니다"
     charging_level:
       name: 충전 수준
       description: 레벨 1(120v) 또는 레벨 2(240v)와 같은 EV 충전소의 전력 레벨을 지정합니다
@@ -1187,6 +1496,9 @@ ko:
     child_seat_placement:
       name: 어린이용 시트 배치
       description: "앞, 뒤 등 자전거의 어린이용 시트 위치를 지정합니다"
+    chin_strap_style:
+      name: 턱끈 스타일
+      description: "스트랩의 구조적 설계 또는 구성을 지정합니다(예: 싱글 스트랩, 풀 헤드, 할로)"
     chipper_technology:
       name: 치퍼 기술
       description: 스크류나 드럼과 같은 치퍼에 사용되는 기술 유형을 식별합니다
@@ -1196,6 +1508,9 @@ ko:
     chocolate_type:
       name: 초콜릿 유형
       description: "다크 초콜릿, 밀크 초콜릿 등 재료와 코코아 함량에 따라 초콜릿의 다양한 종류를 정의합니다"
+    cholesterol_analyte_measured:
+      name: 측정된 콜레스테롤 분석물
+      description: 장치가 총 콜레스테롤 외에 측정하거나 계산할 수 있는 특정 바이오마커를 나열합니다
     chuck_type:
       name: 척 유형
       description: SDS 또는 SDS max와 같은 하드웨어 도구에서 척 종류를 지정합니다
@@ -1235,12 +1550,27 @@ ko:
     cleaning_instructions:
       name: 청소 지침
       description: "권장되는 청소 방법(예: 식기세척기 사용 가능, 손세탁)을 안내합니다"
+    cleaning_kit_components_included:
+      name: 청소 키트 포함 구성품
+      description: 고객이 제공되는 도구와 소모품을 이해할 수 있도록 키트에 포함된 특정 항목을 나열합니다
+    cleaning_mode:
+      name: 청소 모드
+      description: 장치에서 사용할 수 있는 특정 청소 또는 치실 모드를 나열합니다
     cleaning_purpose:
       name: 청소 목적
       description: "청소 또는 세탁 제품의 용도(예: 상쾌함, 얼룩)를 명시합니다"
     cleaning_surfaces:
       name: 청소 대상
       description: "청소용 제품에 적합한 표면(예: 유리 표면 또는 레인지 상단부)을 식별합니다"
+    cleaning_technology:
+      name: 청소 기술
+      description: 칫솔이 치아를 청소하는 데 사용하는 주요 동작이나 메커니즘을 설명합니다
+    cleanse_focus:
+      name: 클렌즈 초점
+      description: 클렌즈 제품이 목표로 하는 주요 신체 시스템이나 목적을 식별합니다
+    cleanser_type:
+      name: 클렌저 유형
+      description: 클렌저의 특정 질감이나 형식을 설명합니다
     cleat_type:
       name: 클리트 유형
       description: 플립업 또는 오픈 베이스와 같이 도킹에 사용되는 클리트 스타일을 지정합니다
@@ -1253,12 +1583,21 @@ ko:
     clipper/trimmer_type:
       name: 클리퍼/트리머 타입
       description: 유선 또는 무선과 같은 클리퍼 또는 트리머의 전원을 식별합니다
+    clipper_motor_type:
+      name: 클리퍼 모터 유형
+      description: "장치에 전원을 공급하는 기계식 모터 설계를 설명합니다(예: 피벗, 로터리, 마그네틱, 브러시리스)"
+    clock_and_alarm_features:
+      name: 시계 및 알람 기능
+      description: 라디오가 제공하는 내장 시계 및 웨이크/슬립 기능을 자세히 설명합니다
     closure_style:
       name: 잠금 스타일
       description: "일반적으로 침구의 품목을 정돈하는 데 사용되는 방법(예: 전통적, 은닉형)을 명시합니다"
     closure_type:
       name: 잠금 방식
       description: "제품을 조이거나 고정하는 데 사용되는 방법(예: 지퍼 또는 버클)을 정의합니다"
+    cloth_treatment:
+      name: 천 처리
+      description: 천이 사전 처리되었는지와 처리의 성격을 식별합니다
     clothing_accessory_material:
       name: 의류 액세서리 소재
       description: 가죽이나 리넨과 같은 의류 액세서리에 사용되는 주요 소재를 식별합니다
@@ -1274,6 +1613,9 @@ ko:
     coating/sealant_application:
       name: 코팅/실란트 도포
       description: "보호 코팅 및 실런트의 기능(예: 내후성, 녹 방지)을 설명합니다"
+    coaxial_cable_series:
+      name: 동축 케이블 시리즈
+      description: "물리적 치수와 전기적 성능을 지시하는 케이블의 산업 표준 시리즈 또는 지정(예: RG-6, RG-58, LMR-400)을 식별합니다"
     cockpit_type:
       name: 조종석 유형
       description: 아날로그나 하이브리드 등 항공기 조종석에서 사용되는 설계 및 기술을 지정합니다
@@ -1304,6 +1646,12 @@ ko:
     coin_material:
       name: 코인 소재
       description: "수집용 주화를 만드는 재료의 유형(예: 청동, 구리)을 지정합니다"
+    collagen_source:
+      name: 콜라겐 공급원
+      description: "보충제에 사용되는 콜라겐의 주요 원산지를 식별합니다(예: 소, 해양, 식물 기반)"
+    collagen_type:
+      name: 콜라겐 유형
+      description: "제품이 제공하는 콜라겐 분자 유형을 지정합니다(예: Type I, II, III)"
     collar/mount_compatible_device:
       name: 칼라/마운트 호환 가능한 장치
       description: "삼각대 고리 또는 마운트(예: 렌즈, 카메라)와 호환되는 장치를 지정합니다"
@@ -1319,15 +1667,30 @@ ko:
     color_accuracy_standards:
       name: 색상 정확도 표준
       description: "일반적으로 모니터의 색상 보정 표준(예: 예: sRGB, Adobe RGB)을 정의합니다"
+    color_depth:
+      name: 색상 심도
+      description: "색상 정확도, 그라데이션 및 편집 유연성을 결정하는 스캐너의 광학/출력 비트 심도(픽셀당 비트 수)를 나타냅니다"
     color_saturation:
       name: 채도
       description: "카메라 필름의 색상 강도(예: 높음, 낮음)를 나타냅니다"
+    comb/brush_size:
+      name: 빗/브러시 크기
+      description: 브러시나 빗의 전체적인 물리적 크기를 분류합니다
+    comb_features:
+      name: 빗 기능
+      description: 빗의 주목할 만한 성능이나 디자인 특성을 나열합니다
+    comb_tooth_spacing:
+      name: 빗살 간격
+      description: 빗살의 간격이나 밀도를 설명합니다
     comic_edition:
       name: 만화판
       description: "만화책의 특정 출시 버전 또는 에디션(예: 초판, 변형 표지)을 나타내며 이는 희소성과 수집 가치에 영향을 미칠 수 있습니다"
     comic_tradition:
       name: 만화의 전통
       description: "만화가 유래된 문화적 또는 지역적 전통을 나타냅니다(예: 중국 만화 또는 만화책)"
+    commode_opening_type:
+      name: 변기 개구부 유형
+      description: 좌석에 변기 컷아웃 또는 버킷 호환성의 존재와 스타일을 식별합니다
     communication_device_features:
       name: 통신 장치 기능
       description: 터치스크린이나 음성 제어 등 통신 장치의 고유한 기능을 식별합니다
@@ -1337,6 +1700,9 @@ ko:
     compass_style:
       name: 나침반 스타일
       description: 다이빙 나침반 또는 자이로컴퍼스와 같은 탐색 나침반의 스타일을 지정합니다
+    compatible_accessibility_equipment_type:
+      name: 호환 가능한 접근성 장비 유형
+      description: 액세서리가 함께 작동하도록 설계된 접근성 또는 이동성 장비의 유형을 지정합니다
     compatible_aircraft_type:
       name: 호환 가능한 항공기 유형
       description: 비행기나 헬리콥터 등 제품에 적합한 항공기 유형을 식별합니다
@@ -1376,9 +1742,18 @@ ko:
     compatible_brass_instrument:
       name: 호환 가능한 금관 악기
       description: "트럼펫, 튜바 등 제품과 함께 사용할 수 있는 금관악기를 지정합니다"
+    compatible_cable_tie_material:
+      name: 호환 케이블 타이 재료
+      description: "건이 설치하거나 제거하도록 설계된 케이블 타이 유형(예: 스테인리스 스틸, 나일론)을 식별합니다"
+    compatible_chemical_treatment_strength_level:
+      name: 호환 가능한 화학 처리 강도 수준
+      description: "제조업체가 권장하는 화학 처리의 강도나 효능을 나타냅니다(예: 순한, 일반, 강한)"
     compatible_clarinet_type:
       name: 호환 가능한 클라리넷 유형
       description: A 클라리넷 또는 유니버셜 등 제품과 호환되는 클라리넷 유형을 식별합니다
+    compatible_contact_lens_type:
+      name: 호환 가능한 콘택트렌즈 유형
+      description: 케이스에 보관하거나 세척할 수 있는 콘택트렌즈 범주를 식별합니다
     compatible_cosmetic_tools:
       name: 호환 가능한 화장 도구
       description: "제품과 함께 사용할 수 있는 미용 도구(예: 스펀지, 핀셋)를 명시합니다"
@@ -1394,9 +1769,18 @@ ko:
     compatible_electronic_card_type:
       name: 호환 가능한 전자 카드 유형
       description: "제품과 상호 작용할 수 있는 전자 카드의 유형(예: 자기 띠 또는 라이브러리)을 명시합니다"
+    compatible_equipment_type:
+      name: 호환 장비 유형
+      description: "회로 기판이 설계된 수영장 또는 스파 장비의 범주를 지정합니다(예: 히터, 펌프, 염소 생성기)"
+    compatible_exercise_machine_type:
+      name: 호환 운동 기구 유형
+      description: "보드가 의도된 운동 기구 유형을 식별합니다(예: 러닝머신, 일립티컬)"
     compatible_exercises:
       name: 할 수 있는 운동
       description: "제품을 이용해 할 수 있는 운동(예: 턱걸이, 딥)을 명시합니다"
+    compatible_eyewear_type:
+      name: 호환 가능한 안경 유형
+      description: 액세서리가 맞거나 작동하도록 설계된 안경 종류를 식별합니다
     compatible_filament:
       name: 호환 가능한 필라멘트
       description: "3D 프린터가 사용할 수 있는 필라멘트 유형(예: 폴리젖산(PLA) 또는 나일론)을 명시합니다"
@@ -1466,12 +1850,21 @@ ko:
     compatible_percussion_instrument:
       name: 호환 가능한 타악기
       description: 드럼이나 봉고 등 제품과 함께 사용할 수 있는 타악기를 식별합니다
+    compatible_pinball_machine_edition:
+      name: 호환 가능한 핀볼 머신 에디션
+      description: "액세서리가 맞는 핀볼 머신의 에디션이나 트림 레벨을 지정합니다(예: Pro, Premium, LE)"
     compatible_play_vehicle_type:
       name: 호환 가능한 장난감 차 유형
       description: 자동차나 보트 등 제품이 적합한 놀이 차량 유형을 식별합니다
     compatible_player:
       name: 호환 가능한 플레이어
       description: "카세트 어댑터와 함께 사용할 수 있는 장치(예: iPad, 노트북)를 식별합니다"
+    compatible_polish_thinner_type:
+      name: 호환 가능한 폴리시 시너 유형
+      description: 시너가 작동하도록 설계된 네일 코팅 시스템을 나타냅니다
+    compatible_power_supply_form_factor:
+      name: 호환 전원 공급 장치 폼 팩터
+      description: 인클로저가 수용하도록 설계된 전원 공급 장치(PSU) 크기 또는 표준을 명시합니다
     compatible_printer:
       name: 호환 가능한 프린터
       description: 레이저 또는 잉크젯 등 제품과 호환되는 프린터 유형을 식별합니다
@@ -1484,9 +1877,15 @@ ko:
     compatible_recipes:
       name: 호환 가능한 레시피
       description: "일반적으로 아이스크림 메이커의 제품에 적합한 레시피(예: 셔벗, 젤라토)를 명시합니다"
+    compatible_resin_type:
+      name: 호환 레진 유형
+      description: SLA/MSLA 프린터가 사용할 수 있는 UV 레진 카테고리를 지정합니다
     compatible_resolution:
       name: 호환 가능한 해상도
       description: "지원되는 디스플레이 해상도(예: 1080p, 풀 HD)를 정의합니다"
+    compatible_satellite_radio_service:
+      name: 호환 위성 라디오 서비스
+      description: 수신기가 작동하도록 설계된 위성 라디오 서비스를 식별하여 기존 또는 의도된 구독과의 호환성을 보장합니다
     compatible_seat_type:
       name: 호환 가능한 시트 유형
       description: "제품에 맞는 유아용 카시트 유형(예: 부스터, 유아용 카시트)을 명시합니다"
@@ -1514,21 +1913,45 @@ ko:
     compatible_vehicle:
       name: 호환 가능한 차량
       description: "제품 설계 목적에 맞는 차량 유형(예: 자동차 또는 SUV)을 명시합니다"
+    compatible_voice_assistant:
+      name: 호환 음성 어시스턴트
+      description: 리시버를 작동할 수 있는 음성 제어 플랫폼을 식별합니다
     compatible_walking_aid_equipment:
       name: 호환 가능한 보행 보조기 장비
       description: "제품 설계 목적에 맞는 보행 보조기(예: 목발, 보행기)를 명시합니다"
+    compatible_wax_container_size:
+      name: 호환 가능한 왁스 용기 크기
+      description: "별도의 이송 없이 워머에 직접 배치할 수 있는 표준 카트리지, 캔 또는 냄비 크기를 나열합니다"
+    compatible_wax_form:
+      name: 호환 가능한 왁스 형태
+      description: 워머가 녹이도록 설계된 제모 왁스의 형태를 지정합니다
     compatible_weight_lifting_accessory:
       name: 관련 역도 액세서리
       description: "제품과 호환되는 웨이트 장비(예: 바벨 또는 덤벨)를 명시합니다"
     compliance_certifications:
       name: 규정 준수 인증
       description: HIPAA 또는 FedRAMP와 같은 제품의 규정 준수 인증을 지정합니다.
+    component_mounting_style:
+      name: 컴포넌트 장착 스타일
+      description: "전자 부품 또는 보드가 회로 기판, 패널, 섀시 또는 레일에 부착되는 기본 방법을 정의합니다"
     component_output_type:
       name: 컴포넌트 출력 유형
       description: "전자 장치의 출력 신호 유형(예: UART 또는 아날로그)을 명시합니다"
     component_package_type:
       name: 구성품 패키지 유형
       description: "전자 구성 요소의 폼 팩터 또는 패키징(예: SDM(표면 실장 장치), DIP(듀얼 인라인 패키지))을 정의합니다"
+    component_size_code:
+      name: 컴포넌트 크기 코드
+      description: "커패시터 패키지에 사용되는 표준화된 SMD 또는 스루홀 크기 지정을 지정합니다(예: 0603, 0805)"
+    component_tolerance:
+      name: 컴포넌트 허용 오차
+      description: "백분율로 표현되는 공칭값(저항, 정전 용량, 인덕턴스, 주파수 등)의 허용 편차를 정의합니다"
+    components_included:
+      name: 포함된 구성요소
+      description: 스타터 키트에 제공되는 하드웨어 부품을 나열합니다
+    compression_circuit_type:
+      name: 압축 회로 유형
+      description: "프로세서의 사운드와 응답을 형성하는 기본 게인 감소 기술을 설명합니다(예: VCA, FET, 광학)"
     compression_format:
       name: 압축 형식
       description: "사용되는 비디오 파일 압축 유형(예: MPEG-4, AVI)을 정의합니다"
@@ -1556,9 +1979,21 @@ ko:
     conditioner_effect:
       name: 컨디셔너 효과
       description: "헤어 컨디셔너의 이점(예: 매끄러움 또는 비듬 방지)을 정의합니다"
+    condom_compatibility:
+      name: 콘돔 호환성
+      description: 윤활제가 안전하게 사용할 수 있는 콘돔 재료를 지정합니다
+    condom_fit_type:
+      name: 콘돔 착용감 유형
+      description: 편안함과 감각을 개선하도록 설계된 전체적인 크기 또는 해부학적 윤곽을 설명합니다
     condom_type:
       name: 콘돔 유형
       description: 콘돔이 남성용인지 여성용인지 구별합니다
+    conductivity_gel_application:
+      name: 전도성 젤 적용
+      description: 전도성 젤이나 로션이 의도된 의료 또는 진단 절차를 지정합니다
+    conductor_core_type:
+      name: 도체 코어 유형
+      description: 내부 도체가 연선인지 단선인지 나타냅니다
     connecting_thread:
       name: 연결 스레드
       description: "배관 부품 결합을 위한 스레드 유형(예: 1/2인치 IPS)을 지정합니다"
@@ -1571,21 +2006,66 @@ ko:
     connectivity_technology:
       name: 연결 기술
       description: "제품의 데이터 전송 방법(예: Bluetooth, USB)을 정의합니다"
+    connectivity_type:
+      name: 연결성 유형
+      description: 보드가 무납땜(브레드보드 스타일)인지 납땜용으로 설계되었는지 명확히 합니다
+    connector_1_type:
+      name: 커넥터 1 유형
+      description: 어댑터 또는 커플러의 첫 번째 끝에 있는 커넥터 또는 인터페이스를 명시합니다
+    connector_2_type:
+      name: 커넥터 2 유형
+      description: 어댑터 또는 커플러의 두 번째 끝에 있는 커넥터 또는 인터페이스를 명시합니다
+    connector_contact_plating:
+      name: 커넥터 접점 도금
+      description: 전도성과 부식 저항성을 개선하기 위해 전기 접점에 적용된 표면 도금 또는 코팅을 명시합니다
     connector_design:
       name: 커넥터 디자인
       description: 개방형 끝 또는 스냅과 같은 체인 커넥터 또는 링크의 디자인을 식별합니다
     connector_gender:
       name: 커넥터 젠더
       description: "전자 장치의 커넥터 끝 성별(예: 남성, 남성에서 여성으로)을 명시합니다"
+    connector_mounting_style:
+      name: 커넥터 장착 스타일
+      description: "커넥터가 어셈블리에 기계적으로 장착되거나 통합되는 방식(예: PCB, 패널, 섀시, 케이블, 커플러)을 나타냅니다"
+    connector_orientation:
+      name: 커넥터 방향
+      description: "장착 표면 또는 케이블에 대한 결합 인터페이스의 물리적 방향(예: 직선, 직각, 수직)을 설명합니다"
+    connector_position:
+      name: 커넥터 위치
+      description: "화면을 정면에서 볼 때 비디오 커넥터의 위치(예: 우하단, 좌상단)를 설명합니다"
+    connector_type:
+      name: 커넥터 유형
+      description: 점퍼 와이어의 끝에 있는 커넥터의 스타일 또는 표준을 지정합니다
+    console_accessories_included:
+      name: 콘솔 포함 액세서리
+      description: "콘솔과 함께 패키지된 주요 액세서리 또는 구성품을 나열합니다(예: 컨트롤러, 케이블, 도크, 게임)"
     console_system:
       name: 콘솔 시스템
       description: "비디오 게임 콘솔의 특정 브랜드(예: Atari 2600 또는 Playstation)를 정의합니다"
+    console_type:
+      name: 콘솔 유형
+      description: 콘솔의 물리적 폼 팩터와 의도된 사용 환경을 분류합니다
     constitutive_ingredients:
       name: 구성 성분
       description: "제품 제조에 사용되는 주요 성분(예: 밀랍, 로즈힙 오일)를 명시합니다"
     construction_set_theme:
       name: 건설 현장 세트 테마
       description: 해적이나 동물과 같은 블록 세트의 주제를 식별합니다
+    contact_lens_case_accessories_included:
+      name: 포함된 콘택트렌즈 케이스 액세서리
+      description: 콘택트렌즈 케이스와 함께 포장된 보조 아이템을 나열합니다
+    contact_lens_case_features:
+      name: 콘택트렌즈 케이스 기능
+      description: 케이스의 주목할 만한 기능적 특징이나 포함 사항을 강조합니다
+    contact_lens_compatibility:
+      name: 콘택트렌즈 호환성
+      description: 용액과 안전하게 사용할 수 있는 콘택트렌즈의 유형이나 소재를 나타냅니다
+    contact_lens_material:
+      name: 콘택트렌즈 소재
+      description: "렌즈가 만들어진 폴리머 제형이나 소재 계열을 지정합니다(예: 하이드로겔, 실리콘 하이드로겔)"
+    contact_material:
+      name: 접점 재료
+      description: 홀더 내 배터리 접점에 사용되는 금속 또는 도금을 식별합니다
     contrast:
       name: 콘트라스트
       description: "카메라 필름의 대비 수준을 지정하는 데 사용됩니다(예: 보통 또는 높음)"
@@ -1595,9 +2075,15 @@ ko:
     control_functions:
       name: 제어 기능
       description: 채널 전환과 같은 앰프 풋스위치의 제어 기능을 지정합니다
+    control_interface:
+      name: 제어 인터페이스
+      description: "장치를 구성하거나 제어할 수 있는 방법을 식별합니다(예: PC 소프트웨어, 모바일 앱, 장치 LCD, 원격 제어)"
     control_method:
       name: 제어 방식
       description: 직접 토크 또는 스칼라(V/f)와 같은 자동화 구성 요소의 제어 기술을 설명합니다
+    control_solution_level:
+      name: 대조 용액 수준
+      description: 대조 용액의 포도당 농도 수준을 나타냅니다
     control_technology:
       name: 제어 기술
       description: "일반적으로 창 처리를 위한 작업 방법(예: 수동, 전동)을 명시합니다"
@@ -1610,6 +2096,9 @@ ko:
     controller_drive_type:
       name: 컨트롤러 드라이브 유형
       description: AC 전원 또는 DC와 같이 자동화 제어 드라이브에 사용되는 전원 유형을 식별합니다
+    conversion_direction:
+      name: 변환 방향
+      description: 장치가 수행하는 변환의 유형과 방향을 설명합니다
     converter_functionality:
       name: 컨버터 기능
       description: 속도 부스터 또는 광각과 같은 렌즈 변환기의 특정 기능을 식별합니다
@@ -1645,7 +2134,7 @@ ko:
       description: "번지점프 줄의 고정 시스템 유형(예: 토글 볼, 후크)을 지정합니다"
     cordless_phone_frequency_band:
       name: 무선 전화 주파수 대역
-      description: 무선 전화 시스템이 작동하는 무선 주파수 대역을 지정하여 구매자가 지역 호환성을 확인하고 간섭을 피하는 데 도움이 됩니다.
+      description: 무선 전화 시스템이 작동하는 무선 주파수 대역을 지정하여 구매자가 지역 호환성을 확인하고 간섭을 피하는 데 도움이 됩니다
     core_color:
       name: 코어 컬러
       description: 검은색이나 파란색과 같은 활이나 석궁 코어의 기본 색상을 식별합니다
@@ -1670,9 +2159,15 @@ ko:
     cosmetic_function:
       name: 화장품 기능
       description: "화장품의 의도된 이점 또는 효과(예: 진정, 치유)를 정의합니다"
+    cosmetic_set_type:
+      name: 화장품 세트 유형
+      description: 세트를 주요 초점이나 테마별로 분류합니다
     costume_theme:
       name: 분장 의상 테마
       description: 공포나 판타지와 같은 의상의 주요 주제나 개념을 식별합니다
+    cotton_ball_size:
+      name: 솜뭉치 크기
+      description: "각 솜뭉치의 상대적 크기 범주를 나타냅니다(예: 소형, 대형, 점보)"
     counter_shape:
       name: 카운터 모양
       description: 직선이나 곡선 등 카운터나 책상의 형태를 설명합니다
@@ -1681,7 +2176,7 @@ ko:
       description: 일본이나 독일 등 제품과 관련된 국가를 지정합니다
     country_of_issue:
       name: 발행 국가
-      description: 전화카드가 발급되었거나 사용 예정인 국가를 나타냅니다.
+      description: 전화카드가 발급되었거나 사용 예정인 국가를 나타냅니다
     cover_closure_design:
       name: 커버 여밈 디자인
       description: "일반적으로 베개 커버의 마감 디자인(예: 봉투형, 지퍼형)을 명시합니다"
@@ -1705,7 +2200,10 @@ ko:
       description: 미국이나 캐나다 등 GPS 소프트웨어의 지리적 적용 범위 국가 또는 지역을 나타냅니다
     coverage_country:
       name: 적용 국가
-      description: 선불 신용카드를 사용할 수 있는 주요 국가를 지정합니다.
+      description: 선불 신용카드를 사용할 수 있는 주요 국가를 지정합니다
+    coverage_level:
+      name: 커버리지 수준
+      description: "제품이 적용되었을 때 제공하는 불투명도나 커버리지 강도를 나타냅니다(예: 시어, 중간, 풀)"
     coverage_region:
       name: 도달 지역
       description: 북미나 오세아니아 등 GPS 소프트웨어의 광범위한 지리적 적용 범위를 나타냅니다
@@ -1745,6 +2243,9 @@ ko:
     crampon_attachment_type:
       name: 아이젠 부착 타입
       description: 하이브리드 또는 스텝인과 같은 신발에 크램폰이 부착되는 방식을 식별합니다
+    creatine_type:
+      name: 크레아틴 유형
+      description: 보충제에 사용되는 크레아틴의 화학적 형태나 특수 제형을 지정합니다
     creative_art_project_type:
       name: 창의적인 예술 프로젝트 유형
       description: 드로잉이나 스크랩북 등 공예 프로젝트 유형을 식별합니다
@@ -1757,6 +2258,9 @@ ko:
     cricket_equipment_included:
       name: 크리켓 장비 포함
       description: 헬멧이나 스텀프 등 세트에 포함된 특정 크리켓 품목을 식별합니다
+    crutch_folding_type:
+      name: 목발 접이식 유형
+      description: 목발이 운송이나 보관을 위해 접히는지와 그 방법을 지정합니다
     crutch_type:
       name: 목발 유형
       description: "목발의 다양한 스타일(예: 팔뚝, 겨드랑이)을 구별합니다"
@@ -1772,6 +2276,15 @@ ko:
     cue_wrap:
       name: 큐 랩
       description: "당구 큐의 랩 유형(예: 아이리시 리넨 또는 노 랩)을 식별합니다"
+    cuff_connector_type:
+      name: 커프 커넥터 유형
+      description: 커프 튜빙을 혈압 모니터에 부착하는 기계적 인터페이스를 정의합니다
+    cuff_size_category:
+      name: 커프 크기 범주
+      description: "커프의 표준화된 크기 등급을 지정합니다(예: 유아, 성인, 대형 성인)"
+    cuff_style:
+      name: 커프 스타일
+      description: 전완 목발의 전완 커프 디자인을 설명합니다
     cuisine:
       name: 요리
       description: "요리 스타일 또는 지역(예: 미국 남서부, 지중해)별로 제품을 분류합니다"
@@ -1781,6 +2294,15 @@ ko:
     cup_size:
       name: 컵 크기
       description: "브래지어의 가슴 사이즈(예: AA 또는 L)를 명시합니다"
+    curing_method:
+      name: 경화 방법
+      description: "글루가 세팅되거나 경화되는 방법을 나타냅니다(예: 에어 드라이, UV/LED 램프, 열)"
+    curler_pad_material:
+      name: 컬러 패드 소재
+      description: "편안함, 내구성 및 알레르기 고려사항에 영향을 미치는 속눈썹을 누르는 교체 가능한 패드의 소재를 식별합니다"
+    curler_size_compatibility:
+      name: 컬러 크기 호환성
+      description: "리필이 맞는 컬러 패드 크기나 스타일을 지정합니다(예: 표준, 미니, 부분)"
     curler_type:
       name: 헤어롤 유형
       description: "헤어 롤러의 종류(예: 플렉시 로드 또는 핫 롤러)를 명시합니다"
@@ -1793,6 +2315,9 @@ ko:
     currency_type:
       name: 통화 유형
       description: 코인이나 토큰 등 제품이 취급하는 통화 유형을 식별합니다
+    cushion_design:
+      name: 쿠션 디자인
+      description: "중족골 쿠션의 전체적인 형태나 스타일을 설명합니다(예: 패드, 슬리브, 돔)"
     customer_support_channels:
       name: 고객 지원 채널
       description: 전화 지원이나 비디오 튜토리얼 등 고객이 도움을 받을 수 있는 방법을 지정합니다
@@ -1808,6 +2333,12 @@ ko:
     cycling_style:
       name: 사이클링 스타일
       description: "사이클링 제품의 용도 또는 라이딩 스타일(예: 로드 레이싱 또는 BMX 레이싱)을 정의합니다"
+    cylinder_size_designation:
+      name: 실린더 크기 지정
+      description: "산소 실린더의 치수와 용량을 식별하는 데 사용되는 표준 문자 또는 숫자 코드를 식별합니다(예: M6, D, E)"
+    daisy_chain_capability:
+      name: 데이지 체인 기능
+      description: 여러 회의 장치를 함께 연결(데이지 체인)하여 마이크 및 스피커 적용 범위를 확장할 수 있는지 여부와 사용되는 연결 방법을 나타냅니다
     dance_style:
       name: 댄스 스타일
       description: "플라멩코, 발레 등 댄스의 특정 장르나 유형을 나타냅니다"
@@ -1816,10 +2347,13 @@ ko:
       description: "모바일 기기의 데이터 네트워크 호환성(예: LTE 또는 3G)을 명시합니다"
     data_network_generation:
       name: 데이터 네트워크 생성
-      description: "선불 카드 또는 SIM이 지원하는 가장 높은 모바일 네트워크 기술을 나타냅니다(예: 3G, 4G LTE, 5G)."
+      description: "선불 카드 또는 SIM이 지원하는 가장 높은 모바일 네트워크 기술을 나타냅니다(예: 3G, 4G LTE, 5G)"
     data_rollover_policy:
       name: 데이터 롤오버 정책
-      description: 사용되지 않은 고속 데이터가 다음 유효 기간으로 이월되는지 또는 만료되는지 여부를 나타냅니다.
+      description: 사용되지 않은 고속 데이터가 다음 유효 기간으로 이월되는지 또는 만료되는지 여부를 나타냅니다
+    decoder/encoder_function:
+      name: 디코더/인코더 기능
+      description: IC가 구현하는 논리 기능을 지정합니다
     decoration_material:
       name: 장식 재료
       description: 스팽글이나 깃털과 같이 장식에 사용되는 재료를 식별합니다
@@ -1829,6 +2363,12 @@ ko:
     denomination:
       name: 액면가
       description: "동전, 우표 등 수집 가능한 품목의 액면가를 식별합니다(예: 1,000달러, 1센트)"
+    dental_appliance_compatibility:
+      name: 치과 기구 호환성
+      description: "폼이 안전하거나 의도된 치과 기구나 복원 작업을 지정합니다(예: 교정기, 브레이스, 베니어)"
+    dental_floss_format:
+      name: 치실 형식
+      description: 치실의 전체 제품 형식이나 전달 스타일을 식별합니다
     dental_floss_shape:
       name: 치실 모양
       description: 테이프나 리본과 같은 치실의 모양이나 스타일을 식별합니다
@@ -1841,6 +2381,9 @@ ko:
     dental_mouthgard_recommended_use:
       name: 권장 치과용 마우스가드 사용
       description: "코골이 감소, 치아교정 보호 등 교정용 마우스피스의 목적을 식별합니다"
+    dental_mouthguard_arch_coverage:
+      name: 치과 마우스가드 아치 커버리지
+      description: 마우스가드가 커버하도록 설계된 치과 아치를 지정합니다
     dental_mouthguard_certifications:
       name: 교정용 마우스피스 인증
       description: "치과용 마우스가드의 안전 및 품질 인증(예: BPA 프리 또는 CE 인증)을 나타냅니다"
@@ -1856,6 +2399,9 @@ ko:
     dentistry_items_included:
       name: 치과 물품 포함
       description: 치과용 거울이나 플라그 제거 도구 등 세트에 포함된 치과 도구를 식별합니다
+    denture_arch_coverage:
+      name: 의치 아치 커버리지
+      description: 의치(또는 스냅온 베니어)가 커버하도록 의도된 치과 아치를 식별합니다
     denture_base_color:
       name: 의치 베이스 색상
       description: "의치의 인공 잇몸 색상(예: 분홍색 또는 천연 잇몸)을 정의합니다"
@@ -1865,6 +2411,9 @@ ko:
     denture_design:
       name: 의치 디자인
       description: "의치의 유형을 설명합니다(예: 유연성, 즉시)"
+    denture_retention_mechanism:
+      name: 의치 유지 메커니즘
+      description: 의치가 치아나 잇몸에 고정되는 방법을 지정합니다
     denture_teeth_color:
       name: 의치 치아 색상
       description: "의치 치아의 색상 음영(예: 황백색 또는 밝은 노란색)을 명시합니다"
@@ -1883,6 +2432,9 @@ ko:
     detectable_drugs:
       name: 검출 가능한 약물
       description: "테스트를 통해 식별할 수 있는 약물 유형(예: 마리화나, 아편제)을 명시합니다"
+    detection_technology:
+      name: 검출 기술
+      description: "HIV 검사가 검출하는 과학적 원리 또는 생물학적 마커를 지정합니다(예: 항체, 항원/항체 콤보, RNA PCR)"
     detector_operation_mode:
       name: 감지기 작동 모드
       description: 상호 연결 또는 독립형과 같이 안전 감지기가 작동하는 방식을 설명합니다
@@ -1892,6 +2444,9 @@ ko:
     detector_type:
       name: 감지기 유형
       description: "안전 장치에 사용되는 감지 방법(예: 이온화 광학, 공기 샘플링)을 명시합니다"
+    developer_strength:
+      name: 산화제 강도
+      description: 원하는 리프트에 맞는 산화제나 키트의 과산화물 농도 또는 볼륨을 지정합니다
     developmental_features:
       name: 발달 특징
       description: "언어 발달 또는 정서적 및 사회적 성장 등, 제품의 발달 측면에서의 이점을 강조합니다"
@@ -1912,7 +2467,7 @@ ko:
       description: 점이나 홀치기 염색 등 시계 다이얼의 디자인이나 모티프를 설명합니다
     dialing_method:
       name: 전화 걸기 방법
-      description: 전화기가 숫자를 입력하는 데 사용하는 메커니즘을 정의합니다.
+      description: 전화기가 숫자를 입력하는 데 사용하는 메커니즘을 정의합니다
     diaper_bag_additional_features:
       name: 기저귀 가방 추가 기능
       description: "기저귀 가방에 추가 기능을 지정합니다(예: 교체용 패드 포함, 병 홀더)"
@@ -1958,12 +2513,27 @@ ko:
     diffuser_design:
       name: 디퓨저 디자인
       description: "링형이나 돔형 등, 플래시 디퓨저의 구조를 설명합니다"
+    digestive_supplement_type:
+      name: 소화 보충제 유형
+      description: "특정 종류의 소화 보충제를 분류합니다(예: 프로바이오틱, 효소, 섬유질)"
     digital_sound_processing:
       name: 디지털 사운드 프로세싱
       description: "오디오 구성 요소의 사운드 수정 기술(예: 지연 또는 반향)을 명시합니다"
+    digitizer_surface_finish:
+      name: 디지타이저 표면 마감
+      description: 디지타이저 유리의 표면 코팅 또는 마감을 설명합니다
+    din_size:
+      name: DIN 크기
+      description: "수신기가 맞는 표준화된 대시 개구부 크기를 지정합니다(예: 싱글 DIN, 더블 DIN)"
     dinnerware_pieces_included:
       name: 식기류 포함
       description: "식기류 컬렉션의 구성 요소(예: 디너 접시 또는 서빙 그릇)를 정의합니다"
+    direct_box_type:
+      name: 다이렉트 박스 유형
+      description: "전력 요구 사항, 사운드 특성 및 의도된 용도에 영향을 미치는 다이렉트 박스(DI)의 회로 구성을 지정합니다"
+    direction_detection_capability:
+      name: 방향 감지 기능
+      description: "레이더가 물체 방향을 보고할 수 있는지 나타냅니다(예: 접근, 이탈 또는 둘 다)"
     dirt_separating_method:
       name: 먼지 분리 방식
       description: "먼지 분리를 위해 진공청소기가 사용하는 기술(예: 사이클론, 필터링)을 설명합니다"
@@ -1976,6 +2546,9 @@ ko:
     dispenser_type:
       name: 디스펜서 유형
       description: "일반적으로 건강 및 미용 분야의 제품 분배 형식(예: 막대기, 항아리)을 명시합니다"
+    dispensing_operation_type:
+      name: 분배 작동 유형
+      description: "치약이 수동, 반자동 또는 자동으로 분배되는지를 설명합니다"
     display_board_features:
       name: 디스플레이 보드 기능
       description: "자가접착식 뒷면이나 튼튼함 등, 디스플레이 보드의 고유한 기능을 설명합니다"
@@ -1985,6 +2558,9 @@ ko:
     display_features:
       name: 디스플레이 기능
       description: "터치스크린이나 버튼 컨트롤 등, 제품의 디스플레이 유형을 설명합니다"
+    display_interface:
+      name: 디스플레이 인터페이스
+      description: 스크린 모듈이 사용하는 비디오 또는 데이터 인터페이스를 명시합니다
     display_mode:
       name: 디스플레이 모드
       description: "디지털 또는 아날로그 등, 제품의 표시 방법을 설명합니다"
@@ -2033,6 +2609,12 @@ ko:
     dj_software_compatibility:
       name: DJ 소프트웨어 호환성
       description: "제품과 호환되는 DJ 소프트웨어를 식별합니다(예: Rekordbox, Serato DJ)"
+    docking_compatibility:
+      name: 도킹 호환성
+      description: 케이스를 제거하지 않고 콘솔을 도킹하거나 충전할 수 있는지 나타냅니다
+    docsis_standard:
+      name: DOCSIS 표준
+      description: 케이블 모뎀이 지원하는 DOCSIS 버전을 지정합니다
     dog_age_group:
       name: 개 연령대
       description: "강아지의 생활 단계(예: 강아지, 노령견)에 따라 강아지 용품을 분류하는 데 도움이 됩니다"
@@ -2135,9 +2717,15 @@ ko:
     download_format:
       name: 다운로드 형식
       description: "MP3 또는 WAV 등, 디지털 음악 다운로드용 파일 형식을 지정합니다"
+    downstream_port_types:
+      name: 다운스트림 포트 유형
+      description: "허브가 주변 장치 연결을 위해 제공하는 출력 포트의 종류(예: USB-A, USB-C, HDMI, 이더넷)를 나열합니다"
     drain_location:
       name: 배수 위치
       description: "중앙 또는 왼쪽 등, 욕조 또는 샤워실의 배수구 위치를 지정합니다"
+    drainage_feature:
+      name: 배수 기능
+      description: 케이스 내부에서 액체 배수나 건조를 허용하는 디자인을 지정합니다
     drawing/painting_kit_items_included:
       name: 드로잉/페인팅 키트 품목 포함
       description: "컬러링 패드, 페인트 컵 등, 미술품이나 공예 키트에 포함된 품목을 식별합니다"
@@ -2167,13 +2755,25 @@ ko:
       description: "세트에 포함된 다양한 음료 용기 구성 요소(예: 피처 또는 와인 잔)를 식별합니다"
     drinkware_shape:
       name: 음료 용기 모양
-      description: "음료용기 품목의 윤곽이나 실루엣(예: 곡선형 또는 테이퍼형)을 정의합니다."
+      description: "음료용기 품목의 윤곽이나 실루엣(예: 곡선형 또는 테이퍼형)을 정의합니다"
+    drive_form_factor:
+      name: 드라이브 폼 팩터
+      description: "드라이브 메커니즘의 높이 또는 크기 등급(예: 풀 하이트, 하프 하이트, 슬림라인)을 명시합니다"
     drive_size:
       name: 드라이브 크기
       description: "소켓 및 토크 렌치의 드라이브 사이즈를 설명합니다(예: 1인치)"
     drive_type:
       name: 드라이브 유형
       description: "이륜구동 또는 사륜구동 등, 차량이나 중장비의 구동 시스템 유형을 식별합니다"
+    driver_configuration:
+      name: 드라이버 구성
+      description: "스피커 시스템의 개별 드라이버 웨이 수를 지정합니다(예: 2웨이, 3웨이)"
+    driver_technology:
+      name: 드라이버 기술
+      description: "소리를 생성하는 데 사용되는 변환기 유형을 지정합니다(예: 다이나믹, 밸런스드 아마추어, 평면 자기, 하이브리드)"
+    drone_board_function:
+      name: 드론 보드 기능
+      description: 드론 시스템 내에서 회로 기판의 주요 목적을 설명합니다
     drone_features:
       name: 드론 기능
       description: GPS 탐색이나 장애물 회피와 같이 드론에서 제공되는 다양한 기능 및 디자인 특징을 지정합니다
@@ -2198,21 +2798,33 @@ ko:
     dryer_technology:
       name: 건조기 기술
       description: "HVAC 시스템의 건조 기술(예: 건조제, 냉장)을 지정합니다"
+    drying_method:
+      name: 건조 방법
+      description: 해당되는 경우 살균 후 장치가 칫솔을 건조시키는 방법을 지정합니다
     drying_speed:
       name: 건조 속도
       description: "제품이 건조되거나 경화되는 속도(예: 속건성, 일반 건조)를 정의합니다"
     dsl_standard_compatibility:
       name: DSL 표준 호환성
-      description: 적절한 잡음 억제 및 연결 품질을 보장하기 위해 필터나 액세서리가 지원하는 DSL 표준을 식별합니다.
+      description: 적절한 잡음 억제 및 연결 품질을 보장하기 위해 필터나 액세서리가 지원하는 DSL 표준을 식별합니다
     duct_design:
       name: 덕트 디자인
       description: "HVAC 시스템의 공기 덕트 형태(예: 견고함, 유연성)를 식별합니다"
     duct_shape:
       name: 덕트 모양
       description: "원형 또는 플랫 등, HVAC 시스템의 공기 덕트 형태를 설명합니다"
+    duplex_component_type:
+      name: 양면 부품 유형
+      description: "제공되는 양면 부품의 특정 형태를 정의합니다(예: 어셈블리, 트레이, 기어)"
+    duplexer_installation_type:
+      name: 양면 인쇄 장치 설치 유형
+      description: "양면 인쇄 장치가 프린터에 부착되는 방법을 명확히 합니다(예: 내부 슬롯, 후면 외부 부착)"
     duplexing_technology:
       name: 양면 인쇄 기술
       description: "프린터가 양면 인쇄를 지원하는지 여부를 명시합니다(예: 지원되지 않음, 자동 양면 인쇄)"
+    duplication_operation_mode:
+      name: 복제 작동 모드
+      description: "복제기가 독립적으로 작동하는지, 컴퓨터 연결이 필요한지, 또는 두 모드를 모두 지원하는지를 나타냅니다"
     durability_features:
       name: 내구성 특징
       description: "방청, 충격 방지 등, 제품이 다양한 조건에 견딜 수 있는 능력을 강조합니다"
@@ -2222,15 +2834,24 @@ ko:
     dust_mask_type:
       name: 방진 마스크 종류
       description: "컵이나 플랫 폴드 등, 방진 마스크의 폼 팩터를 지정합니다"
+    dvi_connection_type:
+      name: DVI 연결 유형
+      description: "지원되는 특정 DVI 커넥터 및 링크 형식(예: DVI-D 싱글 링크, DVI-I 듀얼 링크, Mini-DVI)을 식별합니다"
     dye_form:
       name: 염료 형태
       description: "젤이나 파우더 등, 공예 염료의 물리적 상태를 설명합니다"
     dynamic_level:
       name: 동적 수준
       description: "속도와 바운스를 기준으로 라켓볼과 스쿼시볼을 분류합니다(예: 녹색 점, 빨간색 점)"
+    dynamics_processing_function:
+      name: 다이나믹스 처리 기능
+      description: "장치가 수행하는 주요 다이나믹스 작업을 식별합니다(예: 컴프레서, 리미터, 노이즈 게이트, 디에서)"
     e_book_formats_supported:
       name: 지원되는 전자책 형식
       description: "장치와 호환되는 전자책 형식의 범위(예: PDF, EPUB)를 식별합니다"
+    e_book_reader_part_location:
+      name: 전자책 리더 부품 위치
+      description: 부품이 장치에 설치되거나 위치하는 곳을 명시합니다
     e_cigarette/vaporizer_style:
       name: 전자담배/기화기 스타일
       description: "전자 담배와 기화기를 폼 팩터(예: 일회용, 펜)별로 분류합니다"
@@ -2246,9 +2867,36 @@ ko:
     ear_care_application_method:
       name: 이어케어 도포방법
       description: "노즐이나 스포이드 등, 귀 관리용 품목의 도포 방법을 지정합니다"
+    ear_dryer_technology:
+      name: 귀 건조기 기술
+      description: 제품이 사용하는 주요 건조 메커니즘을 식별합니다
+    ear_orientation:
+      name: 이어 방향
+      description: "이어피스가 왼쪽 귀, 오른쪽 귀용으로 설계되었는지 또는 양쪽에 착용할 수 있는지 지정합니다"
+    ear_pick_tip_style:
+      name: 귀이개 팁 스타일
+      description: 귀지를 제거하는 작업 팁의 모양이나 디자인을 정의합니다
+    ear_side:
+      name: 귀 측면
+      description: "보청기가 왼쪽 귀, 오른쪽 귀 또는 양측 쌍으로 사용하도록 의도되었는지를 지정합니다"
+    ear_tip_size:
+      name: 이어 팁 크기
+      description: 정확한 밀리미터 크기가 제공되지 않을 때 인이어 팁에 일반적으로 사용되는 일반 크기 라벨을 제공합니다
+    ear_tip_style:
+      name: 이어 팁 스타일
+      description: 착용감과 음향 밀봉에 영향을 미치는 이어 팁의 기하학적 모양을 정의합니다
     earphone_features:
       name: 이어폰 기능
       description: "내장 마이크, 볼륨 조절 등, 이어폰의 고유한 기능을 강조합니다"
+    earplug_cord_style:
+      name: 귀마개 코드 스타일
+      description: 귀마개가 분실을 방지하고 제거를 용이하게 하는 코드로 연결되어 있는지를 나타냅니다
+    earplug_shape:
+      name: 귀마개 모양
+      description: 다른 외이도 내에서 편안함과 착용감에 영향을 미치는 귀마개의 물리적 프로필을 설명합니다
+    earplug_type:
+      name: 귀마개 유형
+      description: "분배되는 귀마개의 구조 스타일을 분류합니다(예: 폼, 몰드, 필터)"
     earplug_use:
       name: 귀마개 용도
       description: "귀마개를 사용하는 특정 활동 또는 목적(예: 수영 또는 수면)을 정의합니다"
@@ -2264,6 +2912,9 @@ ko:
     education_level:
       name: 교육 수준
       description: "초등학교, 대학원 등, 소프트웨어가 디자인된 교육 수준을 지정합니다"
+    effects_processor_form_factor:
+      name: 이펙트 프로세서 폼 팩터
+      description: 프로세서의 물리적 또는 제공 형식을 설명합니다
     egg_decorating_items_included:
       name: 계란 장식 품목 포함
       description: "계란 장식 키트에 제공되는 액세서리(예: 염료 정제, 계란 집게)를 명시합니다"
@@ -2273,12 +2924,18 @@ ko:
     electric_scooter_motor_type:
       name: 전기 스쿠터 모터 유형
       description: 브러시 DC 또는 브러시리스 DC와 같은 스쿠터 모터의 유형 및 구성을 지정합니다
+    electrode_connector_type:
+      name: 전극 커넥터 유형
+      description: 전극이나 패드를 부착하는 데 사용되는 물리적 인터페이스를 설명합니다
     electronic_drum_components:
       name: 전자 드럼 부품
       description: "전자 드럼 세트의 요소(예: 드럼 모듈, 드럼 패드 등)를 지정합니다"
     electronic_game_genre:
       name: 전자 게임 장르
       description: "피트니스, 퍼즐 등, 전자 게임의 카테고리를 식별합니다"
+    electrotherapy_modality:
+      name: 전기 치료 방식
+      description: "장치가 지원하는 자극 기술의 유형을 지정합니다(예: TENS, EMS, IFC)"
     embellishment/trim_material:
       name: 장식/트림 소재
       description: "스팽글이나 진주 등, 장식적인 세부 사항이나 마감에 사용되는 소재를 식별합니다"
@@ -2300,6 +2957,15 @@ ko:
     enclosure_type:
       name: 인클로저 유형
       description: "3D 프린터용 케이스 또는 커버 유형(예: 오픈 프레임 또는 DIY 인클로저)을 명시합니다"
+    end_design:
+      name: 끝 디자인
+      description: 기능적 끝의 수와 교체 가능하거나 교환 가능한지 여부를 지정합니다
+    enema_device_type:
+      name: 관장 장치 유형
+      description: 제품의 주요 디자인이나 전달 시스템을 분류합니다
+    enema_nozzle_type:
+      name: 관장 노즐 유형
+      description: "키트와 함께 제공되는 노즐이나 팁의 스타일이나 소재를 지정합니다(예: 슬림 팁, 소아 팁, 스테인리스 스틸 노즐)"
     energy_efficiency_class:
       name: 에너지 효율 등급
       description: "제품의 에너지 효율 등급(예: A+++)을 정의합니다"
@@ -2321,21 +2987,33 @@ ko:
     engraving:
       name: 새겨넣기
       description: "맞춤 텍스트 또는 로고 각인 등, 제품의 각인 유형을 상세히 설명합니다"
+    entry_orientation:
+      name: 투입 방향
+      description: "동전이 메커니즘에 삽입되는 방향을 설명합니다(예: 전면, 상단, 측면, 하단)"
     envelope_features:
       name: 봉투 기능
       description: "잠금 걸쇠나 안감 등, 봉투의 특징을 설명합니다"
     envelope_seal_design:
       name: 봉투 씰 디자인
       description: "꽃무늬나 모노그램 등, 봉투 씰의 디자인이나 스타일을 설명합니다"
+    equalizer_type:
+      name: 이퀄라이저 유형
+      description: 장치가 제공하는 이퀄라이제이션 토폴로지 또는 처리 스타일을 분류합니다
     equipment_operation:
       name: 장비 작동
       description: "수동식이나 전동식 등, 의료 장비가 어떻게 작동하는지 설명합니다"
     era:
       name: 시대
       description: "서부 시대나 제2차 세계대전 등, 시대별로 수집품이나 골동품을 분류하는 데 사용됩니다"
+    error_correction_type:
+      name: 오류 수정 유형
+      description: 메모리 모듈이 오류 수정 기능을 포함하는지와 포함하는 경우 특정 ECC 기술 또는 버퍼링 스타일을 나타냅니다
     esrb_rating:
       name: ESRB 등급
       description: "E(모든 연령) 또는 T(13세 이상) 등, 비디오 게임의 연령 제한을 식별합니다"
+    ethernet_cable_category:
+      name: 이더넷 케이블 범주
+      description: 대역폭과 성능을 정의하는 트위스트 페어 이더넷 케이블의 TIA/EIA 범주 등급을 나타냅니다
     ethernet_lan_interface_type:
       name: 이더넷 LAN 인터페이스 유형
       description: "제품이 지원하는 이더넷 연결 유형(예: LAN 또는 고속)을 명시합니다"
@@ -2363,12 +3041,24 @@ ko:
     exercise_equipment_material:
       name: 운동기구 재질
       description: "강철이나 고무 등, 피트니스 장비에 사용되는 주요 소재를 식별합니다"
+    exercise_machine_board_function:
+      name: 운동 기구 보드 기능
+      description: "기계 내에서 보드의 주요 기능 또는 위치를 설명합니다(예: 모터 제어, 디스플레이)"
     exercise_machine_features:
       name: 운동기구 기능
       description: "속도 조절 기능이나 내장 디스플레이 등, 운동 장비의 특별한 기능을 설명합니다"
     exercise_mat_material:
       name: 운동매트 자재
       description: "PVC 또는 코르크 등, 운동 매트에 사용되는 소재의 유형을 지정합니다"
+    exfoliating_agent_type:
+      name: 각질 제거제 유형
+      description: 사용된 주요 연마제 또는 화학적 각질 제거제를 식별합니다
+    exfoliation_level:
+      name: 각질 제거 수준
+      description: 스폰지의 각질 제거 작용이 얼마나 부드럽거나 단단한지를 나타냅니다
+    exfoliation_method:
+      name: 각질 제거 방법
+      description: "클렌저가 피부를 각질 제거하는지 여부와 방법을 나타냅니다(예: 물리적, 화학적, 효소)"
     expansion_slots:
       name: 확장 슬롯
       description: "컴퓨터 또는 서버에 하드웨어(예: PCIe, M.2)를 추가하기 위한 슬롯을 명시합니다"
@@ -2378,6 +3068,9 @@ ko:
     extended_saxophone_range:
       name: 확장된 색소폰 범위
       description: "하이 F# 키 또는 로우 A 키와 같은 색소폰의 확장된 음계 범위를 지정합니다"
+    external_antenna_connector_type:
+      name: 외부 안테나 커넥터 유형
+      description: 외부 안테나를 부착하는 데 사용되는 물리적 커넥터를 정의합니다
     external_defibrillator_features:
       name: 외부 제세동기 기능
       description: "소아 기능이나 온스크린 심전도 등, 의료용 제세동기의 주요 기능을 강조합니다"
@@ -2387,33 +3080,72 @@ ko:
     extinguishing_agent_type:
       name: 소화제 유형
       description: "화재 안전 제품에 포함된 소화 물질의 종류(예: 물 또는 포말)를 명시합니다"
+    extraction_method:
+      name: 추출 방법
+      description: 대마 식물 재료에서 칸나비노이드를 추출하는 데 사용되는 기술을 식별합니다
+    extraction_technology:
+      name: 추출 기술
+      description: 제품이 불순물을 추출하는 데 사용하는 주요 메커니즘을 설명합니다
     extraction_type:
       name: 추출 유형
       description: "레인지 후드의 공기 제거 방법(예: 덕트리스 또는 컨버터블)을 명시합니다"
+    extractor_items_included:
+      name: 포함된 익스트랙터 아이템
+      description: 세트에 포함된 다양한 익스트랙터 도구나 액세서리를 나열합니다
     extractor_tip_style:
       name: 추출기 팁 스타일
       description: "추출 도구의 팁 디자인(예: 국자, 바늘)을 정의합니다"
+    eye_care_applicator_type:
+      name: 아이 케어 어플리케이터 유형
+      description: 아이 트리트먼트 제품과 함께 제공되는 내장 어플리케이터나 디스펜서 팁의 스타일을 정의합니다
+    eye_condition_treated:
+      name: 치료되는 눈 상태
+      description: 제품이 완화하거나 치료하도록 제조된 주요 안과 문제를 나타냅니다
     eye_pillow_shape:
       name: 눈 베개 모양
       description: "안대의 물리적 형태(예: 윤곽 또는 직사각형)를 정의합니다"
     eye_shadow_effect:
       name: 아이섀도 효과
       description: "아이섀도의 시각적 효과(예: 스모키, 글리터)를 정의합니다"
+    eye_shadow_palette_size:
+      name: 아이섀도 팔레트 크기
+      description: 빠른 탐색을 위한 일반적인 팔레트 형식별로 제품을 분류합니다
+    eyebrow_applicator_type:
+      name: 눈썹 어플리케이터 유형
+      description: 눈썹 제품을 적용하는 데 사용되는 어플리케이터나 팁을 설명합니다
     eyebrow_enhancer_color:
       name: 눈썹 강화 컬러
       description: 검정색이나 연한 금발 등 눈썹 강화제 제품의 색상을 지정합니다
+    eyebrow_stencil_shape:
+      name: 눈썹 스텐실 모양
+      description: 스텐실이 만들도록 의도된 주요 눈썹 모양이나 아치 스타일을 설명합니다
     eyelash_applicator_design:
       name: 속눈썹 부착 도구 디자인
       description: "인조 속눈썹 어플리케이터의 스타일(예: 직선, 곡선)을 정의합니다"
+    eyelash_curl_type:
+      name: 속눈썹 컬 유형
+      description: "속눈썹 섬유의 곡률 분류를 지정합니다(예: C컬, D컬)"
+    eyelash_curler_type:
+      name: 속눈썹 뷰러 유형
+      description: 속눈썹 뷰러의 디자인이나 메커니즘을 지정합니다
     eyelash_material:
       name: 속눈썹 소재
       description: "실크나 합성소재 등, 인조 속눈썹에 사용되는 소재 유형을 식별합니다"
+    eyelash_remover_formulation:
+      name: 속눈썹 리무버 제형
+      description: 리무버의 주요 포뮬러 유형을 식별합니다
+    eyelash_style:
+      name: 속눈썹 스타일
+      description: "속눈썹 세트의 전체적인 시각적 효과나 디자인을 설명합니다(예: 내추럴, 캣아이, 드라마틱)"
     eyelash_type:
       name: 속눈썹 타입
       description: "인조 속눈썹의 유형(예: 스트립 속눈썹, 연장)을 지정합니다"
     eyepiece/adapter_material:
       name: 접안렌즈/어댑터 자재
       description: "유리나 금속 등, 현미경 접안렌즈나 어댑터에 사용되는 소재를 식별합니다"
+    eyewear_compatibility:
+      name: 안경 호환성
+      description: 스트랩이 의도된 안경 유형을 나타냅니다
     eyewear_frame_color:
       name: 안경 프레임 색상
       description: 검은색 또는 금색과 같은 안경 프레임의 색상을 식별합니다
@@ -2429,6 +3161,9 @@ ko:
     eyewear_frame_shape:
       name: 안경 프레임 형태
       description: 원형이나 정사각형과 같은 안경의 모양을 설명합니다
+    eyewear_hinge_type:
+      name: 안경 힌지 유형
+      description: 내구성과 유연성에 영향을 미치는 템플에 사용된 힌지 메커니즘을 설명합니다
     eyewear_lens_color:
       name: 안경 렌즈 색상
       description: 투명 또는 주황색과 같은 안경 렌즈의 색상을 식별합니다
@@ -2438,6 +3173,12 @@ ko:
     eyewear_lens_pattern:
       name: 안경 렌즈 패턴
       description: 하트나 페이즐리 같은 안경 렌즈의 디자인이나 인쇄를 설명합니다
+    eyewear_strap_features:
+      name: 안경 스트랩 기능
+      description: "스트랩이나 체인의 주목할 만한 기능적 특성을 강조합니다(예: 부유, 반사, 신속 분리)"
+    eyewear_strap_or_chain_style:
+      name: 안경 스트랩 또는 체인 스타일
+      description: "안경 스트랩이나 체인의 주요 구조 스타일이나 형태를 지정합니다(예: 로프 코드, 금속 링크 체인, 네오프렌 스트랩)"
     fabric:
       name: 패브릭
       description: "제품에 사용된 직물 유형(예: 면 또는 데님)을 식별합니다"
@@ -2456,9 +3197,24 @@ ko:
     faceplate_design:
       name: 페이스플레이트 디자인
       description: 분리형 또는 고정형과 같은 차량 전자 장치의 전면판 유형을 식별합니다
+    facial_cleansing_kit_items_included:
+      name: 포함된 페이셜 클렌징 키트 아이템
+      description: "페이셜 클렌징 키트에 포함된 특정 제품이나 도구를 나열합니다(예: 클렌저, 토너, 세럼, 브러시, 여행용 파우치)"
+    facial_steamer_features:
+      name: 페이셜 스티머 기능
+      description: 스팀 트리트먼트를 향상시키는 주요 내장 기능을 나열합니다
     facility_sign_design:
       name: 시설 표지판 디자인
       description: "부엌이나 사무실 등, 표지판이 설치될 특정한 영역 또는 방을 설명합니다"
+    fader_type:
+      name: 페이더 유형
+      description: 믹서의 채널 페이더의 물리적 스타일을 식별합니다
+    false_eyelash_adhesive_formulation:
+      name: 인조 속눈썹 접착제 제형
+      description: 글루의 주요 화학 제형을 지정합니다
+    false_nail_adhesive_type:
+      name: 인조 네일 접착제 유형
+      description: "네일에 제공되거나 필요한 접착제 옵션 종류를 식별합니다(예: 글루, 탭, 둘 다, 없음)"
     false_nail_application_method:
       name: 인조네일 적용 방법
       description: 글루온이나 프레스온 등 인조 손톱이 어떻게 적용되는지 식별합니다
@@ -2495,12 +3251,15 @@ ko:
     fencing_components:
       name: 장벽 구성품
       description: "레일이나 패널 등, 울타리 시스템의 일부를 식별합니다"
+    fertility_metrics_measured:
+      name: 측정된 생식력 지표
+      description: 제품이 사용자에게 제공하는 생물학적 지표나 매개변수를 나열합니다
     fiber_art_project_type:
       name: 섬유 공예 프로젝트 유형
       description: "자수나 마크라메 등, 섬유예술 공예를 분류합니다"
     fiber_optic_mode:
       name: 광섬유 모드
-      description: 광섬유 부속품이 단일 모드 또는 다중 모드 광섬유용으로 설계되었는지 여부를 지정합니다.
+      description: 광섬유 부속품이 단일 모드 또는 다중 모드 광섬유용으로 설계되었는지 여부를 지정합니다
     field_flatness:
       name: 필드 평편도
       description: "슈퍼플랜, 세미플랜 등 현미경 렌즈의 시야 평탄도를 나타냅니다"
@@ -2534,9 +3293,21 @@ ko:
     film_type:
       name: 필름 유형
       description: "35mm 또는 120mm 등, 카메라에 사용되는 필름의 사이즈와 형식을 식별합니다"
+    filter_form_factor:
+      name: 필터 폼 팩터
+      description: "호환성 확인을 위한 필터 유닛의 물리적 스타일을 설명합니다(예: 카트리지, 팬 필터, 캡슐, 디스크, 필터 세트)"
+    filter_installation_type:
+      name: 필터 설치 유형
+      description: DSL 필터의 물리적 스타일과 설치 방법을 명시합니다
     filter_material:
       name: 필터 소재
       description: "일반적으로 커피를 위해 사용되는 필터에 사용되는 소재 유형(예: 종이, 삼)을 지정합니다"
+    filter_slope:
+      name: 필터 기울기
+      description: 옥타브당 dB로 표현되는 크로스오버 필터의 감쇠율을 지정합니다
+    filter_topology:
+      name: 필터 토폴로지
+      description: 주파수 응답 모양과 위상 특성을 결정하는 필터의 응답 계열을 지정합니다
     filter_type:
       name: 필터 유형
       description: "필터(일반적으로 수족관용, 예: 예: 기계식, 화학식)를 구별합니다"
@@ -2546,6 +3317,9 @@ ko:
     filtration_class:
       name: 여과 등급
       description: "FFP1 또는 B3 등, 인공호흡기 부속품의 여과 수준을 분류합니다"
+    filtration_technology:
+      name: 필터링 기술
+      description: 인쇄 중 발생하는 대기 오염 물질을 제거하기 위해 필터가 사용하는 기술 또는 단계를 식별합니다
     fin_material:
       name: 핀 소재
       description: "플라스틱이나 고무 등, 다이빙이나 스노클링용 핀의 재료 유형을 지정합니다."
@@ -2576,9 +3350,18 @@ ko:
     fire_extinguisher_items_included:
       name: 소화기 품목 포함
       description: 배출 호스 또는 장착 브래킷과 같이 소화기와 함께 포함된 추가 항목을 지정합니다
+    firewire_standard:
+      name: FireWire 표준
+      description: "케이블이 지원하는 IEEE 1394 사양을 식별하며, 최대 속도와 장치 호환성을 결정합니다"
     firmness:
       name: 단단함
       description: "가구 또는 매트리스와 같은 품목의 견고성 수준(예: 매우 부드러움, 단단함)을 정의합니다"
+    first_aid_container_type:
+      name: 응급 처치 용기 유형
+      description: 키트와 함께 제공되는 용기나 하우징의 주요 스타일을 정의합니다
+    first_aid_kit_compliance_standard:
+      name: 응급 처치 키트 준수 표준
+      description: 키트가 충족하는 공식 표준이나 규정을 지정합니다
     first_aid_kit_components:
       name: 구급약품 키트 구성품
       description: "구급 상자의 내용물(예: 붕대, 가위)을 자세히 설명합니다"
@@ -2612,12 +3395,18 @@ ko:
     flag_shape:
       name: 깃발 모양
       description: "깃발과 풍향계의 기하학적 형태(예: 티어드롭 또는 페넌트)를 정의합니다"
+    flammability_rating_ul_94:
+      name: 가연성 등급 (UL 94)
+      description: 슬리브 재료의 UL 94 난연 분류를 명시합니다
     flare_type:
       name: 플레어 유형
       description: "LED 또는 기존 조명 등, 도로용 불꽃 신호기의 유형을 식별합니다"
     flash_card_theme:
       name: 플래시 카드 테마
       description: 알파벳이나 숫자 등 플래시 카드의 학습 주제를 지정합니다
+    flash_cell_type:
+      name: 플래시 셀 유형
+      description: "메모리 아키텍처 내에서 플래시 셀당 저장되는 비트 수(예: SLC, MLC, TLC)를 식별합니다"
     flash_modes:
       name: 플래시 모드
       description: "자동 또는 수동 등, 카메라 플래시의 다양한 설정을 식별합니다"
@@ -2645,6 +3434,9 @@ ko:
     flexibility_rating:
       name: 유연성 등급
       description: "스노보드 또는 스노슈 바인딩의 유연성 수준(예: 4)을 나타냅니다"
+    floor_configuration:
+      name: 바닥 구성
+      description: 텐트에 바닥이 포함되어 있는지 여부와 포함된 경우 제공되는 바닥 유형을 나타냅니다
     floral_wire_design:
       name: 꽃꽂이용 와이어 디자인
       description: 바인드 와이어 또는 천으로 덮인 와이어와 같이 제작에 사용되는 꽃 와이어 유형을 설명합니다
@@ -2666,6 +3458,9 @@ ko:
     fluid_type:
       name: 유체 유형
       description: "드라이 아이스나 포그 주스 등, 특수 효과 장비에 필요한 유체를 지정합니다"
+    fluoride_content:
+      name: 불소 함량
+      description: 구강 청결제에서 불소의 존재와 상대적 농도를 나타냅니다
     flush_plate_color:
       name: 플러시 플레이트 색상
       description: "흰색이나 은색 등, 변기 탱크의 플러시 플레이트 색상을 식별합니다"
@@ -2678,6 +3473,9 @@ ko:
     flute_configuration:
       name: 플루트 구성
       description: "B 풋조인트 또는 인라인 G 등, 플루트의 특정 설정을 식별합니다"
+    fm_transmitter_playback_source:
+      name: FM 송신기 재생 소스
+      description: "장치가 블루투스 외에 재생할 수 있는 미디어 입력 옵션을 식별합니다(예: USB 스틱, microSD 카드)"
     foam_form:
       name: 폼 형태
       description: "볼형이나 시트형 등, 공예용 폼 제품의 모양이나 유형을 식별합니다"
@@ -2717,6 +3515,12 @@ ko:
     food_supplement_form:
       name: 식품 보충제 형식
       description: "액체 또는 정제 등, 건강 보조 식품의 형태를 지정합니다"
+    foot_arch_type:
+      name: 발 아치 유형
+      description: 제품이 지원하도록 설계된 발 아치 유형을 지정합니다
+    foot_side:
+      name: 발 측면
+      description: "발목 지지대가 왼발, 오른발 또는 양쪽 발에 사용할 수 있도록 설계되었는지를 나타냅니다"
     footage_type:
       name: 영상 유형
       description: "무료 제공 사진이나 비디오 영상의 카테고리(예: 애니메이션, 텍스처 등)를 설명합니다"
@@ -2732,12 +3536,18 @@ ko:
     footwear_pattern:
       name: 신발 패턴
       description: 예를 들어 줄무늬나 나뭇잎 등 신발의 시각적 모티프를 설명합니다
+    force_feedback_type:
+      name: 포스 피드백 유형
+      description: 포스 피드백과 스티어링 저항을 생성하는 데 사용되는 구동 메커니즘을 설명합니다
     format_supported:
       name: 지원되는 형식
       description: "일반적으로 사진 앨범에 대해 호환되는 크기(예: 12 x 16인치, 13 x 18cm)를 명시합니다"
     formula_level:
       name: 분유 단계
       description: "유아용 분유의 연령 적합성(예: 레벨 1(0~6개월))을 명시합니다"
+    formulation_strength:
+      name: 제형 강도
+      description: 제품 공식의 비교 효능을 나타냅니다
     fossil_type:
       name: 화석 유형
       description: "화석의 종류(예: 상어 이빨, 공룡 뼈 등)를 지정합니다"
@@ -2819,6 +3629,9 @@ ko:
     game_components:
       name: 게임 구성품
       description: "게임 세트에 포함된 부품(예: 주사위, 게임판 등)을 식별합니다"
+    game_console_skin_coverage:
+      name: 게임 콘솔 스킨 적용 범위
+      description: 스킨 세트가 장치의 어느 부분을 덮는지 나타냅니다
     game_difficulty:
       name: 게임 난이도
       description: "파티 게임의 난이도 수준(예: 중간, 어려운 등)을 설명합니다"
@@ -2834,6 +3647,9 @@ ko:
     games_included:
       name: 포함된 게임
       description: 제품과 함께 제공되는 게임(카드 또는 체커)을 나열합니다
+    gaming_enhancement_features:
+      name: 게이밍 향상 기능
+      description: 리시버가 지원하는 HDMI 2.1 게임 지향 기술을 나타냅니다
     garage_door_material:
       name: 차고문 소재
       description: "차고 문의 건축 자재(예: 강철, 목재 등)를 식별합니다"
@@ -2864,6 +3680,9 @@ ko:
     gel_strength:
       name: 젤 강도
       description: "젤라틴 제품의 젤 또는 블룸 강도(예: 높은 블룸, 낮은 블룸)를 나타냅니다"
+    gemstone_type:
+      name: 보석 유형
+      description: 광물 또는 재료 분류에 따라 제품에 사용된 주요 보석을 지정합니다
     genre:
       name: 장르
       description: "미디어의 카테고리나 스타일(예: 공포, 판타지 등)을 분류합니다"
@@ -2878,7 +3697,7 @@ ko:
       description: "선물 세트의 표현 스타일(예: 선물 상자, 선물 가방)을 명시합니다"
     gimbal_stabilization_axes:
       name: 짐벌 안정화 축
-      description: 셀카봉에 짐벌 기능이 포함되어 있을 때 제공되는 전자식 또는 기계적 안정화 축의 수를 나타냅니다.
+      description: 셀카봉에 짐벌 기능이 포함되어 있을 때 제공되는 전자식 또는 기계적 안정화 축의 수를 나타냅니다
     gin_variety:
       name: 진 종류
       description: "특정 유형(예: 향미, 런던 드라이)별로 진 제품을 분류합니다"
@@ -2888,9 +3707,18 @@ ko:
     glazing_type:
       name: 유리끼움 방식
       description: "창문 유리 유형(예: 이중창, 단일창 등)을 식별합니다"
+    glide_style:
+      name: 글라이드 스타일
+      description: "스케이트의 의도된 글라이드 특성(예: 속도, 제어)을 나타냅니다"
+    glitter_particle_size:
+      name: 글리터 입자 크기
+      description: "반짝임 강도, 질감 및 적용 용이성에 영향을 미치는 글리터의 입자 크기를 분류합니다"
     glitter_shape:
       name: 반짝이 모양
       description: "반짝이의 모양(예: 하트, 별 등)을 정의합니다"
+    glucose_measurement_units:
+      name: 혈당 측정 단위
+      description: 측정기가 결과를 표시할 수 있는 측정 단위(mg/dL 또는 mmol/L)를 나타냅니다
     glucose_meter_features:
       name: 혈당 측정기 기능
       description: "혈당 측정기의 특별한 특성(예: 휴대 가능 여부, 메모리 기능 등)을 설명합니다"
@@ -2906,6 +3734,9 @@ ko:
     glue_strength:
       name: 접착제 강도
       description: "접착제의 접착 능력(예: 강함, 부드러움)을 나타냅니다"
+    glue_viscosity:
+      name: 글루 점도
+      description: 흐름과 적용 제어에 영향을 미치는 글루의 두께를 설명합니다
     golf_ball_type:
       name: 골프공 유형
       description: "골프공의 성능 특성(예: 투어 퍼포먼스 또는 소프트 디스턴스)을 명시합니다"
@@ -2945,12 +3776,18 @@ ko:
     gravel/substrate_material:
       name: 자갈/기질 자재
       description: "수족관 자갈이나 기질의 구성(예: 점토, 석영 등)을 지정합니다"
+    gray_coverage_level:
+      name: 새치 커버리지 수준
+      description: 제품이 커버하거나 혼합할 수 있는 회색이나 흰 머리의 비율이나 정도를 나타냅니다
     grease_filter_material:
       name: 그리스 필터 소재
       description: "제품의 그리스 필터에 사용되는 소재(예: 금속, 스테인리스강)를 명시합니다"
     grind_size:
       name: 분쇄 크기
       description: 커피 가루의 거칠기나 고운 정도(매우 거칠거나 고운 정도 등)를 나타냅니다
+    grip_or_holder_style:
+      name: 그립 또는 홀더 스타일
+      description: 제품의 주요 물리적 형태를 식별하여 고객이 선호하는 디자인을 빠르게 필터링할 수 있도록 돕습니다
     grip_texture:
       name: 그립 질감
       description: "제품 그립의 표면 감촉(예: 부드러운, 질감이 있는 등)을 설명합니다"
@@ -2978,6 +3815,9 @@ ko:
     habitat_material:
       name: 서식지 재료
       description: "반려동물 집의 주요 소재(예: 아크릴, 목재 등)를 식별합니다"
+    hair_care_effect:
+      name: 헤어 케어 효과
+      description: 샴푸가 제공하도록 제조된 주요 혜택이나 결과를 정의합니다
     hair_care_finish:
       name: 헤어 케어 마무리
       description: "사용 후 모발의 최종 모양 또는 질감을 정의(예: 윤기 있음, 매트함)합니다"
@@ -2990,18 +3830,42 @@ ko:
     hair_color:
       name: 헤어 컬러
       description: 금발이나 짙은 갈색과 같은 헤어 케어 제품의 색상이나 음영을 식별합니다
+    hair_color_formulation:
+      name: 헤어 컬러 제형
+      description: "제품의 색상 효과의 지속성이나 기능적 유형을 나타냅니다(예: 영구 염료, 토너, 뿌리 터치업)"
+    hair_concealer_fiber_material:
+      name: 헤어 컨실러 섬유 재료
+      description: 제품의 빌딩 섬유나 파우더의 주요 재료를 지정합니다
+    hair_dryer_motor_type:
+      name: 헤어 드라이어 모터 유형
+      description: "헤어 드라이어에 사용되는 모터의 종류를 지정하며, 내구성, 소음 수준 및 공기 흐름 파워에 영향을 미칩니다"
+    hair_dye_type_removed:
+      name: 제거되는 헤어 염료 유형
+      description: "제품이 제거하도록 설계된 헤어 염료의 종류를 지정합니다(예: 영구, 헤나)"
     hair_loss_type:
       name: 탈모 유형
       description: "탈모 유형(예: 원형 탈모증, 남성형 대머리)에 따라 제품을 구성합니다"
+    hair_oil_application:
+      name: 헤어 오일 적용
+      description: 헤어 오일을 사용하거나 적용하도록 의도된 방법을 지정합니다
+    hair_oil_effect:
+      name: 헤어 오일 효과
+      description: 헤어 오일이 제공하는 주요 혜택이나 결과를 나타냅니다
     hair_shear_type:
       name: 헤어 커팅 타입
       description: "모발 관리에 사용되는 모발 가위의 스타일을 정의합니다(예: 질감 부여, 가늘어짐"
+    hair_styling_benefits:
+      name: 헤어 스타일링 혜택
+      description: 제품이 머리카락에 제공하는 주요 성능 혜택이나 효과를 강조합니다
     hair_styling_items_included:
       name: 헤어 스타일링 아이템 포함
       description: 고데기나 헤어 브러시와 같이 세트에 포함된 헤어 스타일링 도구를 식별합니다
     hair_styling_tool_features:
       name: 헤어 스타일링 도구 기능
       description: "헤어 스타일링 도구의 특별한 특성(예: 조절 가능한 온도 조절 장치, 자동 전원 등)을 식별합니다"
+    hair_treatment_effect:
+      name: 헤어 트리트먼트 효과
+      description: 헤어 세럼이 제공하는 주요 혜택을 지정합니다
     hair_type:
       name: 헤어 유형
       description: "특정 모발 유형 또는 상태(예: 곱슬머리, 건성)에 따라 제품을 분류합니다"
@@ -3011,6 +3875,9 @@ ko:
     hand_side:
       name: 주 사용 손
       description: "제품 설계 시 염두에 둔 손의 유형(예: 왼손잡이용, 양손잡이용)을 명시합니다"
+    hand_soap_features:
+      name: 핸드 비누 기능
+      description: 분말 핸드 비누의 특별한 특성이나 이점을 강조합니다
     hand_warmer_type:
       name: 손난로형
       description: "손난로의 종류(예: 공기 작동식, 배터리 구동식 등)를 식별합니다"
@@ -3032,6 +3899,9 @@ ko:
     handle_pattern:
       name: 핸들 패턴
       description: 꽃이나 기하학 등 제품 핸들의 디자인이나 모티프를 설명합니다
+    handle_style:
+      name: 손잡이 스타일
+      description: "그립 편안함, 인체공학 및 미적 요소에 영향을 미치는 지팡이 손잡이의 디자인이나 형태를 정의합니다"
     handle_type:
       name: 핸들 유형
       description: "제품에 있는 손잡이의 길이 또는 존재 여부(예: 짧음, 손잡이 없음)를 명시합니다"
@@ -3050,6 +3920,9 @@ ko:
     hanging_chair_design:
       name: 교수형 의자 디자인
       description: 의자에 스탠드가 포함되어 있는지 여부를 명시합니다
+    haptic_feedback_type:
+      name: 햅틱 피드백 유형
+      description: 컨트롤러가 제공하는 촉각 또는 동작 피드백의 종류를 설명합니다
     hard_cider_variety:
       name: 발효 사과술 종류
       description: "사과주 맛 프로필(예: 신맛, 단맛)을 명시합니다"
@@ -3070,7 +3943,7 @@ ko:
       description: "제품의 견고함(예: 부드러운, 중간, 단단한 등)을 나타냅니다"
     hardness_rating_pencil_scale:
       name: 경도 등급(연필 척도)
-      description: 연필 경도 척도를 기준으로 강화 유리 경도 등급을 지정합니다.
+      description: 연필 경도 척도를 기준으로 강화 유리 경도 등급을 지정합니다
     hardware_finish:
       name: 하드웨어 마감
       description: "하드웨어 품목의 표면 처리 또는 코팅(예: 황동, 크롬 등)을 설명합니다"
@@ -3095,12 +3968,21 @@ ko:
     hazmat_suit_design:
       name: 방호복 디자인
       description: "위험물 보호복의 스타일(예: 보호복, 캡슐형 보호복 등)을 설명합니다"
+    hdmi_version_supported:
+      name: 지원되는 HDMI 버전
+      description: "장치가 완전히 지원하는 최고 HDMI 사양 버전(예: 4K @ 120Hz를 위한 HDMI 2.1)을 명시합니다"
     hdr_format:
       name: HDR 형식
       description: "TV의 HDR(High Dynamic Range, 예: HDR10, Dolby Vision)을 명시합니다"
     headjoint_cut:
       name: 헤드조인트 컷
       description: "플루트의 헤드조인트 컷(예: 웨이브, Z컷 등)을 지정합니다"
+    headphone_cushion_shape:
+      name: 헤드폰 쿠션 모양
+      description: 고객이 이어컵 형상과 일치시킬 수 있도록 쿠션의 물리적 윤곽을 설명합니다
+    headphone_driver_technology:
+      name: 헤드폰 드라이버 기술
+      description: 헤드폰에서 소리를 생성하는 데 사용되는 변환기 유형을 정의합니다
     headphone_jack_type:
       name: 헤드폰 잭 유형
       description: "헤드폰 잭 사이즈 유형(예: 3.5mm, USB Type-C)을 명시합니다"
@@ -3109,16 +3991,28 @@ ko:
       description: "헤드폰 디자인(예: 비하인드 넥, 이어버드)을 정의합니다"
     headset_connection_type:
       name: 헤드셋 연결 유형
-      description: 외부 헤드셋을 전화기에 연결하는 데 사용할 수 있는 인터페이스를 지정합니다.
+      description: 외부 헤드셋을 전화기에 연결하는 데 사용할 수 있는 인터페이스를 지정합니다
     headwear_features:
       name: 헤드웨어 기능
       description: "모자의 고유한 특징(예: 접을 수 있는, 다용도 등)을 강조합니다"
+    hearing_aid_compatibility:
+      name: 보청기 호환성
+      description: 전화가 보청기 호환성(HAC) 요구 사항을 충족하는지 여부와 해당되는 경우 등급 수준을 지정합니다
+    hearing_aid_ear_side:
+      name: 보청기 귀 측면
+      description: "보청기가 왼쪽 귀, 오른쪽 귀 또는 양쪽 귀를 위해 설계되었는지를 지정합니다"
     hearing_aid_features:
       name: 보청기 기능
       description: "보청기의 특별한 특성(예: 충전식 배터리, 디지털 등)을 강조합니다"
     hearing_aid_material:
       name: 보청기 자재
       description: "보청기 제작에 사용되는 주요 소재(예: 플라스틱, 실리콘 등)를 식별합니다"
+    hearing_loss_level:
+      name: 난청 수준
+      description: 보청기가 해결하도록 설계된 난청 정도를 지정합니다
+    hearing_protection_class:
+      name: 청력 보호 등급
+      description: 지역 표준에 따라 감쇠 성능을 나타내는 지역 인증 등급을 지정합니다
     heat_function:
       name: 발열 기능
       description: 일반적으로 개인 생활용품의 경우 제품에 가열 기능이 있는지 여부를 나타냅니다
@@ -3131,12 +4025,21 @@ ko:
     heat_source:
       name: 열원
       description: "가열 패드의 열원 유형(예: 전자레인지 사용 가능, 열 젤 등)을 지정합니다"
+    heat_therapy_type:
+      name: 온열 치료 유형
+      description: "제품이 습열, 건열 또는 둘 다를 제공하는지를 나타냅니다"
     heating_instructions:
       name: 가열 지침
       description: "제품을 적절하게 가열하는 방법(예: 오븐, 쿡탑)을 명시합니다"
     heating_method:
       name: 가열 방식
       description: "일반적으로 젖병 보온기의 가열에 사용되는 기술(예: 스팀, 수조)을 명시합니다"
+    heating_pad_design:
+      name: 난방 패드 디자인
+      description: 난방 패드의 물리적 스타일이나 형태를 지정합니다
+    heating_pad_features:
+      name: 난방 패드 기능
+      description: 난방 패드에 내장된 특별한 기능이나 편의 기능을 강조합니다
     heating_speed:
       name: 가열 속도
       description: "제품이 가열되는 속도(예: 빠름, 느림)를 나타냅니다"
@@ -3149,21 +4052,33 @@ ko:
     height_adjustment:
       name: 높이 조정
       description: "제품 높이의 변경 가능 여부(예: 고정 높이, 조정 가능한 높이 등)를 지정합니다"
+    helicobacter_pylori_detection_method:
+      name: 헬리코박터 파일로리 검출 방법
+      description: 키트가 헬리코박터 파일로리 감염을 검출하는 데 사용하는 생물학적 원리 또는 접근 방식을 식별합니다
     helmet_shade_design:
       name: 헬멧 차양 디자인
       description: "용접 헬멧의 쉐이드 메커니즘 유형(예: 고정, 자동 차광 등)을 설명합니다"
+    herbal_supplement_health_goal:
+      name: 허브 보충제 건강 목표
+      description: "허브 보충제가 지원하도록 의도된 주요 건강 목표, 신체 시스템 또는 생리학적 영역을 나타냅니다(예: 면역 지원, 스트레스 완화, 간 및 해독 지원)"
     hitch_class:
       name: 히치 클래스
       description: "차량 히치의 견인 용량(예: Class I, Class II 등)을 식별합니다"
     hitch_type:
       name: 히치 유형
       description: "자전거 트레일러의 장착 방법(예: 축 장착형 또는 안장 기둥)을 명시합니다"
+    hiv_test_generation:
+      name: HIV 검사 세대
+      description: "HIV 진단 검사의 세대를 나타내며, 민감도와 검출 기간의 개선을 반영합니다"
     hockey_equipment_included:
       name: 하키 장비 포함
       description: "라크로스 장비 세트의 품목(예: 라크로스 스틱, 어깨 패드 등)을 지정합니다"
     hold_level:
       name: 홀드 수준
       description: "헤어 스타일링 제품의 강도(예: 가벼움, 강함)를 정의합니다"
+    hole_plating_type:
+      name: 홀 도금 유형
+      description: "보드의 홀이 도금되지 않았는지, 관통 도금되었는지 또는 비아 배럴이 있는지 나타내어 납땜 및 층간 연결에 영향을 미칩니다"
     hook_design:
       name: 후크 디자인
       description: "후크, 버클, 잠금 장치의 디자인(예: 스프링, 양단 등)을 식별합니다"
@@ -3203,6 +4118,9 @@ ko:
     hub/switch_storage_options:
       name: 허브/스위치 스토리지 옵션
       description: 스택형 또는 스택형이 아닌 것과 같은 허브 또는 스위치의 스토리지 기능을 식별합니다
+    humidification_system:
+      name: 가습 시스템
+      description: PAP 기계에 포함되거나 지원되는 가습 옵션의 유형을 설명합니다
     humidifier_design:
       name: 가습기 디자인
       description: "가습기의 스타일(예: 부착형 또는 휴대형)을 설명합니다"
@@ -3227,6 +4145,9 @@ ko:
     icon_type:
       name: 아이콘 유형
       description: "컴퓨터 아이콘 유형(예: 폴더, 소셜 미디어 등)을 지정합니다"
+    identity_verification_requirement:
+      name: 신원 확인 요구 사항
+      description: SIM 또는 eSIM을 사용하기 전에 실명 등록 또는 eKYC 신원 확인이 필요한지 명시합니다
     ignition_system:
       name: 점화 시스템
       description: "발전기의 점화 시스템 유형(예: 수동, 전자 등)을 식별합니다"
@@ -3254,6 +4175,12 @@ ko:
     incontinence_aid_features:
       name: 요실금 보조 기능
       description: "기저귀의 특성(예: 누출 방지, 저자극성 등)을 설명합니다"
+    incontinence_pad_type:
+      name: 실금 패드 유형
+      description: "패드의 특정 스타일 또는 형태를 정의합니다(예: 라이너, 가드, 부스터 패드)"
+    inductance_tolerance:
+      name: 인덕턴스 허용 오차
+      description: 공칭 인덕턴스 값의 허용 백분율 편차를 정의합니다
     industry_focus:
       name: 산업 초점
       description: "제품의 대상 부문(예: 교육, 제조 등)을 강조합니다"
@@ -3277,10 +4204,7 @@ ko:
       description: "제품 제조에 사용되는 성분(예: 산화 아연, 알로에 베라)를 명시합니다"
     ingress_protection_ip_rating:
       name: 침투 방지(IP) 등급
-      description: "케이스가 준수하는 공식 IP 방수/방진 등급(예: IP68)을 제공합니다."
-    ingress_protection_rating:
-      name: 침투 방지 등급
-      description: "장치의 공식 IP 방진 및 방수 등급(예: IP64)을 나타냅니다."
+      description: "케이스가 준수하는 공식 IP 방수/방진 등급(예: IP68)을 제공합니다"
     ink_application_technique:
       name: 잉크 도포 기법
       description: "예술 및 공예에 잉크를 적용하는 데 사용되는 방법(예: 스크린 인쇄)을 설명합니다"
@@ -3305,6 +4229,24 @@ ko:
     input_connection:
       name: 입력 연결
       description: "오디오 케이블의 입력 연결 유형(예: 3.5mm 또는 RCA)을 명시합니다"
+    input_connection_type:
+      name: 입력 연결 유형
+      description: 컨버터의 입력 측에서 허용되는 커넥터 또는 인터페이스 표준을 명시합니다
+    input_signal_interface:
+      name: 입력 신호 인터페이스
+      description: 오디오 컨버터가 허용하는 입력 연결 유형을 명시합니다
+    input_video_interface:
+      name: 입력 비디오 인터페이스
+      description: 스캔 컨버터가 입력으로 허용하는 비디오 커넥터 유형을 명시합니다
+    insole_length_type:
+      name: 깔창 길이 유형
+      description: 삽입물의 적용 범위나 길이 스타일을 정의합니다
+    installation_accessories_included:
+      name: 포함된 설치 액세서리
+      description: 설치를 돕기 위해 배터리와 함께 번들로 제공되는 도구나 설명서를 식별합니다
+    installation_tools_included:
+      name: 포함된 설치 도구
+      description: 설치를 돕기 위해 부품과 함께 번들로 제공되는 도구나 소모품을 나열합니다
     instruction_set_architecture:
       name: 명령 세트 아키텍처
       description: "프로세서가 이해할 수 있는 컴퓨터 아키텍처(예: 32비트)를 정의합니다"
@@ -3347,18 +4289,48 @@ ko:
     insulation_material:
       name: 단열재
       description: "단열재 구성(예: 미네랄 울이나 폴리우레탄(PU) 등)을 지정합니다"
+    integrated_led_lighting:
+      name: 통합 LED 조명
+      description: 스피커가 내장 LED 또는 RGB 조명을 통합하는지 여부와 그 유형을 나타냅니다
+    integrated_power/charging_options:
+      name: 통합 전원/충전 옵션
+      description: 스탠드에 내장 전기 콘센트 및/또는 USB 충전 포트가 포함되어 있는지 지정하여 연결된 장치의 유용성을 향상시킵니다
     integrated_stand_type:
       name: 일체형 스탠드형
-      description: 케이스에 내장된 스탠드 또는 지지 메커니즘의 스타일을 설명합니다.
+      description: 케이스에 내장된 스탠드 또는 지지 메커니즘의 스타일을 설명합니다
     intended_application:
       name: 사용 목적
       description: "페인트와 얼룩의 특정 용도(예: 문, 데크/울타리 등)를 식별합니다"
+    intended_effect:
+      name: 의도된 효과
+      description: CBD 보충제가 제공하도록 마케팅되는 주요 건강 혜택을 설명합니다
+    intended_jewelry_type:
+      name: 의도된 보석 유형
+      description: 스탠드가 보관하거나 전시하도록 설계된 보석의 종류를 나타냅니다
+    intended_surface:
+      name: 사용 표면
+      description: 패드가 보호하도록 설계된 주요 표면을 식별합니다
+    intercom_communication_type:
+      name: 인터콤 통신 유형
+      description: 장치가 지원하는 기본 통신 형식을 분류합니다
+    intercom_wiring_type:
+      name: 인터콤 배선 유형
+      description: 인터콤 스피커 장치가 설계된 배선 또는 통신 방식을 지정합니다
     interface_type:
       name: 인터페이스 유형
       description: "제품에 사용되는 연결 유형(예: 블루투스, USB 등)을 지정합니다"
+    interior_lining_material:
+      name: 내부 안감 재료
+      description: 보석함 내부를 덧대어 보석을 긁힘과 마모로부터 보호하는 주요 재료를 식별합니다
+    interior_texture:
+      name: 내부 질감
+      description: 그릇이나 머그 내부에서 거품을 만드는 데 도움이 되는 내부 표면 패턴을 정의합니다
     internal_drive_form_factor_supported:
       name: 지원되는 내장형 드라이브 폼 팩터
       description: "장치에 호환되는 하드 드라이브 사이즈(예: 2.5인치)를 나타냅니다"
+    internet_radio_form_factor:
+      name: 인터넷 라디오 폼 팩터
+      description: 인터넷 라디오의 물리적 스타일 또는 장착 방향을 정의합니다
     intimate_apparel_features:
       name: 실내복 기능
       description: "실내복의 특별한 특성(예: 통기성이 뛰어난 디자인, 편안한 핏 등)을 설명합니다"
@@ -3383,9 +4355,18 @@ ko:
     j_cup_type:
       name: J컵 유형
       description: "웨이트 트레이닝 장비의 J컵 스타일(예: 플랫, 샌드위치)을 정의합니다"
+    jaw_advancement_adjustability:
+      name: 턱 전진 조정 가능성
+      description: 장치가 제공하는 아래턱 위치를 사용자가 조정할 수 있는지 여부와 방법을 나타냅니다
     jaw_material:
       name: 죠 소재
       description: "도구의 조이는 부분에 사용되는 소재(예: 강철, 티타늄 등)를 식별합니다"
+    jewelry_cleaning_accessories_included:
+      name: 포함된 보석 청소 액세서리
+      description: "청소기와 함께 제공되는 추가 도구나 액세서리를 나열합니다(예: 브러시, 트레이, 광택 천)"
+    jewelry_cleaning_purpose:
+      name: 보석 청소 목적
+      description: "제품의 주요 의도된 기능을 나타냅니다(예: 변색 제거, 광택, 보호 코팅)"
     jewelry_finding_type:
       name: 주얼리 부자재 타입
       description: 비드 캡이나 점프 링과 같이 주얼리 제작에 사용되는 특정 구성 요소를 식별합니다
@@ -3398,6 +4379,9 @@ ko:
     jewelry_set_type:
       name: 주얼리 세트 종류
       description: "주얼리 제작 키트에서 주얼리 유형(예: 반지, 목걸이 등)을 식별합니다"
+    jewelry_steam_cleaner_features:
+      name: 보석 스팀 청소기 기능
+      description: 모델을 구별하는 주목할 만한 내장 기능이나 안전 기능을 나열합니다
     jewelry_type:
       name: 주얼리 유형
       description: "보석 종류(예: 고급 보석 또는 모조 보석)를 구별합니다"
@@ -3410,6 +4394,15 @@ ko:
     joint_style:
       name: 조인트 스타일
       description: "당구 큐에 사용되는 조인트 유형(예: 유니록 또는 레이디얼)을 정의합니다"
+    journey_type:
+      name: 여정 유형
+      description: 여행 횟수와 이동 방향에 따라 티켓이 적용되는 여정 유형을 지정합니다
+    joystick_mounting_style:
+      name: 조이스틱 장착 스타일
+      description: 조이스틱 어셈블리가 제어판이나 캐비닛에 고정되는 방법을 나타냅니다
+    joystick_sensor_technology:
+      name: 조이스틱 센서 기술
+      description: 움직임이나 위치를 감지하는 데 사용되는 주요 센싱 기술을 식별합니다
     jump_rope_design:
       name: 줄넘기 디자인
       description: 일반 또는 스마트와 같은 줄넘기 유형을 설명합니다
@@ -3434,6 +4427,12 @@ ko:
     keyboard_action:
       name: 키보드 동작
       description: "피아노 건반의 감촉(예: 해머 액션, 웨이티드 키 등)을 지정합니다"
+    keyboard_assembly_type:
+      name: 키보드 어셈블리 유형
+      description: "제공되는 물리적 어셈블리(예: 독립형 키보드, 키보드가 있는 팜레스트, 개별 키 세트)를 정의합니다"
+    keyboard_backlight_type:
+      name: 키보드 백라이트 유형
+      description: 키보드 키나 케이스에 사용되는 조명 기술 또는 스타일을 자세히 설명합니다
     keyboard_format:
       name: 키보드 형식
       description: "키보드의 사이즈와 레이아웃(예: 풀 사이즈 또는 콤팩트)을 정의합니다"
@@ -3446,6 +4445,9 @@ ko:
     keyboard_layout:
       name: 키보드 레이아웃
       description: "키보드의 키 배열(예: QWERTY, Workman)을 명시합니다"
+    keyboard_mounting_style:
+      name: 키보드 장착 스타일
+      description: 기계식 키보드의 소리와 느낌에 영향을 미치는 내부 플레이트 장착 방법을 정의합니다
     keyboard_port_type:
       name: 키보드 포트 유형
       description: "키보드 연결용 포트 유형(예: USB Type-C)을 명시합니다"
@@ -3458,9 +4460,27 @@ ko:
     keyboard_type:
       name: 키보드 유형
       description: "키보드의 디자인과 기능(예: 표준, 백라이트)을 명시합니다"
+    keycap_legend_printing_method:
+      name: 키캡 범례 인쇄 방법
+      description: "범례가 키캡에 적용되는 방법을 설명하며, 수명과 외관에 영향을 미칩니다"
+    keycap_material:
+      name: 키캡 재료
+      description: "내구성, 질감 및 범례에 영향을 미치는 키캡의 주요 재료 또는 제조 프로세스를 나타냅니다"
+    keycap_profile:
+      name: 키캡 프로필
+      description: "키캡 세트의 조각 또는 모양 제품군을 명시하며, 타이핑 느낌과 미관에 영향을 미칩니다"
     keypad_style:
       name: 키패드 스타일
       description: "키패드의 입력 방법(예: 디지털 또는 영숫자)을 정의합니다"
+    keystone_correction_type:
+      name: 키스톤 보정 유형
+      description: "사다리꼴 왜곡을 제거하기 위해 프로젝터가 지원하는 키스톤 또는 기하학적 보정 유형을 설명합니다(예: 수동 수직, 자동 4점)"
+    kiln_features:
+      name: 가마 기능
+      description: 가마의 기능적 성능과 디자인 특성을 지정합니다
+    kiln_loading_style:
+      name: 가마 적재 방식
+      description: 가마 챔버에 물품을 넣고 빼는 방법을 지정합니다
     kit_construction_type:
       name: 키트 조립 유형
       description: "트램폴린 점프 영역의 직물(예: 합성, 폴리프로필렌 등)을 지정합니다"
@@ -3473,6 +4493,9 @@ ko:
     kitesurfing_style:
       name: 카이트서핑 스타일
       description: "제품의 특정 카이트서핑 스타일(예: 파도타기)을 정의합니다"
+    knee_brace_style:
+      name: 무릎 보조기 스타일
+      description: "보조기의 구조적 디자인을 정의하며, 착용 방법과 제공되는 지지 수준을 반영합니다"
     kneeboard_features:
       name: 무릎 보드 기능
       description: "니보드의 특정 특성(예: 조절 가능한 스트랩, 미끄럼 방지 등)을 설명합니다"
@@ -3494,6 +4517,9 @@ ko:
     knob_style:
       name: 노브 스타일
       description: "악기 증폭기의 손잡이 디자인(예: 표준, 레트로/빈티지 등)에 대해 설명합니다"
+    knot_shape:
+      name: 매듭 모양
+      description: 매듭이나 브러시 헤드의 전체적인 모양이나 프로필을 지정합니다
     labeling_project_type:
       name: 라벨링 프로젝트 타입
       description: "봉제 라벨의 제작 목적(예: 홈 텍스타일 제작, 맞춤형 선물 제작 등)을 지정합니다"
@@ -3509,15 +4535,33 @@ ko:
     lamination_mode:
       name: 라미네이션 모드
       description: 콜드 라미네이션 또는 핫 라미네이션과 같이 사용된 라미네이션 프로세스 유형을 식별합니다
+    lamination_type:
+      name: 라미네이션 유형
+      description: "차트나 모델 표면이 라미네이트 처리되었는지, 처리되었다면 단면인지 양면인지를 식별합니다"
+    lamp_assembly_type:
+      name: 램프 어셈블리 유형
+      description: "제품이 베어 전구, 하우징이 있는 램프, 트윈 팩 또는 다른 어셈블리 구성인지 지정합니다"
+    lamp_quality_grade:
+      name: 램프 품질 등급
+      description: "램프가 정품 OEM인지, 호환 하우징에 OEM 전구를 사용하는지, 완전 애프터마켓/호환품인지 나타냅니다"
     lamp_type:
       name: 램프 유형
       description: "사진 확대기의 광원(예: 차가운 빛, 이색성 등)을 지정합니다"
+    lancet_mechanism_type:
+      name: 란셋 메커니즘 유형
+      description: "란셋의 작동 메커니즘이나 안전 디자인을 정의합니다(예: 안전 수축식, 압력 작동식)"
     language:
       name: 언어
       description: "사용되는 언어 또는 호환되는 언어(예: 영어, 다국어)를 명시합니다"
     language_version:
       name: 언어 버전
       description: "미디어 제품의 언어 버전(예: ENG-US, ARA-Arabic)을 지정합니다"
+    laptop_cable_type:
+      name: 노트북 케이블 유형
+      description: 노트북 내 케이블의 기능적 목적을 식별합니다
+    laptop_housing_part_type:
+      name: 노트북 하우징 부품 유형
+      description: "제공되는 외부 구성 요소(예: 하단 베이스, 팜레스트, 베젤)를 명시합니다"
     laser_color:
       name: 레이저 색상
       description: "레이저 포인터의 색상(예: 빨간색, 녹색 등)을 식별합니다"
@@ -3545,6 +4589,9 @@ ko:
     lectern_mounting_type:
       name: 독서대 장착 유형
       description: "성서대의 설치 스타일(예: 탁상이나 바닥)을 지정합니다."
+    led_light_mode:
+      name: LED 라이트 모드
+      description: "다양한 스펙트럼이나 강도를 결합하는 선택 가능한 작동 모드를 나열합니다(예: 블루, 레드, 블루 및 레드)"
     leg_color:
       name: 다리 색상
       description: "제품 다리의 색상(예: 흰색, 갈색)을 정의합니다"
@@ -3560,21 +4607,39 @@ ko:
     leg_sections:
       name: 다리 섹션 수
       description: "일반적으로 셀카봉과 같은 전자 액세서리의 레그 섹션 수(예: 5개 이상)를 나타냅니다"
+    legend_type:
+      name: 범례 유형
+      description: "마커가 빈 것인지 또는 숫자, 문자, 기호나 기타 표시가 사전 인쇄되어 있는지를 나타냅니다"
+    length_adjustability:
+      name: 길이 조정 가능성
+      description: 스트랩이나 체인 길이를 사용자가 변경할 수 있는지 또는 고정되어 있는지를 나타냅니다
     lens/slide_material:
       name: 렌즈/슬라이드 소재
       description: "렌즈나 슬라이드 제작에 사용되는 재료(예: 플라스틱이나 유리)를 지정합니다"
     lens_cap_compatible_device:
       name: 렌즈 덮개와 호환 가능한 장치
       description: "렌즈 캡과 호환되는 장비(예: 단안경 또는 디지털 카메라)를 지정합니다."
+    lens_case_accessories_included:
+      name: 포함된 렌즈 케이스 액세서리
+      description: "케이스와 함께 포장된 추가 아이템을 나열합니다(예: 핀셋, 용액 병)"
+    lens_characteristic:
+      name: 렌즈 특성
+      description: "렌즈에 적용된 특수 기능 특성(예: 블루라이트 차단, UV400)을 나열합니다"
     lens_coating:
       name: 렌즈 코팅
       description: "안경 렌즈의 코팅 유형(예: 반사 방지, 긁힘 방지)을 명시합니다"
     lens_color:
       name: 렌즈 색상
       description: "안경 렌즈의 색상(예: 노란색이나 검은색 등)을 지정합니다."
+    lens_color_combination:
+      name: 렌즈 색상 조합
+      description: 애너글리프 3D 안경에 사용되는 렌즈 색상 쌍을 지정합니다
     lens_configuration:
       name: 렌즈 구성
       description: "항목(예: 단일 또는 다중 돋보기 등)에서 렌즈 설정을 지정합니다."
+    lens_filter_category:
+      name: 렌즈 필터 범주
+      description: 렌즈를 틴트 밀도와 적합한 조명 조건에 따라 분류하는 유럽 표준 필터 범주(0-4)를 지정합니다
     lens_filter_effects:
       name: 렌즈 필터 효과
       description: "렌즈 필터가 제공하는 특정 효과(예: 색상 교정이나 매크로)에 대해 설명합니다."
@@ -3583,10 +4648,10 @@ ko:
       description: "카메라 렌즈의 필터 범주(예: 그라디언트, 중립 밀도)를 지정합니다."
     lens_kit_accessories_included:
       name: 렌즈 키트 액세서리 포함
-      description: "구매자가 무엇을 구매하는지 정확히 알 수 있고, 번들로 제공되는 추가 품목을 비교할 수 있도록 휴대폰 렌즈나 필터 키트와 함께 제공되는 추가 품목을 나열합니다."
+      description: "구매자가 무엇을 구매하는지 정확히 알 수 있고, 번들로 제공되는 추가 품목을 비교할 수 있도록 휴대폰 렌즈나 필터 키트와 함께 제공되는 추가 품목을 나열합니다"
     lens_material:
       name: 렌즈 소재
-      description: "광학 유리, 플라스틱, 알루미늄 합금 등 렌즈의 광학 요소나 하우징에 사용되는 주요 재료를 식별합니다."
+      description: "광학 유리, 플라스틱, 알루미늄 합금 등 렌즈의 광학 요소나 하우징에 사용되는 주요 재료를 식별합니다"
     lens_pattern:
       name: 렌즈 패턴
       description: 솔리드 또는 질감과 같은 안경 렌즈의 디자인 또는 시각적 외관을 설명합니다
@@ -3595,13 +4660,19 @@ ko:
       description: "안경의 렌즈 편광 유형(예: 사진 편광)을 나타냅니다"
     lens_protector_coverage_style:
       name: 렌즈 보호 커버 스타일
-      description: 휴대폰 카메라 렌즈 보호기의 물리적 형태 요소 또는 커버리지 디자인을 정의합니다.
+      description: 휴대폰 카메라 렌즈 보호기의 물리적 형태 요소 또는 커버리지 디자인을 정의합니다
     lens_protector_features:
       name: 렌즈 보호 기능
-      description: 보호자가 제공하는 특수 기능을 나열합니다.
+      description: 보호자가 제공하는 특수 기능을 나열합니다
+    lens_refractive_index:
+      name: 렌즈 굴절률
+      description: "렌즈 두께 및 무게와 직접적으로 상관관계가 있는 수치 굴절률을 지정합니다(예: 1.50, 1.60, 1.67)"
     lens_storage_type:
       name: 저장 보관 타입
       description: "렌즈 케이스, 렌즈 파우치 등 카메라 렌즈 보관 유형을 설명합니다"
+    lens_tint_type:
+      name: 렌즈 틴트 유형
+      description: 취급 가시성이나 미용 목적으로 렌즈에 적용된 틴트를 설명합니다
     lens_type:
       name: 렌즈 유형
       description: "안경 제품의 렌즈 유형(예: 편광 또는 누진)을 명시합니다"
@@ -3641,6 +4712,9 @@ ko:
     light_pattern:
       name: 조명 패턴
       description: 기하학적 또는 무지개와 같은 조명 제품의 시각적 테마를 정의합니다
+    light_rejection_type:
+      name: 빛 차단 유형
+      description: 스크린이 주변광 또는 천장 조명을 차단하는지 여부와 방법을 나타내어 밝은 환경에서 이미지 대비를 개선합니다
     light_source:
       name: 광원
       description: "제품에 사용된 전구의 종류(예: LED, 형광등)를 식별합니다"
@@ -3650,6 +4724,9 @@ ko:
     light_temperature:
       name: 빛 온도
       description: "광원의 색상 특성(예: 온백색 또는 일광)을 정의합니다"
+    light_therapy_device_form_factor:
+      name: 광선 치료 장치 형태
+      description: "장치의 물리적 스타일 또는 구성을 설명합니다(예: 패널, 마스크, 핸드헬드)"
     light_type:
       name: 조명 유형
       description: "선박에 사용되는 특정 유형의 조명(예: 항해, 수중)을 식별합니다."
@@ -3659,6 +4736,9 @@ ko:
     lighting_options:
       name: 조명 옵션
       description: "간판의 조명 유형(예: 조명 또는 비조명)을 지정합니다."
+    lighting_type:
+      name: 조명 유형
+      description: 헤드셋의 내장 조명 기능을 설명합니다
     line/rope_type:
       name: 밧줄/로프 유형
       description: "앵커 라인 또는 로프의 구성 스타일(예: 3가닥 또는 이중 브레이드)을 식별합니다."
@@ -3668,15 +4748,30 @@ ko:
     liner_features:
       name: 라이너 기능
       description: "기저귀의 특성(예: 누출 방지 또는 저자극성 등)을 설명합니다."
+    lip_balm_tint_level:
+      name: 립밤 틴트 수준
+      description: 밤이 제공하는 틴트나 색상 발색 수준을 분류합니다
+    lip_gloss_applicator_type:
+      name: 립글로스 어플리케이터 유형
+      description: 적용 용이성과 사용자 선호도에 영향을 미치는 립글로스와 함께 포함된 어플리케이터 스타일을 식별합니다
     lip_gloss_effect:
       name: 립글로스 효과
       description: "립 글로스가 제공하는 효과 또는 마무리(예: 스무딩, 플럼핑)를 설명합니다"
+    lip_gloss_formulation:
+      name: 립글로스 제형
+      description: 립글로스의 주요 질감이나 형식을 정의합니다
     lip_liner_design:
       name: 립라이너 디자인
       description: 개폐식 또는 고정식과 같은 립 라이너 유형을 식별합니다
+    lip_makeup_opacity:
+      name: 립 메이크업 불투명도
+      description: 제품이 적용되었을 때 커버리지나 불투명도 수준을 나타냅니다
     lip_plate_material:
       name: 립 플레이트 소재
       description: "플루트의 립 플레이트에 사용되는 재료(예: 은 또는 나무)를 식별합니다."
+    lipstick_coverage:
+      name: 립스틱 커버리지
+      description: "립스틱이 제공하는 색상 불투명도 수준을 설명합니다(예: 시어, 중간, 풀)"
     lipstick_effect:
       name: 립스틱 효과
       description: "립스틱이 제공하는 효과 또는 마무리(예: 스무딩, 플럼핑)를 설명합니다"
@@ -3710,6 +4805,9 @@ ko:
     locking_mechanism:
       name: 잠금 메커니즘
       description: "일반적으로 안전 제품에 사용되는 잠금 유형(예: 자동 닫기, 슬라이드)을 명시합니다"
+    logic_family:
+      name: 로직 패밀리
+      description: IC의 반도체 로직 패밀리 또는 기술을 식별합니다
     lovibond:
       name: 로비본드
       description: "양조 곡물과 맥아의 색 농도(예: 연한 색, 어두운 색)를 나타냅니다."
@@ -3722,6 +4820,9 @@ ko:
     lubricant_dispenser_type:
       name: 윤활유 디스펜서 유형
       description: "윤활유의 포장이나 용기 유형(예: 드럼이나 병)을 식별합니다."
+    lubricant_effect:
+      name: 윤활제 효과
+      description: 콘돔의 윤활에 의해 제공되는 기능적 효과나 스타일을 나타냅니다
     lubricant_form:
       name: 윤활제 형태
       description: "윤활제의 농도(예: 젤 또는 페이스트)를 설명합니다."
@@ -3734,6 +4835,9 @@ ko:
     lyre/flip_folder_attachment_type:
       name: 리라/플립 보면대 부착 유형
       description: "음악 거문고 및 플립 폴더에 대한 부착 유형(예: 스트랩 또는 거문고 클램프)을 지정합니다."
+    m_2_drive_length_supported:
+      name: 지원되는 M.2 드라이브 길이
+      description: 인클로저 또는 어댑터가 수용할 수 있는 M.2 카드 길이를 명시합니다
     magnet_type:
       name: 자석 유형
       description: "제품에 사용된 자석 유형(예: 세라믹, 티타늄)을 식별합니다"
@@ -3742,7 +4846,10 @@ ko:
       description: "제품의 확대 배율(예: 1x 또는 100x)을 지정합니다."
     magsafe_compatibility:
       name: MagSafe 호환성
-      description: 액세서리가 Apple의 MagSafe 자석 부착 또는 충전 생태계를 지원하는지 여부를 나타냅니다.
+      description: 액세서리가 Apple의 MagSafe 자석 부착 또는 충전 생태계를 지원하는지 여부를 나타냅니다
+    makeup_brush_application:
+      name: 메이크업 브러시 적용
+      description: "브러시가 설계된 주요 화장품 용도나 영역을 지정합니다(예: 파운데이션, 아이섀도, 컨투어)"
     makeup_features:
       name: 메이크업 기능
       description: "화장품의 주요 특성(예: 고발색, 무향)을 강조합니다."
@@ -3752,21 +4859,51 @@ ko:
     mallet_material:
       name: 말렛 소재
       description: "타악기 망치에 사용되는 재료 유형(예: 황동이나 고무 등)을 식별합니다."
+    management_type:
+      name: 관리 유형
+      description: "쇼핑객이 제품 기능을 네트워크 요구 사항과 일치시킬 수 있도록 장치의 관리 가능성 수준을 설명합니다(예: 완전 관리형, 스마트 관리형, 비관리형)"
+    mandibular_device_fitting_method:
+      name: 하악 장치 맞춤 방법
+      description: 장치가 사용자의 치아에 맞춰지거나 성형되는 방법을 설명합니다
     mandolin_back_shape:
       name: 만돌린 뒷면 형태
       description: 평평한 뒷면 또는 아치형 윗면과 같이 만돌린 뒷면의 곡률과 디자인을 지정합니다
     manufacturer_type:
       name: 제조업체 유형
       description: "자동차 부품 또는 액세서리의 출처(예: 순정 또는 타사 등)를 명시합니다."
+    map_update_policy:
+      name: 지도 업데이트 정책
+      description: 장치에 대한 지도 업데이트가 어떻게 제공되거나 가격이 책정되는지 명시합니다
     marine_navigator_features:
       name: 해양 네비게이터 기능
       description: "해양 탐색 도구의 기능(예: 터치스크린 또는 방수)을 지정합니다."
+    marker_format:
+      name: 마커 형식
+      description: 마커의 물리적 스타일 또는 구조를 정의합니다
+    marker_text_color:
+      name: 마커 텍스트 색상
+      description: 마커 표면에 인쇄된 범례 또는 텍스트의 색상(마커 본체 색상과 구별됨)을 명시합니다
     marker_tip_design:
       name: 마커 팁 디자인
       description: "마커 끝의 모양(예: 총알이나 끌)을 설명합니다."
+    marquee_substrate:
+      name: 간판 기판
+      description: "아트워크가 인쇄되거나 함께 제공되는 물리적 매체를 지정합니다(예: 투광 필름, 역방향 인쇄 아크릴, 비닐 데칼)"
+    mascara_brush_shape:
+      name: 마스카라 브러시 모양
+      description: 적용과 결과에 크게 영향을 미치는 내장 프라이머 완드나 브러시의 모양이나 디자인을 지정합니다
     mascara_effect:
       name: 마스카라 효과
       description: "마스카라의 의도된 결과 또는 특징(예: 컬링, 연장)을 설명합니다"
+    mascara_formulation:
+      name: 마스카라 제형
+      description: "질감, 착용감 및 제거에 영향을 미치는 제품의 기본 구성이나 특수 기술을 나타냅니다(예: 액체, 섬유 주입, 튜빙)"
+    mask_cushion_material:
+      name: 마스크 쿠션 재료
+      description: 마스크의 쿠션이나 밀봉에 사용되는 특정 재료를 상세히 설명합니다
+    mask_size:
+      name: 마스크 크기
+      description: 제조업체가 제공하는 크기 지정을 지정합니다
     mask_type:
       name: 마스크 유형
       description: "일반적으로 호흡기 관리를 위한 마스크 디자인(예: 구강, 비강)을 명시합니다"
@@ -3779,6 +4916,9 @@ ko:
     massage_area:
       name: 마사지 부위
       description: "제품이 마사지하도록 설계된 신체 부위(예: 발 또는 목)를 명시합니다"
+    massage_mechanism_dimensionality:
+      name: 마사지 메커니즘 차원성
+      description: "마사지 롤러가 작동하는 움직임 축의 수를 지정합니다(예: 2D, 3D, 4D, 5D)"
     massage_stone_texture:
       name: 마사지 스톤 질감
       description: "마사지 스톤의 표면 느낌(예: 매끄럽거나 거친 느낌)을 표현합니다."
@@ -3812,9 +4952,18 @@ ko:
     mattress_features:
       name: 매트리스 기능
       description: "매트리스의 특별한 특성(예: 저자극성, 냉각 기능 등)을 강조합니다."
+    maximum_bit_depth:
+      name: 최대 비트 깊이
+      description: 컨버터가 지원하는 최대 디지털 워드 길이(비트 단위)를 정의하여 다이나믹 레인지와 해상도에 영향을 미칩니다
     maximum_magnification:
       name: 최대 배율
       description: "현미경이 달성할 수 있는 가장 높은 확대 비율(예: 10x 또는 100x)을 나타냅니다."
+    maximum_reel_diameter_supported:
+      name: 지원 최대 릴 직경
+      description: 데크가 수용할 수 있는 가장 큰 릴 직경을 지정합니다
+    measured_parameters:
+      name: 측정 매개변수
+      description: 장치가 측정하거나 표시할 수 있는 전기 또는 배터리 메트릭을 나열합니다
     measuring_method:
       name: 측정 방식
       description: "체지방을 정량화하는 데 사용되는 기술(예: 광학, 캘리퍼스)을 정의합니다"
@@ -3839,6 +4988,12 @@ ko:
     media_format:
       name: 미디어 형식
       description: "장치에 대해 호환 가능한 미디어 형식(예: 비닐 또는 VHS)을 정의합니다"
+    media_physical_size:
+      name: 미디어 물리적 크기
+      description: 블랭크 미디어의 표준화된 물리적 크기 또는 폼 팩터를 명시합니다
+    media_player_form_factor:
+      name: 미디어 플레이어 폼 팩터
+      description: 장치의 물리적 스타일을 설명하여 쇼핑객이 컴팩트 스틱과 대형 셋톱 박스 중에서 선택할 수 있도록 돕습니다
     media_section:
       name: 미디어 섹션
       description: "신문이나 잡지의 특정 카테고리(예: 스포츠, 정치)를 식별합니다."
@@ -3848,9 +5003,15 @@ ko:
     medical_alarm_features:
       name: 의료용 알람 기능
       description: "의료 경보 시스템의 기능(예: 긴 배터리 수명 또는 양방향 통신)을 설명합니다."
+    medical_device_certification:
+      name: 의료 기기 인증
+      description: "생체 인식 모니터가 준수하는 규제 승인이나 표준을 나열합니다(예: CE, FDA 510(k))"
     medical_identification_type:
       name: 의료용 인식표 유형
       description: 팔찌나 목걸이 등 의료 신분증의 형태를 식별합니다
+    medical_symbol:
+      name: 의료 기호
+      description: 응급 구조대원의 빠른 인식을 돕기 위해 보석이나 태그에 표시된 기호를 지정합니다
     medical_syringe_purpose:
       name: 의료용 주사기 용도
       description: "의료용 주사기의 용도(예: 주사 또는 관개 등)를 식별합니다."
@@ -3875,6 +5036,9 @@ ko:
     memory_form_factor:
       name: 메모리 폼 팩터
       description: "메모리 모듈의 물리적 레이아웃(예: DIMM 또는 마이크로 DIMM)을 명시합니다"
+    memory_rank:
+      name: 메모리 랭크
+      description: "모듈의 랭크 레이아웃(칩이 구성되는 방식)을 나타내며, 호환성과 성능 조정에 영향을 미칩니다"
     memory_storage_type:
       name: 메모리 저장 유형
       description: "카메라에 사용되는 메모리 저장 유형(예: 마이크로 SD 카드 또는 내장 메모리)을 식별합니다."
@@ -3884,6 +5048,15 @@ ko:
     menstrual_cup_shape:
       name: 생리컵 모양
       description: "월경 컵의 형태(예: 종형, V자형)를 설명합니다"
+    menstrual_cup_size:
+      name: 생리컵 크기
+      description: "제조업체가 라벨을 붙인 크기 범주를 나타냅니다(예: 소형, 사이즈 1)"
+    menstrual_cup_stem_type:
+      name: 생리컵 스템 유형
+      description: 컵의 제거 스템이나 손잡이의 디자인을 지정합니다
+    mesh_networking_technology:
+      name: 메시 네트워킹 기술
+      description: 액세스 포인트가 메시 기능을 지원하는지 여부와 사용된 표준이나 프로토콜을 지정합니다
     mesh_type:
       name: 메쉬 유형
       description: "메쉬 원단의 스타일이나 구조를 지정하여 의도된 용도나 특성(예: 에슬레틱, 브러시드)을 나타냅니다"
@@ -3905,12 +5078,18 @@ ko:
     microphone_design:
       name: 마이크 설계
       description: "마이크의 설계 범주(예: 콘덴서, 다이나믹)를 정의합니다"
+    microphone_preamp_form_factor:
+      name: 마이크 프리앰프 폼 팩터
+      description: 설치 또는 사용을 위한 마이크 프리앰프의 물리적 스타일 또는 인클로저 형식을 식별합니다
     microphone_thread:
       name: 마이크 스레드
       description: "마이크의 스레드 사이즈(예: 1/4\"-20, M6)를 명시합니다"
     microphone_type:
       name: 마이크 유형
       description: "사용되는 마이크 기술(예: 콘덴서 또는 다이내믹)을 정의합니다"
+    microphone_windshield_type:
+      name: 마이크 방풍 유형
+      description: "방풍막의 구조 스타일을 지정하여 (예: 폼 슬립온, 털이 많은 데드캣, 블림프, 바스켓) 사용자가 적절한 바람 소음 솔루션을 빠르게 선택할 수 있도록 합니다"
     microscope_features:
       name: 현미경 기능
       description: "현미경의 고유한 측면(예: 휴대성, 메모리 기능)을 강조합니다."
@@ -3920,15 +5099,27 @@ ko:
     midi_connectivity:
       name: 미디 연결
       description: "악기의 MIDI 연결 유형(예: MIDI 입력 또는 USB MIDI)을 식별합니다."
+    mimo_technology:
+      name: MIMO 기술
+      description: 라우터가 지원하는 다중 입력 다중 출력 무선 기술을 나타냅니다
     mineral_class:
       name: 광물 분류
       description: "광물의 특정 범주(예: 산화물이나 규산염)를 식별합니다."
+    mineral_compound_form:
+      name: 미네랄 화합물 형태
+      description: "흡수에 영향을 미치는 미네랄의 화학적 형태나 킬레이트를 지정합니다(예: 구연산염, 글리시네이트)"
     minimum_magnification:
       name: 최소 배율
       description: "현미경 렌즈의 가장 낮은 배율 수준(예: 1x 또는 0.5x)을 나타냅니다."
     mirror_handle_design:
       name: 거울 손잡이 디자인
       description: "치과용 거울의 핸들 스타일(예: 양면 또는 단일 종단)을 설명합니다."
+    mirror_sides:
+      name: 거울 면
+      description: "거울이 가진 반사 표면의 수나 구성을 나타냅니다(예: 단면, 양면, 3단 접이식)"
+    mist_application_area:
+      name: 미스트 적용 부위
+      description: "미스트의 의도된 사용 영역을 나타냅니다(예: 바디, 헤어, 룸, 린넨)"
     mixer_type:
       name: 믹서 유형
       description: "디자인에 따라 DJ 믹서(예: 디지털, 스크래치)를 분류합니다"
@@ -3938,12 +5129,15 @@ ko:
     mobile_movement:
       name: 모빌 움직임 방식
       description: "아기 모빌의 메커니즘(예: 배터리 작동식, 태엽식)을 설명합니다"
+    mobile_phone_accessories_included:
+      name: 휴대전화 포함 액세서리
+      description: 쇼핑객이 어떤 구성품이 포함되어 있는지 정확히 알 수 있도록 휴대전화 액세서리 세트에 제공되는 보조 항목을 나열합니다
     mobile_phone_case_features:
       name: 휴대전화 케이스 기능
       description: "휴대폰 케이스의 고유한 특성(예: 충격 방지, 꼭 맞는 핏)을 설명합니다."
     mobile_phone_connector_type:
       name: 휴대폰 커넥터 종류
-      description: 교체용 충전 또는 데이터 포트 모듈의 인터페이스 표준을 식별합니다.
+      description: 교체용 충전 또는 데이터 포트 모듈의 인터페이스 표준을 식별합니다
     mobile_phone_form_factor:
       name: 휴대폰 폼 팩터
       description: 핸드셋의 물리적 디자인 스타일.
@@ -3953,15 +5147,27 @@ ko:
     mobility_scooter_type:
       name: 전동 스쿠터 유형
       description: "다양한 유형의 이동성 스쿠터(예: 휴대용, 3륜)를 구별합니다"
+    mobility_type:
+      name: 이동성 유형
+      description: "이동성에 영향을 미치는 베이스 스타일을 나타내며, 고정 발, 롤링 캐스터 또는 교체 가능 옵션을 구별합니다"
     model_control_technology:
       name: 모델 제어 기술
       description: "모형 열차의 제어 시스템 유형(예: 무선 또는 디지털)을 지정합니다."
+    model_gender_representation:
+      name: 모델 성별 표현
+      description: "인체 모델이 남성, 여성 또는 유니섹스 해부학적 구조를 묘사하는지를 지정합니다"
     model_train_accessory_type:
       name: 모형 기차 액세서리 유형
       description: "기차 모형 액세서리(예: 조명, 경관재)를 분류합니다."
     model_train_theme:
       name: 모형 기차 테마
       description: "모형 기차 세트의 설정이나 시대(예: 현대 또는 공상 과학)를 식별합니다."
+    modem_form_factor:
+      name: 모뎀 폼 팩터
+      description: "모뎀의 물리적 디자인 스타일을 설명합니다(예: USB 동글, 데스크톱 유닛, M.2 모듈)"
+    modem_technology:
+      name: 모뎀 기술
+      description: "모뎀이 서비스 공급자 네트워크에 액세스하는 데 사용하는 주요 전송 매체나 네트워킹 기술을 지정합니다(예: 케이블/DOCSIS, DSL, 셀룰러)"
     modulation_method:
       name: 변조 방식
       description: "전자 장치에서 신호를 변조하는 데 사용되는 기술(예: AM 또는 PCM)을 명시합니다"
@@ -3995,6 +5201,12 @@ ko:
     monitor_type:
       name: 모니터 유형
       description: "카메라 모니터 유형(예: 터치스크린, HDR)을 지정합니다."
+    monitoring_method:
+      name: 모니터링 방법
+      description: 장치가 혈당 수치를 얻기 위해 사용하는 생리학적 기술을 식별합니다
+    monitoring_service_type:
+      name: 모니터링 서비스 유형
+      description: "시스템이 24시간 전문적으로 모니터링되는지, 자체 모니터링되는지, 또는 모니터링되지 않는지를 나타냅니다"
     monocular_design:
       name: 단안경 디자인
       description: "단안경의 기능(예: 줌 또는 야간 시야)을 식별합니다."
@@ -4016,6 +5228,9 @@ ko:
     motor_starting_method:
       name: 모터 시동 방식
       description: "모터를 시동하는 데 사용되는 방법(예: DOL 또는 자동 변압기)을 식별합니다."
+    motor_type:
+      name: 모터 유형
+      description: "드릴이 브러시 또는 브러시리스 모터를 사용하는지 지정하여 소음, 수명 및 가격에 영향을 미칩니다"
     motor_vehicle_placement:
       name: 자동차 위치
       description: "부품이 장착되도록 설계된 위치(예: 차량의 전면 또는 후면)를 식별합니다."
@@ -4037,15 +5252,36 @@ ko:
     mount/stand_features:
       name: 마운트/스탠드 기능
       description: "제품 마운트나 스탠드의 구체적인 특성(예: 각도 조절 가능, 접이식)을 자세히 설명합니다."
+    mount_installation_point:
+      name: 마운트 설치 지점
+      description: 마운트가 차량이나 장비의 어디에 설치되는지 나타냅니다
+    mount_interface_system:
+      name: 마운트 인터페이스 시스템
+      description: "마운트에 통합된 독점 또는 산업 표준 연결 플랫폼(예: RAM AMPS 패턴, Quad Lock)을 식별합니다"
     mount_material:
       name: 마운트 소재
       description: "제품의 마운트 구성(예: 스테인리스 스틸 또는 플라스틱)을 지정합니다."
     mounting_hardware:
       name: 장착 하드웨어
       description: "제품을 설치하거나 장착하는 데 사용되는 하드웨어 유형(예: 나사 또는 흡입 컵)을 식별합니다."
+    mounting_interface_pattern:
+      name: 마운팅 인터페이스 패턴
+      description: "마운트를 무선 크래들, 브래킷 또는 볼 시스템에 연결하는 데 사용되는 기계적 인터페이스 또는 구멍 패턴을 식별합니다"
+    mounting_interface_standard:
+      name: 장착 인터페이스 표준
+      description: "홀더 또는 크래들이 지원하는 장착 패턴 또는 인터페이스(예: AMPS, VESA 75, RAM B 볼)를 명시합니다"
     mounting_mechanism:
       name: 장착 메커니즘
-      description: 휴대폰이나 카메라가 스틱이나 홀더에 부착되는 방식을 정의합니다.
+      description: 휴대폰이나 카메라가 스틱이나 홀더에 부착되는 방식을 정의합니다
+    mounting_style:
+      name: 장착 스타일
+      description: 푸시 버튼이 제어판에 고정되는 방법을 지정하여 설치 방법과 패널 두께 호환성에 영향을 미칩니다
+    mounting_technology:
+      name: 장착 기술
+      description: IC가 스루홀 또는 표면 실장 조립용으로 설계되었는지 나타냅니다
+    mounting_thread_size:
+      name: 장착 나사 크기
+      description: "제품에 제공되는 표준 삼각대 또는 액세서리 나사 크기를 나타냅니다(예: 1/4\"-20)"
     mounting_type:
       name: 장착 유형
       description: "제품이 설치되거나 부착되는 방식(예: 클립온 또는 흡입 컵)을 명시합니다"
@@ -4079,6 +5315,9 @@ ko:
     multi_gpu_technology:
       name: 다중 GPU 기술
       description: '여러 GPU를 지원하는 마더보드의 기능(예: 지원되지 않음, CrossFireX)을 나타냅니다 '
+    multiplexer_technology:
+      name: 멀티플렉서 기술
+      description: "멀티플렉서가 사용하는 기본 신호나 파장 기술을 지정합니다(예: CWDM, DWDM)"
     muscle_stimulator_design:
       name: 근육 자극기 디자인
       description: "근육 자극기 유형(예: 다리 밴드 또는 스티커 플레이트)을 식별합니다."
@@ -4094,6 +5333,9 @@ ko:
     nail_art_items_included:
       name: 네일 아트 품목 포함
       description: 데칼이나 도트 도구와 같은 키트의 특정 네일 아트 액세서리를 식별합니다
+    nail_art_medium_type:
+      name: 네일 아트 매체 유형
+      description: 네일 아트 용품의 주요 매체나 재료 형식을 지정합니다
     nail_care_features:
       name: 네일 케어 기능
       description: "네일 케어 제품의 특정 품질(예: 칩 방지 또는 빠른 건조)을 설명합니다."
@@ -4133,6 +5375,9 @@ ko:
     neckline:
       name: 네크라인
       description: "의복의 목 부분 모양(예: V넥 또는 보트)을 설명하는 데 사용됩니다"
+    needle_coating_type:
+      name: 침 코팅 유형
+      description: 활주 또는 치료 특성을 개선하기 위해 침 샤프트에 적용되는 표면 코팅을 지정합니다
     needle_eye_type:
       name: 바늘 구멍 유형
       description: "바늘귀의 크기와 스타일(예: 큰 형태 또는 갈라진 형태)을 설명합니다."
@@ -4154,6 +5399,9 @@ ko:
     negative/slide_storage_type:
       name: 네거티브 사진/슬라이드 보관함 유형
       description: "사진 네거티브나 슬라이드를 저장하는 방법(예: 아카이브 보관 상자, 슬라이드 회전식 슬라이드)을 지정합니다."
+    nema_enclosure_rating:
+      name: NEMA 인클로저 등급
+      description: "환경 위험으로부터의 보호를 정의하는 NEMA 유형 분류(예: Type 4X, Type 12)를 명시합니다"
     net_material:
       name: 네트 소재
       description: "네트 기반 제품에 사용되는 재료 유형(예: 나일론 또는 폴리에스테르)을 식별합니다."
@@ -4163,12 +5411,18 @@ ko:
     network_cable_interface:
       name: 네트워크 케이블 인터페이스
       description: "네트워크 케이블의 커넥터 유형(예: BNC, MPO/MTP)을 명시합니다"
+    network_layer_support:
+      name: 네트워크 레이어 지원
+      description: 스위치가 제공하는 최고 OSI 레이어 스위칭 또는 라우팅 기능을 나타냅니다
     network_protocols_supported:
       name: 지원되는 네트워크 프로토콜
       description: "장치가 지원하는 네트워킹 표준(예: TCP/IP, DNS)을 정의합니다"
     networking_standards:
       name: 네트워킹 표준
       description: '네트워킹 장치가 지원하는 프로토콜(예: IEEE 802.3)을 명시합니다 '
+    neutral_density_rating:
+      name: 중성 밀도 등급
+      description: 일반적인 ND 계수 또는 스톱 감소로 표현되는 ND 필터의 광학 밀도 또는 강도를 정의합니다
     nightgown_style:
       name: 잠옷 스타일
       description: "잠옷 스타일(예: 베이비돌, 슈미즈)을 명시합니다"
@@ -4184,15 +5438,27 @@ ko:
     nock_material:
       name: 노크 소재
       description: "화살표 노크에 사용되는 재료 유형(예: 알루미늄 또는 플라스틱)을 지정합니다."
+    noise_cancellation_technology:
+      name: 노이즈 캔슬링 기술
+      description: "헤드폰에서 사용되는 노이즈 감소 시스템 유형을 지정하여 쇼핑객이 능동, 수동 또는 적응형 노이즈 제어가 있는 모델을 식별할 수 있도록 돕습니다"
     noise_intensity:
       name: 소음 강도
       description: "제품(일반적으로 불꽃놀이)에서 생성되는 소리의 수준(예: 낮음, 높음)을 설명합니다."
+    noise_reduction_system:
+      name: 노이즈 감소 시스템
+      description: 데크가 지원하는 내장 아날로그 노이즈 감소 표준을 지정합니다
     notepad_cover_type:
       name: 메모장 표지 타입
       description: 하드커버 또는 페이퍼백 등 메모장의 커버 종류를 식별합니다
     notepad_design:
       name: 메모장 디자인
       description: "나선형 제본, 디스크 제본 등 메모장의 제본이나 레이아웃을 설명합니다"
+    nozzle_coating:
+      name: 노즐 코팅
+      description: 내마모성을 개선하거나 필라멘트 접착을 줄이기 위해 노즐에 적용되는 표면 처리를 지정합니다
+    nozzle_thread_type:
+      name: 노즐 나사 유형
+      description: "노즐을 부착하는 데 사용되는 기계식 나사 또는 장착 표준을 정의합니다(예: M6, MK8, E3D V6, Volcano)"
     nozzle_type:
       name: 노즐 유형
       description: "치과용 워터젯용 노즐 유형(예: 치열 교정, 혀 클리너)을 명시합니다"
@@ -4235,6 +5501,9 @@ ko:
     occasion_style:
       name: 행사 스타일
       description: "상황에 따라 제품을 분류하는 데 도움이 됩니다(예: 캐주얼, 드레스)"
+    odor_remover_application_area:
+      name: 냄새 제거제 적용 부위
+      description: 냄새 제거를 위해 제품이 적용되도록 의도된 곳을 지정합니다
     office_cart_features:
       name: 사무실 카트 기능
       description: "사무용 카트의 특정 특성(예: 조정 가능한 선반 또는 잠금 가능한 바퀴)을 설명합니다."
@@ -4244,6 +5513,9 @@ ko:
     office_supply_material:
       name: 사무용품 소재
       description: "사무용품의 주요 소재(예: 가죽, 판지)를 식별합니다."
+    oil_extraction_method:
+      name: 오일 추출 방법
+      description: "주요 오일이 처리되거나 추출된 방법을 지정합니다(예: 냉압착, 정제)"
     oil_type:
       name: 오일 종류
       description: "제품에 사용되는 오일 유형(예: 파라핀, 등유)을 명시합니다"
@@ -4270,10 +5542,22 @@ ko:
       description: "기기에서 사용하는 시스템 소프트웨어(예: iOS 또는 ChromeOS)를 정의합니다"
     operating_system_compatibility:
       name: 운영 체제 호환성
-      description: 원격 셔터가 기본적으로 지원하는 운영 체제를 식별합니다.
+      description: 원격 셔터가 기본적으로 지원하는 운영 체제를 식별합니다
+    operation_mechanism:
+      name: 작동 메커니즘
+      description: "도구가 장력을 가하고 타이를 절단하는 방법(예: 수동, 공압, 자동)을 설명합니다"
     operation_method:
       name: 작동 방식
       description: "일반적으로 차고문 개폐 장치의 제품 작동 방식(예: 벨트 구동, 유압)을 정의합니다"
+    optical_disc_recordability:
+      name: 광 디스크 기록 가능성
+      description: 광 디스크가 단일 기록 또는 재기록 가능하고 단일 층 또는 이중 층인지 정의합니다
+    optical_drive_form_factor:
+      name: 광학 드라이브 폼 팩터
+      description: 드라이브의 물리적 크기와 설치 스타일을 정의합니다
+    optical_drive_loading_mechanism:
+      name: 광학 드라이브 로딩 메커니즘
+      description: "디스크가 드라이브에 삽입되는 방법(예: 트레이 로딩, 슬롯 로딩, 탑 로딩)을 나타냅니다"
     optical_drive_type:
       name: 광학 드라이브 유형
       description: "장치의 광학 드라이브가 읽고 쓸 수 있는 미디어 형식(예: CD-ROM, DVD-ROM)을 식별합니다"
@@ -4283,12 +5567,21 @@ ko:
     optical_zoom:
       name: 광학 줌
       description: "카메라의 줌 기능(예: 줌 없음, 30배 이상)을 나타냅니다."
+    oral_care_function:
+      name: 구강 관리 기능
+      description: "제품이 다루는 주요 치과 또는 구강 건강 혜택을 강조합니다(예: 미백, 민감성 완화, 잇몸 건강)"
+    oral_care_items_included:
+      name: 포함된 구강 관리 제품
+      description: 세트에 포함된 구강 관리 제품의 유형을 나열합니다
     organizer_type:
       name: 정리함 유형
       description: "차량 보관 카테고리(예: 컵홀더, 글러브박스)를 지정합니다."
     orientation:
       name: 방향
       description: "제품의 의도된 위치(예: 가로, 세로)를 명시합니다"
+    orthotic_coverage_length:
+      name: 교정기 적용 길이
+      description: "아치 지지대가 발바닥을 얼마나 덮는지 정의합니다(예: 전체 길이, 3/4 길이, 힐 컵)"
     outdoor_equipment_features:
       name: 아웃도어 장비 기능
       description: "아웃도어 장비의 고유한 특성(예: 내후성, 휴대성)을 식별합니다."
@@ -4310,18 +5603,36 @@ ko:
     output_connection:
       name: 출력 연결
       description: "오디오 케이블의 출력 연결 유형(예: 3.5mm 또는 RCA)을 명시합니다"
+    output_connection_type:
+      name: 출력 연결 유형
+      description: 컨버터의 출력 측에서 제공되는 커넥터 또는 인터페이스 표준을 명시합니다
     output_level:
       name: 출력 레벨
       description: "악기 액세서리의 출력 레벨(예: 낮음 또는 높음)을 설명합니다."
+    output_signal_interface:
+      name: 출력 신호 인터페이스
+      description: 컨버터가 제공하는 출력 연결 유형을 명시합니다
+    output_video_interface:
+      name: 출력 비디오 인터페이스
+      description: 스캔 컨버터가 출력으로 제공하는 비디오 커넥터 유형을 명시합니다
     output_waveform:
       name: 출력 파형
       description: "전자 발진기가 생성하는 신호 유형(예: 톱니파 또는 사인파)을 명시합니다"
     oven_accessories_included:
       name: 오븐 액세서리 포함
       description: "포함된 추가 오븐 구성 요소(예: 로스팅 팬 또는 와이어 랙)에 대해 자세히 설명합니다"
+    overclock_profile_support:
+      name: 오버클록 프로필 지원
+      description: "모듈에 저장된 표준화된 오버클로킹 프로필(예: Intel XMP, AMD EXPO)을 식별합니다"
+    oxygen_cylinder_outlet_standard:
+      name: 산소 실린더 출구 표준
+      description: 실린더 밸브의 CGA 출구 연결 표준을 지정합니다
     oxygen_tank_valve_type:
       name: 산소 탱크 밸브 유형
       description: "산소 탱크에 사용되는 밸브(예: 토글, 포스트 밸브)를 명시합니다"
+    pa_rating:
+      name: PA 등급
+      description: "지속적인 색소 침착(PPD) 방법을 기반으로 선크림의 UVA 보호 등급을 지정합니다(예: PA+, PA+++, PA++++)"
     pacifier/teether_design:
       name: 고무 젖꼭지/치발기 디자인
       description: "유아용 노리개 젖꼭지와 치아발육기의 디자인(예: 고리형, 치아 교정)을 설명합니다"
@@ -4334,9 +5645,15 @@ ko:
     pad_display_profile:
       name: 패드 디스플레이 프로필
       description: "서명 캡처 패드의 컬러 표시(예: 단색, 컬러)에 대해 설명합니다."
+    pad_thickness:
+      name: 패드 두께
+      description: "패드의 전체 두께 프로필을 분류합니다(예: 초박형, 맥시)"
     pad_type:
       name: 패드 유형
       description: "제품의 패드 유형(예: 세탁기 사용 가능, 교체 가능)을 명시합니다"
+    pad_wing_style:
+      name: 패드 날개 스타일
+      description: 생리대가 부착 및 누출 방지를 위한 측면 날개를 포함하는지 나타냅니다
     paddle/oar_material:
       name: 패들/노 재료
       description: 알루미늄이나 목재와 같이 노나 노를 만드는 데 사용되는 재료를 식별합니다
@@ -4352,6 +5669,12 @@ ko:
     page_size:
       name: 페이지 사이즈
       description: "제품의 크기(예: 11\" x 17\" 또는 A4)를 결정합니다."
+    pager_application:
+      name: 호출기 용도
+      description: 호출기가 의도된 주요 사용 사례 또는 환경을 식별합니다
+    pain_reduction_technology:
+      name: 통증 감소 기술
+      description: "제모 중 불편함을 줄이는 편안함 지향 기능을 식별합니다(예: 쿨링, 마사지 롤러)"
     paint/dye_form:
       name: 페인트/염료 형태
       description: "페인트나 염료의 농도나 유형(예: 젤이나 스프레이)을 설명합니다"
@@ -4397,9 +5720,15 @@ ko:
     panel_termination:
       name: 패널 종단
       description: "패치 패널의 종단 방법(예: RJ-45 또는 110 펀치 다운)을 정의합니다"
+    panel_transparency:
+      name: 패널 투명도
+      description: 텐트가 태닝 중 빛이 들어올 수 있도록 지붕이나 측면에 투명 패널이나 창문을 포함하는지 설명합니다
     pants_length_type:
       name: 바지 길이 유형
       description: "바지의 길이(예: 크롭 또는 롱)를 정의하는 데 사용됩니다"
+    panty_liner_style:
+      name: 팬티라이너 스타일
+      description: "팬티라이너의 모양이나 스타일을 정의합니다(예: 끈, 곡선형, 롱)"
     pantyhose_style:
       name: 팬티스타킹 스타일
       description: "팬티스타킹의 디자인이나 기능성을 설명합니다(예: 발 없음, 임산부용)"
@@ -4436,6 +5765,9 @@ ko:
     parking_sign_design:
       name: 주차 표지판 디자인
       description: "주차 표시의 목적(예: 적재 구역, 예약된 주차 공간)을 식별합니다."
+    pass_duration:
+      name: 패스 기간
+      description: 여행 패스 또는 티켓의 유효 기간이나 수명을 지정합니다
     passband:
       name: 통과 대역
       description: "전자 필터가 통과할 수 있는 주파수 대역(예: 고역 통과)을 명시합니다"
@@ -4448,15 +5780,30 @@ ko:
     patch_shape:
       name: 패치 모양
       description: "패치의 형태 또는 디자인(예: 동물 또는 기하학적 무늬)를 설명합니다."
+    patella_opening_design:
+      name: 슬개골 개구부 디자인
+      description: 보조기에 개방형 또는 폐쇄형 슬개골 영역이나 안정화 링이 있는지를 지정합니다
     pattern:
       name: 패턴
       description: "제품의 디자인이나 모티브(예: 꽃무늬나 줄무늬)를 설명합니다"
     pattern_distribution_format:
       name: 패턴 분포 형식
       description: "패턴이 전달되는 방식(예: PDF 또는 온라인 튜토리얼)을 식별합니다."
+    payment_mechanism_type:
+      name: 결제 메커니즘 유형
+      description: "플레이어가 기계를 활성화하는 방법을 식별합니다(예: 동전 작동, 카드 스와이프)"
+    pbx_system_type:
+      name: PBX 시스템 유형
+      description: PBX 제품의 전체 아키텍처를 정의합니다
+    pcb_surface_finish:
+      name: PCB 표면 마감
+      description: 노출된 구리 패드에 적용되는 보호 코팅을 지정합니다
     pcb_type:
       name: PCB 타입
       description: 강성 또는 유연성과 같은 인쇄 회로 기판(PCB) 유형을 식별합니다
+    pcie_lane_configuration:
+      name: PCIe 레인 구성
+      description: "라이저가 지원하는 물리적 레인 너비(예: x1, x4, x8, x16)를 명시하며, 슬롯 크기와 전기적 대역폭을 나타냅니다"
     pedal_polarity:
       name: 페달 극성
       description: "키보드 페달의 전환 메커니즘이 눌려지지 않은 기본 상태에서 작동하는 방식(예: NC(상시 닫힘))을 지정합니다."
@@ -4592,12 +5939,18 @@ ko:
     phase_type:
       name: 상 종류
       description: "모터 컨트롤러의 위상 유형(예: 단상 또는 2상)을 식별합니다."
+    phone_camera_position:
+      name: 휴대폰 카메라 위치
+      description: 휴대폰 내 카메라 모듈의 물리적 위치나 기능을 나타냅니다
     phone_card_delivery_format:
       name: 전화카드 전달 형식
-      description: 선불 크레딧이 실제 스크래치 카드로 제공되는지 아니면 디지털 코드/바우처로 제공되는지 여부를 나타냅니다.
+      description: 선불 크레딧이 실제 스크래치 카드로 제공되는지 아니면 디지털 코드/바우처로 제공되는지 여부를 나타냅니다
+    phone_skin_coverage:
+      name: 휴대전화 스킨 적용 범위
+      description: 스킨 또는 랩이 휴대전화의 어느 부분을 덮도록 설계되었는지 지정합니다
     phone_strap_accessories_included:
       name: 휴대폰 스트랩 액세서리 포함
-      description: "어댑터 탭, 휴대폰 케이스, 파우치, 손목 가방 등 매력적인 액세서리나 스트랩 세트와 함께 제공되는 추가 구성 요소를 나열합니다."
+      description: "어댑터 탭, 휴대폰 케이스, 파우치, 손목 가방 등 매력적인 액세서리나 스트랩 세트와 함께 제공되는 추가 구성 요소를 나열합니다"
     photo_effects_type:
       name: 사진 효과 유형
       description: "카메라가 생성할 수 있는 사진 효과 유형(예: 빈티지, 세피아)을 식별합니다."
@@ -4640,15 +5993,27 @@ ko:
     pile_type:
       name: 파일 유형
       description: "카펫, 러그, 매트의 질감과 스타일(예: 플러시 천, 베르베르)을 정의합니다"
+    pillbox_schedule:
+      name: 약통 일정
+      description: "약통이 설계된 시간 체계 또는 라벨링 계획을 설명합니다(예: 매일, 매주, 오전/오후)"
     pillow_shape:
       name: 베개 모양
       description: "수유 베개의 형태 또는 윤곽(예: U자형)을 정의합니다"
     pin_size:
       name: 핀 크기
       description: "안전핀의 크기(예: 0 또는 00)를 지정합니다."
+    pin_tip_type:
+      name: 핀 팁 유형
+      description: "편안함, 안전성 및 고정력에 영향을 미치는 핀 팁의 디자인을 설명합니다"
     pinata_design:
       name: 피냐타 디자인
       description: "피냐타의 시각적 주제(예: 전통 또는 동물)를 설명합니다."
+    pinball_machine_edition:
+      name: 핀볼 머신 에디션
+      description: 핀볼 머신의 특정 생산 또는 컬렉터 에디션 계층을 식별합니다
+    pinball_machine_format:
+      name: 핀볼 머신 형식
+      description: "제품의 물리적 또는 디지털 형식을 지정합니다(예: 기계식, 가상, 탁상, 키트)"
     ping_pong_equipment_included:
       name: 탁구 장비 포함
       description: "세트에 포함된 탁구 장비 유형(예: 네트 또는 탁구 패들)을 지정합니다."
@@ -4666,10 +6031,7 @@ ko:
       description: "제품을 설치하거나 사용할 수 있는 위치(예: 벽, 바닥)를 식별합니다."
     plan_service_type:
       name: 요금제 서비스 유형
-      description: SIM 요금제가 데이터 전용인지 아니면 음성 및/또는 SMS 서비스를 포함하는지 정의합니다.
-    plan_type:
-      name: 요금제 유형
-      description: "선불 상품에 포함된 서비스 번들을 식별합니다(예: 음성 및 데이터, 데이터만)."
+      description: SIM 요금제가 데이터 전용인지 아니면 음성 및/또는 SMS 서비스를 포함하는지 정의합니다
     plant_characteristics:
       name: 식물 특성
       description: "식물의 구체적인 특성(예: 화초, 식용)을 정의합니다"
@@ -4703,6 +6065,9 @@ ko:
     playback_disc_formats:
       name: 재생 디스크 형식
       description: "DVD 또는 Blu-Ray 플레이어와 호환되는 디스크 형식(예: CD 오디오, JPEG)을 정의합니다"
+    playback_speed_supported:
+      name: 지원 재생 속도
+      description: 턴테이블 또는 레코드 플레이어가 작동할 수 있는 레코드 회전 속도를 나열합니다
     player/recorder_specialized_features:
       name: 플레이어/리코더 특화 기능
       description: "비디오 플레이어 또는 레코더의 특정 기능(예: AI 기반 또는 자녀 보호 기능)을 강조합니다."
@@ -4757,6 +6122,9 @@ ko:
     polar_pattern:
       name: 극성 패턴
       description: "마이크의 사운드 픽업 방향(예: 무지향성 또는 단일 지향성)을 나타냅니다"
+    polarity_configuration:
+      name: 극성 구성
+      description: "LED, 디스플레이 모듈 및 유사 장치와 관련된 내부 극성 배열을 설명합니다"
     polarization:
       name: 편파
       description: "안테나의 파동 방향(예: 수직, 원형)을 정의합니다"
@@ -4781,6 +6149,9 @@ ko:
     polish_remover_form:
       name: 매니큐어 리무버 형태
       description: "매니큐어 제거제 제품의 유형(예: 액체, 제거 랩)을 명시합니다"
+    polish_remover_formulation:
+      name: 폴리시 리무버 제형
+      description: 특히 아세톤 함량이나 대체 베이스인 리무버의 화학 구성을 나타냅니다
     polish_type:
       name: 광택제 유형
       description: "선박 관리에 사용되는 특정 유형의 광택제(예: 금속 또는 비닐)를 식별합니다."
@@ -4796,6 +6167,9 @@ ko:
     postage_stamp_features:
       name: 우표 기능
       description: "우표의 특별한 특성(예: 중복 인쇄 또는 워터마크)을 식별합니다."
+    postpartum_stage:
+      name: 산후 단계
+      description: 패드가 설계된 출산 후 시간대를 지정합니다
     potential_extract:
       name: 추출량
       description: "양조 곡물 및 맥아의 잠재적 추출 수준(예: 낮음 또는 높음)을 나타냅니다."
@@ -4808,12 +6182,30 @@ ko:
     potty_training_kit_components:
       name: 배변 훈련 키트 구성품
       description: "배변 훈련 키트에 포함된 품목(예: 스티커, 발판)을 명시합니다"
+    power_connector_type:
+      name: 전원 커넥터 유형
+      description: 라이저 또는 어댑터가 필요로 하거나 제공하는 보조 전원 커넥터를 명시합니다
+    power_conversion_semiconductor_type:
+      name: 전력 변환 반도체 유형
+      description: "충전기의 전력 스테이지에 사용되는 주요 반도체 재료를 식별하며, 크기, 효율 및 열 발생에 영향을 미칩니다"
     power_source:
       name: 전원
       description: "제품 작동에 사용되는 전원(예: 태양광, 배터리)을 명시합니다"
+    power_supply_efficiency_rating:
+      name: 전원 공급 장치 효율 등급
+      description: 데스크톱 PSU의 80 Plus 효율 인증 레벨을 명시합니다
+    power_supply_form_factor:
+      name: 전원 공급 장치 폼 팩터
+      description: "PSU의 물리적 크기와 장착 표준(예: ATX, SFX)을 명시합니다"
+    power_supply_modularity:
+      name: 전원 공급 장치 모듈성
+      description: "PSU의 케이블이 제거 불가능한지, 부분적으로 제거 가능한지 또는 완전히 제거 가능한지를 나타냅니다"
     pregnancy_test_sensitivity:
       name: 임신 테스트 감도
       description: "임신을 식별하는 테스트 기능(예: 조기 감지, 표준 감지)을 명시합니다"
+    prescription_status:
+      name: 처방 상태
+      description: 귀약이 일반의약품으로 구입 가능한지 또는 의료 전문가의 처방이 필요한지를 나타냅니다
     presentation_supply_features:
       name: 프레젠테이션 supply 기능
       description: "프레젠테이션 소모품의 고유한 특성(예: 조절 가능한 높이, 지울 수 있는 표면)을 설명합니다."
@@ -4826,12 +6218,21 @@ ko:
     pretend_housekeeping_toy_type:
       name: 소꿉놀이 장난감 타입
       description: 청소 세트나 주방 가전제품과 같은 가정 관리 장난감의 유형을 식별합니다
+    primary_pcie_slot_version:
+      name: 기본 PCIe 슬롯 버전
+      description: 일반적으로 그래픽 카드에 사용되는 기본 x16 슬롯에서 지원하는 PCI Express 세대를 나타냅니다
     primary_region:
       name: 기본 지역
       description: "소프트웨어 또는 클라우드 서비스의 주요 시장 또는 위치(예: 북미, 아시아 태평양)를 지정합니다."
     primer_use:
       name: 프라이머 용도
       description: "프라이머의 기능(예: 베이스 페인트 또는 실러)을 지정합니다."
+    print_orientation:
+      name: 인쇄 방향
+      description: 그래픽이 소재의 어느 쪽에 인쇄되는지 식별합니다
+    print_server_form_factor:
+      name: 프린트 서버 폼 팩터
+      description: "프린트 서버의 물리적 디자인을 나타냅니다(예: 외부 박스, 내부 카드, USB 동글)"
     print_technology:
       name: 인쇄 기술
       description: "프린터에서 사용하는 프로세스(예: 잉크젯 또는 레이저)를 명시합니다"
@@ -4841,6 +6242,15 @@ ko:
     printer_accessories_included:
       name: 프린터 부대용품 포함
       description: "프린터, 복사기 또는 팩스에 포함된 추가 구성 요소(예: 용지함, 퓨저)에 대해 자세히 설명합니다"
+    printer_color_capability:
+      name: 프린터 색상 기능
+      description: 장치가 단색으로만 출력하는지 아니면 전체 색상 인쇄 및 복사를 지원하는지 지정합니다
+    printer_connection_interface:
+      name: 프린터 연결 인터페이스
+      description: 프린트 서버가 프린터 자체에 연결하는 데 사용하는 포트 유형을 정의합니다
+    printer_form_factor:
+      name: 프린터 폼 팩터
+      description: 장치의 물리적 스타일 또는 휴대성을 분류합니다
     printer_functions:
       name: 프린터 기능
       description: "프린터, 복사기, 팩스기의 기능(예: 스캔, 사진 인쇄)을 정의합니다"
@@ -4850,6 +6260,9 @@ ko:
     printing_method:
       name: 인쇄 방식
       description: "인쇄 프로세스(예: 오프셋 인쇄 또는 조각)를 지정합니다."
+    privacy_filtering_direction:
+      name: 프라이버시 필터링 방향
+      description: "필터가 어느 시야 방향에서 가시성을 차단하는지(예: 양방향 수평, 4방향)를 나타냅니다"
     processor_cores:
       name: 프로세서 코어
       description: "컴퓨터 프로세서의 코어 수(예: 듀얼)를 나타냅니다"
@@ -4871,6 +6284,9 @@ ko:
     product_form:
       name: 제품 형태
       description: "일반적으로 건강과 미용을 위한 제품의 형식 또는 표현(예: 로션, 세럼)을 정의합니다"
+    product_format:
+      name: 제품 형식
+      description: 제품이 실물 제품으로 제공되는지 디지털 다운로드로 제공되는지를 나타냅니다
     product_formulation:
       name: 제품 제형
       description: "건축 소모품(예: 기본 물질, 혼합 준비)의 구성을 식별합니다."
@@ -4904,6 +6320,9 @@ ko:
     propulsion_type:
       name: 추진 방식
       description: "실외 장비의 이동 방법(예: 밀기, 견인)을 명시합니다"
+    protected_component:
+      name: 보호되는 구성 요소
+      description: 커버가 보호하는 핀볼 머신의 부분을 식별합니다
     protection_type:
       name: 보호 유형
       description: "안전 장비가 제공하는 보호 수준(예: 유형 I 또는 유형 II)을 식별합니다."
@@ -4916,6 +6335,12 @@ ko:
     protective_mask_features:
       name: 보호 마스크 기능
       description: "보호 마스크의 고유한 기능(예: 조절 가능한 스트랩 또는 밸브)을 자세히 설명합니다."
+    protein_processing_type:
+      name: 단백질 처리 유형
+      description: "단백질이 정제되거나 처리되는 방법을 지정하며 (예: 분리물 대 농축물), 순도, 소화 속도 및 소비자 선호도에 영향을 미칩니다"
+    protein_source:
+      name: 단백질 공급원
+      description: 보충제에 사용되는 주요 단백질 원산지를 식별합니다
     pstn_connectivity_options:
       name: PSTN 연결 옵션
       description: "제품이 지원하는 PSTN(공중 교환 전화망) 인터페이스(예: FXO, POTS)를 명시합니다"
@@ -4943,6 +6368,9 @@ ko:
     puppet_type:
       name: 인형 유형
       description: "인형의 스타일(예: 손 인형 또는 꼭두각시)을 식별합니다."
+    push_button_terminal_type:
+      name: 푸시 버튼 터미널 유형
+      description: 설치 중 배선 하네스 및 퀵 커넥트 탭과의 호환성을 보장하는 버튼의 전기 연결 스타일을 지정합니다
     puzzle_theme:
       name: 퍼즐 테마
       description: "퍼즐의 주요 주제나 모티브(예: 동물 또는 우주)를 설명합니다."
@@ -4955,9 +6383,18 @@ ko:
     rack_design:
       name: 랙 디자인
       description: "유리 선반의 레이아웃이나 구조(예: 개방형 또는 구획형)를 설명합니다."
+    rack_format:
+      name: 랙 형식
+      description: 랙 또는 데스크톱 배치를 위한 채널 스트립의 물리적 하우징 또는 크기 표준을 정의합니다
+    rack_mounting_style:
+      name: 랙 마운팅 스타일
+      description: "랙 마운트의 구조적 스타일을 설명합니다(예: 고정 선반, 슬라이딩 선반, 레일, 블랭크 패널)"
     rack_type:
       name: 랙 유형
       description: "차량 보관함의 스타일(예: 트렁크 또는 지붕)을 식별합니다."
+    rack_width_standard:
+      name: 랙 너비 표준
+      description: 제품이 따르는 산업 표준 수평 장착 너비를 정의합니다
     racket_balance:
       name: 라켓 밸런스
       description: "라켓의 무게 분포(예: 헤드가 무거움, 균형이 잘 잡혀 있음)를 나타냅니다"
@@ -4988,6 +6425,18 @@ ko:
     radio_features:
       name: 라디오 기능
       description: "라디오의 고유한 기능(예: GPS 지원 또는 MP3 재생)을 지정합니다."
+    radio_form_factor:
+      name: 무선기 폼 팩터
+      description: "아마추어 트랜시버의 물리적 클래스를 식별하여 장착 옵션, 전력 요구 사항 및 일반적인 사용 시나리오에 영향을 미칩니다"
+    radio_scanner_form_factor:
+      name: 무선 스캐너 폼 팩터
+      description: "무선 스캐너의 물리적 구성 또는 장착 스타일을 나타냅니다(예: 휴대용, 베이스, 데스크톱, 차량 장착)"
+    radiology_compatibility:
+      name: 방사선 호환성
+      description: "영상 촬영 중에 환자가 보조기를 착용할 수 있는지를 나타냅니다(예: MRI, CT, X-ray)"
+    raid_levels_supported:
+      name: 지원되는 RAID 레벨
+      description: 하드 드라이브 어레이가 생성하거나 관리할 수 있는 모든 RAID 구성을 나열합니다
     ramp_type:
       name: 램프 유형
       description: "스케이트보드 경사로의 디자인 또는 스타일(예: 하프 파이프 또는 펀 박스)을 명시합니다"
@@ -5027,6 +6476,9 @@ ko:
     recommended_use:
       name: 권장 용도
       description: "하드웨어 제품이 설계된 주요 용도 또는 도메인(예: 산업용, 주거용)을 식별합니다."
+    record_cleaning_components_included:
+      name: 레코드 청소 포함 구성품
+      description: "고객이 번들을 한눈에 비교할 수 있도록 키트에 제공되는 특정 항목을 나열합니다(예: 브러시, 용액, 천)"
     recorder_fingering_system:
       name: 리코더 운지법 시스템
       description: "레코더 운지법 유형(예: 독일어, 바로크)을 지정합니다."
@@ -5036,9 +6488,21 @@ ko:
     recording_accessories_included:
       name: 녹음 부대용품 포함
       description: "레코딩 번들에 포함된 추가 구성 요소(예: 헤드폰 또는 마이크)에 대해 자세히 설명합니다"
+    recording_capability_type:
+      name: 녹화 기능 유형
+      description: "수신기가 TV 콘텐츠를 녹화할 수 있는지 여부와 사용 방법을 나타냅니다(예: USB PVR, 내부 HDD, 클라우드)"
+    recording_functionality:
+      name: 녹화 기능
+      description: "수신기가 TV 콘텐츠를 녹화할 수 있는지 여부와 방법을 나타냅니다(예: 내부 HDD로 DVR, 외부 USB)"
+    recording_mode:
+      name: 녹음 모드
+      description: "녹음기가 지원하는 작동 모드를 나열합니다(예: 연속, 타이머 녹음)"
     recording_quality:
       name: 녹음 품질
       description: "녹음기 및 받아쓰기 시스템의 오디오 선명도(예: 낮음 또는 높음)를 설명합니다."
+    recording_speed_modes_supported:
+      name: 지원 녹화 속도 모드
+      description: VCR이 녹화하거나 재생할 수 있는 테이프 속도 모드를 나열하여 녹화 시간과 화질에 영향을 미칩니다
     recreational_vehicle_type:
       name: 레저 차량 유형
       description: "레저용 차량의 카테고리(예: 클래스 A 또는 여행용 트레일러)를 식별합니다."
@@ -5060,21 +6524,30 @@ ko:
     region_code:
       name: 지역 코드
       description: "비디오 게임 소프트웨어 사용이 허가된 지역(예: 아시아(AS) 또는 글로벌(GL))을 지정합니다."
+    release_mechanism:
+      name: 방출 메커니즘
+      description: "비타민의 전달 또는 흡수 기술을 나타냅니다(예: 서방성, 리포솜, 씹을 수 있는)"
     release_schedule:
       name: 공개 일정
       description: "새 에피소드나 업데이트가 릴리스되는 빈도(예: 매주, 격주)를 지정합니다."
     remote_control_functions:
       name: 원격 제어 기능
-      description: 원격 셔터가 사진 촬영 외에 실행할 수 있는 구체적인 동작을 나열합니다.
+      description: 원격 셔터가 사진 촬영 외에 실행할 수 있는 구체적인 동작을 나열합니다
     remote_shutter_form_factor:
       name: 원격 셔터 폼 팩터
-      description: "키패드/버튼, 링 컨트롤러, 셔터가 통합된 셀카봉 등 원격 셔터의 물리적 스타일이나 하우징을 식별합니다."
+      description: "키패드/버튼, 링 컨트롤러, 셔터가 통합된 셀카봉 등 원격 셔터의 물리적 스타일이나 하우징을 식별합니다"
     remote_technology:
       name: 원격 기술
       description: "카메라 원격 제어에 사용되는 기술(예: Bluetooth 또는 테더링)을 식별합니다."
     removable_storage_formats_supported:
       name: 지원되는 이동식 저장소 형식
       description: "장치와 호환되는 이동식 저장 형식(예: SD, microUSB)을 정의합니다"
+    removal_target:
+      name: 제거 대상
+      description: "리무버가 용해하도록 설계된 네일 제품을 지정합니다(예: 젤 폴리시, 아크릴 네일, 딥 파우더)"
+    replacement_lamp_type:
+      name: 교체 램프 유형
+      description: "제공되는 교체 부품 스타일을 분류합니다(예: 램프 및 하우징 모듈, LED 백라이트 스트립, CCFL 어셈블리)"
     reptile/amphibian_food_form:
       name: 파충류/양서류 먹이 형태
       description: 동결 건조 또는 펠렛과 같은 파충류/양서류 식품의 형태를 지정합니다
@@ -5093,6 +6566,12 @@ ko:
     resistance_system:
       name: 저항 시스템
       description: "피트니스 장비에 저항을 생성하는 데 사용되는 메커니즘(예: 물, 공기)을 정의합니다"
+    resistance_tolerance:
+      name: 저항 허용 오차
+      description: "공칭값에서 실제 저항의 허용 편차를 백분율로 정의합니다(예: ±1%)"
+    restrictor_gate_shape:
+      name: 제한 게이트 모양
+      description: 조이스틱에 포함되거나 필요한 제한 게이트의 기하학적 모양을 정의합니다
     result_display:
       name: 결과 표시
       description: "임신 테스트의 형식(예: 라인 기반, 디지털)을 명시합니다"
@@ -5105,6 +6584,12 @@ ko:
     reticle_type:
       name: 레티클 유형
       description: "무기 조준경의 조준선 유형(예: Duplex 또는 Mildot)을 식별합니다."
+    rewinder_operation_mode:
+      name: 되감기 작동 모드
+      description: "되감기가 지원하는 기능 모드를 정의합니다(예: 되감기 전용, 되감기 및 빨리 감기)"
+    rf_output_standard:
+      name: RF 출력 표준
+      description: 변조기가 출력하는 텔레비전 또는 라디오 방송 표준을 명시합니다
     rfid_frequency:
       name: RFID 주파수
       description: "RFID 제품의 작동 주파수(예: 저주파, 초고주파)를 명시합니다"
@@ -5123,6 +6608,12 @@ ko:
     ring_size:
       name: 반지 크기
       description: "링의 사이즈(예: L 또는 6.5)를 명시합니다"
+    rinse_requirement:
+      name: 헹굼 필요성
+      description: "클렌저를 씻어내야 하는지, 그대로 둘 수 있는지 또는 헹굼이 필요 없는지 명확히 합니다(예: 미셀라 워터)"
+    rise_height_class:
+      name: 높이 증가 등급
+      description: "엄지 그립이 기본 스틱에 비해 추가하는 높이(예: 로우 라이즈, 미드 라이즈, 하이 라이즈)를 분류합니다"
     riser_color:
       name: 라이저 색상
       description: "양궁 활의 라이저 색상(예: 검은색 또는 파란색)을 식별합니다"
@@ -5138,6 +6629,9 @@ ko:
     road_sign_design:
       name: 도로 표지판 디자인
       description: "도로 표지판에 표시되는 정보 유형(예: 정지, 속도 제한 등)을 식별합니다."
+    robe_style:
+      name: 로브 스타일
+      description: 스파 로브나 랩과 같은 로브의 전체적인 디자인 유형 또는 구조 스타일을 지정합니다
     rock_composition:
       name: 암석 조성
       description: "암석의 지질학적 구성(예: 대리석 또는 석회암)을 지정합니다."
@@ -5171,6 +6665,9 @@ ko:
     roof_decor_shape:
       name: 지붕 장식 모양
       description: "지붕 장식의 디자인 또는 형태(예: 말 또는 범선)를 정의합니다"
+    room_correction_technology:
+      name: 룸 보정 기술
+      description: 리시버에 통합된 자동 음향 교정 또는 룸 보정 시스템을 지정합니다
     rosin_form:
       name: 송진 형태
       description: "현악기용 활 로진의 모양이나 형태(예: 블록 또는 케이크)를 설명합니다."
@@ -5180,9 +6677,15 @@ ko:
     rotating_direction:
       name: 회전 방향
       description: "드릴 및 드라이버 비트의 회전 방향(예: 왼쪽 또는 오른쪽)을 지정합니다."
+    rotation_direction:
+      name: 회전 방향
+      description: "네일 드릴이 정방향 회전, 역방향 회전 또는 둘 다를 지원하는지 나타냅니다"
     rotator_control_technology:
       name: 로테이터 제어 기술
       description: "안테나 회전 장치의 제어 메커니즘(예: 수동 또는 전동식)을 정의합니다"
+    route_of_administration:
+      name: 투여 경로
+      description: "제품이 적용되거나 섭취되는 방법을 식별하며, 효능과 안전성에 영향을 미칩니다(예: 경구, 국소, 경피 패치, 설하, 근육 주사)"
     rug/mat_features:
       name: 러그/매트 기능
       description: "러그/매트의 특별한 특성(예: 미끄럼 방지 베이스, 속건성 등)을 설명합니다."
@@ -5255,9 +6758,12 @@ ko:
     satellite_coverage_area:
       name: 위성 서비스 지역
       description: "위성 전화기가 액세스할 수 있는 지리적 지역(예: 호주 또는 아프리카)을 정의합니다"
+    satellite_messaging_capability:
+      name: 위성 메시징 기능
+      description: 제품이 단방향(송신 전용) 또는 양방향(송수신) 위성 메시징을 지원하는지 나타냅니다
     satellite_navigation_systems_supported:
       name: 지원되는 위성 항법 시스템
-      description: 휴대폰이 위치 지정 및 추적을 위해 수신할 수 있는 글로벌 항법 위성 시스템(GNSS)을 지정합니다.
+      description: 휴대폰이 위치 지정 및 추적을 위해 수신할 수 있는 글로벌 항법 위성 시스템(GNSS)을 지정합니다
     satellite_network_type:
       name: 위성 네트워크 유형
       description: "위성 전화 서비스 공급자(예: Inmarsat, Iridium)를 식별합니다"
@@ -5282,6 +6788,9 @@ ko:
     scale_model_theme:
       name: 축소 모형 테마
       description: "축소 모형의 주제(예: 판타지 또는 역사)를 식별합니다."
+    scalp_concern:
+      name: 두피 고민
+      description: 트리트먼트가 해결하도록 제조된 주요 두피나 머리카락 문제를 지정합니다
     scalpel_blade_material:
       name: 메스날 소재
       description: "메스 블레이드의 구성(예: 스테인리스 스틸 또는 티타늄)을 식별합니다."
@@ -5300,6 +6809,12 @@ ko:
     scanner_features:
       name: 스캐너 기능
       description: "스캐너의 특수 기능(예: AI 기반 또는 클라우드로 스캔)을 강조합니다."
+    scanner_grip_compatibility:
+      name: 스캐너 그립 호환성
+      description: "케이스가 피스톨/트리거 핸들이 있는 스캐너, 표준 휴대용 형태 또는 둘 다에 맞는지 나타냅니다"
+    scanner_maintenance_kit_type:
+      name: 스캐너 유지보수 키트 유형
+      description: "쇼핑객이 청소 카드, 전체 키트, 교정 키트, 롤러 세트, 와이프, 솔루션을 빠르게 구별할 수 있도록 제품의 성격을 분류합니다"
     scanner_sensor_type:
       name: 스캐너 센서 유형
       description: "스캐너의 센서 유형(예: 2D 이미저 또는 레이저)을 명시합니다"
@@ -5339,12 +6854,39 @@ ko:
     screen/display_design:
       name: 스크린/디스플레이 디자인
       description: "일반적으로 카메라에 대한 제품 화면의 디자인 기능(예: 뷰파인더)을 지정합니다."
+    screen_assembly_components_included:
+      name: 스크린 어셈블리 포함 구성요소
+      description: 스크린과 함께 사전 조립되어 제공되는 부품을 명확히 합니다
+    screen_curvature_rating:
+      name: 화면 곡률 등급
+      description: "곡선 모니터의 곡률 반경을 지정합니다(예: 1000R), 곡선이 얼마나 뚜렷한지 나타냅니다"
     screen_material:
       name: 스크린 소재
       description: "제품 화면에 사용되는 소재 유형(예: 유리, 폴리카보네이트)을 정의합니다"
+    screen_operation_type:
+      name: 스크린 작동 유형
+      description: "스크린의 구조적 또는 전개 스타일을 설명합니다(예: 고정 프레임, 수동 풀다운, 전동식, 삼각대, 팽창식)"
+    screen_protection_features:
+      name: 화면 보호 기능
+      description: 케이스가 기본 커버리지를 넘어 휴대전화 화면을 보호하는 방법을 자세히 설명합니다
+    screen_protector_adhesion_type:
+      name: 화면 보호기 접착 유형
+      description: 보호기를 휴대전화 화면에 부착하는 데 사용되는 접착제 또는 부착 방법을 지정합니다
+    screen_protector_coverage_style:
+      name: 화면 보호기 커버리지 스타일
+      description: 장치 화면에 대한 보호기의 물리적 커버리지 디자인 또는 폼 팩터를 정의합니다
+    screen_protector_features:
+      name: 화면 보호기 기능
+      description: 기본적인 긁힘 방지 외에 보호기가 제공하는 특수 기능 특성을 강조합니다
+    screen_protector_finish:
+      name: 화면 보호기 마감
+      description: "보호기의 광학 표면 마감을 식별합니다(예: 광택, 무광, 프라이버시, 눈부심 방지)"
     screen_specialized_features:
       name: 스크린 특화 기능
       description: "컴퓨터 화면의 고유한 기능(예: 눈부심 방지 또는 터치스크린)을 식별합니다."
+    screen_surface_finish:
+      name: 스크린 표면 마감
+      description: 눈부심과 느낌에 영향을 미치는 스크린 유리의 표면 처리를 설명합니다
     seafood_type:
       name: 해산물 종류
       description: "수산물을 종별(예: 참치, 랍스터)로 분류합니다"
@@ -5363,12 +6905,21 @@ ko:
     seat_pattern:
       name: 시트 패턴
       description: "시각적 모티브(예: 별 또는 점)를 좌석 제품에 명시합니다"
+    seat_reservation:
+      name: 좌석 예약
+      description: 티켓에 좌석 배정이 포함되어 있는지 또는 사전 예약이 필요한지를 지정합니다
+    seat_rotation:
+      name: 좌석 회전
+      description: 좌석이 회전하는지와 사용 가능한 잠금 위치를 나타냅니다
     seat_shape:
       name: 시트 모양
       description: "제품의 좌석 공간 형태(예: 원형 또는 직사각형)를 설명합니다."
     seat_structure:
       name: 시트 구조
       description: "좌석의 구성(예: 고리버들, 솔리드)을 정의합니다"
+    seat_swivel_mechanism:
+      name: 좌석 회전 메커니즘
+      description: 안전한 이동을 위해 착륙 지점에서 좌석이 회전할 수 있는지와 그 방법을 나타냅니다
     seat_type:
       name: 시트 유형
       description: '의자 또는 벤치 좌석의 디자인(예: 패딩 또는 버킷)을 설명합니다 '
@@ -5389,7 +6940,13 @@ ko:
       description: "잠금 장치 및 래치와 같은 항목의 안전 표준(예: 낮음, 중간, 높음)을 지정합니다."
     selfie_stick_functionality_type:
       name: 셀카봉 기능 유형
-      description: "제품의 주요 기능 구성을 정의합니다(예: 스틱 전용, 스틱-삼각대 콤보, 짐벌)."
+      description: "제품의 주요 기능 구성을 정의합니다(예: 스틱 전용, 스틱-삼각대 콤보, 짐벌)"
+    semiconductor_material:
+      name: 반도체 재료
+      description: "스위칭 속도, 항복 전압 및 열 동작에 영향을 미치는 컴포넌트에 사용되는 기본 반도체 기판 재료를 식별합니다"
+    sensation_effect:
+      name: 감각 효과
+      description: "윤활제가 제공하는 추가적인 감각 효과를 설명합니다(예: 온감, 따끔거림)"
     sensor/measuring_tool_features:
       name: 센서/측정 도구 기능
       description: "센서 또는 측정 도구의 고유한 특성(예: 휴대형 또는 스마트)을 설명합니다"
@@ -5399,6 +6956,9 @@ ko:
     sensor_type:
       name: 센서 유형
       description: "보안 또는 안전 장치에 사용되는 센서 유형(예: 적외선, 초음파)을 식별합니다"
+    sensory_effect:
+      name: 감각 효과
+      description: 제품을 적용할 때 제공되는 즉각적인 물리적 감각을 나타냅니다
     sequin/glitter_shape:
       name: 스팽클/반짝이 모양
       description: "장식 조각이나 반짝이의 형태(예: 원형 또는 사각형)를 설명합니다."
@@ -5462,6 +7022,9 @@ ko:
     sheet_color:
       name: 시트 색상
       description: "종이 제품의 색상(예: 흰색, 파란색)을 식별합니다."
+    sheet_mask_material:
+      name: 시트 마스크 소재
+      description: 시트 또는 하이드로겔 마스크의 주요 소재나 기판을 지정합니다
     sheet_pattern:
       name: 시트 패턴
       description: '격자 무늬나 무지개와 같은 종이 제품의 디자인이나 인쇄를 설명합니다 '
@@ -5507,6 +7070,9 @@ ko:
     shower_base_design:
       name: 샤워실 바닥 디자인
       description: "샤워 베이스의 디자인(예: 각도 또는 사분면)을 지정합니다."
+    shower_cap_lining_material:
+      name: 샤워캡 안감 소재
+      description: "편안함, 모발 건강 및 곱슬거림 제어에 영향을 미치는 모발과 접촉하는 내부 안감에 사용된 소재를 식별합니다"
     shower_curtain_mounting_type:
       name: 샤워커튼 장착 타입
       description: "샤워 커튼이 부착된 방식(예: 그로밋 또는 링)을 식별합니다."
@@ -5525,9 +7091,21 @@ ko:
     shutter_finish:
       name: 셔터 마감
       description: "셔터의 표면 처리(예: 페인트칠 또는 프라이밍 처리)에 대해 설명합니다."
+    side_panel_style:
+      name: 사이드 패널 스타일
+      description: "주 사이드 패널의 스타일 또는 재료(예: 강화 유리 창, 메시, 솔리드 스틸)를 설명합니다"
     siding_material:
       name: 외장 자재
       description: "사이딩 제품에 사용되는 재료 유형(예: 목재 또는 비닐)을 식별합니다."
+    signal_path_technology:
+      name: 신호 경로 기술
+      description: "채널 스트립의 사운드 특성을 형성하는 핵심 회로 토폴로지를 식별합니다(예: 진공관, 솔리드 스테이트, 하이브리드)"
+    signal_technology:
+      name: 신호 기술
+      description: 제품이 증폭하거나 확장하도록 설계된 주요 무선 또는 데이터 기술을 식별합니다
+    signal_types_blocked:
+      name: 차단되는 신호 유형
+      description: 제품이 차단하거나 차폐하도록 설계된 특정 무선 또는 전자기 신호를 나열합니다
     signature_placement:
       name: 서명 위치
       description: "수집품에서 서명이 있는 위치(예: 앞면 또는 여러 장)를 식별합니다."
@@ -5561,6 +7139,9 @@ ko:
     size:
       name: 사이즈
       description: "제품의 사이즈(예: 0~3개월, 특대형(XL))를 지정하는 데 사용됩니다."
+    skate_shape:
+      name: 스케이트 모양
+      description: 패키지에 공급된 스케이트의 물리적 폼 팩터를 설명합니다
     skateboarding_style:
       name: 스케이트보드 스타일
       description: "제품 설계 목적에 맞는 스케이트보드 유형(예: 프리스타일 또는 오프로드)을 정의합니다"
@@ -5582,6 +7163,9 @@ ko:
     skin_care_mask_type:
       name: 스킨 케어 마스크 타입
       description: 클레이 또는 필오프와 같은 스킨 케어 마스크의 종류를 식별합니다
+    skin_care_tool_features:
+      name: 스킨케어 도구 기능
+      description: "도구의 주목할 만한 기능적 또는 편의 기능을 강조합니다(예: 방수, 조정 가능한 강도)"
     skin_tone:
       name: 피부톤
       description: "특정 피부 톤(예: 깊은 피부, 밝은 피부)에 맞는 제품을 선택합니다"
@@ -5606,6 +7190,9 @@ ko:
     sleeve_length_type:
       name: 소매 길이 유형
       description: "의류 품목의 소매 스타일(예: 반바지 또는 민소매)을 명시합니다"
+    sleeving_style:
+      name: 슬리빙 스타일
+      description: "슬리브의 구조 또는 구조적 디자인(예: 브레이드, 나선형, 열수축)을 분류합니다"
     slip_texture:
       name: 슬립 질감
       description: "도자기 전표의 느낌(예: 중간 또는 부드러움)을 설명합니다."
@@ -5627,6 +7214,9 @@ ko:
     small_animal_habitat/cage_type:
       name: 소동물 집/케이지 타입
       description: 우리나 수족관과 같은 작은 동물의 서식지나 우리 유형을 식별합니다
+    smart_glasses_features:
+      name: 스마트 안경 기능
+      description: "내장된 주요 기능(예: AR 디스플레이, 터치 컨트롤, 골전도 오디오)을 나열합니다"
     smart_tv_platform:
       name: 스마트 TV 플랫폼
       description: "스마트 TV에서 사용되는 소프트웨어 플랫폼(예: Android 또는 Roku TV)을 정의합니다"
@@ -5651,6 +7241,9 @@ ko:
     snowmobile_type:
       name: 스노모빌 유형
       description: "스노우모빌의 용도 또는 디자인(예: 유틸리티 또는 투어링)을 지정합니다."
+    soap_making_method:
+      name: 비누 제조 방법
+      description: 막대 비누를 만드는 데 사용된 주요 생산 공정을 식별합니다
     socket_driver_tip:
       name: 소켓 드라이버 팁
       description: "소켓 드라이버의 팁 유형(예: 정사각형 또는 육각형)을 식별합니다."
@@ -5711,6 +7304,9 @@ ko:
     solvent_application:
       name: 용제 도포
       description: "제품이 용해되도록 설계된 코팅 또는 접착 재료(예: 에폭시, 페인트)를 지정합니다."
+    sonar_imaging_modes:
+      name: 소나 이미징 모드
+      description: 어탐기가 지원하는 소나 뷰 기술을 식별합니다
     soothing_sounds:
       name: 마음을 달래주는 소리
       description: "제공되는 다양한 편안한 소리(예: 심장 박동, 백색 소음)를 정의합니다"
@@ -5732,9 +7328,15 @@ ko:
     speaker_design:
       name: 스피커 디자인
       description: "스피커의 물리적, 기능적 디자인(예: 서브우퍼 또는 타워)을 정의합니다"
+    speaker_enclosure_type:
+      name: 스피커 인클로저 유형
+      description: 스피커 캐비닛에서 사용하는 음향 인클로저 원리를 설명합니다
     speaker_features:
       name: 스피커 기능
       description: "오디오 스피커의 특수 기능(예: 소음 제거 또는 음성 제어)을 식별합니다."
+    speaker_position_in_laptop:
+      name: 노트북 내 스피커 위치
+      description: 스피커 어셈블리가 노트북 내에 설치되는 위치를 나타냅니다
     speaker_technology:
       name: 스피커 기술
       description: "스피커 설계에 사용되는 기술(예: 다이내믹, 정전기)을 정의합니다"
@@ -5756,6 +7358,9 @@ ko:
     spirit_dilution:
       name: 스피릿 희석
       description: "알코올의 농도 수준(예: 희석, 원액)을 나타냅니다"
+    splint/stay_configuration:
+      name: 부목/스테이 구성
+      description: 보조기에 사용되는 경직성 또는 반경직성 스테이나 부목의 존재와 유형을 설명합니다
     splitter/switch_features:
       name: 분배기/스위치 기능
       description: "오디오/비디오 분배기 또는 스위치의 기능(예: 3D 지원 또는 오디오 추출)을 설명합니다."
@@ -5786,6 +7391,9 @@ ko:
     spout_type:
       name: 스파우트 유형
       description: "일반적으로 음료수 컵의 스파우트 유형(예: 빨대, 소프트)을 정의합니다"
+    spray_purpose:
+      name: 스프레이 목적
+      description: "페이셜 미스트의 주요 의도된 용도를 식별합니다(예: 세팅, 프라이밍, 수분 공급)"
     spreader_type:
       name: 스프레더 유형
       description: "삼각대 스프레더의 범주(예: 지상 또는 중간 수준)를 지정합니다."
@@ -5840,6 +7448,9 @@ ko:
     stationery_binding_type:
       name: 문구 제본 유형
       description: "일반적으로 사진 앨범의 페이지를 보호하는 데 사용되는 방법(예: 새들 스티치)을 명시합니다"
+    steam_inhaler_design:
+      name: 스팀 흡입기 디자인
+      description: 스팀 흡입기의 물리적 스타일과 휴대성 형식을 설명합니다
     stem_length:
       name: 줄기 길이
       description: "꽃 줄기의 길이(예: 짧음, 중간, 김)를 나타냅니다."
@@ -5870,6 +7481,9 @@ ko:
     stiffness:
       name: 강성
       description: "일반적으로 스노보드 부츠의 경우 제품의 강성(예: 연성, 경성)을 나타냅니다"
+    stimulant_profile:
+      name: 자극제 프로파일
+      description: 보충제가 자극제에 의존하는지와 포함하는 주요 유형에 따라 분류합니다
     stimulator_tip_shape:
       name: 자극기 팁 모양
       description: "잇몸 자극기 팁의 모양(예: 원뿔형 또는 테이퍼형)을 설명합니다."
@@ -5918,6 +7532,9 @@ ko:
     strap_design:
       name: 스트랩 디자인
       description: "제품 스트랩의 시각적 외관(예: 인쇄 또는 패턴)을 설명합니다."
+    strap_wearing_style:
+      name: 스트랩 착용 방식
+      description: 스트랩을 착용하거나 휴대하는 의도된 방식을 식별합니다
     straw/stirrer_design:
       name: 빨대/커피 스틱 디자인
       description: "빨대나 교반기의 디자인이나 스타일(예: 직선형 또는 유연함)을 설명합니다."
@@ -5936,6 +7553,9 @@ ko:
     string_pattern:
       name: 선 패턴
       description: 줄무늬와 같은 양궁 스트링의 디자인을 설명합니다
+    strip/patch_technology:
+      name: 스트립/패치 기술
+      description: 모공 스트립이나 패치에 사용된 주요 소재나 기술을 설명합니다
     stripper_application:
       name: 스트리퍼 도포
       description: "제품이 제거 또는 용해되도록 설계된 코팅 또는 접착 재료(예: 에폭시 페인트)를 지정합니다."
@@ -5948,6 +7568,18 @@ ko:
     style:
       name: 스타일
       description: "일반적으로 창 처리를 위한 제품의 스타일(예: 수직 블라인드, 주름진 차양)을 설명합니다"
+    stylus_holder_type:
+      name: 스타일러스 홀더 유형
+      description: 케이스가 스타일러스 보관을 제공하는지와 그 보관 형태를 나타냅니다
+    stylus_support:
+      name: 스타일러스 지원
+      description: 전자책 리더가 메모 작성용 디지털 스타일러스를 지원하는지와 포함 여부를 나타냅니다
+    stylus_support_type:
+      name: 스타일러스 지원 유형
+      description: "태블릿이 입력 스타일러스를 지원하는지와 지원 방식(예: 액티브 디지타이저, 패시브 정전식)을 설명합니다"
+    stylus_technology:
+      name: 스타일러스 기술
+      description: 스타일러스가 사용하는 기본 기술 또는 전원 방법을 정의합니다
     stylus_type:
       name: 스타일러스 유형
       description: "턴테이블 액세서리의 바늘 모양(예: 원뿔형 또는 타원형)을 명시합니다"
@@ -5957,9 +7589,15 @@ ko:
     subscription_type:
       name: 구독 유형
       description: "일반적으로 모바일 기기에 대한 구독 유형(예: 종량제, 선불)을 명시합니다"
+    subsonic_filter:
+      name: 서브소닉 필터
+      description: 레코드 휨으로 인한 저주파 럼블을 제거하기 위해 장치에 서브소닉 또는 워프 필터가 포함되어 있는지 지정합니다
     substrate_features:
       name: 기판 기능
       description: "수족관 기질의 특성(예: 유익한 박테리아 성장 또는 사전 세척)을 설명합니다."
+    subwoofer_configuration:
+      name: 서브우퍼 구성
+      description: "서브우퍼가 포함되어 있는지 여부와 내장형, 유선 또는 무선인지 나타냅니다"
     suction_cup_color:
       name: 석션 컵 색상
       description: "흡입 컵의 색상(예: 검정색 또는 파란색)을 식별합니다."
@@ -6077,6 +7715,9 @@ ko:
     suitable_for_toothbrush:
       name: 적합한 칫솔 유형
       description: "제품과 호환되는 칫솔 유형(예: 전동 칫솔 헤드)을 명시합니다"
+    suitable_for_user_sensitivity_level:
+      name: 사용자 민감도 수준에 적합
+      description: 포뮬라가 민감한 치아를 가진 사용자를 위한 것인지를 나타냅니다
     suitable_for_vehicle_type:
       name: 적합한 차종
       description: "제품과 호환되는 차량 유형(예: 자동차, 트럭)을 식별합니다."
@@ -6107,15 +7748,63 @@ ko:
     sunlight:
       name: 일광량
       description: "식물에 필요한 햇빛의 양(예: 그늘 또는 완전 양지)을 명시합니다"
+    sunscreen_filter_type:
+      name: 선크림 필터 유형
+      description: "포뮬러에 사용된 UV 필터 유형을 식별합니다(화학, 미네랄 또는 하이브리드)"
+    supplement_health_focus:
+      name: 보충제 건강 초점
+      description: 보충제가 지원하도록 의도된 주요 건강 영역을 정의합니다
     support/brace_material:
       name: 지지대/버팀대 자재
       description: "지지대나 버팀대에 사용되는 재료(예: 네오프렌 또는 폼)를 식별합니다."
+    support_cushion_features:
+      name: 지지 쿠션 기능
+      description: 쿠션이 제공하는 특별한 기능적 추가 사항이나 개선 사항을 강조합니다
+    support_level:
+      name: 지지 수준
+      description: 다양한 부상 심각도나 활동 수준에 대해 보조기가 제공하는 전반적인 안정성 또는 지지 등급을 명시합니다
+    support_rigidity_level:
+      name: 지지 강성 수준
+      description: 부드러운 쿠셔닝에서 단단한 교정 지지까지 깔창이 제공하는 전체적인 견고함이나 구조적 지지를 설명합니다
+    supported_audio_sources:
+      name: 지원되는 오디오 소스
+      description: 장치가 처리할 수 있는 재생 또는 입력 소스를 나열합니다
     supported_countries:
       name: 지원 국가
-      description: SIM/eSIM 또는 선불 요금제가 서비스를 제공하는 특정 국가 또는 지역을 나열합니다.
+      description: SIM/eSIM 또는 선불 요금제가 서비스를 제공하는 특정 국가 또는 지역을 나열합니다
+    supported_display_technologies:
+      name: 지원 디스플레이 기술
+      description: 교정기가 프로파일링하거나 측정할 수 있는 디스플레이 또는 화면 기술 유형을 나열합니다
+    supported_dvi_link_type:
+      name: 지원되는 DVI 링크 유형
+      description: "장치가 싱글 링크, 듀얼 링크 또는 두 DVI 신호 표준 모두를 처리하는지 명시합니다"
+    supported_erase_modes:
+      name: 지원되는 삭제 모드
+      description: 복제기가 대상 드라이브에 수행할 수 있는 보안 삭제 표준을 나열합니다
+    supported_input_types:
+      name: 지원 입력 유형
+      description: "채널 스트립이 수용하는 오디오 입력 종류를 나열합니다(예: 마이크, 라인, 악기 Hi-Z)"
     supported_language:
       name: 지원되는 언어
       description: "소프트웨어 제품이 지원하는 언어(예: 영어, 스페인어)를 지정합니다."
+    supported_media_sources:
+      name: 지원 미디어 소스
+      description: 장치가 음악을 재생할 수 있는 물리적 또는 디지털 미디어 입력을 정의합니다
+    supported_raid_levels:
+      name: 지원되는 RAID 레벨
+      description: 통합 스토리지 컨트롤러가 활용할 수 있는 디스크 어레이 구성을 나열합니다
+    supported_scan_media_type:
+      name: 지원 스캔 미디어 유형
+      description: "스캐너가 처리할 수 있는 원본 종류를 나열합니다(예: 다양한 필름 유형, 반사 프린트)"
+    supported_sdi_standards:
+      name: 지원 SDI 표준
+      description: "장치가 신호 전송을 위해 지원하는 SDI 데이터 속도/표준(SD-SDI, HD-SDI, 3G-SDI 등)을 나타냅니다"
+    supported_usb_device_types:
+      name: 지원되는 USB 장치 유형
+      description: 복제기가 처리할 수 있는 USB 저장 장치의 종류를 명시합니다
+    surface_sides:
+      name: 표면 면
+      description: 프린트 베드를 한 면 또는 양면에서 사용할 수 있는지 나타냅니다
     surface_texture:
       name: 표면 질감
       description: "일반적으로 콘돔의 경우 제품 표면의 느낌이나 패턴(예: 매끄러움, 골이 있음)을 설명합니다."
@@ -6137,6 +7826,9 @@ ko:
     sustainability:
       name: 지속 가능성
       description: "지속 가능한 관행(예: 공정 무역, 책임감 있는 조달)을 지원하는 제품을 강조합니다"
+    swab_end_configuration:
+      name: 면봉 끝 구성
+      description: "면봉이 사용 가능한 끝이 하나인지 두 개인지, 끝이 다른지를 나타냅니다"
     swab_material:
       name: 면봉 소재
       description: "악기 청소용 면봉의 직물(예: 실크, 펠트)을 지정합니다."
@@ -6152,12 +7844,33 @@ ko:
     switch_control_type:
       name: 스위치 제어 유형
       description: "전등 스위치를 제어하는 방법(예: 버튼 또는 센서)을 설명합니다."
+    switch_management_type:
+      name: 스위치 관리 유형
+      description: "스위치가 지원하는 관리 및 구성 수준이나 스타일을 분류합니다(예: 비관리형, 스마트, 웹 관리형, 완전 관리형)"
+    switch_mechanism:
+      name: 스위치 메커니즘
+      description: "감촉, 수명 및 반응성에 영향을 미치는 버튼의 내부 작동 기술을 식별합니다(예: 마이크로스위치, 광학)"
+    switch_stem_compatibility:
+      name: 스위치 스템 호환성
+      description: 키캡이나 키 세트가 맞는 기계식 또는 기타 스위치 스템 스타일을 식별합니다
+    switching_layer:
+      name: 스위칭 레이어
+      description: "스위치가 기본적으로 작동하는 최고 OSI 레이어를 나타냅니다(예: 레이어 2, 레이어 3, 하이브리드)"
     switching_method:
       name: 전환 방식
       description: "전자 제품의 다양한 입력 간 전환에 사용되는 방법(예: 리모컨)을 정의합니다"
     synthesis_method:
       name: 합성 방식
       description: "전자 악기의 사운드 합성 방법(예: 가상 아날로그 또는 모듈러)을 지정합니다."
+    system/power_cable_connector_type_end_a:
+      name: 시스템/전원 케이블 커넥터 유형 (끝 A)
+      description: "케이블의 첫 번째 끝에 있는 정확한 커넥터 표준(예: IEC C14, NEMA 5-15P, USB-C)을 식별합니다"
+    system/power_cable_connector_type_end_b:
+      name: 시스템/전원 케이블 커넥터 유형 (끝 B)
+      description: "케이블의 두 번째 끝에 있는 정확한 커넥터 표준(예: IEC C13, DC 5.5 × 2.1 mm, 바나나 플러그)을 식별합니다"
+    system_components_included:
+      name: 시스템 포함 구성품
+      description: 쇼핑객이 번들의 일부인지 아닌지 이해할 수 있도록 시스템과 함께 제공되는 주요 하드웨어 부품을 나열합니다
     system_of_measurement:
       name: 측정 단위계
       description: "제품에 사용되는 측정 단위(예: 영국식 또는 미터법)를 식별합니다."
@@ -6170,6 +7883,9 @@ ko:
     tab_style:
       name: 탭 스타일
       description: "바인더 액세서리의 탭 스타일(예: 사전 인쇄, 번호 매기기)을 지정합니다."
+    tablet_case_functional_features:
+      name: 태블릿 케이스 기능적 특징
+      description: 태블릿 케이스와 함께 포함된 주요 기능 추가 기능을 강조합니다
     tabletop_color:
       name: 탁상 색상
       description: "테이블 상단 표면의 색상(예: 검정색 또는 흰색)을 명시합니다"
@@ -6191,6 +7907,9 @@ ko:
     tag_fastening:
       name: 태그 체결
       description: "수하물에 태그를 고정하는 데 사용되는 방법(예: 버클 또는 고리)을 설명합니다."
+    talc_content:
+      name: 탈크 함량
+      description: "제형에 탈크가 포함되어 있는지, 무탈크인지 또는 감소된 탈크 수준을 사용하는지를 명시합니다"
     tampon_absorbency_level:
       name: 탐폰 흡수 수준
       description: 가볍거나 무거운 탐폰의 흡수력을 식별합니다
@@ -6209,18 +7928,33 @@ ko:
     tank_pattern:
       name: 탱크 패턴
       description: 솔리드 또는 추상과 같은 변기 탱크의 시각적 모티프를 식별합니다
+    tape_cartridge_format:
+      name: 테이프 카트리지 형식
+      description: "드라이브가 읽거나 쓸 수 있는 테이프 카트리지 기술(예: LTO, DAT, DLT)을 명시합니다"
+    tape_cartridge_generation:
+      name: 테이프 카트리지 세대
+      description: 드라이브가 지원하는 테이프 기술 제품군(가장 일반적으로 LTO 세대) 내의 특정 세대 또는 버전을 나타냅니다
     tape_material:
       name: 테이프 소재
       description: "테이프 제품에 사용되는 재료 유형(예: 비닐 또는 플라스틱)을 지정합니다."
+    tape_speed_supported:
+      name: 지원 테이프 속도
+      description: 릴투릴 장치가 작동할 수 있는 재생 및 녹음 테이프 속도(초당 인치)를 나열합니다
     target_audience:
       name: 대상
       description: "제품이 누구에게 적합한지(예: 어린이 또는 모든 연령층) 지정합니다."
+    target_facial_zone:
+      name: 대상 얼굴 부위
+      description: "모공 스트립이 치료하도록 설계된 얼굴 부위를 지정합니다(예: 코, 턱, T존)"
     target_gender:
       name: 대상 성별
       description: "제품의 의도된 성별(예: 여성, 남성, 남녀공용)을 식별합니다"
     targeted_pests:
       name: 표적 해충
       description: "제품이 효과적인 해충 유형(예: 곰팡이, 조류)을 식별합니다"
+    targeted_skin_concern:
+      name: 표적 피부 고민
+      description: 제품이 치료하도록 제조된 특정 병변이나 피부 상태를 나타냅니다
     targeted_stains:
       name: 표적 얼룩
       description: "제품이 처리하도록 설계된 얼룩 유형(예: 음식 또는 진흙)을 식별합니다"
@@ -6236,9 +7970,12 @@ ko:
     telephone_cable_interface:
       name: 전화 케이블 인터페이스
       description: "전화 케이블에 사용되는 플러그 유형(예: RJ-10)을 정의합니다"
+    telephone_cable_second_interface:
+      name: 전화 케이블 두 번째 인터페이스
+      description: "케이블의 반대쪽 끝이 주 인터페이스와 다를 때 커넥터 유형을 정의합니다(예: RJ45에서 RJ11)"
     telephone_cord_style:
       name: 전화선 스타일
-      description: "전화선의 물리적 형태를 지정하여 교체용 핸드셋과 벽면 장착용 직선형, 코일형 또는 특수 케이블이 필요한 고객에게 도움을 줍니다."
+      description: "전화선의 물리적 형태를 지정하여 교체용 핸드셋과 벽면 장착용 직선형, 코일형 또는 특수 케이블이 필요한 고객에게 도움을 줍니다"
     telephone_style:
       name: 전화 스타일
       description: "전화기의 디자인 또는 미학(예: 빈티지, 참신함)을 정의합니다"
@@ -6248,9 +7985,15 @@ ko:
     telescope_tracking_system:
       name: 망원경 추적 시스템
       description: "수동식, 전동식 등 망원경의 추적 시스템 유형을 식별합니다"
+    television_circuit_board_type:
+      name: 텔레비전 회로 기판 유형
+      description: "텔레비전 세트 내에서 회로 기판의 기능적 역할을 식별합니다(예: 메인 보드, 전원 공급 보드, T-Con 보드)"
     television_shape:
       name: 텔레비전 모양
       description: "TV 화면의 물리적 윤곽(예: 곡면 또는 평면)을 정의합니다"
+    television_speaker_position:
+      name: 텔레비전 스피커 위치
+      description: "TV 어셈블리 내 스피커의 물리적 위치 또는 역할을 식별합니다(예: 왼쪽, 오른쪽, 중앙, 서브우퍼)"
     television_specialized_features:
       name: TV 특화 기능
       description: "TV의 고유한 기능(예: 음성 제어, 내장 사운드바)을 식별합니다."
@@ -6275,12 +8018,21 @@ ko:
     tension:
       name: 장력
       description: "악기 현의 장력 수준(예: 매우 무거움)을 설명합니다."
+    tensioning_system:
+      name: 텐션 시스템
+      description: 스크린 표면을 평평하고 주름 없이 유지하는 데 사용되는 메커니즘을 자세히 설명합니다
+    tent_setup_style:
+      name: 텐트 설치 스타일
+      description: 텐트가 전개되거나 조립되는 방법을 나타냅니다
     tequila_variety:
       name: 데킬라 종류
       description: "데킬라의 종류(예: 골드, 숙성)를 명시합니다"
     terminal_operation:
       name: 단말기 작동
       description: "금전등록기의 작동 유형(예: 수동 또는 전자)을 지정합니다."
+    termination_method:
+      name: 단자 처리 방법
+      description: "도체를 커넥터 접점에 부착하는 데 사용되는 기술(예: 크림프, 솔더, IDC)을 명시합니다"
     terrain:
       name: 지형
       description: "제품 설계 목적(일반적으로 실외 장비용)에 맞는 지면 유형(예: 산악, 구릉지)을 명시합니다"
@@ -6296,6 +8048,9 @@ ko:
     tetherball_equipment_included:
       name: 테더볼 장비 포함
       description: "테더볼 세트에 필수 품목(예: 밧줄이나 테더볼)이 포함되어 있음을 나타냅니다."
+    tethering_policy:
+      name: 테더링 정책
+      description: eSIM 요금제 약관에 따라 모바일 핫스팟 또는 테더링이 허용되는지 명확히 합니다
     text_plate_material:
       name: 스템프 텍스트면 재질
       description: "사무용 스탬프의 문자판 재질(예: 금속, 고무)을 식별합니다."
@@ -6314,9 +8069,24 @@ ko:
     theme:
       name: 테마
       description: "제품의 기본 테마 또는 모티브(예: 스포츠, 우주, 휴일)를 설명합니다"
+    therapeutic_features:
+      name: 치료 기능
+      description: 목 보조기에 통합된 추가 치료 방식을 나열합니다
+    therapeutic_swing_accessories_included:
+      name: 포함된 치료용 그네 액세서리
+      description: 그네와 함께 제공되는 추가 하드웨어나 액세서리를 나열합니다
+    therapy_mode_supported:
+      name: 지원되는 치료 모드
+      description: 표준 APAP 이상으로 장치가 작동할 수 있는 호흡 치료 알고리즘을 나열합니다
+    therapy_temperature_type:
+      name: 치료 온도 유형
+      description: "제품이 온열 치료, 냉찜질 치료 또는 둘 다를 제공하는지를 나타냅니다"
     thermal_detector_type:
       name: 열 검출기 유형
       description: "장치의 열 감지에 사용되는 기술(예: 비정질 실리콘(Si) 감지기)을 지정합니다."
+    thermal_sensation:
+      name: 열 감각
+      description: 적용 후 피부에서 인지되는 온도 효과를 설명합니다
     thermocouple_type:
       name: 열전대 유형
       description: "센서의 열전대 범주(예: J형, S형)를 지정합니다."
@@ -6335,9 +8105,15 @@ ko:
     throw_pillow_shape:
       name: 소형 쿠션 모양
       description: "장식 베개의 모양(예: 볼스터 또는 직사각형)을 식별합니다."
+    thumb_grip_profile:
+      name: 엄지 그립 프로필
+      description: "그립과 컨트롤 느낌에 영향을 미치는 엄지 그립 상단의 표면 또는 모양 스타일(예: 오목, 돔형)을 설명합니다"
     ticket_additional_features:
       name: 티켓 추가 기능
       description: "티켓과 함께 제공되는 추가 혜택(예: 만남, 행사 후 활동)을 강조합니다."
+    ticket_class:
+      name: 티켓 등급
+      description: 티켓과 함께 제공되는 서비스 수준 또는 좌석 등급을 지정합니다
     ticket_type:
       name: 티켓 종류
       description: "이벤트 티켓 카테고리(예: 일반 입장권, 지정석)를 식별합니다."
@@ -6380,6 +8156,9 @@ ko:
     timer_type:
       name: 타이머 유형
       description: "타이머의 빈도 설정(예: 매일, 매주)을 명시합니다"
+    tingle_intensity:
+      name: 따끔거림 강도
+      description: 제품을 적용할 때 생성되는 열이나 따끔거림 감각 수준을 설명합니다
     tip_design:
       name: 팁 디자인
       description: "의료용 바늘과 주사기의 팁 유형(예: 루어 락 또는 슬립 팁)을 지정합니다."
@@ -6431,6 +8210,9 @@ ko:
     tom_tom_design:
       name: 톰톰 디자인
       description: "톰톰 드럼의 종류(예: 플로어, 랙)를 설명합니다."
+    tonearm_type:
+      name: 톤암 유형
+      description: 트래킹 성능과 DJ 사용성에 영향을 미치는 톤암의 형상을 설명합니다
     tool/utensil_material:
       name: 도구/기구 자재
       description: "도구나 도구에 사용되는 주요 재료(예: 스테인리스 스틸 또는 티크 목재 등)를 식별합니다."
@@ -6443,6 +8225,12 @@ ko:
     tool_operation:
       name: 도구 작동
       description: "도구를 작동하는 방법(예: 수동 또는 전동식)을 설명합니다."
+    toothbrush_head_size:
+      name: 칫솔모 헤드 크기
+      description: 다양한 입 크기와 청소 요구에 맞는 브러싱 헤드의 상대적 크기를 정의합니다
+    toothbrush_head_type:
+      name: 칫솔모 헤드 유형
+      description: "헤드의 기능적 스타일을 분류합니다(예: 미백, 잇몸 케어, 어린이용)"
     toothpaste_type:
       name: 치약 유형
       description: "치약의 구체적인 기능(예: 충치 방지, 미백)을 정의합니다"
@@ -6466,7 +8254,7 @@ ko:
       description: "제품의 윗면에 사용되는 소재(예: 스테인리스강 또는 세라믹 유리)를 명시합니다"
     top_up_method:
       name: 충전 방법
-      description: 고객이 선불 카드나 SIM에 추가 크레딧을 추가하거나 요금제를 갱신할 수 있는 방법을 지정합니다.
+      description: 고객이 선불 카드나 SIM에 추가 크레딧을 추가하거나 요금제를 갱신할 수 있는 방법을 지정합니다
     tote_handle_type:
       name: 토트 핸들 유형
       description: "토트백 핸들 스타일(예: 짧은 스타일 또는 긴 스타일)을 식별합니다."
@@ -6476,9 +8264,15 @@ ko:
     touch_capabilities:
       name: 터치 기능
       description: "전자 장치가 지원하는 터치 상호 작용 유형(예: 단일 또는 이중)을 나타냅니다"
+    touchpad_form_factor:
+      name: 터치패드 폼 팩터
+      description: 터치패드의 의도된 설치 또는 사용 스타일을 정의합니다
     touchscreen_technology:
       name: 터치스크린 기술
       description: "대화형 장치용 터치스크린 기술(예: 정전식 또는 저항식)을 식별합니다"
+    touchscreen_wire_configuration:
+      name: 터치스크린 와이어 구성
+      description: "저항성 디지타이저가 사용하는 와이어 또는 라인 수를 나타내며, 컨트롤러와의 호환성에 영향을 미칩니다"
     toy/game_material:
       name: 장난감/게임 재료
       description: "장난감이나 게임에 사용되는 주요 재료(예: 플라스틱 또는 나무)를 식별합니다."
@@ -6491,6 +8285,12 @@ ko:
     toy_tool_type:
       name: 장난감 도구 타입
       description: 드릴이나 망치와 같은 가상 놀이 세트에 있는 장난감 도구 유형을 식별합니다
+    track_configuration:
+      name: 트랙 구성
+      description: "기계가 녹음하거나 재생할 수 있는 테이프 트랙 형식과 채널을 나타냅니다(예: 스테레오 대 모노, 트랙 수)"
+    tracker_form_factor:
+      name: 트래커 형태
+      description: 트래커 하드웨어의 물리적 스타일과 모양을 정의합니다
     tracking_metrics:
       name: 추적 항목
       description: "제품에서 모니터링하는 건강 및 피트니스 데이터(예: 수면, 걸음 수)를 명시합니다"
@@ -6521,9 +8321,18 @@ ko:
     trampoline_design:
       name: 트램펄린 디자인
       description: "트램폴린 구성(예: 스프링 프리 또는 코일 스프링)에 대해 설명합니다."
+    transceiver_form_factor:
+      name: 트랜시버 폼 팩터
+      description: "네트워킹 트랜시버의 물리적 모듈 표준을 정의합니다(예: SFP, QSFP28)"
     transcriber/dictation_system_features:
       name: 전사/받아쓰기 시스템 기능
       description: "전사기 또는 받아쓰기 시스템의 특수 기능(예: AI 기반 또는 소음 감소)을 식별합니다."
+    transfer_aid_type:
+      name: 이동 보조기구 유형
+      description: "보조기구의 스타일을 분류하며, 단단한 보드와 유연한 시트, 공기 보조 매트를 구분합니다"
+    transfer_board_shape:
+      name: 이동 보드 형태
+      description: 이동 경로와 다양한 좌석 또는 침대 높이와의 호환성에 영향을 미치는 보드 또는 시트의 기하학적 프로파일을 정의합니다
     transfer_boards_surface_type:
       name: 이동 보드 표면 유형
       description: "이동성 전송 보드의 표면 질감(예: 패딩 처리됨, 매끄러움)을 명시합니다"
@@ -6533,18 +8342,39 @@ ko:
     transmission_type:
       name: 변속기 유형
       description: "차량 또는 부품의 변속기 유형(예: 수동 또는 자동)을 식별합니다."
+    transmitter_form_factor:
+      name: 송신기 폼 팩터
+      description: 쇼핑객이 용도에 맞는 형태를 빠르게 찾을 수 있도록 송신기 장치의 물리적 스타일 또는 하우징을 분류합니다
+    transport_type:
+      name: 교통 수단
+      description: 티켓 또는 패스가 유효한 대중교통 수단을 지정합니다
     trash_can_features:
       name: 쓰레기통 기능
       description: "쓰레기통의 특별한 특성(예: 냄새 제어 또는 풋 페달)을 설명합니다."
+    travel_pillow_features:
+      name: 여행 베개 기능
+      description: "여행 베개의 특별한 기능적 특성, 액세서리 또는 설계 향상 사항을 나열합니다"
     travel_pillow_shape:
       name: 여행용 목베개 모양
       description: '여행용 베개의 물리적 윤곽(예: J자형)을 설명합니다 '
+    tray_compatibility:
+      name: 트레이 호환성
+      description: 케이스가 맞도록 설계된 미백 트레이나 마우스피스의 스타일을 식별합니다
     treatment_area:
       name: 안마 부위
       description: "일반적으로 마사지 품목의 경우 제품의 대상 신체 부위(예: 등, 목)를 명시합니다"
+    treatment_method:
+      name: 치료 방법
+      description: "제품이 병변을 제거하는 데 사용하는 메커니즘이나 전달 기술을 설명합니다(예: 냉동 요법, 화학 산, 마이크로니들 패치)"
+    treatment_modes:
+      name: 치료 모드
+      description: "장치가 지원하는 기능 모드를 나열합니다(예: HR, SHR, SR)"
     treatment_objective:
       name: 치료 목적
       description: "일반적으로 개인 생활용품에 대해 제품이 다루는 문제(예: 예: 코골이, 발열)를 정의합니다"
+    treatment_target_area:
+      name: 트리트먼트 대상 부위
+      description: "제품이 속눈썹, 눈썹 또는 둘 다를 위해 제조되었는지 나타냅니다"
     treatment_texture:
       name: 트리트먼트 질감
       description: "기저귀 발진 크림과 같은 치료 제품의 질감(예: 걸쭉함, 분말)을 정의합니다"
@@ -6608,9 +8438,15 @@ ko:
     tuning_range:
       name: 튜닝 범위
       description: "사용 가능한 튜닝 옵션의 범위(예: 표준 또는 개방형)를 지정합니다."
+    tv_broadcast_standards_supported:
+      name: 지원되는 TV 방송 표준
+      description: 카드나 어댑터가 디코딩하거나 수신할 수 있는 특정 텔레비전 방송 또는 케이블/위성 표준을 나열합니다
     uc_platform_certification:
       name: UC 플랫폼 인증
-      description: 해당 장치가 공식적으로 인증받은 통합 커뮤니케이션 또는 회의 플랫폼을 식별합니다.
+      description: 해당 장치가 공식적으로 인증받은 통합 커뮤니케이션 또는 회의 플랫폼을 식별합니다
+    ultrasound_probe_type:
+      name: 초음파 프로브 유형
+      description: "모니터와 함께 제공되는 프로브의 디자인 특성을 식별합니다(예: 방수, 내부)"
     undershirt_style:
       name: 언더셔츠 스타일
       description: 크루넥 또는 V넥과 같은 언더셔츠의 디자인이나 재단을 설명합니다
@@ -6632,24 +8468,30 @@ ko:
     upholstery_pattern:
       name: 커버 패턴
       description: 줄무늬나 체크무늬와 같은 가구 직물의 시각적 디자인을 설명합니다
+    uplink_port_type:
+      name: 업링크 포트 유형
+      description: "스위치에 있는 최고 속도 업링크 커넥터를 정의합니다(예: SFP+, QSFP28, 10GBase-T)"
+    ups_topology:
+      name: UPS 토폴로지
+      description: "UPS가 전력을 조정하고 공급하는 데 사용하는 내부 설계 접근 방식(예: 대기, 라인 인터랙티브, 온라인)을 나타냅니다"
     urinal_mounting_type:
       name: 소변기 장착 유형
       description: "소변기 설치 방식(예: 벽걸이형, 바닥형)을 지정합니다."
     usage_conditions:
       name: 사용 조건
       description: (일반적으로 면도기의 경우) 제품이 건조하거나 습한 조건에서 사용하기에 적합한지 명시합니다
+    usage_environment:
+      name: 사용 환경
+      description: 태닝 제품이 사용되도록 의도된 장소를 지정합니다
     usage_frequency:
       name: 사용 빈도
       description: "제품 권장 사용 빈도(예: 매일 또는 매주)를 명시합니다"
-    usage_status:
-      name: 사용 상태
-      description: 수집 가치와 기능적 카드에 중요한 요소인 전화카드의 잔액이 소진되었는지 여부를 나타냅니다.
     usage_type:
       name: 사용 유형
       description: "제품의 의도된 사용 주기(예: 재사용 가능, 리필 가능)를 명시합니다"
     usb_connector_type:
       name: USB 커넥터 유형
-      description: 데이터 및/또는 전원을 위해 장치에 제공된 물리적 USB 커넥터를 식별합니다.
+      description: 데이터 및/또는 전원을 위해 장치에 제공된 물리적 USB 커넥터를 식별합니다
     usb_standard:
       name: USB 표준
       description: "전자 장치의 USB 버전(예: USB 2.0 또는 USB 3.1 Gen 1)을 명시합니다"
@@ -6659,9 +8501,15 @@ ko:
     utility/maintenance_task_type:
       name: 유틸리티/유지보수 작업 유형
       description: "소프트웨어가 수행하는 작업(예: 디스크 정리, 시스템 최적화)을 분류합니다."
+    uv_blocking_class:
+      name: UV 차단 등급
+      description: ISO 표준에서 정의한 대로 콘택트렌즈에 내장된 UV 보호 수준을 나타냅니다
     uv_protection:
       name: UV 차단
       description: "일반적으로 선글라스의 경우 제품의 자외선 차단 능력(예: UV400)을 명시합니다"
+    uva_protection_grade:
+      name: UVA 보호 등급
+      description: 일반적으로 PA 등급으로 표현되는 제품의 UVA 보호 등급을 나타냅니다
     vacuum_air_filtering_technology:
       name: 진공 공기 필터링 기술
       description: "진공청소기에 사용되는 공기 여과 유형(예: HEPA 또는 애완동물)을 명시합니다"
@@ -6680,6 +8528,9 @@ ko:
     vase_shape:
       name: 꽃병 모양
       description: "꽃병의 기하학적 또는 유기적 형태(예: 원형 또는 병)를 설명합니다"
+    vcr_configuration:
+      name: VCR 구성
+      description: 장치가 독립형 VCR인지 추가 드라이브 또는 튜너가 있는 콤보 장치인지 식별합니다
     vdi_protocol_support:
       name: VDI 프로토콜 지원
       description: "지원되는 VDI(가상 데스크톱 인프라) 프로토콜(예: PCoIP, RDP)을 명시합니다"
@@ -6740,6 +8591,9 @@ ko:
     vehicle_mirror_type:
       name: 차량 미러 타입
       description: 후방이나 측면 등 차량의 특정 유형의 미러를 식별합니다
+    vehicle_mounting_location:
+      name: 차량 장착 위치
+      description: 마운트가 설치되도록 의도된 차량 내 영역을 지정합니다
     vehicle_oil_features:
       name: 차량 오일 기능
       description: "모터 오일의 고유한 특성(예: 마모 방지 또는 높은 여과 효율)을 설명합니다."
@@ -6761,9 +8615,15 @@ ko:
     vehicle_type:
       name: 차종
       description: "차량 유형(예: SUV, 범선)을 분류합니다."
+    ventilation_type:
+      name: 환기 유형
+      description: 내부 온도를 관리하는 인클로저의 주요 통풍구 스타일 또는 공기 흐름 기능을 설명합니다
     verification_technology:
       name: 검증 기술
       description: "지폐 검증기에 사용되는 기술(예: 자기 또는 적외선)을 식별합니다."
+    vesa_mounting_pattern:
+      name: VESA 마운팅 패턴
+      description: "마운트, 암 및 스탠드와의 호환성을 위해 모니터 뒷면의 VESA 홀 간격을 정의합니다"
     vg/pg_ratio:
       name: VG/PG 비율
       description: "e-액체의 식물성 글리세린 대 프로필렌 글리콜 비율(예: 30:70)을 나타냅니다"
@@ -6788,12 +8648,18 @@ ko:
     video_port_type:
       name: 비디오 포트 유형
       description: "제품이 지원하는 비디오 포트 유형(예: HDMI, 디스플레이 포트)을 명시합니다"
+    video_recorder_type:
+      name: 비디오 레코더 유형
+      description: "장치의 기본 녹화 기술을 지정합니다(예: DVR, NVR, XVR)"
     video_region_code:
       name: 비디오 지역 코드
       description: "DVD 및 Blu-ray 플레이어의 지역 호환성(예: 지역 구분 없음 또는 지역 1)을 정의합니다"
     video_resolution_supported:
       name: 지원되는 비디오 해상도
       description: "장치가 지원하는 비디오 선명도 또는 화질(예: 1080p 또는 Ultra HD)을 정의합니다"
+    video_signal_standard:
+      name: 비디오 신호 표준
+      description: "장치가 지원하는 아날로그 비디오 방송 표준을 지정합니다(예: NTSC, PAL, SECAM)"
     viewing_area_height:
       name: 시야 창 높이
       description: "용접 헬멧과 같은 제품에서 보기 영역의 높이(예: 중형, 대형)를 지정합니다."
@@ -6809,9 +8675,15 @@ ko:
     viscosity:
       name: 점도
       description: "모터 오일의 흐름 저항(예: 10W-40 또는 15W-50)을 지정합니다."
+    vision_correction_type:
+      name: 시력 교정 유형
+      description: 특정 시력 상태를 교정하기 위한 광학 설계를 나타냅니다
     visual_effect:
       name: 시각 효과
       description: "일반적으로 예술 유약에 대한 제품의 시각적 특성(예: 얼룩덜룩함, 질감이 있음)을 정의합니다."
+    voice_recorder_form_factor:
+      name: 음성 녹음기 폼 팩터
+      description: 쇼핑객이 사용 사례에 맞는 디자인을 선택할 수 있도록 녹음기의 물리적 스타일 또는 위장을 설명합니다
     voip_protocol_support:
       name: VoIP 프로토콜 지원
       description: "장치가 지원할 수 있는 VoIP(Voice over Internet Protocol) 프로토콜(예: SIP 또는 IAX)을 명시합니다"
@@ -6821,6 +8693,18 @@ ko:
     waist_rise:
       name: 허리 밑위
       description: "옷이 허리 부분에 자리 잡는 위치(예: 낮음, 중간, 높음)를 나타냅니다"
+    walker_brake_type:
+      name: 워커 브레이크 유형
+      description: 워커에 통합된 제동 메커니즘을 설명합니다
+    walker_seat_type:
+      name: 워커 좌석 유형
+      description: 워커에 좌석이 포함되어 있는지와 좌석의 스타일을 식별합니다
+    walker_type:
+      name: 워커 유형
+      description: 워커의 구조적 스타일과 의도된 사용법을 분류합니다
+    walking_aid_tip_type:
+      name: 보행 보조기구 팁 유형
+      description: 지팡이의 지면 팁의 스타일이나 기술을 지정합니다
     wall_material:
       name: 벽 소재
       description: "일반적으로 사우나에서 제품 벽에 사용되는 소재(예: 삼나무)를 식별합니다"
@@ -6839,6 +8723,9 @@ ko:
     wallpaper_theme:
       name: 배경 화면 테마
       description: "데스크탑 배경화면의 주요 주제나 스타일(예: 자연 또는 추상)을 식별합니다."
+    wan_interface_type:
+      name: WAN 인터페이스 유형
+      description: "라우터의 WAN/인터넷 업링크에 사용되는 물리적 연결 유형을 지정합니다(예: 이더넷, 광섬유, DSL, 셀룰러)"
     warning_category:
       name: 경고 카테고리
       description: "보안 또는 안전 표시의 범주(예: 금지, 경고)를 분류합니다."
@@ -6881,6 +8768,9 @@ ko:
     water_filter_application:
       name: 정수 필터 적용
       description: "일반적으로 가전제품에 사용되는 정수 필터의 용도(예: 커피 머신, 제빙기)를 식별합니다"
+    water_flosser_modes:
+      name: 물 치실기 모드
+      description: 장치가 작동할 수 있는 사용 가능한 청소 모드를 나열합니다
     water_sport:
       name: 수상 스포츠
       description: "제품 설계 용도가 되는 수상 스포츠(예: 스쿠버 다이빙 또는 카약)를 명시합니다"
@@ -6911,6 +8801,12 @@ ko:
     wax_type:
       name: 왁스 종류
       description: "양초와 같은 품목의 왁스 유형(예: 콩 또는 파라핀)을 지정합니다."
+    wear_schedule:
+      name: 착용 스케줄
+      description: 제거 전 렌즈의 최대 승인된 연속 착용 기간을 지정합니다
+    weather_alert_technology:
+      name: 날씨 경보 기술
+      description: 자동 비상 경고를 위해 라디오가 지원하는 경보 표준 또는 인증을 지정합니다
     weather_strip_design:
       name: 문풍지 디자인
       description: "웨더 스트리핑 재료의 모양(예: 원형 또는 평면)을 설명합니다."
@@ -6929,6 +8825,9 @@ ko:
     weight_bar_type:
       name: 웨이트 바 유형
       description: "역기의 디자인(예: 트랩 또는 컬)을 명시합니다"
+    weight_loss_mechanism:
+      name: 체중 감량 메커니즘
+      description: 보충제가 체중 감량을 지원하기 위해 사용하는 주요 생리학적 접근 방식을 식별합니다
     weight_type:
       name: 무게추 유형
       description: "품목의 무게(예: 가벼움, 중간, 무거움)를 설명합니다."
@@ -6950,6 +8849,9 @@ ko:
     wheel_part_type:
       name: 바퀴 부품 종류
       description: "차량 휠 시스템의 특정 구성 요소(예: 휠 베어링 또는 휠 허브)를 식별합니다."
+    wheel_style:
+      name: 휠 스타일
+      description: 물리적 림 모양 또는 운전 분야 스타일을 설명합니다
     wheel_type:
       name: 휠 유형
       description: "사이클링 제품의 바퀴 종류(예: 공기주입식 또는 고체)를 명시합니다"
@@ -6968,6 +8870,9 @@ ko:
     wi_fi_standard:
       name: Wi-Fi 표준
       description: "무선 네트워킹 프로토콜(예: 802.11ac)을 명시합니다"
+    width_adjustment:
+      name: 너비 조정
+      description: "장비의 너비를 다양한 설비, 침대 또는 사용자에 맞게 조정할 수 있는지를 나타냅니다"
     winder_features:
       name: 와인더 기능
       description: "기타 스트링 와인더의 특별한 특성(예: 브리지 핀 풀러 또는 내장 커터)을 설명합니다."
@@ -6989,6 +8894,9 @@ ko:
     wine_variety:
       name: 와인 종류
       description: "다양한 종류의 와인(예: 화이트, 로제)을 구별하는 데 도움이 됩니다"
+    wing_style:
+      name: 날개 스타일
+      description: 패드가 안정화 날개를 포함하는지 여부와 포함하는 경우 어떤 스타일인지를 나타냅니다
     wipe_dispenser/warmer_features:
       name: 물티슈 디스펜서/워머 기능
       description: "물티슈 디스펜서 및 워머의 특장점(예: 여행 친화적)을 설명합니다"
@@ -7001,6 +8909,9 @@ ko:
     wipe_packaging:
       name: 물티슈 패키지
       description: "물티슈의 용기 또는 포장 스타일(예: 리필 팩, 여행용 사이즈)을 정의합니다"
+    wipe_purpose:
+      name: 물티슈 목적
+      description: 물티슈의 주요 의도된 용도나 이점을 식별합니다
     wipe_warmer_features:
       name: 물티슈 워머 기능
       description: "물티슈 워머의 구체적인 기능(예: 여행 친화적, 수분 유지)을 자세히 설명합니다."
@@ -7012,7 +8923,13 @@ ko:
       description: "와이어의 두께(예: 두껍운 두께 또는 가는 두께)를 지정합니다."
     wireless_charging_standard:
       name: 무선 충전 표준
-      description: 휴대폰에서 지원하는 유도 충전 프로토콜을 식별합니다.
+      description: 휴대폰에서 지원하는 유도 충전 프로토콜을 식별합니다
+    wireless_multi_room_platform:
+      name: 무선 멀티룸 플랫폼
+      description: 멀티룸 오디오 스트리밍에 사용되는 독점 또는 타사 생태계를 정의합니다
+    wireless_streaming_protocols_supported:
+      name: 지원 무선 스트리밍 프로토콜
+      description: 스테레오가 기본적으로 수신할 수 있는 무선 스트리밍 표준 또는 서비스를 식별합니다
     woodwind_care_items_included:
       name: 목관 악기 관리 용품 포함
       description: "목관 악기에 포함된 관리 품목(예: 청소용 브러시, 코르크 그리스)을 식별합니다."
@@ -7022,6 +8939,15 @@ ko:
     wreath_design:
       name: 리스 디자인
       description: "화환의 기본 재료나 모양(예: 금속 또는 후프)을 식별합니다."
+    wrist_rest_features:
+      name: 손목 받침대 기능
+      description: 가치를 더하는 특별한 기능적 또는 디자인 특성을 나열합니다
+    wrist_rest_type:
+      name: 손목 받침대 유형
+      description: "손목 받침대의 의도된 장치 페어링 또는 세트 구성(예: 키보드 전용, 마우스 전용, 결합 세트)을 식별합니다"
+    xlr_pin_count:
+      name: XLR 핀 수
+      description: XLR 커넥터의 특정 핀 구성(핀 수)을 나타냅니다
     yacht_type:
       name: 요트 유형
       description: "요트 유형(예: 모터 또는 익스플로러)을 분류합니다."
