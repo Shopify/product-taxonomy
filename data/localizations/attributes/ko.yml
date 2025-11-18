@@ -170,6 +170,9 @@ ko:
     album_type:
       name: 앨범 유형
       description: "스프링 제본, 스크랩북 등 스크랩북 또는 스탬핑 키트의 바인딩 스타일을 설명합니다"
+    alcohol/solvent_content:
+      name: 알코올/용매 함량
+      description: "배송 및 규제 요건에 따라 알코올 또는 용매 함량을 기준으로 제품을 분류합니다(예: 알코올 ≤24%, 알코올 >24%, 용매 소형 용기)."
     alcohol_content:
       name: 알코올 함량
       description: 토너가 무알코올인지 또는 존재하는 경우 포뮬러에 대략 얼마나 많은 알코올이 포함되어 있는지를 나타냅니다
@@ -1754,6 +1757,9 @@ ko:
     compatible_contact_lens_type:
       name: 호환 가능한 콘택트렌즈 유형
       description: 케이스에 보관하거나 세척할 수 있는 콘택트렌즈 범주를 식별합니다
+    compatible_contact_lenses:
+      name: 호환 가능한 콘택트렌즈
+      description: 용액과 안전하게 사용할 수 있는 콘택트렌즈의 유형이나 소재를 나타냅니다.
     compatible_cosmetic_tools:
       name: 호환 가능한 화장 도구
       description: "제품과 함께 사용할 수 있는 미용 도구(예: 스펀지, 핀셋)를 명시합니다"
@@ -2048,6 +2054,9 @@ ko:
     constitutive_ingredients:
       name: 구성 성분
       description: "제품 제조에 사용되는 주요 성분(예: 밀랍, 로즈힙 오일)를 명시합니다"
+    construction:
+      name: 구성
+      description: "주얼리 제조에 사용된 금속 가공 방식을 나타냅니다(예: 도금, 금도금, 충전, 솔리드)."
     construction_set_theme:
       name: 건설 현장 세트 테마
       description: 해적이나 동물과 같은 블록 세트의 주제를 식별합니다
@@ -2057,9 +2066,6 @@ ko:
     contact_lens_case_features:
       name: 콘택트렌즈 케이스 기능
       description: 케이스의 주목할 만한 기능적 특징이나 포함 사항을 강조합니다
-    contact_lens_compatibility:
-      name: 콘택트렌즈 호환성
-      description: 용액과 안전하게 사용할 수 있는 콘택트렌즈의 유형이나 소재를 나타냅니다
     contact_lens_material:
       name: 콘택트렌즈 소재
       description: "렌즈가 만들어진 폴리머 제형이나 소재 계열을 지정합니다(예: 하이드로겔, 실리콘 하이드로겔)"
@@ -4586,6 +4592,9 @@ ko:
     leather/vinyl_texture:
       name: 가죽/비닐 질감
       description: "가죽이나 비닐 제품의 표면 느낌(예: 매끄럽거나 거친 느낌)을 나타냅니다."
+    leather_type:
+      name: 가죽 유형
+      description: "제품에 사용된 동물 종류 또는 가죽 유형을 나타냅니다(예: 소가죽, 송아지 가죽, 악어, 뱀, 합성)."
     lectern_mounting_type:
       name: 독서대 장착 유형
       description: "성서대의 설치 스타일(예: 탁상이나 바닥)을 지정합니다."
@@ -4943,6 +4952,12 @@ ko:
     material_hardness:
       name: 재료 경도
       description: "일반적으로 스포츠 또는 피트니스 장비에 대한 제품의 견고성(예: 매우 부드러움, 높은 저항성)을 정의합니다"
+    material_origin:
+      name: 재료 원산지
+      description: "고가의 재료가 제공되는 형태 또는 상태를 나타냅니다(예: 미가공 원석/세팅 안 함, 완제품 주얼리, 인쇄/디지털 기프트 카드)."
+    material_treatment:
+      name: 재료 처리
+      description: "보존 또는 안전을 위해 재료에 적용된 화학적 또는 물리적 처리를 나타냅니다(예: 열처리, 훈증, 화학 처리)."
     maternity_clothing_features:
       name: 임부복 기능
       description: "임부복의 고유한 특징(예: 배가 성장할 수 있는 공간, 지지 컵 등)을 설명합니다."
@@ -6038,6 +6053,9 @@ ko:
     plant_class:
       name: 식물 품종
       description: "식물을 특정 분류학적 그룹(예: 백합강, 십자화과)으로 분류합니다"
+    plant_material:
+      name: 식물성 소재
+      description: "식물성 소재가 생물인지, 보존된 것인지, 인공 소재인지 나타냅니다."
     plant_name:
       name: 식물명
       description: "식물의 식물명 또는 일반명(예: 장미, 바질, 오이)을 식별합니다"
@@ -6281,6 +6299,9 @@ ko:
     product_certifications_standards:
       name: 제품 인증 및 표준
       description: "제품이 충족하는 인증 또는 기준(예: 유기농, 크루얼티 프리)을 나타냅니다"
+    product_classification:
+      name: 제품 분류
+      description: "고가의 재료, 통화 또는 귀중품 유형을 분류합니다(예: 통화, 금괴, 귀금속, 기프트 카드, NFT)."
     product_form:
       name: 제품 형태
       description: "일반적으로 건강과 미용을 위한 제품의 형식 또는 표현(예: 로션, 세럼)을 정의합니다"
@@ -6296,6 +6317,9 @@ ko:
     product_sterility:
       name: 제품 소독
       description: 건강과 안전을 위해 제품 멸균 여부를 나타냅니다
+    product_use:
+      name: 제품 용도
+      description: "고가의 재료 또는 수집품의 원래 의도된 사용처 또는 목적을 나타냅니다(예: 통화/법정 통화, 수집용, 주얼리, 기프트 카드)."
     program_format:
       name: 프로그램 형식
       description: "행사 프로그램의 레이아웃(예: 소책자, 낱장)을 설명합니다."
@@ -8930,6 +8954,9 @@ ko:
     wireless_streaming_protocols_supported:
       name: 지원 무선 스트리밍 프로토콜
       description: 스테레오가 기본적으로 수신할 수 있는 무선 스트리밍 표준 또는 서비스를 식별합니다
+    wood_finish:
+      name: 목재 마감
+      description: "목재 제품에 적용된 마감 처리 또는 제작 방식을 설명합니다(예: 원목, 덧댐, 가공, 기름칠, 옻칠, 도장)."
     woodwind_care_items_included:
       name: 목관 악기 관리 용품 포함
       description: "목관 악기에 포함된 관리 품목(예: 청소용 브러시, 코르크 그리스)을 식별합니다."
