@@ -1619,6 +1619,21 @@ nl:
     album_type__spiral_bound:
       name: Spiraal gebonden
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: Alcohol >24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: Alcohol ≤24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: Andere
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: Oplosmiddel - grote container (>1L)
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: Oplosmiddel - kleine verpakking (≤1L)
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: Alcoholvrij
       context: Alcohol content
@@ -6770,6 +6785,12 @@ nl:
     battery_size__f:
       name: F
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100Wh"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: Grote batterij (apparaat/gereedschap/speelgoed om op te rijden)
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ nl:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤100Wh"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ nl:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: Kleine huishoudelijke batterij (AA/AAA/munt)
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ nl:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: Onbekend
       context: Battery size
     battery_technology__alkaline:
       name: Alkaline
@@ -7016,6 +7046,12 @@ nl:
     battery_terminal_type__wire_leads:
       name: Draadaansluitingen
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: Ingesloten-afneembaar
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: Ingesloten-niet-afneembaar
+      context: Battery type
     battery_type__disposable:
       name: Wegwerpbaar
       context: Battery type
@@ -7024,6 +7060,12 @@ nl:
       context: Battery type
     battery_type__rechargeable:
       name: Oplaadbaar
+      context: Battery type
+    battery_type__standalone_included:
+      name: Los (inbegrepen)
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: Los (niet inbegrepen)
       context: Battery type
     bead_shape__hair_pipe:
       name: Langwerpige kraal
@@ -9668,6 +9710,9 @@ nl:
     bristle_hardness__soft:
       name: Zacht
       context: Bristle hardness
+    bristle_material__badger:
+      name: Das
+      context: Bristle material
     bristle_material__boar_bristle:
       name: Varkenshaar
       context: Bristle material
@@ -9676,6 +9721,12 @@ nl:
       context: Bristle material
     bristle_material__faux_leather:
       name: Kunstleer
+      context: Bristle material
+    bristle_material__goat:
+      name: Geit
+      context: Bristle material
+    bristle_material__hog:
+      name: Varken
       context: Bristle material
     bristle_material__horsehair:
       name: Paardenhaar
@@ -9710,8 +9761,14 @@ nl:
     bristle_material__polyvinyl_chloride_pvc:
       name: Polyvinylchloride (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: Pony
+      context: Bristle material
     bristle_material__rubber:
       name: Rubber
+      context: Bristle material
+    bristle_material__sable:
+      name: Sabel
       context: Bristle material
     bristle_material__silicone:
       name: Siliconen
@@ -9724,6 +9781,9 @@ nl:
       context: Bristle material
     bristle_material__teflon:
       name: Teflon
+      context: Bristle material
+    bristle_material__unknown:
+      name: Onbekend
       context: Bristle material
     bristle_material__wood:
       name: Hout
@@ -14954,6 +15014,39 @@ nl:
     compatible_contact_lens_type__toric:
       name: Torisch
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: Gekleurde lenzen
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: Harde lenzen
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: Hybride lenzen
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: Multifocale lenzen
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: Orthokeratologie lenzen
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: Andere
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: Rigide gasdoorlatende (RGP) lenzen
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: Sclerale lenzen
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: Silicone hydrogel lenzen
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: Zachte contactlenzen
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: Torische lenzen
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: Oprberghouders voor schoonheidsgereedschap
       context: Compatible cosmetic tools
@@ -18722,6 +18815,30 @@ nl:
     constitutive_ingredients__zinc_oxide:
       name: Zinkoxide
       context: Constitutive ingredients
+    construction__clad:
+      name: Bekleed
+      context: Construction
+    construction__filled:
+      name: Gevuld
+      context: Construction
+    construction__other:
+      name: Andere
+      context: Construction
+    construction__plated:
+      name: Verguld
+      context: Construction
+    construction__solid:
+      name: Stevig
+      context: Construction
+    construction__toned:
+      name: Getint
+      context: Construction
+    construction__vermeil:
+      name: Vermeil
+      context: Construction
+    construction__whole:
+      name: Geheel
+      context: Construction
     construction_set_theme__aircraft:
       name: Vliegtuig
       context: Construction set theme
@@ -18827,39 +18944,6 @@ nl:
     contact_lens_case_features__ventilation_port:
       name: Ventilatiepoort
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: Gekleurde lenzen
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: Harde lenzen
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: Hybride lenzen
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: Multifocale lenzen
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: Orthokeratologie lenzen
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: Andere
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: Rigide gasdoorlatende (RGP) lenzen
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: Sclerale lenzen
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: Silicone hydrogel lenzen
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: Zachte contactlenzen
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: Torische lenzen
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: Balafilcon A
       context: Contact lens material
@@ -27458,23 +27542,41 @@ nl:
     embellishments__chipboard_elements:
       name: Spaanplaatelementen
       context: Embellishments
+    embellishments__diamond:
+      name: Diamant
+      context: Embellishments
     embellishments__die_cuts:
       name: Gestanst
       context: Embellishments
     embellishments__gems:
       name: Edelstenen
       context: Embellishments
+    embellishments__none:
+      name: Geen
+      context: Embellishments
     embellishments__other:
       name: Andere
       context: Embellishments
+    embellishments__precious_stone:
+      name: Edelsteen
+      context: Embellishments
+    embellishments__rhinestone:
+      name: Bergkristal
+      context: Embellishments
     embellishments__ribbons:
       name: Linten
+      context: Embellishments
+    embellishments__semi_precious_stone:
+      name: Halfedelsteen
       context: Embellishments
     embellishments__sequins:
       name: Lovertjes
       context: Embellishments
     embellishments__stickers:
       name: Stickers
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: Synthetische hars
       context: Embellishments
     embellishments__washi_tape:
       name: Washi-tape
@@ -31973,8 +32075,14 @@ nl:
     food_product_form__powder:
       name: Poeder
       context: Food product form
+    food_product_form__preserved:
+      name: Behouden
+      context: Food product form
     food_product_form__sheets:
       name: Bladen
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: Onbehandeld/ruw
       context: Food product form
     food_product_form__whole:
       name: Geheel
@@ -39572,6 +39680,9 @@ nl:
     jewelry_material__alcantara:
       name: Alcantara
       context: Jewelry material
+    jewelry_material__alloy:
+      name: Alloy
+      context: Jewelry material
     jewelry_material__aluminum:
       name: Aluminium
       context: Jewelry material
@@ -39689,6 +39800,9 @@ nl:
     jewelry_material__nickel_plated:
       name: Vernikkeld
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: Niet-edele metalen
+      context: Jewelry material
     jewelry_material__nylon:
       name: Nylon
       context: Jewelry material
@@ -39700,6 +39814,9 @@ nl:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: Verguld palladium
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: Parels
       context: Jewelry material
     jewelry_material__plastic:
       name: Plastic
@@ -39715,6 +39832,9 @@ nl:
       context: Jewelry material
     jewelry_material__porcelain:
       name: Porselein
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: Edelstenen/halfedelstenen
       context: Jewelry material
     jewelry_material__precious_resin:
       name: Kostbare hars
@@ -42137,6 +42257,45 @@ nl:
     leather/vinyl_texture__smooth:
       name: Glad
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: Alligatorleer
+      context: Leather type
+    leather_type__calfskin:
+      name: Kalfsleer
+      context: Leather type
+    leather_type__cowhide:
+      name: Koeienhuid
+      context: Leather type
+    leather_type__crocodile:
+      name: Krokodillenleer
+      context: Leather type
+    leather_type__lambskin:
+      name: Lamsvel
+      context: Leather type
+    leather_type__lizard:
+      name: Hagedissenleer
+      context: Leather type
+    leather_type__ostrich:
+      name: Struisvogel
+      context: Leather type
+    leather_type__other:
+      name: Andere
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: Schapenvacht
+      context: Leather type
+    leather_type__stingray:
+      name: Pijlstaartrog
+      context: Leather type
+    leather_type__synthetic:
+      name: Synthetisch
+      context: Leather type
+    leather_type__unknown:
+      name: Onbekend
+      context: Leather type
     lectern_mounting_type__floor:
       name: Vloer
       context: Lectern mounting type
@@ -43631,8 +43790,14 @@ nl:
     lumber/wood_type__cherry_wood:
       name: Kersenhout
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: Kurk
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: Pecannnoot hout
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: Jute
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: Esdoornhout
@@ -43646,6 +43811,9 @@ nl:
     lumber/wood_type__other:
       name: Andere
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: Palm
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: Dennenhout
       context: Lumber/Wood type
@@ -43655,8 +43823,17 @@ nl:
     lumber/wood_type__poplar_wood:
       name: Populierenhout
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: Raffia
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: Rotan
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: Roodhout
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: Rietje
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: Walnotenhout
@@ -44945,6 +45122,36 @@ nl:
     material_hardness__soft:
       name: Zacht
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: Eindproduct (sieraden/horloge)
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: Los/niet gemonteerd
+      context: Material origin
+    material_origin__nft:
+      name: NFT)
+      context: Material origin
+    material_origin__other:
+      name: Andere
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: Gedrukt/digitaal (cadeaubon
+      context: Material origin
+    material_origin__voucher:
+      name: voucher
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: Chemisch behandeld
+      context: Material treatment
+    material_treatment__fumigated:
+      name: Gefumigeerd
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: Warmtebehandeld
+      context: Material treatment
+    material_treatment__other:
+      name: Andere
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: Verstelbare band
       context: Maternity clothing features
@@ -55409,6 +55616,18 @@ nl:
     plant_class__zingiberales:
       name: Zingiberales
       context: Plant class
+    plant_material__artificial:
+      name: Kunstmatig
+      context: Plant material
+    plant_material__dried/preserved:
+      name: Gedroogd/geconserveerd
+      context: Plant material
+    plant_material__live:
+      name: Live
+      context: Plant material
+    plant_material__other:
+      name: Andere
+      context: Plant material
     plant_name__aeonium:
       name: Aeonium
       context: Plant name
@@ -57668,6 +57887,33 @@ nl:
     product_certifications_standards__vegan:
       name: Vegan
       context: Product certifications & standards
+    product_classification__bullion:
+      name: Goud- en zilverstaven
+      context: Product classification
+    product_classification__coupon:
+      name: Coupon
+      context: Product classification
+    product_classification__currency:
+      name: Valuta
+      context: Product classification
+    product_classification__gift_card:
+      name: Cadeaubon
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: Losse edelstenen
+      context: Product classification
+    product_classification__nft:
+      name: NFT
+      context: Product classification
+    product_classification__other:
+      name: Andere
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: Halfedelstenen
+      context: Product classification
+    product_classification__voucher:
+      name: Voucher
+      context: Product classification
     product_form__cream:
       name: Crème
       context: Product form
@@ -57815,6 +58061,21 @@ nl:
     product_sterility__sterile:
       name: Steriel
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: Verzamelobject/numismatisch
+      context: Product use
+    product_use__currency/legal_tender:
+      name: Valuta/wettig betaalmiddel
+      context: Product use
+    product_use__gift_card/voucher:
+      name: Cadeaubon/voucher
+      context: Product use
+    product_use__jewelry/ornament:
+      name: Sieraden/ornamenten
+      context: Product use
+    product_use__other:
+      name: Andere
+      context: Product use
     program_format__booklet:
       name: Boekje
       context: Program format
@@ -79811,6 +80072,30 @@ nl:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: Geproduceerd (multiplex/MDF)
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: Gelakt/gevernist
+      context: Wood finish
+    wood_finish__oiled:
+      name: Geolied
+      context: Wood finish
+    wood_finish__other:
+      name: Andere
+      context: Wood finish
+    wood_finish__painted:
+      name: Geschilderd
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: Massief hout
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: Onbehandeld/natuurlijk
+      context: Wood finish
+    wood_finish__veneered:
+      name: Gefineerd
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: Schoonmaakborstel
       context: Woodwind care items included
