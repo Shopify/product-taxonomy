@@ -1619,6 +1619,21 @@ es:
     album_type__spiral_bound:
       name: Encuadernación en espiral
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: Alcohol >24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: Alcohol ≤24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: Otros
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: "Disolvente: recipiente grande (>1L)"
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: "Disolvente: recipiente pequeño (≤1L)"
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: Sin alcohol
       context: Alcohol content
@@ -6770,6 +6785,12 @@ es:
     battery_size__f:
       name: F
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100 Wh"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: Celda grande (electrodoméstico/herramienta/juguete para montar)
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ es:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤100 Wh"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ es:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: Celda doméstica pequeña (AA/AAA/moneda)
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ es:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: Desconocido
       context: Battery size
     battery_technology__alkaline:
       name: Alcalino
@@ -7016,6 +7046,12 @@ es:
     battery_terminal_type__wire_leads:
       name: Cables conductores
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: Contenido-desmontable
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: Contenido-no desmontable
+      context: Battery type
     battery_type__disposable:
       name: Desechables
       context: Battery type
@@ -7024,6 +7060,12 @@ es:
       context: Battery type
     battery_type__rechargeable:
       name: Recargable
+      context: Battery type
+    battery_type__standalone_included:
+      name: Independiente (incluido)
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: Independiente (no incluido)
       context: Battery type
     bead_shape__hair_pipe:
       name: Horquillas para el cabello
@@ -9668,6 +9710,9 @@ es:
     bristle_hardness__soft:
       name: Blando
       context: Bristle hardness
+    bristle_material__badger:
+      name: Tejón
+      context: Bristle material
     bristle_material__boar_bristle:
       name: Cerdas de jabalí
       context: Bristle material
@@ -9676,6 +9721,12 @@ es:
       context: Bristle material
     bristle_material__faux_leather:
       name: Cuero sintético
+      context: Bristle material
+    bristle_material__goat:
+      name: Cabra
+      context: Bristle material
+    bristle_material__hog:
+      name: Cerdo
       context: Bristle material
     bristle_material__horsehair:
       name: Horsehair
@@ -9710,8 +9761,14 @@ es:
     bristle_material__polyvinyl_chloride_pvc:
       name: Cloruro de polivinilo (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: Pony
+      context: Bristle material
     bristle_material__rubber:
       name: Goma
+      context: Bristle material
+    bristle_material__sable:
+      name: Sable
       context: Bristle material
     bristle_material__silicone:
       name: Silicona
@@ -9724,6 +9781,9 @@ es:
       context: Bristle material
     bristle_material__teflon:
       name: Teflón
+      context: Bristle material
+    bristle_material__unknown:
+      name: Desconocido
       context: Bristle material
     bristle_material__wood:
       name: Madera
@@ -14954,6 +15014,39 @@ es:
     compatible_contact_lens_type__toric:
       name: Tórico
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: Lentes de color
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: Lentes duros
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: Lentes híbridos
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: Lentes multifocales
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: Lentes de ortoqueratología
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: Otros
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: Lentes rígidos permeables al gas (RPG)
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: Lentes esclerales
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: Lentes de hidrogel de silicona
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: Lentes de contacto blandos
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: Lentes tóricos
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: Contenedores de herramientas de belleza
       context: Compatible cosmetic tools
@@ -18722,6 +18815,30 @@ es:
     constitutive_ingredients__zinc_oxide:
       name: Óxido de zinc
       context: Constitutive ingredients
+    construction__clad:
+      name: Revestido
+      context: Construction
+    construction__filled:
+      name: Relleno
+      context: Construction
+    construction__other:
+      name: Otros
+      context: Construction
+    construction__plated:
+      name: Chapado
+      context: Construction
+    construction__solid:
+      name: Sólido
+      context: Construction
+    construction__toned:
+      name: Tonalizado
+      context: Construction
+    construction__vermeil:
+      name: Vermeil
+      context: Construction
+    construction__whole:
+      name: Entero
+      context: Construction
     construction_set_theme__aircraft:
       name: Avión
       context: Construction set theme
@@ -18827,39 +18944,6 @@ es:
     contact_lens_case_features__ventilation_port:
       name: Puerto de ventilación
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: Lentes de color
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: Lentes duros
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: Lentes híbridos
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: Lentes multifocales
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: Lentes de ortoqueratología
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: Otros
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: Lentes rígidos permeables al gas (RPG)
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: Lentes esclerales
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: Lentes de hidrogel de silicona
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: Lentes de contacto blandos
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: Lentes tóricos
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: Balafilcon A
       context: Contact lens material
@@ -27458,23 +27542,41 @@ es:
     embellishments__chipboard_elements:
       name: Elementos de aglomerado
       context: Embellishments
+    embellishments__diamond:
+      name: Diamante
+      context: Embellishments
     embellishments__die_cuts:
       name: Troqueles
       context: Embellishments
     embellishments__gems:
       name: Gemas
       context: Embellishments
+    embellishments__none:
+      name: Ninguno
+      context: Embellishments
     embellishments__other:
       name: Otros
       context: Embellishments
+    embellishments__precious_stone:
+      name: Piedra preciosa
+      context: Embellishments
+    embellishments__rhinestone:
+      name: Diamante de imitación
+      context: Embellishments
     embellishments__ribbons:
       name: Cintas
+      context: Embellishments
+    embellishments__semi_precious_stone:
+      name: Piedra semipreciosa
       context: Embellishments
     embellishments__sequins:
       name: Lentejuelas
       context: Embellishments
     embellishments__stickers:
       name: Pegatinas
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: Perla sintética
       context: Embellishments
     embellishments__washi_tape:
       name: Cinta washi
@@ -31973,8 +32075,14 @@ es:
     food_product_form__powder:
       name: Polvo
       context: Food product form
+    food_product_form__preserved:
+      name: Preservado
+      context: Food product form
     food_product_form__sheets:
       name: Hojas
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: Sin tratar/En bruto
       context: Food product form
     food_product_form__whole:
       name: Entero
@@ -39572,6 +39680,9 @@ es:
     jewelry_material__alcantara:
       name: Alcántara
       context: Jewelry material
+    jewelry_material__alloy:
+      name: Aleación
+      context: Jewelry material
     jewelry_material__aluminum:
       name: Aluminio
       context: Jewelry material
@@ -39689,6 +39800,9 @@ es:
     jewelry_material__nickel_plated:
       name: Niquelado
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: Metales no preciosos
+      context: Jewelry material
     jewelry_material__nylon:
       name: Nylon
       context: Jewelry material
@@ -39700,6 +39814,9 @@ es:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: Bañado en paladio
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: Perlas
       context: Jewelry material
     jewelry_material__plastic:
       name: Plástico
@@ -39715,6 +39832,9 @@ es:
       context: Jewelry material
     jewelry_material__porcelain:
       name: Porcelana
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: Piedras preciosas/semipreciosas
       context: Jewelry material
     jewelry_material__precious_resin:
       name: Resina preciosa
@@ -42137,6 +42257,45 @@ es:
     leather/vinyl_texture__smooth:
       name: Suave
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: Cocodrilo
+      context: Leather type
+    leather_type__calfskin:
+      name: Piel de becerro
+      context: Leather type
+    leather_type__cowhide:
+      name: Piel de vaca
+      context: Leather type
+    leather_type__crocodile:
+      name: Cocodrilo
+      context: Leather type
+    leather_type__lambskin:
+      name: Piel de cordero
+      context: Leather type
+    leather_type__lizard:
+      name: Lagarto
+      context: Leather type
+    leather_type__ostrich:
+      name: Avestruz
+      context: Leather type
+    leather_type__other:
+      name: Otros
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: Piel de carnero
+      context: Leather type
+    leather_type__stingray:
+      name: Raya
+      context: Leather type
+    leather_type__synthetic:
+      name: Sintético
+      context: Leather type
+    leather_type__unknown:
+      name: Desconocido
+      context: Leather type
     lectern_mounting_type__floor:
       name: Suelo
       context: Lectern mounting type
@@ -43631,8 +43790,14 @@ es:
     lumber/wood_type__cherry_wood:
       name: Madera de cerezo
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: Corcho
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: Madera de nogal
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: Yute
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: Madera de arce
@@ -43646,6 +43811,9 @@ es:
     lumber/wood_type__other:
       name: Otros
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: Palma
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: Madera de pino
       context: Lumber/Wood type
@@ -43655,8 +43823,17 @@ es:
     lumber/wood_type__poplar_wood:
       name: Madera de álamo
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: Rafia
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: Ratán
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: Secoya
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: Paja
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: Madera de nogal
@@ -44945,6 +45122,36 @@ es:
     material_hardness__soft:
       name: Blando
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: Producto terminado (joyería/reloj)
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: Suelto/sin montar
+      context: Material origin
+    material_origin__nft:
+      name: NFT)
+      context: Material origin
+    material_origin__other:
+      name: Otros
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: Tarjeta de regalo impresa/digital
+      context: Material origin
+    material_origin__voucher:
+      name: Cupón
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: Tratado químicamente
+      context: Material treatment
+    material_treatment__fumigated:
+      name: Fumigado
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: Tratado térmicamente
+      context: Material treatment
+    material_treatment__other:
+      name: Otros
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: Correa regulable
       context: Maternity clothing features
@@ -55409,6 +55616,18 @@ es:
     plant_class__zingiberales:
       name: Zingiberales
       context: Plant class
+    plant_material__artificial:
+      name: Artificial
+      context: Plant material
+    plant_material__dried/preserved:
+      name: Secado/Preservado
+      context: Plant material
+    plant_material__live:
+      name: Vivo
+      context: Plant material
+    plant_material__other:
+      name: Otros
+      context: Plant material
     plant_name__aeonium:
       name: Aeonium
       context: Plant name
@@ -57668,6 +57887,33 @@ es:
     product_certifications_standards__vegan:
       name: Vegano
       context: Product certifications & standards
+    product_classification__bullion:
+      name: Lingotes
+      context: Product classification
+    product_classification__coupon:
+      name: Cupón
+      context: Product classification
+    product_classification__currency:
+      name: Moneda
+      context: Product classification
+    product_classification__gift_card:
+      name: Tarjeta de regalo
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: Piedras preciosas sueltas
+      context: Product classification
+    product_classification__nft:
+      name: NFT
+      context: Product classification
+    product_classification__other:
+      name: Otros
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: Piedras semipreciosas
+      context: Product classification
+    product_classification__voucher:
+      name: Cupón
+      context: Product classification
     product_form__cream:
       name: Crema
       context: Product form
@@ -57815,6 +58061,21 @@ es:
     product_sterility__sterile:
       name: Estéril
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: Coleccionable/numismático
+      context: Product use
+    product_use__currency/legal_tender:
+      name: Moneda/moneda de curso legal
+      context: Product use
+    product_use__gift_card/voucher:
+      name: Tarjeta/cupón de regalo
+      context: Product use
+    product_use__jewelry/ornament:
+      name: Joyería/adorno
+      context: Product use
+    product_use__other:
+      name: Otros
+      context: Product use
     program_format__booklet:
       name: Folleto
       context: Program format
@@ -79811,6 +80072,30 @@ es:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: Madera de ingeniería (contrachapado/MDF)
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: Lacado/barnizado
+      context: Wood finish
+    wood_finish__oiled:
+      name: Aceitado
+      context: Wood finish
+    wood_finish__other:
+      name: Otros
+      context: Wood finish
+    wood_finish__painted:
+      name: Pintado
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: Madera sólida
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: Sin tratar/natural
+      context: Wood finish
+    wood_finish__veneered:
+      name: Enchapado
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: Cepillo de limpieza
       context: Woodwind care items included
