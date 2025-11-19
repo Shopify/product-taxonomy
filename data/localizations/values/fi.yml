@@ -1619,6 +1619,21 @@ fi:
     album_type__spiral_bound:
       name: Spiraalisidottu
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: Alkoholia >24 %
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: Alkoholia ≤24 %
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: Muu
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: Liuotin - suuri pakkaus (>1 L)
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: Liuotin - pieni pakkaus (≤1 L)
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: Alkoholiton
       context: Alcohol content
@@ -6770,6 +6785,12 @@ fi:
     battery_size__f:
       name: F
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100 Wh"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: Suuri kenno (laite/työkalu/lelu)
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ fi:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤100 Wh"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ fi:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: Pieni kotitalousparisto (AA/AAA/nappiparisto)
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ fi:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: Tuntematon
       context: Battery size
     battery_technology__alkaline:
       name: Alkali
@@ -7016,6 +7046,12 @@ fi:
     battery_terminal_type__wire_leads:
       name: Johtoliitännät
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: "Sisäinen, irrotettava"
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: "Sisäinen, irrottamaton"
+      context: Battery type
     battery_type__disposable:
       name: Kertakäyttöinen
       context: Battery type
@@ -7024,6 +7060,12 @@ fi:
       context: Battery type
     battery_type__rechargeable:
       name: Ladattava
+      context: Battery type
+    battery_type__standalone_included:
+      name: Erillinen (sisältyy toimitukseen)
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: Erillinen (ei sisälly toimitukseen)
       context: Battery type
     bead_shape__hair_pipe:
       name: Hiusputki
@@ -9668,6 +9710,9 @@ fi:
     bristle_hardness__soft:
       name: Pehmeä
       context: Bristle hardness
+    bristle_material__badger:
+      name: Mäyrä
+      context: Bristle material
     bristle_material__boar_bristle:
       name: Villisian harjakset
       context: Bristle material
@@ -9676,6 +9721,12 @@ fi:
       context: Bristle material
     bristle_material__faux_leather:
       name: Keinonahka
+      context: Bristle material
+    bristle_material__goat:
+      name: Vuohi
+      context: Bristle material
+    bristle_material__hog:
+      name: Sika
       context: Bristle material
     bristle_material__horsehair:
       name: Jouhi
@@ -9710,8 +9761,14 @@ fi:
     bristle_material__polyvinyl_chloride_pvc:
       name: Polyvinyylikloridi (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: Poni
+      context: Bristle material
     bristle_material__rubber:
       name: Kumi
+      context: Bristle material
+    bristle_material__sable:
+      name: Soopeli
       context: Bristle material
     bristle_material__silicone:
       name: Silikoni
@@ -9724,6 +9781,9 @@ fi:
       context: Bristle material
     bristle_material__teflon:
       name: Teflon
+      context: Bristle material
+    bristle_material__unknown:
+      name: Tuntematon
       context: Bristle material
     bristle_material__wood:
       name: Puu
@@ -14954,6 +15014,39 @@ fi:
     compatible_contact_lens_type__toric:
       name: Toorinen
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: Värilliset linssit
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: Kovat linssit
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: Hybridilinssit
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: Moniteholinssit
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: Ortokeratologialinssit
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: Muu
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: Jäykät kaasua läpäisevät (RGP) linssit
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: Skleraalilinssit
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: Silikonihydrogeelilinssit
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: Pehmeät piilolinssit
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: Tooriset linssit
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: Kosmetiikkavälineiden säiliöt
       context: Compatible cosmetic tools
@@ -18722,6 +18815,30 @@ fi:
     constitutive_ingredients__zinc_oxide:
       name: Sinkkioksidi
       context: Constitutive ingredients
+    construction__clad:
+      name: Verhottu
+      context: Construction
+    construction__filled:
+      name: Täytetty
+      context: Construction
+    construction__other:
+      name: Muu
+      context: Construction
+    construction__plated:
+      name: Pinnoitettu
+      context: Construction
+    construction__solid:
+      name: Kiinteä
+      context: Construction
+    construction__toned:
+      name: Sävytetty
+      context: Construction
+    construction__vermeil:
+      name: Vermeil
+      context: Construction
+    construction__whole:
+      name: Kokonainen
+      context: Construction
     construction_set_theme__aircraft:
       name: Ilma-alukset
       context: Construction set theme
@@ -18827,39 +18944,6 @@ fi:
     contact_lens_case_features__ventilation_port:
       name: Tuuletusportti
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: Värilliset linssit
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: Kovat linssit
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: Hybridilinssit
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: Moniteholinssit
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: Ortokeratologialinssit
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: Muu
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: Jäykät kaasua läpäisevät (RGP) linssit
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: Skleraalilinssit
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: Silikonihydrogeelilinssit
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: Pehmeät piilolinssit
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: Tooriset linssit
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: Balafilcon A
       context: Contact lens material
@@ -27458,23 +27542,41 @@ fi:
     embellishments__chipboard_elements:
       name: Lastulevyelementit
       context: Embellishments
+    embellishments__diamond:
+      name: Timantti
+      context: Embellishments
     embellishments__die_cuts:
       name: Stanssit
       context: Embellishments
     embellishments__gems:
       name: Jalokivet
       context: Embellishments
+    embellishments__none:
+      name: Ei mitään
+      context: Embellishments
     embellishments__other:
       name: Muu
       context: Embellishments
+    embellishments__precious_stone:
+      name: Jalokivi
+      context: Embellishments
+    embellishments__rhinestone:
+      name: Tekojalokivi
+      context: Embellishments
     embellishments__ribbons:
       name: Nauhat
+      context: Embellishments
+    embellishments__semi_precious_stone:
+      name: Puolijalokivi
       context: Embellishments
     embellishments__sequins:
       name: Paljetit
       context: Embellishments
     embellishments__stickers:
       name: Tarrat
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: Synteettinen helmi
       context: Embellishments
     embellishments__washi_tape:
       name: Washi-teippi
@@ -31973,8 +32075,14 @@ fi:
     food_product_form__powder:
       name: Jauhe
       context: Food product form
+    food_product_form__preserved:
+      name: Säilötty
+      context: Food product form
     food_product_form__sheets:
       name: Levyt
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: Käsittelemätön/Raaka
       context: Food product form
     food_product_form__whole:
       name: Kokonainen
@@ -39572,6 +39680,9 @@ fi:
     jewelry_material__alcantara:
       name: Alcantara
       context: Jewelry material
+    jewelry_material__alloy:
+      name: Metalliseos
+      context: Jewelry material
     jewelry_material__aluminum:
       name: Alumiini
       context: Jewelry material
@@ -39689,6 +39800,9 @@ fi:
     jewelry_material__nickel_plated:
       name: Nikkelipinnoitettu
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: Epäjalot metallit
+      context: Jewelry material
     jewelry_material__nylon:
       name: Nailon
       context: Jewelry material
@@ -39700,6 +39814,9 @@ fi:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: Palladiumpinnoitettu
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: Helmet
       context: Jewelry material
     jewelry_material__plastic:
       name: Muovi
@@ -39715,6 +39832,9 @@ fi:
       context: Jewelry material
     jewelry_material__porcelain:
       name: Posliini
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: Jalokivet/puolijalokivet
       context: Jewelry material
     jewelry_material__precious_resin:
       name: Jalohartsi
@@ -42137,6 +42257,45 @@ fi:
     leather/vinyl_texture__smooth:
       name: Sileä
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: Alligaattori
+      context: Leather type
+    leather_type__calfskin:
+      name: Vasikannahka
+      context: Leather type
+    leather_type__cowhide:
+      name: Lehmännahka
+      context: Leather type
+    leather_type__crocodile:
+      name: Krokotiili
+      context: Leather type
+    leather_type__lambskin:
+      name: Lampaannahka
+      context: Leather type
+    leather_type__lizard:
+      name: Lisko
+      context: Leather type
+    leather_type__ostrich:
+      name: Strutsi
+      context: Leather type
+    leather_type__other:
+      name: Muu
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: Lampaannahka
+      context: Leather type
+    leather_type__stingray:
+      name: Rausku
+      context: Leather type
+    leather_type__synthetic:
+      name: Synteettinen
+      context: Leather type
+    leather_type__unknown:
+      name: Tuntematon
+      context: Leather type
     lectern_mounting_type__floor:
       name: Lattia
       context: Lectern mounting type
@@ -43631,8 +43790,14 @@ fi:
     lumber/wood_type__cherry_wood:
       name: kirsikkapuu
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: Korkki
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: Hickory-puuta
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: Juutti
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: Vaahterapuu
@@ -43646,6 +43811,9 @@ fi:
     lumber/wood_type__other:
       name: Muu
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: Palmu
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: Mäntypuu
       context: Lumber/Wood type
@@ -43655,8 +43823,17 @@ fi:
     lumber/wood_type__poplar_wood:
       name: Poppeli
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: Raffia
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: Rottinki
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: Punapuu
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: Olki
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: Pähkinäpuu
@@ -44945,6 +45122,36 @@ fi:
     material_hardness__soft:
       name: Pehmeä
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: Valmis tuote (koru/kello)
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: Irrallinen/asentamaton
+      context: Material origin
+    material_origin__nft:
+      name: NFT)
+      context: Material origin
+    material_origin__other:
+      name: Muu
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: Painettu/digitaalinen (lahjakortti
+      context: Material origin
+    material_origin__voucher:
+      name: kuponki
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: Kemiallisesti käsitelty
+      context: Material treatment
+    material_treatment__fumigated:
+      name: Savustettu
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: Lämpökäsitelty
+      context: Material treatment
+    material_treatment__other:
+      name: Muu
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: Säädettävä hihna
       context: Maternity clothing features
@@ -55409,6 +55616,18 @@ fi:
     plant_class__zingiberales:
       name: Zingiberales
       context: Plant class
+    plant_material__artificial:
+      name: Keinotekoinen
+      context: Plant material
+    plant_material__dried/preserved:
+      name: Kuivattu/säilötty
+      context: Plant material
+    plant_material__live:
+      name: Elävä
+      context: Plant material
+    plant_material__other:
+      name: Muu
+      context: Plant material
     plant_name__aeonium:
       name: Aeonium
       context: Plant name
@@ -57668,6 +57887,33 @@ fi:
     product_certifications_standards__vegan:
       name: Vegaani
       context: Product certifications & standards
+    product_classification__bullion:
+      name: Jalometallit
+      context: Product classification
+    product_classification__coupon:
+      name: Kuponki
+      context: Product classification
+    product_classification__currency:
+      name: Valuutta
+      context: Product classification
+    product_classification__gift_card:
+      name: Lahjakortti
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: Irtojalokivet
+      context: Product classification
+    product_classification__nft:
+      name: NFT
+      context: Product classification
+    product_classification__other:
+      name: Muu
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: Puolijalokivet
+      context: Product classification
+    product_classification__voucher:
+      name: Kuponki
+      context: Product classification
     product_form__cream:
       name: Kerma
       context: Product form
@@ -57815,6 +58061,21 @@ fi:
     product_sterility__sterile:
       name: Steriili
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: Keräilyesine/numismaattinen
+      context: Product use
+    product_use__currency/legal_tender:
+      name: Valuutta/laillinen maksuväline
+      context: Product use
+    product_use__gift_card/voucher:
+      name: Lahjakortti/kuponki
+      context: Product use
+    product_use__jewelry/ornament:
+      name: Korut/koristeet
+      context: Product use
+    product_use__other:
+      name: Muu
+      context: Product use
     program_format__booklet:
       name: Vihko
       context: Program format
@@ -79811,6 +80072,30 @@ fi:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: Viimeistelty (vaneri/MDF)
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: Lakattu/vernattu
+      context: Wood finish
+    wood_finish__oiled:
+      name: Öljytty
+      context: Wood finish
+    wood_finish__other:
+      name: Muu
+      context: Wood finish
+    wood_finish__painted:
+      name: Maalattu
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: Kiinteä puu
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: Käsittelemätön/luonnollinen
+      context: Wood finish
+    wood_finish__veneered:
+      name: Viilutettu
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: Puhdistusharja
       context: Woodwind care items included
