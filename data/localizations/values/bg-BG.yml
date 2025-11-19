@@ -1619,6 +1619,21 @@ bg-BG:
     album_type__spiral_bound:
       name: Подвързано със спирала
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: Алкохол >24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: Алкохол ≤24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: Други
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: Разтворител – голям контейнер (>1 л)
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: Разтворител – малък контейнер (≤1L)
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: Без алкохол
       context: Alcohol content
@@ -6770,6 +6785,12 @@ bg-BG:
     battery_size__f:
       name: F
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100 Wh"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: Голяма батерия (уред/инструмент/играчка за яздене или возене)
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ bg-BG:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤100 Wh"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ bg-BG:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: Малка битова батерия (AA/AAA/бутонна)
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ bg-BG:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: Неизвестен
       context: Battery size
     battery_technology__alkaline:
       name: Алкален
@@ -7016,6 +7046,12 @@ bg-BG:
     battery_terminal_type__wire_leads:
       name: Проводници
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: Включено с възможност за изваждане
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: Включено без възможност за изваждане
+      context: Battery type
     battery_type__disposable:
       name: За еднократна употреба
       context: Battery type
@@ -7024,6 +7060,12 @@ bg-BG:
       context: Battery type
     battery_type__rechargeable:
       name: Акумулаторна
+      context: Battery type
+    battery_type__standalone_included:
+      name: Самостоятелно (включено)
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: Самостоятелно (не е включено)
       context: Battery type
     bead_shape__hair_pipe:
       name: Тръба за коса
@@ -9668,6 +9710,9 @@ bg-BG:
     bristle_hardness__soft:
       name: Мека
       context: Bristle hardness
+    bristle_material__badger:
+      name: Язовец
+      context: Bristle material
     bristle_material__boar_bristle:
       name: Четина от глиган
       context: Bristle material
@@ -9676,6 +9721,12 @@ bg-BG:
       context: Bristle material
     bristle_material__faux_leather:
       name: Изкуствена кожа
+      context: Bristle material
+    bristle_material__goat:
+      name: Козе
+      context: Bristle material
+    bristle_material__hog:
+      name: Свиня
       context: Bristle material
     bristle_material__horsehair:
       name: Конски косъм
@@ -9710,8 +9761,14 @@ bg-BG:
     bristle_material__polyvinyl_chloride_pvc:
       name: Поливинилхлорид (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: Пони
+      context: Bristle material
     bristle_material__rubber:
       name: Каучук
+      context: Bristle material
+    bristle_material__sable:
+      name: Самур
       context: Bristle material
     bristle_material__silicone:
       name: Силикон
@@ -9724,6 +9781,9 @@ bg-BG:
       context: Bristle material
     bristle_material__teflon:
       name: Тефлон
+      context: Bristle material
+    bristle_material__unknown:
+      name: Неизвестен
       context: Bristle material
     bristle_material__wood:
       name: Дърво
@@ -14954,6 +15014,39 @@ bg-BG:
     compatible_contact_lens_type__toric:
       name: Торични
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: Цветни лещи
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: Твърди лещи
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: Хибридни лещи
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: Мултифокални лещи
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: Ортокератологични лещи
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: Други
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: Твърди газопропускливи (RGP) лещи
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: Склерални лещи
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: Силиконови хидрогелни лещи
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: Меки контактни лещи
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: Торични лещи
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: Контейнери за козметични инструменти
       context: Compatible cosmetic tools
@@ -18722,6 +18815,30 @@ bg-BG:
     constitutive_ingredients__zinc_oxide:
       name: Цинков оксид
       context: Constitutive ingredients
+    construction__clad:
+      name: Облечено
+      context: Construction
+    construction__filled:
+      name: Запълнено
+      context: Construction
+    construction__other:
+      name: Други
+      context: Construction
+    construction__plated:
+      name: Покритие
+      context: Construction
+    construction__solid:
+      name: Твърдо
+      context: Construction
+    construction__toned:
+      name: Тонизирано
+      context: Construction
+    construction__vermeil:
+      name: Вермейл
+      context: Construction
+    construction__whole:
+      name: Цяла
+      context: Construction
     construction_set_theme__aircraft:
       name: Самолети
       context: Construction set theme
@@ -18827,39 +18944,6 @@ bg-BG:
     contact_lens_case_features__ventilation_port:
       name: Вентилационен отвор
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: Цветни лещи
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: Твърди лещи
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: Хибридни лещи
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: Мултифокални лещи
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: Ортокератологични лещи
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: Други
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: Твърди газопропускливи (RGP) лещи
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: Склерални лещи
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: Силиконови хидрогелни лещи
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: Меки контактни лещи
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: Торични лещи
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: Балафилкон A
       context: Contact lens material
@@ -27458,23 +27542,41 @@ bg-BG:
     embellishments__chipboard_elements:
       name: Елементи от ПДЧ
       context: Embellishments
+    embellishments__diamond:
+      name: Диамант
+      context: Embellishments
     embellishments__die_cuts:
       name: Щанци
       context: Embellishments
     embellishments__gems:
       name: Скъпоценни камъни
       context: Embellishments
+    embellishments__none:
+      name: Няма
+      context: Embellishments
     embellishments__other:
       name: Други
       context: Embellishments
+    embellishments__precious_stone:
+      name: Скъпоценен камък
+      context: Embellishments
+    embellishments__rhinestone:
+      name: Кристал
+      context: Embellishments
     embellishments__ribbons:
       name: Панделки
+      context: Embellishments
+    embellishments__semi_precious_stone:
+      name: Полускъпоценен камък
       context: Embellishments
     embellishments__sequins:
       name: Пайети
       context: Embellishments
     embellishments__stickers:
       name: Стикери
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: Синтетична перла
       context: Embellishments
     embellishments__washi_tape:
       name: Уоши лента
@@ -31973,8 +32075,14 @@ bg-BG:
     food_product_form__powder:
       name: Пудра
       context: Food product form
+    food_product_form__preserved:
+      name: Запазено
+      context: Food product form
     food_product_form__sheets:
       name: Листове
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: Необработено/сурово
       context: Food product form
     food_product_form__whole:
       name: Цяла
@@ -39572,6 +39680,9 @@ bg-BG:
     jewelry_material__alcantara:
       name: Алкантара
       context: Jewelry material
+    jewelry_material__alloy:
+      name: Сплав
+      context: Jewelry material
     jewelry_material__aluminum:
       name: Алуминий
       context: Jewelry material
@@ -39689,6 +39800,9 @@ bg-BG:
     jewelry_material__nickel_plated:
       name: Никелирано покритие
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: Неблагородни метали
+      context: Jewelry material
     jewelry_material__nylon:
       name: Найлон
       context: Jewelry material
@@ -39700,6 +39814,9 @@ bg-BG:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: Паладиево покритие
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: Перли
       context: Jewelry material
     jewelry_material__plastic:
       name: Пластмаса
@@ -39715,6 +39832,9 @@ bg-BG:
       context: Jewelry material
     jewelry_material__porcelain:
       name: Порцелан
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: Скъпоценни/полускъпоценни камъни
       context: Jewelry material
     jewelry_material__precious_resin:
       name: Скъпоценна смола
@@ -42137,6 +42257,45 @@ bg-BG:
     leather/vinyl_texture__smooth:
       name: Гладка
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: Алигатор
+      context: Leather type
+    leather_type__calfskin:
+      name: Телешка кожа
+      context: Leather type
+    leather_type__cowhide:
+      name: Кожа от крава
+      context: Leather type
+    leather_type__crocodile:
+      name: Крокодил
+      context: Leather type
+    leather_type__lambskin:
+      name: Агнешка кожа
+      context: Leather type
+    leather_type__lizard:
+      name: Гущер
+      context: Leather type
+    leather_type__ostrich:
+      name: Щраус
+      context: Leather type
+    leather_type__other:
+      name: Други
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: Овча кожа
+      context: Leather type
+    leather_type__stingray:
+      name: Скат
+      context: Leather type
+    leather_type__synthetic:
+      name: Синтетична
+      context: Leather type
+    leather_type__unknown:
+      name: Неизвестен
+      context: Leather type
     lectern_mounting_type__floor:
       name: Под
       context: Lectern mounting type
@@ -43631,8 +43790,14 @@ bg-BG:
     lumber/wood_type__cherry_wood:
       name: Черешова дървесина
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: Корк
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: Дървесина от хикория
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: Юта
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: Кленова дървесина
@@ -43646,6 +43811,9 @@ bg-BG:
     lumber/wood_type__other:
       name: Други
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: Палма
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: Борова дървесина
       context: Lumber/Wood type
@@ -43655,8 +43823,17 @@ bg-BG:
     lumber/wood_type__poplar_wood:
       name: Дървесина от топола
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: Рафия
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: Ратан
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: Секвоя
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: Слама
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: Орехова дървесина
@@ -44945,6 +45122,36 @@ bg-BG:
     material_hardness__soft:
       name: Мек
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: Готов продукт (бижута/часовник)
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: Централизирана/немонтирана
+      context: Material origin
+    material_origin__nft:
+      name: техника за хранителен филм (NFT)
+      context: Material origin
+    material_origin__other:
+      name: Други
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: Печатна/дигитална (подаръчна карта)
+      context: Material origin
+    material_origin__voucher:
+      name: ваучер
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: Химически обработени
+      context: Material treatment
+    material_treatment__fumigated:
+      name: Фумигирано
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: Термично обработено
+      context: Material treatment
+    material_treatment__other:
+      name: Други
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: Регулируема каишка
       context: Maternity clothing features
@@ -55409,6 +55616,18 @@ bg-BG:
     plant_class__zingiberales:
       name: Zingiberales
       context: Plant class
+    plant_material__artificial:
+      name: Изкуствено
+      context: Plant material
+    plant_material__dried/preserved:
+      name: Сушени/консервирани
+      context: Plant material
+    plant_material__live:
+      name: Живо
+      context: Plant material
+    plant_material__other:
+      name: Други
+      context: Plant material
     plant_name__aeonium:
       name: Еониум
       context: Plant name
@@ -57668,6 +57887,33 @@ bg-BG:
     product_certifications_standards__vegan:
       name: Веган
       context: Product certifications & standards
+    product_classification__bullion:
+      name: Инвестиционно злато
+      context: Product classification
+    product_classification__coupon:
+      name: Талон
+      context: Product classification
+    product_classification__currency:
+      name: Валута
+      context: Product classification
+    product_classification__gift_card:
+      name: Подаръчна карта
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: Немонтирани скъпоценни камъни
+      context: Product classification
+    product_classification__nft:
+      name: Техника за хранителен филм (NFT)
+      context: Product classification
+    product_classification__other:
+      name: Други
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: Полускъпоценни камъни
+      context: Product classification
+    product_classification__voucher:
+      name: Ваучер
+      context: Product classification
     product_form__cream:
       name: Крем
       context: Product form
@@ -57815,6 +58061,21 @@ bg-BG:
     product_sterility__sterile:
       name: Стерилен
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: Колекционерски/нумизматични
+      context: Product use
+    product_use__currency/legal_tender:
+      name: Валута/законно платежно средство
+      context: Product use
+    product_use__gift_card/voucher:
+      name: Подаръчна карта/ваучер
+      context: Product use
+    product_use__jewelry/ornament:
+      name: Бижута/украшения
+      context: Product use
+    product_use__other:
+      name: Други
+      context: Product use
     program_format__booklet:
       name: Брошура
       context: Program format
@@ -79811,6 +80072,30 @@ bg-BG:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: Инженерно (шперплат/MDF)
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: Лакирано
+      context: Wood finish
+    wood_finish__oiled:
+      name: Импрегнирано с масло
+      context: Wood finish
+    wood_finish__other:
+      name: Други
+      context: Wood finish
+    wood_finish__painted:
+      name: Боядисана
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: Масивна дървесина
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: Необработено/естествено
+      context: Wood finish
+    wood_finish__veneered:
+      name: Фурнировано
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: Четка за почистване
       context: Woodwind care items included
