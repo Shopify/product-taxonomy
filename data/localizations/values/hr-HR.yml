@@ -1619,6 +1619,21 @@ hr-HR:
     album_type__spiral_bound:
       name: Spiralni uvez
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: Alkohol > 24 %
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: Alkohol ≤ 24 %
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: Ostalo
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: Otapalo – velika posuda (> 1 L)
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: Otapalo – mala posuda (≤ 1 L)
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: Bez alkohola
       context: Alcohol content
@@ -6770,6 +6785,12 @@ hr-HR:
     battery_size__f:
       name: F
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100 Wh"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: Velika ćelija (uređaj / alat / vozilo za djecu)
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ hr-HR:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤ 100 Wh"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ hr-HR:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: Mala kućna ćelija (AA/AAA/kovanica)
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ hr-HR:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: Nepoznato
       context: Battery size
     battery_technology__alkaline:
       name: Alkalna
@@ -7016,6 +7046,12 @@ hr-HR:
     battery_terminal_type__wire_leads:
       name: Žičani vodovi
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: Zatvorena – odvojiva
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: Zatvorena – neodvojiva
+      context: Battery type
     battery_type__disposable:
       name: Za jednokratnu upotrebu
       context: Battery type
@@ -7024,6 +7060,12 @@ hr-HR:
       context: Battery type
     battery_type__rechargeable:
       name: Punjiva
+      context: Battery type
+    battery_type__standalone_included:
+      name: Samostalna (uključena)
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: Samostalna (nije uključena)
       context: Battery type
     bead_shape__hair_pipe:
       name: Cjevčica
@@ -9668,6 +9710,9 @@ hr-HR:
     bristle_hardness__soft:
       name: Meka
       context: Bristle hardness
+    bristle_material__badger:
+      name: Jazavac
+      context: Bristle material
     bristle_material__boar_bristle:
       name: Čekinje vepra
       context: Bristle material
@@ -9676,6 +9721,12 @@ hr-HR:
       context: Bristle material
     bristle_material__faux_leather:
       name: Umjetna koža
+      context: Bristle material
+    bristle_material__goat:
+      name: Koza
+      context: Bristle material
+    bristle_material__hog:
+      name: Svinja
       context: Bristle material
     bristle_material__horsehair:
       name: Konjska dlaka
@@ -9710,8 +9761,14 @@ hr-HR:
     bristle_material__polyvinyl_chloride_pvc:
       name: Polivinil klorid (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: Poni
+      context: Bristle material
     bristle_material__rubber:
       name: Guma
+      context: Bristle material
+    bristle_material__sable:
+      name: Samur
       context: Bristle material
     bristle_material__silicone:
       name: Silikon
@@ -9724,6 +9781,9 @@ hr-HR:
       context: Bristle material
     bristle_material__teflon:
       name: Teflon
+      context: Bristle material
+    bristle_material__unknown:
+      name: Nepoznato
       context: Bristle material
     bristle_material__wood:
       name: Drvo
@@ -14954,6 +15014,39 @@ hr-HR:
     compatible_contact_lens_type__toric:
       name: Torično
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: Obojene leće
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: Tvrde leće
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: Hibridne leće
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: Multifokalne leće
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: Ortokeratološke leće
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: Ostalo
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: Tvrde propusne za plin (RGP) leće
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: Skleralne leće
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: Silikonsko-hidrogelne leće
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: Meke kontaktne leće
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: Torične leće
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: Spremnici za kozmetičke alate
       context: Compatible cosmetic tools
@@ -18722,6 +18815,30 @@ hr-HR:
     constitutive_ingredients__zinc_oxide:
       name: Cinkov oksid
       context: Constitutive ingredients
+    construction__clad:
+      name: Obloženo
+      context: Construction
+    construction__filled:
+      name: Ispunjeno
+      context: Construction
+    construction__other:
+      name: Ostalo
+      context: Construction
+    construction__plated:
+      name: Obložen
+      context: Construction
+    construction__solid:
+      name: Čvrsti
+      context: Construction
+    construction__toned:
+      name: Tonirano
+      context: Construction
+    construction__vermeil:
+      name: Pozlaćeno
+      context: Construction
+    construction__whole:
+      name: Cjelovito
+      context: Construction
     construction_set_theme__aircraft:
       name: Zrakoplovi
       context: Construction set theme
@@ -18827,39 +18944,6 @@ hr-HR:
     contact_lens_case_features__ventilation_port:
       name: Ventilacijski otvor
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: Obojene leće
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: Tvrde leće
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: Hibridne leće
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: Multifokalne leće
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: Ortokeratološke leće
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: Ostalo
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: Tvrde propusne za plin (RGP) leće
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: Skleralne leće
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: Silikonsko-hidrogelne leće
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: Meke kontaktne leće
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: Torične leće
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: Balafilcon A
       context: Contact lens material
@@ -27458,23 +27542,41 @@ hr-HR:
     embellishments__chipboard_elements:
       name: Elementi od iverice
       context: Embellishments
+    embellishments__diamond:
+      name: Dijamant
+      context: Embellishments
     embellishments__die_cuts:
       name: Izrezi
       context: Embellishments
     embellishments__gems:
       name: Dragulji
       context: Embellishments
+    embellishments__none:
+      name: Nema
+      context: Embellishments
     embellishments__other:
       name: Ostalo
       context: Embellishments
+    embellishments__precious_stone:
+      name: Dragi kamen
+      context: Embellishments
+    embellishments__rhinestone:
+      name: Štras
+      context: Embellishments
     embellishments__ribbons:
       name: Vrpce
+      context: Embellishments
+    embellishments__semi_precious_stone:
+      name: Poludragi kamen
       context: Embellishments
     embellishments__sequins:
       name: Šljokice
       context: Embellishments
     embellishments__stickers:
       name: Naljepnice
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: Sintetički biser
       context: Embellishments
     embellishments__washi_tape:
       name: Washi traka
@@ -31973,8 +32075,14 @@ hr-HR:
     food_product_form__powder:
       name: Prah
       context: Food product form
+    food_product_form__preserved:
+      name: Konzervirano
+      context: Food product form
     food_product_form__sheets:
       name: Listovi
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: Netretirano/sirovo
       context: Food product form
     food_product_form__whole:
       name: Cjelovito
@@ -39572,6 +39680,9 @@ hr-HR:
     jewelry_material__alcantara:
       name: Alkantara
       context: Jewelry material
+    jewelry_material__alloy:
+      name: Legura
+      context: Jewelry material
     jewelry_material__aluminum:
       name: Aluminij
       context: Jewelry material
@@ -39689,6 +39800,9 @@ hr-HR:
     jewelry_material__nickel_plated:
       name: Niklano
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: Neplemeniti metali
+      context: Jewelry material
     jewelry_material__nylon:
       name: Najlon
       context: Jewelry material
@@ -39700,6 +39814,9 @@ hr-HR:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: Obloženo paladijem
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: Biseri
       context: Jewelry material
     jewelry_material__plastic:
       name: Plastika
@@ -39715,6 +39832,9 @@ hr-HR:
       context: Jewelry material
     jewelry_material__porcelain:
       name: Porculan
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: Drago/poludrago kamenje
       context: Jewelry material
     jewelry_material__precious_resin:
       name: Dragocjena smola
@@ -42137,6 +42257,45 @@ hr-HR:
     leather/vinyl_texture__smooth:
       name: Glatka
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: Aligator
+      context: Leather type
+    leather_type__calfskin:
+      name: Teleća koža
+      context: Leather type
+    leather_type__cowhide:
+      name: Kravlja koža
+      context: Leather type
+    leather_type__crocodile:
+      name: Krokodil
+      context: Leather type
+    leather_type__lambskin:
+      name: Janjeća koža
+      context: Leather type
+    leather_type__lizard:
+      name: Gušter
+      context: Leather type
+    leather_type__ostrich:
+      name: Noj
+      context: Leather type
+    leather_type__other:
+      name: Ostalo
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: Od ovčje kože
+      context: Leather type
+    leather_type__stingray:
+      name: Raža
+      context: Leather type
+    leather_type__synthetic:
+      name: Sintetika
+      context: Leather type
+    leather_type__unknown:
+      name: Nepoznato
+      context: Leather type
     lectern_mounting_type__floor:
       name: Podna
       context: Lectern mounting type
@@ -43631,8 +43790,14 @@ hr-HR:
     lumber/wood_type__cherry_wood:
       name: Trešnja
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: Pluto
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: Drvo karije
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: Juta
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: Javor
@@ -43646,6 +43811,9 @@ hr-HR:
     lumber/wood_type__other:
       name: Ostalo
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: Palma
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: Borovina
       context: Lumber/Wood type
@@ -43655,8 +43823,17 @@ hr-HR:
     lumber/wood_type__poplar_wood:
       name: Drvo topole
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: Rafija
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: Ratan
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: Drvo sekvoje
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: Slamka
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: Orahovo drvo
@@ -44945,6 +45122,36 @@ hr-HR:
     material_hardness__soft:
       name: Meki
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: Gotovi proizvod (nakit/sat)
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: Rasuto/nemontirano
+      context: Material origin
+    material_origin__nft:
+      name: NFT
+      context: Material origin
+    material_origin__other:
+      name: Ostalo
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: Tiskano/digitalno (poklon-kartica)
+      context: Material origin
+    material_origin__voucher:
+      name: Vaučer
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: Kemijski tretirano
+      context: Material treatment
+    material_treatment__fumigated:
+      name: Fumigirano
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: Toplinski obrađeno
+      context: Material treatment
+    material_treatment__other:
+      name: Ostalo
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: Podesivi remen
       context: Maternity clothing features
@@ -55409,6 +55616,18 @@ hr-HR:
     plant_class__zingiberales:
       name: Zingiberales
       context: Plant class
+    plant_material__artificial:
+      name: Umjetno
+      context: Plant material
+    plant_material__dried/preserved:
+      name: Sušeno/konzervirano
+      context: Plant material
+    plant_material__live:
+      name: Živo
+      context: Plant material
+    plant_material__other:
+      name: Ostalo
+      context: Plant material
     plant_name__aeonium:
       name: Aeonium
       context: Plant name
@@ -57668,6 +57887,33 @@ hr-HR:
     product_certifications_standards__vegan:
       name: Vegansko
       context: Product certifications & standards
+    product_classification__bullion:
+      name: Financijske poluge
+      context: Product classification
+    product_classification__coupon:
+      name: Kupon
+      context: Product classification
+    product_classification__currency:
+      name: Valuta
+      context: Product classification
+    product_classification__gift_card:
+      name: Poklon-kartica
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: Rasuto drago kamenje
+      context: Product classification
+    product_classification__nft:
+      name: NFT
+      context: Product classification
+    product_classification__other:
+      name: Ostalo
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: Poludrago kamenje
+      context: Product classification
+    product_classification__voucher:
+      name: Vaučer
+      context: Product classification
     product_form__cream:
       name: Krema
       context: Product form
@@ -57815,6 +58061,21 @@ hr-HR:
     product_sterility__sterile:
       name: Sterilno
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: Kolekcionarski/numizmatički
+      context: Product use
+    product_use__currency/legal_tender:
+      name: Valuta / zakonsko sredstvo plaćanja
+      context: Product use
+    product_use__gift_card/voucher:
+      name: Poklon-kartica/vaučer
+      context: Product use
+    product_use__jewelry/ornament:
+      name: Nakit/ukras
+      context: Product use
+    product_use__other:
+      name: Ostalo
+      context: Product use
     program_format__booklet:
       name: Knjižica
       context: Program format
@@ -79811,6 +80072,30 @@ hr-HR:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: Izrađeno (šperploča/MDF)
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: Lakirano / premazano glazurom
+      context: Wood finish
+    wood_finish__oiled:
+      name: Podmazano
+      context: Wood finish
+    wood_finish__other:
+      name: Ostalo
+      context: Wood finish
+    wood_finish__painted:
+      name: Obojeno
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: Masivno drvo
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: Neobrađeno/prirodno
+      context: Wood finish
+    wood_finish__veneered:
+      name: Furnirano
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: Četka za čišćenje
       context: Woodwind care items included
