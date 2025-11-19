@@ -1619,6 +1619,21 @@ id-ID:
     album_type__spiral_bound:
       name: Jilid spiral
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: Alkohol >24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: Alkohol ≤24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: Lainnya
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: Pelarut - wadah besar (>1L)
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: Pelarut - wadah kecil (≤1L)
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: Bebas alkohol
       context: Alcohol content
@@ -6770,6 +6785,12 @@ id-ID:
     battery_size__f:
       name: F
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100Wh"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: Baterai besar (peralatan/perkakas/mainan yang dapat dinaiki)
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ id-ID:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤100Wh"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ id-ID:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: Baterai rumah tangga kecil (AA/AAA/koin)
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ id-ID:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: Tidak dikenal
       context: Battery size
     battery_technology__alkaline:
       name: Alkaline
@@ -7016,6 +7046,12 @@ id-ID:
     battery_terminal_type__wire_leads:
       name: Kabel timah
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: Baterai terpisah yang dapat dilepas
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: Baterai yang tidak dapat dilepas
+      context: Battery type
     battery_type__disposable:
       name: Sekali pakai
       context: Battery type
@@ -7024,6 +7060,12 @@ id-ID:
       context: Battery type
     battery_type__rechargeable:
       name: Dapat diisi ulang
+      context: Battery type
+    battery_type__standalone_included:
+      name: Baterai terpisah (termasuk)
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: Baterai terpisah (tidak termasuk)
       context: Battery type
     bead_shape__hair_pipe:
       name: Pipa rambut
@@ -9668,6 +9710,9 @@ id-ID:
     bristle_hardness__soft:
       name: Lunak
       context: Bristle hardness
+    bristle_material__badger:
+      name: Bulu badger
+      context: Bristle material
     bristle_material__boar_bristle:
       name: Bulu babi hutan
       context: Bristle material
@@ -9676,6 +9721,12 @@ id-ID:
       context: Bristle material
     bristle_material__faux_leather:
       name: Kulit imitasi
+      context: Bristle material
+    bristle_material__goat:
+      name: Kambing
+      context: Bristle material
+    bristle_material__hog:
+      name: Bulu babi
       context: Bristle material
     bristle_material__horsehair:
       name: Bulu kuda
@@ -9710,8 +9761,14 @@ id-ID:
     bristle_material__polyvinyl_chloride_pvc:
       name: Polivinil klorida (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: Pony
+      context: Bristle material
     bristle_material__rubber:
       name: Karet
+      context: Bristle material
+    bristle_material__sable:
+      name: Bulu sable
       context: Bristle material
     bristle_material__silicone:
       name: Silikon
@@ -9724,6 +9781,9 @@ id-ID:
       context: Bristle material
     bristle_material__teflon:
       name: Teflon
+      context: Bristle material
+    bristle_material__unknown:
+      name: Tidak dikenal
       context: Bristle material
     bristle_material__wood:
       name: Kayu
@@ -14954,6 +15014,39 @@ id-ID:
     compatible_contact_lens_type__toric:
       name: Torik
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: Lensa berwarna
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: Lensa keras
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: Lensa hibrida
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: Lensa multifokal
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: Lensa ortokeratologi
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: Lainnya
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: Lensa rigid gas permeable (RGP)
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: Lensa skleral
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: Lensa silikon hidrogel
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: Lensa kontak lunak
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: Lensa torik
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: Wadah alat kecantikan
       context: Compatible cosmetic tools
@@ -18722,6 +18815,30 @@ id-ID:
     constitutive_ingredients__zinc_oxide:
       name: Seng oksida
       context: Constitutive ingredients
+    construction__clad:
+      name: Cladding
+      context: Construction
+    construction__filled:
+      name: Diisi
+      context: Construction
+    construction__other:
+      name: Lainnya
+      context: Construction
+    construction__plated:
+      name: Berlapis
+      context: Construction
+    construction__solid:
+      name: Solid
+      context: Construction
+    construction__toned:
+      name: Bernuansa
+      context: Construction
+    construction__vermeil:
+      name: Perak lapis emas
+      context: Construction
+    construction__whole:
+      name: Utuh
+      context: Construction
     construction_set_theme__aircraft:
       name: Pesawat terbang
       context: Construction set theme
@@ -18827,39 +18944,6 @@ id-ID:
     contact_lens_case_features__ventilation_port:
       name: Lubang ventilasi
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: Lensa berwarna
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: Lensa keras
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: Lensa hibrida
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: Lensa multifokal
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: Lensa ortokeratologi
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: Lainnya
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: Lensa rigid gas permeable (RGP)
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: Lensa skleral
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: Lensa silikon hidrogel
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: Lensa kontak lunak
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: Lensa torik
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: Balafilcon A
       context: Contact lens material
@@ -27458,23 +27542,41 @@ id-ID:
     embellishments__chipboard_elements:
       name: Elemen chipboard
       context: Embellishments
+    embellishments__diamond:
+      name: Berlian
+      context: Embellishments
     embellishments__die_cuts:
       name: Die cut
       context: Embellishments
     embellishments__gems:
       name: Permata
       context: Embellishments
+    embellishments__none:
+      name: Tidak ada
+      context: Embellishments
     embellishments__other:
       name: Lainnya
       context: Embellishments
+    embellishments__precious_stone:
+      name: Batu mulia
+      context: Embellishments
+    embellishments__rhinestone:
+      name: Batu imitasi
+      context: Embellishments
     embellishments__ribbons:
       name: Pita
+      context: Embellishments
+    embellishments__semi_precious_stone:
+      name: Batu semi-mulia
       context: Embellishments
     embellishments__sequins:
       name: Payet
       context: Embellishments
     embellishments__stickers:
       name: Stiker
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: Mutiara sintetis
       context: Embellishments
     embellishments__washi_tape:
       name: Pita washi
@@ -31973,8 +32075,14 @@ id-ID:
     food_product_form__powder:
       name: Bubuk
       context: Food product form
+    food_product_form__preserved:
+      name: Diawetkan
+      context: Food product form
     food_product_form__sheets:
       name: Lembaran
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: Mentah/Tidak diolah
       context: Food product form
     food_product_form__whole:
       name: Utuh
@@ -39572,6 +39680,9 @@ id-ID:
     jewelry_material__alcantara:
       name: Alcantara
       context: Jewelry material
+    jewelry_material__alloy:
+      name: Aloi
+      context: Jewelry material
     jewelry_material__aluminum:
       name: Aluminium
       context: Jewelry material
@@ -39689,6 +39800,9 @@ id-ID:
     jewelry_material__nickel_plated:
       name: Berlapis nikel
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: Logam non-mulia
+      context: Jewelry material
     jewelry_material__nylon:
       name: Nilon
       context: Jewelry material
@@ -39700,6 +39814,9 @@ id-ID:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: Berlapis paladium
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: Mutiara
       context: Jewelry material
     jewelry_material__plastic:
       name: Plastik
@@ -39715,6 +39832,9 @@ id-ID:
       context: Jewelry material
     jewelry_material__porcelain:
       name: Porselen
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: Batu mulia/semi mulia
       context: Jewelry material
     jewelry_material__precious_resin:
       name: Resin bermutu tinggi
@@ -42137,6 +42257,45 @@ id-ID:
     leather/vinyl_texture__smooth:
       name: Halus
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: Kulit aligator
+      context: Leather type
+    leather_type__calfskin:
+      name: Kulit anak sapi
+      context: Leather type
+    leather_type__cowhide:
+      name: Kulit sapi
+      context: Leather type
+    leather_type__crocodile:
+      name: Kulit buaya
+      context: Leather type
+    leather_type__lambskin:
+      name: Kulit domba
+      context: Leather type
+    leather_type__lizard:
+      name: Kulit kadal
+      context: Leather type
+    leather_type__ostrich:
+      name: Burung unta
+      context: Leather type
+    leather_type__other:
+      name: Lainnya
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: Kulit domba
+      context: Leather type
+    leather_type__stingray:
+      name: Kulit pari
+      context: Leather type
+    leather_type__synthetic:
+      name: Sintetis
+      context: Leather type
+    leather_type__unknown:
+      name: Tidak dikenal
+      context: Leather type
     lectern_mounting_type__floor:
       name: Lantai
       context: Lectern mounting type
@@ -43631,8 +43790,14 @@ id-ID:
     lumber/wood_type__cherry_wood:
       name: Kayu ceri
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: Gabus
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: Kayu hickory
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: Jute
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: Kayu maple
@@ -43646,6 +43811,9 @@ id-ID:
     lumber/wood_type__other:
       name: Lainnya
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: Palma
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: Kayu pinus
       context: Lumber/Wood type
@@ -43655,8 +43823,17 @@ id-ID:
     lumber/wood_type__poplar_wood:
       name: Kayu poplar
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: Rafia
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: Rotan
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: Kayu merah
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: Sedotan
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: Kayu kenari
@@ -44945,6 +45122,36 @@ id-ID:
     material_hardness__soft:
       name: Lunak
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: Produk jadi (perhiasan/jam tangan)
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: Lepas/tidak terpasang
+      context: Material origin
+    material_origin__nft:
+      name: NFT)
+      context: Material origin
+    material_origin__other:
+      name: Lainnya
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: Dicetak/digital (kartu hadiah)
+      context: Material origin
+    material_origin__voucher:
+      name: voucher
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: Diolah secara kimia
+      context: Material treatment
+    material_treatment__fumigated:
+      name: Difumigasi
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: Perlakuan panas
+      context: Material treatment
+    material_treatment__other:
+      name: Lainnya
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: Tali dapat disesuaikan
       context: Maternity clothing features
@@ -55409,6 +55616,18 @@ id-ID:
     plant_class__zingiberales:
       name: Zingiberales
       context: Plant class
+    plant_material__artificial:
+      name: Buatan
+      context: Plant material
+    plant_material__dried/preserved:
+      name: Kering/diawetkan
+      context: Plant material
+    plant_material__live:
+      name: Hidup
+      context: Plant material
+    plant_material__other:
+      name: Lainnya
+      context: Plant material
     plant_name__aeonium:
       name: Aeonium
       context: Plant name
@@ -57668,6 +57887,33 @@ id-ID:
     product_certifications_standards__vegan:
       name: Vegan
       context: Product certifications & standards
+    product_classification__bullion:
+      name: Bullion
+      context: Product classification
+    product_classification__coupon:
+      name: Kupon
+      context: Product classification
+    product_classification__currency:
+      name: Mata uang
+      context: Product classification
+    product_classification__gift_card:
+      name: Kartu hadiah
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: Batu mulia lepas
+      context: Product classification
+    product_classification__nft:
+      name: NFT
+      context: Product classification
+    product_classification__other:
+      name: Lainnya
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: Batu semi-mulia
+      context: Product classification
+    product_classification__voucher:
+      name: Voucher
+      context: Product classification
     product_form__cream:
       name: Krim
       context: Product form
@@ -57815,6 +58061,21 @@ id-ID:
     product_sterility__sterile:
       name: Steril
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: Koleksi/numismatik
+      context: Product use
+    product_use__currency/legal_tender:
+      name: Mata uang/alat pembayaran yang sah
+      context: Product use
+    product_use__gift_card/voucher:
+      name: Kartu hadiah/voucher
+      context: Product use
+    product_use__jewelry/ornament:
+      name: Perhiasan/hiasan
+      context: Product use
+    product_use__other:
+      name: Lainnya
+      context: Product use
     program_format__booklet:
       name: Buklet
       context: Program format
@@ -79811,6 +80072,30 @@ id-ID:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: Direkayasa (kayu lapis/MDF)
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: Dilapis pernis/vernis
+      context: Wood finish
+    wood_finish__oiled:
+      name: Dilapisi minyak
+      context: Wood finish
+    wood_finish__other:
+      name: Lainnya
+      context: Wood finish
+    wood_finish__painted:
+      name: Dicat
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: Kayu solid
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: Alami/tidak diolah
+      context: Wood finish
+    wood_finish__veneered:
+      name: Dilapisi
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: Sikat pembersih
       context: Woodwind care items included
