@@ -25,6 +25,7 @@ layout: default
                 class="category-node"
                 data-ancestor-ids="{{ category.ancestor_ids }}"
                 data-attribute-handles="{{ category.attribute_handles }}"
+                data-return-reason-handles="{{ category.return_reason_handles }}"
               >
                 {{ category.name }}
               </li>
@@ -82,6 +83,25 @@ layout: default
                 </li>
               {% endfor %}
             </ul>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="values-wrapper box">
+      <h3 id="category-return-reasons-title">Return Reasons</h3>
+      {% for return_reason in site.data[page.target].return_reasons %}
+        <div class="value-container return-reason-values hidden" data-handle="{{ return_reason.handle }}">
+          <h4 class="value-title return-reason-title" tabindex="0">
+            <div class="value-title__text">
+              {{ return_reason.name }}
+            </div>
+            <div class="value-container__id">
+              <span class="id">{{ return_reason.id }}</span>
+              <span class="chevron"></span>
+            </div>
+          </h4>
+          <div class="values-container">
+            <p class="return-reason-description">{{ return_reason.description }}</p>
           </div>
         </div>
       {% endfor %}

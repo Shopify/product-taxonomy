@@ -29,6 +29,7 @@ module ProductTaxonomy
                 "node_type" => category.root? ? "root" : "leaf",
                 "ancestor_ids" => category.ancestors.map(&:gid).join(","),
                 "attribute_handles" => category.attributes.map(&:handle).join(","),
+                "return_reason_handles" => category.return_reasons.map(&:handle).join(","),
               }
             end
           end

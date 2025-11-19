@@ -35,7 +35,7 @@ export const setupSearch = async (inputId, resultsId, filename, resetResource, s
     resetSearch({ inputId, resultsId });
     clearTimeout(timeoutId);
     timeoutId = setTimeout(() => {
-      search(e.target.value, resultsId, resetResource, searchLimit);
+      search(e.target.value, inputId, resultsId, resetResource, searchLimit);
     }, searchDebounceMs);
   });
 
@@ -62,7 +62,7 @@ const resetSearch = ({ clearInput, focusInput, inputId, resultsId } = {}) => {
   searchContainer.style.display = 'none';
 };
 
-const search = async (query, resultsId, resetResource, searchLimit) => {
+const search = async (query, inputId, resultsId, resetResource, searchLimit) => {
   if (!query.trim()) return;
   const searchContainer = q(`#${resultsId}`);
   searchContainer.style.display = 'block';
@@ -85,8 +85,10 @@ const search = async (query, resultsId, resetResource, searchLimit) => {
     searchLink.href = item.url;
     searchLink.onclick = (e) => {
       e.preventDefault();
+      const searchInput = q(`#${inputId}`);
+      searchInput.value = item.title;
       resetResource(item.searchIdentifier);
-      resetSearch({ clearInput: true, focusInput: e.detail === 0, inputId: resultsId, resultsId });
+      resetSearch({ clearInput: false, focusInput: e.detail === 0, inputId, resultsId });
     };
     searchResult.appendChild(searchLink);
     searchContainer.appendChild(searchResult);
