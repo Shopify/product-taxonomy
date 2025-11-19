@@ -1619,6 +1619,21 @@ tr:
     album_type__spiral_bound:
       name: Spiral bağlı
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: Alkol >%24
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: Alkol ≤%24
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: Diğer
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: Çözücü - büyük kap (>1L)
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: Çözücü - küçük kap (≤1L)
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: Alkolsüz
       context: Alcohol content
@@ -6770,6 +6785,12 @@ tr:
     battery_size__f:
       name: F
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100 Wh"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: Büyük hücre (cihaz/alet/üzerine binilebilen oyuncak)
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ tr:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤100 Wh"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ tr:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: Küçük ev tipi pil (AA/AAA/madeni para)
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ tr:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: Bilinmeyen
       context: Battery size
     battery_technology__alkaline:
       name: Alkali
@@ -7016,6 +7046,12 @@ tr:
     battery_terminal_type__wire_leads:
       name: Kablo uçları
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: Entegre-çıkarılabilir
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: Entegre-çıkarılamaz
+      context: Battery type
     battery_type__disposable:
       name: Tek kullanımlık
       context: Battery type
@@ -7024,6 +7060,12 @@ tr:
       context: Battery type
     battery_type__rechargeable:
       name: Şarj edilebilir
+      context: Battery type
+    battery_type__standalone_included:
+      name: Bağımsız (dahil)
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: Bağımsız (dahil değil)
       context: Battery type
     bead_shape__hair_pipe:
       name: Saç borusu
@@ -9668,6 +9710,9 @@ tr:
     bristle_hardness__soft:
       name: Yumuşak
       context: Bristle hardness
+    bristle_material__badger:
+      name: Porsuk
+      context: Bristle material
     bristle_material__boar_bristle:
       name: Yaban domuzu kılı
       context: Bristle material
@@ -9676,6 +9721,12 @@ tr:
       context: Bristle material
     bristle_material__faux_leather:
       name: Suni deri
+      context: Bristle material
+    bristle_material__goat:
+      name: Keçi
+      context: Bristle material
+    bristle_material__hog:
+      name: Domuz
       context: Bristle material
     bristle_material__horsehair:
       name: At saçı
@@ -9710,8 +9761,14 @@ tr:
     bristle_material__polyvinyl_chloride_pvc:
       name: Polivinil klorür (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: Pony
+      context: Bristle material
     bristle_material__rubber:
       name: Kauçuk
+      context: Bristle material
+    bristle_material__sable:
+      name: Samur
       context: Bristle material
     bristle_material__silicone:
       name: Silikon
@@ -9724,6 +9781,9 @@ tr:
       context: Bristle material
     bristle_material__teflon:
       name: Teflon
+      context: Bristle material
+    bristle_material__unknown:
+      name: Bilinmeyen
       context: Bristle material
     bristle_material__wood:
       name: Ahşap
@@ -14954,6 +15014,39 @@ tr:
     compatible_contact_lens_type__toric:
       name: Torik
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: Renkli lensler
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: Sert lensler
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: Hibrit lensler
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: Multifokal lensler
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: Orthokeratoloji lensleri
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: Diğer
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: Sert gaz geçirgen (RGP) lensler
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: Skleral lensler
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: Silikon hidrojel lensler
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: Yumuşak kontakt lensler
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: Torik lensler
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: Güzellik aracı kapları
       context: Compatible cosmetic tools
@@ -18722,6 +18815,30 @@ tr:
     constitutive_ingredients__zinc_oxide:
       name: Çinko oksit
       context: Constitutive ingredients
+    construction__clad:
+      name: Giyinmiş
+      context: Construction
+    construction__filled:
+      name: Dolgulu
+      context: Construction
+    construction__other:
+      name: Diğer
+      context: Construction
+    construction__plated:
+      name: Kaplama
+      context: Construction
+    construction__solid:
+      name: Düz
+      context: Construction
+    construction__toned:
+      name: Tonlu
+      context: Construction
+    construction__vermeil:
+      name: Altın kaplamalı gümüş
+      context: Construction
+    construction__whole:
+      name: Tüm
+      context: Construction
     construction_set_theme__aircraft:
       name: Hava Taşıtları
       context: Construction set theme
@@ -18827,39 +18944,6 @@ tr:
     contact_lens_case_features__ventilation_port:
       name: Havalandırma portu
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: Renkli lensler
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: Sert lensler
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: Hibrit lensler
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: Multifokal lensler
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: Orthokeratoloji lensleri
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: Diğer
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: Sert gaz geçirgen (RGP) lensler
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: Skleral lensler
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: Silikon hidrojel lensler
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: Yumuşak kontakt lensler
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: Torik lensler
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: Balafilcon A
       context: Contact lens material
@@ -27458,23 +27542,41 @@ tr:
     embellishments__chipboard_elements:
       name: Pano süsleri
       context: Embellishments
+    embellishments__diamond:
+      name: Elmas
+      context: Embellishments
     embellishments__die_cuts:
       name: Kalıp kesimleri
       context: Embellishments
     embellishments__gems:
       name: Taşlar
       context: Embellishments
+    embellishments__none:
+      name: Hiçbiri
+      context: Embellishments
     embellishments__other:
       name: Diğer
       context: Embellishments
+    embellishments__precious_stone:
+      name: Değerli taş
+      context: Embellishments
+    embellishments__rhinestone:
+      name: Yapay elmas
+      context: Embellishments
     embellishments__ribbons:
       name: Kurdeleler
+      context: Embellishments
+    embellishments__semi_precious_stone:
+      name: Yarı değerli taş
       context: Embellishments
     embellishments__sequins:
       name: Payetler
       context: Embellishments
     embellishments__stickers:
       name: Çıkartmalar
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: Sentetik reçine
       context: Embellishments
     embellishments__washi_tape:
       name: Desenli bantlar
@@ -31973,8 +32075,14 @@ tr:
     food_product_form__powder:
       name: Pudra
       context: Food product form
+    food_product_form__preserved:
+      name: Korunmuş
+      context: Food product form
     food_product_form__sheets:
       name: Kağıtlar
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: İşlemsiz/Ham
       context: Food product form
     food_product_form__whole:
       name: Tüm
@@ -39572,6 +39680,9 @@ tr:
     jewelry_material__alcantara:
       name: Alcantara
       context: Jewelry material
+    jewelry_material__alloy:
+      name: Alaşım
+      context: Jewelry material
     jewelry_material__aluminum:
       name: Alüminyum
       context: Jewelry material
@@ -39689,6 +39800,9 @@ tr:
     jewelry_material__nickel_plated:
       name: Nikel kaplama
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: Değerli olmayan metaller
+      context: Jewelry material
     jewelry_material__nylon:
       name: Plastik
       context: Jewelry material
@@ -39700,6 +39814,9 @@ tr:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: Paladyum kaplama
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: İnciler
       context: Jewelry material
     jewelry_material__plastic:
       name: Plastik
@@ -39715,6 +39832,9 @@ tr:
       context: Jewelry material
     jewelry_material__porcelain:
       name: Porselen
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: Değerli/Yarı değerli taşlar
       context: Jewelry material
     jewelry_material__precious_resin:
       name: Değerli reçine
@@ -42137,6 +42257,45 @@ tr:
     leather/vinyl_texture__smooth:
       name: Pürüzsüz
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: Timsah
+      context: Leather type
+    leather_type__calfskin:
+      name: Dana derisi
+      context: Leather type
+    leather_type__cowhide:
+      name: İnek derisi
+      context: Leather type
+    leather_type__crocodile:
+      name: Timsah
+      context: Leather type
+    leather_type__lambskin:
+      name: Kuzu derisi
+      context: Leather type
+    leather_type__lizard:
+      name: Kertenkele
+      context: Leather type
+    leather_type__ostrich:
+      name: Devekuşu
+      context: Leather type
+    leather_type__other:
+      name: Diğer
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: Koyun postu
+      context: Leather type
+    leather_type__stingray:
+      name: Vatoz
+      context: Leather type
+    leather_type__synthetic:
+      name: Sentetik
+      context: Leather type
+    leather_type__unknown:
+      name: Bilinmeyen
+      context: Leather type
     lectern_mounting_type__floor:
       name: Zemin
       context: Lectern mounting type
@@ -43631,8 +43790,14 @@ tr:
     lumber/wood_type__cherry_wood:
       name: Kiraz odunu
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: Mantar
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: Hikori ağacı
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: Jüt
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: Akçaağaç odunu
@@ -43646,6 +43811,9 @@ tr:
     lumber/wood_type__other:
       name: Diğer
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: Palmiye
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: Çam ağacı
       context: Lumber/Wood type
@@ -43655,8 +43823,17 @@ tr:
     lumber/wood_type__poplar_wood:
       name: Kavak ağacı
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: Rafya
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: Hint kamışı
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: Sekoya
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: Saman
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: Ceviz ağacı
@@ -44945,6 +45122,36 @@ tr:
     material_hardness__soft:
       name: Yumuşak
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: Bitmiş ürün (mücevher/saat)
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: Gevşek/monte edilmemiş
+      context: Material origin
+    material_origin__nft:
+      name: NFT)
+      context: Material origin
+    material_origin__other:
+      name: Diğer
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: Baskılı/dijital (hediye kartı)
+      context: Material origin
+    material_origin__voucher:
+      name: kupon
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: Kimyasal olarak işlenmiş
+      context: Material treatment
+    material_treatment__fumigated:
+      name: Fümigasyonlu
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: Isıl işlem görmüş
+      context: Material treatment
+    material_treatment__other:
+      name: Diğer
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: Ayarlanabilir kayış
       context: Maternity clothing features
@@ -55409,6 +55616,18 @@ tr:
     plant_class__zingiberales:
       name: Zingiberales
       context: Plant class
+    plant_material__artificial:
+      name: Yapay
+      context: Plant material
+    plant_material__dried/preserved:
+      name: Kurutulmuş/korunmuş
+      context: Plant material
+    plant_material__live:
+      name: Canlı
+      context: Plant material
+    plant_material__other:
+      name: Diğer
+      context: Plant material
     plant_name__aeonium:
       name: Aeonium
       context: Plant name
@@ -57668,6 +57887,33 @@ tr:
     product_certifications_standards__vegan:
       name: Vegan
       context: Product certifications & standards
+    product_classification__bullion:
+      name: Külçe Altın
+      context: Product classification
+    product_classification__coupon:
+      name: Kupon
+      context: Product classification
+    product_classification__currency:
+      name: Para Birimi
+      context: Product classification
+    product_classification__gift_card:
+      name: Hediye kartı
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: Gevşek değerli taş
+      context: Product classification
+    product_classification__nft:
+      name: NFT
+      context: Product classification
+    product_classification__other:
+      name: Diğer
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: Yarı değerli taş
+      context: Product classification
+    product_classification__voucher:
+      name: Kupon
+      context: Product classification
     product_form__cream:
       name: Krema
       context: Product form
@@ -57815,6 +58061,21 @@ tr:
     product_sterility__sterile:
       name: Steril
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: Koleksiyonluk/nümizmatik
+      context: Product use
+    product_use__currency/legal_tender:
+      name: Para birimi/yasal ödeme aracı
+      context: Product use
+    product_use__gift_card/voucher:
+      name: Hediye kartı/kupon
+      context: Product use
+    product_use__jewelry/ornament:
+      name: Mücevher/süs
+      context: Product use
+    product_use__other:
+      name: Diğer
+      context: Product use
     program_format__booklet:
       name: Kitapçık
       context: Program format
@@ -79811,6 +80072,30 @@ tr:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: Mühendislik (kontrplak/MDF)
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: Lake/vernikli
+      context: Wood finish
+    wood_finish__oiled:
+      name: Yağlanmış
+      context: Wood finish
+    wood_finish__other:
+      name: Diğer
+      context: Wood finish
+    wood_finish__painted:
+      name: Boyalı
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: Sert ahşap
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: İşlenmemiş/doğal
+      context: Wood finish
+    wood_finish__veneered:
+      name: Kaplamalı
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: Temizlik fırçası
       context: Woodwind care items included
