@@ -1619,6 +1619,21 @@ th:
     album_type__spiral_bound:
       name: แบบสันกระดูกงู
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: แอลกอฮอล์ >24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: แอลกอฮอล์ ≤24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: อื่นๆ
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: ตัวทำละลาย - ภาชนะขนาดใหญ่ (>1L)
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: ตัวทำละลาย - ภาชนะขนาดเล็ก (≤1L)
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: ปราศจากแอลกอฮอล์
       context: Alcohol content
@@ -6770,6 +6785,12 @@ th:
     battery_size__f:
       name: F
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100Wh"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: เซลล์แบตเตอรี่ขนาดใหญ่ (เครื่องใช้ไฟฟ้า/เครื่องมือ/ของเล่นแบบนั่งขับ)
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ th:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤100Wh"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ th:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: เซลล์แบตเตอรี่สำหรับครัวเรือนขนาดเล็ก (AA/AAA/ถ่านก้อนกระดุม)
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ th:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: ไม่ทราบ
       context: Battery size
     battery_technology__alkaline:
       name: อัลคาไลน์
@@ -7016,6 +7046,12 @@ th:
     battery_terminal_type__wire_leads:
       name: สายไฟ
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: บรรจุ-ถอดออกได้
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: บรรจุ-ถอดออกไม่ได้
+      context: Battery type
     battery_type__disposable:
       name: ใช้แล้วทิ้ง
       context: Battery type
@@ -7024,6 +7060,12 @@ th:
       context: Battery type
     battery_type__rechargeable:
       name: ชาร์จใหม่ได้
+      context: Battery type
+    battery_type__standalone_included:
+      name: แบบสแตนด์อโลน (รวมอยู่ด้วย)
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: แบบสแตนด์อโลน (ไม่รวมอยู่ด้วย)
       context: Battery type
     bead_shape__hair_pipe:
       name: ลูกปัดยาวสไตล์อินเดียนแดง
@@ -9668,6 +9710,9 @@ th:
     bristle_hardness__soft:
       name: นุ่ม
       context: Bristle hardness
+    bristle_material__badger:
+      name: แบดเจอร์
+      context: Bristle material
     bristle_material__boar_bristle:
       name: ขนหมูป่า
       context: Bristle material
@@ -9676,6 +9721,12 @@ th:
       context: Bristle material
     bristle_material__faux_leather:
       name: หนังเทียม
+      context: Bristle material
+    bristle_material__goat:
+      name: แพะ
+      context: Bristle material
+    bristle_material__hog:
+      name: หมู
       context: Bristle material
     bristle_material__horsehair:
       name: ขนม้า
@@ -9710,8 +9761,14 @@ th:
     bristle_material__polyvinyl_chloride_pvc:
       name: โพลิไวนิลคลอไรด์ (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: ม้าโพนี่
+      context: Bristle material
     bristle_material__rubber:
       name: ยาง
+      context: Bristle material
+    bristle_material__sable:
+      name: เซเบิล
       context: Bristle material
     bristle_material__silicone:
       name: ซิลิโคน
@@ -9724,6 +9781,9 @@ th:
       context: Bristle material
     bristle_material__teflon:
       name: เทฟลอน
+      context: Bristle material
+    bristle_material__unknown:
+      name: ไม่ทราบ
       context: Bristle material
     bristle_material__wood:
       name: ไม้
@@ -14954,6 +15014,39 @@ th:
     compatible_contact_lens_type__toric:
       name: ทอริค
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: เลนส์สี
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: เลนส์แข็ง
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: เลนส์ไฮบริด
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: เลนส์มัลติโฟคัล
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: เลนส์ออร์โธเคราโทโลจี
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: อื่นๆ
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: เลนส์แข็งซึมผ่านแก๊ส (RGP)
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: เลนส์สเคลอรัล
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: เลนส์ซิลิโคนไฮโดรเจล
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: คอนแทคเลนส์นุ่ม
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: เลนส์ทอริค
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: ที่ใส่เครื่องมือเสริมความงาม
       context: Compatible cosmetic tools
@@ -18722,6 +18815,30 @@ th:
     constitutive_ingredients__zinc_oxide:
       name: ซิงค์ออกไซด์
       context: Constitutive ingredients
+    construction__clad:
+      name: หุ้ม
+      context: Construction
+    construction__filled:
+      name: ถม
+      context: Construction
+    construction__other:
+      name: อื่นๆ
+      context: Construction
+    construction__plated:
+      name: ชุบ
+      context: Construction
+    construction__solid:
+      name: โซลิด
+      context: Construction
+    construction__toned:
+      name: เฉดสี
+      context: Construction
+    construction__vermeil:
+      name: ชุบเวอร์เมิล
+      context: Construction
+    construction__whole:
+      name: ทั้งชิ้น
+      context: Construction
     construction_set_theme__aircraft:
       name: เครื่องบิน
       context: Construction set theme
@@ -18827,39 +18944,6 @@ th:
     contact_lens_case_features__ventilation_port:
       name: ช่องระบายอากาศ
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: เลนส์สี
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: เลนส์แข็ง
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: เลนส์ไฮบริด
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: เลนส์มัลติโฟคัล
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: เลนส์ออร์โธเคราโทโลจี
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: อื่นๆ
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: เลนส์แข็งซึมผ่านแก๊ส (RGP)
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: เลนส์สเคลอรัล
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: เลนส์ซิลิโคนไฮโดรเจล
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: คอนแทคเลนส์นุ่ม
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: เลนส์ทอริค
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: บาลาฟิลคอน เอ
       context: Contact lens material
@@ -27458,23 +27542,41 @@ th:
     embellishments__chipboard_elements:
       name: องค์ประกอบชิปบอร์ด
       context: Embellishments
+    embellishments__diamond:
+      name: ข้าวหลามตัด
+      context: Embellishments
     embellishments__die_cuts:
       name: ไดคัต
       context: Embellishments
     embellishments__gems:
       name: อัญมณี
       context: Embellishments
+    embellishments__none:
+      name: ไม่มี
+      context: Embellishments
     embellishments__other:
       name: อื่นๆ
       context: Embellishments
+    embellishments__precious_stone:
+      name: อัญมณีมีค่า
+      context: Embellishments
+    embellishments__rhinestone:
+      name: พลอยเทียม
+      context: Embellishments
     embellishments__ribbons:
       name: ริบบิ้น
+      context: Embellishments
+    embellishments__semi_precious_stone:
+      name: อัญมณีกึ่งมีค่า
       context: Embellishments
     embellishments__sequins:
       name: กลิตเตอร์เลื่อม
       context: Embellishments
     embellishments__stickers:
       name: สติกเกอร์
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: ไข่มุกสังเคราะห์
       context: Embellishments
     embellishments__washi_tape:
       name: เทปวาชิ
@@ -31973,8 +32075,14 @@ th:
     food_product_form__powder:
       name: แบบผง
       context: Food product form
+    food_product_form__preserved:
+      name: พรีเซิร์ฟ
+      context: Food product form
     food_product_form__sheets:
       name: แผ่น
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: ไม่ผ่านการชุบ/ดิบ
       context: Food product form
     food_product_form__whole:
       name: ทั้งชิ้น
@@ -39572,6 +39680,9 @@ th:
     jewelry_material__alcantara:
       name: อัลคันทารา
       context: Jewelry material
+    jewelry_material__alloy:
+      name: อัลลอย
+      context: Jewelry material
     jewelry_material__aluminum:
       name: อะลูมิเนียม
       context: Jewelry material
@@ -39689,6 +39800,9 @@ th:
     jewelry_material__nickel_plated:
       name: ชุบนิกเกิล
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: โลหะที่ไม่มีค่า
+      context: Jewelry material
     jewelry_material__nylon:
       name: ไนลอน
       context: Jewelry material
@@ -39700,6 +39814,9 @@ th:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: ชุบแพลเลเดียม
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: ไข่มุก
       context: Jewelry material
     jewelry_material__plastic:
       name: พลาสติก
@@ -39715,6 +39832,9 @@ th:
       context: Jewelry material
     jewelry_material__porcelain:
       name: พอร์ซเลน
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: อัญมณีมีค่า/กึ่งมีค่า
       context: Jewelry material
     jewelry_material__precious_resin:
       name: เรซินคุณภาพสูง
@@ -42137,6 +42257,45 @@ th:
     leather/vinyl_texture__smooth:
       name: เรียบ
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: จระเข้
+      context: Leather type
+    leather_type__calfskin:
+      name: หนังลูกวัว
+      context: Leather type
+    leather_type__cowhide:
+      name: หนังวัว
+      context: Leather type
+    leather_type__crocodile:
+      name: ตะเข้
+      context: Leather type
+    leather_type__lambskin:
+      name: หนังแกะ
+      context: Leather type
+    leather_type__lizard:
+      name: กิ้งก่า
+      context: Leather type
+    leather_type__ostrich:
+      name: เนื้อนกกระจอกเทศ
+      context: Leather type
+    leather_type__other:
+      name: อื่นๆ
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: Sheepskin
+      context: Leather type
+    leather_type__stingray:
+      name: ปลากระเบน
+      context: Leather type
+    leather_type__synthetic:
+      name: สังเคราะห์
+      context: Leather type
+    leather_type__unknown:
+      name: ไม่ทราบ
+      context: Leather type
     lectern_mounting_type__floor:
       name: พื้น
       context: Lectern mounting type
@@ -43631,8 +43790,14 @@ th:
     lumber/wood_type__cherry_wood:
       name: ไม้เชอร์รี่
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: ต้นคอร์ก
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: ไม้ฮิกโครี่
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: ใยปอ
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: ไม้เมเปิล
@@ -43646,6 +43811,9 @@ th:
     lumber/wood_type__other:
       name: อื่นๆ
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: ปาล์ม
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: ไม้สน
       context: Lumber/Wood type
@@ -43655,8 +43823,17 @@ th:
     lumber/wood_type__poplar_wood:
       name: ไม้ป็อปลาร์
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: ราฟเฟีย
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: หวาย
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: ไม้แดง
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: ฟาง
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: ไม้วอลนัต
@@ -44945,6 +45122,36 @@ th:
     material_hardness__soft:
       name: นุ่ม
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: สินค้าสำเร็จรูป (เครื่องประดับ/นาฬิกา)
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: แบบหลวม/ยังไม่ได้ประกอบ
+      context: Material origin
+    material_origin__nft:
+      name: NFT)
+      context: Material origin
+    material_origin__other:
+      name: อื่นๆ
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: แบบพิมพ์/ดิจิทัล (บัตรของขวัญ
+      context: Material origin
+    material_origin__voucher:
+      name: บัตรกำนัล
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: ชุบเคมี
+      context: Material treatment
+    material_treatment__fumigated:
+      name: รมควัน
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: อบด้วยความร้อน
+      context: Material treatment
+    material_treatment__other:
+      name: อื่นๆ
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: สายรัดที่ปรับได้
       context: Maternity clothing features
@@ -55409,6 +55616,18 @@ th:
     plant_class__zingiberales:
       name: อันดับ Zingiberales
       context: Plant class
+    plant_material__artificial:
+      name: สังเคราะห์
+      context: Plant material
+    plant_material__dried/preserved:
+      name: อบแห้ง/พรีเซิร์ฟ
+      context: Plant material
+    plant_material__live:
+      name: สด
+      context: Plant material
+    plant_material__other:
+      name: อื่นๆ
+      context: Plant material
     plant_name__aeonium:
       name: เอโอเนียม
       context: Plant name
@@ -57668,6 +57887,33 @@ th:
     product_certifications_standards__vegan:
       name: วีแกน
       context: Product certifications & standards
+    product_classification__bullion:
+      name: ทองแท่ง
+      context: Product classification
+    product_classification__coupon:
+      name: คูปอง
+      context: Product classification
+    product_classification__currency:
+      name: สกุลเงิน
+      context: Product classification
+    product_classification__gift_card:
+      name: บัตรของขวัญ
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: อัญมณีแบบหลวม
+      context: Product classification
+    product_classification__nft:
+      name: NFT
+      context: Product classification
+    product_classification__other:
+      name: อื่นๆ
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: อัญมณีกึ่งมีค่าแบบหลวม
+      context: Product classification
+    product_classification__voucher:
+      name: บัตรกำนัล
+      context: Product classification
     product_form__cream:
       name: ครีม
       context: Product form
@@ -57815,6 +58061,21 @@ th:
     product_sterility__sterile:
       name: ปลอดเชื้อ
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: ของสะสม/เหรียญกษาปณ์
+      context: Product use
+    product_use__currency/legal_tender:
+      name: สกุลเงิน/เงินที่ชำระหนี้ได้ตามกฎหมาย
+      context: Product use
+    product_use__gift_card/voucher:
+      name: บัตรของขวัญ/บัตรกำนัล
+      context: Product use
+    product_use__jewelry/ornament:
+      name: เครื่องประดับ/ของประดับ
+      context: Product use
+    product_use__other:
+      name: อื่นๆ
+      context: Product use
     program_format__booklet:
       name: หนังสือเล่มเล็ก
       context: Program format
@@ -79811,6 +80072,30 @@ th:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: แปรรูป (ไม้อัด/MDF)
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: เคลือบแลคเกอร์/เคลือบเงา
+      context: Wood finish
+    wood_finish__oiled:
+      name: เคลือบน้ำมัน
+      context: Wood finish
+    wood_finish__other:
+      name: อื่นๆ
+      context: Wood finish
+    wood_finish__painted:
+      name: ทาสี
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: ไม้เนื้อแข็ง
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: ไม่ผ่านการชุบ/แบบธรรมชาติ
+      context: Wood finish
+    wood_finish__veneered:
+      name: วีเนียร์
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: แปรงทำความสะอาด
       context: Woodwind care items included
