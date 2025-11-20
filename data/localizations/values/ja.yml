@@ -1619,6 +1619,21 @@ ja:
     album_type__spiral_bound:
       name: らせん綴じ
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: アルコール>24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: アルコール≤24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: その他
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: 溶剤 - 大きな容器（>1L）
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: 溶剤 - 小型容器（≤1L）
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: アルコールフリー
       context: Alcohol content
@@ -6770,6 +6785,12 @@ ja:
     battery_size__f:
       name: F
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100Wh"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: 大型セル（家電・工具・乗用玩具）
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ ja:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤100Wh"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ ja:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: 家庭用小型電池（単三電池/単四電池/コイン型電池）
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ ja:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: 不明
       context: Battery size
     battery_technology__alkaline:
       name: アルカリ
@@ -7016,6 +7046,12 @@ ja:
     battery_terminal_type__wire_leads:
       name: ワイヤーリード
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: 取り外し可能な収納型
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: 取り外し不可の収納型
+      context: Battery type
     battery_type__disposable:
       name: 使い捨て
       context: Battery type
@@ -7024,6 +7060,12 @@ ja:
       context: Battery type
     battery_type__rechargeable:
       name: 充電式
+      context: Battery type
+    battery_type__standalone_included:
+      name: スタンドアロン（付属）
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: スタンドアロン（付属なし）
       context: Battery type
     bead_shape__hair_pipe:
       name: ヘアパイプ
@@ -9668,6 +9710,9 @@ ja:
     bristle_hardness__soft:
       name: ソフト
       context: Bristle hardness
+    bristle_material__badger:
+      name: アナグマ
+      context: Bristle material
     bristle_material__boar_bristle:
       name: 猪毛
       context: Bristle material
@@ -9676,6 +9721,12 @@ ja:
       context: Bristle material
     bristle_material__faux_leather:
       name: フェイクレザー
+      context: Bristle material
+    bristle_material__goat:
+      name: ヤギ
+      context: Bristle material
+    bristle_material__hog:
+      name: ホッグ
       context: Bristle material
     bristle_material__horsehair:
       name: ホースヘア
@@ -9710,8 +9761,14 @@ ja:
     bristle_material__polyvinyl_chloride_pvc:
       name: ポリ塩化ビニル (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: ポニー
+      context: Bristle material
     bristle_material__rubber:
       name: ゴム
+      context: Bristle material
+    bristle_material__sable:
+      name: セーブル
       context: Bristle material
     bristle_material__silicone:
       name: シリコーン
@@ -9724,6 +9781,9 @@ ja:
       context: Bristle material
     bristle_material__teflon:
       name: テフロン
+      context: Bristle material
+    bristle_material__unknown:
+      name: 不明
       context: Bristle material
     bristle_material__wood:
       name: 木材
@@ -14954,6 +15014,39 @@ ja:
     compatible_contact_lens_type__toric:
       name: トーリック
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: カラーレンズ
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: ハードレンズ
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: ハイブリッドレンズ
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: 多焦点レンズ
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: オルソケラトロジーレンズ
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: その他
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: 酸素透過性ハード（RGP）レンズ
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: 強膜レンズ
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: シリコーンハイドロゲルレンズ
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: ソフトコンタクトレンズ
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: トーリックレンズ
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: 美容器具容器
       context: Compatible cosmetic tools
@@ -18722,6 +18815,30 @@ ja:
     constitutive_ingredients__zinc_oxide:
       name: 酸化亜鉛
       context: Constitutive ingredients
+    construction__clad:
+      name: クラッド
+      context: Construction
+    construction__filled:
+      name: 満たされた
+      context: Construction
+    construction__other:
+      name: その他
+      context: Construction
+    construction__plated:
+      name: メッキ
+      context: Construction
+    construction__solid:
+      name: ソリッド
+      context: Construction
+    construction__toned:
+      name: トーン調整済み
+      context: Construction
+    construction__vermeil:
+      name: ヴェルメイユ
+      context: Construction
+    construction__whole:
+      name: 全体
+      context: Construction
     construction_set_theme__aircraft:
       name: 航空機
       context: Construction set theme
@@ -18827,39 +18944,6 @@ ja:
     contact_lens_case_features__ventilation_port:
       name: 通気ポート
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: カラーレンズ
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: ハードレンズ
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: ハイブリッドレンズ
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: 多焦点レンズ
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: オルソケラトロジーレンズ
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: その他
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: 酸素透過性ハード（RGP）レンズ
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: 強膜レンズ
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: シリコーンハイドロゲルレンズ
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: ソフトコンタクトレンズ
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: トーリックレンズ
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: バラフィルコンA
       context: Contact lens material
@@ -27458,23 +27542,41 @@ ja:
     embellishments__chipboard_elements:
       name: チップボード
       context: Embellishments
+    embellishments__diamond:
+      name: ダイヤモンド
+      context: Embellishments
     embellishments__die_cuts:
       name: ダイカット
       context: Embellishments
     embellishments__gems:
       name: 宝石
       context: Embellishments
+    embellishments__none:
+      name: なし
+      context: Embellishments
     embellishments__other:
       name: その他
       context: Embellishments
+    embellishments__precious_stone:
+      name: 宝石
+      context: Embellishments
+    embellishments__rhinestone:
+      name: ラインストーン
+      context: Embellishments
     embellishments__ribbons:
       name: リボン
+      context: Embellishments
+    embellishments__semi_precious_stone:
+      name: 半貴石
       context: Embellishments
     embellishments__sequins:
       name: スパンコール
       context: Embellishments
     embellishments__stickers:
       name: シール
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: 合成真珠
       context: Embellishments
     embellishments__washi_tape:
       name: 和紙テープ
@@ -31973,8 +32075,14 @@ ja:
     food_product_form__powder:
       name: パウダー
       context: Food product form
+    food_product_form__preserved:
+      name: 保存された
+      context: Food product form
     food_product_form__sheets:
       name: シート
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: 未処理/生
       context: Food product form
     food_product_form__whole:
       name: 全体
@@ -39572,6 +39680,9 @@ ja:
     jewelry_material__alcantara:
       name: アルカンターラ
       context: Jewelry material
+    jewelry_material__alloy:
+      name: 合金
+      context: Jewelry material
     jewelry_material__aluminum:
       name: アルミニウム
       context: Jewelry material
@@ -39689,6 +39800,9 @@ ja:
     jewelry_material__nickel_plated:
       name: ニッケルメッキ
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: 非貴金属
+      context: Jewelry material
     jewelry_material__nylon:
       name: ナイロン
       context: Jewelry material
@@ -39700,6 +39814,9 @@ ja:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: パラジウムメッキ
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: 真珠
       context: Jewelry material
     jewelry_material__plastic:
       name: プラスチック
@@ -39715,6 +39832,9 @@ ja:
       context: Jewelry material
     jewelry_material__porcelain:
       name: 磁器
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: 貴石/半貴石
       context: Jewelry material
     jewelry_material__precious_resin:
       name: プレシャスレジン
@@ -42137,6 +42257,45 @@ ja:
     leather/vinyl_texture__smooth:
       name: スムース
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: アリゲーター
+      context: Leather type
+    leather_type__calfskin:
+      name: カーフスキン
+      context: Leather type
+    leather_type__cowhide:
+      name: 牛革
+      context: Leather type
+    leather_type__crocodile:
+      name: クロコダイル
+      context: Leather type
+    leather_type__lambskin:
+      name: ラムスキン
+      context: Leather type
+    leather_type__lizard:
+      name: トカゲ
+      context: Leather type
+    leather_type__ostrich:
+      name: ダチョウ
+      context: Leather type
+    leather_type__other:
+      name: その他
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: シープスキン
+      context: Leather type
+    leather_type__stingray:
+      name: スティングレイ
+      context: Leather type
+    leather_type__synthetic:
+      name: 合成品
+      context: Leather type
+    leather_type__unknown:
+      name: 不明
+      context: Leather type
     lectern_mounting_type__floor:
       name: 床
       context: Lectern mounting type
@@ -43631,8 +43790,14 @@ ja:
     lumber/wood_type__cherry_wood:
       name: チェリー材
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: コルク
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: ヒッコリー材
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: ジュート
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: メープルウッド
@@ -43646,6 +43811,9 @@ ja:
     lumber/wood_type__other:
       name: その他
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: ヤシ
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: パイン材
       context: Lumber/Wood type
@@ -43655,8 +43823,17 @@ ja:
     lumber/wood_type__poplar_wood:
       name: ポプラ材
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: ラフィア
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: 籐
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: レッドウッド
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: ストロー
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: ウォールナット材
@@ -44945,6 +45122,36 @@ ja:
     material_hardness__soft:
       name: ソフト
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: 完成品（ジュエリー/時計）
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: 緩い/マウントされていない
+      context: Material origin
+    material_origin__nft:
+      name: NFT）
+      context: Material origin
+    material_origin__other:
+      name: その他
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: 印刷/デジタル（ギフトカード
+      context: Material origin
+    material_origin__voucher:
+      name: バウチャー
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: 化学処理された
+      context: Material treatment
+    material_treatment__fumigated:
+      name: 燻蒸処理済み
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: 熱処理済み
+      context: Material treatment
+    material_treatment__other:
+      name: その他
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: 調節可能なストラップ
       context: Maternity clothing features
@@ -55409,6 +55616,18 @@ ja:
     plant_class__zingiberales:
       name: ショウガ目
       context: Plant class
+    plant_material__artificial:
+      name: 人工
+      context: Plant material
+    plant_material__dried/preserved:
+      name: 乾燥/保存
+      context: Plant material
+    plant_material__live:
+      name: ライブ
+      context: Plant material
+    plant_material__other:
+      name: その他
+      context: Plant material
     plant_name__aeonium:
       name: アエオニウム
       context: Plant name
@@ -57668,6 +57887,33 @@ ja:
     product_certifications_standards__vegan:
       name: ビーガン
       context: Product certifications & standards
+    product_classification__bullion:
+      name: 地金
+      context: Product classification
+    product_classification__coupon:
+      name: クーポン
+      context: Product classification
+    product_classification__currency:
+      name: 通貨
+      context: Product classification
+    product_classification__gift_card:
+      name: ギフトカード
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: 裸石
+      context: Product classification
+    product_classification__nft:
+      name: NFT
+      context: Product classification
+    product_classification__other:
+      name: その他
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: 半貴石
+      context: Product classification
+    product_classification__voucher:
+      name: バウチャー
+      context: Product classification
     product_form__cream:
       name: クリーム
       context: Product form
@@ -57815,6 +58061,21 @@ ja:
     product_sterility__sterile:
       name: 滅菌済み
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: 収集品/貨幣学
+      context: Product use
+    product_use__currency/legal_tender:
+      name: 通貨/法定通貨
+      context: Product use
+    product_use__gift_card/voucher:
+      name: ギフトカード/バウチャー
+      context: Product use
+    product_use__jewelry/ornament:
+      name: 宝石/装飾品
+      context: Product use
+    product_use__other:
+      name: その他
+      context: Product use
     program_format__booklet:
       name: ブックレット
       context: Program format
@@ -79811,6 +80072,30 @@ ja:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: 加工（合板/MDF）
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: ラッカー塗り/ニス塗り
+      context: Wood finish
+    wood_finish__oiled:
+      name: オイル塗り
+      context: Wood finish
+    wood_finish__other:
+      name: その他
+      context: Wood finish
+    wood_finish__painted:
+      name: ペイント
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: 無垢材
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: 未処理/天然
+      context: Wood finish
+    wood_finish__veneered:
+      name: ベニヤ板
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: クリーニングブラシ
       context: Woodwind care items included
