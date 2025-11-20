@@ -170,6 +170,9 @@ vi:
     album_type:
       name: Loại album
       description: "Mô tả kiểu đóng bìa của bộ làm album ảnh hoặc bộ đóng dấu, ví dụ như bìa xoắn ốc, sổ lưu niệm"
+    alcohol/solvent_content:
+      name: Hàm lượng cồn/dung môi
+      description: "Phân loại sản phẩm dựa trên hàm lượng cồn hoặc dung môi cho mục đích vận chuyển và quản lý (ví dụ: cồn ≤24%, cồn >24%, thùng nhỏ dung môi)"
     alcohol_content:
       name: Hàm lượng cồn
       description: "Cho biết liệu toner không chứa cồn hay nếu có, công thức chứa khoảng bao nhiêu cồn."
@@ -1754,6 +1757,9 @@ vi:
     compatible_contact_lens_type:
       name: Loại kính áp tròng tương thích
       description: Xác định loại kính áp tròng nào có thể được bảo quản hoặc làm sạch trong hộp.
+    compatible_contact_lenses:
+      name: Kính áp tròng tương thích
+      description: Cho biết các loại hoặc vật liệu của kính áp tròng mà dung dịch có thể được sử dụng an toàn.
     compatible_cosmetic_tools:
       name: Dụng cụ thẩm mỹ tương thích
       description: "Chỉ định những dụng cụ làm đẹp nào có thể sử dụng được với sản phẩm, ví dụ như mút trang điểm, nhíp"
@@ -2048,6 +2054,9 @@ vi:
     constitutive_ingredients:
       name: Thành phần cấu tạo
       description: "Chỉ định các thành phần chính được sử dụng trong công thức sản phẩm, ví dụ: sáp ong, dầu tầm xuân"
+    construction:
+      name: Xây dựng
+      description: "Chỉ ra phương pháp hoặc kỹ thuật chế tác kim loại được sử dụng trong sản xuất đồ trang sức (ví dụ: mạ, mạ vàng, mạ đầy, đặc)"
     construction_set_theme:
       name: Chủ đề bộ xây dựng
       description: "Xác định chủ đề của một bộ đồ chơi lắp ráp, chẳng hạn như cướp biển hoặc động vật"
@@ -2057,9 +2066,6 @@ vi:
     contact_lens_case_features:
       name: Tính năng hộp kính áp tròng
       description: Nêu bật các tính năng chức năng đáng chú ý hoặc các bao gồm của hộp.
-    contact_lens_compatibility:
-      name: Khả năng tương thích kính áp tròng
-      description: Cho biết các loại hoặc vật liệu của kính áp tròng mà dung dịch có thể được sử dụng an toàn.
     contact_lens_material:
       name: Vật liệu kính áp tròng
       description: "Xác định công thức polymer hoặc họ vật liệu (ví dụ: hydrogel, silicone hydrogel) mà kính được làm từ đó."
@@ -4586,6 +4592,9 @@ vi:
     leather/vinyl_texture:
       name: Kết cấu da/nhựa vinyl
       description: "Mô tả cảm giác bề mặt của các sản phẩm da hoặc nhựa vinyl, như mịn hoặc sần sùi"
+    leather_type:
+      name: Loại da
+      description: "Chỉ rõ nguồn gốc động vật hoặc loại da được sử dụng trong sản phẩm (ví dụ: da bò, da bê, cá sấu, trăn, tổng hợp)"
     lectern_mounting_type:
       name: Kiểu giá đỡ bục giảng
       description: "Chỉ định kiểu thiết lập của bục giảng, như mặt bàn hoặc sàn"
@@ -4943,6 +4952,12 @@ vi:
     material_hardness:
       name: Độ cứng của vật liệu
       description: "Xác định độ cứng của sản phẩm, thường dành cho thiết bị thể thao hoặc thể hình; ví dụ như cực mềm, sức cản cao"
+    material_origin:
+      name: Nguồn gốc vật liệu
+      description: "Chỉ ra hình thức hoặc trạng thái mà vật liệu quý được cung cấp (ví dụ: đồ trang sức rời/chưa gắn, đồ trang sức thành phẩm, thẻ quà tặng in/kỹ thuật số)"
+    material_treatment:
+      name: Xử lý vật liệu
+      description: "Chỉ định những phương pháp xử lý hóa học hoặc vật lý được áp dụng cho vật liệu để bảo quản hoặc đảm bảo an toàn (ví dụ: xử lý nhiệt, hun trùng, xử lý hóa học)"
     maternity_clothing_features:
       name: Đặc điểm quần áo bà bầu
       description: "Mô tả các đặc điểm riêng của trang phục dành cho bà bầu, ví dụ như điều chỉnh theo kích thước bụng, cúp nâng đỡ"
@@ -6038,6 +6053,9 @@ vi:
     plant_class:
       name: Lớp thực vật
       description: "Phân loại thực vật thành các nhóm phân loại cụ thể, ví dụ như thực vật một lá mầm, họ cải"
+    plant_material:
+      name: Vật liệu thực vật
+      description: "Chỉ rõ liệu vật liệu thực vật là sống, được bảo quản hay nhân tạo"
     plant_name:
       name: Tên thực vật
       description: "Xác định tên thực vật hoặc tên thông thường của cây, chẳng hạn như hoa hồng, húng quế hoặc dưa chuột"
@@ -6281,6 +6299,9 @@ vi:
     product_certifications_standards:
       name: Chứng nhận & tiêu chuẩn sản phẩm
       description: "Cho biết các chứng nhận hoặc tiêu chuẩn mà sản phẩm đáp ứng, chẳng hạn như hữu cơ hoặc không độc hại"
+    product_classification:
+      name: Phân loại sản phẩm
+      description: "Phân loại kiểu vật liệu quý, tiền tệ hoặc mặt hàng có giá trị (ví dụ: tiền tệ, vàng thỏi, đá quý, thẻ quà tặng, NFT)"
     product_form:
       name: Hình thức sản phẩm
       description: "Xác định hình thức hoặc dạng thức của sản phẩm, thường dành cho sức khỏe và làm đẹp; ví dụ như kem dưỡng da, huyết thanh"
@@ -6296,6 +6317,9 @@ vi:
     product_sterility:
       name: Độ vô trùng của sản phẩm
       description: Cho biết sản phẩm có vô trùng vì sức khỏe và an toàn hay không
+    product_use:
+      name: Sử dụng sản phẩm
+      description: "Xác định mục đích hoặc mục đích sử dụng chính của các vật liệu quý hoặc đồ sưu tầm (ví dụ: tiền tệ/tiền hợp pháp, đồ sưu tầm, đồ trang sức, thẻ quà tặng)"
     program_format:
       name: Định dạng chương trình
       description: "Mô tả bố cục của các chương trình sự kiện, chẳng hạn như tập sách nhỏ hoặc tờ đơn"
@@ -8930,6 +8954,9 @@ vi:
     wireless_streaming_protocols_supported:
       name: Giao thức phát trực tuyến không dây được hỗ trợ
       description: Xác định các tiêu chuẩn hoặc dịch vụ phát trực tuyến không dây mà stereo có thể nhận nguyên bản.
+    wood_finish:
+      name: Lớp hoàn thiện gỗ
+      description: "Mô tả phương pháp hoàn thiện hoặc chế tạo được áp dụng cho các sản phẩm gỗ (ví dụ: gỗ nguyên khối, gỗ dán, gỗ kỹ thuật, gỗ tẩm dầu, gỗ sơn mài, gỗ sơn)"
     woodwind_care_items_included:
       name: Bao gồm các thiết bị chăm sóc nhạc cụ hơi
       description: "Xác định các vật dụng chăm sóc đi kèm với nhạc cụ hơi bằng gỗ, chẳng hạn như bàn chải làm sạch hoặc mỡ bần"

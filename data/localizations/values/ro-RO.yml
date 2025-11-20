@@ -1619,6 +1619,21 @@ ro-RO:
     album_type__spiral_bound:
       name: Cu spirală
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: Alcool >24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: Alcool ≤24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: Altele
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: Solvent - recipient mare (>1L)
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: Solvent - recipient mic (≤1L)
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: Fără alcool
       context: Alcohol content
@@ -6770,6 +6785,12 @@ ro-RO:
     battery_size__f:
       name: F
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100Wh"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: Celulă mare (aparat/unealtă/jucărie de călărit)
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ ro-RO:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤100Wh"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ ro-RO:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: Celulă mică de uz casnic (AA/AAA/monedă)
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ ro-RO:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: Necunoscut
       context: Battery size
     battery_technology__alkaline:
       name: Alcalină
@@ -7016,6 +7046,12 @@ ro-RO:
     battery_terminal_type__wire_leads:
       name: Fire de conexiune
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: Conținut-detașabil
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: Conținut-nedetașabil
+      context: Battery type
     battery_type__disposable:
       name: De unică folosință
       context: Battery type
@@ -7024,6 +7060,12 @@ ro-RO:
       context: Battery type
     battery_type__rechargeable:
       name: Reîncărcabilă
+      context: Battery type
+    battery_type__standalone_included:
+      name: Independent (inclus)
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: Independent (nu este inclus)
       context: Battery type
     bead_shape__hair_pipe:
       name: Mărgele lungi pentru păr
@@ -9668,6 +9710,9 @@ ro-RO:
     bristle_hardness__soft:
       name: Moale
       context: Bristle hardness
+    bristle_material__badger:
+      name: Bursuc
+      context: Bristle material
     bristle_material__boar_bristle:
       name: Peri de mistreț
       context: Bristle material
@@ -9676,6 +9721,12 @@ ro-RO:
       context: Bristle material
     bristle_material__faux_leather:
       name: Imitație de piele
+      context: Bristle material
+    bristle_material__goat:
+      name: Capră
+      context: Bristle material
+    bristle_material__hog:
+      name: Porc (peri de porc)
       context: Bristle material
     bristle_material__horsehair:
       name: Horsehair
@@ -9710,8 +9761,14 @@ ro-RO:
     bristle_material__polyvinyl_chloride_pvc:
       name: Clorură de polivinil (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: Pony
+      context: Bristle material
     bristle_material__rubber:
       name: Cauciuc
+      context: Bristle material
+    bristle_material__sable:
+      name: Sable / samur (peri de samur)
       context: Bristle material
     bristle_material__silicone:
       name: Silicon
@@ -9724,6 +9781,9 @@ ro-RO:
       context: Bristle material
     bristle_material__teflon:
       name: Teflon
+      context: Bristle material
+    bristle_material__unknown:
+      name: Necunoscut
       context: Bristle material
     bristle_material__wood:
       name: Lemn
@@ -14954,6 +15014,39 @@ ro-RO:
     compatible_contact_lens_type__toric:
       name: Torice
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: Lentile colorate
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: Lentile dure
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: Lentile hibride
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: Lentile multifocale
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: Lentile de ortokeratologie
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: Altele
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: Lentile rigide permeabile la gaze (RGP)
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: Lentile sclerale
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: Lentile din silicon hidrogel
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: Lentile de contact moi
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: Lentile torice
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: Cutii de depozitare pentru instrumente de cosmetică
       context: Compatible cosmetic tools
@@ -18722,6 +18815,30 @@ ro-RO:
     constitutive_ingredients__zinc_oxide:
       name: Oxid de zinc
       context: Constitutive ingredients
+    construction__clad:
+      name: Îmbrăcat
+      context: Construction
+    construction__filled:
+      name: Umplută cu aer
+      context: Construction
+    construction__other:
+      name: Altele
+      context: Construction
+    construction__plated:
+      name: Placat
+      context: Construction
+    construction__solid:
+      name: Solidă
+      context: Construction
+    construction__toned:
+      name: Tonat / colorat
+      context: Construction
+    construction__vermeil:
+      name: Vermeil
+      context: Construction
+    construction__whole:
+      name: Costiță
+      context: Construction
     construction_set_theme__aircraft:
       name: Avioane
       context: Construction set theme
@@ -18827,39 +18944,6 @@ ro-RO:
     contact_lens_case_features__ventilation_port:
       name: Port de ventilație
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: Lentile colorate
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: Lentile dure
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: Lentile hibride
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: Lentile multifocale
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: Lentile de ortokeratologie
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: Altele
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: Lentile rigide permeabile la gaze (RGP)
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: Lentile sclerale
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: Lentile din silicon hidrogel
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: Lentile de contact moi
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: Lentile torice
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: Balafilcon A
       context: Contact lens material
@@ -27458,23 +27542,41 @@ ro-RO:
     embellishments__chipboard_elements:
       name: Elemente din PAL
       context: Embellishments
+    embellishments__diamond:
+      name: Romboidal
+      context: Embellishments
     embellishments__die_cuts:
       name: Matrițe
       context: Embellishments
     embellishments__gems:
       name: Pietre prețioase
       context: Embellishments
+    embellishments__none:
+      name: Niciuna
+      context: Embellishments
     embellishments__other:
       name: Altele
       context: Embellishments
+    embellishments__precious_stone:
+      name: Piatră prețioasă
+      context: Embellishments
+    embellishments__rhinestone:
+      name: Piatră stras
+      context: Embellishments
     embellishments__ribbons:
       name: Panglici
+      context: Embellishments
+    embellishments__semi_precious_stone:
+      name: Piatră semiprețioasă
       context: Embellishments
     embellishments__sequins:
       name: Paiete
       context: Embellishments
     embellishments__stickers:
       name: Autocolante
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: Perlă sintetică
       context: Embellishments
     embellishments__washi_tape:
       name: Bandă Washi
@@ -31973,8 +32075,14 @@ ro-RO:
     food_product_form__powder:
       name: Pudră
       context: Food product form
+    food_product_form__preserved:
+      name: Conservat
+      context: Food product form
     food_product_form__sheets:
       name: Foi
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: Netratat / brut
       context: Food product form
     food_product_form__whole:
       name: Integral
@@ -39572,6 +39680,9 @@ ro-RO:
     jewelry_material__alcantara:
       name: Alcantara
       context: Jewelry material
+    jewelry_material__alloy:
+      name: Aliaj
+      context: Jewelry material
     jewelry_material__aluminum:
       name: Aluminiu
       context: Jewelry material
@@ -39689,6 +39800,9 @@ ro-RO:
     jewelry_material__nickel_plated:
       name: Placat cu nichel
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: Metale neprețioase
+      context: Jewelry material
     jewelry_material__nylon:
       name: Nailon
       context: Jewelry material
@@ -39700,6 +39814,9 @@ ro-RO:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: Placat cu paladiu
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: Perle
       context: Jewelry material
     jewelry_material__plastic:
       name: Plastic
@@ -39715,6 +39832,9 @@ ro-RO:
       context: Jewelry material
     jewelry_material__porcelain:
       name: Porțelan
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: Pietre prețioase/semiprețioase
       context: Jewelry material
     jewelry_material__precious_resin:
       name: Rășină prețioasă
@@ -42137,6 +42257,45 @@ ro-RO:
     leather/vinyl_texture__smooth:
       name: Omogenă
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: Piele de aligator
+      context: Leather type
+    leather_type__calfskin:
+      name: Piele de vițel
+      context: Leather type
+    leather_type__cowhide:
+      name: Piele de vacă
+      context: Leather type
+    leather_type__crocodile:
+      name: Piele de crocodil
+      context: Leather type
+    leather_type__lambskin:
+      name: Piele de miel
+      context: Leather type
+    leather_type__lizard:
+      name: Piele de șopârlă
+      context: Leather type
+    leather_type__ostrich:
+      name: Struț
+      context: Leather type
+    leather_type__other:
+      name: Altele
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: Blană de oaie
+      context: Leather type
+    leather_type__stingray:
+      name: Piele de calc
+      context: Leather type
+    leather_type__synthetic:
+      name: Sintetic
+      context: Leather type
+    leather_type__unknown:
+      name: Necunoscut
+      context: Leather type
     lectern_mounting_type__floor:
       name: Podea
       context: Lectern mounting type
@@ -43631,8 +43790,14 @@ ro-RO:
     lumber/wood_type__cherry_wood:
       name: Lemn de cireș
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: Plută
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: Lemn de hicori
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: Iută
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: Lemn de arțar
@@ -43646,6 +43811,9 @@ ro-RO:
     lumber/wood_type__other:
       name: Altele
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: Palmier
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: Lemn de pin
       context: Lumber/Wood type
@@ -43655,8 +43823,17 @@ ro-RO:
     lumber/wood_type__poplar_wood:
       name: Lemn de plop
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: Rafie
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: Ratan
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: Sequoia
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: Paie
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: Lemn de nuc
@@ -44945,6 +45122,36 @@ ro-RO:
     material_hardness__soft:
       name: Moale
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: Produs finit (bijuterie/ceas)
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: Demontat/slăbit
+      context: Material origin
+    material_origin__nft:
+      name: NFT)
+      context: Material origin
+    material_origin__other:
+      name: Altele
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: Imprimat/digital (card cadou)
+      context: Material origin
+    material_origin__voucher:
+      name: voucher
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: Tratat chimic
+      context: Material treatment
+    material_treatment__fumigated:
+      name: Fumigat
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: Tratat termic
+      context: Material treatment
+    material_treatment__other:
+      name: Altele
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: Curea reglabilă
       context: Maternity clothing features
@@ -55409,6 +55616,18 @@ ro-RO:
     plant_class__zingiberales:
       name: Zingiberales
       context: Plant class
+    plant_material__artificial:
+      name: Artificiale
+      context: Plant material
+    plant_material__dried/preserved:
+      name: Uscat/conservat
+      context: Plant material
+    plant_material__live:
+      name: Trăi
+      context: Plant material
+    plant_material__other:
+      name: Altele
+      context: Plant material
     plant_name__aeonium:
       name: Aeonium
       context: Plant name
@@ -57668,6 +57887,33 @@ ro-RO:
     product_certifications_standards__vegan:
       name: Vegan
       context: Product certifications & standards
+    product_classification__bullion:
+      name: Lingouri
+      context: Product classification
+    product_classification__coupon:
+      name: Cupon
+      context: Product classification
+    product_classification__currency:
+      name: Monedă
+      context: Product classification
+    product_classification__gift_card:
+      name: Card cadou
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: Pietre prețioase vrac
+      context: Product classification
+    product_classification__nft:
+      name: NFT
+      context: Product classification
+    product_classification__other:
+      name: Altele
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: Pietre semiprețioase
+      context: Product classification
+    product_classification__voucher:
+      name: Voucher
+      context: Product classification
     product_form__cream:
       name: Cremă
       context: Product form
@@ -57815,6 +58061,21 @@ ro-RO:
     product_sterility__sterile:
       name: Steril
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: Colecționabil/numismatic
+      context: Product use
+    product_use__currency/legal_tender:
+      name: Monedă/metodă legală de plată
+      context: Product use
+    product_use__gift_card/voucher:
+      name: Card/voucher cadou
+      context: Product use
+    product_use__jewelry/ornament:
+      name: Bijuterie/ornament
+      context: Product use
+    product_use__other:
+      name: Altele
+      context: Product use
     program_format__booklet:
       name: Broșură
       context: Program format
@@ -79811,6 +80072,30 @@ ro-RO:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: Strat stratificat (placaj/MDF)
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: Lăcuit/lăcuit
+      context: Wood finish
+    wood_finish__oiled:
+      name: Uleiuit
+      context: Wood finish
+    wood_finish__other:
+      name: Altele
+      context: Wood finish
+    wood_finish__painted:
+      name: Vopsit
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: Lemn masiv
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: Netratat/natural
+      context: Wood finish
+    wood_finish__veneered:
+      name: Furniruit
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: Perie de curățare
       context: Woodwind care items included

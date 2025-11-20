@@ -1619,6 +1619,21 @@ vi:
     album_type__spiral_bound:
       name: Gáy xoắn
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: Cồn >24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: Cồn ≤24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: Khác
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: Dung môi – thùng lớn (>1L)
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: Dung môi – thùng nhỏ (≤1L)
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: Không cồn
       context: Alcohol content
@@ -6770,6 +6785,12 @@ vi:
     battery_size__f:
       name: F
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100Wh"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: Pin lớn (thiết bị/dụng cụ/đồ chơi dạng lái)
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ vi:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤100Wh"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ vi:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: Pin tiểu gia dụng (AA/AAA/đồng xu)
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ vi:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: Không rõ
       context: Battery size
     battery_technology__alkaline:
       name: Alkaline
@@ -7016,6 +7046,12 @@ vi:
     battery_terminal_type__wire_leads:
       name: Dây dẫn
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: Chứa đựng–có thể tách rời
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: Chứa đựng–không thể tách rời
+      context: Battery type
     battery_type__disposable:
       name: Dùng một lần
       context: Battery type
@@ -7024,6 +7060,12 @@ vi:
       context: Battery type
     battery_type__rechargeable:
       name: Sạc được
+      context: Battery type
+    battery_type__standalone_included:
+      name: Độc lập (bao gồm)
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: Độc lập (không bao gồm)
       context: Battery type
     bead_shape__hair_pipe:
       name: Ống tóc
@@ -9668,6 +9710,9 @@ vi:
     bristle_hardness__soft:
       name: Mềm
       context: Bristle hardness
+    bristle_material__badger:
+      name: Lửng
+      context: Bristle material
     bristle_material__boar_bristle:
       name: Lông heo rừng
       context: Bristle material
@@ -9676,6 +9721,12 @@ vi:
       context: Bristle material
     bristle_material__faux_leather:
       name: Da giả
+      context: Bristle material
+    bristle_material__goat:
+      name: Dê
+      context: Bristle material
+    bristle_material__hog:
+      name: Lợn thiến
       context: Bristle material
     bristle_material__horsehair:
       name: Lông ngựa
@@ -9710,8 +9761,14 @@ vi:
     bristle_material__polyvinyl_chloride_pvc:
       name: Polyvinyl chloride (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: Ngựa con
+      context: Bristle material
     bristle_material__rubber:
       name: Cao su
+      context: Bristle material
+    bristle_material__sable:
+      name: Chồn zibelin
       context: Bristle material
     bristle_material__silicone:
       name: Silicon
@@ -9724,6 +9781,9 @@ vi:
       context: Bristle material
     bristle_material__teflon:
       name: Chân may Teflon
+      context: Bristle material
+    bristle_material__unknown:
+      name: Không rõ
       context: Bristle material
     bristle_material__wood:
       name: Gỗ
@@ -14954,6 +15014,39 @@ vi:
     compatible_contact_lens_type__toric:
       name: Loạn thị
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: Kính áp tròng màu
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: Kính áp tròng cứng
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: Kính áp tròng lai
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: Kính áp tròng đa tiêu cự
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: Kính áp tròng chỉnh hình giác mạc
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: Khác
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: Kính áp tròng cứng thấm khí (RGP)
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: Kính áp tròng củng mạc
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: Kính áp tròng silicone hydrogel
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: Kính áp tròng mềm
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: Kính áp tròng loạn thị
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: Hộp đựng dụng cụ làm đẹp
       context: Compatible cosmetic tools
@@ -18722,6 +18815,30 @@ vi:
     constitutive_ingredients__zinc_oxide:
       name: Kẽm oxit
       context: Constitutive ingredients
+    construction__clad:
+      name: Tráng
+      context: Construction
+    construction__filled:
+      name: Đầy
+      context: Construction
+    construction__other:
+      name: Khác
+      context: Construction
+    construction__plated:
+      name: Mạ
+      context: Construction
+    construction__solid:
+      name: Lốp rắn
+      context: Construction
+    construction__toned:
+      name: Có tông màu
+      context: Construction
+    construction__vermeil:
+      name: Bạc/đồng mạ vàng
+      context: Construction
+    construction__whole:
+      name: Nguyên
+      context: Construction
     construction_set_theme__aircraft:
       name: Máy bay
       context: Construction set theme
@@ -18827,39 +18944,6 @@ vi:
     contact_lens_case_features__ventilation_port:
       name: Cổng thông gió
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: Kính áp tròng màu
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: Kính áp tròng cứng
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: Kính áp tròng lai
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: Kính áp tròng đa tiêu cự
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: Kính áp tròng chỉnh hình giác mạc
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: Khác
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: Kính áp tròng cứng thấm khí (RGP)
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: Kính áp tròng củng mạc
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: Kính áp tròng silicone hydrogel
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: Kính áp tròng mềm
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: Kính áp tròng loạn thị
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: Balafilcon A
       context: Contact lens material
@@ -27458,23 +27542,41 @@ vi:
     embellishments__chipboard_elements:
       name: Chi tiết bảng ván
       context: Embellishments
+    embellishments__diamond:
+      name: Kim cương
+      context: Embellishments
     embellishments__die_cuts:
       name: Hình cắt sẵn
       context: Embellishments
     embellishments__gems:
       name: Đá
       context: Embellishments
+    embellishments__none:
+      name: Không có
+      context: Embellishments
     embellishments__other:
       name: Khác
       context: Embellishments
+    embellishments__precious_stone:
+      name: Đá quý
+      context: Embellishments
+    embellishments__rhinestone:
+      name: Kim cương giả
+      context: Embellishments
     embellishments__ribbons:
       name: Ruy băng
+      context: Embellishments
+    embellishments__semi_precious_stone:
+      name: Đá bán quý
       context: Embellishments
     embellishments__sequins:
       name: Kim sa
       context: Embellishments
     embellishments__stickers:
       name: Nhãn dán
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: Ngọc trai tổng hợp
       context: Embellishments
     embellishments__washi_tape:
       name: Băng dính washi
@@ -31973,8 +32075,14 @@ vi:
     food_product_form__powder:
       name: Bột
       context: Food product form
+    food_product_form__preserved:
+      name: Được bảo quản
+      context: Food product form
     food_product_form__sheets:
       name: Tờ
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: Chưa xử lý/Thô
       context: Food product form
     food_product_form__whole:
       name: Nguyên
@@ -39572,6 +39680,9 @@ vi:
     jewelry_material__alcantara:
       name: Alcantara
       context: Jewelry material
+    jewelry_material__alloy:
+      name: Hợp kim
+      context: Jewelry material
     jewelry_material__aluminum:
       name: Nhôm
       context: Jewelry material
@@ -39689,6 +39800,9 @@ vi:
     jewelry_material__nickel_plated:
       name: Mạ niken
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: Kim loại không quý
+      context: Jewelry material
     jewelry_material__nylon:
       name: Nylon
       context: Jewelry material
@@ -39700,6 +39814,9 @@ vi:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: Mạ paladium
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: Ngọc trai
       context: Jewelry material
     jewelry_material__plastic:
       name: Nhựa
@@ -39715,6 +39832,9 @@ vi:
       context: Jewelry material
     jewelry_material__porcelain:
       name: Sứ
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: Đá quý/đá bán quý
       context: Jewelry material
     jewelry_material__precious_resin:
       name: Nhựa quý
@@ -42137,6 +42257,45 @@ vi:
     leather/vinyl_texture__smooth:
       name: Nhẵn
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: Cá sấu
+      context: Leather type
+    leather_type__calfskin:
+      name: Da bê
+      context: Leather type
+    leather_type__cowhide:
+      name: Da bò
+      context: Leather type
+    leather_type__crocodile:
+      name: Cá sấu
+      context: Leather type
+    leather_type__lambskin:
+      name: Da cừu
+      context: Leather type
+    leather_type__lizard:
+      name: Thằn lằn
+      context: Leather type
+    leather_type__ostrich:
+      name: Đà điểu
+      context: Leather type
+    leather_type__other:
+      name: Khác
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: Da cừu
+      context: Leather type
+    leather_type__stingray:
+      name: Cá đuối gai độc
+      context: Leather type
+    leather_type__synthetic:
+      name: Tổng hợp
+      context: Leather type
+    leather_type__unknown:
+      name: Không rõ
+      context: Leather type
     lectern_mounting_type__floor:
       name: Sàn nhà
       context: Lectern mounting type
@@ -43631,8 +43790,14 @@ vi:
     lumber/wood_type__cherry_wood:
       name: Gỗ anh đào
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: Thảm gỗ bần
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: Gỗ mại châu
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: Sợi đay
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: Gỗ phong
@@ -43646,6 +43811,9 @@ vi:
     lumber/wood_type__other:
       name: Khác
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: Cọ
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: Gỗ thông
       context: Lumber/Wood type
@@ -43655,8 +43823,17 @@ vi:
     lumber/wood_type__poplar_wood:
       name: Gỗ bạch dương
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: Sợi cọ
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: Cây mây
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: Gỗ đỏ
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: Rơm rạ
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: Gỗ óc chó
@@ -44945,6 +45122,36 @@ vi:
     material_hardness__soft:
       name: Mềm
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: Sản phẩm hoàn thiện (trang sức/đồng hồ)
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: Lỏng lẻo/không gắn kết
+      context: Material origin
+    material_origin__nft:
+      name: NFT)
+      context: Material origin
+    material_origin__other:
+      name: Khác
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: In/kỹ thuật số (thẻ quà tặng
+      context: Material origin
+    material_origin__voucher:
+      name: chứng từ
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: Được xử lý hóa học
+      context: Material treatment
+    material_treatment__fumigated:
+      name: Được xông khói
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: Xử lý nhiệt
+      context: Material treatment
+    material_treatment__other:
+      name: Khác
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: Điều chỉnh được dây
       context: Maternity clothing features
@@ -55409,6 +55616,18 @@ vi:
     plant_class__zingiberales:
       name: Bộ Gừng (Zingiberales)
       context: Plant class
+    plant_material__artificial:
+      name: Nhân tạo
+      context: Plant material
+    plant_material__dried/preserved:
+      name: Sấy khô/bảo quản
+      context: Plant material
+    plant_material__live:
+      name: Sống
+      context: Plant material
+    plant_material__other:
+      name: Khác
+      context: Plant material
     plant_name__aeonium:
       name: Sen đá aeonium
       context: Plant name
@@ -57668,6 +57887,33 @@ vi:
     product_certifications_standards__vegan:
       name: Vegan
       context: Product certifications & standards
+    product_classification__bullion:
+      name: Vàng bạc
+      context: Product classification
+    product_classification__coupon:
+      name: Phiếu giảm giá
+      context: Product classification
+    product_classification__currency:
+      name: Đơn vị tiền tệ
+      context: Product classification
+    product_classification__gift_card:
+      name: Thẻ quà tặng
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: Đá quý rời
+      context: Product classification
+    product_classification__nft:
+      name: NFT
+      context: Product classification
+    product_classification__other:
+      name: Khác
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: Đá bán quý
+      context: Product classification
+    product_classification__voucher:
+      name: Chứng từ
+      context: Product classification
     product_form__cream:
       name: Kem
       context: Product form
@@ -57815,6 +58061,21 @@ vi:
     product_sterility__sterile:
       name: Vô trùng
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: Đồ sưu tầm/tiền đúc
+      context: Product use
+    product_use__currency/legal_tender:
+      name: Tiền tệ/tiền hợp pháp
+      context: Product use
+    product_use__gift_card/voucher:
+      name: Thẻ quà tặng/phiếu quà tặng
+      context: Product use
+    product_use__jewelry/ornament:
+      name: Đồ trang sức/đồ trang trí
+      context: Product use
+    product_use__other:
+      name: Khác
+      context: Product use
     program_format__booklet:
       name: Booklet
       context: Program format
@@ -79811,6 +80072,30 @@ vi:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: Gỗ kỹ thuật (gỗ ép/MDF)
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: Sơn bóng/vecni
+      context: Wood finish
+    wood_finish__oiled:
+      name: Dầu
+      context: Wood finish
+    wood_finish__other:
+      name: Khác
+      context: Wood finish
+    wood_finish__painted:
+      name: Sơn
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: Gỗ đặc
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: Không qua xử lý/tự nhiên
+      context: Wood finish
+    wood_finish__veneered:
+      name: Được ốp mặt
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: Cọ vệ sinh
       context: Woodwind care items included

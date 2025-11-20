@@ -1619,6 +1619,21 @@ nb:
     album_type__spiral_bound:
       name: Spiralbundet
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: Alkohol > 24 %
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: Alkohol ≤ 24 %
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: Annet
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: Løsemiddel – stor beholder (> 1 l)
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: Løsemiddel – liten beholder (≤ 1 l)
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: Alkoholfri
       context: Alcohol content
@@ -6770,6 +6785,12 @@ nb:
     battery_size__f:
       name: F
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100 Wh"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: Stor celle (apparat/verktøy/kjøreleke)
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ nb:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤ 100 Wh"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ nb:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: Liten husholdningscelle (AA/AAA/mynt)
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ nb:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: Ukjent
       context: Battery size
     battery_technology__alkaline:
       name: Alkalisk
@@ -7016,6 +7046,12 @@ nb:
     battery_terminal_type__wire_leads:
       name: Ledninger
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: Innkapslet – avtakbart
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: Innkapslet – ikke avtakbart
+      context: Battery type
     battery_type__disposable:
       name: Engangsbruk
       context: Battery type
@@ -7024,6 +7060,12 @@ nb:
       context: Battery type
     battery_type__rechargeable:
       name: Oppladbar
+      context: Battery type
+    battery_type__standalone_included:
+      name: Frittstående (inkludert)
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: Frittstående (ikke inkludert)
       context: Battery type
     bead_shape__hair_pipe:
       name: Hårpinn
@@ -9668,6 +9710,9 @@ nb:
     bristle_hardness__soft:
       name: Myk
       context: Bristle hardness
+    bristle_material__badger:
+      name: Grevling
+      context: Bristle material
     bristle_material__boar_bristle:
       name: Villsvinbust
       context: Bristle material
@@ -9676,6 +9721,12 @@ nb:
       context: Bristle material
     bristle_material__faux_leather:
       name: Kunstig lær
+      context: Bristle material
+    bristle_material__goat:
+      name: Geit
+      context: Bristle material
+    bristle_material__hog:
+      name: Gris
       context: Bristle material
     bristle_material__horsehair:
       name: Horsehair
@@ -9710,8 +9761,14 @@ nb:
     bristle_material__polyvinyl_chloride_pvc:
       name: Polyvinylklorid (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: Ponni
+      context: Bristle material
     bristle_material__rubber:
       name: Gummi
+      context: Bristle material
+    bristle_material__sable:
+      name: Sobel
       context: Bristle material
     bristle_material__silicone:
       name: Silikon
@@ -9724,6 +9781,9 @@ nb:
       context: Bristle material
     bristle_material__teflon:
       name: Teflon
+      context: Bristle material
+    bristle_material__unknown:
+      name: Ukjent
       context: Bristle material
     bristle_material__wood:
       name: Trevirke
@@ -14954,6 +15014,39 @@ nb:
     compatible_contact_lens_type__toric:
       name: Torisk
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: Fargede linser
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: Harde linser
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: Hybridlinser
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: Multifokale linser
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: Ortokeratologilinser
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: Annet
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: Stive gassdiffusjonslinser (RGP)
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: Sklerale linser
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: Silikonhydrogellinser
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: Myke kontaktlinser
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: Toriske linser
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: Skjønnhetsverktøybeholdere
       context: Compatible cosmetic tools
@@ -18722,6 +18815,30 @@ nb:
     constitutive_ingredients__zinc_oxide:
       name: Sinkoksid
       context: Constitutive ingredients
+    construction__clad:
+      name: Kledd
+      context: Construction
+    construction__filled:
+      name: Fylt
+      context: Construction
+    construction__other:
+      name: Annet
+      context: Construction
+    construction__plated:
+      name: Belagt
+      context: Construction
+    construction__solid:
+      name: Fast
+      context: Construction
+    construction__toned:
+      name: Tonet
+      context: Construction
+    construction__vermeil:
+      name: Vermeil
+      context: Construction
+    construction__whole:
+      name: Hel
+      context: Construction
     construction_set_theme__aircraft:
       name: Fly
       context: Construction set theme
@@ -18827,39 +18944,6 @@ nb:
     contact_lens_case_features__ventilation_port:
       name: Ventilasjonsport
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: Fargede linser
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: Harde linser
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: Hybridlinser
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: Multifokale linser
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: Ortokeratologilinser
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: Annet
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: Stive gassdiffusjonslinser (RGP)
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: Sklerale linser
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: Silikonhydrogellinser
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: Myke kontaktlinser
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: Toriske linser
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: Balafilcon A
       context: Contact lens material
@@ -27458,23 +27542,41 @@ nb:
     embellishments__chipboard_elements:
       name: Sponplateelementer
       context: Embellishments
+    embellishments__diamond:
+      name: Diamant
+      context: Embellishments
     embellishments__die_cuts:
       name: Utskjæringer
       context: Embellishments
     embellishments__gems:
       name: Edelstener
       context: Embellishments
+    embellishments__none:
+      name: Ingen
+      context: Embellishments
     embellishments__other:
       name: Annet
       context: Embellishments
+    embellishments__precious_stone:
+      name: Edelsten
+      context: Embellishments
+    embellishments__rhinestone:
+      name: Strass
+      context: Embellishments
     embellishments__ribbons:
       name: Bånd
+      context: Embellishments
+    embellishments__semi_precious_stone:
+      name: Halvedelsten
       context: Embellishments
     embellishments__sequins:
       name: Paljetter
       context: Embellishments
     embellishments__stickers:
       name: Klistremerker
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: Syntetisk perle
       context: Embellishments
     embellishments__washi_tape:
       name: Washi-teip
@@ -31973,8 +32075,14 @@ nb:
     food_product_form__powder:
       name: Pulver
       context: Food product form
+    food_product_form__preserved:
+      name: Bevart
+      context: Food product form
     food_product_form__sheets:
       name: Ark
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: Ubehandlet/rå
       context: Food product form
     food_product_form__whole:
       name: Hel
@@ -39572,6 +39680,9 @@ nb:
     jewelry_material__alcantara:
       name: Alcantara
       context: Jewelry material
+    jewelry_material__alloy:
+      name: Legering
+      context: Jewelry material
     jewelry_material__aluminum:
       name: Aluminium
       context: Jewelry material
@@ -39689,6 +39800,9 @@ nb:
     jewelry_material__nickel_plated:
       name: Forniklet
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: Ikke-edle metaller
+      context: Jewelry material
     jewelry_material__nylon:
       name: Nylon
       context: Jewelry material
@@ -39700,6 +39814,9 @@ nb:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: Palladiumbelagt
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: Perler
       context: Jewelry material
     jewelry_material__plastic:
       name: Plast
@@ -39715,6 +39832,9 @@ nb:
       context: Jewelry material
     jewelry_material__porcelain:
       name: Porselen
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: Edelstener/halvedelstener
       context: Jewelry material
     jewelry_material__precious_resin:
       name: Edelharpiks
@@ -42137,6 +42257,45 @@ nb:
     leather/vinyl_texture__smooth:
       name: Glatt
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: Alligator
+      context: Leather type
+    leather_type__calfskin:
+      name: Kalveskinn
+      context: Leather type
+    leather_type__cowhide:
+      name: Kuskinn
+      context: Leather type
+    leather_type__crocodile:
+      name: Krokodille
+      context: Leather type
+    leather_type__lambskin:
+      name: Lammeskinn
+      context: Leather type
+    leather_type__lizard:
+      name: Øgle
+      context: Leather type
+    leather_type__ostrich:
+      name: Struts
+      context: Leather type
+    leather_type__other:
+      name: Annet
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: Saueskinn
+      context: Leather type
+    leather_type__stingray:
+      name: Rokke
+      context: Leather type
+    leather_type__synthetic:
+      name: Syntetisk
+      context: Leather type
+    leather_type__unknown:
+      name: Ukjent
+      context: Leather type
     lectern_mounting_type__floor:
       name: Gulv
       context: Lectern mounting type
@@ -43631,8 +43790,14 @@ nb:
     lumber/wood_type__cherry_wood:
       name: Kirsebærtre
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: Kork
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: Hickorytre
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: Jute
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: Lønnetre
@@ -43646,6 +43811,9 @@ nb:
     lumber/wood_type__other:
       name: Annet
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: Palmetre
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: Furutre
       context: Lumber/Wood type
@@ -43655,8 +43823,17 @@ nb:
     lumber/wood_type__poplar_wood:
       name: Poppeltre
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: Raffia
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: Rotting
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: Redwood
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: Strå
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: Valnøtttre
@@ -44945,6 +45122,36 @@ nb:
     material_hardness__soft:
       name: Myk
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: Ferdig produkt (smykker/klokke)
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: Løs/umontert
+      context: Material origin
+    material_origin__nft:
+      name: NFT)
+      context: Material origin
+    material_origin__other:
+      name: Annet
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: Trykt/digitalt (gavekort
+      context: Material origin
+    material_origin__voucher:
+      name: kupong
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: Kjemisk behandlet
+      context: Material treatment
+    material_treatment__fumigated:
+      name: Røyk-/dampbehandlet
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: Varmebehandlet
+      context: Material treatment
+    material_treatment__other:
+      name: Annet
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: Regulerbar stropp
       context: Maternity clothing features
@@ -55409,6 +55616,18 @@ nb:
     plant_class__zingiberales:
       name: Zingiberales
       context: Plant class
+    plant_material__artificial:
+      name: Kunstig
+      context: Plant material
+    plant_material__dried/preserved:
+      name: Tørket/bevart
+      context: Plant material
+    plant_material__live:
+      name: Levende
+      context: Plant material
+    plant_material__other:
+      name: Annet
+      context: Plant material
     plant_name__aeonium:
       name: Aeonium
       context: Plant name
@@ -57668,6 +57887,33 @@ nb:
     product_certifications_standards__vegan:
       name: Vegan
       context: Product certifications & standards
+    product_classification__bullion:
+      name: Gullbarrer
+      context: Product classification
+    product_classification__coupon:
+      name: Kupong
+      context: Product classification
+    product_classification__currency:
+      name: Valuta
+      context: Product classification
+    product_classification__gift_card:
+      name: Gavekort
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: Løse edelstener
+      context: Product classification
+    product_classification__nft:
+      name: NFT
+      context: Product classification
+    product_classification__other:
+      name: Annet
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: Halvedelstener
+      context: Product classification
+    product_classification__voucher:
+      name: Kupong
+      context: Product classification
     product_form__cream:
       name: Krem
       context: Product form
@@ -57815,6 +58061,21 @@ nb:
     product_sterility__sterile:
       name: Steril
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: Samleobjekt/numismatisk
+      context: Product use
+    product_use__currency/legal_tender:
+      name: Valuta / lovlig betalingsmiddel
+      context: Product use
+    product_use__gift_card/voucher:
+      name: Gavekort/kupong
+      context: Product use
+    product_use__jewelry/ornament:
+      name: Smykker/pynt
+      context: Product use
+    product_use__other:
+      name: Annet
+      context: Product use
     program_format__booklet:
       name: Hefte
       context: Program format
@@ -79811,6 +80072,30 @@ nb:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: Konstruert (kryssfiner/spon)
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: Lakkert/fernisert
+      context: Wood finish
+    wood_finish__oiled:
+      name: Oljet
+      context: Wood finish
+    wood_finish__other:
+      name: Annet
+      context: Wood finish
+    wood_finish__painted:
+      name: Malt
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: Solid tre
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: Ubehandlet/naturlig
+      context: Wood finish
+    wood_finish__veneered:
+      name: Finer
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: Rengjøringsbørste
       context: Woodwind care items included

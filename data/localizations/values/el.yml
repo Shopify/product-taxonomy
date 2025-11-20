@@ -195,16 +195,16 @@ el:
       name: Με βάση το κερί
       context: 3D printing resin type
     80_plus_efficiency_rating__80_plus_bronze:
-      name: 80 Plus μπρονζέ
+      name: 80 Plus Bronze
       context: 80 Plus efficiency rating
     80_plus_efficiency_rating__80_plus_gold:
-      name: 80 Plus χρυσό
+      name: 80 Plus Gold
       context: 80 Plus efficiency rating
     80_plus_efficiency_rating__80_plus_platinum:
       name: 80 Plus πλατίνα
       context: 80 Plus efficiency rating
     80_plus_efficiency_rating__80_plus_silver:
-      name: 80 Plus ασημί
+      name: 80 Plus Silver
       context: 80 Plus efficiency rating
     80_plus_efficiency_rating__80_plus_standard/white:
       name: 80 Plus (τυπικό/λευκό)
@@ -1619,6 +1619,21 @@ el:
     album_type__spiral_bound:
       name: Σπιράλ
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: Αλκοόλ >24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: Αλκοόλ ≤24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: Άλλο
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: Διαλύτης - μεγάλο δοχείο (>1L)
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: Διαλύτης - μικρό δοχείο (≤1L)
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: Χωρίς αλκοόλ
       context: Alcohol content
@@ -3105,7 +3120,7 @@ el:
       name: Σύνθετο υλικό
       context: Artwork frame material
     artwork_frame_material__gold:
-      name: Χρυσός
+      name: Χρυσό
       context: Artwork frame material
     artwork_frame_material__gold_plated:
       name: Επίχρυσο
@@ -5817,7 +5832,7 @@ el:
       name: Χρώμιο
       context: Barrel material
     barrel_material__gold:
-      name: Χρυσός
+      name: Χρυσό
       context: Barrel material
     barrel_material__other:
       name: Άλλο
@@ -6770,6 +6785,12 @@ el:
     battery_size__f:
       name: F
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100Wh"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: Μεγάλη κυψέλη (συσκευή/εργαλείο/ηλεκτροκίνητο παιχνίδι)
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ el:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤100Wh"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ el:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: Μικρή οικιακή κυψέλη (AA/AAA/νομισματική μπαταρία)
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ el:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: Άγνωστο
       context: Battery size
     battery_technology__alkaline:
       name: Αλκαλική
@@ -7016,6 +7046,12 @@ el:
     battery_terminal_type__wire_leads:
       name: Καλώδια
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: Περιέχεται αποσπώμενη
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: Περιέχεται μη αποσπώμενη
+      context: Battery type
     battery_type__disposable:
       name: Μίας χρήσης
       context: Battery type
@@ -7024,6 +7060,12 @@ el:
       context: Battery type
     battery_type__rechargeable:
       name: Επαναφορτιζόμενη
+      context: Battery type
+    battery_type__standalone_included:
+      name: Αυτόνομη (περιλαμβάνεται)
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: Αυτόνομη (δεν περιλαμβάνεται)
       context: Battery type
     bead_shape__hair_pipe:
       name: Μακρύς κύλινδρος
@@ -9668,6 +9710,9 @@ el:
     bristle_hardness__soft:
       name: Μαλακό
       context: Bristle hardness
+    bristle_material__badger:
+      name: Τρίχα ασβού
+      context: Bristle material
     bristle_material__boar_bristle:
       name: Τρίχα αγριογούρουνου
       context: Bristle material
@@ -9676,6 +9721,12 @@ el:
       context: Bristle material
     bristle_material__faux_leather:
       name: Συνθετικό δέρμα
+      context: Bristle material
+    bristle_material__goat:
+      name: Κατσίκα
+      context: Bristle material
+    bristle_material__hog:
+      name: Τρίχα χοίρου
       context: Bristle material
     bristle_material__horsehair:
       name: Αλογότριχες
@@ -9710,8 +9761,14 @@ el:
     bristle_material__polyvinyl_chloride_pvc:
       name: Πολυβινυλοχλωρίδιο (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: Πόνυ
+      context: Bristle material
     bristle_material__rubber:
       name: Καουτσούκ
+      context: Bristle material
+    bristle_material__sable:
+      name: Τρίχα σαμούρ
       context: Bristle material
     bristle_material__silicone:
       name: Σιλικόνη
@@ -9724,6 +9781,9 @@ el:
       context: Bristle material
     bristle_material__teflon:
       name: Τεφλόν
+      context: Bristle material
+    bristle_material__unknown:
+      name: Άγνωστο
       context: Bristle material
     bristle_material__wood:
       name: Ξύλο
@@ -14226,7 +14286,7 @@ el:
       name: Μωβ
       context: Color
     color__red:
-      name: Κόκκινη
+      name: Κόκκινο
       context: Color
     color__rose_gold:
       name: Ροζ χρυσό
@@ -14954,6 +15014,39 @@ el:
     compatible_contact_lens_type__toric:
       name: Τορική
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: Έγχρωμοι φακοί
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: Σκληροί φακοί
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: Υβριδικοί φακοί
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: Πολυεστιακοί φακοί
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: Φακοί ορθοκερατολογίας
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: Άλλο
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: Σκληροί φακοί διαπερατοί αερίου (RGP)
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: Σκληρικοί φακοί
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: Φακοί υδρογέλης σιλικόνης
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: Μαλακοί φακοί επαφής
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: Τορικοί φακοί
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: Δοχεία εργαλείων ομορφιάς
       context: Compatible cosmetic tools
@@ -18201,7 +18294,7 @@ el:
       name: Χαλκός
       context: Connector contact plating
     connector_contact_plating__gold:
-      name: Χρυσή
+      name: Χρυσό
       context: Connector contact plating
     connector_contact_plating__nickel:
       name: Νικέλιο
@@ -18213,7 +18306,7 @@ el:
       name: Ρόδιο
       context: Connector contact plating
     connector_contact_plating__silver:
-      name: Ασημί
+      name: Ασήμι
       context: Connector contact plating
     connector_contact_plating__tin:
       name: Κασσίτερος
@@ -18722,6 +18815,30 @@ el:
     constitutive_ingredients__zinc_oxide:
       name: Οξείδιο ψευδαργύρου
       context: Constitutive ingredients
+    construction__clad:
+      name: Με επένδυση
+      context: Construction
+    construction__filled:
+      name: Με πλήρωση
+      context: Construction
+    construction__other:
+      name: Άλλο
+      context: Construction
+    construction__plated:
+      name: Επιμεταλλωμένο
+      context: Construction
+    construction__solid:
+      name: Στερεάς μορφής
+      context: Construction
+    construction__toned:
+      name: Με απόχρωση 
+      context: Construction
+    construction__vermeil:
+      name: Vermeil
+      context: Construction
+    construction__whole:
+      name: Πλήρες
+      context: Construction
     construction_set_theme__aircraft:
       name: Αεροπλάνο
       context: Construction set theme
@@ -18827,39 +18944,6 @@ el:
     contact_lens_case_features__ventilation_port:
       name: Θυρίδα εξαερισμού
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: Έγχρωμοι φακοί
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: Σκληροί φακοί
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: Υβριδικοί φακοί
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: Πολυεστιακοί φακοί
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: Φακοί ορθοκερατολογίας
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: Άλλο
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: Σκληροί φακοί διαπερατοί αερίου (RGP)
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: Σκληρικοί φακοί
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: Φακοί υδρογέλης σιλικόνης
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: Μαλακοί φακοί επαφής
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: Τορικοί φακοί
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: Balafilcon A
       context: Contact lens material
@@ -19455,7 +19539,7 @@ el:
       name: Άλλο
       context: Cooking wine variety
     cooking_wine_variety__red:
-      name: Κόκκινη
+      name: Κόκκινο
       context: Cooking wine variety
     cooking_wine_variety__rice:
       name: Ρύζι
@@ -27375,7 +27459,7 @@ el:
       name: Γυαλί
       context: Embellishment/Trim material
     embellishment/trim_material__gold:
-      name: Χρυσός
+      name: Χρυσό
       context: Embellishment/Trim material
     embellishment/trim_material__linen:
       name: Λινό
@@ -27458,23 +27542,41 @@ el:
     embellishments__chipboard_elements:
       name: Στοιχεία νοβοπάν
       context: Embellishments
+    embellishments__diamond:
+      name: Διαμάντι
+      context: Embellishments
     embellishments__die_cuts:
       name: Κοπές με μήτρα
       context: Embellishments
     embellishments__gems:
       name: Πολύτιμοι λίθοι
       context: Embellishments
+    embellishments__none:
+      name: Καμία
+      context: Embellishments
     embellishments__other:
       name: Άλλο
       context: Embellishments
+    embellishments__precious_stone:
+      name: Πολύτιμος λίθος
+      context: Embellishments
+    embellishments__rhinestone:
+      name: Στρας
+      context: Embellishments
     embellishments__ribbons:
       name: Κορδέλες
+      context: Embellishments
+    embellishments__semi_precious_stone:
+      name: Ημιπολύτιμος λίθος
       context: Embellishments
     embellishments__sequins:
       name: Πούλιες
       context: Embellishments
     embellishments__stickers:
       name: Αυτοκόλλητα
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: Συνθετικό μαργαριτάρι
       context: Embellishments
     embellishments__washi_tape:
       name: Ταινία Washi
@@ -29760,7 +29862,7 @@ el:
       name: Γαλβανισμένος χάλυβας
       context: Fastener finish
     fastener_finish__gold:
-      name: Χρυσός
+      name: Χρυσό
       context: Fastener finish
     fastener_finish__nickel:
       name: Νικέλιο
@@ -31386,7 +31488,7 @@ el:
       name: Γυαλί
       context: Flatware material
     flatware_material__gold:
-      name: Χρυσός
+      name: Χρυσό
       context: Flatware material
     flatware_material__gold_plated:
       name: Επίχρυσο
@@ -31973,8 +32075,14 @@ el:
     food_product_form__powder:
       name: Σκόνη
       context: Food product form
+    food_product_form__preserved:
+      name: Διατηρημένο
+      context: Food product form
     food_product_form__sheets:
       name: Φύλλα
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: Ακατέργαστο
       context: Food product form
     food_product_form__whole:
       name: Πλήρες
@@ -36102,7 +36210,7 @@ el:
       name: Λάμψη
       context: Hardware finish
     hardware_finish__gold:
-      name: Χρυσός
+      name: Χρυσό
       context: Hardware finish
     hardware_finish__lacquered:
       name: Λακαρισμένη
@@ -36123,7 +36231,7 @@ el:
       name: Σατέν
       context: Hardware finish
     hardware_finish__silver:
-      name: Ασήμι
+      name: Ασημί
       context: Hardware finish
     hardware_material__aluminum:
       name: Αλουμίνιο
@@ -38358,7 +38466,7 @@ el:
       name: Χρώμιο
       context: Instrument/Accessory finish
     instrument/accessory_finish__gold:
-      name: Χρυσός
+      name: Χρυσό
       context: Instrument/Accessory finish
     instrument/accessory_finish__gold_plated:
       name: Επίχρυσο
@@ -38613,7 +38721,7 @@ el:
       name: Υαλοβάμβακας
       context: Instrument material
     instrument_material__gold:
-      name: Χρυσός
+      name: Χρυσό
       context: Instrument material
     instrument_material__gold_plated:
       name: Επίχρυσο
@@ -38706,7 +38814,7 @@ el:
       name: Ψεύτικο ελεφαντόδοντο
       context: Instrument part material
     instrument_part_material__gold:
-      name: Χρυσός
+      name: Χρυσό
       context: Instrument part material
     instrument_part_material__gold_plated:
       name: Επίχρυσο
@@ -39572,6 +39680,9 @@ el:
     jewelry_material__alcantara:
       name: Αλκαντάρα
       context: Jewelry material
+    jewelry_material__alloy:
+      name: Κράμα
+      context: Jewelry material
     jewelry_material__aluminum:
       name: Αλουμίνιο
       context: Jewelry material
@@ -39648,7 +39759,7 @@ el:
       name: Γυαλί
       context: Jewelry material
     jewelry_material__gold:
-      name: Χρυσός
+      name: Χρυσό
       context: Jewelry material
     jewelry_material__gold_plated:
       name: Επίχρυσο
@@ -39689,6 +39800,9 @@ el:
     jewelry_material__nickel_plated:
       name: Επινικελωμένο
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: Μη πολύτιμα μέταλλα
+      context: Jewelry material
     jewelry_material__nylon:
       name: Νάιλον
       context: Jewelry material
@@ -39700,6 +39814,9 @@ el:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: Επιμεταλλωμένο με παλλάδιο
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: Μαργαριτάρια
       context: Jewelry material
     jewelry_material__plastic:
       name: Πλαστικό
@@ -39715,6 +39832,9 @@ el:
       context: Jewelry material
     jewelry_material__porcelain:
       name: Πορσελάνη
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: Πολύτιμοι/Ημιπολύτιμοι λίθοι
       context: Jewelry material
     jewelry_material__precious_resin:
       name: Πολύτιμη ρητίνη
@@ -42137,6 +42257,45 @@ el:
     leather/vinyl_texture__smooth:
       name: Ήπια
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: Δέρμα αλιγάτορα
+      context: Leather type
+    leather_type__calfskin:
+      name: Δέρμα μοσχαριού
+      context: Leather type
+    leather_type__cowhide:
+      name: Δέρμα αγελάδας
+      context: Leather type
+    leather_type__crocodile:
+      name: Δέρμα κροκόδειλου
+      context: Leather type
+    leather_type__lambskin:
+      name: Δέρμα αρνιού
+      context: Leather type
+    leather_type__lizard:
+      name: Δέρμα σαύρας
+      context: Leather type
+    leather_type__ostrich:
+      name: Στρουθοκάμηλος
+      context: Leather type
+    leather_type__other:
+      name: Άλλο
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: Από δέρμα προβάτου
+      context: Leather type
+    leather_type__stingray:
+      name: Δέρμα σαλαχιού
+      context: Leather type
+    leather_type__synthetic:
+      name: Συνθετικό
+      context: Leather type
+    leather_type__unknown:
+      name: Άγνωστο
+      context: Leather type
     lectern_mounting_type__floor:
       name: Δαπέδου
       context: Lectern mounting type
@@ -43631,8 +43790,14 @@ el:
     lumber/wood_type__cherry_wood:
       name: Ξύλο κερασιάς
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: Φελλός
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: Ξύλο Hickory
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: Γιούτα
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: Ξύλο σφενδάμου
@@ -43646,6 +43811,9 @@ el:
     lumber/wood_type__other:
       name: Άλλο
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: Φοίνικας
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: Ξύλο πεύκου
       context: Lumber/Wood type
@@ -43655,8 +43823,17 @@ el:
     lumber/wood_type__poplar_wood:
       name: Ξύλο λεύκας
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: Raffia (Φυσική ίνα από φοίνικα)
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: Ρατάν
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: Σεκόγια
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: Άχυρο
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: Ξύλο καρυδιάς
@@ -44945,6 +45122,36 @@ el:
     material_hardness__soft:
       name: Μαλακό
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: Τελικό προϊόν (κόσμημα/ρολόι)
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: Χύμα / μη τοποθετημένο
+      context: Material origin
+    material_origin__nft:
+      name: NFT)
+      context: Material origin
+    material_origin__other:
+      name: Άλλο
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: Τυπωμένη / ψηφιακή (δωροκάρτα
+      context: Material origin
+    material_origin__voucher:
+      name:  κουπόνι
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: Χημικά επεξεργασμένο
+      context: Material treatment
+    material_treatment__fumigated:
+      name: Απολυμασμένο με καπνισμό
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: Θερμικά επεξεργασμένο
+      context: Material treatment
+    material_treatment__other:
+      name: Άλλο
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: Ρυθμιζόμενος ιμάντας
       context: Maternity clothing features
@@ -49347,7 +49554,7 @@ el:
       name: Γυριστό
       context: Neckline
     needle_coating_type__gold:
-      name: Χρυσή
+      name: Χρυσό
       context: Needle coating type
     needle_coating_type__none:
       name: Καμία
@@ -49362,7 +49569,7 @@ el:
       name: Σιλικόνη
       context: Needle coating type
     needle_coating_type__silver:
-      name: Ασημί
+      name: Ασήμι
       context: Needle coating type
     needle_coating_type__uncoated:
       name: Χωρίς επίστρωση
@@ -49479,7 +49686,7 @@ el:
       name: Άλλο
       context: Needle gauge
     needle_material__gold:
-      name: Χρυσός
+      name: Χρυσό
       context: Needle material
     needle_material__nickel:
       name: Νικέλιο
@@ -50646,7 +50853,7 @@ el:
       name: Χαλκός
       context: Office instrument material
     office_instrument_material__gold:
-      name: Χρυσός
+      name: Χρυσό
       context: Office instrument material
     office_instrument_material__hardboard:
       name: Χαρτοσανίδα
@@ -55409,6 +55616,18 @@ el:
     plant_class__zingiberales:
       name: Zingiberales
       context: Plant class
+    plant_material__artificial:
+      name: Τεχνητό
+      context: Plant material
+    plant_material__dried/preserved:
+      name: Αποξηραμένο / διατηρημένο
+      context: Plant material
+    plant_material__live:
+      name: Ζωντανό
+      context: Plant material
+    plant_material__other:
+      name: Άλλο
+      context: Plant material
     plant_name__aeonium:
       name: ΑιώνιοAeonium
       context: Plant name
@@ -56670,16 +56889,16 @@ el:
       name: 80 Plus
       context: Power supply efficiency rating
     power_supply_efficiency_rating__80_plus_bronze:
-      name: 80 Plus μπρονζέ
+      name: 80 Plus Bronze
       context: Power supply efficiency rating
     power_supply_efficiency_rating__80_plus_gold:
-      name: 80 Plus χρυσό
+      name: 80 Plus Gold
       context: Power supply efficiency rating
     power_supply_efficiency_rating__80_plus_platinum:
       name: 80 Plus πλατίνα
       context: Power supply efficiency rating
     power_supply_efficiency_rating__80_plus_silver:
-      name: 80 Plus ασημί
+      name: 80 Plus Silver
       context: Power supply efficiency rating
     power_supply_efficiency_rating__80_plus_titanium:
       name: 80 Plus τιτάνιο
@@ -57668,6 +57887,33 @@ el:
     product_certifications_standards__vegan:
       name: Βίγκαν
       context: Product certifications & standards
+    product_classification__bullion:
+      name: Ράβδοι πολύτιμων μετάλλων
+      context: Product classification
+    product_classification__coupon:
+      name: Κουπόνι
+      context: Product classification
+    product_classification__currency:
+      name: Νόμισμα
+      context: Product classification
+    product_classification__gift_card:
+      name: Δωροκάρτα
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: Χύμα πολύτιμοι λίθοι
+      context: Product classification
+    product_classification__nft:
+      name: NFT
+      context: Product classification
+    product_classification__other:
+      name: Άλλο
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: Ημιπολύτιμοι λίθοι
+      context: Product classification
+    product_classification__voucher:
+      name:  Κουπόνι
+      context: Product classification
     product_form__cream:
       name: Κρέμα
       context: Product form
@@ -57815,6 +58061,21 @@ el:
     product_sterility__sterile:
       name: Αποστειρωμένο
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: Συλλεκτικό/νομισματικό
+      context: Product use
+    product_use__currency/legal_tender:
+      name: Νόμισμα/νόμιμο μέσο πληρωμής
+      context: Product use
+    product_use__gift_card/voucher:
+      name: Δωροκάρτα/κουπόνι
+      context: Product use
+    product_use__jewelry/ornament:
+      name: Κόσμημα / διακοσμητικό
+      context: Product use
+    product_use__other:
+      name: Άλλο
+      context: Product use
     program_format__booklet:
       name: Βιβλιαράκι
       context: Program format
@@ -61767,7 +62028,7 @@ el:
       name: Αρωματισμένο
       context: Rum grade
     rum_grade__gold:
-      name: Κίτρινο
+      name: Χρυσό
       context: Rum grade
     rum_grade__light:
       name: Ελαφριά
@@ -67137,7 +67398,7 @@ el:
       name: Γλυσσίου
       context: Soleplate type
     soleplate_type__gold:
-      name: Χρυσός
+      name: Χρυσό
       context: Soleplate type
     soleplate_type__honeycomb:
       name: Honeycomb
@@ -67146,7 +67407,7 @@ el:
       name: Microsteam
       context: Soleplate type
     soleplate_type__nano_silver_ceramic:
-      name: Νανο-ασημί κεραμικό
+      name: Nano-silver κεραμικό
       context: Soleplate type
     soleplate_type__nano_steel:
       name: Νανοατσάλι
@@ -70461,7 +70722,7 @@ el:
       name: Πολύτιμος λίθος
       context: Suitable for precious material
     suitable_for_precious_material__gold:
-      name: Χρυσός
+      name: Χρυσό
       context: Suitable for precious material
     suitable_for_precious_material__hard_gemstone:
       name: Σκληρός πολύτιμος λίθος
@@ -72777,7 +73038,7 @@ el:
       name: Ηλικιωμένος
       context: Tequila variety
     tequila_variety__gold:
-      name: Χρυσή
+      name: Χρυσό
       context: Tequila variety
     tequila_variety__other:
       name: Άλλο
@@ -79683,7 +79944,7 @@ el:
       name: Γαλβανισμένος χάλυβας
       context: Wire/Rope material
     wire/rope_material__gold:
-      name: Χρυσός
+      name: Χρυσό
       context: Wire/Rope material
     wire/rope_material__nickel:
       name: Νικέλιο
@@ -79811,6 +80072,30 @@ el:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: Μηχανικά επεξεργασμένο (κόντρα πλακέ/MDF)
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: Λακαρισμένο/βερνικωμένο
+      context: Wood finish
+    wood_finish__oiled:
+      name: Λαδωμένο
+      context: Wood finish
+    wood_finish__other:
+      name: Άλλο
+      context: Wood finish
+    wood_finish__painted:
+      name: Βαμμένος
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: Μασίφ ξύλο
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: Μη επεξεργασμένο/φυσικό
+      context: Wood finish
+    wood_finish__veneered:
+      name: Επενδεδυμένο με καπλαμά
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: Βούρτσα καθαρισμού
       context: Woodwind care items included

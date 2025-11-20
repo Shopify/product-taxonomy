@@ -123,7 +123,7 @@ it:
       name: Simile ad ABS
       context: 3D printing resin type
     3d_printing_resin_type__bio_based:
-      name: Bio-based
+      name: A base biologica
       context: 3D printing resin type
     3d_printing_resin_type__castable:
       name: Colabile
@@ -1619,6 +1619,21 @@ it:
     album_type__spiral_bound:
       name: Rilegatura a spirale
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: Alcol >24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: Alcol ≤24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: Altro
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: Solvente - contenitore grande (>1L)
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: Solvente - contenitore piccolo (≤1L)
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: Senza alcol
       context: Alcohol content
@@ -6770,6 +6785,12 @@ it:
     battery_size__f:
       name: F
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100 Wh"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: Pila grande (elettrodomestico/utensile/giocattolo cavalcabile)
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ it:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤100 Wh"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ it:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: Piccole pile domestiche (AA/AAA/moneta)
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ it:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: Sconosciuto
       context: Battery size
     battery_technology__alkaline:
       name: Alkaline
@@ -7016,6 +7046,12 @@ it:
     battery_terminal_type__wire_leads:
       name: Cavi volanti
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: Contenute - staccabili
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: Contenute - non staccabili
+      context: Battery type
     battery_type__disposable:
       name: Monouso
       context: Battery type
@@ -7024,6 +7060,12 @@ it:
       context: Battery type
     battery_type__rechargeable:
       name: Ricaricabile
+      context: Battery type
+    battery_type__standalone_included:
+      name: Autonomo (incluso)
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: Autonomo (non incluso)
       context: Battery type
     bead_shape__hair_pipe:
       name: Hair pipe
@@ -9668,6 +9710,9 @@ it:
     bristle_hardness__soft:
       name: Morbida
       context: Bristle hardness
+    bristle_material__badger:
+      name: Tasso
+      context: Bristle material
     bristle_material__boar_bristle:
       name: Setola di cinghiale
       context: Bristle material
@@ -9676,6 +9721,12 @@ it:
       context: Bristle material
     bristle_material__faux_leather:
       name: Ecopelle
+      context: Bristle material
+    bristle_material__goat:
+      name: Capra
+      context: Bristle material
+    bristle_material__hog:
+      name: Maiale
       context: Bristle material
     bristle_material__horsehair:
       name: Crine di cavallo
@@ -9710,8 +9761,14 @@ it:
     bristle_material__polyvinyl_chloride_pvc:
       name: Cloruro di polivinile (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: Pony
+      context: Bristle material
     bristle_material__rubber:
       name: Gomma
+      context: Bristle material
+    bristle_material__sable:
+      name: Zibellino
       context: Bristle material
     bristle_material__silicone:
       name: Silicone
@@ -9724,6 +9781,9 @@ it:
       context: Bristle material
     bristle_material__teflon:
       name: Teflon
+      context: Bristle material
+    bristle_material__unknown:
+      name: Sconosciuto
       context: Bristle material
     bristle_material__wood:
       name: Legno
@@ -14954,6 +15014,39 @@ it:
     compatible_contact_lens_type__toric:
       name: Torico
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: Lenti colorate
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: Lenti rigide
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: Lenti ibride
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: Lenti multifocali
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: Lenti ortocheratologiche
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: Altro
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: Lenti rigide gas permeabili (RGP)
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: Lenti sclerali
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: Lenti in silicone idrogel
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: Lenti a contatto morbide
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: Lenti toriche
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: Contenitori per strumenti di bellezza
       context: Compatible cosmetic tools
@@ -18722,6 +18815,30 @@ it:
     constitutive_ingredients__zinc_oxide:
       name: Ossido di zinco
       context: Constitutive ingredients
+    construction__clad:
+      name: Placcato
+      context: Construction
+    construction__filled:
+      name: Riempito
+      context: Construction
+    construction__other:
+      name: Altro
+      context: Construction
+    construction__plated:
+      name: Placcato
+      context: Construction
+    construction__solid:
+      name: Solido
+      context: Construction
+    construction__toned:
+      name: Tonalizzato
+      context: Construction
+    construction__vermeil:
+      name: Vermeil
+      context: Construction
+    construction__whole:
+      name: Intero
+      context: Construction
     construction_set_theme__aircraft:
       name: Aerei
       context: Construction set theme
@@ -18827,39 +18944,6 @@ it:
     contact_lens_case_features__ventilation_port:
       name: Porta di ventilazione
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: Lenti colorate
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: Lenti rigide
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: Lenti ibride
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: Lenti multifocali
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: Lenti ortocheratologiche
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: Altro
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: Lenti rigide gas permeabili (RGP)
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: Lenti sclerali
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: Lenti in silicone idrogel
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: Lenti a contatto morbide
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: Lenti toriche
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: Balafilcon A
       context: Contact lens material
@@ -18918,10 +19002,10 @@ it:
       name: Placcato stagno
       context: Contact material
     contrast__high:
-      name: Alto
+      name: Alta
       context: Contrast
     contrast__low:
-      name: Basso
+      name: Bassa
       context: Contrast
     contrast__normal:
       name: Normale
@@ -27458,23 +27542,41 @@ it:
     embellishments__chipboard_elements:
       name: Elementi in truciolato
       context: Embellishments
+    embellishments__diamond:
+      name: Diamante
+      context: Embellishments
     embellishments__die_cuts:
       name: Fustellato
       context: Embellishments
     embellishments__gems:
       name: Gioielli
       context: Embellishments
+    embellishments__none:
+      name: Nessuna
+      context: Embellishments
     embellishments__other:
       name: Altro
+      context: Embellishments
+    embellishments__precious_stone:
+      name: Pietra preziosa
+      context: Embellishments
+    embellishments__rhinestone:
+      name: Strass
       context: Embellishments
     embellishments__ribbons:
       name: Nastri
       context: Embellishments
+    embellishments__semi_precious_stone:
+      name: Pietra semipreziosa
+      context: Embellishments
     embellishments__sequins:
-      name: Paillettes
+      name: Paillette
       context: Embellishments
     embellishments__stickers:
       name: Adesivi
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: Perla sintetica
       context: Embellishments
     embellishments__washi_tape:
       name: Nastro adesivo Washi
@@ -28011,7 +28113,7 @@ it:
       name: Guerra di Corea
       context: Era
     era__modern:
-      name: Età moderna
+      name: Moderno
       context: Era
     era__other:
       name: Altro
@@ -31110,7 +31212,7 @@ it:
       name: Gamba affusolata
       context: Fit
     fit__wide:
-      name: Largo
+      name: Larga
       context: Fit
     fit_type__custom:
       name: Personalizzato
@@ -31973,8 +32075,14 @@ it:
     food_product_form__powder:
       name: Polvere
       context: Food product form
+    food_product_form__preserved:
+      name: Conservato
+      context: Food product form
     food_product_form__sheets:
       name: Fogli
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: Non trattato
       context: Food product form
     food_product_form__whole:
       name: Intero
@@ -33849,7 +33957,7 @@ it:
       name: Romanzo
       context: Genre
     genre__sci_fi:
-      name: Sci-fi
+      name: Sci-Fi
       context: Genre
     genre__self_help_personal_development:
       name: Auto-aiuto e sviluppo personale
@@ -34320,7 +34428,7 @@ it:
       name: Fine
       context: Grain
     grain__high:
-      name: Forte
+      name: Alta
       context: Grain
     grain__normal:
       name: Normale
@@ -37887,7 +37995,7 @@ it:
       name: "2,4-d"
       context: Ingredients
     ingredients__aloe_vera:
-      name: Aloe Vera
+      name: Aloe vera
       context: Ingredients
     ingredients__builders:
       name: Integratori
@@ -39572,6 +39680,9 @@ it:
     jewelry_material__alcantara:
       name: Alcantara
       context: Jewelry material
+    jewelry_material__alloy:
+      name: Lega
+      context: Jewelry material
     jewelry_material__aluminum:
       name: Alluminio
       context: Jewelry material
@@ -39689,6 +39800,9 @@ it:
     jewelry_material__nickel_plated:
       name: Placcato nickel
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: Metalli non preziosi
+      context: Jewelry material
     jewelry_material__nylon:
       name: Nylon
       context: Jewelry material
@@ -39700,6 +39814,9 @@ it:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: Placcato palladio
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: Perle
       context: Jewelry material
     jewelry_material__plastic:
       name: Plastica
@@ -39715,6 +39832,9 @@ it:
       context: Jewelry material
     jewelry_material__porcelain:
       name: Porcellana
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: Pietre preziose/semipreziose
       context: Jewelry material
     jewelry_material__precious_resin:
       name: Resina preziosa
@@ -42137,6 +42257,45 @@ it:
     leather/vinyl_texture__smooth:
       name: Liscio
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: Alligatore
+      context: Leather type
+    leather_type__calfskin:
+      name: Pelle di vitello
+      context: Leather type
+    leather_type__cowhide:
+      name: Vacchetta
+      context: Leather type
+    leather_type__crocodile:
+      name: Coccodrillo
+      context: Leather type
+    leather_type__lambskin:
+      name: Pelle di agnello
+      context: Leather type
+    leather_type__lizard:
+      name: Lucertola
+      context: Leather type
+    leather_type__ostrich:
+      name: Struzzo
+      context: Leather type
+    leather_type__other:
+      name: Altro
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: Pelle di pecora
+      context: Leather type
+    leather_type__stingray:
+      name: Pastinaca
+      context: Leather type
+    leather_type__synthetic:
+      name: Sintetico
+      context: Leather type
+    leather_type__unknown:
+      name: Sconosciuto
+      context: Leather type
     lectern_mounting_type__floor:
       name: Pavimento
       context: Lectern mounting type
@@ -43631,8 +43790,14 @@ it:
     lumber/wood_type__cherry_wood:
       name: Legno di ciliegio
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: Sughero
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: Legno di noce americano
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: Iuta
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: Legno di acero
@@ -43646,6 +43811,9 @@ it:
     lumber/wood_type__other:
       name: Altro
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: Palma
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: Legno di pino
       context: Lumber/Wood type
@@ -43655,8 +43823,17 @@ it:
     lumber/wood_type__poplar_wood:
       name: Legno di pioppo
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: Raffia
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: Rattan
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: Sequoia
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: Paglia
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: Legno di noce
@@ -44694,7 +44871,7 @@ it:
       name: Ceramica
       context: Material
     material__chrome:
-      name: Cromo
+      name: Perlato
       context: Material
     material__clay:
       name: Argilla
@@ -44763,7 +44940,7 @@ it:
       name: Lattice
       context: Material
     material__leather:
-      name: Cuoio
+      name: Pelle
       context: Material
     material__linen:
       name: Lino
@@ -44784,7 +44961,7 @@ it:
       name: Merino
       context: Material
     material__mesh:
-      name: Mesh
+      name: Metallo
       context: Material
     material__metal:
       name: Metallo
@@ -44847,7 +45024,7 @@ it:
       name: Gomma
       context: Material
     material__satin:
-      name: Raso
+      name: Satinato
       context: Material
     material__sherpa:
       name: Sherpa
@@ -44945,6 +45122,36 @@ it:
     material_hardness__soft:
       name: Morbida
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: Prodotto finito (gioiello/orologio)
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: Sciolto/non montato
+      context: Material origin
+    material_origin__nft:
+      name: NFT)
+      context: Material origin
+    material_origin__other:
+      name: Altro
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: Carta regalo stampata/digitale
+      context: Material origin
+    material_origin__voucher:
+      name: voucher
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: Trattato chimicamente
+      context: Material treatment
+    material_treatment__fumigated:
+      name: Fumigato
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: Trattato termicamente
+      context: Material treatment
+    material_treatment__other:
+      name: Altro
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: Cinghia regolabile
       context: Maternity clothing features
@@ -49299,7 +49506,7 @@ it:
       name: Bardot
       context: Neckline
     neckline__boat:
-      name: A barca
+      name: Barca
       context: Neckline
     neckline__cowl:
       name: A cappuccio
@@ -49326,13 +49533,13 @@ it:
       name: Profondo
       context: Neckline
     neckline__round:
-      name: Rotondo
+      name: Rotonda
       context: Neckline
     neckline__split:
-      name: Con spacco
+      name: Rovinati
       context: Neckline
     neckline__square:
-      name: Quadrato
+      name: Quadrata
       context: Neckline
     neckline__sweetheart:
       name: A cuore
@@ -55409,6 +55616,18 @@ it:
     plant_class__zingiberales:
       name: Zingiberales
       context: Plant class
+    plant_material__artificial:
+      name: Artificiale
+      context: Plant material
+    plant_material__dried/preserved:
+      name: Essiccato/conservato
+      context: Plant material
+    plant_material__live:
+      name: Vivo
+      context: Plant material
+    plant_material__other:
+      name: Altro
+      context: Plant material
     plant_name__aeonium:
       name: Aeonium
       context: Plant name
@@ -56292,7 +56511,7 @@ it:
       name: Circolare
       context: Polarization
     polarization__elliptical:
-      name: Ellittica
+      name: Ellittico
       context: Polarization
     polarization__horizontal:
       name: Orizzontale
@@ -57668,6 +57887,33 @@ it:
     product_certifications_standards__vegan:
       name: Vegan
       context: Product certifications & standards
+    product_classification__bullion:
+      name: Lingotti
+      context: Product classification
+    product_classification__coupon:
+      name: Coupon
+      context: Product classification
+    product_classification__currency:
+      name: Valuta
+      context: Product classification
+    product_classification__gift_card:
+      name: Carta regalo
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: Pietre preziose sfuse
+      context: Product classification
+    product_classification__nft:
+      name: NFT
+      context: Product classification
+    product_classification__other:
+      name: Altro
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: Pietre semipreziose
+      context: Product classification
+    product_classification__voucher:
+      name: voucher
+      context: Product classification
     product_form__cream:
       name: Crema
       context: Product form
@@ -57815,6 +58061,21 @@ it:
     product_sterility__sterile:
       name: Sterile
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: Da collezione/numismatico
+      context: Product use
+    product_use__currency/legal_tender:
+      name: Valuta/corso legale
+      context: Product use
+    product_use__gift_card/voucher:
+      name: Carta regalo/voucher
+      context: Product use
+    product_use__jewelry/ornament:
+      name: Gioielli/ornamenti
+      context: Product use
+    product_use__other:
+      name: Altro
+      context: Product use
     program_format__booklet:
       name: Opuscolo
       context: Program format
@@ -68637,7 +68898,7 @@ it:
       name: Altro
       context: Stiffness
     stiffness__soft:
-      name: Morbida
+      name: Morbido
       context: Stiffness
     stiffness__stiff:
       name: Rigida
@@ -79811,6 +80072,30 @@ it:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: Ingegnerizzato (compensato/MDF)
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: Laccato/verniciato
+      context: Wood finish
+    wood_finish__oiled:
+      name: Oliato
+      context: Wood finish
+    wood_finish__other:
+      name: Altro
+      context: Wood finish
+    wood_finish__painted:
+      name: Dipinto
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: Legno massiccio
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: Non trattato/naturale
+      context: Wood finish
+    wood_finish__veneered:
+      name: Impiallacciato
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: Spazzola per la pulizia
       context: Woodwind care items included

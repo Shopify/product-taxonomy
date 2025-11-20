@@ -1619,6 +1619,21 @@ pl:
     album_type__spiral_bound:
       name: Na spirali
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: Alkohol >24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: Alkohol ≤24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: Inne
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: Rozpuszczalnik – duży pojemnik (>1 l)
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: Rozpuszczalnik – mały pojemnik (≤1 l)
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: Bezalkoholowy
       context: Alcohol content
@@ -6770,6 +6785,12 @@ pl:
     battery_size__f:
       name: K
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100 Wh"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: Duża bateria (urządzenie/narzędzie/jeździk)
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ pl:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤100 Wh"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ pl:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: Mała bateria do użytku domowego (AA/AAA/pastylkowa)
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ pl:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: Nieznana
       context: Battery size
     battery_technology__alkaline:
       name: Alkaliczna
@@ -7016,6 +7046,12 @@ pl:
     battery_terminal_type__wire_leads:
       name: Przewody
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: Wbudowana-wyjmowana
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: Wbudowana-niewyjmowana
+      context: Battery type
     battery_type__disposable:
       name: Do jednorazowego użytku
       context: Battery type
@@ -7024,6 +7060,12 @@ pl:
       context: Battery type
     battery_type__rechargeable:
       name: Ładowalna
+      context: Battery type
+    battery_type__standalone_included:
+      name: Samodzielna (w zestawie)
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: Samodzielna (niezawarta w zestawie)
       context: Battery type
     bead_shape__hair_pipe:
       name: Ozdoby na piersi
@@ -9668,6 +9710,9 @@ pl:
     bristle_hardness__soft:
       name: Miękki
       context: Bristle hardness
+    bristle_material__badger:
+      name: Borsucze
+      context: Bristle material
     bristle_material__boar_bristle:
       name: Włosie dzika
       context: Bristle material
@@ -9676,6 +9721,12 @@ pl:
       context: Bristle material
     bristle_material__faux_leather:
       name: Skaj
+      context: Bristle material
+    bristle_material__goat:
+      name: Koza
+      context: Bristle material
+    bristle_material__hog:
+      name: Świńskie
       context: Bristle material
     bristle_material__horsehair:
       name: Włosie końskie
@@ -9710,8 +9761,14 @@ pl:
     bristle_material__polyvinyl_chloride_pvc:
       name: Polichlorek winylu (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: Pony
+      context: Bristle material
     bristle_material__rubber:
       name: Guma
+      context: Bristle material
+    bristle_material__sable:
+      name: Sobole
       context: Bristle material
     bristle_material__silicone:
       name: Silikon
@@ -9724,6 +9781,9 @@ pl:
       context: Bristle material
     bristle_material__teflon:
       name: Teflon
+      context: Bristle material
+    bristle_material__unknown:
+      name: Nieznana
       context: Bristle material
     bristle_material__wood:
       name: Drewno
@@ -14954,6 +15014,39 @@ pl:
     compatible_contact_lens_type__toric:
       name: Toryczne
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: Soczewki kolorowe
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: Soczewki twarde
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: Soczewki hybrydowe
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: Soczewki wieloogniskowe
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: Soczewki ortokeratologiczne
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: Inne
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: Soczewki sztywne gazoprzepuszczalne (RGP)
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: Soczewki skleralne
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: Soczewki silikonowo-hydrożelowe
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: Miękkie soczewki kontaktowe
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: Soczewki toryczne
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: Pojemniki na przybory kosmetyczne
       context: Compatible cosmetic tools
@@ -18722,6 +18815,30 @@ pl:
     constitutive_ingredients__zinc_oxide:
       name: Tlenek cynku
       context: Constitutive ingredients
+    construction__clad:
+      name: Powlekane
+      context: Construction
+    construction__filled:
+      name: Wypełnione
+      context: Construction
+    construction__other:
+      name: Inne
+      context: Construction
+    construction__plated:
+      name: Platerowany
+      context: Construction
+    construction__solid:
+      name: Stały
+      context: Construction
+    construction__toned:
+      name: Tonowane
+      context: Construction
+    construction__vermeil:
+      name: Vermeil (srebro pozłacane)
+      context: Construction
+    construction__whole:
+      name: Całe
+      context: Construction
     construction_set_theme__aircraft:
       name: Samolot
       context: Construction set theme
@@ -18827,39 +18944,6 @@ pl:
     contact_lens_case_features__ventilation_port:
       name: Port wentylacyjny
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: Soczewki kolorowe
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: Soczewki twarde
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: Soczewki hybrydowe
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: Soczewki wieloogniskowe
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: Soczewki ortokeratologiczne
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: Inne
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: Soczewki sztywne gazoprzepuszczalne (RGP)
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: Soczewki skleralne
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: Soczewki silikonowo-hydrożelowe
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: Miękkie soczewki kontaktowe
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: Soczewki toryczne
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: Balafilcon A
       context: Contact lens material
@@ -27458,23 +27542,41 @@ pl:
     embellishments__chipboard_elements:
       name: Elementy z płyty wiórowej
       context: Embellishments
+    embellishments__diamond:
+      name: Diament
+      context: Embellishments
     embellishments__die_cuts:
       name: Matryce
       context: Embellishments
     embellishments__gems:
       name: Klejnoty
       context: Embellishments
+    embellishments__none:
+      name: Brak
+      context: Embellishments
     embellishments__other:
       name: Inne
       context: Embellishments
+    embellishments__precious_stone:
+      name: Kamień szlachetny
+      context: Embellishments
+    embellishments__rhinestone:
+      name: Cyrkonia
+      context: Embellishments
     embellishments__ribbons:
       name: Taśmy
+      context: Embellishments
+    embellishments__semi_precious_stone:
+      name: Kamień półszlachetny
       context: Embellishments
     embellishments__sequins:
       name: Cekiny
       context: Embellishments
     embellishments__stickers:
       name: Naklejki
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: Perła syntetyczna
       context: Embellishments
     embellishments__washi_tape:
       name: Taśma Washi
@@ -27846,7 +27948,7 @@ pl:
       name: Przycinarka do chwastów
       context: Engine purpose
     engine_type__diesel:
-      name: ON
+      name: "ON"
       context: Engine type
     engine_type__electric:
       name: Elektryczny
@@ -31973,8 +32075,14 @@ pl:
     food_product_form__powder:
       name: Proszek
       context: Food product form
+    food_product_form__preserved:
+      name: Konserwa
+      context: Food product form
     food_product_form__sheets:
       name: Arkusze
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: Nieprzetworzony/surowy
       context: Food product form
     food_product_form__whole:
       name: Całe
@@ -32715,7 +32823,7 @@ pl:
       name: Biopaliwa
       context: Fuel supply
     fuel_supply__diesel:
-      name: ON
+      name: "ON"
       context: Fuel supply
     fuel_supply__electric:
       name: Elektryczny
@@ -39572,6 +39680,9 @@ pl:
     jewelry_material__alcantara:
       name: Alcantara
       context: Jewelry material
+    jewelry_material__alloy:
+      name: Stop
+      context: Jewelry material
     jewelry_material__aluminum:
       name: Aluminium
       context: Jewelry material
@@ -39689,6 +39800,9 @@ pl:
     jewelry_material__nickel_plated:
       name: Niklowany
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: Metale nieszlachetne
+      context: Jewelry material
     jewelry_material__nylon:
       name: Nylon
       context: Jewelry material
@@ -39700,6 +39814,9 @@ pl:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: Palladowany
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: Perły
       context: Jewelry material
     jewelry_material__plastic:
       name: Tworzywo sztuczne
@@ -39715,6 +39832,9 @@ pl:
       context: Jewelry material
     jewelry_material__porcelain:
       name: Porcelana
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: Kamienie szlachetne/półszlachetne
       context: Jewelry material
     jewelry_material__precious_resin:
       name: Cenna żywica
@@ -42138,6 +42258,45 @@ pl:
     leather/vinyl_texture__smooth:
       name: Gładki
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: Aligator
+      context: Leather type
+    leather_type__calfskin:
+      name: Skóra cielęca
+      context: Leather type
+    leather_type__cowhide:
+      name: Skóra bydlęca
+      context: Leather type
+    leather_type__crocodile:
+      name: Krokodyl
+      context: Leather type
+    leather_type__lambskin:
+      name: Skóra jagnięca
+      context: Leather type
+    leather_type__lizard:
+      name: Jaszczurka
+      context: Leather type
+    leather_type__ostrich:
+      name: Struś
+      context: Leather type
+    leather_type__other:
+      name: Inne
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: Z owczej skóry
+      context: Leather type
+    leather_type__stingray:
+      name: Płaszczka
+      context: Leather type
+    leather_type__synthetic:
+      name: Syntetyczne
+      context: Leather type
+    leather_type__unknown:
+      name: Nieznana
+      context: Leather type
     lectern_mounting_type__floor:
       name: Podłoga
       context: Lectern mounting type
@@ -43632,8 +43791,14 @@ pl:
     lumber/wood_type__cherry_wood:
       name: Drewno wiśniowe
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: Korek
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: Drewno orzesznika pięciolistkowego
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: Juta
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: Drewno klonowe
@@ -43647,6 +43812,9 @@ pl:
     lumber/wood_type__other:
       name: Inne
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: Palm
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: Drewno sosnowe
       context: Lumber/Wood type
@@ -43656,8 +43824,17 @@ pl:
     lumber/wood_type__poplar_wood:
       name: Drewno topoli
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: Rafia
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: Rattan
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: Drewno sekwoi
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: Słoma
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: Drewno orzechowe
@@ -44946,6 +45123,36 @@ pl:
     material_hardness__soft:
       name: Miękki
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: Produkt gotowy (biżuteria/zegarek)
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: Luzem/bez oprawy
+      context: Material origin
+    material_origin__nft:
+      name: NFT
+      context: Material origin
+    material_origin__other:
+      name: Inne
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: Drukowany/cyfrowy (karta prezentowa)
+      context: Material origin
+    material_origin__voucher:
+      name: Voucher
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: Poddany obróbce chemicznej
+      context: Material treatment
+    material_treatment__fumigated:
+      name: Fumigowany
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: Poddany obróbce cieplnej
+      context: Material treatment
+    material_treatment__other:
+      name: Inne
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: Regulowany pasek
       context: Maternity clothing features
@@ -55410,6 +55617,18 @@ pl:
     plant_class__zingiberales:
       name: Zingiberales
       context: Plant class
+    plant_material__artificial:
+      name: Sztuczne
+      context: Plant material
+    plant_material__dried/preserved:
+      name: Suszone/zakonserwowane
+      context: Plant material
+    plant_material__live:
+      name: Żywe
+      context: Plant material
+    plant_material__other:
+      name: Inne
+      context: Plant material
     plant_name__aeonium:
       name: Aeonium
       context: Plant name
@@ -56608,7 +56827,7 @@ pl:
       name: Zasilane prądem stałym
       context: Power source
     power_source__diesel:
-      name: ON
+      name: "ON"
       context: Power source
     power_source__ethanol:
       name: Etanol
@@ -57669,6 +57888,33 @@ pl:
     product_certifications_standards__vegan:
       name: Wegańska
       context: Product certifications & standards
+    product_classification__bullion:
+      name: Sztabki metali szlachetnych
+      context: Product classification
+    product_classification__coupon:
+      name: Kupon
+      context: Product classification
+    product_classification__currency:
+      name: Waluta
+      context: Product classification
+    product_classification__gift_card:
+      name: Karta prezentowa
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: Kamienie szlachetne luzem
+      context: Product classification
+    product_classification__nft:
+      name: NFT
+      context: Product classification
+    product_classification__other:
+      name: Inne
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: Kamienie półszlachetne
+      context: Product classification
+    product_classification__voucher:
+      name: Voucher
+      context: Product classification
     product_form__cream:
       name: Krem
       context: Product form
@@ -57816,6 +58062,21 @@ pl:
     product_sterility__sterile:
       name: Sterylne
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: Kolekcjonerskie/numizmatyczne
+      context: Product use
+    product_use__currency/legal_tender:
+      name: Waluta/prawny środek płatniczy
+      context: Product use
+    product_use__gift_card/voucher:
+      name: Karta prezentowa/voucher
+      context: Product use
+    product_use__jewelry/ornament:
+      name: Biżuteria/ozdoba
+      context: Product use
+    product_use__other:
+      name: Inne
+      context: Product use
     program_format__booklet:
       name: Broszura
       context: Program format
@@ -79812,6 +80073,30 @@ pl:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: Płyta warstwowa (sklejka/MDF)
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: Lakierowane/bejcowane
+      context: Wood finish
+    wood_finish__oiled:
+      name: Olejowane
+      context: Wood finish
+    wood_finish__other:
+      name: Inne
+      context: Wood finish
+    wood_finish__painted:
+      name: Malowany
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: Lite drewno
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: Niepoddane obróbce/naturalne
+      context: Wood finish
+    wood_finish__veneered:
+      name: Fornirowane
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: Szczotka do czyszczenia
       context: Woodwind care items included

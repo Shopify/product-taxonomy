@@ -1619,6 +1619,21 @@ zh-TW:
     album_type__spiral_bound:
       name: 螺旋裝訂
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: 酒精 > 24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: 酒精 ≤ 24%
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: 其他
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: 溶劑 - 大容器（> 1公升）
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: 溶劑 - 小容器（≤ 1公升）
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: 無酒精
       context: Alcohol content
@@ -6770,6 +6785,12 @@ zh-TW:
     battery_size__f:
       name: F
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100 瓦時"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: 大型電池 (電器/工具/騎乘玩具)
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ zh-TW:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤ 100 瓦時"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ zh-TW:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: 小型家用電池 (AA/AAA/硬幣型)
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ zh-TW:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: 未知
       context: Battery size
     battery_technology__alkaline:
       name: 鹼性
@@ -7016,6 +7046,12 @@ zh-TW:
     battery_terminal_type__wire_leads:
       name: 導線引線
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: 內含可拆式
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: 內含不可拆式
+      context: Battery type
     battery_type__disposable:
       name: 免洗
       context: Battery type
@@ -7024,6 +7060,12 @@ zh-TW:
       context: Battery type
     battery_type__rechargeable:
       name: 可充電的
+      context: Battery type
+    battery_type__standalone_included:
+      name: 獨立式 (隨附)
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: 獨立式 (未隨附)
       context: Battery type
     bead_shape__hair_pipe:
       name: 髮管
@@ -9668,6 +9710,9 @@ zh-TW:
     bristle_hardness__soft:
       name: 柔軟
       context: Bristle hardness
+    bristle_material__badger:
+      name: 獾
+      context: Bristle material
     bristle_material__boar_bristle:
       name: 野猪鬃
       context: Bristle material
@@ -9676,6 +9721,12 @@ zh-TW:
       context: Bristle material
     bristle_material__faux_leather:
       name: 人造皮
+      context: Bristle material
+    bristle_material__goat:
+      name: 山羊
+      context: Bristle material
+    bristle_material__hog:
+      name: 野豬
       context: Bristle material
     bristle_material__horsehair:
       name: 馬毛
@@ -9710,8 +9761,14 @@ zh-TW:
     bristle_material__polyvinyl_chloride_pvc:
       name: 聚氯乙烯 (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: 經濟型小車
+      context: Bristle material
     bristle_material__rubber:
       name: 橡膠
+      context: Bristle material
+    bristle_material__sable:
+      name: 紫貂
       context: Bristle material
     bristle_material__silicone:
       name: 矽膠
@@ -9724,6 +9781,9 @@ zh-TW:
       context: Bristle material
     bristle_material__teflon:
       name: Teflon
+      context: Bristle material
+    bristle_material__unknown:
+      name: 未知
       context: Bristle material
     bristle_material__wood:
       name: 木材
@@ -14954,6 +15014,39 @@ zh-TW:
     compatible_contact_lens_type__toric:
       name: 散光
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: 彩色鏡片
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: 硬式鏡片
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: 混合式鏡片
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: 多焦點鏡片
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: 角膜塑型片
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: 其他
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: 硬式透氧（RGP）鏡片
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: 鞏膜鏡片
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: 矽水凝膠鏡片
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: 軟式隱形眼鏡
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: 散光鏡片
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: 美容工具容器
       context: Compatible cosmetic tools
@@ -18722,6 +18815,30 @@ zh-TW:
     constitutive_ingredients__zinc_oxide:
       name: 氧化鋅
       context: Constitutive ingredients
+    construction__clad:
+      name: 覆層
+      context: Construction
+    construction__filled:
+      name: 填充
+      context: Construction
+    construction__other:
+      name: 其他
+      context: Construction
+    construction__plated:
+      name: 電鍍
+      context: Construction
+    construction__solid:
+      name: 實心
+      context: Construction
+    construction__toned:
+      name: 上色
+      context: Construction
+    construction__vermeil:
+      name: 鍍金
+      context: Construction
+    construction__whole:
+      name: 全部
+      context: Construction
     construction_set_theme__aircraft:
       name: 飛行器
       context: Construction set theme
@@ -18827,39 +18944,6 @@ zh-TW:
     contact_lens_case_features__ventilation_port:
       name: 透氣孔
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: 彩色鏡片
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: 硬式鏡片
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: 混合式鏡片
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: 多焦點鏡片
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: 角膜塑型片
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: 其他
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: 硬式透氧（RGP）鏡片
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: 鞏膜鏡片
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: 矽水凝膠鏡片
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: 軟式隱形眼鏡
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: 散光鏡片
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: 貝拉菲康A
       context: Contact lens material
@@ -27458,23 +27542,41 @@ zh-TW:
     embellishments__chipboard_elements:
       name: 刨花板元件
       context: Embellishments
+    embellishments__diamond:
+      name: 鑽石
+      context: Embellishments
     embellishments__die_cuts:
       name: 模切
       context: Embellishments
     embellishments__gems:
       name: 寶石
       context: Embellishments
+    embellishments__none:
+      name: 無
+      context: Embellishments
     embellishments__other:
       name: 其他
       context: Embellishments
+    embellishments__precious_stone:
+      name: 寶石
+      context: Embellishments
+    embellishments__rhinestone:
+      name: 水鑽
+      context: Embellishments
     embellishments__ribbons:
       name: 緞帶
+      context: Embellishments
+    embellishments__semi_precious_stone:
+      name: 半寶石
       context: Embellishments
     embellishments__sequins:
       name: 亮片
       context: Embellishments
     embellishments__stickers:
       name: 貼紙
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: 人造珍珠
       context: Embellishments
     embellishments__washi_tape:
       name: 和紙膠帶
@@ -31973,8 +32075,14 @@ zh-TW:
     food_product_form__powder:
       name: 粉末
       context: Food product form
+    food_product_form__preserved:
+      name: 妥善保存
+      context: Food product form
     food_product_form__sheets:
       name: 薄片
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: 未處理/天然
       context: Food product form
     food_product_form__whole:
       name: 全部
@@ -39572,6 +39680,9 @@ zh-TW:
     jewelry_material__alcantara:
       name: 人造麂皮
       context: Jewelry material
+    jewelry_material__alloy:
+      name: 合金
+      context: Jewelry material
     jewelry_material__aluminum:
       name: 鋁
       context: Jewelry material
@@ -39689,6 +39800,9 @@ zh-TW:
     jewelry_material__nickel_plated:
       name: 鍍鎳
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: 非貴金屬
+      context: Jewelry material
     jewelry_material__nylon:
       name: 尼龍
       context: Jewelry material
@@ -39700,6 +39814,9 @@ zh-TW:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: 鍍鈀
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: 珍珠
       context: Jewelry material
     jewelry_material__plastic:
       name: 塑膠
@@ -39715,6 +39832,9 @@ zh-TW:
       context: Jewelry material
     jewelry_material__porcelain:
       name: 陶瓷
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: 寶石/半寶石
       context: Jewelry material
     jewelry_material__precious_resin:
       name: 珍貴樹脂
@@ -42137,6 +42257,45 @@ zh-TW:
     leather/vinyl_texture__smooth:
       name: 光滑
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: 短吻鱷皮
+      context: Leather type
+    leather_type__calfskin:
+      name: 小牛皮
+      context: Leather type
+    leather_type__cowhide:
+      name: 牛皮
+      context: Leather type
+    leather_type__crocodile:
+      name: 鱷魚皮
+      context: Leather type
+    leather_type__lambskin:
+      name: 小羊皮
+      context: Leather type
+    leather_type__lizard:
+      name: 蜥蜴皮
+      context: Leather type
+    leather_type__ostrich:
+      name: 鴕鳥
+      context: Leather type
+    leather_type__other:
+      name: 其他
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: 綿羊皮
+      context: Leather type
+    leather_type__stingray:
+      name: 魟魚皮
+      context: Leather type
+    leather_type__synthetic:
+      name: 合成
+      context: Leather type
+    leather_type__unknown:
+      name: 未知
+      context: Leather type
     lectern_mounting_type__floor:
       name: 地板
       context: Lectern mounting type
@@ -43631,8 +43790,14 @@ zh-TW:
     lumber/wood_type__cherry_wood:
       name: 櫻桃木
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: 軟木
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: 山胡桃木
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: 黃麻
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: 楓木
@@ -43646,6 +43811,9 @@ zh-TW:
     lumber/wood_type__other:
       name: 其他
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: 棕櫚樹
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: 松木材
       context: Lumber/Wood type
@@ -43655,8 +43823,17 @@ zh-TW:
     lumber/wood_type__poplar_wood:
       name: 楊木
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: 大蛇草
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: 藤
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: 紅木
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: 稻草
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: 胡桃木
@@ -44945,6 +45122,36 @@ zh-TW:
     material_hardness__soft:
       name: 柔軟
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: 成品 (珠寶/手錶)
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: 散裝/未裝載
+      context: Material origin
+    material_origin__nft:
+      name: NFT)
+      context: Material origin
+    material_origin__other:
+      name: 其他
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: 平面/電子 (禮品卡)
+      context: Material origin
+    material_origin__voucher:
+      name: 兌換券
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: 經化學處理
+      context: Material treatment
+    material_treatment__fumigated:
+      name: 燻蒸
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: 熱處理
+      context: Material treatment
+    material_treatment__other:
+      name: 其他
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: 帶子可調
       context: Maternity clothing features
@@ -55409,6 +55616,18 @@ zh-TW:
     plant_class__zingiberales:
       name: 薑目
       context: Plant class
+    plant_material__artificial:
+      name: 人造
+      context: Plant material
+    plant_material__dried/preserved:
+      name: 乾燥處理/妥善保存
+      context: Plant material
+    plant_material__live:
+      name: 活體
+      context: Plant material
+    plant_material__other:
+      name: 其他
+      context: Plant material
     plant_name__aeonium:
       name: 蓮花掌屬
       context: Plant name
@@ -57668,6 +57887,33 @@ zh-TW:
     product_certifications_standards__vegan:
       name: 素食
       context: Product certifications & standards
+    product_classification__bullion:
+      name: 貴重金屬塊/條
+      context: Product classification
+    product_classification__coupon:
+      name: 優惠券
+      context: Product classification
+    product_classification__currency:
+      name: 幣別
+      context: Product classification
+    product_classification__gift_card:
+      name: 禮品卡
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: 裸鑽寶石
+      context: Product classification
+    product_classification__nft:
+      name: NFT
+      context: Product classification
+    product_classification__other:
+      name: 其他
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: 半寶石
+      context: Product classification
+    product_classification__voucher:
+      name: 兌換券
+      context: Product classification
     product_form__cream:
       name: 鮮奶油
       context: Product form
@@ -57815,6 +58061,21 @@ zh-TW:
     product_sterility__sterile:
       name: 滅菌
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: 收藏品/錢幣
+      context: Product use
+    product_use__currency/legal_tender:
+      name: 貨幣/法定貨幣
+      context: Product use
+    product_use__gift_card/voucher:
+      name: 禮品卡/兌換券
+      context: Product use
+    product_use__jewelry/ornament:
+      name: 珠寶/飾品
+      context: Product use
+    product_use__other:
+      name: 其他
+      context: Product use
     program_format__booklet:
       name: 小冊子
       context: Program format
@@ -79811,6 +80072,30 @@ zh-TW:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: 工程處理 (合板/中密度纖維板)
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: 上漆/上光漆
+      context: Wood finish
+    wood_finish__oiled:
+      name: 塗油
+      context: Wood finish
+    wood_finish__other:
+      name: 其他
+      context: Wood finish
+    wood_finish__painted:
+      name: 塗漆
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: 實木
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: 未處理/天然
+      context: Wood finish
+    wood_finish__veneered:
+      name: 貼面
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: 清潔刷具
       context: Woodwind care items included
