@@ -1619,6 +1619,21 @@ cs:
     album_type__spiral_bound:
       name: Spirálově vázané
       context: Album type
+    alcohol/solvent_content__alcohol_gt_24:
+      name: Alkohol > 24 %
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__alcohol_lte_24:
+      name: Alkohol ≤ 24 %
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__other:
+      name: Jiné
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_large_container_1l:
+      name: Rozpouštědlo – velká nádoba (> 1 l)
+      context: Alcohol/Solvent content
+    alcohol/solvent_content__solvent_small_container_1l:
+      name: Rozpouštědlo – malá nádoba (≤ 1 l)
+      context: Alcohol/Solvent content
     alcohol_content__alcohol_free:
       name: Bez alkoholu
       context: Alcohol content
@@ -6770,6 +6785,12 @@ cs:
     battery_size__f:
       name: F
       context: Battery size
+    battery_size__gt_100wh:
+      name: ">100 Wh"
+      context: Battery size
+    battery_size__large_cell_appliance/tool/ride_on_toy:
+      name: Velká baterie (spotřebič / nářadí / pojízdná hračka)
+      context: Battery size
     battery_size__lr06:
       name: LR06
       context: Battery size
@@ -6803,6 +6824,9 @@ cs:
     battery_size__lr66:
       name: LR66
       context: Battery size
+    battery_size__lte_100wh:
+      name: "≤ 100 Wh"
+      context: Battery size
     battery_size__mn11:
       name: MN11
       context: Battery size
@@ -6829,6 +6853,9 @@ cs:
       context: Battery size
     battery_size__sc:
       name: SC
+      context: Battery size
+    battery_size__small_household_cell_aa/aaa/coin:
+      name: Malá baterie pro domácnost (AA/AAA/knoflíková)
       context: Battery size
     battery_size__sr41:
       name: SR41
@@ -6889,6 +6916,9 @@ cs:
       context: Battery size
     battery_size__sr936sw:
       name: SR936SW
+      context: Battery size
+    battery_size__unknown:
+      name: Stav neznámý
       context: Battery size
     battery_technology__alkaline:
       name: Alkalické
@@ -7016,6 +7046,12 @@ cs:
     battery_terminal_type__wire_leads:
       name: Drátové vývody
       context: Battery terminal type
+    battery_type__contained_detachable:
+      name: Uzavřené – odnímatelné
+      context: Battery type
+    battery_type__contained_undetachable:
+      name: Uzavřené – neodnímatelné
+      context: Battery type
     battery_type__disposable:
       name: Jednorázové
       context: Battery type
@@ -7024,6 +7060,12 @@ cs:
       context: Battery type
     battery_type__rechargeable:
       name: Dobíjecí
+      context: Battery type
+    battery_type__standalone_included:
+      name: Samostatné (součástí balení)
+      context: Battery type
+    battery_type__standalone_not_included:
+      name: Samostatné (není součástí balení)
       context: Battery type
     bead_shape__hair_pipe:
       name: Trubička do vlasů
@@ -9668,6 +9710,9 @@ cs:
     bristle_hardness__soft:
       name: Měkká
       context: Bristle hardness
+    bristle_material__badger:
+      name: Jezevec
+      context: Bristle material
     bristle_material__boar_bristle:
       name: Kančí štětina
       context: Bristle material
@@ -9676,6 +9721,12 @@ cs:
       context: Bristle material
     bristle_material__faux_leather:
       name: Nepravá kůže
+      context: Bristle material
+    bristle_material__goat:
+      name: Koza
+      context: Bristle material
+    bristle_material__hog:
+      name: Prase
       context: Bristle material
     bristle_material__horsehair:
       name: Koňské žíně
@@ -9710,8 +9761,14 @@ cs:
     bristle_material__polyvinyl_chloride_pvc:
       name: Polyvinylchlorid (PVC)
       context: Bristle material
+    bristle_material__pony:
+      name: Veterán Pony
+      context: Bristle material
     bristle_material__rubber:
       name: Guma
+      context: Bristle material
+    bristle_material__sable:
+      name: Sobol
       context: Bristle material
     bristle_material__silicone:
       name: Silikon
@@ -9724,6 +9781,9 @@ cs:
       context: Bristle material
     bristle_material__teflon:
       name: Teflon
+      context: Bristle material
+    bristle_material__unknown:
+      name: Stav neznámý
       context: Bristle material
     bristle_material__wood:
       name: Dřevo
@@ -14954,6 +15014,39 @@ cs:
     compatible_contact_lens_type__toric:
       name: Torické
       context: Compatible contact lens type
+    compatible_contact_lenses__colored_lenses:
+      name: Barevné čočky
+      context: Compatible contact lenses
+    compatible_contact_lenses__hard_lenses:
+      name: Tvrdé čočky
+      context: Compatible contact lenses
+    compatible_contact_lenses__hybrid_lenses:
+      name: Hybridní čočky
+      context: Compatible contact lenses
+    compatible_contact_lenses__multifocal_lenses:
+      name: Multifokální čočky
+      context: Compatible contact lenses
+    compatible_contact_lenses__orthokeratology_lenses:
+      name: Ortokeratologické čočky
+      context: Compatible contact lenses
+    compatible_contact_lenses__other:
+      name: Jiné
+      context: Compatible contact lenses
+    compatible_contact_lenses__rigid_gas_permeable_rgp_lenses:
+      name: Tvrdé propustné pro plyny (RGP) čočky
+      context: Compatible contact lenses
+    compatible_contact_lenses__scleral_lenses:
+      name: Sklerální čočky
+      context: Compatible contact lenses
+    compatible_contact_lenses__silicone_hydrogel_lenses:
+      name: Silikonové hydrogelové čočky
+      context: Compatible contact lenses
+    compatible_contact_lenses__soft_contact_lenses:
+      name: Měkké kontaktní čočky
+      context: Compatible contact lenses
+    compatible_contact_lenses__toric_lenses:
+      name: Torické čočky
+      context: Compatible contact lenses
     compatible_cosmetic_tools__beauty_tool_containers:
       name: Nádoby na kosmetické pomůcky
       context: Compatible cosmetic tools
@@ -18722,6 +18815,30 @@ cs:
     constitutive_ingredients__zinc_oxide:
       name: Oxid zinečnatý
       context: Constitutive ingredients
+    construction__clad:
+      name: Obložená
+      context: Construction
+    construction__filled:
+      name: Plněná
+      context: Construction
+    construction__other:
+      name: Jiné
+      context: Construction
+    construction__plated:
+      name: Pokovený
+      context: Construction
+    construction__solid:
+      name: Pevná
+      context: Construction
+    construction__toned:
+      name: Tónovaná
+      context: Construction
+    construction__vermeil:
+      name: Vermeil
+      context: Construction
+    construction__whole:
+      name: Celé
+      context: Construction
     construction_set_theme__aircraft:
       name: Letadla
       context: Construction set theme
@@ -18827,39 +18944,6 @@ cs:
     contact_lens_case_features__ventilation_port:
       name: Ventilační otvor
       context: Contact lens case features
-    contact_lens_compatibility__colored_lenses:
-      name: Barevné čočky
-      context: Contact lens compatibility
-    contact_lens_compatibility__hard_lenses:
-      name: Tvrdé čočky
-      context: Contact lens compatibility
-    contact_lens_compatibility__hybrid_lenses:
-      name: Hybridní čočky
-      context: Contact lens compatibility
-    contact_lens_compatibility__multifocal_lenses:
-      name: Multifokální čočky
-      context: Contact lens compatibility
-    contact_lens_compatibility__orthokeratology_lenses:
-      name: Ortokeratologické čočky
-      context: Contact lens compatibility
-    contact_lens_compatibility__other:
-      name: Jiné
-      context: Contact lens compatibility
-    contact_lens_compatibility__rigid_gas_permeable_rgp_lenses:
-      name: Tvrdé propustné pro plyny (RGP) čočky
-      context: Contact lens compatibility
-    contact_lens_compatibility__scleral_lenses:
-      name: Sklerální čočky
-      context: Contact lens compatibility
-    contact_lens_compatibility__silicone_hydrogel_lenses:
-      name: Silikonové hydrogelové čočky
-      context: Contact lens compatibility
-    contact_lens_compatibility__soft_contact_lenses:
-      name: Měkké kontaktní čočky
-      context: Contact lens compatibility
-    contact_lens_compatibility__toric_lenses:
-      name: Torické čočky
-      context: Contact lens compatibility
     contact_lens_material__balafilcon_a:
       name: Balafilcon A
       context: Contact lens material
@@ -27458,23 +27542,41 @@ cs:
     embellishments__chipboard_elements:
       name: Dřevotřískové prvky
       context: Embellishments
+    embellishments__diamond:
+      name: Diamantová
+      context: Embellishments
     embellishments__die_cuts:
       name: Výseky
       context: Embellishments
     embellishments__gems:
       name: Drahokamy
       context: Embellishments
+    embellishments__none:
+      name: Žádný
+      context: Embellishments
     embellishments__other:
       name: Jiné
       context: Embellishments
+    embellishments__precious_stone:
+      name: Drahokam
+      context: Embellishments
+    embellishments__rhinestone:
+      name: Štrasový kámen
+      context: Embellishments
     embellishments__ribbons:
       name: Stuhy
+      context: Embellishments
+    embellishments__semi_precious_stone:
+      name: Polodrahokam
       context: Embellishments
     embellishments__sequins:
       name: Flitry
       context: Embellishments
     embellishments__stickers:
       name: Nálepky
+      context: Embellishments
+    embellishments__synthetic_pearl:
+      name: Syntetická perla
       context: Embellishments
     embellishments__washi_tape:
       name: Dekorační páska
@@ -31973,8 +32075,14 @@ cs:
     food_product_form__powder:
       name: Prášek
       context: Food product form
+    food_product_form__preserved:
+      name: Konzervované
+      context: Food product form
     food_product_form__sheets:
       name: Listy
+      context: Food product form
+    food_product_form__untreated/raw:
+      name: Nezpracované/syrové
       context: Food product form
     food_product_form__whole:
       name: Celé
@@ -39572,6 +39680,9 @@ cs:
     jewelry_material__alcantara:
       name: Alcantara
       context: Jewelry material
+    jewelry_material__alloy:
+      name: Slitina
+      context: Jewelry material
     jewelry_material__aluminum:
       name: Hliník
       context: Jewelry material
@@ -39689,6 +39800,9 @@ cs:
     jewelry_material__nickel_plated:
       name: Poniklované
       context: Jewelry material
+    jewelry_material__non_precious_metals:
+      name: Nedrahé kovy
+      context: Jewelry material
     jewelry_material__nylon:
       name: Nylon
       context: Jewelry material
@@ -39700,6 +39814,9 @@ cs:
       context: Jewelry material
     jewelry_material__palladium_plated:
       name: Pokovené palladiem
+      context: Jewelry material
+    jewelry_material__pearls:
+      name: Perly
       context: Jewelry material
     jewelry_material__plastic:
       name: Plast
@@ -39715,6 +39832,9 @@ cs:
       context: Jewelry material
     jewelry_material__porcelain:
       name: Porcelán
+      context: Jewelry material
+    jewelry_material__precious/semiprecious_stones:
+      name: Drahokamy/polodrahokamy
       context: Jewelry material
     jewelry_material__precious_resin:
       name: Vzácná pryskyřice
@@ -42137,6 +42257,45 @@ cs:
     leather/vinyl_texture__smooth:
       name: Hladký
       context: Leather/Vinyl texture
+    leather_type__alligator:
+      name: Aligátor
+      context: Leather type
+    leather_type__calfskin:
+      name: Teletina
+      context: Leather type
+    leather_type__cowhide:
+      name: Hovězí useň
+      context: Leather type
+    leather_type__crocodile:
+      name: Krokodýl
+      context: Leather type
+    leather_type__lambskin:
+      name: Jehněčí kůže
+      context: Leather type
+    leather_type__lizard:
+      name: Ještěrka
+      context: Leather type
+    leather_type__ostrich:
+      name: Pštrosí maso
+      context: Leather type
+    leather_type__other:
+      name: Jiné
+      context: Leather type
+    leather_type__python:
+      name: Python
+      context: Leather type
+    leather_type__sheepskin:
+      name: Ovčí kůže
+      context: Leather type
+    leather_type__stingray:
+      name: Rejnok
+      context: Leather type
+    leather_type__synthetic:
+      name: Syntetické
+      context: Leather type
+    leather_type__unknown:
+      name: Stav neznámý
+      context: Leather type
     lectern_mounting_type__floor:
       name: Podlaha
       context: Lectern mounting type
@@ -43631,8 +43790,14 @@ cs:
     lumber/wood_type__cherry_wood:
       name: Třešňové dřevo
       context: Lumber/Wood type
+    lumber/wood_type__cork:
+      name: Korek
+      context: Lumber/Wood type
     lumber/wood_type__hickory_wood:
       name: Dřevo z ořechovce
+      context: Lumber/Wood type
+    lumber/wood_type__jute:
+      name: Juta
       context: Lumber/Wood type
     lumber/wood_type__maple_wood:
       name: Javorové dřevo
@@ -43646,6 +43811,9 @@ cs:
     lumber/wood_type__other:
       name: Jiné
       context: Lumber/Wood type
+    lumber/wood_type__palm:
+      name: Palma
+      context: Lumber/Wood type
     lumber/wood_type__pine_wood:
       name: Borovicové dřevo
       context: Lumber/Wood type
@@ -43655,8 +43823,17 @@ cs:
     lumber/wood_type__poplar_wood:
       name: Topolové dřevo
       context: Lumber/Wood type
+    lumber/wood_type__raffia:
+      name: Rafie
+      context: Lumber/Wood type
+    lumber/wood_type__rattan:
+      name: Ratan
+      context: Lumber/Wood type
     lumber/wood_type__redwood:
       name: Sekvoj
+      context: Lumber/Wood type
+    lumber/wood_type__straw:
+      name: Sláma
       context: Lumber/Wood type
     lumber/wood_type__walnut_wood:
       name: Ořechové dřevo
@@ -44945,6 +45122,36 @@ cs:
     material_hardness__soft:
       name: Měkká
       context: Material hardness
+    material_origin__finished_product_jewelry/watch:
+      name: Hotový výrobek (šperky/hodinky)
+      context: Material origin
+    material_origin__loose/unmounted:
+      name: Volné/nepřipevněné
+      context: Material origin
+    material_origin__nft:
+      name: NFT)
+      context: Material origin
+    material_origin__other:
+      name: Jiné
+      context: Material origin
+    material_origin__printed/digital_gift_card:
+      name: Tištěná/digitální (dárkový
+      context: Material origin
+    material_origin__voucher:
+      name: poukaz
+      context: Material origin
+    material_treatment__chemically_treated:
+      name: Chemicky ošetřené
+      context: Material treatment
+    material_treatment__fumigated:
+      name: Fumigované
+      context: Material treatment
+    material_treatment__heat_treated:
+      name: Tepelně zpracované
+      context: Material treatment
+    material_treatment__other:
+      name: Jiné
+      context: Material treatment
     maternity_clothing_features__adjustable_strap:
       name: Nastavitelný popruh
       context: Maternity clothing features
@@ -55409,6 +55616,18 @@ cs:
     plant_class__zingiberales:
       name: Zingiberales
       context: Plant class
+    plant_material__artificial:
+      name: Umělé
+      context: Plant material
+    plant_material__dried/preserved:
+      name: Sušené/konzervované
+      context: Plant material
+    plant_material__live:
+      name: Živé
+      context: Plant material
+    plant_material__other:
+      name: Jiné
+      context: Plant material
     plant_name__aeonium:
       name: Růžicovka
       context: Plant name
@@ -57668,6 +57887,33 @@ cs:
     product_certifications_standards__vegan:
       name: Veganské
       context: Product certifications & standards
+    product_classification__bullion:
+      name: Neražené drahé kovy
+      context: Product classification
+    product_classification__coupon:
+      name: Kupón
+      context: Product classification
+    product_classification__currency:
+      name: Měna
+      context: Product classification
+    product_classification__gift_card:
+      name: Dárková karta
+      context: Product classification
+    product_classification__loose_precious_stones:
+      name: Volné drahokamy
+      context: Product classification
+    product_classification__nft:
+      name: NFT
+      context: Product classification
+    product_classification__other:
+      name: Jiné
+      context: Product classification
+    product_classification__semi_precious_stones:
+      name: Polodrahokamy
+      context: Product classification
+    product_classification__voucher:
+      name: Poukaz
+      context: Product classification
     product_form__cream:
       name: Smetana
       context: Product form
@@ -57815,6 +58061,21 @@ cs:
     product_sterility__sterile:
       name: Sterilní
       context: Product sterility
+    product_use__collectible/numismatic:
+      name: Sběratelský/numismatický předmět
+      context: Product use
+    product_use__currency/legal_tender:
+      name: Měna / zákonné platidlo
+      context: Product use
+    product_use__gift_card/voucher:
+      name: Dárková karta / poukaz
+      context: Product use
+    product_use__jewelry/ornament:
+      name: Šperky/ozdoby
+      context: Product use
+    product_use__other:
+      name: Jiné
+      context: Product use
     program_format__booklet:
       name: Brožura
       context: Program format
@@ -79811,6 +80072,30 @@ cs:
     wireless_streaming_protocols_supported__upnp:
       name: UPnP
       context: Wireless streaming protocols supported
+    wood_finish__engineered_plywood/mdf:
+      name: Strojně opracované (překližka/MDF)
+      context: Wood finish
+    wood_finish__lacquered/varnished:
+      name: Lakované/potahované
+      context: Wood finish
+    wood_finish__oiled:
+      name: Olejované
+      context: Wood finish
+    wood_finish__other:
+      name: Jiné
+      context: Wood finish
+    wood_finish__painted:
+      name: Malovaný
+      context: Wood finish
+    wood_finish__solid_wood:
+      name: Masivní dřevo
+      context: Wood finish
+    wood_finish__untreated/natural:
+      name: Neošetřené/přírodní
+      context: Wood finish
+    wood_finish__veneered:
+      name: Dýhované
+      context: Wood finish
     woodwind_care_items_included__cleaning_brush:
       name: Čisticí kartáč
       context: Woodwind care items included
