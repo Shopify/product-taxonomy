@@ -47,7 +47,7 @@ module ProductTaxonomy
 
       command = TestCommand.new({})
       mock_value = mock("value")
-      ProductTaxonomy::Value.expects(:all).returns([mock_value])
+      ProductTaxonomy::Value.expects(:all).twice.returns([mock_value])
       mock_value.expects(:validate!).with(:taxonomy_loaded)
 
       command.load_taxonomy
