@@ -27,27 +27,11 @@ module ProductTaxonomy
     end
 
     def load_taxonomy
-      return if ProductTaxonomy::Category.all.any?
+      values_path = File.expand_path("values.yml", ProductTaxonomy.data_path)
+      attributes_path = File.expand_path("attributes.yml", ProductTaxonomy.data_path)
+      categories_glob = Dir.glob(File.expand_path("categories/*.yml", ProductTaxonomy.data_path))
 
-      ProductTaxonomy::Value.load_from_source(YAML.load_file(File.expand_path(
-        "values.yml",
-        ProductTaxonomy.data_path,
-      )))
-      ProductTaxonomy::Attribute.load_from_source(YAML.load_file(File.expand_path(
-        "attributes.yml",
-        ProductTaxonomy.data_path,
-      )))
-
-      glob = Dir.glob(File.expand_path("categories/*.yml", ProductTaxonomy.data_path))
-      categories_source_data = glob.each_with_object([]) do |file, array|
-        array.concat(YAML.safe_load_file(file))
-      end
-      ProductTaxonomy::Category.load_from_source(categories_source_data)
-
-      # Run validations that can only be run after the taxonomy has been loaded.
-      # Right now, only the `Value` model has validations that run in this context. If other models begin to use this
-      # validation context, they should be added here too.
-      ProductTaxonomy::Value.all.each { |model| model.validate!(:taxonomy_loaded) }
+      ProductTaxonomy::Loader.load(values_path:, attributes_path:, categories_glob:)
     end
 
     def validate_and_sanitize_version!(version)
