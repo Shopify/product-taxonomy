@@ -1,6 +1,20 @@
 # frozen_string_literal: true
 
 require "thor"
+require_relative "commands/command"
+require_relative "commands/generate_dist_command"
+require_relative "commands/find_unmapped_external_categories_command"
+require_relative "commands/generate_docs_command"
+require_relative "commands/generate_release_command"
+require_relative "commands/dump_categories_command"
+require_relative "commands/dump_attributes_command"
+require_relative "commands/dump_values_command"
+require_relative "commands/dump_integration_full_names_command"
+require_relative "commands/sync_en_localizations_command"
+require_relative "commands/add_category_command"
+require_relative "commands/add_attribute_command"
+require_relative "commands/add_attributes_to_categories_command"
+require_relative "commands/add_value_command"
 
 module ProductTaxonomy
   class Cli < Thor
