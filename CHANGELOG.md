@@ -5,13 +5,13 @@ Expanded taxonomy with 1,000+ new categories and 600+ new attributes, plus exten
 
 ##### Apparel & Accessories
 
-- Adds the attributes `Gemstone type`, `Robe style`.
+- Adds the attributes `Gemstone type`, `Leather type` and `Robe style`.
 
 ##### Arts & Entertainment
 
 - Adds `Kilns` (`Ceramic & Pottery Kilns`, `Enameling Kilns`, `Glass Kilns` and `Multipurpose Kilns`).
 - In the Percussion area, adds `Crash/Ride Cymbals`.
-- Adds the attributes `Kiln features`, `Kiln loading style`.
+- Adds the attributes `Kiln features`, `Kiln loading style`, `Material origin`, `Product classification` and `Product use`.
 
 ##### Electronics
 
@@ -177,7 +177,7 @@ Expanded taxonomy with 1,000+ new categories and 600+ new attributes, plus exten
 - In the E-Book Reader Parts area, adds `E-Book Reader Covers & Housings`, `E-Book Reader Logic Boards` and `E-Book Reader Replacement Cables`.
 - In the GPS Accessories area, adds `GPS Modules & Receivers`.
 - In the GPS Navigation Systems area, adds `Automotive GPS Navigation Systems` and `Handheld & Outdoor GPS Navigation Devices`.
-- Adds 350 new attributes including `3D glasses fit design`, `3D glasses technology`, `3D printer case style`.
+- Adds 300+ new attributes including `3D glasses fit design`, `3D glasses technology` and `3D printer case style`.
 
 ##### Food, Beverages & Tobacco
 
@@ -187,6 +187,7 @@ Expanded taxonomy with 1,000+ new categories and 600+ new attributes, plus exten
 
 ##### Health & Beauty
 
+- Adds `Steam Inhaler Accessories` (`Steam Inhaler Solutions`).
 - In the Health Care area, adds `Insulin Pump Accessories`, `Insulin Pumps`, `Mask Accessories` and `Medical Gloves`.
 - In the Acupuncture area, adds `Acupressure Bands & Devices`, `Acupuncture Charts & Reference Materials`, `Ear Seeds & Auriculotherapy Supplies`, `Electronic Acupuncture Pens & Stimulators` and `Moxibustion Supplies`.
 - In the Hearing Aids area, adds `Receiver-In-Canal (RIC) Hearing Aids`.
@@ -200,8 +201,7 @@ Expanded taxonomy with 1,000+ new categories and 600+ new attributes, plus exten
 - In the Walking Aids area, adds `Knee Walkers & Scooters`, `Rollators`, `Seat Canes`, `Tripod Canes` and `White Canes`.
 - In the Occupational & Physical Therapy Equipment area, adds 9 new categories including `Balance Boards`, `Compression Therapy Devices` and `Cupping Therapy Sets`.
 - In the Therapeutic Swings area, adds `Hammock Therapeutic Swings`, `Platform Therapeutic Swings` and `Tube Therapeutic Swings`.
-- In the Respiratory Care area, adds 6 new categories including `Nebulizer Accessories`, `Oxygen Concentrators` and `Oxygen Tanks Accessories`.
-- In the Steam Inhalers area, adds `Steam Inhaler Solutions`.
+- In the Respiratory Care area, adds `Nebulizer Accessories`, `Oxygen Concentrators`, `Oxygen Tanks Accessories`, `PAP Mask Replacement Parts` and `Spirometers`.
 - In the Supports & Braces area, adds `Abdominal & Hernia Supports`, `Calf & Shin Supports`, `Finger & Thumb Braces`, `Hip & Groin Supports` and `Shoulder Supports`.
 - In the Ankle Supports area, adds `Ankle-Foot Orthoses (AFOs)` and `Medical Walking Boots`.
 - In the Back Braces area, adds `Lumbar Support Belts` and `Sacroiliac Belts`.
@@ -223,12 +223,11 @@ Expanded taxonomy with 1,000+ new categories and 600+ new attributes, plus exten
 - In the First Aid Kits area, adds `First Aid Bags & Empty Cases`, `First Aid Kit Refills & Restock Packs` and `Trauma First Aid Kits`.
 - In the Hot & Cold Therapies area, adds `Cold Sprays`, `Hot & Cold Packs` and `Hot Water Bottles`.
 - In the Medical Tape & Bandages area, adds 6 new categories including `Adhesive Bandages & Plasters`, `Cohesive & Self-Adherent Bandages` and `Compression Bandages`.
-- In the Fitness & Nutrition area, adds `Fitness & Workout Programs`.
 - In the Nutrition Bars area, adds `Energy Bars`, `Meal Replacement Bars` and `Protein Bars`.
 - In the Nutrition Drinks & Shakes area, adds `Pre-Workout Drinks & Powders`, `Protein & Meal Replacement Shakes` and `Weight Gainer Shakes`.
 - In the Nutrition Gels & Chews area, adds `Energy Chews & Gummies` and `Energy Gels`.
 - In the Vitamins & Supplements area, adds 23 new categories including `Activated Charcoal & Binders`, `Branched-Chain Amino Acid (BCAA)` and `Calcium`.
-- In the Weight Loss area, adds `Detox & Cleanse Patches`, `Detox & Cleanse Programs`, `Weight Loss Journals & Trackers`, `Weight Loss Programs & Coaching` and `Weight Loss Topical & Patch Treatments`.
+- In the Weight Loss area, adds `Detox & Cleanse Patches`, `Detox & Cleanse Programs`, `Weight Loss Journals & Trackers` and `Weight Loss Topical & Patch Treatments`.
 - In the Jewelry Cleaning & Care area, adds `Jewelry Repair & Resizing Services` and `Jewelry Sizing Tools`.
 - In the Jewelry Holders area, adds `Earring Holders` and `Jewelry Rolls`.
 - In the Jewelry Boxes area, adds `Musical Jewelry Boxes`, `Ring Boxes`, `Travel Jewelry Cases` and `Watch Boxes`.
@@ -237,7 +236,7 @@ Expanded taxonomy with 1,000+ new categories and 600+ new attributes, plus exten
 - In the Back Care area, adds `Back Stretchers` and `Posture Correctors`.
 - In the Back & Lumbar Support Cushions area, adds `Lumbar Roll Cushions` and `Seat & Tailbone Support Cushions`.
 - In the Hair Styling Products area, adds 6 new categories including `Hair Creams & Lotions`, `Hair Gels` and `Hair Mousses & Foams`.
-- In the Hair Styling Tool Accessories area, adds 8 new categories including `Bobby Pins`, `Hair Extension Tools & Accessories` and `Hair Spray Bottles`.
+- In the Hair Styling Tool Accessories area, adds 7 new categories including `Bobby Pins`, `Hair Extension Tools & Accessories` and `Hair Spray Bottles`.
 - In the Hair Styling Tools area, adds `Hair Braiders` and `Hair Crimpers`.
 - In the Hair Loss Concealers area, adds `Hair Building Fibers`, `Root Concealer Powders & Sticks` and `Root Concealer Sprays`.
 - In the Hair Permanents & Straighteners area, adds `Hair Perm Solutions & Kits`, `Hair Relaxers`, `Hair Texturizers & Softening Systems` and `Keratin & Smoothing Treatments`.
@@ -278,7 +277,7 @@ Expanded taxonomy with 1,000+ new categories and 600+ new attributes, plus exten
 - In the Feminine Sanitary Supplies area, adds `Feminine Moisturizers & Oils`, `Feminine Wipes` and `Menstrual Discs`.
 - In the Foot Care area, adds 7 new categories including `Antifungal Foot Treatments`, `Blister Care Supplies` and `Foot Creams & Balms`.
 - In the Bunion Care Supplies area, adds `Bunion Pads` and `Bunion Splints & Correctors`.
-- Adds 287 new attributes including `Activation mechanism`, `Additional cleaning technology`, `Adhesive application type`.
+- Adds 200+ new attributes including `Activation mechanism`, `Additional cleaning technology` and `Adhesive application type`.
 
 ##### Home & Garden
 
@@ -288,9 +287,11 @@ Expanded taxonomy with 1,000+ new categories and 600+ new attributes, plus exten
 
 ##### Services
 
+- In the Office Services area, adds `Printing & Custom Print Services`.
 - In the Travel & Leisure area, adds `Public Transport Tickets & Passes`.
 - In the Personal Services area, adds `Clothing Alterations`.
-- Adds the attributes `Journey type`, `Pass duration`, `Seat reservation`, `Ticket class`, `Transport type`.
+- In the Fitness & Wellness area, adds `Fitness & Workout Programs` and `Weight Loss Programs & Coaching`.
+- Adds the attributes `Journey type`, `Pass duration`, `Seat reservation`, `Ticket class` and `Transport type`.
 
 ##### Sporting Goods
 
@@ -298,6 +299,7 @@ Expanded taxonomy with 1,000+ new categories and 600+ new attributes, plus exten
 
 ##### Miscellaneous
 
+- Adds the attributes `Wood finish`, `Construction`, `Alcohol/Solvent content`, `Plant material` and `Material treatment` across multiple verticals.
 - Extends existing attributes to additional categories.
 - Includes 5,000+ new attribute values across multiple attributes.
 - Includes other refinements and improvements.
