@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "thor"
+
 module ProductTaxonomy
   class Cli < Thor
     class << self

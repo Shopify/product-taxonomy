@@ -1,20 +1,22 @@
 # frozen_string_literal: true
 
-require "thor"
 require "active_support/all"
 require "active_model"
-require "debug"
 
 module ProductTaxonomy
-  DATA_PATH = File.expand_path("../../data", __dir__)
-  private_constant :DATA_PATH
+  DEFAULT_DATA_PATH = File.expand_path("../../data", __dir__)
 
   class << self
-    def data_path = DATA_PATH
+    attr_writer :data_path
+
+    def data_path
+      @data_path ||= DEFAULT_DATA_PATH
+    end
   end
 end
 
-require_relative "product_taxonomy/cli"
+require_relative "product_taxonomy/version"
+require_relative "product_taxonomy/loader"
 require_relative "product_taxonomy/alphanumeric_sorter"
 require_relative "product_taxonomy/identifier_formatter"
 require_relative "product_taxonomy/localizations_validator"
