@@ -29,7 +29,11 @@ jobs:
           working-directory: dev
           bundler-cache: true
 
-      - name: Publish to RubyGems
-        uses: rubygems/release-gem@v1
-        with:
-          gemspec-file: 'dev/shopify_product_taxonomy.gemspec'
+      - name: Configure RubyGems credentials
+        uses: rubygems/configure-rubygems-credentials@v1.0.0
+
+      - name: Build and publish gem
+        working-directory: dev
+        run: |
+          gem build shopify_product_taxonomy.gemspec
+          gem push shopify_product_taxonomy-*.gem
