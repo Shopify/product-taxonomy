@@ -3,6 +3,7 @@
 
 require "bundler/setup"
 require_relative "../lib/product_taxonomy"
+require_relative "../lib/product_taxonomy/cli"
 
 begin
   ProductTaxonomy::Cli.start(ARGV)

@@ -3,6 +3,7 @@
 $LOAD_PATH.unshift(File.expand_path("../lib", __dir__))
 
 require "product_taxonomy"
+require "product_taxonomy/cli"
 require "active_support/testing/autorun"
 require "minitest/benchmark"
 require "minitest/pride"
