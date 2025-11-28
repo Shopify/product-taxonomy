@@ -1,4 +1,4 @@
-## 2025-11
+## 2025-12
 
 #### 📚 Taxonomy Tree
 Expanded taxonomy with 1,000+ new categories and 600+ new attributes, plus extensive enhancements to existing categories.
