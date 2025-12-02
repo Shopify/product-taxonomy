@@ -5,4 +5,5 @@
 	name!: string
 	children!: [...string]
 	attributes!: [...string]
+  return_reasons!: [...string]
 }]
