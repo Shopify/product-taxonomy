@@ -3,16 +3,21 @@ target_languages: [bg-BG, cs, da, de, el, es, fi, fr, hr-HR, hu, id-ID, it, ja, 
 async_pr_mode: per_pr
 component_prefix: product-taxonomy
 translation_profile: product
-audience: [buyer, merchant, partner]
 components:
   - name: attributes
+    audience: [buyer, merchant, partner]
+    owners: ['@Shopify/taxonomy-tree-squad']
     paths:
       - data/localizations/attributes/{{language}}.yml
 
   - name: categories
+    audience: [buyer, merchant, partner]
+    owners: ['@Shopify/taxonomy-tree-squad']
     paths:
       - data/localizations/categories/{{language}}.yml
 
   - name: values
+    audience: [buyer, merchant, partner]
+    owners: ['@Shopify/taxonomy-tree-squad']
     paths:
       - data/localizations/values/{{language}}.yml
