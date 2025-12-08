@@ -11,6 +11,7 @@ require_relative "commands/dump_attributes_command"
 require_relative "commands/dump_values_command"
 require_relative "commands/dump_integration_full_names_command"
 require_relative "commands/sync_en_localizations_command"
+require_relative "commands/migrate_localizations_command"
 require_relative "commands/add_category_command"
 require_relative "commands/add_attribute_command"
 require_relative "commands/add_attributes_to_categories_command"
@@ -85,6 +86,12 @@ module ProductTaxonomy
     option :targets, type: :string, desc: "List of targets to sync. Valid targets are: categories, attributes, values"
     def sync_en_localizations
       SyncEnLocalizationsCommand.new(options).run
+    end
+
+    desc "migrate_localizations", "Remove context keys from all non-English localization files"
+    option :dry_run, type: :boolean, default: false, desc: "Preview changes without writing files"
+    def migrate_localizations
+      MigrateLocalizationsCommand.new(options).run
     end
 
     desc "add_category NAME PARENT_ID", "Add a new category to the taxonomy with NAME, as a child of PARENT_ID"
