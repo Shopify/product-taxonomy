@@ -84,6 +84,14 @@ module ProductTaxonomy
     end
 
     # Injects context strings as YAML comments below entry IDs (above the first field).
+    #
+    # Strategy: Parse YAML.dump output line-by-line to find entry IDs, then inject comments
+    # at the correct indentation. This adapts to YAML.dump's formatting without hardcoding indentation.
+    #
+    # Example transformation:
+    #   aa-1-1:              =>    aa-1-1:
+    #     name: Activewear   =>      # Apparel & Accessories > Clothing > Activewear
+    #                        =>      name: Activewear
     def inject_context_comments(yaml_output, context_map, type)
       lines = yaml_output.lines
       result = []
@@ -91,17 +99,20 @@ module ProductTaxonomy
       lines.each_with_index do |line, index|
         result << line
 
-        # Match lines with format "  key:" and check if they're entry IDs (not field names)
+        # Find lines that look like YAML keys (format: "  key:")
         if line.match?(/^(\s+)(.+):$/)
           current_indent = line[/^(\s+)/, 1]
           entry_id = line.strip.chomp(":")
           next_line = lines[index + 1]
 
-          # Entry IDs have fields indented more than themselves
-          # Field names (like "name:") have values at same or less indentation
+          # Distinguish entry IDs from field names by checking indentation
+          # Entry IDs have their fields indented MORE (e.g., "aa-1-1:" followed by "    name:")
+          # Field names have values at SAME level or less (e.g., "  name:" followed by "  value")
           is_entry_id = next_line&.match?(/^(\s+)/) && next_line[/^(\s+)/, 1].length > current_indent.length
 
+          # If this is an entry ID with context, inject comment at field indentation
           if is_entry_id && context_map.key?(entry_id)
+            # Use the next line's indentation (the field level) for the comment
             field_indent = next_line[/^(\s+)/, 1]
             result << "#{field_indent}# #{context_map[entry_id]}\n"
           end
