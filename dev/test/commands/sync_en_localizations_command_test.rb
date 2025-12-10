@@ -205,6 +205,16 @@ module ProductTaxonomy
           assert_equal 1, sections.keys.size,
             "Expected exactly one section (to avoid entry ID collisions). Got: #{sections.keys.join(', ')}"
 
+          # Verify no duplicate entry IDs across all sections (even though we expect only one section)
+          # Redundant with single-section check above, but makes the extract_contexts assumption explicit.
+          all_entry_ids = []
+          sections.each do |_section_name, entries|
+            all_entry_ids.concat(entries.keys)
+          end
+          duplicate_ids = all_entry_ids.group_by { |id| id }.select { |_id, occurrences| occurrences.size > 1 }.keys
+          assert_empty duplicate_ids,
+            "Found duplicate entry IDs across sections: #{duplicate_ids.join(', ')}"
+
           sections.each do |section_name, entries|
             # Each section should contain a hash of entries
             assert entries.is_a?(Hash), "Expected section '#{section_name}' to contain a Hash of entries"
