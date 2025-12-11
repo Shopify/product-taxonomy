@@ -51,6 +51,11 @@ module ProductTaxonomy
       yaml_output = YAML.dump(localizations, line_width: -1)
       yaml_with_comments = inject_context_comments(yaml_output, context_map, type)
 
+      # Verify that comment injection didn't alter the data structure
+      unless YAML.load(yaml_with_comments) == localizations
+        raise "Failed to safely inject comments into #{type} localizations"
+      end
+
       File.open(file_path, "w") do |file|
         file.puts "# This file is auto-generated. Do not edit directly."
         file.write(yaml_with_comments)
