@@ -38,7 +38,13 @@ module ProductTaxonomy
     end
 
     test "execute syncs categories localizations" do
-      mock_localizations = { "test" => "data" }
+      mock_localizations = {
+        "en" => {
+          "categories" => {
+            "test-1" => { "name" => "Test Category", "context" => "Test > Category" },
+          },
+        },
+      }
       Serializers::Category::Data::LocalizationsSerializer.stubs(:serialize_all)
         .returns(mock_localizations)
 
@@ -47,12 +53,26 @@ module ProductTaxonomy
 
       expected_path = File.expand_path("data/localizations/categories/en.yml", @tmp_base_path)
       assert File.exist?(expected_path)
-      expected_content = "# This file is auto-generated. Do not edit directly.\n---\ntest: data\n"
+      expected_content = <<~YAML
+        # This file is auto-generated. Do not edit directly.
+        ---
+        en:
+          categories:
+            test-1:
+              # Test > Category
+              name: Test Category
+      YAML
       assert_equal expected_content, File.read(expected_path)
     end
 
     test "execute syncs attributes localizations" do
-      mock_localizations = { "test" => "attribute_data" }
+      mock_localizations = {
+        "en" => {
+          "attributes" => {
+            "test-attr" => { "name" => "Test Attribute", "description" => "A test attribute" },
+          },
+        },
+      }
       Serializers::Attribute::Data::LocalizationsSerializer.stubs(:serialize_all)
         .returns(mock_localizations)
 
@@ -61,12 +81,26 @@ module ProductTaxonomy
 
       expected_path = File.expand_path("data/localizations/attributes/en.yml", @tmp_base_path)
       assert File.exist?(expected_path)
-      expected_content = "# This file is auto-generated. Do not edit directly.\n---\ntest: attribute_data\n"
+      expected_content = <<~YAML
+        # This file is auto-generated. Do not edit directly.
+        ---
+        en:
+          attributes:
+            test-attr:
+              name: Test Attribute
+              description: A test attribute
+      YAML
       assert_equal expected_content, File.read(expected_path)
     end
 
     test "execute syncs values localizations" do
-      mock_localizations = { "test" => "value_data" }
+      mock_localizations = {
+        "en" => {
+          "values" => {
+            "test-value" => { "name" => "Test Value", "context" => "Test Attribute" },
+          },
+        },
+      }
       Serializers::Value::Data::LocalizationsSerializer.stubs(:serialize_all)
         .returns(mock_localizations)
 
@@ -75,17 +109,25 @@ module ProductTaxonomy
 
       expected_path = File.expand_path("data/localizations/values/en.yml", @tmp_base_path)
       assert File.exist?(expected_path)
-      expected_content = "# This file is auto-generated. Do not edit directly.\n---\ntest: value_data\n"
+      expected_content = <<~YAML
+        # This file is auto-generated. Do not edit directly.
+        ---
+        en:
+          values:
+            test-value:
+              # Test Attribute
+              name: Test Value
+      YAML
       assert_equal expected_content, File.read(expected_path)
     end
 
     test "execute syncs all targets when none specified" do
       Serializers::Category::Data::LocalizationsSerializer.stubs(:serialize_all)
-        .returns({ "category" => "data" })
+        .returns({ "en" => { "categories" => { "cat-1" => { "name" => "Category", "context" => "Category" } } } })
       Serializers::Attribute::Data::LocalizationsSerializer.stubs(:serialize_all)
-        .returns({ "attribute" => "data" })
+        .returns({ "en" => { "attributes" => { "attr-1" => { "name" => "Attribute", "description" => "Desc" } } } })
       Serializers::Value::Data::LocalizationsSerializer.stubs(:serialize_all)
-        .returns({ "value" => "data" })
+        .returns({ "en" => { "values" => { "val-1" => { "name" => "Value", "context" => "Attribute" } } } })
 
       command = SyncEnLocalizationsCommand.new({})
       command.execute
@@ -98,13 +140,106 @@ module ProductTaxonomy
       assert File.exist?(attributes_path)
       assert File.exist?(values_path)
 
-      expected_categories = "# This file is auto-generated. Do not edit directly.\n---\ncategory: data\n"
-      expected_attributes = "# This file is auto-generated. Do not edit directly.\n---\nattribute: data\n"
-      expected_values = "# This file is auto-generated. Do not edit directly.\n---\nvalue: data\n"
+      expected_categories = <<~YAML
+        # This file is auto-generated. Do not edit directly.
+        ---
+        en:
+          categories:
+            cat-1:
+              # Category
+              name: Category
+      YAML
+      expected_attributes = <<~YAML
+        # This file is auto-generated. Do not edit directly.
+        ---
+        en:
+          attributes:
+            attr-1:
+              name: Attribute
+              description: Desc
+      YAML
+      expected_values = <<~YAML
+        # This file is auto-generated. Do not edit directly.
+        ---
+        en:
+          values:
+            val-1:
+              # Attribute
+              name: Value
+      YAML
 
       assert_equal expected_categories, File.read(categories_path)
       assert_equal expected_attributes, File.read(attributes_path)
       assert_equal expected_values, File.read(values_path)
     end
+
+    test "serializers produce the expected structure for context extraction" do
+      # This test validates the structure assumptions in extract_contexts.
+      # If serializers change their output format, this test will fail.
+
+      # Temporarily use real data path to load taxonomy
+      ProductTaxonomy.unstub(:data_path)
+
+      # Load real taxonomy data
+      values_path = File.expand_path("values.yml", ProductTaxonomy.data_path)
+      attributes_path = File.expand_path("attributes.yml", ProductTaxonomy.data_path)
+      categories_glob = Dir.glob(File.expand_path("categories/*.yml", ProductTaxonomy.data_path))
+      ProductTaxonomy::Loader.load(values_path:, attributes_path:, categories_glob:)
+
+      begin
+        categories = Serializers::Category::Data::LocalizationsSerializer.serialize_all
+        attributes = Serializers::Attribute::Data::LocalizationsSerializer.serialize_all
+        values = Serializers::Value::Data::LocalizationsSerializer.serialize_all
+
+        [categories, attributes, values].each do |localizations|
+          # Should be a hash with one locale key
+          assert localizations.is_a?(Hash), "Expected localization to be a Hash"
+          assert_equal 1, localizations.keys.size, "Expected exactly one locale key"
+
+          locale, sections = localizations.first
+          assert_equal "en", locale, "Expected locale to be 'en'"
+
+          # Sections should be a hash with exactly ONE section
+          # This is important because extract_contexts assumes no ID collisions across sections
+          assert sections.is_a?(Hash), "Expected sections to be a Hash"
+          assert_equal 1, sections.keys.size,
+            "Expected exactly one section (to avoid entry ID collisions). Got: #{sections.keys.join(', ')}"
+
+          # Verify no duplicate entry IDs across all sections (even though we expect only one section)
+          # Redundant with single-section check above, but makes the extract_contexts assumption explicit.
+          all_entry_ids = []
+          sections.each do |_section_name, entries|
+            all_entry_ids.concat(entries.keys)
+          end
+          duplicate_ids = all_entry_ids.group_by { |id| id }.select { |_id, occurrences| occurrences.size > 1 }.keys
+          assert_empty duplicate_ids,
+            "Found duplicate entry IDs across sections: #{duplicate_ids.join(', ')}"
+
+          sections.each do |section_name, entries|
+            # Each section should contain a hash of entries
+            assert entries.is_a?(Hash), "Expected section '#{section_name}' to contain a Hash of entries"
+
+            entries.each do |entry_id, data|
+              # Each entry should be a hash with at least a 'name' field
+              assert data.is_a?(Hash), "Expected entry '#{entry_id}' to be a Hash"
+              assert data.key?("name"), "Expected entry '#{entry_id}' to have a 'name' field"
+
+              # If 'context' exists, it should be a string
+              if data.key?("context")
+                assert data["context"].is_a?(String), "Expected 'context' in entry '#{entry_id}' to be a String"
+              end
+            end
+          end
+        end
+      ensure
+        # Clean up taxonomy data so it doesn't interfere with other tests
+        Category.reset
+        Attribute.reset
+        Value.reset
+        # Re-stub data_path for other tests
+        ProductTaxonomy.stubs(:data_path).returns(File.expand_path("data", @tmp_base_path))
+      end
+    end
+
   end
 end
