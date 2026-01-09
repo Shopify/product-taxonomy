@@ -8,6 +8,11 @@ module ProductTaxonomy
     extend Indexed
 
     class << self
+      # Override to match folder name convention (return_reasons vs returnreasons)
+      def localizations_humanized_model_name
+        "return_reasons"
+      end
+
       # Load return reasons from source data. By default, this data is deserialized from a YAML file in the `data` directory.
       #
       # @param source_data [Array<Hash>] The source data to load return reasons from.
