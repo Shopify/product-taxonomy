@@ -111,5 +111,22 @@ module ProductTaxonomy
     def add_value(name, attribute_friendly_id)
       AddValueCommand.new(options.merge(name:, attribute_friendly_id:)).run
     end
+
+    desc "add_return_reason NAME DESCRIPTION", "Add a new return reason to the taxonomy with NAME and DESCRIPTION"
+    def add_return_reason(name, description)
+      AddReturnReasonCommand.new(options.merge(name:, description:)).run
+    end
+
+    desc "dump_return_reasons", "Dump return reasons to YAML file"
+    def dump_return_reasons
+      DumpReturnReasonsCommand.new(options).run
+    end
+
+    desc "add_return_reasons_to_categories RETURN_REASON_FRIENDLY_IDS CATEGORY_IDS",
+      "Add one or more return reasons to one or more categories. RETURN_REASON_FRIENDLY_IDS is a comma-separated list of return reason friendly IDs."
+    option :include_descendants, type: :boolean, desc: "When set, the return reasons will be added to all descendants of the specified categories"
+    def add_return_reasons_to_categories(return_reason_friendly_ids, category_ids)
+      AddReturnReasonsToCategoriesCommand.new(options.merge(return_reason_friendly_ids:, category_ids:)).run
+    end
   end
 end
