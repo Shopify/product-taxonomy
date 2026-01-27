@@ -12,6 +12,7 @@ module ProductTaxonomy
       FileUtils.mkdir_p(File.expand_path("data/localizations/categories", @tmp_base_path))
       FileUtils.mkdir_p(File.expand_path("data/localizations/attributes", @tmp_base_path))
       FileUtils.mkdir_p(File.expand_path("data/localizations/values", @tmp_base_path))
+      FileUtils.mkdir_p(File.expand_path("data/localizations/return_reasons", @tmp_base_path))
       ProductTaxonomy.stubs(:data_path).returns(File.expand_path("data", @tmp_base_path))
 
       Command.any_instance.stubs(:load_taxonomy)
@@ -23,7 +24,7 @@ module ProductTaxonomy
 
     test "initialize sets targets to all permitted targets when not specified" do
       command = SyncEnLocalizationsCommand.new({})
-      assert_equal ["categories", "attributes", "values"], command.instance_variable_get(:@targets)
+      assert_equal ["categories", "attributes", "values", "return_reasons"], command.instance_variable_get(:@targets)
     end
 
     test "initialize accepts custom targets" do
@@ -121,6 +122,34 @@ module ProductTaxonomy
       assert_equal expected_content, File.read(expected_path)
     end
 
+    test "execute syncs return_reasons localizations" do
+      mock_localizations = {
+        "en" => {
+          "return_reasons" => {
+            "damaged" => { "name" => "Damaged", "description" => "Item was damaged" },
+          },
+        },
+      }
+      Serializers::ReturnReason::Data::LocalizationsSerializer.stubs(:serialize_all)
+        .returns(mock_localizations)
+
+      command = SyncEnLocalizationsCommand.new(targets: "return_reasons")
+      command.execute
+
+      expected_path = File.expand_path("data/localizations/return_reasons/en.yml", @tmp_base_path)
+      assert File.exist?(expected_path)
+      expected_content = <<~YAML
+        # This file is auto-generated. Do not edit directly.
+        ---
+        en:
+          return_reasons:
+            damaged:
+              name: Damaged
+              description: Item was damaged
+      YAML
+      assert_equal expected_content, File.read(expected_path)
+    end
+
     test "execute syncs all targets when none specified" do
       Serializers::Category::Data::LocalizationsSerializer.stubs(:serialize_all)
         .returns({ "en" => { "categories" => { "cat-1" => { "name" => "Category", "context" => "Category" } } } })
@@ -128,6 +157,8 @@ module ProductTaxonomy
         .returns({ "en" => { "attributes" => { "attr-1" => { "name" => "Attribute", "description" => "Desc" } } } })
       Serializers::Value::Data::LocalizationsSerializer.stubs(:serialize_all)
         .returns({ "en" => { "values" => { "val-1" => { "name" => "Value", "context" => "Attribute" } } } })
+      Serializers::ReturnReason::Data::LocalizationsSerializer.stubs(:serialize_all)
+        .returns({ "en" => { "return_reasons" => { "damaged" => { "name" => "Damaged", "description" => "Item was damaged" } } } })
 
       command = SyncEnLocalizationsCommand.new({})
       command.execute
@@ -135,10 +166,12 @@ module ProductTaxonomy
       categories_path = File.expand_path("data/localizations/categories/en.yml", @tmp_base_path)
       attributes_path = File.expand_path("data/localizations/attributes/en.yml", @tmp_base_path)
       values_path = File.expand_path("data/localizations/values/en.yml", @tmp_base_path)
+      return_reasons_path = File.expand_path("data/localizations/return_reasons/en.yml", @tmp_base_path)
 
       assert File.exist?(categories_path)
       assert File.exist?(attributes_path)
       assert File.exist?(values_path)
+      assert File.exist?(return_reasons_path)
 
       expected_categories = <<~YAML
         # This file is auto-generated. Do not edit directly.
@@ -167,10 +200,20 @@ module ProductTaxonomy
               # Attribute
               name: Value
       YAML
+      expected_return_reasons = <<~YAML
+        # This file is auto-generated. Do not edit directly.
+        ---
+        en:
+          return_reasons:
+            damaged:
+              name: Damaged
+              description: Item was damaged
+      YAML
 
       assert_equal expected_categories, File.read(categories_path)
       assert_equal expected_attributes, File.read(attributes_path)
       assert_equal expected_values, File.read(values_path)
+      assert_equal expected_return_reasons, File.read(return_reasons_path)
     end
 
     test "serializers produce the expected structure for context extraction" do
@@ -191,8 +234,9 @@ module ProductTaxonomy
         categories = Serializers::Category::Data::LocalizationsSerializer.serialize_all
         attributes = Serializers::Attribute::Data::LocalizationsSerializer.serialize_all
         values = Serializers::Value::Data::LocalizationsSerializer.serialize_all
+        return_reasons = Serializers::ReturnReason::Data::LocalizationsSerializer.serialize_all
 
-        [categories, attributes, values].each do |localizations|
+        [categories, attributes, values, return_reasons].each do |localizations|
           # Should be a hash with one locale key
           assert localizations.is_a?(Hash), "Expected localization to be a Hash"
           assert_equal 1, localizations.keys.size, "Expected exactly one locale key"

@@ -2,7 +2,7 @@
 
 module ProductTaxonomy
   class SyncEnLocalizationsCommand < Command
-    PERMITTED_TARGETS = ["categories", "attributes", "values"].freeze
+    PERMITTED_TARGETS = ["categories", "attributes", "values", "return_reasons"].freeze
 
     def initialize(options)
       super
@@ -19,6 +19,7 @@ module ProductTaxonomy
       sync_categories if @targets.include?("categories")
       sync_attributes if @targets.include?("attributes")
       sync_values if @targets.include?("values")
+      sync_return_reasons if @targets.include?("return_reasons")
     end
 
     private
@@ -39,6 +40,12 @@ module ProductTaxonomy
       logger.info("Syncing values...")
       localizations = Serializers::Value::Data::LocalizationsSerializer.serialize_all
       write_localizations("values", localizations)
+    end
+
+    def sync_return_reasons
+      logger.info("Syncing return_reasons...")
+      localizations = Serializers::ReturnReason::Data::LocalizationsSerializer.serialize_all
+      write_localizations("return_reasons", localizations)
     end
 
     # Writes localization data to a YAML file with 'context' keys converted to comments.
