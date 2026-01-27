@@ -183,8 +183,9 @@ module ProductTaxonomy
       # Load real taxonomy data
       values_path = File.expand_path("values.yml", ProductTaxonomy.data_path)
       attributes_path = File.expand_path("attributes.yml", ProductTaxonomy.data_path)
+      return_reasons_path = File.expand_path("return_reasons.yml", ProductTaxonomy.data_path)
       categories_glob = Dir.glob(File.expand_path("categories/*.yml", ProductTaxonomy.data_path))
-      ProductTaxonomy::Loader.load(values_path:, attributes_path:, categories_glob:)
+      ProductTaxonomy::Loader.load(values_path:, attributes_path:, categories_glob:, return_reasons_path:)
 
       begin
         categories = Serializers::Category::Data::LocalizationsSerializer.serialize_all
@@ -236,6 +237,7 @@ module ProductTaxonomy
         Category.reset
         Attribute.reset
         Value.reset
+        ReturnReason.reset
         # Re-stub data_path for other tests
         ProductTaxonomy.stubs(:data_path).returns(File.expand_path("data", @tmp_base_path))
       end

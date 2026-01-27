@@ -38,6 +38,8 @@ module ProductTaxonomy
 
       ProductTaxonomy.stubs(:data_path).returns("/fake/path")
       YAML.stubs(:load_file).returns({})
+      File.stubs(:exist?).returns(false)
+      File.stubs(:exist?).with("/fake/path/return_reasons.yml").returns(true)
       Dir.stubs(:glob).returns(["/fake/path/categories/test.yml"])
       YAML.stubs(:safe_load_file).returns([])
 

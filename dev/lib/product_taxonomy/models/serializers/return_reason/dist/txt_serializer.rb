@@ -19,7 +19,6 @@ module ProductTaxonomy
 
               return_reasons_txt = ProductTaxonomy::ReturnReason
                 .all
-                .sort_by(&:name)
                 .map { serialize(_1, padding:, locale:) }
                 .join("\n")
 
@@ -45,7 +44,3 @@ module ProductTaxonomy
     end
   end
 end
-
-
-
-

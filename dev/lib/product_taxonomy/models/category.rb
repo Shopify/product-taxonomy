@@ -38,6 +38,7 @@ module ProductTaxonomy
           node.validate!(:category_tree_loaded)
           node.children.sort_by!(&:name)
           node.attributes.sort_by!(&:name)
+          # `return_reasons` order is intentionally preserved from `data/categories/*.yml`.
           root_nodes << node if node.root?
         end
         @verticals.sort_by!(&:name)

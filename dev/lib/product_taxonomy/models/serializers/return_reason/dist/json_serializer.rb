@@ -12,7 +12,7 @@ module ProductTaxonomy
             def serialize_all(version:, locale: "en")
               {
                 "version" => version,
-                "return_reasons" => ProductTaxonomy::ReturnReason.all.sort_by(&:name).map { serialize(_1, locale:) },
+                "return_reasons" => ProductTaxonomy::ReturnReason.all.map { serialize(_1, locale:) },
               }
             end
 
@@ -33,4 +33,3 @@ module ProductTaxonomy
     end
   end
 end
-
