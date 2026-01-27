@@ -28,6 +28,7 @@ module ProductTaxonomy
                 "name" => "Child",
               }],
               "ancestors" => [],
+              "return_reasons" => [],
             }
             assert_equal expected_json, JsonSerializer.serialize(@root)
           end
@@ -48,6 +49,7 @@ module ProductTaxonomy
                 "id" => "gid://shopify/TaxonomyCategory/aa",
                 "name" => "Root",
               }],
+              "return_reasons" => [],
             }
             assert_equal expected_json, JsonSerializer.serialize(@child)
           end
@@ -71,6 +73,7 @@ module ProductTaxonomy
                   "name" => "Root",
                 },
               ],
+              "return_reasons" => [],
             }
             assert_equal expected_json, JsonSerializer.serialize(@grandchild)
           end
@@ -90,6 +93,7 @@ module ProductTaxonomy
                 "name" => "Child en français",
               }],
               "ancestors" => [],
+              "return_reasons" => [],
             }
             assert_equal expected_json, JsonSerializer.serialize(@root, locale: "fr")
           end
@@ -174,6 +178,43 @@ module ProductTaxonomy
             assert_equal ["Aaaa", "Bbbb", "Cccc"], actual_json
           end
 
+          test "serialize preserves return_reasons order from YAML" do
+            rr1 = ProductTaxonomy::ReturnReason.new(
+              id: 1,
+              name: "Zzz",
+              description: "Zzz",
+              friendly_id: "zzz",
+              handle: "zzz",
+            )
+            rr2 = ProductTaxonomy::ReturnReason.new(
+              id: 2,
+              name: "Aaa",
+              description: "Aaa",
+              friendly_id: "aaa",
+              handle: "aaa",
+            )
+            ProductTaxonomy::ReturnReason.add(rr1)
+            ProductTaxonomy::ReturnReason.add(rr2)
+
+            yaml_content = <<~YAML
+              ---
+              - id: aa
+                name: Root
+                children: []
+                attributes: []
+                return_reasons:
+                - zzz
+                - aaa
+            YAML
+
+            ProductTaxonomy::Category.load_from_source(YAML.safe_load(yaml_content))
+            actual_handles = JsonSerializer
+              .serialize(ProductTaxonomy::Category.verticals.first)["return_reasons"]
+              .map { _1["handle"] }
+
+            assert_equal ["zzz", "aaa"], actual_handles
+          end
+
           test "serialize_all returns the JSON representation of all categories" do
             stub_localizations
             ProductTaxonomy::Category.stubs(:verticals).returns([@root])
@@ -193,6 +234,7 @@ module ProductTaxonomy
                     "attributes" => [],
                     "children" => [{ "id" => "gid://shopify/TaxonomyCategory/aa-1", "name" => "Child" }],
                     "ancestors" => [],
+                    "return_reasons" => [],
                   },
                   {
                     "id" => "gid://shopify/TaxonomyCategory/aa-1",
@@ -203,6 +245,7 @@ module ProductTaxonomy
                     "attributes" => [],
                     "children" => [{ "id" => "gid://shopify/TaxonomyCategory/aa-1-1", "name" => "Grandchild" }],
                     "ancestors" => [{ "id" => "gid://shopify/TaxonomyCategory/aa", "name" => "Root" }],
+                    "return_reasons" => [],
                   },
                   {
                     "id" => "gid://shopify/TaxonomyCategory/aa-1-1",
@@ -216,6 +259,7 @@ module ProductTaxonomy
                       { "id" => "gid://shopify/TaxonomyCategory/aa-1", "name" => "Child" },
                       { "id" => "gid://shopify/TaxonomyCategory/aa", "name" => "Root" },
                     ],
+                    "return_reasons" => [],
                   },
                 ],
               }],

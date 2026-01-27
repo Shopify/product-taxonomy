@@ -38,12 +38,15 @@ module ProductTaxonomy
 
       ProductTaxonomy.stubs(:data_path).returns("/fake/path")
       YAML.stubs(:load_file).returns({})
+      File.stubs(:exist?).returns(false)
+      File.stubs(:exist?).with("/fake/path/return_reasons.yml").returns(true)
       Dir.stubs(:glob).returns(["/fake/path/categories/test.yml"])
       YAML.stubs(:safe_load_file).returns([])
 
       ProductTaxonomy::Value.expects(:load_from_source).once
       ProductTaxonomy::Attribute.expects(:load_from_source).once
       ProductTaxonomy::Category.expects(:load_from_source).once
+      ProductTaxonomy::ReturnReason.expects(:load_from_source).once
 
       command = TestCommand.new({})
       mock_value = mock("value")
@@ -59,6 +62,7 @@ module ProductTaxonomy
       ProductTaxonomy::Value.expects(:load_from_source).never
       ProductTaxonomy::Attribute.expects(:load_from_source).never
       ProductTaxonomy::Category.expects(:load_from_source).never
+      ProductTaxonomy::ReturnReason.expects(:load_from_source).never
 
       command = TestCommand.new({})
       command.expects(:run_taxonomy_loaded_validations).never

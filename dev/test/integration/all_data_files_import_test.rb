@@ -32,6 +32,7 @@ module ProductTaxonomy
       Value.reset
       Attribute.reset
       Category.reset
+      ReturnReason.reset
     end
 
     test "Values are consistent with values.yml" do

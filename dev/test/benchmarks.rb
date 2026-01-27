@@ -30,6 +30,7 @@ module ProductTaxonomy
       Value.reset
       Attribute.reset
       Category.reset
+      ReturnReason.reset
     end
   end
 end

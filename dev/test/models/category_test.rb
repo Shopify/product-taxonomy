@@ -254,6 +254,39 @@ module ProductTaxonomy
       assert_equal [attribute], aa_clothing.attributes
     end
 
+    test "load_from_source preserves return_reasons order from YAML" do
+      rr1 = ReturnReason.new(
+        id: 1,
+        name: "Zzz",
+        description: "Zzz",
+        friendly_id: "zzz",
+        handle: "zzz",
+      )
+      rr2 = ReturnReason.new(
+        id: 2,
+        name: "Aaa",
+        description: "Aaa",
+        friendly_id: "aaa",
+        handle: "aaa",
+      )
+      ReturnReason.add(rr1)
+      ReturnReason.add(rr2)
+
+      yaml_content = <<~YAML
+        ---
+        - id: aa
+          name: Apparel & Accessories
+          return_reasons:
+          - zzz
+          - aaa
+      YAML
+
+      Category.load_from_source(YAML.safe_load(yaml_content))
+
+      actual = Category.verticals.first.return_reasons.map(&:friendly_id)
+      assert_equal ["zzz", "aaa"], actual
+    end
+
     test "load_from_source raises validation error if attribute is not found" do
       yaml_content = <<~YAML
         ---
@@ -288,6 +321,24 @@ module ProductTaxonomy
       end
       expected_errors = {
         children: [{ error: :not_found }],
+      }
+      assert_equal expected_errors, error.model.errors.details
+    end
+
+    test "load_from_source raises validation error if return reason is not found" do
+      yaml_content = <<~YAML
+        ---
+        - id: aa
+          name: Apparel & Accessories
+          return_reasons:
+          - foo ## This return reason does not exist
+      YAML
+
+      error = assert_raises(ActiveModel::ValidationError) do
+        Category.load_from_source(YAML.safe_load(yaml_content))
+      end
+      expected_errors = {
+        return_reasons: [{ error: :not_found }],
       }
       assert_equal expected_errors, error.model.errors.details
     end
