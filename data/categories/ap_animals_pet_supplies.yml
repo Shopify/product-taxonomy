@@ -5,10 +5,26 @@
   - ap-1
   - ap-2
   attributes: []
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-1
   name: Live Animals
   children: []
   attributes: []
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2
   name: Pet Supplies
   children:
@@ -63,6 +79,15 @@
   - animal_type
   - color
   - pattern
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1
   name: Bird Supplies
   children:
@@ -74,6 +99,15 @@
   - ap-2-1-6
   - ap-2-1-7
   attributes: []
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-1
   name: Bird Cage Accessories
   children:
@@ -85,6 +119,15 @@
   - material
   - pattern
   - wood_finish
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-1-1
   name: Bird Cage Bird Baths
   children: []
@@ -92,6 +135,14 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-1-2
   name: Bird Cage Food & Water Dishes
   children:
@@ -101,24 +152,60 @@
   attributes:
   - color
   - pattern
+  return_reasons:
+  - size
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-1-2-1
   name: Bird Cage Food Dishes
   children: []
   attributes:
   - color
   - pattern
+  return_reasons:
+  - size
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-1-2-2
   name: Bird Cage Water Dishes
   children: []
   attributes:
   - color
   - pattern
+  return_reasons:
+  - size
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-1-2-3
   name: Combined Bird Cage Food & Water Dishes
   children: []
   attributes:
   - color
   - pattern
+  return_reasons:
+  - size
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-2
   name: Bird Cages & Stands
   children: []
@@ -128,6 +215,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-3
   name: Bird Food
   children: []
@@ -135,6 +232,15 @@
   - bird_food_form
   - bird_food_ingredients
   - suitable_for_bird_type
+  return_reasons:
+  - animal_refused
+  - dietary_requirements
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-4
   name: Bird Gyms & Playstands
   children: []
@@ -142,6 +248,15 @@
   - lumber/wood_type
   - suitable_for_bird_type
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-5
   name: Bird Ladders & Perches
   children:
@@ -151,11 +266,29 @@
   - lumber/wood_type
   - suitable_for_bird_type
   - wood_finish
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-5-1
   name: Ladders & Steps
   children: []
   attributes:
   - material
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-5-2
   name: Swings & Perches
   children: []
@@ -163,6 +296,15 @@
   - lumber/wood_type
   - material
   - wood_finish
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-6
   name: Bird Toys
   children:
@@ -180,16 +322,43 @@
   - lumber/wood_type
   - toy/game_material
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-6-1
   name: Balls & Fetch Toys
   children: []
   attributes:
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-6-2
   name: Bells & Beads
   children: []
   attributes:
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-6-3
   name: Chew Toys
   children: []
@@ -199,6 +368,15 @@
   - lumber/wood_type
   - toy/game_material
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-6-4
   name: Foraging Toys
   children: []
@@ -208,26 +386,71 @@
   - lumber/wood_type
   - toy/game_material
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-6-5
   name: Mirrors
   children: []
   attributes:
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-6-7
   name: Puzzles & Interactive Toys
   children: []
   attributes:
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-6-8
   name: Ropes & Knots
   children: []
   attributes:
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-6-9
   name: Tunnels & Tubes
   children: []
   attributes:
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-1-7
   name: Bird Treats
   children: []
@@ -236,6 +459,15 @@
   - package_type
   - pet_supply_product_form
   - suitable_for_bird_type
+  return_reasons:
+  - animal_refused
+  - dietary_requirements
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2
   name: Cat Supplies
   children:
@@ -246,6 +478,15 @@
   - ap-2-2-5
   - ap-2-2-6
   attributes: []
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-1
   name: Cat Food
   children:
@@ -258,6 +499,15 @@
   - pet_food_flavor
   - pet_food_form
   - pet_food_supplements
+  return_reasons:
+  - animal_refused
+  - dietary_requirements
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-1-1
   name: Non-Prescription Cat Food
   children: []
@@ -268,6 +518,15 @@
   - pet_food_flavor
   - pet_food_form
   - pet_food_supplements
+  return_reasons:
+  - animal_refused
+  - dietary_requirements
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-1-2
   name: Prescription Cat Food
   children: []
@@ -278,6 +537,15 @@
   - pet_food_flavor
   - pet_food_form
   - pet_food_supplements
+  return_reasons:
+  - animal_refused
+  - dietary_requirements
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-2
   name: Cat Furniture
   children:
@@ -294,6 +562,16 @@
   - lumber/wood_type
   - pattern
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-2-1
   name: Cat Condos & Houses
   children: []
@@ -303,6 +581,16 @@
   - lumber/wood_type
   - pattern
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-2-2
   name: Cat Perches & Shelves
   children: []
@@ -310,6 +598,16 @@
   - color
   - furniture/fixture_material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-2-3
   name: Cat Scratchers & Scratching Posts
   children: []
@@ -319,6 +617,16 @@
   - lumber/wood_type
   - pattern
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-2-4
   name: Cat Steps & Ramps
   children: []
@@ -326,6 +634,16 @@
   - color
   - furniture/fixture_material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-2-5
   name: Cat Trees & Towers
   children: []
@@ -333,6 +651,16 @@
   - color
   - furniture/fixture_material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-2-6
   name: Cat Window Beds & Perches
   children: []
@@ -340,6 +668,16 @@
   - color
   - furniture/fixture_material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-2-7
   name: Outdoor Cat Houses
   children: []
@@ -347,12 +685,32 @@
   - color
   - furniture/fixture_material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-3
   name: Cat Furniture Accessories
   children: []
   attributes:
   - color
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-4
   name: Cat Litter
   children:
@@ -363,6 +721,15 @@
   - cat_litter_formula
   - lumber/wood_type
   - wood_finish
+  return_reasons:
+  - scent
+  - texture
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-4-1
   name: Cat Litter Box Liners
   children: []
@@ -370,6 +737,15 @@
   - care_instructions
   - liner_features
   - usage_type
+  return_reasons:
+  - size
+  - scent
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-4-2
   name: Cat Litter Box Mats
   children: []
@@ -378,6 +754,15 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - texture
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-4-3
   name: Cat Litter Boxes
   children: []
@@ -385,6 +770,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - style
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-5
   name: Cat Toys
   children:
@@ -407,11 +802,29 @@
   - pattern
   - plant_material
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-5-1
   name: Balls & Chasers
   children: []
   attributes:
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-5-2
   name: Catnip Toys
   children: []
@@ -421,16 +834,43 @@
   - material_treatment
   - plant_material
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-5-3
   name: Chew Toys
   children: []
   attributes:
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-5-4
   name: Feathers & Teasers
   children: []
   attributes:
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-5-5
   name: Interactive Toys
   children: []
@@ -438,6 +878,15 @@
   - battery_size
   - battery_type
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-5-6
   name: Laser Toys
   children: []
@@ -445,16 +894,43 @@
   - battery_size
   - battery_type
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-5-7
   name: Puzzles & Treat-Dispensing Toys
   children: []
   attributes:
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-5-9
   name: Squeakies
   children: []
   attributes:
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-5-10
   name: Stuffed Toys & Plushies
   children: []
@@ -462,16 +938,43 @@
   - color
   - pattern
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-5-11
   name: Tunnels
   children: []
   attributes:
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-5-12
   name: Wands
   children: []
   attributes:
   - toy/game_material
+  return_reasons:
+  - size
+  - length
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-2-6
   name: Cat Treats
   children: []
@@ -485,6 +988,15 @@
   - pet_supply_product_form
   - pet_treat_type
   - plant_material
+  return_reasons:
+  - animal_refused
+  - dietary_requirements
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3
   name: Dog Supplies
   children:
@@ -499,6 +1011,15 @@
   - ap-2-3-9
   attributes:
   - material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3-1
   name: Dog Diaper Pads & Liners
   children: []
@@ -508,6 +1029,15 @@
   - liner_features
   - material
   - usage_type
+  return_reasons:
+  - size
+  - absorbency
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3-2
   name: Dog Diapers
   children: []
@@ -521,6 +1051,15 @@
   - material
   - pattern
   - usage_type
+  return_reasons:
+  - size
+  - absorbency
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3-3
   name: Dog Food
   children:
@@ -533,6 +1072,16 @@
   - pet_food_flavor
   - pet_food_form
   - pet_food_supplements
+  return_reasons:
+  - animal_refused
+  - dietary_requirements
+  - texture
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3-3-1
   name: Non-Prescription Dog Food
   children: []
@@ -543,6 +1092,15 @@
   - pet_food_flavor
   - pet_food_form
   - pet_food_supplements
+  return_reasons:
+  - animal_refused
+  - dietary_requirements
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3-3-2
   name: Prescription Dog Food
   children: []
@@ -553,6 +1111,16 @@
   - pet_food_flavor
   - pet_food_form
   - pet_food_supplements
+  return_reasons:
+  - animal_refused
+  - dietary_requirements
+  - texture
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3-4
   name: Dog Houses
   children: []
@@ -562,11 +1130,31 @@
   - material
   - pattern
   - suitable_space
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3-5
   name: Dog Kennel & Run Accessories
   children: []
   attributes:
   - material
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3-6
   name: Dog Kennels & Runs
   children:
@@ -580,6 +1168,16 @@
   - dog_kennel/run_features
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3-6-1
   name: Dog Pens
   children: []
@@ -588,6 +1186,16 @@
   - dog_pen_features
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3-6-2
   name: Dog Runs
   children: []
@@ -596,6 +1204,16 @@
   - material
   - outdoor_equipment_features
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3-6-3
   name: Indoor Dog Kennels
   children: []
@@ -604,6 +1222,16 @@
   - dog_kennel_features
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3-6-4
   name: Outdoor Dog Kennels
   children: []
@@ -612,6 +1240,16 @@
   - dog_kennel_features
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3-6-5
   name: Portable Dog Kennels
   children: []
@@ -620,6 +1258,16 @@
   - dog_kennel_features
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3-7
   name: Dog Toys
   children: []
@@ -632,6 +1280,15 @@
   - pattern
   - suitable_for_breed_size
   - toy/game_material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3-8
   name: Dog Treadmills
   children: []
@@ -640,6 +1297,15 @@
   - dog_age_group
   - exercise_machine_features
   - suitable_for_breed_size
+  return_reasons:
+  - size
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-3-9
   name: Dog Treats
   children: []
@@ -653,6 +1319,15 @@
   - pet_supply_product_form
   - pet_treat_texture
   - pet_treat_type
+  return_reasons:
+  - animal_refused
+  - texture
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4
   name: Fish & Aquatic Supplies
   children:
@@ -673,6 +1348,15 @@
   - ap-2-4-15
   - ap-2-4-16
   attributes: []
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-1
   name: Aquarium & Pond Tubings
   children:
@@ -685,6 +1369,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - length
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-1-1
   name: Airlines
   children: []
@@ -692,6 +1386,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - length
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-1-2
   name: Coil Tubings
   children: []
@@ -699,6 +1403,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - length
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-1-3
   name: Flexible Tubings
   children: []
@@ -706,6 +1420,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - length
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-1-4
   name: Rigid Tubings
   children: []
@@ -713,6 +1437,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - length
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-1-5
   name: Standard Tubings
   children: []
@@ -720,6 +1454,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - length
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-2
   name: Aquarium Air Stones & Diffusers
   children:
@@ -734,6 +1478,16 @@
   - compatible_aquarium
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-2-1
   name: Air Diffusers
   children: []
@@ -743,6 +1497,16 @@
   - compatible_aquarium
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-2-2
   name: Disc Air Stones
   children: []
@@ -752,6 +1516,16 @@
   - compatible_aquarium
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-2-3
   name: Standard Air Stones
   children: []
@@ -761,6 +1535,16 @@
   - compatible_aquarium
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-2-4
   name: Tube Air Stones
   children: []
@@ -770,6 +1554,16 @@
   - compatible_aquarium
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-2-5
   name: Wall Air Stones
   children: []
@@ -779,6 +1573,16 @@
   - compatible_aquarium
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-3
   name: Aquarium Cleaning Supplies
   children:
@@ -793,46 +1597,126 @@
   attributes:
   - alcohol/solvent_content
   - compatible_aquarium
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-3-1
   name: Algae Scrapers
   children: []
   attributes:
   - compatible_aquarium
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-3-2
   name: Aquarium Gloves
   children: []
   attributes:
   - compatible_aquarium
+  return_reasons:
+  - too_big
+  - too_small
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-3-3
   name: Cleaning Brushes
   children: []
   attributes:
   - compatible_aquarium
+  return_reasons:
+  - size
+  - color
+  - length
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-3-4
   name: Cleaning Solutions
   children: []
   attributes:
   - compatible_aquarium
+  return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-3-5
   name: Gravel Vacuums
   children: []
   attributes:
   - compatible_aquarium
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-3-6
   name: Scrub Pads
   children: []
   attributes:
   - compatible_aquarium
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-3-7
   name: Siphons
   children: []
   attributes:
   - compatible_aquarium
+  return_reasons:
+  - size
+  - length
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-3-8
   name: Tank Cleaners
   children: []
   attributes:
   - compatible_aquarium
+  return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-4
   name: Aquarium Decors
   children:
@@ -854,6 +1738,16 @@
   - pattern
   - plant_material
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-4-1
   name: Aquarium Backgrounds
   children: []
@@ -862,6 +1756,16 @@
   - color
   - decoration_material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-4-2
   name: Aquarium Caves & Shelters
   children: []
@@ -870,6 +1774,16 @@
   - color
   - decoration_material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-4-3
   name: Aquarium Rocks
   children: []
@@ -878,6 +1792,16 @@
   - color
   - decoration_material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-4-4
   name: Aquarium Substrates
   children: []
@@ -886,6 +1810,17 @@
   - color
   - decoration_material
   - pattern
+  return_reasons:
+  - color
+  - material
+  - too_coarse
+  - too_fine
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-4-5
   name: Artificial Plants
   children: []
@@ -896,6 +1831,16 @@
   - material_treatment
   - pattern
   - plant_material
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-4-6
   name: Bubbling Decorations
   children: []
@@ -904,6 +1849,16 @@
   - color
   - decoration_material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-4-7
   name: Driftwood
   children: []
@@ -915,6 +1870,16 @@
   - material_treatment
   - pattern
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-4-8
   name: Ornaments
   children: []
@@ -927,6 +1892,16 @@
   - pattern
   - plant_material
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-4-9
   name: Shipwrecks
   children: []
@@ -935,6 +1910,16 @@
   - color
   - decoration_material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-5
   name: Aquarium Filters
   children:
@@ -948,6 +1933,16 @@
   - filter_type
   - power_source
   - suitable_for_water_type
+  return_reasons:
+  - size
+  - capacity
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-5-1
   name: External & Canister Aquarium Filters
   children: []
@@ -955,6 +1950,16 @@
   - aquarium_filter_features
   - power_source
   - suitable_for_water_type
+  return_reasons:
+  - size
+  - capacity
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-5-2
   name: Hang-On-Back (HOB) Aquarium Filters
   children: []
@@ -962,6 +1967,16 @@
   - aquarium_filter_features
   - power_source
   - suitable_for_water_type
+  return_reasons:
+  - size
+  - capacity
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-5-3
   name: Internal Aquarium Filters
   children: []
@@ -969,6 +1984,16 @@
   - aquarium_filter_features
   - power_source
   - suitable_for_water_type
+  return_reasons:
+  - size
+  - capacity
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-5-4
   name: Sponge Aquarium Filters
   children: []
@@ -976,6 +2001,16 @@
   - aquarium_filter_features
   - power_source
   - suitable_for_water_type
+  return_reasons:
+  - size
+  - capacity
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-5-5
   name: Undergravel Aquarium Filters
   children: []
@@ -983,6 +2018,16 @@
   - aquarium_filter_features
   - power_source
   - suitable_for_water_type
+  return_reasons:
+  - size
+  - capacity
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-6
   name: Aquarium Fish Nets
   children:
@@ -993,30 +2038,76 @@
   attributes:
   - color
   - pattern
+  return_reasons:
+  - size
+  - style
+  - length
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-6-1
   name: Scoop Nets
   children: []
   attributes:
   - color
   - pattern
+  return_reasons:
+  - size
+  - length
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-6-2
   name: Shrimp Nets
   children: []
   attributes:
   - color
   - pattern
+  return_reasons:
+  - size
+  - length
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-6-3
   name: Sock Nets
   children: []
   attributes:
   - color
   - pattern
+  return_reasons:
+  - size
+  - length
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-6-4
   name: Standard Nets
   children: []
   attributes:
   - color
   - pattern
+  return_reasons:
+  - size
+  - length
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-7
   name: Aquarium Gravel & Substrates
   children:
@@ -1032,6 +2123,17 @@
   - gravel/substrate_material
   - pattern
   - substrate_features
+  return_reasons:
+  - color
+  - material
+  - too_coarse
+  - too_fine
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-7-1
   name: Aquarium Soil
   children: []
@@ -1041,6 +2143,16 @@
   - pattern
   - plant_material
   - substrate_features
+  return_reasons:
+  - color
+  - too_coarse
+  - too_fine
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-7-2
   name: Aragonite Sands
   children: []
@@ -1048,6 +2160,16 @@
   - color
   - pattern
   - substrate_features
+  return_reasons:
+  - color
+  - too_coarse
+  - too_fine
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-7-3
   name: Crushed Corals
   children: []
@@ -1055,6 +2177,16 @@
   - color
   - pattern
   - substrate_features
+  return_reasons:
+  - color
+  - too_coarse
+  - too_fine
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-7-4
   name: Glass Stones
   children: []
@@ -1062,6 +2194,16 @@
   - color
   - pattern
   - substrate_features
+  return_reasons:
+  - color
+  - too_coarse
+  - too_fine
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-7-5
   name: Gravel
   children: []
@@ -1069,6 +2211,16 @@
   - color
   - pattern
   - substrate_features
+  return_reasons:
+  - color
+  - too_coarse
+  - too_fine
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-7-6
   name: Pebbles
   children: []
@@ -1076,6 +2228,16 @@
   - color
   - pattern
   - substrate_features
+  return_reasons:
+  - color
+  - too_coarse
+  - too_fine
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-7-7
   name: Sand
   children: []
@@ -1083,6 +2245,16 @@
   - color
   - pattern
   - substrate_features
+  return_reasons:
+  - color
+  - too_coarse
+  - too_fine
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-8
   name: Aquarium Lighting
   children: []
@@ -1091,12 +2263,32 @@
   - light_source
   - lighting_features
   - power_source
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-9
   name: Aquarium Overflow Boxes
   children: []
   attributes:
   - aquarium_overflow_box_design
   - material
+  return_reasons:
+  - size
+  - capacity
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-10
   name: Aquarium Stands
   children:
@@ -1110,6 +2302,17 @@
   - material
   - pattern
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - style
+  - weight_capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-10-1
   name: Box Frame Stands
   children: []
@@ -1119,6 +2322,17 @@
   - material
   - pattern
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - style
+  - weight_capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-10-2
   name: Cabinet Stands
   children: []
@@ -1128,6 +2342,17 @@
   - material
   - pattern
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - style
+  - weight_capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-10-3
   name: Double Tank Stands
   children: []
@@ -1135,6 +2360,17 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - weight_capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-10-4
   name: Wrought Iron Stands
   children: []
@@ -1142,6 +2378,17 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - weight_capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-11
   name: Aquarium Temperature Controllers
   children:
@@ -1150,18 +2397,45 @@
   attributes:
   - power_source
   - suitable_for_water_type
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-11-1
   name: Analog Temperature Controllers
   children: []
   attributes:
   - power_source
   - suitable_for_water_type
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-11-2
   name: Digital Temperature Controllers
   children: []
   attributes:
   - power_source
   - suitable_for_water_type
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-12
   name: Aquarium Water Treatments
   children:
@@ -1178,50 +2452,133 @@
   - material_treatment
   - plant_material
   - suitable_for_water_type
+  return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-12-1
   name: Algae Control
   children: []
   attributes:
   - suitable_for_water_type
+  return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-12-2
   name: Ammonia Removers
   children: []
   attributes:
   - suitable_for_water_type
+  return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-12-3
   name: Fungal & Bacterial Treatments
   children: []
   attributes:
   - suitable_for_water_type
+  return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-12-4
   name: Nitrate Removers
   children: []
   attributes:
   - suitable_for_water_type
+  return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-12-5
   name: PH Adjusters
   children: []
   attributes:
   - suitable_for_water_type
+  return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-12-6
   name: Tap Water Detoxifiers
   children: []
   attributes:
   - suitable_for_water_type
+  return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-12-7
   name: Water Clarifiers
   children: []
   attributes:
   - suitable_for_water_type
+  return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-12-8
   name: Water Conditioners
   children: []
   attributes:
   - suitable_for_water_type
+  return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-13
   name: Aquariums
   children: []
   attributes: []
+  return_reasons:
+  - size
+  - color
+  - style
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-14
   name: Aquatic Plant Fertilizers
   children:
@@ -1231,32 +2588,83 @@
   - ap-2-4-14-4
   attributes:
   - suitable_for_water_type
+  return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-14-1
   name: Granular Fertilizers
   children: []
   attributes:
   - suitable_for_water_type
+  return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-14-2
   name: Liquid Fertilizers
   children: []
   attributes:
   - suitable_for_water_type
+  return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-14-3
   name: Powder Fertilizers
   children: []
   attributes:
   - suitable_for_water_type
+  return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-14-4
   name: Tablet Fertilizers
   children: []
   attributes:
   - suitable_for_water_type
+  return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-15
   name: Fish Feeders
   children: []
   attributes:
   - battery_size
   - battery_type
+  return_reasons:
+  - size
+  - color
+  - capacity
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-16
   name: Fish Food
   children:
@@ -1275,6 +2683,15 @@
   - pet_food_flavor
   - pet_supply_product_form
   - suitable_for_fish_type
+  return_reasons:
+  - animal_refused
+  - dietary_requirements
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-16-1
   name: Algae Wafers
   children: []
@@ -1283,6 +2700,14 @@
   - package_type
   - pet_food_flavor
   - suitable_for_fish_type
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-16-2
   name: Betta Food
   children: []
@@ -1291,6 +2716,14 @@
   - package_type
   - pet_food_flavor
   - suitable_for_fish_type
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-16-3
   name: Cichlid Food
   children: []
@@ -1299,6 +2732,14 @@
   - package_type
   - pet_food_flavor
   - suitable_for_fish_type
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-16-4
   name: Dry Fish Food
   children: []
@@ -1307,6 +2748,14 @@
   - package_type
   - pet_food_flavor
   - suitable_for_fish_type
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-16-5
   name: Freeze-Dried Food
   children: []
@@ -1315,6 +2764,14 @@
   - package_type
   - pet_food_flavor
   - suitable_for_fish_type
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-16-6
   name: Frozen Food
   children: []
@@ -1323,6 +2780,14 @@
   - package_type
   - pet_food_flavor
   - suitable_for_fish_type
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-16-7
   name: Goldfish Food
   children: []
@@ -1331,6 +2796,14 @@
   - package_type
   - pet_food_flavor
   - suitable_for_fish_type
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-16-8
   name: Live Food
   children: []
@@ -1339,6 +2812,14 @@
   - package_type
   - pet_food_flavor
   - suitable_for_fish_type
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-4-16-9
   name: Medicated Food
   children: []
@@ -1347,6 +2828,14 @@
   - package_type
   - pet_food_flavor
   - suitable_for_fish_type
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-5
   name: Pet Agility Equipment
   children:
@@ -1363,6 +2852,15 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-5-1
   name: A-Frames
   children: []
@@ -1371,6 +2869,15 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-5-2
   name: Agility Tunnels
   children: []
@@ -1379,6 +2886,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - length
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-5-3
   name: Dog Walks & Ramps
   children: []
@@ -1387,6 +2904,15 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-5-4
   name: Jump Bars
   children: []
@@ -1395,6 +2921,15 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-5-5
   name: Pause Tables
   children: []
@@ -1403,6 +2938,15 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-5-6
   name: Poles
   children: []
@@ -1411,6 +2955,15 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-5-7
   name: Teeter Boards
   children: []
@@ -1419,6 +2972,15 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-5-8
   name: Tire Jumps
   children: []
@@ -1427,6 +2989,15 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6
   name: Pet Apparel
   children:
@@ -1455,6 +3026,16 @@
   - fabric
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-1
   name: Pet Bandanas
   children: []
@@ -1466,6 +3047,16 @@
   - fabric
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-2
   name: Pet Bows & Ribbons
   children: []
@@ -1477,6 +3068,16 @@
   - fabric
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-3
   name: Pet Coats
   children: []
@@ -1488,6 +3089,17 @@
   - fabric
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - warmth
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-4
   name: Pet Collars & Ties
   children: []
@@ -1499,6 +3111,16 @@
   - fabric
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-5
   name: Pet Costumes
   children: []
@@ -1510,6 +3132,16 @@
   - fabric
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-6
   name: Pet Dresses
   children: []
@@ -1521,6 +3153,16 @@
   - fabric
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-7
   name: Pet Hats
   children: []
@@ -1532,6 +3174,17 @@
   - fabric
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - warmth
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-8
   name: Pet Hoodies
   children: []
@@ -1543,6 +3196,17 @@
   - fabric
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - warmth
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-9
   name: Pet Jackets
   children: []
@@ -1554,6 +3218,17 @@
   - fabric
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - warmth
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-10
   name: Pet Rain Coats
   children: []
@@ -1565,6 +3240,16 @@
   - fabric
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-11
   name: Pet Safety Vests
   children: []
@@ -1578,6 +3263,15 @@
   - fabric
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-12
   name: Pet Scarves
   children: []
@@ -1589,6 +3283,17 @@
   - fabric
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - warmth
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-13
   name: Pet Shirts
   children: []
@@ -1600,6 +3305,16 @@
   - fabric
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-14
   name: Pet Shoes
   children: []
@@ -1611,6 +3326,16 @@
   - footwear_material
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - too_big
+  - too_small
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-15
   name: Pet Socks
   children: []
@@ -1622,6 +3347,16 @@
   - fabric
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - warmth
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-16
   name: Pet Sunglasses
   children: []
@@ -1633,6 +3368,16 @@
   - material
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-6-17
   name: Pet Sweaters
   children: []
@@ -1644,11 +3389,31 @@
   - fabric
   - pattern
   - pet_apparel_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - warmth
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-7
   name: Pet Apparel Hangers
   children: []
   attributes:
   - material
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-8
   name: Pet Bed Accessories
   children: []
@@ -1658,6 +3423,17 @@
   - pattern
   - shape
   - suitable_space
+  return_reasons:
+  - size
+  - color
+  - material
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-9
   name: Pet Beds
   children:
@@ -1683,6 +3459,16 @@
   - pet_bedding_features
   - shape
   - suitable_space
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-9-1
   name: Baskets
   children: []
@@ -1697,6 +3483,17 @@
   - shape
   - suitable_space
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - style
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-9-2
   name: Bolster Beds
   children: []
@@ -1709,6 +3506,17 @@
   - pet_bedding_features
   - shape
   - suitable_space
+  return_reasons:
+  - size
+  - color
+  - style
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-9-3
   name: Caves
   children: []
@@ -1721,6 +3529,17 @@
   - pet_bedding_features
   - shape
   - suitable_space
+  return_reasons:
+  - size
+  - color
+  - style
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-9-4
   name: Cooling Beds
   children: []
@@ -1733,6 +3552,17 @@
   - pet_bedding_features
   - shape
   - suitable_space
+  return_reasons:
+  - size
+  - color
+  - style
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-9-5
   name: Donuts
   children: []
@@ -1745,6 +3575,17 @@
   - pet_bedding_features
   - shape
   - suitable_space
+  return_reasons:
+  - size
+  - color
+  - style
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-9-6
   name: Hammocks
   children: []
@@ -1757,6 +3598,17 @@
   - pet_bedding_features
   - shape
   - suitable_space
+  return_reasons:
+  - size
+  - color
+  - style
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-9-7
   name: Nests
   children: []
@@ -1769,6 +3621,17 @@
   - pet_bedding_features
   - shape
   - suitable_space
+  return_reasons:
+  - size
+  - color
+  - style
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-9-8
   name: Orthopedic Beds
   children: []
@@ -1781,6 +3644,17 @@
   - pet_bedding_features
   - shape
   - suitable_space
+  return_reasons:
+  - size
+  - color
+  - style
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-9-9
   name: Pet Chairs
   children: []
@@ -1793,6 +3667,17 @@
   - shape
   - suitable_space
   - upholstery_material
+  return_reasons:
+  - size
+  - color
+  - style
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-9-10
   name: Pet Cots
   children: []
@@ -1805,6 +3690,17 @@
   - pet_bedding_features
   - shape
   - suitable_space
+  return_reasons:
+  - size
+  - color
+  - style
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-9-11
   name: Pillow Beds
   children: []
@@ -1817,6 +3713,17 @@
   - pet_bedding_features
   - shape
   - suitable_space
+  return_reasons:
+  - size
+  - color
+  - style
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-9-12
   name: Radiator Beds
   children: []
@@ -1829,6 +3736,17 @@
   - pet_bedding_features
   - shape
   - suitable_space
+  return_reasons:
+  - size
+  - color
+  - style
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-9-13
   name: Towers
   children: []
@@ -1841,6 +3759,17 @@
   - pet_bedding_features
   - shape
   - suitable_space
+  return_reasons:
+  - size
+  - color
+  - style
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-10
   name: Pet Bells & Charms
   children:
@@ -1850,24 +3779,64 @@
   attributes:
   - material
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-10-1
   name: Collar Bells
   children: []
   attributes:
   - material
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-10-2
   name: Collar Charms
   children: []
   attributes:
   - material
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-10-3
   name: ID Tag Charms
   children: []
   attributes:
   - material
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-11
   name: Pet Biometric Monitors
   children:
@@ -1876,6 +3845,15 @@
   - ap-2-11-3
   attributes:
   - connectivity_technology
+  return_reasons:
+  - battery_life
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-11-1
   name: Pet Glucose Meters
   children: []
@@ -1883,11 +3861,29 @@
   - connectivity_technology
   - glucose_meter_features
   - pet_monitor_items_included
+  return_reasons:
+  - battery_life
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-11-2
   name: Pet Pedometers
   children: []
   attributes:
   - connectivity_technology
+  return_reasons:
+  - battery_life
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-11-3
   name: Pet Thermometers
   children: []
@@ -1896,16 +3892,45 @@
   - battery_type
   - connectivity_technology
   - pet_thermometer_design
+  return_reasons:
+  - battery_life
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-12
   name: Pet Bowl Mats
   children: []
   attributes:
   - material
+  return_reasons:
+  - size
+  - color
+  - material
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-13
   name: Pet Bowl Stands
   children: []
   attributes:
   - material
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-14
   name: Pet Bowls, Feeders & Waterers
   children:
@@ -1922,6 +3947,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-14-1
   name: Automatic Feeders
   children: []
@@ -1932,6 +3967,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-14-2
   name: Bowls
   children: []
@@ -1942,6 +3987,16 @@
   - material
   - pattern
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-14-3
   name: Elevated Bowls
   children: []
@@ -1950,6 +4005,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-14-4
   name: Gravity Feeders
   children: []
@@ -1958,6 +4023,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-14-5
   name: Slow Feeder Bowls
   children: []
@@ -1966,6 +4041,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-14-6
   name: Travel Bowls
   children: []
@@ -1974,6 +4059,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-14-7
   name: Water Dispensers
   children: []
@@ -1982,6 +4077,15 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-14-8
   name: Water Fountains
   children: []
@@ -1992,11 +4096,29 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-15
   name: Pet Carrier & Crate Accessories
   children: []
   attributes:
   - material
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-16
   name: Pet Carriers & Crates
   children:
@@ -2015,66 +4137,181 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-16-1
   name: Air Travel Approved Carriers
   children: []
   attributes:
   - animal_type
   - material
+  return_reasons:
+  - size
+  - color
+  - style
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-16-2
   name: Backpack Carriers
   children: []
   attributes:
   - animal_type
   - material
+  return_reasons:
+  - size
+  - color
+  - style
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-16-3
   name: Car Crates
   children: []
   attributes:
   - animal_type
   - material
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-16-4
   name: Furniture-Style Crates
   children: []
   attributes:
   - animal_type
   - furniture/fixture_material
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-16-5
   name: Hard-Sided Carriers
   children: []
   attributes:
   - animal_type
   - material
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-16-8
   name: Rolling Carriers
   children: []
   attributes:
   - animal_type
   - material
+  return_reasons:
+  - size
+  - color
+  - style
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-16-9
   name: Slings & Wearable Carriers
   children: []
   attributes:
   - animal_type
   - material
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-16-10
   name: Soft-Sided Carriers
   children: []
   attributes:
   - animal_type
   - material
+  return_reasons:
+  - size
+  - color
+  - style
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-16-11
   name: Soft-Sided Crates
   children: []
   attributes:
   - animal_type
   - material
+  return_reasons:
+  - size
+  - color
+  - style
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-16-12
   name: Wheeled Carriers
   children: []
   attributes:
   - animal_type
   - material
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-17
   name: Pet Collars & Harnesses
   children:
@@ -2095,6 +4332,15 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-17-1
   name: Breakaway & Safety Collars
   children: []
@@ -2105,6 +4351,15 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-17-2
   name: Flea Collars
   children: []
@@ -2115,6 +4370,15 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-17-3
   name: GPS Collars
   children: []
@@ -2125,6 +4389,16 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - material
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-17-4
   name: Harnesses
   children: []
@@ -2135,6 +4409,16 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-17-5
   name: LED Collars
   children: []
@@ -2147,6 +4431,15 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-17-6
   name: Martingale Collars
   children: []
@@ -2157,6 +4450,15 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-17-7
   name: Personalized ID Collars
   children: []
@@ -2167,6 +4469,16 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-17-8
   name: Standard Collars
   children: []
@@ -2177,6 +4489,15 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-17-9
   name: Training, Choke & Pinch Collars
   children: []
@@ -2187,6 +4508,15 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-17-10
   name: Vests
   children: []
@@ -2197,6 +4527,16 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-18
   name: Pet Containment Systems
   children:
@@ -2211,6 +4551,15 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-18-1
   name: Electronic Invisible Fences
   children: []
@@ -2221,6 +4570,15 @@
   - color
   - furniture/fixture_material
   - pattern
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-18-2
   name: Enclosures & Cages
   children: []
@@ -2231,6 +4589,15 @@
   - material
   - pattern
   - wood_finish
+  return_reasons:
+  - size
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-18-3
   name: Exercise Pens
   children: []
@@ -2239,6 +4606,15 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-18-4
   name: Fences & Gates
   children: []
@@ -2247,6 +4623,15 @@
   - color
   - furniture/fixture_material
   - pattern
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-18-5
   name: Kennels
   children: []
@@ -2255,6 +4640,14 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-18-6
   name: Playpens
   children: []
@@ -2263,11 +4656,29 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-19
   name: Pet Door Accessories
   children: []
   attributes:
   - material
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-20
   name: Pet Doors
   children:
@@ -2282,6 +4693,15 @@
   - color
   - door_material
   - pattern
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-20-1
   name: Door-Mounted Doors
   children: []
@@ -2291,6 +4711,16 @@
   - color
   - door_material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-20-2
   name: Electronic Automatic Doors
   children: []
@@ -2300,6 +4730,15 @@
   - color
   - door_material
   - pattern
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-20-3
   name: Sliding Glass Doors
   children: []
@@ -2309,6 +4748,15 @@
   - color
   - door_material
   - pattern
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-20-4
   name: Wall-Mounted Doors
   children: []
@@ -2318,6 +4766,15 @@
   - color
   - door_material
   - pattern
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-20-5
   name: Window-Mounted Doors
   children: []
@@ -2327,6 +4784,16 @@
   - color
   - door_material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-21
   name: Pet Eye Drops & Lubricants
   children:
@@ -2339,42 +4806,94 @@
   attributes:
   - animal_type
   - pet_supply_product_form
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-21-1
   name: Conjunctivitis Treatments
   children: []
   attributes:
   - animal_type
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-21-2
   name: Eye Cleaners
   children: []
   attributes:
   - animal_type
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-21-3
   name: Eye Irrigation Solutions
   children: []
   attributes:
   - animal_type
   - pet_supply_product_form
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-21-4
   name: Eye Lubricants
   children: []
   attributes:
   - animal_type
   - pet_supply_product_form
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-21-5
   name: Eye Washes
   children: []
   attributes:
   - animal_type
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-21-6
   name: Tear Stain Removers
   children: []
   attributes:
   - animal_type
   - pet_supply_product_form
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-22
   name: Pet First Aid & Emergency Kits
   children:
@@ -2384,24 +4903,56 @@
   attributes:
   - accessory_size
   - first_aid_kit_components
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-22-1
   name: General First Aid Kits
   children: []
   attributes:
   - accessory_size
   - first_aid_kit_components
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-22-2
   name: Trauma Kits
   children: []
   attributes:
   - accessory_size
   - first_aid_kit_components
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-22-3
   name: Travel First Aid Kits
   children: []
   attributes:
   - accessory_size
   - first_aid_kit_components
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-23
   name: Pet Flea & Tick Control
   children:
@@ -2415,24 +4966,54 @@
   attributes:
   - animal_type
   - pet_supply_product_form
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-23-1
   name: Flea & Tick Collars
   children: []
   attributes:
   - animal_type
   - pet_supply_product_form
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-23-2
   name: Flea & Tick Foggers
   children: []
   attributes:
   - animal_type
   - pet_supply_product_form
+  return_reasons:
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-23-3
   name: Flea & Tick Shampoos
   children: []
   attributes:
   - animal_type
   - pet_supply_product_form
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-23-4
   name: Flea & Tick Sprays
   children: []
@@ -2440,24 +5021,54 @@
   - alcohol/solvent_content
   - animal_type
   - pet_supply_product_form
+  return_reasons:
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-23-5
   name: Flea Combs
   children: []
   attributes:
   - animal_type
   - pet_supply_product_form
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-23-6
   name: Oral Medication
   children: []
   attributes:
   - animal_type
   - pet_supply_product_form
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-23-7
   name: Spot Treatments
   children: []
   attributes:
   - animal_type
   - pet_supply_product_form
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-24
   name: Pet Food Containers
   children:
@@ -2466,26 +5077,71 @@
   - ap-2-24-3
   attributes:
   - material
+  return_reasons:
+  - size
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-24-1
   name: Can Covers
   children: []
   attributes:
   - food_storage_material
+  return_reasons:
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-24-2
   name: Food Storage Bins
   children: []
   attributes:
   - material
+  return_reasons:
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-24-3
   name: Food Storage Containers
   children: []
   attributes:
   - material
+  return_reasons:
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-25
   name: Pet Food Scoops
   children: []
   attributes:
   - material
+  return_reasons:
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26
   name: Pet Grooming Supplies
   children:
@@ -2502,6 +5158,15 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-1
   name: Pet Combs & Brushes
   children:
@@ -2515,36 +5180,94 @@
   - animal_type
   - color
   - pattern
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-1-1
   name: Brushes
   children: []
   attributes:
   - animal_type
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-1-2
   name: Combs
   children: []
   attributes:
   - animal_type
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-1-3
   name: Deshedders
   children: []
   attributes:
   - animal_type
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-1-4
   name: Gloves
   children: []
   attributes:
   - animal_type
+  return_reasons:
+  - too_big
+  - too_small
+  - material
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-1-5
   name: Groomers
   children: []
   attributes:
   - animal_type
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-1-6
   name: Trimming Knives
   children: []
   attributes:
   - animal_type
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-2
   name: Pet Fragrances & Deodorizing Sprays
   children:
@@ -2555,30 +5278,70 @@
   attributes:
   - alcohol/solvent_content
   - pet_supply_product_form
+  return_reasons:
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-2-1
   name: Colognes
   children: []
   attributes:
   - alcohol/solvent_content
   - pet_supply_product_form
+  return_reasons:
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-2-2
   name: Deodorizer Sprays
   children: []
   attributes:
   - alcohol/solvent_content
   - pet_supply_product_form
+  return_reasons:
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-2-3
   name: Odor Neutralizers
   children: []
   attributes:
   - alcohol/solvent_content
   - pet_supply_product_form
+  return_reasons:
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-2-4
   name: Perfumes
   children: []
   attributes:
   - alcohol/solvent_content
   - pet_supply_product_form
+  return_reasons:
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-3
   name: Pet Hair Clippers & Trimmers
   children:
@@ -2592,18 +5355,47 @@
   - battery_type
   - color
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-3-1
   name: Blade Sharpeners
   children: []
   attributes:
   - color
   - pattern
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-3-2
   name: Clipper Blades
   children: []
   attributes:
   - color
   - pattern
+  return_reasons:
+  - size
+  - length
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-3-3
   name: Clippers
   children: []
@@ -2612,6 +5404,15 @@
   - battery_type
   - color
   - pattern
+  return_reasons:
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-3-4
   name: Shears & Scissors
   children: []
@@ -2620,6 +5421,15 @@
   - battery_type
   - color
   - pattern
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-3-5
   name: Trimmers
   children: []
@@ -2628,6 +5438,15 @@
   - battery_type
   - color
   - pattern
+  return_reasons:
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-4
   name: Pet Hair Dryers
   children: []
@@ -2637,12 +5456,29 @@
   - pattern
   - pet_hair_dryer_design
   - pet_hair_dryer_speed_settings
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-5
   name: Pet Nail Polish
   children: []
   attributes:
   - color
   - pattern
+  return_reasons:
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-6
   name: Pet Nail Tools
   children: []
@@ -2654,6 +5490,15 @@
   - lumber/wood_type
   - pattern
   - pet_nail_tool_type
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-7
   name: Pet Shampoo & Conditioner
   children:
@@ -2663,24 +5508,56 @@
   attributes:
   - animal_type
   - constitutive_ingredients
+  return_reasons:
+  - scent
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-7-1
   name: 2-in-1 Shampoo & Conditioners
   children: []
   attributes:
   - animal_type
   - constitutive_ingredients
+  return_reasons:
+  - scent
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-7-2
   name: Conditioners
   children: []
   attributes:
   - animal_type
   - constitutive_ingredients
+  return_reasons:
+  - scent
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-7-3
   name: Shampoo
   children: []
   attributes:
   - animal_type
   - constitutive_ingredients
+  return_reasons:
+  - scent
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-8
   name: Pet Wipes
   children:
@@ -2693,51 +5570,141 @@
   - ap-2-26-8-7
   - ap-2-26-8-8
   attributes: []
+  return_reasons:
+  - size
+  - thickness
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-8-1
   name: Deodorizing Wipes
   children: []
   attributes:
   - animal_type
+  return_reasons:
+  - size
+  - thickness
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-8-2
   name: Ear Cleaning Wipes
   children: []
   attributes:
   - animal_type
+  return_reasons:
+  - size
+  - thickness
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-8-3
   name: Eye Cleaning Wipes
   children: []
   attributes:
   - animal_type
+  return_reasons:
+  - size
+  - thickness
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-8-4
   name: General Cleaning Wipes
   children: []
   attributes:
   - animal_type
+  return_reasons:
+  - size
+  - thickness
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-8-5
   name: Grooming Wipes
   children: []
   attributes:
   - animal_type
+  return_reasons:
+  - size
+  - thickness
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-8-6
   name: Hypoallergenic Wipes
   children: []
   attributes:
   - animal_type
+  return_reasons:
+  - size
+  - thickness
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-8-7
   name: Paw Cleaning Wipes
   children: []
   attributes:
   - animal_type
+  return_reasons:
+  - size
+  - thickness
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-26-8-8
   name: Tear Stain Wipes
   children: []
   attributes:
   - animal_type
+  return_reasons:
+  - size
+  - thickness
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-27
   name: Pet Heating Pad Accessories
   children: []
   attributes:
   - material
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-28
   name: Pet Heating Pads
   children: []
@@ -2746,6 +5713,15 @@
   - color
   - pattern
   - power_source
+  return_reasons:
+  - size
+  - temperature
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-29
   name: Pet ID Tags
   children:
@@ -2760,6 +5736,16 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-29-1
   name: Digital QR Code Tags
   children: []
@@ -2768,6 +5754,16 @@
   - animal_type
   - material
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-29-2
   name: Embroidered Tags
   children: []
@@ -2776,6 +5772,17 @@
   - animal_type
   - material
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - material
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-29-3
   name: Medical Alert Tags
   children: []
@@ -2784,6 +5791,16 @@
   - animal_type
   - material
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-29-4
   name: Slide-On Collar Tags
   children: []
@@ -2792,11 +5809,31 @@
   - animal_type
   - material
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - color
+  - style
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-30
   name: Pet Leash Extensions
   children: []
   attributes:
   - material
+  return_reasons:
+  - length
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-31
   name: Pet Leashes
   children:
@@ -2813,6 +5850,16 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - color
+  - length
+  - material
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-31-1
   name: Double Pet Leashes
   children: []
@@ -2823,6 +5870,16 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - color
+  - length
+  - material
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-31-2
   name: Hands-Free Leashes
   children: []
@@ -2833,6 +5890,16 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - color
+  - length
+  - material
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-31-3
   name: No-Pull Leashes
   children: []
@@ -2843,6 +5910,16 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - color
+  - length
+  - material
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-31-4
   name: Slip Leads
   children: []
@@ -2853,6 +5930,16 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - color
+  - length
+  - material
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-31-5
   name: Standard Leashes
   children: []
@@ -2863,6 +5950,16 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - color
+  - length
+  - material
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-31-6
   name: Training Leashes
   children: []
@@ -2873,6 +5970,16 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - color
+  - length
+  - material
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-32
   name: Pet Medical Collars
   children: []
@@ -2881,12 +5988,28 @@
   - animal_type
   - pet_control_accessory_features
   - pet_medical_collar_design
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-33
   name: Pet Medical Tape & Bandages
   children: []
   attributes:
   - medical_tape_material
   - pet_medical_supply_type
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-34
   name: Pet Medicine
   children:
@@ -2900,48 +6023,112 @@
   attributes:
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-34-1
   name: Allergy Relief
   children: []
   attributes:
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-34-2
   name: Antibiotics
   children: []
   attributes:
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-34-3
   name: Antiparasitics
   children: []
   attributes:
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-34-4
   name: Anxiety Relief
   children: []
   attributes:
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-34-5
   name: Digestive Aids
   children: []
   attributes:
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-34-6
   name: Ear & Eye Medicine
   children: []
   attributes:
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-34-7
   name: Pain Relievers
   children: []
   attributes:
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-35
   name: Pet Muzzles
   children: []
@@ -2950,6 +6137,15 @@
   - material
   - pattern
   - pet_control_accessory_features
+  return_reasons:
+  - size
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-36
   name: Pet Oral Care Supplies
   children:
@@ -2964,54 +6160,127 @@
   attributes:
   - animal_type
   - pet_food_flavor
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-36-1
   name: Dental Chews
   children: []
   attributes:
   - animal_type
   - pet_food_flavor
+  return_reasons:
+  - size
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-36-2
   name: Dental Gels
   children: []
   attributes:
   - animal_type
   - pet_food_flavor
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-36-3
   name: Dental Sprays
   children: []
   attributes:
   - animal_type
   - pet_food_flavor
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-36-5
   name: Dental Water Additives
   children: []
   attributes:
   - animal_type
   - pet_food_flavor
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-36-6
   name: Dental Wipes
   children: []
   attributes:
   - animal_type
   - pet_food_flavor
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-36-7
   name: Oral Rinses
   children: []
   attributes:
   - animal_type
   - pet_food_flavor
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-36-8
   name: Toothbrushes
   children: []
   attributes:
   - animal_type
   - pet_food_flavor
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-36-9
   name: Toothpaste
   children: []
   attributes:
   - animal_type
   - pet_food_flavor
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-39
   name: Pet Strollers
   children:
@@ -3026,6 +6295,15 @@
   - material
   - pattern
   - stroller_features
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-39-1
   name: Detachable Carrier Pet Strollers
   children: []
@@ -3035,6 +6313,16 @@
   - material
   - pattern
   - stroller_features
+  return_reasons:
+  - size
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-39-2
   name: Double-Decker Strollers
   children: []
@@ -3044,6 +6332,16 @@
   - material
   - pattern
   - stroller_features
+  return_reasons:
+  - size
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-39-3
   name: Jogging Strollers
   children: []
@@ -3053,6 +6351,16 @@
   - material
   - pattern
   - stroller_features
+  return_reasons:
+  - size
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-39-4
   name: Multi-Strollers
   children: []
@@ -3062,6 +6370,16 @@
   - material
   - pattern
   - stroller_features
+  return_reasons:
+  - size
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-39-5
   name: Standard Strollers
   children: []
@@ -3071,6 +6389,15 @@
   - material
   - pattern
   - stroller_features
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-40
   name: Pet Sunscreen
   children: []
@@ -3080,6 +6407,13 @@
   - product_certifications_standards
   - skin_care_features
   - spf_level
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-41
   name: Pet Training Aids
   children:
@@ -3092,6 +6426,14 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-41-1
   name: Pet Training Clickers & Treat Dispensers
   children: []
@@ -3101,6 +6443,14 @@
   - material
   - pattern
   - pet_trainer_type
+  return_reasons:
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-41-2
   name: Pet Training Pad Holders
   children:
@@ -3113,6 +6463,16 @@
   - material
   - pattern
   - pet_pad_features
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-41-2-1
   name: Grid-Top Pad Holders
   children: []
@@ -3122,6 +6482,16 @@
   - material
   - pattern
   - pet_pad_features
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-41-2-2
   name: Regular Pad Holders
   children: []
@@ -3131,6 +6501,16 @@
   - material
   - pattern
   - pet_pad_features
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-41-2-3
   name: Wall-Mounted Pad Holders
   children: []
@@ -3140,6 +6520,16 @@
   - material
   - pattern
   - pet_pad_features
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-41-3
   name: Pet Training Pads
   children: []
@@ -3149,6 +6539,15 @@
   - material
   - pattern
   - pet_pad_features
+  return_reasons:
+  - size
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-41-4
   name: Pet Training Sprays & Solutions
   children: []
@@ -3159,6 +6558,13 @@
   - pattern
   - pet_spray/solution_type
   - pet_supply_product_form
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-42
   name: Pet Vitamins & Supplements
   children:
@@ -3177,6 +6583,14 @@
   - pet_dietary_requirements
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-42-2
   name: Calcium
   children: []
@@ -3184,6 +6598,14 @@
   - pet_dietary_preferences
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-42-3
   name: Dental Health
   children: []
@@ -3191,6 +6613,14 @@
   - pet_dietary_preferences
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-42-4
   name: Fish Oil
   children: []
@@ -3198,6 +6628,14 @@
   - pet_dietary_preferences
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-42-5
   name: Immune Support
   children: []
@@ -3205,6 +6643,14 @@
   - pet_dietary_preferences
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-42-6
   name: Joint Health
   children: []
@@ -3212,6 +6658,14 @@
   - pet_dietary_preferences
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-42-7
   name: Multi-Vitamins
   children: []
@@ -3219,6 +6673,14 @@
   - pet_dietary_preferences
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-42-8
   name: Probiotics
   children: []
@@ -3226,6 +6688,14 @@
   - pet_dietary_preferences
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-42-9
   name: Skin & Coat
   children: []
@@ -3233,6 +6703,14 @@
   - pet_dietary_preferences
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-42-10
   name: Weight Control
   children: []
@@ -3240,12 +6718,28 @@
   - pet_dietary_preferences
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-42-11
   name: CBD Supplements
   children: []
   attributes:
   - pet_food_flavor
   - pet_supply_product_form
+  return_reasons:
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-43
   name: Pet Waste Bag Dispensers & Holders
   children:
@@ -3256,26 +6750,79 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-43-1
   name: Flashlight Dispensers
   children: []
   attributes:
   - material
+  return_reasons:
+  - size
+  - color
+  - brightness
+  - battery_life
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-43-2
   name: Standard Dispensers & Holders
   children: []
   attributes:
   - material
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-43-3
   name: Storage Dispensers
   children: []
   attributes:
   - material
+  return_reasons:
+  - size
+  - color
+  - capacity
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-44
   name: Pet Waste Bags
   children: []
   attributes:
   - accessory_size
+  return_reasons:
+  - size
+  - scent
+  - thickness
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-45
   name: Pet Waste Disposal Systems & Tools
   children:
@@ -3287,6 +6834,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - odor_control
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-45-1
   name: Doggy Bags
   children: []
@@ -3295,6 +6852,16 @@
   - disposable_bag_material
   - pattern
   - waste_bag_features
+  return_reasons:
+  - size
+  - color
+  - odor_control
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-45-2
   name: Litter Trays
   children: []
@@ -3302,6 +6869,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - odor_control
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-45-3
   name: Pet Waste Disposal Systems
   children: []
@@ -3309,6 +6886,17 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - odor_control
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-45-4
   name: Waste Scoopers
   children: []
@@ -3316,6 +6904,16 @@
   - color
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-46
   name: Reptile & Amphibian Supplies
   children:
@@ -3325,6 +6923,15 @@
   - ap-2-46-4
   - ap-2-46-5
   attributes: []
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-46-1
   name: Reptile & Amphibian Food
   children: []
@@ -3332,6 +6939,15 @@
   - animal_type
   - pet_supply_product_form
   - reptile/amphibian_food_form
+  return_reasons:
+  - animal_refused
+  - dietary_requirements
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-46-2
   name: Reptile & Amphibian Habitat Accessories
   children: []
@@ -3341,6 +6957,16 @@
   - material
   - material_treatment
   - plant_material
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-46-3
   name: Reptile & Amphibian Habitat Heating & Lighting
   children: []
@@ -3353,6 +6979,16 @@
   - lighting_features
   - material
   - reptile/amphibian_habitat_supply_type
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-46-4
   name: Reptile & Amphibian Habitats
   children:
@@ -3366,6 +7002,16 @@
   - habitat_material
   - lumber/wood_type
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-46-4-1
   name: Aquariums
   children: []
@@ -3373,6 +7019,17 @@
   - accessory_size
   - animal_type
   - habitat_material
+  return_reasons:
+  - size
+  - color
+  - style
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-46-4-2
   name: Paludariums
   children: []
@@ -3380,6 +7037,16 @@
   - accessory_size
   - animal_type
   - habitat_material
+  return_reasons:
+  - size
+  - capacity
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-46-4-3
   name: Terrariums
   children: []
@@ -3389,6 +7056,17 @@
   - habitat_material
   - material_treatment
   - plant_material
+  return_reasons:
+  - size
+  - color
+  - style
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-46-4-4
   name: Vivariums
   children: []
@@ -3396,6 +7074,17 @@
   - accessory_size
   - animal_type
   - habitat_material
+  return_reasons:
+  - size
+  - color
+  - style
+  - capacity
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-46-5
   name: Reptile & Amphibian Substrates
   children: []
@@ -3405,6 +7094,16 @@
   - material_treatment
   - pattern
   - plant_material
+  return_reasons:
+  - color
+  - too_coarse
+  - too_fine
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-47
   name: Small Animal Supplies
   children:
@@ -3414,6 +7113,15 @@
   - ap-2-47-4
   - ap-2-47-5
   attributes: []
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-47-1
   name: Small Animal Bedding
   children: []
@@ -3421,6 +7129,17 @@
   - animal_type
   - color
   - pattern
+  return_reasons:
+  - size
+  - color
+  - material
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-47-2
   name: Small Animal Food
   children: []
@@ -3431,6 +7150,15 @@
   - small_animal_dietary_requirements
   - small_animal_food_form
   - small_animal_food_ingredients
+  return_reasons:
+  - dietary_requirements
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-47-3
   name: Small Animal Habitat Accessories
   children: []
@@ -3439,6 +7167,16 @@
   - lumber/wood_type
   - material
   - wood_finish
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-47-4
   name: Small Animal Habitats & Cages
   children: []
@@ -3446,6 +7184,16 @@
   - animal_type
   - material
   - small_animal_habitat/cage_type
+  return_reasons:
+  - size
+  - color
+  - style
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-47-5
   name: Small Animal Treats
   children:
@@ -3458,42 +7206,105 @@
   attributes:
   - animal_type
   - pet_food_flavor
+  return_reasons:
+  - dietary_requirements
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-47-5-1
   name: Biscuits & Bakery
   children: []
   attributes:
   - animal_type
   - pet_food_flavor
+  return_reasons:
+  - animal_refused
+  - dietary_requirements
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-47-5-2
   name: Chew Treats
   children: []
   attributes:
   - animal_type
   - pet_food_flavor
+  return_reasons:
+  - dietary_requirements
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-47-5-3
   name: Crunchy Treats
   children: []
   attributes:
   - animal_type
   - pet_food_flavor
+  return_reasons:
+  - dietary_requirements
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-47-5-4
   name: Soft Treats
   children: []
   attributes:
   - animal_type
   - pet_food_flavor
+  return_reasons:
+  - animal_refused
+  - dietary_requirements
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-47-5-5
   name: Stick Treats
   children: []
   attributes:
   - animal_type
   - pet_food_flavor
+  return_reasons:
+  - dietary_requirements
+  - animal_refused
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-47-5-6
   name: Training Treats
   children: []
   attributes:
   - animal_type
   - pet_food_flavor
+  return_reasons:
+  - animal_refused
+  - dietary_requirements
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-48
   name: Vehicle Pet Barriers
   children:
@@ -3507,6 +7318,16 @@
   - compatible_vehicle
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-48-1
   name: Backseat Barriers
   children: []
@@ -3515,6 +7336,16 @@
   - compatible_vehicle
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-48-2
   name: Cargo Area Barriers
   children: []
@@ -3523,6 +7354,16 @@
   - compatible_vehicle
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-48-3
   name: Door Barriers
   children: []
@@ -3531,6 +7372,16 @@
   - compatible_vehicle
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-48-4
   name: Partitions
   children: []
@@ -3539,6 +7390,16 @@
   - compatible_vehicle
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-48-5
   name: Window Barriers
   children: []
@@ -3547,6 +7408,16 @@
   - compatible_vehicle
   - material
   - pattern
+  return_reasons:
+  - size
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
 - id: ap-2-49
   name: Pet Steps & Ramps
   children: []
@@ -3556,3 +7427,12 @@
   - material
   - pattern
   - suitable_space
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
