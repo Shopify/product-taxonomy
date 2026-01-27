@@ -30,8 +30,8 @@ module ProductTaxonomy
         id: 4,
         name: "Other",
         description: "Other return reason not listed",
-        friendly_id: "other",
-        handle: "other",
+        friendly_id: "other_reason",
+        handle: "other-reason",
       )
 
       ReturnReason.add(@defective_reason)
@@ -140,7 +140,7 @@ module ProductTaxonomy
       GenerateDocsCommand.any_instance.expects(:execute).once
 
       AddReturnReasonsToCategoriesCommand.new(
-        return_reason_friendly_ids: "unknown,defective_or_doesnt_work,other,wrong_size_or_fit",
+        return_reason_friendly_ids: "unknown,defective_or_doesnt_work,other_reason,wrong_size_or_fit",
         category_ids: "aa-1",
         include_descendants: false,
       ).execute

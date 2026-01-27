@@ -2,6 +2,13 @@
 
 module ProductTaxonomy
   class AddReturnReasonsToCategoriesCommand < Command
+    UNKNOWN_RETURN_REASON_FRIENDLY_ID = "unknown"
+    OTHER_RETURN_REASON_FRIENDLY_ID = "other_reason"
+    SPECIAL_RETURN_REASON_FRIENDLY_IDS = [
+      UNKNOWN_RETURN_REASON_FRIENDLY_ID,
+      OTHER_RETURN_REASON_FRIENDLY_ID,
+    ].freeze
+
     def initialize(options)
       super
       load_taxonomy
@@ -38,19 +45,25 @@ module ProductTaxonomy
     end
 
     def sort_return_reasons!(category)
-      special_reasons = category.return_reasons.select { |r| ["unknown", "other"].include?(r.friendly_id) }
-      regular_reasons = category.return_reasons.reject { |r| ["unknown", "other"].include?(r.friendly_id) }
+      special, regular = category.return_reasons.partition do |return_reason|
+        SPECIAL_RETURN_REASON_FRIENDLY_IDS.include?(return_reason.friendly_id)
+      end
 
-      sorted_friendly_ids = AlphanumericSorter.sort(regular_reasons.map(&:friendly_id))
-      regular_reasons = sorted_friendly_ids.map { |fid| regular_reasons.find { |r| r.friendly_id == fid } }
+      regular_by_friendly_id = regular.each_with_object({}) do |return_reason, by_friendly_id|
+        by_friendly_id[return_reason.friendly_id] = return_reason
+      end
+      sorted_regular = AlphanumericSorter.sort(regular_by_friendly_id.keys).map do |friendly_id|
+        regular_by_friendly_id[friendly_id]
+      end
 
-      # Add special reasons at the end in the correct order
-      unknown = special_reasons.find { |r| r.friendly_id == "unknown" }
-      other = special_reasons.find { |r| r.friendly_id == "other" }
+      special_by_friendly_id = special.each_with_object({}) do |return_reason, by_friendly_id|
+        by_friendly_id[return_reason.friendly_id] = return_reason
+      end
+      sorted_special = SPECIAL_RETURN_REASON_FRIENDLY_IDS.filter_map do |friendly_id|
+        special_by_friendly_id[friendly_id]
+      end
 
-      sorted_reasons = regular_reasons + [unknown, other].compact
-
-      category.return_reasons.replace(sorted_reasons)
+      category.return_reasons.replace(sorted_regular + sorted_special)
     end
 
     def update_data_files!
