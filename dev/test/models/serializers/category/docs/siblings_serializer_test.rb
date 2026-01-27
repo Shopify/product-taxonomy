@@ -47,6 +47,7 @@ module ProductTaxonomy
               "node_type" => "leaf",
               "ancestor_ids" => "gid://shopify/TaxonomyCategory/1",
               "attribute_handles" => "test_handle",
+              "return_reason_handles" => "",
             }
 
             assert_equal expected, SiblingsSerializer.serialize(@category)
@@ -67,6 +68,7 @@ module ProductTaxonomy
               "node_type" => "root",
               "ancestor_ids" => "",
               "attribute_handles" => "",
+              "return_reason_handles" => "",
             }
 
             assert_equal expected, SiblingsSerializer.serialize(root_category)
@@ -87,6 +89,7 @@ module ProductTaxonomy
                     "node_type" => "root",
                     "ancestor_ids" => "",
                     "attribute_handles" => "",
+                    "return_reason_handles" => "",
                   },
                 ],
               },
@@ -101,12 +104,81 @@ module ProductTaxonomy
                     "node_type" => "leaf",
                     "ancestor_ids" => "gid://shopify/TaxonomyCategory/1",
                     "attribute_handles" => "test_handle",
+                    "return_reason_handles" => "",
                   },
                 ],
               },
             }
 
             assert_equal expected, SiblingsSerializer.serialize_all
+          end
+
+          test "serialize category with return reasons returns expected structure" do
+            return_reason = ProductTaxonomy::ReturnReason.new(
+              id: 1,
+              name: "Test Return Reason",
+              description: "Test Description",
+              friendly_id: "test_return_reason",
+              handle: "test_return_reason_handle",
+            )
+
+            category = ProductTaxonomy::Category.new(
+              id: "te-1",
+              name: "Test Category",
+              return_reasons: [return_reason],
+            )
+
+            expected = {
+              "id" => "gid://shopify/TaxonomyCategory/te-1",
+              "name" => "Test Category",
+              "fully_qualified_type" => "Test Category",
+              "depth" => 0,
+              "parent_id" => "root",
+              "node_type" => "root",
+              "ancestor_ids" => "",
+              "attribute_handles" => "",
+              "return_reason_handles" => "test_return_reason_handle",
+            }
+
+            assert_equal expected, SiblingsSerializer.serialize(category)
+          end
+
+          test "serialize category with multiple return reasons returns comma-separated handles" do
+            return_reason1 = ProductTaxonomy::ReturnReason.new(
+              id: 1,
+              name: "Return Reason One",
+              description: "First return reason",
+              friendly_id: "return_reason_one",
+              handle: "return_reason_one",
+            )
+
+            return_reason2 = ProductTaxonomy::ReturnReason.new(
+              id: 2,
+              name: "Return Reason Two",
+              description: "Second return reason",
+              friendly_id: "return_reason_two",
+              handle: "return_reason_two",
+            )
+
+            category = ProductTaxonomy::Category.new(
+              id: "te-1",
+              name: "Test Category",
+              return_reasons: [return_reason1, return_reason2],
+            )
+
+            expected = {
+              "id" => "gid://shopify/TaxonomyCategory/te-1",
+              "name" => "Test Category",
+              "fully_qualified_type" => "Test Category",
+              "depth" => 0,
+              "parent_id" => "root",
+              "node_type" => "root",
+              "ancestor_ids" => "",
+              "attribute_handles" => "",
+              "return_reason_handles" => "return_reason_one,return_reason_two",
+            }
+
+            assert_equal expected, SiblingsSerializer.serialize(category)
           end
         end
       end

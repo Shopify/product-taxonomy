@@ -64,7 +64,7 @@ module ProductTaxonomy
     end
 
     def localizations_humanized_model_name
-      name.demodulize.humanize.downcase.pluralize
+      name.demodulize.underscore.pluralize
     end
   end
 end

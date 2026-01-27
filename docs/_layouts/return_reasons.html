@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+{% include header.html %}
+<div class="attribute-search-wrapper">
+  <div class="search-container">
+    <label for="return-reason-search" class="search-container__label">Return Reason Search:</label>
+    <input class="search-container__input" type="text" id="return-reason-search" placeholder="Loading…">
+    <ul class="search-container__ul" id="return-reason-search-results"></ul>
+  </div>
+</div>
+{% for return_reason in site.data[page.target].reversed_return_reasons.return_reasons %}
+<div class="return-reason-container hidden" data-handle="{{ return_reason.handle }}" >
+  <div class="column">
+    <div class="return-reasons-wrapper box">
+      <div class="value-container return-reason-values">
+        <h3>{{ return_reason.name }}</h3>
+        <div class="value-container__id">
+          <span class="id">{{ return_reason.id }}</span>
+        </div>
+        <div class="return-reason-description-wrapper">
+          <p class="return-reason-description">{{ return_reason.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="return-reason-categories-wrapper box">
+      <div class="categories-container return-reason-categories">
+        <h3>
+          Categories
+        </h3>
+        <div>
+          <ul class="values-container__list">
+            {% for category in return_reason.categories %}
+            <li class="values-container__list-item">
+              <div class="values-container__list-item-content">
+                {{ category.full_name }}
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+<script type="module" src="{{ site.baseurl }}/assets/js/return_reason_release.js"></script>

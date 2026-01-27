@@ -61,6 +61,21 @@ module ProductTaxonomy
       logger.info("Generating attribute with categories search index...")
       attribute_search_index_json = JSON.fast_generate(Serializers::Attribute::Docs::SearchSerializer.serialize_all)
       File.write("#{data_target}/attribute_search_index.json", attribute_search_index_json + "\n")
+
+      logger.info("Generating return reasons...")
+      return_reasons_yml = YAML.dump(Serializers::ReturnReason::Docs::BaseSerializer.serialize_all, line_width: -1)
+      File.write("#{data_target}/return_reasons.yml", return_reasons_yml)
+
+      logger.info("Generating return reasons with categories...")
+      reversed_return_reasons_yml = YAML.dump(
+        Serializers::ReturnReason::Docs::ReversedSerializer.serialize_all,
+        line_width: -1,
+      )
+      File.write("#{data_target}/reversed_return_reasons.yml", reversed_return_reasons_yml)
+
+      logger.info("Generating return reason search index...")
+      return_reason_search_index_json = JSON.fast_generate(Serializers::ReturnReason::Docs::SearchSerializer.serialize_all)
+      File.write("#{data_target}/return_reason_search_index.json", return_reason_search_index_json + "\n")
     end
 
     def generate_release_folder
@@ -82,6 +97,13 @@ module ProductTaxonomy
       content.gsub!("TARGET", @version)
       content.gsub!("GH_URL", "https://github.com/Shopify/product-taxonomy/releases/tag/v#{@version}")
       File.write("#{release_path}/attributes.html", content)
+
+      logger.info("Generating return_reasons.html...")
+      content = File.read(File.expand_path("_releases/_return_reasons_template.html", self.class.docs_path))
+      content.gsub!("TITLE", @version.upcase)
+      content.gsub!("TARGET", @version)
+      content.gsub!("GH_URL", "https://github.com/Shopify/product-taxonomy/releases/tag/v#{@version}")
+      File.write("#{release_path}/return_reasons.html", content)
 
       logger.info("Updating latest.html redirect...")
       latest_html_path = File.expand_path("_releases/latest.html", self.class.docs_path)

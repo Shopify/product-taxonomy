@@ -7,7 +7,7 @@ module ProductTaxonomy
         module SearchSerializer
           class << self
             def serialize_all
-              ProductTaxonomy::Category.all_depth_first.flat_map { serialize(_1) }
+              ProductTaxonomy::Category.all_depth_first.map { serialize(_1) }
             end
 
             # @param [Category] category
