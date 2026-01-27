@@ -14,20 +14,7 @@ module ProductTaxonomy
                 end
               end
 
-              sorted_return_reasons = ProductTaxonomy::ReturnReason.all.sort_by do |return_reason|
-                sort_priority = case return_reason.friendly_id
-                when "unknown"
-                  1
-                when "other"
-                  2
-                else
-                  0
-                end
-                
-                [sort_priority, return_reason.name.downcase, return_reason.id]
-              end
-
-              serialized_return_reasons = sorted_return_reasons.map do |return_reason|
+              serialized_return_reasons = ProductTaxonomy::ReturnReason.all.map do |return_reason|
                 serialize(return_reason, return_reasons_to_categories[return_reason])
               end
 
@@ -60,4 +47,3 @@ module ProductTaxonomy
     end
   end
 end
-

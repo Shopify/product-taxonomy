@@ -112,109 +112,36 @@ module ProductTaxonomy
             assert_equal "B Category", categories[1]["full_name"]
           end
 
-          test "serialize_all sorts return reasons with other last, unknown second-to-last" do
-            unknown_return_reason = ProductTaxonomy::ReturnReason.new(
-              id: 2,
-              name: "Unknown",
-              description: "Unknown reason",
-              friendly_id: "unknown",
-              handle: "unknown",
-            )
-
-            other_return_reason = ProductTaxonomy::ReturnReason.new(
-              id: 3,
-              name: "Other",
-              description: "Other reason",
-              friendly_id: "other",
-              handle: "other",
-            )
-
-            normal_return_reason = ProductTaxonomy::ReturnReason.new(
-              id: 4,
-              name: "Normal Reason",
-              description: "Normal description",
-              friendly_id: "normal",
-              handle: "normal",
-            )
-
-            # Return in non-sorted order
-            ProductTaxonomy::ReturnReason.stubs(:all).returns([
-              other_return_reason,
-              normal_return_reason,
-              unknown_return_reason,
-            ])
-            ProductTaxonomy::Category.stubs(:all).returns([])
-
-            result = ReversedSerializer.serialize_all
-            handles = result["return_reasons"].map { |rr| rr["handle"] }
-
-            assert_equal ["normal", "unknown", "other"], handles
-          end
-
-          test "serialize_all sorts normal return reasons alphabetically by name" do
-            return_reason_c = ProductTaxonomy::ReturnReason.new(
-              id: 1,
-              name: "Cccc",
-              description: "Description C",
-              friendly_id: "cccc",
-              handle: "cccc",
-            )
-
-            return_reason_a = ProductTaxonomy::ReturnReason.new(
-              id: 2,
-              name: "Aaaa",
-              description: "Description A",
-              friendly_id: "aaaa",
-              handle: "aaaa",
-            )
-
-            return_reason_b = ProductTaxonomy::ReturnReason.new(
-              id: 3,
-              name: "Bbbb",
-              description: "Description B",
-              friendly_id: "bbbb",
-              handle: "bbbb",
-            )
-
-            # Add in non-alphabetical order
-            ProductTaxonomy::ReturnReason.stubs(:all).returns([
-              return_reason_c,
-              return_reason_a,
-              return_reason_b,
-            ])
-            ProductTaxonomy::Category.stubs(:all).returns([])
-
-            result = ReversedSerializer.serialize_all
-            handles = result["return_reasons"].map { |rr| rr["handle"] }
-
-            assert_equal ["aaaa", "bbbb", "cccc"], handles
-          end
-
-          test "serialize_all uses ID as tiebreaker for identical names" do
+          test "serialize_all preserves return reason source order" do
             return_reason_1 = ProductTaxonomy::ReturnReason.new(
-              id: 2,
-              name: "Same Name",
-              description: "Description 1",
-              friendly_id: "same_name_1",
-              handle: "same_name_1",
-            )
-
-            return_reason_2 = ProductTaxonomy::ReturnReason.new(
               id: 1,
-              name: "Same Name",
-              description: "Description 2",
-              friendly_id: "same_name_2",
-              handle: "same_name_2",
+              name: "First",
+              description: "First description",
+              friendly_id: "first",
+              handle: "first",
+            )
+            return_reason_2 = ProductTaxonomy::ReturnReason.new(
+              id: 2,
+              name: "Second",
+              description: "Second description",
+              friendly_id: "second",
+              handle: "second",
+            )
+            return_reason_3 = ProductTaxonomy::ReturnReason.new(
+              id: 3,
+              name: "Third",
+              description: "Third description",
+              friendly_id: "third",
+              handle: "third",
             )
 
-            ProductTaxonomy::ReturnReason.stubs(:all).returns([return_reason_1, return_reason_2])
+            ProductTaxonomy::ReturnReason.stubs(:all).returns([return_reason_2, return_reason_3, return_reason_1])
             ProductTaxonomy::Category.stubs(:all).returns([])
 
             result = ReversedSerializer.serialize_all
             handles = result["return_reasons"].map { |rr| rr["handle"] }
 
-            # Should be sorted by ID (1, then 2) when names are identical
-            assert_equal ["same_name_2", "same_name_1"], handles
+            assert_equal ["second", "third", "first"], handles
           end
         end
       end
