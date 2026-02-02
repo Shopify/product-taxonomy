@@ -6,10 +6,9 @@ module ProductTaxonomy
   class Loader
     class << self
       def load(data_path:)
-        return if ProductTaxonomy::Category.all.any?
-
-        # Set the module-level data_path so localizations and other files can be accessed
         ProductTaxonomy.data_path = data_path
+
+        return if ProductTaxonomy::Category.all.any?
 
         values_path = File.join(data_path, "values.yml")
         attributes_path = File.join(data_path, "attributes.yml")
@@ -19,10 +18,7 @@ module ProductTaxonomy
         begin
           ProductTaxonomy::Value.load_from_source(YAML.load_file(values_path))
           ProductTaxonomy::Attribute.load_from_source(YAML.load_file(attributes_path))
-
-          if File.exist?(return_reasons_path)
-            ProductTaxonomy::ReturnReason.load_from_source(YAML.load_file(return_reasons_path))
-          end
+          ProductTaxonomy::ReturnReason.load_from_source(YAML.load_file(return_reasons_path))
 
           categories_source_data = categories_glob.each_with_object([]) do |file, array|
             array.concat(YAML.safe_load_file(file))
