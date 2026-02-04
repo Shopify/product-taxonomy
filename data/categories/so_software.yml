@@ -798,7 +798,9 @@
   - other_reason
 - id: so-3
   name: Video Game Software
-  children: []
+  children:
+  - so-3-1
+  - so-3-2
   attributes:
   - esrb_rating
   - national/regional_rating
@@ -811,6 +813,44 @@
   - video_game_sub_genre
   return_reasons:
   - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: so-3-1
+  name: Digital Video Games
+  children: []
+  attributes:
+  - esrb_rating
+  - national/regional_rating
+  - pegi_rating
+  - region_code
+  - video_game_content_features
+  - video_game_genre
+  - video_game_platform
+  - video_game_sub_genre
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: so-3-2
+  name: Physical Video Games
+  children: []
+  attributes:
+  - esrb_rating
+  - national/regional_rating
+  - pegi_rating
+  - region_code
+  - video_game_content_features
+  - video_game_genre
+  - video_game_platform
+  - video_game_sub_genre
+  return_reasons:
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
