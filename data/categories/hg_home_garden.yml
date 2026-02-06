@@ -670,7 +670,6 @@
   - hg-2-7
   - hg-2-8
   - hg-2-9
-  - hg-2-10
   attributes:
   - color
   - pattern
@@ -1131,17 +1130,6 @@
   - other_reason
 - id: hg-2-9-4
   name: Vibration Sensors
-  children: []
-  attributes: []
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-2-10
-  name: Video Doorbells
   children: []
   attributes: []
   return_reasons:
@@ -10043,8 +10031,6 @@
   children:
   - hg-9-12-1
   - hg-9-12-2
-  - hg-9-12-3
-  - hg-9-12-4
   attributes:
   - boiler_system
   - color
@@ -10076,28 +10062,6 @@
   - other_reason
 - id: hg-9-12-2
   name: Solar Water Heaters
-  children: []
-  attributes: []
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-9-12-3
-  name: Tank Water Heaters
-  children: []
-  attributes: []
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-9-12-4
-  name: Tankless Water Heaters
   children: []
   attributes: []
   return_reasons:
@@ -15516,7 +15480,6 @@
   children:
   - hg-11-2-5-5-1
   - hg-11-2-5-5-2
-  - hg-11-2-5-5-3
   - hg-11-2-5-5-4
   attributes:
   - color
@@ -15553,17 +15516,6 @@
   - pattern
   return_reasons:
   - incompatible
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-11-2-5-5-3
-  name: Steaming Racks
-  children: []
-  attributes: []
-  return_reasons:
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -15619,6 +15571,7 @@
   - hg-11-3-11
   - hg-11-3-12
   - hg-11-3-13
+  - hg-11-3-14
   attributes:
   - color
   - material
@@ -15954,6 +15907,17 @@
   - other_reason
 - id: hg-11-3-13
   name: Growlers
+  children: []
+  attributes: []
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: hg-11-3-14
+  name: Travel Mugs
   children: []
   attributes: []
   return_reasons:
@@ -16488,7 +16452,6 @@
   children:
   - hg-11-6-2-1
   - hg-11-6-2-2
-  - hg-11-6-2-3
   - hg-11-6-2-4
   - hg-11-6-2-5
   - hg-11-6-2-6
@@ -16530,20 +16493,6 @@
   - other_reason
 - id: hg-11-6-2-2
   name: Coffee Decanters
-  children: []
-  attributes:
-  - color
-  - pattern
-  return_reasons:
-  - incompatible
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-11-6-2-3
-  name: Coffee Filter Baskets
   children: []
   attributes:
   - color
@@ -16613,7 +16562,6 @@
   - hg-11-6-2-7-13
   - hg-11-6-2-7-14
   - hg-11-6-2-7-15
-  - hg-11-6-2-7-16
   - hg-11-6-2-7-20
   - hg-11-6-2-7-21
   - hg-11-6-2-7-23
@@ -16767,20 +16715,6 @@
   - other_reason
 - id: hg-11-6-2-7-15
   name: Drippers
-  children: []
-  attributes:
-  - color
-  - pattern
-  return_reasons:
-  - incompatible
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-11-6-2-7-16
-  name: Dump Boxes
   children: []
   attributes:
   - color
@@ -17281,7 +17215,6 @@
   children:
   - hg-11-6-4-1
   - hg-11-6-4-2
-  - hg-11-6-4-5
   - hg-11-6-4-6
   - hg-11-6-4-7
   - hg-11-6-4-8
@@ -17319,19 +17252,6 @@
   - pattern
   return_reasons:
   - size
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-11-6-4-5
-  name: Cotton Candy Sugar
-  children: []
-  attributes:
-  - color
-  - pattern
-  return_reasons:
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -17873,8 +17793,6 @@
   - hg-11-6-11-41
   - hg-11-6-11-46
   - hg-11-6-11-52
-  - hg-11-6-11-53
-  - hg-11-6-11-54
   - hg-11-6-11-55
   attributes:
   - color
@@ -17920,13 +17838,37 @@
   - other_reason
 - id: hg-11-6-11-11
   name: Cutting Discs
-  children: []
+  children:
+  - hg-11-6-11-11-1
+  - hg-11-6-11-11-2
   attributes:
   - color
   - pattern
   - suitable_for_food_processor_type
   return_reasons:
   - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: hg-11-6-11-11-1
+  name: Julienne Discs
+  children: []
+  attributes: []
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: hg-11-6-11-11-2
+  name: Shredding Discs
+  children: []
+  attributes: []
+  return_reasons:
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -18182,28 +18124,6 @@
   - suitable_for_food_processor_type
   return_reasons:
   - incompatible
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-11-6-11-53
-  name: Julienne Discs
-  children: []
-  attributes: []
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-11-6-11-54
-  name: Shredding Discs
-  children: []
-  attributes: []
-  return_reasons:
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -19346,9 +19266,6 @@
   name: Popcorn Maker Accessories
   children:
   - hg-11-6-21-1
-  - hg-11-6-21-2
-  - hg-11-6-21-4
-  - hg-11-6-21-5
   attributes:
   - color
   - pattern
@@ -19369,45 +19286,6 @@
   - pattern
   return_reasons:
   - size
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-11-6-21-2
-  name: Popcorn Kernels
-  children: []
-  attributes:
-  - color
-  - pattern
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-11-6-21-4
-  name: Popcorn Seasoning
-  children: []
-  attributes:
-  - color
-  - pattern
-  return_reasons:
-  - taste
-  - dietary_requirements
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-11-6-21-5
-  name: Popcorn Oil
-  children: []
-  attributes: []
-  return_reasons:
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -20363,7 +20241,6 @@
   - hg-11-7-22
   - hg-11-7-23
   - hg-11-7-24
-  - hg-11-7-25
   - hg-11-7-26
   - hg-11-7-27
   - hg-11-7-28
@@ -21015,7 +20892,6 @@
 - id: hg-11-7-17-1
   name: Food Blenders
   children:
-  - hg-11-7-17-1-1
   - hg-11-7-17-1-2
   - hg-11-7-17-1-3
   - hg-11-7-17-1-4
@@ -21024,17 +20900,6 @@
   - pattern
   return_reasons:
   - capacity
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-11-7-17-1-1
-  name: Commercial Blenders
-  children: []
-  attributes: []
-  return_reasons:
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -21135,7 +21000,6 @@
   - hg-11-7-19-2
   - hg-11-7-19-3
   - hg-11-7-19-4
-  - hg-11-7-19-5
   - hg-11-7-19-6
   - hg-11-7-19-7
   attributes:
@@ -21206,17 +21070,6 @@
   return_reasons:
   - size
   - capacity
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-11-7-19-5
-  name: Buffet Servers & Warming Trays
-  children: []
-  attributes: []
-  return_reasons:
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -21381,23 +21234,6 @@
   children: []
   attributes: []
   return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-11-7-25
-  name: Hot Plates
-  children: []
-  attributes:
-  - color
-  - material
-  - pattern
-  return_reasons:
-  - size
-  - capacity
-  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -21707,6 +21543,7 @@
   - hg-11-7-38-1
   - hg-11-7-38-2
   - hg-11-7-38-3
+  - hg-11-7-38-4
   attributes:
   - color
   - pattern
@@ -21746,6 +21583,20 @@
   name: Portable Induction Cooktops
   children: []
   attributes: []
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: hg-11-7-38-4
+  name: Hot Plates
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -25922,7 +25773,6 @@
   - hg-11-10-3-2
   - hg-11-10-3-3
   - hg-11-10-3-4
-  - hg-11-10-3-5
   attributes:
   - color
   - pattern
@@ -25994,17 +25844,6 @@
   - size
   - color
   - style
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-11-10-3-5
-  name: Sugar Shakers
-  children: []
-  attributes: []
-  return_reasons:
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -26097,7 +25936,6 @@
   - hg-11-10-5-6
   - hg-11-10-5-7
   - hg-11-10-5-8
-  - hg-11-10-5-9
   attributes:
   - color
   - drinkware_material
@@ -26349,17 +26187,6 @@
   return_reasons:
   - size
   - style
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-11-10-5-9
-  name: Travel Mugs
-  children: []
-  attributes: []
-  return_reasons:
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -27681,7 +27508,6 @@
   - hg-12-1-6-2
   - hg-12-1-6-3
   - hg-12-1-6-4
-  - hg-12-1-6-5
   attributes:
   - color
   - pattern
@@ -27827,17 +27653,6 @@
   - other_reason
 - id: hg-12-1-6-4
   name: Gardening Tool Holsters & Sheaths
-  children: []
-  attributes: []
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-12-1-6-5
-  name: Gardening Tool Sharpeners
   children: []
   attributes: []
   return_reasons:
@@ -28944,7 +28759,6 @@
   children:
   - hg-12-1-19-1-6-1
   - hg-12-1-19-1-6-2
-  - hg-12-1-19-1-6-3
   attributes:
   - color
   - pattern
@@ -28970,17 +28784,6 @@
   - other_reason
 - id: hg-12-1-19-1-6-2
   name: Raft Aquaponics Systems
-  children: []
-  attributes: []
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-12-1-19-1-6-3
-  name: Vertical Tower Aquaponics Systems
   children: []
   attributes: []
   return_reasons:
@@ -32840,7 +32643,6 @@
   - hg-12-6-7
   - hg-12-6-8
   - hg-12-6-9
-  - hg-12-6-10
   attributes:
   - color
   - pattern
@@ -33204,17 +33006,6 @@
   - other_reason
 - id: hg-12-6-9-3
   name: Soaker Hose Systems
-  children: []
-  attributes: []
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-12-6-10
-  name: Water Timers
   children: []
   attributes: []
   return_reasons:
