@@ -226,6 +226,7 @@
   name: Bathroom Accessory Mounts
   children: []
   attributes:
+  - bathroom_accessory_compatibility
   - color
   - mount_material
   - mounting_type
@@ -244,6 +245,7 @@
   name: Bathroom Accessory Sets
   children: []
   attributes:
+  - bathroom_accessories_included
   - color
   - material
   - mounting_type
@@ -263,6 +265,7 @@
   children: []
   attributes:
   - color
+  - compatible_tissue_box_type
   - material
   - pattern
   return_reasons:
@@ -280,6 +283,7 @@
   children: []
   attributes:
   - color
+  - hand_dryer_accessory_type
   - material
   - pattern
   return_reasons:
@@ -348,6 +352,7 @@
   children: []
   attributes:
   - color
+  - grab_bar_shape
   - hardware_material
   - pattern
   return_reasons:
@@ -368,6 +373,7 @@
   - color
   - hardware_material
   - pattern
+  - shower_curtain_ring_type
   return_reasons:
   - color
   - style
@@ -422,6 +428,7 @@
   - material
   - mounting_type
   - pattern
+  - soap_dispenser_operation_type
   return_reasons:
   - size
   - color
@@ -437,6 +444,7 @@
   children: []
   attributes:
   - color
+  - drainage_design
   - material
   - pattern
   return_reasons:
@@ -472,6 +480,7 @@
   - hg-1-18-3
   - hg-1-18-4
   attributes:
+  - bristle_stiffness
   - color
   - material
   - pattern
@@ -508,6 +517,7 @@
   - brush_material
   - color
   - pattern
+  - replaceable_brush_head
   return_reasons:
   - color
   - style
@@ -555,6 +565,7 @@
   - material
   - mounting_type
   - pattern
+  - toothbrush_holder_features
   return_reasons:
   - size
   - color
@@ -596,6 +607,7 @@
   - lumber/wood_type
   - material
   - pattern
+  - towel_holder_design
   - wood_finish
   return_reasons:
   - size
@@ -708,6 +720,7 @@
   - color
   - connectivity_technology
   - control_type
+  - home_alarm_features
   - pattern
   return_reasons:
   - size
@@ -741,8 +754,10 @@
   children: []
   attributes:
   - color
+  - mirror_curvature
   - mounting_hardware
   - pattern
+  - safety_mirror_features
   return_reasons:
   - size
   - incompatible
@@ -782,6 +797,7 @@
   - monitor_mounting_type
   - pattern
   - power_source
+  - recorder_type
   return_reasons:
   - size
   - incompatible
@@ -867,6 +883,7 @@
   children: []
   attributes:
   - color
+  - lock_keying_option
   - lock_type
   - pattern
   return_reasons:
@@ -900,6 +917,7 @@
   attributes:
   - color
   - compatible_lock_type
+  - key_blade_type
   - pattern
   return_reasons:
   - size
@@ -917,6 +935,7 @@
   - color
   - material
   - pattern
+  - protected_item_type
   - rfid_frequency
   return_reasons:
   - size
@@ -978,6 +997,7 @@
   children: []
   attributes:
   - color
+  - fire_protection_class
   - lock_type
   - pattern
   return_reasons:
@@ -1087,6 +1107,7 @@
   - connectivity_technology
   - motion_sensor_type
   - pattern
+  - security_sensor_subtype
   return_reasons:
   - size
   - incompatible
@@ -1254,6 +1275,7 @@
   attributes:
   - color
   - pattern
+  - surface_reflectivity
   return_reasons:
   - size
   - color
@@ -1297,6 +1319,7 @@
   - plant_class
   - plant_material
   - plant_name
+  - planter_material
   return_reasons:
   - size
   - color
@@ -1337,8 +1360,10 @@
   - material_treatment
   - pattern
   - plant_class
+  - plant_container_type
   - plant_material
   - plant_name
+  - shrub_shape
   return_reasons:
   - size
   - color
@@ -1361,6 +1386,7 @@
   - plant_class
   - plant_material
   - plant_name
+  - tree_shape
   - wood_finish
   return_reasons:
   - size
@@ -1482,6 +1508,7 @@
   - color
   - frame_style
   - pattern
+  - print_edition_type
   - theme
   return_reasons:
   - size
@@ -1524,6 +1551,7 @@
   - frame_style
   - painting_medium
   - pattern
+  - signature_presence
   - theme
   return_reasons:
   - size
@@ -1706,6 +1734,7 @@
   children: []
   attributes:
   - color
+  - compatible_feeder_type
   - pattern
   return_reasons:
   - size
@@ -1741,6 +1770,7 @@
   attributes:
   - color
   - pattern
+  - squirrel_resistance
   return_reasons:
   - size
   - color
@@ -1757,6 +1787,7 @@
   attributes:
   - color
   - pattern
+  - weather_guard_mounting_method
   return_reasons:
   - size
   - color
@@ -1788,6 +1819,7 @@
   attributes:
   - color
   - decoration_material
+  - feeder_design
   - mounting_hardware
   - pattern
   return_reasons:
@@ -1827,6 +1859,7 @@
   name: Butterfly Feeders
   children: []
   attributes:
+  - butterfly_feeder_food_type
   - color
   - decoration_material
   - mounting_hardware
@@ -1850,6 +1883,7 @@
   - decoration_material
   - mounting_hardware
   - pattern
+  - squirrel_feed_type
   return_reasons:
   - size
   - color
@@ -1889,6 +1923,8 @@
   attributes:
   - color
   - pattern
+  - perch_design
+  - perch_surface_texture
   return_reasons:
   - size
   - color
@@ -1906,6 +1942,7 @@
   attributes:
   - color
   - pattern
+  - predator_guard_style
   return_reasons:
   - size
   - color
@@ -2023,6 +2060,7 @@
   children: []
   attributes:
   - color
+  - entrance_slot_design
   - material
   - mounting_hardware
   - pattern
@@ -2097,8 +2135,10 @@
   name: Cardboard Cutouts
   children: []
   attributes:
+  - blade_sidedness
   - color
   - pattern
+  - printed_sides
   - theme
   return_reasons:
   - size
@@ -2195,6 +2235,7 @@
   children: []
   attributes:
   - color
+  - dial_finish
   - pattern
   return_reasons:
   - size
@@ -2211,6 +2252,7 @@
   name: Clock Hands
   children: []
   attributes:
+  - clock_hand_style
   - color
   - construction
   - embellishment/trim_material
@@ -2250,8 +2292,10 @@
   attributes:
   - battery_size
   - battery_type
+  - clock_hand_mounting_type
   - color
   - pattern
+  - pendulum_compatibility
   return_reasons:
   - size
   - incompatible
@@ -2291,8 +2335,10 @@
   - hg-3-17-3
   - hg-3-17-4
   attributes:
+  - clock_movement_type
   - color
   - material
+  - numeral_style
   - pattern
   return_reasons:
   - size
@@ -2314,6 +2360,7 @@
   - material
   - pattern
   - power_source
+  - time_format
   return_reasons:
   - size
   - color
@@ -2352,6 +2399,7 @@
   attributes:
   - battery_size
   - battery_type
+  - clock_display_type
   - color
   - material
   - pattern
@@ -2391,6 +2439,7 @@
   - hg-3-17-3-2
   - hg-3-17-3-3
   attributes:
+  - clock_chime_melody
   - color
   - material
   - pattern
@@ -2547,6 +2596,7 @@
   attributes:
   - color
   - decoration_material
+  - jar_shape
   - pattern
   return_reasons:
   - size
@@ -2660,6 +2710,7 @@
   attributes:
   - color
   - pattern
+  - preservation_method
   return_reasons:
   - color
   - style
@@ -2674,6 +2725,7 @@
   children: []
   attributes:
   - color
+  - light_exposure_requirement
   - pattern
   return_reasons:
   - size
@@ -2782,6 +2834,7 @@
   - color
   - material
   - pattern
+  - pole_construction_type
   return_reasons:
   - size
   - color
@@ -2821,6 +2874,7 @@
   - hg-3-33-2
   attributes:
   - color
+  - flag_attachment_style
   - flag_shape
   - pattern
   - theme
@@ -2933,6 +2987,7 @@
   - battery_size
   - battery_type
   - color
+  - fountain_design
   - pattern
   return_reasons:
   - size
@@ -3105,6 +3160,7 @@
   - lumber/wood_type
   - material
   - pattern
+  - warmer_type
   - wood_finish
   return_reasons:
   - size
@@ -3163,6 +3219,7 @@
   - battery_size
   - battery_type
   - color
+  - incense_holder_style
   - lumber/wood_type
   - material
   - pattern
@@ -3228,6 +3285,7 @@
   children: []
   attributes:
   - alcohol/solvent_content
+  - fragrance_refill_type
   return_reasons:
   - size
   - color
@@ -3245,6 +3303,7 @@
   - alcohol/solvent_content
   - battery_size
   - battery_type
+  - mist_output_mode
   return_reasons:
   - size
   - color
@@ -3358,6 +3417,7 @@
   children: []
   attributes:
   - alcohol/solvent_content
+  - candle_container_material
   - candle_type
   - color
   - decoration_material
@@ -3380,6 +3440,8 @@
   attributes:
   - alcohol/solvent_content
   - color
+  - fragrance_oil_application
+  - fragrance_oil_composition
   - pattern
   - scent
   return_reasons:
@@ -3487,6 +3549,7 @@
   attributes:
   - color
   - pattern
+  - sand_color
   return_reasons:
   - size
   - color
@@ -3504,6 +3567,7 @@
   attributes:
   - color
   - decoration_material
+  - displayed_character
   - pattern
   return_reasons:
   - size
@@ -3624,6 +3688,7 @@
   - hg-3-45-6
   attributes:
   - color
+  - compatible_mailbox_size
   - material
   - pattern
   return_reasons:
@@ -3660,6 +3725,7 @@
   children: []
   attributes:
   - color
+  - compatible_mailbox_type
   - material
   - pattern
   return_reasons:
@@ -3696,6 +3762,7 @@
   attributes:
   - color
   - pattern
+  - post_installation_method
   - post_material
   return_reasons:
   - size
@@ -3760,6 +3827,7 @@
   - hg-3-47-2
   attributes:
   - color
+  - mirror_type
   - pattern
   - shape
   return_reasons:
@@ -3876,6 +3944,7 @@
   - color
   - decoration_material
   - frame_style
+  - glazing_material
   - pattern
   - shape
   return_reasons:
@@ -3949,6 +4018,7 @@
   - decoration_material
   - embellishment/trim_material
   - jewelry_material
+  - money_retrieval_method
   - pattern
   return_reasons:
   - size
@@ -3967,6 +4037,7 @@
   - color
   - decoration_material
   - pattern
+  - rain_chain_style
   return_reasons:
   - size
   - color
@@ -4158,6 +4229,7 @@
   children: []
   attributes:
   - color
+  - ornament_hook_style
   - pattern
   return_reasons:
   - size
@@ -4219,6 +4291,7 @@
   - color
   - decoration_material
   - pattern
+  - stocking_toe_orientation
   return_reasons:
   - size
   - color
@@ -4416,6 +4489,7 @@
   - color
   - decoration_material
   - pattern
+  - slipcover_stretch_type
   - suitable_for_furniture_type
   return_reasons:
   - color
@@ -4447,6 +4521,7 @@
   children: []
   attributes:
   - color
+  - hanging_attachment_type
   - pattern
   return_reasons:
   - size
@@ -4464,6 +4539,7 @@
   attributes:
   - color
   - pattern
+  - sundial_type
   return_reasons:
   - size
   - color
@@ -4519,6 +4595,7 @@
   attributes:
   - color
   - pattern
+  - vase_filler_type
   return_reasons:
   - size
   - color
@@ -4623,9 +4700,12 @@
   attributes:
   - color
   - pattern
+  - pattern_match_type
   - sustainability
   - theme
   - wallpaper_application_method
+  - wallpaper_removal_type
+  - wallpaper_washability_rating
   return_reasons:
   - size
   - color
@@ -4880,6 +4960,7 @@
   children: []
   attributes:
   - color
+  - curtain_rod_type
   - hardware_material
   - pattern
   return_reasons:
@@ -5017,6 +5098,7 @@
   children: []
   attributes:
   - color
+  - hook_style
   - pattern
   return_reasons:
   - color
@@ -5050,6 +5132,7 @@
   attributes:
   - color
   - pattern
+  - window_rod_type
   return_reasons:
   - size
   - color
@@ -5101,6 +5184,8 @@
   - hg-3-74-1-2
   attributes:
   - color
+  - curtain_heading_style
+  - curtain_lining_type
   - fabric
   - pattern
   return_reasons:
@@ -5178,6 +5263,7 @@
   - blind/shade_style
   - color
   - control_technology
+  - lift_mechanism
   - light_control
   - pattern
   - window_treatment_material
@@ -5241,6 +5327,8 @@
   - color
   - film_application_method
   - pattern
+  - window_film_installation_surface
+  - window_film_type
   return_reasons:
   - size
   - color
@@ -5258,6 +5346,7 @@
   attributes:
   - color
   - pattern
+  - window_screen_type
   - window_treatment_material
   return_reasons:
   - size
@@ -5279,6 +5368,7 @@
   - color
   - material
   - pattern
+  - window_treatment_lining_type
   return_reasons:
   - size
   - color
@@ -5314,6 +5404,7 @@
   - color
   - material
   - pattern
+  - valance_style
   return_reasons:
   - size
   - color
@@ -5333,8 +5424,10 @@
   - hg-3-75-5
   attributes:
   - color
+  - map_style
   - pattern
   - power_source
+  - relief_style
   return_reasons:
   - size
   - color
@@ -5369,6 +5462,7 @@
   - color
   - pattern
   - power_source
+  - topographical_relief
   return_reasons:
   - size
   - color
@@ -5401,6 +5495,7 @@
   children: []
   attributes:
   - color
+  - globe_map_content
   - pattern
   - power_source
   return_reasons:
@@ -5438,6 +5533,7 @@
   children: []
   attributes:
   - color
+  - garland_style
   - material_treatment
   - pattern
   - plant_material
@@ -5562,6 +5658,7 @@
   children: []
   attributes:
   - color
+  - emergency_blanket_features
   - pattern
   return_reasons:
   - size
@@ -5577,6 +5674,7 @@
   attributes:
   - color
   - pattern
+  - preparation_type
   return_reasons:
   - size
   - shelf_life
@@ -5607,6 +5705,7 @@
   children: []
   attributes:
   - color
+  - furniture_anchor_type
   - hardware_material
   - pattern
   return_reasons:
@@ -5698,6 +5797,8 @@
   children: []
   attributes:
   - color
+  - fuel_compatibility
+  - grate_design
   - material
   - pattern
   return_reasons:
@@ -5763,6 +5864,7 @@
   children: []
   attributes:
   - color
+  - fireplace_tool_items_included
   - material
   - pattern
   return_reasons:
@@ -5784,7 +5886,9 @@
   - hg-5-7-4
   attributes:
   - color
+  - fireplace_fuel_form
   - pattern
+  - wood_seasoning_method
   return_reasons:
   - size
   - changed_my_mind
@@ -5798,6 +5902,7 @@
   children: []
   attributes:
   - color
+  - firewood_seasoning
   - pattern
   return_reasons:
   - size
@@ -6138,6 +6243,7 @@
   children: []
   attributes:
   - color
+  - fire_alarm_panel_type
   - pattern
   - power_source
   return_reasons:
@@ -6288,6 +6394,8 @@
   attributes:
   - color
   - pattern
+  - sprinkler_orientation
+  - sprinkler_response_type
   return_reasons:
   - size
   - incompatible
@@ -6325,6 +6433,7 @@
   - color
   - connectivity_technology
   - detector_operation_mode
+  - hazards_detected
   - mounting_type
   - pattern
   - power_source
@@ -6398,6 +6507,7 @@
   - color
   - pattern
   - power_source
+  - water_sensor_design
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -6498,6 +6608,7 @@
   - hg-8-1-6
   attributes:
   - color
+  - compatible_air_conditioner_type
   - material
   - pattern
   return_reasons:
@@ -6531,6 +6642,7 @@
   attributes:
   - color
   - material
+  - merv_rating
   - pattern
   return_reasons:
   - incompatible
@@ -6607,6 +6719,7 @@
   name: Air Purifier Filters
   children: []
   attributes:
+  - air_purifier_filtration_rating
   - color
   - pattern
   return_reasons:
@@ -6674,6 +6787,7 @@
   children: []
   attributes:
   - color
+  - compatible_dehumidifier_technology
   - pattern
   return_reasons:
   - size
@@ -6689,6 +6803,7 @@
   children: []
   attributes:
   - color
+  - dehumidifier_refill_form
   - pattern
   return_reasons:
   - size
@@ -6864,6 +6979,7 @@
   children: []
   attributes:
   - color
+  - pad_cleaning_action
   - pattern
   return_reasons:
   - size
@@ -6911,6 +7027,7 @@
   attributes:
   - color
   - pattern
+  - steam_nozzle_type
   return_reasons:
   - size
   - incompatible
@@ -7015,6 +7132,7 @@
   attributes:
   - color
   - pattern
+  - pipe_connection_method
   return_reasons:
   - size
   - incompatible
@@ -7029,6 +7147,7 @@
   children: []
   attributes:
   - color
+  - flue_pipe_connection_type
   - pattern
   return_reasons:
   - size
@@ -7060,6 +7179,8 @@
   attributes:
   - color
   - pattern
+  - sheath_material
+  - thermocouple_junction_type
   return_reasons:
   - size
   - incompatible
@@ -7113,6 +7234,7 @@
   - hg-8-7-6
   attributes:
   - color
+  - compatible_radiator_style
   - pattern
   return_reasons:
   - size
@@ -7264,6 +7386,7 @@
   children: []
   attributes:
   - color
+  - humidifier_filter_type
   - pattern
   return_reasons:
   - size
@@ -7353,6 +7476,7 @@
   children: []
   attributes:
   - color
+  - compatible_garment_steamer_design
   - pattern
   return_reasons:
   - size
@@ -7460,6 +7584,7 @@
   children: []
   attributes:
   - color
+  - iron_cleaner_purpose
   - pattern
   return_reasons:
   - changed_my_mind
@@ -7617,6 +7742,7 @@
   - hg-8-10-5
   attributes:
   - color
+  - compatible_fuel_type
   - pattern
   return_reasons:
   - size
@@ -7747,6 +7873,7 @@
   name: Animal Care Sets
   children: []
   attributes:
+  - animal_care_set_components_included
   - color
   - compatible_vacuum_type
   - pattern
@@ -7795,6 +7922,7 @@
   name: Car Cleaning Kits
   children: []
   attributes:
+  - car_cleaning_kit_items_included
   - color
   - compatible_vacuum_type
   - pattern
@@ -7912,6 +8040,7 @@
   - color
   - compatible_vacuum_type
   - pattern
+  - vacuum_hose_connection_type
   return_reasons:
   - size
   - incompatible
@@ -8128,6 +8257,7 @@
   - hg-8-12-12
   attributes:
   - color
+  - compatible_water_heater_type
   - pattern
   return_reasons:
   - size
@@ -8174,6 +8304,7 @@
   attributes:
   - color
   - pattern
+  - water_heater_element_connection_type
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8187,6 +8318,7 @@
   children: []
   attributes:
   - color
+  - internal_membrane_type
   - pattern
   return_reasons:
   - capacity
@@ -8217,6 +8349,7 @@
   attributes:
   - color
   - pattern
+  - vent_pipe_type
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8493,6 +8626,7 @@
   name: Air Purifiers
   children: []
   attributes:
+  - air_purifier_filter_technology
   - battery_size
   - battery_type
   - color
@@ -8513,6 +8647,7 @@
   children: []
   attributes:
   - color
+  - drainage_method
   - energy_efficiency_class
   - pattern
   return_reasons:
@@ -8630,6 +8765,7 @@
   - battery_type
   - color
   - energy_efficiency_class
+  - oscillation_mode
   - pattern
   return_reasons:
   - size
@@ -8669,6 +8805,7 @@
   - battery_type
   - color
   - energy_efficiency_class
+  - oscillation_type
   - pattern
   return_reasons:
   - size
@@ -8771,6 +8908,7 @@
   - boiler_system
   - color
   - energy_efficiency_class
+  - heating_stages
   - mounting_type
   - pattern
   - power_source
@@ -8809,6 +8947,7 @@
   - boiler_system
   - color
   - energy_efficiency_class
+  - furnace_configuration
   - mounting_type
   - pattern
   - power_source
@@ -8830,6 +8969,7 @@
   - mounting_type
   - pattern
   - power_source
+  - radiator_design_type
   - suitable_space
   return_reasons:
   - size
@@ -8850,6 +8990,7 @@
   - color
   - energy_efficiency_class
   - evaporation_technology
+  - humidifier_features
   - pattern
   return_reasons:
   - size
@@ -8870,6 +9011,7 @@
   - battery_type
   - color
   - energy_efficiency_class
+  - nozzle_material
   - pattern
   return_reasons:
   - size
@@ -8890,6 +9032,7 @@
   - color
   - energy_efficiency_class
   - mounting_type
+  - patio_heater_safety_features
   - pattern
   - power_source
   return_reasons:
@@ -8911,6 +9054,7 @@
   - energy_efficiency_class
   - pattern
   - power_source
+  - space_heater_safety_features
   return_reasons:
   - size
   - operating_noise
@@ -9229,6 +9373,7 @@
   - battery_type
   - color
   - energy_efficiency_class
+  - floor_scrubber_brush_type
   - pattern
   return_reasons:
   - size
@@ -9602,6 +9747,7 @@
   attributes:
   - battery_size
   - battery_type
+  - code_technology
   - color
   - energy_efficiency_class
   - pattern
@@ -9617,6 +9763,7 @@
   name: Garage Door Openers
   children: []
   attributes:
+  - battery_backup_support
   - color
   - energy_efficiency_class
   - operation_method
@@ -9661,7 +9808,10 @@
   children: []
   attributes:
   - color
+  - door_hinge_position
+  - dryer_drum_material
   - dryer_features
+  - dryer_venting_type
   - energy_efficiency_class
   - loading_type
   - mounting_type
@@ -9894,6 +10044,7 @@
   - color
   - energy_efficiency_class
   - pattern
+  - ultrasonic_cleaner_accessories_included
   return_reasons:
   - size
   - capacity
@@ -10145,6 +10296,7 @@
   children: []
   attributes:
   - color
+  - liner_installation_method
   - material
   - pattern
   return_reasons:
@@ -10164,6 +10316,7 @@
   - hg-10-2-2
   attributes:
   - color
+  - floor_protection_transparency_level
   - material
   - pattern
   return_reasons:
@@ -10180,6 +10333,7 @@
   children: []
   attributes:
   - color
+  - film_reusability
   - material
   - pattern
   return_reasons:
@@ -10216,6 +10370,7 @@
   attributes:
   - color
   - fabric
+  - floor_surface_compatibility
   - pattern
   - shape
   return_reasons:
@@ -10233,6 +10388,7 @@
   - allergy_friendly_features
   - care_instructions
   - color
+  - garage_floor_mat_style
   - mat_features
   - material
   - pattern
@@ -10298,6 +10454,8 @@
   children: []
   attributes:
   - color
+  - handle_connection_type
+  - handle_length_adjustability
   - pattern
   return_reasons:
   - size
@@ -10312,6 +10470,7 @@
   name: Broom Heads
   children: []
   attributes:
+  - bristle_tip_type
   - color
   - pattern
   return_reasons:
@@ -10343,6 +10502,7 @@
   name: Buckets
   children: []
   attributes:
+  - bucket_features
   - color
   - pattern
   return_reasons:
@@ -10414,6 +10574,7 @@
   - battery_size
   - battery_type
   - color
+  - duster_head_material
   - material
   - pattern
   return_reasons:
@@ -10430,6 +10591,7 @@
   children: []
   attributes:
   - color
+  - dustpan_type
   - material
   - pattern
   return_reasons:
@@ -10478,6 +10640,7 @@
   - hg-10-6-11-16
   - hg-10-6-11-17
   attributes:
+  - cleaning_solution_concentration
   - color
   - dispenser_type
   - ingredients
@@ -10547,6 +10710,7 @@
   attributes:
   - alcohol/solvent_content
   - color
+  - dish_detergent_features
   - dispenser_type
   - ingredients
   - pattern
@@ -10686,6 +10850,7 @@
   attributes:
   - color
   - dispenser_type
+  - glass_and_surface_cleaner_features
   - ingredients
   - pattern
   return_reasons:
@@ -10702,6 +10867,7 @@
   attributes:
   - color
   - dispenser_type
+  - glass_cleaner_features
   - ingredients
   - pattern
   return_reasons:
@@ -10717,6 +10883,7 @@
   children: []
   attributes:
   - alcohol/solvent_content
+  - cleaner_concentration
   - color
   - dispenser_type
   - ingredients
@@ -10809,6 +10976,7 @@
   - dispenser_type
   - ingredients
   - pattern
+  - stainless_steel_cleaner_features
   return_reasons:
   - scent
   - changed_my_mind
@@ -10932,6 +11100,7 @@
   children: []
   attributes:
   - color
+  - compatible_washing_machine_type
   - dispenser_type
   - ingredients
   - pattern
@@ -10951,6 +11120,7 @@
   - color
   - dry/wet_cleaning
   - material
+  - mop_head_type
   - pattern
   return_reasons:
   - size
@@ -10970,6 +11140,7 @@
   - color
   - dry/wet_cleaning
   - material
+  - mop_wringing_mechanism
   - pattern
   return_reasons:
   - size
@@ -10985,6 +11156,7 @@
   children: []
   attributes:
   - bristle_material
+  - brush_head_shape
   - brush_material
   - cleaning_surfaces
   - color
@@ -11027,6 +11199,7 @@
   name: Shop Towels & General-Purpose Cleaning Cloths
   children: []
   attributes:
+  - cleaning_cloth_features
   - color
   - material
   - pattern
@@ -11048,6 +11221,7 @@
   attributes:
   - color
   - pattern
+  - scrubbing_strength
   return_reasons:
   - size
   - material
@@ -11128,6 +11302,7 @@
   attributes:
   - color
   - pattern
+  - tissue_lotion_content
   return_reasons:
   - size
   - scent
@@ -11190,6 +11365,7 @@
   attributes:
   - color
   - pattern
+  - thermometer_design
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -11237,6 +11413,7 @@
   name: Bleach
   children: []
   attributes:
+  - bleach_formulation
   - color
   - dispenser_type
   - pattern
@@ -11253,6 +11430,7 @@
   name: Clothespins
   children: []
   attributes:
+  - clothespin_type
   - color
   - material
   - pattern
@@ -11370,6 +11548,7 @@
   - hg-10-9-7-2
   attributes:
   - color
+  - fabric_care_product_form
   - pattern
   - scent
   return_reasons:
@@ -11385,6 +11564,7 @@
   children: []
   attributes:
   - color
+  - dryer_sheet_features
   - pattern
   - scent
   return_reasons:
@@ -11401,6 +11581,7 @@
   attributes:
   - alcohol/solvent_content
   - color
+  - fabric_softener_features
   - pattern
   - scent
   return_reasons:
@@ -11416,6 +11597,7 @@
   children: []
   attributes:
   - alcohol/solvent_content
+  - bleach_type
   - color
   - pattern
   - targeted_stains
@@ -11432,6 +11614,7 @@
   children: []
   attributes:
   - color
+  - fabric_stiffness_level
   - pattern
   return_reasons:
   - scent
@@ -11513,6 +11696,7 @@
   children: []
   attributes:
   - color
+  - ironing_board_pad_shape
   - material
   - pattern
   return_reasons:
@@ -11531,6 +11715,7 @@
   - hg-10-9-13-3
   attributes:
   - color
+  - compatible_ironing_board_type
   - pattern
   return_reasons:
   - size
@@ -11575,6 +11760,7 @@
   - color
   - cover_material
   - features
+  - ironing_board_form_factor
   - mounting_type
   - pattern
   return_reasons:
@@ -11613,6 +11799,7 @@
   children: []
   attributes:
   - color
+  - laundry_ball_texture
   - pattern
   return_reasons:
   - size
@@ -11667,6 +11854,7 @@
   - hg-10-9-18-2
   attributes:
   - color
+  - laundry_wash_accessory_type
   - pattern
   return_reasons:
   - material
@@ -11704,6 +11892,7 @@
   children: []
   attributes:
   - color
+  - lint_roller_type
   - pattern
   return_reasons:
   - size
@@ -11784,6 +11973,8 @@
   children: []
   attributes:
   - color
+  - desiccant_material
+  - moisture_absorber_form
   - pattern
   return_reasons:
   - size
@@ -11818,6 +12009,7 @@
   - battery_size
   - battery_type
   - color
+  - fly_swatter_type
   - lumber/wood_type
   - pattern
   - power_source
@@ -11877,7 +12069,9 @@
   children: []
   attributes:
   - alcohol/solvent_content
+  - attractant_type
   - color
+  - glue_trap_design
   - pattern
   - suitable_for_pest_type
   - suitable_space
@@ -11895,6 +12089,8 @@
   children: []
   attributes:
   - color
+  - door_configuration
+  - live_trap_design
   - pattern
   - suitable_for_pest_type
   - suitable_space
@@ -11987,6 +12183,7 @@
   attributes:
   - color
   - ingredients
+  - mode_of_action
   - pattern
   return_reasons:
   - ingredients
@@ -12111,6 +12308,7 @@
   - color
   - ingredients
   - pattern
+  - repellent_mechanism
   - suitable_space
   return_reasons:
   - scent
@@ -12230,6 +12428,7 @@
   attributes:
   - color
   - pattern
+  - shoe_brush_type
   return_reasons:
   - size
   - changed_my_mind
@@ -12260,6 +12459,7 @@
   attributes:
   - color
   - pattern
+  - shoe_dryer_technology
   return_reasons:
   - size
   - capacity
@@ -12383,6 +12583,7 @@
   - hg-10-14-8-2
   attributes:
   - color
+  - compatible_footwear_material
   - pattern
   return_reasons:
   - color
@@ -12399,6 +12600,7 @@
   attributes:
   - color
   - pattern
+  - shoe_polish_form
   return_reasons:
   - color
   - changed_my_mind
@@ -12443,6 +12645,7 @@
   attributes:
   - color
   - pattern
+  - shoe_treatment_purpose
   return_reasons:
   - color
   - scent
@@ -12491,6 +12694,7 @@
   - color
   - material
   - pattern
+  - size_adjustability
   return_reasons:
   - size
   - changed_my_mind
@@ -12504,6 +12708,7 @@
   children: []
   attributes:
   - color
+  - footwear_type_compatibility
   - material
   - pattern
   return_reasons:
@@ -12521,6 +12726,7 @@
   - color
   - material
   - pattern
+  - shoe_tree_design
   return_reasons:
   - size
   - changed_my_mind
@@ -12623,6 +12829,7 @@
   attributes:
   - color
   - pattern
+  - valet_organizer_features
   return_reasons:
   - size
   - color
@@ -12765,6 +12972,7 @@
   - color
   - furniture/fixture_features
   - pattern
+  - shoe_organizer_design
   return_reasons:
   - size
   - color
@@ -12850,7 +13058,9 @@
   children: []
   attributes:
   - color
+  - drawer_organizer_features
   - material
+  - organizer_application
   - pattern
   return_reasons:
   - size
@@ -12868,6 +13078,7 @@
   attributes:
   - bag/case_material
   - color
+  - compression_method
   - pattern
   return_reasons:
   - size
@@ -12902,6 +13113,7 @@
   - color
   - material
   - pattern
+  - stacking_capability
   return_reasons:
   - size
   - color
@@ -13226,6 +13438,7 @@
   children: []
   attributes:
   - color
+  - filter_technology
   - material
   - pattern
   return_reasons:
@@ -13258,6 +13471,7 @@
   attributes:
   - color
   - material
+  - number_of_compartments
   - pattern
   - shape
   return_reasons:
@@ -13297,6 +13511,7 @@
   - hg-10-18-2-5
   attributes:
   - color
+  - compatible_hazardous_waste_type
   - material
   - pattern
   - shape
@@ -13450,6 +13665,7 @@
   - hg-10-19-6
   attributes:
   - color
+  - compatible_waste_container_type
   - pattern
   return_reasons:
   - size
@@ -13498,6 +13714,7 @@
   attributes:
   - color
   - pattern
+  - waste_container_sign_message
   return_reasons:
   - size
   - color
@@ -13513,6 +13730,7 @@
   attributes:
   - color
   - pattern
+  - waste_container_lid_features
   return_reasons:
   - size
   - incompatible
@@ -13528,6 +13746,8 @@
   attributes:
   - color
   - pattern
+  - wheel_bearing_type
+  - wheel_tread_style
   return_reasons:
   - size
   - incompatible
@@ -13634,6 +13854,7 @@
   - hg-11-1-2-4
   attributes:
   - color
+  - draft_gas_type
   - pattern
   return_reasons:
   - size
@@ -13747,6 +13968,8 @@
   - hg-11-1-4-2
   attributes:
   - color
+  - handle_style
+  - insulation_type
   - pattern
   return_reasons:
   - color
@@ -13778,6 +14001,7 @@
   name: Beverage Tubs
   children: []
   attributes:
+  - beverage_tub_features
   - color
   - pattern
   return_reasons:
@@ -13860,8 +14084,10 @@
   name: Screw-On Bottle Caps
   children: []
   attributes:
+  - bottle_cap_liner_type
   - color
   - pattern
+  - tamper_evident_feature
   return_reasons:
   - size
   - color
@@ -13875,6 +14101,7 @@
   name: Swing-Top Bottle Caps
   children: []
   attributes:
+  - bottle_cap_gasket_material
   - color
   - pattern
   return_reasons:
@@ -13891,7 +14118,9 @@
   children: []
   attributes:
   - barware_material
+  - bottle_stopper_mechanism
   - color
+  - compatible_beverage_type
   - pattern
   return_reasons:
   - size
@@ -13927,6 +14156,7 @@
   children: []
   attributes:
   - barware_material
+  - coaster_features
   - color
   - construction
   - embellishment/trim_material
@@ -14045,6 +14275,7 @@
   children: []
   attributes:
   - barware_material
+  - cocktail_strainer_type
   - color
   - pattern
   return_reasons:
@@ -14143,6 +14374,7 @@
   attributes:
   - barware_material
   - color
+  - corkscrew_accessories_included
   - pattern
   return_reasons:
   - size
@@ -14176,6 +14408,8 @@
   attributes:
   - barware_material
   - color
+  - corkscrew_hinge_type
+  - corkscrew_tools_included
   - pattern
   return_reasons:
   - size
@@ -14242,7 +14476,9 @@
   attributes:
   - barware_material
   - color
+  - intended_beverage_type
   - pattern
+  - stopper_type
   return_reasons:
   - size
   - color
@@ -14288,6 +14524,8 @@
   children: []
   attributes:
   - color
+  - ice_bucket_accessories_included
+  - ice_bucket_insulation
   - material
   - pattern
   return_reasons:
@@ -14308,6 +14546,7 @@
   - barware_material
   - color
   - pattern
+  - wine_aerator_type
   return_reasons:
   - size
   - color
@@ -14425,6 +14664,7 @@
   children: []
   attributes:
   - baking_sheet_material
+  - baking_sheet_style
   - color
   - pattern
   - shape
@@ -14529,7 +14769,9 @@
   - cleaning_instructions
   - color
   - cookware/bakeware_material
+  - pan_bottom_type
   - pattern
+  - pie_pan_edge_style
   - product_certifications_standards
   return_reasons:
   - size
@@ -14551,6 +14793,7 @@
   - color
   - cookware/bakeware_material
   - pattern
+  - pizza_pan_style
   - product_certifications_standards
   return_reasons:
   - size
@@ -14663,6 +14906,7 @@
   name: Baking Liners
   children: []
   attributes:
+  - baking_liner_size
   - color
   - cookware/bakeware_material
   - pattern
@@ -14742,6 +14986,7 @@
   - color
   - cookware/bakeware_material
   - pattern
+  - roasting_rack_shape
   return_reasons:
   - size
   - changed_my_mind
@@ -14776,6 +15021,7 @@
   - color
   - compatible_stove_top_type
   - cookware/bakeware_material
+  - cookware_coating_type
   - pattern
   return_reasons:
   - size
@@ -14926,6 +15172,7 @@
   - color
   - compatible_stove_top_type
   - cookware/bakeware_material
+  - fermentation_crock_type
   - pattern
   return_reasons:
   - size
@@ -14945,6 +15192,7 @@
   - cleaning_instructions
   - color
   - compatible_stove_top_type
+  - cooking_surface_texture
   - cookware/bakeware_material
   - cookware_features
   - pattern
@@ -15021,6 +15269,7 @@
   name: Canners
   children: []
   attributes:
+  - canner_type
   - color
   - compatible_stove_top_type
   - cookware/bakeware_material
@@ -15043,6 +15292,8 @@
   - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
+  - pressure_cooker_safety_features
+  - pressure_settings
   return_reasons:
   - size
   - color
@@ -15128,6 +15379,7 @@
   - color
   - compatible_stove_top_type
   - cookware/bakeware_material
+  - cookware_coating_material
   - cookware_features
   - pattern
   - product_certifications_standards
@@ -15190,6 +15442,7 @@
   - compatible_stove_top_type
   - cookware/bakeware_material
   - pattern
+  - whistling
   return_reasons:
   - size
   - color
@@ -15224,6 +15477,7 @@
   name: Clay Cooking Pots
   children: []
   attributes:
+  - clay_pot_material
   - color
   - compatible_stove_top_type
   - cookware/bakeware_material
@@ -15267,6 +15521,7 @@
   - cookware_features
   - pattern
   - product_certifications_standards
+  - wok_bottom_type
   return_reasons:
   - size
   - color
@@ -15362,6 +15617,8 @@
   - color
   - cookware/bakeware_material
   - cookware_features
+  - cookware_lid_style
+  - lid_vent_type
   - pattern
   - product_certifications_standards
   - shape
@@ -15434,6 +15691,7 @@
   - color
   - handle_material
   - pattern
+  - pressure_cooker_handle_type
   return_reasons:
   - size
   - incompatible
@@ -15637,6 +15895,7 @@
   children: []
   attributes:
   - color
+  - dispensing_mechanism
   - material
   - pattern
   return_reasons:
@@ -15669,6 +15928,7 @@
   children: []
   attributes:
   - color
+  - cooler_style
   - material
   - pattern
   return_reasons:
@@ -15687,6 +15947,7 @@
   - hg-11-3-4-2
   attributes:
   - color
+  - insulation_capability
   - material
   - pattern
   return_reasons:
@@ -15702,9 +15963,12 @@
   name: Can & Bottle Sleeves
   children: []
   attributes:
+  - bag_insulation
   - color
+  - insulation_status
   - material
   - pattern
+  - sleeve_insulation
   - suitable_for_container_type
   return_reasons:
   - color
@@ -15735,6 +15999,7 @@
   children: []
   attributes:
   - color
+  - flask_insulation_type
   - material
   - pattern
   return_reasons:
@@ -15773,6 +16038,7 @@
   attributes:
   - age_group
   - color
+  - food_carrier_insulation_type
   - material
   - pattern
   return_reasons:
@@ -15808,6 +16074,7 @@
   attributes:
   - age_group
   - color
+  - lunch_set_items_included
   - material
   - pattern
   return_reasons:
@@ -15905,8 +16172,10 @@
   children: []
   attributes:
   - color
+  - insulation_technology
   - material
   - pattern
+  - thermos_handle_type
   return_reasons:
   - size
   - color
@@ -15976,6 +16245,7 @@
   - hg-11-4-8
   attributes:
   - color
+  - food_storage_features
   - pattern
   return_reasons:
   - size
@@ -15992,6 +16262,7 @@
   - hg-11-4-1-1
   - hg-11-4-1-2
   attributes:
+  - bread_storage_ventilation
   - color
   - food_storage_material
   - lumber/wood_type
@@ -16088,6 +16359,8 @@
   attributes:
   - color
   - food_bag_material
+  - food_storage_bag_features
+  - food_storage_bag_type
   - pattern
   return_reasons:
   - capacity
@@ -16127,7 +16400,9 @@
   - hg-11-4-7-6
   attributes:
   - color
+  - food_wrap_features
   - pattern
+  - wrap_format
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -16140,6 +16415,7 @@
   children: []
   attributes:
   - color
+  - foil_duty_rating
   - pattern
   return_reasons:
   - changed_my_mind
@@ -16153,6 +16429,7 @@
   children: []
   attributes:
   - color
+  - parchment_paper_coating
   - pattern
   return_reasons:
   - changed_my_mind
@@ -16180,6 +16457,7 @@
   attributes:
   - color
   - pattern
+  - wax_paper_form
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -16250,6 +16528,7 @@
   children: []
   attributes:
   - color
+  - label_content_type
   - pattern
   return_reasons:
   - color
@@ -16265,6 +16544,8 @@
   children: []
   attributes:
   - color
+  - compatible_wrap_material
+  - cutting_mechanism_type
   - material
   - pattern
   return_reasons:
@@ -16279,6 +16560,7 @@
   children: []
   attributes:
   - color
+  - oxygen_indicator_type
   - pattern
   return_reasons:
   - capacity
@@ -16323,6 +16605,7 @@
   name: Bag Sealing Clips
   children: []
   attributes:
+  - bag_clip_style
   - color
   - pattern
   return_reasons:
@@ -16504,6 +16787,7 @@
   - hg-11-6-2-16
   attributes:
   - color
+  - compatible_coffee_maker_type
   - pattern
   return_reasons:
   - size
@@ -16518,6 +16802,7 @@
   name: Coffee Decanter Warmers
   children: []
   attributes:
+  - coffee_decanter_warmer_features
   - color
   - pattern
   return_reasons:
@@ -16546,6 +16831,7 @@
   name: Coffee Filter Baskets
   children: []
   attributes:
+  - coffee_filter_basket_size
   - color
   - pattern
   return_reasons:
@@ -16560,7 +16846,9 @@
   name: Coffee Filters
   children: []
   attributes:
+  - coffee_filter_shape
   - color
+  - filter_bleaching_method
   - filter_material
   - pattern
   return_reasons:
@@ -16575,6 +16863,7 @@
   name: Coffee Grinder Accessories
   children: []
   attributes:
+  - coffee_grinder_accessory_type
   - color
   - pattern
   return_reasons:
@@ -16589,6 +16878,7 @@
   name: Coffee Grinders
   children: []
   attributes:
+  - burr_shape
   - color
   - pattern
   return_reasons:
@@ -16658,6 +16948,7 @@
   children: []
   attributes:
   - color
+  - compatible_coffee_capsule_system
   - pattern
   return_reasons:
   - incompatible
@@ -16673,6 +16964,7 @@
   attributes:
   - color
   - pattern
+  - sprinkle_opening_style
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -16728,6 +17020,7 @@
   children: []
   attributes:
   - color
+  - cup_warmer_features
   - pattern
   return_reasons:
   - incompatible
@@ -16770,6 +17063,7 @@
   children: []
   attributes:
   - color
+  - dripper_design
   - pattern
   return_reasons:
   - incompatible
@@ -16858,6 +17152,7 @@
   children: []
   attributes:
   - color
+  - milk_frothing_method
   - pattern
   return_reasons:
   - incompatible
@@ -17008,6 +17303,7 @@
   attributes:
   - color
   - pattern
+  - pitcher_spout_style
   - power_source
   - tool/utensil_material
   return_reasons:
@@ -17025,6 +17321,7 @@
   - color
   - material
   - pattern
+  - portafilter_type
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -17451,6 +17748,7 @@
   - hg-11-6-6-1-2
   attributes:
   - color
+  - dishwasher_accessory_type
   - pattern
   return_reasons:
   - incompatible
@@ -17606,6 +17904,7 @@
   children: []
   attributes:
   - color
+  - lid_features
   - pattern
   return_reasons:
   - size
@@ -17621,6 +17920,8 @@
   attributes:
   - color
   - pattern
+  - spray_pattern
+  - sprayer_operation_mechanism
   return_reasons:
   - capacity
   - changed_my_mind
@@ -17704,6 +18005,7 @@
   - hg-11-6-9-1-5
   attributes:
   - color
+  - cooking_gel_fuel_base
   - pattern
   return_reasons:
   - changed_my_mind
@@ -17813,6 +18115,7 @@
   - hg-11-6-10-2
   attributes:
   - color
+  - food_dehydrator_surface_type
   - pattern
   return_reasons:
   - incompatible
@@ -17841,6 +18144,7 @@
   children: []
   attributes:
   - color
+  - food_dehydrator_tray_type
   - pattern
   return_reasons:
   - incompatible
@@ -17893,6 +18197,7 @@
   children: []
   attributes:
   - color
+  - food_processor_attachments_included
   - pattern
   - suitable_for_food_processor_type
   return_reasons:
@@ -17909,6 +18214,8 @@
   attributes:
   - color
   - pattern
+  - stackability
+  - stackable_design
   - suitable_for_food_processor_type
   return_reasons:
   - incompatible
@@ -17923,6 +18230,7 @@
   children: []
   attributes:
   - color
+  - cutting_disc_function
   - pattern
   - suitable_for_food_processor_type
   return_reasons:
@@ -17983,6 +18291,7 @@
   children: []
   attributes:
   - color
+  - drum_grating_styles_included
   - pattern
   - suitable_for_food_processor_type
   return_reasons:
@@ -18247,6 +18556,7 @@
   children: []
   attributes:
   - color
+  - gasket_profile_type
   - pattern
   return_reasons:
   - incompatible
@@ -18345,6 +18655,7 @@
   children: []
   attributes:
   - color
+  - garbage_disposal_stopper_style
   - pattern
   return_reasons:
   - size
@@ -18406,6 +18717,7 @@
   - hg-11-6-14-3
   attributes:
   - color
+  - ice_cream_maker_accessories_included
   - pattern
   return_reasons:
   - incompatible
@@ -18724,6 +19036,7 @@
   attributes:
   - color
   - pattern
+  - ventilation_type
   return_reasons:
   - size
   - changed_my_mind
@@ -18752,6 +19065,7 @@
   attributes:
   - color
   - pattern
+  - plate_coupling_pattern
   return_reasons:
   - size
   - changed_my_mind
@@ -18811,6 +19125,7 @@
   - battery_size
   - battery_type
   - color
+  - compatible_grill_type
   - lumber/wood_type
   - pattern
   - wood_finish
@@ -18832,6 +19147,7 @@
   - hg-11-6-19-1-4
   - hg-11-6-19-1-5
   attributes:
+  - charcoal_ignition_type
   - color
   - pattern
   return_reasons:
@@ -18858,6 +19174,7 @@
   name: Charcoal Briquettes
   children: []
   attributes:
+  - briquette_ignition_type
   - color
   - pattern
   return_reasons:
@@ -18908,6 +19225,7 @@
   name: Charcoal Chimneys
   children: []
   attributes:
+  - charcoal_chimney_features
   - color
   - pattern
   return_reasons:
@@ -18939,6 +19257,7 @@
   children: []
   attributes:
   - color
+  - compatible_outdoor_grill_style
   - pattern
   return_reasons:
   - size
@@ -18970,6 +19289,7 @@
   children: []
   attributes:
   - color
+  - outdoor_grill_rack_type
   - pattern
   return_reasons:
   - incompatible
@@ -19019,6 +19339,7 @@
   name: Grill Burners
   children: []
   attributes:
+  - burner_shape
   - color
   - pattern
   return_reasons:
@@ -19064,6 +19385,7 @@
   - battery_size
   - battery_type
   - color
+  - grill_thermometer_type
   - pattern
   return_reasons:
   - incompatible
@@ -19202,6 +19524,7 @@
   - color
   - lumber/wood_type
   - pattern
+  - smoking_chip_size
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -19381,6 +19704,7 @@
   attributes:
   - color
   - pattern
+  - popcorn_kernel_variety
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -19425,6 +19749,7 @@
   - hg-11-6-22-9
   attributes:
   - color
+  - compatible_stove_fuel_type
   - pattern
   return_reasons:
   - size
@@ -19454,6 +19779,7 @@
   children: []
   attributes:
   - color
+  - fire_starter_type
   - pattern
   return_reasons:
   - changed_my_mind
@@ -19467,6 +19793,7 @@
   children: []
   attributes:
   - color
+  - compatible_stove_type
   - pattern
   return_reasons:
   - size
@@ -19525,6 +19852,7 @@
   attributes:
   - color
   - pattern
+  - range_hood_filter_type
   return_reasons:
   - size
   - incompatible
@@ -19570,6 +19898,7 @@
   attributes:
   - color
   - pattern
+  - vent_style
   return_reasons:
   - size
   - incompatible
@@ -19612,6 +19941,7 @@
   - hg-11-6-24-7
   attributes:
   - color
+  - compatible_refrigerator_compartment
   - pattern
   return_reasons:
   - size
@@ -19642,6 +19972,7 @@
   attributes:
   - color
   - pattern
+  - shelf_location_in_appliance
   return_reasons:
   - size
   - incompatible
@@ -19732,6 +20063,8 @@
   children: []
   attributes:
   - color
+  - cylinder_connector_type
+  - gas_type
   - pattern
   return_reasons:
   - size
@@ -19748,6 +20081,7 @@
   attributes:
   - color
   - pattern
+  - sweetener_type
   return_reasons:
   - taste
   - dietary_requirements
@@ -19766,6 +20100,8 @@
   attributes:
   - color
   - pattern
+  - steam_table_pan_size
+  - steam_table_pan_type
   return_reasons:
   - size
   - incompatible
@@ -19781,6 +20117,7 @@
   attributes:
   - color
   - pattern
+  - steam_table_pan_cover_features
   return_reasons:
   - size
   - changed_my_mind
@@ -19794,6 +20131,7 @@
   children: []
   attributes:
   - color
+  - pan_perforation_type
   - pattern
   return_reasons:
   - size
@@ -20009,6 +20347,7 @@
   attributes:
   - color
   - pattern
+  - waffle_style
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -20039,6 +20378,7 @@
   - hg-11-6-30-6
   attributes:
   - color
+  - compatible_water_cooler_type
   - pattern
   return_reasons:
   - incompatible
@@ -20052,6 +20392,7 @@
   name: Water Cooler Bottles
   children: []
   attributes:
+  - bottle_fill_state
   - color
   - pattern
   return_reasons:
@@ -20236,6 +20577,7 @@
   - hg-11-6-33-4
   - hg-11-6-33-5
   attributes:
+  - air_fryer_accessory_type
   - color
   - material
   - pattern
@@ -20426,6 +20768,7 @@
   children: []
   attributes:
   - color
+  - crust_browning_level
   - pattern
   return_reasons:
   - size
@@ -20481,6 +20824,8 @@
   name: Drip Coffee Makers
   children: []
   attributes:
+  - brew_strength_options
+  - coffee_filter_type
   - color
   - pattern
   return_reasons:
@@ -20515,6 +20860,8 @@
   attributes:
   - coffee_input_type
   - color
+  - espresso_boiler_type
+  - milk_frothing_system
   - mounting_type
   - pattern
   return_reasons:
@@ -20679,6 +21026,8 @@
   children: []
   attributes:
   - color
+  - dishwasher_wash_programs
+  - drying_system
   - energy_efficiency_class
   - mounting_type
   - pattern
@@ -20712,6 +21061,7 @@
   children: []
   attributes:
   - color
+  - electric_kettle_features
   - material
   - pattern
   - power_source
@@ -20778,6 +21128,8 @@
   children: []
   attributes:
   - color
+  - fondue_pot_type
+  - fondue_set_pieces_included
   - pattern
   return_reasons:
   - size
@@ -20816,6 +21168,7 @@
   children: []
   attributes:
   - color
+  - egg_cooker_functions
   - pattern
   return_reasons:
   - color
@@ -20847,6 +21200,7 @@
   attributes:
   - color
   - pattern
+  - rice_cooker_functions
   return_reasons:
   - color
   - capacity
@@ -20947,6 +21301,7 @@
   - hg-11-7-16-3
   attributes:
   - color
+  - grinding_mechanism_type
   - pattern
   return_reasons:
   - capacity
@@ -21020,6 +21375,7 @@
   - hg-11-7-17-1-3
   - hg-11-7-17-1-4
   attributes:
+  - blender_jar_material
   - color
   - pattern
   return_reasons:
@@ -21120,6 +21476,7 @@
   - color
   - pattern
   - power_source
+  - smoker_type
   return_reasons:
   - capacity
   - changed_my_mind
@@ -21186,6 +21543,7 @@
   children: []
   attributes:
   - color
+  - inner_pot_coating
   - pattern
   return_reasons:
   - color
@@ -21203,6 +21561,7 @@
   attributes:
   - color
   - pattern
+  - steam_table_pan_size_compatibility
   return_reasons:
   - size
   - capacity
@@ -21253,7 +21612,9 @@
   - hg-11-7-20-3
   attributes:
   - color
+  - door_hinge_orientation
   - energy_efficiency_class
+  - freezer_configuration
   - mounting_type
   - pattern
   - star_rating
@@ -21319,6 +21680,7 @@
   children: []
   attributes:
   - color
+  - garbage_disposal_feed_type
   - pattern
   return_reasons:
   - size
@@ -21410,6 +21772,7 @@
   attributes:
   - color
   - compatible_recipes
+  - freezing_method
   - pattern
   return_reasons:
   - color
@@ -21472,7 +21835,9 @@
   children: []
   attributes:
   - color
+  - ice_shape
   - pattern
+  - water_supply_type
   return_reasons:
   - size
   - color
@@ -21488,7 +21853,9 @@
   children: []
   attributes:
   - color
+  - juicer_type
   - pattern
+  - pulp_ejection_type
   return_reasons:
   - capacity
   - changed_my_mind
@@ -21578,6 +21945,7 @@
   children: []
   attributes:
   - color
+  - lubricant_requirement
   - pattern
   return_reasons:
   - size
@@ -21593,7 +21961,9 @@
   children: []
   attributes:
   - color
+  - microwave_oven_functions
   - pattern
+  - turntable_type
   return_reasons:
   - size
   - color
@@ -21611,6 +21981,7 @@
   - battery_size
   - battery_type
   - color
+  - milk_frother_type
   - pattern
   return_reasons:
   - size
@@ -21626,6 +21997,7 @@
   children: []
   attributes:
   - color
+  - mochi_maker_functions
   - pattern
   return_reasons:
   - size
@@ -21641,6 +22013,7 @@
   children: []
   attributes:
   - color
+  - grill_grate_material
   - pattern
   - power_source
   return_reasons:
@@ -21661,6 +22034,7 @@
   - mounting_type
   - oven_accessories_included
   - pattern
+  - self_cleaning_method
   return_reasons:
   - size
   - capacity
@@ -21778,6 +22152,7 @@
   attributes:
   - color
   - pattern
+  - range_installation_type
   return_reasons:
   - size
   - capacity
@@ -21797,6 +22172,7 @@
   - energy_efficiency_class
   - mounting_type
   - pattern
+  - refrigerator_configuration
   - star_rating
   return_reasons:
   - size
@@ -21839,6 +22215,7 @@
   - mounting_type
   - oven_accessories_included
   - pattern
+  - roaster_oven_functions
   return_reasons:
   - size
   - capacity
@@ -21852,6 +22229,8 @@
   name: Soda Makers
   children: []
   attributes:
+  - carbonation_level_adjustment
+  - co2_cylinder_compatibility
   - color
   - pattern
   - soda_maker_accessories_included
@@ -22040,6 +22419,7 @@
   attributes:
   - color
   - pattern
+  - toaster_features
   return_reasons:
   - size
   - color
@@ -22118,6 +22498,7 @@
   attributes:
   - color
   - pattern
+  - sealing_modes
   return_reasons:
   - size
   - capacity
@@ -22165,6 +22546,7 @@
   children: []
   attributes:
   - color
+  - dispensing_temperature_options
   - pattern
   return_reasons:
   - capacity
@@ -22185,6 +22567,7 @@
   - color
   - pattern
   - water_filter_application
+  - water_filtration_technology
   return_reasons:
   - capacity
   - incompatible
@@ -22247,6 +22630,7 @@
   - mounting_type
   - pattern
   - star_rating
+  - temperature_zones
   return_reasons:
   - size
   - color
@@ -22405,6 +22789,8 @@
   name: Aprons
   children: []
   attributes:
+  - apron_features
+  - apron_style
   - color
   - fabric
   - pattern
@@ -22441,6 +22827,7 @@
   name: Basters
   children: []
   attributes:
+  - baster_tip_type
   - color
   - pattern
   return_reasons:
@@ -22498,6 +22885,7 @@
   attributes:
   - color
   - pattern
+  - piping_tip_shape
   return_reasons:
   - size
   - color
@@ -22512,6 +22900,8 @@
   children: []
   attributes:
   - color
+  - compatible_coupler_size
+  - decorating_bag_features
   - pattern
   return_reasons:
   - size
@@ -22525,6 +22915,7 @@
   name: Turntables
   children: []
   attributes:
+  - base_features
   - color
   - pattern
   return_reasons:
@@ -22593,6 +22984,8 @@
   children: []
   attributes:
   - color
+  - compatible_can_size
+  - crushing_method
   - pattern
   - suitable_for_container_type
   return_reasons:
@@ -22658,6 +23051,7 @@
   attributes:
   - color
   - pattern
+  - strainer_style
   - tool/utensil_material
   return_reasons:
   - size
@@ -22672,6 +23066,7 @@
   name: Colanders
   children: []
   attributes:
+  - colander_style
   - color
   - pattern
   - tool/utensil_material
@@ -22690,6 +23085,7 @@
   attributes:
   - color
   - pattern
+  - strainer_type
   - tool/utensil_material
   return_reasons:
   - size
@@ -22777,6 +23173,7 @@
   children: []
   attributes:
   - color
+  - compatible_cooking_thermometer_type
   - pattern
   return_reasons:
   - incompatible
@@ -22866,6 +23263,7 @@
   children: []
   attributes:
   - color
+  - cooking_thermometer_design
   - display_technology
   - pattern
   - units_of_measurement
@@ -22961,6 +23359,7 @@
   - battery_type
   - color
   - pattern
+  - timer_mechanism
   return_reasons:
   - size
   - color
@@ -22975,6 +23374,7 @@
   children: []
   attributes:
   - color
+  - flame_adjustment
   - pattern
   return_reasons:
   - size
@@ -23009,6 +23409,7 @@
   - pattern
   - tool/utensil_material
   - wood_finish
+  - wood_grain_orientation
   return_reasons:
   - size
   - color
@@ -23228,6 +23629,7 @@
   attributes:
   - color
   - pattern
+  - seafood_utensil_items_included
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -23411,6 +23813,8 @@
   - hg-11-8-30-2
   attributes:
   - color
+  - grater_design
+  - grating_surface_coarseness
   - pattern
   - tool/utensil_material
   return_reasons:
@@ -23425,6 +23829,7 @@
   children: []
   attributes:
   - color
+  - food_grater_type
   - lumber/wood_type
   - pattern
   - tool/utensil_material
@@ -23520,6 +23925,7 @@
   - color
   - lumber/wood_type
   - pattern
+  - skewer_tip_type
   - tool/utensil_material
   - wood_finish
   return_reasons:
@@ -23552,6 +23958,7 @@
   - color
   - lumber/wood_type
   - pattern
+  - stick_tip_style
   - tool/utensil_material
   - wood_finish
   return_reasons:
@@ -23567,6 +23974,7 @@
   children: []
   attributes:
   - color
+  - funnel_type
   - pattern
   - tool/utensil_material
   return_reasons:
@@ -23628,6 +24036,7 @@
   children: []
   attributes:
   - color
+  - nozzle_types_included
   - pattern
   return_reasons:
   - size
@@ -23655,11 +24064,14 @@
   - hg-11-8-39-11
   - hg-11-8-39-12
   attributes:
+  - blade_construction_method
+  - blade_finish
   - blade_material
   - handle_color
   - handle_material
   - handle_pattern
   - lumber/wood_type
+  - tang_type
   - wood_finish
   return_reasons:
   - size
@@ -23983,6 +24395,7 @@
   - hg-11-8-41-2-3
   attributes:
   - color
+  - drinkware_holder_style
   - pattern
   return_reasons:
   - size
@@ -24132,6 +24545,7 @@
   - color
   - lumber/wood_type
   - pattern
+  - utensil_holder_features
   - wood_finish
   return_reasons:
   - size
@@ -24221,6 +24635,7 @@
   - hg-11-8-41-7-2
   attributes:
   - color
+  - compatible_napkin_size
   - pattern
   return_reasons:
   - size
@@ -24341,6 +24756,7 @@
   - color
   - lumber/wood_type
   - pattern
+  - spice_organizer_features
   - wood_finish
   return_reasons:
   - size
@@ -24378,6 +24794,7 @@
   attributes:
   - color
   - pattern
+  - straw_dispensing_mechanism
   return_reasons:
   - size
   - color
@@ -24431,6 +24848,7 @@
   attributes:
   - color
   - pattern
+  - toothpick_dispensing_mechanism
   return_reasons:
   - size
   - color
@@ -24488,6 +24906,7 @@
   - jewelry_material
   - lumber/wood_type
   - pattern
+  - utensil_tray_features
   - wood_finish
   return_reasons:
   - size
@@ -24572,6 +24991,7 @@
   attributes:
   - color
   - pattern
+  - utensil_flexibility
   return_reasons:
   - size
   - changed_my_mind
@@ -24632,6 +25052,7 @@
   - color
   - housing_material
   - pattern
+  - slice_style
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -24724,6 +25145,7 @@
   children: []
   attributes:
   - color
+  - masher_head_design
   - pattern
   - tool/utensil_material
   return_reasons:
@@ -24773,6 +25195,7 @@
   children: []
   attributes:
   - color
+  - measuring_spoon_features
   - pattern
   return_reasons:
   - color
@@ -24788,6 +25211,8 @@
   children: []
   attributes:
   - color
+  - meat_tenderizer_face_type
+  - meat_tenderizer_mechanism
   - pattern
   - tool/utensil_material
   return_reasons:
@@ -24804,6 +25229,7 @@
   children: []
   attributes:
   - color
+  - mixing_bowl_features
   - pattern
   - units_of_measurement
   return_reasons:
@@ -24843,6 +25269,7 @@
   attributes:
   - color
   - pattern
+  - pour_spout_style
   - tool/utensil_material
   return_reasons:
   - capacity
@@ -24857,6 +25284,7 @@
   children: []
   attributes:
   - color
+  - oil_dispenser_spout_design
   - pattern
   - tool/utensil_material
   return_reasons:
@@ -25124,6 +25552,7 @@
   - handle_color
   - handle_material
   - handle_pattern
+  - pizza_cutter_design
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -25282,6 +25711,7 @@
   children: []
   attributes:
   - color
+  - mixing_mechanism
   - pattern
   - tool/utensil_material
   return_reasons:
@@ -25316,6 +25746,7 @@
   - color
   - lumber/wood_type
   - pattern
+  - salad_spinner_mechanism
   - tool/utensil_material
   - wood_finish
   return_reasons:
@@ -25340,6 +25771,7 @@
   - color
   - lumber/wood_type
   - pattern
+  - scoop_release_mechanism
   - tool/utensil_material
   - wood_finish
   return_reasons:
@@ -25408,6 +25840,7 @@
   attributes:
   - color
   - pattern
+  - scoop_wall_design
   - tool/utensil_material
   return_reasons:
   - color
@@ -25424,6 +25857,7 @@
   attributes:
   - color
   - pattern
+  - scoop_surface_design
   - tool/utensil_material
   return_reasons:
   - color
@@ -25478,6 +25912,7 @@
   attributes:
   - color
   - pattern
+  - sink_caddy_features
   return_reasons:
   - size
   - color
@@ -25607,6 +26042,7 @@
   children: []
   attributes:
   - color
+  - grinding_mechanism_material
   - lumber/wood_type
   - pattern
   - wood_finish
@@ -25640,6 +26076,7 @@
   attributes:
   - color
   - pattern
+  - sugar_dispenser_mechanism
   return_reasons:
   - size
   - color
@@ -25691,6 +26128,7 @@
   - color
   - lumber/wood_type
   - pattern
+  - tong_type
   - tool/utensil_material
   - wood_finish
   return_reasons:
@@ -25770,6 +26208,7 @@
   - color
   - furniture/fixture_features
   - furniture/fixture_material
+  - kitchen_layout
   - pattern
   return_reasons:
   - size
@@ -25796,6 +26235,7 @@
   - hg-11-10-10
   attributes:
   - color
+  - microwave_compatibility
   - pattern
   return_reasons:
   - size
@@ -25904,6 +26344,7 @@
   attributes:
   - color
   - pattern
+  - teapot_spout_style
   return_reasons:
   - size
   - color
@@ -25990,6 +26431,7 @@
   attributes:
   - color
   - pattern
+  - shaker_set_pieces_included
   return_reasons:
   - size
   - color
@@ -26035,7 +26477,9 @@
   name: Bowls
   children: []
   attributes:
+  - bowl_type
   - color
+  - dinnerware_features
   - dinnerware_pieces_included
   - pattern
   - shape
@@ -26074,6 +26518,7 @@
   attributes:
   - color
   - pattern
+  - plate_style
   - shape
   - tableware_material
   return_reasons:
@@ -26100,7 +26545,9 @@
   - hg-11-10-5-9
   attributes:
   - color
+  - drinkware_insulation
   - drinkware_material
+  - handle_type
   - pattern
   return_reasons:
   - size
@@ -26116,6 +26563,7 @@
   name: Beer Glasses
   children: []
   attributes:
+  - beer_glass_type
   - color
   - drinkware_material
   - pattern
@@ -26205,6 +26653,7 @@
   - color
   - drinkware_material
   - pattern
+  - shot_glass_style
   return_reasons:
   - size
   - color
@@ -26225,6 +26674,7 @@
   - hg-11-10-5-7-5
   attributes:
   - color
+  - drinkware_crystal_composition
   - drinkware_material
   - pattern
   return_reasons:
@@ -26241,6 +26691,7 @@
   name: Champagne Glasses
   children: []
   attributes:
+  - champagne_glass_type
   - color
   - drinkware_material
   - drinkware_shape
@@ -26307,7 +26758,9 @@
   - drinkware_material
   - drinkware_shape
   - pattern
+  - stemware_design
   - style
+  - wine_glass_style
   return_reasons:
   - size
   - style
@@ -26470,6 +26923,7 @@
   name: Chopstick Trainers
   children: []
   attributes:
+  - chopstick_trainer_design
   - color
   - pattern
   return_reasons:
@@ -26486,6 +26940,7 @@
   name: Chopsticks
   children: []
   attributes:
+  - chopstick_style
   - color
   - flatware_material
   - lumber/wood_type
@@ -26759,6 +27214,7 @@
   children: []
   attributes:
   - color
+  - flatware_finish
   - flatware_material
   - pattern
   return_reasons:
@@ -26874,6 +27330,7 @@
   - color
   - lumber/wood_type
   - pattern
+  - serveware_pieces_included
   - tableware_material
   return_reasons:
   - size
@@ -26943,6 +27400,7 @@
   children: []
   attributes:
   - color
+  - egg_cup_design
   - pattern
   - tableware_material
   return_reasons:
@@ -26982,6 +27440,7 @@
   attributes:
   - color
   - pattern
+  - punch_bowl_components_included
   - tableware_material
   return_reasons:
   - size
@@ -27000,8 +27459,10 @@
   - color
   - construction
   - embellishment/trim_material
+  - infuser_type
   - jewelry_material
   - pattern
+  - pour_spout_design
   - tableware_material
   return_reasons:
   - size
@@ -27277,6 +27738,7 @@
   attributes:
   - color
   - pattern
+  - tablecloth_clip_design
   return_reasons:
   - size
   - color
@@ -27423,6 +27885,8 @@
   children: []
   attributes:
   - color
+  - compost_form
+  - compost_source_material
   - gardening_use
   - pattern
   return_reasons:
@@ -27437,6 +27901,7 @@
   children: []
   attributes:
   - color
+  - compost_aerator_design
   - material
   - pattern
   return_reasons:
@@ -27479,6 +27944,7 @@
   children: []
   attributes:
   - color
+  - formulation_concentration
   - pattern
   - pest_control_method
   - suitable_for_pest_type
@@ -27501,6 +27967,7 @@
   - nutrient_content
   - pattern
   - plant_material
+  - release_type
   - suitable_space
   return_reasons:
   - size
@@ -27519,6 +27986,7 @@
   attributes:
   - color
   - pattern
+  - saucer_functionality
   - shape
   return_reasons:
   - size
@@ -28002,7 +28470,9 @@
   name: Gardening Forks
   children: []
   attributes:
+  - gardening_fork_type
   - handle_color
+  - handle_grip_style
   - handle_material
   - handle_pattern
   - teeth_material
@@ -28039,6 +28509,7 @@
   - handle_color
   - handle_material
   - handle_pattern
+  - machete_blade_style
   return_reasons:
   - size
   - changed_my_mind
@@ -28113,6 +28584,7 @@
   - hg-12-1-7-7-1
   - hg-12-1-7-7-2
   attributes:
+  - ballast_material
   - color
   - pattern
   return_reasons:
@@ -28210,6 +28682,8 @@
   attributes:
   - color
   - pattern
+  - shovel_handle_grip_type
+  - shovel_head_type
   return_reasons:
   - size
   - changed_my_mind
@@ -28223,6 +28697,7 @@
   children: []
   attributes:
   - blade_material
+  - blade_shape
   - handle_color
   - handle_material
   - handle_pattern
@@ -28261,7 +28736,9 @@
   - battery_size
   - battery_type
   - color
+  - lawn_spreader_type
   - pattern
+  - suitable_spread_material
   - tank_material
   return_reasons:
   - size
@@ -28453,6 +28930,8 @@
   attributes:
   - color
   - pattern
+  - staple/pin_shape
+  - staple_coating
   return_reasons:
   - size
   - changed_my_mind
@@ -28467,6 +28946,7 @@
   attributes:
   - color
   - pattern
+  - pin_shape
   return_reasons:
   - size
   - changed_my_mind
@@ -28510,6 +28990,7 @@
   - hg-12-1-12-3
   attributes:
   - color
+  - mulch_form
   - pattern
   return_reasons:
   - size
@@ -28766,6 +29247,7 @@
   - color
   - material
   - pattern
+  - rain_barrel_design
   return_reasons:
   - size
   - color
@@ -28800,6 +29282,7 @@
   attributes:
   - color
   - pattern
+  - sand_type
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -28814,6 +29297,7 @@
   - color
   - gardening_use
   - pattern
+  - soil_texture
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -29052,7 +29536,8 @@
 - id: hg-12-1-19-2-2
   name: Rockwool
   children: []
-  attributes: []
+  attributes:
+  - rockwool_form
   return_reasons:
   - size
   - changed_my_mind
@@ -29081,6 +29566,7 @@
   children: []
   attributes:
   - color
+  - particle_size_grade
   - pattern
   - ph_level
   return_reasons:
@@ -29095,6 +29581,8 @@
   children: []
   attributes:
   - color
+  - growing_media_buffering
+  - growing_media_form
   - pattern
   - ph_level
   return_reasons:
@@ -29156,6 +29644,7 @@
   - hg-12-1-19-3-3
   attributes:
   - application_method
+  - supplement_function
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -29168,6 +29657,7 @@
   children: []
   attributes:
   - application_method
+  - hydroponic_nutrient_system
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -29180,6 +29670,7 @@
   children: []
   attributes:
   - application_method
+  - ph_adjustment_direction
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -29458,6 +29949,7 @@
   children: []
   attributes:
   - color
+  - compatible_awning_rail_type
   - material
   - pattern
   return_reasons:
@@ -29510,6 +30002,7 @@
   - color
   - material
   - pattern
+  - strap_end_fitting_type
   return_reasons:
   - size
   - color
@@ -29631,6 +30124,7 @@
   attributes:
   - awning_construction_type
   - awning_design
+  - awning_operation_type
   - cover_color
   - cover_material
   - cover_pattern
@@ -29956,6 +30450,7 @@
   children: []
   attributes:
   - color
+  - gazebo_roof_material
   - material
   - pattern
   return_reasons:
@@ -30130,6 +30625,7 @@
   name: Arbors
   children: []
   attributes:
+  - arbor_top_design
   - color
   - material
   - pattern
@@ -30198,6 +30694,7 @@
   name: Garden Bridges
   children: []
   attributes:
+  - bridge_railing_style
   - color
   - material
   - pattern
@@ -30221,6 +30718,7 @@
   - color
   - material
   - pattern
+  - roof_style
   return_reasons:
   - size
   - color
@@ -30330,6 +30828,7 @@
   - color
   - pattern
   - shape
+  - umbrella_base_type
   return_reasons:
   - size
   - incompatible
@@ -30344,6 +30843,7 @@
   children: []
   attributes:
   - color
+  - compatible_umbrella_type
   - pattern
   return_reasons:
   - size
@@ -30398,6 +30898,7 @@
   - hg-12-2-8-3
   attributes:
   - canopy_material
+  - canopy_venting
   - color
   - pattern
   - shape
@@ -30774,6 +31275,7 @@
   children: []
   attributes:
   - color
+  - lawn_aerator_type
   - pattern
   - power_source
   return_reasons:
@@ -30795,6 +31297,7 @@
   - hg-12-3-5-5
   attributes:
   - color
+  - grass_discharge_type
   - pattern
   - power_source
   return_reasons:
@@ -30814,6 +31317,7 @@
   - hg-12-3-5-1-2
   attributes:
   - color
+  - mower_deck_material
   - pattern
   - power_source
   return_reasons:
@@ -31010,6 +31514,7 @@
   - material
   - pattern
   - power_source
+  - tine_position
   return_reasons:
   - size
   - horsepower
@@ -31026,6 +31531,7 @@
   children: []
   attributes:
   - color
+  - cultivator_type
   - material
   - pattern
   - power_source
@@ -31064,6 +31570,7 @@
   - color
   - pattern
   - power_source
+  - pump_type
   return_reasons:
   - horsepower
   - operating_noise
@@ -31080,6 +31587,7 @@
   - color
   - pattern
   - power_source
+  - snow_blower_stage_type
   return_reasons:
   - size
   - horsepower
@@ -31181,6 +31689,7 @@
   - color
   - pattern
   - power_source
+  - trimmer_line_feed_system
   return_reasons:
   - size
   - operating_noise
@@ -31245,6 +31754,7 @@
   - hg-12-4-1-3
   - hg-12-4-1-4
   attributes:
+  - chainsaw_bar_mount_type
   - color
   - pattern
   return_reasons:
@@ -31260,6 +31770,8 @@
   name: Chainsaw Bars
   children: []
   attributes:
+  - chainsaw_bar_nose_type
+  - chainsaw_bar_type
   - color
   - pattern
   return_reasons:
@@ -31274,6 +31786,7 @@
   name: Chainsaw Chains
   children: []
   attributes:
+  - chainsaw_cutter_type
   - color
   - pattern
   return_reasons:
@@ -31330,6 +31843,7 @@
   name: Edger Belts
   children: []
   attributes:
+  - belt_profile
   - color
   - pattern
   return_reasons:
@@ -31374,6 +31888,7 @@
   attributes:
   - color
   - pattern
+  - spring_type
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -31517,6 +32032,7 @@
   attributes:
   - color
   - pattern
+  - power_equipment_hitch_type
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -31558,6 +32074,7 @@
   children: []
   attributes:
   - color
+  - mounting_bolt_pattern
   - pattern
   return_reasons:
   - incompatible
@@ -31582,6 +32099,7 @@
   name: Lawn Mower Bags
   children: []
   attributes:
+  - bag_configuration
   - color
   - pattern
   return_reasons:
@@ -31597,6 +32115,7 @@
   children: []
   attributes:
   - color
+  - lawn_mower_belt_type
   - pattern
   return_reasons:
   - incompatible
@@ -31610,7 +32129,9 @@
   name: Lawn Mower Blades
   children: []
   attributes:
+  - center_hole_shape
   - color
+  - lawn_mower_blade_type
   - pattern
   return_reasons:
   - incompatible
@@ -31684,6 +32205,7 @@
   attributes:
   - color
   - pattern
+  - plate_purpose
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -31714,6 +32236,7 @@
   attributes:
   - color
   - pattern
+  - pulley_groove_profile
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -31726,6 +32249,7 @@
   name: Lawn Mower Pulleys
   children: []
   attributes:
+  - bore_type
   - color
   - pattern
   return_reasons:
@@ -31742,6 +32266,7 @@
   attributes:
   - color
   - pattern
+  - valve_stem_angle
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -31756,6 +32281,7 @@
   attributes:
   - color
   - pattern
+  - tire_tread_pattern
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -31783,6 +32309,7 @@
   children: []
   attributes:
   - color
+  - compatible_lawn_mower_type
   - pattern
   return_reasons:
   - incompatible
@@ -31837,6 +32364,7 @@
   - hg-12-4-5-4
   attributes:
   - color
+  - compatible_leaf_blower_style
   - pattern
   return_reasons:
   - size
@@ -31852,6 +32380,7 @@
   children: []
   attributes:
   - color
+  - nozzle_style
   - pattern
   return_reasons:
   - incompatible
@@ -31993,6 +32522,7 @@
   children: []
   attributes:
   - color
+  - cutting_head_type
   - pattern
   return_reasons:
   - incompatible
@@ -32063,6 +32593,7 @@
   attributes:
   - color
   - pattern
+  - pressure_washer_spray_pattern
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -32132,6 +32663,7 @@
   attributes:
   - color
   - pattern
+  - pressure_washer_outlet_connector_type
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -32146,6 +32678,7 @@
   attributes:
   - color
   - pattern
+  - scrubber_head_type
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -32409,6 +32942,7 @@
   - hg-12-4-10-7
   attributes:
   - color
+  - compatible_tractor_type
   - pattern
   return_reasons:
   - size
@@ -32428,6 +32962,9 @@
   attributes:
   - color
   - pattern
+  - tire_construction_type
+  - tractor_tire_application
+  - tractor_tire_tread_classification
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -32442,6 +32979,7 @@
   attributes:
   - color
   - pattern
+  - tire_construction
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -32455,6 +32993,7 @@
   children: []
   attributes:
   - color
+  - lawn_tractor_tread_type
   - pattern
   return_reasons:
   - incompatible
@@ -32557,6 +33096,7 @@
   attributes:
   - color
   - pattern
+  - trimmer_line_shape
   return_reasons:
   - size
   - incompatible
@@ -32877,6 +33417,7 @@
   children: []
   attributes:
   - color
+  - garden_hose_fitting_type
   - pattern
   return_reasons:
   - incompatible
@@ -32892,6 +33433,7 @@
   attributes:
   - color
   - pattern
+  - valve_configuration
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -32928,6 +33470,7 @@
   attributes:
   - color
   - pattern
+  - trigger_type
   return_reasons:
   - size
   - incompatible
@@ -32942,6 +33485,7 @@
   children: []
   attributes:
   - color
+  - garden_hose_design
   - pattern
   - suitable_installation
   return_reasons:
@@ -32962,6 +33506,7 @@
   attributes:
   - color
   - pattern
+  - thread_standard
   return_reasons:
   - size
   - incompatible
@@ -32991,6 +33536,7 @@
   attributes:
   - color
   - pattern
+  - sprinkler_valve_type
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -33018,6 +33564,7 @@
   attributes:
   - color
   - pattern
+  - sprinkler_type
   return_reasons:
   - size
   - incompatible
@@ -33106,8 +33653,10 @@
   children: []
   attributes:
   - color
+  - handle_position
   - material
   - pattern
+  - rose_attachment
   - sprinkler_head_type
   return_reasons:
   - color
@@ -33154,6 +33703,8 @@
   children: []
   attributes:
   - color
+  - flow_control_type
+  - nozzle_adjustability
   - pattern
   return_reasons:
   - changed_my_mind
@@ -33268,6 +33819,7 @@
   - bulb_size
   - bulb_type
   - color
+  - emergency_lighting_operating_mode
   - energy_efficiency_class
   - light_color
   - light_pattern
@@ -33482,6 +34034,7 @@
   - bulb_type
   - color
   - energy_efficiency_class
+  - lamp_arm_style
   - light_color
   - light_pattern
   - light_temperature
@@ -33506,6 +34059,7 @@
   - bulb_type
   - color
   - energy_efficiency_class
+  - lampshade_shape
   - light_color
   - light_pattern
   - light_temperature
@@ -33555,6 +34109,7 @@
   - hg-13-7-6
   attributes:
   - bulb_cap_type
+  - bulb_finish
   - bulb_shape
   - bulb_size
   - color
@@ -33607,6 +34162,7 @@
   - bulb_size
   - color
   - energy_efficiency_class
+  - fluorescent_tube_output_type
   - light_color
   - light_pattern
   - light_temperature
@@ -33631,6 +34187,7 @@
   - bulb_size
   - color
   - energy_efficiency_class
+  - filament_style
   - light_color
   - light_pattern
   - light_temperature
@@ -33781,6 +34338,7 @@
   - bulb_cap_type
   - bulb_size
   - bulb_type
+  - cabinet_light_fixture_style
   - color
   - energy_efficiency_class
   - light_color
@@ -33807,6 +34365,7 @@
   - bulb_cap_type
   - bulb_size
   - bulb_type
+  - ceiling_light_fixture_style
   - color
   - energy_efficiency_class
   - light_color
@@ -33833,6 +34392,7 @@
   - bulb_cap_type
   - bulb_size
   - bulb_type
+  - chandelier_shape
   - color
   - construction
   - embellishment/trim_material
@@ -34003,6 +34563,7 @@
   - light_temperature
   - pattern
   - power_source
+  - wick_material
   return_reasons:
   - size
   - color
@@ -34049,6 +34610,7 @@
   - light_pattern
   - light_temperature
   - pattern
+  - track_lighting_system_compatibility
   return_reasons:
   - size
   - style
@@ -34141,6 +34703,7 @@
   - light_pattern
   - light_temperature
   - pattern
+  - track_system_standard
   return_reasons:
   - finish
   - incompatible
@@ -34227,6 +34790,8 @@
   - light_pattern
   - light_temperature
   - pattern
+  - track_lighting_rail_type
+  - track_rail_circuit_configuration
   return_reasons:
   - size
   - style
@@ -34266,6 +34831,7 @@
   children: []
   attributes:
   - color
+  - lamp_post_base_mounting_type
   - pattern
   return_reasons:
   - size
@@ -34299,6 +34865,9 @@
   children: []
   attributes:
   - color
+  - lamp_shade_fitter_type
+  - lamp_shade_shape
+  - lamp_shade_translucency
   - mounting_type
   - pattern
   - suitable_space
@@ -34500,6 +35069,8 @@
   children: []
   attributes:
   - bedding_size
+  - bedskirt_corner_style
+  - bedskirt_style
   - care_instructions
   - color
   - fabric
@@ -34527,6 +35098,7 @@
   - color
   - fabric
   - pattern
+  - warmth_rating
   return_reasons:
   - size
   - color
@@ -34578,6 +35150,7 @@
   - care_instructions
   - color
   - fabric
+  - fabric_weave
   - pattern
   return_reasons:
   - size
@@ -34598,6 +35171,7 @@
   - bedding_size
   - color
   - fabric
+  - mattress_protector_features
   - pattern
   return_reasons:
   - size
@@ -34649,6 +35223,7 @@
   attributes:
   - color
   - fabric
+  - nap_mat_items_included
   - pattern
   return_reasons:
   - size
@@ -34723,6 +35298,7 @@
   - filler_material
   - filler_support
   - pattern
+  - sleeping_position_suitability
   return_reasons:
   - too_soft
   - too_firm
@@ -34800,6 +35376,8 @@
   - material_treatment
   - pattern
   - plant_material
+  - quilt_construction_type
+  - warmth_level
   return_reasons:
   - size
   - color
@@ -34839,6 +35417,7 @@
   attributes:
   - color
   - fabric
+  - kitchen_linen_items_included
   - pattern
   return_reasons:
   - size
@@ -34880,6 +35459,7 @@
   attributes:
   - color
   - fabric
+  - napkin_edge_finish
   - pattern
   return_reasons:
   - size
@@ -34931,6 +35511,7 @@
   children: []
   attributes:
   - color
+  - edge_finish
   - fabric
   - pattern
   return_reasons:
@@ -34951,6 +35532,7 @@
   - color
   - fabric
   - pattern
+  - table_skirt_pleat_style
   return_reasons:
   - size
   - color
@@ -34969,6 +35551,7 @@
   - fabric
   - pattern
   - shape
+  - tablecloth_features
   return_reasons:
   - size
   - color
@@ -34991,6 +35574,7 @@
   - color
   - fabric
   - pattern
+  - towel_weave
   return_reasons:
   - size
   - color
@@ -35135,9 +35719,12 @@
   - canopy_color
   - canopy_material
   - canopy_pattern
+  - canopy_shape
   - pole_color
   - pole_material
   - pole_pattern
+  - rib_material
+  - umbrella_opening_mechanism
   return_reasons:
   - size
   - color
@@ -35154,8 +35741,11 @@
   attributes:
   - canopy_material
   - color
+  - parasol_opening_mechanism
   - pattern
   - pole_material
+  - tilt_mechanism
+  - upf_rating
   return_reasons:
   - size
   - color
@@ -35174,6 +35764,7 @@
   - color
   - pattern
   - pole_material
+  - umbrella_type
   return_reasons:
   - size
   - color
@@ -35194,13 +35785,18 @@
   - hg-17-5
   - hg-17-6
   attributes:
+  - blooming_season
   - color
+  - hardiness_zone
   - pattern
   - plant_characteristics
   - plant_class
+  - plant_life_cycle
   - plant_name
+  - preferred_soil_type
   - suitable_space
   - sunlight
+  - watering_needs
   return_reasons:
   - size
   - changed_my_mind
@@ -35213,6 +35809,8 @@
   name: Aquatic Plants
   children: []
   attributes:
+  - aquatic_plant_growth_habit
+  - co2_supplementation_requirement
   - flower_color
   - flower_pattern
   - plant_characteristics
@@ -35263,6 +35861,7 @@
   attributes:
   - color
   - pattern
+  - pet_safety
   - plant_characteristics
   - plant_class
   - plant_name
@@ -35350,6 +35949,7 @@
   - culinary_botanical_name
   - flower_color
   - flower_pattern
+  - growth_habit
   - material_treatment
   - plant_characteristics
   - plant_material
@@ -35391,6 +35991,7 @@
   attributes:
   - flower_color
   - flower_pattern
+  - foliage_color
   - material_treatment
   - plant_characteristics
   - plant_class
@@ -35450,6 +36051,8 @@
   - flower_pattern
   - material_treatment
   - pattern
+  - pet_toxicity
+  - plant_care_difficulty
   - plant_characteristics
   - plant_class
   - plant_material
@@ -35513,6 +36116,7 @@
   attributes:
   - flower_color
   - flower_pattern
+  - growing_medium_type
   - plant_characteristics
   - plant_class
   - plant_name
@@ -35567,6 +36171,7 @@
   - hg-17-5-3
   attributes:
   - color
+  - cultivar_type
   - pattern
   - plant_class
   - plant_name
@@ -35689,6 +36294,7 @@
   - plant_class
   - plant_material
   - plant_name
+  - seed_treatment
   - suitable_space
   - sunlight
   return_reasons:
@@ -35854,6 +36460,7 @@
   children: []
   attributes:
   - color
+  - diving_board_surface_texture
   - pattern
   return_reasons:
   - size
@@ -35889,6 +36496,7 @@
   attributes:
   - color
   - pattern
+  - pool_filter_type
   return_reasons:
   - size
   - incompatible
@@ -35941,6 +36549,7 @@
   attributes:
   - color
   - pattern
+  - suitable_pool_surface_type
   return_reasons:
   - size
   - incompatible
@@ -35970,6 +36579,7 @@
   attributes:
   - color
   - pattern
+  - pool_chemical_type
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -35990,6 +36600,7 @@
   attributes:
   - color
   - pattern
+  - suitable_for_pool_shape
   return_reasons:
   - size
   - color
@@ -36176,6 +36787,7 @@
   attributes:
   - color
   - pattern
+  - pool_lounger_features
   return_reasons:
   - size
   - color
@@ -36233,6 +36845,7 @@
   - hg-18-1-13-4
   attributes:
   - color
+  - handrail_configuration
   - pattern
   return_reasons:
   - size
@@ -36251,6 +36864,7 @@
   attributes:
   - color
   - pattern
+  - pool_ladder_design
   return_reasons:
   - size
   - style
@@ -36313,6 +36927,7 @@
   attributes:
   - color
   - pattern
+  - pool_liner_installation_style
   return_reasons:
   - size
   - color
@@ -36330,6 +36945,7 @@
   attributes:
   - color
   - pattern
+  - pool_skimmer_type
   return_reasons:
   - size
   - incompatible
@@ -36362,6 +36978,7 @@
   name: Pool Sweeps
   children: []
   attributes:
+  - booster_pump_requirement
   - color
   - pattern
   return_reasons:
@@ -36380,6 +36997,7 @@
   - battery_type
   - color
   - pattern
+  - pool_vacuum_type
   return_reasons:
   - size
   - changed_my_mind
@@ -36398,6 +37016,7 @@
   attributes:
   - color
   - pattern
+  - pool_toy_features
   return_reasons:
   - size
   - color
@@ -36430,6 +37049,7 @@
   attributes:
   - color
   - pattern
+  - pool_game_type
   return_reasons:
   - size
   - color
@@ -36446,6 +37066,7 @@
   attributes:
   - color
   - pattern
+  - pool_lounge_style
   return_reasons:
   - size
   - color
@@ -36461,6 +37082,7 @@
   children: []
   attributes:
   - color
+  - noodle_core_design
   - pattern
   return_reasons:
   - size
@@ -36621,6 +37243,7 @@
   attributes:
   - color
   - pattern
+  - sauna_heater_type
   return_reasons:
   - size
   - color
@@ -36697,6 +37320,7 @@
   - color
   - pattern
   - sauna_accessories_included
+  - sauna_form_factor
   - suitable_space
   - wall_material
   return_reasons:
@@ -36751,6 +37375,7 @@
   attributes:
   - color
   - pattern
+  - spa_installation_type
   - suitable_space
   return_reasons:
   - size
@@ -36814,6 +37439,7 @@
   attributes:
   - color
   - pattern
+  - pool_type
   - shape
   - suitable_space
   return_reasons:
@@ -36889,6 +37515,7 @@
   name: Ashtrays
   children: []
   attributes:
+  - ashtray_type
   - color
   - material
   - pattern
@@ -36925,6 +37552,7 @@
   - hg-19-3-1
   - hg-19-3-2
   attributes:
+  - cigar_cutter_type
   - color
   - material
   - pattern
@@ -36959,6 +37587,7 @@
   name: Cigar Punches
   children: []
   attributes:
+  - cigar_punch_type
   - color
   - material
   - pattern
@@ -36994,7 +37623,9 @@
   children: []
   attributes:
   - color
+  - compatible_cigarette_size
   - material
+  - mouthpiece_shape
   - pattern
   return_reasons:
   - size
@@ -37011,6 +37642,7 @@
   children: []
   attributes:
   - color
+  - humidor_accessory_type
   - material
   - pattern
   return_reasons:
@@ -37028,6 +37660,7 @@
   attributes:
   - color
   - humidity_control
+  - hygrometer_type
   - material
   - pattern
   return_reasons:
@@ -37124,7 +37757,9 @@
   name: Wood Stoves
   children: []
   attributes:
+  - catalytic_combustor_type
   - color
+  - flue_outlet_position
   - mounting_type
   - pattern
   - stove_airflow
