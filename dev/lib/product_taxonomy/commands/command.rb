@@ -27,17 +27,7 @@ module ProductTaxonomy
     end
 
     def load_taxonomy
-      values_path = File.expand_path("values.yml", ProductTaxonomy.data_path)
-      attributes_path = File.expand_path("attributes.yml", ProductTaxonomy.data_path)
-      return_reasons_path = File.expand_path("return_reasons.yml", ProductTaxonomy.data_path)
-      categories_glob = Dir.glob(File.expand_path("categories/*.yml", ProductTaxonomy.data_path))
-
-      ProductTaxonomy::Loader.load(
-        values_path:,
-        attributes_path:,
-        categories_glob:,
-        return_reasons_path:,
-      )
+      ProductTaxonomy::Loader.load(data_path: ProductTaxonomy.data_path)
     end
 
     def validate_and_sanitize_version!(version)
