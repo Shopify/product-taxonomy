@@ -1340,7 +1340,13 @@
 - id: hg-2-9-4
   name: Vibration Sensors
   children: []
-  attributes: []
+  attributes:
+  - battery_size
+  - ingress_protection_ip_rating
+  - mounting_type
+  - power_source
+  - security_sensor_subtype
+  - suitable_space
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -6902,7 +6908,10 @@
 - id: hg-3-78
   name: Throw Pillow Accessories
   children: []
-  attributes: []
+  attributes:
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -6913,7 +6922,10 @@
 - id: hg-3-79
   name: Decorative Lanterns
   children: []
-  attributes: []
+  attributes:
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -6929,7 +6941,6 @@
   - hg-4-3
   - hg-4-4
   - hg-4-5
-  - hg-4-6
   - hg-4-7
   - hg-4-8
   attributes:
@@ -7033,21 +7044,13 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: hg-4-6
-  name: Emergency Radios
-  children: []
-  attributes: []
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
 - id: hg-4-7
   name: Emergency Water Storage Containers
   children: []
-  attributes: []
+  attributes:
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -7058,7 +7061,10 @@
 - id: hg-4-8
   name: Fire Escape Ladders
   children: []
-  attributes: []
+  attributes:
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -7537,7 +7543,10 @@
 - id: hg-5-12
   name: Ash Buckets & Shovels
   children: []
-  attributes: []
+  attributes:
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -7620,7 +7629,6 @@
   - hg-7-7
   - hg-7-8
   - hg-7-9
-  - hg-7-10
   attributes:
   - color
   - pattern
@@ -8029,18 +8037,10 @@
 - id: hg-7-9
   name: Fire Blankets
   children: []
-  attributes: []
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: hg-7-10
-  name: Gas Detectors
-  children: []
-  attributes: []
+  attributes:
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -10355,7 +10355,10 @@
 - id: hg-8-13
   name: Evaporative Cooler Accessories
   children: []
-  attributes: []
+  attributes:
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -10366,7 +10369,10 @@
 - id: hg-8-14
   name: Space Heater Accessories
   children: []
-  attributes: []
+  attributes:
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -22556,7 +22562,11 @@
 - id: hg-11-6-11-11-1
   name: Julienne Discs
   children: []
-  attributes: []
+  attributes:
+  - cleaning_instructions
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -22567,7 +22577,11 @@
 - id: hg-11-6-11-11-2
   name: Shredding Discs
   children: []
-  attributes: []
+  attributes:
+  - cleaning_instructions
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -27376,9 +27390,11 @@
   name: Backpacking Stoves
   children: []
   attributes:
+  - color
   - energy_efficiency_class
   - ignition_system
   - material
+  - pattern
   - power_source
   return_reasons:
   - changed_my_mind
@@ -27391,9 +27407,11 @@
   name: Camping Tabletop Stoves
   children: []
   attributes:
+  - color
   - energy_efficiency_class
   - ignition_system
   - material
+  - pattern
   - power_source
   return_reasons:
   - changed_my_mind
@@ -27405,7 +27423,13 @@
 - id: hg-11-7-38-3
   name: Portable Induction Cooktops
   children: []
-  attributes: []
+  attributes:
+  - color
+  - energy_efficiency_class
+  - ignition_system
+  - material
+  - pattern
+  - power_source
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -27418,8 +27442,11 @@
   children: []
   attributes:
   - color
+  - energy_efficiency_class
+  - ignition_system
   - material
   - pattern
+  - power_source
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -43857,7 +43884,10 @@
 - id: hg-14-6
   name: Lamp Chimneys
   children: []
-  attributes: []
+  attributes:
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -43868,7 +43898,10 @@
 - id: hg-14-7
   name: Lamp Finials
   children: []
-  attributes: []
+  attributes:
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -43879,7 +43912,10 @@
 - id: hg-14-8
   name: Lamp Harps
   children: []
-  attributes: []
+  attributes:
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -44236,7 +44272,11 @@
 - id: hg-15-1-8-1
   name: Pillow Shams
   children: []
-  attributes: []
+  attributes:
+  - care_instructions
+  - color
+  - fabric
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -44247,7 +44287,11 @@
 - id: hg-15-1-8-2
   name: Pillowcases
   children: []
-  attributes: []
+  attributes:
+  - care_instructions
+  - color
+  - fabric
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -44397,7 +44441,15 @@
 - id: hg-15-1-11
   name: Bedding Sets
   children: []
-  attributes: []
+  attributes:
+  - bedding_size
+  - care_instructions
+  - color
+  - fabric
+  - material_treatment
+  - pattern
+  - season
+  - warmth_level
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -44408,7 +44460,15 @@
 - id: hg-15-1-12
   name: Mattress Toppers
   children: []
-  attributes: []
+  attributes:
+  - bedding_size
+  - care_instructions
+  - color
+  - fabric
+  - material_treatment
+  - pattern
+  - season
+  - warmth_level
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -47228,7 +47288,10 @@
 - id: hg-19-8
   name: Pipe Cleaners
   children: []
-  attributes: []
+  attributes:
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -47239,7 +47302,10 @@
 - id: hg-19-9
   name: Pipe Stands
   children: []
-  attributes: []
+  attributes:
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -47250,7 +47316,10 @@
 - id: hg-19-10
   name: Rolling Trays
   children: []
-  attributes: []
+  attributes:
+  - color
+  - material
+  - pattern
   return_reasons:
   - changed_my_mind
   - item_not_as_described
