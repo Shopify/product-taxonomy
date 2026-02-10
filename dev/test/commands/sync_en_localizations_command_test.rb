@@ -222,6 +222,7 @@ module ProductTaxonomy
 
       # Temporarily use real data path to load taxonomy
       ProductTaxonomy.unstub(:data_path)
+      ProductTaxonomy.data_path = nil
 
       # Load real taxonomy data
       ProductTaxonomy::Loader.load(data_path: ProductTaxonomy.data_path)
