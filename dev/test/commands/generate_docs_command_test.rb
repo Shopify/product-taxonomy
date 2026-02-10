@@ -7,7 +7,7 @@ module ProductTaxonomy
   class GenerateDocsCommandTest < TestCase
     setup do
       @tmp_base_path = Dir.mktmpdir
-      @real_base_path = File.expand_path("..", ProductTaxonomy.data_path)
+      @real_base_path = File.expand_path("..", ProductTaxonomy::DEFAULT_DATA_PATH)
 
       # Create test files
       FileUtils.mkdir_p(File.expand_path("data", @tmp_base_path))

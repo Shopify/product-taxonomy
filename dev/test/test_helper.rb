@@ -17,6 +17,7 @@ module ProductTaxonomy
       ProductTaxonomy::Attribute.reset
       ProductTaxonomy::Category.reset
       ProductTaxonomy::ReturnReason.reset
+      ProductTaxonomy.data_path = nil
     end
   end
 end
