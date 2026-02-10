@@ -5,16 +5,20 @@ require "yaml"
 module ProductTaxonomy
   class Loader
     class << self
-      def load(values_path:, attributes_path:, categories_glob:, return_reasons_path: nil)
+      def load(data_path:)
+        ProductTaxonomy.data_path = data_path
+
         return if ProductTaxonomy::Category.all.any?
+
+        values_path = File.join(data_path, "values.yml")
+        attributes_path = File.join(data_path, "attributes.yml")
+        return_reasons_path = File.join(data_path, "return_reasons.yml")
+        categories_glob = Dir.glob(File.join(data_path, "categories", "*.yml"))
 
         begin
           ProductTaxonomy::Value.load_from_source(YAML.load_file(values_path))
           ProductTaxonomy::Attribute.load_from_source(YAML.load_file(attributes_path))
-
-          if return_reasons_path && File.exist?(return_reasons_path)
-            ProductTaxonomy::ReturnReason.load_from_source(YAML.load_file(return_reasons_path))
-          end
+          ProductTaxonomy::ReturnReason.load_from_source(YAML.load_file(return_reasons_path))
 
           categories_source_data = categories_glob.each_with_object([]) do |file, array|
             array.concat(YAML.safe_load_file(file))
