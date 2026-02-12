@@ -5,6 +5,7 @@
   - fb-1
   - fb-2
   - fb-3
+  - fb-4
   attributes: []
   return_reasons:
   - taste
@@ -8053,6 +8054,189 @@
   - flavor
   - material
   - burn_rate
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: fb-4
+  name: Cannabis Products
+  children:
+  - fb-4-1
+  - fb-4-2
+  - fb-4-3
+  - fb-4-4
+  - fb-4-5
+  attributes:
+  - package_type
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: fb-4-1
+  name: Recreational Cannabis
+  children: []
+  attributes:
+  - flavor
+  - package_type
+  - product_certifications_standards
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: fb-4-2
+  name: Medical Cannabis
+  children: []
+  attributes:
+  - flavor
+  - package_type
+  - product_certifications_standards
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: fb-4-3
+  name: Cannabis Seeds
+  children:
+  - fb-4-3-1
+  - fb-4-3-2
+  attributes:
+  - package_type
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: fb-4-3-1
+  name: Viable Seeds
+  children: []
+  attributes:
+  - cultivar_type
+  - package_type
+  - product_certifications_standards
+  - seed_treatment
+  - suitable_space
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: fb-4-3-2
+  name: Non-Viable Seeds
+  children: []
+  attributes:
+  - allergen_information
+  - dietary_preferences
+  - nut/seed_type
+  - nut_processing_method
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: fb-4-4
+  name: Pipes & Bongs
+  children: []
+  attributes:
+  - color
+  - material
+  - package_type
+  - pattern
+  - shape
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: fb-4-5
+  name: Vaping
+  children:
+  - fb-4-5-1
+  - fb-4-5-2
+  - fb-4-5-3
+  - fb-4-5-4
+  attributes:
+  - package_type
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: fb-4-5-1
+  name: E-Liquid
+  children: []
+  attributes:
+  - flavor
+  - package_type
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: fb-4-5-2
+  name: Vape Cartridges
+  children: []
+  attributes:
+  - color
+  - flavor
+  - material
+  - package_type
+  - pattern
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: fb-4-5-3
+  name: Vape Pods
+  children: []
+  attributes:
+  - color
+  - flavor
+  - material
+  - package_type
+  - pattern
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: fb-4-5-4
+  name: Vaping Devices
+  children: []
+  attributes:
+  - color
+  - material
+  - package_type
+  - pattern
+  - power_source
+  return_reasons:
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
