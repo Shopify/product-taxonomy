@@ -15,6 +15,9 @@ require_relative "commands/add_category_command"
 require_relative "commands/add_attribute_command"
 require_relative "commands/add_attributes_to_categories_command"
 require_relative "commands/add_value_command"
+require_relative "commands/dump_return_reasons_command"
+require_relative "commands/add_return_reason_command"
+require_relative "commands/add_return_reasons_to_categories_command"
 
 module ProductTaxonomy
   class Cli < Thor

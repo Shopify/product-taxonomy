@@ -1,3 +1,288 @@
+## 2026-02
+
+#### 🔄 Return Reasons
+Introduces **return reasons** as a new dimension of the taxonomy. Return reasons are category-specific labels that describe why a customer might return a product, such as "Too small", "Color", "Incompatible" or "Damaged or defective". Each category in the taxonomy is now assigned an ordered set of return reasons tailored to its product type, enabling merchants to capture structured return data and surface actionable insights. This release includes 468 return reasons mapped across the full category tree.
+
+#### 📚 Taxonomy Tree
+Expanded taxonomy with 700+ new categories and 600+ new attributes, plus extensive enhancements to existing categories.
+
+##### Animals & Pet Supplies
+
+- Renames `Shampoos` as `Shampoo`.
+
+##### Apparel & Accessories
+
+- Restructures `Baby & Toddler Clothing`, `Baby & Toddler Clothing Accessories`, `Baby & Toddler Shoes`, `Girls' Underwear` and `Boys' Underwear` into a broader `Baby & Children's` naming convention, consolidating 96 categories under new `Baby & Children's Clothing`, `Baby & Children's Clothing Accessories` and `Baby & Children's Shoes` hierarchies, with `Baby & Children's Underwear` as a new parent grouping `Toddler Underwear`, `Girls' Underwear` and `Boys' Underwear`.
+
+##### Arts & Entertainment
+
+- In the Crafting Patterns & Molds area, adds `Crochet Patterns` and `Knitting Patterns`.
+
+##### Business & Industrial
+
+- Adds `Medical Teaching Equipment Accessories` (`Simulator Accessories`, `Simulator Carrying Cases & Transport`, `Synthetic Tissue Inserts & Replacement Skins` and `Trainer Replacement Parts & Consumables`).
+- In the Medical Teaching Equipment area, adds `Procedure Training Simulators & Task Trainers`, `Simulator Kits & Training Bundles` and `Synthetic Tissue Models & Training Pads`.
+- Adds the attributes `Medical specialty` and `Procedure`.
+
+##### Electronics
+
+- In the Radios area, adds `Emergency Radios`.
+
+##### Food, Beverages & Tobacco
+
+- Adds `Cannabis Products` (`Cannabis Seeds`, `Medical Cannabis`, `Pipes & Bongs`, `Recreational Cannabis` and `Vaping`).
+- Adds `Cannabis Seeds` (`Non-Viable Seeds` and `Viable Seeds`).
+- Adds `Vaping` (`E-Liquid`, `Vape Cartridges`, `Vape Pods` and `Vaping Devices`).
+- In the Grains, Rice & Cereal area, adds `Popcorn Kernels`.
+- In the Seasonings & Spices area, adds `Popcorn Seasoning`.
+- In the Cooking Oils area, adds `Popcorn Oil`.
+- In the Sugar & Sweeteners area, adds `Cotton Candy Sugar`.
+- In the Vaporizers & Electronic Cigarettes area (Tobacco Products), adds `Vape Cartridges`.
+- Adds the attributes `Cultivar type` and `Seed treatment`.
+
+##### Furniture
+
+- In the Sofas area, adds `Sofa Beds`.
+
+##### Health & Beauty
+
+- Adds `Hearing Aid Accessories` (`Hearing Aid Batteries`, `Hearing Aid Cases & Storage`, `Hearing Aid Charging Accessories`, `Hearing Aid Cleaning & Maintenance` and `Hearing Aid Domes, Tips & Wax Guards`).
+
+##### Home & Garden
+
+- In the Toilet Brushes & Holders area, adds `Toilet Brush & Holder Sets`.
+- In the Towel Racks & Holders area, adds `Towel Bars`, `Towel Rings` and `Towel Warmers`.
+- In the Pesticides area, adds `Bactericides` and `Rodenticides`.
+- In the Shoe Trees & Shapers area, adds `Boot Shapers` and `Boot Trees`.
+- In the Shoe Horns & Dressing Aids area, adds `Button Hooks`, `Dressing Sticks`, `Sock Aids` and `Zipper Pull Aids`.
+- In the Storage & Organization area, adds `Household Storage Baskets`.
+- In the Clothing & Closet Storage area, adds `Garment Storage Bags`, `Shoe Cabinets` and `Underbed Storage`.
+- In the Photo Storage area, adds `Photo Storage Binders` and `Photo Storage Sleeves & Envelopes`.
+- In the Storage Hooks & Racks area, adds `Adhesive Hooks` and `Over-the-Door Hooks`.
+- In the Trash Compactor Accessories area, adds `Trash Compactor Deodorizers`.
+- In the Hazardous Waste Containers area, adds `Biohazard Waste Containers`, `Chemical Waste Containers`, `Pharmaceutical Waste Containers`, `Radioactive Waste Containers` and `Sharps Containers`.
+- In the Waste Containment Accessories area, adds `Waste Container Handles`.
+- In the Household Cleaning Products area, adds `Grout Cleaners`.
+- In the Sponges & Scouring Pads area, adds `Scouring Pads`, `Sponges` and `Steel Wool`.
+- In the Laundry Supplies area, adds `Clotheslines` and `Laundry Hampers`.
+- In the Ironing Board Replacement Parts area, adds `Ironing Board Foot Caps`.
+- In the Ironing Boards area, adds `Over-the-Door Ironing Boards` and `Sleeve Ironing Boards`.
+- In the Laundry Wash Bags & Frames area, adds `Laundry Wash Bags` and `Laundry Wash Frames`.
+- In the Barware area, adds `Bar Mats`.
+- In the Cocktail Shakers & Tools area, adds `Bar Spoons` and `Jiggers`.
+- In the Corkscrews area, adds `Ah-So Corkscrews`, `Air Pressure Corkscrews` and `Tabletop Corkscrews`.
+- In the Beer Dispensers & Taps area, adds `Beer Tap Handles`, `Beer Tap Towers`, `Keg Couplers` and `Kegerators`.
+- In the Drinkware area, adds `Brandy Glasses`, `Cordial Glasses`, `Coupe Glasses` and `Martini Glasses`.
+- In the Flatware area, adds 7 new categories including `Appetizer Forks`, `Iced Tea Spoons` and `Oyster Forks`.
+- In the Serveware area, adds `Chip & Dip Servers`, `Lazy Susans` and `Serving Bowls`.
+- In the Serveware Accessories area, adds `Gravy Boat Lids` and `Gravy Boat Stands`.
+- In the Cookware area, adds `Braiser Pans` and `Stovetop Steamers`.
+- In the Cookware Accessories area, adds `Heat Diffusers`, `Pressure Cooker Inner Pots`, `Pressure Cooker Racks & Trivets`, `Splatter Screens` and `Wok Lids`.
+- In the Food & Beverage Carriers area, adds `Growlers` and `Travel Mugs`.
+- In the Lunch Boxes & Totes area, adds `Bento Boxes`.
+- In the Bread Boxes & Bags area, adds `Bread Bags` and `Bread Boxes`.
+- In the Food Wraps area, adds `Beeswax Wraps` and `Butcher Paper`.
+- In the Kitchen Appliance Accessories area, adds `Food Mixer Accessories`, `Rice Cooker Accessories` and `Slow Cooker Accessories`.
+- In the Breadmaker Accessories area, adds `Breadmaker Drive Belts` and `Gaskets`.
+- In the Food Processor Accessories area, adds `Julienne Discs`, `Shredding Discs` and `Whisk Attachments`.
+- In the Freezer Accessories area, adds `Freezer Baskets` and `Freezer Drawers`.
+- In the Garbage Disposal Accessories area, adds `Jam Wrenches`, `Mounting Flanges`, `Power Cords` and `Splash Guards`.
+- In the Ice Cream Maker Accessories area, adds `Ice Cream Maker Lids` and `Ice Cream Maker Paddles`.
+- In the Ice Crusher & Shaver Accessories area, adds `Replacement Blades`.
+- In the Ice Maker Accessories area, adds `Ice Maker Bins`, `Ice Maker Cleaning Solutions`, `Ice Maker Water Filters` and `Ice Maker Water Line Kits`.
+- In the Juicer Accessories area, adds `Auger Screws`, `Juicer Replacement Blades` and `Strainer Baskets`.
+- In the Microwave Oven Accessories area, adds `Crisper Pans`, `Microwave Steamers` and `Racks`.
+- In the Outdoor Grill Accessories area, adds 8 new categories including `Coconut Shell Charcoals`, `Grill Control Knobs` and `Grill Drip Pans`.
+- In the Coffee Maker & Espresso Machine Accessories area, adds 8 new categories including `Coffee Dosing Funnels`, `Coffee Grinder Replacement Parts` and `Coffee Scales`.
+- In the Pasta Maker Accessories area, adds `Motor Kits`.
+- In the Portable Cooking Stove Accessories area, adds `Pot Supports` and `Stove Carrying Bags & Cases`.
+- In the Range Hood Accessories area, adds `Chimney Extensions` and `Recirculation Kits`.
+- In the Refrigerator Accessories area, adds `Refrigerator Door Gaskets`, `Refrigerator Door Handles`, `Refrigerator Drawers & Bins` and `Refrigerator Water Filters`.
+- In the Steam Table Accessories area, adds `Steam Table Adapter Plates`.
+- In the Toaster Accessories area, adds `Toaster Bags`.
+- In the Vacuum Sealer Accessories area, adds `Vacuum Sealer Containers` and `Vacuum Sealer Rolls`.
+- In the Waffle Iron Accessories area, adds `Drip Trays`.
+- In the Cooktop, Oven & Range Accessories area, adds `Control Knobs & Dials`, `Cooktop Burner Covers`, `Cooktop Burner Grates`, `Cooktop Drip Pans` and `Oven Door Gaskets & Seals`.
+- In the Water Cooler Accessories area, adds `Water Cooler Caps & Lids`, `Water Cooler Cleaning Kits`, `Water Cooler Drip Trays`, `Water Cooler Faucets & Taps` and `Water Cooler Stands`.
+- In the Wine Fridge Accessories area, adds `Wine Fridge Door Gaskets`, `Wine Fridge Filters` and `Wine Fridge Shelves`.
+- In the Yogurt Maker Accessories area, adds `Yogurt Strainers`.
+- In the Air Fryer Accessories area, adds `Air Fryer Baskets`, `Air Fryer Liners & Mats`, `Air Fryer Racks`, `Air Fryer Rotisserie Kits` and `Air Fryer Skewer Sets`.
+- In the Cotton Candy Machine Accessories area, adds `Cotton Candy Machine Covers & Domes`, `Cotton Candy Scoops & Measuring Spoons` and `Cotton Candy Sticks`.
+- In the Deep Fryer Accessories area, adds `Deep Fryer Filters`.
+- In the Dishwasher Parts & Accessories area, adds `Dishwasher Racks` and `Dishwasher Utensil Baskets`.
+- In the Electric Kettle Accessories area, adds `Electric Kettle Filters` and `Electric Kettle Infusers`.
+- In the Electric Skillet & Wok Accessories area, adds `Handles`, `Power Cords` and `Replacement Temperature Control Probes`.
+- In the Fondue Set Accessories area, adds `Fondue Burners`.
+- In the Food Cookers & Steamers area, adds `Electric Pressure Cookers` and `Multi-Cookers`.
+- In the Food Grinders & Mills area, adds `Grain Mills`.
+- In the Food Mixers & Blenders area, adds `Countertop Blenders`, `Hand Mixers`, `Immersion Blenders`, `Personal Blenders` and `Stand Mixers`.
+- In the Food Warmers area, adds `Soup Kettles` and `Warming Drawers`.
+- In the Freezers area, adds `Chest Freezers`, `Drawer Freezers` and `Upright Freezers`.
+- In the Hot Drink Makers area, adds `Hot Chocolate Makers` and `Water Boilers & Warmers`.
+- In the Portable Cooking Stoves area, adds `Backpacking Stoves`, `Camping Tabletop Stoves`, `Hot Plates` and `Portable Induction Cooktops`.
+- In the Coffee Makers & Espresso Machines area, adds `Cold Brew Coffee Makers`, `Pour Over Coffee Makers` and `Single-Serve Coffee Makers`.
+- In the Refrigerators area, adds `Commercial Refrigerators` and `Mini Refrigerators`.
+- In the Toasters & Grills area, adds `Crêpe Makers`.
+- In the Vacuum Sealers area, adds `Chamber Vacuum Sealers`, `External Vacuum Sealers` and `Handheld Vacuum Sealers`.
+- In the Water Filters area, adds `Countertop Water Filters`, `Faucet Water Filters`, `Under-Sink Water Filters` and `Water Filter Pitchers`.
+- In the Kitchen Tools & Utensils area, adds `Butter Dispensers`, `Jar Openers`, `Kitchen Scales` and `Spiralizers`.
+- In the Cooking Thermometer Accessories area, adds `Mounting Clips & Holders` and `Thermometer Cases & Sleeves`.
+- In the Cooking Thermometers area, adds `Deep Fry Thermometers`.
+- In the Dish Racks & Drain Boards area, adds `Dish Drying Mats`.
+- In the Electric Knife Accessories area, adds `Electric Knife Cases` and `Electric Knife Power Cords & Chargers`.
+- In the Food Crackers area, adds `Screw Nutcrackers`.
+- In the Kitchen Knives area, adds 7 new categories including `Boning Knives`, `Butcher Knives` and `Carving Knives`.
+- In the Kitchen Molds area, adds 6 new categories including `Candy Molds`, `Cheese Molds` and `Dumpling Molds`.
+- In the Kitchen Organizers area, adds 7 new categories including `Cabinet Lazy Susans`, `Cup Racks` and `Mug Trees`.
+- In the Kitchen Scrapers area, adds `Pan Scrapers`.
+- In the Kitchen Slicers area, adds `Apple Slicers`, `Cheese Slicers`, `Egg Slicers` and `Mandoline Slicers`.
+- In the Oil & Vinegar Dispensers area, adds `Oil & Vinegar Dispenser Sets`.
+- In the Oven Mitts & Pot Holders area, adds `Oven Mitts` and `Pot Holders`.
+- In the Pasta Molds & Stamps area, adds `Gnocchi Boards`.
+- In the Pizza Cutter Accessories area, adds `Pizza Cutter Guards & Sheaths` and `Pizza Cutter Handles`.
+- In the Cake Decorating Supplies area, adds `Cake Smoothers & Scrapers`, `Fondant & Modeling Tools` and `Piping Tips & Nozzles`.
+- In the Rolling Pin Accessories area, adds `Rolling Pin Stands & Rests`.
+- In the Scoops area, adds `Coffee Scoops` and `Cookie Scoops`.
+- In the Gardening area, adds `Soil Test Kits`.
+- In the Composting area, adds `Compost Starters & Accelerators`.
+- In the Plant Cages & Supports area, adds `Plant Clips & Ties`, `Plant Hoops & Rings`, `Plant Netting & Mesh` and `Plant Stakes`.
+- In the Hydroponics area, adds 15 new categories including `Foamed Glass`, `Grow Light Accessories` and `Grow Light Ballasts`.
+- In the Garden Pot Saucers & Trays area, adds `Garden Pot Saucers` and `Garden Pot Trays`.
+- In the Gardening Tool Accessories area, adds `Gardening Tool Holsters & Sheaths` and `Wheelbarrow Axles`.
+- In the Gardening Tools area, adds 8 new categories including `Broadcast Spreaders`, `Bulb Augers` and `Bulb Planters`.
+- In the Greenhouses area, adds `Cold Frames`, `Lean-To Greenhouses` and `Mini Greenhouses`.
+- In the Awning Accessories area, adds `Awning Motors` and `Awning Tie Down Kits`.
+- In the Hammock Parts & Accessories area, adds 7 new categories including `Hammock Hooks & Hangers`, `Hammock Mosquito Nets` and `Hammock Rain Flies`.
+- In the Outdoor Blankets area, adds `Stadium Blankets`.
+- In the Outdoor Structures area, adds `Canopy & Gazebo Side Walls`, `Canopy Anchor Kits` and `Canopy Stakes`.
+- In the Outdoor Umbrellas & Sunshades area, adds `Beach Umbrellas`, `Cantilever Umbrellas`, `Half Patio Umbrellas`, `Market Umbrellas` and `Shade Sails`.
+- In the Porch Swing Accessories area, adds `Porch Swing Springs`.
+- In the Outdoor Power Equipment area, adds `Wood Chippers`.
+- In the Lawn Mowers area, adds `Rear-Engine Riding Mowers`, `Reel Mowers` and `Zero-Turn Mowers`.
+- In the Outdoor Power Equipment Accessories area, adds 7 new categories including `Auger Accessories`, `Garden Shredder Accessories` and `Lawn Sweeper Accessories`.
+- In the Chainsaw Accessories area, adds `Chainsaw Cases & Covers` and `Chainsaw Sharpeners`.
+- In the Tractor Parts & Accessories area, adds `Tractor Ballast Weights`, `Tractor Covers`, `Tractor Hitches`, `Tractor Seats` and `Tractor Tire Chains`.
+- In the Weed Trimmer Accessories area, adds `Weed Trimmer Guards`, `Weed Trimmer Heads` and `Weed Trimmer Lines`.
+- In the Hedge Trimmer Accessories area, adds `Blade Guards`, `Hedge Trimmer Blade Sharpeners` and `Hedge Trimmer Covers`.
+- In the Lawn Mower Accessories area, adds `Gearboxes`, `Lawn Mower Hitch Kits` and `Lawn Mower Seats`.
+- In the Leaf Blower Accessories area, adds `Leaf Blower Bags`, `Leaf Blower Harnesses` and `Leaf Blower Nozzles`.
+- In the Multifunction Outdoor Power Equipment Attachments area, adds `Brush Cutter Attachments` and `Power Broom Attachments`.
+- In the Pressure Washer Accessories area, adds `Foam Cannons`, `Pressure Hoses` and `Surface Cleaners`.
+- In the Snow Blower Accessories area, adds 7 new categories including `Snow Blower Attachments`, `Snow Blower Belts` and `Snow Blower Cabs`.
+- In the Snow Removal area, adds `Roof Rakes`.
+- In the Garden Hose Fittings & Valves area, adds `Garden Hose Quick-Connect Couplers` and `Garden Hose Splitters`.
+- In the Sprinkler Accessories area, adds `Sprinkler Risers`.
+- In the Irrigation Systems area, adds `Drip Irrigation Systems`, `Micro Spray Irrigation Systems` and `Soaker Hose Systems`.
+- In the Emergency Lighting area, adds `Emergency Light Fixtures` and `Exit Signs`.
+- In the Night Lights & Ambient Lighting area, adds `Lava Lamps`, `Night Light Projectors` and `Salt Lamps`.
+- In the Tiki Torches & Oil Lamps area, adds `Oil Lamps` and `Tiki Torches`.
+- In the Track Lighting Accessories area, adds `Connectors & Joiners` and `End Caps`.
+- In the Light Bulbs area, adds `Halogen Light Bulbs` and `High-Intensity Discharge Light Bulbs`.
+- In the Light Ropes & Strings area, adds `Rope Lights` and `String Lights`.
+- In the Lighting Fixtures area, adds `Pendant Light Fixtures` and `Recessed Light Fixtures`.
+- In the Lighting Accessories area, adds `Lamp Chimneys`, `Lamp Finials` and `Lamp Harps`.
+- In the Bedding area, adds `Bedding Sets` and `Mattress Toppers`.
+- In the Bed Sheets area, adds `Fitted Sheets` and `Flat Sheets`.
+- In the Blankets area, adds `Electric Blankets`, `Throw Blankets` and `Weighted Blankets`.
+- In the Pillowcases & Shams area, adds `Pillow Shams` and `Pillowcases`.
+- In the Pillows area, adds `Body Pillows`, `Knee & Leg Pillows`, `Neck & Cervical Pillows`, `Pregnancy & Maternity Pillows` and `Wedge Pillows`.
+- In the Indoor & Outdoor Plants area, adds `Succulents & Cacti` and `Vines & Climbing Plants`.
+- In the Landscaping & Garden Plants area, adds `Ornamental Grasses`.
+- In the Plant & Herb Growing Kits area, adds `Mushroom Growing Kits`.
+- In the Seeds, Bulbs & Accessories area, adds `Seed Starting Accessories`.
+- In the Trees area, adds `Bonsai Trees` and `Fruit Trees`.
+- In the Pool & Spa Accessories area, adds `Pool Alarms`, `Pool Lights` and `Pool Thermometers`.
+- In the Pool Floats & Loungers area, adds `Pool Floating Islands` and `Pool Hammocks`.
+- In the Pool Ladders, Steps & Ramps area, adds `Pool Handrails`.
+- In the Pool & Spa Filters area, adds `Pool & Spa Filter Cartridges` and `Pool & Spa Filter Media`.
+- In the Pool Cover Accessories area, adds 6 new categories including `Pool Cover Air Pillows`, `Pool Cover Clips & Fasteners` and `Pool Cover Pumps`.
+- In the Sauna Accessories area, adds `Sauna Backrests & Headrests`, `Sauna Lighting`, `Sauna Stones`, `Sauna Thermometers & Hygrometers` and `Sauna Timers`.
+- In the Saunas area, adds `Infrared Saunas`, `Portable Saunas` and `Steam Saunas`.
+- In the Spas area, adds `In-Ground Spas`, `Inflatable Spas`, `Portable Hot Tubs` and `Swim Spas`.
+- In the Swimming Pools area, adds `Above-Ground Pools`, `Inflatable Pools` and `Kiddie Pools`.
+- In the Smoking Accessories area, adds `Dry Herb Vaporizers`, `Dry Herb Vaporizer Accessories` and `Grinders`.
+- In the Security Monitors & Recorders area, adds `Security Digital Video Recorders`.
+- In the Security Safe Accessories area, adds `Safe Interior Lights` and `Security Safe Dehumidifiers`.
+- In the Security Safes area, adds `Data Safes`, `Depository Safes` and `Portable Safes`.
+- In the Security System Sensors area, adds `Door & Window Sensors`, `Glass Break Sensors`, `Tilt Sensors` and `Vibration Sensors`.
+- In the Decor area, adds `Decorative Lanterns` and `Throw Pillow Accessories`.
+- In the Bird & Wildlife Houses area, adds `Bee Houses` and `Squirrel Houses`.
+- In the Clock Parts area, adds `Clock Pendulums` and `Clock Weights`.
+- In the Floor & Grandfather Clocks area, adds `Grandmother Clocks`.
+- In the Flag & Windsock Accessories area, adds `Flag & Windsock Finials` and `Flag & Windsock Halyards & Ropes`.
+- In the Flags & Windsocks area, adds `Decorative Flags` and `Windsocks`.
+- In the Garden & Stepping Stones area, adds `Memorial Stones`.
+- In the Home Fragrance Accessories area, adds `Candle Wick Trimmers`.
+- In the Fragrance Diffusers area, adds `Evaporative Diffusers` and `Nebulizing Diffusers`.
+- In the Posters, Prints, & Visual Artwork area, adds `Photographs`.
+- In the Home Fragrances area, adds `Scented Sachets`.
+- In the Lawn Ornaments area, adds `Garden Gnomes` and `Gazing Globes`.
+- In the Mailbox Accessories area, adds `Mailbox Locks`.
+- In the Mirrors area, adds `Floor Mirrors` and `Wall Mirrors`.
+- In the Seasonal & Holiday Decorations area, adds `Christmas Tree Toppers`.
+- In the Japanese Traditional Dolls area, adds `Daruma Dolls`, `Gogatsu Dolls`, `Hina Dolls` and `Kokeshi Dolls`.
+- In the Seasonal Village Sets & Accessories area, adds `Seasonal Village Buildings`, `Seasonal Village Figurines`, `Seasonal Village Landscaping & Trees` and `Seasonal Village Lighting & Power Accessories`.
+- In the Vases area, adds `Bud Vases`, `Floor Vases` and `Hanging & Wall Vases`.
+- In the Wallpaper area, adds `Wall Murals` and `Wallpaper Borders`.
+- In the Roof Decors area, adds `Cupolas`, `Roof Crestings` and `Roof Finials`.
+- In the Bird & Wildlife Feeder Accessories area, adds `Feeder Cleaning Brushes`.
+- In the Window Treatment Accessories area, adds `Curtain Tracks`.
+- In the Curtain Holdbacks & Tassels area, adds `Curtain Tiebacks`.
+- In the Wreaths & Garlands area, adds `Swags`.
+- In the Bird & Wildlife House Accessories area, adds `Bird House Mounting Brackets` and `House Poles`.
+- In the Emergency Preparedness area, adds `Emergency Water Storage Containers` and `Fire Escape Ladders`.
+- In the Fireplace & Wood Stove Accessories area, adds `Ash Buckets & Shovels`.
+- In the Log Racks & Carriers area, adds `Firewood Carriers`.
+- In the Firewood & Fuel area, adds `Compressed Fire Logs`, `Kindling` and `Wood Pellets`.
+- In the Log Rack & Carrier Accessories area, adds `Log Rack Covers`, `Log Rack Extension Kits` and `Log Rack Wheels`.
+- In the Flood, Fire & Gas Safety area, adds `Fire Blankets`.
+- In the Fire Alarms area, adds `Fire Alarm Bells & Chimes`, `Fire Alarm Horns & Strobes` and `Fire Alarm Pull Stations`.
+- In the Fire Extinguisher & Equipment Storage area, adds `Fire Extinguisher Brackets & Mounts`, `Fire Extinguisher Cabinets`, `Fire Extinguisher Covers & Bags` and `Fire Extinguisher Stands`.
+- In the Smoke & Carbon Monoxide Detectors area, adds `Combination Smoke & Carbon Monoxide Detectors`.
+- In the Household Appliance Accessories area, adds `Evaporative Cooler Accessories` and `Space Heater Accessories`.
+- In the Air Conditioner Accessories area, adds `Air Conditioner Brackets`, `Air Conditioner Hoses`, `Air Conditioner Installation Kits` and `Air Conditioner Remote Controls`.
+- In the Patio Heater Accessories area, adds `Patio Heater Hoses`, `Patio Heater Reflectors`, `Patio Heater Regulators` and `Patio Heater Wheel Kits`.
+- In the Vacuum Accessories area, adds `Brush Rolls`, `Side Brushes`, `Vacuum Batteries` and `Vacuum Belts`.
+- In the Water Heater Accessories area, adds `Water Heater Drain Valves`, `Water Heater Insulation Blankets`, `Water Heater Relief Valves`, `Water Heater Stands` and `Water Heater Thermostats`.
+- In the Water Heater Vents area, adds `Water Heater Vent Caps`, `Water Heater Vent Fittings`, `Water Heater Vent Kits` and `Water Heater Vent Pipes`.
+- In the Air Purifier Accessories area, adds `Air Purifier Ionizer Plates`, `Air Purifier Remote Controls` and `Air Purifier Replacement Bulbs`.
+- In the Dehumidifier Accessories area, adds `Dehumidifier Hoses`.
+- In the Fan Accessories area, adds `Ceiling Fan Downrods & Extension Rods`, `Fan Blades`, `Fan Mounting Kits & Brackets`, `Fan Pull Chains & Switches` and `Fan Remote Controls`.
+- In the Floor & Steam Cleaner Accessories area, adds `Brush Attachments` and `Extension Hoses`.
+- In the Furnace & Boiler Accessories area, adds `Furnace & Boiler Control Boards`, `Furnace & Boiler Gas Valves` and `Furnace & Boiler Igniters`.
+- In the Heating Radiator Accessories area, adds `Heating Radiator Bleed Keys`, `Heating Radiator Covers`, `Heating Radiator Humidifiers`, `Heating Radiator Shelves` and `Heating Radiator Valves`.
+- In the Humidifier Accessories area, adds `Humidifier Cleaners`, `Humidifier Demineralization Cartridges` and `Humidifier Wicks`.
+- In the Garment Steamer Accessories area, adds `Garment Steamer Brushes`, `Garment Steamer Fabric Clips`, `Garment Steamer Hoses` and `Garment Steamer Water Tanks`.
+- In the Iron Accessories area, adds `Anti-Calc Cartridges` and `Iron Soleplate Covers`.
+- In the Washer & Dryer Accessories area, adds `Dryer Lint Filters & Traps`, `Dryer Vent Kits`, `Laundry Appliance Hoses`, `Washer & Dryer Pedestals` and `Washer & Dryer Stacking Kits`.
+- In the Climate Control Appliances area, adds `Heat Pumps`.
+- In the Air Conditioners area, adds `Portable Air Conditioners`, `Split System Air Conditioners`, `Through-the-Wall Air Conditioners` and `Window Air Conditioners`.
+- In the Evaporative Coolers area, adds `Roof-Mounted Evaporative Coolers`.
+- In the Fans area, adds `Box Fans`, `Tower Fans` and `Window Fans`.
+- In the Vacuums area, adds `Central Vacuum Systems`, `Handheld Vacuums`, `Robot Vacuums` and `Stick Vacuums`.
+- In the Water Heaters area, adds `Heat Pump Water Heaters` and `Solar Water Heaters`.
+- In the Floor Scrubbers area, adds `Robotic Floor Scrubbers`.
+- In the Floor Polishers & Buffers area, adds `Floor Burnishers`.
+- In the Laundry Appliances area, adds `Drying Cabinets`.
+
+##### Sporting Goods
+
+- Renames `Ice Climbing Screwdrivers` as `Ice Climbing Screws`.
+- Adds `Gaelic Games (GAA)` (`Gaelic Football` and `Hurling`).
+- Adds `Hurling` (`Hurling Balls`, `Hurling Protective Gear`, `Hurling Sticks` and `Hurling Training Aids`).
+- Adds `Gaelic Football` (`Gaelic Football Balls`, `Gaelic Football Gloves`, `Gaelic Football Protective Gear` and `Gaelic Football Training Aids`).
+
+##### Software
+
+- In the Video Game Software area, adds `Digital Video Games` and `Physical Video Games`.
+
+##### Miscellaneous
+
+- Adds 600+ new attributes across the taxonomy, with particular emphasis on Home & Garden.
+- Extends existing attributes to additional categories.
+- Includes 5,000+ new attribute values across multiple attributes.
+- Includes other refinements and improvements.
+
 ## 2025-12
 
 #### 📚 Taxonomy Tree
