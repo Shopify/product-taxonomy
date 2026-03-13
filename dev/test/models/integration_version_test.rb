@@ -69,9 +69,12 @@ module ProductTaxonomy
       assert_equal "gid://shopify/TaxonomyCategory/aa-3", output_mappings["shopify/2022-01"].first.output_category.gid
       # 2021: mapped to aa-2, continues to resolve to aa-3
       assert_equal "gid://shopify/TaxonomyCategory/aa-3", output_mappings["shopify/2021-01"].first.output_category.gid
-      # 2020: mapped to aa-1, continues to resolve to aa-3
-      assert_equal "gid://shopify/TaxonomyCategory/aa", output_mappings["shopify/2020-01"].first.output_category.gid
-      assert_equal "gid://shopify/TaxonomyCategory/aa-3", output_mappings["shopify/2020-01"].second.output_category.gid
+      # 2020: original rules mapped to aa and aa-3, plus propagated rule for aa-2 → aa-3
+      assert_equal 3, output_mappings["shopify/2020-01"].size
+      assert_equal "gid://shopify/TaxonomyCategory/aa", output_mappings["shopify/2020-01"][0].output_category.gid
+      assert_equal "gid://shopify/TaxonomyCategory/aa-3", output_mappings["shopify/2020-01"][1].output_category.gid
+      assert_equal "gid://shopify/TaxonomyCategory/aa-3", output_mappings["shopify/2020-01"][2].output_category.gid
+      assert_equal "aa-2", output_mappings["shopify/2020-01"][2].input_category["id"].to_s
     end
 
     test "to_json returns the JSON representation of a mapping to Shopify" do
@@ -402,6 +405,84 @@ module ProductTaxonomy
       assert_equal "gid://shopify/TaxonomyCategory/aa-1", versions[1].to_shopify_mappings[0].output_category.gid
       assert_equal "gid://shopify/TaxonomyCategory/aa-3", versions[2].to_shopify_mappings[0].output_category.gid
       assert_equal "gid://shopify/TaxonomyCategory/aa-2", versions[3].to_shopify_mappings[0].output_category.gid
+    end
+
+    test "resolve_to_shopify_mappings propagates rules from newer versions for categories in full_names_by_id" do
+      # Newer version already has resolved output (Category object) — simulates post-chain-resolution state
+      newer_version = IntegrationVersion.new(
+        name: "shopify",
+        version: "2022-01",
+        to_shopify_mappings: [
+          MappingRule.new(input_category: category_hash("aa-2"), output_category: Category.find_by(id: "aa-3")),
+        ],
+        full_names_by_id: { "aa-2" => category_hash("aa-2") },
+      )
+      # Older version has a raw string output that resolves to a current Category
+      older_version = IntegrationVersion.new(
+        name: "shopify",
+        version: "2020-01",
+        to_shopify_mappings: [
+          MappingRule.new(input_category: category_hash("1"), output_category: "aa"),
+        ],
+        full_names_by_id: {
+          "1" => category_hash("1"),
+          "aa-2" => category_hash("aa-2"),
+        },
+      )
+      older_version.resolve_to_shopify_mappings([newer_version])
+
+      assert_equal 2, older_version.to_shopify_mappings.size
+      assert_equal "gid://shopify/TaxonomyCategory/aa", older_version.to_shopify_mappings[0].output_category.gid
+      assert_equal "gid://shopify/TaxonomyCategory/aa-3", older_version.to_shopify_mappings[1].output_category.gid
+      assert_equal "aa-2", older_version.to_shopify_mappings[1].input_category["id"]
+    end
+
+    test "resolve_to_shopify_mappings does not overwrite existing rules with propagated rules" do
+      newer_version = IntegrationVersion.new(
+        name: "shopify",
+        version: "2022-01",
+        to_shopify_mappings: [
+          MappingRule.new(input_category: category_hash("aa-1"), output_category: Category.find_by(id: "aa-3")),
+        ],
+        full_names_by_id: { "aa-1" => category_hash("aa-1") },
+      )
+      # Older version already has a rule for aa-1 (raw string output)
+      older_version = IntegrationVersion.new(
+        name: "shopify",
+        version: "2020-01",
+        to_shopify_mappings: [
+          MappingRule.new(input_category: category_hash("aa-1"), output_category: "aa-2"),
+        ],
+        full_names_by_id: {
+          "aa-1" => category_hash("aa-1"),
+        },
+      )
+      older_version.resolve_to_shopify_mappings([newer_version])
+
+      assert_equal 1, older_version.to_shopify_mappings.size
+      assert_equal "gid://shopify/TaxonomyCategory/aa-2", older_version.to_shopify_mappings[0].output_category.gid
+    end
+
+    test "resolve_to_shopify_mappings does not propagate rules for categories not in full_names_by_id" do
+      newer_version = IntegrationVersion.new(
+        name: "shopify",
+        version: "2022-01",
+        to_shopify_mappings: [
+          MappingRule.new(input_category: category_hash("aa-2"), output_category: Category.find_by(id: "aa-3")),
+        ],
+        full_names_by_id: { "aa-2" => category_hash("aa-2") },
+      )
+      older_version = IntegrationVersion.new(
+        name: "shopify",
+        version: "2020-01",
+        to_shopify_mappings: [],
+        full_names_by_id: {
+          "1" => category_hash("1"),
+        },
+      )
+      older_version.resolve_to_shopify_mappings([newer_version])
+
+      assert_equal 0, older_version.to_shopify_mappings.size
     end
 
     test "IntegrationVersion.clear_shopify_integrations_directory removes existing directory and recreates it" do
