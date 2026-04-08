@@ -21,9 +21,6 @@ module ProductTaxonomy
     end
 
     test "All attributes belong to at least one category" do
-      # Attributes intentionally not assigned to any category. These are either:
-      # - Extended attributes that duplicate a base attribute already on the category
-      # - Attributes too specific for a parent category (would not apply to all children)
       known_orphan_attributes = [
         "accessory_material",
         "arrow/bolt_material",
