@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+{% include header.html %}
+<div class="attribute-search-wrapper">
+  <div class="search-container">
+    <label for="value-search" class="search-container__label">Value Search:</label>
+    <input class="search-container__input" type="text" id="value-search" placeholder="Loading…">
+    <ul class="search-container__ul" id="value-search-results"></ul>
+  </div>
+</div>
+{% for value in site.data[page.target].reversed_values.values %}
+<div class="value-page-entry hidden" data-handle="{{ value.handle }}">
+  <div class="column">
+    <div class="value-wrapper box">
+      <div class="value-container value-detail">
+        <h3>{{ value.name }}</h3>
+        <div class="value-container__id">
+          <span class="id">{{ value.id }}</span>
+          <span class="id">{{ value.handle }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="value-attribute-wrapper box">
+      <div class="value-container value-attribute">
+        <h3>Attribute</h3>
+        {% if value.attribute %}
+          <p>
+            <a href="{{ site.baseurl }}/releases/{{ page.target }}/attributes?attributeHandle={{ value.attribute.handle }}">
+              {{ value.attribute.name }}
+            </a>
+          </p>
+        {% else %}
+          <p>No attribute associated.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+<script type="module" src="{{ site.baseurl }}/assets/js/value_release.js"></script>

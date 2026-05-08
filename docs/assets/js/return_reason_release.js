@@ -44,9 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
     resetToReturnReason,
     10,
     [
-      {name: 'title', score: 1},
-      {name: 'return_reason.name', score: 1},
-      {name: 'return_reason.description', score: 0.5},
+      {name: 'title', weight: 1},
+      {name: 'return_reason.name', weight: 1},
+      {name: 'return_reason.description', weight: 0.5},
     ],
   );
   setInitialReturnReason();
