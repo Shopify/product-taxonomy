@@ -30,7 +30,6 @@
   - item_material
   - manufacturer_type
   - vehicle_application_area
-  - vehicle_engine/part_features
   - vehicle_type
   return_reasons:
   - size
@@ -45,7 +44,12 @@
   name: Aircraft Parts & Accessories
   children: []
   attributes:
+  - aircraft_documentation_included
+  - aircraft_installation_location
+  - aircraft_system_application
+  - airworthiness_approval_basis
   - compatible_aircraft_type
+  - part_condition
   return_reasons:
   - size
   - incompatible
@@ -139,6 +143,7 @@
   attributes:
   - color
   - ev_connector/adapter_type
+  - ev_connector_adapter_direction
   - item_condition
   - manufacturer_type
   - pattern
@@ -160,7 +165,11 @@
   - vp-1-2-5-4
   - vp-1-2-5-5
   attributes:
+  - ev_conversion_kit_completeness_level
   - ev_conversion_kit_components
+  - ev_conversion_kit_drivetrain_configuration
+  - ev_conversion_kit_voltage_class
+  - installation_fabrication_level
   - item_condition
   - manufacturer_type
   return_reasons:
@@ -176,7 +185,12 @@
   name: Car EV Conversion Kits
   children: []
   attributes:
+  - car_ev_conversion_kit_motor_type
+  - ev_conversion_kit_completeness_level
   - ev_conversion_kit_components
+  - ev_conversion_kit_drivetrain_configuration
+  - ev_conversion_kit_voltage_class
+  - installation_fabrication_level
   - item_condition
   - manufacturer_type
   return_reasons:
@@ -193,7 +207,11 @@
   name: Motorcycle EV Conversion Kits
   children: []
   attributes:
+  - ev_conversion_kit_completeness_level
   - ev_conversion_kit_components
+  - ev_conversion_kit_drivetrain_configuration
+  - ev_conversion_kit_voltage_class
+  - installation_fabrication_level
   - item_condition
   - manufacturer_type
   return_reasons:
@@ -210,9 +228,16 @@
   name: Scooter EV Conversion Kits
   children: []
   attributes:
+  - controller_type
+  - ev_conversion_kit_completeness_level
   - ev_conversion_kit_components
+  - ev_conversion_kit_drivetrain_configuration
+  - ev_conversion_kit_voltage_class
+  - installation_fabrication_level
   - item_condition
   - manufacturer_type
+  - motor_mounting_configuration
+  - throttle_type_scooter_conversion
   return_reasons:
   - size
   - range
@@ -227,7 +252,13 @@
   name: Truck EV Conversion Kits
   children: []
   attributes:
+  - conversion_kit_cooling_method
+  - conversion_kit_installation_complexity
+  - ev_conversion_kit_completeness_level
   - ev_conversion_kit_components
+  - ev_conversion_kit_drivetrain_configuration
+  - ev_conversion_kit_voltage_class
+  - installation_fabrication_level
   - item_condition
   - manufacturer_type
   return_reasons:
@@ -244,7 +275,11 @@
   name: Van EV Conversion Kits
   children: []
   attributes:
+  - ev_conversion_kit_completeness_level
   - ev_conversion_kit_components
+  - ev_conversion_kit_drivetrain_configuration
+  - ev_conversion_kit_voltage_class
+  - installation_fabrication_level
   - item_condition
   - manufacturer_type
   return_reasons:
@@ -266,6 +301,7 @@
   attributes:
   - battery_size
   - battery_type
+  - battery_voltage_class
   - ev_battery_features
   - ev_battery_type
   - item_condition
@@ -336,6 +372,8 @@
   - item_condition
   - manufacturer_type
   - pattern
+  - protective_case_interior_protection_type
+  - protective_case_shell_type
   return_reasons:
   - size
   - style
@@ -361,6 +399,8 @@
   - item_condition
   - manufacturer_type
   - pattern
+  - protective_case_interior_protection_type
+  - protective_case_shell_type
   return_reasons:
   - size
   - style
@@ -380,12 +420,16 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - battery_case_certification_standard
+  - battery_case_interior_padding_material
   - care_instructions
   - carry_options
   - color
   - item_condition
   - manufacturer_type
   - pattern
+  - protective_case_interior_protection_type
+  - protective_case_shell_type
   return_reasons:
   - size
   - style
@@ -411,6 +455,8 @@
   - item_condition
   - manufacturer_type
   - pattern
+  - protective_case_interior_protection_type
+  - protective_case_shell_type
   return_reasons:
   - size
   - style
@@ -432,9 +478,12 @@
   - care_instructions
   - carry_options
   - color
+  - connector_case_style
   - item_condition
   - manufacturer_type
   - pattern
+  - protective_case_interior_protection_type
+  - protective_case_shell_type
   return_reasons:
   - size
   - style
@@ -457,9 +506,12 @@
   - care_instructions
   - carry_options
   - color
+  - interior_padding_type
   - item_condition
   - manufacturer_type
   - pattern
+  - protective_case_interior_protection_type
+  - protective_case_shell_type
   return_reasons:
   - size
   - style
@@ -485,6 +537,9 @@
   - item_condition
   - manufacturer_type
   - pattern
+  - protective_case_interior_protection_type
+  - protective_case_shell_type
+  - tool_case_form_factor
   return_reasons:
   - size
   - style
@@ -551,6 +606,7 @@
   - compatible_operating_system
   - item_condition
   - manufacturer_type
+  - motor_vehicle_a_v_integration_features
   - pattern
   - player/recorder_specialized_features
   - power_source
@@ -570,6 +626,7 @@
   - amplifier_class
   - amplifier_configuration
   - color
+  - crossover_type
   - item_condition
   - manufacturer_type
   - pattern
@@ -633,6 +690,7 @@
   attributes:
   - color
   - faceplate_design
+  - faceplate_security_features
   - item_condition
   - manufacturer_type
   - pattern
@@ -650,6 +708,7 @@
   name: Single DIN Cassette Players
   children: []
   attributes:
+  - cassette_deck_feature_set
   - color
   - faceplate_design
   - item_condition
@@ -739,6 +798,7 @@
   - manufacturer_type
   - pattern
   - power_source
+  - vehicle_audio_dsp_form_factor
   - vehicle_audio_system_features
   return_reasons:
   - sound_quality
@@ -757,6 +817,7 @@
   - connectivity_technology
   - item_condition
   - manufacturer_type
+  - mounting_location
   - pattern
   - power_source
   - vehicle_audio_system_features
@@ -773,6 +834,7 @@
   name: Parametric Equalizers
   children: []
   attributes:
+  - audio_channel_configuration
   - color
   - connectivity_technology
   - item_condition
@@ -795,6 +857,8 @@
   attributes:
   - color
   - connectivity_technology
+  - crossover_component_type
+  - crossover_configuration
   - item_condition
   - manufacturer_type
   - pattern
@@ -819,8 +883,12 @@
   - item_condition
   - manufacturer_type
   - parking_camera_features
+  - parking_camera_mounting_location
+  - parking_camera_night_vision_technology
+  - parking_camera_orientation
   - pattern
   - power_source
+  - video_signal_standard
   return_reasons:
   - field_of_view
   - installation
@@ -835,12 +903,17 @@
   name: 360-Degree Cameras
   children: []
   attributes:
+  - camera_mounting_location_vehicle_exterior
   - color
   - item_condition
   - manufacturer_type
   - parking_camera_features
+  - parking_camera_mounting_location
+  - parking_camera_night_vision_technology
+  - parking_camera_orientation
   - pattern
   - power_source
+  - video_signal_standard
   return_reasons:
   - field_of_view
   - installation
@@ -855,12 +928,18 @@
   name: Backup Cameras
   children: []
   attributes:
+  - backup_camera_mounting_location
+  - backup_camera_video_interface
   - color
   - item_condition
   - manufacturer_type
   - parking_camera_features
+  - parking_camera_mounting_location
+  - parking_camera_night_vision_technology
+  - parking_camera_orientation
   - pattern
   - power_source
+  - video_signal_standard
   return_reasons:
   - field_of_view
   - installation
@@ -876,6 +955,7 @@
   children: []
   attributes:
   - color
+  - included_mounting_accessories
   - item_condition
   - manufacturer_type
   - pattern
@@ -926,6 +1006,8 @@
   - manufacturer_type
   - pattern
   - power_source
+  - speaker_cone_material
+  - vehicle_coaxial_speaker_nominal_size
   return_reasons:
   - size
   - sound_quality
@@ -941,10 +1023,13 @@
   children: []
   attributes:
   - color
+  - crossover_type
   - item_condition
   - manufacturer_type
   - pattern
   - power_source
+  - speaker_size
+  - tweeter_material
   return_reasons:
   - size
   - sound_quality
@@ -981,6 +1066,7 @@
   - color
   - item_condition
   - manufacturer_type
+  - motor_vehicle_speaker_mounting_type
   - pattern
   - power_source
   return_reasons:
@@ -1002,6 +1088,8 @@
   - manufacturer_type
   - pattern
   - power_source
+  - tweeter_crossover_type
+  - tweeter_mount_type
   return_reasons:
   - size
   - sound_quality
@@ -1021,6 +1109,9 @@
   - manufacturer_type
   - pattern
   - power_source
+  - voice_coil_configuration
+  - woofer_mounting_type
+  - woofer_surround_material
   return_reasons:
   - size
   - sound_quality
@@ -1040,8 +1131,12 @@
   - color
   - item_condition
   - manufacturer_type
+  - motor_vehicle_subwoofer_size
+  - motor_vehicle_subwoofer_voice_coil_configuration
+  - motor_vehicle_subwoofer_voice_coil_impedance_per_coil
   - pattern
   - power_source
+  - subwoofer_installation_type
   return_reasons:
   - size
   - sound_quality
@@ -1066,6 +1161,7 @@
   - color
   - item_condition
   - manufacturer_type
+  - mount_attachment_method
   - mount_material
   - pattern
   - power_source
@@ -1086,6 +1182,7 @@
   - color
   - item_condition
   - manufacturer_type
+  - mount_attachment_method
   - mount_material
   - pattern
   - power_source
@@ -1104,8 +1201,11 @@
   children: []
   attributes:
   - color
+  - compatible_device_type
+  - headrest_mount_attachment_method
   - item_condition
   - manufacturer_type
+  - mount_attachment_method
   - mount_material
   - pattern
   - power_source
@@ -1126,7 +1226,9 @@
   - color
   - item_condition
   - manufacturer_type
+  - mount_attachment_method
   - mount_material
+  - overhead_mount_installation_method
   - pattern
   - power_source
   return_reasons:
@@ -1146,9 +1248,11 @@
   - color
   - item_condition
   - manufacturer_type
+  - mount_attachment_method
   - mount_material
   - pattern
   - power_source
+  - rearview_mirror_mount_attachment_type
   return_reasons:
   - size
   - style
@@ -1166,6 +1270,7 @@
   - color
   - item_condition
   - manufacturer_type
+  - mount_attachment_method
   - mount_material
   - pattern
   - power_source
@@ -1186,6 +1291,7 @@
   - color
   - item_condition
   - manufacturer_type
+  - mount_attachment_method
   - mount_material
   - pattern
   - power_source
@@ -1206,9 +1312,11 @@
   - color
   - item_condition
   - manufacturer_type
+  - mount_attachment_method
   - mount_material
   - pattern
   - power_source
+  - windshield_mount_attachment_method
   return_reasons:
   - size
   - style
@@ -1282,7 +1390,10 @@
   attributes:
   - battery_size
   - battery_type
+  - brake_fluid_dot_specification
+  - brake_position
   - color
+  - compatible_brake_service_system
   - item_condition
   - manufacturer_type
   - pattern
@@ -1299,7 +1410,10 @@
   name: Anti-Lock Braking System (ABS) Parts
   children: []
   attributes:
+  - brake_fluid_dot_specification
+  - brake_position
   - color
+  - compatible_brake_service_system
   - item_condition
   - manufacturer_type
   - pattern
@@ -1317,10 +1431,16 @@
   name: Brake Boosters
   children: []
   attributes:
+  - brake_booster_assist_type
+  - brake_booster_diaphragm_configuration
+  - brake_fluid_dot_specification
+  - brake_position
   - color
+  - compatible_brake_service_system
   - item_condition
   - manufacturer_type
   - pattern
+  - pushrod_end_type
   - vehicle_braking_features
   return_reasons:
   - size
@@ -1335,7 +1455,15 @@
   name: Brake Calipers
   children: []
   attributes:
+  - brake_caliper_bleeder_screw_position
+  - brake_caliper_finish
+  - brake_caliper_included_hardware
+  - brake_caliper_mount_type
+  - brake_fluid_dot_specification
+  - brake_position
   - color
+  - compatible_brake_service_system
+  - compatible_parking_brake_mechanism
   - item_condition
   - manufacturer_type
   - pattern
@@ -1353,7 +1481,10 @@
   name: Brake Fluid
   children: []
   attributes:
+  - brake_fluid_dot_specification
+  - brake_position
   - color
+  - compatible_brake_service_system
   - pattern
   return_reasons:
   - incompatible
@@ -1367,7 +1498,10 @@
   name: Brake Lines
   children: []
   attributes:
+  - brake_fluid_dot_specification
+  - brake_position
   - color
+  - compatible_brake_service_system
   - item_condition
   - manufacturer_type
   - pattern
@@ -1385,9 +1519,18 @@
   name: Brake Master Cylinders
   children: []
   attributes:
+  - brake_circuit_type
+  - brake_fluid_dot_specification
+  - brake_master_cylinder_mounting_type
+  - brake_master_cylinder_reservoir_type
+  - brake_position
   - color
+  - compatible_abs_system
+  - compatible_brake_fluid
+  - compatible_brake_service_system
   - item_condition
   - manufacturer_type
+  - outlet_thread_type
   - pattern
   - vehicle_braking_features
   return_reasons:
@@ -1403,7 +1546,15 @@
   name: Brake Pads
   children: []
   attributes:
+  - brake_fluid_dot_specification
+  - brake_pad_compatible_rotor_type
+  - brake_pad_form_factor
+  - brake_pad_material
+  - brake_pad_shim_included
+  - brake_pad_wear_indicator_type
+  - brake_position
   - color
+  - compatible_brake_service_system
   - item_condition
   - manufacturer_type
   - pattern
@@ -1421,7 +1572,10 @@
   name: Brake Rotors
   children: []
   attributes:
+  - brake_fluid_dot_specification
+  - brake_position
   - color
+  - compatible_brake_service_system
   - item_condition
   - manufacturer_type
   - pattern
@@ -1439,7 +1593,12 @@
   name: Brake Drums
   children: []
   attributes:
+  - brake_drum_finish_coating
+  - brake_drum_type
+  - brake_fluid_dot_specification
+  - brake_position
   - color
+  - compatible_brake_service_system
   - item_condition
   - manufacturer_type
   - pattern
@@ -1457,7 +1616,10 @@
   name: Back Plates
   children: []
   attributes:
+  - brake_fluid_dot_specification
+  - brake_position
   - color
+  - compatible_brake_service_system
   - item_condition
   - manufacturer_type
   - pattern
@@ -1475,7 +1637,12 @@
   name: Brake Shoes
   children: []
   attributes:
+  - brake_fluid_dot_specification
+  - brake_position
+  - brake_shoe_friction_material
+  - brake_shoe_set_contents
   - color
+  - compatible_brake_service_system
   - item_condition
   - manufacturer_type
   - pattern
@@ -1493,11 +1660,15 @@
   name: Wheel Cylinders
   children: []
   attributes:
+  - brake_fluid_dot_specification
+  - brake_position
   - color
+  - compatible_brake_service_system
   - item_condition
   - manufacturer_type
   - pattern
   - vehicle_braking_features
+  - wheel_cylinder_inlet_port_thread_standard
   return_reasons:
   - size
   - incompatible
@@ -1511,7 +1682,11 @@
   name: Brake Hoses
   children: []
   attributes:
+  - brake_fluid_dot_specification
+  - brake_hose_end_fitting_type
+  - brake_position
   - color
+  - compatible_brake_service_system
   - item_condition
   - manufacturer_type
   - pattern
@@ -1529,7 +1704,14 @@
   name: Brake Light Switches
   children: []
   attributes:
+  - brake_fluid_dot_specification
+  - brake_light_switch_actuation_type
+  - brake_light_switch_connector_type
+  - brake_light_switch_contact_type
+  - brake_light_switch_mounting_style
+  - brake_position
   - color
+  - compatible_brake_service_system
   - item_condition
   - manufacturer_type
   - pattern
@@ -1619,6 +1801,7 @@
   children: []
   attributes:
   - color
+  - console_cover_installation_method
   - cover_features
   - cover_material
   - item_condition
@@ -1641,6 +1824,8 @@
   - color
   - cover_features
   - cover_material
+  - dash_cover_construction_type
+  - dash_cover_cutout_configuration
   - item_condition
   - manufacturer_type
   - pattern
@@ -1684,6 +1869,7 @@
   - color
   - durability_features
   - fabric
+  - headliner_product_form
   - item_condition
   - manufacturer_type
   - pattern
@@ -1726,9 +1912,13 @@
   - color
   - durability_features
   - fabric
+  - flammability_compliance
   - item_condition
   - manufacturer_type
   - pattern
+  - stretch_type
+  - upholstery_fabric_backing_type
+  - upholstery_fabric_water_resistance
   return_reasons:
   - size
   - color
@@ -1770,6 +1960,8 @@
   name: AC Compressors
   children: []
   attributes:
+  - ac_compressor_mounting_style
+  - ac_compressor_oil_type
   - color
   - durability_features
   - item_condition
@@ -1808,7 +2000,9 @@
   children: []
   attributes:
   - color
+  - compatible_refrigerant_type
   - durability_features
+  - evaporator_core_type
   - item_condition
   - item_material
   - manufacturer_type
@@ -1845,6 +2039,8 @@
   name: Blower Motors
   children: []
   attributes:
+  - blower_motor_bearing_type
+  - blower_motor_mounting_position
   - color
   - durability_features
   - item_condition
@@ -1863,6 +2059,7 @@
   name: Climate Control Modules
   children: []
   attributes:
+  - climate_control_module_function
   - color
   - durability_features
   - item_condition
@@ -1883,6 +2080,9 @@
   attributes:
   - color
   - durability_features
+  - heater_control_actuation_method
+  - heater_control_electrical_connector_type
+  - hvac_control_functions
   - item_condition
   - item_material
   - manufacturer_type
@@ -1924,10 +2124,13 @@
   - vp-1-4-4-6
   attributes:
   - color
+  - handbrake_actuation_type
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
+  - steering_component_drive_type
+  - vehicle_steering_assist_type
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -1941,9 +2144,11 @@
   children: []
   attributes:
   - color
+  - handbrake_orientation
   - item_condition
   - item_material
   - manufacturer_type
+  - mounting_position
   - pattern
   return_reasons:
   - length
@@ -1959,10 +2164,12 @@
   children: []
   attributes:
   - color
+  - grip_surface_type
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
+  - pedal_mounting_style
   return_reasons:
   - size
   - incompatible
@@ -1981,6 +2188,10 @@
   - item_material
   - manufacturer_type
   - pattern
+  - steering_column_adjustability_features
+  - steering_column_ignition_provision
+  - steering_column_shaft_end_interface_type
+  - steering_column_shift_type
   return_reasons:
   - length
   - incompatible
@@ -1999,6 +2210,7 @@
   - item_material
   - manufacturer_type
   - pattern
+  - steering_pump_pulley_type
   return_reasons:
   - pressure_rating
   - flow_rate
@@ -2018,6 +2230,8 @@
   - item_material
   - manufacturer_type
   - pattern
+  - steering_rack_finish_coating
+  - steering_rack_position
   return_reasons:
   - length
   - incompatible
@@ -2032,10 +2246,13 @@
   children: []
   attributes:
   - color
+  - compatible_steering_wheel_airbag
+  - compatible_steering_wheel_control_button
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
+  - steering_wheel_rim_material_grip_surface
   return_reasons:
   - size
   - incompatible
@@ -2064,6 +2281,7 @@
   - item_condition
   - item_material
   - manufacturer_type
+  - oil_system_connection_thread_standard
   - pattern
   - vehicle_oil_features
   return_reasons:
@@ -2082,6 +2300,8 @@
   - item_condition
   - item_material
   - manufacturer_type
+  - oil_cooler_core_type
+  - oil_cooler_mounting_style
   - pattern
   - vehicle_oil_features
   return_reasons:
@@ -2100,6 +2320,9 @@
   - item_condition
   - item_material
   - manufacturer_type
+  - oil_dipstick_component_type
+  - oil_dipstick_measurement_markings
+  - oil_dipstick_tube_mounting_type
   - pattern
   - vehicle_oil_features
   return_reasons:
@@ -2118,6 +2341,8 @@
   - item_condition
   - item_material
   - manufacturer_type
+  - oil_drain_plug_head_drive_type
+  - oil_drain_plug_magnet_type
   - pattern
   - vehicle_oil_features
   return_reasons:
@@ -2132,10 +2357,16 @@
   name: Oil Filler Caps
   children: []
   attributes:
+  - cap_seal_type
   - color
   - item_condition
   - item_material
   - manufacturer_type
+  - oil_filler_cap_attachment_type
+  - oil_filler_cap_installation_position
+  - oil_filler_cap_locking_type
+  - oil_filler_cap_tether_type
+  - oil_filler_cap_venting_type
   - pattern
   - vehicle_oil_features
   return_reasons:
@@ -2154,6 +2385,7 @@
   - item_condition
   - item_material
   - manufacturer_type
+  - oil_filter_style
   - pattern
   - vehicle_oil_features
   return_reasons:
@@ -2169,9 +2401,12 @@
   children: []
   attributes:
   - color
+  - compatible_sensor_port_type
   - item_condition
   - item_material
   - manufacturer_type
+  - oil_pan_baffle_windage_features
+  - oil_pan_finish_coating
   - pattern
   - vehicle_oil_features
   return_reasons:
@@ -2187,9 +2422,12 @@
   children: []
   attributes:
   - color
+  - installation_location
   - item_condition
   - item_material
   - manufacturer_type
+  - oil_pressure_sensor_function_type
+  - oil_pressure_sensor_signal_output_type
   - pattern
   - vehicle_oil_features
   return_reasons:
@@ -2208,6 +2446,8 @@
   - item_condition
   - item_material
   - manufacturer_type
+  - oil_pump_drive_method
+  - oil_pump_mounting_style
   - pattern
   - vehicle_oil_features
   return_reasons:
@@ -2264,11 +2504,15 @@
   name: Camshafts
   children: []
   attributes:
+  - camshaft_construction
+  - camshaft_material
+  - camshaft_position
   - color
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
+  - usage
   - vehicle_engine_part_features
   return_reasons:
   - horsepower
@@ -2284,6 +2528,9 @@
   children: []
   attributes:
   - color
+  - crankshaft_balance_type
+  - crankshaft_bolt_pattern
+  - crankshaft_sensor_reluctor_type
   - item_condition
   - item_material
   - manufacturer_type
@@ -2302,6 +2549,9 @@
   children: []
   attributes:
   - color
+  - cylinder_head_assembly
+  - cylinder_head_material_grade
+  - cylinder_head_position
   - item_condition
   - item_material
   - manufacturer_type
@@ -2320,6 +2570,9 @@
   children: []
   attributes:
   - color
+  - engine_bearing_coating
+  - engine_bearing_position
+  - engine_bearing_size
   - item_condition
   - item_material
   - manufacturer_type
@@ -2361,6 +2614,9 @@
   name: Glow Plugs
   children: []
   attributes:
+  - glow_plug_connector_type
+  - glow_plug_heating_element_type
+  - hex_size
   - item_condition
   - item_material
   - manufacturer_type
@@ -2377,6 +2633,7 @@
   name: Ignition Coils
   children: []
   attributes:
+  - ignition_coil_configuration
   - item_condition
   - item_material
   - manufacturer_type
@@ -2393,6 +2650,10 @@
   name: Ignition Leads
   children: []
   attributes:
+  - ignition_lead_compliance_standard
+  - ignition_lead_insulation_material
+  - ignition_lead_set_type
+  - ignition_lead_terminal_type
   - item_condition
   - item_material
   - manufacturer_type
@@ -2409,9 +2670,14 @@
   name: Distributors
   children: []
   attributes:
+  - distributor_advance_mechanism
+  - distributor_gear_material
+  - distributor_ignition_type
+  - distributor_kit_contents
   - item_condition
   - item_material
   - manufacturer_type
+  - rotation_direction
   - vehicle_engine_part_features
   return_reasons:
   - incompatible
@@ -2425,6 +2691,7 @@
   name: Distributor Parts
   children: []
   attributes:
+  - distributor_cap_terminal_type
   - item_condition
   - item_material
   - manufacturer_type
@@ -2446,6 +2713,9 @@
   - item_material
   - manufacturer_type
   - pattern
+  - piston_application_type
+  - piston_crown_dish_style
+  - piston_pin_retention_type
   - vehicle_engine_part_features
   return_reasons:
   - size
@@ -2461,10 +2731,14 @@
   children: []
   attributes:
   - color
+  - components_included
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
+  - timing_belt_construction_material_rubber_compound
+  - timing_belt_profile
+  - timing_belt_reinforcement_cord_material
   - vehicle_engine_part_features
   return_reasons:
   - incompatible
@@ -2481,7 +2755,9 @@
   - color
   - item_condition
   - item_material
+  - kit_components_included
   - manufacturer_type
+  - number_of_timing_chain_rows
   - pattern
   - vehicle_engine_part_features
   return_reasons:
@@ -2497,10 +2773,14 @@
   children: []
   attributes:
   - color
+  - engine_valve_coating
+  - engine_valve_position
+  - engine_valve_stem_tip_type
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
+  - valve_design
   - vehicle_engine_part_features
   return_reasons:
   - incompatible
@@ -2522,12 +2802,19 @@
   - vp-1-4-7-7
   - vp-1-4-7-8
   attributes:
+  - aspiration_type
   - color
+  - emissions_compliance_standard
+  - engine_configuration
+  - engine_cooling_type
   - engine_design
   - engine_type
+  - fuel_system_type
   - item_condition
   - manufacturer_type
   - pattern
+  - primary_component_material
+  - valvetrain_configuration
   - vehicle_engine_features
   return_reasons:
   - size
@@ -2543,11 +2830,14 @@
   children: []
   attributes:
   - color
+  - emissions_compliance_standard
   - engine_design
   - engine_type
   - item_condition
   - manufacturer_type
   - pattern
+  - primary_component_material
+  - valvetrain_configuration
   - vehicle_engine_features
   return_reasons:
   - size
@@ -2564,11 +2854,16 @@
   children: []
   attributes:
   - color
+  - crate_engine_assembly_level
+  - emissions_compliance_standard
   - engine_design
   - engine_type
+  - engine_valvetrain_type
   - item_condition
   - manufacturer_type
   - pattern
+  - primary_component_material
+  - valvetrain_configuration
   - vehicle_engine_features
   return_reasons:
   - size
@@ -2585,11 +2880,15 @@
   children: []
   attributes:
   - color
+  - emissions_compliance_standard
   - engine_design
+  - engine_mount_type
   - engine_type
   - item_condition
   - manufacturer_type
   - pattern
+  - primary_component_material
+  - valvetrain_configuration
   - vehicle_engine_features
   return_reasons:
   - incompatible
@@ -2604,11 +2903,16 @@
   children: []
   attributes:
   - color
+  - emissions_compliance_standard
   - engine_design
+  - engine_rebuild_kit_contents
   - engine_type
   - item_condition
   - manufacturer_type
+  - oversize_or_undersize_grade
   - pattern
+  - primary_component_material
+  - valvetrain_configuration
   - vehicle_engine_features
   return_reasons:
   - size
@@ -2624,11 +2928,17 @@
   children: []
   attributes:
   - color
+  - component_position
+  - emissions_compliance_standard
   - engine_design
+  - engine_timing_system_drive_type
   - engine_type
   - item_condition
   - manufacturer_type
   - pattern
+  - primary_component_material
+  - timing_component_material
+  - valvetrain_configuration
   - vehicle_engine_features
   return_reasons:
   - size
@@ -2644,11 +2954,17 @@
   children: []
   attributes:
   - color
+  - emissions_compliance_standard
   - engine_design
   - engine_type
   - item_condition
   - manufacturer_type
+  - oil_fill_cap_type
   - pattern
+  - primary_component_material
+  - valve_cover_gasket_material
+  - valve_cover_material
+  - valvetrain_configuration
   - vehicle_engine_features
   return_reasons:
   - color
@@ -2664,11 +2980,15 @@
   children: []
   attributes:
   - color
+  - emissions_compliance_standard
   - engine_design
   - engine_type
   - item_condition
+  - long_block_completeness
   - manufacturer_type
   - pattern
+  - primary_component_material
+  - valvetrain_configuration
   - vehicle_engine_features
   return_reasons:
   - size
@@ -2685,11 +3005,17 @@
   children: []
   attributes:
   - color
+  - emissions_compliance_standard
   - engine_design
   - engine_type
   - item_condition
   - manufacturer_type
   - pattern
+  - primary_component_material
+  - short_block_assembly_balance_type
+  - short_block_intended_use
+  - short_block_rotating_assembly_included
+  - valvetrain_configuration
   - vehicle_engine_features
   return_reasons:
   - size
@@ -2712,6 +3038,8 @@
   - battery_size
   - battery_type
   - color
+  - exhaust_installation_position
+  - exhaust_outlet_configuration
   - item_condition
   - item_material
   - manufacturer_type
@@ -2791,6 +3119,8 @@
   name: Bumpers
   children: []
   attributes:
+  - bumper_finish
+  - bumper_sensor_cutouts
   - color
   - item_condition
   - item_material
@@ -2812,6 +3142,8 @@
   children: []
   attributes:
   - color
+  - door_assembly_type
+  - door_window_operation
   - item_condition
   - item_material
   - manufacturer_type
@@ -2832,6 +3164,7 @@
   children: []
   attributes:
   - color
+  - fender_finish_state
   - item_condition
   - item_material
   - manufacturer_type
@@ -2852,6 +3185,9 @@
   children: []
   attributes:
   - color
+  - grille_emblem_provision
+  - grille_mounting_method
+  - grille_style
   - item_condition
   - item_material
   - manufacturer_type
@@ -2891,11 +3227,14 @@
   name: Quarter Panels
   children: []
   attributes:
+  - body_panel_finish_state
   - color
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
+  - quarter_panel_coverage_type
+  - quarter_panel_set_contents
   - vehicle_frame/body_features
   return_reasons:
   - color
@@ -2915,6 +3254,7 @@
   - item_material
   - manufacturer_type
   - pattern
+  - spoiler_adjustability
   - vehicle_frame/body_features
   return_reasons:
   - incompatible
@@ -2933,6 +3273,7 @@
   - item_material
   - manufacturer_type
   - pattern
+  - trunk_part_type
   - vehicle_frame/body_features
   return_reasons:
   - size
@@ -2967,6 +3308,7 @@
   children: []
   attributes:
   - color
+  - end_fitting_type
   - item_condition
   - item_material
   - manufacturer_type
@@ -2987,6 +3329,8 @@
   children: []
   attributes:
   - color
+  - door_handle_components_included
+  - door_handle_operation
   - item_condition
   - item_material
   - manufacturer_type
@@ -3011,6 +3355,7 @@
   - item_material
   - manufacturer_type
   - pattern
+  - side_panel_installation_state
   - vehicle_frame/body_features
   return_reasons:
   - size
@@ -3027,6 +3372,9 @@
   children: []
   attributes:
   - color
+  - door_seal_feature_set
+  - door_seal_material_type
+  - door_seal_product_form
   - item_condition
   - item_material
   - manufacturer_type
@@ -3075,6 +3423,8 @@
   name: Carburetors
   children: []
   attributes:
+  - carburetor_barrel_count
+  - carburetor_choke_type
   - color
   - item_condition
   - manufacturer_type
@@ -3093,6 +3443,11 @@
   children: []
   attributes:
   - color
+  - compatible_evap_system
+  - fuel_cap_gasket_seal_material
+  - fuel_cap_locking_mechanism
+  - fuel_cap_type
+  - fuel_cap_venting
   - item_condition
   - manufacturer_type
   - pattern
@@ -3110,6 +3465,9 @@
   children: []
   attributes:
   - color
+  - fuel_filter_features
+  - fuel_filter_media_material
+  - fuel_filter_mounting_connection_type
   - item_condition
   - manufacturer_type
   - pattern
@@ -3127,9 +3485,14 @@
   children: []
   attributes:
   - color
+  - fuel_injector_electrical_connector_type
+  - fuel_injector_seat_type
+  - fuel_injector_spray_pattern
   - fuel_supply
   - item_condition
   - manufacturer_type
+  - mounting_type
+  - operating_voltage
   - pattern
   return_reasons:
   - incompatible
@@ -3159,10 +3522,16 @@
   name: Fuel Pressure Regulators
   children: []
   attributes:
+  - adjustment_type
   - color
+  - fuel_pressure_regulator_body_material
+  - fuel_pressure_regulator_mounting_type
   - item_condition
   - manufacturer_type
   - pattern
+  - regulator_diaphragm_material
+  - regulator_port_thread_standard
+  - vacuum_boost_reference_port
   return_reasons:
   - pressure_rating
   - incompatible
@@ -3177,6 +3546,10 @@
   children: []
   attributes:
   - color
+  - fuel_pump_inlet_type
+  - fuel_pump_mounting_location
+  - fuel_pump_outlet_connection_type
+  - fuel_system_application
   - item_condition
   - manufacturer_type
   - pattern
@@ -3194,6 +3567,8 @@
   children: []
   attributes:
   - color
+  - fuel_tank_installation_position
+  - fuel_tank_shape
   - item_condition
   - manufacturer_type
   - pattern
@@ -3309,6 +3684,10 @@
   - color
   - fabric
   - fit_type
+  - floor_mat_cleaning_method
+  - floor_mat_edge_style
+  - floor_mat_retention_system
+  - floor_mat_set_configuration
   - item_condition
   - manufacturer_type
   - motor_vehicle_type
@@ -3335,6 +3714,7 @@
   - manufacturer_type
   - motor_vehicle_type
   - pattern
+  - pedal_set_components
   return_reasons:
   - size
   - color
@@ -3357,6 +3737,9 @@
   - manufacturer_type
   - motor_vehicle_type
   - pattern
+  - seat_cover_placement
+  - seat_cover_securement_method
+  - seat_cover_set_contents
   return_reasons:
   - size
   - color
@@ -3404,6 +3787,8 @@
   - manufacturer_type
   - motor_vehicle_type
   - pattern
+  - sun_shade_attachment_method
+  - sun_shade_style
   return_reasons:
   - size
   - color
@@ -3494,9 +3879,14 @@
   attributes:
   - battery_size
   - battery_type
+  - beam_pattern
   - color
+  - compliance_certification
   - fit_type
   - item_condition
+  - light_bar_housing_material
+  - light_bar_lens_material
+  - light_bar_mounting_location
   - light_source
   - lighting_features
   - manufacturer_type
@@ -3523,6 +3913,8 @@
   - light_source
   - lighting_features
   - manufacturer_type
+  - motor_vehicle_bulb_application_position
+  - motor_vehicle_bulb_approval_standard
   - pattern
   return_reasons:
   - color
@@ -3562,9 +3954,13 @@
   - fit_type
   - item_condition
   - light_source
+  - light_switch_function
   - lighting_features
   - manufacturer_type
+  - number_of_switch_poles
+  - number_of_switch_throws
   - pattern
+  - switch_electrical_positions
   return_reasons:
   - size
   - incompatible
@@ -3606,6 +4002,8 @@
   - lighting_features
   - manufacturer_type
   - pattern
+  - turn_signal_lens_color
+  - turn_signal_lighting_style
   return_reasons:
   - color
   - brightness
@@ -3624,8 +4022,10 @@
   - item_condition
   - manufacturer_type
   - pattern
+  - vehicle_mirror_adjustment_type
   - vehicle_mirror_design
   - vehicle_mirror_features
+  - vehicle_mirror_glass_type
   - vehicle_mirror_type
   return_reasons:
   - size
@@ -3669,10 +4069,15 @@
   name: Alternators
   children: []
   attributes:
+  - alternator_cooling_type
+  - alternator_mounting_configuration
+  - alternator_pulley_type
+  - alternator_regulator_type
   - color
   - item_condition
   - manufacturer_type
   - pattern
+  - vehicle_electrical_connector_type
   return_reasons:
   - power_output
   - incompatible
@@ -3686,6 +4091,8 @@
   name: Batteries
   children: []
   attributes:
+  - battery_group_size
+  - battery_polarity
   - battery_size
   - battery_type
   - color
@@ -3706,9 +4113,13 @@
   children: []
   attributes:
   - color
+  - fuse_form_factor
+  - fuse_terminal_or_mount_style
   - item_condition
   - manufacturer_type
   - pattern
+  - time_current_characteristic
+  - voltage_rating_type
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -3743,6 +4154,9 @@
   - item_condition
   - manufacturer_type
   - pattern
+  - spark_plug_electrode_material
+  - spark_plug_seat_type
+  - spark_plug_terminal_type
   return_reasons:
   - tip_style
   - incompatible
@@ -3760,6 +4174,8 @@
   - item_condition
   - manufacturer_type
   - pattern
+  - starter_drive_type
+  - starter_terminal_type
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -3775,9 +4191,13 @@
   - battery_size
   - battery_type
   - color
+  - compatible_ground_polarity
+  - electrical_system_voltage
   - item_condition
   - manufacturer_type
+  - motor_vehicle_voltage_regulator_type
   - pattern
+  - voltage_regulator_connector_type
   return_reasons:
   - power_output
   - incompatible
@@ -3795,6 +4215,8 @@
   - item_condition
   - manufacturer_type
   - pattern
+  - wire_gauge_awg
+  - wire_insulation_material
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -3864,10 +4286,16 @@
   children: []
   attributes:
   - color
+  - compatible_seat_airbag
   - fabric
+  - front_seat_position
   - item_condition
   - manufacturer_type
+  - occupant_classification_sensor_support
   - pattern
+  - seat_adjustment_power_type
+  - seat_belt_integration
+  - seat_mounting_type
   - vehicle_seating_features
   return_reasons:
   - size
@@ -3886,9 +4314,14 @@
   attributes:
   - color
   - fabric
+  - headrest_provision
   - item_condition
   - manufacturer_type
+  - mounting_hardware_included_for_installation
   - pattern
+  - rear_seat_configuration
+  - seat_belt_provision
+  - vehicle_seat_row
   - vehicle_seating_features
   return_reasons:
   - size
@@ -3931,6 +4364,7 @@
   - item_condition
   - manufacturer_type
   - pattern
+  - sensor_or_gauge_mounting_location
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -3944,10 +4378,14 @@
   children: []
   attributes:
   - color
+  - compatible_fuel_type
+  - fuel_level_sensor_mounting_type
+  - fuel_level_sensor_sensing_mechanism
   - gauge_type
   - item_condition
   - manufacturer_type
   - pattern
+  - sensor_or_gauge_mounting_location
   return_reasons:
   - length
   - incompatible
@@ -3966,6 +4404,8 @@
   - item_condition
   - manufacturer_type
   - pattern
+  - sensor_or_gauge_mounting_location
+  - signal_source
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -3982,7 +4422,13 @@
   - gauge_type
   - item_condition
   - manufacturer_type
+  - motor_vehicle_oxygen_sensor_bank
+  - motor_vehicle_oxygen_sensor_number_of_wires
+  - motor_vehicle_oxygen_sensor_position
+  - motor_vehicle_oxygen_sensor_sensor_number
+  - motor_vehicle_oxygen_sensor_type
   - pattern
+  - sensor_or_gauge_mounting_location
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -3998,10 +4444,15 @@
   - battery_size
   - battery_type
   - color
+  - electrical_connector_type
   - gauge_type
   - item_condition
   - manufacturer_type
   - pattern
+  - pressure_measurement_unit
+  - pressure_sensor_application
+  - pressure_sensor_port_thread_standard
+  - sensor_or_gauge_mounting_location
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4019,6 +4470,7 @@
   - item_condition
   - manufacturer_type
   - pattern
+  - sensor_or_gauge_mounting_location
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4036,6 +4488,10 @@
   - item_condition
   - manufacturer_type
   - pattern
+  - sensor_or_gauge_mounting_location
+  - speedometer_backlight_type
+  - speedometer_display_type
+  - speedometer_unit_of_measure
   return_reasons:
   - size
   - incompatible
@@ -4054,6 +4510,7 @@
   - item_condition
   - manufacturer_type
   - pattern
+  - sensor_or_gauge_mounting_location
   return_reasons:
   - size
   - incompatible
@@ -4072,6 +4529,7 @@
   - item_condition
   - manufacturer_type
   - pattern
+  - sensor_or_gauge_mounting_location
   return_reasons:
   - temperature_rating
   - incompatible
@@ -4090,6 +4548,8 @@
   - item_condition
   - manufacturer_type
   - pattern
+  - rain_sensor_technology
+  - sensor_or_gauge_mounting_location
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4106,7 +4566,10 @@
   - gauge_type
   - item_condition
   - manufacturer_type
+  - parking_sensor_finish
+  - parking_sensor_type
   - pattern
+  - sensor_or_gauge_mounting_location
   return_reasons:
   - color
   - incompatible
@@ -4124,7 +4587,10 @@
   - gauge_type
   - item_condition
   - manufacturer_type
+  - mass_air_flow_sensor_measurement_type
+  - mass_air_flow_sensor_mounting_type
   - pattern
+  - sensor_or_gauge_mounting_location
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4140,8 +4606,10 @@
   - color
   - gauge_type
   - item_condition
+  - knock_sensor_technology
   - manufacturer_type
   - pattern
+  - sensor_or_gauge_mounting_location
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4155,10 +4623,13 @@
   children: []
   attributes:
   - color
+  - coolant_temperature_sensor_seal_type
   - gauge_type
   - item_condition
   - manufacturer_type
+  - output_signal_type
   - pattern
+  - sensor_or_gauge_mounting_location
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4175,7 +4646,10 @@
   - gauge_type
   - item_condition
   - manufacturer_type
+  - map_sensor_output_signal_type
   - pattern
+  - sensor_mounting_type
+  - sensor_or_gauge_mounting_location
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4188,11 +4662,13 @@
   name: Air Intake Temperature Sensors
   children: []
   attributes:
+  - air_intake_temperature_sensor_mounting_style
   - color
   - gauge_type
   - item_condition
   - manufacturer_type
   - pattern
+  - sensor_or_gauge_mounting_location
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4273,6 +4749,9 @@
   name: Coil Springs
   children: []
   attributes:
+  - coil_spring_design
+  - coil_spring_finish_coating
+  - coil_spring_material
   - color
   - item_condition
   - manufacturer_type
@@ -4294,6 +4773,13 @@
   children: []
   attributes:
   - color
+  - control_arm_bushing_material
+  - control_arm_bushings_included
+  - control_arm_finish
+  - control_arm_grease_fitting_type
+  - control_arm_material
+  - control_arm_position
+  - control_arm_style
   - item_condition
   - manufacturer_type
   - motor_vehicle_placement
@@ -4315,6 +4801,7 @@
   attributes:
   - color
   - item_condition
+  - leaf_spring_material
   - manufacturer_type
   - motor_vehicle_placement
   - pattern
@@ -4334,10 +4821,16 @@
   children: []
   attributes:
   - color
+  - damping_adjustability
   - item_condition
   - manufacturer_type
   - motor_vehicle_placement
   - pattern
+  - shock_absorber_bushing_material
+  - shock_absorber_charge_type
+  - shock_absorber_mount_type_lower
+  - shock_absorber_mount_type_upper
+  - shock_absorber_position
   - vehicle_suspension_features
   return_reasons:
   - height
@@ -4353,11 +4846,13 @@
   name: Struts
   children: []
   attributes:
+  - adjustability_type
   - color
   - item_condition
   - manufacturer_type
   - motor_vehicle_placement
   - pattern
+  - strut_placement
   - vehicle_suspension_features
   return_reasons:
   - height
@@ -4375,9 +4870,11 @@
   attributes:
   - color
   - item_condition
+  - lubrication_type
   - manufacturer_type
   - motor_vehicle_placement
   - pattern
+  - suspension_bushing_type
   - vehicle_suspension_features
   return_reasons:
   - firmness
@@ -4397,6 +4894,9 @@
   - manufacturer_type
   - motor_vehicle_placement
   - pattern
+  - sway_bar_adjustability
+  - sway_bar_coating
+  - sway_bar_fitment_front_rear_kit
   - vehicle_suspension_features
   return_reasons:
   - length
@@ -4430,10 +4930,13 @@
   - vp-1-4-18-8
   attributes:
   - color
+  - hitch_ball_diameter
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
+  - trailer_light_function
+  - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   return_reasons:
   - size
@@ -4449,10 +4952,12 @@
   children: []
   attributes:
   - color
+  - hitch_ball_mounting_style
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
+  - trailer_light_function
   - vehicle_drive/handling_features
   return_reasons:
   - size
@@ -4474,6 +4979,7 @@
   - manufacturer_type
   - mount_material
   - pattern
+  - trailer_light_function
   - vehicle_drive/handling_features
   return_reasons:
   - size
@@ -4494,6 +5000,7 @@
   - item_material
   - manufacturer_type
   - pattern
+  - trailer_light_function
   - vehicle_drive/handling_features
   return_reasons:
   - size
@@ -4510,10 +5017,14 @@
   children: []
   attributes:
   - color
+  - end_type
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
+  - tow_strap_protective_features
+  - tow_strap_type
+  - trailer_light_function
   - vehicle_drive/handling_features
   return_reasons:
   - size
@@ -4528,11 +5039,14 @@
   name: Trailer Brakes
   children: []
   attributes:
+  - brake_mounting_flange_bolt_pattern
   - color
+  - compatible_axle_weight_rating
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
+  - trailer_light_function
   - vehicle_drive/handling_features
   return_reasons:
   - size
@@ -4553,6 +5067,8 @@
   - item_material
   - manufacturer_type
   - pattern
+  - trailer_hitch_mounting_location_method
+  - trailer_light_function
   - vehicle_drive/handling_features
   return_reasons:
   - size
@@ -4573,6 +5089,7 @@
   - item_material
   - manufacturer_type
   - pattern
+  - trailer_light_function
   - vehicle_drive/handling_features
   return_reasons:
   - size
@@ -4592,6 +5109,8 @@
   - item_material
   - manufacturer_type
   - pattern
+  - trailer_light_function
+  - trailer_wiring_circuit
   - vehicle_drive/handling_features
   return_reasons:
   - size
@@ -4627,9 +5146,12 @@
   - vp-1-4-19-19
   attributes:
   - color
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - transmission_cooler_construction
+  - transmission_fluid_specification
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4645,9 +5167,11 @@
   children: []
   attributes:
   - color
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4664,9 +5188,11 @@
   children: []
   attributes:
   - color
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4682,9 +5208,11 @@
   children: []
   attributes:
   - color
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4699,11 +5227,17 @@
   name: Drive Shafts
   children: []
   attributes:
+  - balance_type
   - color
+  - drive_shaft_material
+  - gear_oil_api_classification
+  - intended_use
   - item_condition
   - manufacturer_type
   - pattern
+  - transmission_cooler_construction
   - transmission_type
+  - u_joint_series_size
   - vehicle_drive/handling_features
   return_reasons:
   - size
@@ -4719,9 +5253,11 @@
   children: []
   attributes:
   - color
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4736,8 +5272,11 @@
   name: Transmission Fluid
   children: []
   attributes:
+  - base_oil_type
   - color
+  - gear_oil_api_classification
   - pattern
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4753,9 +5292,13 @@
   children: []
   attributes:
   - color
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - transmission_cooler_construction
+  - transmission_mount_bushing_material
+  - transmission_mount_type
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4770,10 +5313,13 @@
   name: Transmissions
   children: []
   attributes:
+  - bellhousing_bolt_pattern
   - color
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4789,9 +5335,12 @@
   children: []
   attributes:
   - color
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - reservoir_type
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4807,10 +5356,15 @@
   name: Clutch Slave Cylinders
   children: []
   attributes:
+  - clutch_hydraulic_system_type
+  - clutch_slave_cylinder_connection_type
+  - clutch_slave_cylinder_mounting_type
   - color
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4826,9 +5380,11 @@
   children: []
   attributes:
   - color
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4845,9 +5401,15 @@
   children: []
   attributes:
   - color
+  - cv_boot_clamp_type
+  - cv_boot_kit_contents
+  - cv_boot_material
+  - cv_boot_position
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4863,9 +5425,15 @@
   children: []
   attributes:
   - color
+  - compatible_clutch_type
+  - flywheel_balance_type
+  - friction_surface_included
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - surface_finish_prep
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4881,9 +5449,11 @@
   children: []
   attributes:
   - color
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4898,10 +5468,18 @@
   name: Clutch Pressure Plates
   children: []
   attributes:
+  - clutch_pressure_plate_actuation_type
+  - clutch_pressure_plate_release_mechanism_type
+  - clutch_pressure_plate_surface_type
   - color
+  - compatible_flywheel_type
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - pressure_plate_balance_type
+  - pressure_plate_components_included
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4917,9 +5495,12 @@
   children: []
   attributes:
   - color
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - release_bearing_material
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4935,10 +5516,13 @@
   name: Clutch Lines
   children: []
   attributes:
+  - clutch_line_connection_type
   - color
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4955,9 +5539,11 @@
   children: []
   attributes:
   - color
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -4974,9 +5560,11 @@
   children: []
   attributes:
   - color
+  - gear_oil_api_classification
   - item_condition
   - manufacturer_type
   - pattern
+  - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
   return_reasons:
@@ -5001,7 +5589,9 @@
   - item_material
   - manufacturer_type
   - pattern
+  - tire_speed_rating
   - vehicle_drive/handling_features
+  - wheel_system_finish
   return_reasons:
   - size
   - color
@@ -5021,12 +5611,15 @@
   - vp-1-4-20-1-3
   attributes:
   - color
+  - compatible_tpms_sensor_type
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
   - rim/wheel_design
+  - tire_speed_rating
   - vehicle_drive/handling_features
+  - vehicle_wheel_valve_stem_type
   return_reasons:
   - size
   - color
@@ -5043,12 +5636,17 @@
   children: []
   attributes:
   - color
+  - compatible_tpms_sensor_type
   - item_condition
   - item_material
   - manufacturer_type
+  - number_of_wheel_pieces
   - pattern
   - rim/wheel_design
+  - tire_speed_rating
   - vehicle_drive/handling_features
+  - vehicle_wheel_valve_stem_type
+  - wheel_construction_type
   return_reasons:
   - size
   - color
@@ -5065,12 +5663,15 @@
   children: []
   attributes:
   - color
+  - compatible_tpms_sensor_type
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
   - rim/wheel_design
+  - tire_speed_rating
   - vehicle_drive/handling_features
+  - vehicle_wheel_valve_stem_type
   return_reasons:
   - size
   - color
@@ -5086,13 +5687,18 @@
   name: Off-Road and All-Terrain Vehicle Rims & Wheels
   children: []
   attributes:
+  - beadlock_type
   - color
+  - compatible_tpms_sensor_type
   - item_condition
   - item_material
+  - lug_nut_seat_profile
   - manufacturer_type
   - pattern
   - rim/wheel_design
+  - tire_speed_rating
   - vehicle_drive/handling_features
+  - vehicle_wheel_valve_stem_type
   return_reasons:
   - size
   - color
@@ -5115,6 +5721,8 @@
   - item_material
   - manufacturer_type
   - pattern
+  - tire_speed_rating
+  - tpms_sensor_frequency_band
   - vehicle_drive/handling_features
   return_reasons:
   - size
@@ -5137,6 +5745,10 @@
   - item_material
   - manufacturer_type
   - pattern
+  - tire_construction_type
+  - tire_position
+  - tire_speed_rating
+  - tire_tube_type
   - vehicle_drive/handling_features
   return_reasons:
   - size
@@ -5157,6 +5769,14 @@
   - item_material
   - manufacturer_type
   - pattern
+  - tire_construction_type
+  - tire_load_range
+  - tire_position
+  - tire_sidewall_type
+  - tire_speed_rating
+  - tire_temperature_rating_utqg
+  - tire_traction_rating_utqg
+  - tire_tube_type
   - vehicle_drive/handling_features
   - vehicle_tire_type
   return_reasons:
@@ -5177,8 +5797,13 @@
   - item_condition
   - item_material
   - manufacturer_type
+  - motorcycle_tire_speed_rating
   - motorcycle_tire_type
   - pattern
+  - tire_construction_type
+  - tire_position
+  - tire_speed_rating
+  - tire_tube_type
   - vehicle_drive/handling_features
   return_reasons:
   - size
@@ -5200,6 +5825,10 @@
   - item_material
   - manufacturer_type
   - pattern
+  - tire_construction_type
+  - tire_position
+  - tire_speed_rating
+  - tire_tube_type
   - vehicle_drive/handling_features
   return_reasons:
   - size
@@ -5224,7 +5853,9 @@
   - item_material
   - manufacturer_type
   - pattern
+  - tire_speed_rating
   - vehicle_drive/handling_features
+  - wheel_fastener_seat_type
   - wheel_part_type
   return_reasons:
   - size
@@ -5270,6 +5901,10 @@
   - item_material
   - manufacturer_type
   - pattern
+  - window_component_location
+  - window_glass_finish
+  - window_regulator_operation
+  - wiper_blade_attachment_type
   return_reasons:
   - size
   - incompatible
@@ -5284,10 +5919,18 @@
   children: []
   attributes:
   - color
+  - heated_glass_feature
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
+  - window_component_location
+  - window_glass_construction
+  - window_glass_features
+  - window_glass_finish
+  - window_glass_tint_color
+  - window_glass_tint_level
+  - wiper_blade_attachment_type
   return_reasons:
   - size
   - incompatible
@@ -5306,6 +5949,9 @@
   - item_material
   - manufacturer_type
   - pattern
+  - window_component_location
+  - window_glass_finish
+  - wiper_blade_attachment_type
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -5323,6 +5969,9 @@
   - item_material
   - manufacturer_type
   - pattern
+  - window_component_location
+  - window_glass_finish
+  - wiper_blade_attachment_type
   return_reasons:
   - size
   - incompatible
@@ -5345,6 +5994,9 @@
   - item_material
   - manufacturer_type
   - pattern
+  - window_component_location
+  - window_glass_finish
+  - wiper_blade_attachment_type
   return_reasons:
   - length
   - incompatible
@@ -5363,6 +6015,10 @@
   - item_material
   - manufacturer_type
   - pattern
+  - window_component_location
+  - window_glass_finish
+  - wiper_blade_attachment_type
+  - wiper_system_position
   return_reasons:
   - length
   - incompatible
@@ -5381,6 +6037,10 @@
   - item_material
   - manufacturer_type
   - pattern
+  - window_component_location
+  - window_glass_finish
+  - wiper_blade_attachment_type
+  - wiper_blade_rubber_material
   return_reasons:
   - length
   - incompatible
@@ -5399,6 +6059,11 @@
   - item_material
   - manufacturer_type
   - pattern
+  - window_component_location
+  - window_glass_finish
+  - wiper_arm_finish
+  - wiper_arm_pivot_mount_type
+  - wiper_blade_attachment_type
   return_reasons:
   - length
   - incompatible
@@ -5417,6 +6082,9 @@
   - item_material
   - manufacturer_type
   - pattern
+  - window_component_location
+  - window_glass_finish
+  - wiper_blade_attachment_type
   return_reasons:
   - size
   - incompatible
@@ -5463,6 +6131,9 @@
   - item_material
   - manufacturer_type
   - motor_vehicle_type
+  - radiator_cap_gasket_material
+  - radiator_cap_pressure_relief_style
+  - radiator_expansion_tank_cap_application
   return_reasons:
   - pressure_rating
   - incompatible
@@ -5476,6 +6147,7 @@
   name: Fan Shrouds
   children: []
   attributes:
+  - fan_shroud_type
   - item_condition
   - item_material
   - manufacturer_type
@@ -5496,6 +6168,7 @@
   - item_material
   - manufacturer_type
   - motor_vehicle_type
+  - thermostat_type
   return_reasons:
   - temperature_rating
   - incompatible
@@ -5525,10 +6198,13 @@
   name: Hose Fittings
   children: []
   attributes:
+  - fitting_angle
   - item_condition
   - item_material
   - manufacturer_type
   - motor_vehicle_type
+  - seal_type
+  - thread_standard
   return_reasons:
   - size
   - incompatible
@@ -5542,10 +6218,14 @@
   name: Radiator Overflow Tanks
   children: []
   attributes:
+  - cap_type
+  - engine_bay_mounting_location
   - item_condition
   - item_material
   - manufacturer_type
   - motor_vehicle_type
+  - radiator_overflow_tank_level_sensor_provision
+  - radiator_overflow_tank_shape
   return_reasons:
   - capacity
   - incompatible
@@ -5560,6 +6240,10 @@
   children: []
   attributes:
   - angles_supported
+  - compatible_thermostat_type
+  - coolant_outlet_connection_style
+  - coolant_outlet_neck_angle
+  - coolant_temperature_sensor_port
   - item_condition
   - item_material
   - manufacturer_type
@@ -5593,6 +6277,9 @@
   name: Expansion Tank Caps
   children: []
   attributes:
+  - expansion_tank_cap_connection_type
+  - expansion_tank_cap_pressure_relief_feature
+  - expansion_tank_cap_seal_material
   - item_condition
   - item_material
   - manufacturer_type
@@ -5631,6 +6318,9 @@
   - item_material
   - manufacturer_type
   - motor_vehicle_type
+  - radiator_fan_control_type
+  - radiator_fan_mounting_pattern
+  - radiator_fan_type
   return_reasons:
   - operating_noise
   - incompatible
@@ -5644,10 +6334,16 @@
   name: Water Pumps
   children: []
   attributes:
+  - bearing_type
+  - cooling_system_component_included
   - item_condition
   - item_material
   - manufacturer_type
   - motor_vehicle_type
+  - water_pump_drive_type
+  - water_pump_housing_material
+  - water_pump_impeller_material
+  - water_pump_mounting_type
   return_reasons:
   - flow_rate
   - incompatible
@@ -5665,6 +6361,10 @@
   - item_material
   - manufacturer_type
   - motor_vehicle_type
+  - radiator_hose_end_type
+  - radiator_hose_position
+  - radiator_hose_shape
+  - reinforcement_type
   return_reasons:
   - size
   - incompatible
@@ -5747,9 +6447,13 @@
   - bristle_material
   - brush_type
   - color
+  - paint_safe_bristles
   - pattern
+  - recommended_vehicle_surfaces
+  - replaceable_brush_head
   - vehicle_application_area
   - vehicle_type
+  - water_fed_design
   return_reasons:
   - size
   - too_soft
@@ -5769,12 +6473,15 @@
   - vp-1-5-2-2-3
   - vp-1-5-2-2-4
   attributes:
+  - car_wash_solution_form
+  - car_wash_solution_scent
   - color
   - package_type
   - pattern
   - vehicle_application_area
   - vehicle_fluid_type
   - vehicle_type
+  - wheel_cleaner_formula_type
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -5787,6 +6494,9 @@
   name: Car Shampoo
   children: []
   attributes:
+  - car_shampoo_application_method
+  - car_wash_solution_form
+  - car_wash_solution_scent
   - color
   - package_type
   - pattern
@@ -5804,9 +6514,13 @@
   name: Waterless Washes
   children: []
   attributes:
+  - car_wash_solution_form
+  - car_wash_solution_scent
+  - cleaning_task_focus
   - color
   - package_type
   - pattern
+  - product_form
   - vehicle_application_area
   - vehicle_type
   return_reasons:
@@ -5822,6 +6536,8 @@
   name: Wax Washes
   children: []
   attributes:
+  - car_wash_solution_form
+  - car_wash_solution_scent
   - color
   - package_type
   - pattern
@@ -5840,11 +6556,17 @@
   name: Wheel Cleaners
   children: []
   attributes:
+  - car_wash_solution_form
+  - car_wash_solution_scent
   - color
+  - compatible_wheel_finish
+  - concentration_type
   - package_type
   - pattern
   - vehicle_application_area
   - vehicle_type
+  - wheel_cleaner_acidity_ph_category
+  - wheel_contaminant_target
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -5877,6 +6599,7 @@
   name: Carpet Cleaners
   children: []
   attributes:
+  - carpet_cleaner_application_method
   - color
   - package_type
   - pattern
@@ -5895,8 +6618,10 @@
   children: []
   attributes:
   - color
+  - compatible_interior_material
   - package_type
   - pattern
+  - stain_remover_format
   - vehicle_application_area
   - vehicle_type
   return_reasons:
@@ -5912,6 +6637,7 @@
   children: []
   attributes:
   - color
+  - odor_control_features
   - package_type
   - pattern
   - vehicle_application_area
@@ -5930,6 +6656,8 @@
   attributes:
   - alcohol/solvent_content
   - color
+  - fuel_injection_cleaning_method
+  - fuel_system_connection_type
   - package_type
   - pattern
   - vehicle_application_area
@@ -5952,6 +6680,7 @@
   - pattern
   - vehicle_application_area
   - vehicle_cleaning_item_features
+  - vehicle_glass_cleaner_form
   - vehicle_type
   return_reasons:
   - residue
@@ -5970,13 +6699,16 @@
   - vp-1-5-2-6-3
   - vp-1-5-2-6-4
   attributes:
+  - abrasive_level
   - alcohol/solvent_content
   - color
+  - compatible_surface_material
   - package_type
   - pattern
   - vehicle_application_area
   - vehicle_cleaning_item_features
   - vehicle_type
+  - vehicle_wax_polish_product_form
   return_reasons:
   - finish
   - incompatible
@@ -5991,11 +6723,13 @@
   children: []
   attributes:
   - color
+  - compatible_surface_material
   - package_type
   - pattern
   - vehicle_application_area
   - vehicle_cleaning_item_features
   - vehicle_type
+  - vehicle_wax_polish_product_form
   return_reasons:
   - finish
   - incompatible
@@ -6011,11 +6745,14 @@
   attributes:
   - alcohol/solvent_content
   - color
+  - compatible_surface_material
   - package_type
   - pattern
   - vehicle_application_area
   - vehicle_cleaning_item_features
+  - vehicle_polish_application_method
   - vehicle_type
+  - vehicle_wax_polish_product_form
   return_reasons:
   - finish
   - incompatible
@@ -6031,11 +6768,14 @@
   attributes:
   - alcohol/solvent_content
   - color
+  - compatible_surface_material
   - package_type
   - pattern
+  - protectant_formula_base
   - vehicle_application_area
   - vehicle_cleaning_item_features
   - vehicle_type
+  - vehicle_wax_polish_product_form
   return_reasons:
   - finish
   - incompatible
@@ -6050,11 +6790,14 @@
   children: []
   attributes:
   - color
+  - compatible_surface_material
+  - hydrophobicity_level
   - package_type
   - pattern
   - vehicle_application_area
   - vehicle_cleaning_item_features
   - vehicle_type
+  - vehicle_wax_polish_product_form
   return_reasons:
   - finish
   - incompatible
@@ -6079,6 +6822,7 @@
   - cover_type
   - pattern
   - vehicle_application_area
+  - vehicle_cover_size_class
   - vehicle_type
   return_reasons:
   - size
@@ -6096,8 +6840,12 @@
   children: []
   attributes:
   - color
+  - compatible_windshield_type
   - cover_features
   - cover_material
+  - enclosure_panel_configuration
+  - enclosure_window_material
+  - golf_cart_enclosure_fit_type
   - pattern
   - vehicle_application_area
   - vehicle_type
@@ -6120,8 +6868,10 @@
   - cover_features
   - cover_material
   - pattern
+  - season_condition_protection
   - vehicle_application_area
   - vehicle_type
+  - windshield_coverage_area
   return_reasons:
   - size
   - color
@@ -6142,6 +6892,7 @@
   - cover_material
   - cover_type
   - pattern
+  - tonneau_cover_mounting_style
   - vehicle_application_area
   - vehicle_type
   return_reasons:
@@ -6162,6 +6913,9 @@
   - color
   - cover_features
   - cover_material
+  - hardtop_finish_type
+  - hardtop_shell_material
+  - hardtop_window_configuration
   - pattern
   - vehicle_application_area
   - vehicle_type
@@ -6184,6 +6938,10 @@
   - cover_features
   - cover_material
   - pattern
+  - soft_top_attachment_type
+  - soft_top_includes_frame_hardware
+  - soft_top_installation_type
+  - soft_top_window_configuration
   - vehicle_application_area
   - vehicle_type
   return_reasons:
@@ -6251,12 +7009,15 @@
   children: []
   attributes:
   - color
+  - compatible_roof_height
   - cover_features
   - cover_material
   - cover_type
+  - golf_cart_cover_climate_use
   - pattern
   - vehicle_application_area
   - vehicle_type
+  - venting_design
   return_reasons:
   - size
   - color
@@ -6276,6 +7037,7 @@
   - cover_features
   - cover_material
   - cover_type
+  - motorcycle_cover_size_class
   - pattern
   - vehicle_application_area
   - vehicle_type
@@ -6316,6 +7078,7 @@
   attributes:
   - color
   - cover_features
+  - cover_fit_type
   - cover_material
   - cover_type
   - pattern
@@ -6425,9 +7188,11 @@
   children: []
   attributes:
   - accessory_size
+  - antenna_fit_type
   - color
   - decoration_material
   - pattern
+  - reflective_or_glow_effect
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -6448,6 +7213,7 @@
   attributes:
   - accessory_size
   - color
+  - dashboard_accessory_position
   - decoration_material
   - pattern
   - vehicle_application_area
@@ -6471,6 +7237,10 @@
   - accessory_size
   - alcohol/solvent_content
   - color
+  - decal_installation_method
+  - decal_orientation
+  - decal_placement_type
+  - decal_visibility_property
   - decoration_material
   - pattern
   - vehicle_application_area
@@ -6501,6 +7271,7 @@
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
+  - vehicle_decor_set_items_included
   - vehicle_type
   return_reasons:
   - size
@@ -6520,6 +7291,8 @@
   - accessory_size
   - color
   - decoration_material
+  - flag_design_theme
+  - flag_mounting_method
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
@@ -6567,6 +7340,8 @@
   - cover_material
   - pattern
   - vehicle_application_area
+  - vehicle_hitch_cover_illumination_type
+  - vehicle_hitch_cover_mounting_type
   - vehicle_type
   return_reasons:
   - size
@@ -6587,6 +7362,7 @@
   - color
   - cover_features
   - cover_material
+  - license_plate_cover_style
   - pattern
   - vehicle_application_area
   - vehicle_type
@@ -6611,6 +7387,9 @@
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
+  - vehicle_license_plate_frame_anti_theft_design
+  - vehicle_license_plate_frame_plate_standard
+  - vehicle_license_plate_frame_profile
   - vehicle_type
   return_reasons:
   - size
@@ -6628,7 +7407,11 @@
   children: []
   attributes:
   - accessory_size
+  - anti_theft_feature
   - color
+  - compatible_license_plate_hole_pattern
+  - compatible_license_plate_size
+  - corrosion_resistance
   - mount_material
   - pattern
   - vehicle_application_area
@@ -6650,9 +7433,17 @@
   - accessory_size
   - color
   - decoration_material
+  - license_plate_personalization_type
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
+  - vehicle_license_plate_finish
+  - vehicle_license_plate_mounting_hole_count
+  - vehicle_license_plate_mounting_hole_pattern
+  - vehicle_license_plate_reflectivity
+  - vehicle_license_plate_size_standard
+  - vehicle_license_plate_text_style
+  - vehicle_license_plate_theme
   - vehicle_type
   return_reasons:
   - color
@@ -6674,6 +7465,8 @@
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
+  - vehicle_magnet_attachment_type
+  - vehicle_magnet_intended_use
   - vehicle_type
   return_reasons:
   - size
@@ -6698,6 +7491,8 @@
   - jewelry_material
   - lumber/wood_type
   - pattern
+  - personalization_type
+  - rear_view_mirror_ornament_attachment_type
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -6719,8 +7514,11 @@
   attributes:
   - accessory_size
   - color
+  - compatible_shifter_type
   - decoration_material
   - pattern
+  - shift_boot_attachment_method
+  - shift_boot_installation_hardware_included
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -6743,6 +7541,10 @@
   - color
   - decoration_material
   - pattern
+  - shift_knob_illumination
+  - shift_knob_installation_method
+  - shift_knob_shape
+  - shift_pattern_type
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -6766,6 +7568,7 @@
   - cover_features
   - cover_material
   - pattern
+  - steering_wheel_cover_installation_type
   - vehicle_application_area
   - vehicle_type
   return_reasons:
@@ -6837,6 +7640,9 @@
   attributes:
   - antifreeze_type
   - color
+  - coolant_base_fluid
+  - coolant_technology
+  - mix_ratio
   - pattern
   - vehicle_type
   return_reasons:
@@ -6852,7 +7658,10 @@
   name: Vehicle Brake Fluid
   children: []
   attributes:
+  - brake_fluid_base_chemistry
+  - brake_fluid_standards_compliance
   - color
+  - compatible_brake_system
   - pattern
   - vehicle_fluid_features
   - vehicle_type
@@ -6888,6 +7697,8 @@
   children: []
   attributes:
   - color
+  - compatible_coolant_chemistry
+  - coolant_additive_purpose
   - pattern
   - vehicle_fluid_features
   - vehicle_type
@@ -6905,6 +7716,8 @@
   children: []
   attributes:
   - color
+  - compatible_cooling_system_material
+  - cooling_system_flush_application_step
   - pattern
   - vehicle_fluid_features
   - vehicle_type
@@ -6922,6 +7735,8 @@
   attributes:
   - color
   - pattern
+  - recommended_use_case
+  - seals_leak_type
   - vehicle_fluid_features
   - vehicle_type
   return_reasons:
@@ -6937,6 +7752,8 @@
   children: []
   attributes:
   - color
+  - engine_degreaser_form
+  - engine_degreaser_rinse_requirement
   - pattern
   - vehicle_fluid_features
   - vehicle_type
@@ -6956,6 +7773,7 @@
   - vp-1-5-5-5-3
   attributes:
   - color
+  - compatible_fuel_system_type
   - pattern
   - vehicle_fluid_features
   - vehicle_type
@@ -6971,10 +7789,14 @@
   name: Carburetor Cleaners
   children: []
   attributes:
+  - application_method
   - color
+  - compatible_fuel_system_type
   - pattern
+  - target_components
   - vehicle_fluid_features
   - vehicle_type
+  - voc_compliance_standard
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -6988,6 +7810,7 @@
   children: []
   attributes:
   - color
+  - compatible_fuel_system_type
   - pattern
   - vehicle_fluid_features
   - vehicle_type
@@ -7004,6 +7827,9 @@
   children: []
   attributes:
   - color
+  - compatible_fuel_system_type
+  - compatible_injection_type
+  - delivery_form
   - pattern
   - vehicle_fluid_features
   - vehicle_type
@@ -7020,6 +7846,9 @@
   children: []
   attributes:
   - color
+  - grease_application
+  - grease_consistency_grade_nlgi
+  - grease_thickener_type
   - pattern
   - vehicle_fluid_features
   - vehicle_type
@@ -7036,6 +7865,8 @@
   name: Vehicle Hydraulic Clutch Fluid
   children: []
   attributes:
+  - brake_clutch_fluid_base_chemistry
+  - brake_clutch_fluid_dot_specification
   - color
   - pattern
   - vehicle_fluid_features
@@ -7076,6 +7907,8 @@
   children: []
   attributes:
   - color
+  - engine_oil_formulation
+  - engine_oil_specification
   - pattern
   - vehicle_oil_features
   - vehicle_type
@@ -7131,6 +7964,7 @@
   attributes:
   - color
   - pattern
+  - synthetic_formulation_type
   - vehicle_oil_features
   - vehicle_type
   - viscosity
@@ -7164,7 +7998,9 @@
   children: []
   attributes:
   - color
+  - compatible_power_steering_system
   - pattern
+  - power_steering_fluid_formulation
   - vehicle_fluid_features
   - vehicle_type
   return_reasons:
@@ -7196,9 +8032,12 @@
   children: []
   attributes:
   - color
+  - compatible_vehicle_windshield_fluid
   - pattern
   - vehicle_fluid_features
   - vehicle_type
+  - vehicle_windshield_fluid_formula
+  - windshield_washer_fluid_seasonality
   return_reasons:
   - temperature_rating
   - incompatible
@@ -7219,6 +8058,7 @@
   - paint_finish
   - pattern
   - vehicle_decor_features
+  - vehicle_paint_chemistry_base
   - vehicle_paint_type
   - vehicle_type
   return_reasons:
@@ -7237,12 +8077,17 @@
   attributes:
   - alcohol/solvent_content
   - color
+  - compatible_substrate_material
+  - motor_vehicle_paint_application_method
+  - motor_vehicle_paint_system_step
   - paint_finish
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
+  - vehicle_paint_chemistry_base
   - vehicle_paint_type
   - vehicle_type
+  - voc_regulatory_class
   return_reasons:
   - color
   - finish
@@ -7257,11 +8102,15 @@
   name: Motor Vehicle Brake Caliper Paint
   children: []
   attributes:
+  - brake_caliper_paint_base_chemistry
+  - brake_caliper_paint_kit_contents
   - color
+  - paint_application_method
   - paint_finish
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
+  - vehicle_paint_chemistry_base
   - vehicle_paint_type
   - vehicle_type
   return_reasons:
@@ -7293,8 +8142,10 @@
   - battery_size
   - battery_type
   - color
+  - diagnostic_interface_type
   - pattern
   - power_source
+  - repair_compound_type
   - vehicle_type
   return_reasons:
   - incompatible
@@ -7308,6 +8159,8 @@
   name: Motor Vehicle Brake Service Kits
   children: []
   attributes:
+  - brake_bleeding_method
+  - brake_service_kit_components_included
   - color
   - material
   - pattern
@@ -7345,6 +8198,7 @@
   - color
   - pattern
   - power_source
+  - vehicle_battery_charger_features
   - vehicle_type
   return_reasons:
   - incompatible
@@ -7358,9 +8212,11 @@
   name: Vehicle Battery Testers
   children: []
   attributes:
+  - battery_standards_supported
   - color
   - pattern
   - power_source
+  - test_result_output_method
   - vehicle_type
   return_reasons:
   - incompatible
@@ -7378,6 +8234,7 @@
   - filler_type
   - pattern
   - power_source
+  - vehicle_body_filler_form
   - vehicle_type
   return_reasons:
   - incompatible
@@ -7394,8 +8251,11 @@
   - battery_size
   - battery_type
   - color
+  - communication_protocols
+  - diagnostic_functions_supported
   - pattern
   - power_source
+  - update_method
   - vehicle_type
   return_reasons:
   - incompatible
@@ -7474,6 +8334,7 @@
   - features
   - pattern
   - power_source
+  - tire_changer_operation_type
   - vehicle_type
   return_reasons:
   - size
@@ -7489,9 +8350,12 @@
   children: []
   attributes:
   - color
+  - compatible_tire_application
   - features
+  - mounting_style
   - pattern
   - power_source
+  - tire_changer_operation_type
   - vehicle_type
   return_reasons:
   - size
@@ -7506,10 +8370,14 @@
   name: Tire Changer Machines
   children: []
   attributes:
+  - bead_breaker_type
   - color
   - features
   - pattern
   - power_source
+  - rim_clamping_method
+  - tire_changer_operation_type
+  - tire_changer_type
   - vehicle_type
   return_reasons:
   - size
@@ -7528,6 +8396,7 @@
   - features
   - pattern
   - power_source
+  - tire_changer_operation_type
   - vehicle_type
   return_reasons:
   - size
@@ -7545,6 +8414,7 @@
   - features
   - pattern
   - power_source
+  - tire_changer_operation_type
   - vehicle_type
   return_reasons:
   - size
@@ -7562,6 +8432,9 @@
   - features
   - pattern
   - power_source
+  - tip_finish_coating
+  - tire_changer_operation_type
+  - tire_spoon_type
   - vehicle_type
   return_reasons:
   - size
@@ -7587,6 +8460,8 @@
   attributes:
   - color
   - features
+  - inflation_method_included
+  - intended_repair_location
   - pattern
   - power_source
   - vehicle_type
@@ -7604,6 +8479,7 @@
   children: []
   attributes:
   - color
+  - damage_type
   - pattern
   - power_source
   - vehicle_type
@@ -7622,9 +8498,11 @@
   - vp-1-5-7-11-2
   attributes:
   - color
+  - lift_stand_support_point
   - material
   - pattern
   - power_source
+  - vehicle_lift_actuation_method
   - vehicle_type
   return_reasons:
   - size
@@ -7641,9 +8519,15 @@
   children: []
   attributes:
   - color
+  - lift_stand_support_point
+  - lifting_support_type
+  - lock_system
   - material
   - pattern
   - power_source
+  - vehicle_lift_actuation_method
+  - vehicle_lift_mounting_type
+  - vehicle_lift_type
   - vehicle_type
   return_reasons:
   - size
@@ -7660,9 +8544,11 @@
   children: []
   attributes:
   - color
+  - lift_stand_support_point
   - material
   - pattern
   - power_source
+  - vehicle_lift_actuation_method
   - vehicle_type
   return_reasons:
   - size
@@ -7711,6 +8597,7 @@
   - accessory_size
   - color
   - gear_material
+  - motorcycle_protective_gear_size_system
   - pattern
   - target_gender
   - vehicle_type
@@ -7730,8 +8617,12 @@
   children: []
   attributes:
   - accessory_size
+  - compatible_protective_gear_integration
   - gear_material
+  - motorcycle_armor_certification_standard
+  - motorcycle_protective_gear_size_system
   - protective_gear_features
+  - protector_coverage_area
   - target_gender
   - vehicle_type
   return_reasons:
@@ -7749,6 +8640,10 @@
   attributes:
   - accessory_size
   - gear_material
+  - guard_construction_type
+  - guard_size_measurement_basis
+  - motorcycle_guard_coverage_area
+  - motorcycle_protective_gear_size_system
   - protective_gear_features
   - target_gender
   - vehicle_type
@@ -7767,8 +8662,13 @@
   attributes:
   - accessory_size
   - color
+  - glove_armor_placement
+  - glove_insulation
   - handwear_material
+  - motorcycle_glove_certification_standard
   - motorcycle_glove_purpose
+  - motorcycle_glove_waterproof_construction
+  - motorcycle_protective_gear_size_system
   - pattern
   - protective_gear_features
   - target_gender
@@ -7795,6 +8695,7 @@
   - gear_material
   - lens_color
   - lens_pattern
+  - motorcycle_protective_gear_size_system
   - protective_gear_features
   - target_gender
   - vehicle_type
@@ -7813,7 +8714,14 @@
   children: []
   attributes:
   - accessory_size
+  - color_finish
   - gear_material
+  - hand_guard_backbone_material
+  - hand_guard_coverage_style
+  - hand_guard_mounting_type
+  - hand_guard_set_configuration
+  - hand_guard_weather_protection
+  - motorcycle_protective_gear_size_system
   - protective_gear_features
   - target_gender
   - vehicle_type
@@ -7831,12 +8739,17 @@
   children: []
   attributes:
   - accessory_size
+  - attachment_type
   - battery_size
   - battery_type
   - color
+  - compatible_helmet_certification_standard
+  - compatible_helmet_shell_size
   - gear_material
+  - motorcycle_protective_gear_size_system
   - pattern
   - protective_gear_features
+  - replacement_part_purpose
   - target_gender
   - vehicle_type
   return_reasons:
@@ -7861,7 +8774,17 @@
   - battery_size
   - battery_type
   - color
+  - compatible_visor_system
   - gear_material
+  - helmet_communication_system_readiness
+  - helmet_interior_liner_type
+  - helmet_safety_certification_standard
+  - helmet_shell_material
+  - helmet_size_system
+  - helmet_vehicle_fit
+  - helmet_ventilation_configuration
+  - helmet_visor_shield_type
+  - motorcycle_protective_gear_size_system
   - pattern
   - protective_gear_features
   - target_gender
@@ -7886,7 +8809,18 @@
   - battery_size
   - battery_type
   - color
+  - compatible_visor_system
   - gear_material
+  - helmet_communication_system_readiness
+  - helmet_fit_head_shape
+  - helmet_interior_liner_type
+  - helmet_safety_certification_standard
+  - helmet_shell_material
+  - helmet_size_system
+  - helmet_vehicle_fit
+  - helmet_ventilation_configuration
+  - helmet_visor_shield_type
+  - motorcycle_protective_gear_size_system
   - pattern
   - protective_gear_features
   - target_gender
@@ -7909,7 +8843,17 @@
   attributes:
   - accessory_size
   - color
+  - compatible_visor_system
   - gear_material
+  - helmet_communication_system_readiness
+  - helmet_interior_liner_type
+  - helmet_safety_certification_standard
+  - helmet_shell_material
+  - helmet_size_system
+  - helmet_vehicle_fit
+  - helmet_ventilation_configuration
+  - helmet_visor_shield_type
+  - motorcycle_protective_gear_size_system
   - pattern
   - protective_gear_features
   - target_gender
@@ -7934,7 +8878,19 @@
   - battery_size
   - battery_type
   - color
+  - compatible_visor_system
   - gear_material
+  - helmet_communication_system_readiness
+  - helmet_interior_liner_type
+  - helmet_safety_certification_standard
+  - helmet_shell_material
+  - helmet_size_system
+  - helmet_sun_visor_type
+  - helmet_vehicle_fit
+  - helmet_ventilation_configuration
+  - helmet_visor_shield_optical_features
+  - helmet_visor_shield_type
+  - motorcycle_protective_gear_size_system
   - pattern
   - protective_gear_features
   - target_gender
@@ -7956,11 +8912,24 @@
   attributes:
   - accessory_size
   - color
+  - compatible_visor_system
   - gear_material
+  - goggle_integration
+  - helmet_communication_system_readiness
+  - helmet_interior_liner_type
+  - helmet_safety_certification_standard
+  - helmet_shell_material
+  - helmet_size_system
+  - helmet_vehicle_fit
+  - helmet_ventilation_configuration
+  - helmet_visor_peak_adjustability
+  - helmet_visor_shield_type
+  - motorcycle_protective_gear_size_system
   - pattern
   - protective_gear_features
   - target_gender
   - vehicle_type
+  - ventilation_configuration
   return_reasons:
   - too_big
   - too_small
@@ -7979,7 +8948,18 @@
   attributes:
   - accessory_size
   - color
+  - compatible_visor_system
   - gear_material
+  - helmet_communication_system_readiness
+  - helmet_interior_liner_type
+  - helmet_liner_material
+  - helmet_safety_certification_standard
+  - helmet_shell_material
+  - helmet_size_system
+  - helmet_vehicle_fit
+  - helmet_ventilation_configuration
+  - helmet_visor_shield_type
+  - motorcycle_protective_gear_size_system
   - pattern
   - protective_gear_features
   - target_gender
@@ -8007,6 +8987,10 @@
   attributes:
   - accessory_size
   - item_material
+  - kidney_belt_support_level
+  - motorcycle_kidney_belt_construction_type
+  - motorcycle_kidney_belt_purpose
+  - motorcycle_protective_gear_size_system
   - protective_gear_features
   - target_gender
   - vehicle_type
@@ -8027,6 +9011,7 @@
   attributes:
   - accessory_size
   - gear_material
+  - motorcycle_protective_gear_size_system
   - protective_gear_features
   - target_gender
   - vehicle_type
@@ -8044,7 +9029,12 @@
   children: []
   attributes:
   - accessory_size
+  - compatible_protective_gear
   - gear_material
+  - motorcycle_protective_gear_size_system
+  - motorcycle_riding_discipline
+  - neck_brace_fit_system
+  - neck_brace_size_basis
   - protective_gear_features
   - target_gender
   - vehicle_type
@@ -8070,6 +9060,7 @@
   - vp-1-6-3-8
   - vp-1-6-3-9
   attributes:
+  - door_lock_position
   - item_condition
   - manufacturer_type
   - power_source
@@ -8172,6 +9163,8 @@
   - material
   - power_source
   - vehicle_alarm/lock_features
+  - vehicle_door_lock_actuator_kit_contents
+  - vehicle_door_lock_actuator_wiring_configuration
   - vehicle_type
   return_reasons:
   - size
@@ -8186,6 +9179,7 @@
   name: Vehicle Door Lock Knobs
   children: []
   attributes:
+  - door_lock_knob_attachment_method
   - item_condition
   - manufacturer_type
   - material
@@ -8205,11 +9199,14 @@
   name: Vehicle Door Locks & Locking Systems
   children: []
   attributes:
+  - electrical_connector_type
   - item_condition
   - manufacturer_type
   - material
   - power_source
   - vehicle_alarm/lock_features
+  - vehicle_door_lock_actuation_method
+  - vehicle_door_lock_included_components
   - vehicle_type
   return_reasons:
   - size
@@ -8246,7 +9243,9 @@
   attributes:
   - battery_size
   - battery_type
+  - immobilizer_installation_type
   - immobilizer_type
+  - immobilizer_unlock_method
   - item_condition
   - manufacturer_type
   - material
@@ -8270,6 +9269,7 @@
   - item_condition
   - manufacturer_type
   - power_source
+  - remote_keyless_system_programming_method
   - vehicle_alarm/lock_features
   - vehicle_type
   return_reasons:
@@ -8285,10 +9285,12 @@
   children: []
   attributes:
   - item_condition
+  - lock_cylinder_type
   - manufacturer_type
   - material
   - power_source
   - vehicle_alarm/lock_features
+  - vehicle_steering_wheel_lock_form_factor
   - vehicle_type
   return_reasons:
   - size
@@ -8304,11 +9306,13 @@
   children: []
   attributes:
   - item_condition
+  - lock_security_level
   - manufacturer_type
   - material
   - power_source
   - vehicle_alarm/lock_features
   - vehicle_type
+  - visibility_features
   return_reasons:
   - size
   - incompatible
@@ -8338,6 +9342,8 @@
   - pattern
   - product_certifications_standards
   - safety_equipment_material
+  - vehicle_safety_equipment_position
+  - vehicle_safety_equipment_visibility_features
   - vehicle_type
   return_reasons:
   - size
@@ -8352,9 +9358,15 @@
   name: Car Window Nets
   children: []
   attributes:
+  - motorsport_window_net_certification
   - net_material
   - product_certifications_standards
+  - vehicle_safety_equipment_position
+  - vehicle_safety_equipment_visibility_features
   - vehicle_type
+  - window_net_latch_mechanism
+  - window_net_mounting_hardware
+  - window_net_opening_direction
   return_reasons:
   - size
   - color
@@ -8369,9 +9381,14 @@
   name: Emergency Road Flares
   children: []
   attributes:
+  - flare_color
   - flare_type
+  - hazard_signal_mode
+  - mounting_method
   - product_certifications_standards
   - safety_equipment_material
+  - vehicle_safety_equipment_position
+  - vehicle_safety_equipment_visibility_features
   - vehicle_type
   return_reasons:
   - brightness
@@ -8386,8 +9403,12 @@
   name: Motor Vehicle Airbag Parts
   children: []
   attributes:
+  - airbag_position
+  - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
+  - vehicle_safety_equipment_position
+  - vehicle_safety_equipment_visibility_features
   - vehicle_type
   return_reasons:
   - size
@@ -8403,8 +9424,12 @@
   children: []
   attributes:
   - cage_type
+  - installation_method
   - product_certifications_standards
+  - roll_cage_tubing_material
   - safety_equipment_material
+  - vehicle_safety_equipment_position
+  - vehicle_safety_equipment_visibility_features
   - vehicle_type
   return_reasons:
   - size
@@ -8422,6 +9447,11 @@
   attributes:
   - product_certifications_standards
   - safety_equipment_material
+  - seat_belt_buckle_electrical_connector_type
+  - seat_belt_buckle_mounting_type
+  - seat_belt_buckle_release_button_color
+  - vehicle_safety_equipment_position
+  - vehicle_safety_equipment_visibility_features
   - vehicle_type
   return_reasons:
   - size
@@ -8439,6 +9469,9 @@
   - cover_features
   - cover_material
   - product_certifications_standards
+  - seat_belt_cover_placement
+  - vehicle_safety_equipment_position
+  - vehicle_safety_equipment_visibility_features
   - vehicle_type
   return_reasons:
   - size
@@ -8453,8 +9486,14 @@
   name: Vehicle Seat Belt Straps
   children: []
   attributes:
+  - compatible_strap_retractor
+  - intended_seating_position
   - product_certifications_standards
   - safety_equipment_material
+  - seat_belt_attachment_type
+  - seat_belt_strap_installation_location
+  - vehicle_safety_equipment_position
+  - vehicle_safety_equipment_visibility_features
   - vehicle_type
   return_reasons:
   - size
@@ -8472,6 +9511,8 @@
   - belt_type
   - fabric
   - product_certifications_standards
+  - vehicle_safety_equipment_position
+  - vehicle_safety_equipment_visibility_features
   - vehicle_type
   return_reasons:
   - size
@@ -8488,6 +9529,8 @@
   attributes:
   - product_certifications_standards
   - safety_equipment_material
+  - vehicle_safety_equipment_position
+  - vehicle_safety_equipment_visibility_features
   - vehicle_type
   return_reasons:
   - size
@@ -8504,7 +9547,10 @@
   attributes:
   - product_certifications_standards
   - safety_equipment_material
+  - vehicle_safety_equipment_position
+  - vehicle_safety_equipment_visibility_features
   - vehicle_type
+  - wheel_chock_grip_features
   return_reasons:
   - size
   - incompatible
@@ -8524,7 +9570,9 @@
   - vp-1-6-5-5
   - vp-1-6-5-6
   - vp-1-6-5-7
-  attributes: []
+  attributes:
+  - aircraft_protective_gear_certification
+  - intended_user
   return_reasons:
   - too_big
   - too_small
@@ -8541,9 +9589,15 @@
   children: []
   attributes:
   - accessory_size
+  - aircraft_protective_gear_certification
   - color
   - gear_material
+  - helmet_audio_connector_type
+  - intended_user
+  - noise_reduction_type
   - pattern
+  - pilot_helmet_communications_integration
+  - pilot_helmet_visor_configuration
   - protective_gear_features
   - target_gender
   return_reasons:
@@ -8563,8 +9617,10 @@
   children: []
   attributes:
   - accessory_size
+  - aircraft_protective_gear_certification
   - color
   - gear_material
+  - intended_user
   - pattern
   - protective_gear_features
   - target_gender
@@ -8584,8 +9640,12 @@
   children: []
   attributes:
   - accessory_size
+  - aircraft_protective_gear_certification
   - color
   - gear_material
+  - intended_user
+  - life_vest_approval_standard
+  - life_vest_intended_user
   - pattern
   - protective_gear_features
   - target_gender
@@ -8604,8 +9664,10 @@
   children: []
   attributes:
   - accessory_size
+  - aircraft_protective_gear_certification
   - color
   - gear_material
+  - intended_user
   - pattern
   - protective_gear_features
   - target_gender
@@ -8624,7 +9686,9 @@
   name: Aircraft Emergency Oxygen Systems
   children: []
   attributes:
+  - aircraft_protective_gear_certification
   - gear_material
+  - intended_user
   - protective_gear_features
   return_reasons:
   - capacity
@@ -8640,8 +9704,14 @@
   children: []
   attributes:
   - accessory_size
+  - aircraft_protective_gear_certification
+  - anti_g_suit_bladder_material
+  - anti_g_suit_connector_type
+  - anti_g_suit_inflation_method
+  - anti_g_suit_size_system
   - color
   - gear_material
+  - intended_user
   - pattern
   - protective_gear_features
   - target_gender
@@ -8658,7 +9728,10 @@
   name: Aircraft Fire Suppression Gear
   children: []
   attributes:
+  - actuation_method
+  - aircraft_protective_gear_certification
   - gear_material
+  - intended_user
   - protective_gear_features
   return_reasons:
   - size
@@ -8681,6 +9754,7 @@
   attributes:
   - color
   - pattern
+  - watercraft_safety_equipment_activation_type
   return_reasons:
   - size
   - changed_my_mind
@@ -8694,7 +9768,12 @@
   children: []
   attributes:
   - color
+  - distress_transmission_frequency
+  - floatation
+  - mounting_storage_type
   - pattern
+  - water_activation
+  - watercraft_safety_equipment_activation_type
   return_reasons:
   - range
   - changed_my_mind
@@ -8708,7 +9787,10 @@
   children: []
   attributes:
   - color
+  - marine_flare_certification_standard
   - pattern
+  - smoke_color
+  - watercraft_safety_equipment_activation_type
   return_reasons:
   - size
   - brightness
@@ -8723,8 +9805,12 @@
   children: []
   attributes:
   - color
+  - life_raft_certification_standard
+  - life_raft_container_type
   - material
   - pattern
+  - service_interval
+  - watercraft_safety_equipment_activation_type
   return_reasons:
   - size
   - weight_capacity
@@ -8739,7 +9825,10 @@
   children: []
   attributes:
   - color
+  - lifebuoy_approval_standard
+  - lifebuoy_features
   - pattern
+  - watercraft_safety_equipment_activation_type
   return_reasons:
   - size
   - changed_my_mind
@@ -8753,7 +9842,10 @@
   children: []
   attributes:
   - color
+  - compatible_watercraft_communication_standard
+  - man_overboard_system_type
   - pattern
+  - watercraft_safety_equipment_activation_type
   return_reasons:
   - size
   - incompatible
@@ -8770,6 +9862,10 @@
   - color
   - material
   - pattern
+  - throw_rope_end_attachment
+  - throw_rope_storage_packaging_type
+  - throw_rope_visibility_features
+  - watercraft_safety_equipment_activation_type
   return_reasons:
   - size
   - changed_my_mind
@@ -8797,6 +9893,7 @@
   - vp-1-6-7-14
   - vp-1-6-7-15
   attributes:
+  - protective_gear_certification_standard
   - protective_gear_features
   - vehicle_type
   return_reasons:
@@ -8814,6 +9911,8 @@
   name: ATV & UTV Bar Pads
   children: []
   attributes:
+  - bar_pad_style
+  - protective_gear_certification_standard
   - vehicle_type
   return_reasons:
   - size
@@ -8832,8 +9931,12 @@
   - accessory_size
   - color
   - gear_material
+  - helmet_retention_closure_type
+  - helmet_ventilation_adjustability
   - pattern
+  - protective_gear_certification_standard
   - protective_gear_features
+  - replacement_parts_availability
   - target_gender
   return_reasons:
   - too_big
@@ -8851,12 +9954,15 @@
   children: []
   attributes:
   - accessory_size
+  - compatible_tear_off_system
   - eyewear_frame_color
   - eyewear_frame_material
   - eyewear_frame_pattern
   - eyewear_lens_color
   - eyewear_lens_material
   - eyewear_lens_pattern
+  - goggle_fit_design
+  - protective_gear_certification_standard
   - target_gender
   return_reasons:
   - too_big
@@ -8877,6 +9983,7 @@
   - color
   - handwear_material
   - pattern
+  - protective_gear_certification_standard
   - target_gender
   return_reasons:
   - too_big
@@ -8895,11 +10002,16 @@
   children: []
   attributes:
   - accessory_size
+  - body_armor_coverage_area
+  - body_armor_intended_use
   - color
   - gear_material
+  - impact_protection_level
   - pattern
+  - protective_gear_certification_standard
   - protective_gear_features
   - target_gender
+  - ventilation_level
   return_reasons:
   - too_big
   - too_small
@@ -8920,6 +10032,7 @@
   - footwear_material
   - heel_height_type
   - pattern
+  - protective_gear_certification_standard
   - shoe_features
   - shoe_fit
   - shoe_size
@@ -8945,7 +10058,11 @@
   - color
   - gear_material
   - pattern
+  - protective_gear_certification_standard
   - protective_gear_features
+  - racing_suit_certification_standard
+  - racing_suit_cuff_design
+  - racing_suit_size_system
   - target_gender
   return_reasons:
   - too_big
@@ -8964,8 +10081,12 @@
   attributes:
   - accessory_size
   - color
+  - glove_cuff_length
+  - glove_palm_material
   - handwear_material
   - pattern
+  - protective_gear_certification_standard
+  - racing_glove_certification_standard
   - target_gender
   return_reasons:
   - too_big
@@ -8985,10 +10106,16 @@
   attributes:
   - accessory_size
   - color
+  - compatible_head_and_neck_restraint_system
+  - compatible_intercom_system
+  - compatible_racing_discipline
   - gear_material
   - pattern
+  - protective_gear_certification_standard
   - protective_gear_features
+  - racing_helmet_certification_standard
   - target_gender
+  - visor_configuration
   return_reasons:
   - too_big
   - too_small
@@ -9011,6 +10138,8 @@
   - eyewear_lens_color
   - eyewear_lens_material
   - eyewear_lens_pattern
+  - protective_gear_certification_standard
+  - racing_goggles_lens_system
   - target_gender
   return_reasons:
   - too_big
@@ -9029,10 +10158,15 @@
   attributes:
   - accessory_size
   - color
+  - compatible_helmet_type
   - gear_material
+  - neck_support_size_system
   - pattern
+  - protective_gear_certification_standard
   - protective_gear_features
+  - racing_neck_support_style
   - target_gender
+  - tether_strap_system
   return_reasons:
   - too_big
   - too_small
@@ -9052,6 +10186,7 @@
   - color
   - gear_material
   - pattern
+  - protective_gear_certification_standard
   - protective_gear_features
   - target_gender
   return_reasons:
@@ -9070,10 +10205,15 @@
   children: []
   attributes:
   - accessory_size
+  - certification_standard
   - color
   - gear_material
   - pattern
+  - protective_gear_certification_standard
   - protective_gear_features
+  - racing_balaclava_face_opening_style
+  - racing_balaclava_neck_coverage_length
+  - racing_balaclava_ventilation_zones
   - target_gender
   return_reasons:
   - too_big
@@ -9094,7 +10234,11 @@
   - color
   - gear_material
   - pattern
+  - protective_gear_certification_standard
   - protective_gear_features
+  - protective_shorts_intended_use
+  - protective_shorts_padding_type
+  - protective_shorts_padding_zones
   - target_gender
   return_reasons:
   - too_big
@@ -9115,7 +10259,10 @@
   - color
   - gear_material
   - pattern
+  - protective_gear_certification_standard
   - protective_gear_features
+  - racing_chest_guard_intended_use
+  - racing_chest_guard_size_type
   - target_gender
   return_reasons:
   - too_big
@@ -9163,6 +10310,8 @@
   - vp-1-7-1-3
   attributes:
   - accessory_size
+  - cargo_net_adjustability
+  - cargo_net_style
   - features
   - item_condition
   - net_material
@@ -9182,9 +10331,12 @@
   children: []
   attributes:
   - accessory_size
+  - cargo_net_adjustability
+  - cargo_net_style
   - features
   - item_condition
   - net_material
+  - roof_cargo_net_hook_fastener_style
   - vehicle_type
   return_reasons:
   - size
@@ -9201,9 +10353,12 @@
   children: []
   attributes:
   - accessory_size
+  - cargo_net_adjustability
+  - cargo_net_style
   - features
   - item_condition
   - net_material
+  - truck_bed_length_class
   - vehicle_type
   return_reasons:
   - size
@@ -9220,6 +10375,10 @@
   children: []
   attributes:
   - accessory_size
+  - cargo_net_adjustability
+  - cargo_net_position
+  - cargo_net_stretch_type
+  - cargo_net_style
   - features
   - item_condition
   - net_material
@@ -9243,6 +10402,7 @@
   - vp-1-7-2-4
   - vp-1-7-2-5
   attributes:
+  - compatible_hitch_receiver_size
   - item_condition
   - material
   - vehicle_type
@@ -9260,6 +10420,7 @@
   name: Vehicle Bicycle Rack Accessories
   children: []
   attributes:
+  - compatible_hitch_receiver_size
   - item_condition
   - material
   - vehicle_type
@@ -9277,6 +10438,8 @@
   name: Vehicle Ski & Snowboard Rack Accessories
   children: []
   attributes:
+  - carrying_capacity_pairs_boards
+  - compatible_hitch_receiver_size
   - item_condition
   - material
   - vehicle_type
@@ -9337,6 +10500,8 @@
   name: Vehicle Base Rack Systems
   children: []
   attributes:
+  - compatible_roof_rail_type
+  - crossbar_shape_profile
   - features
   - item_condition
   - material
@@ -9356,7 +10521,11 @@
   name: Vehicle Bicycle Racks
   children: []
   attributes:
+  - bike_rack_mounting_style
+  - bike_rack_tilt_function
   - features
+  - foldability_stow
+  - integrated_locking
   - item_condition
   - material
   - rack_type
@@ -9375,6 +10544,8 @@
   name: Vehicle Boat Racks
   children: []
   attributes:
+  - carrier_style
+  - compatible_crossbar
   - features
   - item_condition
   - material
@@ -9395,9 +10566,11 @@
   name: Vehicle Cargo Racks
   children: []
   attributes:
+  - cargo_rack_finish
   - features
   - item_condition
   - material
+  - mounting_receiver_size
   - vehicle_type
   return_reasons:
   - size
@@ -9455,7 +10628,9 @@
   - features
   - item_condition
   - material
+  - motorcycle_rack_carrier_style
   - rack_type
+  - tie_down_points_straps_included
   - vehicle_type
   return_reasons:
   - size
@@ -9491,6 +10666,7 @@
   name: Vehicle Water Sport Board Racks
   children: []
   attributes:
+  - compatible_water_board_type
   - features
   - item_condition
   - material
@@ -9535,6 +10711,9 @@
   - features
   - item_condition
   - material
+  - number_of_trailer_axles
+  - trailer_construction
+  - trailer_coupler_size
   - trailer_type
   - vehicle_type
   return_reasons:
@@ -9551,9 +10730,14 @@
   name: Boat Trailers
   children: []
   attributes:
+  - boat_trailer_construction_type
   - features
   - item_condition
+  - lighting_type
   - material
+  - number_of_trailer_axles
+  - trailer_construction
+  - trailer_coupler_size
   - trailer_type
   - vehicle_type
   return_reasons:
@@ -9571,8 +10755,13 @@
   children: []
   attributes:
   - features
+  - interior_stall_configuration
   - item_condition
   - material
+  - number_of_trailer_axles
+  - ramp_type
+  - trailer_construction
+  - trailer_coupler_size
   - trailer_type
   - vehicle_type
   return_reasons:
@@ -9593,7 +10782,13 @@
   - features
   - item_condition
   - material
+  - number_of_trailer_axles
+  - trailer_construction
+  - trailer_coupler_size
   - trailer_type
+  - travel_trailer_appliances_fuel_type
+  - travel_trailer_holding_tank_type
+  - travel_trailer_power_hookup_shore_power
   - vehicle_type
   return_reasons:
   - size
@@ -9613,6 +10808,9 @@
   - features
   - item_condition
   - material
+  - number_of_trailer_axles
+  - trailer_construction
+  - trailer_coupler_size
   - trailer_type
   - vehicle_type
   return_reasons:
@@ -9639,6 +10837,9 @@
   - carry_options
   - color
   - item_condition
+  - motorcycle_luggage_capacity_class
+  - motorcycle_luggage_mounting_system
+  - motorcycle_luggage_side
   - pattern
   - vehicle_type
   return_reasons:
@@ -9697,8 +10898,10 @@
   - color
   - item_condition
   - material
+  - number_of_compartments
   - organizer_type
   - pattern
+  - vehicle_organizer_features
   - vehicle_type
   return_reasons:
   - size
@@ -9795,6 +10998,9 @@
   - item_condition
   - item_material
   - line/rope_type
+  - rope_construction
+  - splice_termination_type
+  - suitable_for_anchoring_use
   - watercraft_type
   return_reasons:
   - size
@@ -9813,13 +11019,16 @@
   attributes:
   - battery_size
   - battery_type
+  - compatible_windlass_rode
   - control_technology
   - durability_features
   - item_condition
   - item_material
   - power_source
   - watercraft_type
+  - windlass_control_station_type
   - windlass_design
+  - windlass_mount_type
   return_reasons:
   - size
   - incompatible
@@ -9834,6 +11043,7 @@
   children: []
   attributes:
   - anchor_type
+  - bottom_type_suitability
   - control_technology
   - durability_features
   - item_condition
@@ -9852,6 +11062,7 @@
   name: Boat Hooks
   children: []
   attributes:
+  - boat_hook_flotation
   - control_technology
   - durability_features
   - hook_type
@@ -9871,11 +11082,13 @@
   name: Boat Ladders
   children: []
   attributes:
+  - boat_ladder_stowage_style
   - control_technology
   - durability_features
   - item_condition
   - item_material
   - ladder_type
+  - step_surface_texture
   - watercraft_type
   return_reasons:
   - size
@@ -9893,6 +11106,7 @@
   attributes:
   - battery_size
   - battery_type
+  - cleat_finish
   - cleat_type
   - control_technology
   - durability_features
@@ -9912,6 +11126,7 @@
   name: Dock Steps
   children: []
   attributes:
+  - compatible_dock_structure_type
   - control_technology
   - durability_features
   - item_condition
@@ -9953,7 +11168,9 @@
   - vp-1-8-3-2
   attributes:
   - item_material
+  - product_form
   - vehicle_cleaning_item_features
+  - watercraft_care_application_area
   - watercraft_type
   return_reasons:
   - incompatible
@@ -9970,7 +11187,9 @@
   - alcohol/solvent_content
   - cleaner_purpose
   - item_material
+  - product_form
   - vehicle_cleaning_item_features
+  - watercraft_care_application_area
   - watercraft_type
   return_reasons:
   - incompatible
@@ -9987,7 +11206,9 @@
   - alcohol/solvent_content
   - item_material
   - polish_type
+  - product_form
   - vehicle_cleaning_item_features
+  - watercraft_care_application_area
   - watercraft_type
   return_reasons:
   - finish
@@ -10013,8 +11234,11 @@
   attributes:
   - battery_size
   - battery_type
+  - compatible_watercraft_engine_type
   - item_condition
   - item_material
+  - propeller_hub_type
+  - propeller_rotation
   - vehicle_engine_part_features
   - watercraft_type
   return_reasons:
@@ -10029,8 +11253,13 @@
   name: Watercraft Alternators
   children: []
   attributes:
+  - alternator_marine_ignition_protection_rating
+  - alternator_terminal_connection_type
+  - compatible_watercraft_engine_type
   - item_condition
   - item_material
+  - propeller_hub_type
+  - propeller_rotation
   - vehicle_engine_part_features
   - watercraft_type
   return_reasons:
@@ -10045,8 +11274,12 @@
   name: Watercraft Carburetors & Parts
   children: []
   attributes:
+  - carburetor_mounting_flange_type
+  - compatible_watercraft_engine_type
   - item_condition
   - item_material
+  - propeller_hub_type
+  - propeller_rotation
   - vehicle_engine_part_features
   - watercraft_type
   return_reasons:
@@ -10061,8 +11294,14 @@
   name: Watercraft Engine Controls
   children: []
   attributes:
+  - compatible_watercraft_engine_type
+  - control_cable_connector_type
   - item_condition
   - item_material
+  - lever_configuration
+  - number_of_control_stations
+  - propeller_hub_type
+  - propeller_rotation
   - vehicle_engine_part_features
   - watercraft_engine_control_type
   - watercraft_type
@@ -10081,9 +11320,13 @@
   attributes:
   - battery_size
   - battery_type
+  - compatible_watercraft_engine_type
   - item_condition
   - item_material
+  - propeller_hub_type
+  - propeller_rotation
   - vehicle_engine_part_features
+  - watercraft_ignition_part_voltage
   - watercraft_type
   return_reasons:
   - incompatible
@@ -10097,9 +11340,14 @@
   name: Watercraft Impellers
   children: []
   attributes:
+  - compatible_watercraft_engine_type
   - item_condition
   - item_material
+  - propeller_hub_type
+  - propeller_rotation
   - vehicle_engine_part_features
+  - watercraft_impeller_material_grade
+  - watercraft_pump_stage_impeller_role
   - watercraft_type
   return_reasons:
   - incompatible
@@ -10113,9 +11361,12 @@
   name: Watercraft Motor Locks
   children: []
   attributes:
+  - compatible_watercraft_engine_type
   - item_condition
   - item_material
   - lock_placement
+  - propeller_hub_type
+  - propeller_rotation
   - vehicle_engine_part_features
   - watercraft_type
   return_reasons:
@@ -10130,9 +11381,14 @@
   name: Watercraft Motor Mounts
   children: []
   attributes:
+  - compatible_watercraft_engine_type
+  - corrosion_resistance_level
   - item_condition
   - mount_material
+  - propeller_hub_type
+  - propeller_rotation
   - vehicle_engine_part_features
+  - watercraft_motor_mount_adjustment_features
   - watercraft_motor_mounting_type
   - watercraft_type
   return_reasons:
@@ -10147,9 +11403,13 @@
   name: Watercraft Pistons & Parts
   children: []
   attributes:
+  - compatible_watercraft_engine_type
   - item_condition
   - item_material
+  - propeller_hub_type
+  - propeller_rotation
   - vehicle_engine_part_features
+  - watercraft_piston_part_type
   - watercraft_type
   return_reasons:
   - size
@@ -10164,10 +11424,16 @@
   name: Watercraft Propellers
   children: []
   attributes:
+  - compatible_watercraft_engine_type
   - item_condition
   - item_material
+  - propeller_blade_cup
   - propeller_blade_design
+  - propeller_hub_type
+  - propeller_rotation
   - vehicle_engine_part_features
+  - watercraft_propeller_blade_rake
+  - watercraft_propeller_rotation_direction
   - watercraft_type
   return_reasons:
   - pitch
@@ -10206,10 +11472,13 @@
   name: Inboard Motors
   children: []
   attributes:
+  - cooling_system_type
+  - engine_rotation_direction
   - engine_type
   - fuel_supply
   - item_condition
   - item_material
+  - marine_transmission_type
   - vehicle_engine_features
   - watercraft_type
   return_reasons:
@@ -10232,6 +11501,9 @@
   - fuel_supply
   - item_condition
   - item_material
+  - outboard_motor_shaft_type
+  - outboard_motor_steering_type
+  - trim_tilt_type
   - vehicle_engine_features
   - watercraft_type
   return_reasons:
@@ -10276,8 +11548,11 @@
   - vp-1-8-6-3
   - vp-1-8-6-4
   attributes:
+  - compliance_certifications
+  - exhaust_cooling_type
   - item_condition
   - item_material
+  - mounting_location
   - watercraft_type
   return_reasons:
   - size
@@ -10292,8 +11567,11 @@
   name: Watercraft Manifolds
   children: []
   attributes:
+  - compliance_certifications
+  - exhaust_cooling_type
   - item_condition
   - item_material
+  - mounting_location
   - watercraft_type
   return_reasons:
   - operating_noise
@@ -10308,8 +11586,11 @@
   name: Watercraft Mufflers & Parts
   children: []
   attributes:
+  - compliance_certifications
+  - exhaust_cooling_type
   - item_condition
   - item_material
+  - mounting_location
   - watercraft_type
   return_reasons:
   - size
@@ -10356,6 +11637,8 @@
   name: Watercraft Fuel Lines & Parts
   children: []
   attributes:
+  - fuel_line_compliance_standard
+  - fuel_line_connector_interface_type
   - item_condition
   - item_material
   - watercraft_type
@@ -10371,6 +11654,8 @@
   name: Watercraft Fuel Meters
   children: []
   attributes:
+  - display_backlight_color
+  - gauge_mounting_type
   - item_condition
   - item_material
   - meter_type
@@ -10402,8 +11687,11 @@
   name: Watercraft Fuel Tanks & Parts
   children: []
   attributes:
+  - fuel_tank_orientation
   - item_condition
   - item_material
+  - watercraft_fuel_tank_sending_unit_pattern
+  - watercraft_fuel_tank_shape
   - watercraft_type
   return_reasons:
   - incompatible
@@ -10434,6 +11722,7 @@
   - light_type
   - lighting_features
   - power_source
+  - watercraft_lighting_certification_compliance
   - watercraft_type
   return_reasons:
   - color
@@ -10470,6 +11759,10 @@
   attributes:
   - item_condition
   - item_material
+  - steering_cable_end_fitting_type
+  - watercraft_steering_cable_core_material
+  - watercraft_steering_cable_hardware_included
+  - watercraft_steering_cable_system_type
   - watercraft_type
   return_reasons:
   - length
@@ -10486,6 +11779,9 @@
   attributes:
   - item_condition
   - item_material
+  - steering_wheel_grip_material
+  - steering_wheel_mounting_pattern
+  - watercraft_steering_wheel_hub_bore_type
   - watercraft_steering_wheel_type
   - watercraft_type
   return_reasons:
@@ -10556,6 +11852,7 @@
   - vp-2-1-1-11
   - vp-2-1-1-12
   attributes:
+  - aircraft_airframe_material
   - body_color
   - body_pattern
   - fuel_supply
@@ -10575,12 +11872,15 @@
   name: Helicopters
   children: []
   attributes:
+  - aircraft_airframe_material
   - aircraft_engine_configuration
   - aircraft_engine_type
   - body_color
   - body_pattern
   - cockpit_type
   - fuel_supply
+  - helicopter_mission_type
+  - helicopter_rotor_configuration
   - item_condition
   - upholstery_color
   - upholstery_pattern
@@ -10596,10 +11896,13 @@
   name: Drones
   children: []
   attributes:
+  - aircraft_airframe_material
   - battery_size
   - battery_type
   - color
   - drone_features
+  - drone_positioning_system
+  - drone_transmission_type
   - item_condition
   - pattern
   - video_resolution_supported
@@ -10615,6 +11918,7 @@
   name: Ultralights
   children: []
   attributes:
+  - aircraft_airframe_material
   - aircraft_engine_configuration
   - aircraft_engine_type
   - body_color
@@ -10622,6 +11926,7 @@
   - cockpit_type
   - fuel_supply
   - item_condition
+  - ultralight_aircraft_wing_configuration
   - upholstery_color
   - upholstery_pattern
   return_reasons:
@@ -10636,6 +11941,9 @@
   name: Autogyros
   children: []
   attributes:
+  - aircraft_airframe_material
+  - aircraft_landing_gear_type
+  - autogyro_cockpit_enclosure
   - body_color
   - body_pattern
   - cockpit_type
@@ -10655,9 +11963,14 @@
   name: Gliders
   children: []
   attributes:
+  - aircraft_airframe_material
   - body_color
   - body_pattern
   - cockpit_type
+  - glider_avionics_package
+  - glider_landing_gear_configuration
+  - glider_launch_method
+  - glider_performance_class
   - item_condition
   - upholstery_color
   - upholstery_pattern
@@ -10674,6 +11987,7 @@
   name: Light Jets
   children: []
   attributes:
+  - aircraft_airframe_material
   - aircraft_engine_configuration
   - aircraft_engine_type
   - body_color
@@ -10696,6 +12010,8 @@
   name: Very Light Jets
   children: []
   attributes:
+  - aircraft_ads_b_capability
+  - aircraft_airframe_material
   - aircraft_engine_configuration
   - aircraft_engine_type
   - body_color
@@ -10717,8 +12033,11 @@
   name: Mid-Size Jets
   children: []
   attributes:
+  - aircraft_airframe_material
   - aircraft_engine_configuration
   - aircraft_engine_type
+  - aircraft_galley_configuration
+  - aircraft_operational_certification
   - body_color
   - body_pattern
   - cockpit_type
@@ -10738,8 +12057,12 @@
   name: Super Mid-Size Jets
   children: []
   attributes:
+  - aircraft_airframe_material
   - aircraft_engine_configuration
   - aircraft_engine_type
+  - aircraft_internet_connection
+  - aircraft_lavatory_configuration
+  - aircraft_maintenance_program_enrollment
   - body_color
   - body_pattern
   - cockpit_type
@@ -10760,6 +12083,8 @@
   name: Large Jets
   children: []
   attributes:
+  - aircraft_airframe_material
+  - aircraft_cabin_configuration
   - aircraft_engine_configuration
   - aircraft_engine_type
   - body_color
@@ -10781,6 +12106,7 @@
   name: Long Range Jets
   children: []
   attributes:
+  - aircraft_airframe_material
   - aircraft_engine_configuration
   - aircraft_engine_type
   - body_color
@@ -10802,6 +12128,7 @@
   name: Light Aircraft
   children: []
   attributes:
+  - aircraft_airframe_material
   - aircraft_engine_configuration
   - aircraft_engine_type
   - body_color
@@ -10846,6 +12173,9 @@
   attributes:
   - body_color
   - body_pattern
+  - hot_air_balloon_basket_type
+  - hot_air_balloon_burner_type
+  - hot_air_balloon_envelope_material
   - item_condition
   - upholstery_color
   - upholstery_pattern
@@ -10863,11 +12193,14 @@
   attributes:
   - aircraft_engine_configuration
   - aircraft_engine_type
+  - airship_envelope_material
+  - ballonet_configuration
   - body_color
   - body_pattern
   - cockpit_type
   - fuel_supply
   - item_condition
+  - lifting_gas_type
   - upholstery_color
   - upholstery_pattern
   return_reasons:
@@ -10944,6 +12277,7 @@
   - vp-2-2-1-1-2
   - vp-2-2-1-1-3
   attributes:
+  - bidirectional_charging_capability
   - body_color
   - body_pattern
   - drive_type
@@ -10968,9 +12302,11 @@
   - vp-2-2-1-1-1-1
   - vp-2-2-1-1-1-2
   attributes:
+  - bidirectional_charging_capability
   - body_color
   - body_pattern
   - car_type
+  - charging_port_location
   - drive_type
   - fuel_supply
   - item_condition
@@ -10991,10 +12327,12 @@
   name: Battery Electric Vehicles (BEV)
   children: []
   attributes:
+  - bidirectional_charging_capability
   - body_color
   - body_pattern
   - car_type
   - drive_type
+  - electric_vehicle_drivetrain_layout
   - fuel_supply
   - item_condition
   - transmission_type
@@ -11014,11 +12352,13 @@
   name: Plug-In Hybrid Electric Vehicles (PHEV)
   children: []
   attributes:
+  - bidirectional_charging_capability
   - body_color
   - body_pattern
   - car_type
   - drive_type
   - fuel_supply
+  - hybrid_drivetrain_configuration
   - item_condition
   - transmission_type
   - upholstery_color
@@ -11037,6 +12377,7 @@
   name: Electric Trucks
   children: []
   attributes:
+  - bidirectional_charging_capability
   - body_color
   - body_pattern
   - drive_type
@@ -11061,9 +12402,12 @@
   name: Electric Vans
   children: []
   attributes:
+  - bidirectional_charging_capability
   - body_color
   - body_pattern
   - drive_type
+  - electric_van_body_length_class
+  - electric_van_roof_height_class
   - fuel_supply
   - item_condition
   - transmission_type
@@ -11090,6 +12434,7 @@
   - body_color
   - body_pattern
   - drive_type
+  - emissions_standard
   - fuel_supply
   - item_condition
   - transmission_type
@@ -11113,6 +12458,7 @@
   - body_pattern
   - car_type
   - drive_type
+  - emissions_standard
   - fuel_supply
   - item_condition
   - transmission_type
@@ -11135,6 +12481,7 @@
   - body_color
   - body_pattern
   - drive_type
+  - emissions_standard
   - fuel_supply
   - item_condition
   - transmission_type
@@ -11159,6 +12506,7 @@
   - body_color
   - body_pattern
   - drive_type
+  - emissions_standard
   - fuel_supply
   - item_condition
   - transmission_type
@@ -11186,6 +12534,7 @@
   - body_pattern
   - drive_type
   - fuel_supply
+  - hybrid_system_type
   - item_condition
   - transmission_type
   - upholstery_color
@@ -11209,6 +12558,7 @@
   - car_type
   - drive_type
   - fuel_supply
+  - hybrid_system_type
   - item_condition
   - transmission_type
   - upholstery_color
@@ -11232,6 +12582,8 @@
   - body_pattern
   - drive_type
   - fuel_supply
+  - hybrid_system_type
+  - hybrid_truck_cab_type
   - item_condition
   - transmission_type
   - truck_type
@@ -11256,6 +12608,7 @@
   - body_pattern
   - drive_type
   - fuel_supply
+  - hybrid_system_type
   - item_condition
   - transmission_type
   - upholstery_color
@@ -11307,6 +12660,7 @@
   - drive_type
   - fuel_supply
   - item_condition
+  - title_status
   - transmission_type
   - upholstery_color
   - upholstery_pattern
@@ -11327,13 +12681,16 @@
   - body_color
   - body_pattern
   - drive_type
+  - drivetrain_configuration
   - fuel_supply
   - item_condition
   - transmission_type
+  - truck_bed_body_type
   - truck_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - vintage_classic_truck_cab_type
   return_reasons:
   - performance
   - changed_my_mind
@@ -11352,6 +12709,9 @@
   - drive_type
   - fuel_supply
   - item_condition
+  - restoration_status
+  - roof_height_class
+  - steering_position
   - transmission_type
   - upholstery_color
   - upholstery_pattern
@@ -11373,6 +12733,7 @@
   - body_pattern
   - cart_type
   - fuel_supply
+  - golf_cart_intended_use
   - item_condition
   - transmission_type
   - upholstery_color
@@ -11494,6 +12855,7 @@
   name: ATVs & UTVs
   children: []
   attributes:
+  - atv_utv_intended_use
   - body_color
   - body_pattern
   - drive_type
@@ -11568,6 +12930,8 @@
   - drive_type
   - fuel_supply
   - item_condition
+  - recreational_vehicle_holding_tank_type
+  - recreational_vehicle_leveling_system
   - recreational_vehicle_type
   - transmission_type
   - upholstery_color
@@ -11615,6 +12979,7 @@
   attributes:
   - body_color
   - body_pattern
+  - commercial_vehicle_class
   - fuel_supply
   - item_condition
   - upholstery_color
@@ -11642,6 +13007,7 @@
   attributes:
   - body_color
   - body_pattern
+  - commercial_vehicle_class
   - fuel_supply
   - item_condition
   - upholstery_color
@@ -11662,6 +13028,7 @@
   attributes:
   - body_color
   - body_pattern
+  - commercial_vehicle_class
   - fuel_supply
   - item_condition
   - upholstery_color
@@ -11682,6 +13049,7 @@
   attributes:
   - body_color
   - body_pattern
+  - commercial_vehicle_class
   - fuel_supply
   - item_condition
   - upholstery_color
@@ -11702,8 +13070,11 @@
   attributes:
   - body_color
   - body_pattern
+  - commercial_vehicle_class
   - fuel_supply
   - item_condition
+  - school_bus_body_type
+  - school_bus_safety_feature
   - upholstery_color
   - upholstery_pattern
   - vehicle_floor_configuration
@@ -11720,8 +13091,10 @@
   name: Minibuses
   children: []
   attributes:
+  - accessibility_features
   - body_color
   - body_pattern
+  - commercial_vehicle_class
   - fuel_supply
   - item_condition
   - upholstery_color
@@ -11741,6 +13114,8 @@
   attributes:
   - body_color
   - body_pattern
+  - commercial_vehicle_class
+  - double_decker_bus_deck_configuration
   - fuel_supply
   - item_condition
   - upholstery_color
@@ -11761,6 +13136,7 @@
   attributes:
   - body_color
   - body_pattern
+  - commercial_vehicle_class
   - fuel_supply
   - item_condition
   - upholstery_color
@@ -11781,8 +13157,10 @@
   attributes:
   - body_color
   - body_pattern
+  - commercial_vehicle_class
   - fuel_supply
   - item_condition
+  - trolleybus_power_supply_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_floor_configuration
@@ -11802,6 +13180,7 @@
   - body_color
   - body_pattern
   - car_type
+  - commercial_vehicle_class
   - fuel_supply
   - item_condition
   - upholstery_color
@@ -11862,8 +13241,10 @@
   name: Ambulances
   children: []
   attributes:
+  - ambulance_stretcher_mount_type
   - body_color
   - body_pattern
+  - emergency_lighting_package
   - fuel_supply
   - item_condition
   - upholstery_color
@@ -11905,8 +13286,10 @@
   - body_pattern
   - fuel_supply
   - item_condition
+  - police_equipment_fitment
   - upholstery_color
   - upholstery_pattern
+  - vehicle_pursuit_package
   return_reasons:
   - performance
   - changed_my_mind
@@ -11923,8 +13306,13 @@
   - body_pattern
   - fuel_supply
   - item_condition
+  - police_equipment_fitment
+  - police_vehicle_equipment_package
+  - police_vehicle_light_siren_equipment
+  - prisoner_transport_partition_type
   - upholstery_color
   - upholstery_pattern
+  - vehicle_pursuit_package
   return_reasons:
   - performance
   - changed_my_mind
@@ -11939,10 +13327,15 @@
   attributes:
   - body_color
   - body_pattern
+  - cab_type
   - fuel_supply
   - item_condition
+  - police_equipment_fitment
+  - police_vehicle_upfit_level
+  - siren_system_type
   - upholstery_color
   - upholstery_pattern
+  - vehicle_pursuit_package
   return_reasons:
   - performance
   - changed_my_mind
@@ -11957,10 +13350,16 @@
   attributes:
   - body_color
   - body_pattern
+  - emergency_lighting_configuration
   - fuel_supply
   - item_condition
+  - police_equipment_fitment
+  - prisoner_transport_configuration
+  - siren_system_included
   - upholstery_color
   - upholstery_pattern
+  - vehicle_equipment_fit_out_level
+  - vehicle_pursuit_package
   return_reasons:
   - performance
   - changed_my_mind
@@ -11973,12 +13372,14 @@
   name: Military Vehicles
   children: []
   attributes:
+  - armor_protection_type
   - body_color
   - body_pattern
   - fuel_supply
   - item_condition
   - upholstery_color
   - upholstery_pattern
+  - weapon_system_integration
   return_reasons:
   - performance
   - changed_my_mind
@@ -12078,8 +13479,12 @@
   name: Formula Cars
   children: []
   attributes:
+  - aerodynamic_elements_included
   - body_color
   - body_pattern
+  - chassis_construction_type
+  - fia_homologation_certification
+  - formula_car_series_class
   - fuel_supply
   - item_condition
   - transmission_type
@@ -12098,10 +13503,14 @@
   name: GT Cars
   children: []
   attributes:
+  - aero_package_components
   - body_color
   - body_pattern
   - fuel_supply
+  - gt_racing_class
+  - homologation_rule_set
   - item_condition
+  - safety_equipment_included
   - transmission_type
   - upholstery_color
   - upholstery_pattern
@@ -12122,6 +13531,8 @@
   - body_pattern
   - fuel_supply
   - item_condition
+  - rally_competition_class
+  - rally_surface_setup
   - transmission_type
   - upholstery_color
   - upholstery_pattern
@@ -12140,8 +13551,10 @@
   attributes:
   - body_color
   - body_pattern
+  - eligible_race_series
   - fuel_supply
   - item_condition
+  - race_car_class
   - transmission_type
   - upholstery_color
   - upholstery_pattern
@@ -12162,6 +13575,7 @@
   - body_pattern
   - fuel_supply
   - item_condition
+  - stock_car_race_series
   - transmission_type
   - upholstery_color
   - upholstery_pattern
@@ -12202,6 +13616,10 @@
   - body_pattern
   - fuel_supply
   - item_condition
+  - racing_kart_brake_type
+  - racing_kart_class
+  - racing_kart_frame_material
+  - racing_kart_seat_size
   - transmission_type
   - upholstery_color
   - upholstery_pattern
@@ -12244,6 +13662,7 @@
   attributes:
   - body_color
   - body_pattern
+  - enduro_bike_suspension_adjustability
   - fuel_supply
   - item_condition
   - transmission_type
@@ -12346,6 +13765,7 @@
   - body_pattern
   - fuel_supply
   - item_condition
+  - racing_truck_discipline
   - transmission_type
   - upholstery_color
   - upholstery_pattern
@@ -12375,6 +13795,7 @@
   - upholstery_color
   - upholstery_pattern
   - watercraft_features
+  - watercraft_hull_material
   return_reasons:
   - size
   - performance
@@ -12396,6 +13817,7 @@
   - upholstery_color
   - upholstery_pattern
   - watercraft_features
+  - watercraft_hull_material
   return_reasons:
   - size
   - performance
@@ -12417,6 +13839,7 @@
   - upholstery_color
   - upholstery_pattern
   - watercraft_features
+  - watercraft_hull_material
   return_reasons:
   - size
   - performance
@@ -12434,10 +13857,13 @@
   - body_pattern
   - fuel_supply
   - item_condition
+  - keel_type
   - sailboat_type
   - upholstery_color
   - upholstery_pattern
   - watercraft_features
+  - watercraft_hull_material
+  - watercraft_registration_status
   return_reasons:
   - size
   - performance
@@ -12454,10 +13880,12 @@
   - body_color
   - body_pattern
   - fuel_supply
+  - hull_type
   - item_condition
   - upholstery_color
   - upholstery_pattern
   - watercraft_features
+  - watercraft_hull_material
   - yacht_type
   return_reasons:
   - size
