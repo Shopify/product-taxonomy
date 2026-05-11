@@ -259,7 +259,10 @@
   - other_reason
 - id: vp-1-2-6
   name: Electric Vehicle Batteries
-  children: []
+  children:
+  - vp-1-2-6-1
+  - vp-1-2-6-2
+  - vp-1-2-6-3
   attributes:
   - battery_size
   - battery_type
@@ -277,6 +280,21 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: vp-1-2-6-1
+  name: EV Battery Cells
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-2-6-2
+  name: EV Battery Packs
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-2-6-3
+  name: EV Battery Modules
+  children: []
+  attributes: []
+  return_reasons: []
 - id: vp-1-2-7
   name: Power Inverters
   children: []
@@ -2038,6 +2056,9 @@
   - vp-1-4-5-6
   - vp-1-4-5-7
   - vp-1-4-5-8
+  - vp-1-4-5-9
+  - vp-1-4-5-10
+  - vp-1-4-5-11
   attributes:
   - color
   - item_condition
@@ -2197,6 +2218,21 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: vp-1-4-5-9
+  name: Oil Pickup Tubes & Screens
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-4-5-10
+  name: Oil Filter Housings & Adapters
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-4-5-11
+  name: Oil Cooler Lines & Hoses
+  children: []
+  attributes: []
+  return_reasons: []
 - id: vp-1-4-6
   name: Motor Vehicle Engine Parts
   children:
@@ -2666,7 +2702,12 @@
   - other_reason
 - id: vp-1-4-8
   name: Motor Vehicle Exhaust
-  children: []
+  children:
+  - vp-1-4-8-1
+  - vp-1-4-8-2
+  - vp-1-4-8-3
+  - vp-1-4-8-4
+  - vp-1-4-8-5
   attributes:
   - battery_size
   - battery_type
@@ -2686,6 +2727,31 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: vp-1-4-8-1
+  name: Motor Vehicle Exhaust Hardware
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-4-8-2
+  name: Motor Vehicle Catalytic Converters
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-4-8-3
+  name: Motor Vehicle Exhaust Tips
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-4-8-4
+  name: Motor Vehicle Exhaust Pipes & Tubings
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-4-8-5
+  name: Motor Vehicle Mufflers
+  children: []
+  attributes: []
+  return_reasons: []
 - id: vp-1-4-9
   name: Motor Vehicle Frame & Body Parts
   children:
@@ -2986,6 +3052,10 @@
   - vp-1-4-10-6
   - vp-1-4-10-7
   - vp-1-4-10-8
+  - vp-1-4-10-9
+  - vp-1-4-10-10
+  - vp-1-4-10-11
+  - vp-1-4-10-12
   attributes:
   - color
   - fuel_supply
@@ -3136,6 +3206,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: vp-1-4-10-9
+  name: Fuel Rails
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-4-10-10
+  name: Fuel System Kits
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-4-10-11
+  name: Fuel Filler Necks
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-4-10-12
+  name: Fuel Sending Units
+  children: []
+  attributes: []
+  return_reasons: []
 - id: vp-1-4-11
   name: Motor Vehicle Interior Fittings
   children:
@@ -3829,6 +3919,10 @@
   - vp-1-4-16-13
   - vp-1-4-16-14
   - vp-1-4-16-15
+  - vp-1-4-16-16
+  - vp-1-4-16-17
+  - vp-1-4-16-18
+  - vp-1-4-16-19
   attributes:
   - battery_size
   - battery_type
@@ -4107,6 +4201,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: vp-1-4-16-16
+  name: Camshaft Position Sensors
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-4-16-17
+  name: Tire Pressure Monitoring System (TPMS) Sensors
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-4-16-18
+  name: Throttle Position Sensors
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-4-16-19
+  name: Crankshaft Position Sensors
+  children: []
+  attributes: []
+  return_reasons: []
 - id: vp-1-4-17
   name: Motor Vehicle Suspension Parts
   children:
@@ -4118,6 +4232,8 @@
   - vp-1-4-17-6
   - vp-1-4-17-7
   - vp-1-4-17-8
+  - vp-1-4-17-9
+  - vp-1-4-17-10
   attributes:
   - color
   - item_condition
@@ -4291,6 +4407,16 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: vp-1-4-17-9
+  name: Suspension Lift Kits
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-4-17-10
+  name: Strut Mounts
+  children: []
+  attributes: []
+  return_reasons: []
 - id: vp-1-4-18
   name: Motor Vehicle Towing
   children:
@@ -5087,7 +5213,11 @@
   - other_reason
 - id: vp-1-4-20-4
   name: Motor Vehicle Wheel Parts
-  children: []
+  children:
+  - vp-1-4-20-4-1
+  - vp-1-4-20-4-2
+  - vp-1-4-20-4-3
+  - vp-1-4-20-4-4
   attributes:
   - color
   - item_condition
@@ -5107,6 +5237,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: vp-1-4-20-4-1
+  name: Wheel Spacers & Adapters
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-4-20-4-2
+  name: Wheel Fasteners & Locks
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-4-20-4-3
+  name: Wheel Weights & Balancing
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-4-20-4-4
+  name: Wheel Bearings & Hubs
+  children: []
+  attributes: []
+  return_reasons: []
 - id: vp-1-4-21
   name: Motor Vehicle Window Parts & Accessories
   children:
@@ -7317,6 +7467,8 @@
   - vp-1-5-7-9-1-3
   - vp-1-5-7-9-1-4
   - vp-1-5-7-9-1-5
+  - vp-1-5-7-9-1-6
+  - vp-1-5-7-9-1-7
   attributes:
   - color
   - features
@@ -7419,6 +7571,16 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: vp-1-5-7-9-1-6
+  name: Mount/Demount Bars
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-5-7-9-1-7
+  name: Rim Protectors
+  children: []
+  attributes: []
+  return_reasons: []
 - id: vp-1-5-7-9-2
   name: Tire Repair Kits
   children: []
@@ -7693,6 +7855,7 @@
   - vp-1-6-1-7-3
   - vp-1-6-1-7-4
   - vp-1-6-1-7-5
+  - vp-1-6-1-7-6
   attributes:
   - accessory_size
   - battery_size
@@ -7833,6 +7996,11 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: vp-1-6-1-7-6
+  name: Adventure/Dual-Sport Helmets
+  children: []
+  attributes: []
+  return_reasons: []
 - id: vp-1-6-1-8
   name: Motorcycle Kidney Belts
   children: []
@@ -9071,6 +9239,9 @@
   children:
   - vp-1-7-2-1
   - vp-1-7-2-2
+  - vp-1-7-2-3
+  - vp-1-7-2-4
+  - vp-1-7-2-5
   attributes:
   - item_condition
   - material
@@ -9118,6 +9289,21 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: vp-1-7-2-3
+  name: Vehicle Water Sport Board Rack Accessories
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-7-2-4
+  name: Vehicle Cargo Rack Accessories
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-7-2-5
+  name: Vehicle Boat & Kayak Rack Accessories
+  children: []
+  attributes: []
+  return_reasons: []
 - id: vp-1-7-3
   name: Motor Vehicle Carrying Racks
   children:
@@ -10087,6 +10273,8 @@
   children:
   - vp-1-8-6-1
   - vp-1-8-6-2
+  - vp-1-8-6-3
+  - vp-1-8-6-4
   attributes:
   - item_condition
   - item_material
@@ -10133,6 +10321,16 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: vp-1-8-6-3
+  name: Watercraft Exhaust Hoses & Fittings
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-8-6-4
+  name: Watercraft Exhaust Risers & Elbows
+  children: []
+  attributes: []
+  return_reasons: []
 - id: vp-1-8-7
   name: Watercraft Fuel Systems
   children:
@@ -10140,6 +10338,8 @@
   - vp-1-8-7-2
   - vp-1-8-7-3
   - vp-1-8-7-4
+  - vp-1-8-7-5
+  - vp-1-8-7-6
   attributes:
   - item_condition
   - item_material
@@ -10213,6 +10413,16 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: vp-1-8-7-5
+  name: Watercraft Fuel Filters & Water Separators
+  children: []
+  attributes: []
+  return_reasons: []
+- id: vp-1-8-7-6
+  name: Watercraft Fuel Fittings & Connectors
+  children: []
+  attributes: []
+  return_reasons: []
 - id: vp-1-8-8
   name: Watercraft Lighting
   children: []
