@@ -26,6 +26,7 @@
   - fr-22
   - fr-23
   - fr-24
+  - fr-25
   attributes:
   - color
   - pattern
@@ -52,6 +53,10 @@
   - fr-1-7
   - fr-1-8
   - fr-1-9
+  - fr-1-10
+  - fr-1-11
+  - fr-1-12
+  - fr-1-13
   attributes:
   - color
   - furniture/fixture_material
@@ -88,7 +93,13 @@
   - other_reason
 - id: fr-1-2
   name: Bassinet & Cradle Accessories
-  children: []
+  children:
+  - fr-1-2-1
+  - fr-1-2-2
+  - fr-1-2-3
+  - fr-1-2-4
+  - fr-1-2-5
+  - fr-1-2-6
   attributes:
   - color
   - material
@@ -105,6 +116,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-1-2-1
+  name: Bassinet & Cradle Stands
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-1-2-2
+  name: Bassinet & Cradle Liners & Covers
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-1-2-3
+  name: Canopies & Mosquito Nets
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-1-2-4
+  name: Bassinet & Cradle Mattresses
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-1-2-5
+  name: Bassinet Sheets & Mattress Protectors
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-1-2-6
+  name: Bassinet Support Pillows & Wedges
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-1-3
   name: Bassinets & Cradles
   children:
@@ -117,6 +158,7 @@
   - fr-1-3-8
   - fr-1-3-10
   - fr-1-3-11
+  - fr-1-3-12
   attributes:
   - age_group
   - baby/toddler_furniture_features
@@ -305,6 +347,11 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-1-3-12
+  name: Baby Loungers & Nests
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-1-4
   name: Changing Tables
   children: []
@@ -329,6 +376,8 @@
   children:
   - fr-1-5-1
   - fr-1-5-2
+  - fr-1-5-3
+  - fr-1-5-4
   attributes:
   - color
   - material
@@ -495,6 +544,16 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-1-5-3
+  name: Crib Sheets & Bedding
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-1-5-4
+  name: Crib Mattress Protectors & Pads
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-1-6
   name: Cribs & Toddler Beds
   children:
@@ -674,7 +733,12 @@
   - other_reason
 - id: fr-1-7
   name: High Chair & Booster Seat Accessories
-  children: []
+  children:
+  - fr-1-7-1
+  - fr-1-7-2
+  - fr-1-7-3
+  - fr-1-7-4
+  - fr-1-7-5
   attributes:
   - color
   - material
@@ -690,6 +754,31 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-1-7-1
+  name: High Chair Cushions
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-1-7-2
+  name: High Chair Harnesses & Safety Straps
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-1-7-3
+  name: High Chair Trays
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-1-7-4
+  name: High Chair Footrests & Leg Wraps
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-1-7-5
+  name: High Chair Newborn & Baby Sets
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-1-8
   name: High Chairs & Booster Seats
   children:
@@ -808,6 +897,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-1-10
+  name: Kids Tables & Chair Sets
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-1-11
+  name: Learning Towers & Kitchen Helper Stools
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-1-12
+  name: Step Stools & Booster Stools
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-1-13
+  name: Toddler Chairs & Armchairs
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-2
   name: Beds & Accessories
   children:
@@ -833,7 +942,10 @@
   - other_reason
 - id: fr-2-1
   name: Bed & Bed Frame Accessories
-  children: []
+  children:
+  - fr-2-1-1
+  - fr-2-1-2
+  - fr-2-1-3
   attributes:
   - bedding_size
   - color
@@ -850,6 +962,21 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-2-1-1
+  name: Bed Risers
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-2-1-2
+  name: Bed Rails
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-2-1-3
+  name: Bed Slats
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-2-2
   name: Beds & Bed Frames
   children:
@@ -1200,7 +1327,9 @@
   - other_reason
 - id: fr-2-2-16
   name: Water Beds
-  children: []
+  children:
+  - fr-2-2-16-1
+  - fr-2-2-16-2
   attributes:
   - bed/frame_features
   - bedding_size
@@ -1220,6 +1349,16 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-2-2-16-1
+  name: Water Bed Bladders & Tubes
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-2-2-16-2
+  name: Water Bed Heaters
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-2-3
   name: Footboards
   children: []
@@ -1264,6 +1403,7 @@
   - fr-2-5-5
   - fr-2-5-7
   - fr-2-5-8
+  - fr-2-5-9
   attributes:
   - bedding_size
   - firmness
@@ -1460,6 +1600,11 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-2-5-9
+  name: Roll-Up Slat Bases
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-2-6
   name: Mattresses
   children:
@@ -1470,6 +1615,8 @@
   - fr-2-6-5
   - fr-2-6-6
   - fr-2-6-7
+  - fr-2-6-8
+  - fr-2-6-9
   attributes:
   - bedding_size
   - color
@@ -1622,12 +1769,23 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-2-6-8
+  name: Crib & Toddler Mattresses
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-2-6-9
+  name: Hybrid Mattresses
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-3
   name: Benches
   children:
   - fr-3-1
   - fr-3-2
   - fr-3-3
+  - fr-3-4
   attributes:
   - color
   - furniture/fixture_material
@@ -2286,6 +2444,11 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-3-4
+  name: Bedroom Benches
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-4
   name: Cabinets & Storage
   children:
@@ -2341,6 +2504,7 @@
   - fr-4-1-15
   - fr-4-1-16
   - fr-4-1-17
+  - fr-4-1-18
   attributes:
   - color
   - furniture/fixture_material
@@ -2665,6 +2829,11 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-4-1-18
+  name: Chifforobes
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-4-2
   name: Buffets
   children: []
@@ -3423,7 +3592,9 @@
   - other_reason
 - id: fr-4-10
   name: Media Storage Cabinets & Racks
-  children: []
+  children:
+  - fr-4-10-1
+  - fr-4-10-2
   attributes:
   - color
   - furniture/fixture_material
@@ -3439,6 +3610,16 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-4-10-1
+  name: Turntable Stands
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-4-10-2
+  name: Record Storage Crates
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-4-11
   name: Sideboards
   children: []
@@ -3469,7 +3650,11 @@
   - other_reason
 - id: fr-4-12
   name: Storage Cabinets & Lockers
-  children: []
+  children:
+  - fr-4-12-1
+  - fr-4-12-2
+  - fr-4-12-3
+  - fr-4-12-4
   attributes:
   - color
   - furniture/fixture_material
@@ -3485,11 +3670,33 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-4-12-1
+  name: Storage Cabinets
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-4-12-2
+  name: Lockers
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-4-12-3
+  name: Shoe Cabinets
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-4-12-4
+  name: Garage Storage Cabinets
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-4-13
   name: Storage Chests
   children:
   - fr-4-13-1
   - fr-4-13-2
+  - fr-4-13-3
+  - fr-4-13-4
   attributes:
   - color
   - furniture/fixture_material
@@ -3541,6 +3748,16 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-4-13-3
+  name: Storage Trunks
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-4-13-4
+  name: Blanket Chests
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-4-14
   name: Vanities
   children:
@@ -3592,7 +3809,9 @@
   - other_reason
 - id: fr-4-14-1-1
   name: Bathroom Cabinets
-  children: []
+  children:
+  - fr-4-14-1-1-1
+  - fr-4-14-1-1-2
   attributes:
   - color
   - furniture/fixture_material
@@ -3609,6 +3828,16 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-4-14-1-1-1
+  name: Tall Bathroom Cabinets
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-4-14-1-1-2
+  name: Mirrored Bathroom Cabinets
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-4-14-1-2
   name: Bathroom Vanity Sets
   children: []
@@ -3992,6 +4221,7 @@
   - fr-4-17-4
   - fr-4-17-5
   - fr-4-17-6
+  - fr-4-17-7
   attributes:
   - color
   - furniture/fixture_features
@@ -4125,6 +4355,11 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-4-17-7
+  name: Closet Panels
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-5
   name: Carts & Islands
   children:
@@ -4147,7 +4382,10 @@
   - other_reason
 - id: fr-5-1
   name: Carts
-  children: []
+  children:
+  - fr-5-1-1
+  - fr-5-1-2
+  - fr-5-1-3
   attributes:
   - color
   - furniture/fixture_material
@@ -4163,6 +4401,21 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-5-1-1
+  name: Bar Carts
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-5-1-2
+  name: Kitchen Carts
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-5-1-3
+  name: Utility & Storage Carts
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-5-2
   name: Islands
   children: []
@@ -4185,6 +4438,11 @@
   name: Chair Accessories
   children:
   - fr-6-1
+  - fr-6-2
+  - fr-6-3
+  - fr-6-4
+  - fr-6-5
+  - fr-6-6
   attributes:
   - color
   - material
@@ -4202,7 +4460,10 @@
   - other_reason
 - id: fr-6-1
   name: Hanging Chair Replacement Parts
-  children: []
+  children:
+  - fr-6-1-1
+  - fr-6-1-2
+  - fr-6-1-3
   attributes:
   - color
   - material
@@ -4218,6 +4479,46 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-6-1-1
+  name: Hanging Chair Stands & Frames
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-6-1-2
+  name: Hanging Chair Mounting Hardware
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-6-1-3
+  name: Hanging Chair Cushions & Pads
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-6-2
+  name: Chair Replacement Parts
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-6-3
+  name: Chair Armrest Pads
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-6-4
+  name: Chair Feet & Glides
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-6-5
+  name: Chair Cushions & Pads
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-6-6
+  name: Chair Casters & Wheels
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-7
   name: Chairs
   children:
@@ -4233,6 +4534,7 @@
   - fr-7-10
   - fr-7-11
   - fr-7-12
+  - fr-7-13
   attributes:
   - backrest_type
   - chair_features
@@ -4344,7 +4646,10 @@
   - other_reason
 - id: fr-7-2
   name: Bean Bag Chairs
-  children: []
+  children:
+  - fr-7-2-1
+  - fr-7-2-2
+  - fr-7-2-3
   attributes:
   - chair_features
   - color
@@ -4362,6 +4667,21 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-7-2-1
+  name: Bean Bag Loungers & Daybeds
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-7-2-2
+  name: Outdoor Bean Bag Chairs
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-7-2-3
+  name: Kids' Bean Bag Chairs
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-7-3
   name: Chaises
   children:
@@ -4495,7 +4815,11 @@
   - other_reason
 - id: fr-7-5
   name: Floor Chairs
-  children: []
+  children:
+  - fr-7-5-1
+  - fr-7-5-2
+  - fr-7-5-3
+  - fr-7-5-4
   attributes:
   - backrest_type
   - chair_features
@@ -4514,6 +4838,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-7-5-1
+  name: Meditation Chairs
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-7-5-2
+  name: Balance Ball Chairs
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-7-5-3
+  name: Kneeling Chairs
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-7-5-4
+  name: Floor Sofas & Loungers
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-7-6
   name: Folding Chairs & Stools
   children:
@@ -4625,7 +4969,8 @@
   - other_reason
 - id: fr-7-9
   name: Kitchen & Dining Room Chairs
-  children: []
+  children:
+  - fr-7-9-1
   attributes:
   - backrest_type
   - chair_features
@@ -4644,6 +4989,11 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-7-9-1
+  name: Dining Chairs
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-7-10
   name: Rocking Chairs
   children:
@@ -4760,6 +5110,7 @@
   children:
   - fr-7-12-1
   - fr-7-12-2
+  - fr-7-12-3
   attributes:
   - back_type
   - chair_features
@@ -4825,6 +5176,16 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-7-12-3
+  name: Counter Stools
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-7-13
+  name: Kids' Chairs
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-8
   name: Daybeds
   children: []
@@ -4930,7 +5291,9 @@
   - other_reason
 - id: fr-10-3
   name: Kitchen & Dining Furniture Sets
-  children: []
+  children:
+  - fr-10-3-1
+  - fr-10-3-2
   attributes:
   - color
   - furniture/fixture_features
@@ -4948,6 +5311,16 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-10-3-1
+  name: Breakfast Nook Furniture Sets
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-10-3-2
+  name: Bar & Pub Table Sets
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-10-4
   name: Living Room Furniture Sets
   children: []
@@ -4975,6 +5348,7 @@
   children:
   - fr-11-1
   - fr-11-2
+  - fr-11-3
   attributes:
   - color
   - pattern
@@ -5031,6 +5405,11 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-11-3
+  name: Futon Covers
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-12
   name: Office Furniture
   children:
@@ -5055,7 +5434,15 @@
   - other_reason
 - id: fr-12-1
   name: Desks
-  children: []
+  children:
+  - fr-12-1-1
+  - fr-12-1-2
+  - fr-12-1-3
+  - fr-12-1-4
+  - fr-12-1-5
+  - fr-12-1-6
+  - fr-12-1-7
+  - fr-12-1-8
   attributes:
   - frame_color
   - frame_material
@@ -5078,6 +5465,46 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-12-1-1
+  name: Executive Desks
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-12-1-2
+  name: Standing Desks
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-12-1-3
+  name: Writing Desks
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-12-1-4
+  name: Kids' Desks
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-12-1-5
+  name: Secretary Desks
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-12-1-6
+  name: Computer Desks
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-12-1-7
+  name: Reception Desks
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-12-1-8
+  name: Gaming Desks
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-12-2
   name: Office Chairs
   children: []
@@ -5175,7 +5602,10 @@
   - other_reason
 - id: fr-12-5
   name: Workstations & Cubicles
-  children: []
+  children:
+  - fr-12-5-1
+  - fr-12-5-2
+  - fr-12-5-3
   attributes:
   - color
   - furniture/fixture_material
@@ -5191,6 +5621,21 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-12-5-1
+  name: Mobile Workstation Carts
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-12-5-2
+  name: Office Pods & Acoustic Booths
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-12-5-3
+  name: Study Carrels
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-13
   name: Office Furniture Accessories
   children:
@@ -5248,7 +5693,13 @@
   - other_reason
 - id: fr-13-3
   name: Workstation & Cubicle Accessories
-  children: []
+  children:
+  - fr-13-3-1
+  - fr-13-3-2
+  - fr-13-3-3
+  - fr-13-3-4
+  - fr-13-3-5
+  - fr-13-3-6
   attributes:
   - color
   - pattern
@@ -5263,6 +5714,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-13-3-1
+  name: Cubicle Panel Connectors & Brackets
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-13-3-2
+  name: Desk Privacy & Acoustic Screens
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-13-3-3
+  name: Cubicle Panels
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-13-3-4
+  name: Cubicle Shelves
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-13-3-5
+  name: Cubicle Hooks & Hangers
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-13-3-6
+  name: Standing Desk Converters
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-14
   name: Ottomans
   children: []
@@ -5543,6 +6024,7 @@
   - fr-15-3-14
   - fr-15-3-15
   - fr-15-3-16
+  - fr-15-3-17
   attributes:
   - color
   - pattern
@@ -5839,6 +6321,11 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-15-3-17
+  name: Garden Stools
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-15-4
   name: Outdoor Seating
   children:
@@ -5847,6 +6334,7 @@
   - fr-15-4-3
   - fr-15-4-4
   - fr-15-4-5
+  - fr-15-4-6
   attributes:
   - color
   - pattern
@@ -5867,6 +6355,7 @@
   - fr-15-4-1-10
   - fr-15-4-1-11
   - fr-15-4-1-12
+  - fr-15-4-1-13
   attributes:
   - color
   - furniture/fixture_material
@@ -5949,6 +6438,11 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-15-4-1-13
+  name: Glider Benches
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-15-4-2
   name: Outdoor Chairs
   children:
@@ -5957,6 +6451,9 @@
   - fr-15-4-2-15
   - fr-15-4-2-16
   - fr-15-4-2-18
+  - fr-15-4-2-19
+  - fr-15-4-2-20
+  - fr-15-4-2-21
   attributes:
   - backrest_type
   - chair_features
@@ -6002,7 +6499,9 @@
   - other_reason
 - id: fr-15-4-2-9
   name: Folding Chairs
-  children: []
+  children:
+  - fr-15-4-2-9-1
+  - fr-15-4-2-9-2
   attributes:
   - backrest_type
   - chair_features
@@ -6024,6 +6523,16 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-15-4-2-9-1
+  name: Folding Beach Chairs
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-15-4-2-9-2
+  name: Folding Loveseat Chairs
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-15-4-2-15
   name: Rocking Chairs
   children: []
@@ -6092,6 +6601,21 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-15-4-2-19
+  name: Outdoor Bar & Counter Chairs
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-15-4-2-20
+  name: Adirondack Chairs
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-15-4-2-21
+  name: Outdoor Dining Chairs
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-15-4-3
   name: Outdoor Sectional Sofa Units
   children: []
@@ -6179,6 +6703,11 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-15-4-6
+  name: Outdoor Stools
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-15-5
   name: Outdoor Storage Boxes
   children: []
@@ -6210,6 +6739,8 @@
   - fr-15-6-7
   - fr-15-6-9
   - fr-15-6-11
+  - fr-15-6-12
+  - fr-15-6-13
   attributes:
   - color
   - furniture/fixture_material
@@ -6321,7 +6852,10 @@
   - other_reason
 - id: fr-15-6-7
   name: Fire Pits
-  children: []
+  children:
+  - fr-15-6-7-1
+  - fr-15-6-7-2
+  - fr-15-6-7-3
   attributes:
   - color
   - furniture/fixture_material
@@ -6337,9 +6871,28 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-15-6-7-1
+  name: Smokeless Fire Pits
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-15-6-7-2
+  name: Fire Pit Tables
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-15-6-7-3
+  name: Fire Bowls
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-15-6-9
   name: Game Tables
-  children: []
+  children:
+  - fr-15-6-9-1
+  - fr-15-6-9-2
+  - fr-15-6-9-3
+  - fr-15-6-9-4
   attributes:
   - color
   - furniture/fixture_material
@@ -6355,6 +6908,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-15-6-9-1
+  name: Outdoor Multi-Game Tables
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-15-6-9-2
+  name: Chess Tables
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-15-6-9-3
+  name: Outdoor Foosball Tables
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-15-6-9-4
+  name: Outdoor Billiard Tables
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-15-6-11
   name: Poolside Tables
   children: []
@@ -6373,10 +6946,23 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-15-6-12
+  name: Side Tables
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-15-6-13
+  name: Picnic Tables
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-16
   name: Outdoor Furniture Accessories
   children:
   - fr-16-1
+  - fr-16-2
+  - fr-16-3
+  - fr-16-4
   attributes:
   - color
   - pattern
@@ -6408,6 +6994,21 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-16-2
+  name: Outdoor Furniture Care & Maintenance
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-16-3
+  name: Outdoor Furniture Cushions
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-16-4
+  name: Outdoor Furniture Replacement Parts
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-17
   name: Room Divider Accessories
   children: []
@@ -6448,6 +7049,7 @@
   children:
   - fr-19-1
   - fr-19-2
+  - fr-19-3
   attributes:
   - color
   - furniture/fixture_material
@@ -6473,6 +7075,8 @@
   - fr-19-1-3
   - fr-19-1-4
   - fr-19-1-5
+  - fr-19-1-6
+  - fr-19-1-7
   attributes:
   - color
   - furniture/fixture_material
@@ -6593,6 +7197,16 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-19-1-6
+  name: Barrister Bookcases & Shelves
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-19-1-7
+  name: Cube Bookcases & Shelves
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-19-2
   name: Wall Shelves & Ledges
   children:
@@ -6601,6 +7215,7 @@
   - fr-19-2-3
   - fr-19-2-4
   - fr-19-2-5
+  - fr-19-2-6
   attributes:
   - color
   - furniture/fixture_material
@@ -6724,10 +7339,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-19-2-6
+  name: Picture Ledge Wall Shelves & Ledges
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-19-3
+  name: Heavy Duty & Utility Shelving
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-20
   name: Shelving Accessories
   children:
   - fr-20-1
+  - fr-20-2
+  - fr-20-3
+  - fr-20-4
+  - fr-20-5
+  - fr-20-6
+  - fr-20-7
   attributes:
   - color
   - pattern
@@ -6759,11 +7390,42 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-20-2
+  name: Shelf Pins & Pegs
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-20-3
+  name: Shelf Dividers & Organizers
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-20-4
+  name: Shelf Rails & Guards
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-20-5
+  name: Shelf Posts & Uprights
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-20-6
+  name: Shelf Liners & Covers
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-20-7
+  name: Shelf Brackets
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-21
   name: Sofa Accessories
   children:
   - fr-21-1
   - fr-21-2
+  - fr-21-3
   attributes:
   - color
   - pattern
@@ -6811,6 +7473,11 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-21-3
+  name: Sofa Legs
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-22
   name: Sofas
   children:
@@ -6819,6 +7486,7 @@
   - fr-22-4
   - fr-22-6
   - fr-22-7
+  - fr-22-8
   attributes:
   - backrest_upholstery_color
   - backrest_upholstery_material
@@ -6953,11 +7621,20 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-22-8
+  name: Bean Bag Sofas
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-23
   name: Table Accessories
   children:
   - fr-23-1
   - fr-23-2
+  - fr-23-3
+  - fr-23-4
+  - fr-23-5
+  - fr-23-6
   attributes:
   - color
   - pattern
@@ -7008,6 +7685,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-23-3
+  name: Table Cup Holders
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-23-4
+  name: Table Leaves
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-23-5
+  name: Table Casters
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-23-6
+  name: Table Bases
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-24
   name: Tables
   children:
@@ -7017,6 +7714,7 @@
   - fr-24-4
   - fr-24-5
   - fr-24-6
+  - fr-24-7
   attributes:
   - leg_color
   - leg_material
@@ -7041,6 +7739,8 @@
   - fr-24-1-1
   - fr-24-1-2
   - fr-24-1-3
+  - fr-24-1-4
+  - fr-24-1-5
   attributes:
   - leg_color
   - leg_material
@@ -7126,6 +7826,16 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-24-1-4
+  name: Console Tables
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-24-1-5
+  name: Nesting Tables
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-24-2
   name: Activity Tables
   children: []
@@ -7174,6 +7884,7 @@
   name: Kitchen & Dining Room Tables
   children:
   - fr-24-4-1
+  - fr-24-4-2
   attributes:
   - leg_color
   - leg_material
@@ -7213,6 +7924,11 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-24-4-2
+  name: Dining Tables
+  children: []
+  attributes: []
+  return_reasons: []
 - id: fr-24-5
   name: Kotatsu
   children: []
@@ -7261,3 +7977,13 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: fr-24-7
+  name: Overbed Tables
+  children: []
+  attributes: []
+  return_reasons: []
+- id: fr-25
+  name: Pedestals & Plinths
+  children: []
+  attributes: []
+  return_reasons: []
