@@ -101,6 +101,7 @@
   - fr-1-2-5
   - fr-1-2-6
   attributes:
+  - bassinet_cradle_accessory_features
   - color
   - material
   - pattern
@@ -222,6 +223,7 @@
   - crib/toddler_bed_features
   - furniture/fixture_material
   - pattern
+  - side_wall_mechanism
   return_reasons:
   - size
   - color
@@ -258,6 +260,7 @@
   - age_group
   - baby/toddler_furniture_features
   - color
+  - cradle_capacity
   - furniture/fixture_material
   - pattern
   return_reasons:
@@ -336,6 +339,7 @@
   - color
   - furniture/fixture_material
   - pattern
+  - travel_bassinet_accessories_included
   return_reasons:
   - size
   - color
@@ -380,6 +384,8 @@
   - fr-1-5-4
   attributes:
   - color
+  - compatible_crib_format
+  - crib_accessory_features
   - material
   - pattern
   return_reasons:
@@ -424,6 +430,7 @@
   attributes:
   - color
   - fabric
+  - liner_padding_type
   - pattern
   return_reasons:
   - size
@@ -443,6 +450,7 @@
   - color
   - fabric
   - pattern
+  - rail_coverage_configuration
   return_reasons:
   - size
   - color
@@ -477,6 +485,7 @@
   children: []
   attributes:
   - color
+  - crib_bumper_features
   - fabric
   - pattern
   return_reasons:
@@ -531,6 +540,8 @@
   children: []
   attributes:
   - color
+  - converted_bed_size
+  - crib_conversion_kit_components
   - material
   - pattern
   return_reasons:
@@ -567,6 +578,7 @@
   - fr-1-6-12
   attributes:
   - color
+  - convertible_configuration
   - crib/toddler_bed_features
   - furniture/fixture_material
   - pattern
@@ -624,6 +636,7 @@
   attributes:
   - color
   - furniture/fixture_material
+  - ladder_position
   - pattern
   - toddler_bed_features
   return_reasons:
@@ -827,6 +840,7 @@
   attributes:
   - baby/toddler_seat_features
   - color
+  - convertible_high_chair_modes
   - pattern
   - upholstery_material
   return_reasons:
@@ -949,6 +963,7 @@
   attributes:
   - bedding_size
   - color
+  - compatible_bed_frame_style
   - compatible_mattress_size
   - pattern
   return_reasons:
@@ -998,10 +1013,13 @@
   - fr-2-2-16
   attributes:
   - bed/frame_features
+  - bed_storage_type
   - bedding_size
+  - box_spring_requirement
   - color
   - compatible_mattress_size
   - furniture/fixture_material
+  - headboard_style
   - pattern
   return_reasons:
   - size
@@ -1017,10 +1035,14 @@
   name: Air Beds
   children: []
   attributes:
+  - air_bed_internal_construction
   - bed/frame_features
+  - bed_storage_type
   - bedding_size
   - color
   - compatible_mattress_size
+  - headboard_style
+  - included_pump_type
   - material
   - pattern
   return_reasons:
@@ -1038,12 +1060,17 @@
   children: []
   attributes:
   - bed/frame_features
+  - bed_storage_type
   - bedding_size
+  - built_in_storage_type
+  - bunk_bed_configuration
   - color
   - compatible_mattress_size
   - furniture/fixture_material
+  - headboard_style
   - lumber/wood_type
   - pattern
+  - top_bunk_access_method
   - wood_finish
   return_reasons:
   - size
@@ -1062,11 +1089,14 @@
   children: []
   attributes:
   - bed/frame_features
+  - bed_storage_type
   - bedding_size
   - color
   - compatible_mattress_size
   - furniture/fixture_material
+  - headboard_style
   - pattern
+  - under_bed_features
   return_reasons:
   - size
   - color
@@ -1082,10 +1112,12 @@
   children: []
   attributes:
   - bed/frame_features
+  - bed_storage_type
   - bedding_size
   - color
   - compatible_mattress_size
   - furniture/fixture_material
+  - headboard_style
   - pattern
   return_reasons:
   - size
@@ -1103,10 +1135,12 @@
   children: []
   attributes:
   - bed/frame_features
+  - bed_storage_type
   - bedding_size
   - color
   - compatible_mattress_size
   - furniture/fixture_material
+  - headboard_style
   - pattern
   return_reasons:
   - size
@@ -1123,10 +1157,13 @@
   children: []
   attributes:
   - bed/frame_features
+  - bed_base_type
+  - bed_storage_type
   - bedding_size
   - color
   - compatible_mattress_size
   - furniture/fixture_material
+  - headboard_style
   - pattern
   return_reasons:
   - size
@@ -1143,10 +1180,12 @@
   children: []
   attributes:
   - bed/frame_features
+  - bed_storage_type
   - bedding_size
   - color
   - compatible_mattress_size
   - furniture/fixture_material
+  - headboard_style
   - pattern
   return_reasons:
   - size
@@ -1163,11 +1202,15 @@
   name: Loft Beds & Bed Frames
   children: []
   attributes:
+  - access_mechanism
   - bed/frame_features
+  - bed_storage_type
   - bedding_size
   - color
   - compatible_mattress_size
   - furniture/fixture_material
+  - headboard_style
+  - loft_bed_height_classification
   - lumber/wood_type
   - pattern
   - wood_finish
@@ -1188,10 +1231,12 @@
   children: []
   attributes:
   - bed/frame_features
+  - bed_storage_type
   - bedding_size
   - color
   - compatible_mattress_size
   - furniture/fixture_material
+  - headboard_style
   - pattern
   return_reasons:
   - size
@@ -1208,10 +1253,13 @@
   children: []
   attributes:
   - bed/frame_features
+  - bed_storage_type
   - bedding_size
   - color
   - compatible_mattress_size
   - furniture/fixture_material
+  - furniture_finish
+  - headboard_style
   - pattern
   return_reasons:
   - size
@@ -1228,10 +1276,12 @@
   children: []
   attributes:
   - bed/frame_features
+  - bed_storage_type
   - bedding_size
   - color
   - compatible_mattress_size
   - furniture/fixture_material
+  - headboard_style
   - lumber/wood_type
   - pattern
   - wood_finish
@@ -1250,10 +1300,12 @@
   children: []
   attributes:
   - bed/frame_features
+  - bed_storage_type
   - bedding_size
   - color
   - compatible_mattress_size
   - furniture/fixture_material
+  - headboard_style
   - pattern
   return_reasons:
   - size
@@ -1270,10 +1322,12 @@
   children: []
   attributes:
   - bed/frame_features
+  - bed_storage_type
   - bedding_size
   - color
   - compatible_mattress_size
   - furniture/fixture_material
+  - headboard_style
   - pattern
   return_reasons:
   - size
@@ -1290,11 +1344,14 @@
   children: []
   attributes:
   - bed/frame_features
+  - bed_storage_type
   - bedding_size
   - color
   - compatible_mattress_size
   - furniture/fixture_material
+  - headboard_style
   - pattern
+  - trundle_mechanism
   return_reasons:
   - size
   - color
@@ -1310,10 +1367,14 @@
   children: []
   attributes:
   - bed/frame_features
+  - bed_storage_type
   - bedding_size
   - color
   - compatible_mattress_size
   - furniture/fixture_material
+  - headboard_style
+  - integrated_furniture_function
+  - lift_mechanism_type
   - pattern
   return_reasons:
   - size
@@ -1332,11 +1393,14 @@
   - fr-2-2-16-2
   attributes:
   - bed/frame_features
+  - bed_storage_type
   - bedding_size
   - color
   - compatible_mattress_size
+  - headboard_style
   - material
   - pattern
+  - waterbed_stabilization_level
   return_reasons:
   - size
   - color
@@ -1363,6 +1427,8 @@
   name: Footboards
   children: []
   attributes:
+  - footboard_mounting_type
+  - footboard_style
   - furniture/fixture_material
   return_reasons:
   - size
@@ -1410,6 +1476,7 @@
   - foundation_color
   - foundation_material
   - foundation_pattern
+  - foundation_profile
   - frame_color
   - frame_material
   - frame_pattern
@@ -1429,6 +1496,7 @@
   name: Adjustable Bases
   children: []
   attributes:
+  - adjustable_zones
   - battery_size
   - battery_type
   - bedding_size
@@ -1436,10 +1504,12 @@
   - foundation_color
   - foundation_material
   - foundation_pattern
+  - foundation_profile
   - frame_color
   - frame_material
   - frame_pattern
   - lumber/wood_type
+  - massage_feature
   - slat_color
   - slat_material
   - slat_pattern
@@ -1459,10 +1529,12 @@
   children: []
   attributes:
   - bedding_size
+  - box_spring_profile
   - firmness
   - foundation_color
   - foundation_material
   - foundation_pattern
+  - foundation_profile
   - frame_color
   - frame_material
   - frame_pattern
@@ -1487,6 +1559,7 @@
   - foundation_color
   - foundation_material
   - foundation_pattern
+  - foundation_profile
   - frame_color
   - frame_material
   - frame_pattern
@@ -1511,6 +1584,7 @@
   - foundation_color
   - foundation_material
   - foundation_pattern
+  - foundation_profile
   - frame_color
   - frame_material
   - frame_pattern
@@ -1533,8 +1607,10 @@
   - bedding_size
   - firmness
   - foundation_color
+  - foundation_configuration
   - foundation_material
   - foundation_pattern
+  - foundation_profile
   - frame_color
   - frame_material
   - frame_pattern
@@ -1556,11 +1632,14 @@
   name: Panel Bases
   children: []
   attributes:
+  - base_configuration
+  - base_storage_type
   - bedding_size
   - firmness
   - foundation_color
   - foundation_material
   - foundation_pattern
+  - foundation_profile
   - frame_color
   - frame_material
   - frame_pattern
@@ -1585,6 +1664,7 @@
   - foundation_color
   - foundation_material
   - foundation_pattern
+  - foundation_profile
   - frame_color
   - frame_material
   - frame_pattern
@@ -1619,9 +1699,11 @@
   - fr-2-6-9
   attributes:
   - bedding_size
+  - coil_system_type
   - color
   - firmness
   - mattress_features
+  - mattress_top_type
   - pattern
   return_reasons:
   - size
@@ -1642,6 +1724,7 @@
   - firmness
   - mattress_features
   - pattern
+  - recommended_sleep_position
   return_reasons:
   - size
   - too_firm
@@ -1679,6 +1762,7 @@
   - bedding_size
   - color
   - firmness
+  - innerspring_coil_type
   - mattress_features
   - pattern
   return_reasons:
@@ -1698,6 +1782,8 @@
   - bedding_size
   - color
   - firmness
+  - latex_processing_method
+  - latex_type
   - mattress_features
   - pattern
   return_reasons:
@@ -1719,7 +1805,9 @@
   - color
   - firmness
   - mattress_features
+  - memory_foam_infusion_material
   - pattern
+  - sleep_position_suitability
   return_reasons:
   - size
   - too_firm
@@ -1759,6 +1847,8 @@
   - firmness
   - mattress_features
   - pattern
+  - water_chamber_configuration
+  - water_mattress_construction
   return_reasons:
   - size
   - too_firm
@@ -1845,6 +1935,7 @@
   - frame_material
   - frame_pattern
   - seat_color
+  - seat_material
   - seat_pattern
   - seat_type
   - upholstery_color
@@ -1886,6 +1977,7 @@
   name: Banquettes
   children: []
   attributes:
+  - banquette_configuration
   - frame_color
   - frame_material
   - frame_pattern
@@ -1908,6 +2000,7 @@
   name: Booths
   children: []
   attributes:
+  - booth_configuration
   - frame_color
   - frame_material
   - frame_pattern
@@ -1977,6 +2070,7 @@
   - frame_color
   - frame_material
   - frame_pattern
+  - leg_style
   - lumber/wood_type
   - seat_type
   - upholstery_color
@@ -2356,6 +2450,7 @@
   attributes:
   - color
   - furniture/fixture_material
+  - locker_bench_configuration
   - pattern
   return_reasons:
   - size
@@ -2375,6 +2470,7 @@
   - color
   - furniture/fixture_material
   - lumber/wood_type
+  - number_of_compartments
   - pattern
   - wood_finish
   return_reasons:
@@ -2780,6 +2876,7 @@
   attributes:
   - color
   - furniture/fixture_material
+  - mirror_coverage
   - pattern
   return_reasons:
   - size
@@ -2948,6 +3045,7 @@
   name: Corner Display Cabinets
   children: []
   attributes:
+  - back_panel_type
   - color
   - furniture/fixture_material
   - pattern
@@ -3197,6 +3295,7 @@
   name: Walk-In Closets
   children: []
   attributes:
+  - closet_configuration
   - color
   - furniture/fixture_features
   - furniture/fixture_material
@@ -3217,6 +3316,7 @@
   children: []
   attributes:
   - color
+  - drawer_features
   - furniture/fixture_material
   - pattern
   return_reasons:
@@ -3254,6 +3354,7 @@
   attributes:
   - color
   - furniture/fixture_material
+  - ironing_center_features
   - pattern
   return_reasons:
   - size
@@ -3285,6 +3386,7 @@
   - fr-4-8-15
   - fr-4-8-16
   attributes:
+  - cabinet_door_style
   - color
   - furniture/fixture_material
   - pattern
@@ -3336,7 +3438,9 @@
   name: Double Doors
   children: []
   attributes:
+  - cabinet_overlay_type
   - color
+  - door_closure_mechanism
   - furniture/fixture_material
   - pattern
   return_reasons:
@@ -3353,7 +3457,9 @@
   name: Drawer Base Kitchen Cabinets
   children: []
   attributes:
+  - closing_mechanism
   - color
+  - drawer_slide_type
   - furniture/fixture_material
   - pattern
   return_reasons:
@@ -3457,6 +3563,7 @@
   attributes:
   - color
   - furniture/fixture_material
+  - oven_housing_configuration
   - pattern
   return_reasons:
   - size
@@ -3559,7 +3666,9 @@
   name: Wall Kitchen Cabinets
   children: []
   attributes:
+  - assembly_state
   - color
+  - door_hinge_position
   - furniture/fixture_material
   - pattern
   return_reasons:
@@ -3718,6 +3827,8 @@
   attributes:
   - color
   - furniture/fixture_material
+  - interior_lining_material
+  - lid_hinge_mechanism
   - pattern
   return_reasons:
   - size
@@ -3796,6 +3907,7 @@
   - color
   - furniture/fixture_material
   - pattern
+  - sink_material
   return_reasons:
   - size
   - color
@@ -3995,6 +4107,7 @@
   children: []
   attributes:
   - color
+  - faucet_hole_configuration
   - furniture/fixture_material
   - pattern
   return_reasons:
@@ -4056,8 +4169,10 @@
   name: Bedroom Vanity Sets
   children: []
   attributes:
+  - bedroom_vanity_items_included
   - color
   - furniture/fixture_material
+  - mirror_shape
   - pattern
   return_reasons:
   - size
@@ -4129,6 +4244,7 @@
   attributes:
   - color
   - furniture/fixture_material
+  - mirror_type
   - pattern
   return_reasons:
   - size
@@ -4163,6 +4279,7 @@
   attributes:
   - color
   - furniture/fixture_material
+  - mirror_configuration
   - pattern
   return_reasons:
   - size
@@ -4265,6 +4382,7 @@
   - furniture/fixture_features
   - material
   - pattern
+  - transparency_level
   return_reasons:
   - size
   - color
@@ -4387,6 +4505,7 @@
   - fr-5-1-2
   - fr-5-1-3
   attributes:
+  - caster_type
   - color
   - furniture/fixture_material
   - pattern
@@ -4536,6 +4655,7 @@
   - fr-7-12
   - fr-7-13
   attributes:
+  - armrest_type
   - backrest_type
   - chair_features
   - color
@@ -4609,6 +4729,8 @@
   - color
   - lumber/wood_type
   - pattern
+  - recliner_control_type
+  - recliner_motion_type
   - seat_type
   - upholstery_material
   - wood_finish
@@ -4929,9 +5051,12 @@
   name: Gaming Chairs
   children: []
   attributes:
+  - armrest_adjustability
   - backrest_type
   - chair_features
   - color
+  - gas_lift_class
+  - lumbar_support_type
   - pattern
   - seat_type
   - upholstery_material
@@ -5065,6 +5190,7 @@
   name: Nursery Rocking Chairs
   children: []
   attributes:
+  - accessories_included
   - backrest_type
   - chair_features
   - color
@@ -5115,8 +5241,10 @@
   - back_type
   - chair_features
   - color
+  - footrest_type
   - furniture/fixture_material
   - pattern
+  - seat_height_category
   - seat_type
   return_reasons:
   - size
@@ -5136,9 +5264,11 @@
   - back_type
   - chair_features
   - color
+  - footrest_type
   - furniture/fixture_material
   - lumber/wood_type
   - pattern
+  - seat_height_category
   - seat_type
   - wood_finish
   return_reasons:
@@ -5160,9 +5290,11 @@
   - backrest_type
   - chair_features
   - color
+  - footrest_type
   - furniture/fixture_material
   - lumber/wood_type
   - pattern
+  - seat_height_category
   - seat_type
   - wood_finish
   return_reasons:
@@ -5275,6 +5407,7 @@
   name: Bedroom Furniture Sets
   children: []
   attributes:
+  - bedroom_furniture_items_included
   - color
   - furniture/fixture_material
   - mounting_type
@@ -5329,6 +5462,7 @@
   - frame_color
   - frame_material
   - frame_pattern
+  - living_room_furniture_items_included
   - seat_type
   - upholstery_color
   - upholstery_material
@@ -5371,6 +5505,7 @@
   - bedding_size
   - color
   - furniture/fixture_material
+  - futon_frame_conversion_mechanism
   - pattern
   - suitable_space
   return_reasons:
@@ -5448,6 +5583,7 @@
   - frame_material
   - frame_pattern
   - furniture/fixture_features
+  - integrated_power_options
   - leg_color
   - leg_material
   - leg_pattern
@@ -5530,6 +5666,7 @@
   children: []
   attributes:
   - color
+  - office_furniture_items_included
   - pattern
   return_reasons:
   - size
@@ -5586,6 +5723,7 @@
   name: Conference Room Tables
   children: []
   attributes:
+  - cable_management_type
   - color
   - furniture/fixture_features
   - furniture/fixture_material
@@ -5610,6 +5748,7 @@
   - color
   - furniture/fixture_material
   - pattern
+  - privacy_or_acoustic_feature
   return_reasons:
   - size
   - color
@@ -5841,6 +5980,7 @@
   children: []
   attributes:
   - bedding_size
+  - canopy_type
   - color
   - firmness
   - mounting_type
@@ -5969,10 +6109,12 @@
   - bedding_size
   - color
   - firmness
+  - hanging_suspension_method
   - lumber/wood_type
   - mounting_type
   - outdoor_equipment_features
   - pattern
+  - suspension_material
   - wood_finish
   return_reasons:
   - size
@@ -6423,6 +6565,7 @@
   - color
   - furniture/fixture_material
   - lumber/wood_type
+  - movement_mechanism
   - outdoor_equipment_features
   - pattern
   - seat_structure
@@ -6504,11 +6647,13 @@
   - fr-15-4-2-9-2
   attributes:
   - backrest_type
+  - chair_accessories_included
   - chair_features
   - color
   - furniture/fixture_material
   - lumber/wood_type
   - pattern
+  - seat_fabric
   - seat_structure
   - seat_type
   - wood_finish
@@ -6561,6 +6706,7 @@
   attributes:
   - backrest_type
   - chair_features
+  - chair_storage_design
   - color
   - furniture/fixture_material
   - pattern
@@ -6622,6 +6768,7 @@
   attributes:
   - color
   - pattern
+  - sectional_configuration
   return_reasons:
   - size
   - color
@@ -6692,6 +6839,8 @@
   attributes:
   - color
   - pattern
+  - portability_features
+  - seating_surface_material
   return_reasons:
   - size
   - color
@@ -6858,6 +7007,7 @@
   - fr-15-6-7-3
   attributes:
   - color
+  - fire_pit_accessories_included
   - furniture/fixture_material
   - pattern
   - tabletop_shape
@@ -6934,6 +7084,7 @@
   attributes:
   - color
   - furniture/fixture_material
+  - outdoor_table_functionality
   - pattern
   - tabletop_shape
   return_reasons:
@@ -7031,6 +7182,7 @@
   children: []
   attributes:
   - color
+  - foldability
   - pattern
   - style
   return_reasons:
@@ -7428,7 +7580,9 @@
   - fr-21-3
   attributes:
   - color
+  - compatible_seating_capacity
   - pattern
+  - section_orientation_compatibility
   return_reasons:
   - size
   - color
@@ -7444,7 +7598,9 @@
   children: []
   attributes:
   - color
+  - compatible_seating_capacity
   - pattern
+  - section_orientation_compatibility
   return_reasons:
   - size
   - color
@@ -7461,7 +7617,9 @@
   children: []
   attributes:
   - color
+  - compatible_seating_capacity
   - pattern
+  - section_orientation_compatibility
   return_reasons:
   - size
   - color
@@ -7491,9 +7649,11 @@
   - backrest_upholstery_color
   - backrest_upholstery_material
   - backrest_upholstery_pattern
+  - chaise_or_sectional_orientation
   - color
   - firmness
   - pattern
+  - reclining_mechanism
   - seat_type
   - seat_upholstery_color
   - seat_upholstery_material
@@ -7517,6 +7677,7 @@
   - backrest_upholstery_color
   - backrest_upholstery_material
   - backrest_upholstery_pattern
+  - chaise_or_sectional_orientation
   - firmness
   - seat_upholstery_color
   - seat_upholstery_material
@@ -7540,6 +7701,7 @@
   - backrest_upholstery_color
   - backrest_upholstery_material
   - backrest_upholstery_pattern
+  - chaise_or_sectional_orientation
   - firmness
   - seat_upholstery_color
   - seat_upholstery_material
@@ -7563,6 +7725,7 @@
   - backrest_upholstery_color
   - backrest_upholstery_material
   - backrest_upholstery_pattern
+  - chaise_or_sectional_orientation
   - firmness
   - seat_upholstery_color
   - seat_upholstery_material
@@ -7586,10 +7749,12 @@
   - backrest_upholstery_color
   - backrest_upholstery_material
   - backrest_upholstery_pattern
+  - chaise_or_sectional_orientation
   - firmness
   - seat_upholstery_color
   - seat_upholstery_material
   - seat_upholstery_pattern
+  - sectional_shape
   - sofa_features
   return_reasons:
   - size
@@ -7609,6 +7774,7 @@
   - backrest_upholstery_color
   - backrest_upholstery_material
   - backrest_upholstery_pattern
+  - chaise_or_sectional_orientation
   - firmness
   - seat_upholstery_color
   - seat_upholstery_material
@@ -7656,6 +7822,7 @@
   - color
   - furniture/fixture_material
   - pattern
+  - table_leg_design
   return_reasons:
   - size
   - color
@@ -7745,6 +7912,7 @@
   - leg_color
   - leg_material
   - leg_pattern
+  - table_base_material
   - tabletop_color
   - tabletop_material
   - tabletop_pattern
@@ -7767,6 +7935,7 @@
   - leg_material
   - leg_pattern
   - lumber/wood_type
+  - table_base_material
   - tabletop_color
   - tabletop_material
   - tabletop_pattern
@@ -7790,6 +7959,7 @@
   - leg_material
   - leg_pattern
   - lumber/wood_type
+  - table_base_material
   - tabletop_color
   - tabletop_material
   - tabletop_pattern
@@ -7812,6 +7982,7 @@
   - leg_color
   - leg_material
   - leg_pattern
+  - table_base_material
   - tabletop_color
   - tabletop_material
   - tabletop_pattern
@@ -7843,9 +8014,11 @@
   - leg_color
   - leg_material
   - leg_pattern
+  - mobility_features
   - tabletop_color
   - tabletop_material
   - tabletop_pattern
+  - tabletop_tilt_function
   return_reasons:
   - size
   - color
@@ -7886,9 +8059,11 @@
   - fr-24-4-1
   - fr-24-4-2
   attributes:
+  - extension_mechanism
   - leg_color
   - leg_material
   - leg_pattern
+  - table_base_type
   - tabletop_color
   - tabletop_material
   - tabletop_pattern
@@ -7906,10 +8081,12 @@
   name: Console Tables
   children: []
   attributes:
+  - extension_mechanism
   - leg_color
   - leg_material
   - leg_pattern
   - lumber/wood_type
+  - table_base_type
   - tabletop_color
   - tabletop_material
   - tabletop_pattern
@@ -7959,6 +8136,7 @@
   - frame_color
   - frame_material
   - frame_pattern
+  - integrated_charging_options
   - leg_color
   - leg_material
   - leg_pattern

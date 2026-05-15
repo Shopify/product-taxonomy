@@ -168,9 +168,11 @@
   - fb-1-1-5-14
   attributes:
   - allergen_information
+  - cask_finish
   - country
   - dietary_preferences
   - dietary_supplements
+  - distillation_method
   return_reasons:
   - taste
   - dietary_requirements
@@ -185,12 +187,14 @@
   name: Absinthe
   children: []
   attributes:
+  - absinthe_accessories_included
   - absinthe_style
   - absinthe_variety
   - allergen_information
   - country
   - dietary_preferences
   - dietary_supplements
+  - distillation_method
   return_reasons:
   - taste
   - dietary_requirements
@@ -206,10 +210,12 @@
   children: []
   attributes:
   - allergen_information
+  - brandy_age_classification
   - brandy_variety
   - country
   - dietary_preferences
   - dietary_supplements
+  - distillation_method
   return_reasons:
   - taste
   - dietary_requirements
@@ -228,6 +234,7 @@
   - country
   - dietary_preferences
   - dietary_supplements
+  - distillation_method
   - gin_variety
   return_reasons:
   - taste
@@ -246,6 +253,7 @@
   - country
   - dietary_preferences
   - dietary_supplements
+  - distillation_method
   - flavor
   - liqueur_variety
   return_reasons:
@@ -266,6 +274,7 @@
   - country
   - dietary_preferences
   - dietary_supplements
+  - distillation_method
   - rum_grade
   return_reasons:
   - taste
@@ -284,9 +293,12 @@
   - fb-1-1-5-6-2
   attributes:
   - allergen_information
+  - base_ingredient
   - country
   - dietary_preferences
   - dietary_supplements
+  - distillation_method
+  - shochu_soju_variety
   - spirit_dilution
   return_reasons:
   - taste
@@ -302,9 +314,15 @@
   children: []
   attributes:
   - allergen_information
+  - base_ingredient
   - country
   - dietary_preferences
   - dietary_supplements
+  - distillation_method
+  - koji_mold_type
+  - maturation_vessel_material
+  - shochu_base_ingredient
+  - shochu_soju_variety
   - spirit_dilution
   return_reasons:
   - taste
@@ -320,9 +338,12 @@
   children: []
   attributes:
   - allergen_information
+  - base_ingredient
   - country
   - dietary_preferences
   - dietary_supplements
+  - distillation_method
+  - shochu_soju_variety
   - spirit_dilution
   return_reasons:
   - taste
@@ -337,10 +358,13 @@
   name: Tequila
   children: []
   attributes:
+  - agave_content_classification
   - allergen_information
+  - barrel_or_cask_type
   - country
   - dietary_preferences
   - dietary_supplements
+  - distillation_method
   - region
   - tequila_variety
   return_reasons:
@@ -361,7 +385,10 @@
   - country
   - dietary_preferences
   - dietary_supplements
+  - distillation_method
+  - filtration_method
   - flavor
+  - vodka_base_ingredient
   return_reasons:
   - taste
   - dietary_requirements
@@ -379,6 +406,8 @@
   - country
   - dietary_preferences
   - dietary_supplements
+  - distillation_method
+  - peat_level
   - region
   - whiskey_style
   - whiskey_variety
@@ -446,6 +475,7 @@
   children: []
   attributes:
   - allergen_information
+  - beer_based_cocktail_variety
   - beverage_product_form
   - country
   - dietary_preferences
@@ -504,6 +534,7 @@
   - allergen_information
   - base_spirit
   - beverage_product_form
+  - cocktail_type
   - country
   - dietary_preferences
   - dietary_supplements
@@ -580,7 +611,10 @@
   - country
   - dietary_preferences
   - dietary_supplements
+  - grape_variety
   - region
+  - wine_body
+  - wine_style
   - wine_sweetness
   - wine_variety
   return_reasons:
@@ -610,6 +644,7 @@
   - fb-1-2-3
   attributes:
   - allergen_information
+  - buttermilk_variety
   - dietary_preferences
   - flavor
   return_reasons:
@@ -648,6 +683,9 @@
   attributes:
   - allergen_information
   - caffeine_content
+  - coffee_bean_species
+  - coffee_beverage_variety
+  - coffee_processing_method
   - coffee_product_form
   - coffee_roast
   - country
@@ -670,9 +708,11 @@
   attributes:
   - allergen_information
   - caffeine_content
+  - coffee_bean_species
   - coffee_product_form
   - coffee_roast
   - country
+  - decaffeination_method
   - dietary_preferences
   - dietary_supplements
   - flavor
@@ -695,7 +735,9 @@
   attributes:
   - allergen_information
   - caffeine_content
+  - coffee_bean_species
   - coffee_roast
+  - compatible_coffee_pod_system
   - country
   - dietary_preferences
   - dietary_supplements
@@ -716,11 +758,13 @@
   attributes:
   - allergen_information
   - caffeine_content
+  - coffee_bean_species
   - coffee_roast
   - country
   - dietary_preferences
   - dietary_supplements
   - flavor
+  - instant_coffee_form
   return_reasons:
   - taste
   - roast_level
@@ -738,11 +782,13 @@
   attributes:
   - allergen_information
   - caffeine_content
+  - coffee_bean_species
   - coffee_roast
   - country
   - dietary_preferences
   - dietary_supplements
   - flavor
+  - milk_base_type
   return_reasons:
   - taste
   - dietary_requirements
@@ -769,6 +815,7 @@
   - dietary_supplements
   - flavor
   - package_type
+  - sugar_content_level
   return_reasons:
   - taste
   - dietary_requirements
@@ -804,6 +851,7 @@
   - dietary_supplements
   - flavor
   - package_type
+  - texture_inclusions
   return_reasons:
   - taste
   - dietary_requirements
@@ -849,6 +897,10 @@
   children: []
   attributes:
   - allergen_information
+  - cacao_bean_variety
+  - cacao_roast_level
+  - cocoa_processing_method
+  - cocoa_product_form
   - dietary_preferences
   - dietary_supplements
   return_reasons:
@@ -927,7 +979,9 @@
   - dietary_supplements
   - flavor
   - fruit_source
+  - juice_processing_method
   - package_type
+  - pulp_content
   return_reasons:
   - taste
   - consistency
@@ -1002,6 +1056,7 @@
   - fb-1-8-8
   attributes:
   - allergen_information
+  - carbonation
   - dietary_preferences
   - dietary_supplements
   return_reasons:
@@ -1018,6 +1073,7 @@
   children: []
   attributes:
   - allergen_information
+  - carbonation
   - dietary_preferences
   - dietary_supplements
   return_reasons:
@@ -1034,6 +1090,7 @@
   children: []
   attributes:
   - allergen_information
+  - carbonation
   - dietary_preferences
   - dietary_supplements
   return_reasons:
@@ -1050,6 +1107,8 @@
   children: []
   attributes:
   - allergen_information
+  - carbonation
+  - cocktail_mix_variety
   - dietary_preferences
   - dietary_supplements
   return_reasons:
@@ -1066,6 +1125,7 @@
   children: []
   attributes:
   - allergen_information
+  - carbonation
   - dietary_preferences
   - dietary_supplements
   return_reasons:
@@ -1089,6 +1149,7 @@
   - fb-1-8-5-7
   attributes:
   - allergen_information
+  - carbonation
   - dietary_preferences
   - dietary_supplements
   return_reasons:
@@ -1140,8 +1201,10 @@
   children: []
   attributes:
   - allergen_information
+  - carbonation
   - dietary_preferences
   - dietary_supplements
+  - wine_carbonation
   return_reasons:
   - taste
   - dietary_requirements
@@ -1168,6 +1231,7 @@
   - allergen_information
   - dietary_preferences
   - fat_content
+  - milk_processing_method
   return_reasons:
   - taste
   - dietary_requirements
@@ -1189,6 +1253,7 @@
   - fb-1-10-7
   attributes:
   - allergen_information
+  - barista_suitability
   - dietary_preferences
   return_reasons:
   - taste
@@ -1204,6 +1269,7 @@
   children: []
   attributes:
   - allergen_information
+  - barista_suitability
   - dietary_preferences
   return_reasons:
   - taste
@@ -1224,6 +1290,7 @@
   - fb-1-10-2-4
   attributes:
   - allergen_information
+  - barista_suitability
   - dietary_preferences
   return_reasons:
   - taste
@@ -1260,7 +1327,11 @@
   children: []
   attributes:
   - allergen_information
+  - barista_suitability
   - dietary_preferences
+  - formulation_style
+  - nutrient_fortification
+  - sweetening_type
   return_reasons:
   - taste
   - consistency
@@ -1276,6 +1347,7 @@
   children: []
   attributes:
   - allergen_information
+  - barista_suitability
   - dietary_preferences
   return_reasons:
   - taste
@@ -1292,6 +1364,7 @@
   children: []
   attributes:
   - allergen_information
+  - barista_suitability
   - dietary_preferences
   return_reasons:
   - taste
@@ -1323,6 +1396,7 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - powdered_beverage_variety
   return_reasons:
   - taste
   - dietary_requirements
@@ -1438,6 +1512,7 @@
   - dietary_supplements
   - flavor
   - tea_input_type
+  - tea_variety
   return_reasons:
   - taste
   - too_strong
@@ -1457,7 +1532,9 @@
   - dietary_preferences
   - dietary_supplements
   - flavor
+  - herbal_infusion_function
   - tea_input_type
+  - tea_variety
   return_reasons:
   - taste
   - dietary_requirements
@@ -1485,6 +1562,7 @@
   - dietary_supplements
   - flavor
   - tea_input_type
+  - tea_variety
   return_reasons:
   - taste
   - dietary_requirements
@@ -1539,10 +1617,12 @@
   children: []
   attributes:
   - allergen_information
+  - beverage_sweetness_level
   - caffeine_content
   - dietary_preferences
   - dietary_supplements
   - flavor
+  - tea_variety
   return_reasons:
   - taste
   - caffeine_level
@@ -1566,6 +1646,7 @@
   - dietary_preferences
   - dietary_supplements
   - flavor
+  - sweetener_type
   - vinegar_drink_variety
   return_reasons:
   - taste
@@ -1590,6 +1671,7 @@
   - fb-1-16-9
   attributes:
   - allergen_information
+  - container_material
   - dietary_preferences
   - dietary_supplements
   - flavor
@@ -1608,10 +1690,13 @@
   children: []
   attributes:
   - allergen_information
+  - carbonated_water_variety
+  - container_material
   - dietary_preferences
   - dietary_supplements
   - flavor
   - package_type
+  - water_source
   return_reasons:
   - taste
   - dietary_requirements
@@ -1626,10 +1711,13 @@
   children: []
   attributes:
   - allergen_information
+  - container_material
   - dietary_preferences
   - dietary_supplements
+  - distilled_water_intended_use
   - flavor
   - package_type
+  - water_purification_method
   return_reasons:
   - taste
   - dietary_requirements
@@ -1644,10 +1732,12 @@
   children: []
   attributes:
   - allergen_information
+  - container_material
   - dietary_preferences
   - dietary_supplements
   - flavor
   - package_type
+  - packaging_material
   return_reasons:
   - taste
   - dietary_requirements
@@ -1662,6 +1752,7 @@
   children: []
   attributes:
   - allergen_information
+  - container_material
   - dietary_preferences
   - dietary_supplements
   - flavor
@@ -1727,6 +1818,7 @@
   - dietary_preferences
   - flavor
   - food_product_form
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -1763,6 +1855,7 @@
   - dietary_preferences
   - flavor
   - flour/grain_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -1778,9 +1871,11 @@
   children: []
   attributes:
   - allergen_information
+  - bagel_size
   - dietary_preferences
   - flavor
   - flour/grain_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -1799,6 +1894,7 @@
   - bakery_items_included
   - dietary_preferences
   - flour/grain_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -1814,9 +1910,11 @@
   children: []
   attributes:
   - allergen_information
+  - bread_variety
   - dietary_preferences
   - flavor
   - flour/grain_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -1838,6 +1936,8 @@
   - dietary_preferences
   - flavor
   - flour/grain_type
+  - frosting_or_icing_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -1859,9 +1959,12 @@
   - fb-2-1-4-1-6
   attributes:
   - allergen_information
+  - cake_type
   - dietary_preferences
   - flavor
   - flour/grain_type
+  - frosting_or_icing_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -1912,6 +2015,8 @@
   - dietary_preferences
   - flavor
   - flour/grain_type
+  - frosting_or_icing_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -1942,9 +2047,12 @@
   children: []
   attributes:
   - allergen_information
+  - cake_shape
+  - cake_topping
   - dietary_preferences
   - flavor
   - flour/grain_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -1965,9 +2073,12 @@
   - fb-2-1-6-5
   attributes:
   - allergen_information
+  - cookie_variety
   - dietary_preferences
+  - filling_type
   - flavor
   - flour/grain_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2008,9 +2119,11 @@
   children: []
   attributes:
   - allergen_information
+  - cupcake_size
   - dietary_preferences
   - flavor
   - flour/grain_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2029,6 +2142,8 @@
   - dietary_preferences
   - flavor
   - flour/grain_type
+  - storage_requirements
+  - topping_type
   return_reasons:
   - taste
   - texture
@@ -2047,6 +2162,7 @@
   - dietary_preferences
   - flavor
   - flour/grain_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2069,6 +2185,7 @@
   - dietary_preferences
   - flavor
   - flour/grain_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2107,6 +2224,8 @@
   - dietary_preferences
   - flavor
   - flour/grain_type
+  - muffin_size
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2134,6 +2253,8 @@
   - dietary_preferences
   - flavor
   - flour/grain_type
+  - pastry_filling_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2200,6 +2321,9 @@
   - dietary_preferences
   - flavor
   - flour/grain_type
+  - pie_crust_type
+  - product_format
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2232,6 +2356,7 @@
   - allergen_information
   - dietary_preferences
   - flour/grain_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2251,6 +2376,7 @@
   - allergen_information
   - dietary_preferences
   - flour/grain_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2295,6 +2421,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - fruit_variety
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -2309,7 +2437,10 @@
   children: []
   attributes:
   - allergen_information
+  - candying_method
   - dietary_preferences
+  - fruit_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2326,6 +2457,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - fruit_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2350,6 +2483,7 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2372,8 +2506,10 @@
   - fb-2-3-1-7
   attributes:
   - allergen_information
+  - candy_texture
   - dietary_preferences
   - flavor
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2434,6 +2570,7 @@
   - country
   - dietary_preferences
   - flavor
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2510,6 +2647,7 @@
   - allergen_information
   - dietary_preferences
   - heat_level
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2526,6 +2664,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2541,8 +2680,10 @@
   children: []
   attributes:
   - allergen_information
+  - curry_variety
   - dietary_preferences
   - heat_level
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2564,6 +2705,8 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - storage_requirements
+  - topping_form
   return_reasons:
   - taste
   - texture
@@ -2581,6 +2724,9 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - fruit_topping_format
+  - storage_requirements
+  - topping_form
   return_reasons:
   - taste
   - texture
@@ -2598,6 +2744,8 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - storage_requirements
+  - topping_form
   return_reasons:
   - taste
   - texture
@@ -2624,6 +2772,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2640,6 +2789,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2656,7 +2806,12 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - honey_form
+  - honey_processing_method
+  - honey_variety
   - package_type
+  - storage_requirements
+  - usda_honey_grade
   return_reasons:
   - taste
   - texture
@@ -2672,7 +2827,9 @@
   children: []
   attributes:
   - allergen_information
+  - condiment_form
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2690,6 +2847,8 @@
   - allergen_information
   - dietary_preferences
   - heat_level
+  - sauce_product_form
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2707,6 +2866,7 @@
   - allergen_information
   - dietary_preferences
   - package_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2724,6 +2884,8 @@
   - allergen_information
   - dietary_preferences
   - heat_level
+  - recommended_food_pairing
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2740,6 +2902,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2756,6 +2919,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2774,6 +2938,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - olive_variety
+  - preservation_medium
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2789,7 +2956,10 @@
   children: []
   attributes:
   - allergen_information
+  - caper_size_grade
   - dietary_preferences
+  - preservation_medium
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2805,7 +2975,10 @@
   children: []
   attributes:
   - allergen_information
+  - curing_or_preparation_method
   - dietary_preferences
+  - preservation_medium
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2823,6 +2996,9 @@
   - allergen_information
   - dietary_preferences
   - heat_level
+  - pasta_sauce_texture
+  - pasta_sauce_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2841,6 +3017,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - pickling_method
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2868,6 +3046,8 @@
   - allergen_information
   - dietary_preferences
   - heat_level
+  - sauce_consistency
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2885,8 +3065,10 @@
   - fb-2-4-17-2
   attributes:
   - allergen_information
+  - condiment_texture
   - dietary_preferences
   - heat_level
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2913,6 +3095,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - salad_dressing_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2929,6 +3113,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2945,6 +3130,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - fermentation_method
+  - soy_sauce_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2962,6 +3150,8 @@
   - allergen_information
   - dietary_preferences
   - heat_level
+  - intended_culinary_use
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -2978,6 +3168,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
+  - syrup_variety
   return_reasons:
   - taste
   - texture
@@ -2994,6 +3186,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - sesame_seed_hull_status
+  - sesame_seed_roast_level
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3010,6 +3205,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3029,6 +3225,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - sauce_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3060,6 +3258,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3131,6 +3330,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - ingredient_processing_method
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3146,7 +3347,9 @@
   children: []
   attributes:
   - allergen_information
+  - baking_chip_form
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3162,7 +3365,9 @@
   children: []
   attributes:
   - allergen_information
+  - chocolate_form
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3180,6 +3385,9 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - flavor_intensity
+  - flavor_solvent_base
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -3196,6 +3404,7 @@
   - allergen_information
   - baking_purpose
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3212,6 +3421,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - leavening_action_type
+  - storage_requirements
   return_reasons:
   - dietary_requirements
   - changed_my_mind
@@ -3226,6 +3437,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - dietary_requirements
   - changed_my_mind
@@ -3240,6 +3452,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3260,7 +3473,9 @@
   - fb-2-5-8-5
   attributes:
   - allergen_information
+  - bean_paste_variety
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3301,7 +3516,9 @@
   children: []
   attributes:
   - allergen_information
+  - bread_crumb_base_ingredient
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3322,6 +3539,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -3338,6 +3556,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -3354,6 +3573,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -3370,6 +3590,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -3391,8 +3612,10 @@
   attributes:
   - allergen_information
   - color
+  - cookie_decorating_kit_items_included
   - dietary_preferences
   - pattern
+  - storage_requirements
   return_reasons:
   - color
   - taste
@@ -3421,6 +3644,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - oil_processing_method
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -3437,6 +3662,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - oil_processing_method
+  - refinement_level
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -3452,7 +3680,10 @@
   children: []
   attributes:
   - allergen_information
+  - coconut_oil_refinement_type
   - dietary_preferences
+  - oil_processing_method
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -3469,6 +3700,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - oil_processing_method
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -3485,6 +3718,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - oil_processing_method
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -3501,6 +3736,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - oil_processing_method
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -3517,6 +3754,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - oil_processing_method
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -3533,6 +3772,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - oil_processing_method
+  - sesame_seed_variety
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -3549,6 +3791,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - oil_processing_method
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -3565,6 +3809,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - oil_processing_method
+  - storage_requirements
+  - sunflower_oil_variety
   return_reasons:
   - taste
   - consistency
@@ -3581,6 +3828,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - oil_processing_method
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -3597,6 +3846,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - oil_processing_method
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -3613,6 +3864,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - starch_processing_type
+  - starch_source
+  - storage_requirements
   return_reasons:
   - dietary_requirements
   - changed_my_mind
@@ -3628,6 +3882,7 @@
   - allergen_information
   - cooking_wine_variety
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -3642,7 +3897,10 @@
   children: []
   attributes:
   - allergen_information
+  - corn_syrup_variety
   - dietary_preferences
+  - primary_sweetener_source
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3669,6 +3927,9 @@
   - allergen_information
   - dietary_preferences
   - flour/grain_type
+  - leavening_agent
+  - primary_dish_application
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3685,7 +3946,11 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - dough_format
   - flour/grain_type
+  - leavening_agent
+  - primary_dish_application
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3703,6 +3968,10 @@
   - allergen_information
   - dietary_preferences
   - flour/grain_type
+  - intended_consumption
+  - leavening_agent
+  - primary_dish_application
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3718,8 +3987,14 @@
   children: []
   attributes:
   - allergen_information
+  - crust_taste_profile
   - dietary_preferences
   - flour/grain_type
+  - leavening_agent
+  - pastry_crust_state
+  - pastry_crust_style
+  - primary_dish_application
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3772,6 +4047,7 @@
   - color
   - dietary_preferences
   - pattern
+  - storage_requirements
   return_reasons:
   - color
   - taste
@@ -3809,6 +4085,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - egg_component_replaced
+  - egg_replacer_main_ingredient
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3825,6 +4104,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - floss_sugar_granulation_grade
+  - floss_sugar_product_form
+  - storage_requirements
   return_reasons:
   - color
   - taste
@@ -3843,6 +4125,9 @@
   - allergen_information
   - dietary_preferences
   - flour/grain_type
+  - flour_grind_texture
+  - flour_processing_method
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3859,8 +4144,11 @@
   attributes:
   - allergen_information
   - color
+  - coloring_finish
   - dietary_preferences
+  - food_coloring_form
   - pattern
+  - storage_requirements
   return_reasons:
   - color
   - consistency
@@ -3882,6 +4170,7 @@
   - color
   - dietary_preferences
   - pattern
+  - storage_requirements
   return_reasons:
   - color
   - taste
@@ -3914,6 +4203,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - juice_form
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -3930,7 +4221,11 @@
   - allergen_information
   - color
   - dietary_preferences
+  - gelatin_or_gelling_agent_source
+  - marshmallow_processing_method
+  - marshmallow_size
   - pattern
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3947,6 +4242,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - milling_process
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3963,6 +4260,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - molasses_base_ingredient
+  - molasses_grade
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -3983,6 +4283,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - filling_consistency
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4021,6 +4323,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - fat_rendering_state
+  - hydrogenation_level
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4052,6 +4357,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - fermentation_application
+  - storage_requirements
   return_reasons:
   - dietary_requirements
   - changed_my_mind
@@ -4097,6 +4404,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -4112,6 +4420,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
+  - sugar_refinement_level
+  - sugar_source
   return_reasons:
   - taste
   - dietary_requirements
@@ -4126,7 +4437,10 @@
   children: []
   attributes:
   - allergen_information
+  - anti_caking_agent
   - dietary_preferences
+  - icing_sugar_variety
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -4145,6 +4459,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -4178,6 +4493,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
+  - syrup_base_ingredient
   return_reasons:
   - taste
   - consistency
@@ -4209,6 +4526,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -4227,6 +4545,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4242,7 +4561,9 @@
   children: []
   attributes:
   - allergen_information
+  - concentration_level
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4261,6 +4582,10 @@
   - dietary_preferences
   - food_product_form
   - gel_strength
+  - gelatin_form
+  - gelatin_source
+  - leaf_gelatin_grade
+  - storage_requirements
   return_reasons:
   - texture
   - dietary_requirements
@@ -4276,6 +4601,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - filtration_and_mother_status
+  - storage_requirements
   - vinegar_variety
   return_reasons:
   - taste
@@ -4292,6 +4619,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4312,6 +4640,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - yeast_application
   return_reasons:
   - dietary_requirements
   - changed_my_mind
@@ -4370,7 +4700,10 @@
   - fb-2-6-10
   attributes:
   - allergen_information
+  - beta_casein_variant
   - dietary_preferences
+  - milk_source_animal
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4394,7 +4727,10 @@
   - fb-2-6-1-7
   attributes:
   - allergen_information
+  - beta_casein_variant
   - dietary_preferences
+  - fat_source
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4411,7 +4747,10 @@
   children: []
   attributes:
   - allergen_information
+  - beta_casein_variant
   - dietary_preferences
+  - fat_source
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4427,8 +4766,11 @@
   children: []
   attributes:
   - allergen_information
+  - beta_casein_variant
   - dietary_preferences
+  - fat_source
   - food_product_form
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4445,7 +4787,12 @@
   children: []
   attributes:
   - allergen_information
+  - beta_casein_variant
+  - butter_variety
   - dietary_preferences
+  - fat_source
+  - milk_feeding_method
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4462,7 +4809,10 @@
   children: []
   attributes:
   - allergen_information
+  - beta_casein_variant
   - dietary_preferences
+  - fat_source
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4494,8 +4844,12 @@
   children: []
   attributes:
   - allergen_information
+  - beta_casein_variant
+  - cheese_form
+  - cheese_texture
   - country
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4511,9 +4865,11 @@
   children: []
   attributes:
   - allergen_information
+  - beta_casein_variant
   - coffee_creamer_variety
   - dietary_preferences
   - fat_content
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4529,8 +4885,11 @@
   children: []
   attributes:
   - allergen_information
+  - beta_casein_variant
+  - curd_size
   - dietary_preferences
   - fat_content
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4555,8 +4914,12 @@
   - fb-2-6-5-9
   attributes:
   - allergen_information
+  - beta_casein_variant
+  - cream_base_ingredient
+  - cream_variety
   - dietary_preferences
   - fat_content
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -4573,8 +4936,12 @@
   children: []
   attributes:
   - allergen_information
+  - beta_casein_variant
+  - cream_base_ingredient
+  - cream_variety
   - dietary_preferences
   - fat_content
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -4591,8 +4958,13 @@
   children: []
   attributes:
   - allergen_information
+  - beta_casein_variant
+  - cream_base_ingredient
+  - cream_variety
+  - dairy_heat_treatment
   - dietary_preferences
   - fat_content
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -4644,8 +5016,11 @@
   children: []
   attributes:
   - allergen_information
+  - beta_casein_variant
   - dietary_preferences
   - fat_content
+  - sour_cream_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4661,8 +5036,12 @@
   children: []
   attributes:
   - allergen_information
+  - beta_casein_variant
   - dietary_preferences
   - fat_content
+  - storage_requirements
+  - whipped_cream_base
+  - whipped_cream_form
   return_reasons:
   - taste
   - texture
@@ -4678,9 +5057,12 @@
   children: []
   attributes:
   - allergen_information
+  - beta_casein_variant
   - dietary_preferences
   - fat_content
   - flavor
+  - storage_requirements
+  - yogurt_base_ingredient
   return_reasons:
   - taste
   - texture
@@ -4720,6 +5102,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - spread_consistency
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4737,6 +5121,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - spread_consistency
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4753,6 +5139,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - spread_consistency
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4768,8 +5156,12 @@
   children: []
   attributes:
   - allergen_information
+  - cream_cheese_base
+  - cream_cheese_form
   - dietary_preferences
   - flavor
+  - spread_consistency
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4786,6 +5178,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - spread_consistency
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4802,6 +5196,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - hummus_base_ingredient
+  - spread_consistency
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4819,6 +5216,10 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - jam_and_jelly_consistency
+  - spread_consistency
+  - spread_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4835,7 +5236,11 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - nut_butter_texture
   - nut_butter_variety
+  - spread_consistency
+  - storage_requirements
+  - sweetener_presence
   return_reasons:
   - taste
   - texture
@@ -4852,6 +5257,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - spread_consistency
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4868,6 +5275,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - spread_consistency
+  - storage_requirements
+  - tapenade_main_ingredients
   return_reasons:
   - taste
   - texture
@@ -4884,6 +5294,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - spread_consistency
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4916,7 +5328,9 @@
   - allergen_information
   - color
   - dietary_preferences
+  - food_basket_items_included
   - pattern
+  - storage_requirements
   return_reasons:
   - presentation
   - assortment
@@ -4940,6 +5354,7 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4963,6 +5378,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4979,6 +5395,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -4995,6 +5412,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5011,6 +5429,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - ice_cream_format
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5027,6 +5447,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5043,6 +5464,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5075,6 +5497,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5120,7 +5543,9 @@
   children: []
   attributes:
   - allergen_information
+  - base_type
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5157,7 +5582,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - food_packing_medium
   - food_product_form
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5176,6 +5603,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - packing_medium
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5207,7 +5636,9 @@
   - fb-2-10-2-6
   attributes:
   - allergen_information
+  - cut_or_preparation_style
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5254,6 +5685,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5272,6 +5704,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - drying_method
+  - fruit_piece_form
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5298,6 +5733,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5315,6 +5751,7 @@
   - allergen_information
   - dietary_preferences
   - dry_bean_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5378,6 +5815,10 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cultivar_or_variety
+  - fruit_cut_style
+  - ripeness_stage
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5393,8 +5834,12 @@
   children: []
   attributes:
   - allergen_information
+  - apple_variety
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
+  - taste_profile
   return_reasons:
   - taste
   - texture
@@ -5410,8 +5855,11 @@
   children: []
   attributes:
   - allergen_information
+  - atemoya_cultivar
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5427,8 +5875,11 @@
   children: []
   attributes:
   - allergen_information
+  - avocado_variety
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5446,6 +5897,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5461,8 +5914,11 @@
   children: []
   attributes:
   - allergen_information
+  - banana_variety
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5485,8 +5941,11 @@
   - fb-2-10-7-6-7
   attributes:
   - allergen_information
+  - berry_species
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5539,6 +5998,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5556,6 +6017,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5571,8 +6034,11 @@
   children: []
   attributes:
   - allergen_information
+  - cherimoya_variety
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5601,6 +6067,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - seed_content
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5618,6 +6087,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - seed_content
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5635,6 +6107,10 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - kumquat_variety
+  - seed_content
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5652,6 +6128,10 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - lemon_variety
+  - seed_content
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5669,6 +6149,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - seed_content
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5686,6 +6169,10 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - lime_variety
+  - seed_content
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5703,6 +6190,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - seed_content
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5720,6 +6210,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - seed_content
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5755,8 +6248,13 @@
   children: []
   attributes:
   - allergen_information
+  - coconut_husk_status
+  - coconut_maturity_stage
+  - coconut_preparation_form
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5772,8 +6270,11 @@
   children: []
   attributes:
   - allergen_information
+  - date_variety
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5790,7 +6291,10 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - feijoa_cultivar
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5807,7 +6311,10 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - fig_variety
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5825,6 +6332,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - fruit_mix_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5842,6 +6352,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5859,6 +6371,10 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - guava_flesh_color
+  - guava_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5876,6 +6392,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5893,6 +6411,10 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - kiwifruit_variety
+  - produce_grade
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5910,6 +6432,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - longan_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5927,6 +6452,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - loquat_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5944,6 +6472,10 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - lychee_cultivar
+  - seed_size_classification
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5961,6 +6493,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5978,6 +6512,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -5995,6 +6531,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - mangosteen_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6011,7 +6550,11 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - flesh_color
   - food_product_form
+  - fruit_cut_style
+  - melon_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6029,6 +6572,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - papaya_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6046,6 +6592,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - passion_fruit_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6063,6 +6612,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - pear_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6080,6 +6632,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - persimmon_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6097,6 +6652,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - physalis_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6114,6 +6672,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6131,6 +6691,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - pitahaya_flesh_color
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6148,6 +6711,10 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - pomegranate_product_form
+  - pomegranate_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6165,6 +6732,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - quince_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6182,6 +6752,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6199,6 +6771,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - sapodillo_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6216,6 +6791,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - sapote_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6233,6 +6811,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6250,6 +6830,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - starfruit_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6273,6 +6856,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6290,6 +6875,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6305,8 +6892,11 @@
   children: []
   attributes:
   - allergen_information
+  - cherry_variety
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6324,6 +6914,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6341,6 +6933,11 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - stone_adhesion
+  - stone_fruit_cultivar
+  - stone_fruit_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6358,6 +6955,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - plumcot_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6375,6 +6975,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - plum_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6392,6 +6995,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -6409,6 +7014,9 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - fruit_cut_style
+  - storage_requirements
+  - tamarind_variety
   return_reasons:
   - taste
   - texture
@@ -6500,6 +7108,8 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6517,7 +7127,10 @@
   - allergen_information
   - cooking_method
   - dietary_preferences
+  - farming_practice
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6533,9 +7146,13 @@
   children: []
   attributes:
   - allergen_information
+  - artichoke_cut
+  - artichoke_variety
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6554,6 +7171,8 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6569,9 +7188,13 @@
   children: []
   attributes:
   - allergen_information
+  - bean_preparation
+  - bean_variety
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6587,9 +7210,12 @@
   children: []
   attributes:
   - allergen_information
+  - beet_variety
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6607,7 +7233,10 @@
   - allergen_information
   - cooking_method
   - dietary_preferences
+  - edible_plant_part
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6623,9 +7252,13 @@
   children: []
   attributes:
   - allergen_information
+  - broccoli_cut
+  - broccoli_variety
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6641,9 +7274,13 @@
   children: []
   attributes:
   - allergen_information
+  - brussel_sprout_preparation
+  - brussels_sprout_variety
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6659,9 +7296,12 @@
   children: []
   attributes:
   - allergen_information
+  - cabbage_variety
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6680,6 +7320,8 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6698,6 +7340,8 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6713,9 +7357,13 @@
   children: []
   attributes:
   - allergen_information
+  - carrot_size
+  - carrot_variety
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6731,9 +7379,12 @@
   children: []
   attributes:
   - allergen_information
+  - cauliflower_variety
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6749,9 +7400,13 @@
   children: []
   attributes:
   - allergen_information
+  - celery_form
+  - celery_variety
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6770,6 +7425,8 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6786,8 +7443,12 @@
   attributes:
   - allergen_information
   - cooking_method
+  - corn_presentation
+  - corn_variety
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6804,8 +7465,11 @@
   attributes:
   - allergen_information
   - cooking_method
+  - cucumber_variety
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6823,7 +7487,10 @@
   - allergen_information
   - cooking_method
   - dietary_preferences
+  - eggplant_variety
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6841,7 +7508,11 @@
   - allergen_information
   - cooking_method
   - dietary_preferences
+  - fennel_trimming
+  - fennel_variety
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6860,6 +7531,8 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6878,6 +7551,8 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6897,6 +7572,8 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6920,6 +7597,10 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - garlic_preparation_style
+  - garlic_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6938,6 +7619,10 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - ginger_maturity
+  - ginger_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6956,6 +7641,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - gobo_root_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -6990,8 +7678,13 @@
   attributes:
   - allergen_information
   - cooking_method
+  - cultivation_method
   - dietary_preferences
   - food_product_form
+  - greens_maturity_stage
+  - produce_washing_state
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7008,8 +7701,15 @@
   attributes:
   - allergen_information
   - cooking_method
+  - cultivation_method
   - dietary_preferences
   - food_product_form
+  - greens_maturity_stage
+  - greens_preparation_state
+  - harvest_stage
+  - produce_washing_state
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7026,8 +7726,13 @@
   attributes:
   - allergen_information
   - cooking_method
+  - cultivation_method
   - dietary_preferences
   - food_product_form
+  - greens_maturity_stage
+  - produce_washing_state
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7043,9 +7748,15 @@
   children: []
   attributes:
   - allergen_information
+  - bok_choy_variety
   - cooking_method
+  - cultivation_method
   - dietary_preferences
   - food_product_form
+  - greens_maturity_stage
+  - produce_washing_state
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7061,9 +7772,15 @@
   children: []
   attributes:
   - allergen_information
+  - chard_variety
   - cooking_method
+  - cultivation_method
   - dietary_preferences
   - food_product_form
+  - greens_maturity_stage
+  - produce_washing_state
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7079,9 +7796,15 @@
   children: []
   attributes:
   - allergen_information
+  - chicory_variety
   - cooking_method
+  - cultivation_method
   - dietary_preferences
   - food_product_form
+  - greens_maturity_stage
+  - produce_washing_state
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7097,9 +7820,15 @@
   children: []
   attributes:
   - allergen_information
+  - choy_sum_variety
   - cooking_method
+  - cultivation_method
   - dietary_preferences
   - food_product_form
+  - greens_maturity_stage
+  - produce_washing_state
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7116,8 +7845,14 @@
   attributes:
   - allergen_information
   - cooking_method
+  - cultivation_method
   - dietary_preferences
   - food_product_form
+  - greens_maturity_stage
+  - kale_variety
+  - produce_washing_state
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7134,8 +7869,14 @@
   attributes:
   - allergen_information
   - cooking_method
+  - cultivation_method
   - dietary_preferences
   - food_product_form
+  - greens_maturity_stage
+  - lettuce_variety
+  - produce_washing_state
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7152,8 +7893,13 @@
   attributes:
   - allergen_information
   - cooking_method
+  - cultivation_method
   - dietary_preferences
   - food_product_form
+  - greens_maturity_stage
+  - produce_washing_state
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7170,8 +7916,14 @@
   attributes:
   - allergen_information
   - cooking_method
+  - cultivation_method
   - dietary_preferences
   - food_product_form
+  - greens_maturity_stage
+  - leaf_preparation
+  - produce_washing_state
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7189,8 +7941,15 @@
   attributes:
   - allergen_information
   - cooking_method
+  - cultivation_method
   - dietary_preferences
   - food_product_form
+  - greens_maturity_stage
+  - produce_washing_state
+  - spinach_preparation_style
+  - spinach_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7207,8 +7966,13 @@
   attributes:
   - allergen_information
   - cooking_method
+  - cultivation_method
   - dietary_preferences
   - food_product_form
+  - greens_maturity_stage
+  - produce_washing_state
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7257,6 +8021,10 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - recommended_storage
+  - root_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7275,6 +8043,8 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7293,6 +8063,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - kohlrabi_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7311,6 +8084,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - leek_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7329,6 +8105,8 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7347,6 +8125,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - malanga_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7365,6 +8146,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - mushroom_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7383,6 +8167,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - okra_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7401,6 +8188,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - onion_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7419,6 +8209,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - parsley_root_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7437,6 +8230,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - parsnip_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7455,6 +8251,8 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7473,6 +8271,8 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7491,6 +8291,11 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - potato_cut_style
+  - potato_intended_use
+  - potato_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7509,6 +8314,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - radish_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7527,6 +8335,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - rhubarb_product_cut_type
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7545,6 +8356,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - shallot_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7563,6 +8377,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - sprout_presentation
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7581,6 +8398,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - squash_and_gourd_variety
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7599,6 +8419,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - sugar_cane_variety
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7617,6 +8440,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - sunchoke_variety
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7635,6 +8461,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - sweet_potato_variety
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7653,6 +8482,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - tamarillo_variety
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7671,6 +8503,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - taro_variety
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7689,6 +8524,8 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7709,6 +8546,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - turnip_and_rutabaga_variety
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7737,6 +8577,8 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7755,6 +8597,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - preparation_style
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7773,6 +8618,10 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - produce_growth_stage
+  - storage_requirements
+  - vegetable_preparation_style
+  - watercress_variety
   return_reasons:
   - taste
   - texture
@@ -7791,6 +8640,8 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7809,6 +8660,9 @@
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
+  - yam_variety
   return_reasons:
   - taste
   - texture
@@ -7824,9 +8678,12 @@
   children: []
   attributes:
   - allergen_information
+  - cassava_variety
   - cooking_method
   - dietary_preferences
   - food_product_form
+  - storage_requirements
+  - vegetable_preparation_style
   return_reasons:
   - taste
   - texture
@@ -7843,6 +8700,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -7882,6 +8740,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - grain_processing_method
+  - rice_grain_length
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -7898,6 +8759,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -7914,6 +8776,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -7929,7 +8792,10 @@
   children: []
   attributes:
   - allergen_information
+  - buckwheat_processing_method
+  - buckwheat_product_form
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -7948,8 +8814,10 @@
   - fb-2-11-4-3
   attributes:
   - allergen_information
+  - cereal_type
   - dietary_preferences
   - flavor
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -7981,6 +8849,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -7997,6 +8866,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - millet_processing_method
+  - millet_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8021,6 +8893,7 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8038,6 +8911,7 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - storage_requirements
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -8052,6 +8926,7 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - storage_requirements
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -8090,6 +8965,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - quinoa_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8106,6 +8983,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - rice_processing_method
+  - rice_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8122,6 +9002,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8138,6 +9019,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - grind_size
+  - storage_requirements
+  - wheat_product_form
   return_reasons:
   - taste
   - texture
@@ -8154,6 +9038,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -8200,6 +9085,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -8221,6 +9107,11 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - egg_grade
+  - egg_production_method
+  - egg_size
+  - egg_source_animal
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -8236,6 +9127,10 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - egg_production_method
+  - egg_source_animal
+  - egg_white_processing_method
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -8251,7 +9146,12 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - egg_component
+  - egg_farming_method
+  - egg_production_method
+  - egg_source_animal
   - food_product_form
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -8267,6 +9167,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - egg_production_method
+  - egg_source_animal
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -8282,6 +9185,12 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - egg_enrichment
+  - egg_processing_state
+  - egg_production_method
+  - egg_source_animal
+  - eggshell_color
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -8309,8 +9218,12 @@
   - fb-2-12-2-3
   attributes:
   - allergen_information
+  - animal_raising_method
   - dietary_preferences
   - food_product_form
+  - meat_processing_state
+  - meat_quality_grade
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8326,8 +9239,12 @@
   children: []
   attributes:
   - allergen_information
+  - animal_raising_method
+  - canned_meat_form
   - canned_meat_variety
   - dietary_preferences
+  - meat_processing_state
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8351,10 +9268,15 @@
   - fb-2-12-2-2-8
   attributes:
   - allergen_information
+  - animal_raising_method
+  - bone_content
   - cooking_method
   - cuisine
   - dietary_preferences
   - food_product_form
+  - meat_processing_state
+  - meat_raising_claim
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8372,11 +9294,18 @@
   - fb-2-12-2-2-1-2
   attributes:
   - allergen_information
+  - animal_raising_method
+  - bone_content
+  - cattle_breed
   - cooking_method
   - cuisine
   - dietary_preferences
   - food_product_form
   - meat_cut
+  - meat_processing_state
+  - meat_raising_claim
+  - raising_method
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8402,11 +9331,16 @@
   children: []
   attributes:
   - allergen_information
+  - animal_raising_method
+  - bone_content
   - cooking_method
   - cuisine
   - dietary_preferences
   - food_product_form
   - meat_cut
+  - meat_processing_state
+  - meat_raising_claim
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8422,11 +9356,16 @@
   children: []
   attributes:
   - allergen_information
+  - animal_raising_method
+  - bone_content
   - cooking_method
   - cuisine
   - dietary_preferences
   - food_product_form
   - meat_cut
+  - meat_processing_state
+  - meat_raising_claim
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8442,11 +9381,17 @@
   children: []
   attributes:
   - allergen_information
+  - animal_raising_method
+  - bone_content
   - cooking_method
   - cuisine
   - dietary_preferences
+  - farming_method
   - food_product_form
   - meat_cut
+  - meat_processing_state
+  - meat_raising_claim
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8464,11 +9409,16 @@
   - fb-2-12-2-2-5-2
   attributes:
   - allergen_information
+  - animal_raising_method
+  - bone_content
   - cooking_method
   - cuisine
   - dietary_preferences
   - food_product_form
   - meat_cut
+  - meat_processing_state
+  - meat_raising_claim
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8484,11 +9434,18 @@
   children: []
   attributes:
   - allergen_information
+  - animal_raising_method
+  - bone_content
   - cooking_method
+  - cooking_state
   - cuisine
   - dietary_preferences
   - food_product_form
   - meat_cut
+  - meat_processing_state
+  - meat_raising_claim
+  - skin_presence
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8504,11 +9461,16 @@
   children: []
   attributes:
   - allergen_information
+  - animal_raising_method
+  - bone_content
   - cooking_method
   - cuisine
   - dietary_preferences
   - food_product_form
   - meat_cut
+  - meat_processing_state
+  - meat_raising_claim
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8542,8 +9504,12 @@
   - fb-2-12-2-3-3
   attributes:
   - allergen_information
+  - animal_raising_method
+  - deli_meat_variety
   - dietary_preferences
   - food_product_form
+  - meat_processing_state
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8579,6 +9545,10 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - seafood_cut
+  - seafood_processing_method
+  - seafood_source
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8595,7 +9565,10 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - harvest_method
+  - seafood_source
   - seafood_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8615,7 +9588,9 @@
   - cuisine
   - dietary_preferences
   - food_product_form
+  - seafood_source
   - seafood_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8644,6 +9619,9 @@
   - dietary_preferences
   - nut/seed_type
   - nut_processing_method
+  - salt_level
+  - shell_hull_status
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -8661,6 +9639,7 @@
   - dietary_preferences
   - food_product_form
   - pasta_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8682,6 +9661,8 @@
   - dietary_preferences
   - food_product_form
   - heating_instructions
+  - meal_course
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8704,6 +9685,9 @@
   - dietary_preferences
   - food_product_form
   - heating_instructions
+  - meal_course
+  - serving_temperature
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8737,6 +9721,9 @@
   - dietary_preferences
   - food_product_form
   - heating_instructions
+  - meal_course
+  - meal_preparation_state
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8768,6 +9755,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - seasoning_variety
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -8786,6 +9775,7 @@
   - food_product_form
   - material_treatment
   - plant_material
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -8801,6 +9791,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -8817,6 +9808,8 @@
   - allergen_information
   - dietary_preferences
   - food_product_form
+  - pepper_variety
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -8832,6 +9825,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - iodization
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -8848,6 +9843,7 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - storage_requirements
   return_reasons:
   - taste
   - dietary_requirements
@@ -8907,6 +9903,7 @@
   - dietary_preferences
   - flavor
   - food_product_form
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8922,7 +9919,9 @@
   children: []
   attributes:
   - allergen_information
+  - breadstick_style
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8942,7 +9941,11 @@
   - fb-2-17-2-4
   attributes:
   - allergen_information
+  - bar_coating
+  - bar_texture
   - dietary_preferences
+  - protein_source
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8958,8 +9961,14 @@
   children: []
   attributes:
   - allergen_information
+  - bar_coating
+  - bar_texture
+  - cereal_bar_texture
+  - coating_type
   - dietary_preferences
   - flavor
+  - protein_source
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -8975,7 +9984,11 @@
   children: []
   attributes:
   - allergen_information
+  - bar_coating
+  - bar_texture
   - dietary_preferences
+  - protein_source
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9001,7 +10014,9 @@
   children: []
   attributes:
   - allergen_information
+  - cheese_variety
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9017,8 +10032,10 @@
   children: []
   attributes:
   - allergen_information
+  - chip_cut_style
   - dietary_preferences
   - flavor
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9036,6 +10053,7 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9053,6 +10071,7 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9072,6 +10091,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - fruit_snack_form
+  - snack_processing_method
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9105,7 +10127,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - jerky_form
   - meat_type
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9136,6 +10160,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - popcorn_form
+  - popcorn_kernel_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9172,6 +10199,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - pork_rind_form
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9189,6 +10218,9 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - pretzel_coating
+  - pretzel_shape
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9208,6 +10240,8 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - gelling_agent
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9235,6 +10269,7 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9251,6 +10286,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - salad_topping_base_ingredient
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9268,6 +10305,8 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - snack_texture
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9285,6 +10324,7 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9305,6 +10345,7 @@
   - allergen_information
   - dietary_preferences
   - flavor
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9340,6 +10381,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - snack_mix_variety
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9396,6 +10439,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - soup_or_broth_variety
+  - storage_requirements
   return_reasons:
   - taste
   - consistency
@@ -9422,6 +10467,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9437,7 +10483,10 @@
   children: []
   attributes:
   - allergen_information
+  - cheese_alternative_form
   - dietary_preferences
+  - primary_plant_base
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9459,6 +10508,9 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - preparation_state
+  - primary_plant_protein_source
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9500,6 +10552,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9516,6 +10569,7 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
   return_reasons:
   - taste
   - texture
@@ -9536,6 +10590,8 @@
   attributes:
   - allergen_information
   - dietary_preferences
+  - storage_requirements
+  - tofu_preparation_style
   return_reasons:
   - taste
   - texture
@@ -9617,6 +10673,8 @@
   name: Chewing Tobacco
   children: []
   attributes:
+  - chewing_tobacco_form
+  - strength_classification
   - tobacco_type
   return_reasons:
   - flavor
@@ -9631,6 +10689,9 @@
   name: Cigarettes
   children: []
   attributes:
+  - cigarette_filter_type
+  - cigarette_size
+  - cigarette_strength_descriptor
   - tobacco_type
   return_reasons:
   - flavor
@@ -9646,6 +10707,7 @@
   children: []
   attributes:
   - cigar_body
+  - cigar_wrapper_color
   return_reasons:
   - flavor
   - nicotine_strength
@@ -9664,6 +10726,9 @@
   - fb-3-5-4
   - fb-3-5-5
   attributes:
+  - tobacco_application
+  - tobacco_cut_type
+  - tobacco_strength
   - tobacco_type
   return_reasons:
   - flavor
@@ -9710,8 +10775,10 @@
   - fb-3-6-4
   attributes:
   - color
+  - compatible_pipe_filter_size
   - pattern
   - pipe_shape
+  - stem_material
   - tobacco_type
   return_reasons:
   - color
@@ -9755,6 +10822,8 @@
   - fb-3-7-6
   attributes:
   - coil_connection
+  - coil_material
+  - coil_type
   - color
   - e_cigarette/vaporizer_style
   - e_liquid_flavor
@@ -9777,6 +10846,7 @@
   - color
   - e_liquid_flavor
   - e_liquid_variety
+  - nicotine_source
   - pattern
   - vg/pg_ratio
   return_reasons:
@@ -9817,10 +10887,13 @@
   attributes:
   - battery_size
   - battery_type
+  - cartridge_thread_compatibility
   - coil_connection
   - color
+  - compatible_vaporizing_material
   - e_cigarette/vaporizer_style
   - e_liquid_flavor
+  - heating_technology
   - pattern
   - vaping_style
   return_reasons:
@@ -9882,8 +10955,12 @@
   - fb-3-8-2
   - fb-3-8-3
   attributes:
+  - burn_rate
   - color
   - pattern
+  - rolling_paper_format
+  - rolling_paper_gum_type
+  - rolling_paper_size
   return_reasons:
   - size
   - flavor
