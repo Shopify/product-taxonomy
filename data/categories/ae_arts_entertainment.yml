@@ -982,7 +982,10 @@
 - id: ae-2-1-2-2-7
   name: Buckles
   children: []
-  attributes: []
+  attributes:
+  - color
+  - fastener_material
+  - pattern
   return_reasons: []
 - id: ae-2-1-2-3
   name: Craft Paint, Ink & Glaze
@@ -4590,7 +4593,18 @@
 - id: ae-2-1-2-14-1-1-4
   name: Needlepoint Canvas
   children: []
-  attributes: []
+  attributes:
+  - color
+  - fabric_cut_format
+  - material
+  - needlecraft_fabric_composition
+  - needlecraft_stitching_coverage
+  - number_of_needlecraft_fabrics
+  - paper_size
+  - pattern
+  - stretch_level
+  - textile_finish_treatment
+  - water_resistance_level
   return_reasons: []
 - id: ae-2-1-2-14-1-2
   name: Painting Canvas
@@ -5462,12 +5476,28 @@
 - id: ae-2-1-2-17-1-1-6
   name: Rapeseed & Canola Wax
   children: []
-  attributes: []
+  attributes:
+  - candle_dye_form
+  - color
+  - olfactory_arts_material_form
+  - pattern
+  - scent
+  - wax_blend_composition
+  - wax_physical_form
+  - wax_recommended_candle_application
   return_reasons: []
 - id: ae-2-1-2-17-1-1-7
   name: Coconut Wax
   children: []
-  attributes: []
+  attributes:
+  - candle_dye_form
+  - color
+  - olfactory_arts_material_form
+  - pattern
+  - scent
+  - wax_blend_composition
+  - wax_physical_form
+  - wax_recommended_candle_application
   return_reasons: []
 - id: ae-2-1-2-17-1-2
   name: Wick Tabs
@@ -5588,27 +5618,50 @@
 - id: ae-2-1-2-17-1-3-3
   name: Wick Spools
   children: []
-  attributes: []
+  attributes:
+  - candle_dye_form
+  - material
+  - olfactory_arts_material_form
+  - wick_construction_type
   return_reasons: []
 - id: ae-2-1-2-17-1-3-4
   name: Cored Wicks
   children: []
-  attributes: []
+  attributes:
+  - candle_dye_form
+  - material
+  - olfactory_arts_material_form
+  - wick_construction_type
   return_reasons: []
 - id: ae-2-1-2-17-1-4
   name: Candle Fragrance Additives
   children: []
-  attributes: []
+  attributes:
+  - candle_dye_form
+  - candle_fragrance_form
+  - color
+  - olfactory_arts_material_form
+  - pattern
   return_reasons: []
 - id: ae-2-1-2-17-1-5
   name: Candle Dyes & Colorants
   children: []
-  attributes: []
+  attributes:
+  - candle_dye_form
+  - candle_fragrance_form
+  - color
+  - olfactory_arts_material_form
+  - pattern
   return_reasons: []
 - id: ae-2-1-2-17-1-6
   name: Candle Making Additives
   children: []
-  attributes: []
+  attributes:
+  - candle_dye_form
+  - candle_fragrance_form
+  - color
+  - olfactory_arts_material_form
+  - pattern
   return_reasons: []
 - id: ae-2-1-2-17-2
   name: Perfumery Ingredients
@@ -5675,7 +5728,8 @@
 - id: ae-2-1-2-17-3
   name: Incense Making Materials
   children: []
-  attributes: []
+  attributes:
+  - olfactory_arts_material_form
   return_reasons: []
 - id: ae-2-1-3
   name: Art & Crafting Tool Accessories
@@ -7303,12 +7357,18 @@
 - id: ae-2-1-4-6-11
   name: Measuring Tapes
   children: []
-  attributes: []
+  attributes:
+  - color
+  - construction
+  - pattern
   return_reasons: []
 - id: ae-2-1-4-6-13
   name: Protractors
   children: []
-  attributes: []
+  attributes:
+  - color
+  - construction
+  - pattern
   return_reasons: []
 - id: ae-2-1-4-7
   name: Cutting Mats
@@ -9345,12 +9405,24 @@
 - id: ae-2-1-5-4
   name: Bead & Jewelry Organizers
   children: []
-  attributes: []
+  attributes:
+  - accessory_size
+  - color
+  - craft_organizer_storage_features
+  - material
+  - number_of_compartments
+  - pattern
   return_reasons: []
 - id: ae-2-1-5-5
   name: Craft Storage Boxes & Cases
   children: []
-  attributes: []
+  attributes:
+  - accessory_size
+  - color
+  - craft_organizer_storage_features
+  - material
+  - number_of_compartments
+  - pattern
   return_reasons: []
 - id: ae-2-1-6
   name: Crafting Patterns & Molds
@@ -9745,17 +9817,29 @@
 - id: ae-2-1-7-1
   name: Sewing Interfacing & Stabilizers
   children: []
-  attributes: []
+  attributes:
+  - color
+  - fabric
+  - fastener_material
+  - pattern
   return_reasons: []
 - id: ae-2-1-7-2
   name: Garment Fabric
   children: []
-  attributes: []
+  attributes:
+  - color
+  - fabric
+  - fastener_material
+  - pattern
   return_reasons: []
 - id: ae-2-1-7-3
   name: Sewing Notions & Fasteners
   children: []
-  attributes: []
+  attributes:
+  - color
+  - fabric
+  - fastener_material
+  - pattern
   return_reasons: []
 - id: ae-2-2
   name: Collectibles
@@ -11935,17 +12019,20 @@
 - id: ae-2-3-5
   name: Fermentation Equipment
   children: []
-  attributes: []
+  attributes:
+  - equipment_contact_material_brew_wine
   return_reasons: []
 - id: ae-2-3-6
   name: Brewing & Winemaking Cleaning & Sanitizing
   children: []
-  attributes: []
+  attributes:
+  - equipment_contact_material_brew_wine
   return_reasons: []
 - id: ae-2-3-7
   name: Bottling & Packaging Supplies
   children: []
-  attributes: []
+  attributes:
+  - equipment_contact_material_brew_wine
   return_reasons: []
 - id: ae-2-4
   name: Juggling
@@ -12988,12 +13075,16 @@
 - id: ae-2-7-1-6-1
   name: Brass Instrument Harnesses
   children: []
-  attributes: []
+  attributes:
+  - instrument_accessory_material
+  - instrument_support_type
   return_reasons: []
 - id: ae-2-7-1-6-2
   name: Brass Instrument Stands
   children: []
-  attributes: []
+  attributes:
+  - instrument_accessory_material
+  - instrument_support_type
   return_reasons: []
 - id: ae-2-7-2
   name: Conductor Batons
@@ -14319,12 +14410,28 @@
 - id: ae-2-7-12-5-3-6
   name: Hi-Hat Pedals
   children: []
-  attributes: []
+  attributes:
+  - compatible_drum_configuration
+  - drum_hardware_adjustability
+  - drum_hardware_material
+  - drum_pedal_accessories_included
+  - drum_pedal_baseplate_type
+  - drum_pedal_cam_type
+  - drum_pedal_clamp_type
+  - footboard_type
   return_reasons: []
 - id: ae-2-7-12-5-3-7
   name: Electronic Kick Drum Trigger Pedals
   children: []
-  attributes: []
+  attributes:
+  - compatible_drum_configuration
+  - drum_hardware_adjustability
+  - drum_hardware_material
+  - drum_pedal_accessories_included
+  - drum_pedal_baseplate_type
+  - drum_pedal_cam_type
+  - drum_pedal_clamp_type
+  - footboard_type
   return_reasons: []
 - id: ae-2-7-12-6
   name: Drum Stick & Brush Accessories
@@ -14367,7 +14474,17 @@
 - id: ae-2-7-12-6-2
   name: Drum Stick & Brush Holder Mounts
   children: []
-  attributes: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - brush_material
+  - care_instructions
+  - carry_options
+  - closure_type
+  - mounting_attachment_method
+  - mounting_method
   return_reasons: []
 - id: ae-2-7-12-7
   name: Drum Sticks & Brushes
@@ -15088,7 +15205,14 @@
 - id: ae-2-7-13-1-7-3
   name: Thumb Picks
   children: []
-  attributes: []
+  attributes:
+  - color
+  - grip_texture
+  - instrument_accessory_material
+  - pattern
+  - pick_design
+  - pick_grip_aid
+  - thickness_type
   return_reasons: []
 - id: ae-2-7-13-1-8
   name: Guitar Slides
@@ -17080,7 +17204,14 @@
 - id: ae-2-7-14-7-4-1-5
   name: Bass Saxophone Mouthpieces
   children: []
-  attributes: []
+  attributes:
+  - chamber_size
+  - compatible_reed_type
+  - compatible_saxophone_size
+  - facing_length
+  - instrument_accessory_material
+  - saxophone_mouthpiece_baffle_type
+  - tip_opening
   return_reasons: []
 - id: ae-2-7-14-7-4-2
   name: Saxophone Necks
@@ -18286,17 +18417,23 @@
 - id: ae-2-8-5-2-8
   name: Bell Cymbals
   children: []
-  attributes: []
+  attributes:
+  - cymbal_weight_class
+  - instrument_material
   return_reasons: []
 - id: ae-2-8-5-2-9
   name: Stack Cymbals
   children: []
-  attributes: []
+  attributes:
+  - cymbal_weight_class
+  - instrument_material
   return_reasons: []
 - id: ae-2-8-5-2-10
   name: Hi-Hat Cymbals
   children: []
-  attributes: []
+  attributes:
+  - cymbal_weight_class
+  - instrument_material
   return_reasons: []
 - id: ae-2-8-5-3
   name: Drum Kits
@@ -18510,12 +18647,26 @@
 - id: ae-2-8-5-3-10
   name: Marching Drum Kits
   children: []
-  attributes: []
+  attributes:
+  - drum_configuration
+  - drum_kit_included_items
+  - drum_kit_portability
+  - drum_shell_material
+  - instrument_material
+  - lumber/wood_type
+  - wood_finish
   return_reasons: []
 - id: ae-2-8-5-3-11
   name: Shell Packs
   children: []
-  attributes: []
+  attributes:
+  - drum_configuration
+  - drum_kit_included_items
+  - drum_kit_portability
+  - drum_shell_material
+  - instrument_material
+  - lumber/wood_type
+  - wood_finish
   return_reasons: []
 - id: ae-2-8-5-4
   name: Electronic Drums
@@ -20233,12 +20384,28 @@
 - id: ae-2-8-5-10-4
   name: Acrylic Snare Drums
   children: []
-  attributes: []
+  attributes:
+  - instrument_material
+  - lumber/wood_type
+  - snare_drum_bearing_edge_profile
+  - snare_drum_finish_type
+  - snare_drum_hoop_type
+  - snare_drum_mounting_type
+  - snare_drum_strainer_type
+  - wood_finish
   return_reasons: []
 - id: ae-2-8-5-10-5
   name: Marching Snare Drums
   children: []
-  attributes: []
+  attributes:
+  - instrument_material
+  - lumber/wood_type
+  - snare_drum_bearing_edge_profile
+  - snare_drum_finish_type
+  - snare_drum_hoop_type
+  - snare_drum_mounting_type
+  - snare_drum_strainer_type
+  - wood_finish
   return_reasons: []
 - id: ae-2-8-5-11
   name: Tom-Toms
@@ -21552,12 +21719,34 @@
 - id: ae-2-8-8-3-5
   name: Contra-alto Flutes
   children: []
-  attributes: []
+  attributes:
+  - flute_configuration
+  - flute_footjoint_type
+  - flute_key_system
+  - flute_keywork_material
+  - flute_offset_g
+  - flute_wall_thickness
+  - headjoint_cut
+  - instrument/accessory_finish
+  - instrument_material
+  - lumber/wood_type
+  - wood_finish
   return_reasons: []
 - id: ae-2-8-8-3-6
   name: Contrabass Flutes
   children: []
-  attributes: []
+  attributes:
+  - flute_configuration
+  - flute_footjoint_type
+  - flute_key_system
+  - flute_keywork_material
+  - flute_offset_g
+  - flute_wall_thickness
+  - headjoint_cut
+  - instrument/accessory_finish
+  - instrument_material
+  - lumber/wood_type
+  - wood_finish
   return_reasons: []
 - id: ae-2-8-8-4
   name: Flutophones

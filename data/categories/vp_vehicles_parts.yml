@@ -320,17 +320,38 @@
 - id: vp-1-2-6-1
   name: EV Battery Cells
   children: []
-  attributes: []
+  attributes:
+  - battery_size
+  - battery_type
+  - battery_voltage_class
+  - ev_battery_features
+  - ev_battery_type
+  - item_condition
+  - manufacturer_type
   return_reasons: []
 - id: vp-1-2-6-2
   name: EV Battery Packs
   children: []
-  attributes: []
+  attributes:
+  - battery_size
+  - battery_type
+  - battery_voltage_class
+  - ev_battery_features
+  - ev_battery_type
+  - item_condition
+  - manufacturer_type
   return_reasons: []
 - id: vp-1-2-6-3
   name: EV Battery Modules
   children: []
-  attributes: []
+  attributes:
+  - battery_size
+  - battery_type
+  - battery_voltage_class
+  - ev_battery_features
+  - ev_battery_type
+  - item_condition
+  - manufacturer_type
   return_reasons: []
 - id: vp-1-2-7
   name: Power Inverters
@@ -2271,22 +2292,54 @@
 - id: vp-1-4-4-7
   name: Steering Tie Rods
   children: []
-  attributes: []
+  attributes:
+  - color
+  - handbrake_actuation_type
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - pattern
+  - steering_component_drive_type
+  - vehicle_steering_assist_type
   return_reasons: []
 - id: vp-1-4-4-8
   name: Steering Drag Links
   children: []
-  attributes: []
+  attributes:
+  - color
+  - handbrake_actuation_type
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - pattern
+  - steering_component_drive_type
+  - vehicle_steering_assist_type
   return_reasons: []
 - id: vp-1-4-4-9
   name: Steering Gears
   children: []
-  attributes: []
+  attributes:
+  - color
+  - handbrake_actuation_type
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - pattern
+  - steering_component_drive_type
+  - vehicle_steering_assist_type
   return_reasons: []
 - id: vp-1-4-4-10
   name: Steering Stabilizers
   children: []
-  attributes: []
+  attributes:
+  - color
+  - handbrake_actuation_type
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - pattern
+  - steering_component_drive_type
+  - vehicle_steering_assist_type
   return_reasons: []
 - id: vp-1-4-5
   name: Motor Vehicle Engine Oil Circulation
@@ -2487,17 +2540,38 @@
 - id: vp-1-4-5-9
   name: Oil Pickup Tubes & Screens
   children: []
-  attributes: []
+  attributes:
+  - color
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - oil_system_connection_thread_standard
+  - pattern
+  - vehicle_oil_features
   return_reasons: []
 - id: vp-1-4-5-10
   name: Oil Filter Housings & Adapters
   children: []
-  attributes: []
+  attributes:
+  - color
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - oil_system_connection_thread_standard
+  - pattern
+  - vehicle_oil_features
   return_reasons: []
 - id: vp-1-4-5-11
   name: Oil Cooler Lines & Hoses
   children: []
-  attributes: []
+  attributes:
+  - color
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - oil_system_connection_thread_standard
+  - pattern
+  - vehicle_oil_features
   return_reasons: []
 - id: vp-1-4-6
   name: Motor Vehicle Engine Parts
@@ -3084,27 +3158,82 @@
 - id: vp-1-4-8-1
   name: Motor Vehicle Exhaust Hardware
   children: []
-  attributes: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - exhaust_installation_position
+  - exhaust_outlet_configuration
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - motor_vehicle_type
+  - pattern
+  - vehicle_exhaust_type
   return_reasons: []
 - id: vp-1-4-8-2
   name: Motor Vehicle Catalytic Converters
   children: []
-  attributes: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - exhaust_installation_position
+  - exhaust_outlet_configuration
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - motor_vehicle_type
+  - pattern
+  - vehicle_exhaust_type
   return_reasons: []
 - id: vp-1-4-8-3
   name: Motor Vehicle Exhaust Tips
   children: []
-  attributes: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - exhaust_installation_position
+  - exhaust_outlet_configuration
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - motor_vehicle_type
+  - pattern
+  - vehicle_exhaust_type
   return_reasons: []
 - id: vp-1-4-8-4
   name: Motor Vehicle Exhaust Pipes & Tubings
   children: []
-  attributes: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - exhaust_installation_position
+  - exhaust_outlet_configuration
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - motor_vehicle_type
+  - pattern
+  - vehicle_exhaust_type
   return_reasons: []
 - id: vp-1-4-8-5
   name: Motor Vehicle Mufflers
   children: []
-  attributes: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - exhaust_installation_position
+  - exhaust_outlet_configuration
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - motor_vehicle_type
+  - pattern
+  - vehicle_exhaust_type
   return_reasons: []
 - id: vp-1-4-9
   name: Motor Vehicle Frame & Body Parts
@@ -3610,22 +3739,46 @@
 - id: vp-1-4-10-9
   name: Fuel Rails
   children: []
-  attributes: []
+  attributes:
+  - color
+  - fuel_supply
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - pattern
   return_reasons: []
 - id: vp-1-4-10-10
   name: Fuel System Kits
   children: []
-  attributes: []
+  attributes:
+  - color
+  - fuel_supply
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - pattern
   return_reasons: []
 - id: vp-1-4-10-11
   name: Fuel Filler Necks
   children: []
-  attributes: []
+  attributes:
+  - color
+  - fuel_supply
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - pattern
   return_reasons: []
 - id: vp-1-4-10-12
   name: Fuel Sending Units
   children: []
-  attributes: []
+  attributes:
+  - color
+  - fuel_supply
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - pattern
   return_reasons: []
 - id: vp-1-4-11
   name: Motor Vehicle Interior Fittings
@@ -4706,22 +4859,54 @@
 - id: vp-1-4-16-16
   name: Camshaft Position Sensors
   children: []
-  attributes: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - gauge_type
+  - item_condition
+  - manufacturer_type
+  - pattern
+  - sensor_or_gauge_mounting_location
   return_reasons: []
 - id: vp-1-4-16-17
   name: Tire Pressure Monitoring System (TPMS) Sensors
   children: []
-  attributes: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - gauge_type
+  - item_condition
+  - manufacturer_type
+  - pattern
+  - sensor_or_gauge_mounting_location
   return_reasons: []
 - id: vp-1-4-16-18
   name: Throttle Position Sensors
   children: []
-  attributes: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - gauge_type
+  - item_condition
+  - manufacturer_type
+  - pattern
+  - sensor_or_gauge_mounting_location
   return_reasons: []
 - id: vp-1-4-16-19
   name: Crankshaft Position Sensors
   children: []
-  attributes: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - gauge_type
+  - item_condition
+  - manufacturer_type
+  - pattern
+  - sensor_or_gauge_mounting_location
   return_reasons: []
 - id: vp-1-4-17
   name: Motor Vehicle Suspension Parts
@@ -4937,17 +5122,38 @@
 - id: vp-1-4-17-9
   name: Suspension Lift Kits
   children: []
-  attributes: []
+  attributes:
+  - color
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - motor_vehicle_placement
+  - pattern
+  - vehicle_suspension_features
   return_reasons: []
 - id: vp-1-4-17-10
   name: Strut Mounts
   children: []
-  attributes: []
+  attributes:
+  - color
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - motor_vehicle_placement
+  - pattern
+  - vehicle_suspension_features
   return_reasons: []
 - id: vp-1-4-17-11
   name: Track Bars
   children: []
-  attributes: []
+  attributes:
+  - color
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - motor_vehicle_placement
+  - pattern
+  - vehicle_suspension_features
   return_reasons: []
 - id: vp-1-4-18
   name: Motor Vehicle Towing
@@ -5903,22 +6109,58 @@
 - id: vp-1-4-20-4-1
   name: Wheel Spacers & Adapters
   children: []
-  attributes: []
+  attributes:
+  - color
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - pattern
+  - tire_speed_rating
+  - vehicle_drive/handling_features
+  - wheel_fastener_seat_type
+  - wheel_part_type
   return_reasons: []
 - id: vp-1-4-20-4-2
   name: Wheel Fasteners & Locks
   children: []
-  attributes: []
+  attributes:
+  - color
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - pattern
+  - tire_speed_rating
+  - vehicle_drive/handling_features
+  - wheel_fastener_seat_type
+  - wheel_part_type
   return_reasons: []
 - id: vp-1-4-20-4-3
   name: Wheel Weights & Balancing
   children: []
-  attributes: []
+  attributes:
+  - color
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - pattern
+  - tire_speed_rating
+  - vehicle_drive/handling_features
+  - wheel_fastener_seat_type
+  - wheel_part_type
   return_reasons: []
 - id: vp-1-4-20-4-4
   name: Wheel Bearings & Hubs
   children: []
-  attributes: []
+  attributes:
+  - color
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - pattern
+  - tire_speed_rating
+  - vehicle_drive/handling_features
+  - wheel_fastener_seat_type
+  - wheel_part_type
   return_reasons: []
 - id: vp-1-4-21
   name: Motor Vehicle Window Parts & Accessories
@@ -6415,7 +6657,15 @@
 - id: vp-1-4-23-1
   name: Engine Air Filters
   children: []
-  attributes: []
+  attributes:
+  - color
+  - fit_type
+  - item_condition
+  - item_material
+  - manufacturer_type
+  - material
+  - pattern
+  - vehicle_type
   return_reasons: []
 - id: vp-1-5
   name: Vehicle Maintenance, Care & Decor
@@ -8490,12 +8740,24 @@
 - id: vp-1-5-7-9-1-6
   name: Mount-Demount Bars
   children: []
-  attributes: []
+  attributes:
+  - color
+  - features
+  - pattern
+  - power_source
+  - tire_changer_operation_type
+  - vehicle_type
   return_reasons: []
 - id: vp-1-5-7-9-1-7
   name: Rim Protectors
   children: []
-  attributes: []
+  attributes:
+  - color
+  - features
+  - pattern
+  - power_source
+  - tire_changer_operation_type
+  - vehicle_type
   return_reasons: []
 - id: vp-1-5-7-9-2
   name: Tire Repair Kits
@@ -9022,7 +9284,26 @@
 - id: vp-1-6-1-7-6
   name: Adventure & Dual-Sport Helmets
   children: []
-  attributes: []
+  attributes:
+  - accessory_size
+  - battery_size
+  - battery_type
+  - color
+  - compatible_visor_system
+  - gear_material
+  - helmet_communication_system_readiness
+  - helmet_interior_liner_type
+  - helmet_safety_certification_standard
+  - helmet_shell_material
+  - helmet_size_system
+  - helmet_vehicle_fit
+  - helmet_ventilation_configuration
+  - helmet_visor_shield_type
+  - motorcycle_protective_gear_size_system
+  - pattern
+  - protective_gear_features
+  - target_gender
+  - vehicle_type
   return_reasons: []
 - id: vp-1-6-1-8
   name: Motorcycle Kidney Belts
@@ -10498,17 +10779,29 @@
 - id: vp-1-7-2-3
   name: Vehicle Water Sport Board Rack Accessories
   children: []
-  attributes: []
+  attributes:
+  - compatible_hitch_receiver_size
+  - item_condition
+  - material
+  - vehicle_type
   return_reasons: []
 - id: vp-1-7-2-4
   name: Vehicle Cargo Rack Accessories
   children: []
-  attributes: []
+  attributes:
+  - compatible_hitch_receiver_size
+  - item_condition
+  - material
+  - vehicle_type
   return_reasons: []
 - id: vp-1-7-2-5
   name: Vehicle Boat & Kayak Rack Accessories
   children: []
-  attributes: []
+  attributes:
+  - compatible_hitch_receiver_size
+  - item_condition
+  - material
+  - vehicle_type
   return_reasons: []
 - id: vp-1-7-3
   name: Motor Vehicle Carrying Racks
@@ -11648,12 +11941,24 @@
 - id: vp-1-8-6-3
   name: Watercraft Exhaust Hoses & Fittings
   children: []
-  attributes: []
+  attributes:
+  - compliance_certifications
+  - exhaust_cooling_type
+  - item_condition
+  - item_material
+  - mounting_location
+  - watercraft_type
   return_reasons: []
 - id: vp-1-8-6-4
   name: Watercraft Exhaust Risers & Elbows
   children: []
-  attributes: []
+  attributes:
+  - compliance_certifications
+  - exhaust_cooling_type
+  - item_condition
+  - item_material
+  - mounting_location
+  - watercraft_type
   return_reasons: []
 - id: vp-1-8-7
   name: Watercraft Fuel Systems
@@ -11747,12 +12052,18 @@
 - id: vp-1-8-7-5
   name: Watercraft Fuel Filters & Water Separators
   children: []
-  attributes: []
+  attributes:
+  - item_condition
+  - item_material
+  - watercraft_type
   return_reasons: []
 - id: vp-1-8-7-6
   name: Watercraft Fuel Fittings & Connectors
   children: []
-  attributes: []
+  attributes:
+  - item_condition
+  - item_material
+  - watercraft_type
   return_reasons: []
 - id: vp-1-8-8
   name: Watercraft Lighting
