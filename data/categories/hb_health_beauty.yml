@@ -2401,7 +2401,9 @@
   - other_reason
 - id: hb-1-9-2-2
   name: Protein & Meal Replacement Shakes
-  children: []
+  children:
+  - hb-1-9-2-2-1
+  - hb-1-9-2-2-2
   attributes:
   - age_group
   - allergen_information
@@ -2421,6 +2423,38 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: hb-1-9-2-2-1
+  name: Meal Replacement Drinks & Powders
+  children: []
+  attributes:
+  - age_group
+  - allergen_information
+  - caffeine_content
+  - detailed_ingredients
+  - dietary_preferences
+  - dietary_supplements
+  - dietary_use
+  - flavor
+  - package_type
+  - product_form
+  - protein_source
+  return_reasons: []
+- id: hb-1-9-2-2-2
+  name: Protein Shakes
+  children: []
+  attributes:
+  - age_group
+  - allergen_information
+  - caffeine_content
+  - detailed_ingredients
+  - dietary_preferences
+  - dietary_supplements
+  - dietary_use
+  - flavor
+  - package_type
+  - product_form
+  - protein_source
+  return_reasons: []
 - id: hb-1-9-2-3
   name: Weight Gainer Shakes
   children: []
@@ -3565,6 +3599,7 @@
   - battery_type
   - connectivity_technology
   - ear_side
+  - hearing_aid_ear_side
   - hearing_aid_features
   - hearing_aid_material
   - hearing_loss_level
@@ -4688,6 +4723,7 @@
   - mobility/accessibility_equipment_features
   - mounting_type
   - pattern
+  - transfer_aid_type
   - transfer_board_shape
   - transfer_boards_surface_type
   - width_adjustment
@@ -5310,6 +5346,7 @@
   - hb-1-17-5-1-7
   attributes:
   - age_group
+  - cane_base_design
   - color
   - folding_mechanism
   - handle_style
@@ -7378,6 +7415,8 @@
   - hb-3-18
   - hb-3-19
   - hb-3-20
+  - hb-3-21
+  - hb-3-22
   attributes:
   - age_group
   - color
@@ -10611,6 +10650,7 @@
   - hb-3-2-6-4-5
   - hb-3-2-6-4-6
   attributes:
+  - color
   - cosmetic_finish
   - coverage_level
   - dispenser_type
@@ -10754,6 +10794,7 @@
   children: []
   attributes:
   - alcohol/solvent_content
+  - color
   - cosmetic_finish
   - coverage_level
   - dispenser_type
@@ -10786,6 +10827,7 @@
   attributes:
   - active_ingredient
   - alcohol/solvent_content
+  - color
   - cosmetic_finish
   - coverage_level
   - dispenser_type
@@ -10818,6 +10860,7 @@
   - hb-3-2-6-4-4-3
   - hb-3-2-6-4-4-4
   attributes:
+  - color
   - cosmetic_finish
   - coverage_level
   - dispenser_type
@@ -10848,6 +10891,7 @@
   name: BB & CC Creams
   children: []
   attributes:
+  - color
   - cosmetic_finish
   - coverage_level
   - dispenser_type
@@ -10874,6 +10918,7 @@
   name: Color Correctors
   children: []
   attributes:
+  - color
   - cosmetic_finish
   - coverage_level
   - dispenser_type
@@ -10900,6 +10945,7 @@
   name: Concealers
   children: []
   attributes:
+  - color
   - cosmetic_finish
   - coverage_level
   - dispenser_type
@@ -10926,6 +10972,7 @@
   name: Foundations
   children: []
   attributes:
+  - color
   - cosmetic_finish
   - coverage_level
   - dispenser_type
@@ -10953,6 +11000,7 @@
   children: []
   attributes:
   - body_area
+  - color
   - cosmetic_finish
   - coverage_level
   - dispenser_type
@@ -10979,6 +11027,7 @@
   name: Face Palettes
   children: []
   attributes:
+  - color
   - cosmetic_finish
   - coverage_level
   - dispenser_type
@@ -21219,3 +21268,51 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: hb-3-21
+  name: Essential Oils
+  children:
+  - hb-3-21-1
+  - hb-3-21-2
+  - hb-3-21-3
+  attributes: []
+  return_reasons: []
+- id: hb-3-21-1
+  name: Essential Oil Singles
+  children: []
+  attributes:
+  - age_group
+  - color
+  - material
+  - pattern
+  - product_form
+  return_reasons: []
+- id: hb-3-21-2
+  name: Essential Oil Blends
+  children: []
+  attributes:
+  - age_group
+  - color
+  - material
+  - pattern
+  - product_form
+  return_reasons: []
+- id: hb-3-21-3
+  name: Essential Oil Diffusers
+  children: []
+  attributes:
+  - age_group
+  - color
+  - material
+  - pattern
+  - product_form
+  return_reasons: []
+- id: hb-3-22
+  name: Essential Oil Accessories
+  children: []
+  attributes:
+  - age_group
+  - color
+  - material
+  - pattern
+  - product_form
+  return_reasons: []
