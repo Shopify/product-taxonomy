@@ -121,6 +121,7 @@
   - fit
   - pants_length_type
   - pattern
+  - pocket_type
   - size
   - target_gender
   - waist_rise
@@ -146,8 +147,10 @@
   - color
   - fabric
   - fit
+  - leg_opening_style
   - pants_length_type
   - pattern
+  - pocket_type
   - size
   - target_gender
   - waist_rise
@@ -172,8 +175,10 @@
   - color
   - fabric
   - fit
+  - leggings_waistband_style
   - pants_length_type
   - pattern
+  - pocket_type
   - size
   - target_gender
   - waist_rise
@@ -199,8 +204,10 @@
   - color
   - fabric
   - fit
+  - liner_type
   - pants_length_type
   - pattern
+  - pocket_type
   - size
   - target_gender
   - waist_rise
@@ -227,6 +234,7 @@
   - fit
   - pants_length_type
   - pattern
+  - pocket_type
   - size
   - target_gender
   - waist_rise
@@ -251,6 +259,7 @@
   - fabric
   - pants_length_type
   - pattern
+  - pocket_type
   - size
   - target_gender
   - waist_rise
@@ -277,6 +286,7 @@
   - fabric
   - pants_length_type
   - pattern
+  - pocket_type
   - size
   - target_gender
   - waist_rise
@@ -300,8 +310,11 @@
   - activity
   - color
   - fabric
+  - pant_cuff_style
   - pants_length_type
   - pattern
+  - pocket_closure_type
+  - pocket_type
   - size
   - target_gender
   - waist_rise
@@ -325,8 +338,10 @@
   - activity
   - color
   - fabric
+  - pant_leg_conversion_type
   - pants_length_type
   - pattern
+  - pocket_type
   - size
   - target_gender
   - waist_rise
@@ -363,6 +378,7 @@
   - sleeve_length_type
   - target_gender
   - top_length_type
+  - zipper_style
   return_reasons:
   - too_big
   - too_small
@@ -456,7 +472,20 @@
 - id: aa-1-1-2-4
   name: Base Layer Tops
   children: []
-  attributes: []
+  attributes:
+  - activewear_clothing_features
+  - activity
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
+  - top_length_type
+  - zipper_style
   return_reasons: []
 - id: aa-1-1-4
   name: Boxing Shorts
@@ -464,6 +493,7 @@
   attributes:
   - activewear_clothing_features
   - color
+  - combat_shorts_cut_style
   - fabric
   - pattern
   - size
@@ -491,7 +521,9 @@
   - battery_size
   - battery_type
   - color
+  - dance_occasion
   - fabric
+  - integrated_bottom_type
   - pattern
   - size
   - skirt/dress_length_type
@@ -512,12 +544,38 @@
 - id: aa-1-1-5-1
   name: Dance Skirts
   children: []
-  attributes: []
+  attributes:
+  - activewear_clothing_features
+  - age_group
+  - battery_size
+  - battery_type
+  - color
+  - dance_occasion
+  - fabric
+  - integrated_bottom_type
+  - pattern
+  - size
+  - skirt/dress_length_type
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-1-5-2
   name: Dance Dresses
   children: []
-  attributes: []
+  attributes:
+  - activewear_clothing_features
+  - age_group
+  - battery_size
+  - battery_type
+  - color
+  - dance_occasion
+  - fabric
+  - integrated_bottom_type
+  - pattern
+  - size
+  - skirt/dress_length_type
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-1-6
   name: Sports Bras
@@ -528,6 +586,7 @@
   - bra_closure_type
   - bra_coverage
   - bra_features
+  - bra_length_type
   - bra_strap_type
   - bra_style
   - bra_support_level
@@ -537,6 +596,7 @@
   - fabric
   - pattern
   - size
+  - sports_bra_padding_type
   - target_gender
   return_reasons:
   - too_big
@@ -562,6 +622,7 @@
   - age_group
   - color
   - fabric
+  - hood_design
   - neckline
   - pattern
   - size
@@ -588,6 +649,8 @@
   - age_group
   - color
   - fabric
+  - hood_design
+  - hood_type
   - neckline
   - pattern
   - size
@@ -614,6 +677,7 @@
   - age_group
   - color
   - fabric
+  - hood_design
   - neckline
   - pattern
   - size
@@ -639,6 +703,7 @@
   - activity
   - color
   - fabric
+  - hood_design
   - neckline
   - pattern
   - size
@@ -667,6 +732,7 @@
   - age_group
   - color
   - fabric
+  - insulation_fill_material
   - pattern
   - size
   - sleeve_length_type
@@ -694,7 +760,9 @@
   - battery_type
   - color
   - fabric
+  - insulation_fill_material
   - neckline
+  - packability
   - pattern
   - size
   - target_gender
@@ -720,12 +788,14 @@
   - care_instructions
   - color
   - fabric
+  - insulation_fill_material
   - neckline
   - pattern
   - size
   - sleeve_length_type
   - target_gender
   - top_length_type
+  - zipper_opening_length
   return_reasons:
   - too_big
   - too_small
@@ -749,6 +819,7 @@
   - age_group
   - color
   - fabric
+  - garment_back_style
   - pattern
   - size
   - sleeve_length_type
@@ -768,29 +839,61 @@
 - id: aa-1-1-9-1
   name: Leotards
   children: []
-  attributes: []
+  attributes:
+  - activewear_clothing_features
+  - activity
+  - age_group
+  - color
+  - fabric
+  - garment_back_style
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-1-9-2
   name: Unitards
   children: []
-  attributes: []
+  attributes:
+  - activewear_clothing_features
+  - activity
+  - age_group
+  - color
+  - fabric
+  - garment_back_style
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-1-9-3
   name: Triathlon Suits
   children: []
-  attributes: []
+  attributes:
+  - activewear_clothing_features
+  - activity
+  - age_group
+  - color
+  - fabric
+  - garment_back_style
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-4
   name: Dresses
   children: []
   attributes:
   - age_group
+  - back_design
   - care_instructions
   - clothing_features
   - color
   - dress_occasion
   - dress_style
   - fabric
+  - hemline_style
   - neckline
   - pattern
   - size
@@ -829,6 +932,7 @@
   - aa-1-6-16
   attributes:
   - age_group
+  - bra_padding_type
   - care_instructions
   - color
   - fabric
@@ -942,18 +1046,27 @@
 - id: aa-1-6-2-2-1
   name: Bra Extenders
   children: []
-  attributes: []
+  attributes:
+  - color
+  - fabric
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-1-6-2-2-2
   name: Bra Straps
   children: []
-  attributes: []
+  attributes:
+  - color
+  - fabric
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-1-6-2-3
   name: Breast Enhancing Inserts
   children: []
   attributes:
   - color
+  - enhancement_level
   - fabric
   - pattern
   - target_gender
@@ -991,12 +1104,20 @@
 - id: aa-1-6-2-5
   name: Bra Hardware & Findings
   children: []
-  attributes: []
+  attributes:
+  - color
+  - fabric
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-1-6-2-6
   name: Breast Lift Tape
   children: []
-  attributes: []
+  attributes:
+  - color
+  - fabric
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-1-6-3
   name: Bras
@@ -1058,8 +1179,10 @@
   - care_instructions
   - color
   - fabric
+  - hosiery_toe_style
   - intimate_apparel_features
   - pattern
+  - seam_design
   - size
   - target_gender
   return_reasons:
@@ -1081,6 +1204,7 @@
   - color
   - fabric
   - intimate_apparel_features
+  - jockstrap_design_features
   - pattern
   - size
   - target_gender
@@ -1149,6 +1273,7 @@
   attributes:
   - care_instructions
   - color
+  - embellishment_type
   - fabric
   - intimate_apparel_features
   - pattern
@@ -1168,12 +1293,28 @@
 - id: aa-1-6-8-2-1
   name: Sock Garters
   children: []
-  attributes: []
+  attributes:
+  - care_instructions
+  - color
+  - embellishment_type
+  - fabric
+  - intimate_apparel_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-6-8-2-2
   name: Shirttail Garters
   children: []
-  attributes: []
+  attributes:
+  - care_instructions
+  - color
+  - embellishment_type
+  - fabric
+  - intimate_apparel_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-6-8-3
   name: Pantyhose
@@ -1183,10 +1324,12 @@
   - color
   - fabric
   - intimate_apparel_features
+  - pantyhose_crotch_style
   - pantyhose_style
   - pattern
   - size
   - target_gender
+  - toe_reinforcement_type
   return_reasons:
   - too_big
   - too_small
@@ -1202,12 +1345,26 @@
 - id: aa-1-6-8-4
   name: Body Harnesses
   children: []
-  attributes: []
+  attributes:
+  - care_instructions
+  - color
+  - fabric
+  - intimate_apparel_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-6-8-5
   name: Fashion & Body Tape
   children: []
-  attributes: []
+  attributes:
+  - care_instructions
+  - color
+  - fabric
+  - intimate_apparel_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-6-9
   name: Petticoats & Pettipants
@@ -1236,12 +1393,26 @@
 - id: aa-1-6-9-1
   name: Petticoats
   children: []
-  attributes: []
+  attributes:
+  - care_instructions
+  - color
+  - fabric
+  - intimate_apparel_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-6-9-2
   name: Pettipants
   children: []
-  attributes: []
+  attributes:
+  - care_instructions
+  - color
+  - fabric
+  - intimate_apparel_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-6-10
   name: Shapewear
@@ -1279,11 +1450,13 @@
   name: Bodysuits
   children: []
   attributes:
+  - bust_design
   - care_instructions
   - color
   - fabric
   - intimate_apparel_features
   - pattern
+  - post_surgery_stage_suitability
   - shapewear_support_level
   - size
   - target_gender
@@ -1332,6 +1505,7 @@
   - fabric
   - intimate_apparel_features
   - pattern
+  - shapewear_enhancement_feature
   - shapewear_support_level
   - size
   - target_gender
@@ -1376,9 +1550,11 @@
   name: Waist Cinchers
   children: []
   attributes:
+  - boning_type
   - care_instructions
   - color
   - fabric
+  - heat_retention_technology
   - intimate_apparel_features
   - pattern
   - shapewear_support_level
@@ -1399,17 +1575,41 @@
 - id: aa-1-6-10-6
   name: Shaping Camisoles & Tank Tops
   children: []
-  attributes: []
+  attributes:
+  - care_instructions
+  - color
+  - fabric
+  - intimate_apparel_features
+  - pattern
+  - shapewear_support_level
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-6-10-7
   name: Arm & Upper Body Shapers
   children: []
-  attributes: []
+  attributes:
+  - care_instructions
+  - color
+  - fabric
+  - intimate_apparel_features
+  - pattern
+  - shapewear_support_level
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-6-10-8
   name: Shaping Slips
   children: []
-  attributes: []
+  attributes:
+  - care_instructions
+  - color
+  - fabric
+  - intimate_apparel_features
+  - pattern
+  - shapewear_support_level
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-6-11
   name: Women's Underpants
@@ -1427,6 +1627,7 @@
   - care_instructions
   - color
   - fabric
+  - gusset_material
   - intimate_apparel_features
   - pattern
   - size
@@ -1450,6 +1651,7 @@
   - care_instructions
   - color
   - fabric
+  - gusset_material
   - intimate_apparel_features
   - pattern
   - size
@@ -1473,6 +1675,7 @@
   - care_instructions
   - color
   - fabric
+  - gusset_material
   - intimate_apparel_features
   - pattern
   - size
@@ -1496,6 +1699,7 @@
   - care_instructions
   - color
   - fabric
+  - gusset_material
   - intimate_apparel_features
   - pattern
   - size
@@ -1519,6 +1723,7 @@
   - care_instructions
   - color
   - fabric
+  - gusset_material
   - intimate_apparel_features
   - pattern
   - size
@@ -1543,6 +1748,7 @@
   - care_instructions
   - color
   - fabric
+  - gusset_material
   - intimate_apparel_features
   - pattern
   - size
@@ -1568,6 +1774,7 @@
   - care_instructions
   - color
   - fabric
+  - gusset_material
   - intimate_apparel_features
   - pattern
   - size
@@ -1587,17 +1794,44 @@
 - id: aa-1-6-11-7
   name: Bloomers
   children: []
-  attributes: []
+  attributes:
+  - care_instructions
+  - color
+  - fabric
+  - gusset_material
+  - intimate_apparel_features
+  - pattern
+  - size
+  - target_gender
+  - waist_rise
   return_reasons: []
 - id: aa-1-6-11-8
   name: Hipsters
   children: []
-  attributes: []
+  attributes:
+  - care_instructions
+  - color
+  - fabric
+  - gusset_material
+  - intimate_apparel_features
+  - pattern
+  - size
+  - target_gender
+  - waist_rise
   return_reasons: []
 - id: aa-1-6-11-9
   name: Cheeky Panties
   children: []
-  attributes: []
+  attributes:
+  - care_instructions
+  - color
+  - fabric
+  - gusset_material
+  - intimate_apparel_features
+  - pattern
+  - size
+  - target_gender
+  - waist_rise
   return_reasons: []
 - id: aa-1-6-12
   name: Women's Undershirts
@@ -1646,17 +1880,44 @@
 - id: aa-1-6-14
   name: Babydolls
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - bra_padding_type
+  - care_instructions
+  - color
+  - fabric
+  - intimate_apparel_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-6-15
   name: Corsets & Bustiers
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - bra_padding_type
+  - care_instructions
+  - color
+  - fabric
+  - intimate_apparel_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-6-16
   name: Lingerie Sets
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - bra_padding_type
+  - care_instructions
+  - color
+  - fabric
+  - intimate_apparel_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-7
   name: Maternity Clothing
@@ -1673,9 +1934,12 @@
   - aa-1-7-10
   - aa-1-7-11
   attributes:
+  - belly_panel_style
   - color
   - fabric
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - target_gender
   return_reasons:
   - too_big
@@ -1693,6 +1957,7 @@
   name: Nursing Bras
   children: []
   attributes:
+  - belly_panel_style
   - bra_closure_type
   - bra_coverage
   - bra_features
@@ -1701,7 +1966,10 @@
   - color
   - cup_size
   - fabric
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
+  - pumping_compatibility
   - target_gender
   return_reasons:
   - band_too_big
@@ -1721,6 +1989,7 @@
   name: Maternity Dresses
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - dress_occasion
@@ -1728,7 +1997,9 @@
   - fabric
   - maternity_clothing_features
   - neckline
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - skirt/dress_length_type
   - sleeve_length_type
@@ -1750,14 +2021,17 @@
   name: Maternity One-Pieces
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
   - neckline
+  - nursing_access_type
   - one_piece_style
   - pants_length_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - sleeve_length_type
   - target_gender
@@ -1787,13 +2061,17 @@
   - aa-1-7-4-14
   - aa-1-7-4-15
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - fit
   - maternity_clothing_features
+  - maternity_waistband_style
+  - nursing_access_type
   - pants_length_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - target_gender
   return_reasons:
@@ -1811,13 +2089,18 @@
   name: Cargos
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - fit
   - maternity_clothing_features
+  - maternity_panel_type
+  - maternity_waistband_style
+  - nursing_access_type
   - pants_length_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - target_gender
   return_reasons:
@@ -1835,13 +2118,17 @@
   name: Chinos
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - fit
   - maternity_clothing_features
+  - maternity_waistband_style
+  - nursing_access_type
   - pants_length_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - target_gender
   return_reasons:
@@ -1861,13 +2148,17 @@
   name: Jeans
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - fit
   - maternity_clothing_features
+  - maternity_waistband_style
+  - nursing_access_type
   - pants_length_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - target_gender
   return_reasons:
@@ -1887,13 +2178,17 @@
   name: Jeggings
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - fit
   - maternity_clothing_features
+  - maternity_waistband_style
+  - nursing_access_type
   - pants_length_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - target_gender
   return_reasons:
@@ -1911,13 +2206,17 @@
   name: Joggers
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - fit
   - maternity_clothing_features
+  - maternity_waistband_style
+  - nursing_access_type
   - pants_length_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - target_gender
   return_reasons:
@@ -1935,13 +2234,17 @@
   name: Leggings
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - fit
   - maternity_clothing_features
+  - maternity_waistband_style
+  - nursing_access_type
   - pants_length_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - target_gender
   return_reasons:
@@ -1959,13 +2262,17 @@
   name: Skorts
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - fit
   - maternity_clothing_features
+  - maternity_waistband_style
+  - nursing_access_type
   - pants_length_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - target_gender
   return_reasons:
@@ -1983,13 +2290,17 @@
   name: Trousers
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - fit
   - maternity_clothing_features
+  - maternity_waistband_style
+  - nursing_access_type
   - pants_length_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - target_gender
   return_reasons:
@@ -2008,27 +2319,69 @@
 - id: aa-1-7-4-13
   name: Shorts
   children: []
-  attributes: []
+  attributes:
+  - belly_panel_style
+  - care_instructions
+  - color
+  - fabric
+  - fit
+  - maternity_clothing_features
+  - maternity_waistband_style
+  - nursing_access_type
+  - pants_length_type
+  - pattern
+  - pregnancy_stage_suitability
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-7-4-14
   name: Tights
   children: []
-  attributes: []
+  attributes:
+  - belly_panel_style
+  - care_instructions
+  - color
+  - fabric
+  - fit
+  - maternity_clothing_features
+  - maternity_waistband_style
+  - nursing_access_type
+  - pants_length_type
+  - pattern
+  - pregnancy_stage_suitability
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-7-4-15
   name: Capris
   children: []
-  attributes: []
+  attributes:
+  - belly_panel_style
+  - care_instructions
+  - color
+  - fabric
+  - fit
+  - maternity_clothing_features
+  - maternity_waistband_style
+  - nursing_access_type
+  - pants_length_type
+  - pattern
+  - pregnancy_stage_suitability
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-7-5
   name: Maternity Skirts
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - skirt/dress_length_type
   - target_gender
@@ -2047,12 +2400,15 @@
   name: Maternity Sleepwear
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
   - maternity_sleepwear_style
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - target_gender
   return_reasons:
@@ -2077,11 +2433,14 @@
   - aa-1-7-7-20
   - aa-1-7-7-21
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - target_gender
   return_reasons:
@@ -2100,11 +2459,14 @@
   name: Swim Boxers
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - target_gender
   return_reasons:
@@ -2123,11 +2485,15 @@
   name: Burkinis
   children: []
   attributes:
+  - belly_panel_style
+  - burkini_pieces_included
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - sleeve_length_type
   - target_gender
@@ -2147,11 +2513,14 @@
   name: Classic Bikinis
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - sleeve_length_type
   - target_gender
@@ -2171,14 +2540,18 @@
   name: Cover Ups
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - sleeve_length_type
   - target_gender
+  - trim_detail
   return_reasons:
   - too_big
   - too_small
@@ -2195,11 +2568,15 @@
   name: Swim Dresses
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
+  - nursing_access
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - sleeve_length_type
   - target_gender
@@ -2219,11 +2596,14 @@
   name: One-Piece Swimsuits
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - sleeve_length_type
   - target_gender
@@ -2243,11 +2623,14 @@
   name: Swimwear Tops
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - sleeve_length_type
   - target_gender
@@ -2274,14 +2657,16 @@
   - aa-1-7-8-7
   - aa-1-7-8-8
   - aa-1-7-8-11
-  - aa-1-7-8-12
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
   - neckline
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - sleeve_length_type
   - target_gender
@@ -2301,12 +2686,15 @@
   name: Blouses
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
   - neckline
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - sleeve_length_type
   - target_gender
@@ -2326,12 +2714,16 @@
   name: Bodysuits
   children: []
   attributes:
+  - belly_panel_style
+  - bodysuit_bottom_coverage
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
   - neckline
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - sleeve_length_type
   - target_gender
@@ -2351,12 +2743,15 @@
   name: Cardigans
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
   - neckline
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - sleeve_length_type
   - target_gender
@@ -2381,12 +2776,15 @@
   - aa-1-7-8-4-4
   attributes:
   - age_group
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
   - neckline
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - sleeve_length_type
   - target_gender
@@ -2405,33 +2803,92 @@
 - id: aa-1-7-8-4-1
   name: Nursing T-Shirts
   children: []
-  attributes: []
-  return_reasons: []
-- id: aa-1-7-8-4-2
-  name: Nursing Hoodies
-  children: []
-  attributes: []
-  return_reasons: []
-- id: aa-1-7-8-4-3
-  name: Nursing Tank Tops
-  children: []
-  attributes: []
-  return_reasons: []
-- id: aa-1-7-8-4-4
-  name: Nursing Sweatshirts
-  children: []
-  attributes: []
-  return_reasons: []
-- id: aa-1-7-8-5
-  name: Overshirts
-  children: []
   attributes:
+  - age_group
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
   - neckline
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
+  - size
+  - sleeve_length_type
+  - target_gender
+  - top_length_type
+  return_reasons: []
+- id: aa-1-7-8-4-2
+  name: Nursing Hoodies
+  children: []
+  attributes:
+  - age_group
+  - belly_panel_style
+  - care_instructions
+  - color
+  - fabric
+  - maternity_clothing_features
+  - neckline
+  - nursing_access_type
+  - pattern
+  - pregnancy_stage_suitability
+  - size
+  - sleeve_length_type
+  - target_gender
+  - top_length_type
+  return_reasons: []
+- id: aa-1-7-8-4-3
+  name: Nursing Tank Tops
+  children: []
+  attributes:
+  - age_group
+  - belly_panel_style
+  - care_instructions
+  - color
+  - fabric
+  - maternity_clothing_features
+  - neckline
+  - nursing_access_type
+  - pattern
+  - pregnancy_stage_suitability
+  - size
+  - sleeve_length_type
+  - target_gender
+  - top_length_type
+  return_reasons: []
+- id: aa-1-7-8-4-4
+  name: Nursing Sweatshirts
+  children: []
+  attributes:
+  - age_group
+  - belly_panel_style
+  - care_instructions
+  - color
+  - fabric
+  - maternity_clothing_features
+  - neckline
+  - nursing_access_type
+  - pattern
+  - pregnancy_stage_suitability
+  - size
+  - sleeve_length_type
+  - target_gender
+  - top_length_type
+  return_reasons: []
+- id: aa-1-7-8-5
+  name: Overshirts
+  children: []
+  attributes:
+  - belly_panel_style
+  - care_instructions
+  - color
+  - fabric
+  - maternity_clothing_features
+  - neckline
+  - nursing_access_type
+  - pattern
+  - pregnancy_stage_suitability
   - size
   - sleeve_length_type
   - target_gender
@@ -2451,12 +2908,15 @@
   name: Shirts
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
   - neckline
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - sleeve_length_type
   - target_gender
@@ -2476,12 +2936,15 @@
   name: T-Shirts
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
   - neckline
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - sleeve_length_type
   - target_gender
@@ -2501,12 +2964,15 @@
   name: Tunics
   children: []
   attributes:
+  - belly_panel_style
   - care_instructions
   - color
   - fabric
   - maternity_clothing_features
   - neckline
+  - nursing_access_type
   - pattern
+  - pregnancy_stage_suitability
   - size
   - sleeve_length_type
   - target_gender
@@ -2522,25 +2988,44 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: aa-1-7-8-12
-  name: Nursing Cardigans
-  children: []
-  attributes: []
-  return_reasons: []
 - id: aa-1-7-9
   name: Maternity Outerwear
   children: []
-  attributes: []
+  attributes:
+  - belly_panel_style
+  - care_instructions
+  - color
+  - fabric
+  - nursing_access_type
+  - pattern
+  - pregnancy_stage_suitability
+  - target_gender
   return_reasons: []
 - id: aa-1-7-10
   name: Maternity Shapewear & Support Garments
   children: []
-  attributes: []
+  attributes:
+  - belly_panel_style
+  - care_instructions
+  - color
+  - fabric
+  - nursing_access_type
+  - pattern
+  - pregnancy_stage_suitability
+  - target_gender
   return_reasons: []
 - id: aa-1-7-11
   name: Maternity Underwear
   children: []
-  attributes: []
+  attributes:
+  - belly_panel_style
+  - care_instructions
+  - color
+  - fabric
+  - nursing_access_type
+  - pattern
+  - pregnancy_stage_suitability
+  - target_gender
   return_reasons: []
 - id: aa-1-8
   name: Men's Undergarments
@@ -2574,6 +3059,7 @@
   - care_instructions
   - color
   - fabric
+  - fly_type
   - intimate_apparel_features
   - pattern
   - size
@@ -2625,13 +3111,13 @@
   - aa-1-8-3-8
   - aa-1-8-3-9
   - aa-1-8-3-10
-  - aa-1-8-3-11
   attributes:
   - care_instructions
   - color
   - fabric
   - intimate_apparel_features
   - pattern
+  - pouch_style
   - size
   - target_gender
   return_reasons:
@@ -2654,6 +3140,7 @@
   - fabric
   - intimate_apparel_features
   - pattern
+  - pouch_style
   - size
   - target_gender
   return_reasons:
@@ -2676,6 +3163,7 @@
   - fabric
   - intimate_apparel_features
   - pattern
+  - pouch_style
   - size
   - target_gender
   return_reasons:
@@ -2698,6 +3186,7 @@
   - fabric
   - intimate_apparel_features
   - pattern
+  - pouch_style
   - size
   - target_gender
   return_reasons:
@@ -2720,6 +3209,9 @@
   - fabric
   - intimate_apparel_features
   - pattern
+  - pouch_style
+  - protective_cup_configuration
+  - rear_coverage
   - size
   - target_gender
   return_reasons:
@@ -2742,6 +3234,7 @@
   - fabric
   - intimate_apparel_features
   - pattern
+  - pouch_style
   - size
   - target_gender
   return_reasons:
@@ -2764,6 +3257,8 @@
   - fabric
   - intimate_apparel_features
   - pattern
+  - pouch_design
+  - pouch_style
   - size
   - target_gender
   return_reasons:
@@ -2785,7 +3280,9 @@
   - color
   - fabric
   - intimate_apparel_features
+  - leg_length
   - pattern
+  - pouch_style
   - size
   - target_gender
   return_reasons:
@@ -2808,6 +3305,7 @@
   - fabric
   - intimate_apparel_features
   - pattern
+  - pouch_style
   - size
   - target_gender
   return_reasons:
@@ -2824,12 +3322,15 @@
 - id: aa-1-8-3-10
   name: Hipsters
   children: []
-  attributes: []
-  return_reasons: []
-- id: aa-1-8-3-11
-  name: Bikinis
-  children: []
-  attributes: []
+  attributes:
+  - care_instructions
+  - color
+  - fabric
+  - intimate_apparel_features
+  - pattern
+  - pouch_style
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-9
   name: One-Pieces
@@ -2874,7 +3375,9 @@
   - care_instructions
   - color
   - fabric
+  - hood_style
   - outerwear_clothing_features
+  - outerwear_pieces_included
   - pattern
   - size
   - sleeve_length_type
@@ -3045,6 +3548,7 @@
   - fabric
   - neckline
   - outerwear_clothing_features
+  - outerwear_length_type
   - pattern
   - size
   - sleeve_length_type
@@ -3142,12 +3646,32 @@
 - id: aa-1-10-2-8-1
   name: Rain Ponchos
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - care_instructions
+  - color
+  - fabric
+  - neckline
+  - outerwear_clothing_features
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-10-2-8-2
   name: Changing & Surf Ponchos
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - care_instructions
+  - color
+  - fabric
+  - neckline
+  - outerwear_clothing_features
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-10-2-9
   name: Puffer Jackets
@@ -3183,6 +3707,7 @@
   - care_instructions
   - color
   - fabric
+  - layer_construction
   - neckline
   - outerwear_clothing_features
   - pattern
@@ -3259,6 +3784,7 @@
   - care_instructions
   - color
   - fabric
+  - front_closure_style
   - neckline
   - outerwear_clothing_features
   - pattern
@@ -3381,7 +3907,19 @@
 - id: aa-1-10-2-18
   name: Blazers
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - care_instructions
+  - clothing_features
+  - color
+  - fabric
+  - neckline
+  - outerwear_clothing_features
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
+  - top_length_type
   return_reasons: []
 - id: aa-1-10-3
   name: Rain Pants
@@ -3418,6 +3956,8 @@
   - fabric
   - outerwear_clothing_features
   - pattern
+  - rain_suit_configuration
+  - seam_sealing_type
   - size
   - sleeve_length_type
   - target_gender
@@ -3464,17 +4004,44 @@
 - id: aa-1-10-5-1
   name: Snow Suits
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - care_instructions
+  - color
+  - fabric
+  - outerwear_clothing_features
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-10-5-2
   name: Snow Bibs
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - care_instructions
+  - color
+  - fabric
+  - outerwear_clothing_features
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-10-5-3
   name: Snow Pants
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - care_instructions
+  - color
+  - fabric
+  - outerwear_clothing_features
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-10-6
   name: Vests
@@ -3530,12 +4097,22 @@
 - id: aa-1-10-8
   name: Liners & Insulators
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - care_instructions
+  - color
+  - fabric
+  - hood_style
+  - outerwear_clothing_features
+  - outerwear_pieces_included
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-11
   name: Outfit Sets
-  children:
-  - aa-1-11-1
+  children: []
   attributes:
   - activewear_clothing_features
   - activity
@@ -3558,6 +4135,7 @@
   - skirt/dress_length_type
   - skirt_style
   - sleeve_length_type
+  - stitching_state
   - target_gender
   - top_length_type
   - waist_rise
@@ -3572,11 +4150,6 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: aa-1-11-1
-  name: Tracksuit Sets
-  children: []
-  attributes: []
-  return_reasons: []
 - id: aa-1-12
   name: Pants
   children:
@@ -3598,9 +4171,11 @@
   - fit
   - pants_length_type
   - pattern
+  - pocket_style
   - size
   - target_gender
   - waist_rise
+  - waistband_style
   return_reasons:
   - too_big
   - too_small
@@ -3621,11 +4196,14 @@
   - color
   - fabric
   - fit
+  - leg_cuff_style
   - pants_length_type
   - pattern
+  - pocket_style
   - size
   - target_gender
   - waist_rise
+  - waistband_style
   return_reasons:
   - too_big
   - too_small
@@ -3646,11 +4224,14 @@
   - color
   - fabric
   - fit
+  - front_style
   - pants_length_type
   - pattern
+  - pocket_style
   - size
   - target_gender
   - waist_rise
+  - waistband_style
   return_reasons:
   - waist_too_big
   - waist_too_small
@@ -3672,13 +4253,16 @@
   - care_instructions
   - clothing_features
   - color
+  - distressing_style
   - fabric
   - fit
   - pants_length_type
   - pattern
+  - pocket_style
   - size
   - target_gender
   - waist_rise
+  - waistband_style
   return_reasons:
   - waist_too_big
   - waist_too_small
@@ -3699,13 +4283,16 @@
   - age_group
   - clothing_features
   - color
+  - distressing_level
   - fabric
   - fit
   - pants_length_type
   - pattern
+  - pocket_style
   - size
   - target_gender
   - waist_rise
+  - waistband_style
   return_reasons:
   - too_big
   - too_small
@@ -3729,9 +4316,11 @@
   - fit
   - pants_length_type
   - pattern
+  - pocket_style
   - size
   - target_gender
   - waist_rise
+  - waistband_style
   return_reasons:
   - too_big
   - too_small
@@ -3754,9 +4343,11 @@
   - fit
   - pants_length_type
   - pattern
+  - pocket_style
   - size
   - target_gender
   - waist_rise
+  - waistband_style
   return_reasons:
   - too_big
   - too_small
@@ -3781,9 +4372,11 @@
   - fit
   - pants_length_type
   - pattern
+  - pocket_style
   - size
   - target_gender
   - waist_rise
+  - waistband_style
   return_reasons:
   - waist_too_big
   - waist_too_small
@@ -3800,12 +4393,38 @@
 - id: aa-1-12-12
   name: Harem Pants
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - care_instructions
+  - clothing_features
+  - color
+  - fabric
+  - fit
+  - pants_length_type
+  - pattern
+  - pocket_style
+  - size
+  - target_gender
+  - waist_rise
+  - waistband_style
   return_reasons: []
 - id: aa-1-12-13
   name: Palazzo Pants
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - care_instructions
+  - clothing_features
+  - color
+  - fabric
+  - fit
+  - pants_length_type
+  - pattern
+  - pocket_style
+  - size
+  - target_gender
+  - waist_rise
+  - waistband_style
   return_reasons: []
 - id: aa-1-13
   name: Clothing Tops
@@ -3833,7 +4452,10 @@
   - pattern
   - size
   - sleeve_length_type
+  - sleeve_style
+  - stretch_level
   - target_gender
+  - top_fit
   - top_length_type
   return_reasons:
   - too_big
@@ -3848,9 +4470,7 @@
   - other_reason
 - id: aa-1-13-1
   name: Blouses
-  children:
-  - aa-1-13-1-1
-  - aa-1-13-1-2
+  children: []
   attributes:
   - age_group
   - care_instructions
@@ -3861,6 +4481,8 @@
   - pattern
   - size
   - sleeve_length_type
+  - sleeve_style
+  - stretch_level
   - target_gender
   - top_length_type
   return_reasons:
@@ -3874,16 +4496,6 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: aa-1-13-1-1
-  name: Dirndl Blouses
-  children: []
-  attributes: []
-  return_reasons: []
-- id: aa-1-13-1-2
-  name: Sari Blouses
-  children: []
-  attributes: []
-  return_reasons: []
 - id: aa-1-13-2
   name: Bodysuits
   children: []
@@ -3897,6 +4509,8 @@
   - pattern
   - size
   - sleeve_length_type
+  - sleeve_style
+  - stretch_level
   - target_gender
   - top_length_type
   return_reasons:
@@ -3919,10 +4533,13 @@
   - clothing_features
   - color
   - fabric
+  - knit_pattern
   - neckline
   - pattern
   - size
   - sleeve_length_type
+  - sleeve_style
+  - stretch_level
   - target_gender
   - top_length_type
   return_reasons:
@@ -3949,6 +4566,8 @@
   - pattern
   - size
   - sleeve_length_type
+  - sleeve_style
+  - stretch_level
   - target_gender
   - top_length_type
   return_reasons:
@@ -3973,8 +4592,11 @@
   - fabric
   - neckline
   - pattern
+  - placket_type
   - size
   - sleeve_length_type
+  - sleeve_style
+  - stretch_level
   - target_gender
   - top_length_type
   return_reasons:
@@ -3997,13 +4619,17 @@
   attributes:
   - age_group
   - care_instructions
+  - chest_pocket_style
   - clothing_features
   - color
   - fabric
   - neckline
   - pattern
+  - shirt_cuff_style
   - size
   - sleeve_length_type
+  - sleeve_style
+  - stretch_level
   - target_gender
   - top_length_type
   return_reasons:
@@ -4020,12 +4646,42 @@
 - id: aa-1-13-7-1
   name: Henley Shirts
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - care_instructions
+  - chest_pocket_style
+  - clothing_features
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - shirt_cuff_style
+  - size
+  - sleeve_length_type
+  - sleeve_style
+  - stretch_level
+  - target_gender
+  - top_length_type
   return_reasons: []
 - id: aa-1-13-7-2
   name: Dress Shirts
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - care_instructions
+  - chest_pocket_style
+  - clothing_features
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - shirt_cuff_style
+  - size
+  - sleeve_length_type
+  - sleeve_style
+  - stretch_level
+  - target_gender
+  - top_length_type
   return_reasons: []
 - id: aa-1-13-8
   name: T-Shirts
@@ -4035,11 +4691,14 @@
   - care_instructions
   - clothing_features
   - color
+  - decoration_technique
   - fabric
   - neckline
   - pattern
   - size
   - sleeve_length_type
+  - sleeve_style
+  - stretch_level
   - target_gender
   - top_length_type
   return_reasons:
@@ -4066,6 +4725,10 @@
   - pattern
   - size
   - sleeve_length_type
+  - sleeve_style
+  - strap_width
+  - stretch_level
+  - tank_top_back_style
   - target_gender
   - top_length_type
   return_reasons:
@@ -4091,6 +4754,8 @@
   - pattern
   - size
   - sleeve_length_type
+  - sleeve_style
+  - stretch_level
   - target_gender
   - top_length_type
   return_reasons:
@@ -4117,6 +4782,8 @@
   - pattern
   - size
   - sleeve_length_type
+  - sleeve_style
+  - stretch_level
   - target_gender
   - top_length_type
   return_reasons:
@@ -4144,6 +4811,8 @@
   - pattern
   - size
   - sleeve_length_type
+  - sleeve_style
+  - stretch_level
   - target_gender
   - top_length_type
   return_reasons:
@@ -4171,6 +4840,9 @@
   - pattern
   - size
   - sleeve_length_type
+  - sleeve_style
+  - stretch_level
+  - sweatshirt_pocket_type
   - target_gender
   - top_length_type
   return_reasons:
@@ -4187,7 +4859,21 @@
 - id: aa-1-13-15
   name: Corset Tops
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - care_instructions
+  - clothing_features
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - sleeve_style
+  - stretch_level
+  - target_gender
+  - top_fit
+  - top_length_type
   return_reasons: []
 - id: aa-1-14
   name: Shorts
@@ -4326,8 +5012,10 @@
   - age_group
   - clothing_features
   - color
+  - denim_wash
   - fabric
   - fit
+  - hem_style
   - pants_length_type
   - pattern
   - size
@@ -4483,6 +5171,7 @@
   - fabric
   - pattern
   - size
+  - sleepwear_set_pieces_included
   - target_gender
   return_reasons:
   - too_big
@@ -4502,9 +5191,12 @@
   - clothing_features
   - color
   - fabric
+  - fly_style
   - pattern
   - size
+  - sleepwear_set_pieces_included
   - target_gender
+  - thermal_set_components
   return_reasons:
   - too_big
   - too_small
@@ -4529,6 +5221,7 @@
   - fabric
   - pattern
   - size
+  - sleepwear_set_pieces_included
   - target_gender
   return_reasons:
   - too_big
@@ -4559,6 +5252,7 @@
   - pants_length_type
   - pattern
   - size
+  - sleepwear_set_pieces_included
   - target_gender
   - waist_rise
   return_reasons:
@@ -4583,6 +5277,7 @@
   - pants_length_type
   - pattern
   - size
+  - sleepwear_set_pieces_included
   - target_gender
   - waist_rise
   return_reasons:
@@ -4608,6 +5303,7 @@
   - pants_length_type
   - pattern
   - size
+  - sleepwear_set_pieces_included
   - target_gender
   - waist_rise
   return_reasons:
@@ -4632,6 +5328,7 @@
   - pants_length_type
   - pattern
   - size
+  - sleepwear_set_pieces_included
   - target_gender
   - waist_rise
   return_reasons:
@@ -4658,6 +5355,7 @@
   - pants_length_type
   - pattern
   - size
+  - sleepwear_set_pieces_included
   - target_gender
   - waist_rise
   return_reasons:
@@ -4683,6 +5381,7 @@
   - pattern
   - size
   - skirt/dress_length_type
+  - sleepwear_set_pieces_included
   - target_gender
   - waist_rise
   return_reasons:
@@ -4699,7 +5398,18 @@
 - id: aa-1-17-2-1-6
   name: Lounge Pants
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - fit
+  - pants_length_type
+  - pattern
+  - size
+  - sleepwear_set_pieces_included
+  - target_gender
+  - waist_rise
   return_reasons: []
 - id: aa-1-17-2-2
   name: Loungewear Tops
@@ -4709,8 +5419,10 @@
   - clothing_features
   - color
   - fabric
+  - fabric_texture
   - pattern
   - size
+  - sleepwear_set_pieces_included
   - target_gender
   - top_length_type
   return_reasons:
@@ -4727,7 +5439,15 @@
 - id: aa-1-17-2-3
   name: Loungewear Sets
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - pattern
+  - size
+  - sleepwear_set_pieces_included
+  - target_gender
   return_reasons: []
 - id: aa-1-17-3
   name: Nightgowns
@@ -4741,6 +5461,7 @@
   - pattern
   - size
   - skirt/dress_length_type
+  - sleepwear_set_pieces_included
   - sleeve_length_type
   - target_gender
   return_reasons:
@@ -4765,6 +5486,7 @@
   - neckline
   - pattern
   - size
+  - sleepwear_set_pieces_included
   - sleeve_length_type
   - target_gender
   - top_length_type
@@ -4790,6 +5512,7 @@
   - pattern
   - robe_style
   - size
+  - sleepwear_set_pieces_included
   - target_gender
   return_reasons:
   - too_big
@@ -4812,7 +5535,9 @@
   - color
   - fabric
   - pattern
+  - rear_opening_type
   - size
+  - sleepwear_set_pieces_included
   - sleeve_length_type
   - target_gender
   return_reasons:
@@ -4829,7 +5554,15 @@
 - id: aa-1-17-7
   name: Wearable Blankets & Sleep Sacks
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - pattern
+  - size
+  - sleepwear_set_pieces_included
+  - target_gender
   return_reasons: []
 - id: aa-1-18
   name: Socks
@@ -4856,6 +5589,8 @@
   - color
   - fabric
   - pattern
+  - sock_cushioning_level
+  - sock_toe_style
   - target_gender
   return_reasons:
   - too_big
@@ -4878,6 +5613,8 @@
   - color
   - fabric
   - pattern
+  - sock_cushioning_level
+  - sock_toe_style
   - target_gender
   return_reasons:
   - too_big
@@ -4898,8 +5635,11 @@
   - activity
   - clothing_features
   - color
+  - cushioning_level
   - fabric
   - pattern
+  - sock_cushioning_level
+  - sock_toe_style
   - target_gender
   return_reasons:
   - too_big
@@ -4922,6 +5662,8 @@
   - color
   - fabric
   - pattern
+  - sock_cushioning_level
+  - sock_toe_style
   - target_gender
   return_reasons:
   - too_big
@@ -4944,6 +5686,9 @@
   - color
   - fabric
   - pattern
+  - sock_cushioning_level
+  - sock_grip_type
+  - sock_toe_style
   - target_gender
   return_reasons:
   - too_big
@@ -4965,8 +5710,12 @@
   - clothing_features
   - color
   - fabric
+  - grip_coverage
   - pattern
+  - sock_cushioning_level
+  - sock_toe_style
   - target_gender
+  - toe_coverage
   return_reasons:
   - too_big
   - too_small
@@ -4988,6 +5737,8 @@
   - color
   - fabric
   - pattern
+  - sock_cushioning_level
+  - sock_toe_style
   - target_gender
   return_reasons:
   - too_big
@@ -5010,6 +5761,8 @@
   - color
   - fabric
   - pattern
+  - sock_cushioning_level
+  - sock_toe_style
   - target_gender
   return_reasons:
   - too_big
@@ -5032,6 +5785,9 @@
   - color
   - fabric
   - pattern
+  - sock_cushioning
+  - sock_cushioning_level
+  - sock_toe_style
   - target_gender
   return_reasons:
   - too_big
@@ -5054,6 +5810,8 @@
   - color
   - fabric
   - pattern
+  - sock_cushioning_level
+  - sock_toe_style
   - target_gender
   return_reasons:
   - too_big
@@ -5076,6 +5834,8 @@
   - color
   - fabric
   - pattern
+  - sock_cushioning_level
+  - sock_toe_style
   - target_gender
   return_reasons:
   - too_big
@@ -5091,22 +5851,62 @@
 - id: aa-1-18-11
   name: Toe Socks
   children: []
-  attributes: []
+  attributes:
+  - accessory_size
+  - activity
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - pattern
+  - sock_cushioning_level
+  - sock_toe_style
+  - target_gender
   return_reasons: []
 - id: aa-1-18-12
   name: Compression Socks
   children: []
-  attributes: []
+  attributes:
+  - accessory_size
+  - activity
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - pattern
+  - sock_cushioning_level
+  - sock_toe_style
+  - target_gender
   return_reasons: []
 - id: aa-1-18-13
   name: Dress Socks
   children: []
-  attributes: []
+  attributes:
+  - accessory_size
+  - activity
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - pattern
+  - sock_cushioning_level
+  - sock_toe_style
+  - target_gender
   return_reasons: []
 - id: aa-1-18-14
   name: Thermal Socks
   children: []
-  attributes: []
+  attributes:
+  - accessory_size
+  - activity
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - pattern
+  - sock_cushioning_level
+  - sock_toe_style
+  - target_gender
   return_reasons: []
 - id: aa-1-19
   name: Suits
@@ -5121,10 +5921,14 @@
   - clothing_features
   - color
   - fabric
+  - front_button_configuration
+  - jacket_vent_style
+  - lapel_style
   - neckline
   - pattern
   - size
   - sleeve_length_type
+  - suit_pieces
   - target_gender
   return_reasons:
   - too_big
@@ -5146,9 +5950,13 @@
   - color
   - fabric
   - fit
+  - jacket_breast_style
+  - jacket_vent_style
+  - lapel_style
   - pants_length_type
   - pattern
   - size
+  - suit_pieces
   - target_gender
   - waist_rise
   return_reasons:
@@ -5170,9 +5978,12 @@
   - clothing_features
   - color
   - fabric
+  - jacket_vent_style
+  - lapel_style
   - pattern
   - size
   - skirt/dress_length_type
+  - suit_pieces
   - target_gender
   return_reasons:
   - too_big
@@ -5195,9 +6006,13 @@
   - clothing_features
   - color
   - fabric
+  - jacket_vent_style
+  - lapel_style
   - pattern
   - size
+  - suit_pieces
   - target_gender
+  - vent_style
   return_reasons:
   - too_big
   - too_small
@@ -5212,17 +6027,53 @@
 - id: aa-1-19-3-1
   name: Tuxedo Pants
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - jacket_vent_style
+  - lapel_style
+  - pattern
+  - size
+  - suit_pieces
+  - target_gender
+  - vent_style
   return_reasons: []
 - id: aa-1-19-3-2
   name: Tuxedo Jackets
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - jacket_vent_style
+  - lapel_style
+  - pattern
+  - size
+  - suit_pieces
+  - target_gender
+  - vent_style
   return_reasons: []
 - id: aa-1-19-4
   name: Unstitched Suit Sets
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - care_instructions
+  - clothing_features
+  - color
+  - fabric
+  - front_button_configuration
+  - jacket_vent_style
+  - lapel_style
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - suit_pieces
+  - target_gender
   return_reasons: []
 - id: aa-1-20
   name: Swimwear
@@ -5247,7 +6098,9 @@
   attributes:
   - age_group
   - color
+  - coverage_level
   - fabric
+  - lining_type
   - pattern
   - size
   - sleeve_length_type
@@ -5271,7 +6124,10 @@
   attributes:
   - age_group
   - color
+  - coverage_level
   - fabric
+  - fabric_stretch_type
+  - lining_type
   - pattern
   - size
   - swimwear_features
@@ -5293,7 +6149,9 @@
   attributes:
   - age_group
   - color
+  - coverage_level
   - fabric
+  - lining_type
   - pattern
   - size
   - swimwear_features
@@ -5316,7 +6174,11 @@
   attributes:
   - age_group
   - color
+  - coverage_level
   - fabric
+  - leg_cut_style
+  - lining
+  - lining_type
   - pattern
   - size
   - swimwear_features
@@ -5339,11 +6201,14 @@
   attributes:
   - age_group
   - color
+  - coverage_level
   - fabric
+  - lining_type
   - pattern
   - size
   - sleeve_length_type
   - swimwear_features
+  - swimwear_set_pieces_included
   - target_gender
   return_reasons:
   - too_big
@@ -5362,8 +6227,12 @@
   children: []
   attributes:
   - age_group
+  - bikini_top_style
   - color
+  - coverage_level
   - fabric
+  - leg_cut_height
+  - lining_type
   - pattern
   - size
   - sleeve_length_type
@@ -5387,7 +6256,9 @@
   attributes:
   - age_group
   - color
+  - coverage_level
   - fabric
+  - lining_type
   - neckline
   - pattern
   - size
@@ -5412,7 +6283,9 @@
   attributes:
   - age_group
   - color
+  - coverage_level
   - fabric
+  - lining_type
   - pattern
   - size
   - swimwear_features
@@ -5435,7 +6308,9 @@
   attributes:
   - age_group
   - color
+  - coverage_level
   - fabric
+  - lining_type
   - pattern
   - size
   - sleeve_length_type
@@ -5459,7 +6334,9 @@
   attributes:
   - age_group
   - color
+  - coverage_level
   - fabric
+  - lining_type
   - pattern
   - size
   - sleeve_length_type
@@ -5483,7 +6360,9 @@
   attributes:
   - age_group
   - color
+  - coverage_level
   - fabric
+  - lining_type
   - pattern
   - size
   - sleeve_length_type
@@ -5506,7 +6385,9 @@
   attributes:
   - age_group
   - color
+  - coverage_level
   - fabric
+  - lining_type
   - pattern
   - size
   - sleeve_length_type
@@ -5532,7 +6413,9 @@
   attributes:
   - age_group
   - color
+  - coverage_level
   - fabric
+  - lining_type
   - pattern
   - size
   - sleeve_length_type
@@ -5554,37 +6437,107 @@
 - id: aa-1-20-25-1
   name: Period Bikinis
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - coverage_level
+  - fabric
+  - lining_type
+  - pattern
+  - size
+  - sleeve_length_type
+  - swimwear_features
+  - target_gender
   return_reasons: []
 - id: aa-1-20-25-2
   name: Period One-Piece Swimsuits
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - coverage_level
+  - fabric
+  - lining_type
+  - pattern
+  - size
+  - sleeve_length_type
+  - swimwear_features
+  - target_gender
   return_reasons: []
 - id: aa-1-20-26
   name: Swim Jammers
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - coverage_level
+  - fabric
+  - lining_type
+  - pattern
+  - size
+  - sleeve_length_type
+  - swimwear_features
+  - target_gender
   return_reasons: []
 - id: aa-1-20-27
   name: Swim Skirts
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - coverage_level
+  - fabric
+  - lining_type
+  - pattern
+  - size
+  - sleeve_length_type
+  - swimwear_features
+  - target_gender
   return_reasons: []
 - id: aa-1-20-28
   name: Tankinis
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - coverage_level
+  - fabric
+  - lining_type
+  - pattern
+  - size
+  - sleeve_length_type
+  - swimwear_features
+  - target_gender
   return_reasons: []
 - id: aa-1-20-29
   name: Swim Leggings
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - coverage_level
+  - fabric
+  - lining_type
+  - pattern
+  - size
+  - sleeve_length_type
+  - swimwear_features
+  - target_gender
   return_reasons: []
 - id: aa-1-20-30
   name: Swim Shorts
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - coverage_level
+  - fabric
+  - lining_type
+  - pattern
+  - size
+  - sleeve_length_type
+  - swimwear_features
+  - target_gender
   return_reasons: []
 - id: aa-1-22
   name: Wedding & Bridal Party Dresses
@@ -5625,8 +6578,10 @@
   - age_group
   - clothing_features
   - color
+  - dress_embellishment
   - dress_occasion
   - dress_style
+  - dress_train_type
   - fabric
   - neckline
   - pattern
@@ -5648,22 +6603,78 @@
 - id: aa-1-22-1-1
   name: Bridesmaid Dresses
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - dress_embellishment
+  - dress_occasion
+  - dress_style
+  - dress_train_type
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - skirt/dress_length_type
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-22-1-2
   name: Junior Bridesmaid Dresses
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - dress_embellishment
+  - dress_occasion
+  - dress_style
+  - dress_train_type
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - skirt/dress_length_type
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-22-1-3
   name: Mother of the Bride Dresses
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - dress_embellishment
+  - dress_occasion
+  - dress_style
+  - dress_train_type
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - skirt/dress_length_type
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-22-1-4
   name: Flower Girl Dresses
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - dress_embellishment
+  - dress_occasion
+  - dress_style
+  - dress_train_type
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - skirt/dress_length_type
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-22-2
   name: Wedding Dresses
@@ -5755,17 +6766,38 @@
 - id: aa-1-23-1-1
   name: Yukatas
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-23-1-2
   name: Kimono Jackets & Cardigans
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-23-1-3
   name: Haori Jackets
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-23-2
   name: Saris & Lehengas
@@ -5775,8 +6807,10 @@
   attributes:
   - age_group
   - color
+  - embellishment_technique
   - fabric
   - pattern
+  - set_items_included
   - size
   - target_gender
   return_reasons:
@@ -5793,62 +6827,158 @@
 - id: aa-1-23-2-1
   name: Saris
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - embellishment_technique
+  - fabric
+  - pattern
+  - set_items_included
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-23-2-2
   name: Lehengas
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - embellishment_technique
+  - fabric
+  - pattern
+  - set_items_included
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-23-3
   name: Kilts
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-23-4
   name: Hanboks
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-23-5
   name: Dirndls
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-23-6
   name: Cheongsams
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-23-7
   name: Kurtas & Kurta Sets
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-23-8
   name: Baju Melayu
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-23-9
   name: Abayas & Jilbabs
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-23-10
   name: Salwar Kameez & Suit Sets
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-23-11
   name: Dashikis
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-23-12
   name: Kaftans
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - neckline
+  - pattern
+  - size
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-24
   name: Uniforms & Workwear
@@ -5862,14 +6992,17 @@
   - aa-1-24-7
   - aa-1-24-8
   - aa-1-24-9
-  - aa-1-24-10
   - aa-1-24-11
   - aa-1-24-12
+  - aa-1-24-13
   attributes:
   - age_group
   - color
   - fabric
+  - flame_resistance_standard
+  - high_visibility_class
   - pattern
+  - reflective_tape_pattern
   - size
   - target_gender
   return_reasons:
@@ -5894,7 +7027,11 @@
   - clothing_features
   - color
   - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - knee_pad_pocket_type
   - pattern
+  - reinforced_areas
   - size
   - target_gender
   return_reasons:
@@ -5911,17 +7048,50 @@
 - id: aa-1-24-1-1
   name: Work Pants
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - knee_pad_pocket_type
+  - pattern
+  - reinforced_areas
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-1-2
   name: Coveralls
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - knee_pad_pocket_type
+  - pattern
+  - reinforced_areas
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-1-3
   name: Bib Overalls
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - knee_pad_pocket_type
+  - pattern
+  - reinforced_areas
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-2
   name: Flight Suits
@@ -5931,6 +7101,8 @@
   - clothing_features
   - color
   - fabric
+  - flame_resistance_standard
+  - high_visibility_class
   - pattern
   - size
   - target_gender
@@ -5960,6 +7132,8 @@
   - clothing_features
   - color
   - fabric
+  - flame_resistance_standard
+  - high_visibility_class
   - pattern
   - size
   - target_gender
@@ -5978,32 +7152,86 @@
 - id: aa-1-24-3-1
   name: Chef Hats
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-3-2
   name: Food Service Aprons
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-3-3
   name: Chef Pants & Trousers
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-3-4
   name: Food Service Hair Nets
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-3-5
   name: Food Service Shirts & Blouses
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-3-6
   name: Chef Coats & Jackets
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-4
   name: Military Uniforms
@@ -6020,6 +7248,9 @@
   - clothing_features
   - color
   - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - military_branch
   - pattern
   - size
   - target_gender
@@ -6038,37 +7269,107 @@
 - id: aa-1-24-4-1
   name: Military Uniform Shirts
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - military_branch
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-4-2
   name: Combat Uniforms
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - military_branch
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-4-3
   name: Military Insignia & Badges
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - military_branch
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-4-4
   name: Dress Uniforms
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - military_branch
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-4-5
   name: Military Patches
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - military_branch
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-4-6
   name: Military Coats & Jackets
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - military_branch
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-4-7
   name: Military Uniform Pants
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - military_branch
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-5
   name: School Uniforms
@@ -6085,6 +7386,9 @@
   - clothing_features
   - color
   - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - logo_application_method
   - pants_length_type
   - pattern
   - size
@@ -6106,52 +7410,146 @@
 - id: aa-1-24-5-1
   name: School Physical Education Uniforms
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - logo_application_method
+  - pants_length_type
+  - pattern
+  - size
+  - skirt/dress_length_type
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-24-5-2
   name: School Uniform Sweaters & Knitwear
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - logo_application_method
+  - pants_length_type
+  - pattern
+  - size
+  - skirt/dress_length_type
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-24-5-3
   name: School Uniform Pants & Shorts
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - logo_application_method
+  - pants_length_type
+  - pattern
+  - size
+  - skirt/dress_length_type
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-24-5-4
   name: School Uniform Tops
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - logo_application_method
+  - pants_length_type
+  - pattern
+  - size
+  - skirt/dress_length_type
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-24-5-5
   name: School Uniform Blazers & Outerwear
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - logo_application_method
+  - pants_length_type
+  - pattern
+  - size
+  - skirt/dress_length_type
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-24-5-6
   name: School Uniform Skirts
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - logo_application_method
+  - pants_length_type
+  - pattern
+  - size
+  - skirt/dress_length_type
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-24-5-7
   name: School Uniform Dresses & Jumpers
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - logo_application_method
+  - pants_length_type
+  - pattern
+  - size
+  - skirt/dress_length_type
+  - sleeve_length_type
+  - target_gender
   return_reasons: []
 - id: aa-1-24-6
   name: Security Uniforms
   children:
   - aa-1-24-6-1
-  - aa-1-24-6-2
   - aa-1-24-6-3
   attributes:
   - age_group
   - clothing_features
   - color
   - fabric
+  - flame_resistance_standard
+  - high_visibility_class
   - pattern
   - size
   - target_gender
+  - uniform_pieces_included
+  - uniform_role
   return_reasons:
   - too_big
   - too_small
@@ -6167,17 +7565,34 @@
 - id: aa-1-24-6-1
   name: Security Uniform Shirts
   children: []
-  attributes: []
-  return_reasons: []
-- id: aa-1-24-6-2
-  name: Security Uniform Accessories
-  children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - pattern
+  - size
+  - target_gender
+  - uniform_pieces_included
+  - uniform_role
   return_reasons: []
 - id: aa-1-24-6-3
   name: Security Uniform Pants
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - pattern
+  - size
+  - target_gender
+  - uniform_pieces_included
+  - uniform_role
   return_reasons: []
 - id: aa-1-24-7
   name: Sports Uniforms
@@ -6188,6 +7603,8 @@
   - clothing_features
   - color
   - fabric
+  - flame_resistance_standard
+  - high_visibility_class
   - pants_length_type
   - pattern
   - size
@@ -6211,8 +7628,12 @@
   attributes:
   - age_group
   - clothing_features
+  - collar_style
   - color
+  - cuff_style
   - fabric
+  - flame_resistance_standard
+  - high_visibility_class
   - pattern
   - size
   - sleeve_length_type
@@ -6242,6 +7663,8 @@
   - clothing_features
   - color
   - fabric
+  - flame_resistance_standard
+  - high_visibility_class
   - pattern
   - size
   - target_gender
@@ -6260,42 +7683,117 @@
 - id: aa-1-24-9-1
   name: Scrub Dresses & Skirts
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-9-2
   name: Scrub Tops
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-9-3
   name: Scrub Jackets
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-9-4
   name: Scrub Pants
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-9-5
   name: Scrub Sets
   children: []
-  attributes: []
-  return_reasons: []
-- id: aa-1-24-10
-  name: High-Visibility Safety Apparel
-  children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-11
   name: Clergy Uniforms
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - pattern
+  - reflective_tape_pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-24-12
   name: Housekeeping Uniforms
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - pattern
+  - reflective_tape_pattern
+  - size
+  - target_gender
+  return_reasons: []
+- id: aa-1-24-13
+  name: Security Uniform Accessories
+  children: []
+  attributes:
+  - age_group
+  - clothing_features
+  - color
+  - fabric
+  - flame_resistance_standard
+  - high_visibility_class
+  - pattern
+  - reflective_tape_pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-1-25
   name: Baby & Children's Clothing
@@ -8525,6 +10023,7 @@
   - aa-2-35
   - aa-2-36
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
@@ -8545,6 +10044,7 @@
   name: Arm Warmers & Sleeves
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - activity
   - age_group
@@ -8567,11 +10067,13 @@
   name: Balaclavas
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - fabric
   - pattern
   - target_gender
+  - thermal_weight
   return_reasons:
   - too_big
   - too_small
@@ -8587,11 +10089,13 @@
   name: Bandanas & Headties
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - fabric
   - pattern
   - target_gender
+  - upf_rating
   return_reasons:
   - too_big
   - too_small
@@ -8608,6 +10112,7 @@
   name: Belt Buckles
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - fabric
@@ -8628,8 +10133,10 @@
   name: Belts
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
+  - belt_buckle_type
   - clothing_accessory_material
   - clothing_features
   - color
@@ -8656,11 +10163,13 @@
   - aa-2-7-5
   - aa-2-7-6
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - fabric
   - pattern
   - target_gender
+  - veil_length_type
   return_reasons:
   - too_big
   - too_small
@@ -8675,37 +10184,80 @@
 - id: aa-2-7-1
   name: Bridal Garters
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
+  - veil_length_type
   return_reasons: []
 - id: aa-2-7-2
   name: Bridal Sashes & Belts
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
+  - veil_length_type
   return_reasons: []
 - id: aa-2-7-3
   name: Bridal Gloves
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
+  - veil_length_type
   return_reasons: []
 - id: aa-2-7-4
   name: Bridal Veils
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
+  - veil_length_type
   return_reasons: []
 - id: aa-2-7-5
   name: Bridal Tiaras & Headpieces
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
+  - veil_length_type
   return_reasons: []
 - id: aa-2-7-6
   name: Bridal Dupattas & Shawls
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
+  - veil_length_type
   return_reasons: []
 - id: aa-2-8
   name: Button Studs
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - fabric
@@ -8726,6 +10278,7 @@
   name: Collar Stays
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
@@ -8747,6 +10300,7 @@
   name: Cufflinks
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - jewelry_material
@@ -8768,10 +10322,12 @@
   name: Decorative Fans
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - decoration_material
   - pattern
+  - rib_material
   - target_gender
   return_reasons:
   - too_big
@@ -8789,8 +10345,10 @@
   name: Earmuffs
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
+  - earmuff_style
   - fabric
   - pattern
   - target_gender
@@ -8810,9 +10368,11 @@
   name: Gloves & Mittens
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
+  - handwear_cuff_style
   - handwear_features
   - handwear_material
   - handwear_type
@@ -8848,6 +10408,7 @@
   - aa-2-14-14
   - aa-2-14-15
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - pattern
@@ -8869,6 +10430,7 @@
   - aa-2-14-1-1
   - aa-2-14-1-2
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - fabric
@@ -8888,17 +10450,30 @@
 - id: aa-2-14-1-1
   name: Clip-In Hair Buns
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-14-1-2
   name: Hair Donuts & Bun Makers
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-14-2
   name: Hair Combs
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - bristle_material
   - color
@@ -8922,9 +10497,13 @@
   name: Hair Extensions
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
+  - color_effect
   - fabric
+  - hair_extension_texture
+  - hair_quality_grade
   - pattern
   - target_gender
   return_reasons:
@@ -8942,6 +10521,7 @@
   name: Hair Forks & Sticks
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - embellishment/trim_material
@@ -8967,9 +10547,12 @@
   name: Hair Nets
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - fabric
+  - hair_net_style
+  - layer_design
   - pattern
   - target_gender
   return_reasons:
@@ -8986,11 +10569,11 @@
 - id: aa-2-14-6
   name: Hair Pins, Claws & Clips
   children:
-  - aa-2-14-6-1
   - aa-2-14-6-2
   - aa-2-14-6-3
   - aa-2-14-6-4
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - construction
@@ -9011,30 +10594,56 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: aa-2-14-6-1
-  name: Hair Pins & Bobby Pins
-  children: []
-  attributes: []
-  return_reasons: []
 - id: aa-2-14-6-2
   name: Claw Clips
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - construction
+  - embellishment/trim_material
+  - fabric
+  - jewelry_material
+  - material
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-14-6-3
   name: Hair Barrettes & Slides
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - construction
+  - embellishment/trim_material
+  - fabric
+  - jewelry_material
+  - material
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-14-6-4
   name: Hair Bows & Bow Clips
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - construction
+  - embellishment/trim_material
+  - fabric
+  - jewelry_material
+  - material
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-14-7
   name: Hair Wreaths
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - fabric
@@ -9055,11 +10664,13 @@
   name: Headbands
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - construction
   - embellishment/trim_material
   - fabric
+  - headband_embellishment
   - jewelry_material
   - pattern
   - target_gender
@@ -9080,10 +10691,12 @@
   - aa-2-14-9-1
   - aa-2-14-9-2
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - fabric
   - pattern
+  - ponytail_holder_style
   - target_gender
   return_reasons:
   - too_big
@@ -9100,17 +10713,32 @@
 - id: aa-2-14-9-1
   name: Scrunchies
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - ponytail_holder_style
+  - target_gender
   return_reasons: []
 - id: aa-2-14-9-2
   name: Spiral Hair Ties
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - ponytail_holder_style
+  - target_gender
   return_reasons: []
 - id: aa-2-14-10
   name: Tiaras
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - construction
@@ -9119,6 +10747,7 @@
   - jewelry_material
   - pattern
   - target_gender
+  - tiara_design
   return_reasons:
   - too_big
   - too_small
@@ -9134,6 +10763,7 @@
   name: Wig Accessories
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - pattern
@@ -9153,12 +10783,19 @@
   name: Wigs
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
+  - cap_construction
+  - cap_size
   - color
   - fabric
   - hair_type
+  - lace_area_size
+  - lace_type
+  - parting_style
   - pattern
   - target_gender
+  - wig_fiber_material
   return_reasons:
   - too_big
   - too_small
@@ -9174,6 +10811,7 @@
   name: Hair Bands
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - embellishment/trim_material
@@ -9195,17 +10833,28 @@
 - id: aa-2-14-14
   name: Hair Beads & Cuffs
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-14-15
   name: Durags & Hair Wraps
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-15
   name: Hand Muffs
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
@@ -9228,6 +10877,7 @@
   name: Handkerchiefs
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - fabric
@@ -9273,6 +10923,7 @@
   - aa-2-17-24
   - aa-2-17-25
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
@@ -9296,9 +10947,12 @@
   name: Baseball Caps
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
+  - cap_fit_type
   - color
+  - crown_profile
   - fabric
   - headwear_features
   - pattern
@@ -9318,8 +10972,10 @@
   name: Beanies
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
+  - beanie_style
   - color
   - fabric
   - headwear_features
@@ -9340,8 +10996,10 @@
   name: Berets
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
+  - beret_style
   - color
   - fabric
   - headwear_features
@@ -9362,9 +11020,11 @@
   name: Bowler Hats
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
+  - crown_style
   - fabric
   - headwear_features
   - pattern
@@ -9384,6 +11044,7 @@
   name: Bucket Hats
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
@@ -9406,6 +11067,7 @@
   name: Cowboy Hats
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
@@ -9428,6 +11090,7 @@
   name: Fedoras
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
@@ -9451,6 +11114,7 @@
   name: Flat Caps
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
@@ -9473,6 +11137,7 @@
   name: Panama Hats
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
@@ -9480,6 +11145,7 @@
   - headwear_features
   - pattern
   - target_gender
+  - weave_style
   return_reasons:
   - too_big
   - too_small
@@ -9495,6 +11161,7 @@
   name: Snapback Caps
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
@@ -9517,8 +11184,10 @@
   name: Sun Hats
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
+  - chin_strap_type
   - color
   - fabric
   - headwear_features
@@ -9539,6 +11208,7 @@
   name: Top Hats
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
@@ -9546,6 +11216,7 @@
   - headwear_features
   - pattern
   - target_gender
+  - top_hat_style
   return_reasons:
   - too_big
   - too_small
@@ -9561,6 +11232,7 @@
   name: Trilbies
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
@@ -9583,10 +11255,12 @@
   name: Trucker Hats
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
   - fabric
+  - front_decoration_type
   - headwear_features
   - pattern
   - target_gender
@@ -9605,6 +11279,7 @@
   name: Visors
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
@@ -9627,12 +11302,15 @@
   name: Winter Hats
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
+  - ear_coverage_type
   - fabric
   - headwear_features
   - pattern
+  - pom_pom_type
   - target_gender
   return_reasons:
   - too_big
@@ -9648,47 +11326,128 @@
 - id: aa-2-17-17
   name: Boater Hats
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - headwear_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-2-17-18
   name: Pillbox Hats
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - headwear_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-2-17-19
   name: Kufis & Topis
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - headwear_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-2-17-20
   name: Fezzes
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - headwear_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-2-17-21
   name: Pork Pie Hats
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - headwear_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-2-17-22
   name: Newsboy Caps
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - headwear_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-2-17-23
   name: Sombreros
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - headwear_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-2-17-24
   name: Cloche Hats
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - headwear_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-2-17-25
   name: Graduation Caps
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - headwear_features
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-2-18
   name: Headwear
@@ -9699,9 +11458,11 @@
   - aa-2-18-4
   - aa-2-18-5
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
+  - compatible_hair_length
   - fabric
   - pattern
   - target_gender
@@ -9721,9 +11482,11 @@
   name: Fascinators
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - fabric
+  - fascinator_style
   - pattern
   - target_gender
   return_reasons:
@@ -9742,6 +11505,7 @@
   name: Headdresses
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - fabric
@@ -9762,9 +11526,11 @@
   name: Turbans
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - fabric
+  - headwear_intended_use
   - pattern
   - target_gender
   return_reasons:
@@ -9782,17 +11548,34 @@
 - id: aa-2-18-4
   name: Undercaps & Underscarves
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - compatible_hair_length
+  - fabric
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-18-5
   name: Bonnets & Sleep Caps
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - compatible_hair_length
+  - fabric
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-19
   name: Leg Warmers
   children: []
   attributes:
+  - accessory_pieces_included
   - activity
   - age_group
   - color
@@ -9815,7 +11598,9 @@
   name: Leis
   children: []
   attributes:
+  - accessory_pieces_included
   - color
+  - lei_closure_style
   - pattern
   - target_gender
   return_reasons:
@@ -9833,6 +11618,7 @@
   name: Maternity Belts & Support Bands
   children: []
   attributes:
+  - accessory_pieces_included
   - color
   - fabric
   - pattern
@@ -9852,6 +11638,7 @@
   name: Neck Gaiters
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
@@ -9876,12 +11663,14 @@
   - aa-2-23-2
   - aa-2-23-3
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
   - fabric
   - pattern
   - target_gender
+  - weave_finish
   return_reasons:
   - too_long
   - too_short
@@ -9897,22 +11686,47 @@
 - id: aa-2-23-1
   name: Bow Ties
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
+  - weave_finish
   return_reasons: []
 - id: aa-2-23-2
   name: Ascots & Cravats
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
+  - weave_finish
   return_reasons: []
 - id: aa-2-23-3
   name: Tie Sets
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
+  - weave_finish
   return_reasons: []
 - id: aa-2-24
   name: Pinback Buttons
   children: []
   attributes:
+  - accessory_pieces_included
   - color
   - jewelry_material
   - pattern
@@ -9933,6 +11747,7 @@
   name: Sashes
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - fabric
@@ -9953,12 +11768,15 @@
   name: Scarves & Shawls
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - care_instructions
   - clothing_features
   - color
+  - edge_finish
   - fabric
+  - opacity_level
   - pattern
   - scarf/shawl_style
   - target_gender
@@ -9978,6 +11796,7 @@
   name: Sunglasses
   children: []
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - eyewear_frame_color
@@ -9989,6 +11808,7 @@
   - lens_color
   - lens_pattern
   - lens_polarization
+  - lens_tint_category
   - pattern
   - target_gender
   - temple_color
@@ -10007,6 +11827,7 @@
   name: Suspenders
   children: []
   attributes:
+  - accessory_pieces_included
   - closure_type
   - color
   - fabric
@@ -10029,6 +11850,7 @@
   name: Tie Clips
   children: []
   attributes:
+  - accessory_pieces_included
   - color
   - fabric
   - jewelry_type
@@ -10055,6 +11877,7 @@
   - aa-2-30-4
   - aa-2-30-5
   attributes:
+  - accessory_pieces_included
   - age_group
   - color
   - material
@@ -10074,27 +11897,57 @@
 - id: aa-2-30-1
   name: Festival & Event Wristbands
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - material
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-30-2
   name: Survival & Paracord Wristbands
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - material
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-30-3
   name: Insect Repellent Wristbands
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - material
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-30-4
   name: Sweat Wristbands
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - material
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-30-5
   name: Awareness Wristbands
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - age_group
+  - color
+  - material
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-31
   name: Traditional Clothing Accessories
@@ -10106,6 +11959,7 @@
   - aa-2-31-5
   - aa-2-31-6
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
@@ -10126,41 +11980,85 @@
 - id: aa-2-31-1
   name: Obi Belts
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-31-2
   name: Kilt & Highland Wear Accessories
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-31-3
   name: Cummerbunds
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-31-4
   name: Dupattas
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-31-5
   name: Bindis & Forehead Adornments
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-31-6
   name: Graduation Regalia Accessories
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-32
   name: Fashion Face Masks
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - age_group
   - color
   - fabric
+  - face_mask_style
   - pattern
   - target_gender
   return_reasons:
@@ -10183,6 +12081,7 @@
   - aa-2-33-3
   - aa-2-33-4
   attributes:
+  - accessory_pieces_included
   - color
   - fabric
   - pattern
@@ -10204,6 +12103,7 @@
   name: Baby & Children's Belts
   children: []
   attributes:
+  - accessory_pieces_included
   - clothing_accessory_material
   - color
   - pattern
@@ -10224,6 +12124,7 @@
   name: Baby & Children's Gloves & Mittens
   children: []
   attributes:
+  - accessory_pieces_included
   - color
   - handwear_material
   - pattern
@@ -10244,6 +12145,7 @@
   name: Baby & Children's Hats
   children: []
   attributes:
+  - accessory_pieces_included
   - accessory_size
   - baby/toddler_hat_style
   - color
@@ -10267,6 +12169,7 @@
   name: Baby & Children's Protective Wear
   children: []
   attributes:
+  - accessory_pieces_included
   - color
   - fabric
   - pattern
@@ -10286,17 +12189,35 @@
 - id: aa-2-34
   name: Pocket Squares
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-35
   name: Clothing Patches
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-2-36
   name: Detachable Collars
   children: []
-  attributes: []
+  attributes:
+  - accessory_pieces_included
+  - accessory_size
+  - age_group
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-3
   name: Costumes & Accessories
@@ -10377,6 +12298,7 @@
   attributes:
   - age_group
   - color
+  - costume_components_included
   - costume_theme
   - fabric
   - pattern
@@ -10399,6 +12321,7 @@
   attributes:
   - age_group
   - color
+  - costume_components_included
   - costume_theme
   - fabric
   - pattern
@@ -10421,6 +12344,7 @@
   attributes:
   - age_group
   - color
+  - costume_components_included
   - costume_theme
   - fabric
   - pattern
@@ -10440,17 +12364,41 @@
 - id: aa-3-3-3
   name: Costume Cloaks & Capes
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - costume_components_included
+  - costume_theme
+  - fabric
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-3-3-4
   name: Costume Tops
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - costume_components_included
+  - costume_theme
+  - fabric
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-3-3-5
   name: Costume Onesies & Jumpsuits
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - costume_components_included
+  - costume_theme
+  - fabric
+  - pattern
+  - size
+  - target_gender
   return_reasons: []
 - id: aa-3-4
   name: Masks
@@ -10476,7 +12424,11 @@
 - id: aa-3-5
   name: Costume Wigs
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-4
   name: Handbag & Wallet Accessories
@@ -10530,6 +12482,8 @@
   children: []
   attributes:
   - color
+  - lanyard_attachment_hardware
+  - lanyard_style
   - pattern
   - target_gender
   return_reasons:
@@ -10549,6 +12503,7 @@
   attributes:
   - color
   - pattern
+  - strand_configuration
   - target_gender
   return_reasons:
   - too_long
@@ -10564,27 +12519,52 @@
 - id: aa-4-4
   name: Bag Straps & Handles
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - carry_options
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-4-5
   name: Bag Bases & Protectors
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - carry_options
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-4-6
   name: Purse Hooks & Hangers
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - carry_options
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-4-7
   name: Bag Inserts & Organizers
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - carry_options
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-4-8
   name: Bag Charms
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - carry_options
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-5
   name: Handbags, Wallets & Cases
@@ -10621,6 +12601,7 @@
   attributes:
   - age_group
   - attachment_options
+  - clip_style
   - color
   - pattern
   - target_gender
@@ -10638,17 +12619,35 @@
 - id: aa-5-1-1
   name: Passport Holders
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - attachment_options
+  - clip_style
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-5-1-2
   name: Badge Reels
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - attachment_options
+  - clip_style
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-5-1-3
   name: ID Card Holders
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - attachment_options
+  - clip_style
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-5-2
   name: Business Card Cases
@@ -10675,6 +12674,7 @@
   children: []
   attributes:
   - age_group
+  - checkbook_loading_orientation
   - color
   - pattern
   - target_gender
@@ -10722,6 +12722,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -10747,6 +12748,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -10772,6 +12774,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -10797,6 +12800,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -10822,6 +12826,8 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
+  - bag_size_descriptor
   - care_instructions
   - carry_options
   - color
@@ -10847,6 +12853,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -10872,6 +12879,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -10898,6 +12906,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -10926,6 +12935,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -10951,6 +12961,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -10976,6 +12987,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -11001,6 +13013,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -11026,6 +13039,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -11051,6 +13065,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -11076,9 +13091,11 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
+  - fur_type
   - pattern
   - target_gender
   return_reasons:
@@ -11101,10 +13118,12 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
   - leather_type
+  - number_of_compartments
   - pattern
   - target_gender
   return_reasons:
@@ -11127,6 +13146,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -11153,6 +13173,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -11179,6 +13200,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -11205,6 +13227,7 @@
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bag_embellishment
   - care_instructions
   - carry_options
   - color
@@ -11227,6 +13250,7 @@
   attributes:
   - age_group
   - bag/case_material
+  - bag_embellishment
   - color
   - pattern
   - target_gender
@@ -11244,17 +13268,53 @@
 - id: aa-5-4-21
   name: Potli Bags
   children: []
-  attributes: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - bag_embellishment
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-5-4-22
   name: Belt Bags
   children: []
-  attributes: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - bag_embellishment
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-5-4-23
   name: Backpack Handbags
   children: []
-  attributes: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - bag_embellishment
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - target_gender
   return_reasons: []
 - id: aa-5-5
   name: Wallets & Money Clips
@@ -11269,6 +13329,7 @@
   - aa-5-5-9
   attributes:
   - age_group
+  - clip_mechanism_type
   - clothing_accessory_material
   - color
   - pattern
@@ -11333,6 +13394,7 @@
   attributes:
   - clothing_accessory_material
   - color
+  - key_attachment_mechanism
   - pattern
   - target_gender
   - wallet_features
@@ -11434,7 +13496,14 @@
 - id: aa-5-5-9
   name: Money Clips
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clip_mechanism_type
+  - clothing_accessory_material
+  - color
+  - pattern
+  - target_gender
+  - wallet_features
   return_reasons: []
 - id: aa-6
   name: Jewelry
@@ -11452,13 +13521,17 @@
   - aa-6-11
   - aa-6-12
   - aa-6-13
-  - aa-6-14
   attributes:
   - age_group
   - color
+  - diamond_color_grade
+  - fluorescence_grade
+  - gemstone_clarity_grade
   - jewelry_material
   - jewelry_type
   - pattern
+  - stone_creation_method
+  - stone_cut_grade
   - target_gender
   return_reasons:
   - too_big
@@ -11500,10 +13573,12 @@
   - age_group
   - body_jewelry_type
   - color
+  - gemstone_type
   - jewelry_material
   - jewelry_type
   - pattern
   - target_gender
+  - threading_type
   return_reasons:
   - too_big
   - too_small
@@ -11549,6 +13624,7 @@
   - jewelry_material
   - jewelry_type
   - pattern
+  - pin_backing_type
   - target_gender
   return_reasons:
   - too_big
@@ -11564,12 +13640,26 @@
 - id: aa-6-4-1
   name: Brooches
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - jewelry_material
+  - jewelry_type
+  - pattern
+  - pin_backing_type
+  - target_gender
   return_reasons: []
 - id: aa-6-4-2
   name: Lapel Pins
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - jewelry_material
+  - jewelry_type
+  - pattern
+  - pin_backing_type
+  - target_gender
   return_reasons: []
 - id: aa-6-5
   name: Charms & Pendants
@@ -11582,6 +13672,7 @@
   - jewelry_material
   - jewelry_type
   - pattern
+  - stone_setting_type
   - target_gender
   return_reasons:
   - too_big
@@ -11597,12 +13688,26 @@
 - id: aa-6-5-1
   name: Pendants
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - jewelry_material
+  - jewelry_type
+  - pattern
+  - stone_setting_type
+  - target_gender
   return_reasons: []
 - id: aa-6-5-2
   name: Charms
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - jewelry_material
+  - jewelry_type
+  - pattern
+  - stone_setting_type
+  - target_gender
   return_reasons: []
 - id: aa-6-6
   name: Earrings
@@ -11610,9 +13715,11 @@
   attributes:
   - age_group
   - color
+  - earring_closure_type
   - earring_design
   - jewelry_material
   - jewelry_type
+  - metal_purity
   - pattern
   - target_gender
   return_reasons:
@@ -11633,6 +13740,7 @@
   - age_group
   - color
   - jewelry_material
+  - jewelry_pieces_included
   - jewelry_type
   - necklace_design
   - pattern
@@ -11658,6 +13766,7 @@
   - jewelry_material
   - jewelry_type
   - necklace_design
+  - necklace_length_type
   - pattern
   - target_gender
   return_reasons:
@@ -11679,6 +13788,7 @@
   attributes:
   - age_group
   - color
+  - gemstone_cut_style
   - gemstone_type
   - jewelry_material
   - jewelry_type
@@ -11701,12 +13811,34 @@
 - id: aa-6-9-1
   name: Wedding Bands
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - gemstone_cut_style
+  - gemstone_type
+  - jewelry_material
+  - jewelry_type
+  - pattern
+  - ring_design
+  - ring_size
+  - stone_shape
+  - target_gender
   return_reasons: []
 - id: aa-6-9-2
   name: Engagement Rings
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - gemstone_cut_style
+  - gemstone_type
+  - jewelry_material
+  - jewelry_type
+  - pattern
+  - ring_design
+  - ring_size
+  - stone_shape
+  - target_gender
   return_reasons: []
 - id: aa-6-10
   name: Watch Accessories
@@ -11724,6 +13856,7 @@
   - color
   - material
   - pattern
+  - protection_coverage_area
   - target_gender
   - watch_accessory_style
   return_reasons:
@@ -11752,6 +13885,7 @@
   - pattern
   - target_gender
   - watch_accessory_style
+  - watch_band_design
   return_reasons:
   - too_big
   - too_small
@@ -11771,6 +13905,7 @@
   - age_group
   - color
   - pattern
+  - sticker_decal_features
   - target_gender
   return_reasons:
   - too_big
@@ -11795,6 +13930,7 @@
   - connectivity_technology
   - pattern
   - target_gender
+  - winding_direction
   return_reasons:
   - too_big
   - too_small
@@ -11809,27 +13945,62 @@
 - id: aa-6-10-4
   name: Watch Storage Boxes & Rolls
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - material
+  - pattern
+  - protection_coverage_area
+  - target_gender
+  - watch_accessory_style
   return_reasons: []
 - id: aa-6-10-5
   name: Watch Parts & Components
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - material
+  - pattern
+  - protection_coverage_area
+  - target_gender
+  - watch_accessory_style
   return_reasons: []
 - id: aa-6-10-6
   name: Watch Tools
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - material
+  - pattern
+  - protection_coverage_area
+  - target_gender
+  - watch_accessory_style
   return_reasons: []
 - id: aa-6-10-7
   name: Watch Display Stands
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - material
+  - pattern
+  - protection_coverage_area
+  - target_gender
+  - watch_accessory_style
   return_reasons: []
 - id: aa-6-10-8
   name: Watch Protective Cases & Covers
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - material
+  - pattern
+  - protection_coverage_area
+  - target_gender
+  - watch_accessory_style
   return_reasons: []
 - id: aa-6-11
   name: Watches
@@ -11839,13 +14010,16 @@
   - band_color
   - band_pattern
   - case_color
+  - case_material
   - case_pattern
+  - crystal_material
   - dial_color
   - dial_pattern
   - target_gender
   - watch_display
   - watch_features
   - watch_material
+  - watch_movement
   return_reasons:
   - too_big
   - too_small
@@ -11889,12 +14063,18 @@
 - id: aa-6-13
   name: Dental Grills
   children: []
-  attributes: []
-  return_reasons: []
-- id: aa-6-14
-  name: Loose Gemstones
-  children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - diamond_color_grade
+  - fluorescence_grade
+  - gemstone_clarity_grade
+  - jewelry_material
+  - jewelry_type
+  - pattern
+  - stone_creation_method
+  - stone_cut_grade
+  - target_gender
   return_reasons: []
 - id: aa-7
   name: Shoe Accessories
@@ -11930,6 +14110,7 @@
   - age_group
   - clothing_accessory_material
   - color
+  - insulation_type
   - pattern
   - shoe_size
   - target_gender
@@ -11951,9 +14132,11 @@
   - age_group
   - clothing_accessory_material
   - color
+  - gaiter_height_type
   - pattern
   - shoe_size
   - target_gender
+  - underfoot_strap_type
   return_reasons:
   - too_big
   - too_small
@@ -11993,17 +14176,35 @@
 - id: aa-7-3-1
   name: Boot Covers
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - shoe_size
+  - target_gender
   return_reasons: []
 - id: aa-7-3-2
   name: Heel Protectors
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - shoe_size
+  - target_gender
   return_reasons: []
 - id: aa-7-3-3
   name: Toe Covers
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - color
+  - fabric
+  - pattern
+  - shoe_size
+  - target_gender
   return_reasons: []
 - id: aa-7-4
   name: Shoe Grips
@@ -12018,6 +14219,7 @@
   - color
   - pattern
   - shoe_size
+  - suitable_surface_type
   - target_gender
   return_reasons:
   - too_big
@@ -12034,22 +14236,50 @@
 - id: aa-7-4-1
   name: Ice & Snow Cleats
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_accessory_material
+  - color
+  - pattern
+  - shoe_size
+  - suitable_surface_type
+  - target_gender
   return_reasons: []
 - id: aa-7-4-2
   name: Traction Sprays & Rosin
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_accessory_material
+  - color
+  - pattern
+  - shoe_size
+  - suitable_surface_type
+  - target_gender
   return_reasons: []
 - id: aa-7-4-3
   name: Replacement Studs & Spikes
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_accessory_material
+  - color
+  - pattern
+  - shoe_size
+  - suitable_surface_type
+  - target_gender
   return_reasons: []
 - id: aa-7-4-4
   name: Adhesive Grip Pads & Treads
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_accessory_material
+  - color
+  - pattern
+  - shoe_size
+  - suitable_surface_type
+  - target_gender
   return_reasons: []
 - id: aa-7-5
   name: Shoe Inserts
@@ -12063,6 +14293,9 @@
   - age_group
   - clothing_accessory_material
   - color
+  - foot_arch_type_suitability
+  - foot_support_level
+  - insert_coverage_area
   - pattern
   - shoe_size
   - target_gender
@@ -12084,6 +14317,8 @@
   - age_group
   - clothing_accessory_material
   - color
+  - foot_support_level
+  - insert_coverage_area
   - pattern
   - shoe_size
   - target_gender
@@ -12105,6 +14340,11 @@
   - age_group
   - clothing_accessory_material
   - color
+  - foot_arch_type_compatibility
+  - foot_support_level
+  - insert_coverage_area
+  - insert_length_type
+  - insole_attachment_method
   - pattern
   - shoe_size
   - target_gender
@@ -12127,6 +14367,8 @@
   - age_group
   - clothing_accessory_material
   - color
+  - foot_support_level
+  - insert_coverage_area
   - pattern
   - shoe_size
   - target_gender
@@ -12150,6 +14392,8 @@
   - age_group
   - clothing_accessory_material
   - color
+  - foot_support_level
+  - insert_coverage_area
   - pattern
   - shoe_size
   - target_gender
@@ -12167,17 +14411,42 @@
 - id: aa-7-5-4-1
   name: Heel Lifts
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_accessory_material
+  - color
+  - foot_support_level
+  - insert_coverage_area
+  - pattern
+  - shoe_size
+  - target_gender
   return_reasons: []
 - id: aa-7-5-4-2
   name: Heel Grips & Liners
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_accessory_material
+  - color
+  - foot_support_level
+  - insert_coverage_area
+  - pattern
+  - shoe_size
+  - target_gender
   return_reasons: []
 - id: aa-7-5-5
   name: Toe Pads
   children: []
-  attributes: []
+  attributes:
+  - age_group
+  - clothing_accessory_material
+  - color
+  - foot_arch_type_suitability
+  - foot_support_level
+  - insert_coverage_area
+  - pattern
+  - shoe_size
+  - target_gender
   return_reasons: []
 - id: aa-7-6
   name: Shoelaces
@@ -12187,6 +14456,7 @@
   - clothing_accessory_material
   - color
   - pattern
+  - shoelace_aglet_material
   - target_gender
   return_reasons:
   - too_long
@@ -12206,7 +14476,9 @@
   - age_group
   - clothing_accessory_material
   - color
+  - equestrian_discipline
   - pattern
+  - rowel_type
   - target_gender
   return_reasons:
   - too_big
@@ -12235,14 +14507,18 @@
   - care_instructions
   - closure_type
   - color
+  - footwear_construction_method
   - footwear_material
   - heel_height_type
+  - lining_material
   - occasion_style
+  - outsole_material
   - pattern
   - shoe_features
   - shoe_fit
   - shoe_size
   - target_gender
+  - toe_protection_type
   - toe_style
   return_reasons:
   - too_big
@@ -12268,7 +14544,10 @@
   - closure_type
   - color
   - footwear_material
+  - footwear_support_type
   - heel_height_type
+  - lining_material
+  - outsole_material
   - pattern
   - shoe_features
   - shoe_fit
@@ -12300,7 +14579,9 @@
   - color
   - footwear_material
   - heel_height_type
+  - lining_material
   - occasion_style
+  - outsole_material
   - pattern
   - shoe_features
   - shoe_fit
@@ -12331,7 +14612,9 @@
   - color
   - footwear_material
   - heel_height_type
+  - lining_material
   - occasion_style
+  - outsole_material
   - pattern
   - sandal_style
   - shoe_features
@@ -12363,7 +14646,9 @@
   - color
   - footwear_material
   - heel_height_type
+  - lining_material
   - occasion_style
+  - outsole_material
   - pattern
   - shoe_features
   - shoe_fit
@@ -12396,14 +14681,18 @@
   - color
   - footwear_material
   - heel_height_type
+  - lining_material
   - occasion_style
+  - outsole_material
   - pattern
+  - pronation_support
   - shoe_features
   - shoe_fit
   - shoe_size
   - sneaker_style
   - target_gender
   - toe_style
+  - upper_material
   return_reasons:
   - too_big
   - too_small
@@ -12428,7 +14717,10 @@
   - color
   - flat_shoe_style
   - footwear_material
+  - insole_material
+  - lining_material
   - occasion_style
+  - outsole_material
   - pattern
   - shoe_features
   - shoe_fit
@@ -12459,8 +14751,11 @@
   - color
   - footwear_material
   - heel_height_type
+  - heel_shape
   - heel_shoe_type
+  - lining_material
   - occasion_style
+  - outsole_material
   - pattern
   - shoe_features
   - shoe_fit
@@ -12494,6 +14789,8 @@
   - closure_type
   - color
   - footwear_material
+  - lining_material
+  - outsole_material
   - pattern
   - shoe_features
   - shoe_fit
@@ -12520,7 +14817,9 @@
   - closure_type
   - color
   - footwear_material
+  - lining_material
   - occasion_style
+  - outsole_material
   - pattern
   - shoe_features
   - shoe_fit
@@ -12546,7 +14845,9 @@
   - closure_type
   - color
   - footwear_material
+  - lining_material
   - occasion_style
+  - outsole_material
   - pattern
   - sandal_style
   - shoe_features
@@ -12574,6 +14875,8 @@
   - closure_type
   - color
   - footwear_material
+  - lining_material
+  - outsole_material
   - pattern
   - shoe_features
   - shoe_fit
@@ -12599,7 +14902,9 @@
   - closure_type
   - color
   - footwear_material
+  - lining_material
   - occasion_style
+  - outsole_material
   - pattern
   - shoe_features
   - shoe_fit
@@ -12626,6 +14931,8 @@
   - color
   - first_steps/crawlers_style
   - footwear_material
+  - lining_material
+  - outsole_material
   - pattern
   - shoe_features
   - shoe_fit
