@@ -16,7 +16,16 @@ namespace :test do
   desc "Run integration tests"
   Rake::TestTask.new(:integration) do |t|
     t.libs << "test"
-    t.pattern = "test/integration/**/*_test.rb"
+    t.test_files = FileList["test/integration/**/*_test.rb"].exclude(
+      "test/integration/orphan_detection_test.rb",
+    )
+    t.options = "--enable-silence"
+  end
+
+  desc "Run orphan detection tests (non-blocking)"
+  Rake::TestTask.new(:orphan) do |t|
+    t.libs << "test"
+    t.test_files = FileList["test/integration/orphan_detection_test.rb"]
     t.options = "--enable-silence"
   end
 

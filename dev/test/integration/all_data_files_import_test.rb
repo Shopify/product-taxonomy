@@ -93,10 +93,11 @@ module ProductTaxonomy
       snowboard = Category.find_by(id: "sg-4-17-2-17")
 
       assert_equal "Snowboards", snowboard.name
-      assert_empty snowboard.children
+      assert_equal ["sg-4-17-2-17-1", "sg-4-17-2-17-2"], snowboard.children.map(&:id).sort
+      assert_equal ["Snowskates", "Splitboards"], snowboard.children.map(&:name).sort
 
       real_attribute_friendly_ids = snowboard.attributes.map(&:friendly_id)
-      assert_equal 8, real_attribute_friendly_ids.size
+      assert_equal 10, real_attribute_friendly_ids.size
       assert_includes real_attribute_friendly_ids, "age_group"
       assert_includes real_attribute_friendly_ids, "color"
       assert_includes real_attribute_friendly_ids, "pattern"
@@ -105,6 +106,8 @@ module ProductTaxonomy
       assert_includes real_attribute_friendly_ids, "snowboarding_style"
       assert_includes real_attribute_friendly_ids, "target_gender"
       assert_includes real_attribute_friendly_ids, "snowboard_construction"
+      assert_includes real_attribute_friendly_ids, "snowboard_base_material"
+      assert_includes real_attribute_friendly_ids, "snowboard_width_class"
     end
 
     # more fragile, but easier sanity check
