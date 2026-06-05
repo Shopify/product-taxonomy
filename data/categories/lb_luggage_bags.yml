@@ -19,6 +19,7 @@
   - lb-15
   - lb-16
   attributes:
+  - care_instructions
   - carry_options
   - color
   - pattern
@@ -50,6 +51,7 @@
   - color
   - luggage/bag_closure
   - pattern
+  - target_gender
   return_reasons:
   - size
   - color
@@ -167,6 +169,7 @@
   - color
   - luggage/bag_closure
   - pattern
+  - target_gender
   return_reasons:
   - size
   - color
@@ -288,6 +291,7 @@
   - diaper_bag_material
   - diaper_bag_style
   - pattern
+  - target_gender
   return_reasons:
   - size
   - color
@@ -402,9 +406,11 @@
   attributes:
   - accessory_size
   - bag/case_material
+  - care_instructions
   - color
   - luggage/bag_closure
   - pattern
+  - target_gender
   return_reasons:
   - size
   - color
@@ -427,6 +433,8 @@
   - lb-9-7
   - lb-9-8
   attributes:
+  - bag/case_material
+  - care_instructions
   - color
   - pattern
   return_reasons:
@@ -627,6 +635,7 @@
   - color
   - luggage/bag_closure
   - pattern
+  - safety_certifications
   - target_gender
   - tote_handle_type
   return_reasons:
@@ -657,6 +666,7 @@
   - pattern
   - spinner_type
   - suitcase_handle_type
+  - target_gender
   return_reasons:
   - size
   - color
@@ -845,4 +855,10 @@
   - carry_options
   - color
   - pattern
-  return_reasons: []
+  return_reasons:
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
