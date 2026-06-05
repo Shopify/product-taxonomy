@@ -27,6 +27,7 @@
   attributes:
   - genre
   - language_version
+  - media_format
   - recommended_age_group
   - target_audience
   return_reasons:
@@ -89,6 +90,7 @@
   attributes:
   - language_version
   - media_access
+  - media_format
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -237,6 +239,7 @@
   - me-3-5
   - me-3-6
   attributes:
+  - media_format
   - music_genre
   return_reasons:
   - sound_quality
@@ -336,6 +339,7 @@
   attributes:
   - genre
   - language
+  - media_format
   - release_schedule
   return_reasons:
   - sound_quality
@@ -415,6 +419,7 @@
   attributes:
   - book_cover_type
   - compatible_instrument
+  - media_format
   - music_genre
   return_reasons:
   - instrument
@@ -433,9 +438,11 @@
   - me-7-3
   - me-7-4
   attributes:
+  - age_restrictions
   - genre
   - language_version
   - media_content_type
+  - media_format
   - mpaa_rating
   - target_audience
   return_reasons:
