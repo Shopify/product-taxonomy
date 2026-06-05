@@ -666,6 +666,8 @@
   - so-2-5
   - so-2-6
   - so-2-7
+  - so-2-8
+  - so-2-9
   attributes:
   - operating_system
   - software_features
@@ -789,6 +791,39 @@
   attributes:
   - software_features
   return_reasons:
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: so-2-8
+  name: SVG & Cut Files
+  children: []
+  attributes:
+  - file_format_type
+  - operating_system
+  - software_features
+  return_reasons:
+  - style
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: so-2-9
+  name: Photo Editing Presets & LUTs
+  children: []
+  attributes:
+  - compatible_software_platform
+  - file_format_type
+  - operating_system
+  - software_features
+  return_reasons:
+  - style
   - incompatible
   - changed_my_mind
   - item_not_as_described
