@@ -10,7 +10,10 @@
   - me-6
   - me-7
   - me-8
-  attributes: []
+  - me-9
+  - me-10
+  attributes:
+  - age_restrictions
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -27,6 +30,7 @@
   attributes:
   - genre
   - language_version
+  - media_format
   - recommended_age_group
   - target_audience
   return_reasons:
@@ -89,6 +93,7 @@
   attributes:
   - language_version
   - media_access
+  - media_format
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -237,6 +242,7 @@
   - me-3-5
   - me-3-6
   attributes:
+  - media_format
   - music_genre
   return_reasons:
   - sound_quality
@@ -336,6 +342,7 @@
   attributes:
   - genre
   - language
+  - media_format
   - release_schedule
   return_reasons:
   - sound_quality
@@ -415,6 +422,7 @@
   attributes:
   - book_cover_type
   - compatible_instrument
+  - media_format
   - music_genre
   return_reasons:
   - instrument
@@ -433,9 +441,11 @@
   - me-7-3
   - me-7-4
   attributes:
+  - age_restrictions
   - genre
   - language_version
   - media_content_type
+  - media_format
   - mpaa_rating
   - target_audience
   return_reasons:
@@ -532,6 +542,89 @@
   - time_period
   return_reasons:
   - academic_level
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: me-9
+  name: Online Courses
+  children: []
+  attributes:
+  - academic_level
+  - language_version
+  - media_format
+  - subject_area
+  - target_audience
+  return_reasons:
+  - incompatible
+  - language
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: me-10
+  name: Printables
+  children:
+  - me-10-1
+  - me-10-2
+  - me-10-3
+  attributes:
+  - file_format_type
+  return_reasons:
+  - style
+  - resolution
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: me-10-1
+  name: Wall Art
+  children: []
+  attributes:
+  - artwork_type
+  - file_format_type
+  return_reasons:
+  - style
+  - resolution
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: me-10-2
+  name: Planners
+  children: []
+  attributes:
+  - file_format_type
+  - template_type
+  return_reasons:
+  - style
+  - resolution
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: me-10-3
+  name: Activity Sheets
+  children: []
+  attributes:
+  - file_format_type
+  return_reasons:
+  - style
+  - resolution
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
