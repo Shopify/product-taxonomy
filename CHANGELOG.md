@@ -1,3 +1,535 @@
+## 2026-05
+
+#### 📚 Taxonomy Tree
+Expanded taxonomy with 2,000+ new categories and 4,000+ new attributes, plus extensive enhancements to existing categories.
+
+##### Apparel & Accessories
+
+- In the Activewear Tops area, adds `Base Layer Tops`.
+- In the Dance Dresses, Skirts & Costumes area, adds `Dance Dresses` and `Dance Skirts`.
+- In the Leotards & Unitards area, adds `Leotards`, `Triathlon Suits` and `Unitards`.
+- In the Outerwear area, adds `Liners & Insulators`.
+- In the Coats & Jackets area, adds `Blazers`, `Changing & Surf Ponchos` and `Rain Ponchos`.
+- In the Snow Pants & Suits area, adds `Snow Bibs`, `Snow Pants` and `Snow Suits`.
+- In the Pants area, adds `Harem Pants` and `Palazzo Pants`.
+- In the Clothing Tops area, adds `Corset Tops`.
+- In the Shirts area, adds `Dress Shirts` and `Henley Shirts`.
+- In the Sleepwear & Loungewear area, adds `Wearable Blankets & Sleep Sacks`.
+- In the Loungewear area, adds `Lounge Pants` and `Loungewear Sets`.
+- In the Socks area, adds `Compression Socks`, `Dress Socks`, `Thermal Socks` and `Toe Socks`.
+- In the Suits area, adds `Unstitched Suit Sets`.
+- In the Tuxedos area, adds `Tuxedo Jackets` and `Tuxedo Pants`.
+- In the Swimwear area, adds `Swim Jammers`, `Swim Leggings`, `Swim Shorts`, `Swim Skirts` and `Tankinis`.
+- In the Period Swimwear area, adds `Period Bikinis` and `Period One-Piece Swimsuits`.
+- In the Bridal Party Dresses area, adds `Bridesmaid Dresses`, `Flower Girl Dresses`, `Junior Bridesmaid Dresses` and `Mother of the Bride Dresses`.
+- In the Traditional & Ceremonial Clothing area, adds 10 new categories including `Abayas & Jilbabs`, `Baju Melayu` and `Cheongsams`.
+- In the Kimonos area, adds `Haori Jackets`, `Kimono Jackets & Cardigans` and `Yukatas`.
+- In the Saris & Lehengas area, adds `Lehengas` and `Saris`.
+- In the Uniforms & Workwear area, adds `Clergy Uniforms`, `Housekeeping Uniforms` and `Security Uniform Accessories`.
+- In the Contractor Pants & Coveralls area, adds `Bib Overalls`, `Coveralls` and `Work Pants`.
+- In the Food Service Uniforms area, adds 6 new categories including `Chef Coats & Jackets`, `Chef Hats` and `Chef Pants & Trousers`.
+- In the Military Uniforms area, adds 7 new categories including `Combat Uniforms`, `Dress Uniforms` and `Military Coats & Jackets`.
+- In the School Uniforms area, adds 7 new categories including `School Physical Education Uniforms`, `School Uniform Blazers & Outerwear` and `School Uniform Dresses & Jumpers`.
+- In the Security Uniforms area, adds `Security Uniform Pants` and `Security Uniform Shirts`.
+- In the Scrubs area, adds `Scrub Dresses & Skirts`, `Scrub Jackets`, `Scrub Pants`, `Scrub Sets` and `Scrub Tops`.
+- In the Lingerie area, adds `Babydolls`, `Corsets & Bustiers` and `Lingerie Sets`.
+- In the Shapewear area, adds `Arm & Upper Body Shapers`, `Shaping Camisoles & Tank Tops` and `Shaping Slips`.
+- In the Women's Underpants area, adds `Bloomers`, `Cheeky Panties` and `Hipsters`.
+- In the Bra Accessories area, adds `Bra Extenders`, `Bra Hardware & Findings`, `Bra Straps` and `Breast Lift Tape`.
+- In the Lingerie Accessories area, adds `Body Harnesses`, `Fashion & Body Tape`, `Shirttail Garters` and `Sock Garters`.
+- In the Petticoats & Pettipants area, adds `Petticoats` and `Pettipants`.
+- In the Maternity Clothing area, adds `Maternity Outerwear`, `Maternity Shapewear & Support Garments` and `Maternity Underwear`.
+- In the Maternity Pants area, adds `Capris`, `Shorts` and `Tights`.
+- In the Maternity Tops area, adds `Nursing Hoodies`, `Nursing Sweatshirts`, `Nursing T-Shirts` and `Nursing Tank Tops`.
+- In the Men's Underwear area, adds `Hipsters`.
+- In the Clothing Accessories area, adds `Clothing Patches`, `Detachable Collars` and `Pocket Squares`.
+- In the Hair Accessories area, adds `Durags & Hair Wraps` and `Hair Beads & Cuffs`.
+- In the Hair Bun & Volume Shapers area, adds `Clip-In Hair Buns` and `Hair Donuts & Bun Makers`.
+- In the Hair Pins, Claws & Clips area, adds `Claw Clips`, `Hair Barrettes & Slides` and `Hair Bows & Bow Clips`.
+- In the Ponytail Holders area, adds `Scrunchies` and `Spiral Hair Ties`.
+- In the Hats area, adds 9 new categories including `Boater Hats`, `Cloche Hats` and `Fezzes`.
+- In the Headwear area, adds `Bonnets & Sleep Caps` and `Undercaps & Underscarves`.
+- In the Neckties area, adds `Ascots & Cravats`, `Bow Ties` and `Tie Sets`.
+- In the Wristbands area, adds `Awareness Wristbands`, `Festival & Event Wristbands`, `Insect Repellent Wristbands`, `Survival & Paracord Wristbands` and `Sweat Wristbands`.
+- In the Traditional Clothing Accessories area, adds 6 new categories including `Bindis & Forehead Adornments`, `Cummerbunds` and `Dupattas`.
+- In the Bridal Accessories area, adds 6 new categories including `Bridal Dupattas & Shawls`, `Bridal Garters` and `Bridal Gloves`.
+- In the Costumes & Accessories area, adds `Costume Wigs`.
+- In the Costumes area, adds `Costume Cloaks & Capes`, `Costume Onesies & Jumpsuits` and `Costume Tops`.
+- In the Handbag & Wallet Accessories area, adds `Bag Bases & Protectors`, `Bag Charms`, `Bag Inserts & Organizers`, `Bag Straps & Handles` and `Purse Hooks & Hangers`.
+- In the Badge & Pass Holders area, adds `Badge Reels`, `ID Card Holders` and `Passport Holders`.
+- In the Handbags area, adds `Backpack Handbags`, `Belt Bags` and `Potli Bags`.
+- In the Wallets & Money Clips area, adds `Money Clips`.
+- In the Jewelry area, adds `Dental Grills`.
+- In the Watch Accessories area, adds `Watch Display Stands`, `Watch Parts & Components`, `Watch Protective Cases & Covers`, `Watch Storage Boxes & Rolls` and `Watch Tools`.
+- In the Brooches & Lapel Pins area, adds `Brooches` and `Lapel Pins`.
+- In the Charms & Pendants area, adds `Charms` and `Pendants`.
+- In the Rings area, adds `Engagement Rings` and `Wedding Bands`.
+- In the Shoe Covers area, adds `Boot Covers`, `Heel Protectors` and `Toe Covers`.
+- In the Shoe Grips area, adds `Adhesive Grip Pads & Treads`, `Ice & Snow Cleats`, `Replacement Studs & Spikes` and `Traction Sprays & Rosin`.
+- In the Shoe Inserts area, adds `Toe Pads`.
+- In the Heel Cushions area, adds `Heel Grips & Liners` and `Heel Lifts`.
+- Adds 200+ new attributes including `Accessory pieces included`, `Back design` and `Bag embellishment`.
+
+##### Arts & Entertainment
+
+- In the Art & Crafting Materials area, adds 10 new categories including `Buckles`, `Candle Dyes & Colorants` and `Candle Fragrance Additives`.
+- In the Art & Crafting Tools area, adds `Measuring Tapes` and `Protractors`.
+- In the Craft Organization area, adds `Bead & Jewelry Organizers` and `Craft Storage Boxes & Cases`.
+- In the Crafting Patterns & Molds area, adds `Digital Sewing Patterns`.
+- In the Clothing Sewing Materials area, adds `Garment Fabric`, `Sewing Interfacing & Stabilizers` and `Sewing Notions & Fasteners`.
+- In the Homebrewing & Winemaking Supplies area, adds `Bottling & Packaging Supplies`, `Brewing & Winemaking Cleaning & Sanitizing` and `Fermentation Equipment`.
+- In the Brass Instrument Accessories area, adds `Brass Instrument Harnesses` and `Brass Instrument Stands`.
+- In the Percussion Accessories area, adds `Drum Stick & Brush Holder Mounts`, `Electronic Kick Drum Trigger Pedals` and `Hi-Hat Pedals`.
+- In the String Instrument Accessories area, adds `Thumb Picks`.
+- In the Woodwind Instrument Accessories area, adds `Bass Saxophone Mouthpieces`.
+- In the Percussion area, adds 7 new categories including `Acrylic Snare Drums`, `Bell Cymbals` and `Hi-Hat Cymbals`.
+- In the Woodwinds area, adds `Contra-alto Flutes` and `Contrabass Flutes`.
+- Adds 1,000+ new attributes including `Accent modes`, `Acoustic amplifier feedback control features` and `Acoustic drum kit components included`.
+
+##### Business & Industrial
+
+- In the Work Safety Protective Gear area, adds `High-Visibility Safety Apparel`.
+
+##### Food, Beverages & Tobacco
+
+- In the Alcoholic Beverages area, adds `Mead` and `Sake`.
+- In the Liquor & Spirits area, adds `Aquavit`, `Arak & Ouzo`, `Bacanora & Sotol`, `Baijiu` and `Mezcal`.
+- In the Premixed Spirits & Cocktail Mixes area, adds `Sangria Cocktails & Mixes`, `Wine Slush Mixes` and `Wine Spritzes & Mimosa Cocktails`.
+- In the Non-Dairy Milk area, adds `Hemp Drinks` and `Pea Drinks`.
+- In the Nut Drinks area, adds `Almond Drinks`, `Cashew Drinks`, `Macadamia Drinks` and `Mixed Nut Drinks`.
+- In the Powdered Beverage Mixes area, adds `Iced Tea Mixes`, `Lemonade Mixes` and `Sports Drink Mixes`.
+- In the Tea & Infusions area, adds `Bubble Tea Ingredients & Kits`.
+- In the Tea area, adds 8 new categories including `Black Tea`, `Green Tea` and `Herbal & Fruit Tea`.
+- In the Water area, adds `Alkaline Water`, `Coconut Water`, `Flavored Water`, `Functional & Enhanced Water` and `Purified Water`.
+- In the Buttermilk area, adds `Ayran & Doogh`, `Laban` and `Lassi & Chaas`.
+- In the Coffee area, adds `Coffee Concentrates`.
+- In the Cordials, Syrups & Squash area, adds `Beverage Syrups`, `Cordials` and `Squash`.
+- In the Fruit Flavored Drinks area, adds `Fruit Punch` and `Lemonade`.
+- In the Hot Chocolate area, adds `Hot Chocolate Bombs`.
+- In the Low Alcohol & Alcohol-Free Beverages area, adds `Low Alcohol & Alcohol-Free Kombucha` and `Low Alcohol & Alcohol-Free Seltzers`.
+- In the Low Alcohol & Alcohol-Free Liquors & Spirits area, adds 7 new categories including `Aperitifs & Amari`, `Low Alcohol & Alcohol-Free Liqueurs` and `Low Alcohol & Alcohol-Free Rum`.
+- In the Bakery area, adds `Crêpes`, `Mooncakes` and `Waffles`.
+- In the Ice Cream Cones area, adds `Cake Cones`, `Sugar Cones`, `Wafer Cups & Bowls` and `Waffle Cones`.
+- In the Pastries & Scones area, adds 9 new categories including `Baklava`, `Cannoli` and `Cinnamon Rolls`.
+- In the Pies & Tarts area, adds `Pies`, `Quiches` and `Tarts`.
+- In the Tortillas & Wraps area, adds `Rice Paper & Spring Roll Wrappers` and `Tortillas`.
+- In the Cakes & Dessert Bars area, adds 8 new categories including `Blondies`, `Brownies` and `Cheesecakes`.
+- In the Cookies area, adds `Biscotti & Cantuccini`, `Gingerbread & Holiday Cookies`, `Sandwich Cookies`, `Shortbread Cookies` and `Wafer Cookies`.
+- In the Fruits & Vegetables area, adds `Seaweed & Algae`.
+- In the Canned & Jarred Fruits area, adds `Fruit Compotes` and `Fruit Pulps & Purées`.
+- In the Canned & Jarred Vegetables area, adds 6 new categories including `Canned & Jarred Peppers`, `Canned & Jarred Tomatoes` and `Canned Artichokes`.
+- In the Dried Fruits area, adds `Dried Tropical Fruits` and `Raisins & Sultanas`.
+- In the Fresh & Frozen Fruits area, adds 14 new categories including `Acai Berries`, `Blackberries` and `Blueberries`.
+- In the Fresh & Frozen Vegetables area, adds 9 new categories including `Broccoli Rabe`, `Broccolini` and `Collard Greens`.
+- In the Grains, Rice & Cereal area, adds 6 new categories including `Bulgur`, `Cornmeal & Hominy` and `Farro`.
+- In the Cereal & Granola area, adds `Cold Breakfast Cereals`, `Granola` and `Muesli`.
+- In the Oats, Grits & Hot Cereal area, adds `Cornmeal & Polenta`, `Instant & Quick Oats`, `Oat Flour & Powder`, `Rolled Oats` and `Steel Cut Oats`.
+- In the Eggs area, adds `Egg Yolks` and `Powdered Eggs`.
+- In the Meat area, adds 6 new categories including `Bison`, `Goat` and `Ham`.
+- In the Seafood area, adds `Dried Seafood` and `Smoked Seafood`.
+- In the Prepared Foods area, adds `Prepared Desserts & Sweets`.
+- In the Prepared Appetizers & Side Dishes area, adds `Prepared Dumplings & Buns`, `Prepared Fries & Potato Sides` and `Prepared Salads`.
+- In the Seasonings & Spices area, adds `Barbecue Rubs & Dry Rubs`, `Brining & Curing Mixes`, `Dukkah` and `Rice Seasonings & Furikake`.
+- In the Snack Foods area, adds `Nut & Seed Snacks`, `Puffed & Extruded Snacks`, `Rice Crackers` and `Seaweed Snacks`.
+- In the Pudding & Gelatin Snacks area, adds `Gelatin & Jelly Desserts` and `Pudding Snacks`.
+- In the Sticky Rice Cakes area, adds `Korean Tteok & Tteokbokki Rice Cakes`, `Mochi Blocks` and `Sweet Mochi & Daifuku`.
+- In the Trail & Snack Mixes area, adds `Namkeen & Sev Mixes`, `Nut Mixes`, `Party Snack Mixes` and `Trail Mixes`.
+- In the Cereal & Granola Bars area, adds `Energy & Meal Replacement Bars` and `Protein Bars`.
+- In the Fruit Snacks area, adds `Freeze-Dried Fruit Snacks`, `Fruit Gummies` and `Fruit Leather & Rolls`.
+- In the Jerky area, adds `Biltong` and `Meat Sticks`.
+- In the Popcorn area, adds `Popcorn Gift Tins & Sets`, `Popcorn Kernels`, `Popcorn Seasonings & Mixes` and `Ready-to-Eat Popcorn`.
+- In the Tofu, Soy & Vegetarian Products area, adds `Egg Alternatives`, `Natto`, `Soy-Based Desserts & Yogurts`, `Textured Vegetable Protein` and `Yuba & Dried Bean Curd`.
+- In the Meat Alternatives area, adds `Plant-Based Burgers`, `Plant-Based Deli & Bacon Slices`, `Plant-Based Ground Meat Alternatives`, `Plant-Based Sausages` and `Seafood Alternatives`.
+- In the Tofu area, adds `Dried Tofu`, `Fried & Puffed Tofu`, `Silken Tofu` and `Tofu Skins & Sheets`.
+- In the Candied & Chocolate Covered Fruit area, adds `Fruit Jelly Candy`.
+- In the Candy area, adds 7 new categories including `Caramel & Toffee`, `Chewing Gum` and `Cotton Candy`.
+- In the Chocolate area, adds 6 new categories including `Chocolate Bars & Tablets`, `Chocolate Covered Nuts` and `Chocolate Gift Boxes`.
+- In the Condiments & Sauces area, adds `Barbecue Sauces`, `Cooking Pastes & Purees` and `Miso`.
+- In the Pickled Fruits & Vegetables area, adds `Kimchi` and `Sauerkraut`.
+- In the Relish & Chutney area, adds `Chutney` and `Relish`.
+- In the White & Cream Sauces area, adds `Béchamel Sauces`, `Cheese Sauces` and `Hollandaise & Béarnaise Sauces`.
+- In the Dessert Toppings area, adds `Dessert Sauces` and `Whipped Toppings`.
+- In the Cooking & Baking Ingredients area, adds `Food Acids & pH Regulators`, `Gums & Pectins`, `Marshmallow Creme` and `Pie Crust Mixes`.
+- In the Canned & Dry Milk area, adds `Coconut Milk & Cream`.
+- In the Dough area, adds 6 new categories including `Biscuit Dough`, `Dumpling & Wonton Wrappers` and `Masa & Tortilla Dough`.
+- In the Edible Baking Decorations area, adds `Edible Glitter & Dust`, `Edible Images & Cake Toppers`, `Fondant & Sugar Paste` and `Sprinkles & Sprinkle Mixes`.
+- In the Frosting & Icing area, adds `Buttercream Frosting`, `Glazes & Drips` and `Royal Icing & Meringue Mixes`.
+- In the Pie & Pastry Fillings area, adds `Caramel & Dulce de Leche Fillings`, `Cream & Custard Fillings`, `Fruit Fillings` and `Nut & Chocolate Fillings`.
+- In the Shortening & Lard area, adds `Lard` and `Vegetable Shortening`.
+- In the Starter Cultures area, adds `Cheese Starter Cultures`, `Kefir Starter Cultures`, `Kombucha & Jun Cultures`, `Sourdough Starters` and `Yogurt Starter Cultures`.
+- In the Sugar & Sweeteners area, adds 7 new categories including `Agave Syrup`, `Brown Sugar` and `Date Syrup`.
+- In the Yeast area, adds `Baking Yeast`, `Brewing & Fermentation Yeast` and `Nutritional Yeast`.
+- In the Bean Paste area, adds `Almond & Marzipan Paste`, `Bean Paste Making Kits`, `Fermented Bean Curd`, `Fermented Black Beans` and `Fermented Soybean Paste`.
+- In the Dairy Products area, adds `Kefir` and `Milk`.
+- In the Butter & Margarine area, adds `Cultured Butter`, `Flavored & Compound Butter` and `Ghee & Clarified Butter`.
+- In the Cream area, adds 7 new categories including `Clotted Cream`, `Cooking Cream` and `Double Cream`.
+- In the Dips & Spreads area, adds `Dip Mixes`, `Fruit & Vegetable Butters` and `Pâté`.
+- In the Food Gift Baskets area, adds `Alcohol Gift Baskets` and `Tobacco Gift Baskets`.
+- In the Frozen Desserts & Novelties area, adds `Frozen Cakes & Pies` and `Frozen Custards & Puddings`.
+- In the Ice Cream & Frozen Yogurt area, adds `Ice Cream Mixes & Bases` and `Kulfi`.
+- In the Ice Cream Novelties area, adds 6 new categories including `Freeze-Dried Ice Cream`, `Ice Cream Bars` and `Ice Cream Bites`.
+- In the Tobacco Products area, adds `Nicotine Pouches`, `Rolling Tips & Filters` and `Snuff & Snus`.
+- In the Loose Tobacco area, adds `Hookah & Shisha Tobacco`, `Nasal Tobacco`, `Pipe Tobacco`, `Rolling Tobacco` and `Whole Leaf Tobacco`.
+- In the Smoking Pipes area, adds `Chillums & One-Hitters`, `Hand Pipes`, `Traditional Smoking Pipes` and `Water Pipes & Bongs`.
+- In the Vaporizers & Electronic Cigarettes area, adds `Replacement Coils`, `Vaporizer Coils & Pods` and `Vaporizer Parts & Accessories`.
+- In the Vaporizers area, adds `Portable Vaporizers` and `Vape Tanks & Rebuildables`.
+- In the Rolling Papers area, adds `Hemp & Blunt Wraps` and `Pre-Rolled Cones`.
+- Adds 300+ new attributes including `Absinthe accessories included`, `Agave content classification` and `Animal raising method`.
+
+##### Furniture
+
+- In the Furniture area, adds `Pedestals & Plinths`.
+- In the Baby & Toddler Furniture area, adds `Kids Tables & Chair Sets`, `Learning Towers & Kitchen Helper Stools`, `Step Stools & Booster Stools` and `Toddler Chairs & Armchairs`.
+- In the Bassinet & Cradle Accessories area, adds 6 new categories including `Bassinet & Cradle Liners & Covers`, `Bassinet & Cradle Mattresses` and `Bassinet & Cradle Stands`.
+- In the Bassinets & Cradles area, adds `Baby Loungers & Nests`.
+- In the Crib & Toddler Bed Accessories area, adds `Crib Mattress Protectors & Pads` and `Crib Sheets & Bedding`.
+- In the High Chair & Booster Seat Accessories area, adds `High Chair Cushions`, `High Chair Footrests & Leg Wraps`, `High Chair Harnesses & Safety Straps` and `High Chair Trays`.
+- In the High Chairs & Booster Seats area, adds `High Chair Newborn & Baby Sets`.
+- In the Kitchen & Dining Furniture Sets area, adds `Bar & Pub Table Sets` and `Breakfast Nook Furniture Sets`.
+- In the Futons area, adds `Futon Covers`.
+- In the Desks area, adds 8 new categories including `Computer Desks`, `Executive Desks` and `Gaming Desks`.
+- In the Workstations & Cubicles area, adds `Mobile Workstation Carts`, `Office Pods & Acoustic Booths` and `Study Carrels`.
+- In the Workstation & Cubicle Accessories area, adds `Cubicle Hooks & Hangers`, `Cubicle Panel Connectors & Brackets`, `Cubicle Panels`, `Cubicle Shelves` and `Desk Privacy & Acoustic Screens`.
+- In the Outdoor Seating area, adds `Outdoor Stools`.
+- In the Outdoor Benches area, adds `Glider Benches`.
+- In the Outdoor Chairs area, adds `Adirondack Chairs`, `Folding Beach Chairs`, `Folding Loveseat Chairs`, `Outdoor Bar & Counter Chairs` and `Outdoor Dining Chairs`.
+- In the Outdoor Tables area, adds `Picnic Tables` and `Side Tables`.
+- In the Fire Pits area, adds `Fire Bowls`, `Fire Pit Tables` and `Smokeless Fire Pits`.
+- In the Game Tables area, adds `Chess Tables`, `Outdoor Billiard Tables`, `Outdoor Foosball Tables` and `Outdoor Multi-Game Tables`.
+- In the Outdoor Furniture Accessories area, adds `Outdoor Furniture Care & Maintenance`, `Outdoor Furniture Cushions` and `Outdoor Furniture Replacement Parts`.
+- In the Shelving area, adds `Heavy Duty & Utility Shelving`.
+- In the Bookcases & Standing Shelves area, adds `Barrister Bookcases & Shelves` and `Cube Bookcases & Shelves`.
+- In the Wall Shelves & Ledges area, adds `Picture Ledge Wall Shelves & Ledges`.
+- In the Bed & Bed Frame Accessories area, adds `Bed Rails`, `Bed Risers`, `Bed Slats`, `Water Bed Bladders & Tubes` and `Water Bed Heaters`.
+- In the Mattress Foundations area, adds `Roll-Up Slat Bases`.
+- In the Mattresses area, adds `Crib & Toddler Mattresses` and `Hybrid Mattresses`.
+- In the Shelving Accessories area, adds 6 new categories including `Shelf Brackets`, `Shelf Dividers & Organizers` and `Shelf Liners & Covers`.
+- In the Sofa Accessories area, adds `Sofa Legs`.
+- In the Sofas area, adds `Bean Bag Sofas`.
+- In the Table Accessories area, adds `Table Bases`, `Table Casters`, `Table Cup Holders` and `Table Leaves`.
+- In the Tables area, adds `Overbed Tables`.
+- In the Accent Tables area, adds `Console Tables` and `Nesting Tables`.
+- In the Kitchen & Dining Room Tables area, adds `Dining Tables`.
+- In the Benches area, adds `Bedroom Benches`.
+- In the Armoires & Wardrobes area, adds `Chifforobes`.
+- In the Media Storage Cabinets & Racks area, adds `Record Storage Crates` and `Turntable Stands`.
+- In the Storage Cabinets & Lockers area, adds `Garage Storage Cabinets`, `Lockers`, `Shoe Cabinets` and `Storage Cabinets`.
+- In the Storage Chests area, adds `Blanket Chests` and `Storage Trunks`.
+- In the Bathroom Vanities area, adds `Mirrored Bathroom Cabinets` and `Tall Bathroom Cabinets`.
+- In the Closet Parts & Accessories area, adds `Closet Panels`.
+- In the Carts area, adds `Bar Carts`, `Kitchen Carts` and `Utility & Storage Carts`.
+- In the Chair Accessories area, adds `Chair Armrest Pads`, `Chair Casters & Wheels`, `Chair Cushions & Pads`, `Chair Feet & Glides` and `Chair Replacement Parts`.
+- In the Hanging Chair Replacement Parts area, adds `Hanging Chair Cushions & Pads`, `Hanging Chair Mounting Hardware` and `Hanging Chair Stands & Frames`.
+- In the Chairs area, adds `Kids' Chairs`.
+- In the Table & Bar Stools area, adds `Counter Stools`.
+- In the Bean Bag Chairs area, adds `Bean Bag Loungers & Daybeds`, `Kids' Bean Bag Chairs` and `Outdoor Bean Bag Chairs`.
+- In the Floor Chairs area, adds `Balance Ball Chairs`, `Floor Sofas & Loungers`, `Kneeling Chairs` and `Meditation Chairs`.
+- In the Kitchen & Dining Room Chairs area, adds `Dining Chairs`.
+- Adds 100+ new attributes including `Access mechanism`, `Accessories included` and `Adjustable zones`.
+
+##### Health & Beauty
+
+- Adds `Essential Oils` (`Essential Oil Blends`, `Essential Oil Diffusers` and `Essential Oil Singles`).
+- In the Fitness & Nutrition area, adds `Digital Meal Plans`.
+- In the Nutrition Drinks & Shakes area, adds `Meal Replacement Drinks & Powders` and `Protein Shakes`.
+- In the Personal Care area, adds `Essential Oil Accessories`.
+
+##### Luggage & Bags
+
+- In the Luggage & Bags area, adds `Dry Bags`.
+
+##### Media
+
+- Adds `Printables` (`Activity Sheets`, `Planners` and `Wall Art`).
+- In the Media area, adds `Online Courses`.
+
+##### Services
+
+- In the Services area, adds `Food & Beverage Services`.
+
+##### Sporting Goods
+
+- Adds `Fishing Net Accessories` (`Fishing Net Handles & Poles` and `Fishing Netting & Mesh Materials`).
+- In the Athletics area, adds `Australian Rules Football`, `Beach Tennis`, `Netball`, `Triathlon` and `Ultimate Frisbee`.
+- In the American Football Protective Gear area, adds 12 new categories including `American Football Arm & Elbow Pads`, `American Football Back Plates` and `American Football Chin Strap Hardware & Parts`.
+- In the American Football Training Equipment area, adds `American Football Blocking Pads`, `American Football Passing Nets & Targets`, `American Football Tackle Rings` and `Flag Football Belts & Sets`.
+- In the Fencing area, adds `Fencing Shoes`.
+- In the Fencing Protective Gear area, adds 6 new categories including `Fencing Cuffs`, `Fencing Gloves` and `Fencing Jackets`.
+- In the Fencing Scoring Equipment area, adds 6 new categories including `Fencing Floor Cords`, `Fencing Reels` and `Fencing Remote Displays`.
+- In the Fencing Training Aids area, adds `Fencing Body Cord Accessories` and `Fencing Weapon Testing & Maintenance Tools`.
+- In the Fencing Weapons area, adds `Fencing Foils`, `Fencing Sabre Blades` and `Fencing Sabre Guards`.
+- In the Field Hockey & Lacrosse area, adds `Field Hockey & Lacrosse Bags` and `Field Hockey Equipment Sets`.
+- In the Field Hockey & Lacrosse Protective Gear area, adds 15 new categories including `Arm & Elbow Pads`, `Field Hockey & Lacrosse Goalie Pants & Shorts` and `Field Hockey & Lacrosse Goggles`.
+- In the Lacrosse Sticks area, adds `Lacrosse Goalie Sticks` and `Mini Lacrosse Sticks`.
+- In the Lacrosse Training Aids area, adds `Lacrosse Backstop Systems`, `Lacrosse Shooting Targets` and `Lacrosse Training Dummies`.
+- In the Field Hockey & Lacrosse Shoes area, adds `Field Hockey Shoes` and `Lacrosse Cleats`.
+- In the Field Hockey Sticks area, adds `Goalkeeper Field Hockey Sticks` and `Indoor Field Hockey Sticks`.
+- In the Field Hockey Training Aids area, adds `Field Hockey Ball Bags`, `Field Hockey Goalkeeping Bags`, `Field Hockey Stick Bags`, `Field Hockey Training Balls` and `Field Hockey Training Mats`.
+- In the Lacrosse Stick Parts area, adds `Lacrosse Grip Tape`, `Lacrosse Stick Bags`, `Lacrosse Stick End Caps` and `Lacrosse Stick Hardware`.
+- In the Figure Skating & Hockey area, adds `Figure Skating & Hockey Equipment Bags` and `Hockey Equipment Cleaners & Deodorizers`.
+- In the Figure Skating & Hockey Training Aids area, adds `Dryland & Multi-Sport Training Tiles`, `Hockey Passing Trainer Accessories`, `Hockey Resistance Trainers` and `Synthetic Ice Tiles & Panels`.
+- In the Ice Skates area, adds `Long Track Speed Ice Skates` and `Short Track Speed Ice Skates`.
+- In the Hockey Balls & Pucks area, adds `Floorball Balls`, `Ringette Rings` and `Street Hockey Balls`.
+- In the Hockey Goals area, adds `Hockey Goal Backstops`, `Hockey Goal Nets` and `Mini Hockey Goals`.
+- In the Hockey Protective Gear area, adds 13 new categories including `Hockey Chest Protectors`, `Hockey Compression Pants` and `Hockey Girdles`.
+- In the Hockey Stick Care area, adds `Hockey Stick Grip Enhancers` and `Hockey Stick Racks`.
+- In the Hockey Stick Parts area, adds `Hockey Stick End Plugs & Extensions` and `Hockey Stick Grips`.
+- In the Ice Skate Parts & Accessories area, adds 12 new categories including `Figure Skate Blades`, `Goalie Skate Blades` and `Hockey Skate Blades`.
+- In the General Purpose Athletic Equipment area, adds 7 new categories including `Altitude Training Mask Accessories`, `Athletic Cup Accessories` and `Athletic Supporters`.
+- In the Practice Nets & Screens area, adds `Barrier & Backstop Nets`, `Rebounder Nets` and `Replacement & Bulk Netting`.
+- In the Speed & Agility Ladders & Hurdles area, adds `Agility Ladders`, `Agility Training Poles & Gates` and `Speed & Agility Hurdles`.
+- In the Stadium Seats & Cushions area, adds `Team Benches`.
+- In the Ball Carrying Bags & Carts area, adds `Ball Display Stands` and `Ball Storage Racks`.
+- In the Ball Pump Accessories area, adds `Ball Pressure Gauges`, `Ball Pump Adapters` and `Ball Pump Hoses`.
+- In the Gym Mats area, adds `Crash Pads`, `Interlocking Gym Floor Tiles` and `Wall Pads`.
+- In the Gymnastics area, adds `Gymnastics Accessories & Gifts`, `Gymnastics Shoes`, `Gymnastics Springboard Accessories`, `Gymnastics Vaulting Tables` and `Rhythmic Gymnastics Apparatus`.
+- In the Gymnastics Bars & Balance Beams area, adds `Gymnastics Equipment Packages`, `Gymnastics Training Bars` and `Parallel Bars`.
+- In the Gymnastics Protective Gear area, adds `Gymnastics Ankle & Heel Protectors`, `Gymnastics Elbow Pads`, `Gymnastics Knee Pads`, `Gymnastics Wrist Supports` and `Gymnastics Wristbands`.
+- In the Gymnastics Training Aids area, adds 7 new categories including `Gymnastics Air Tracks`, `Gymnastics Incline Mats` and `Gymnastics Octagon Tumblers`.
+- In the Racquetball & Squash area, adds `Racquetball & Squash Cleaning Accessories` and `Racquetball & Squash Racket Accessories`.
+- In the Racquetball & Squash Balls area, adds `Racquetballs` and `Squash Balls`.
+- In the Racquetball & Squash Training Aids area, adds 6 new categories including `Racquetball & Squash Ball Machines`, `Racquetball & Squash Protective Tape & Guards` and `Racquetball & Squash Racket Bags`.
+- In the Rounders area, adds `Rounders Balls`, `Rounders Bases`, `Rounders Protective Gear` and `Rounders Sets`.
+- In the Rounders Training Aids area, adds `Rounders Pitching Machines` and `Rounders Training Nets`.
+- In the Rugby area, adds `Rugby Apparel`, `Rugby Bags` and `Rugby Post Accessories`.
+- In the Rugby Protective Gear area, adds `Rugby Arm Guards`, `Rugby Body Armor & Shoulder Pads`, `Rugby Groin Guards`, `Rugby Mouthguards` and `Rugby Protective Shorts & Thigh Guards`.
+- In the Rugby Training Aids area, adds 7 new categories including `Rugby Agility Poles`, `Rugby Grip Enhancers` and `Rugby Lineout Lifting Blocks`.
+- In the Soccer area, adds `Soccer Bags & Carriers`.
+- In the Soccer Corner Flags area, adds `Soccer Corner Flag Bases` and `Soccer Corner Flag Poles`.
+- In the Soccer Gloves area, adds `Goalkeeper Gloves` and `Soccer Field Player Gloves`.
+- In the Soccer Goal Accessories area, adds 7 new categories including `Soccer Goal Bags & Covers`, `Soccer Goal Corner Targets` and `Soccer Goal Lighting`.
+- In the Soccer Protective Gear area, adds `Shin Guard Straps`, `Soccer Goalkeeper Protective Bottoms`, `Soccer Goalkeeper Protective Tops`, `Soccer Head & Face Guards` and `Soccer Knee & Elbow Pads`.
+- In the Soccer Training Aids area, adds `Soccer Footwork Training Mats`.
+- In the Team Handball area, adds `Team Handball Protective Gear`.
+- In the Team Handball Training Aids area, adds `Team Handball Agility Ladders & Hurdles`, `Team Handball Grip Resins` and `Team Handball Training Cones`.
+- In the Baseball & Softball area, adds 6 new categories including `Baseball & Softball Base Accessories`, `Baseball & Softball Bat Grips` and `Baseball & Softball Equipment Bags`.
+- In the Baseballs area, adds `Souvenir & Novelty Baseballs` and `Tee Balls & Reduced-Injury Baseballs`.
+- In the Softballs area, adds `Fastpitch Softballs` and `Slow Pitch Softballs`.
+- In the Baseball & Softball Gloves & Mitts area, adds `Catchers Mitts` and `First Base Mitts`.
+- In the Baseball & Softball Protective Gear area, adds 14 new categories including `Baseball & Softball Elbow Guards`, `Baseball & Softball Fielder Masks` and `Baseball & Softball Hand & Wrist Guards`.
+- In the Baseball & Softball Training Aids area, adds 9 new categories including `Baseball & Softball Batting Cage Nets`, `Baseball & Softball Batting Tee Parts` and `Baseball & Softball Hitting Net Replacement Parts`.
+- In the Tennis area, adds `Tennis Ball Machine Accessories`.
+- In the Tennis Ball Hoppers & Carts area, adds `Tennis Ball Baskets & Hoppers`, `Tennis Ball Carts & Trolleys` and `Tennis Ball Pickup Tubes`.
+- In the Tennis Racket Accessories area, adds `Racket Frame Protectors`, `String Stencil Ink & Cards`, `Tennis Racket Covers`, `Tennis Racket Lead & Tuning Tape` and `Tennis Racket Protective Tape`.
+- In the Tennis Training Aids area, adds `Solo Tennis Rebounders`, `Tennis Net Height Gauges`, `Tennis Rebound Nets`, `Tennis Serve Trainers` and `Tennis Swing Trainers`.
+- In the Track & Field area, adds `Shot Put Accessories`, `Steeplechase Barriers`, `Track Hurdle Replacement Parts` and `Track Starting Block Accessories`.
+- In the Track & Field Training Aids area, adds `Track & Field Run-Up Markers`, `Track & Field Tape Measures`, `Track & Field Training Plans` and `Track & Field Wind Gauges`.
+- In the Pole Vault Pits area, adds `Pole Vault Pit Covers` and `Pole Vault Pit Safety Inserts`.
+- In the Volleyball area, adds `Volleyball Net Accessories`, `Volleyball Posts` and `Volleyball Shoes`.
+- In the Volleyball Protective Gear area, adds `Volleyball Ankle Braces`, `Volleyball Arm & Forearm Sleeves`, `Volleyball Elbow Pads`, `Volleyball Finger & Hand Protectors` and `Volleyball Protective Shorts`.
+- In the Volleyball Training Aids area, adds `Volleyball Blocking Trainers`, `Volleyball Footwork Trainers`, `Volleyball Passing Trainers`, `Volleyball Rebounders` and `Volleyball Spike Trainers`.
+- In the Water Polo area, adds `Water Polo Goal Accessories` and `Water Polo Swimwear`.
+- In the Wrestling Protective Gear area, adds 6 new categories including `Wrestling Ankle Guards`, `Wrestling Chest Protectors` and `Wrestling Elbow Pads`.
+- In the Wrestling Training Aids area, adds `Wrestling Leg Sleeves` and `Wrestling Spats`.
+- In the Curling area, adds `Curling Gloves`.
+- In the Basketball area, adds `Basketball Apparel`, `Basketball Bags` and `Basketball Protective Gear`.
+- In the Basketball Hoop Parts & Accessories area, adds 6 new categories including `Basketball Backboard Padding`, `Basketball Hoop Bases` and `Basketball Hoop Lights`.
+- In the Basketball Hoops area, adds `Door-Mounted Mini Basketball Hoops`, `In-Ground Basketball Hoops`, `Portable Basketball Hoops` and `Wall-Mounted Basketball Hoops`.
+- In the Basketball Training Aids area, adds 9 new categories including `Basketball Coaching Boards`, `Basketball Court Marking Stencils` and `Basketball Passing Targets`.
+- In the Boxing & Martial Arts Protective Gear area, adds 9 new categories including `Belly Pads`, `Boxing & Martial Arts Elbow Guards` and `Boxing & Martial Arts Foot Guards`.
+- In the Boxing & Martial Arts Training Equipment area, adds 8 new categories including `Coaching Sticks`, `Martial Arts Training Mats` and `Punching & Training Chains`.
+- In the Boxing Ring Parts area, adds 7 new categories including `Boxing Ring Canvases`, `Boxing Ring Corner Pads & Cushions` and `Boxing Ring Rope Spacers`.
+- In the Martial Arts Weapons area, adds `Chain Whips & Rope Darts`, `Escrima Sticks`, `Kamas`, `Shinai` and `Training Swords`.
+- In the Broomball Equipment area, adds `Broomball Bags`, `Broomball Protective Gear` and `Broomball Shoes`.
+- In the Cheerleading area, adds `Cheerleading Hair Bows`, `Cheerleading Megaphones`, `Cheerleading Shoes`, `Cheerleading Training Aids` and `Cheerleading Uniforms`.
+- In the Coaching & Officiating area, adds `Scoreboard Accessories`.
+- In the Sport & Safety Whistles area, adds `Air Horns` and `Electronic Whistles`.
+- In the Field & Court Boundary Markers area, adds `Field Marking Chalk`, `Field Marking Machines`, `Field Marking Stencils` and `Field Marking Webbing`.
+- In the Officiating Flags area, adds `Linesman Flag Accessories & Replacement Parts`, `Referee Chair Accessories` and `Umpire Flags`.
+- In the Penalty Cards & Flags area, adds `Officiating Bean Bags`.
+- In the Cricket area, adds `Cricket Bags`, `Cricket Clothing & Uniforms`, `Cricket Shoe Accessories` and `Mini Cricket Bats`.
+- In the Cricket Bat Accessories area, adds 6 new categories including `Cricket Bat Covers`, `Cricket Bat Mallets` and `Cricket Bat Oils & Waxes`.
+- In the Cricket Protective Gear area, adds 11 new categories including `Cricket Abdominal Guards`, `Cricket Arm & Wrist Guards` and `Cricket Batting Gloves`.
+- In the Cricket Training Aids area, adds 8 new categories including `Barrier & Backstop Nets`, `Cricket Ball Throwers` and `Cricket Batting Cages`.
+- In the Dancing area, adds `Dance Poles`, `Dance Protective Gear`, `Dance Training Equipment`, `Dancing Grip Enhancers` and `Twirling Batons`.
+- In the Dancing Shoes area, adds `Character Shoes`, `Dance Boots` and `Dance Sneakers`.
+- In the Fitness & General Exercise Equipment area, adds `Ab Mats`, `Battle Ropes`, `Ice Baths & Cold Plunge Tubs`, `Plyometric Boxes` and `Shaker Bottles`.
+- In the Foam Roller Accessories area, adds `Foam Roller Bases`, `Foam Roller End Caps`, `Foam Roller Storage Carts` and `Foam Roller Storage Racks`.
+- In the Hand Exercisers area, adds `Finger Extensor Exercisers & Stretchers`, `Grip Rings & Stress Balls`, `Gyroscopic Hand Exercisers`, `Hand Grippers` and `Power Twister Bars`.
+- In the Inversion Tables & Systems area, adds `Inversion Boots`, `Inversion Chairs`, `Inversion Racks & Bars` and `Inversion Tables & Benches`.
+- In the Push Up & Pull Up Bars area, adds `Dip & Parallette Bars`, `Pull Up Bars` and `Push Up Bars & Handles`.
+- In the Sport Safety Reflectors area, adds `LED Reflective Armbands`, `Reflective Belts & Harnesses`, `Reflective Sprays & Paints` and `Reflective Stickers & Decals`.
+- In the Weight Lifting area, adds `Ankle & Wrist Straps`, `Weight Lifting Belt Accessories`, `Weight Lifting Shoes`, `Weight Lifting Singlets` and `Weight Lifting Support Sleeves`.
+- In the Free Weight Accessories area, adds 9 new categories including `Barbell Jacks`, `Barbell Pads` and `Barbell Storage Racks`.
+- In the Free Weights, Dumbbells & Kettlebells area, adds `Bulgarian Bags`, `Free Weight Sets`, `Power Bags`, `Strongman Sandbags` and `Weighted Clubs & Maces`.
+- In the Weight Lifting Gloves & Hand Supports area, adds `Grip Pads & Hand Grips`, `Weight Lifting Gloves`, `Weight Lifting Straps` and `Weight Lifting Wrist Wraps`.
+- In the Weight Lifting Machine & Exercise Bench Accessories area, adds 10 new categories including `Lat & Pull-Down Bars`, `Machine & Bench Attachments` and `Pads & Cushions`.
+- In the Weight Lifting Machines & Racks area, adds 6 new categories including `Cable Crossover Machines`, `Functional Trainers` and `Half Power Racks`.
+- In the Yoga & Pilates area, adds 6 new categories including `Yoga & Pilates Balls`, `Yoga & Pilates Blankets` and `Yoga & Pilates Bolsters & Cushions`.
+- In the Pilates Machines area, adds 7 new categories including `Pilates Barrels`, `Pilates Cadillacs` and `Pilates Chair Accessories`.
+- In the Balance Trainers area, adds `Balance Beams`, `Balance Pods` and `Sliding Discs`.
+- In the Cardio area, adds `Fitness Trampolines & Rebounders`.
+- In the Cardio Machine Accessories & Parts area, adds 24 new categories including `Elliptical Trainer Bottle Holders`, `Elliptical Trainer Consoles` and `Elliptical Trainer Covers`.
+- In the Cardio Machines area, adds 8 new categories including `Commercial Treadmills`, `Manual Treadmills` and `Recumbent Magnetic Elliptical Trainers`.
+- In the Exercise Bands & Loops area, adds `Figure Eight Resistance Bands`, `Flat Resistance Bands`, `Hip Circle Resistance Bands` and `Resistance Tubes`.
+- In the Exercise Benches area, adds `Abdominal & Sit Up Benches`, `Adjustable Exercise Benches`, `Flat Weight Benches`, `Hyperextension Benches & Roman Chairs` and `Preacher Curl Benches`.
+- In the Indoor Games area, adds `Carrom`, `Crokinole`, `Ring Toss & Hook Games`, `Sim Racing Equipment` and `Tabletop Curling`.
+- In the Air Hockey Table Parts area, adds `Air Hockey Table Blowers`, `Air Hockey Table Electronics & Sensors` and `Air Hockey Table Rails`.
+- In the Billiards area, adds `Billiard Training & Instruction` and `Billiard Training Aids`.
+- In the Billiard Cue Accessories area, adds `Billiard Cue Extensions`, `Billiard Cue Tip Tools` and `Billiard Cue Tips`.
+- In the Billiard Cues & Bridges area, adds `Billiard Bridge Heads` and `Billiard Bridge Sticks`.
+- In the Billiard Table Parts & Accessories area, adds `Billiard Scoreboards`, `Billiard Table Conversion Tops`, `Billiard Table Cushion Rubber`, `Billiard Table Hardware & Fasteners` and `Billiard Table Rail Sets`.
+- In the Bowling area, adds 6 new categories including `Bowling Ball Maintenance Supplies`, `Bowling Ball Racks & Holders` and `Bowling Shoe Accessories`.
+- In the Bowling Ball Bags area, adds `Bowling Ball Add-On Bags`, `Bowling Ball Backpacks`, `Bowling Ball Roller Bags` and `Bowling Ball Tote Bags`.
+- In the Foosball Table Parts & Accessories area, adds `Foosball Table Bearings & Bushings`, `Foosball Table Bumpers` and `Foosball Table Covers`.
+- In the Foosball Tables area, adds `Outdoor Foosball Tables` and `Tabletop Foosball Tables`.
+- In the Ping Pong area, adds `Ping Pong Court Barriers` and `Ping Pong Training Aids`.
+- In the Ping Pong Paddle Accessories area, adds 6 new categories including `Ping Pong Paddle Blades`, `Ping Pong Paddle Cleaners` and `Ping Pong Paddle Edge Tape`.
+- In the Ping Pong Paddles & Sets area, adds `Ping Pong Paddle Sets` and `Ping Pong Paddles`.
+- In the Ping Pong Robot Accessories area, adds `Ping Pong Ball Catch Nets`, `Ping Pong Ball Pickers & Collectors` and `Ping Pong Robot Replacement Parts`.
+- In the Ping Pong Tables area, adds `Mini & Mid-Size Ping Pong Tables` and `Ping Pong Conversion Tops`.
+- In the Table Shuffleboard area, adds `Table Shuffleboard Covers`.
+- In the Throwing Darts area, adds `Dart Cases & Wallets`, `Dart Mats & Throw Lines` and `Dartboard Cabinets`.
+- In the Dart Parts area, adds `Dart Barrels` and `Dart O-Rings`.
+- In the Outdoor Recreation area, adds `Gold Prospecting & Panning Equipment` and `Skateboard Wax`.
+- In the Boating & Water Sports area, adds `Bodyboard Fins`, `Float Tubes & Accessories` and `Pedal Boat Parts & Accessories`.
+- In the Boating & Rafting area, adds 29 new categories including `Canoe Anchoring Systems`, `Canoe Seats` and `Catarafts`.
+- In the Wingfoiling area, adds 9 new categories including `Wing Bladders`, `Wing Handles` and `Wing Valves`.
+- In the Windfoiling area, adds 8 new categories including `Foil Front Wings`, `Windfoil Footstraps` and `Windfoil Harness Lines`.
+- In the Boating & Water Sport Protective Gear area, adds 6 new categories including `Boating & Water Sport Ear Protection`, `Boating & Water Sport Eye Protection Accessories` and `Boating & Water Sport Joint & Limb Protection`.
+- In the Boating & Water Sport Apparel area, adds 10 new categories including `Changing & Dry Robes`, `Drysuit Accessories` and `Life Jacket CO2 Cylinders`.
+- In the Diving & Snorkeling area, adds 9 new categories including `Buoyancy Compensator Accessories`, `Center-Mount Snorkels` and `Dive Computer Accessories`.
+- In the Kitesurfing area, adds 8 new categories including `Kiteboard Control Bars`, `Kiteboard Inflation & Valve Parts` and `Kiteboard Mounting Hardware`.
+- In the Surfing area, adds 7 new categories including `Fish Surfboards`, `Foil Boards` and `Funboard Surfboards`.
+- In the Swimming area, adds 11 new categories including `Anti-Fog Treatments`, `Flotation Belts` and `Goggle Straps`.
+- In the Towed Water Sports area, adds 23 new categories including `Ballast Bags & Pumps`, `Foil Masts` and `Hydrofoil Hardware & Accessories`.
+- In the Watercraft Storage Racks area, adds `Personal Watercraft Storage Racks` and `Watercraft Carts & Dollies`.
+- In the Windsurfing area, adds 6 new categories including `Windsurfing Accessories`, `Windsurfing Board Daggerboards` and `Windsurfing Board Footstraps`.
+- In the Hydration System Accessories area, adds `Hydration System Cleaning Kits`, `Hydration System Replacement Parts`, `Water Bottle Holders & Pouches` and `Water Storage Jugs & Jerrycans`.
+- In the Inline & Roller Skating area, adds `Inline & Roller Skating Accessories` and `Roller Ski Parts`.
+- In the Inline & Roller Skating Protective Gear area, adds 8 new categories including `Inline & Roller Skating Gloves`, `Inline & Roller Skating Helmets` and `Protective Shorts`.
+- In the Inline Skate Parts area, adds 6 new categories including `Inline Skate Buckles & Straps`, `Inline Skate Frames` and `Inline Skate Hardware`.
+- In the Inline Skates area, adds `Hockey Inline Skates`.
+- In the Roller Skate Parts area, adds `Bolt-On Toe Stops`, `Roller Skate Frames`, `Roller Skate Jam Plugs`, `Roller Skate Plates` and `Roller Skate Trucks`.
+- In the Roller Skates area, adds `Artistic Roller Skates`, `Derby Roller Skates`, `Hockey Roller Skates` and `Jam Roller Skates`.
+- In the Roller Skis area, adds `Off-Road Roller Skis`.
+- In the Kite Buggying area, adds `Kite Buggy Kites`.
+- In the Outdoor Games area, adds `Axe Throwing`, `Beer Pong`, `Roundnet Sets` and `Zip Line Kits`.
+- In the Badminton area, adds `Badminton Bags`, `Badminton Racket Accessories`, `Badminton Strings` and `Badminton Training Aids`.
+- In the Deck Shuffleboard area, adds `Deck Shuffleboard Accessories`, `Deck Shuffleboard Courts`, `Deck Shuffleboard Sets` and `Deck Shuffleboard Tables`.
+- In the Disc Golf area, adds `Disc Golf Accessories`, `Disc Golf Starter Sets`, `Mini Disc Golf Baskets`, `Permanent Disc Golf Baskets` and `Portable Disc Golf Baskets`.
+- In the Lawn Games area, adds 8 new categories including `Cornhole Accessories`, `Cornhole Bags` and `Cornhole Boards`.
+- In the Pickleball area, adds `Pickleball Accessories & Training Aids`, `Pickleball Bags & Cases`, `Pickleball Ball Machines`, `Pickleball Nets` and `Pickleball Sets`.
+- In the Platform & Paddle Tennis area, adds `Platform & Paddle Tennis Bags`, `Platform & Paddle Tennis Grips & Tape`, `Platform & Paddle Tennis Shoes` and `Platform Tennis Nets`.
+- In the Riding Scooters area, adds `Kick Scooter Parts` and `Self-Balancing Scooters`.
+- In the E-Scooters Parts area, adds 18 new categories including `Brake Cables & Hoses`, `Brake Calipers` and `Brake Levers & Master Cylinders`.
+- In the Skateboarding area, adds `Skateboard Tools & Maintenance`, `Skateboarding Accessories` and `Skateboarding Shoes`.
+- In the Complete Skateboards area, adds `Electric Skateboards`.
+- In the Skateboard Parts area, adds 6 new categories including `Skateboard Axle Nuts`, `Skateboard Bearings` and `Skateboard Bushings`.
+- In the Skateboarding Protective Gear area, adds 6 new categories including `Skateboarding Body Armor`, `Skateboarding Elbow Pads` and `Skateboarding Knee Pads`.
+- In the Winter Sports & Activities area, adds `Sled Accessories` and `Winter Trail Maps & Guides`.
+- In the Avalanche Safety area, adds `Avalanche Beacons & Transceivers`, `Avalanche Rescue Kits`, `Avalanche Shovels` and `Snow Study Tools`.
+- In the Skiing & Snowboarding area, adds 35 new categories including `Alpine Ski Bindings`, `Alpine Touring Ski Bindings` and `Backcountry & Touring Skis`.
+- In the Sleds area, adds 7 new categories including `Cargo Pulks`, `Child Pulks` and `Inflatable Toboggans`.
+- In the Snowshoeing area, adds `Snowshoe Bags` and `Snowshoe Poles`.
+- In the Camping & Hiking area, adds `Camping Stoves`, `Navigational Compasses Accessories`, `Trail & Topographic Maps` and `Windbreak Accessories`.
+- In the Camp Furniture area, adds 6 new categories including `Air Mattress & Sleeping Pad Valves`, `Camping Chairs` and `Camping Seat Pads & Cushions`.
+- In the Portable Toilets & Showers area, adds 10 new categories including `Condom Catheters`, `Disposable Urinal Bags` and `Male Urination Device Accessories`.
+- In the Portable Water Filters & Purifiers area, adds 6 new categories including `Gravity Water Filters`, `Portable Water Filter Cartridges` and `UV Water Purifiers`.
+- In the Tent Accessories area, adds 9 new categories including `Guy Lines & Ropes`, `Tarps & Rain Flies` and `Tent Anchors & Mounting Hardware`.
+- In the Tents area, adds `Bell Tents`, `Bivy Sacks & Storm Shelters`, `Rooftop Tents`, `Screen Houses & Shelters` and `Tipi Tents`.
+- In the Camping Cookware & Dinnerware area, adds `Camping Bowls`, `Camping Cookware Sets`, `Camping Kettles`, `Camping Sporks` and `Camping Utensil Sets`.
+- In the Camping Tools area, adds 9 new categories including `Camping Accessory Straps & Buckles`, `Camping Axes & Hatchets` and `Camping Fire Starters`.
+- In the Hiking Pole Accessories area, adds `Hiking Pole Grips`, `Hiking Pole Medallions`, `Hiking Pole Quivers & Carry Bags` and `Hiking Pole Replacement Parts`.
+- In the Mosquito Nets & Insect Screens area, adds `Hammock Mosquito Nets`, `Head Mosquito Nets` and `Self-Supporting Mosquito Nets`.
+- In the Climbing area, adds 6 new categories including `Climbing Accessory Cords`, `Climbing Chalk` and `Climbing Guidebooks & Maps`.
+- In the Ice Climbing Tools area, adds `Ice Climbing Leashes & Tethers` and `Ice Screw Holders & Racking Clips`.
+- In the Climbing Apparel & Accessories area, adds 6 new categories including `Belay Glasses`, `Climbing Brushes` and `Climbing Jackets`.
+- In the Climbing Ascenders & Descenders area, adds `Climbing Ascenders` and `Climbing Descenders`.
+- In the Climbing Harnesses area, adds `Chest Climbing Harnesses`, `Full Body Climbing Harnesses` and `Seat Climbing Harnesses`.
+- In the Climbing Protection Devices area, adds 6 new categories including `Climbing Bolts & Anchors`, `Climbing Cams` and `Climbing Hexes`.
+- In the Cycling area, adds `Cycling Maps & Guides`.
+- In the Bicycle Accessories area, adds 62 new categories including `Bicycle Bag Accessories & Mounts`, `Bicycle Bar End Plugs & Caps` and `Bicycle Basket Accessories`.
+- In the Bicycle Parts area, adds 41 new categories including `BMX Bike Frames`, `BMX Handlebars` and `Bar-End Shifters`.
+- In the Bicycles area, adds 20 new categories including `Balance Bikes`, `Cargo Tricycles` and `Cross-Country Mountain Bikes`.
+- In the Cycling Apparel & Accessories area, adds 24 new categories including `Bicycle Chest & Back Protectors`, `Bicycle Cleat Adapters` and `Bicycle Elbow Pads`.
+- In the Equestrian area, adds `Rodeo & Roping Equipment` and `Stable Supplies`.
+- In the Horse Care area, adds 29 new categories including `Coolers & Dress Sheets`, `Farrier Supplies` and `Fly & Sweet Itch Sheets`.
+- In the Horse Tack area, adds 24 new categories including `Breakaway Halters`, `Breastplates & Martingales` and `Browbands`.
+- In the Horse Tack Accessories area, adds 12 new categories including `Bridle Accessories`, `English Saddle Pads` and `Horse Spurs`.
+- In the Horse Vaulting Accessories area, adds `Vaulting Pads` and `Vaulting Surcingles`.
+- In the Riding Apparel & Accessories area, adds 11 new categories including `Breeches`, `Dressage Whips` and `Equestrian Helmet Bags & Cases`.
+- In the Fishing area, adds 7 new categories including `Fishing Bite Alarm Accessories`, `Fishing Carts & Barrows` and `Fishing Maps & Charts`.
+- In the Bite Alarms area, adds `Fishing Bite Alarm Receivers`.
+- In the Fishing Rod Accessories area, adds `Fishing Rod Building Components`, `Fishing Rod Repair Kits & Supplies` and `Fishing Rod Sleeves & Covers`.
+- In the Fishing Rods area, adds 9 new categories including `Centerpin Fishing Rods`, `Feeder Fishing Rods` and `Fly Fishing Rod Combos & Outfits`.
+- In the Fishing Spears area, adds 6 new categories including `Bowfishing Arrows`, `Hawaiian Slings` and `Pole Spears`.
+- In the Fishing Tackle area, adds 22 new categories including `Artificial Fishing Blade & Vibe Lures`, `Artificial Fishing Crankbaits` and `Artificial Fishing Jerkbaits`.
+- In the Fishing Traps area, adds `Crab Traps`, `Crawfish Traps`, `Lobster Traps` and `Minnow Traps`.
+- In the Fly Tying Materials area, adds 11 new categories including `Fly Tying Adhesives & Resins`, `Fly Tying Chenille & Braids` and `Fly Tying Dubbing`.
+- In the Live Bait area, adds `Live Crustaceans`, `Live Insects & Larvae`, `Live Minnows & Suckers` and `Live Worms`.
+- In the Tackle Bags & Boxes area, adds `Tackle Bags` and `Tackle Boxes`.
+- In the Fishing & Hunting Waders area, adds `Wader Bags & Totes` and `Wading Boots`.
+- In the Fishing Bait & Chum Containers area, adds `Bait Boxes & Tubs`, `Bait Buckets`, `Chum Bags` and `PVA Bait Bags & Mesh Systems`.
+- In the Fishing Hook Removal Tools area, adds `Fish Lip Grippers`, `Fishing Forceps & Hemostats` and `Fishing Nippers & Line Cutters`.
+- In the Fishing Lines & Leaders area, adds `Fishing Leaders` and `Fly Fishing Lines`.
+- In the Fishing Nets area, adds `Bait & Dip Nets`, `Casting Nets`, `Landing Nets` and `Seine Nets`.
+- In the Fishing Reel Accessories area, adds 9 new categories including `Baitcasting Fishing Reel Replacement Spools`, `Fishing Reel Bearings` and `Fishing Reel Cleaning & Maintenance Kits`.
+- In the Fishing Reels area, adds 6 new categories including `Bowfishing Reels`, `Electric Fishing Reels` and `Handline Fishing Reels`.
+- In the Golf area, adds `Golf Ball Retrievers` and `Golf Rangefinders & GPS Devices`.
+- In the Golf Training Aids area, adds 10 new categories including `Golf Alignment Sticks`, `Golf Grip Trainers` and `Golf Hitting Mats`.
+- In the Golf Bag Accessories area, adds 9 new categories including `Golf Bag Rain Covers`, `Golf Bag Straps` and `Golf Bag Travel Covers`.
+- In the Golf Bags area, adds `Golf Cart Bags`, `Golf Stand Bags`, `Staff & Tour Golf Bags` and `Sunday Golf Bags`.
+- In the Golf Club Parts & Accessories area, adds `Golf Club Ferrules`, `Golf Club Repair & Maintenance Tools`, `Golf Club Shaft Adapters` and `Golf Club Weights & Screws`.
+- In the Golf Club Sets area, adds `Complete Golf Club Sets`, `Golf Iron Sets` and `Junior Golf Club Sets`.
+- In the Golf Clubs area, adds 7 new categories including `Golf Chippers`, `Golf Drivers` and `Golf Fairway Woods`.
+- In the Hang Gliding & Skydiving area, adds `Hang Glider Parts & Accessories`, `Hang Gliding Harnesses`, `Paragliders`, `Paragliding & Skydiving Harnesses` and `Skydiving & Paragliding Altimeters`.
+- In the Air Suits area, adds `Skydiving Jumpsuits` and `Wingsuits`.
+- In the Hunting & Shooting area, adds `Blowguns & Accessories`, `Slingshots` and `Slingshots & Accessories`.
+- In the Archery area, adds 43 new categories including `3D Archery Targets`, `Archery Release Aids` and `Archery Shooting Gloves & Finger Tabs`.
+- In the Paintball area, adds 28 new categories including `Electronic Paintball Hoppers`, `Flashbang Grenades` and `Gravity-Fed Paintball Hoppers`.
+- In the Clay Pigeon Shooting area, adds `Clay Pigeon Shooting Bags & Pouches`, `Clay Pigeon Shooting Vests`, `Clay Pigeon Thrower Accessories` and `Shotgun Choke Tubes`.
+- In the Hunting area, adds 28 new categories including `Animal Trap Accessories`, `Body Grip Traps` and `Burlap Hunting Blind Fabric`.
+- In the Hunting & Shooting Protective Gear area, adds `Hunting & Shooting Eye Protection`, `Hunting & Shooting Hearing Protection`, `Hunting & Shooting Pants & Bibs`, `Hunting & Shooting Safety Harnesses` and `Hunting & Shooting Vests`.
+- In the Shooting & Range Accessories area, adds 11 new categories including `3D & Foam Targets`, `Bench & Vise Shooting Rests` and `Bore Sighters`.
+- In the Airsoft area, adds 19 new categories including `Airsoft Goggle & Mask Accessories`, `Airsoft Goggles` and `Airsoft Grenade Launchers`.
+- In the BB Guns & Accessories area, adds 7 new categories including `BB Gun Barrels`, `BB Gun Magazines & Speedloaders` and `BB Gun Seals & O-Rings`.
+- In the Gel Blasters & Accessories area, adds 9 new categories including `Gel Blaster Cases & Bags`, `Gel Blaster Launchers` and `Gel Blaster Pistols`.
+- Adds 1,000+ new attributes including `ABEC rating`, `ART security rating` and `ASA mounting type`.
+
+##### Software
+
+- In the Digital Goods & Currency area, adds `Photo Editing Presets & LUTs` and `SVG & Cut Files`.
+
+##### Toys & Games
+
+- In the Puzzles area, adds `Puzzle Mats & Boards`.
+- In the Toy Gliders area, adds `Hand-Launched Toy Gliders` and `RC Toy Gliders`.
+- In the String Instruments area, adds `Toy Guitars`, `Toy Ukuleles` and `Toy Violins`.
+- In the Play Money & Banking area, adds `Play Money Sets`, `Toy ATM & Banking Machines`, `Toy Cash Registers` and `Toy Safes & Lockboxes`.
+- In the Sports Toys area, adds `Soccer Toys` and `Table Tennis Toys`.
+- In the Toy Weapons & Gadgets area, adds `Role-Play Melee Weapons & Shields`, `Spy Gadgets & Detective Kits` and `Toy Blasters & Projectile Toys`.
+- In the Visual Toys area, adds `Light Projection Toys` and `Optical Illusion Toys`.
+- In the Toy Playsets area, adds `Animal Playsets`, `Construction Playsets` and `Police & Firefighter Playsets`.
+- In the Puppet & Puppet Theater Accessories area, adds `Puppet Accessories` and `Puppet Theater Accessories`.
+- In the Educational Toys area, adds `Coding & Robotics Learning Toys` and `Math Toys`.
+- Adds 200+ new attributes including `Abacus bead material`, `Action figure scale` and `Air & water rocket kit items included`.
+
+##### Vehicles & Parts
+
+- Adds `Motor Vehicle Air Intake` (`Engine Air Filters`).
+- In the Electric Vehicle Batteries area, adds `EV Battery Cells`, `EV Battery Modules` and `EV Battery Packs`.
+- In the Motor Vehicle Fuel Systems area, adds `Fuel Filler Necks`, `Fuel Rails`, `Fuel Sending Units` and `Fuel System Kits`.
+- In the Motor Vehicle Sensors & Gauges area, adds `Camshaft Position Sensors`, `Crankshaft Position Sensors`, `Throttle Position Sensors` and `Tire Pressure Monitoring System (TPMS) Sensors`.
+- In the Motor Vehicle Suspension Parts area, adds `Strut Mounts`, `Suspension Lift Kits` and `Track Bars`.
+- In the Motor Vehicle Wheel Systems area, adds `Wheel Bearings & Hubs`, `Wheel Fasteners & Locks`, `Wheel Spacers & Adapters` and `Wheel Weights & Balancing`.
+- In the Motor Vehicle Controls area, adds `Steering Drag Links`, `Steering Gears`, `Steering Stabilizers` and `Steering Tie Rods`.
+- In the Motor Vehicle Engine Oil Circulation area, adds `Oil Cooler Lines & Hoses`, `Oil Filter Housings & Adapters` and `Oil Pickup Tubes & Screens`.
+- In the Motor Vehicle Exhaust area, adds `Motor Vehicle Catalytic Converters`, `Motor Vehicle Exhaust Hardware`, `Motor Vehicle Exhaust Pipes & Tubings`, `Motor Vehicle Exhaust Tips` and `Motor Vehicle Mufflers`.
+- In the Vehicle Repair & Specialty Tools area, adds `Mount-Demount Bars` and `Rim Protectors`.
+- In the Motorcycle Protective Gear area, adds `Adventure & Dual-Sport Helmets`.
+- In the Motor Vehicle Carrying Rack Accessories area, adds `Vehicle Boat & Kayak Rack Accessories`, `Vehicle Cargo Rack Accessories` and `Vehicle Water Sport Board Rack Accessories`.
+- In the Watercraft Exhaust Parts area, adds `Watercraft Exhaust Hoses & Fittings` and `Watercraft Exhaust Risers & Elbows`.
+- In the Watercraft Fuel Systems area, adds `Watercraft Fuel Filters & Water Separators` and `Watercraft Fuel Fittings & Connectors`.
+- Adds 900+ new attributes including `AC compressor mounting style`, `AC compressor oil type` and `ATV/UTV intended use`.
+
+##### Miscellaneous
+
+- Adds the attributes `Assembly required`, `Organic certification`, `Mounting method` and `Intended use` across multiple verticals.
+- Extends existing attributes to additional categories.
+- Includes 42,000+ new attribute values across multiple attributes.
+- Includes other refinements and improvements.
+
 ## 2026-02
 
 #### 🔄 Return Reasons
