@@ -37,13 +37,13 @@ module ProductTaxonomy
 
       def normalize_sequential(match)
         [
-          normalize_text(match[:primary_text]),
+          normalize_text(match[:primary_text]) || "",
           normalize_single_number(match[:primary_step]),
           normalize_text(match[:primary_unit] || match[:secondary_unit]) || "",
           normalize_text(match[:seperator]) || "-",
-          normalize_text(match[:secondary_text]),
+          normalize_text(match[:secondary_text]) || "",
           normalize_single_number(match[:secondary_step]),
-          normalize_text(match[:trailing_text]),
+          normalize_text(match[:trailing_text]) || "",
         ]
       end
 
