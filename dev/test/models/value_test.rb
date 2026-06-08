@@ -213,6 +213,15 @@ module ProductTaxonomy
       assert_equal ["Animal", "Rayé", "Autre"], sorted_values.map { _1.name(locale: "fr") }
     end
 
+    test "Value.sort_by_localized_name sorts localized values that mix matched and unmatched secondary text" do
+      values = stub_ev_connector_da_values
+
+      assert_equal(
+        ["CCS1-bilindtag til CHAdeMO-stik", "CCS1-bilindtag til J1772-stik"],
+        Value.sort_by_localized_name(values, locale: "da").map { _1.name(locale: "da") },
+      )
+    end
+
     test "next_id returns 1 when there are no values" do
       Value.reset
       assert_equal 1, Value.next_id
@@ -340,6 +349,37 @@ module ProductTaxonomy
         Value.new(id: 1, name: "Animal", handle: "pattern__animal", friendly_id: "pattern__animal"),
         Value.new(id: 2, name: "Striped", handle: "pattern__striped", friendly_id: "pattern__striped"),
         Value.new(id: 3, name: "Other", handle: "pattern__other", friendly_id: "pattern__other"),
+      ]
+    end
+
+    def stub_ev_connector_da_values
+      da_yaml = <<~YAML
+        da:
+          values:
+            ev_connector_adapter_direction__ccs1_vehicle_inlet_to_chademo_plug:
+              name: "CCS1-bilindtag til CHAdeMO-stik"
+            ev_connector_adapter_direction__ccs1_vehicle_inlet_to_j1772_plug:
+              name: "CCS1-bilindtag til J1772-stik"
+      YAML
+      Dir.stubs(:glob)
+        .with(File.join(ProductTaxonomy.data_path, "localizations", "values", "*.yml"))
+        .returns(["fake/path/da.yml"])
+      YAML.stubs(:safe_load_file).with("fake/path/da.yml").returns(YAML.safe_load(da_yaml))
+
+      # Real records from data/values.yml (ids 58183 / 58182).
+      [
+        Value.new(
+          id: 58183,
+          name: "CCS1 vehicle inlet to J1772 plug",
+          handle: "ev-connector-adapter-direction__ccs1-vehicle-inlet-to-j1772-plug",
+          friendly_id: "ev_connector_adapter_direction__ccs1_vehicle_inlet_to_j1772_plug",
+        ),
+        Value.new(
+          id: 58182,
+          name: "CCS1 vehicle inlet to CHAdeMO plug",
+          handle: "ev-connector-adapter-direction__ccs1-vehicle-inlet-to-chademo-plug",
+          friendly_id: "ev_connector_adapter_direction__ccs1_vehicle_inlet_to_chademo_plug",
+        ),
       ]
     end
   end
