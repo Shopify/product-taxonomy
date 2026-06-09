@@ -206,6 +206,25 @@ module ProductTaxonomy
           "\"#{mapping.input_category["id"]}\" to \"#{mapping.output_category}\" " \
           "(input version: #{version})"
       end
+
+      # Propagate rules from newer versions for categories that exist in this version
+      # but don't have an explicit mapping rule
+      existing_input_ids = Set.new(@to_shopify_mappings&.map { |m| m.input_category["id"].to_s })
+      next_integration_versions.each do |newer_version|
+        newer_version.to_shopify_mappings&.each do |newer_mapping|
+          input_id = newer_mapping.input_category["id"].to_s
+          next if existing_input_ids.include?(input_id)
+          next unless @full_names_by_id.key?(input_id)
+
+          propagated = MappingRule.new(
+            input_category: @full_names_by_id[input_id],
+            output_category: newer_mapping.output_category,
+          )
+          @to_shopify_mappings ||= []
+          @to_shopify_mappings << propagated
+          existing_input_ids.add(input_id)
+        end
+      end
     end
 
     # For a mapping to an external taxonomy, get the IDs of external categories that are not mapped from Shopify.
