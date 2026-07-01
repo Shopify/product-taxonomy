@@ -18,6 +18,7 @@
   - [🕹️ Interactive explorer](#️-interactive-explorer)
 - [🧭 Getting started](#-getting-started)
   - [🧩 1. Integrators: How to integrate with the taxonomy](#-1-integrators-how-to-integrate-with-the-taxonomy)
+    - [Attribute types](#attribute-types)
     - [🗺️ Mapping to other taxonomies](#️-mapping-to-other-taxonomies)
   - [🧑🏼‍🏫 2. Taxonomists: How to make changes to the taxonomy](#-2-taxonomists-how-to-make-changes-to-the-taxonomy)
   - [👩🏼‍💻 3. Developers: How to evolve the system](#-3-developers-how-to-evolve-the-system)
@@ -51,6 +52,10 @@ You can think of this repository serving 3 primary users:
 Dive straight into [`dist`](./dist/) to find the files you need and integrate this taxonomy into your system.
 
 We offer `txt` and `json` formats to make it easy to integrate with your systems. If you have a specific format you'd like to see, please open an issue and let us know!
+
+#### Attribute types
+
+Attributes include an explicit `type`. Closed-list attributes define a set of taxonomy values. Measurement attributes define a `measurement_type` and `supported_units` instead of values.
 
 #### 🗺️ Mapping to other taxonomies
 

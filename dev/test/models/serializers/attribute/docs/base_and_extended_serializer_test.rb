@@ -38,6 +38,7 @@ module ProductTaxonomy
               "id" => "gid://shopify/TaxonomyAttribute/1",
               "name" => "Base Attribute",
               "handle" => "base_handle",
+              "type" => "closed_list",
               "values" => [
                 {
                   "id" => "gid://shopify/TaxonomyValue/1",
@@ -49,12 +50,37 @@ module ProductTaxonomy
             assert_equal expected, BaseAndExtendedSerializer.serialize(@base_attribute)
           end
 
+          test "serialize measurement attribute returns the expected structure" do
+            measurement_attribute = ProductTaxonomy::Attribute.new(
+              id: 2,
+              name: "Height",
+              description: "Height Description",
+              friendly_id: "height",
+              handle: "height",
+              type: "measurement",
+              measurement_type: "dimension",
+              supported_units: ["cm", "in"],
+            )
+
+            expected = {
+              "id" => "gid://shopify/TaxonomyAttribute/2",
+              "name" => "Height",
+              "handle" => "height",
+              "type" => "measurement",
+              "measurement_type" => "dimension",
+              "supported_units" => ["cm", "in"],
+            }
+
+            assert_equal expected, BaseAndExtendedSerializer.serialize(measurement_attribute)
+          end
+
           test "serialize extended attribute returns the expected structure" do
             expected = {
               "id" => "gid://shopify/TaxonomyAttribute/1",
               "name" => "Base Attribute",
               "handle" => "extended_handle",
               "extended_name" => "Extended Attribute",
+              "type" => "closed_list",
               "values" => [
                 {
                   "id" => "gid://shopify/TaxonomyValue/1",
@@ -76,6 +102,7 @@ module ProductTaxonomy
                 "name" => "Base Attribute",
                 "handle" => "extended_handle",
                 "extended_name" => "Extended Attribute",
+                "type" => "closed_list",
                 "values" => [
                   {
                     "id" => "gid://shopify/TaxonomyValue/1",
@@ -87,6 +114,7 @@ module ProductTaxonomy
                 "id" => "gid://shopify/TaxonomyAttribute/1",
                 "name" => "Base Attribute",
                 "handle" => "base_handle",
+                "type" => "closed_list",
                 "values" => [
                   {
                     "id" => "gid://shopify/TaxonomyValue/1",

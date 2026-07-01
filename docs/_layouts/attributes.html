@@ -26,16 +26,41 @@ layout: default
           <span class="id">{{ attribute.id }}</span>
         </div>
         <div>
-          <ul class="values-container__list">
-            {% for value in attribute.values %}
-            <li class="values-container__list-item">
-              <div class="values-container__list-item-content">
-                {{ value.name }}
-                <div class="id">{{ value.id }}</div>
+          <div class="attribute-metadata">
+            <div class="attribute-metadata__row">
+              <span class="attribute-metadata__label">Type</span>
+              <span class="id">{{ attribute.type }}</span>
+            </div>
+            {% if attribute.type == "measurement" %}
+              <div class="attribute-metadata__row">
+                <span class="attribute-metadata__label">Measurement type</span>
+                <span class="id">{{ attribute.measurement_type }}</span>
               </div>
-            </li>
-            {% endfor %}
-          </ul>
+              <div class="attribute-metadata__row">
+                <span class="attribute-metadata__label">Supported units</span>
+                <div class="attribute-metadata__units">
+                  {% for unit in attribute.supported_units %}
+                    <span class="id">{{ unit }}</span>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+          {% unless attribute.type == "measurement" %}
+            <div class="attribute-metadata__row">
+              <span class="attribute-metadata__label">Values</span>
+            </div>
+            <ul class="values-container__list">
+              {% for value in attribute.values %}
+              <li class="values-container__list-item">
+                <div class="values-container__list-item-content">
+                  {{ value.name }}
+                  <div class="id">{{ value.id }}</div>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
+          {% endunless %}
         </div>
       </div>
     </div>

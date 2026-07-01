@@ -37,6 +37,7 @@ module ProductTaxonomy
               "handle" => "test_handle",
               "name" => "Test Attribute",
               "base_name" => nil,
+              "type" => "closed_list",
               "categories" => [
                 {
                   "id" => "gid://shopify/TaxonomyCategory/1",
@@ -52,6 +53,37 @@ module ProductTaxonomy
             }
 
             assert_equal expected, ReversedSerializer.serialize(@attribute, [@category])
+          end
+
+          test "serialize measurement attribute returns the expected JSON structure" do
+            measurement_attribute = ProductTaxonomy::Attribute.new(
+              id: 2,
+              name: "Height",
+              description: "Height Description",
+              friendly_id: "height",
+              handle: "height",
+              type: "measurement",
+              measurement_type: "dimension",
+              supported_units: ["cm", "in"],
+            )
+
+            expected = {
+              "id" => "gid://shopify/TaxonomyAttribute/2",
+              "handle" => "height",
+              "name" => "Height",
+              "base_name" => nil,
+              "type" => "measurement",
+              "categories" => [
+                {
+                  "id" => "gid://shopify/TaxonomyCategory/1",
+                  "full_name" => "Test Category",
+                },
+              ],
+              "measurement_type" => "dimension",
+              "supported_units" => ["cm", "in"],
+            }
+
+            assert_equal expected, ReversedSerializer.serialize(measurement_attribute, [@category])
           end
 
           test "serialize with extended attribute returns the expected JSON structure" do
@@ -76,6 +108,7 @@ module ProductTaxonomy
               "handle" => "extended_handle",
               "name" => "Extended Attribute",
               "base_name" => "Base Attribute",
+              "type" => "closed_list",
               "categories" => [],
               "values" => [
                 {
@@ -99,6 +132,7 @@ module ProductTaxonomy
                   "handle" => "test_handle",
                   "name" => "Test Attribute",
                   "base_name" => nil,
+                  "type" => "closed_list",
                   "categories" => [
                     {
                       "id" => "gid://shopify/TaxonomyCategory/1",
