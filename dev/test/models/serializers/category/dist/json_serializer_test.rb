@@ -178,6 +178,53 @@ module ProductTaxonomy
             assert_equal ["Aaaa", "Bbbb", "Cccc"], actual_json
           end
 
+          test "serialize includes type for closed-list category attributes" do
+            value = ProductTaxonomy::Value.new(id: 1, name: "Black", friendly_id: "black", handle: "black")
+            attribute = ProductTaxonomy::Attribute.new(
+              id: 1,
+              name: "Color",
+              friendly_id: "color",
+              handle: "color",
+              description: "Defines the primary color or pattern, such as blue or striped",
+              values: [value],
+            )
+            @child.add_attribute(attribute)
+
+            expected_attribute_json = {
+              "id" => "gid://shopify/TaxonomyAttribute/1",
+              "name" => "Color",
+              "handle" => "color",
+              "description" => "Defines the primary color or pattern, such as blue or striped",
+              "type" => "closed_list",
+              "extended" => false,
+            }
+            assert_equal [expected_attribute_json], JsonSerializer.serialize(@child)["attributes"]
+          end
+
+          test "serialize includes type for measurement category attributes" do
+            measurement_attribute = ProductTaxonomy::Attribute.new(
+              id: 12429,
+              name: "Height",
+              friendly_id: "height",
+              handle: "height",
+              description: "Specifies the vertical measurement from bottom to top.",
+              type: "measurement",
+              measurement_type: "dimension",
+              supported_units: ["cm", "in"],
+            )
+            @child.add_attribute(measurement_attribute)
+
+            expected_attribute_json = {
+              "id" => "gid://shopify/TaxonomyAttribute/12429",
+              "name" => "Height",
+              "handle" => "height",
+              "description" => "Specifies the vertical measurement from bottom to top.",
+              "type" => "measurement",
+              "extended" => false,
+            }
+            assert_equal [expected_attribute_json], JsonSerializer.serialize(@child)["attributes"]
+          end
+
           test "serialize preserves return_reasons order from YAML" do
             rr1 = ProductTaxonomy::ReturnReason.new(
               id: 1,

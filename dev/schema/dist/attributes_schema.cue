@@ -4,22 +4,25 @@
 #attribute_gid_regex: "^gid://shopify/TaxonomyAttribute/\\d+$"
 #value_gid_regex:     "^gid://shopify/TaxonomyValue/\\d+$"
 
-
 #version_regex: "^\\d{4}-\\d{2}(-(unstable|beta\\d+))?$"
 version!: string & =~#version_regex
 
 attributes!: [
 	...{
-		id!:     string & =~#attribute_gid_regex
-		name!:   string
-		handle!: string
+		id!:                  string & =~#attribute_gid_regex
+		name!:                string
+		handle!:              string
+		description?:         string
+		type!:                "closed_list" | "measurement"
+		measurement_type?:    string
+		supported_units?:     [_, ...string]
 		extended_attributes!: [
 			...{
 				name!:   string
 				handle!: string
 			},
 		]
-		values!: [
+		values?: [
 			...{
 				id!:     string & =~#value_gid_regex
 				name!:   string

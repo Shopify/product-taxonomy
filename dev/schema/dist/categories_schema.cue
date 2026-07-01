@@ -24,6 +24,7 @@ verticals!: [...{
 			id!:       string & =~#attribute_gid_regex
 			name!:     string
 			handle!:   string
+			type!:     "closed_list" | "measurement"
 			extended!: bool
 		}]
 		children!: [..._category_reference]
