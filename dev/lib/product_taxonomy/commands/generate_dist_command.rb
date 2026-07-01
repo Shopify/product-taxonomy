@@ -80,7 +80,8 @@ module ProductTaxonomy
         Serializers::ReturnReason::Dist::JsonSerializer.serialize_all(version: @version, locale:)
       end
 
-      File.write("#{OUTPUT_PATH}/#{locale}/#{type}.json", JSON.pretty_generate(json_data) + "\n")
+      json_output = type == "taxonomy" ? JSON.generate(json_data) : JSON.pretty_generate(json_data)
+      File.write("#{OUTPUT_PATH}/#{locale}/#{type}.json", json_output + "\n")
     end
   end
 end
