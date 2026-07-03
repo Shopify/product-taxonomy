@@ -132,12 +132,17 @@ module ProductTaxonomy
 
     def update_mapping_files(filename, field_name, new_value)
       files = Dir.glob(File.expand_path("integrations/**/mappings/#{filename}", ProductTaxonomy.data_path))
+      escaped_field_name = Regexp.escape(field_name)
 
-      files = [files.sort.last] if filename == "to_shopify.yml"
+      if filename == "to_shopify.yml"
+        files = files.select do |file|
+          File.read(file).match?(%r{#{escaped_field_name}: shopify/\d{4}-\d{2}-unstable})
+        end
+      end
 
       files.each do |file|
         content = File.read(file)
-        content.gsub!(%r{#{field_name}: shopify/\d{4}-\d{2}(-unstable)?}, "#{field_name}: #{new_value}")
+        content.gsub!(%r{#{escaped_field_name}: shopify/\d{4}-\d{2}(-unstable)?}, "#{field_name}: #{new_value}")
         File.write(file, content)
       end
     end

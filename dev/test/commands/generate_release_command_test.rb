@@ -158,6 +158,21 @@ module ProductTaxonomy
       assert_equal "input_taxonomy: shopify/#{@next_version}", from_shopify_content
     end
 
+    test "execute preserves finalized to_shopify mapping when release has no pending mapping" do
+      latest_shopify_file = File.expand_path("data/integrations/shopify/2023-12/mappings/to_shopify.yml", @tmp_base_path)
+      finalized_shopify_file = File.expand_path("data/integrations/shopify/2022-10/mappings/to_shopify.yml", @tmp_base_path)
+
+      FileUtils.rm_f(latest_shopify_file)
+      File.write(finalized_shopify_file, "output_taxonomy: shopify/2023-12")
+
+      assert_equal "output_taxonomy: shopify/2023-12", File.read(finalized_shopify_file)
+
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+      command.execute
+
+      assert_equal "output_taxonomy: shopify/2023-12", File.read(finalized_shopify_file)
+    end
+
     test "execute updates taxonomy fields in mapping files" do
       command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
       command.execute
@@ -346,7 +361,7 @@ module ProductTaxonomy
       assert_equal "/repo/path", command.send(:git_repo_root) # Should use memoized value
     end
 
-    test "update_mapping_files handles to_shopify.yml files specially" do
+    test "update_mapping_files updates only pending to_shopify.yml files" do
       older_shopify_version = "2022-10"
       latest_shopify_version = "2023-12"
 
@@ -359,14 +374,37 @@ module ProductTaxonomy
       older_shopify_file = File.join(older_shopify_dir, "to_shopify.yml")
       latest_shopify_file = File.join(latest_shopify_dir, "to_shopify.yml")
 
-      File.write(older_shopify_file, "output_taxonomy: shopify/#{older_shopify_version}-unstable")
+      File.write(older_shopify_file, "output_taxonomy: shopify/#{latest_shopify_version}")
       File.write(latest_shopify_file, "output_taxonomy: shopify/#{latest_shopify_version}-unstable")
 
       command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
       command.send(:update_mapping_files, "to_shopify.yml", "output_taxonomy", "shopify/#{@version}")
 
-      assert_equal "output_taxonomy: shopify/#{older_shopify_version}-unstable", File.read(older_shopify_file)
+      assert_equal "output_taxonomy: shopify/#{latest_shopify_version}", File.read(older_shopify_file)
       assert_equal "output_taxonomy: shopify/#{@version}", File.read(latest_shopify_file)
+    end
+
+    test "update_mapping_files updates every pending to_shopify.yml file" do
+      shopify_mapping_file = File.expand_path("data/integrations/shopify/2023-12/mappings/to_shopify.yml", @tmp_base_path)
+      other_integration_dir = File.expand_path("data/integrations/other/2023-12/mappings", @tmp_base_path)
+      finalized_integration_dir = File.expand_path("data/integrations/finalized/2022-10/mappings", @tmp_base_path)
+
+      FileUtils.mkdir_p(other_integration_dir)
+      FileUtils.mkdir_p(finalized_integration_dir)
+
+      other_pending_file = File.join(other_integration_dir, "to_shopify.yml")
+      finalized_file = File.join(finalized_integration_dir, "to_shopify.yml")
+
+      File.write(shopify_mapping_file, "output_taxonomy: shopify/2023-12-unstable")
+      File.write(other_pending_file, "output_taxonomy: shopify/2023-12-unstable")
+      File.write(finalized_file, "output_taxonomy: shopify/2023-12")
+
+      command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
+      command.send(:update_mapping_files, "to_shopify.yml", "output_taxonomy", "shopify/#{@version}")
+
+      assert_equal "output_taxonomy: shopify/#{@version}", File.read(shopify_mapping_file)
+      assert_equal "output_taxonomy: shopify/#{@version}", File.read(other_pending_file)
+      assert_equal "output_taxonomy: shopify/2023-12", File.read(finalized_file)
     end
 
     test "update_mapping_files updates all from_shopify.yml files in non-shopify integrations" do
