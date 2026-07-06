@@ -47,6 +47,7 @@ module ProductTaxonomy
       ProductTaxonomy::Attribute.expects(:load_from_source).once
       ProductTaxonomy::Category.expects(:load_from_source).once
       ProductTaxonomy::ReturnReason.expects(:load_from_source).once
+      ProductTaxonomy::Disclosure.expects(:load_from_source).once
 
       command = TestCommand.new({})
       mock_value = mock("value")
@@ -63,6 +64,7 @@ module ProductTaxonomy
       ProductTaxonomy::Attribute.expects(:load_from_source).never
       ProductTaxonomy::Category.expects(:load_from_source).never
       ProductTaxonomy::ReturnReason.expects(:load_from_source).never
+      ProductTaxonomy::Disclosure.expects(:load_from_source).never
 
       command = TestCommand.new({})
       command.expects(:run_taxonomy_loaded_validations).never
