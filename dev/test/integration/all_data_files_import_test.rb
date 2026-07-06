@@ -24,6 +24,7 @@ module ProductTaxonomy
         ProductTaxonomy.data_path,
       ))
       @raw_mapping_rules_data = mapping_rule_files.map { { content: YAML.safe_load_file(_1), file_name: _1 } }
+      @raw_disclosures_data = YAML.safe_load_file(File.expand_path("disclosures.yml", ProductTaxonomy.data_path))
 
       Command.new(quiet: true).load_taxonomy
     end
@@ -33,6 +34,7 @@ module ProductTaxonomy
       Attribute.reset
       Category.reset
       ReturnReason.reset
+      Disclosure.reset
     end
 
     test "Values are consistent with values.yml" do
@@ -85,6 +87,20 @@ module ProductTaxonomy
         assert_equal raw_category.fetch("children").sort, real_category.children.map(&:id).sort
         assert_equal raw_category.fetch("attributes").sort, real_category.attributes.map(&:friendly_id).sort
         assert_equal raw_category.fetch("secondary_children", []).sort, real_category.secondary_children.map(&:id).sort
+      end
+    end
+
+    test "Disclosures are consistent with disclosures.yml" do
+      @raw_disclosures_data.each do |raw_disclosure|
+        real_disclosure = Disclosure.find_by(id: raw_disclosure.fetch("id"))
+
+        refute_nil real_disclosure, "Disclosure #{raw_disclosure.fetch("id")} not found"
+        assert_equal raw_disclosure.fetch("id"), real_disclosure.id
+        assert_equal raw_disclosure.fetch("public_id"), real_disclosure.public_id
+        assert_equal raw_disclosure["parent_id"], real_disclosure.parent_id
+        assert_equal raw_disclosure.fetch("name"), real_disclosure.name
+        assert_equal raw_disclosure["jurisdictions"], real_disclosure.jurisdictions
+        assert_equal raw_disclosure["display_preferences"], real_disclosure.display_preferences
       end
     end
 
