@@ -92,12 +92,12 @@ module ProductTaxonomy
 
     test "Disclosures are consistent with disclosures.yml" do
       @raw_disclosures_data.each do |raw_disclosure|
-        real_disclosure = Disclosure.find_by(id: raw_disclosure.fetch("id"))
+        public_id = raw_disclosure.fetch("public_id")
+        real_disclosure = Disclosure.find_by(public_id: public_id)
 
-        refute_nil real_disclosure, "Disclosure #{raw_disclosure.fetch("id")} not found"
-        assert_equal raw_disclosure.fetch("id"), real_disclosure.id
-        assert_equal raw_disclosure.fetch("public_id"), real_disclosure.public_id
-        assert_equal raw_disclosure["parent_id"], real_disclosure.parent_id
+        refute_nil real_disclosure, "Disclosure #{public_id} not found"
+        assert_equal public_id, real_disclosure.public_id
+        assert_equal raw_disclosure["parent_public_id"], real_disclosure.parent_public_id
         assert_equal raw_disclosure.fetch("name"), real_disclosure.name
         assert_equal raw_disclosure["jurisdictions"], real_disclosure.jurisdictions
         assert_equal raw_disclosure["display_preferences"], real_disclosure.display_preferences
