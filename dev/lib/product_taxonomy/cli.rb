@@ -6,6 +6,8 @@ require_relative "commands/generate_dist_command"
 require_relative "commands/find_unmapped_external_categories_command"
 require_relative "commands/generate_docs_command"
 require_relative "commands/generate_release_command"
+require_relative "commands/stage_dist_assets_command"
+require_relative "commands/publish_release_assets_command"
 require_relative "commands/dump_categories_command"
 require_relative "commands/dump_attributes_command"
 require_relative "commands/dump_values_command"
@@ -60,6 +62,18 @@ module ProductTaxonomy
     option :locales, type: :array, default: ["all"], desc: "The locales to generate"
     def release(current_version, next_version)
       GenerateReleaseCommand.new(options.merge(current_version:, next_version:)).run
+    end
+
+    desc "stage_dist_assets", "Flatten and gzip distribution files using release asset names"
+    option :input_path, type: :string, required: true, desc: "Distribution directory to stage"
+    option :output_path, type: :string, required: true, desc: "Directory to replace with staged assets; existing contents will be deleted"
+    def stage_dist_assets
+      StageDistAssetsCommand.new(options).run
+    end
+
+    desc "publish_release_assets TAG", "Generate, upload, and verify assets for a stable release tag"
+    def publish_release_assets(tag)
+      PublishReleaseAssetsCommand.new(options.merge(tag:)).run
     end
 
     desc "dump_categories", "Dump category verticals to YAML files"
