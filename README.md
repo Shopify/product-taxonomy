@@ -18,6 +18,7 @@
   - [🕹️ Interactive explorer](#️-interactive-explorer)
 - [🧭 Getting started](#-getting-started)
   - [🧩 1. Integrators: How to integrate with the taxonomy](#-1-integrators-how-to-integrate-with-the-taxonomy)
+    - [Attribute types](#attribute-types)
     - [🗺️ Mapping to other taxonomies](#️-mapping-to-other-taxonomies)
   - [🧑🏼‍🏫 2. Taxonomists: How to make changes to the taxonomy](#-2-taxonomists-how-to-make-changes-to-the-taxonomy)
   - [👩🏼‍💻 3. Developers: How to evolve the system](#-3-developers-how-to-evolve-the-system)
@@ -51,6 +52,44 @@ You can think of this repository serving 3 primary users:
 Dive straight into [`dist`](./dist/) to find the files you need and integrate this taxonomy into your system.
 
 We offer `txt` and `json` formats to make it easy to integrate with your systems. If you have a specific format you'd like to see, please open an issue and let us know!
+
+#### Attribute types
+
+Attributes include an explicit `type`:
+
+- `closed_list`: an attribute whose value is selected from a predefined set of taxonomy values, used when consistent value standardization is needed across products.
+- `measurement`: an attribute whose value is a number paired with a supported unit, used when products need precise measurements such as dimensions, weight, volume, or power.
+
+Closed-list attributes include `values`:
+
+```json
+{
+  "id": "gid://shopify/TaxonomyAttribute/1",
+  "name": "Color",
+  "handle": "color",
+  "type": "closed_list",
+  "values": [
+    {
+      "id": "gid://shopify/TaxonomyValue/1",
+      "name": "Black",
+      "handle": "color__black"
+    }
+  ]
+}
+```
+
+Measurement attributes include `measurement_type` and `supported_units` instead of `values`:
+
+```json
+{
+  "id": "gid://shopify/TaxonomyAttribute/12429",
+  "name": "Height",
+  "handle": "height",
+  "type": "measurement",
+  "measurement_type": "dimension",
+  "supported_units": ["cm", "in"]
+}
+```
 
 #### 🗺️ Mapping to other taxonomies
 

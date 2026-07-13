@@ -28,24 +28,31 @@ module ProductTaxonomy
             # @return [Hash] The serialized attribute.
             def serialize(attribute, attribute_categories)
               attribute_categories ||= []
-              {
+              result = {
                 "id" => attribute.gid,
                 "handle" => attribute.handle,
                 "name" => attribute.name,
                 "base_name" => attribute.extended? ? attribute.base_attribute.name : nil,
+                "type" => attribute.type,
                 "categories" => attribute_categories.sort_by(&:full_name).map do |category|
                   {
                     "id" => category.gid,
                     "full_name" => category.full_name,
                   }
                 end,
-                "values" => attribute.sorted_values.map do |value|
+              }
+              if attribute.measurement?
+                result["measurement_type"] = attribute.measurement_type
+                result["supported_units"] = attribute.supported_units
+              else
+                result["values"] = attribute.sorted_values.map do |value|
                   {
                     "id" => value.gid,
                     "name" => value.name,
                   }
-                end,
-              }
+                end
+              end
+              result
             end
           end
         end

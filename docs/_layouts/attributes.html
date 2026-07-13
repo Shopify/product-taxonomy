@@ -11,6 +11,7 @@ layout: default
   </div>
 </div>
 {% for attribute in site.data[page.target].reversed_attributes.attributes %}
+{% assign attribute_type = attribute.type | default: "closed_list" %}
 <div class="attribute-container hidden" data-handle="{{ attribute.handle }}" >
   <div class="column">
     <div class="attributes-wrapper box">
@@ -26,16 +27,41 @@ layout: default
           <span class="id">{{ attribute.id }}</span>
         </div>
         <div>
-          <ul class="values-container__list">
-            {% for value in attribute.values %}
-            <li class="values-container__list-item">
-              <div class="values-container__list-item-content">
-                {{ value.name }}
-                <div class="id">{{ value.id }}</div>
+          <div class="attribute-metadata">
+            <div class="attribute-metadata__row">
+              <span class="attribute-metadata__label">Type</span>
+              <span class="id">{{ attribute_type }}</span>
+            </div>
+            {% if attribute_type == "measurement" %}
+              <div class="attribute-metadata__row">
+                <span class="attribute-metadata__label">Measurement type</span>
+                <span class="id">{{ attribute.measurement_type }}</span>
               </div>
-            </li>
-            {% endfor %}
-          </ul>
+              <div class="attribute-metadata__row">
+                <span class="attribute-metadata__label">Supported units</span>
+                <div class="attribute-metadata__units">
+                  {% for unit in attribute.supported_units %}
+                    <span class="id">{{ unit }}</span>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+          {% unless attribute_type == "measurement" %}
+            <div class="attribute-metadata__row">
+              <span class="attribute-metadata__label">Values</span>
+            </div>
+            <ul class="values-container__list">
+              {% for value in attribute.values %}
+              <li class="values-container__list-item">
+                <div class="values-container__list-item-content">
+                  {{ value.name }}
+                  <div class="id">{{ value.id }}</div>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
+          {% endunless %}
         </div>
       </div>
     </div>

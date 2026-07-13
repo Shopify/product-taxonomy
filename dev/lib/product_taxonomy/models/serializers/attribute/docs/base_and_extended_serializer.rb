@@ -23,13 +23,19 @@ module ProductTaxonomy
                 "name" => attribute.extended? ? attribute.base_attribute.name : attribute.name,
                 "handle" => attribute.handle,
                 "extended_name" => attribute.extended? ? attribute.name : nil,
-                "values" => attribute.values.map do |value|
+                "type" => attribute.type,
+              }
+              if attribute.measurement?
+                result["measurement_type"] = attribute.measurement_type
+                result["supported_units"] = attribute.supported_units
+              else
+                result["values"] = attribute.values.map do |value|
                   {
                     "id" => value.gid,
                     "name" => value.name,
                   }
-                end,
-              }
+                end
+              end
               result.delete("extended_name") unless attribute.extended?
               result
             end
