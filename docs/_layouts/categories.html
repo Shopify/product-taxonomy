@@ -58,6 +58,7 @@ layout: default
     <div class="values-wrapper box">
       <h3 id="category-attributes-title">Category Attributes</h3>
       {% for attribute in site.data[page.target].attributes %}
+        {% assign attribute_type = attribute.type | default: "closed_list" %}
         <div class="value-container attribute-values hidden" data-handle="{{ attribute.handle }}">
           <h4 class="value-title attribute-title" tabindex="0">
             <div class="value-title__text">
@@ -76,9 +77,9 @@ layout: default
             <div class="attribute-metadata">
               <div class="attribute-metadata__row">
                 <span class="attribute-metadata__label">Type</span>
-                <span class="id">{{ attribute.type }}</span>
+                <span class="id">{{ attribute_type }}</span>
               </div>
-              {% if attribute.type == "measurement" %}
+              {% if attribute_type == "measurement" %}
                 <div class="attribute-metadata__row">
                   <span class="attribute-metadata__label">Measurement type</span>
                   <span class="id">{{ attribute.measurement_type }}</span>
@@ -93,7 +94,7 @@ layout: default
                 </div>
               {% endif %}
             </div>
-            {% unless attribute.type == "measurement" %}
+            {% unless attribute_type == "measurement" %}
               <div class="attribute-metadata__row">
                 <span class="attribute-metadata__label">Values</span>
               </div>

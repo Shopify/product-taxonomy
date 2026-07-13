@@ -11,6 +11,7 @@ layout: default
   </div>
 </div>
 {% for attribute in site.data[page.target].reversed_attributes.attributes %}
+{% assign attribute_type = attribute.type | default: "closed_list" %}
 <div class="attribute-container hidden" data-handle="{{ attribute.handle }}" >
   <div class="column">
     <div class="attributes-wrapper box">
@@ -29,9 +30,9 @@ layout: default
           <div class="attribute-metadata">
             <div class="attribute-metadata__row">
               <span class="attribute-metadata__label">Type</span>
-              <span class="id">{{ attribute.type }}</span>
+              <span class="id">{{ attribute_type }}</span>
             </div>
-            {% if attribute.type == "measurement" %}
+            {% if attribute_type == "measurement" %}
               <div class="attribute-metadata__row">
                 <span class="attribute-metadata__label">Measurement type</span>
                 <span class="id">{{ attribute.measurement_type }}</span>
@@ -46,7 +47,7 @@ layout: default
               </div>
             {% endif %}
           </div>
-          {% unless attribute.type == "measurement" %}
+          {% unless attribute_type == "measurement" %}
             <div class="attribute-metadata__row">
               <span class="attribute-metadata__label">Values</span>
             </div>

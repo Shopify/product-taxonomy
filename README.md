@@ -55,7 +55,41 @@ We offer `txt` and `json` formats to make it easy to integrate with your systems
 
 #### Attribute types
 
-Attributes include an explicit `type`. Closed-list attributes define a set of taxonomy values. Measurement attributes define a `measurement_type` and `supported_units` instead of values.
+Attributes include an explicit `type`:
+
+- `closed_list`: an attribute whose value is selected from a predefined set of taxonomy values, used when consistent value standardization is needed across products.
+- `measurement`: an attribute whose value is a number paired with a supported unit, used when products need precise measurements such as dimensions, weight, volume, or power.
+
+Closed-list attributes include `values`:
+
+```json
+{
+  "id": "gid://shopify/TaxonomyAttribute/1",
+  "name": "Color",
+  "handle": "color",
+  "type": "closed_list",
+  "values": [
+    {
+      "id": "gid://shopify/TaxonomyValue/1",
+      "name": "Black",
+      "handle": "color__black"
+    }
+  ]
+}
+```
+
+Measurement attributes include `measurement_type` and `supported_units` instead of `values`:
+
+```json
+{
+  "id": "gid://shopify/TaxonomyAttribute/12429",
+  "name": "Height",
+  "handle": "height",
+  "type": "measurement",
+  "measurement_type": "dimension",
+  "supported_units": ["cm", "in"]
+}
+```
 
 #### 🗺️ Mapping to other taxonomies
 
