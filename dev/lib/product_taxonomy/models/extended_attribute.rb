@@ -31,6 +31,9 @@ module ProductTaxonomy
         friendly_id:,
         values: values_from.try(:values),
         is_manually_sorted: values_from.try(:manually_sorted?) || false,
+        type: values_from.try(:type),
+        measurement_type: values_from.try(:measurement_type),
+        supported_units: values_from.try(:supported_units),
       )
     end
 
