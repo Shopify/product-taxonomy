@@ -50,7 +50,10 @@
   - aircraft_system_application
   - airworthiness_approval_basis
   - compatible_aircraft_type
+  - height
+  - length
   - part_condition
+  - width
   return_reasons:
   - size
   - incompatible
@@ -88,8 +91,11 @@
   attributes:
   - battery_management_features
   - compatible_battery_technology
+  - height
   - item_condition
+  - length
   - manufacturer_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -103,11 +109,16 @@
   name: Charging Cables
   children: []
   attributes:
+  - cable_length
   - charging_cable_type
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - power_rating
+  - width
   return_reasons:
   - size
   - incompatible
@@ -123,11 +134,15 @@
   attributes:
   - charging_level
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - phase_type
+  - power_output_typical
   - station_type
+  - width
   return_reasons:
   - size
   - power_output
@@ -145,9 +160,13 @@
   - color
   - ev_connector/adapter_type
   - ev_connector_adapter_direction
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - power_output_typical
+  - width
   return_reasons:
   - size
   - incompatible
@@ -170,9 +189,14 @@
   - ev_conversion_kit_components
   - ev_conversion_kit_drivetrain_configuration
   - ev_conversion_kit_voltage_class
+  - height
   - installation_fabrication_level
   - item_condition
+  - length
   - manufacturer_type
+  - power
+  - voltage
+  - width
   return_reasons:
   - size
   - incompatible
@@ -191,9 +215,14 @@
   - ev_conversion_kit_components
   - ev_conversion_kit_drivetrain_configuration
   - ev_conversion_kit_voltage_class
+  - height
   - installation_fabrication_level
   - item_condition
+  - length
   - manufacturer_type
+  - power
+  - voltage
+  - width
   return_reasons:
   - size
   - range
@@ -212,9 +241,14 @@
   - ev_conversion_kit_components
   - ev_conversion_kit_drivetrain_configuration
   - ev_conversion_kit_voltage_class
+  - height
   - installation_fabrication_level
   - item_condition
+  - length
   - manufacturer_type
+  - power
+  - voltage
+  - width
   return_reasons:
   - size
   - range
@@ -234,11 +268,16 @@
   - ev_conversion_kit_components
   - ev_conversion_kit_drivetrain_configuration
   - ev_conversion_kit_voltage_class
+  - height
   - installation_fabrication_level
   - item_condition
+  - length
   - manufacturer_type
   - motor_mounting_configuration
+  - power
   - throttle_type_scooter_conversion
+  - voltage
+  - width
   return_reasons:
   - size
   - range
@@ -259,9 +298,14 @@
   - ev_conversion_kit_components
   - ev_conversion_kit_drivetrain_configuration
   - ev_conversion_kit_voltage_class
+  - height
   - installation_fabrication_level
   - item_condition
+  - length
   - manufacturer_type
+  - power
+  - voltage
+  - width
   return_reasons:
   - size
   - range
@@ -280,9 +324,14 @@
   - ev_conversion_kit_components
   - ev_conversion_kit_drivetrain_configuration
   - ev_conversion_kit_voltage_class
+  - height
   - installation_fabrication_level
   - item_condition
+  - length
   - manufacturer_type
+  - power
+  - voltage
+  - width
   return_reasons:
   - size
   - range
@@ -300,13 +349,20 @@
   - vp-1-2-6-2
   - vp-1-2-6-3
   attributes:
+  - amperage
+  - battery_pack_operating_voltage_nominal
   - battery_size
   - battery_type
   - battery_voltage_class
   - ev_battery_features
   - ev_battery_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
+  - power_consumption_typical
+  - voltage
+  - width
   return_reasons:
   - size
   - capacity
@@ -321,6 +377,7 @@
   name: EV Battery Cells
   children: []
   attributes:
+  - battery_pack_operating_voltage_nominal
   - battery_size
   - battery_type
   - battery_voltage_class
@@ -339,6 +396,7 @@
   name: EV Battery Packs
   children: []
   attributes:
+  - battery_pack_operating_voltage_nominal
   - battery_size
   - battery_type
   - battery_voltage_class
@@ -357,6 +415,7 @@
   name: EV Battery Modules
   children: []
   attributes:
+  - battery_pack_operating_voltage_nominal
   - battery_size
   - battery_type
   - battery_voltage_class
@@ -376,10 +435,14 @@
   children: []
   attributes:
   - color
+  - height
   - inverter_type
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - voltage
+  - width
   return_reasons:
   - size
   - inverter_type
@@ -409,11 +472,14 @@
   - care_instructions
   - carry_options
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - protective_case_interior_protection_type
   - protective_case_shell_type
+  - width
   return_reasons:
   - size
   - style
@@ -429,6 +495,9 @@
   children: []
   attributes:
   - accessory_size
+  - adapter_case_interior_height
+  - adapter_case_interior_length
+  - adapter_case_interior_width
   - bag/case_closure
   - bag/case_features
   - bag/case_material
@@ -436,11 +505,14 @@
   - care_instructions
   - carry_options
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - protective_case_interior_protection_type
   - protective_case_shell_type
+  - width
   return_reasons:
   - size
   - style
@@ -465,11 +537,14 @@
   - care_instructions
   - carry_options
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - protective_case_interior_protection_type
   - protective_case_shell_type
+  - width
   return_reasons:
   - size
   - style
@@ -492,11 +567,14 @@
   - care_instructions
   - carry_options
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - protective_case_interior_protection_type
   - protective_case_shell_type
+  - width
   return_reasons:
   - size
   - style
@@ -518,12 +596,17 @@
   - care_instructions
   - carry_options
   - color
+  - connector_case_internal_dimensions
   - connector_case_style
+  - height
   - item_condition
+  - length
   - manufacturer_type
+  - maximum_cable_length_supported
   - pattern
   - protective_case_interior_protection_type
   - protective_case_shell_type
+  - width
   return_reasons:
   - size
   - style
@@ -546,12 +629,15 @@
   - care_instructions
   - carry_options
   - color
+  - height
   - interior_padding_type
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - protective_case_interior_protection_type
   - protective_case_shell_type
+  - width
   return_reasons:
   - size
   - style
@@ -574,12 +660,15 @@
   - care_instructions
   - carry_options
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - protective_case_interior_protection_type
   - protective_case_shell_type
   - tool_case_form_factor
+  - width
   return_reasons:
   - size
   - style
@@ -594,11 +683,14 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - regenerative_braking_features
+  - width
   return_reasons:
   - size
   - incompatible
@@ -644,12 +736,15 @@
   - battery_type
   - color
   - compatible_operating_system
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - motor_vehicle_a_v_integration_features
   - pattern
   - player/recorder_specialized_features
   - power_source
+  - width
   return_reasons:
   - size
   - incompatible
@@ -665,12 +760,17 @@
   attributes:
   - amplifier_class
   - amplifier_configuration
+  - amplifier_fuse_rating
   - color
   - crossover_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - power_output_typical
   - power_source
+  - width
   return_reasons:
   - sound_quality
   - incompatible
@@ -688,10 +788,13 @@
   - color
   - compatible_player
   - faceplate_design
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - power_source
+  - width
   return_reasons:
   - length
   - sound_quality
@@ -711,10 +814,13 @@
   attributes:
   - color
   - faceplate_design
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - power_source
+  - width
   return_reasons:
   - sound_quality
   - incompatible
@@ -731,10 +837,13 @@
   - color
   - faceplate_design
   - faceplate_security_features
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - power_source
+  - width
   return_reasons:
   - sound_quality
   - incompatible
@@ -751,10 +860,13 @@
   - cassette_deck_feature_set
   - color
   - faceplate_design
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - power_source
+  - width
   return_reasons:
   - sound_quality
   - incompatible
@@ -770,10 +882,13 @@
   attributes:
   - color
   - faceplate_design
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - power_source
+  - width
   return_reasons:
   - sound_quality
   - incompatible
@@ -794,11 +909,14 @@
   attributes:
   - color
   - connectivity_technology
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - power_source
   - vehicle_audio_system_features
+  - width
   return_reasons:
   - sound_quality
   - incompatible
@@ -814,11 +932,14 @@
   attributes:
   - color
   - connectivity_technology
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - power_source
   - vehicle_audio_system_features
+  - width
   return_reasons:
   - sound_quality
   - incompatible
@@ -834,12 +955,15 @@
   attributes:
   - color
   - connectivity_technology
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - power_source
   - vehicle_audio_dsp_form_factor
   - vehicle_audio_system_features
+  - width
   return_reasons:
   - sound_quality
   - incompatible
@@ -855,12 +979,16 @@
   attributes:
   - color
   - connectivity_technology
+  - height
   - item_condition
+  - length
   - manufacturer_type
+  - maximum_preamp_output_voltage
   - mounting_location
   - pattern
   - power_source
   - vehicle_audio_system_features
+  - width
   return_reasons:
   - sound_quality
   - incompatible
@@ -877,11 +1005,15 @@
   - audio_channel_configuration
   - color
   - connectivity_technology
+  - height
   - item_condition
+  - length
   - manufacturer_type
+  - maximum_boost_and_cut_per_band
   - pattern
   - power_source
   - vehicle_audio_system_features
+  - width
   return_reasons:
   - sound_quality
   - incompatible
@@ -899,11 +1031,14 @@
   - connectivity_technology
   - crossover_component_type
   - crossover_configuration
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - power_source
   - vehicle_audio_system_features
+  - width
   return_reasons:
   - sound_quality
   - incompatible
@@ -920,7 +1055,9 @@
   - vp-1-3-6-2
   attributes:
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - parking_camera_features
   - parking_camera_mounting_location
@@ -929,6 +1066,7 @@
   - pattern
   - power_source
   - video_signal_standard
+  - width
   return_reasons:
   - field_of_view
   - installation
@@ -945,7 +1083,9 @@
   attributes:
   - camera_mounting_location_vehicle_exterior
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - parking_camera_features
   - parking_camera_mounting_location
@@ -954,6 +1094,7 @@
   - pattern
   - power_source
   - video_signal_standard
+  - width
   return_reasons:
   - field_of_view
   - installation
@@ -968,10 +1109,13 @@
   name: Backup Cameras
   children: []
   attributes:
+  - backup_camera_minimum_illumination
   - backup_camera_mounting_location
   - backup_camera_video_interface
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - parking_camera_features
   - parking_camera_mounting_location
@@ -980,6 +1124,7 @@
   - pattern
   - power_source
   - video_signal_standard
+  - width
   return_reasons:
   - field_of_view
   - installation
@@ -995,13 +1140,16 @@
   children: []
   attributes:
   - color
+  - height
   - included_mounting_accessories
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - power_source
   - speaker_features
   - speakerphone_type
+  - width
   return_reasons:
   - size
   - sound_quality
@@ -1023,10 +1171,15 @@
   - vp-1-3-8-7
   attributes:
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
+  - motor_vehicle_speaker_mounting_depth
   - pattern
   - power_source
+  - speaker_mounting_cutout_diameter
+  - width
   return_reasons:
   - size
   - sound_quality
@@ -1042,12 +1195,19 @@
   children: []
   attributes:
   - color
+  - height
+  - impedance
   - item_condition
+  - length
   - manufacturer_type
+  - motor_vehicle_speaker_mounting_depth
   - pattern
   - power_source
+  - rms_rated_power
   - speaker_cone_material
+  - speaker_mounting_cutout_diameter
   - vehicle_coaxial_speaker_nominal_size
+  - width
   return_reasons:
   - size
   - sound_quality
@@ -1064,12 +1224,19 @@
   attributes:
   - color
   - crossover_type
+  - height
+  - impedance
   - item_condition
+  - length
   - manufacturer_type
+  - motor_vehicle_speaker_mounting_depth
   - pattern
   - power_source
+  - rms_rated_power
+  - speaker_mounting_cutout_diameter
   - speaker_size
   - tweeter_material
+  - width
   return_reasons:
   - size
   - sound_quality
@@ -1085,10 +1252,17 @@
   children: []
   attributes:
   - color
+  - height
+  - impedance
   - item_condition
+  - length
   - manufacturer_type
+  - motor_vehicle_speaker_mounting_depth
   - pattern
   - power_source
+  - rms_rated_power
+  - speaker_mounting_cutout_diameter
+  - width
   return_reasons:
   - size
   - sound_quality
@@ -1104,11 +1278,18 @@
   children: []
   attributes:
   - color
+  - height
+  - impedance
   - item_condition
+  - length
   - manufacturer_type
+  - motor_vehicle_speaker_mounting_depth
   - motor_vehicle_speaker_mounting_type
   - pattern
   - power_source
+  - rms_rated_power
+  - speaker_mounting_cutout_diameter
+  - width
   return_reasons:
   - size
   - sound_quality
@@ -1124,12 +1305,20 @@
   children: []
   attributes:
   - color
+  - height
+  - impedance
   - item_condition
+  - length
   - manufacturer_type
+  - motor_vehicle_speaker_mounting_depth
   - pattern
   - power_source
+  - rms_rated_power
+  - speaker_mounting_cutout_diameter
   - tweeter_crossover_type
   - tweeter_mount_type
+  - tweeter_sensitivity
+  - width
   return_reasons:
   - size
   - sound_quality
@@ -1145,12 +1334,25 @@
   children: []
   attributes:
   - color
+  - height
+  - impedance
   - item_condition
+  - length
   - manufacturer_type
+  - motor_vehicle_speaker_mounting_depth
   - pattern
+  - peak_power_handling
   - power_source
+  - rms_rated_power
+  - speaker_mounting_cutout_diameter
   - voice_coil_configuration
+  - voice_coil_diameter
+  - width
+  - woofer_diameter
+  - woofer_mounting_cutout_diameter
+  - woofer_mounting_depth
   - woofer_mounting_type
+  - woofer_sensitivity
   - woofer_surround_material
   return_reasons:
   - size
@@ -1169,14 +1371,21 @@
   - battery_size
   - battery_type
   - color
+  - height
+  - impedance
   - item_condition
+  - length
   - manufacturer_type
+  - motor_vehicle_subwoofer_sensitivity
   - motor_vehicle_subwoofer_size
   - motor_vehicle_subwoofer_voice_coil_configuration
   - motor_vehicle_subwoofer_voice_coil_impedance_per_coil
   - pattern
   - power_source
+  - rms_rated_power
   - subwoofer_installation_type
+  - subwoofer_mounting_depth
+  - width
   return_reasons:
   - size
   - sound_quality
@@ -1199,12 +1408,16 @@
   - vp-1-3-10-7
   attributes:
   - color
+  - compatible_monitor_size
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - mount_attachment_method
   - mount_material
   - pattern
   - power_source
+  - width
   return_reasons:
   - size
   - style
@@ -1220,12 +1433,16 @@
   children: []
   attributes:
   - color
+  - compatible_monitor_size
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - mount_attachment_method
   - mount_material
   - pattern
   - power_source
+  - width
   return_reasons:
   - size
   - style
@@ -1242,13 +1459,17 @@
   attributes:
   - color
   - compatible_device_type
+  - compatible_monitor_size
   - headrest_mount_attachment_method
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - mount_attachment_method
   - mount_material
   - pattern
   - power_source
+  - width
   return_reasons:
   - size
   - style
@@ -1264,13 +1485,17 @@
   children: []
   attributes:
   - color
+  - compatible_monitor_size
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - mount_attachment_method
   - mount_material
   - overhead_mount_installation_method
   - pattern
   - power_source
+  - width
   return_reasons:
   - size
   - style
@@ -1286,13 +1511,17 @@
   children: []
   attributes:
   - color
+  - compatible_monitor_size
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - mount_attachment_method
   - mount_material
   - pattern
   - power_source
   - rearview_mirror_mount_attachment_type
+  - width
   return_reasons:
   - size
   - style
@@ -1308,12 +1537,16 @@
   children: []
   attributes:
   - color
+  - compatible_monitor_size
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - mount_attachment_method
   - mount_material
   - pattern
   - power_source
+  - width
   return_reasons:
   - size
   - style
@@ -1329,12 +1562,16 @@
   children: []
   attributes:
   - color
+  - compatible_monitor_size
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - mount_attachment_method
   - mount_material
   - pattern
   - power_source
+  - width
   return_reasons:
   - size
   - style
@@ -1350,12 +1587,17 @@
   children: []
   attributes:
   - color
+  - compatible_monitor_size
+  - height
   - item_condition
+  - length
   - manufacturer_type
+  - maximum_arm_reach
   - mount_attachment_method
   - mount_material
   - pattern
   - power_source
+  - width
   - windshield_mount_attachment_method
   return_reasons:
   - size
@@ -1455,10 +1697,13 @@
   - brake_position
   - color
   - compatible_brake_service_system
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - vehicle_braking_features
+  - width
   return_reasons:
   - programming
   - incompatible
@@ -1473,16 +1718,21 @@
   children: []
   attributes:
   - brake_booster_assist_type
+  - brake_booster_body_diameter
   - brake_booster_diaphragm_configuration
+  - brake_booster_hose_port_size
   - brake_fluid_dot_specification
   - brake_position
   - color
   - compatible_brake_service_system
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - pushrod_end_type
   - vehicle_braking_features
+  - width
   return_reasons:
   - size
   - incompatible
@@ -1500,15 +1750,20 @@
   - brake_caliper_finish
   - brake_caliper_included_hardware
   - brake_caliper_mount_type
+  - brake_caliper_mounting_bolt_spacing
+  - brake_caliper_piston_bore_diameter
   - brake_fluid_dot_specification
   - brake_position
   - color
   - compatible_brake_service_system
   - compatible_parking_brake_mechanism
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - vehicle_braking_features
+  - width
   return_reasons:
   - color
   - incompatible
@@ -1523,9 +1778,11 @@
   children: []
   attributes:
   - brake_fluid_dot_specification
+  - brake_fluid_wet_boiling_point
   - brake_position
   - color
   - compatible_brake_service_system
+  - dry_boiling_point
   - pattern
   return_reasons:
   - incompatible
@@ -1543,10 +1800,13 @@
   - brake_position
   - color
   - compatible_brake_service_system
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - vehicle_braking_features
+  - width
   return_reasons:
   - length
   - incompatible
@@ -1569,11 +1829,14 @@
   - compatible_abs_system
   - compatible_brake_fluid
   - compatible_brake_service_system
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - outlet_thread_type
   - pattern
   - vehicle_braking_features
+  - width
   return_reasons:
   - size
   - incompatible
@@ -1596,10 +1859,13 @@
   - brake_position
   - color
   - compatible_brake_service_system
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - vehicle_braking_features
+  - width
   return_reasons:
   - operating_noise
   - incompatible
@@ -1617,10 +1883,15 @@
   - brake_position
   - color
   - compatible_brake_service_system
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - rotor_diameter
+  - rotor_weight
   - vehicle_braking_features
+  - width
   return_reasons:
   - size
   - incompatible
@@ -1634,8 +1905,12 @@
   name: Brake Drums
   children: []
   attributes:
+  - brake_drum_center_bore_diameter
   - brake_drum_finish_coating
+  - brake_drum_inside_diameter
+  - brake_drum_maximum_discard_diameter
   - brake_drum_type
+  - brake_drum_width
   - brake_fluid_dot_specification
   - brake_position
   - color
@@ -1684,6 +1959,8 @@
   - brake_shoe_set_contents
   - color
   - compatible_brake_service_system
+  - compatible_brake_shoe_width
+  - compatible_drum_inside_diameter
   - item_condition
   - manufacturer_type
   - pattern
@@ -1780,9 +2057,12 @@
   - color
   - durability_features
   - fabric
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - size
   - color
@@ -1801,9 +2081,12 @@
   - color
   - durability_features
   - fabric
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - size
   - color
@@ -1819,12 +2102,17 @@
   name: Carpet Kits
   children: []
   attributes:
+  - carpet_kit_thickness
+  - carpet_pile_height
   - color
   - durability_features
   - fabric
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - size
   - color
@@ -1845,9 +2133,12 @@
   - console_cover_installation_method
   - cover_features
   - cover_material
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - color
   - style
@@ -1867,9 +2158,12 @@
   - cover_material
   - dash_cover_construction_type
   - dash_cover_cutout_configuration
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - size
   - color
@@ -1888,9 +2182,12 @@
   - color
   - durability_features
   - fabric
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - size
   - color
@@ -1910,10 +2207,14 @@
   - color
   - durability_features
   - fabric
+  - headliner_backing_thickness
   - headliner_product_form
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - size
   - color
@@ -1932,9 +2233,12 @@
   - color
   - durability_features
   - fabric
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - size
   - color
@@ -1954,12 +2258,15 @@
   - durability_features
   - fabric
   - flammability_compliance
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - stretch_type
   - upholstery_fabric_backing_type
   - upholstery_fabric_water_resistance
+  - width
   return_reasons:
   - size
   - color
@@ -1985,10 +2292,13 @@
   attributes:
   - color
   - durability_features
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2005,10 +2315,13 @@
   - ac_compressor_oil_type
   - color
   - durability_features
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2022,11 +2335,16 @@
   children: []
   attributes:
   - color
+  - condenser_inlet_port_diameter
+  - condenser_outlet_port_diameter
   - durability_features
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - size
   - incompatible
@@ -2044,10 +2362,15 @@
   - compatible_refrigerant_type
   - durability_features
   - evaporator_core_type
+  - height
+  - inlet_port_diameter
   - item_condition
   - item_material
+  - length
   - manufacturer_type
+  - outlet_port_diameter
   - pattern
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2062,10 +2385,13 @@
   attributes:
   - color
   - durability_features
+  - height
   - hose_material
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - length
   - material
@@ -2082,12 +2408,18 @@
   attributes:
   - blower_motor_bearing_type
   - blower_motor_mounting_position
+  - blower_motor_rotational_speed
   - color
   - durability_features
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
+  - power
+  - voltage
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2103,10 +2435,13 @@
   - climate_control_module_function
   - color
   - durability_features
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2123,11 +2458,14 @@
   - durability_features
   - heater_control_actuation_method
   - heater_control_electrical_connector_type
+  - height
   - hvac_control_functions
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2142,10 +2480,13 @@
   attributes:
   - color
   - durability_features
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2170,12 +2511,15 @@
   attributes:
   - color
   - handbrake_actuation_type
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - steering_component_drive_type
   - vehicle_steering_assist_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2190,11 +2534,14 @@
   attributes:
   - color
   - handbrake_orientation
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - mounting_position
   - pattern
+  - width
   return_reasons:
   - length
   - incompatible
@@ -2210,11 +2557,14 @@
   attributes:
   - color
   - grip_surface_type
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - pedal_mounting_style
+  - width
   return_reasons:
   - size
   - incompatible
@@ -2229,14 +2579,20 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - steering_column_adjustability_features
   - steering_column_ignition_provision
+  - steering_column_mounting_pattern_bolt_spacing
+  - steering_column_overall_length
+  - steering_column_shaft_diameter
   - steering_column_shaft_end_interface_type
   - steering_column_shift_type
+  - width
   return_reasons:
   - length
   - incompatible
@@ -2251,11 +2607,15 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
+  - maximum_operating_pressure
   - pattern
   - steering_pump_pulley_type
+  - width
   return_reasons:
   - pressure_rating
   - flow_rate
@@ -2271,12 +2631,16 @@
   children: []
   attributes:
   - color
+  - height
+  - input_shaft_diameter
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - steering_rack_finish_coating
   - steering_rack_position
+  - width
   return_reasons:
   - length
   - incompatible
@@ -2293,11 +2657,16 @@
   - color
   - compatible_steering_wheel_airbag
   - compatible_steering_wheel_control_button
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
+  - steering_wheel_dish_depth
   - steering_wheel_rim_material_grip_surface
+  - steering_wheel_size
+  - width
   return_reasons:
   - size
   - incompatible
@@ -2399,12 +2768,15 @@
   - vp-1-4-5-11
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - oil_system_connection_thread_standard
   - pattern
   - vehicle_oil_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2418,13 +2790,16 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - oil_cooler_core_type
   - oil_cooler_mounting_style
   - pattern
   - vehicle_oil_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2438,14 +2813,18 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - oil_dipstick_component_type
   - oil_dipstick_measurement_markings
+  - oil_dipstick_tube_inner_diameter
   - oil_dipstick_tube_mounting_type
   - pattern
   - vehicle_oil_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2459,13 +2838,16 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - oil_drain_plug_head_drive_type
   - oil_drain_plug_magnet_type
   - pattern
   - vehicle_oil_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2480,16 +2862,20 @@
   attributes:
   - cap_seal_type
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - oil_filler_cap_attachment_type
+  - oil_filler_cap_diameter
   - oil_filler_cap_installation_position
   - oil_filler_cap_locking_type
   - oil_filler_cap_tether_type
   - oil_filler_cap_venting_type
   - pattern
   - vehicle_oil_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2503,12 +2889,16 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
+  - oil_filter_gasket_outer_diameter
   - oil_filter_style
   - pattern
   - vehicle_oil_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2523,13 +2913,17 @@
   attributes:
   - color
   - compatible_sensor_port_type
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - oil_pan_baffle_windage_features
+  - oil_pan_capacity
   - oil_pan_finish_coating
   - pattern
   - vehicle_oil_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2543,14 +2937,17 @@
   children: []
   attributes:
   - color
+  - height
   - installation_location
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - oil_pressure_sensor_function_type
   - oil_pressure_sensor_signal_output_type
   - pattern
   - vehicle_oil_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2564,13 +2961,18 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
+  - maximum_operating_pressure
   - oil_pump_drive_method
+  - oil_pump_inlet_port_diameter
   - oil_pump_mounting_style
   - pattern
   - vehicle_oil_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2647,11 +3049,14 @@
   - vp-1-4-6-9
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - vehicle_engine/part_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2664,16 +3069,23 @@
   name: Camshafts
   children: []
   attributes:
+  - camshaft_base_circle_diameter
   - camshaft_construction
+  - camshaft_journal_diameter
+  - camshaft_lobe_lift
   - camshaft_material
   - camshaft_position
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - usage
+  - valve_lift
   - vehicle_engine/part_features
+  - width
   return_reasons:
   - horsepower
   - incompatible
@@ -2690,12 +3102,17 @@
   - color
   - crankshaft_balance_type
   - crankshaft_bolt_pattern
+  - crankshaft_main_bearing_journal_diameter
   - crankshaft_sensor_reluctor_type
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
+  - rod_journal_diameter
   - vehicle_engine/part_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2712,11 +3129,16 @@
   - cylinder_head_assembly
   - cylinder_head_material_grade
   - cylinder_head_position
+  - exhaust_runner_volume
+  - height
+  - intake_valve_diameter
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - vehicle_engine/part_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2733,11 +3155,14 @@
   - engine_bearing_coating
   - engine_bearing_position
   - engine_bearing_size
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - vehicle_engine/part_features
+  - width
   return_reasons:
   - size
   - incompatible
@@ -2757,11 +3182,14 @@
   - vp-1-4-6-5-5
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - vehicle_engine/part_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2776,6 +3204,8 @@
   attributes:
   - glow_plug_connector_type
   - glow_plug_heating_element_type
+  - glow_plug_reach_length
+  - glow_plug_voltage
   - hex_size
   - item_condition
   - item_material
@@ -2851,6 +3281,7 @@
   name: Distributor Parts
   children: []
   attributes:
+  - distributor_cap_diameter
   - distributor_cap_terminal_type
   - item_condition
   - item_material
@@ -2869,14 +3300,19 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - piston_application_type
   - piston_crown_dish_style
   - piston_pin_retention_type
   - vehicle_engine/part_features
+  - width
+  - wrist_pin_diameter
+  - wrist_pin_length
   return_reasons:
   - size
   - incompatible
@@ -2892,14 +3328,17 @@
   attributes:
   - color
   - components_included
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - timing_belt_construction_material_rubber_compound
   - timing_belt_profile
   - timing_belt_reinforcement_cord_material
   - vehicle_engine/part_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2913,13 +3352,16 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
   - item_material
   - kit_components_included
+  - length
   - manufacturer_type
   - number_of_timing_chain_rows
   - pattern
   - vehicle_engine/part_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2934,14 +3376,18 @@
   attributes:
   - color
   - engine_valve_coating
+  - engine_valve_length
   - engine_valve_position
   - engine_valve_stem_tip_type
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - valve_design
   - vehicle_engine/part_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2964,18 +3410,26 @@
   attributes:
   - aspiration_type
   - color
+  - cylinder_bore
+  - dry_weight
   - emissions_compliance_standard
   - engine_configuration
   - engine_cooling_type
   - engine_design
   - engine_type
   - fuel_system_type
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - primary_component_material
+  - stroke
   - valvetrain_configuration
   - vehicle_engine_features
+  - width
   return_reasons:
   - size
   - incompatible
@@ -2990,15 +3444,23 @@
   children: []
   attributes:
   - color
+  - cylinder_bore
+  - dry_weight
   - emissions_compliance_standard
   - engine_design
   - engine_type
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - primary_component_material
+  - stroke
   - valvetrain_configuration
   - vehicle_engine_features
+  - width
   return_reasons:
   - size
   - horsepower
@@ -3015,16 +3477,25 @@
   attributes:
   - color
   - crate_engine_assembly_level
+  - cylinder_bore
+  - dry_weight
   - emissions_compliance_standard
   - engine_design
   - engine_type
   - engine_valvetrain_type
+  - fuel_tank_capacity
+  - height
+  - horsepower
+  - horsepower_rpm
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - primary_component_material
+  - stroke
   - valvetrain_configuration
   - vehicle_engine_features
+  - width
   return_reasons:
   - size
   - horsepower
@@ -3044,12 +3515,15 @@
   - engine_design
   - engine_mount_type
   - engine_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - primary_component_material
   - valvetrain_configuration
   - vehicle_engine_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -3067,13 +3541,16 @@
   - engine_design
   - engine_rebuild_kit_contents
   - engine_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - oversize_or_undersize_grade
   - pattern
   - primary_component_material
   - valvetrain_configuration
   - vehicle_engine_features
+  - width
   return_reasons:
   - size
   - incompatible
@@ -3093,13 +3570,16 @@
   - engine_design
   - engine_timing_system_drive_type
   - engine_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - primary_component_material
   - timing_component_material
   - valvetrain_configuration
   - vehicle_engine_features
+  - width
   return_reasons:
   - size
   - incompatible
@@ -3113,11 +3593,14 @@
   name: Engine Valve Covers
   children: []
   attributes:
+  - breather_port_diameter
   - color
   - emissions_compliance_standard
   - engine_design
   - engine_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - oil_fill_cap_type
   - pattern
@@ -3126,6 +3609,7 @@
   - valve_cover_material
   - valvetrain_configuration
   - vehicle_engine_features
+  - width
   return_reasons:
   - color
   - incompatible
@@ -3140,16 +3624,24 @@
   children: []
   attributes:
   - color
+  - cylinder_bore
+  - dry_weight
   - emissions_compliance_standard
   - engine_design
   - engine_type
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
   - long_block_completeness
   - manufacturer_type
   - pattern
   - primary_component_material
+  - stroke
   - valvetrain_configuration
   - vehicle_engine_features
+  - width
   return_reasons:
   - size
   - horsepower
@@ -3165,18 +3657,26 @@
   children: []
   attributes:
   - color
+  - cylinder_bore
+  - dry_weight
   - emissions_compliance_standard
   - engine_design
   - engine_type
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - primary_component_material
   - short_block_assembly_balance_type
   - short_block_intended_use
   - short_block_rotating_assembly_included
+  - stroke
   - valvetrain_configuration
   - vehicle_engine_features
+  - width
   return_reasons:
   - size
   - incompatible
@@ -3200,12 +3700,15 @@
   - color
   - exhaust_installation_position
   - exhaust_outlet_configuration
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - motor_vehicle_type
   - pattern
   - vehicle_exhaust_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -3344,12 +3847,15 @@
   attributes:
   - color
   - fit_type
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - vehicle_frame/body_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -3367,11 +3873,14 @@
   - bumper_finish
   - bumper_sensor_cutouts
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - vehicle_frame/body_features
+  - width
   return_reasons:
   - size
   - color
@@ -3389,11 +3898,14 @@
   - color
   - door_assembly_type
   - door_window_operation
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - vehicle_frame/body_features
+  - width
   return_reasons:
   - size
   - color
@@ -3410,11 +3922,14 @@
   attributes:
   - color
   - fender_finish_state
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - vehicle_frame/body_features
+  - width
   return_reasons:
   - size
   - color
@@ -3432,12 +3947,16 @@
   - color
   - grille_emblem_provision
   - grille_mounting_method
+  - grille_opening_dimensions
   - grille_style
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - vehicle_frame/body_features
+  - width
   return_reasons:
   - size
   - color
@@ -3453,11 +3972,14 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - vehicle_frame/body_features
+  - width
   return_reasons:
   - size
   - color
@@ -3474,13 +3996,16 @@
   attributes:
   - body_panel_finish_state
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - quarter_panel_coverage_type
   - quarter_panel_set_contents
   - vehicle_frame/body_features
+  - width
   return_reasons:
   - color
   - incompatible
@@ -3495,12 +4020,16 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - spoiler_adjustability
+  - spoiler_width
   - vehicle_frame/body_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -3514,12 +4043,15 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - trunk_part_type
   - vehicle_frame/body_features
+  - width
   return_reasons:
   - size
   - color
@@ -3554,6 +4086,7 @@
   attributes:
   - color
   - end_fitting_type
+  - gas_strut_compressed_length
   - item_condition
   - item_material
   - manufacturer_type
@@ -3652,10 +4185,13 @@
   attributes:
   - color
   - fuel_supply
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -3668,12 +4204,16 @@
   name: Carburetors
   children: []
   attributes:
+  - carburetor_airflow_rating
   - carburetor_barrel_count
   - carburetor_choke_type
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - size
   - incompatible
@@ -3689,13 +4229,17 @@
   attributes:
   - color
   - compatible_evap_system
+  - compatible_fuel_cap_neck_outer_diameter
   - fuel_cap_gasket_seal_material
   - fuel_cap_locking_mechanism
   - fuel_cap_type
   - fuel_cap_venting
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - color
   - incompatible
@@ -3713,9 +4257,12 @@
   - fuel_filter_features
   - fuel_filter_media_material
   - fuel_filter_mounting_connection_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - flow_rate
   - incompatible
@@ -3731,14 +4278,18 @@
   attributes:
   - color
   - fuel_injector_electrical_connector_type
+  - fuel_injector_o_ring_size
   - fuel_injector_seat_type
   - fuel_injector_spray_pattern
   - fuel_supply
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - mounting_type
   - operating_voltage
   - pattern
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -3752,9 +4303,12 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -3771,12 +4325,15 @@
   - color
   - fuel_pressure_regulator_body_material
   - fuel_pressure_regulator_mounting_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - regulator_diaphragm_material
   - regulator_port_thread_standard
   - vacuum_boost_reference_port
+  - width
   return_reasons:
   - pressure_rating
   - incompatible
@@ -3794,10 +4351,15 @@
   - fuel_pump_inlet_type
   - fuel_pump_mounting_location
   - fuel_pump_outlet_connection_type
+  - fuel_pump_outlet_diameter
   - fuel_system_application
+  - height
   - item_condition
+  - length
   - manufacturer_type
+  - maximum_operating_pressure
   - pattern
+  - width
   return_reasons:
   - flow_rate
   - incompatible
@@ -3814,9 +4376,12 @@
   - color
   - fuel_tank_installation_position
   - fuel_tank_shape
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - capacity
   - incompatible
@@ -3909,12 +4474,15 @@
   - battery_type
   - color
   - fit_type
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - motor_vehicle_type
   - pattern
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -3932,11 +4500,14 @@
   - battery_type
   - color
   - fit_type
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - motor_vehicle_type
   - pattern
+  - width
   return_reasons:
   - size
   - color
@@ -3955,10 +4526,13 @@
   - color
   - fabric
   - fit_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - motor_vehicle_type
   - pattern
+  - width
   return_reasons:
   - size
   - color
@@ -3981,10 +4555,13 @@
   - floor_mat_edge_style
   - floor_mat_retention_system
   - floor_mat_set_configuration
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - motor_vehicle_type
   - pattern
+  - width
   return_reasons:
   - size
   - color
@@ -4002,12 +4579,15 @@
   attributes:
   - color
   - fit_type
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - motor_vehicle_type
   - pattern
   - pedal_set_components
+  - width
   return_reasons:
   - size
   - color
@@ -4026,13 +4606,16 @@
   - color
   - cover_material
   - fit_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - motor_vehicle_type
   - pattern
   - seat_cover_placement
   - seat_cover_securement_method
   - seat_cover_set_contents
+  - width
   return_reasons:
   - size
   - color
@@ -4053,10 +4636,13 @@
   - color
   - cover_material
   - fit_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - motor_vehicle_type
   - pattern
+  - width
   return_reasons:
   - size
   - color
@@ -4076,12 +4662,15 @@
   - color
   - fabric
   - fit_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - motor_vehicle_type
   - pattern
   - sun_shade_attachment_method
   - sun_shade_style
+  - width
   return_reasons:
   - size
   - color
@@ -4108,11 +4697,14 @@
   - battery_type
   - color
   - fit_type
+  - height
   - item_condition
+  - length
   - light_source
   - lighting_features
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - color
   - brightness
@@ -4129,11 +4721,14 @@
   attributes:
   - color
   - fit_type
+  - height
   - item_condition
+  - length
   - light_source
   - lighting_features
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - size
   - color
@@ -4151,11 +4746,14 @@
   attributes:
   - color
   - fit_type
+  - height
   - item_condition
+  - length
   - light_source
   - lighting_features
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - color
   - brightness
@@ -4176,7 +4774,9 @@
   - color
   - compliance_certification
   - fit_type
+  - height
   - item_condition
+  - length
   - light_bar_housing_material
   - light_bar_lens_material
   - light_bar_mounting_location
@@ -4184,6 +4784,7 @@
   - lighting_features
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - color
   - brightness
@@ -4202,13 +4803,16 @@
   - battery_type
   - color
   - fit_type
+  - height
   - item_condition
+  - length
   - light_source
   - lighting_features
   - manufacturer_type
   - motor_vehicle_bulb_application_position
   - motor_vehicle_bulb_approval_standard
   - pattern
+  - width
   return_reasons:
   - color
   - brightness
@@ -4225,10 +4829,13 @@
   attributes:
   - color
   - fit_type
+  - height
   - item_condition
+  - length
   - light_source
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - color
   - brightness
@@ -4245,7 +4852,9 @@
   attributes:
   - color
   - fit_type
+  - height
   - item_condition
+  - length
   - light_source
   - light_switch_function
   - lighting_features
@@ -4254,6 +4863,7 @@
   - number_of_switch_throws
   - pattern
   - switch_electrical_positions
+  - width
   return_reasons:
   - size
   - incompatible
@@ -4269,11 +4879,14 @@
   attributes:
   - color
   - fit_type
+  - height
   - item_condition
+  - length
   - light_source
   - lighting_features
   - manufacturer_type
   - pattern
+  - width
   return_reasons:
   - color
   - brightness
@@ -4290,13 +4903,16 @@
   attributes:
   - color
   - fit_type
+  - height
   - item_condition
+  - length
   - light_source
   - lighting_features
   - manufacturer_type
   - pattern
   - turn_signal_lens_color
   - turn_signal_lighting_style
+  - width
   return_reasons:
   - color
   - brightness
@@ -4312,7 +4928,9 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - vehicle_mirror_adjustment_type
@@ -4320,6 +4938,7 @@
   - vehicle_mirror_features
   - vehicle_mirror_glass_type
   - vehicle_mirror_type
+  - width
   return_reasons:
   - size
   - style
@@ -4344,12 +4963,17 @@
   - vp-1-4-14-9
   - vp-1-4-14-10
   attributes:
+  - amperage
   - battery_size
   - battery_type
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - voltage
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4366,11 +4990,16 @@
   - alternator_mounting_configuration
   - alternator_pulley_type
   - alternator_regulator_type
+  - amperage
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - vehicle_electrical_connector_type
+  - voltage
+  - width
   return_reasons:
   - power_output
   - incompatible
@@ -4384,14 +5013,20 @@
   name: Batteries
   children: []
   attributes:
+  - amperage
   - battery_group_size
   - battery_polarity
   - battery_size
   - battery_type
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - reserve_capacity_rc
+  - voltage
+  - width
   return_reasons:
   - capacity
   - incompatible
@@ -4405,14 +5040,19 @@
   name: Fuses
   children: []
   attributes:
+  - amperage
   - color
   - fuse_form_factor
   - fuse_terminal_or_mount_style
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - time_current_characteristic
+  - voltage
   - voltage_rating_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4425,10 +5065,15 @@
   name: Relays
   children: []
   attributes:
+  - amperage
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - voltage
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4441,15 +5086,20 @@
   name: Spark Plugs
   children: []
   attributes:
+  - amperage
   - battery_size
   - battery_type
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - spark_plug_electrode_material
   - spark_plug_seat_type
   - spark_plug_terminal_type
+  - voltage
+  - width
   return_reasons:
   - tip_style
   - incompatible
@@ -4463,12 +5113,17 @@
   name: Starters
   children: []
   attributes:
+  - amperage
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - starter_drive_type
   - starter_terminal_type
+  - voltage
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4481,16 +5136,21 @@
   name: Voltage Regulators
   children: []
   attributes:
+  - amperage
   - battery_size
   - battery_type
   - color
   - compatible_ground_polarity
   - electrical_system_voltage
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - motor_vehicle_voltage_regulator_type
   - pattern
+  - voltage
   - voltage_regulator_connector_type
+  - width
   return_reasons:
   - power_output
   - incompatible
@@ -4504,10 +5164,15 @@
   name: Wiring Harnesses
   children: []
   attributes:
+  - amperage
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
+  - voltage
+  - width
   - wire_gauge_awg
   - wire_insulation_material
   return_reasons:
@@ -4559,10 +5224,13 @@
   attributes:
   - color
   - fabric
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - vehicle_seating_features
+  - width
   return_reasons:
   - size
   - color
@@ -4582,7 +5250,9 @@
   - compatible_seat_airbag
   - fabric
   - front_seat_position
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - occupant_classification_sensor_support
   - pattern
@@ -4590,6 +5260,7 @@
   - seat_belt_integration
   - seat_mounting_type
   - vehicle_seating_features
+  - width
   return_reasons:
   - size
   - color
@@ -4608,7 +5279,9 @@
   - color
   - fabric
   - headrest_provision
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - mounting_hardware_included_for_installation
   - pattern
@@ -4616,6 +5289,7 @@
   - seat_belt_provision
   - vehicle_seat_row
   - vehicle_seating_features
+  - width
   return_reasons:
   - size
   - color
@@ -4654,10 +5328,13 @@
   - battery_type
   - color
   - gauge_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - sensor_or_gauge_mounting_location
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4675,10 +5352,13 @@
   - fuel_level_sensor_mounting_type
   - fuel_level_sensor_sensing_mechanism
   - gauge_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - sensor_or_gauge_mounting_location
+  - width
   return_reasons:
   - length
   - incompatible
@@ -4694,11 +5374,15 @@
   attributes:
   - color
   - gauge_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
+  - panel_cutout_diameter
   - pattern
   - sensor_or_gauge_mounting_location
   - signal_source
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4713,15 +5397,19 @@
   attributes:
   - color
   - gauge_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - motor_vehicle_oxygen_sensor_bank
   - motor_vehicle_oxygen_sensor_number_of_wires
   - motor_vehicle_oxygen_sensor_position
   - motor_vehicle_oxygen_sensor_sensor_number
   - motor_vehicle_oxygen_sensor_type
+  - oxygen_sensor_hex_size
   - pattern
   - sensor_or_gauge_mounting_location
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4739,13 +5427,16 @@
   - color
   - electrical_connector_type
   - gauge_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - pressure_measurement_unit
   - pressure_sensor_application
   - pressure_sensor_port_thread_standard
   - sensor_or_gauge_mounting_location
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4760,10 +5451,13 @@
   attributes:
   - color
   - gauge_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - sensor_or_gauge_mounting_location
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -4778,13 +5472,16 @@
   attributes:
   - color
   - gauge_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - sensor_or_gauge_mounting_location
   - speedometer_backlight_type
   - speedometer_display_type
   - speedometer_unit_of_measure
+  - width
   return_reasons:
   - size
   - incompatible
@@ -4800,10 +5497,13 @@
   attributes:
   - color
   - gauge_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - sensor_or_gauge_mounting_location
+  - width
   return_reasons:
   - size
   - incompatible
@@ -4819,10 +5519,13 @@
   attributes:
   - color
   - gauge_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - sensor_or_gauge_mounting_location
+  - width
   return_reasons:
   - temperature_rating
   - incompatible
@@ -4860,6 +5563,7 @@
   - item_condition
   - manufacturer_type
   - parking_sensor_finish
+  - parking_sensor_hole_diameter
   - parking_sensor_type
   - pattern
   - sensor_or_gauge_mounting_location
@@ -4916,6 +5620,7 @@
   children: []
   attributes:
   - color
+  - coolant_temperature_sensor_hex_size
   - coolant_temperature_sensor_seal_type
   - gauge_type
   - item_condition
@@ -5062,12 +5767,15 @@
   - vp-1-4-17-11
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - motor_vehicle_placement
   - pattern
   - vehicle_suspension_features
+  - width
   return_reasons:
   - height
   - incompatible
@@ -5082,11 +5790,14 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - motor_vehicle_placement
   - pattern
   - vehicle_suspension_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -5101,13 +5812,19 @@
   attributes:
   - coil_spring_design
   - coil_spring_finish_coating
+  - coil_spring_free_length
+  - coil_spring_lift_height
   - coil_spring_material
+  - coil_spring_wire_diameter
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - motor_vehicle_placement
   - pattern
   - vehicle_suspension_features
+  - width
   return_reasons:
   - height
   - firmness
@@ -5130,11 +5847,14 @@
   - control_arm_material
   - control_arm_position
   - control_arm_style
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - motor_vehicle_placement
   - pattern
   - vehicle_suspension_features
+  - width
   return_reasons:
   - height
   - length
@@ -5150,12 +5870,21 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
+  - leaf_spring_bushing_inside_diameter
+  - leaf_spring_center_bolt_diameter
+  - leaf_spring_eye_to_eye_length
+  - leaf_spring_free_arch_height
   - leaf_spring_material
+  - leaf_spring_width
+  - length
   - manufacturer_type
   - motor_vehicle_placement
   - pattern
+  - suspension_lift_amount
   - vehicle_suspension_features
+  - width
   return_reasons:
   - height
   - firmness
@@ -5172,16 +5901,20 @@
   attributes:
   - color
   - damping_adjustability
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - motor_vehicle_placement
   - pattern
   - shock_absorber_bushing_material
   - shock_absorber_charge_type
+  - shock_absorber_compressed_length
   - shock_absorber_mount_type_lower
   - shock_absorber_mount_type_upper
   - shock_absorber_position
   - vehicle_suspension_features
+  - width
   return_reasons:
   - height
   - firmness
@@ -5198,12 +5931,17 @@
   attributes:
   - adjustability_type
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - motor_vehicle_placement
   - pattern
+  - strut_extended_length
   - strut_placement
+  - strut_travel
   - vehicle_suspension_features
+  - width
   return_reasons:
   - height
   - firmness
@@ -5219,13 +5957,16 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
+  - length
   - lubrication_type
   - manufacturer_type
   - motor_vehicle_placement
   - pattern
   - suspension_bushing_type
   - vehicle_suspension_features
+  - width
   return_reasons:
   - firmness
   - incompatible
@@ -5240,14 +5981,18 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - motor_vehicle_placement
   - pattern
   - sway_bar_adjustability
   - sway_bar_coating
+  - sway_bar_diameter
   - sway_bar_fitment_front_rear_kit
   - vehicle_suspension_features
+  - width
   return_reasons:
   - length
   - incompatible
@@ -5324,14 +6069,23 @@
   - vp-1-4-18-8
   attributes:
   - color
+  - height
   - hitch_ball_diameter
+  - hitch_ball_threaded_shank_diameter
+  - hitch_ball_threaded_shank_length
+  - hitch_mount_drop
+  - hitch_mount_rise
   - item_condition
   - item_material
+  - length
   - manufacturer_type
+  - maximum_load_capacity
   - pattern
+  - tow_strap_width
   - trailer_light_function
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - size
   - incompatible
@@ -5346,13 +6100,21 @@
   children: []
   attributes:
   - color
+  - height
   - hitch_ball_mounting_style
+  - hitch_ball_threaded_shank_diameter
+  - hitch_ball_tongue_weight_rating
+  - hitch_ball_weight_rating_gtw
+  - hitch_mount_rise
   - item_condition
   - item_material
+  - length
   - manufacturer_type
+  - maximum_load_capacity
   - pattern
   - trailer_light_function
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - size
   - material
@@ -5369,12 +6131,18 @@
   children: []
   attributes:
   - color
+  - height
+  - hitch_ball_threaded_shank_diameter
+  - hitch_mount_rise
   - item_condition
+  - length
   - manufacturer_type
+  - maximum_load_capacity
   - mount_material
   - pattern
   - trailer_light_function
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - size
   - weight_capacity
@@ -5390,12 +6158,18 @@
   children: []
   attributes:
   - color
+  - height
+  - hitch_ball_threaded_shank_diameter
+  - hitch_mount_rise
   - item_condition
   - item_material
+  - length
   - manufacturer_type
+  - maximum_load_capacity
   - pattern
   - trailer_light_function
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - size
   - weight_capacity
@@ -5412,14 +6186,20 @@
   attributes:
   - color
   - end_type
+  - height
+  - hitch_ball_threaded_shank_diameter
+  - hitch_mount_rise
   - item_condition
   - item_material
+  - length
   - manufacturer_type
+  - maximum_load_capacity
   - pattern
   - tow_strap_protective_features
   - tow_strap_type
   - trailer_light_function
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - size
   - weight_capacity
@@ -5436,12 +6216,18 @@
   - brake_mounting_flange_bolt_pattern
   - color
   - compatible_axle_weight_rating
+  - height
+  - hitch_ball_threaded_shank_diameter
+  - hitch_mount_rise
   - item_condition
   - item_material
+  - length
   - manufacturer_type
+  - maximum_load_capacity
   - pattern
   - trailer_light_function
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - size
   - weight_capacity
@@ -5457,13 +6243,19 @@
   children: []
   attributes:
   - color
+  - height
+  - hitch_ball_threaded_shank_diameter
+  - hitch_mount_rise
   - item_condition
   - item_material
+  - length
   - manufacturer_type
+  - maximum_load_capacity
   - pattern
   - trailer_hitch_mounting_location_method
   - trailer_light_function
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - size
   - weight_capacity
@@ -5479,12 +6271,18 @@
   children: []
   attributes:
   - color
+  - height
+  - hitch_ball_threaded_shank_diameter
+  - hitch_mount_rise
   - item_condition
   - item_material
+  - length
   - manufacturer_type
+  - maximum_load_capacity
   - pattern
   - trailer_light_function
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - size
   - incompatible
@@ -5499,13 +6297,19 @@
   children: []
   attributes:
   - color
+  - height
+  - hitch_ball_threaded_shank_diameter
+  - hitch_mount_rise
   - item_condition
   - item_material
+  - length
   - manufacturer_type
+  - maximum_load_capacity
   - pattern
   - trailer_light_function
   - trailer_wiring_circuit
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - size
   - length
@@ -5560,14 +6364,19 @@
   name: Axles
   children: []
   attributes:
+  - axle_shaft_diameter
+  - axle_shaft_length
   - color
   - gear_oil_api_classification
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - size
   - incompatible
@@ -5583,12 +6392,15 @@
   attributes:
   - color
   - gear_oil_api_classification
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -5603,12 +6415,15 @@
   attributes:
   - color
   - gear_oil_api_classification
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -5623,16 +6438,20 @@
   attributes:
   - balance_type
   - color
+  - drive_shaft_length
   - drive_shaft_material
   - gear_oil_api_classification
+  - height
   - intended_use
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - transmission_cooler_construction
   - transmission_type
   - u_joint_series_size
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - size
   - incompatible
@@ -5648,12 +6467,15 @@
   attributes:
   - color
   - gear_oil_api_classification
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -5673,6 +6495,7 @@
   - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -5687,7 +6510,9 @@
   attributes:
   - color
   - gear_oil_api_classification
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - transmission_cooler_construction
@@ -5695,6 +6520,7 @@
   - transmission_mount_type
   - transmission_type
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -5710,12 +6536,15 @@
   - bellhousing_bolt_pattern
   - color
   - gear_oil_api_classification
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - pattern
   - transmission_cooler_construction
   - transmission_type
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -5728,6 +6557,7 @@
   name: Clutch Master Cylinders
   children: []
   attributes:
+  - clutch_master_cylinder_bore_diameter
   - color
   - gear_oil_api_classification
   - item_condition
@@ -5797,8 +6627,11 @@
   - color
   - cv_boot_clamp_type
   - cv_boot_kit_contents
+  - cv_boot_large_end_inner_diameter
+  - cv_boot_length
   - cv_boot_material
   - cv_boot_position
+  - cv_boot_small_end_inner_diameter
   - gear_oil_api_classification
   - item_condition
   - manufacturer_type
@@ -5819,8 +6652,12 @@
   children: []
   attributes:
   - color
+  - compatible_clutch_disc_diameter
   - compatible_clutch_type
   - flywheel_balance_type
+  - flywheel_outer_diameter
+  - flywheel_thickness
+  - flywheel_weight
   - friction_surface_included
   - gear_oil_api_classification
   - item_condition
@@ -5863,6 +6700,8 @@
   children: []
   attributes:
   - clutch_pressure_plate_actuation_type
+  - clutch_pressure_plate_bolt_circle_diameter_bcd
+  - clutch_pressure_plate_diameter
   - clutch_pressure_plate_release_mechanism_type
   - clutch_pressure_plate_surface_type
   - color
@@ -5985,6 +6824,7 @@
   - pattern
   - tire_speed_rating
   - vehicle_drive/handling_features
+  - wheel_offset
   - wheel_system_finish
   return_reasons:
   - size
@@ -6006,14 +6846,21 @@
   attributes:
   - color
   - compatible_tpms_sensor_type
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - rim/wheel_design
   - tire_speed_rating
   - vehicle_drive/handling_features
+  - vehicle_wheel_backspacing
+  - vehicle_wheel_load_rating
+  - vehicle_wheel_offset
   - vehicle_wheel_valve_stem_type
+  - wheel_size
+  - width
   return_reasons:
   - size
   - color
@@ -6031,16 +6878,23 @@
   attributes:
   - color
   - compatible_tpms_sensor_type
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - number_of_wheel_pieces
   - pattern
   - rim/wheel_design
   - tire_speed_rating
   - vehicle_drive/handling_features
+  - vehicle_wheel_backspacing
+  - vehicle_wheel_load_rating
+  - vehicle_wheel_offset
   - vehicle_wheel_valve_stem_type
   - wheel_construction_type
+  - wheel_size
+  - width
   return_reasons:
   - size
   - color
@@ -6058,14 +6912,21 @@
   attributes:
   - color
   - compatible_tpms_sensor_type
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - rim/wheel_design
   - tire_speed_rating
   - vehicle_drive/handling_features
+  - vehicle_wheel_backspacing
+  - vehicle_wheel_load_rating
+  - vehicle_wheel_offset
   - vehicle_wheel_valve_stem_type
+  - wheel_size
+  - width
   return_reasons:
   - size
   - color
@@ -6084,15 +6945,22 @@
   - beadlock_type
   - color
   - compatible_tpms_sensor_type
+  - height
   - item_condition
   - item_material
+  - length
   - lug_nut_seat_profile
   - manufacturer_type
   - pattern
   - rim/wheel_design
   - tire_speed_rating
   - vehicle_drive/handling_features
+  - vehicle_wheel_backspacing
+  - vehicle_wheel_load_rating
+  - vehicle_wheel_offset
   - vehicle_wheel_valve_stem_type
+  - wheel_size
+  - width
   return_reasons:
   - size
   - color
@@ -6111,13 +6979,16 @@
   - battery_size
   - battery_type
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - tire_speed_rating
   - tpms_sensor_frequency_band
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - size
   - incompatible
@@ -6135,15 +7006,22 @@
   - vp-1-4-20-3-3
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - tire_construction_type
   - tire_position
+  - tire_profile
+  - tire_rim
   - tire_speed_rating
+  - tire_tread_depth
   - tire_tube_type
+  - tire_width
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - size
   - tread_type
@@ -6159,20 +7037,29 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - tire_construction_type
   - tire_load_range
+  - tire_outside_diameter
   - tire_position
+  - tire_profile
+  - tire_rim
+  - tire_section_width
   - tire_sidewall_type
   - tire_speed_rating
   - tire_temperature_rating_utqg
   - tire_traction_rating_utqg
+  - tire_tread_depth
   - tire_tube_type
+  - tire_width
   - vehicle_drive/handling_features
   - vehicle_tire_type
+  - width
   return_reasons:
   - size
   - tread_type
@@ -6188,17 +7075,25 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
+  - motorcycle_tire_overall_diameter
   - motorcycle_tire_speed_rating
   - motorcycle_tire_type
   - pattern
   - tire_construction_type
   - tire_position
+  - tire_profile
+  - tire_rim
   - tire_speed_rating
+  - tire_tread_depth
   - tire_tube_type
+  - tire_width
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - size
   - tread_type
@@ -6215,15 +7110,22 @@
   attributes:
   - atv/off_road_tire_type
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - tire_construction_type
   - tire_position
+  - tire_profile
+  - tire_rim
   - tire_speed_rating
+  - tire_tread_depth
   - tire_tube_type
+  - tire_width
   - vehicle_drive/handling_features
+  - width
   return_reasons:
   - size
   - tread_type
@@ -6243,14 +7145,18 @@
   - vp-1-4-20-4-4
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
   - tire_speed_rating
   - vehicle_drive/handling_features
   - wheel_fastener_seat_type
   - wheel_part_type
+  - wheel_spacer_thickness
+  - width
   return_reasons:
   - size
   - color
@@ -6275,6 +7181,7 @@
   - vehicle_drive/handling_features
   - wheel_fastener_seat_type
   - wheel_part_type
+  - wheel_spacer_thickness
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -6295,6 +7202,7 @@
   - vehicle_drive/handling_features
   - wheel_fastener_seat_type
   - wheel_part_type
+  - wheel_spacer_thickness
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -6315,6 +7223,7 @@
   - vehicle_drive/handling_features
   - wheel_fastener_seat_type
   - wheel_part_type
+  - wheel_spacer_thickness
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -6335,6 +7244,7 @@
   - vehicle_drive/handling_features
   - wheel_fastener_seat_type
   - wheel_part_type
+  - wheel_spacer_thickness
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -6351,14 +7261,18 @@
   - vp-1-4-21-4
   attributes:
   - color
+  - height
   - item_condition
   - item_material
+  - length
   - manufacturer_type
   - pattern
+  - width
   - window_component_location
   - window_glass_finish
   - window_regulator_operation
   - wiper_blade_attachment_type
+  - wiper_blade_length
   return_reasons:
   - size
   - incompatible
@@ -6516,6 +7430,7 @@
   - window_component_location
   - window_glass_finish
   - wiper_arm_finish
+  - wiper_arm_length
   - wiper_arm_pivot_mount_type
   - wiper_blade_attachment_type
   return_reasons:
@@ -6586,6 +7501,7 @@
   - manufacturer_type
   - motor_vehicle_type
   - radiator_cap_gasket_material
+  - radiator_cap_neck_depth
   - radiator_cap_pressure_relief_style
   - radiator_expansion_tank_cap_application
   return_reasons:
@@ -6622,6 +7538,7 @@
   - item_material
   - manufacturer_type
   - motor_vehicle_type
+  - thermostat_flange_diameter
   - thermostat_type
   return_reasons:
   - temperature_rating
@@ -6678,6 +7595,7 @@
   - item_material
   - manufacturer_type
   - motor_vehicle_type
+  - radiator_overflow_tank_hose_port_diameter
   - radiator_overflow_tank_level_sensor_provision
   - radiator_overflow_tank_shape
   return_reasons:
@@ -6790,6 +7708,7 @@
   attributes:
   - bearing_type
   - cooling_system_component_included
+  - inlet_port_inner_diameter
   - item_condition
   - item_material
   - manufacturer_type
@@ -6798,6 +7717,7 @@
   - water_pump_housing_material
   - water_pump_impeller_material
   - water_pump_mounting_type
+  - water_pump_outlet_port_diameter
   return_reasons:
   - flow_rate
   - incompatible
@@ -6888,10 +7808,14 @@
   name: Portable Fuel Cans
   children: []
   attributes:
+  - capacity
   - color
+  - height
+  - length
   - material
   - pattern
   - vehicle_type
+  - width
   return_reasons:
   - capacity
   - changed_my_mind
@@ -6930,8 +7854,11 @@
   - battery_size
   - battery_type
   - bristle_material
+  - brush_head_width
   - brush_type
   - color
+  - height
+  - length
   - paint_safe_bristles
   - pattern
   - recommended_vehicle_surfaces
@@ -6939,6 +7866,7 @@
   - vehicle_application_area
   - vehicle_type
   - water_fed_design
+  - width
   return_reasons:
   - size
   - too_soft
@@ -6966,6 +7894,7 @@
   - vehicle_application_area
   - vehicle_fluid_type
   - vehicle_type
+  - volume
   - wheel_cleaner_formula_type
   return_reasons:
   - incompatible
@@ -6987,6 +7916,7 @@
   - pattern
   - vehicle_application_area
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -7008,6 +7938,7 @@
   - product_form
   - vehicle_application_area
   - vehicle_type
+  - volume
   return_reasons:
   - residue
   - incompatible
@@ -7028,6 +7959,7 @@
   - pattern
   - vehicle_application_area
   - vehicle_type
+  - volume
   return_reasons:
   - residue
   - incompatible
@@ -7050,6 +7982,7 @@
   - pattern
   - vehicle_application_area
   - vehicle_type
+  - volume
   - wheel_cleaner_acidity_ph_category
   - wheel_contaminant_target
   return_reasons:
@@ -7072,6 +8005,7 @@
   - pattern
   - vehicle_application_area
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -7090,6 +8024,7 @@
   - pattern
   - vehicle_application_area
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -7109,6 +8044,7 @@
   - stain_remover_format
   - vehicle_application_area
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -7127,6 +8063,7 @@
   - pattern
   - vehicle_application_area
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -7143,11 +8080,14 @@
   - color
   - fuel_injection_cleaning_method
   - fuel_system_connection_type
+  - height
+  - length
   - package_type
   - pattern
   - vehicle_application_area
   - vehicle_cleaning_item_features
   - vehicle_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -7161,12 +8101,15 @@
   children: []
   attributes:
   - color
+  - height
+  - length
   - package_type
   - pattern
   - vehicle_application_area
   - vehicle_cleaning_item_features
   - vehicle_glass_cleaner_form
   - vehicle_type
+  - width
   return_reasons:
   - residue
   - incompatible
@@ -7194,6 +8137,7 @@
   - vehicle_cleaning_item_features
   - vehicle_type
   - vehicle_wax_polish_product_form
+  - volume
   return_reasons:
   - finish
   - incompatible
@@ -7215,6 +8159,7 @@
   - vehicle_cleaning_item_features
   - vehicle_type
   - vehicle_wax_polish_product_form
+  - volume
   return_reasons:
   - finish
   - incompatible
@@ -7238,6 +8183,7 @@
   - vehicle_polish_application_method
   - vehicle_type
   - vehicle_wax_polish_product_form
+  - volume
   return_reasons:
   - finish
   - incompatible
@@ -7261,6 +8207,7 @@
   - vehicle_cleaning_item_features
   - vehicle_type
   - vehicle_wax_polish_product_form
+  - volume
   return_reasons:
   - finish
   - incompatible
@@ -7283,6 +8230,7 @@
   - vehicle_cleaning_item_features
   - vehicle_type
   - vehicle_wax_polish_product_form
+  - volume
   return_reasons:
   - finish
   - incompatible
@@ -7331,9 +8279,12 @@
   - enclosure_panel_configuration
   - enclosure_window_material
   - golf_cart_enclosure_fit_type
+  - height
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7352,10 +8303,13 @@
   - color
   - cover_features
   - cover_material
+  - height
+  - length
   - pattern
   - season_condition_protection
   - vehicle_application_area
   - vehicle_type
+  - width
   - windshield_coverage_area
   return_reasons:
   - size
@@ -7373,13 +8327,17 @@
   children: []
   attributes:
   - color
+  - compatible_truck_bed_length
   - cover_features
   - cover_material
   - cover_type
+  - height
+  - length
   - pattern
   - tonneau_cover_mounting_style
   - vehicle_application_area
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7401,9 +8359,12 @@
   - hardtop_finish_type
   - hardtop_shell_material
   - hardtop_window_configuration
+  - height
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7422,6 +8383,8 @@
   - color
   - cover_features
   - cover_material
+  - height
+  - length
   - pattern
   - soft_top_attachment_type
   - soft_top_includes_frame_hardware
@@ -7429,6 +8392,7 @@
   - soft_top_window_configuration
   - vehicle_application_area
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7453,9 +8417,12 @@
   - cover_features
   - cover_material
   - cover_type
+  - height
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7475,9 +8442,12 @@
   - cover_features
   - cover_material
   - cover_type
+  - height
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7499,10 +8469,13 @@
   - cover_material
   - cover_type
   - golf_cart_cover_climate_use
+  - height
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_type
   - venting_design
+  - width
   return_reasons:
   - size
   - color
@@ -7522,10 +8495,13 @@
   - cover_features
   - cover_material
   - cover_type
+  - height
+  - length
   - motorcycle_cover_size_class
   - pattern
   - vehicle_application_area
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7545,9 +8521,12 @@
   - cover_features
   - cover_material
   - cover_type
+  - height
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -7562,13 +8541,17 @@
   children: []
   attributes:
   - color
+  - compatible_beam_width
   - cover_features
   - cover_fit_type
   - cover_material
   - cover_type
+  - height
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7608,11 +8591,14 @@
   - construction
   - decoration_material
   - embellishment/trim_material
+  - height
   - jewelry_material
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7631,10 +8617,13 @@
   - accessory_size
   - color
   - decoration_material
+  - height
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
+  - width
   return_reasons:
   - color
   - style
@@ -7654,11 +8643,14 @@
   - car_freshener_fragrance
   - color
   - decoration_material
+  - height
+  - length
   - pattern
   - scent
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
+  - width
   return_reasons:
   - scent
   - incompatible
@@ -7676,11 +8668,14 @@
   - antenna_fit_type
   - color
   - decoration_material
+  - height
+  - length
   - pattern
   - reflective_or_glow_effect
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7700,10 +8695,13 @@
   - color
   - dashboard_accessory_position
   - decoration_material
+  - height
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7727,10 +8725,13 @@
   - decal_placement_type
   - decal_visibility_property
   - decoration_material
+  - height
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7752,12 +8753,15 @@
   - construction
   - decoration_material
   - embellishment/trim_material
+  - height
   - jewelry_material
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7778,10 +8782,13 @@
   - decoration_material
   - flag_design_theme
   - flag_mounting_method
+  - height
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7800,10 +8807,13 @@
   - accessory_size
   - color
   - decoration_material
+  - height
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7823,11 +8833,14 @@
   - color
   - cover_features
   - cover_material
+  - height
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_hitch_cover_illumination_type
   - vehicle_hitch_cover_mounting_type
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7847,10 +8860,13 @@
   - color
   - cover_features
   - cover_material
+  - height
+  - length
   - license_plate_cover_style
   - pattern
   - vehicle_application_area
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7869,6 +8885,8 @@
   - accessory_size
   - color
   - decoration_material
+  - height
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
@@ -7876,6 +8894,7 @@
   - vehicle_license_plate_frame_plate_standard
   - vehicle_license_plate_frame_profile
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7897,11 +8916,14 @@
   - compatible_license_plate_hole_pattern
   - compatible_license_plate_size
   - corrosion_resistance
+  - height
+  - length
   - mount_material
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -7918,6 +8940,8 @@
   - accessory_size
   - color
   - decoration_material
+  - height
+  - length
   - license_plate_personalization_type
   - pattern
   - vehicle_application_area
@@ -7930,6 +8954,7 @@
   - vehicle_license_plate_text_style
   - vehicle_license_plate_theme
   - vehicle_type
+  - width
   return_reasons:
   - color
   - style
@@ -7947,12 +8972,15 @@
   - accessory_size
   - color
   - decoration_material
+  - height
+  - length
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_magnet_attachment_type
   - vehicle_magnet_intended_use
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -7973,7 +9001,10 @@
   - construction
   - decoration_material
   - embellishment/trim_material
+  - hanging_drop_length
+  - height
   - jewelry_material
+  - length
   - lumber/wood_type
   - pattern
   - personalization_type
@@ -7981,6 +9012,7 @@
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
+  - width
   - wood_finish
   return_reasons:
   - size
@@ -8001,12 +9033,16 @@
   - color
   - compatible_shifter_type
   - decoration_material
+  - height
+  - length
   - pattern
   - shift_boot_attachment_method
+  - shift_boot_inner_opening_diameter
   - shift_boot_installation_hardware_included
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -8025,6 +9061,8 @@
   - accessory_size
   - color
   - decoration_material
+  - height
+  - length
   - pattern
   - shift_knob_illumination
   - shift_knob_installation_method
@@ -8033,6 +9071,7 @@
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -8052,10 +9091,13 @@
   - color
   - cover_features
   - cover_material
+  - height
+  - length
   - pattern
   - steering_wheel_cover_installation_type
   - vehicle_application_area
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -8076,11 +9118,15 @@
   - construction
   - decoration_material
   - embellishment/trim_material
+  - height
+  - length
   - material
   - pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
+  - width
+  - wrap_coverage_area
   return_reasons:
   - size
   - color
@@ -8111,6 +9157,7 @@
   - color
   - pattern
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8127,9 +9174,12 @@
   - color
   - coolant_base_fluid
   - coolant_technology
+  - freeze_protection_temperature_minimum
+  - maximum_boiling_protection_temperature
   - mix_ratio
   - pattern
   - vehicle_type
+  - volume
   return_reasons:
   - temperature_rating
   - incompatible
@@ -8150,6 +9200,7 @@
   - pattern
   - vehicle_fluid_features
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8169,6 +9220,7 @@
   - pattern
   - vehicle_fluid_features
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8187,6 +9239,7 @@
   - pattern
   - vehicle_fluid_features
   - vehicle_type
+  - volume
   return_reasons:
   - temperature_rating
   - incompatible
@@ -8206,6 +9259,7 @@
   - pattern
   - vehicle_fluid_features
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8224,6 +9278,7 @@
   - seals_leak_type
   - vehicle_fluid_features
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8242,6 +9297,7 @@
   - pattern
   - vehicle_fluid_features
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8262,6 +9318,7 @@
   - pattern
   - vehicle_fluid_features
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8282,6 +9339,7 @@
   - vehicle_fluid_features
   - vehicle_type
   - voc_compliance_standard
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8299,6 +9357,7 @@
   - pattern
   - vehicle_fluid_features
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8315,9 +9374,11 @@
   - compatible_fuel_system_type
   - compatible_injection_type
   - delivery_form
+  - fuel_volume_treated
   - pattern
   - vehicle_fluid_features
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8337,6 +9398,7 @@
   - pattern
   - vehicle_fluid_features
   - vehicle_type
+  - volume
   return_reasons:
   - viscosity
   - incompatible
@@ -8353,9 +9415,12 @@
   - brake_clutch_fluid_base_chemistry
   - brake_clutch_fluid_dot_specification
   - color
+  - dry_boiling_point
   - pattern
   - vehicle_fluid_features
   - vehicle_type
+  - volume
+  - wet_boiling_point
   return_reasons:
   - viscosity
   - incompatible
@@ -8378,6 +9443,7 @@
   - vehicle_oil_features
   - vehicle_type
   - viscosity
+  - volume
   return_reasons:
   - viscosity
   - incompatible
@@ -8398,6 +9464,7 @@
   - vehicle_oil_features
   - vehicle_type
   - viscosity
+  - volume
   return_reasons:
   - viscosity
   - incompatible
@@ -8416,6 +9483,7 @@
   - vehicle_oil_features
   - vehicle_type
   - viscosity
+  - volume
   return_reasons:
   - viscosity
   - incompatible
@@ -8434,6 +9502,7 @@
   - vehicle_oil_features
   - vehicle_type
   - viscosity
+  - volume
   return_reasons:
   - viscosity
   - incompatible
@@ -8453,6 +9522,7 @@
   - vehicle_oil_features
   - vehicle_type
   - viscosity
+  - volume
   return_reasons:
   - viscosity
   - incompatible
@@ -8470,6 +9540,7 @@
   - pattern
   - vehicle_fluid_features
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8488,6 +9559,7 @@
   - power_steering_fluid_formulation
   - vehicle_fluid_features
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8504,6 +9576,7 @@
   - pattern
   - vehicle_fluid_features
   - vehicle_type
+  - volume
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8522,6 +9595,7 @@
   - vehicle_fluid_features
   - vehicle_type
   - vehicle_windshield_fluid_formula
+  - volume
   - windshield_washer_fluid_seasonality
   return_reasons:
   - temperature_rating
@@ -8546,6 +9620,7 @@
   - vehicle_paint_chemistry_base
   - vehicle_paint_type
   - vehicle_type
+  - volume
   return_reasons:
   - color
   - finish
@@ -8564,6 +9639,7 @@
   - color
   - compatible_substrate_material
   - motor_vehicle_paint_application_method
+  - motor_vehicle_paint_coverage_area
   - motor_vehicle_paint_system_step
   - paint_finish
   - pattern
@@ -8573,6 +9649,7 @@
   - vehicle_paint_type
   - vehicle_type
   - voc_regulatory_class
+  - volume
   return_reasons:
   - color
   - finish
@@ -8589,8 +9666,10 @@
   attributes:
   - brake_caliper_paint_base_chemistry
   - brake_caliper_paint_kit_contents
+  - brake_caliper_paint_maximum_temperature_resistance
   - color
   - paint_application_method
+  - paint_dry_to_touch_time
   - paint_finish
   - pattern
   - vehicle_application_area
@@ -8598,6 +9677,7 @@
   - vehicle_paint_chemistry_base
   - vehicle_paint_type
   - vehicle_type
+  - volume
   return_reasons:
   - color
   - finish
@@ -8647,10 +9727,13 @@
   - brake_bleeding_method
   - brake_service_kit_components_included
   - color
+  - height
+  - length
   - material
   - pattern
   - power_source
   - vehicle_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8664,9 +9747,12 @@
   children: []
   attributes:
   - color
+  - height
+  - length
   - pattern
   - power_source
   - vehicle_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8681,10 +9767,13 @@
   attributes:
   - charger_type
   - color
+  - height
+  - length
   - pattern
   - power_source
   - vehicle_battery_charger_features
   - vehicle_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8699,10 +9788,13 @@
   attributes:
   - battery_standards_supported
   - color
+  - height
+  - length
   - pattern
   - power_source
   - test_result_output_method
   - vehicle_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8717,10 +9809,14 @@
   attributes:
   - color
   - filler_type
+  - height
+  - length
   - pattern
   - power_source
   - vehicle_body_filler_form
   - vehicle_type
+  - volume
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8738,10 +9834,13 @@
   - color
   - communication_protocols
   - diagnostic_functions_supported
+  - height
+  - length
   - pattern
   - power_source
   - update_method
   - vehicle_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8757,9 +9856,12 @@
   - battery_size
   - battery_type
   - color
+  - height
+  - length
   - pattern
   - power_source
   - vehicle_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -8772,10 +9874,14 @@
   name: Vehicle Jumper Cables
   children: []
   attributes:
+  - cable_length
   - color
+  - height
+  - length
   - pattern
   - power_source
   - vehicle_type
+  - width
   return_reasons:
   - length
   - incompatible
@@ -8817,10 +9923,13 @@
   attributes:
   - color
   - features
+  - height
+  - length
   - pattern
   - power_source
   - tire_changer_operation_type
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -8837,11 +9946,14 @@
   - color
   - compatible_tire_application
   - features
+  - height
+  - length
   - mounting_style
   - pattern
   - power_source
   - tire_changer_operation_type
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -8858,12 +9970,16 @@
   - bead_breaker_type
   - color
   - features
+  - height
+  - length
+  - maximum_tire_diameter_supported
   - pattern
   - power_source
   - rim_clamping_method
   - tire_changer_operation_type
   - tire_changer_type
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -8879,10 +9995,13 @@
   attributes:
   - color
   - features
+  - height
+  - length
   - pattern
   - power_source
   - tire_changer_operation_type
   - vehicle_type
+  - width
   return_reasons:
   - size
   - changed_my_mind
@@ -8897,10 +10016,13 @@
   attributes:
   - color
   - features
+  - height
+  - length
   - pattern
   - power_source
   - tire_changer_operation_type
   - vehicle_type
+  - width
   return_reasons:
   - size
   - changed_my_mind
@@ -8915,12 +10037,15 @@
   attributes:
   - color
   - features
+  - height
+  - length
   - pattern
   - power_source
   - tip_finish_coating
   - tire_changer_operation_type
   - tire_spoon_type
   - vehicle_type
+  - width
   return_reasons:
   - size
   - changed_my_mind
@@ -8969,11 +10094,16 @@
   attributes:
   - color
   - features
+  - height
   - inflation_method_included
   - intended_repair_location
+  - length
+  - maximum_puncture_size_supported
   - pattern
   - power_source
+  - sealant_volume
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -8989,9 +10119,14 @@
   attributes:
   - color
   - damage_type
+  - height
+  - length
   - pattern
   - power_source
   - vehicle_type
+  - width
+  - windshield_repair_kit_maximum_crack_length
+  - windshield_repair_kit_maximum_repair_diameter
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -9128,12 +10263,15 @@
   - accessory_size
   - compatible_protective_gear_integration
   - gear_material
+  - height
+  - length
   - motorcycle_armor_certification_standard
   - motorcycle_protective_gear_size_system
   - protective_gear_features
   - protector_coverage_area
   - target_gender
   - vehicle_type
+  - width
   return_reasons:
   - too_big
   - too_small
@@ -9151,11 +10289,14 @@
   - gear_material
   - guard_construction_type
   - guard_size_measurement_basis
+  - height
+  - length
   - motorcycle_guard_coverage_area
   - motorcycle_protective_gear_size_system
   - protective_gear_features
   - target_gender
   - vehicle_type
+  - width
   return_reasons:
   - too_big
   - too_small
@@ -9202,12 +10343,15 @@
   - frame_color
   - frame_pattern
   - gear_material
+  - height
+  - length
   - lens_color
   - lens_pattern
   - motorcycle_protective_gear_size_system
   - protective_gear_features
   - target_gender
   - vehicle_type
+  - width
   return_reasons:
   - too_big
   - too_small
@@ -9230,10 +10374,13 @@
   - hand_guard_mounting_type
   - hand_guard_set_configuration
   - hand_guard_weather_protection
+  - height
+  - length
   - motorcycle_protective_gear_size_system
   - protective_gear_features
   - target_gender
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -9255,12 +10402,15 @@
   - compatible_helmet_certification_standard
   - compatible_helmet_shell_size
   - gear_material
+  - height
+  - length
   - motorcycle_protective_gear_size_system
   - pattern
   - protective_gear_features
   - replacement_part_purpose
   - target_gender
   - vehicle_type
+  - width
   return_reasons:
   - size
   - changed_my_mind
@@ -9285,6 +10435,7 @@
   - color
   - compatible_visor_system
   - gear_material
+  - height
   - helmet_communication_system_readiness
   - helmet_interior_liner_type
   - helmet_safety_certification_standard
@@ -9293,11 +10444,13 @@
   - helmet_vehicle_fit
   - helmet_ventilation_configuration
   - helmet_visor_shield_type
+  - length
   - motorcycle_protective_gear_size_system
   - pattern
   - protective_gear_features
   - target_gender
   - vehicle_type
+  - width
   return_reasons:
   - too_big
   - too_small
@@ -9320,6 +10473,7 @@
   - color
   - compatible_visor_system
   - gear_material
+  - height
   - helmet_communication_system_readiness
   - helmet_fit_head_shape
   - helmet_interior_liner_type
@@ -9329,11 +10483,13 @@
   - helmet_vehicle_fit
   - helmet_ventilation_configuration
   - helmet_visor_shield_type
+  - length
   - motorcycle_protective_gear_size_system
   - pattern
   - protective_gear_features
   - target_gender
   - vehicle_type
+  - width
   return_reasons:
   - too_big
   - too_small
@@ -9354,6 +10510,7 @@
   - color
   - compatible_visor_system
   - gear_material
+  - height
   - helmet_communication_system_readiness
   - helmet_interior_liner_type
   - helmet_safety_certification_standard
@@ -9362,11 +10519,13 @@
   - helmet_vehicle_fit
   - helmet_ventilation_configuration
   - helmet_visor_shield_type
+  - length
   - motorcycle_protective_gear_size_system
   - pattern
   - protective_gear_features
   - target_gender
   - vehicle_type
+  - width
   return_reasons:
   - too_big
   - too_small
@@ -9389,6 +10548,7 @@
   - color
   - compatible_visor_system
   - gear_material
+  - height
   - helmet_communication_system_readiness
   - helmet_interior_liner_type
   - helmet_safety_certification_standard
@@ -9399,11 +10559,13 @@
   - helmet_ventilation_configuration
   - helmet_visor_shield_optical_features
   - helmet_visor_shield_type
+  - length
   - motorcycle_protective_gear_size_system
   - pattern
   - protective_gear_features
   - target_gender
   - vehicle_type
+  - width
   return_reasons:
   - too_big
   - too_small
@@ -9424,6 +10586,7 @@
   - compatible_visor_system
   - gear_material
   - goggle_integration
+  - height
   - helmet_communication_system_readiness
   - helmet_interior_liner_type
   - helmet_safety_certification_standard
@@ -9433,12 +10596,14 @@
   - helmet_ventilation_configuration
   - helmet_visor_peak_adjustability
   - helmet_visor_shield_type
+  - length
   - motorcycle_protective_gear_size_system
   - pattern
   - protective_gear_features
   - target_gender
   - vehicle_type
   - ventilation_configuration
+  - width
   return_reasons:
   - too_big
   - too_small
@@ -9459,6 +10624,7 @@
   - color
   - compatible_visor_system
   - gear_material
+  - height
   - helmet_communication_system_readiness
   - helmet_interior_liner_type
   - helmet_liner_material
@@ -9468,11 +10634,14 @@
   - helmet_vehicle_fit
   - helmet_ventilation_configuration
   - helmet_visor_shield_type
+  - helmet_weight
+  - length
   - motorcycle_protective_gear_size_system
   - pattern
   - protective_gear_features
   - target_gender
   - vehicle_type
+  - width
   return_reasons:
   - too_big
   - too_small
@@ -9520,14 +10689,18 @@
   children: []
   attributes:
   - accessory_size
+  - height
   - item_material
+  - kidney_belt_panel_height
   - kidney_belt_support_level
+  - length
   - motorcycle_kidney_belt_construction_type
   - motorcycle_kidney_belt_purpose
   - motorcycle_protective_gear_size_system
   - protective_gear_features
   - target_gender
   - vehicle_type
+  - width
   return_reasons:
   - too_big
   - too_small
@@ -9545,10 +10718,13 @@
   attributes:
   - accessory_size
   - gear_material
+  - height
+  - length
   - motorcycle_protective_gear_size_system
   - protective_gear_features
   - target_gender
   - vehicle_type
+  - width
   return_reasons:
   - too_big
   - too_small
@@ -9565,6 +10741,8 @@
   - accessory_size
   - compatible_protective_gear
   - gear_material
+  - height
+  - length
   - motorcycle_protective_gear_size_system
   - motorcycle_riding_discipline
   - neck_brace_fit_system
@@ -9572,6 +10750,7 @@
   - protective_gear_features
   - target_gender
   - vehicle_type
+  - width
   return_reasons:
   - too_big
   - too_small
@@ -9612,11 +10791,14 @@
   name: Automotive Alarm Accessories
   children: []
   attributes:
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - power_source
   - vehicle_alarm/lock_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -9632,11 +10814,14 @@
   attributes:
   - battery_size
   - battery_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - power_source
   - vehicle_alarm/lock_features
   - vehicle_type
+  - width
   return_reasons:
   - range
   - incompatible
@@ -9650,13 +10835,18 @@
   name: Motorcycle Alarms & Locks
   children: []
   attributes:
+  - alarm_siren_loudness
   - battery_size
   - battery_type
+  - height
   - item_condition
+  - length
+  - locking_bolt_diameter
   - manufacturer_type
   - power_source
   - vehicle_alarm/lock_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -9673,12 +10863,15 @@
   - vp-1-6-3-4-2
   - vp-1-6-3-4-3
   attributes:
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - material
   - power_source
   - vehicle_alarm/lock_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -9692,7 +10885,9 @@
   name: Vehicle Door Lock Actuators
   children: []
   attributes:
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - material
   - power_source
@@ -9700,6 +10895,7 @@
   - vehicle_door_lock_actuator_kit_contents
   - vehicle_door_lock_actuator_wiring_configuration
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -9714,12 +10910,15 @@
   children: []
   attributes:
   - door_lock_knob_attachment_method
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - material
   - power_source
   - vehicle_alarm/lock_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -9734,7 +10933,9 @@
   children: []
   attributes:
   - electrical_connector_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - material
   - power_source
@@ -9742,6 +10943,7 @@
   - vehicle_door_lock_actuation_method
   - vehicle_door_lock_included_components
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -9755,13 +10957,16 @@
   name: Vehicle Hitch Locks
   children: []
   attributes:
+  - height
   - hitch_class
   - item_condition
+  - length
   - manufacturer_type
   - material
   - power_source
   - vehicle_alarm/lock_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -9777,15 +10982,18 @@
   attributes:
   - battery_size
   - battery_type
+  - height
   - immobilizer_installation_type
   - immobilizer_type
   - immobilizer_unlock_method
   - item_condition
+  - length
   - manufacturer_type
   - material
   - power_source
   - vehicle_alarm/lock_features
   - vehicle_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -9800,12 +11008,15 @@
   attributes:
   - battery_size
   - battery_type
+  - height
   - item_condition
+  - length
   - manufacturer_type
   - power_source
   - remote_keyless_system_programming_method
   - vehicle_alarm/lock_features
   - vehicle_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -9818,14 +11029,18 @@
   name: Vehicle Steering Wheel Locks
   children: []
   attributes:
+  - height
   - item_condition
+  - length
   - lock_cylinder_type
   - manufacturer_type
   - material
+  - maximum_extended_length
   - power_source
   - vehicle_alarm/lock_features
   - vehicle_steering_wheel_lock_form_factor
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -9839,7 +11054,9 @@
   name: Vehicle Wheel Clamps
   children: []
   attributes:
+  - height
   - item_condition
+  - length
   - lock_security_level
   - manufacturer_type
   - material
@@ -9847,6 +11064,7 @@
   - vehicle_alarm/lock_features
   - vehicle_type
   - visibility_features
+  - width
   return_reasons:
   - size
   - incompatible
@@ -9873,12 +11091,15 @@
   - battery_size
   - battery_type
   - color
+  - height
+  - length
   - pattern
   - product_certifications_standards
   - safety_equipment_material
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -9892,15 +11113,19 @@
   name: Car Window Nets
   children: []
   attributes:
+  - height
+  - length
   - motorsport_window_net_certification
   - net_material
   - product_certifications_standards
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
+  - width
   - window_net_latch_mechanism
   - window_net_mounting_hardware
   - window_net_opening_direction
+  - window_net_strap_width
   return_reasons:
   - size
   - color
@@ -9918,12 +11143,15 @@
   - flare_color
   - flare_type
   - hazard_signal_mode
+  - height
+  - length
   - mounting_method
   - product_certifications_standards
   - safety_equipment_material
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
+  - width
   return_reasons:
   - brightness
   - burn_time
@@ -9939,11 +11167,14 @@
   attributes:
   - airbag_position
   - compatible_airbag_system_type
+  - height
+  - length
   - product_certifications_standards
   - safety_equipment_material
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -9958,13 +11189,17 @@
   children: []
   attributes:
   - cage_type
+  - height
   - installation_method
+  - length
   - product_certifications_standards
   - roll_cage_tubing_material
+  - roll_cage_tubing_wall_thickness
   - safety_equipment_material
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -9979,6 +11214,9 @@
   name: Vehicle Seat Belt Buckles
   children: []
   attributes:
+  - compatible_seat_belt_tongue_width
+  - height
+  - length
   - product_certifications_standards
   - safety_equipment_material
   - seat_belt_buckle_electrical_connector_type
@@ -9987,6 +11225,7 @@
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -10002,11 +11241,14 @@
   attributes:
   - cover_features
   - cover_material
+  - height
+  - length
   - product_certifications_standards
   - seat_belt_cover_placement
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - comfort
@@ -10021,14 +11263,19 @@
   children: []
   attributes:
   - compatible_strap_retractor
+  - height
   - intended_seating_position
+  - length
   - product_certifications_standards
   - safety_equipment_material
   - seat_belt_attachment_type
   - seat_belt_strap_installation_location
+  - seat_belt_strap_thickness
+  - seat_belt_strap_width
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -10044,10 +11291,13 @@
   attributes:
   - belt_type
   - fabric
+  - height
+  - length
   - product_certifications_standards
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -10061,11 +11311,15 @@
   name: Vehicle Warning Whips
   children: []
   attributes:
+  - height
+  - length
   - product_certifications_standards
   - safety_equipment_material
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
+  - whip_diameter
+  - width
   return_reasons:
   - size
   - incompatible
@@ -10079,12 +11333,15 @@
   name: Vehicle Wheel Chocks
   children: []
   attributes:
+  - height
+  - length
   - product_certifications_standards
   - safety_equipment_material
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
   - wheel_chock_grip_features
+  - width
   return_reasons:
   - size
   - incompatible
@@ -10301,6 +11558,7 @@
   name: Distress Beacons and EPIRBs
   children: []
   attributes:
+  - battery_service_life
   - color
   - distress_transmission_frequency
   - floatation
@@ -10341,6 +11599,8 @@
   - color
   - life_raft_certification_standard
   - life_raft_container_type
+  - life_raft_packed_dimensions
+  - life_raft_packed_weight
   - material
   - pattern
   - service_interval
@@ -10361,6 +11621,7 @@
   - color
   - lifebuoy_approval_standard
   - lifebuoy_features
+  - lifebuoy_weight
   - pattern
   - watercraft_safety_equipment_activation_type
   return_reasons:
@@ -10375,6 +11636,7 @@
   name: Man Overboard Systems
   children: []
   attributes:
+  - battery_life_active_transmission
   - color
   - compatible_watercraft_communication_standard
   - man_overboard_system_type
@@ -10427,9 +11689,12 @@
   - vp-1-6-7-14
   - vp-1-6-7-15
   attributes:
+  - height
+  - length
   - protective_gear_certification_standard
   - protective_gear_features
   - vehicle_type
+  - width
   return_reasons:
   - too_big
   - too_small
@@ -10446,8 +11711,11 @@
   children: []
   attributes:
   - bar_pad_style
+  - height
+  - length
   - protective_gear_certification_standard
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -10694,6 +11962,7 @@
   - color
   - compatible_helmet_type
   - gear_material
+  - neck_support_circumference
   - neck_support_size_system
   - pattern
   - protective_gear_certification_standard
@@ -10847,9 +12116,13 @@
   - cargo_net_adjustability
   - cargo_net_style
   - features
+  - height
   - item_condition
+  - length
+  - mesh_opening_size
   - net_material
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -10868,10 +12141,14 @@
   - cargo_net_adjustability
   - cargo_net_style
   - features
+  - height
   - item_condition
+  - length
+  - mesh_opening_size
   - net_material
   - roof_cargo_net_hook_fastener_style
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -10890,10 +12167,14 @@
   - cargo_net_adjustability
   - cargo_net_style
   - features
+  - height
   - item_condition
+  - length
+  - mesh_opening_size
   - net_material
   - truck_bed_length_class
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -10914,9 +12195,13 @@
   - cargo_net_stretch_type
   - cargo_net_style
   - features
+  - height
   - item_condition
+  - length
+  - mesh_opening_size
   - net_material
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -10937,9 +12222,12 @@
   - vp-1-7-2-5
   attributes:
   - compatible_hitch_receiver_size
+  - height
   - item_condition
+  - length
   - material
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -10955,9 +12243,12 @@
   children: []
   attributes:
   - compatible_hitch_receiver_size
+  - height
   - item_condition
+  - length
   - material
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -10974,9 +12265,12 @@
   attributes:
   - carrying_capacity_pairs_boards
   - compatible_hitch_receiver_size
+  - height
   - item_condition
+  - length
   - material
   - vehicle_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -11046,10 +12340,13 @@
   attributes:
   - color
   - features
+  - height
   - item_condition
+  - length
   - material
   - pattern
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -11067,9 +12364,12 @@
   - compatible_roof_rail_type
   - crossbar_shape_profile
   - features
+  - height
   - item_condition
+  - length
   - material
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -11089,11 +12389,16 @@
   - bike_rack_tilt_function
   - features
   - foldability_stow
+  - height
   - integrated_locking
   - item_condition
+  - length
   - material
+  - maximum_tire_width_supported
+  - maximum_wheelbase_supported
   - rack_type
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -11111,10 +12416,13 @@
   - carrier_style
   - compatible_crossbar
   - features
+  - height
   - item_condition
+  - length
   - material
   - rack_type
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -11132,10 +12440,13 @@
   attributes:
   - cargo_rack_finish
   - features
+  - height
   - item_condition
+  - length
   - material
   - mounting_receiver_size
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -11152,10 +12463,13 @@
   children: []
   attributes:
   - features
+  - height
   - item_condition
+  - length
   - material
   - rack_type
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -11171,10 +12485,13 @@
   children: []
   attributes:
   - features
+  - height
   - item_condition
+  - length
   - material
   - rack_type
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -11190,12 +12507,15 @@
   children: []
   attributes:
   - features
+  - height
   - item_condition
+  - length
   - material
   - motorcycle_rack_carrier_style
   - rack_type
   - tie_down_points_straps_included
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -11212,10 +12532,13 @@
   children: []
   attributes:
   - features
+  - height
   - item_condition
+  - length
   - material
   - rack_type
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -11232,10 +12555,13 @@
   attributes:
   - compatible_water_board_type
   - features
+  - height
   - item_condition
+  - length
   - material
   - rack_type
   - vehicle_type
+  - width
   return_reasons:
   - style
   - incompatible
@@ -11250,10 +12576,13 @@
   children: []
   attributes:
   - features
+  - height
   - item_condition
+  - length
   - loading_ramp_type
   - material
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -11273,13 +12602,17 @@
   - vp-1-7-5-4
   attributes:
   - features
+  - height
   - item_condition
+  - length
   - material
   - number_of_trailer_axles
   - trailer_construction
   - trailer_coupler_size
+  - trailer_interior_width
   - trailer_type
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -11296,14 +12629,18 @@
   attributes:
   - boat_trailer_construction_type
   - features
+  - height
   - item_condition
+  - length
   - lighting_type
   - material
   - number_of_trailer_axles
   - trailer_construction
   - trailer_coupler_size
+  - trailer_interior_width
   - trailer_type
   - vehicle_type
+  - width
   return_reasons:
   - size
   - weight_capacity
@@ -11319,15 +12656,19 @@
   children: []
   attributes:
   - features
+  - height
   - interior_stall_configuration
   - item_condition
+  - length
   - material
   - number_of_trailer_axles
   - ramp_type
   - trailer_construction
   - trailer_coupler_size
+  - trailer_interior_width
   - trailer_type
   - vehicle_type
+  - width
   return_reasons:
   - size
   - capacity
@@ -11344,16 +12685,20 @@
   children: []
   attributes:
   - features
+  - height
   - item_condition
+  - length
   - material
   - number_of_trailer_axles
   - trailer_construction
   - trailer_coupler_size
+  - trailer_interior_width
   - trailer_type
   - travel_trailer_appliances_fuel_type
   - travel_trailer_holding_tank_type
   - travel_trailer_power_hookup_shore_power
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -11370,13 +12715,17 @@
   children: []
   attributes:
   - features
+  - height
   - item_condition
+  - length
   - material
   - number_of_trailer_axles
   - trailer_construction
   - trailer_coupler_size
+  - trailer_interior_width
   - trailer_type
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -11400,12 +12749,15 @@
   - care_instructions
   - carry_options
   - color
+  - height
   - item_condition
+  - length
   - motorcycle_luggage_capacity_class
   - motorcycle_luggage_mounting_system
   - motorcycle_luggage_side
   - pattern
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -11423,10 +12775,14 @@
   attributes:
   - box_type
   - features
+  - height
   - item_condition
+  - length
   - lumber/wood_type
   - material
   - vehicle_type
+  - volume
+  - width
   - wood_finish
   return_reasons:
   - size
@@ -11442,9 +12798,12 @@
   name: Vehicle Headrest Hangers & Hooks
   children: []
   attributes:
+  - height
   - item_condition
+  - length
   - material
   - vehicle_type
+  - width
   return_reasons:
   - size
   - style
@@ -11460,13 +12819,16 @@
   children: []
   attributes:
   - color
+  - height
   - item_condition
+  - length
   - material
   - number_of_compartments
   - organizer_type
   - pattern
   - vehicle_organizer_features
   - vehicle_type
+  - width
   return_reasons:
   - size
   - color
@@ -11521,9 +12883,12 @@
   - battery_type
   - control_technology
   - durability_features
+  - height
   - item_condition
   - item_material
+  - length
   - watercraft_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -11540,9 +12905,12 @@
   - chain_type
   - control_technology
   - durability_features
+  - height
   - item_condition
   - item_material
+  - length
   - watercraft_type
+  - width
   return_reasons:
   - size
   - length
@@ -11557,15 +12925,19 @@
   name: Anchor Lines & Ropes
   children: []
   attributes:
+  - anchor_line_diameter
   - control_technology
   - durability_features
+  - height
   - item_condition
   - item_material
+  - length
   - line/rope_type
   - rope_construction
   - splice_termination_type
   - suitable_for_anchoring_use
   - watercraft_type
+  - width
   return_reasons:
   - size
   - length
@@ -11586,10 +12958,13 @@
   - compatible_windlass_rode
   - control_technology
   - durability_features
+  - height
   - item_condition
   - item_material
+  - length
   - power_source
   - watercraft_type
+  - width
   - windlass_control_station_type
   - windlass_design
   - windlass_mount_type
@@ -11606,13 +12981,18 @@
   name: Anchors
   children: []
   attributes:
+  - anchor_shank_length
   - anchor_type
+  - anchor_weight
   - bottom_type_suitability
   - control_technology
   - durability_features
+  - height
   - item_condition
   - item_material
+  - length
   - watercraft_type
+  - width
   return_reasons:
   - size
   - weight_capacity
@@ -11629,10 +13009,13 @@
   - boat_hook_flotation
   - control_technology
   - durability_features
+  - height
   - hook_type
   - item_condition
   - item_material
+  - length
   - watercraft_type
+  - width
   return_reasons:
   - size
   - length
@@ -11649,11 +13032,14 @@
   - boat_ladder_stowage_style
   - control_technology
   - durability_features
+  - height
   - item_condition
   - item_material
   - ladder_type
+  - length
   - step_surface_texture
   - watercraft_type
+  - width
   return_reasons:
   - size
   - weight_capacity
@@ -11674,9 +13060,13 @@
   - cleat_type
   - control_technology
   - durability_features
+  - fastener_hole_spacing
+  - height
   - item_condition
   - item_material
+  - length
   - watercraft_type
+  - width
   return_reasons:
   - size
   - weight_capacity
@@ -11693,10 +13083,14 @@
   - compatible_dock_structure_type
   - control_technology
   - durability_features
+  - height
   - item_condition
   - item_material
+  - length
   - step_type
+  - step_width
   - watercraft_type
+  - width
   return_reasons:
   - size
   - weight_capacity
@@ -11711,10 +13105,13 @@
   name: Sailboat Parts
   children: []
   attributes:
+  - height
   - item_condition
   - item_material
+  - length
   - lumber/wood_type
   - watercraft_type
+  - width
   - wood_finish
   return_reasons:
   - size
@@ -11731,11 +13128,16 @@
   - vp-1-8-3-1
   - vp-1-8-3-2
   attributes:
+  - height
   - item_material
+  - length
   - product_form
   - vehicle_cleaning_item_features
+  - volume
   - watercraft_care_application_area
+  - watercraft_care_coverage_area
   - watercraft_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -11750,11 +13152,16 @@
   attributes:
   - alcohol/solvent_content
   - cleaner_purpose
+  - height
   - item_material
+  - length
   - product_form
   - vehicle_cleaning_item_features
+  - volume
   - watercraft_care_application_area
+  - watercraft_care_coverage_area
   - watercraft_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -11768,12 +13175,17 @@
   children: []
   attributes:
   - alcohol/solvent_content
+  - height
   - item_material
+  - length
   - polish_type
   - product_form
   - vehicle_cleaning_item_features
+  - volume
   - watercraft_care_application_area
+  - watercraft_care_coverage_area
   - watercraft_type
+  - width
   return_reasons:
   - finish
   - incompatible
@@ -11799,12 +13211,17 @@
   - battery_size
   - battery_type
   - compatible_watercraft_engine_type
+  - height
+  - impeller_height
   - item_condition
   - item_material
+  - length
+  - piston_oversize
   - propeller_hub_type
   - propeller_rotation
   - vehicle_engine/part_features
   - watercraft_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -11819,13 +13236,19 @@
   attributes:
   - alternator_marine_ignition_protection_rating
   - alternator_terminal_connection_type
+  - amperage
   - compatible_watercraft_engine_type
+  - height
   - item_condition
   - item_material
+  - length
+  - piston_oversize
+  - power_output_typical
   - propeller_hub_type
   - propeller_rotation
   - vehicle_engine/part_features
   - watercraft_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -11840,12 +13263,16 @@
   attributes:
   - carburetor_mounting_flange_type
   - compatible_watercraft_engine_type
+  - height
   - item_condition
   - item_material
+  - length
+  - piston_oversize
   - propeller_hub_type
   - propeller_rotation
   - vehicle_engine/part_features
   - watercraft_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -11860,15 +13287,19 @@
   attributes:
   - compatible_watercraft_engine_type
   - control_cable_connector_type
+  - height
   - item_condition
   - item_material
+  - length
   - lever_configuration
   - number_of_control_stations
+  - piston_oversize
   - propeller_hub_type
   - propeller_rotation
   - vehicle_engine/part_features
   - watercraft_engine_control_type
   - watercraft_type
+  - width
   return_reasons:
   - length
   - incompatible
@@ -11885,13 +13316,17 @@
   - battery_size
   - battery_type
   - compatible_watercraft_engine_type
+  - height
   - item_condition
   - item_material
+  - length
+  - piston_oversize
   - propeller_hub_type
   - propeller_rotation
   - vehicle_engine/part_features
   - watercraft_ignition_part_voltage
   - watercraft_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -11905,14 +13340,20 @@
   children: []
   attributes:
   - compatible_watercraft_engine_type
+  - height
   - item_condition
   - item_material
+  - length
+  - piston_oversize
   - propeller_hub_type
   - propeller_rotation
   - vehicle_engine/part_features
   - watercraft_impeller_material_grade
+  - watercraft_impeller_outer_diameter
+  - watercraft_impeller_thickness_overall_width
   - watercraft_pump_stage_impeller_role
   - watercraft_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -11926,13 +13367,18 @@
   children: []
   attributes:
   - compatible_watercraft_engine_type
+  - height
   - item_condition
   - item_material
+  - length
   - lock_placement
+  - piston_oversize
   - propeller_hub_type
   - propeller_rotation
   - vehicle_engine/part_features
+  - watercraft_motor_lock_shackle_bolt_diameter
   - watercraft_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -11947,14 +13393,18 @@
   attributes:
   - compatible_watercraft_engine_type
   - corrosion_resistance_level
+  - height
   - item_condition
+  - length
   - mount_material
+  - piston_oversize
   - propeller_hub_type
   - propeller_rotation
   - vehicle_engine/part_features
   - watercraft_motor_mount_adjustment_features
   - watercraft_motor_mounting_type
   - watercraft_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -11968,13 +13418,18 @@
   children: []
   attributes:
   - compatible_watercraft_engine_type
+  - height
   - item_condition
   - item_material
+  - length
+  - piston_oversize
+  - piston_ring_thickness
   - propeller_hub_type
   - propeller_rotation
   - vehicle_engine/part_features
   - watercraft_piston_part_type
   - watercraft_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -11989,16 +13444,22 @@
   children: []
   attributes:
   - compatible_watercraft_engine_type
+  - height
   - item_condition
   - item_material
+  - length
+  - piston_oversize
   - propeller_blade_cup
   - propeller_blade_design
   - propeller_hub_type
   - propeller_rotation
   - vehicle_engine/part_features
   - watercraft_propeller_blade_rake
+  - watercraft_propeller_diameter
+  - watercraft_propeller_pitch
   - watercraft_propeller_rotation_direction
   - watercraft_type
+  - width
   return_reasons:
   - pitch
   - incompatible
@@ -12017,12 +13478,20 @@
   attributes:
   - battery_size
   - battery_type
+  - cylinder_bore
+  - dry_weight
   - engine_type
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
   - item_material
+  - length
+  - stroke
   - vehicle_engine_features
   - watercraft_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -12037,14 +13506,22 @@
   children: []
   attributes:
   - cooling_system_type
+  - cylinder_bore
+  - dry_weight
   - engine_rotation_direction
   - engine_type
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
   - item_material
+  - length
   - marine_transmission_type
+  - stroke
   - vehicle_engine_features
   - watercraft_type
+  - width
   return_reasons:
   - size
   - horsepower
@@ -12061,15 +13538,24 @@
   attributes:
   - battery_size
   - battery_type
+  - cylinder_bore
+  - dry_weight
   - engine_type
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
   - item_material
+  - length
+  - outboard_motor_alternator_output
   - outboard_motor_shaft_type
   - outboard_motor_steering_type
+  - stroke
   - trim_tilt_type
   - vehicle_engine_features
   - watercraft_type
+  - width
   return_reasons:
   - size
   - shaft_length
@@ -12087,12 +13573,17 @@
   attributes:
   - battery_size
   - battery_type
+  - dry_weight
   - engine_type
   - fuel_supply
+  - height
   - item_condition
   - item_material
+  - length
   - vehicle_engine_features
+  - voltage
   - watercraft_type
+  - width
   return_reasons:
   - size
   - shaft_length
@@ -12114,10 +13605,13 @@
   attributes:
   - compliance_certifications
   - exhaust_cooling_type
+  - height
   - item_condition
   - item_material
+  - length
   - mounting_location
   - watercraft_type
+  - width
   return_reasons:
   - size
   - incompatible
@@ -12133,10 +13627,13 @@
   attributes:
   - compliance_certifications
   - exhaust_cooling_type
+  - height
   - item_condition
   - item_material
+  - length
   - mounting_location
   - watercraft_type
+  - width
   return_reasons:
   - operating_noise
   - incompatible
@@ -12152,10 +13649,13 @@
   attributes:
   - compliance_certifications
   - exhaust_cooling_type
+  - height
   - item_condition
   - item_material
+  - length
   - mounting_location
   - watercraft_type
+  - width
   return_reasons:
   - size
   - operating_noise
@@ -12210,9 +13710,12 @@
   - vp-1-8-7-5
   - vp-1-8-7-6
   attributes:
+  - height
   - item_condition
   - item_material
+  - length
   - watercraft_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -12227,9 +13730,12 @@
   attributes:
   - fuel_line_compliance_standard
   - fuel_line_connector_interface_type
+  - height
   - item_condition
   - item_material
+  - length
   - watercraft_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -12243,11 +13749,15 @@
   children: []
   attributes:
   - display_backlight_color
+  - gauge_cutout_diameter
   - gauge_mounting_type
+  - height
   - item_condition
   - item_material
+  - length
   - meter_type
   - watercraft_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -12260,9 +13770,13 @@
   name: Watercraft Fuel Pumps & Parts
   children: []
   attributes:
+  - height
   - item_condition
   - item_material
+  - length
+  - maximum_operating_pressure
   - watercraft_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -12275,12 +13789,19 @@
   name: Watercraft Fuel Tanks & Parts
   children: []
   attributes:
+  - fuel_tank_capacity
   - fuel_tank_orientation
+  - height
   - item_condition
   - item_material
+  - length
+  - watercraft_fuel_tank_feed_connection_diameter
+  - watercraft_fuel_tank_fill_neck_diameter
   - watercraft_fuel_tank_sending_unit_pattern
   - watercraft_fuel_tank_shape
+  - watercraft_fuel_tank_vent_connection_diameter
   - watercraft_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -12323,13 +13844,16 @@
   attributes:
   - battery_size
   - battery_type
+  - height
   - item_condition
   - item_material
+  - length
   - light_type
   - lighting_features
   - power_source
   - watercraft_lighting_certification_compliance
   - watercraft_type
+  - width
   return_reasons:
   - color
   - brightness
@@ -12348,9 +13872,12 @@
   attributes:
   - battery_size
   - battery_type
+  - height
   - item_condition
   - item_material
+  - length
   - watercraft_type
+  - width
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -12363,13 +13890,18 @@
   name: Watercraft Steering Cables
   children: []
   attributes:
+  - cable_length
+  - height
   - item_condition
   - item_material
+  - length
   - steering_cable_end_fitting_type
   - watercraft_steering_cable_core_material
   - watercraft_steering_cable_hardware_included
+  - watercraft_steering_cable_stroke
   - watercraft_steering_cable_system_type
   - watercraft_type
+  - width
   return_reasons:
   - length
   - incompatible
@@ -12383,13 +13915,16 @@
   name: Watercraft Steering Wheels
   children: []
   attributes:
+  - height
   - item_condition
   - item_material
+  - length
   - steering_wheel_grip_material
   - steering_wheel_mounting_pattern
   - watercraft_steering_wheel_hub_bore_type
   - watercraft_steering_wheel_type
   - watercraft_type
+  - width
   return_reasons:
   - color
   - incompatible
@@ -12427,12 +13962,18 @@
   - vp-2-1-1
   - vp-2-1-2
   attributes:
+  - airframe_total_time
   - body_color
   - body_pattern
   - fuel_supply
+  - height
   - item_condition
+  - length
+  - maximum_takeoff_weight_mtow
   - upholstery_color
   - upholstery_pattern
+  - width
+  - wingspan
   return_reasons:
   - size
   - performance
@@ -12459,12 +14000,15 @@
   - vp-2-1-1-12
   attributes:
   - aircraft_airframe_material
+  - aircraft_service_ceiling
+  - airframe_total_time
   - body_color
   - body_pattern
   - fuel_supply
   - item_condition
   - upholstery_color
   - upholstery_pattern
+  - wingspan
   return_reasons:
   - size
   - performance
@@ -12481,6 +14025,8 @@
   - aircraft_airframe_material
   - aircraft_engine_configuration
   - aircraft_engine_type
+  - aircraft_service_ceiling
+  - airframe_total_time
   - body_color
   - body_pattern
   - cockpit_type
@@ -12490,6 +14036,7 @@
   - item_condition
   - upholstery_color
   - upholstery_pattern
+  - wingspan
   return_reasons:
   - performance
   - changed_my_mind
@@ -12503,6 +14050,8 @@
   children: []
   attributes:
   - aircraft_airframe_material
+  - aircraft_service_ceiling
+  - airframe_total_time
   - battery_size
   - battery_type
   - color
@@ -12512,6 +14061,7 @@
   - item_condition
   - pattern
   - video_resolution_supported
+  - wingspan
   return_reasons:
   - performance
   - changed_my_mind
@@ -12527,6 +14077,8 @@
   - aircraft_airframe_material
   - aircraft_engine_configuration
   - aircraft_engine_type
+  - aircraft_service_ceiling
+  - airframe_total_time
   - body_color
   - body_pattern
   - cockpit_type
@@ -12535,6 +14087,7 @@
   - ultralight_aircraft_wing_configuration
   - upholstery_color
   - upholstery_pattern
+  - wingspan
   return_reasons:
   - performance
   - changed_my_mind
@@ -12548,8 +14101,13 @@
   children: []
   attributes:
   - aircraft_airframe_material
+  - aircraft_empty_weight
   - aircraft_landing_gear_type
+  - aircraft_service_ceiling
+  - airframe_total_time
   - autogyro_cockpit_enclosure
+  - autogyro_landing_distance
+  - autogyro_rotor_diameter
   - body_color
   - body_pattern
   - cockpit_type
@@ -12557,6 +14115,7 @@
   - item_condition
   - upholstery_color
   - upholstery_pattern
+  - wingspan
   return_reasons:
   - performance
   - changed_my_mind
@@ -12570,6 +14129,8 @@
   children: []
   attributes:
   - aircraft_airframe_material
+  - aircraft_service_ceiling
+  - airframe_total_time
   - body_color
   - body_pattern
   - cockpit_type
@@ -12580,6 +14141,7 @@
   - item_condition
   - upholstery_color
   - upholstery_pattern
+  - wingspan
   return_reasons:
   - size
   - performance
@@ -12596,6 +14158,8 @@
   - aircraft_airframe_material
   - aircraft_engine_configuration
   - aircraft_engine_type
+  - aircraft_service_ceiling
+  - airframe_total_time
   - body_color
   - body_pattern
   - cockpit_type
@@ -12603,6 +14167,7 @@
   - item_condition
   - upholstery_color
   - upholstery_pattern
+  - wingspan
   return_reasons:
   - size
   - performance
@@ -12620,6 +14185,8 @@
   - aircraft_airframe_material
   - aircraft_engine_configuration
   - aircraft_engine_type
+  - aircraft_service_ceiling
+  - airframe_total_time
   - body_color
   - body_pattern
   - cockpit_type
@@ -12627,6 +14194,7 @@
   - item_condition
   - upholstery_color
   - upholstery_pattern
+  - wingspan
   return_reasons:
   - performance
   - changed_my_mind
@@ -12641,9 +14209,13 @@
   attributes:
   - aircraft_airframe_material
   - aircraft_engine_configuration
+  - aircraft_engine_time_since_overhaul_tso
   - aircraft_engine_type
   - aircraft_galley_configuration
+  - aircraft_maximum_payload
   - aircraft_operational_certification
+  - aircraft_service_ceiling
+  - airframe_total_time
   - body_color
   - body_pattern
   - cockpit_type
@@ -12651,6 +14223,7 @@
   - item_condition
   - upholstery_color
   - upholstery_pattern
+  - wingspan
   return_reasons:
   - performance
   - changed_my_mind
@@ -12669,6 +14242,8 @@
   - aircraft_internet_connection
   - aircraft_lavatory_configuration
   - aircraft_maintenance_program_enrollment
+  - aircraft_service_ceiling
+  - airframe_total_time
   - body_color
   - body_pattern
   - cockpit_type
@@ -12676,6 +14251,7 @@
   - item_condition
   - upholstery_color
   - upholstery_pattern
+  - wingspan
   return_reasons:
   - size
   - performance
@@ -12693,6 +14269,8 @@
   - aircraft_cabin_configuration
   - aircraft_engine_configuration
   - aircraft_engine_type
+  - aircraft_service_ceiling
+  - airframe_total_time
   - body_color
   - body_pattern
   - cockpit_type
@@ -12700,6 +14278,7 @@
   - item_condition
   - upholstery_color
   - upholstery_pattern
+  - wingspan
   return_reasons:
   - performance
   - changed_my_mind
@@ -12715,6 +14294,8 @@
   - aircraft_airframe_material
   - aircraft_engine_configuration
   - aircraft_engine_type
+  - aircraft_service_ceiling
+  - airframe_total_time
   - body_color
   - body_pattern
   - cockpit_type
@@ -12722,6 +14303,7 @@
   - item_condition
   - upholstery_color
   - upholstery_pattern
+  - wingspan
   return_reasons:
   - performance
   - changed_my_mind
@@ -12737,6 +14319,8 @@
   - aircraft_airframe_material
   - aircraft_engine_configuration
   - aircraft_engine_type
+  - aircraft_service_ceiling
+  - airframe_total_time
   - body_color
   - body_pattern
   - cockpit_type
@@ -12744,6 +14328,7 @@
   - item_condition
   - upholstery_color
   - upholstery_pattern
+  - wingspan
   return_reasons:
   - size
   - performance
@@ -12759,11 +14344,13 @@
   - vp-2-1-2-1
   - vp-2-1-2-2
   attributes:
+  - airframe_total_time
   - body_color
   - body_pattern
   - item_condition
   - upholstery_color
   - upholstery_pattern
+  - wingspan
   return_reasons:
   - size
   - performance
@@ -12777,6 +14364,7 @@
   name: Hot Air Balloons
   children: []
   attributes:
+  - airframe_total_time
   - body_color
   - body_pattern
   - hot_air_balloon_basket_type
@@ -12785,6 +14373,7 @@
   - item_condition
   - upholstery_color
   - upholstery_pattern
+  - wingspan
   return_reasons:
   - performance
   - changed_my_mind
@@ -12799,6 +14388,7 @@
   attributes:
   - aircraft_engine_configuration
   - aircraft_engine_type
+  - airframe_total_time
   - airship_envelope_material
   - ballonet_configuration
   - body_color
@@ -12809,6 +14399,7 @@
   - lifting_gas_type
   - upholstery_color
   - upholstery_pattern
+  - wingspan
   return_reasons:
   - size
   - performance
@@ -12833,8 +14424,12 @@
   attributes:
   - body_color
   - body_pattern
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - horsepower
   - item_condition
+  - maximum_speed
   - transmission_type
   - upholstery_color
   - upholstery_pattern
@@ -12860,8 +14455,14 @@
   - body_color
   - body_pattern
   - drive_type
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - horsepower
   - item_condition
+  - maximum_speed
+  - odometer_unit
+  - towing_capacity
   - transmission_type
   - upholstery_color
   - upholstery_pattern
@@ -12887,8 +14488,14 @@
   - body_color
   - body_pattern
   - drive_type
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - horsepower
   - item_condition
+  - maximum_speed
+  - odometer_unit
+  - towing_capacity
   - transmission_type
   - upholstery_color
   - upholstery_pattern
@@ -12908,18 +14515,28 @@
   - vp-2-2-1-1-1-1
   - vp-2-2-1-1-1-2
   attributes:
+  - ac_onboard_charger_power
   - bidirectional_charging_capability
   - body_color
   - body_pattern
   - car_type
   - charging_port_location
   - drive_type
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
+  - odometer_unit
+  - towing_capacity
   - transmission_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - width
   return_reasons:
   - range
   - performance
@@ -12933,18 +14550,28 @@
   name: Battery Electric Vehicles (BEV)
   children: []
   attributes:
+  - ac_onboard_charger_power
   - bidirectional_charging_capability
   - body_color
   - body_pattern
   - car_type
   - drive_type
   - electric_vehicle_drivetrain_layout
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
+  - odometer_unit
+  - towing_capacity
   - transmission_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - width
   return_reasons:
   - range
   - performance
@@ -12958,18 +14585,29 @@
   name: Plug-In Hybrid Electric Vehicles (PHEV)
   children: []
   attributes:
+  - ac_onboard_charger_power
   - bidirectional_charging_capability
   - body_color
   - body_pattern
   - car_type
   - drive_type
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - hybrid_drivetrain_configuration
   - item_condition
+  - length
+  - maximum_speed
+  - odometer_unit
+  - phev_charging_time
+  - towing_capacity
   - transmission_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - width
   return_reasons:
   - range
   - performance
@@ -12987,13 +14625,22 @@
   - body_color
   - body_pattern
   - drive_type
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
+  - odometer_unit
+  - towing_capacity
   - transmission_type
   - truck_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - width
   return_reasons:
   - size
   - performance
@@ -13014,13 +14661,22 @@
   - drive_type
   - electric_van_body_length_class
   - electric_van_roof_height_class
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
+  - odometer_unit
+  - towing_capacity
   - transmission_type
   - upholstery_color
   - upholstery_pattern
   - van_type
   - vehicle_features
+  - width
   return_reasons:
   - range
   - performance
@@ -13041,12 +14697,23 @@
   - body_pattern
   - drive_type
   - emissions_standard
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
+  - odometer_unit
+  - payload_capacity
+  - towing_capacity
   - transmission_type
   - upholstery_color
   - upholstery_pattern
+  - vehicle_curb_weight
   - vehicle_features
+  - width
   return_reasons:
   - color
   - performance
@@ -13065,12 +14732,23 @@
   - car_type
   - drive_type
   - emissions_standard
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
+  - odometer_unit
+  - payload_capacity
+  - towing_capacity
   - transmission_type
   - upholstery_color
   - upholstery_pattern
+  - vehicle_curb_weight
   - vehicle_features
+  - width
   return_reasons:
   - color
   - performance
@@ -13088,13 +14766,24 @@
   - body_pattern
   - drive_type
   - emissions_standard
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
+  - odometer_unit
+  - payload_capacity
+  - towing_capacity
   - transmission_type
   - truck_type
   - upholstery_color
   - upholstery_pattern
+  - vehicle_curb_weight
   - vehicle_features
+  - width
   return_reasons:
   - size
   - performance
@@ -13113,13 +14802,24 @@
   - body_pattern
   - drive_type
   - emissions_standard
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
+  - odometer_unit
+  - payload_capacity
+  - towing_capacity
   - transmission_type
   - upholstery_color
   - upholstery_pattern
   - van_type
+  - vehicle_curb_weight
   - vehicle_features
+  - width
   return_reasons:
   - color
   - performance
@@ -13140,12 +14840,16 @@
   - body_pattern
   - drive_type
   - fuel_supply
+  - hybrid_battery_warranty_period
   - hybrid_system_type
   - item_condition
+  - odometer_unit
+  - towing_capacity
   - transmission_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - vehicle_mileage
   return_reasons:
   - performance
   - efficiency
@@ -13164,12 +14868,16 @@
   - car_type
   - drive_type
   - fuel_supply
+  - hybrid_battery_warranty_period
   - hybrid_system_type
   - item_condition
+  - odometer_unit
+  - towing_capacity
   - transmission_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - vehicle_mileage
   return_reasons:
   - size
   - performance
@@ -13188,14 +14896,18 @@
   - body_pattern
   - drive_type
   - fuel_supply
+  - hybrid_battery_warranty_period
   - hybrid_system_type
   - hybrid_truck_cab_type
   - item_condition
+  - odometer_unit
+  - towing_capacity
   - transmission_type
   - truck_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - vehicle_mileage
   return_reasons:
   - size
   - performance
@@ -13214,13 +14926,17 @@
   - body_pattern
   - drive_type
   - fuel_supply
+  - hybrid_battery_warranty_period
   - hybrid_system_type
   - item_condition
+  - odometer_unit
+  - towing_capacity
   - transmission_type
   - upholstery_color
   - upholstery_pattern
   - van_type
   - vehicle_features
+  - vehicle_mileage
   return_reasons:
   - performance
   - efficiency
@@ -13242,6 +14958,8 @@
   - body_pattern
   - fuel_supply
   - item_condition
+  - odometer_unit
+  - towing_capacity
   - transmission_type
   - upholstery_color
   - upholstery_pattern
@@ -13266,7 +14984,9 @@
   - drive_type
   - fuel_supply
   - item_condition
+  - odometer_unit
   - title_status
+  - towing_capacity
   - transmission_type
   - upholstery_color
   - upholstery_pattern
@@ -13290,6 +15010,8 @@
   - drivetrain_configuration
   - fuel_supply
   - item_condition
+  - odometer_unit
+  - towing_capacity
   - transmission_type
   - truck_bed_body_type
   - truck_type
@@ -13315,9 +15037,11 @@
   - drive_type
   - fuel_supply
   - item_condition
+  - odometer_unit
   - restoration_status
   - roof_height_class
   - steering_position
+  - towing_capacity
   - transmission_type
   - upholstery_color
   - upholstery_pattern
@@ -13338,13 +15062,20 @@
   - body_color
   - body_pattern
   - cart_type
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
   - golf_cart_intended_use
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
   - transmission_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - width
   return_reasons:
   - size
   - changed_my_mind
@@ -13364,14 +15095,21 @@
   - body_color
   - body_pattern
   - color
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
   - motorcycle_drive_type
   - pattern
   - transmission_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - width
   return_reasons:
   - size
   - performance
@@ -13386,18 +15124,26 @@
   name: Electric Motorcycles & Scooters
   children: []
   attributes:
+  - battery_range
   - battery_size
   - battery_type
   - body_color
   - body_pattern
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
   - motorcycle/scooter_type
   - motorcycle_drive_type
   - transmission_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - width
   return_reasons:
   - range
   - performance
@@ -13413,14 +15159,21 @@
   attributes:
   - body_color
   - body_pattern
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
   - motorcycle/scooter_type
   - motorcycle_drive_type
   - transmission_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - width
   return_reasons:
   - size
   - performance
@@ -13441,12 +15194,19 @@
   - body_color
   - body_pattern
   - drive_type
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
   - transmission_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - width
   return_reasons:
   - size
   - performance
@@ -13465,12 +15225,20 @@
   - body_color
   - body_pattern
   - drive_type
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - ground_clearance
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
   - transmission_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - width
   return_reasons:
   - performance
   - changed_my_mind
@@ -13488,12 +15256,19 @@
   - body_color
   - body_pattern
   - drive_type
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
   - transmission_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - width
   return_reasons:
   - size
   - performance
@@ -13534,8 +15309,14 @@
   - body_color
   - body_pattern
   - drive_type
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
   - recreational_vehicle_holding_tank_type
   - recreational_vehicle_leveling_system
   - recreational_vehicle_type
@@ -13543,6 +15324,7 @@
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - width
   return_reasons:
   - size
   - performance
@@ -13560,13 +15342,23 @@
   - body_color
   - body_pattern
   - drive_type
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
+  - snowmobile_track_length
+  - snowmobile_track_lug_height
   - snowmobile_type
+  - track_width
   - transmission_type
   - upholstery_color
   - upholstery_pattern
   - vehicle_features
+  - width
   return_reasons:
   - size
   - performance
@@ -13640,6 +15432,7 @@
   - upholstery_color
   - upholstery_pattern
   - vehicle_floor_configuration
+  - vehicle_length
   return_reasons:
   - performance
   - efficiency
@@ -13853,6 +15646,7 @@
   - emergency_lighting_package
   - fuel_supply
   - item_condition
+  - overall_exterior_height
   - upholstery_color
   - upholstery_pattern
   return_reasons:
@@ -14396,12 +16190,20 @@
   attributes:
   - body_color
   - body_pattern
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
   - upholstery_color
   - upholstery_pattern
+  - watercraft_beam
   - watercraft_features
   - watercraft_hull_material
+  - width
   return_reasons:
   - size
   - performance
@@ -14418,12 +16220,20 @@
   - boat_type
   - body_color
   - body_pattern
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
   - upholstery_color
   - upholstery_pattern
+  - watercraft_beam
   - watercraft_features
   - watercraft_hull_material
+  - width
   return_reasons:
   - size
   - performance
@@ -14439,13 +16249,21 @@
   attributes:
   - body_color
   - body_pattern
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
+  - length
+  - maximum_speed
   - personal_watercraft_type
   - upholstery_color
   - upholstery_pattern
+  - watercraft_beam
   - watercraft_features
   - watercraft_hull_material
+  - width
   return_reasons:
   - size
   - performance
@@ -14461,15 +16279,23 @@
   attributes:
   - body_color
   - body_pattern
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - item_condition
   - keel_type
+  - length
+  - maximum_speed
   - sailboat_type
   - upholstery_color
   - upholstery_pattern
+  - watercraft_beam
   - watercraft_features
   - watercraft_hull_material
   - watercraft_registration_status
+  - width
   return_reasons:
   - size
   - performance
@@ -14485,13 +16311,21 @@
   attributes:
   - body_color
   - body_pattern
+  - fuel_efficiency_typical
   - fuel_supply
+  - fuel_tank_capacity
+  - height
+  - horsepower
   - hull_type
   - item_condition
+  - length
+  - maximum_speed
   - upholstery_color
   - upholstery_pattern
+  - watercraft_beam
   - watercraft_features
   - watercraft_hull_material
+  - width
   - yacht_type
   return_reasons:
   - size
