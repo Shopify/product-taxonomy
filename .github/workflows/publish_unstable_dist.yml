@@ -1,0 +1,169 @@
+name: Publish unstable distribution assets
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/**'
+      - 'dev/**'
+  workflow_dispatch:
+
+concurrency:
+  group: publish-unstable-dist
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  publish:
+    name: Generate and publish unstable assets
+    permissions:
+      contents: write # Required to create the rolling prerelease and replace its assets.
+    runs-on: ubuntu-latest
+    # Successful runs take ~12 minutes (checkout ~4m, all-locale dist generation ~6m).
+    timeout-minutes: 20
+    steps:
+      - name: Refuse to publish from non-main refs
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          set -euo pipefail
+
+          if [[ "$GITHUB_REF" != "refs/heads/main" ]]; then
+            echo "This workflow must be dispatched from main; got $GITHUB_REF." >&2
+            exit 1
+          fi
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - uses: ruby/setup-ruby@d5126b9b3579e429dd52e51e68624dda2e05be25 # v1.267.0
+        with:
+          bundler-cache: true
+          working-directory: dev
+
+      - name: Read unstable version
+        id: version
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          version="$(tr -d '[:space:]' < VERSION)"
+          if [[ ! "$version" =~ ^[0-9]{4}-[0-9]{2}-unstable$ ]]; then
+            echo "VERSION must contain an unstable calendar version, got: $version" >&2
+            exit 1
+          fi
+
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Generate distribution files
+        working-directory: dev
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          rm -rf ../dist
+          bundle exec bin/product_taxonomy dist --version "$VERSION" --locales all
+
+      - name: Stage and validate release assets
+        working-directory: dev
+        env:
+          ASSET_PATH: ${{ runner.temp }}/release-assets
+        run: |
+          set -euo pipefail
+
+          bundle exec bin/product_taxonomy stage_dist_assets \
+            --input-path ../dist \
+            --output-path "$ASSET_PATH"
+
+          source_count="$(find ../dist -mindepth 2 -type f \( -name '*.json' -o -name '*.txt' \) -print0 | tr -cd '\0' | wc -c | tr -d '[:space:]')"
+          asset_count="$(find "$ASSET_PATH" -maxdepth 1 -type f -name '*.gz' -print0 | tr -cd '\0' | wc -c | tr -d '[:space:]')"
+
+          if [[ "$source_count" -eq 0 || "$asset_count" -ne "$source_count" ]]; then
+            echo "Expected one staged asset per distribution file; found $source_count source files and $asset_count assets." >&2
+            exit 1
+          fi
+
+          find "$ASSET_PATH" -maxdepth 1 -type f -name '*.gz' -print0 | xargs -0 gzip --test
+
+      - name: Create unstable prerelease if needed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          if gh release view unstable --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "The unstable prerelease already exists; leaving its tag unchanged."
+          else
+            gh release create unstable \
+              --repo "$GITHUB_REPOSITORY" \
+              --target "$GITHUB_SHA" \
+              --prerelease \
+              --latest=false \
+              --title "Unstable" \
+              --notes "Rolling distribution assets generated from main."
+          fi
+
+      - name: Publish unstable assets
+        env:
+          ASSET_PATH: ${{ runner.temp }}/release-assets
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload unstable "$ASSET_PATH"/*.gz --clobber --repo "$GITHUB_REPOSITORY"
+
+      - name: Reconcile published assets with staged assets
+        env:
+          ASSET_PATH: ${{ runner.temp }}/release-assets
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          expected="$(find "$ASSET_PATH" -maxdepth 1 -type f -name '*.gz' -exec basename {} \; | sort)"
+          # All assets regardless of state, so stale or broken (non-uploaded) assets get deleted.
+          actual_all="$(gh release view unstable --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name' | sort)"
+          # Only fully uploaded assets count as present: an asset stuck in a non-uploaded
+          # state appears in the listing but 404s on download.
+          actual_uploaded="$(gh release view unstable --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[] | select(.state == "uploaded") | .name' | sort)"
+
+          # Delete release assets that are no longer part of the staged set.
+          while IFS= read -r orphan; do
+            [[ -z "$orphan" ]] && continue
+            echo "Deleting stale asset: $orphan"
+            gh release delete-asset unstable "$orphan" --yes --repo "$GITHUB_REPOSITORY"
+          done < <(comm -13 <(printf '%s\n' "$expected") <(printf '%s\n' "$actual_all"))
+
+          # Fail if any staged asset is missing (or not fully uploaded) after upload.
+          missing="$(comm -23 <(printf '%s\n' "$expected") <(printf '%s\n' "$actual_uploaded"))"
+          if [[ -n "$missing" ]]; then
+            printf 'Assets missing from the unstable release after upload:\n%s\n' "$missing" >&2
+            exit 1
+          fi
+
+  notify_failure:
+    name: Notify Slack on failure
+    needs: [publish]
+    # always() is required: without it this job is skipped when publish fails.
+    # Gate on == 'failure' (not != 'success') so cancelled runs don't alert.
+    if: ${{ always() && needs.publish.result == 'failure' }}
+    permissions: {}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Post failure notification to Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.TAXONOMY_RELEASE_SLACK_WEBHOOK_URL }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+
+          if [[ -z "$SLACK_WEBHOOK_URL" ]]; then
+            echo "::error::TAXONOMY_RELEASE_SLACK_WEBHOOK_URL is not configured; cannot send the failure notification."
+            exit 1
+          fi
+
+          payload="$(jq -n \
+            --arg text ":x: Publish unstable distribution assets failed for $GITHUB_REPOSITORY. <$RUN_URL|View run>" \
+            '{text: $text}')"
+
+          curl -sS --fail-with-body -X POST "$SLACK_WEBHOOK_URL" \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data "$payload"
