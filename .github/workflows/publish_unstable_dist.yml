@@ -1,0 +1,97 @@
+name: Publish unstable distribution assets
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/**'
+
+concurrency:
+  group: publish-unstable-dist
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  publish:
+    name: Generate and publish unstable assets
+    permissions:
+      contents: write # Required to create the rolling prerelease and replace its assets.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - uses: ruby/setup-ruby@d5126b9b3579e429dd52e51e68624dda2e05be25 # v1.267.0
+        with:
+          bundler-cache: true
+          working-directory: dev
+
+      - name: Read unstable version
+        id: version
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          version="$(tr -d '[:space:]' < VERSION)"
+          if [[ ! "$version" =~ ^[0-9]{4}-[0-9]{2}-unstable$ ]]; then
+            echo "VERSION must contain an unstable calendar version, got: $version" >&2
+            exit 1
+          fi
+
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Generate distribution files
+        working-directory: dev
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          rm -rf ../dist
+          bundle exec bin/product_taxonomy dist --version "$VERSION" --locales all
+
+      - name: Stage and validate release assets
+        working-directory: dev
+        env:
+          ASSET_PATH: ${{ runner.temp }}/release-assets
+        run: |
+          set -euo pipefail
+
+          bundle exec bin/product_taxonomy stage_dist_assets \
+            --input-path ../dist \
+            --output-path "$ASSET_PATH"
+
+          source_count="$(find ../dist -mindepth 2 -type f \( -name '*.json' -o -name '*.txt' \) -print0 | tr -cd '\0' | wc -c | tr -d '[:space:]')"
+          asset_count="$(find "$ASSET_PATH" -maxdepth 1 -type f -name '*.gz' -print0 | tr -cd '\0' | wc -c | tr -d '[:space:]')"
+
+          if [[ "$source_count" -eq 0 || "$asset_count" -ne "$source_count" ]]; then
+            echo "Expected one staged asset per distribution file; found $source_count source files and $asset_count assets." >&2
+            exit 1
+          fi
+
+          find "$ASSET_PATH" -maxdepth 1 -type f -name '*.gz' -print0 | xargs -0 gzip --test
+
+      - name: Create unstable prerelease if needed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          if gh release view unstable --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "The unstable prerelease already exists; leaving its tag unchanged."
+          else
+            gh release create unstable \
+              --repo "$GITHUB_REPOSITORY" \
+              --target "$GITHUB_SHA" \
+              --prerelease \
+              --latest=false \
+              --title "Unstable" \
+              --notes "Rolling distribution assets generated from main."
+          fi
+
+      - name: Publish unstable assets
+        env:
+          ASSET_PATH: ${{ runner.temp }}/release-assets
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload unstable "$ASSET_PATH"/*.gz --clobber --repo "$GITHUB_REPOSITORY"
