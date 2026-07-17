@@ -97,7 +97,10 @@ module ProductTaxonomy
     end
 
     desc "add_attribute NAME DESCRIPTION", "Add a new attribute to the taxonomy with NAME and DESCRIPTION"
-    option :values, type: :string, desc: "A comma separated list of values to add to the attribute"
+    option :type, type: :string, desc: "Attribute type: closed_list or measurement"
+    option :values, type: :string, desc: "A comma separated list of values to add to a closed-list attribute"
+    option :measurement_type, type: :string, desc: "Measurement type for a measurement attribute"
+    option :supported_units, type: :string, desc: "A comma separated list of supported units for a measurement attribute"
     option :base_attribute_friendly_id, type: :string, desc: "Create an extended attribute by extending the attribute with this friendly ID"
     def add_attribute(name, description)
       AddAttributeCommand.new(options.merge(name:, description:)).run

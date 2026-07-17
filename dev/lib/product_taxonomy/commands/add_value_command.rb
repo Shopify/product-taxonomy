@@ -21,6 +21,9 @@ module ProductTaxonomy
       if @attribute.extended?
         raise "Attribute `#{@attribute.name}` is an extended attribute, please use a primary attribute instead"
       end
+      if @attribute.measurement?
+        raise "Attribute `#{@attribute.name}` is a measurement attribute and cannot have values"
+      end
 
       friendly_id = IdentifierFormatter.format_friendly_id("#{@attribute.friendly_id}__#{@name}")
       value = Value.create_validate_and_add!(

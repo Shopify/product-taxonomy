@@ -72,6 +72,26 @@ module ProductTaxonomy
       end
     end
 
+    test "execute raises error when trying to add value to measurement attribute" do
+      measurement_attribute = Attribute.new(
+        id: 2,
+        name: "Height",
+        description: "Specifies the vertical measurement from bottom to top",
+        friendly_id: "height",
+        handle: "height",
+        type: "measurement",
+        measurement_type: "dimension",
+        supported_units: ["cm", "in"],
+      )
+      Attribute.add(measurement_attribute)
+
+      stub_commands
+
+      assert_raises(RuntimeError) do
+        AddValueCommand.new(name: "Tall", attribute_friendly_id: "height").execute
+      end
+    end
+
     test "execute raises error when value already exists" do
       stub_commands
 
