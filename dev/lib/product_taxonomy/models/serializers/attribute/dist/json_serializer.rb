@@ -17,21 +17,35 @@ module ProductTaxonomy
             # @param locale [String] The locale to use for localized attributes.
             # @return [Hash]
             def serialize(attribute, locale: "en")
-              {
+              serialized = {
                 "id" => attribute.gid,
                 "name" => attribute.name(locale:),
                 "handle" => attribute.handle,
                 "description" => attribute.description(locale:),
-                "extended_attributes" => attribute.extended_attributes.sort_by(&:name).map do |ext_attr|
-                  {
-                    "name" => ext_attr.name(locale:),
-                    "handle" => ext_attr.handle,
-                  }
-                end,
-                "values" => attribute.sorted_values(locale:).map do |value|
-                  Serializers::Value::Dist::JsonSerializer.serialize(value, locale:)
-                end,
+                "type" => attribute.type,
               }
+
+              if attribute.measurement?
+                serialized.merge!(
+                  "measurement_type" => attribute.measurement_type,
+                  "supported_units" => attribute.supported_units,
+                )
+              end
+
+              serialized["extended_attributes"] = attribute.extended_attributes.sort_by(&:name).map do |ext_attr|
+                {
+                  "name" => ext_attr.name(locale:),
+                  "handle" => ext_attr.handle,
+                }
+              end
+
+              unless attribute.measurement?
+                serialized["values"] = attribute.sorted_values(locale:).map do |value|
+                  Serializers::Value::Dist::JsonSerializer.serialize(value, locale:)
+                end
+              end
+
+              serialized
             end
           end
         end
