@@ -101,6 +101,7 @@ module ProductTaxonomy
         assert_equal raw_disclosure.fetch("name"), real_disclosure.name
         assert_equal raw_disclosure["jurisdictions"], real_disclosure.jurisdictions
         assert_equal raw_disclosure["display_preferences"], real_disclosure.display_preferences
+        assert_equal raw_disclosure["metaobject_definition"], real_disclosure.metaobject_definition
       end
     end
 

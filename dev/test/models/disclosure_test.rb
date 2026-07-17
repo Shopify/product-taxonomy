@@ -265,6 +265,108 @@ module ProductTaxonomy
       assert_equal "Choking Hazard: Small Parts", leaf.title(locale: "en")
     end
 
+    test "load_from_source loads the metaobject_definition of a reference disclosure" do
+      Disclosure.load_from_source(YAML.safe_load(reference_source))
+
+      leaf = Disclosure.find_by(public_id: "us-cpsc-efiling-pga_reference_set")
+      assert leaf.reference?
+      assert_equal "product_id", leaf.metaobject_definition["display_name_key"]
+    end
+
+    test "reference? is false for a display disclosure" do
+      Disclosure.load_from_source(YAML.safe_load(valid_source))
+
+      refute Disclosure.find_by(public_id: "us-cpsc-choking_small_parts").reference?
+    end
+
+    test "taxonomy_loaded validation passes for a reference leaf without display copy" do
+      Disclosure.load_from_source(YAML.safe_load(reference_source))
+
+      Disclosure.all.each { |disclosure| assert disclosure.valid?(:taxonomy_loaded), disclosure.errors.full_messages.to_s }
+    end
+
+    test "taxonomy_loaded validation fails when a reference leaf is missing jurisdictions" do
+      Disclosure.load_from_source(YAML.safe_load(<<~YAML))
+        - public_id: group
+          name: Group
+          internal_label: Group
+        - public_id: leaf
+          parent_public_id: group
+          name: Leaf
+          internal_label: Leaf
+          legal_citation: 16 CFR 1110
+          source: https://example.com
+          metaobject_definition:
+            display_name_key: product_id
+      YAML
+
+      leaf = Disclosure.find_by(public_id: "leaf")
+      refute leaf.valid?(:taxonomy_loaded)
+      assert_includes leaf.errors.attribute_names, :jurisdictions
+    end
+
+    test "taxonomy_loaded validation fails when a reference leaf defines display preferences" do
+      Disclosure.load_from_source(YAML.safe_load(<<~YAML))
+        - public_id: group
+          name: Group
+          internal_label: Group
+        - public_id: leaf
+          parent_public_id: group
+          name: Leaf
+          internal_label: Leaf
+          jurisdictions:
+          - US
+          legal_citation: 16 CFR 1110
+          source: https://example.com
+          display_preferences:
+            surfaces:
+            - product_page
+          metaobject_definition:
+            display_name_key: product_id
+      YAML
+
+      leaf = Disclosure.find_by(public_id: "leaf")
+      refute leaf.valid?(:taxonomy_loaded)
+      assert_includes leaf.errors.attribute_names, :display_preferences
+    end
+
+    test "taxonomy_loaded validation fails when metaobject_definition is missing a display_name_key" do
+      Disclosure.load_from_source(YAML.safe_load(<<~YAML))
+        - public_id: group
+          name: Group
+          internal_label: Group
+        - public_id: leaf
+          parent_public_id: group
+          name: Leaf
+          internal_label: Leaf
+          jurisdictions:
+          - US
+          legal_citation: 16 CFR 1110
+          source: https://example.com
+          metaobject_definition:
+            access:
+              admin: PUBLIC_READ_WRITE
+      YAML
+
+      leaf = Disclosure.find_by(public_id: "leaf")
+      refute leaf.valid?(:taxonomy_loaded)
+      assert_includes leaf.errors.attribute_names, :metaobject_definition
+    end
+
+    test "load_from_source raises an error if metaobject_definition is not a hash" do
+      yaml_content = <<~YAML
+        - public_id: leaf
+          name: Leaf
+          internal_label: Leaf
+          metaobject_definition: not-a-hash
+      YAML
+
+      error = assert_raises(ActiveModel::ValidationError) do
+        Disclosure.load_from_source(YAML.safe_load(yaml_content))
+      end
+      assert_equal [{ error: :invalid }], error.model.errors.details[:metaobject_definition]
+    end
+
     private
 
     def valid_source
@@ -302,6 +404,28 @@ module ProductTaxonomy
           title: Balloon Choking Hazard
           content: Adult supervision required.
           source: https://www.ecfr.gov/current/title-16/section-1500.19
+      YAML
+    end
+
+    def reference_source
+      <<~YAML
+        - public_id: cpsc_efiling
+          parent_public_id:
+          name: CPSC eFiling Compliance
+          internal_label: CPSC eFiling Compliance
+        - public_id: us-cpsc-efiling-pga_reference_set
+          parent_public_id: cpsc_efiling
+          name: CPSC eFiling Reference PGA Message Set (US)
+          internal_label: CPSC eFiling Reference PGA Message Set (US)
+          jurisdictions:
+          - US
+          legal_citation: 16 CFR 1110
+          source: https://www.cpsc.gov/Business--Manufacturing/Testing-Certification/eFiling
+          metaobject_definition:
+            display_name_key: product_id
+            access:
+              storefront: NONE
+              admin: PUBLIC_READ_WRITE
       YAML
     end
   end

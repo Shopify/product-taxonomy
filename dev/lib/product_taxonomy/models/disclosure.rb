@@ -4,7 +4,14 @@ module ProductTaxonomy
   # A legally-required product disclosure (e.g. a safety warning or chemical
   # exposure notice). Disclosures form a shallow hierarchy: grouping/root nodes
   # (no `parent_public_id`) organize the axis, and leaf nodes carry the
-  # jurisdiction and display information that merchants surface.
+  # jurisdiction information that merchants surface.
+  #
+  # Most leaves are *display* disclosures: they carry `display_preferences` and
+  # the copy shown to buyers (title, content). A leaf may instead be a
+  # *reference* disclosure — one that wires up a metaobject definition
+  # (`metaobject_definition`) rather than being displayed. Reference disclosures
+  # are exempt from the display-only leaf rules but still carry
+  # jurisdiction/provenance (jurisdictions, legal_citation, source).
   class Disclosure
     include ActiveModel::Validations
     include FormattedValidationErrors
@@ -30,8 +37,11 @@ module ProductTaxonomy
       :source,
     ].freeze
 
-    # Fields required on leaf disclosures (in addition to jurisdictions and display_preferences).
+    # Fields required on display leaf disclosures (in addition to jurisdictions and display_preferences).
     LEAF_REQUIRED_FIELDS = [:title, :content, :legal_citation, :source].freeze
+
+    # Fields required on reference leaf disclosures (which carry no display copy).
+    REFERENCE_LEAF_REQUIRED_FIELDS = [:legal_citation, :source].freeze
 
     class << self
       # Load disclosures from source data. By default this is deserialized from
@@ -74,6 +84,7 @@ module ProductTaxonomy
           title: data["title"],
           content: data["content"],
           source: data["source"],
+          metaobject_definition: data["metaobject_definition"],
           disclosure_attributes: data["disclosure_attributes"],
           disclosure_attribute_values: data["disclosure_attribute_values"],
         )
@@ -93,6 +104,7 @@ module ProductTaxonomy
     validate :jurisdiction_and_display_only_on_leaves, on: :taxonomy_loaded
     validate :leaf_required_fields_present, on: :taxonomy_loaded
     validate :display_preferences_surfaces_are_valid, on: :taxonomy_loaded
+    validate :metaobject_definition_is_well_formed, on: :taxonomy_loaded
 
     localized_attr_reader :name, :description, :title, :content, keyed_by: :public_id
 
@@ -105,6 +117,7 @@ module ProductTaxonomy
       :display_requirements,
       :display_preferences,
       :source,
+      :metaobject_definition,
       :disclosure_attributes,
       :disclosure_attribute_values
 
@@ -122,6 +135,7 @@ module ProductTaxonomy
       title: nil,
       content: nil,
       source: nil,
+      metaobject_definition: nil,
       disclosure_attributes: nil,
       disclosure_attribute_values: nil
     )
@@ -138,6 +152,7 @@ module ProductTaxonomy
       @title = title
       @content = content
       @source = source
+      @metaobject_definition = metaobject_definition
       @disclosure_attributes = disclosure_attributes
       @disclosure_attribute_values = disclosure_attribute_values
     end
@@ -178,11 +193,22 @@ module ProductTaxonomy
       children.empty?
     end
 
+    # Whether this is a reference disclosure — one that wires up a metaobject
+    # definition rather than being displayed to buyers.
+    #
+    # @return [Boolean]
+    def reference?
+      metaobject_definition.present?
+    end
+
     private
 
     def field_types_are_valid
       errors.add(:jurisdictions, :invalid, message: "must be an array") if jurisdictions && !jurisdictions.is_a?(Array)
       errors.add(:display_preferences, :invalid, message: "must be a hash") if display_preferences && !display_preferences.is_a?(Hash)
+      if metaobject_definition && !metaobject_definition.is_a?(Hash)
+        errors.add(:metaobject_definition, :invalid, message: "must be a hash")
+      end
       unless disclosure_attributes.nil? || disclosure_attributes.is_a?(Array)
         errors.add(:disclosure_attributes, :invalid, message: "must be an array")
       end
@@ -230,24 +256,42 @@ module ProductTaxonomy
     end
 
     def jurisdiction_and_display_only_on_leaves
-      if leaf?
-        errors.add(:jurisdictions, :blank, message: "must be present on leaf disclosures") if jurisdictions.blank?
-        if display_preferences.blank?
-          errors.add(:display_preferences, :blank, message: "must be present on leaf disclosures")
-        end
-      else
+      unless leaf?
         errors.add(:jurisdictions, :present, message: "must not be set on grouping disclosures") if jurisdictions.present?
         if display_preferences.present?
           errors.add(:display_preferences, :present, message: "must not be set on grouping disclosures")
         end
+        return
+      end
+
+      errors.add(:jurisdictions, :blank, message: "must be present on leaf disclosures") if jurisdictions.blank?
+
+      if reference?
+        # Reference disclosures are not displayed, so they must not carry display preferences.
+        if display_preferences.present?
+          errors.add(:display_preferences, :present, message: "must not be set on reference disclosures")
+        end
+      elsif display_preferences.blank?
+        errors.add(:display_preferences, :blank, message: "must be present on leaf disclosures")
       end
     end
 
     def leaf_required_fields_present
       return unless leaf?
 
-      LEAF_REQUIRED_FIELDS.each do |field|
+      required = reference? ? REFERENCE_LEAF_REQUIRED_FIELDS : LEAF_REQUIRED_FIELDS
+      required.each do |field|
         errors.add(field, :blank, message: "must be present on leaf disclosures") if send(field).blank?
+      end
+    end
+
+    def metaobject_definition_is_well_formed
+      return unless reference?
+
+      errors.add(:metaobject_definition, :invalid, message: "may only be set on leaf disclosures") unless leaf?
+
+      if metaobject_definition.is_a?(Hash) && metaobject_definition["display_name_key"].blank?
+        errors.add(:metaobject_definition, :invalid, message: "must define a display_name_key")
       end
     end
 
