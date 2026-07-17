@@ -213,6 +213,18 @@ module ProductTaxonomy
       assert_equal ["Animal", "Rayé", "Autre"], sorted_values.map { _1.name(locale: "fr") }
     end
 
+    test "Value.sort_by_localized_name sorts localized values that mix matched and unmatched secondary text" do
+      values = stub_ev_connector_da_values
+
+      sorted_values = nil
+      assert_nothing_raised { sorted_values = Value.sort_by_localized_name(values, locale: "da") }
+
+      assert_equal(
+        ["CCS1-bilindtag til CHAdeMO-stik", "CCS1-bilindtag til J1772-stik"],
+        sorted_values.map { _1.name(locale: "da") },
+      )
+    end
+
     test "next_id returns 1 when there are no values" do
       Value.reset
       assert_equal 1, Value.next_id
@@ -340,6 +352,36 @@ module ProductTaxonomy
         Value.new(id: 1, name: "Animal", handle: "pattern__animal", friendly_id: "pattern__animal"),
         Value.new(id: 2, name: "Striped", handle: "pattern__striped", friendly_id: "pattern__striped"),
         Value.new(id: 3, name: "Other", handle: "pattern__other", friendly_id: "pattern__other"),
+      ]
+    end
+
+    def stub_ev_connector_da_values
+      da_yaml = <<~YAML
+        da:
+          values:
+            ev_connector_adapter_direction__ccs1_to_chademo:
+              name: "CCS1-bilindtag til CHAdeMO-stik"
+            ev_connector_adapter_direction__ccs1_to_j1772:
+              name: "CCS1-bilindtag til J1772-stik"
+      YAML
+      Dir.stubs(:glob)
+        .with(File.join(ProductTaxonomy.data_path, "localizations", "values", "*.yml"))
+        .returns(["fake/path/da.yml"])
+      YAML.stubs(:safe_load_file).with("fake/path/da.yml").returns(YAML.safe_load(da_yaml))
+
+      [
+        Value.new(
+          id: 1,
+          name: "CCS1 to J1772 adapter",
+          handle: "ev_connector_adapter_direction__ccs1_to_j1772",
+          friendly_id: "ev_connector_adapter_direction__ccs1_to_j1772",
+        ),
+        Value.new(
+          id: 2,
+          name: "CCS1 to CHAdeMO adapter",
+          handle: "ev_connector_adapter_direction__ccs1_to_chademo",
+          friendly_id: "ev_connector_adapter_direction__ccs1_to_chademo",
+        ),
       ]
     end
   end
