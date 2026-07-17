@@ -13,12 +13,14 @@ module ProductTaxonomy
         values_path = File.join(data_path, "values.yml")
         attributes_path = File.join(data_path, "attributes.yml")
         return_reasons_path = File.join(data_path, "return_reasons.yml")
+        disclosures_path = File.join(data_path, "disclosures.yml")
         categories_glob = Dir.glob(File.join(data_path, "categories", "*.yml"))
 
         begin
           ProductTaxonomy::Value.load_from_source(YAML.load_file(values_path))
           ProductTaxonomy::Attribute.load_from_source(YAML.load_file(attributes_path))
           ProductTaxonomy::ReturnReason.load_from_source(YAML.load_file(return_reasons_path))
+          ProductTaxonomy::Disclosure.load_from_source(YAML.load_file(disclosures_path))
 
           categories_source_data = categories_glob.each_with_object([]) do |file, array|
             array.concat(YAML.safe_load_file(file))
@@ -32,6 +34,7 @@ module ProductTaxonomy
 
         # Run validations that can only be run after the taxonomy has been loaded.
         ProductTaxonomy::Value.all.each { |model| model.validate!(:taxonomy_loaded) }
+        ProductTaxonomy::Disclosure.all.each { |model| model.validate!(:taxonomy_loaded) }
       end
     end
   end
