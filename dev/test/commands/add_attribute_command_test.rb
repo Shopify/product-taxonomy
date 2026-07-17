@@ -63,6 +63,30 @@ module ProductTaxonomy
       assert_includes value_friendly_ids, "size__large"
     end
 
+    test "execute successfully adds a new measurement attribute" do
+      stub_commands
+
+      AddAttributeCommand.new(
+        name: "Height",
+        description: "Specifies the vertical measurement from bottom to top",
+        type: "measurement",
+        measurement_type: "dimension",
+        supported_units: "cm, in",
+      ).execute
+
+      new_attribute = Attribute.find_by(friendly_id: "height")
+      assert_not_nil new_attribute
+      assert_equal 2, new_attribute.id
+      assert_equal "Height", new_attribute.name
+      assert_equal "Specifies the vertical measurement from bottom to top", new_attribute.description
+      assert_equal "height", new_attribute.friendly_id
+      assert_equal "height", new_attribute.handle
+      assert_equal "measurement", new_attribute.type
+      assert_equal "dimension", new_attribute.measurement_type
+      assert_equal ["cm", "in"], new_attribute.supported_units
+      assert_empty new_attribute.values
+    end
+
     test "execute successfully adds an extended attribute" do
       DumpAttributesCommand.any_instance.expects(:execute).once
       DumpValuesCommand.any_instance.expects(:execute).once
@@ -89,6 +113,37 @@ module ProductTaxonomy
       assert_equal @base_attribute.values.first.name, new_attribute.values.first.name
     end
 
+    test "execute successfully adds a measurement-backed extended attribute" do
+      measurement_attribute = Attribute.new(
+        id: 2,
+        name: "Height",
+        description: "Specifies the vertical measurement from bottom to top",
+        friendly_id: "height",
+        handle: "height",
+        type: "measurement",
+        measurement_type: "dimension",
+        supported_units: ["cm", "in"],
+      )
+      Attribute.add(measurement_attribute)
+
+      stub_commands
+
+      AddAttributeCommand.new(
+        name: "Interior Height",
+        description: "Specifies the interior vertical measurement from bottom to top",
+        base_attribute_friendly_id: "height",
+      ).execute
+
+      new_attribute = Attribute.find_by(friendly_id: "interior_height")
+      assert_not_nil new_attribute
+      assert_instance_of ExtendedAttribute, new_attribute
+      assert_equal measurement_attribute, new_attribute.base_attribute
+      assert_equal "measurement", new_attribute.type
+      assert_equal "dimension", new_attribute.measurement_type
+      assert_equal ["cm", "in"], new_attribute.supported_units
+      assert_empty new_attribute.values
+    end
+
     test "execute raises error when creating base attribute without values" do
       stub_commands
 
@@ -97,6 +152,61 @@ module ProductTaxonomy
           name: "Material",
           description: "Product material information",
           values: "",
+        ).execute
+      end
+    end
+
+    test "execute raises error when creating measurement attribute without measurement_type" do
+      stub_commands
+
+      assert_raises(RuntimeError) do
+        AddAttributeCommand.new(
+          name: "Height",
+          description: "Specifies the vertical measurement from bottom to top",
+          type: "measurement",
+          supported_units: "cm, in",
+        ).execute
+      end
+    end
+
+    test "execute raises error when creating measurement attribute without supported_units" do
+      stub_commands
+
+      assert_raises(RuntimeError) do
+        AddAttributeCommand.new(
+          name: "Height",
+          description: "Specifies the vertical measurement from bottom to top",
+          type: "measurement",
+          measurement_type: "dimension",
+        ).execute
+      end
+    end
+
+    test "execute raises error when creating measurement attribute with values" do
+      stub_commands
+
+      assert_raises(RuntimeError) do
+        AddAttributeCommand.new(
+          name: "Height",
+          description: "Specifies the vertical measurement from bottom to top",
+          type: "measurement",
+          measurement_type: "dimension",
+          supported_units: "cm, in",
+          values: "Short, Tall",
+        ).execute
+      end
+    end
+
+    test "execute raises error when creating closed-list attribute with measurement metadata" do
+      stub_commands
+
+      assert_raises(RuntimeError) do
+        AddAttributeCommand.new(
+          name: "Size",
+          description: "Product size information",
+          values: "Small, Medium, Large",
+          measurement_type: "dimension",
+          supported_units: "cm, in",
         ).execute
       end
     end
@@ -110,6 +220,21 @@ module ProductTaxonomy
           description: "Color of clothing items",
           base_attribute_friendly_id: "color",
           values: "Red, Blue",
+        ).execute
+      end
+    end
+
+    test "execute raises error when creating extended attribute with measurement options" do
+      stub_commands
+
+      assert_raises(RuntimeError) do
+        AddAttributeCommand.new(
+          name: "Clothing Color",
+          description: "Color of clothing items",
+          base_attribute_friendly_id: "color",
+          type: "measurement",
+          measurement_type: "dimension",
+          supported_units: "cm, in",
         ).execute
       end
     end
