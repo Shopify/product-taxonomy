@@ -13,10 +13,14 @@
 # is a grouping/root node; a node that no other node points at is a leaf.
 #
 # Authoring rules (enforced by ProductTaxonomy::Disclosure validations):
-#   - Only leaf nodes define `jurisdictions` and `display_preferences`.
+#   - Only leaf nodes define `jurisdictions`.
 #   - Grouping/root nodes must NOT define `jurisdictions` or `display_preferences`.
-#   - `display_preferences.surfaces` values must be a unique subset of
-#     product_page, cart, checkout.
+#   - Display leaves define `display_preferences`; `surfaces` values must be a
+#     unique subset of product_page, cart, checkout.
+#   - A leaf that instead carries a `metaobject_definition` is a *reference*
+#     disclosure: it wires up a metaobject rather than being displayed, so it
+#     omits `display_preferences`/`title`/`content` but still carries
+#     `jurisdictions`, `legal_citation`, and `source`.
 
 # Choking hazards
 - public_id: choking_hazard
@@ -207,3 +211,73 @@
   source: "https://www.p65warnings.ca.gov/alcoholic-beverages"
   disclosure_attributes: []
   disclosure_attribute_values: []
+
+# CPSC eFiling
+#
+# U.S. CPSC import eFiling compliance data transmitted at entry via CBP ACE.
+# The leaf is a *reference* disclosure: it is not displayed to buyers but wires
+# up a metaobject definition capturing the CPSC eFiling reference PGA message set.
+- public_id: cpsc_efiling
+  parent_public_id:
+  name: CPSC eFiling Compliance
+  internal_label: CPSC eFiling Compliance
+  description: "U.S. CPSC import eFiling compliance data transmitted at entry via CBP ACE"
+  legal_citation:
+  symbol:
+  display_requirements:
+  title:
+  content:
+  source:
+  disclosure_attributes: []
+  disclosure_attribute_values: []
+
+- public_id: us-cpsc-efiling-pga_reference_set
+  parent_public_id: cpsc_efiling
+  name: "CPSC eFiling Reference PGA Message Set (US)"
+  internal_label: "CPSC eFiling Reference PGA Message Set (US)"
+  description: "Shorthand CPSC eFiling submission: a reference to a record pre-uploaded to the CPSC Product Registry."
+  jurisdictions:
+  - US
+  legal_citation: "16 CFR 1110"
+  symbol:
+  display_requirements:
+  title:
+  content:
+  source: "https://www.cpsc.gov/Business--Manufacturing/Testing-Certification/eFiling"
+  disclosure_attributes: []
+  disclosure_attribute_values: []
+  metaobject_definition:
+    display_name_key: product_id
+    access:
+      storefront: NONE
+      admin: PUBLIC_READ_WRITE
+    capabilities:
+      - capability_type: reference_integrity
+    field_definitions:
+      - name: Certifier ID
+        key: certifier_id
+        type: single_line_text_field
+        required: true
+        visible_to_storefront_api: false
+        use_as_admin_filter: false
+        validations:
+          - name: max
+            value: "255"
+      - name: Product ID
+        key: product_id
+        type: single_line_text_field
+        required: true
+        visible_to_storefront_api: false
+        use_as_admin_filter: false
+        validations:
+          - name: max
+            value: "255"
+      - name: Version ID
+        key: version_id
+        type: single_line_text_field
+        required: true
+        visible_to_storefront_api: false
+        use_as_admin_filter: false
+        validations:
+          - name: max
+            value: "255"
