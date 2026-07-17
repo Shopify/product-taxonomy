@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+{% include header.html %}
+<div class="attribute-search-wrapper">
+  <div class="search-container">
+    <label for="disclosure-search" class="search-container__label">Disclosure Search:</label>
+    <input class="search-container__input" type="text" id="disclosure-search" placeholder="Loading…">
+    <ul class="search-container__ul" id="disclosure-search-results"></ul>
+  </div>
+</div>
+{% for disclosure in site.data[page.target].disclosures %}
+<div class="return-reason-container hidden" data-public-id="{{ disclosure.public_id }}">
+  <div class="column">
+    <div class="return-reasons-wrapper box">
+      <div class="value-container return-reason-values">
+        <h3>{{ disclosure.name }} <span class="disclosure-kind">{{ disclosure.kind }}</span></h3>
+        <div class="value-container__id">
+          <span class="id">{{ disclosure.public_id }}</span>
+        </div>
+        {% if disclosure.description %}
+        <div class="return-reason-description-wrapper">
+          <p class="return-reason-description">{{ disclosure.description }}</p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="return-reason-categories-wrapper box">
+      <div class="categories-container return-reason-categories">
+        <h3>Details</h3>
+        <ul class="values-container__list">
+          {% if disclosure.parent_name %}
+          <li class="values-container__list-item">
+            <div class="values-container__list-item-content">Parent: {{ disclosure.parent_name }}</div>
+          </li>
+          {% endif %}
+          {% if disclosure.jurisdictions %}
+          <li class="values-container__list-item">
+            <div class="values-container__list-item-content">Jurisdictions: {{ disclosure.jurisdictions | join: ", " }}</div>
+          </li>
+          {% endif %}
+          {% if disclosure.legal_citation %}
+          <li class="values-container__list-item">
+            <div class="values-container__list-item-content">Legal citation: {{ disclosure.legal_citation }}</div>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+<script type="module" src="{{ site.baseurl }}/assets/js/disclosure_release.js"></script>
