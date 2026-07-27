@@ -8,6 +8,7 @@ require_relative "commands/generate_docs_command"
 require_relative "commands/generate_release_command"
 require_relative "commands/stage_dist_assets_command"
 require_relative "commands/publish_release_assets_command"
+require_relative "commands/backfill_release_assets_command"
 require_relative "commands/dump_categories_command"
 require_relative "commands/dump_attributes_command"
 require_relative "commands/dump_values_command"
@@ -74,6 +75,13 @@ module ProductTaxonomy
     desc "publish_release_assets TAG", "Generate, upload, and verify assets for a stable release tag"
     def publish_release_assets(tag)
       PublishReleaseAssetsCommand.new(options.merge(tag:)).run
+    end
+
+    desc "backfill_release_assets", "Publish historical dist files for existing stable releases"
+    option :tags, type: :array, desc: "Stable release tags to backfill; defaults to all stable GitHub releases"
+    option :dry_run, type: :boolean, default: false, desc: "Resolve and stage historical files without uploading"
+    def backfill_release_assets
+      BackfillReleaseAssetsCommand.new(options).run
     end
 
     desc "dump_categories", "Dump category verticals to YAML files"
