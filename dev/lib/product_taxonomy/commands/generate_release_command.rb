@@ -169,12 +169,17 @@ module ProductTaxonomy
       logger.info("\nNext steps:")
       logger.info("  1. If the changes look good, push the branch")
       logger.info("     * Run `git push origin release-v#{@version}`")
-      logger.info("  2. Open a PR and follow the usual process to get approval and merge")
+      logger.info("  2. Open a PR and follow the usual process to get approval")
       logger.info("     * https://github.com/Shopify/product-taxonomy/pull/new/release-v#{@version}")
-      logger.info("  3. Once the PR is merged, push the tag that was created")
+      logger.info("  3. Merge the approved PR")
+      logger.info("  4. Push the tag that was created")
       logger.info("     * Run `git push origin v#{@version}`")
-      logger.info("  4. Create a release on GitHub")
+      logger.info("  5. Create a release on GitHub")
       logger.info("     * https://github.com/Shopify/product-taxonomy/releases/new?tag=v#{@version}")
+      logger.info("  6. Publish the release assets locally")
+      logger.info("     * Run `bin/product_taxonomy publish_release_assets v#{@version}`")
+      logger.info("  7. Spot-check a published asset")
+      logger.info("     * Run `curl -L https://github.com/Shopify/product-taxonomy/releases/download/v#{@version}/categories.en.json.gz | gunzip`")
     end
 
     def print_rollback_instructions

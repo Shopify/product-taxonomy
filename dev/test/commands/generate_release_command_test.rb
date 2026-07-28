@@ -263,12 +263,17 @@ module ProductTaxonomy
         Next steps:
           1. If the changes look good, push the branch
              * Run `git push origin release-v2024-01`
-          2. Open a PR and follow the usual process to get approval and merge
+          2. Open a PR and follow the usual process to get approval
              * https://github.com/Shopify/product-taxonomy/pull/new/release-v2024-01
-          3. Once the PR is merged, push the tag that was created
+          3. Merge the approved PR
+          4. Push the tag that was created
              * Run `git push origin v2024-01`
-          4. Create a release on GitHub
+          5. Create a release on GitHub
              * https://github.com/Shopify/product-taxonomy/releases/new?tag=v2024-01
+          6. Publish the release assets locally
+             * Run `bin/product_taxonomy publish_release_assets v2024-01`
+          7. Spot-check a published asset
+             * Run `curl -L https://github.com/Shopify/product-taxonomy/releases/download/v2024-01/categories.en.json.gz | gunzip`
       OUTPUT
       log_string = StringIO.new
       logger = Logger.new(log_string)
