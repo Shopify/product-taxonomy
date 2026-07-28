@@ -186,6 +186,15 @@ module ProductTaxonomy
       assert_equal(2, RecordingStager.stage_count)
     end
 
+    test "#execute raises when no stable releases are discovered" do
+      @command_runner.release_list = []
+
+      error = assert_raises(RuntimeError) { build_command.execute }
+
+      assert_equal("No stable GitHub releases were found to backfill.", error.message)
+      refute(@command_runner.calls.any? { _1.command.first(3) == ["git", "worktree", "add"] })
+    end
+
     test "#execute extracts committed dist files from the exact tag and resolves LFS before staging" do
       build_command(tags: ["v2024-10"]).execute
 
@@ -235,6 +244,21 @@ module ProductTaxonomy
       assert_instance_of(RecordedCall, recorded_call_starting_with("git", "worktree", "remove"))
     end
 
+    test "#execute preserves the LFS failure and recommends pruning when worktree cleanup also fails" do
+      @command_runner.lfs_pull_succeeds = false
+      @command_runner.worktree_remove_succeeds = false
+      error = nil
+
+      stdout, = capture_io do
+        error = assert_raises(RuntimeError) { build_command(tags: ["v2024-10"], quiet: false).execute }
+      end
+
+      assert_equal("Could not resolve Git LFS files for v2024-10. LFS download failed", error.message)
+      assert_includes(stdout, "Could not remove temporary worktree")
+      assert_includes(stdout, "git worktree prune")
+      assert_instance_of(RecordedCall, recorded_call_starting_with("git", "worktree", "remove"))
+    end
+
     test "#execute dry-run stages and validates files without uploading" do
       build_command(tags: ["v2024-10"], dry_run: true).execute
 
@@ -253,6 +277,18 @@ module ProductTaxonomy
       assert(@command_runner.calls.any? { asset_verification_call?(_1.command) })
     end
 
+    test "#execute reports missing assets when upload verification is incomplete" do
+      @command_runner.uploaded_asset_names = ["categories.en.json.gz"]
+
+      error = assert_raises(RuntimeError) { build_command(tags: ["v2024-10"]).execute }
+
+      assert_includes(
+        error.message,
+        "GitHub release v2024-10 is missing uploaded assets: integrations.all_mappings.en.json.gz",
+      )
+      assert_includes(error.message, "bin/product_taxonomy backfill_release_assets --tags v2024-10")
+    end
+
     test "#execute reports release-specific recovery steps after a partial upload" do
       @command_runner.upload_succeeds = false
 
@@ -262,6 +298,18 @@ module ProductTaxonomy
       assert_includes(error.message, "gh release view v2024-10 --json assets --jq '.assets[].name'")
       assert_includes(error.message, "gh release delete-asset v2024-10 <asset-name> --yes")
       assert_includes(error.message, "bin/product_taxonomy backfill_release_assets --tags v2024-10")
+    end
+
+    test "#execute raises before extraction when the GitHub release does not exist" do
+      @command_runner.release_exists = false
+
+      error = assert_raises(RuntimeError) { build_command(tags: ["v2024-10"]).execute }
+
+      assert_equal(
+        "GitHub release v2024-10 does not exist or is inaccessible. release not found",
+        error.message,
+      )
+      refute(@command_runner.calls.any? { _1.command.first(3) == ["git", "worktree", "add"] })
     end
 
     test "#execute raises before extraction when an explicit tag is not available locally" do
@@ -275,9 +323,9 @@ module ProductTaxonomy
 
     private
 
-    def build_command(tags: [], dry_run: false)
+    def build_command(tags: [], dry_run: false, quiet: true)
       BackfillReleaseAssetsCommand.new(
-        { tags:, dry_run:, quiet: true },
+        { tags:, dry_run:, quiet: },
         command_runner: @command_runner,
         stager_class: RecordingStager,
       )
