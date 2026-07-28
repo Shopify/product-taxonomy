@@ -1,0 +1,209 @@
+---
+# Disclosures.
+#
+# The disclosure axis models legally-required product disclosures (safety
+# warnings, chemical exposure notices, etc.) that a merchant may need to show
+# for a product in a given jurisdiction.
+#
+# Row-shaped: each entry maps 1:1 to a disclosure node, keyed by a stable
+# `public_id` slug — never rename an existing `public_id`, as downstream systems
+# reference it by global ID.
+#
+# Hierarchy is expressed via `parent_public_id`. A node with no `parent_public_id`
+# is a grouping/root node; a node that no other node points at is a leaf.
+#
+# Authoring rules (enforced by ProductTaxonomy::Disclosure validations):
+#   - Only leaf nodes define `jurisdictions` and `display_preferences`.
+#   - Grouping/root nodes must NOT define `jurisdictions` or `display_preferences`.
+#   - `display_preferences.surfaces` values must be a unique subset of
+#     product_page, cart, checkout.
+
+# Choking hazards
+- public_id: choking_hazard
+  parent_public_id:
+  name: Choking hazards
+  internal_label: Choking hazards
+  description: "Choking and suffocation hazards for children"
+  legal_citation:
+  symbol:
+  display_requirements:
+  title:
+  content:
+  source:
+  disclosure_attributes: []
+  disclosure_attribute_values: []
+
+- public_id: us-cpsc-choking_small_parts
+  parent_public_id: choking_hazard
+  name: "Choking Hazard — Small Parts (US)"
+  internal_label: "Choking Hazard — Small Parts (US)"
+  description:
+  jurisdictions:
+  - US
+  legal_citation: "16 CFR 1501"
+  symbol: "https://cdn.shopify.com/static/product-disclosures/default-warning-white.png"
+  display_requirements: "Display the disclosure (Title, Content, Symbol) pre-purchase. Age warning must be legible."
+  display_preferences:
+    surfaces:
+    - product_page
+  title: "Choking Hazard: Small Parts"
+  content: |
+    **WARNING: CHOKING HAZARD — Small parts.** Not for children under 3 years.
+  source: "https://www.ecfr.gov/current/title-16/chapter-II/subchapter-B/part-1501"
+  disclosure_attributes: []
+  disclosure_attribute_values: []
+
+- public_id: us-cpsc-choking_balloons
+  parent_public_id: choking_hazard
+  name: "Choking Hazard — Balloons (US)"
+  internal_label: "Choking Hazard — Balloons (US)"
+  description:
+  jurisdictions:
+  - US
+  legal_citation: "16 CFR 1500.19"
+  symbol: "https://cdn.shopify.com/static/product-disclosures/default-warning-white.png"
+  display_requirements: "Display the disclosure (Title, Content, Symbol) pre-purchase. Age warning must be legible."
+  display_preferences:
+    surfaces:
+    - product_page
+  title: "Balloon Choking Hazard"
+  content: |
+    **WARNING: CHOKING HAZARD — Children under 8 years can choke or suffocate on uninflated or broken balloons.** Adult supervision required. Keep uninflated balloons from children. Discard broken balloons at once.
+  source: "https://www.ecfr.gov/current/title-16/chapter-II/subchapter-B/part-1500/section-1500.19"
+  disclosure_attributes: []
+  disclosure_attribute_values: []
+
+- public_id: us-cpsc-choking_marbles
+  parent_public_id: choking_hazard
+  name: "Choking Hazard — Marbles (US)"
+  internal_label: "Choking Hazard — Marbles (US)"
+  description:
+  jurisdictions:
+  - US
+  legal_citation: "16 CFR 1500.19"
+  symbol: "https://cdn.shopify.com/static/product-disclosures/default-warning-white.png"
+  display_requirements: "Display the disclosure (Title, Content, Symbol) pre-purchase. Age warning must be legible."
+  display_preferences:
+    surfaces:
+    - product_page
+  title: "Marble Choking Hazard"
+  content: |
+    **WARNING: CHOKING HAZARD — This toy is a marble.** Not for children under 3 years.
+  source: "https://www.ecfr.gov/current/title-16/chapter-II/subchapter-B/part-1500/section-1500.19"
+  disclosure_attributes: []
+  disclosure_attribute_values: []
+
+- public_id: us-cpsc-choking_small_balls
+  parent_public_id: choking_hazard
+  name: "Choking Hazard — Small Balls (US)"
+  internal_label: "Choking Hazard — Small Balls (US)"
+  description:
+  jurisdictions:
+  - US
+  legal_citation: "16 CFR 1500.19"
+  symbol: "https://cdn.shopify.com/static/product-disclosures/default-warning-white.png"
+  display_requirements: "Display the disclosure (Title, Content, Symbol) pre-purchase. Age warning must be legible."
+  display_preferences:
+    surfaces:
+    - product_page
+  title: "Small Ball Choking Hazard"
+  content: |
+    **WARNING: CHOKING HAZARD — This toy is a small ball.** Not for children under 3 years.
+  source: "https://www.ecfr.gov/current/title-16/chapter-II/subchapter-B/part-1500/section-1500.19"
+  disclosure_attributes: []
+  disclosure_attribute_values: []
+
+# Chemical exposures
+- public_id: chemical_exposure
+  parent_public_id:
+  name: Chemical exposures
+  internal_label: Chemical exposures
+  description: "Chemicals known to cause cancer or reproductive harm"
+  legal_citation:
+  symbol:
+  display_requirements:
+  title:
+  content:
+  source:
+  disclosure_attributes: []
+  disclosure_attribute_values: []
+
+- public_id: us-ca-prop65-cancer
+  parent_public_id: chemical_exposure
+  name: "Prop 65 — Cancer (US-CA)"
+  internal_label: "Prop 65 — Cancer (US-CA)"
+  description:
+  jurisdictions:
+  - US-CA
+  legal_citation: "CA Health & Safety Code §25249.6"
+  symbol: "https://cdn.shopify.com/static/product-disclosures/default-warning-yellow.png"
+  display_requirements: "Display the disclosure (Title, Content, Symbol) pre-purchase. \"WARNING\" must be in all caps and bold. Short-form (without chemical name) permitted until 2028."
+  display_preferences:
+    surfaces:
+    - product_page
+  title: "Prop 65 Cancer Warning"
+  content: |
+    **WARNING:** Cancer - http://www.P65Warnings.ca.gov
+  source: "https://oehha.ca.gov/proposition-65"
+  disclosure_attributes: []
+  disclosure_attribute_values: []
+
+- public_id: us-ca-prop65-reproductive
+  parent_public_id: chemical_exposure
+  name: "Prop 65 — Reproductive Harm (US-CA)"
+  internal_label: "Prop 65 — Reproductive Harm (US-CA)"
+  description:
+  jurisdictions:
+  - US-CA
+  legal_citation: "CA Health & Safety Code §25249.6"
+  symbol: "https://cdn.shopify.com/static/product-disclosures/default-warning-yellow.png"
+  display_requirements: "Display the disclosure (Title, Content, Symbol) pre-purchase. \"WARNING\" must be in all caps and bold. Short-form (without chemical name) permitted until 2028."
+  display_preferences:
+    surfaces:
+    - product_page
+  title: "Prop 65 Reproductive Harm Warning"
+  content: |
+    **WARNING**: Reproductive Harm - http://www.P65Warnings.ca.gov
+  source: "https://oehha.ca.gov/proposition-65"
+  disclosure_attributes: []
+  disclosure_attribute_values: []
+
+- public_id: us-ca-prop65-cancer_reproductive
+  parent_public_id: chemical_exposure
+  name: "Prop 65 — Cancer and Reproductive Harm (US-CA)"
+  internal_label: "Prop 65 — Cancer and Reproductive Harm (US-CA)"
+  description:
+  jurisdictions:
+  - US-CA
+  legal_citation: "CA Health & Safety Code §25249.6"
+  symbol: "https://cdn.shopify.com/static/product-disclosures/default-warning-yellow.png"
+  display_requirements: "Display the disclosure (Title, Content, Symbol) pre-purchase. \"WARNING\" must be in all caps and bold. Short-form (without chemical name) permitted until 2028."
+  display_preferences:
+    surfaces:
+    - product_page
+  title: "Prop 65 Cancer and Reproductive Harm Warning"
+  content: |
+    **WARNING**: Cancer and Reproductive Harm - http://www.P65Warnings.ca.gov
+  source: "https://oehha.ca.gov/proposition-65"
+  disclosure_attributes: []
+  disclosure_attribute_values: []
+
+- public_id: us-ca-prop65-alcohol
+  parent_public_id: chemical_exposure
+  name: "Prop 65 — Alcohol (US-CA)"
+  internal_label: "Prop 65 — Alcohol (US-CA)"
+  description:
+  jurisdictions:
+  - US-CA
+  legal_citation: "CA Health & Safety Code §25249.6"
+  symbol: "https://cdn.shopify.com/static/product-disclosures/default-warning-yellow.png"
+  display_requirements: "Display the disclosure (Title, Content, Symbol) pre-purchase. \"WARNING\" must be uppercase and bold."
+  display_preferences:
+    surfaces:
+    - product_page
+  title: "Prop 65 Alcohol Warning"
+  content: |
+    **WARNING:** Drinking distilled spirits, beer, coolers, wine and other alcoholic beverages may increase cancer risk, and, during pregnancy, can cause birth defects. For more information go to www.P65Warnings.ca.gov/alcoholic-beverages.
+  source: "https://www.p65warnings.ca.gov/alcoholic-beverages"
+  disclosure_attributes: []
+  disclosure_attribute_values: []

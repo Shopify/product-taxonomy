@@ -5,24 +5,6 @@ async_pr_mode: per_component
 component_prefix: product-taxonomy
 translation_profile: taxonomy
 components:
-  - name: attributes
-    audience: [buyer, merchant, partner]
-    owners: ['@Shopify/taxonomy-tree-squad']
-    paths:
-      - data/localizations/attributes/{{language}}.yml
-
-  - name: categories
-    audience: [buyer, merchant, partner]
-    owners: ['@Shopify/taxonomy-tree-squad']
-    paths:
-      - data/localizations/categories/{{language}}.yml
-
-  - name: values
-    audience: [buyer, merchant, partner]
-    owners: ['@Shopify/taxonomy-tree-squad']
-    paths:
-      - data/localizations/values/{{language}}.yml
-
   - name: return_reasons
     audience: [buyer, merchant, partner]
     owners: ['@Shopify/taxonomy-tree-squad']
