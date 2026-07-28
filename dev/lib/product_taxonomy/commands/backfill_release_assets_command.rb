@@ -35,8 +35,10 @@ module ProductTaxonomy
       tags = selected_tags(repository_root)
       raise "No stable GitHub releases were found to backfill." if tags.empty?
 
+      validate_releases!(repository_root, tags)
+
       total_asset_count = tags.sum { backfill_release(repository_root, _1) }
-      action = @dry_run ? "Staged and verified" : "Published and verified"
+      action = @dry_run ? "Staged and validated" : "Published and verified"
       logger.info("#{action} #{total_asset_count} assets across #{tags.length} stable releases")
     end
 
@@ -71,10 +73,12 @@ module ProductTaxonomy
       raise "Could not parse GitHub releases: #{error.message}"
     end
 
-    def backfill_release(repository_root, tag)
-      ensure_tag_exists!(repository_root, tag)
-      ensure_release_exists!(repository_root, tag)
+    def validate_releases!(repository_root, tags)
+      tags.each { ensure_tag_exists!(repository_root, _1) }
+      tags.each { ensure_stable_release_exists!(repository_root, _1) }
+    end
 
+    def backfill_release(repository_root, tag)
       staged_file_count = Dir.mktmpdir("product-taxonomy-backfill-#{tag}-") do |temporary_directory|
         source_path = File.join(temporary_directory, "source")
         staging_path = File.join(temporary_directory, "release-assets")
@@ -101,6 +105,7 @@ module ProductTaxonomy
           ).stage
           raise "No release assets were staged for #{tag}." if staged_files.empty?
 
+          ensure_no_asset_conflicts!(repository_root, tag, staged_files)
           publish_and_verify!(repository_root, tag, staged_files) unless @dry_run
           staged_files.length
         ensure
@@ -108,7 +113,7 @@ module ProductTaxonomy
         end
       end
 
-      action = @dry_run ? "Staged" : "Published and verified"
+      action = @dry_run ? "Staged and validated" : "Published and verified"
       logger.info("#{action} #{staged_file_count} historical assets for #{tag}")
       staged_file_count
     end
@@ -151,17 +156,45 @@ module ProductTaxonomy
       raise "Tag #{tag} does not exist locally. Fetch tags and retry." unless status.success?
     end
 
-    def ensure_release_exists!(repository_root, tag)
-      run_command!(
+    def ensure_stable_release_exists!(repository_root, tag)
+      output = run_command!(
         "gh",
         "release",
         "view",
         tag,
         "--json",
-        "tagName",
+        "tagName,isDraft,isPrerelease",
         chdir: repository_root,
         failure_message: "GitHub release #{tag} does not exist or is inaccessible.",
       )
+      release = JSON.parse(output)
+      return unless release.fetch("isDraft") || release.fetch("isPrerelease")
+
+      raise "GitHub release #{tag} is not a published stable release."
+    rescue JSON::ParserError, KeyError => error
+      raise "Could not parse GitHub release #{tag}: #{error.message}"
+    end
+
+    def ensure_no_asset_conflicts!(repository_root, tag, staged_files)
+      existing_asset_output = run_command!(
+        "gh",
+        "release",
+        "view",
+        tag,
+        "--json",
+        "assets",
+        "--jq",
+        ".assets[].name",
+        chdir: repository_root,
+        failure_message: "Could not inspect existing assets on GitHub release #{tag}.",
+      )
+      existing_asset_names = existing_asset_output.lines.map(&:strip).reject(&:empty?)
+      expected_asset_names = staged_files.map { File.basename(_1) }.sort
+      conflicting_asset_names = expected_asset_names & existing_asset_names
+      return if conflicting_asset_names.empty?
+
+      raise "GitHub release #{tag} already contains expected assets: #{conflicting_asset_names.join(", ")}. " \
+        "Refusing to overwrite existing assets."
     end
 
     def publish_and_verify!(repository_root, tag, staged_files)
