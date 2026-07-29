@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 require "json"
-require "open3"
-require "tmpdir"
 
 module ProductTaxonomy
   class BackfillReleaseAssetsCommand < Command
@@ -20,14 +18,22 @@ module ProductTaxonomy
     ].freeze
     RELEASE_LIST_LIMIT = 1_000
 
-    def initialize(options, command_runner: Open3.method(:capture3), stager_class: DistAssetStager)
+    def initialize(
+      options,
+      command_runner: CommandExecutor::DEFAULT_RUNNER,
+      stager_class: DistAssetStager,
+      publisher_class: ReleaseAssetPublisher,
+      workspace_class: TaggedReleaseWorkspace
+    )
       super(options)
 
       @tags = Array(options[:tags]).map(&:to_s)
       @tags.each { validate_stable_tag!(_1) }
       @dry_run = options.fetch(:dry_run, false)
-      @command_runner = command_runner
+      @command_executor = CommandExecutor.new(command_runner:)
       @stager_class = stager_class
+      @publisher = publisher_class.new(command_executor: @command_executor)
+      @workspace_class = workspace_class
     end
 
     def execute
@@ -50,7 +56,7 @@ module ProductTaxonomy
     end
 
     def discover_stable_release_tags(repository_root)
-      output = run_command!(
+      output = @command_executor.run!(
         "gh",
         "release",
         "list",
@@ -79,38 +85,17 @@ module ProductTaxonomy
     end
 
     def backfill_release(repository_root, tag)
-      staged_file_count = Dir.mktmpdir("product-taxonomy-backfill-#{tag}-") do |temporary_directory|
-        source_path = File.join(temporary_directory, "source")
-        staging_path = File.join(temporary_directory, "release-assets")
-        worktree_created = false
+      staged_file_count = workspace(repository_root, tag).with_paths do |source_path, staging_path|
+        resolve_lfs_files!(source_path, tag)
 
-        begin
-          run_command!(
-            "git",
-            "worktree",
-            "add",
-            "--detach",
-            source_path,
-            tag,
-            chdir: repository_root,
-            failure_message: "Could not create a worktree for #{tag}.",
-          )
-          worktree_created = true
+        staged_files = @stager_class.new(
+          input_path: File.join(source_path, "dist"),
+          output_path: staging_path,
+        ).stage
+        raise "No release assets were staged for #{tag}." if staged_files.empty?
 
-          resolve_lfs_files!(source_path, tag)
-
-          staged_files = @stager_class.new(
-            input_path: File.join(source_path, "dist"),
-            output_path: staging_path,
-          ).stage
-          raise "No release assets were staged for #{tag}." if staged_files.empty?
-
-          ensure_no_asset_conflicts!(repository_root, tag, staged_files)
-          publish_and_verify!(repository_root, tag, staged_files) unless @dry_run
-          staged_files.length
-        ensure
-          remove_worktree(repository_root, source_path, tag) if worktree_created
-        end
+        publish_or_validate!(repository_root, tag, staged_files)
+        staged_files.length
       end
 
       action = @dry_run ? "Staged and validated" : "Published and verified"
@@ -118,8 +103,28 @@ module ProductTaxonomy
       staged_file_count
     end
 
+    def publish_or_validate!(repository_root, tag, staged_files)
+      arguments = { repository_root:, tag:, staged_files: }
+      return @publisher.validate!(**arguments) if @dry_run
+
+      @publisher.publish!(
+        **arguments,
+        retry_command: "bin/product_taxonomy backfill_release_assets --tags #{tag}",
+      )
+    end
+
+    def workspace(repository_root, tag)
+      @workspace_class.new(
+        repository_root:,
+        tag:,
+        command_executor: @command_executor,
+        logger:,
+        temporary_prefix: "product-taxonomy-backfill-#{tag}-",
+      )
+    end
+
     def resolve_lfs_files!(source_path, tag)
-      run_command!(
+      @command_executor.run!(
         "git",
         *LFS_FILTER_CONFIG,
         "lfs",
@@ -144,7 +149,7 @@ module ProductTaxonomy
     end
 
     def ensure_tag_exists!(repository_root, tag)
-      _, _, status = capture_command(
+      _, _, status = @command_executor.capture(
         "git",
         "rev-parse",
         "--verify",
@@ -157,7 +162,7 @@ module ProductTaxonomy
     end
 
     def ensure_stable_release_exists!(repository_root, tag)
-      output = run_command!(
+      output = @command_executor.run!(
         "gh",
         "release",
         "view",
@@ -175,93 +180,6 @@ module ProductTaxonomy
       raise "Could not parse GitHub release #{tag}: #{error.message}"
     end
 
-    def ensure_no_asset_conflicts!(repository_root, tag, staged_files)
-      existing_asset_output = run_command!(
-        "gh",
-        "release",
-        "view",
-        tag,
-        "--json",
-        "assets",
-        "--jq",
-        ".assets[].name",
-        chdir: repository_root,
-        failure_message: "Could not inspect existing assets on GitHub release #{tag}.",
-      )
-      existing_asset_names = existing_asset_output.lines.map(&:strip).reject(&:empty?)
-      expected_asset_names = staged_files.map { File.basename(_1) }.sort
-      conflicting_asset_names = expected_asset_names & existing_asset_names
-      return if conflicting_asset_names.empty?
-
-      raise "GitHub release #{tag} already contains expected assets: #{conflicting_asset_names.join(", ")}. " \
-        "Refusing to overwrite existing assets."
-    end
-
-    def publish_and_verify!(repository_root, tag, staged_files)
-      run_command!(
-        "gh",
-        "release",
-        "upload",
-        tag,
-        *staged_files,
-        chdir: repository_root,
-        failure_message: "Asset upload failed for GitHub release #{tag}.",
-      )
-      verify_assets!(repository_root, tag, staged_files)
-    rescue StandardError => error
-      raise "#{error.message}\n\n#{partial_upload_retry_instructions(tag)}"
-    end
-
-    def verify_assets!(repository_root, tag, staged_files)
-      uploaded_asset_output = run_command!(
-        "gh",
-        "release",
-        "view",
-        tag,
-        "--json",
-        "assets",
-        "--jq",
-        ".assets[] | select(.state == \"uploaded\") | .name",
-        chdir: repository_root,
-        failure_message: "Could not verify assets on GitHub release #{tag}.",
-      )
-      uploaded_asset_names = uploaded_asset_output.lines.map(&:strip).reject(&:empty?)
-      expected_asset_names = staged_files.map { File.basename(_1) }.sort
-      missing_asset_names = expected_asset_names - uploaded_asset_names
-      return if missing_asset_names.empty?
-
-      raise "GitHub release #{tag} is missing uploaded assets: #{missing_asset_names.join(", ")}"
-    end
-
-    def partial_upload_retry_instructions(tag)
-      <<~INSTRUCTIONS.chomp
-        Asset backfill may have partially succeeded. Before retrying:
-          1. Inspect assets already present on the release:
-             gh release view #{tag} --json assets --jq '.assets[].name'
-          2. Delete each asset uploaded by this failed attempt:
-             gh release delete-asset #{tag} <asset-name> --yes
-          3. Rerun the backfill for only this release:
-             bin/product_taxonomy backfill_release_assets --tags #{tag}
-      INSTRUCTIONS
-    end
-
-    def remove_worktree(repository_root, source_path, tag)
-      run_command!(
-        "git",
-        "worktree",
-        "remove",
-        "--force",
-        source_path,
-        chdir: repository_root,
-        failure_message: "Could not remove temporary worktree for #{tag}.",
-      )
-    rescue StandardError => cleanup_error
-      logger.warn(
-        "Could not remove temporary worktree at #{source_path}: #{cleanup_error.message}. " \
-          "Run `git worktree prune` from #{repository_root} after this command exits.",
-      )
-    end
-
     def validate_stable_tag!(tag)
       return if tag.match?(STABLE_TAG_PATTERN)
 
@@ -269,29 +187,13 @@ module ProductTaxonomy
     end
 
     def repository_root!
-      run_command!(
+      @command_executor.run!(
         "git",
         "rev-parse",
         "--show-toplevel",
         chdir: Dir.pwd,
         failure_message: "Could not determine the Git repository root.",
       ).strip
-    end
-
-    def run_command!(*command, chdir:, failure_message:)
-      stdout, stderr, status = capture_command(*command, chdir:, failure_message:)
-      return stdout if status.success?
-
-      details = stderr.strip
-      details = stdout.strip if details.empty?
-      message = details.empty? ? failure_message : "#{failure_message} #{details}"
-      raise message
-    end
-
-    def capture_command(*command, chdir:, failure_message:)
-      @command_runner.call(*command, chdir:)
-    rescue SystemCallError => error
-      raise "#{failure_message} #{error.message}"
     end
   end
 end
