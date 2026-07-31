@@ -11,6 +11,19 @@ on:
     types: [opened, synchronize, reopened, target]
 
 jobs:
+  dist_not_tracked:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+    - name: Ensure distribution files are not tracked
+      run: |
+        tracked_dist_files="$(git ls-files -- dist/)"
+        if [[ -n "$tracked_dist_files" ]]; then
+          echo "::error::dist/ contains tracked files; distribution files must be published as release assets"
+          echo "$tracked_dist_files"
+          exit 1
+        fi
+
   test:
     strategy:
       fail-fast: true

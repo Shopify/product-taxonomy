@@ -44,7 +44,7 @@ module ProductTaxonomy
       else
         File.write(
           File.expand_path("docs/_releases/_return_reasons_template.html", @tmp_base_path),
-          "---\nlayout: return_reasons\n\ntitle: TITLE\ntarget: TARGET\npermalink: /releases/TARGET/return_reasons/\ngithub_url: GH_URL\n---"
+          "---\nlayout: return_reasons\n\ntitle: TITLE\ntarget: TARGET\npermalink: /releases/TARGET/return_reasons/\ngithub_url: GH_URL\n---",
         )
       end
       if File.exist?(File.expand_path("docs/_releases/_values_template.html", @real_base_path))
@@ -55,7 +55,7 @@ module ProductTaxonomy
       else
         File.write(
           File.expand_path("docs/_releases/_values_template.html", @tmp_base_path),
-          "---\nlayout: values\n\ntitle: TITLE\ntarget: TARGET\npermalink: /releases/TARGET/values/\ngithub_url: GH_URL\n---"
+          "---\nlayout: values\n\ntitle: TITLE\ntarget: TARGET\npermalink: /releases/TARGET/values/\ngithub_url: GH_URL\n---",
         )
       end
 
@@ -70,6 +70,7 @@ module ProductTaxonomy
         ---
       HTML
 
+      ProductTaxonomy.stubs(:data_path).returns(File.expand_path("data", @tmp_base_path))
       GenerateDocsCommand.stubs(:docs_path).returns(File.expand_path("docs", @tmp_base_path))
       Command.any_instance.stubs(:load_taxonomy)
       Serializers::Category::Docs::SiblingsSerializer.stubs(:serialize_all).returns({ "siblings" => "foo" })

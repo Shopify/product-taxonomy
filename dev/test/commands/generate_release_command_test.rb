@@ -13,7 +13,6 @@ module ProductTaxonomy
       @release_branch = "release-v#{@version}"
 
       # Create test files and directories
-      FileUtils.mkdir_p(File.expand_path("dist", @tmp_base_path))
       FileUtils.mkdir_p(File.expand_path("data/integrations/shopify/2023-12/mappings", @tmp_base_path))
       FileUtils.mkdir_p(File.expand_path("data/integrations/shopify/2022-01/mappings", @tmp_base_path))
       FileUtils.mkdir_p(File.expand_path("data/integrations/shopify/2022-10/mappings", @tmp_base_path))
@@ -27,11 +26,6 @@ module ProductTaxonomy
         File.expand_path("README.md", @tmp_base_path),
         '<img src="https://img.shields.io/badge/Version-2023--12-blue.svg" alt="Version">',
       )
-      File.write(
-        File.expand_path("dist/README.md", @tmp_base_path),
-        '<img src="https://img.shields.io/badge/Version-2023--12-blue.svg" alt="Version">',
-      )
-
       # Create test mapping files
       File.write(
         File.expand_path("data/integrations/shopify/2023-12/mappings/to_shopify.yml", @tmp_base_path),
@@ -233,17 +227,15 @@ module ProductTaxonomy
       refute_match "input_taxonomy: shopify/#{@version}", from_shopify_content_stage2 unless @version == @next_version.gsub(/-unstable$/, "")
     end
 
-    test "execute updates both README files version badges" do
+    test "execute updates the README version badge without a dist README" do
       command = GenerateReleaseCommand.new(current_version: @version, next_version: @next_version)
 
       command.execute
 
       root_readme_content = File.read(File.expand_path("README.md", @tmp_base_path))
-      dist_readme_content = File.read(File.expand_path("dist/README.md", @tmp_base_path))
-
       expected_badge = '<img src="https://img.shields.io/badge/Version-2024--01-blue.svg" alt="Version">'
       assert_equal expected_badge, root_readme_content
-      assert_equal expected_badge, dist_readme_content
+      refute_path_exists File.expand_path("dist/README.md", @tmp_base_path)
     end
 
     test "print_summary outputs expected format" do
