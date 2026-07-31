@@ -17,6 +17,7 @@ module ProductTaxonomy
       "filter.lfs.required=true",
     ].freeze
     RELEASE_LIST_LIMIT = 1_000
+    CANONICAL_REMOTE = "origin"
 
     def initialize(
       options,
@@ -43,7 +44,9 @@ module ProductTaxonomy
 
       validate_releases!(repository_root, tags)
 
-      total_asset_count = tags.sum { backfill_release(repository_root, _1) }
+      total_asset_count = tags.each_with_index.sum do |tag, index|
+        backfill_release(repository_root, tag, retry_tags: tags.drop(index))
+      end
       action = @dry_run ? "Staged and validated" : "Published and verified"
       logger.info("#{action} #{total_asset_count} assets across #{tags.length} stable releases")
     end
@@ -80,11 +83,16 @@ module ProductTaxonomy
     end
 
     def validate_releases!(repository_root, tags)
-      tags.each { ensure_tag_exists!(repository_root, _1) }
+      local_tag_commits = tags.to_h do |tag|
+        [tag, local_tag_commit!(repository_root, tag)]
+      end
+      tags.each do |tag|
+        ensure_tag_matches_canonical_remote!(repository_root, tag, local_tag_commits.fetch(tag))
+      end
       tags.each { ensure_stable_release_exists!(repository_root, _1) }
     end
 
-    def backfill_release(repository_root, tag)
+    def backfill_release(repository_root, tag, retry_tags:)
       staged_file_count = workspace(repository_root, tag).with_paths do |source_path, staging_path|
         resolve_lfs_files!(source_path, tag)
 
@@ -94,7 +102,7 @@ module ProductTaxonomy
         ).stage
         raise "No release assets were staged for #{tag}." if staged_files.empty?
 
-        publish_or_validate!(repository_root, tag, staged_files)
+        publish_or_validate!(repository_root, tag, staged_files, retry_tags:)
         staged_files.length
       end
 
@@ -103,14 +111,21 @@ module ProductTaxonomy
       staged_file_count
     end
 
-    def publish_or_validate!(repository_root, tag, staged_files)
+    def publish_or_validate!(repository_root, tag, staged_files, retry_tags:)
       arguments = { repository_root:, tag:, staged_files: }
       return @publisher.validate!(**arguments) if @dry_run
 
       @publisher.publish!(
         **arguments,
-        retry_command: "bin/product_taxonomy backfill_release_assets --tags #{tag}",
+        retry_command: "bin/product_taxonomy backfill_release_assets --tags #{retry_tags.join(" ")}",
       )
+    rescue ReleaseAssetPublisher::ExistingAssetsError => error
+      raise <<~ERROR.chomp
+        #{error.message}
+
+        If #{tag} was already backfilled successfully, do not delete its assets. Rerun with `--tags`
+        containing only releases that still need backfilling.
+      ERROR
     end
 
     def workspace(repository_root, tag)
@@ -143,13 +158,13 @@ module ProductTaxonomy
 
     def unresolved_lfs_pointer_paths(dist_path)
       Dir.glob(File.join(dist_path, "**", "*")).select { File.file?(_1) }.filter_map do |path|
-        first_line = File.open(path, "rb", &:gets)&.strip
-        path.delete_prefix("#{dist_path}#{File::SEPARATOR}") if first_line == LFS_POINTER_HEADER
+        header = File.binread(path, LFS_POINTER_HEADER.bytesize)
+        path.delete_prefix("#{dist_path}#{File::SEPARATOR}") if header == LFS_POINTER_HEADER
       end.sort
     end
 
-    def ensure_tag_exists!(repository_root, tag)
-      _, _, status = @command_executor.capture(
+    def local_tag_commit!(repository_root, tag)
+      stdout, _, status = @command_executor.capture(
         "git",
         "rev-parse",
         "--verify",
@@ -159,6 +174,32 @@ module ProductTaxonomy
         failure_message: "Could not check whether tag #{tag} exists.",
       )
       raise "Tag #{tag} does not exist locally. Fetch tags and retry." unless status.success?
+
+      stdout.strip
+    end
+
+    def ensure_tag_matches_canonical_remote!(repository_root, tag, local_commit)
+      tag_ref = "refs/tags/#{tag}"
+      output = @command_executor.run!(
+        "git",
+        "ls-remote",
+        "--exit-code",
+        CANONICAL_REMOTE,
+        tag_ref,
+        "#{tag_ref}^{}",
+        chdir: repository_root,
+        failure_message: "Could not resolve tag #{tag} on #{CANONICAL_REMOTE}.",
+      )
+      remote_refs = output.lines.to_h do |line|
+        object_id, ref = line.split
+        [ref, object_id]
+      end
+      remote_commit = remote_refs["#{tag_ref}^{}"] || remote_refs[tag_ref]
+      raise "Could not resolve tag #{tag} on #{CANONICAL_REMOTE}." unless remote_commit
+      return if local_commit == remote_commit
+
+      raise "Local tag #{tag} resolves to #{local_commit}, but #{CANONICAL_REMOTE} resolves to #{remote_commit}. " \
+        "Fetch the canonical tag and retry."
     end
 
     def ensure_stable_release_exists!(repository_root, tag)

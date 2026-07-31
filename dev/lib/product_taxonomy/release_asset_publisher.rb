@@ -2,6 +2,8 @@
 
 module ProductTaxonomy
   class ReleaseAssetPublisher
+    class ExistingAssetsError < RuntimeError; end
+
     def initialize(command_executor:)
       @command_executor = command_executor
     end
@@ -23,8 +25,9 @@ module ProductTaxonomy
       conflicting_asset_names = expected_names(staged_files) & existing_asset_names
       return if conflicting_asset_names.empty?
 
-      raise "GitHub release #{tag} already contains expected assets: #{conflicting_asset_names.join(", ")}. " \
-        "Refusing to overwrite existing assets."
+      raise ExistingAssetsError,
+        "GitHub release #{tag} already contains expected assets: #{conflicting_asset_names.join(", ")}. " \
+          "Refusing to overwrite existing assets."
     end
 
     def publish!(repository_root:, tag:, staged_files:, retry_command:)

@@ -10,11 +10,16 @@ module ProductTaxonomy
 
     class FakeCommandRunner
       attr_accessor(
+        :annotated_remote_tags,
         :existing_asset_names,
         :lfs_pull_succeeds,
+        :local_tag_commits,
         :missing_release_tags,
+        :missing_remote_tags,
         :missing_tags,
         :release_list,
+        :remote_tag_commits,
+        :upload_failure_tags,
         :upload_succeeds,
         :uploaded_asset_names,
         :worktree_remove_succeeds,
@@ -24,9 +29,12 @@ module ProductTaxonomy
 
       def initialize(repository_root)
         @repository_root = repository_root
+        @annotated_remote_tags = ["v2024-10"]
         @existing_asset_names = []
         @lfs_pull_succeeds = true
+        @local_tag_commits = Hash.new { |_, tag| "commit-for-#{tag}" }
         @missing_release_tags = []
+        @missing_remote_tags = []
         @missing_tags = []
         @release_list = [
           { "tagName" => "v2024-10-beta1", "isDraft" => false, "isPrerelease" => true },
@@ -35,7 +43,8 @@ module ProductTaxonomy
           { "tagName" => "unstable", "isDraft" => false, "isPrerelease" => true },
           { "tagName" => "v2025-03", "isDraft" => true, "isPrerelease" => false },
         ]
-        @tag_exists = true
+        @remote_tag_commits = Hash.new { |_, tag| "commit-for-#{tag}" }
+        @upload_failure_tags = []
         @upload_succeeds = true
         @uploaded_asset_names = RecordingStager.asset_names
         @worktree_remove_succeeds = true
@@ -60,11 +69,12 @@ module ProductTaxonomy
 
       def handle_dynamic_command(command)
         return tag_verification_result(command) if tag_verification_command?(command)
+        return remote_tag_verification_result(command) if remote_tag_verification_command?(command)
         return release_view_result(command) if release_view_command?(command)
         return create_worktree(command) if worktree_add_command?(command)
         return result(@lfs_pull_succeeds, stderr: "LFS download failed") if lfs_pull_command?(command)
         return result(@worktree_remove_succeeds, stderr: "cleanup failed") if worktree_remove_command?(command)
-        return result(@upload_succeeds, stderr: "HTTP 500") if upload_command?(command)
+        return upload_result(command) if upload_command?(command)
         return success(@existing_asset_names.join("\n") + "\n") if asset_preflight_command?(command)
         return success(@uploaded_asset_names.join("\n") + "\n") if asset_verification_command?(command)
 
@@ -77,7 +87,29 @@ module ProductTaxonomy
 
       def tag_verification_result(command)
         tag = command.fetch(4)[%r{\Arefs/tags/(.+)\^\{commit\}\z}, 1]
-        result(!@missing_tags.include?(tag), stderr: "unknown revision")
+        result(
+          !@missing_tags.include?(tag),
+          stdout: "#{@local_tag_commits[tag]}\n",
+          stderr: "unknown revision",
+        )
+      end
+
+      def remote_tag_verification_command?(command)
+        command.first(4) == ["git", "ls-remote", "--exit-code", "origin"]
+      end
+
+      def remote_tag_verification_result(command)
+        tag_ref = command.fetch(4)
+        tag = tag_ref.delete_prefix("refs/tags/")
+        return result(false, stderr: "not found") if @missing_remote_tags.include?(tag)
+
+        commit = @remote_tag_commits[tag]
+        output = if @annotated_remote_tags.include?(tag)
+          "tag-object-for-#{tag}\t#{tag_ref}\n#{commit}\t#{tag_ref}^{}\n"
+        else
+          "#{commit}\t#{tag_ref}\n"
+        end
+        success(output)
       end
 
       def release_view_command?(command)
@@ -119,6 +151,12 @@ module ProductTaxonomy
 
       def upload_command?(command)
         command.first(3) == ["gh", "release", "upload"]
+      end
+
+      def upload_result(command)
+        tag = command.fetch(3)
+        succeeds = @upload_succeeds && !@upload_failure_tags.include?(tag)
+        result(succeeds, stderr: "HTTP 500")
       end
 
       def asset_preflight_command?(command)
@@ -275,8 +313,11 @@ module ProductTaxonomy
       refute(@command_runner.calls.any? { _1.command.first(2) == ["bin/product_taxonomy", "dist"] })
     end
 
-    test "#execute rejects unresolved LFS pointers before staging or upload" do
+    test "#execute rejects unresolved LFS pointers using a bounded prefix read" do
       @command_runner.write_unresolved_pointer = true
+      File.expects(:binread).with do |path, length|
+        path.end_with?("/dist/en/taxonomy.json") && length == BackfillReleaseAssetsCommand::LFS_POINTER_HEADER.bytesize
+      end.returns(BackfillReleaseAssetsCommand::LFS_POINTER_HEADER)
 
       error = assert_raises(RuntimeError) { build_command(tags: ["v2024-10"], dry_run: true).execute }
 
@@ -330,11 +371,13 @@ module ProductTaxonomy
         build_command(tags: ["v2024-10"], dry_run: true).execute
       end
 
-      assert_equal(
+      assert_includes(
+        error.message,
         "GitHub release v2024-10 already contains expected assets: categories.en.json.gz. " \
           "Refusing to overwrite existing assets.",
-        error.message,
       )
+      assert_includes(error.message, "If v2024-10 was already backfilled successfully, do not delete its assets")
+      assert_includes(error.message, "Rerun with `--tags`")
       assert(@command_runner.calls.any? { asset_preflight_call?(_1.command) })
       refute(@command_runner.calls.any? { _1.command.first(3) == ["gh", "release", "upload"] })
       refute_includes(error.message, "gh release delete-asset")
@@ -346,6 +389,8 @@ module ProductTaxonomy
       error = assert_raises(RuntimeError) { build_command(tags: ["v2024-10"]).execute }
 
       assert_includes(error.message, "GitHub release v2024-10 already contains expected assets")
+      assert_includes(error.message, "If v2024-10 was already backfilled successfully, do not delete its assets")
+      assert_includes(error.message, "containing only releases that still need backfilling")
       refute_includes(error.message, "gh release delete-asset")
       refute(@command_runner.calls.any? { _1.command.first(3) == ["gh", "release", "upload"] })
     end
@@ -385,6 +430,22 @@ module ProductTaxonomy
       assert_includes(error.message, "bin/product_taxonomy backfill_release_assets --tags v2024-10")
     end
 
+    test "#execute retries the failed and remaining tags after an earlier tag was published" do
+      @command_runner.upload_failure_tags = ["v2024-10"]
+      tags = ["v2024-07", "v2024-10", "v2025-06"]
+
+      error = assert_raises(RuntimeError) { build_command(tags:).execute }
+
+      upload_tags = @command_runner.calls.filter_map do |call|
+        call.command.fetch(3) if call.command.first(3) == ["gh", "release", "upload"]
+      end
+      assert_equal(["v2024-07", "v2024-10"], upload_tags)
+      assert_includes(
+        error.message,
+        "bin/product_taxonomy backfill_release_assets --tags v2024-10 v2025-06",
+      )
+    end
+
     test "#execute validates every GitHub release before extracting the first tag" do
       @command_runner.missing_release_tags = ["v2024-10"]
 
@@ -408,8 +469,38 @@ module ProductTaxonomy
       end
 
       assert_equal("Tag v2024-10 does not exist locally. Fetch tags and retry.", error.message)
+      refute(@command_runner.calls.any? { _1.command.first(3) == ["git", "ls-remote", "--exit-code"] })
       refute(@command_runner.calls.any? { _1.command.first(3) == ["git", "worktree", "add"] })
       refute(@command_runner.calls.any? { _1.command.first(3) == ["gh", "release", "view"] })
+    end
+
+    test "#execute rejects a local tag that does not match the canonical remote before mutation" do
+      @command_runner.remote_tag_commits["v2024-10"] = "canonical-commit"
+
+      error = assert_raises(RuntimeError) do
+        build_command(tags: ["v2024-07", "v2024-10"]).execute
+      end
+
+      assert_equal(
+        "Local tag v2024-10 resolves to commit-for-v2024-10, but origin resolves to canonical-commit. " \
+          "Fetch the canonical tag and retry.",
+        error.message,
+      )
+      assert(@command_runner.calls.any? { _1.command.first(3) == ["git", "ls-remote", "--exit-code"] })
+      refute(@command_runner.calls.any? { _1.command.first(3) == ["git", "worktree", "add"] })
+      refute(@command_runner.calls.any? { _1.command.first(3) == ["gh", "release", "view"] })
+      refute(@command_runner.calls.any? { _1.command.first(3) == ["gh", "release", "upload"] })
+    end
+
+    test "#execute rejects a tag missing from the canonical remote before mutation" do
+      @command_runner.missing_remote_tags = ["v2024-10"]
+
+      error = assert_raises(RuntimeError) { build_command(tags: ["v2024-10"]).execute }
+
+      assert_equal("Could not resolve tag v2024-10 on origin. not found", error.message)
+      refute(@command_runner.calls.any? { _1.command.first(3) == ["git", "worktree", "add"] })
+      refute(@command_runner.calls.any? { _1.command.first(3) == ["gh", "release", "view"] })
+      refute(@command_runner.calls.any? { _1.command.first(3) == ["gh", "release", "upload"] })
     end
 
     private
