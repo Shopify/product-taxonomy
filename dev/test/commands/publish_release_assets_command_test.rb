@@ -10,6 +10,7 @@ module ProductTaxonomy
 
     class FakeCommandRunner
       attr_accessor(
+        :existing_asset_names,
         :tag_exists,
         :release_exists,
         :dist_succeeds,
@@ -21,6 +22,7 @@ module ProductTaxonomy
 
       def initialize(repository_root)
         @repository_root = repository_root
+        @existing_asset_names = []
         @tag_exists = true
         @release_exists = true
         @dist_succeeds = true
@@ -42,6 +44,8 @@ module ProductTaxonomy
           result(@release_exists, stdout: "{\"tagName\":\"v2024-01\"}\n", stderr: "release not found")
         when ["bin/product_taxonomy", "dist", "--version", "2024-01", "--locales", "all"]
           result(@dist_succeeds, stderr: "generator exploded")
+        when ["gh", "release", "view", "v2024-01", "--json", "assets", "--jq", ".assets[].name"]
+          success(@existing_asset_names.join("\n") + "\n")
         when [
           "gh",
           "release",
@@ -151,11 +155,13 @@ module ProductTaxonomy
       assert_equal(1, RecordingStager.initializations.length)
       assert_match(%r{/source/dist\z}, RecordingStager.initializations.first.fetch(:input_path))
 
+      preflight_call = @command_runner.calls.find { _1.command.last == ".assets[].name" }
       upload_call = recorded_call_starting_with("gh", "release", "upload")
       assert_equal(["gh", "release", "upload", "v2024-01"], upload_call.command.first(4))
       assert_equal(RecordingStager.asset_names, upload_call.command.drop(4).map { File.basename(_1) })
       refute_includes(upload_call.command, "--clobber")
 
+      preflight_index = @command_runner.calls.index(preflight_call)
       upload_index = @command_runner.calls.index(upload_call)
       verification_index = @command_runner.calls.index do |call|
         call.command == [
@@ -169,6 +175,7 @@ module ProductTaxonomy
           ".assets[] | select(.state == \"uploaded\") | .name",
         ]
       end
+      assert_operator(preflight_index, :<, upload_index)
       assert_operator(verification_index, :>, upload_index)
     end
 
@@ -234,6 +241,16 @@ module ProductTaxonomy
 
       assert_equal("naming collision", error.message)
       assert_instance_of(RecordedCall, recorded_call_starting_with("git", "worktree", "remove"))
+    end
+
+    test "#execute refuses to overwrite existing expected assets" do
+      @command_runner.existing_asset_names = ["categories.en.json.gz"]
+
+      error = assert_raises(RuntimeError) { build_command.execute }
+
+      assert_includes(error.message, "GitHub release v2024-01 already contains expected assets")
+      refute_includes(error.message, "gh release delete-asset")
+      refute(@command_runner.calls.any? { _1.command.first(3) == ["gh", "release", "upload"] })
     end
 
     test "#execute prints partial-upload retry instructions when GitHub rejects an asset" do
