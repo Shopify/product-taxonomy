@@ -76,9 +76,8 @@ module ProductTaxonomy
       logger.info("Generating documentation files...")
       GenerateDocsCommand.new(version: @version, locales: @locales).execute
 
-      logger.info("Updating README.md files...")
+      logger.info("Updating README.md...")
       update_version_badge(File.expand_path("../README.md", ProductTaxonomy.data_path))
-      update_version_badge(File.expand_path("../dist/README.md", ProductTaxonomy.data_path))
 
       logger.info("Committing and tagging release version #{@version}...")
       run_git_command("add", ".")
