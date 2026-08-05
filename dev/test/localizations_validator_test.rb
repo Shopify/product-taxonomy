@@ -21,9 +21,18 @@ module ProductTaxonomy
         handle: "test_value",
       )
 
+      @return_reason = ReturnReason.new(
+        id: 1,
+        name: "Test Return Reason",
+        description: "Test return reason description",
+        friendly_id: "test_return_reason",
+        handle: "test_return_reason",
+      )
+
       Category.stubs(:all).returns([@category])
       Attribute.stubs(:all).returns([@attribute])
       Value.stubs(:all).returns([@value])
+      ReturnReason.stubs(:all).returns([@return_reason])
 
       @fr_categories_yaml = <<~YAML
         fr:
@@ -45,6 +54,14 @@ module ProductTaxonomy
           values:
             "test_value":
               name: "Valeur de test"
+      YAML
+
+      @fr_return_reasons_yaml = <<~YAML
+        fr:
+          return_reasons:
+            "test_return_reason":
+              name: "Motif de retour de test"
+              description: "Description de test"
       YAML
 
       @es_categories_yaml = <<~YAML
@@ -69,6 +86,14 @@ module ProductTaxonomy
               name: "Valor de prueba"
       YAML
 
+      @es_return_reasons_yaml = <<~YAML
+        es:
+          return_reasons:
+            "test_return_reason":
+              name: "Motivo de devolución de prueba"
+              description: "Descripción de prueba"
+      YAML
+
       ProductTaxonomy.stubs(:data_path).returns("/fake/path")
 
       Dir.stubs(:glob)
@@ -80,6 +105,12 @@ module ProductTaxonomy
       Dir.stubs(:glob)
         .with("/fake/path/localizations/values/*.yml")
         .returns(["/fake/path/localizations/values/fr.yml", "/fake/path/localizations/values/es.yml"])
+      Dir.stubs(:glob)
+        .with("/fake/path/localizations/return_reasons/*.yml")
+        .returns([
+          "/fake/path/localizations/return_reasons/fr.yml",
+          "/fake/path/localizations/return_reasons/es.yml",
+        ])
 
       YAML.stubs(:safe_load_file)
         .with("/fake/path/localizations/categories/fr.yml")
@@ -99,12 +130,19 @@ module ProductTaxonomy
       YAML.stubs(:safe_load_file)
         .with("/fake/path/localizations/values/es.yml")
         .returns(YAML.safe_load(@es_values_yaml))
+      YAML.stubs(:safe_load_file)
+        .with("/fake/path/localizations/return_reasons/fr.yml")
+        .returns(YAML.safe_load(@fr_return_reasons_yaml))
+      YAML.stubs(:safe_load_file)
+        .with("/fake/path/localizations/return_reasons/es.yml")
+        .returns(YAML.safe_load(@es_return_reasons_yaml))
     end
 
     teardown do
       Category.instance_variable_set(:@localizations, nil)
       Attribute.instance_variable_set(:@localizations, nil)
       Value.instance_variable_set(:@localizations, nil)
+      ReturnReason.instance_variable_set(:@localizations, nil)
     end
 
     test "validate! passes when all required localizations are present" do
@@ -155,6 +193,21 @@ module ProductTaxonomy
       end
     end
 
+    test "validate! raises error when return reason localizations are missing" do
+      return_reason2 = ReturnReason.new(
+        id: 2,
+        name: "Second Return Reason",
+        description: "Test return reason description 2",
+        friendly_id: "test_return_reason2",
+        handle: "test_return_reason2",
+      )
+      ReturnReason.stubs(:all).returns([@return_reason, return_reason2])
+
+      assert_raises(ArgumentError) do
+        LocalizationsValidator.validate!(["fr"])
+      end
+    end
+
     test "validate! raises error when locales are inconsistent" do
       Dir.unstub(:glob)
       Dir.stubs(:glob)
@@ -166,6 +219,9 @@ module ProductTaxonomy
       Dir.stubs(:glob)
         .with("/fake/path/localizations/values/*.yml")
         .returns([])
+      Dir.stubs(:glob)
+        .with("/fake/path/localizations/return_reasons/*.yml")
+        .returns(["/fake/path/localizations/return_reasons/fr.yml"])
 
       assert_raises(ArgumentError, "Not all model localizations have the same set of locales") do
         LocalizationsValidator.validate!

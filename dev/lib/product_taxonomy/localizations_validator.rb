@@ -11,6 +11,7 @@ module ProductTaxonomy
         Category.validate_localizations!(locales)
         Attribute.validate_localizations!(locales)
         Value.validate_localizations!(locales)
+        ReturnReason.validate_localizations!(locales)
 
         validate_locales_are_consistent! if locales.nil?
       end
@@ -21,10 +22,12 @@ module ProductTaxonomy
         categories_locales = Category.localizations.keys
         attributes_locales = Attribute.localizations.keys
         values_locales = Value.localizations.keys
+        return_reasons_locales = ReturnReason.localizations.keys
 
         error_message = "Not all model localizations have the same set of locales"
-        raise ArgumentError,
-          error_message unless categories_locales == attributes_locales && attributes_locales == values_locales
+        all_locales_match = [attributes_locales, values_locales, return_reasons_locales]
+          .all? { |locales| locales == categories_locales }
+        raise ArgumentError, error_message unless all_locales_match
       end
     end
   end
