@@ -136,6 +136,9 @@
   attributes:
   - material
   return_reasons:
+  - size
+  - material
+  - intensity
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -148,6 +151,10 @@
   attributes:
   - material
   return_reasons:
+  - size
+  - material
+  - detail
+  - academic_level
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -160,6 +167,9 @@
   attributes:
   - material
   return_reasons:
+  - size
+  - material
+  - adhesive_strength
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -172,6 +182,10 @@
   attributes:
   - material
   return_reasons:
+  - size
+  - material
+  - intensity
+  - battery_life
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -184,6 +198,9 @@
   attributes:
   - material
   return_reasons:
+  - size
+  - material
+  - burn_time
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -715,6 +732,9 @@
   - pattern
   - usage_type
   return_reasons:
+  - size
+  - color
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -735,6 +755,9 @@
   - pattern
   - usage_type
   return_reasons:
+  - size
+  - color
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -755,6 +778,9 @@
   - pattern
   - usage_type
   return_reasons:
+  - size
+  - color
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -775,6 +801,9 @@
   - pattern
   - usage_type
   return_reasons:
+  - size
+  - material
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -1506,6 +1535,7 @@
   - pattern
   - power_source
   return_reasons:
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -1525,6 +1555,9 @@
   - power_source
   - tracking_metrics
   return_reasons:
+  - battery_life
+  - connectivity
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -1605,6 +1638,10 @@
   - closure_type
   - material
   return_reasons:
+  - size
+  - color
+  - capacity
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -1619,6 +1656,9 @@
   - closure_type
   - material
   return_reasons:
+  - size
+  - color
+  - capacity
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -2292,6 +2332,8 @@
   - product_certifications_standards
   - usage_type
   return_reasons:
+  - size
+  - absorbency
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -2307,6 +2349,10 @@
   - product_certifications_standards
   - usage_type
   return_reasons:
+  - size
+  - scent
+  - consistency
+  - not_suitable_for_skin_type
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -2321,6 +2367,10 @@
   - product_certifications_standards
   - usage_type
   return_reasons:
+  - size
+  - capacity
+  - applicator
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -2335,6 +2385,9 @@
   - product_certifications_standards
   - usage_type
   return_reasons:
+  - size
+  - grip
+  - material
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -2349,6 +2402,9 @@
   - product_certifications_standards
   - usage_type
   return_reasons:
+  - size
+  - material
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -2363,6 +2419,9 @@
   - product_certifications_standards
   - usage_type
   return_reasons:
+  - size
+  - adjustability
+  - support
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -3865,8 +3924,8 @@
   - ingress_protection_ip_rating
   - technology_level
   return_reasons:
-  - sound_quality
   - uncomfortable_in_ear
+  - sound_quality
   - battery_life
   - connectivity
   - changed_my_mind
@@ -3890,9 +3949,9 @@
   - ingress_protection_ip_rating
   - technology_level
   return_reasons:
+  - uncomfortable_in_ear
   - sound_quality
   - battery_life
-  - uncomfortable_in_ear
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -3942,6 +4001,7 @@
   - uncomfortable_in_ear
   - sound_quality
   - battery_life
+  - connectivity
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -3990,6 +4050,8 @@
   return_reasons:
   - uncomfortable_in_ear
   - sound_quality
+  - battery_life
+  - connectivity
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4039,6 +4101,7 @@
   - uncomfortable_in_ear
   - sound_quality
   - battery_life
+  - connectivity
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4085,9 +4148,10 @@
   - ingress_protection_ip_rating
   - technology_level
   return_reasons:
+  - uncomfortable_in_ear
   - sound_quality
   - battery_life
-  - uncomfortable_in_ear
+  - connectivity
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4109,6 +4173,10 @@
   - ingress_protection_ip_rating
   - technology_level
   return_reasons:
+  - uncomfortable_in_ear
+  - sound_quality
+  - battery_life
+  - connectivity
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4223,6 +4291,9 @@
   - pattern
   - usage_type
   return_reasons:
+  - size
+  - capacity
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4242,6 +4313,10 @@
   - target_gender
   - usage_type
   return_reasons:
+  - too_big
+  - too_small
+  - absorbency
+  - odor_control
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4261,6 +4336,10 @@
   - target_gender
   - usage_type
   return_reasons:
+  - absorbency
+  - softness
+  - scent
+  - thickness
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4278,6 +4357,8 @@
   - pattern
   - usage_type
   return_reasons:
+  - size
+  - capacity
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4297,6 +4378,10 @@
   - target_gender
   - usage_type
   return_reasons:
+  - too_big
+  - too_small
+  - material
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4364,6 +4449,10 @@
   - power_source
   - system_range
   return_reasons:
+  - range
+  - battery_life
+  - too_loud
+  - too_quiet
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4383,6 +4472,10 @@
   - power_source
   - system_range
   return_reasons:
+  - range
+  - battery_life
+  - too_loud
+  - too_quiet
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4402,6 +4495,10 @@
   - power_source
   - system_range
   return_reasons:
+  - range
+  - battery_life
+  - too_loud
+  - too_quiet
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4421,6 +4518,11 @@
   - power_source
   - system_range
   return_reasons:
+  - range
+  - battery_life
+  - sensitivity
+  - too_loud
+  - too_quiet
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4440,6 +4542,10 @@
   - power_source
   - system_range
   return_reasons:
+  - range
+  - battery_life
+  - too_loud
+  - too_quiet
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4459,6 +4565,10 @@
   - power_source
   - system_range
   return_reasons:
+  - range
+  - battery_life
+  - too_loud
+  - too_quiet
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4694,6 +4804,9 @@
   - treatment_objective
   return_reasons:
   - taste
+  - ingredients
+  - format
+  - strength
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4713,6 +4826,10 @@
   - route_of_administration
   - treatment_objective
   return_reasons:
+  - taste
+  - ingredients
+  - strength
+  - format
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4732,6 +4849,10 @@
   - route_of_administration
   - treatment_objective
   return_reasons:
+  - taste
+  - ingredients
+  - format
+  - strength
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4751,6 +4872,10 @@
   - route_of_administration
   - treatment_objective
   return_reasons:
+  - taste
+  - ingredients
+  - format
+  - strength
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4770,6 +4895,10 @@
   - route_of_administration
   - treatment_objective
   return_reasons:
+  - taste
+  - ingredients
+  - format
+  - strength
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4789,6 +4918,10 @@
   - route_of_administration
   - treatment_objective
   return_reasons:
+  - taste
+  - ingredients
+  - format
+  - strength
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4808,6 +4941,10 @@
   - route_of_administration
   - treatment_objective
   return_reasons:
+  - taste
+  - ingredients
+  - format
+  - strength
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -4827,6 +4964,10 @@
   - route_of_administration
   - treatment_objective
   return_reasons:
+  - scent
+  - consistency
+  - absorption
+  - strength
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6074,6 +6215,9 @@
   - material
   - pattern
   return_reasons:
+  - size
+  - angle
+  - grip
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6090,6 +6234,9 @@
   - pattern
   - power_source
   return_reasons:
+  - size
+  - compression
+  - material
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6105,6 +6252,9 @@
   - material
   - pattern
   return_reasons:
+  - size
+  - material
+  - suction_strength
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6121,6 +6271,9 @@
   - pattern
   - power_source
   return_reasons:
+  - size
+  - material
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6135,6 +6288,10 @@
   - material
   - pattern
   return_reasons:
+  - size
+  - resistance
+  - firmness
+  - grip
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6151,6 +6308,9 @@
   - pattern
   - power_source
   return_reasons:
+  - resistance
+  - length
+  - material
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6167,6 +6327,8 @@
   - pattern
   - power_source
   return_reasons:
+  - size
+  - intensity
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6182,6 +6344,9 @@
   - material
   - pattern
   return_reasons:
+  - size
+  - firmness
+  - grip
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6197,6 +6362,8 @@
   - material
   - pattern
   return_reasons:
+  - resistance
+  - texture
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6405,6 +6572,9 @@
   - compatible_patient_profile
   - material
   return_reasons:
+  - size
+  - material
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6418,6 +6588,10 @@
   - compatible_patient_profile
   - material
   return_reasons:
+  - flow_rate
+  - weight
+  - too_bulky
+  - operating_noise
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6431,6 +6605,8 @@
   - compatible_patient_profile
   - material
   return_reasons:
+  - size
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6444,6 +6620,9 @@
   - compatible_patient_profile
   - material
   return_reasons:
+  - fit
+  - material
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6457,6 +6636,10 @@
   - compatible_patient_profile
   - material
   return_reasons:
+  - weight
+  - flow_rate
+  - results_display
+  - metrics_supported
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6471,6 +6654,9 @@
   - compatible_patient_profile
   - material
   return_reasons:
+  - fit
+  - material
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6843,6 +7029,9 @@
   - size
   - support/brace_material
   return_reasons:
+  - too_tight
+  - too_loose
+  - support
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6863,6 +7052,10 @@
   - size
   - support/brace_material
   return_reasons:
+  - too_tight
+  - too_loose
+  - support
+  - too_bulky
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6883,6 +7076,10 @@
   - size
   - support/brace_material
   return_reasons:
+  - too_tight
+  - too_loose
+  - support
+  - too_bulky
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6903,6 +7100,10 @@
   - size
   - support/brace_material
   return_reasons:
+  - too_tight
+  - too_loose
+  - support
+  - too_bulky
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6923,6 +7124,10 @@
   - size
   - support/brace_material
   return_reasons:
+  - too_tight
+  - too_loose
+  - support
+  - too_bulky
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6988,6 +7193,10 @@
   - product_sterility
   - usage_type
   return_reasons:
+  - too_big
+  - too_small
+  - breathability
+  - fit
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -7008,6 +7217,10 @@
   - product_sterility
   - usage_type
   return_reasons:
+  - too_big
+  - too_small
+  - breathability
+  - fit
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -7028,6 +7241,9 @@
   - product_sterility
   - usage_type
   return_reasons:
+  - size
+  - fit
+  - breathability
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -7040,6 +7256,9 @@
   attributes:
   - age_group
   return_reasons:
+  - size
+  - material
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -7052,6 +7271,9 @@
   attributes:
   - age_group
   return_reasons:
+  - size
+  - battery_life
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -7064,6 +7286,9 @@
   attributes:
   - age_group
   return_reasons:
+  - size
+  - material
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -7076,6 +7301,10 @@
   attributes:
   - age_group
   return_reasons:
+  - size
+  - color
+  - material
+  - thickness
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -7660,6 +7889,10 @@
   - pattern
   - product_form
   return_reasons:
+  - size
+  - color
+  - style
+  - organization
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -7677,6 +7910,10 @@
   - pattern
   - product_form
   return_reasons:
+  - size
+  - color
+  - style
+  - organization
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -7727,6 +7964,9 @@
   - product_form
   - suitable_for_precious_material
   return_reasons:
+  - scheduling_conflict
+  - provider_unavailable
+  - service_unavailable
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -7742,6 +7982,8 @@
   - product_form
   - suitable_for_precious_material
   return_reasons:
+  - size
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -7912,6 +8154,9 @@
   - size
   - treatment_objective
   return_reasons:
+  - size
+  - too_firm
+  - support
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -7929,6 +8174,10 @@
   - size
   - treatment_objective
   return_reasons:
+  - too_big
+  - too_small
+  - support
+  - adjustability
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -11098,7 +11347,6 @@
   - suitable_for_skin_type
   - treatment_target_area
   return_reasons:
-  - results
   - consistency
   - scent
   - applicator
@@ -11701,10 +11949,10 @@
   - spf_level
   - suitable_for_skin_type
   return_reasons:
-  - color
+  - shade
   - finish
-  - wear
   - consistency
+  - wear
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -11735,9 +11983,9 @@
   - texture
   return_reasons:
   - shade
-  - texture
+  - finish
+  - consistency
   - wear
-  - doesnt_apply_evenly
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -11765,8 +12013,9 @@
   - suitable_for_skin_type
   - texture
   return_reasons:
-  - color
-  - texture
+  - shade
+  - finish
+  - consistency
   - wear
   - changed_my_mind
   - item_not_as_described
@@ -11799,9 +12048,9 @@
   - suitable_for_skin_type
   - texture
   return_reasons:
-  - color
-  - texture
+  - shade
   - finish
+  - consistency
   - wear
   - changed_my_mind
   - item_not_as_described
@@ -12726,6 +12975,8 @@
   return_reasons:
   - scent
   - longevity
+  - too_strong
+  - too_subtle
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -12782,6 +13033,8 @@
   return_reasons:
   - scent
   - longevity
+  - too_strong
+  - too_subtle
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -14268,6 +14521,9 @@
   - suitable_for_skin_type
   - target_gender
   return_reasons:
+  - scent
+  - not_suitable_for_skin_type
+  - consistency
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -14704,6 +14960,8 @@
   - product_form
   - usage_type
   return_reasons:
+  - size
+  - adhesive
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -14720,6 +14978,8 @@
   - product_form
   - usage_type
   return_reasons:
+  - size
+  - uncomfortable_in_ear
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -14761,6 +15021,9 @@
   - product_sterility
   - treatment_objective
   return_reasons:
+  - capacity
+  - nozzle
+  - material
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -14778,6 +15041,10 @@
   - product_sterility
   - treatment_objective
   return_reasons:
+  - material
+  - nozzle
+  - capacity
+  - pressure
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -14795,6 +15062,10 @@
   - product_sterility
   - treatment_objective
   return_reasons:
+  - capacity
+  - material
+  - nozzle
+  - pressure
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -14812,6 +15083,10 @@
   - product_sterility
   - treatment_objective
   return_reasons:
+  - material
+  - nozzle
+  - pressure
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -15156,6 +15431,10 @@
   - product_form
   - treatment_objective
   return_reasons:
+  - scent
+  - consistency
+  - residue
+  - not_suitable_for_skin_type
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -15171,6 +15450,9 @@
   - product_form
   - treatment_objective
   return_reasons:
+  - scent
+  - not_suitable_for_skin_type
+  - softness
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -15186,6 +15468,8 @@
   - product_form
   - treatment_objective
   return_reasons:
+  - size
+  - capacity
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -15525,6 +15809,10 @@
   - skin_care_effect
   - treatment_objective
   return_reasons:
+  - scent
+  - consistency
+  - strength
+  - not_suitable_for_skin_type
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -15543,6 +15831,10 @@
   - skin_care_effect
   - treatment_objective
   return_reasons:
+  - size
+  - adhesive
+  - thickness
+  - material
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -15561,6 +15853,10 @@
   - skin_care_effect
   - treatment_objective
   return_reasons:
+  - scent
+  - consistency
+  - absorption
+  - not_suitable_for_skin_type
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -15579,6 +15875,10 @@
   - skin_care_effect
   - treatment_objective
   return_reasons:
+  - scent
+  - consistency
+  - strength
+  - not_suitable_for_skin_type
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -15597,6 +15897,9 @@
   - skin_care_effect
   - treatment_objective
   return_reasons:
+  - scent
+  - too_coarse
+  - too_fine
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -15615,6 +15918,9 @@
   - skin_care_effect
   - treatment_objective
   return_reasons:
+  - scent
+  - strength
+  - not_suitable_for_skin_type
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -15633,6 +15939,9 @@
   - skin_care_effect
   - treatment_objective
   return_reasons:
+  - assortment
+  - sharpness
+  - grip
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -17978,6 +18287,9 @@
   - product_form
   - treatment_objective
   return_reasons:
+  - scent
+  - intensity
+  - longevity
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -17996,6 +18308,7 @@
   - product_form
   - treatment_objective
   return_reasons:
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -18015,6 +18328,10 @@
   - sensory_effect
   - treatment_objective
   return_reasons:
+  - scent
+  - consistency
+  - absorbency
+  - not_suitable_for_skin_type
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -19397,6 +19714,10 @@
   - oral_care_function
   - product_form
   return_reasons:
+  - size
+  - color
+  - capacity
+  - material
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -19411,6 +19732,9 @@
   - oral_care_function
   - product_form
   return_reasons:
+  - size
+  - too_soft
+  - too_stiff
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -19425,6 +19749,9 @@
   - oral_care_function
   - product_form
   return_reasons:
+  - taste
+  - consistency
+  - strength
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -19439,6 +19766,9 @@
   - oral_care_function
   - product_form
   return_reasons:
+  - taste
+  - strength
+  - consistency
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -19453,6 +19783,9 @@
   - oral_care_function
   - product_form
   return_reasons:
+  - flavor
+  - texture
+  - strength
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -19467,6 +19800,9 @@
   - oral_care_function
   - product_form
   return_reasons:
+  - adhesion
+  - firmness
+  - flavor
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -19481,6 +19817,10 @@
   - oral_care_function
   - product_form
   return_reasons:
+  - size
+  - color
+  - style
+  - material
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -20732,6 +21072,10 @@
   - product_form
   - target_gender
   return_reasons:
+  - scent
+  - consistency
+  - not_suitable_for_skin_type
+  - not_suitable_for_hair_type
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -20747,6 +21091,10 @@
   - product_form
   - target_gender
   return_reasons:
+  - size
+  - material
+  - grip
+  - too_stiff
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -20762,6 +21110,9 @@
   - product_form
   - target_gender
   return_reasons:
+  - scent
+  - consistency
+  - not_suitable_for_hair_type
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -20777,6 +21128,10 @@
   - product_form
   - target_gender
   return_reasons:
+  - scent
+  - consistency
+  - not_suitable_for_hair_type
+  - residue
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -20792,6 +21147,10 @@
   - product_form
   - target_gender
   return_reasons:
+  - scent
+  - consistency
+  - lather
+  - not_suitable_for_hair_type
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -20807,6 +21166,10 @@
   - product_form
   - target_gender
   return_reasons:
+  - scent
+  - consistency
+  - residue
+  - wear
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -20822,6 +21185,10 @@
   - product_form
   - target_gender
   return_reasons:
+  - scent
+  - consistency
+  - not_suitable_for_skin_type
+  - residue
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -20837,6 +21204,9 @@
   - product_form
   - target_gender
   return_reasons:
+  - scent
+  - lather
+  - not_suitable_for_skin_type
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -21195,6 +21565,9 @@
   - pattern
   - product_form
   return_reasons:
+  - scent
+  - strength
+  - residue
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -21212,6 +21585,8 @@
   - pattern
   - product_form
   return_reasons:
+  - scent
+  - intensity
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -21253,8 +21628,7 @@
   - product_form
   return_reasons:
   - size
-  - power_output
-  - voltage
+  - intensity
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -21270,6 +21644,8 @@
   - orientation
   - product_form
   return_reasons:
+  - size
+  - intensity
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -21285,6 +21661,8 @@
   - orientation
   - product_form
   return_reasons:
+  - size
+  - intensity
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -22195,6 +22573,9 @@
   - material
   - product_sterility
   return_reasons:
+  - size
+  - temperature
+  - material
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -22209,6 +22590,9 @@
   - material
   - product_sterility
   return_reasons:
+  - size
+  - ingredients
+  - taste
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -22223,6 +22607,9 @@
   - material
   - product_sterility
   return_reasons:
+  - scent
+  - not_suitable_for_skin_type
+  - residue
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -22237,6 +22624,7 @@
   - material
   - product_sterility
   return_reasons:
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -22253,6 +22641,9 @@
   - pattern
   - product_form
   return_reasons:
+  - scent
+  - assortment
+  - presentation
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
