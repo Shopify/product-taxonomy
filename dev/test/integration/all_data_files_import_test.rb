@@ -61,7 +61,14 @@ module ProductTaxonomy
         assert_equal raw_attribute["handle"], real_attribute.handle
         assert_equal raw_attribute["description"], real_attribute.description
         assert_equal raw_attribute["friendly_id"], real_attribute.friendly_id
-        assert_equal raw_attribute["values"], real_attribute.values.map(&:friendly_id)
+        assert_equal raw_attribute.fetch("type"), real_attribute.type
+        if real_attribute.measurement?
+          assert_equal raw_attribute["measurement_type"], real_attribute.measurement_type
+          assert_equal raw_attribute["supported_units"], real_attribute.supported_units
+          assert_empty real_attribute.values
+        else
+          assert_equal raw_attribute["values"], real_attribute.values.map(&:friendly_id)
+        end
       end
 
       extended_attributes.each do |raw_attribute|

@@ -94,6 +94,93 @@ module ProductTaxonomy
       assert_equal ["pattern__abstract"], clothing_pattern.values.map(&:friendly_id)
     end
 
+    test "load_from_source loads measurement attributes" do
+      attributes_yaml_content = <<~YAML
+        ---
+        base_attributes:
+        - id: 12429
+          name: Height
+          description: Specifies the vertical measurement from bottom to top.
+          friendly_id: height
+          handle: height
+          type: measurement
+          measurement_type: dimension
+          supported_units:
+          - cm
+          - in
+        extended_attributes: []
+      YAML
+
+      Attribute.load_from_source(YAML.safe_load(attributes_yaml_content))
+
+      height = Attribute.find_by(friendly_id: "height")
+      assert_instance_of Attribute, height
+      assert_equal "height", height.handle
+      assert_equal "measurement", height.type
+      assert height.measurement?
+      refute height.closed_list?
+      assert_equal "dimension", height.measurement_type
+      assert_equal ["cm", "in"], height.supported_units
+      assert_empty height.values
+    end
+
+    test "load_from_source raises an error if a measurement attribute is missing measurement fields" do
+      yaml_content = <<~YAML
+        ---
+        base_attributes:
+        - id: 12429
+          name: Height
+          description: Specifies the vertical measurement from bottom to top.
+          friendly_id: height
+          handle: height
+          type: measurement
+        extended_attributes: []
+      YAML
+
+      error = assert_raises(ActiveModel::ValidationError) do
+        Attribute.load_from_source(YAML.safe_load(yaml_content))
+      end
+      expected_errors = {
+        measurement_type: [{ error: :blank }],
+        supported_units: [{ error: :blank }],
+      }
+      assert_equal expected_errors, error.model.errors.details
+    end
+
+    test "load_from_source raises an error if a measurement attribute has values" do
+      attributes_yaml_content = <<~YAML
+        ---
+        base_attributes:
+        - id: 12429
+          name: Height
+          description: Specifies the vertical measurement from bottom to top.
+          friendly_id: height
+          handle: height
+          type: measurement
+          measurement_type: dimension
+          supported_units:
+          - cm
+          values:
+          - height__centimeters_cm
+        extended_attributes: []
+      YAML
+      values_yaml_content = <<~YAML
+        - id: 1
+          name: centimeters (cm)
+          friendly_id: height__centimeters_cm
+          handle: height__centimeters-cm
+      YAML
+      Value.load_from_source(YAML.safe_load(values_yaml_content))
+
+      error = assert_raises(ActiveModel::ValidationError) do
+        Attribute.load_from_source(YAML.safe_load(attributes_yaml_content))
+      end
+      expected_errors = {
+        values: [{ error: :present }],
+      }
+      assert_equal expected_errors, error.model.errors.details
+    end
+
     test "load_from_source raises an error if the source YAML does not follow the expected schema" do
       yaml_content = <<~YAML
         ---

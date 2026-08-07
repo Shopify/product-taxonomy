@@ -4,6 +4,64 @@ require "test_helper"
 
 module ProductTaxonomy
   class ExtendedAttributeTest < TestCase
+    test "inherits closed-list metadata from base attribute" do
+      value = Value.new(
+        id: 1,
+        name: "Black",
+        friendly_id: "color__black",
+        handle: "color__black",
+      )
+      attribute = Attribute.new(
+        id: 1,
+        name: "Color",
+        description: "Defines the primary color or pattern, such as blue or striped",
+        friendly_id: "color",
+        handle: "color",
+        values: [value],
+      )
+      extended_attribute = ExtendedAttribute.new(
+        name: "Clothing Color",
+        description: "Color of the clothing",
+        friendly_id: "clothing_color",
+        handle: "clothing_color",
+        values_from: attribute,
+      )
+
+      assert_equal "closed_list", extended_attribute.type
+      assert extended_attribute.closed_list?
+      refute extended_attribute.measurement?
+      assert_nil extended_attribute.measurement_type
+      assert_nil extended_attribute.supported_units
+      assert_equal [value], extended_attribute.values
+    end
+
+    test "inherits measurement metadata from base attribute" do
+      attribute = Attribute.new(
+        id: 12429,
+        name: "Height",
+        description: "Specifies the vertical measurement from bottom to top.",
+        friendly_id: "height",
+        handle: "height",
+        type: "measurement",
+        measurement_type: "dimension",
+        supported_units: ["cm", "in"],
+      )
+      extended_attribute = ExtendedAttribute.new(
+        name: "Interior Height",
+        description: "Specifies the interior vertical measurement from bottom to top.",
+        friendly_id: "interior_height",
+        handle: "interior_height",
+        values_from: attribute,
+      )
+
+      assert_equal "measurement", extended_attribute.type
+      assert extended_attribute.measurement?
+      refute extended_attribute.closed_list?
+      assert_equal "dimension", extended_attribute.measurement_type
+      assert_equal ["cm", "in"], extended_attribute.supported_units
+      assert_empty extended_attribute.values
+    end
+
     test "validates values_from is an attribute" do
       extended_attribute = ExtendedAttribute.new(
         name: "Clothing Color",
