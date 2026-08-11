@@ -26,6 +26,16 @@ jobs:
     - uses: cue-lang/setup-cue@a93fa358375740cd8b0078f76355512b9208acb1 # v1.0.1
       with:
         version: 'v0.7.0'
+    # Integration and schema checks validate generated output, not committed
+    # files. Remove the checked-out dist/ tree so checks cannot accidentally
+    # read committed or stale files, then generate a fresh ephemeral tree from
+    # data/ and VERSION. Unit tests do not consume dist/.
+    - name: Generate distribution files
+      if: matrix.test != 'test_unit'
+      working-directory: dev
+      run: |
+        rm -rf ../dist
+        bundle exec bin/product_taxonomy dist --locales en
     - name: Run tests
       working-directory: dev
       run: |
