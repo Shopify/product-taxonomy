@@ -89,11 +89,17 @@ jobs:
       - name: Create unstable prerelease if needed
         env:
           GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
         run: |
           set -euo pipefail
 
+          notes="Rolling distribution assets generated from main. Version: \`$VERSION\` (built from $GITHUB_SHA)."
+
           if gh release view unstable --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            echo "The unstable prerelease already exists; leaving its tag unchanged."
+            echo "The unstable prerelease already exists; updating its notes and leaving its tag unchanged."
+            gh release edit unstable \
+              --repo "$GITHUB_REPOSITORY" \
+              --notes "$notes"
           else
             gh release create unstable \
               --repo "$GITHUB_REPOSITORY" \
@@ -101,7 +107,7 @@ jobs:
               --prerelease \
               --latest=false \
               --title "Unstable" \
-              --notes "Rolling distribution assets generated from main."
+              --notes "$notes"
           fi
 
       - name: Publish unstable assets
