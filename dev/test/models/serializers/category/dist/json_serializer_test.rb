@@ -215,6 +215,42 @@ module ProductTaxonomy
             assert_equal ["zzz", "aaa"], actual_handles
           end
 
+          test "serialize includes the inherited return reasons for inheriting categories" do
+            ["zzz", "aaa"].each_with_index do |friendly_id, index|
+              ProductTaxonomy::ReturnReason.add(ProductTaxonomy::ReturnReason.new(
+                id: index + 1,
+                name: friendly_id,
+                description: friendly_id,
+                friendly_id:,
+                handle: friendly_id,
+              ))
+            end
+
+            yaml_content = <<~YAML
+              ---
+              - id: aa
+                name: Root
+                children:
+                - aa-1
+                attributes: []
+                return_reasons:
+                - zzz
+                - aaa
+              - id: aa-1
+                name: Child
+                children: []
+                attributes: []
+                return_reasons: inherit
+            YAML
+
+            ProductTaxonomy::Category.load_from_source(YAML.safe_load(yaml_content))
+            child_handles = JsonSerializer
+              .serialize(ProductTaxonomy::Category.find_by(id: "aa-1"))["return_reasons"]
+              .map { |reason| reason["handle"] }
+
+            assert_equal ["zzz", "aaa"], child_handles
+          end
+
           test "serialize_all returns the JSON representation of all categories" do
             stub_localizations
             ProductTaxonomy::Category.stubs(:verticals).returns([@root])

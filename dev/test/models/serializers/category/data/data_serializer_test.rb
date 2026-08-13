@@ -68,6 +68,26 @@ module ProductTaxonomy
             assert_equal expected, DataSerializer.serialize(category)["return_reasons"]
           end
 
+          test "serialize writes `inherit` for categories that inherit their return reasons" do
+            category = ProductTaxonomy::Category.new(id: "bb", name: "Inheriting Root", return_reasons: :inherit)
+
+            assert_equal "inherit", DataSerializer.serialize(category)["return_reasons"]
+          end
+
+          test "serialize writes `inherit` even after inherited reasons have been resolved" do
+            root = ProductTaxonomy::Category.new(
+              id: "dd",
+              name: "Defining Root",
+              return_reasons: [return_reason(1, "color")],
+            )
+            child = ProductTaxonomy::Category.new(id: "dd-1", name: "Inheriting Child", return_reasons: :inherit)
+            root.add_child(child)
+            child.resolve_inherited_return_reasons
+
+            assert_equal ["color"], child.return_reasons.map(&:friendly_id)
+            assert_equal "inherit", DataSerializer.serialize(child)["return_reasons"]
+          end
+
           test "serialize_all returns all categories in data format" do
             expected = [
               {

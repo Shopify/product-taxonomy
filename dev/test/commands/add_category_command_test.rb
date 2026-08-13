@@ -43,6 +43,42 @@ module ProductTaxonomy
       assert_not_nil Category.find_by(id: "aa-5")
     end
 
+    test "execute marks new categories as inheriting return reasons by default" do
+      stub_commands
+
+      AddCategoryCommand.new(name: "New Category", parent_id: "aa").execute
+
+      assert_equal true, Category.find_by(id: "aa-2").inherits_return_reasons
+    end
+
+    test "execute lets the caller opt out of inheriting return reasons" do
+      stub_commands
+
+      AddCategoryCommand.new(name: "New Category", parent_id: "aa", inherits_return_reasons: false).execute
+
+      new_category = Category.find_by(id: "aa-2")
+      assert_equal false, new_category.inherits_return_reasons
+      assert_equal [], new_category.return_reasons
+    end
+
+    test "execute copies inherited reasons from the closest defining ancestor onto the new category" do
+      stub_commands
+      return_reason = ReturnReason.new(
+        id: 1,
+        name: "Too big",
+        description: "Too big",
+        friendly_id: "too_big",
+        handle: "too-big",
+      )
+      @root_category.return_reasons << return_reason
+
+      AddCategoryCommand.new(name: "New Category", parent_id: "aa").execute
+
+      new_category = Category.find_by(id: "aa-2")
+      assert_equal true, new_category.inherits_return_reasons
+      assert_equal ["too_big"], new_category.return_reasons.map(&:friendly_id)
+    end
+
     test "execute raises error when parent category not found" do
       stub_commands
 

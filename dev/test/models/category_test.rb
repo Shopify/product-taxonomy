@@ -287,6 +287,97 @@ module ProductTaxonomy
       assert_equal ["zzz", "aaa"], actual
     end
 
+    test "inherits_return_reasons is false for a category with an explicit return_reasons list" do
+      assert_equal false, Category.new(id: "aa", name: "Root", return_reasons: []).inherits_return_reasons
+    end
+
+    test "inherits_return_reasons is true for a category created with :inherit" do
+      category = Category.new(id: "aa", name: "Root", return_reasons: :inherit)
+
+      assert_equal true, category.inherits_return_reasons
+      assert_equal [], category.return_reasons
+    end
+
+    test "load_from_source copies return reasons into inheriting descendants from the closest defining ancestor" do
+      add_return_reasons("size", "color")
+
+      yaml_content = <<~YAML
+        ---
+        - id: aa
+          name: Apparel & Accessories
+          children:
+          - aa-1
+          return_reasons:
+          - size
+          - color
+        - id: aa-1
+          name: Clothing
+          children:
+          - aa-1-1
+          return_reasons: inherit
+        - id: aa-1-1
+          name: Shirts
+          return_reasons: inherit
+      YAML
+
+      Category.load_from_source(YAML.safe_load(yaml_content))
+
+      assert_equal false, Category.find_by(id: "aa").inherits_return_reasons
+      assert_equal true, Category.find_by(id: "aa-1").inherits_return_reasons
+      assert_equal true, Category.find_by(id: "aa-1-1").inherits_return_reasons
+      assert_equal ["size", "color"], Category.find_by(id: "aa-1").return_reasons.map(&:friendly_id)
+      assert_equal ["size", "color"], Category.find_by(id: "aa-1-1").return_reasons.map(&:friendly_id)
+    end
+
+    test "load_from_source inherits from the closest ancestor that redefines its own reasons" do
+      add_return_reasons("size", "color", "damaged")
+
+      yaml_content = <<~YAML
+        ---
+        - id: aa
+          name: Apparel & Accessories
+          children:
+          - aa-1
+          return_reasons:
+          - size
+        - id: aa-1
+          name: Clothing
+          children:
+          - aa-1-1
+          return_reasons:
+          - color
+          - damaged
+        - id: aa-1-1
+          name: Shirts
+          return_reasons: inherit
+      YAML
+
+      Category.load_from_source(YAML.safe_load(yaml_content))
+
+      assert_equal ["color", "damaged"], Category.find_by(id: "aa-1-1").return_reasons.map(&:friendly_id)
+    end
+
+    test "load_from_source gives each inheriting category its own copy of the reasons" do
+      add_return_reasons("size")
+
+      yaml_content = <<~YAML
+        ---
+        - id: aa
+          name: Apparel & Accessories
+          children:
+          - aa-1
+          return_reasons:
+          - size
+        - id: aa-1
+          name: Clothing
+          return_reasons: inherit
+      YAML
+
+      Category.load_from_source(YAML.safe_load(yaml_content))
+
+      refute_same Category.find_by(id: "aa").return_reasons, Category.find_by(id: "aa-1").return_reasons
+    end
+
     test "load_from_source raises validation error if attribute is not found" do
       yaml_content = <<~YAML
         ---
@@ -511,6 +602,18 @@ module ProductTaxonomy
     end
 
     private
+
+    def add_return_reasons(*friendly_ids)
+      friendly_ids.each_with_index do |friendly_id, index|
+        ReturnReason.add(ReturnReason.new(
+          id: index + 1,
+          name: friendly_id.tr("_", " ").capitalize,
+          description: "Description for #{friendly_id}",
+          friendly_id:,
+          handle: friendly_id.tr("_", "-"),
+        ))
+      end
+    end
 
     def stub_localizations
       fr_yaml = <<~YAML

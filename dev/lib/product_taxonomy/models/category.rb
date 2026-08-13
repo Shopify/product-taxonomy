@@ -22,7 +22,7 @@ module ProductTaxonomy
             id: item["id"],
             name: item["name"],
             attributes: Array(item["attributes"]).map { Attribute.find_by(friendly_id: _1) || _1 },
-            return_reasons: Array(item["return_reasons"]).map { ReturnReason.find_by(friendly_id: _1) || _1 },
+            return_reasons: parse_return_reasons(item["return_reasons"]),
           )
         end
 
@@ -42,6 +42,9 @@ module ProductTaxonomy
           root_nodes << node if node.root?
         end
         @verticals.sort_by!(&:name)
+
+        # Fourth pass: resolve inherited return reasons now that ancestry is known.
+        Category.all.each(&:resolve_inherited_return_reasons)
       end
 
       # Reset all class-level state
@@ -59,6 +62,13 @@ module ProductTaxonomy
       end
 
       private
+
+      # `return_reasons: inherit` in the data marks a category as inheriting; anything else is an explicit list.
+      def parse_return_reasons(value)
+        return :inherit if value == "inherit"
+
+        Array(value).map { |friendly_id| ReturnReason.find_by(friendly_id:) || friendly_id }
+      end
 
       def add_children(type:, item:, parent:)
         item[type]&.each do |child_id|
@@ -87,13 +97,14 @@ module ProductTaxonomy
 
     localized_attr_reader :name, keyed_by: :id
 
-    attr_reader :id, :children, :secondary_children, :attributes, :return_reasons
+    attr_reader :id, :children, :secondary_children, :attributes, :return_reasons, :inherits_return_reasons
     attr_accessor :parent, :secondary_parents
 
     # @param id [String] The ID of the category.
     # @param name [String] The name of the category.
     # @param attributes [Array<Attribute>] The attributes of the category.
-    # @param return_reasons [Array<ReturnReason>] The return reasons for the category.
+    # @param return_reasons [Array<ReturnReason>, :inherit] The return reasons for the category, or `:inherit` to copy
+    #   them from the closest ancestor that defines its own.
     # @param parent [Category] The parent category of the category.
     def initialize(id:, name:, attributes: [], return_reasons: [], parent: nil)
       @id = id
@@ -101,7 +112,8 @@ module ProductTaxonomy
       @children = []
       @secondary_children = []
       @attributes = attributes
-      @return_reasons = return_reasons
+      @inherits_return_reasons = return_reasons == :inherit
+      @return_reasons = @inherits_return_reasons ? [] : return_reasons
       @parent = parent
       @secondary_parents = []
     end
@@ -144,6 +156,15 @@ module ProductTaxonomy
     # @param [ReturnReason] return_reason
     def add_return_reason(return_reason)
       @return_reasons << return_reason
+    end
+
+    # Copy return reasons from the closest ancestor that defines its own, when this category inherits. No-op for
+    # categories that define their own reasons or have no defining ancestor.
+    def resolve_inherited_return_reasons
+      return unless inherits_return_reasons
+
+      source = ancestors.find { |ancestor| !ancestor.inherits_return_reasons }
+      @return_reasons = source.return_reasons.dup if source
     end
 
     #
