@@ -50,7 +50,7 @@ module ProductTaxonomy
             assert_equal expected, DataSerializer.serialize(@root)
           end
 
-          test "serialize sorts return reasons alphanumerically with unknown and other_reason last" do
+          test "serialize preserves the return reason order, moving unknown and other_reason to the end" do
             category = ProductTaxonomy::Category.new(
               id: "cc",
               name: "Sorted Root",
@@ -63,7 +63,7 @@ module ProductTaxonomy
               ],
             )
 
-            expected = ["changed_my_mind", "color", "too_big", "unknown", "other_reason"]
+            expected = ["too_big", "changed_my_mind", "color", "unknown", "other_reason"]
 
             assert_equal expected, DataSerializer.serialize(category)["return_reasons"]
           end
