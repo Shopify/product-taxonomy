@@ -16,11 +16,11 @@ module ProductTaxonomy
             def serialize(category)
               return_reason_ids = category.return_reasons.map(&:friendly_id)
               has_unknown = return_reason_ids.delete('unknown')
-              has_other = return_reason_ids.delete('other')
+              has_other = return_reason_ids.delete('other_reason')
 
               sorted_return_reasons = AlphanumericSorter.sort(return_reason_ids)
               sorted_return_reasons += ['unknown'] if has_unknown
-              sorted_return_reasons += ['other'] if has_other
+              sorted_return_reasons += ['other_reason'] if has_other
               
               {
                 "id" => category.id,

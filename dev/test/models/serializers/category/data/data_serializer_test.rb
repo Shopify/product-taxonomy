@@ -50,6 +50,24 @@ module ProductTaxonomy
             assert_equal expected, DataSerializer.serialize(@root)
           end
 
+          test "serialize sorts return reasons alphanumerically with unknown and other_reason last" do
+            category = ProductTaxonomy::Category.new(
+              id: "cc",
+              name: "Sorted Root",
+              return_reasons: [
+                return_reason(1, "too_big"),
+                return_reason(2, "other_reason"),
+                return_reason(3, "changed_my_mind"),
+                return_reason(4, "unknown"),
+                return_reason(5, "color"),
+              ],
+            )
+
+            expected = ["changed_my_mind", "color", "too_big", "unknown", "other_reason"]
+
+            assert_equal expected, DataSerializer.serialize(category)["return_reasons"]
+          end
+
           test "serialize_all returns all categories in data format" do
             expected = [
               {
@@ -90,6 +108,18 @@ module ProductTaxonomy
             ]
 
             assert_equal expected, DataSerializer.serialize_all(@root)
+          end
+
+          private
+
+          def return_reason(id, friendly_id)
+            ProductTaxonomy::ReturnReason.new(
+              id:,
+              name: friendly_id.tr("_", " ").capitalize,
+              description: "Description for #{friendly_id}",
+              friendly_id:,
+              handle: friendly_id.tr("_", "-"),
+            )
           end
         end
       end
