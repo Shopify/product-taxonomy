@@ -48,7 +48,19 @@ You can think of this repository serving 3 primary users:
 
 ### 🧩 1. Integrators: How to integrate with the taxonomy
 
-Dive straight into [`dist`](./dist/) to find the files you need and integrate this taxonomy into your system.
+Distribution files are published as gzip-compressed assets on [GitHub releases](https://github.com/Shopify/product-taxonomy/releases):
+
+- **Stable** (recommended): `https://github.com/Shopify/product-taxonomy/releases/latest/download/<asset>`, or pin a version with `releases/download/v<version>/<asset>`.
+- **Unstable** (tracks `main`): `https://github.com/Shopify/product-taxonomy/releases/download/unstable/<asset>`.
+
+Assets are named `<basename>.<locale>.<format>.gz`, with nested paths flattened using dots (`categories.en.json.gz`, `integrations.all_mappings.en.json.gz`). Decompress after downloading:
+
+```sh
+curl -L https://github.com/Shopify/product-taxonomy/releases/latest/download/categories.en.json.gz | gunzip > categories.json
+```
+
+> [!IMPORTANT]
+> The committed [`dist/`](./dist/) directory is deprecated and will be removed on **October 31, 2026**. Migrate to the release-asset URLs above before then.
 
 We offer `txt` and `json` formats to make it easy to integrate with your systems. If you have a specific format you'd like to see, please open an issue and let us know!
 

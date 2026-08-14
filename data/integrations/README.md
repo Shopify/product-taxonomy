@@ -24,7 +24,7 @@ data/integrations/
 └── <integration 2> #...
 ```
 
-Generated distribution files for mappings can be found in `dist/{locale}/integrations`.
+Mapping distribution files are published as gzip-compressed [GitHub release assets](https://github.com/Shopify/product-taxonomy/releases) (for example `integrations.all_mappings.en.json.gz` — see the [main README](../../README.md#-1-integrators-how-to-integrate-with-the-taxonomy) for download instructions). Running `bin/product_taxonomy dist` generates them locally under `dist/{locale}/integrations`. The committed `dist/` directory is deprecated and will be removed on October 31, 2026.
 
 ```
 dist/{locale}/integrations/

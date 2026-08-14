@@ -1,3 +1,9 @@
+## Unreleased
+
+#### 📦 Distribution
+
+- Distribution files are now published as gzip-compressed GitHub release assets. Download stable files from `https://github.com/Shopify/product-taxonomy/releases/latest/download/<asset>` (or pin a version with `releases/download/v<version>/<asset>`) and main-tracking files from `releases/download/unstable/<asset>`, then decompress (for example `curl -L <url> | gunzip`). Assets are named `<basename>.<locale>.<format>.gz`, with nested paths flattened using dots (for example `categories.en.json.gz`, `integrations.all_mappings.en.json.gz`). The committed `dist/` directory is deprecated and will be removed from `main` on October 31, 2026.
+
 ## 2026-05
 
 #### 📚 Taxonomy Tree
