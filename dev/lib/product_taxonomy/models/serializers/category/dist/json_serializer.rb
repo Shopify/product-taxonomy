@@ -46,6 +46,7 @@ module ProductTaxonomy
                     "description" => return_reason.description(locale:),
                   }
                 end,
+                "inherits_return_reasons" => category.inherits_return_reasons,
                 "children" => category.children.map do |child|
                   {
                     "id" => child.gid,

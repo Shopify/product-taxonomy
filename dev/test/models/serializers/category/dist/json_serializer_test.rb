@@ -29,6 +29,7 @@ module ProductTaxonomy
               }],
               "ancestors" => [],
               "return_reasons" => [],
+              "inherits_return_reasons" => false,
             }
             assert_equal expected_json, JsonSerializer.serialize(@root)
           end
@@ -50,6 +51,7 @@ module ProductTaxonomy
                 "name" => "Root",
               }],
               "return_reasons" => [],
+              "inherits_return_reasons" => false,
             }
             assert_equal expected_json, JsonSerializer.serialize(@child)
           end
@@ -74,6 +76,7 @@ module ProductTaxonomy
                 },
               ],
               "return_reasons" => [],
+              "inherits_return_reasons" => false,
             }
             assert_equal expected_json, JsonSerializer.serialize(@grandchild)
           end
@@ -94,6 +97,7 @@ module ProductTaxonomy
               }],
               "ancestors" => [],
               "return_reasons" => [],
+              "inherits_return_reasons" => false,
             }
             assert_equal expected_json, JsonSerializer.serialize(@root, locale: "fr")
           end
@@ -244,11 +248,11 @@ module ProductTaxonomy
             YAML
 
             ProductTaxonomy::Category.load_from_source(YAML.safe_load(yaml_content))
-            child_handles = JsonSerializer
-              .serialize(ProductTaxonomy::Category.find_by(id: "aa-1"))["return_reasons"]
-              .map { |reason| reason["handle"] }
+            child_json = JsonSerializer.serialize(ProductTaxonomy::Category.find_by(id: "aa-1"))
+            child_handles = child_json["return_reasons"].map { |reason| reason["handle"] }
 
             assert_equal ["zzz", "aaa"], child_handles
+            assert_equal true, child_json["inherits_return_reasons"]
           end
 
           test "serialize_all returns the JSON representation of all categories" do
@@ -271,6 +275,7 @@ module ProductTaxonomy
                     "children" => [{ "id" => "gid://shopify/TaxonomyCategory/aa-1", "name" => "Child" }],
                     "ancestors" => [],
                     "return_reasons" => [],
+                    "inherits_return_reasons" => false,
                   },
                   {
                     "id" => "gid://shopify/TaxonomyCategory/aa-1",
@@ -282,6 +287,7 @@ module ProductTaxonomy
                     "children" => [{ "id" => "gid://shopify/TaxonomyCategory/aa-1-1", "name" => "Grandchild" }],
                     "ancestors" => [{ "id" => "gid://shopify/TaxonomyCategory/aa", "name" => "Root" }],
                     "return_reasons" => [],
+                    "inherits_return_reasons" => false,
                   },
                   {
                     "id" => "gid://shopify/TaxonomyCategory/aa-1-1",
@@ -296,6 +302,7 @@ module ProductTaxonomy
                       { "id" => "gid://shopify/TaxonomyCategory/aa", "name" => "Root" },
                     ],
                     "return_reasons" => [],
+                    "inherits_return_reasons" => false,
                   },
                 ],
               }],
