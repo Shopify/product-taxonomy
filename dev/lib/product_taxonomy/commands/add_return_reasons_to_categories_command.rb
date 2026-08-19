@@ -58,6 +58,12 @@ module ProductTaxonomy
         sort_return_reasons!(category)
       end
 
+      # Re-resolve inheritance for descendants so inheriting children reflect their ancestors' updated reasons in
+      # the generated artifacts/docs (which read the resolved list, not the literal `inherit`).
+      @categories.each do |category|
+        category.descendants.each(&:resolve_inherited_return_reasons)
+      end
+
       logger.info("Added #{@return_reasons.size} return reason(s) to #{@categories.size} categories")
     end
 

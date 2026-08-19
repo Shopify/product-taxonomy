@@ -360,6 +360,57 @@ module ProductTaxonomy
       assert_includes shoes.return_reasons, @defective_reason
     end
 
+    test "execute on a category that used to inherit updates its inheriting children's values in the artifacts/docs" do
+      # `aa` defines its own reasons; `aa-2` (parent) and its child `aa-2-1` both inherit from it.
+      @root.add_return_reason(@wrong_size_reason)
+      parent = Category.new(id: "aa-2", name: "Shoes", return_reasons: :inherit)
+      child = Category.new(id: "aa-2-1", name: "Sneakers", return_reasons: :inherit)
+      @root.add_child(parent)
+      parent.add_child(child)
+      Category.add(parent)
+      Category.add(child)
+      parent.resolve_inherited_return_reasons
+      child.resolve_inherited_return_reasons
+
+      # Precondition: both inherit `aa`'s single reason.
+      assert parent.inherits_return_reasons
+      assert child.inherits_return_reasons
+      assert_equal [@wrong_size_reason], child.return_reasons
+
+      DumpCategoriesCommand.any_instance.expects(:execute).once
+      SyncEnLocalizationsCommand.any_instance.expects(:execute).once
+      GenerateDocsCommand.any_instance.expects(:execute).once
+
+      # Add a reason only to the parent, not its descendants.
+      AddReturnReasonsToCategoriesCommand.new(
+        return_reason_friendly_ids: "defective_or_doesnt_work",
+        category_ids: "aa-2",
+        include_descendants: false,
+      ).execute
+
+      expected_friendly_ids = [
+        "defective_or_doesnt_work",
+        "changed_my_mind",
+        "item_not_as_described",
+        "received_the_wrong_item",
+        "damaged_or_defective",
+        "unknown",
+        "other_reason",
+      ]
+
+      # The child still inherits, so the data file keeps `inherit`, but it now inherits the parent's new reasons,
+      # so the resolved values feeding the docs/dist artifacts are updated.
+      assert child.inherits_return_reasons
+      assert_equal "inherit", Serializers::Category::Data::DataSerializer.serialize(child)["return_reasons"]
+      assert_equal expected_friendly_ids, child.return_reasons.map(&:friendly_id)
+
+      expected_handles = expected_friendly_ids.map { |friendly_id| ReturnReason.find_by!(friendly_id:).handle }
+      assert_equal(
+        expected_handles.join(","),
+        Serializers::Category::Docs::SiblingsSerializer.serialize(child)["return_reason_handles"],
+      )
+    end
+
     test "execute handles whitespace in comma-separated lists" do
       DumpCategoriesCommand.any_instance.expects(:execute).once
       SyncEnLocalizationsCommand.any_instance.expects(:execute).once
