@@ -61,6 +61,7 @@ module ProductTaxonomy
 
       def disclosure_from(data)
         Disclosure.new(
+          id: data["id"],
           public_id: data["public_id"],
           parent_public_id: data["parent_public_id"],
           name: data["name"],
@@ -80,10 +81,11 @@ module ProductTaxonomy
       end
     end
 
+    validates :id, presence: true, numericality: { only_integer: true }, on: :create
     validates :public_id, presence: true, format: { with: PUBLIC_ID_FORMAT, allow_blank: true }, on: :create
     validates :name, presence: true, on: :create
     validates :internal_label, presence: true, on: :create
-    validates_with ProductTaxonomy::Indexed::UniquenessValidator, attributes: [:public_id], on: :create
+    validates_with ProductTaxonomy::Indexed::UniquenessValidator, attributes: [:public_id, :id], on: :create
     validate :field_types_are_valid, on: :create
     validate :not_self_parenting, on: :create
 
@@ -96,7 +98,8 @@ module ProductTaxonomy
 
     localized_attr_reader :name, :description, :title, :content, keyed_by: :public_id
 
-    attr_reader :public_id,
+    attr_reader :id,
+      :public_id,
       :parent_public_id,
       :internal_label,
       :jurisdictions,
@@ -109,6 +112,7 @@ module ProductTaxonomy
       :disclosure_attribute_values
 
     def initialize(
+      id:,
       public_id:,
       name:,
       internal_label:,
@@ -125,6 +129,7 @@ module ProductTaxonomy
       disclosure_attributes: nil,
       disclosure_attribute_values: nil
     )
+      @id = id
       @public_id = public_id
       @parent_public_id = parent_public_id
       @name = name
@@ -146,7 +151,7 @@ module ProductTaxonomy
     #
     # @return [String]
     def gid
-      "gid://shopify/TaxonomyDisclosure/#{public_id}"
+      "gid://shopify/TaxonomyDisclosure/#{id}"
     end
 
     # Whether this is a grouping/root node (has no parent).

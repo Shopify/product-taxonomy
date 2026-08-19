@@ -97,11 +97,19 @@ module ProductTaxonomy
 
         refute_nil real_disclosure, "Disclosure #{public_id} not found"
         assert_equal public_id, real_disclosure.public_id
+        assert_equal raw_disclosure.fetch("id"), real_disclosure.id
         assert_equal raw_disclosure["parent_public_id"], real_disclosure.parent_public_id
         assert_equal raw_disclosure.fetch("name"), real_disclosure.name
         assert_equal raw_disclosure["jurisdictions"], real_disclosure.jurisdictions
         assert_equal raw_disclosure["display_preferences"], real_disclosure.display_preferences
       end
+    end
+
+    test "every disclosure in disclosures.yml carries a unique integer id" do
+      ids = @raw_disclosures_data.map { |raw_disclosure| raw_disclosure.fetch("id") }
+
+      assert ids.all?(Integer), "every disclosure needs an integer id"
+      assert_equal ids.uniq, ids
     end
 
     # more fragile, but easier sanity check
