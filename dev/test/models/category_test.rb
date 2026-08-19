@@ -298,6 +298,23 @@ module ProductTaxonomy
       assert_equal [], category.return_reasons
     end
 
+    test "raises validation error if a root category inherits return reasons" do
+      category = Category.new(id: "aa", name: "Root", return_reasons: :inherit)
+      error = assert_raises(ActiveModel::ValidationError) { category.validate!(:category_tree_loaded) }
+      expected_errors = {
+        return_reasons: [{ error: :root_cannot_inherit }],
+      }
+      assert_equal expected_errors, error.model.errors.details
+    end
+
+    test "does not raise if a non-root category inherits return reasons" do
+      root = Category.new(id: "aa", name: "Root", return_reasons: [])
+      child = Category.new(id: "aa-1", name: "Child", return_reasons: :inherit)
+      root.add_child(child)
+
+      assert_nothing_raised { child.validate!(:category_tree_loaded) }
+    end
+
     test "add_return_reason on an inheriting category turns off inheritance and drops the inherited reasons" do
       add_return_reasons("size", "color")
       size = ReturnReason.find_by(friendly_id: "size")

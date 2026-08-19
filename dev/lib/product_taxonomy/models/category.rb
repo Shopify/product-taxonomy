@@ -94,6 +94,7 @@ module ProductTaxonomy
     validate :id_starts_with_parent_id, unless: :root?, on: :category_tree_loaded
     validate :children_found?, on: :category_tree_loaded
     validate :secondary_children_found?, on: :category_tree_loaded
+    validate :root_does_not_inherit_return_reasons, if: :root?, on: :category_tree_loaded
 
     localized_attr_reader :name, keyed_by: :id
 
@@ -334,6 +335,13 @@ module ProductTaxonomy
           message: "not found for friendly ID \"#{return_reason}\"",
         )
       end
+    end
+
+    def root_does_not_inherit_return_reasons
+      return unless inherits_return_reasons
+
+      # A root category has no ancestor to inherit from, so `inherit` cannot be resolved.
+      errors.add(:return_reasons, :root_cannot_inherit, message: "cannot be inherited by a root category")
     end
 
     def children_found?
