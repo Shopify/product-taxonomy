@@ -151,10 +151,15 @@ module ProductTaxonomy
       @attributes << attribute
     end
 
-    # Add a return reason to the category
+    # Add a return reason to the category. Explicitly adding a reason means the category defines its own reasons
+    # rather than inheriting them, so the first add on an inheriting category drops the inherited reasons.
     #
     # @param [ReturnReason] return_reason
     def add_return_reason(return_reason)
+      if @inherits_return_reasons
+        @inherits_return_reasons = false
+        @return_reasons = []
+      end
       @return_reasons << return_reason
     end
 

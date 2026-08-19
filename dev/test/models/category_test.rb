@@ -298,6 +298,27 @@ module ProductTaxonomy
       assert_equal [], category.return_reasons
     end
 
+    test "add_return_reason on an inheriting category turns off inheritance and drops the inherited reasons" do
+      add_return_reasons("size", "color")
+      size = ReturnReason.find_by(friendly_id: "size")
+      color = ReturnReason.find_by(friendly_id: "color")
+
+      root = Category.new(id: "aa", name: "Root", return_reasons: [size])
+      child = Category.new(id: "aa-1", name: "Child", return_reasons: :inherit)
+      root.add_child(child)
+      child.resolve_inherited_return_reasons
+
+      assert child.inherits_return_reasons
+      assert_equal [size], child.return_reasons
+
+      child.add_return_reason(color)
+
+      # Explicitly adding a reason converts the category to defining its own reasons, discarding the ones it had
+      # inherited so only the newly added reason remains.
+      refute child.inherits_return_reasons
+      assert_equal [color], child.return_reasons
+    end
+
     test "load_from_source copies return reasons into inheriting descendants from the closest defining ancestor" do
       add_return_reasons("size", "color")
 

@@ -209,6 +209,66 @@ module ProductTaxonomy
       assert_includes @equipment.return_reasons, @defective_reason
     end
 
+    test "execute on a category that inherits its return reasons turns off inheritance and keeps only the new reason" do
+      # `aa-2` inherits from its parent `aa`, which defines its own reasons.
+      @root.add_return_reason(@wrong_size_reason)
+      shoes = Category.new(id: "aa-2", name: "Shoes", return_reasons: :inherit)
+      @root.add_child(shoes)
+      Category.add(shoes)
+      shoes.resolve_inherited_return_reasons
+
+      assert shoes.inherits_return_reasons
+      assert_equal [@wrong_size_reason], shoes.return_reasons
+
+      DumpCategoriesCommand.any_instance.expects(:execute).once
+      SyncEnLocalizationsCommand.any_instance.expects(:execute).once
+      GenerateDocsCommand.any_instance.expects(:execute).once
+
+      AddReturnReasonsToCategoriesCommand.new(
+        return_reason_friendly_ids: "defective_or_doesnt_work",
+        category_ids: "aa-2",
+        include_descendants: false,
+      ).execute
+
+      # Adding a reason turns off inheritance and discards the inherited reasons: only the new reason remains.
+      refute shoes.inherits_return_reasons
+      assert_equal [@defective_reason], shoes.return_reasons
+      assert_equal(
+        ["defective_or_doesnt_work"],
+        Serializers::Category::Data::DataSerializer.serialize(shoes)["return_reasons"],
+      )
+    end
+
+    test "execute does not skip a reason the category only has through inheritance, materializing it instead" do
+      # `aa-2` inherits from its parent `aa`, whose reasons already include the one we add.
+      @root.add_return_reason(@defective_reason)
+      shoes = Category.new(id: "aa-2", name: "Shoes", return_reasons: :inherit)
+      @root.add_child(shoes)
+      Category.add(shoes)
+      shoes.resolve_inherited_return_reasons
+
+      assert shoes.inherits_return_reasons
+      assert_equal [@defective_reason], shoes.return_reasons
+
+      DumpCategoriesCommand.any_instance.expects(:execute).once
+      SyncEnLocalizationsCommand.any_instance.expects(:execute).once
+      GenerateDocsCommand.any_instance.expects(:execute).once
+
+      AddReturnReasonsToCategoriesCommand.new(
+        return_reason_friendly_ids: "defective_or_doesnt_work",
+        category_ids: "aa-2",
+        include_descendants: false,
+      ).execute
+
+      # Even though the reason is present via inheritance, the command still adds it, turning off inheritance.
+      refute shoes.inherits_return_reasons
+      assert_equal [@defective_reason], shoes.return_reasons
+      assert_equal(
+        ["defective_or_doesnt_work"],
+        Serializers::Category::Data::DataSerializer.serialize(shoes)["return_reasons"],
+      )
+    end
+
     test "execute handles whitespace in comma-separated lists" do
       DumpCategoriesCommand.any_instance.expects(:execute).once
       SyncEnLocalizationsCommand.any_instance.expects(:execute).once

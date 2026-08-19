@@ -30,8 +30,14 @@ module ProductTaxonomy
       @categories = @categories.flat_map(&:descendants_and_self) if @include_descendants
 
       @categories.each do |category|
+        if category.inherits_return_reasons
+          logger.info("Category `#{category.name}` inherited its return reasons - replacing them with the new return reason(s)")
+        end
+
         @return_reasons.each do |return_reason|
-          if category.return_reasons.include?(return_reason)
+          # An inheriting category's reasons come from its parent; adding materializes them, so don't treat
+          # inherited reasons as "already present" and skip.
+          if !category.inherits_return_reasons && category.return_reasons.include?(return_reason)
             logger.info("Category `#{category.name}` already has return reason `#{return_reason.friendly_id}` - skipping")
           else
             category.add_return_reason(return_reason)
