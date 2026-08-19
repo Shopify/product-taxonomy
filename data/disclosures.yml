@@ -13,8 +13,10 @@
 # is a grouping/root node; a node that no other node points at is a leaf.
 #
 # Authoring rules (enforced by ProductTaxonomy::Disclosure validations):
-#   - Only leaf nodes define `jurisdictions` and `display_preferences`.
+#   - Only leaf nodes define `jurisdictions`.
 #   - Grouping/root nodes must NOT define `jurisdictions` or `display_preferences`.
+#   - `display_preferences` is optional on a leaf. A leaf that defines it must
+#     also define `title` and `content`, as buyers read that copy.
 #   - `display_preferences.surfaces` values must be a unique subset of
 #     product_page, cart, checkout.
 
@@ -215,5 +217,38 @@
   content: |
     **WARNING:** Drinking distilled spirits, beer, coolers, wine and other alcoholic beverages may increase cancer risk, and, during pregnancy, can cause birth defects. For more information go to www.P65Warnings.ca.gov/alcoholic-beverages.
   source: "https://www.p65warnings.ca.gov/alcoholic-beverages"
+  disclosure_attributes: []
+  disclosure_attribute_values: []
+
+# CPSC eFiling
+- id: 20
+  public_id: cpsc_efiling
+  parent_public_id:
+  name: CPSC eFiling Compliance
+  internal_label: CPSC eFiling Compliance
+  description: "U.S. CPSC import eFiling compliance data transmitted at entry via CBP ACE"
+  legal_citation:
+  symbol:
+  display_requirements:
+  title:
+  content:
+  source:
+  disclosure_attributes: []
+  disclosure_attribute_values: []
+
+- id: 22
+  public_id: us-cpsc-efiling-pga_reference_set
+  parent_public_id: cpsc_efiling
+  name: "CPSC eFiling Reference PGA Message Set (US)"
+  internal_label: "CPSC eFiling Reference PGA Message Set (US)"
+  description: "Shorthand CPSC eFiling submission: a reference to a record pre-uploaded to the CPSC Product Registry."
+  jurisdictions:
+  - US
+  legal_citation: "16 CFR 1110"
+  symbol:
+  display_requirements:
+  title: "CPSC eFiling Reference PGA Message Set"
+  content:
+  source: "https://www.cpsc.gov/Business--Manufacturing/Testing-Certification/eFiling"
   disclosure_attributes: []
   disclosure_attribute_values: []

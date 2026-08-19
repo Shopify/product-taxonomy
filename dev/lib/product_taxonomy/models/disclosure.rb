@@ -4,7 +4,7 @@ module ProductTaxonomy
   # A legally-required product disclosure (e.g. a safety warning or chemical
   # exposure notice). Disclosures form a shallow hierarchy: grouping/root nodes
   # (no `parent_public_id`) organize the axis, and leaf nodes carry the
-  # jurisdiction and display information that merchants surface.
+  # jurisdiction information, plus the optional copy that merchants surface.
   class Disclosure
     include ActiveModel::Validations
     include FormattedValidationErrors
@@ -30,8 +30,11 @@ module ProductTaxonomy
       :source,
     ].freeze
 
-    # Fields required on leaf disclosures (in addition to jurisdictions and display_preferences).
-    LEAF_REQUIRED_FIELDS = [:title, :content, :legal_citation, :source].freeze
+    # Fields required on every leaf disclosure, in addition to jurisdictions.
+    LEAF_REQUIRED_FIELDS = [:legal_citation, :source].freeze
+
+    # Fields required on a leaf disclosure that names a display surface.
+    DISPLAY_REQUIRED_FIELDS = [:title, :content].freeze
 
     class << self
       # Load disclosures from source data. By default this is deserialized from
@@ -94,6 +97,7 @@ module ProductTaxonomy
     validate :hierarchy_is_shallow_and_acyclic, on: :taxonomy_loaded
     validate :jurisdiction_and_display_only_on_leaves, on: :taxonomy_loaded
     validate :leaf_required_fields_present, on: :taxonomy_loaded
+    validate :display_fields_are_consistent, on: :taxonomy_loaded
     validate :display_preferences_surfaces_are_valid, on: :taxonomy_loaded
 
     localized_attr_reader :name, :description, :title, :content, keyed_by: :public_id
@@ -237,9 +241,6 @@ module ProductTaxonomy
     def jurisdiction_and_display_only_on_leaves
       if leaf?
         errors.add(:jurisdictions, :blank, message: "must be present on leaf disclosures") if jurisdictions.blank?
-        if display_preferences.blank?
-          errors.add(:display_preferences, :blank, message: "must be present on leaf disclosures")
-        end
       else
         errors.add(:jurisdictions, :present, message: "must not be set on grouping disclosures") if jurisdictions.present?
         if display_preferences.present?
@@ -253,6 +254,16 @@ module ProductTaxonomy
 
       LEAF_REQUIRED_FIELDS.each do |field|
         errors.add(field, :blank, message: "must be present on leaf disclosures") if send(field).blank?
+      end
+    end
+
+    # A leaf that names a display surface must carry the copy that buyers read.
+    def display_fields_are_consistent
+      return unless leaf?
+      return if display_preferences.blank?
+
+      DISPLAY_REQUIRED_FIELDS.each do |field|
+        errors.add(field, :blank, message: "must be present when display_preferences is set") if send(field).blank?
       end
     end
 

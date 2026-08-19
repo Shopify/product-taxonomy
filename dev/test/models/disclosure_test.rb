@@ -71,7 +71,7 @@ module ProductTaxonomy
       Disclosure.all.each { |disclosure| assert disclosure.valid?(:taxonomy_loaded), disclosure.errors.full_messages.to_s }
     end
 
-    test "taxonomy_loaded validation fails when a leaf is missing jurisdictions or display preferences" do
+    test "taxonomy_loaded validation fails when a leaf is missing jurisdictions" do
       Disclosure.load_from_source(YAML.safe_load(<<~YAML))
         - id: 1
           public_id: group
@@ -87,7 +87,6 @@ module ProductTaxonomy
       leaf = Disclosure.find_by(public_id: "leaf")
       refute leaf.valid?(:taxonomy_loaded)
       assert_includes leaf.errors.attribute_names, :jurisdictions
-      assert_includes leaf.errors.attribute_names, :display_preferences
     end
 
     test "taxonomy_loaded validation fails when a grouping node defines jurisdictions" do
@@ -331,6 +330,66 @@ module ProductTaxonomy
       assert_equal [{ error: :taken }], error.model.errors.details[:id]
     end
 
+    test "taxonomy_loaded validation passes for a leaf without display preferences" do
+      Disclosure.load_from_source(YAML.safe_load(non_displayed_source))
+
+      Disclosure.all.each { |disclosure| assert disclosure.valid?(:taxonomy_loaded), disclosure.errors.full_messages.to_s }
+    end
+
+    test "taxonomy_loaded validation fails when a leaf defines display preferences without a title" do
+      Disclosure.load_from_source(YAML.safe_load(<<~YAML))
+        - id: 1
+          public_id: group
+          name: Group
+          internal_label: Group
+        - id: 2
+          public_id: leaf
+          parent_public_id: group
+          name: Leaf
+          internal_label: Leaf
+          jurisdictions:
+          - US
+          legal_citation: 16 CFR 1110
+          source: https://example.com
+          display_preferences:
+            surfaces:
+            - product_page
+          content: Read this
+      YAML
+
+      leaf = Disclosure.find_by(public_id: "leaf")
+      refute leaf.valid?(:taxonomy_loaded)
+      assert_includes leaf.errors.attribute_names, :title
+      refute_includes leaf.errors.attribute_names, :content
+    end
+
+    test "taxonomy_loaded validation fails when a leaf defines display preferences without content" do
+      Disclosure.load_from_source(YAML.safe_load(<<~YAML))
+        - id: 1
+          public_id: group
+          name: Group
+          internal_label: Group
+        - id: 2
+          public_id: leaf
+          parent_public_id: group
+          name: Leaf
+          internal_label: Leaf
+          jurisdictions:
+          - US
+          legal_citation: 16 CFR 1110
+          source: https://example.com
+          display_preferences:
+            surfaces:
+            - product_page
+          title: Warning
+      YAML
+
+      leaf = Disclosure.find_by(public_id: "leaf")
+      refute leaf.valid?(:taxonomy_loaded)
+      assert_includes leaf.errors.attribute_names, :content
+      refute_includes leaf.errors.attribute_names, :title
+    end
+
     private
 
     def valid_source
@@ -371,6 +430,25 @@ module ProductTaxonomy
           title: Balloon Choking Hazard
           content: Adult supervision required.
           source: https://www.ecfr.gov/current/title-16/section-1500.19
+      YAML
+    end
+
+    def non_displayed_source
+      <<~YAML
+        - id: 20
+          public_id: cpsc_efiling
+          parent_public_id:
+          name: CPSC eFiling Compliance
+          internal_label: CPSC eFiling Compliance
+        - id: 22
+          public_id: us-cpsc-efiling-pga_reference_set
+          parent_public_id: cpsc_efiling
+          name: CPSC eFiling Reference PGA Message Set (US)
+          internal_label: CPSC eFiling Reference PGA Message Set (US)
+          jurisdictions:
+          - US
+          legal_citation: 16 CFR 1110
+          source: https://www.cpsc.gov/Business--Manufacturing/Testing-Certification/eFiling
       YAML
     end
   end
