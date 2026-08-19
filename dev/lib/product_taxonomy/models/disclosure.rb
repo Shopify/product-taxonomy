@@ -57,6 +57,11 @@ module ProductTaxonomy
         @hashed_models = nil
       end
 
+      # Get the next ID for a newly created disclosure.
+      #
+      # @return [Integer] The next ID.
+      def next_id = (all.max_by(&:id)&.id || 0) + 1
+
       private
 
       def disclosure_from(data)
