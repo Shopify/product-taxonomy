@@ -66,6 +66,14 @@ module ProductTaxonomy
         handle: "damaged-or-defective",
       )
 
+      @existing_reason = ReturnReason.new(
+        id: 1003,
+        name: "Existing Reason",
+        description: "A reason already present on the category before the command runs",
+        friendly_id: "existing_reason",
+        handle: "existing-reason",
+      )
+
       ReturnReason.add(@defective_reason)
       ReturnReason.add(@wrong_size_reason)
       ReturnReason.add(@unknown_reason)
@@ -74,6 +82,7 @@ module ProductTaxonomy
       ReturnReason.add(@item_not_as_described_reason)
       ReturnReason.add(@received_wrong_item_reason)
       ReturnReason.add(@damaged_or_defective_reason)
+      ReturnReason.add(@existing_reason)
 
       @root = Category.new(id: "aa", name: "Apparel & Accessories")
       @clothing = Category.new(id: "aa-1", name: "Clothing")
@@ -92,6 +101,8 @@ module ProductTaxonomy
     end
 
     test "execute adds return reasons to specified categories" do
+      @clothing.add_return_reason(@existing_reason)
+
       DumpCategoriesCommand.any_instance.expects(:execute).once
       SyncEnLocalizationsCommand.any_instance.expects(:execute).once
       GenerateDocsCommand.any_instance.expects(:execute).once
@@ -102,7 +113,8 @@ module ProductTaxonomy
         include_descendants: false,
       ).execute
 
-      assert_equal 2, @clothing.return_reasons.size
+      assert_equal 3, @clothing.return_reasons.size
+      assert_includes @clothing.return_reasons, @existing_reason
       assert_includes @clothing.return_reasons, @defective_reason
       assert_includes @clothing.return_reasons, @wrong_size_reason
 
@@ -110,10 +122,39 @@ module ProductTaxonomy
       assert_empty @shirts.return_reasons
     end
 
+    test "execute appends the global reasons when a category starts from an empty list" do
+      DumpCategoriesCommand.any_instance.expects(:execute).once
+      SyncEnLocalizationsCommand.any_instance.expects(:execute).once
+      GenerateDocsCommand.any_instance.expects(:execute).once
+
+      AddReturnReasonsToCategoriesCommand.new(
+        return_reason_friendly_ids: "wrong_size_or_fit",
+        category_ids: "aa-1",
+        include_descendants: false,
+      ).execute
+
+      # The added reason keeps its spot at the front; the six global reasons follow in their defined order.
+      assert_equal(
+        [
+          "wrong_size_or_fit",
+          "changed_my_mind",
+          "item_not_as_described",
+          "received_the_wrong_item",
+          "damaged_or_defective",
+          "unknown",
+          "other_reason",
+        ],
+        @clothing.return_reasons.map(&:friendly_id),
+      )
+    end
+
     test "execute adds return reasons to categories and their descendants when include_descendants is true" do
       DumpCategoriesCommand.any_instance.expects(:execute).once
       SyncEnLocalizationsCommand.any_instance.expects(:execute).once
       GenerateDocsCommand.any_instance.expects(:execute).once
+
+      @clothing.add_return_reason(@existing_reason)
+      @shirts.add_return_reason(@existing_reason)
 
       AddReturnReasonsToCategoriesCommand.new(
         return_reason_friendly_ids: "defective_or_doesnt_work",
@@ -121,10 +162,10 @@ module ProductTaxonomy
         include_descendants: true,
       ).execute
 
-      assert_equal 1, @clothing.return_reasons.size
+      assert_equal 2, @clothing.return_reasons.size
       assert_includes @clothing.return_reasons, @defective_reason
 
-      assert_equal 1, @shirts.return_reasons.size
+      assert_equal 2, @shirts.return_reasons.size
       assert_includes @shirts.return_reasons, @defective_reason
 
       assert_empty @root.return_reasons
@@ -135,16 +176,19 @@ module ProductTaxonomy
       SyncEnLocalizationsCommand.any_instance.expects(:execute).once
       GenerateDocsCommand.any_instance.expects(:execute).once
 
+      @root.add_return_reason(@existing_reason)
+      @clothing.add_return_reason(@existing_reason)
+
       AddReturnReasonsToCategoriesCommand.new(
         return_reason_friendly_ids: "defective_or_doesnt_work",
         category_ids: "aa,aa-1",
         include_descendants: false,
       ).execute
 
-      assert_equal 1, @root.return_reasons.size
+      assert_equal 2, @root.return_reasons.size
       assert_includes @root.return_reasons, @defective_reason
 
-      assert_equal 1, @clothing.return_reasons.size
+      assert_equal 2, @clothing.return_reasons.size
       assert_includes @clothing.return_reasons, @defective_reason
 
       assert_empty @shirts.return_reasons
@@ -230,6 +274,9 @@ module ProductTaxonomy
       Category.add(@second_root)
       Category.add(@equipment)
 
+      @clothing.add_return_reason(@existing_reason)
+      @equipment.add_return_reason(@existing_reason)
+
       dump_command = mock
       dump_command.expects(:execute).once
       DumpCategoriesCommand.expects(:new).with(verticals: ["aa", "bb"]).returns(dump_command)
@@ -243,14 +290,14 @@ module ProductTaxonomy
         include_descendants: false,
       ).execute
 
-      assert_equal 1, @clothing.return_reasons.size
+      assert_equal 2, @clothing.return_reasons.size
       assert_includes @clothing.return_reasons, @defective_reason
 
-      assert_equal 1, @equipment.return_reasons.size
+      assert_equal 2, @equipment.return_reasons.size
       assert_includes @equipment.return_reasons, @defective_reason
     end
 
-    test "execute on a category that inherits its return reasons turns off inheritance and keeps only the new reason" do
+    test "execute on a category that inherits its return reasons turns off inheritance and appends the global reasons" do
       # `aa-2` inherits from its parent `aa`, which defines its own reasons.
       @root.add_return_reason(@wrong_size_reason)
       shoes = Category.new(id: "aa-2", name: "Shoes", return_reasons: :inherit)
@@ -271,13 +318,20 @@ module ProductTaxonomy
         include_descendants: false,
       ).execute
 
-      # Adding a reason turns off inheritance and discards the inherited reasons: only the new reason remains.
+      # Adding a reason turns off inheritance and discards the inherited reasons; since the category now starts
+      # from scratch, the global reasons are appended after the new reason.
       refute shoes.inherits_return_reasons
-      assert_equal [@defective_reason], shoes.return_reasons
-      assert_equal(
-        ["defective_or_doesnt_work"],
-        Serializers::Category::Data::DataSerializer.serialize(shoes)["return_reasons"],
-      )
+      expected = [
+        "defective_or_doesnt_work",
+        "changed_my_mind",
+        "item_not_as_described",
+        "received_the_wrong_item",
+        "damaged_or_defective",
+        "unknown",
+        "other_reason",
+      ]
+      assert_equal expected, shoes.return_reasons.map(&:friendly_id)
+      assert_equal expected, Serializers::Category::Data::DataSerializer.serialize(shoes)["return_reasons"]
     end
 
     test "execute does not skip a reason the category only has through inheritance, materializing it instead" do
@@ -303,11 +357,7 @@ module ProductTaxonomy
 
       # Even though the reason is present via inheritance, the command still adds it, turning off inheritance.
       refute shoes.inherits_return_reasons
-      assert_equal [@defective_reason], shoes.return_reasons
-      assert_equal(
-        ["defective_or_doesnt_work"],
-        Serializers::Category::Data::DataSerializer.serialize(shoes)["return_reasons"],
-      )
+      assert_includes shoes.return_reasons, @defective_reason
     end
 
     test "execute handles whitespace in comma-separated lists" do
@@ -315,17 +365,20 @@ module ProductTaxonomy
       SyncEnLocalizationsCommand.any_instance.expects(:execute).once
       GenerateDocsCommand.any_instance.expects(:execute).once
 
+      @clothing.add_return_reason(@existing_reason)
+      @shirts.add_return_reason(@existing_reason)
+
       AddReturnReasonsToCategoriesCommand.new(
         return_reason_friendly_ids: "defective_or_doesnt_work , wrong_size_or_fit ",
         category_ids: " aa-1 , aa-1-1",
         include_descendants: false,
       ).execute
 
-      assert_equal 2, @clothing.return_reasons.size
+      assert_equal 3, @clothing.return_reasons.size
       assert_includes @clothing.return_reasons, @defective_reason
       assert_includes @clothing.return_reasons, @wrong_size_reason
 
-      assert_equal 2, @shirts.return_reasons.size
+      assert_equal 3, @shirts.return_reasons.size
       assert_includes @shirts.return_reasons, @defective_reason
       assert_includes @shirts.return_reasons, @wrong_size_reason
     end

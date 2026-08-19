@@ -35,8 +35,12 @@ module ProductTaxonomy
       @categories = @categories.flat_map(&:descendants_and_self) if @include_descendants
 
       @categories.each do |category|
+        # A category with no reasons of its own yet — empty, or inheriting from an ancestor — is defined from
+        # scratch, so it also gets the global reasons appended (ordered at the end by sort_return_reasons!).
+        from_scratch = category.inherits_return_reasons || category.return_reasons.empty?
+
         if category.inherits_return_reasons
-          logger.info("Category `#{category.name}` inherited its return reasons - replacing them with the new return reason(s)")
+          logger.info("Category `#{category.name}` inherited its return reasons - replacing them with the new return reason(s) and the global return reasons")
         end
 
         @return_reasons.each do |return_reason|
@@ -49,10 +53,24 @@ module ProductTaxonomy
           end
         end
 
+        append_global_return_reasons!(category) if from_scratch
+
         sort_return_reasons!(category)
       end
 
       logger.info("Added #{@return_reasons.size} return reason(s) to #{@categories.size} categories")
+    end
+
+    def append_global_return_reasons!(category)
+      global_return_reasons.each do |return_reason|
+        next if category.return_reasons.include?(return_reason)
+
+        category.add_return_reason(return_reason)
+      end
+    end
+
+    def global_return_reasons
+      @global_return_reasons ||= GLOBAL_RETURN_REASON_FRIENDLY_IDS.map { |friendly_id| ReturnReason.find_by!(friendly_id:) }
     end
 
     # Move the global reasons to the end in their defined order, preserving the order of all other reasons.
