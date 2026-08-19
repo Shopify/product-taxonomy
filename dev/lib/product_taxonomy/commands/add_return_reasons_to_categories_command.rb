@@ -4,7 +4,12 @@ module ProductTaxonomy
   class AddReturnReasonsToCategoriesCommand < Command
     UNKNOWN_RETURN_REASON_FRIENDLY_ID = "unknown"
     OTHER_RETURN_REASON_FRIENDLY_ID = "other_reason"
-    SPECIAL_RETURN_REASON_FRIENDLY_IDS = [
+    # Global reasons are always ordered at the end of a category's list, in this exact order.
+    GLOBAL_RETURN_REASON_FRIENDLY_IDS = [
+      "changed_my_mind",
+      "item_not_as_described",
+      "received_the_wrong_item",
+      "damaged_or_defective",
       UNKNOWN_RETURN_REASON_FRIENDLY_ID,
       OTHER_RETURN_REASON_FRIENDLY_ID,
     ].freeze
@@ -50,26 +55,17 @@ module ProductTaxonomy
       logger.info("Added #{@return_reasons.size} return reason(s) to #{@categories.size} categories")
     end
 
+    # Move the global reasons to the end in their defined order, preserving the order of all other reasons.
     def sort_return_reasons!(category)
-      special, regular = category.return_reasons.partition do |return_reason|
-        SPECIAL_RETURN_REASON_FRIENDLY_IDS.include?(return_reason.friendly_id)
+      global, regular = category.return_reasons.partition do |return_reason|
+        GLOBAL_RETURN_REASON_FRIENDLY_IDS.include?(return_reason.friendly_id)
       end
 
-      regular_by_friendly_id = regular.each_with_object({}) do |return_reason, by_friendly_id|
-        by_friendly_id[return_reason.friendly_id] = return_reason
-      end
-      sorted_regular = AlphanumericSorter.sort(regular_by_friendly_id.keys).map do |friendly_id|
-        regular_by_friendly_id[friendly_id]
+      sorted_global = GLOBAL_RETURN_REASON_FRIENDLY_IDS.filter_map do |friendly_id|
+        global.find { |return_reason| return_reason.friendly_id == friendly_id }
       end
 
-      special_by_friendly_id = special.each_with_object({}) do |return_reason, by_friendly_id|
-        by_friendly_id[return_reason.friendly_id] = return_reason
-      end
-      sorted_special = SPECIAL_RETURN_REASON_FRIENDLY_IDS.filter_map do |friendly_id|
-        special_by_friendly_id[friendly_id]
-      end
-
-      category.return_reasons.replace(sorted_regular + sorted_special)
+      category.return_reasons.replace(regular + sorted_global)
     end
 
     def update_data_files!

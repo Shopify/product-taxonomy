@@ -6,38 +6,74 @@ module ProductTaxonomy
   class AddReturnReasonsToCategoriesCommandTest < TestCase
     setup do
       @defective_reason = ReturnReason.new(
-        id: 1,
+        id: 1001,
         name: "Defective or Doesn't Work",
         description: "Item is broken, defective, or doesn't function as expected",
         friendly_id: "defective_or_doesnt_work",
         handle: "defective-or-doesnt-work",
       )
       @wrong_size_reason = ReturnReason.new(
-        id: 2,
+        id: 1002,
         name: "Wrong Size or Fit",
         description: "Item doesn't fit properly or is not the expected size",
         friendly_id: "wrong_size_or_fit",
         handle: "wrong-size-or-fit",
       )
       @unknown_reason = ReturnReason.new(
-        id: 3,
+        id: 1,
         name: "Unknown",
-        description: "Unknown return reason",
+        description: "The reason for the return has not been specified or could not be determined.",
         friendly_id: "unknown",
         handle: "unknown",
       )
       @other_reason = ReturnReason.new(
-        id: 4,
+        id: 5,
         name: "Other",
-        description: "Other return reason not listed",
+        description: "The reason for the return does not fit into any of the predefined categories.",
         friendly_id: "other_reason",
         handle: "other-reason",
+      )
+
+      @changed_my_mind_reason = ReturnReason.new(
+        id: 2,
+        name: "Changed my mind",
+        description: "The customer no longer wants the item after purchasing it, regardless of product " \
+          "quality or accuracy.",
+        friendly_id: "changed_my_mind",
+        handle: "changed-my-mind",
+      )
+      @item_not_as_described_reason = ReturnReason.new(
+        id: 3,
+        name: "Item not as described",
+        description: "The product does not match the description, images, or specifications provided in " \
+          "the listing.",
+        friendly_id: "item_not_as_described",
+        handle: "item-not-as-described",
+      )
+      @received_wrong_item_reason = ReturnReason.new(
+        id: 4,
+        name: "Received the wrong item",
+        description: "The customer received a different product than what was ordered or expected.",
+        friendly_id: "received_the_wrong_item",
+        handle: "received-the-wrong-item",
+      )
+      @damaged_or_defective_reason = ReturnReason.new(
+        id: 6,
+        name: "Damaged or defective",
+        description: "The item arrived with physical damage, manufacturing defects, or does not function " \
+          "as intended.",
+        friendly_id: "damaged_or_defective",
+        handle: "damaged-or-defective",
       )
 
       ReturnReason.add(@defective_reason)
       ReturnReason.add(@wrong_size_reason)
       ReturnReason.add(@unknown_reason)
       ReturnReason.add(@other_reason)
+      ReturnReason.add(@changed_my_mind_reason)
+      ReturnReason.add(@item_not_as_described_reason)
+      ReturnReason.add(@received_wrong_item_reason)
+      ReturnReason.add(@damaged_or_defective_reason)
 
       @root = Category.new(id: "aa", name: "Apparel & Accessories")
       @clothing = Category.new(id: "aa-1", name: "Clothing")
@@ -134,28 +170,33 @@ module ProductTaxonomy
       assert_equal 1, @clothing.return_reasons.count { |reason| reason == @defective_reason }
     end
 
-    test "execute sorts return reasons with special ones at the end" do
+    test "execute keeps non-global reasons in order and moves the global reasons to the end in their defined order" do
       DumpCategoriesCommand.any_instance.expects(:execute).once
       SyncEnLocalizationsCommand.any_instance.expects(:execute).once
       GenerateDocsCommand.any_instance.expects(:execute).once
 
       AddReturnReasonsToCategoriesCommand.new(
-        return_reason_friendly_ids: "unknown,defective_or_doesnt_work,other_reason,wrong_size_or_fit",
+        return_reason_friendly_ids:
+          "other_reason,changed_my_mind,wrong_size_or_fit,unknown,damaged_or_defective," \
+          "defective_or_doesnt_work,received_the_wrong_item,item_not_as_described",
         category_ids: "aa-1",
         include_descendants: false,
       ).execute
 
-      assert_equal 4, @clothing.return_reasons.size
-
-      # Check that regular reasons are sorted alphabetically
-      regular_reasons = @clothing.return_reasons.take(2)
-      assert_equal @defective_reason, regular_reasons[0]
-      assert_equal @wrong_size_reason, regular_reasons[1]
-
-      # Check that 'unknown' and 'other' are at the end in that order
-      special_reasons = @clothing.return_reasons.drop(2)
-      assert_equal @unknown_reason, special_reasons[0]
-      assert_equal @other_reason, special_reasons[1]
+      # Non-global reasons keep the given order at the front; the global reasons follow in their defined order.
+      assert_equal(
+        [
+          "wrong_size_or_fit",
+          "defective_or_doesnt_work",
+          "changed_my_mind",
+          "item_not_as_described",
+          "received_the_wrong_item",
+          "damaged_or_defective",
+          "unknown",
+          "other_reason",
+        ],
+        @clothing.return_reasons.map(&:friendly_id),
+      )
     end
 
     test "execute raises error when return reason is not found" do
