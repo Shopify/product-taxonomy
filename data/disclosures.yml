@@ -5,9 +5,9 @@
 # warnings, chemical exposure notices, etc.) that a merchant may need to show
 # for a product in a given jurisdiction.
 #
-# Row-shaped: each entry maps 1:1 to a disclosure node, keyed by a stable
-# `public_id` slug — never rename an existing `public_id`, as downstream systems
-# reference it by global ID.
+# Row-shaped: each entry maps 1:1 to a disclosure node. `id` is the numeric
+# identity that global IDs use, and `public_id` is a stable slug. Never change
+# an existing `id` or `public_id`, as downstream systems reference both.
 #
 # Hierarchy is expressed via `parent_public_id`. A node with no `parent_public_id`
 # is a grouping/root node; a node that no other node points at is a leaf.
@@ -19,7 +19,8 @@
 #     product_page, cart, checkout.
 
 # Choking hazards
-- public_id: choking_hazard
+- id: 1
+  public_id: choking_hazard
   parent_public_id:
   name: Choking hazards
   internal_label: Choking hazards
@@ -33,7 +34,8 @@
   disclosure_attributes: []
   disclosure_attribute_values: []
 
-- public_id: us-cpsc-choking_small_parts
+- id: 2
+  public_id: us-cpsc-choking_small_parts
   parent_public_id: choking_hazard
   name: "Choking Hazard — Small Parts (US)"
   internal_label: "Choking Hazard — Small Parts (US)"
@@ -53,7 +55,8 @@
   disclosure_attributes: []
   disclosure_attribute_values: []
 
-- public_id: us-cpsc-choking_balloons
+- id: 3
+  public_id: us-cpsc-choking_balloons
   parent_public_id: choking_hazard
   name: "Choking Hazard — Balloons (US)"
   internal_label: "Choking Hazard — Balloons (US)"
@@ -73,7 +76,8 @@
   disclosure_attributes: []
   disclosure_attribute_values: []
 
-- public_id: us-cpsc-choking_marbles
+- id: 4
+  public_id: us-cpsc-choking_marbles
   parent_public_id: choking_hazard
   name: "Choking Hazard — Marbles (US)"
   internal_label: "Choking Hazard — Marbles (US)"
@@ -93,7 +97,8 @@
   disclosure_attributes: []
   disclosure_attribute_values: []
 
-- public_id: us-cpsc-choking_small_balls
+- id: 5
+  public_id: us-cpsc-choking_small_balls
   parent_public_id: choking_hazard
   name: "Choking Hazard — Small Balls (US)"
   internal_label: "Choking Hazard — Small Balls (US)"
@@ -114,7 +119,8 @@
   disclosure_attribute_values: []
 
 # Chemical exposures
-- public_id: chemical_exposure
+- id: 12
+  public_id: chemical_exposure
   parent_public_id:
   name: Chemical exposures
   internal_label: Chemical exposures
@@ -128,7 +134,8 @@
   disclosure_attributes: []
   disclosure_attribute_values: []
 
-- public_id: us-ca-prop65-cancer
+- id: 13
+  public_id: us-ca-prop65-cancer
   parent_public_id: chemical_exposure
   name: "Prop 65 — Cancer (US-CA)"
   internal_label: "Prop 65 — Cancer (US-CA)"
@@ -148,7 +155,8 @@
   disclosure_attributes: []
   disclosure_attribute_values: []
 
-- public_id: us-ca-prop65-reproductive
+- id: 14
+  public_id: us-ca-prop65-reproductive
   parent_public_id: chemical_exposure
   name: "Prop 65 — Reproductive Harm (US-CA)"
   internal_label: "Prop 65 — Reproductive Harm (US-CA)"
@@ -168,7 +176,8 @@
   disclosure_attributes: []
   disclosure_attribute_values: []
 
-- public_id: us-ca-prop65-cancer_reproductive
+- id: 15
+  public_id: us-ca-prop65-cancer_reproductive
   parent_public_id: chemical_exposure
   name: "Prop 65 — Cancer and Reproductive Harm (US-CA)"
   internal_label: "Prop 65 — Cancer and Reproductive Harm (US-CA)"
@@ -188,7 +197,8 @@
   disclosure_attributes: []
   disclosure_attribute_values: []
 
-- public_id: us-ca-prop65-alcohol
+- id: 16
+  public_id: us-ca-prop65-alcohol
   parent_public_id: chemical_exposure
   name: "Prop 65 — Alcohol (US-CA)"
   internal_label: "Prop 65 — Alcohol (US-CA)"
