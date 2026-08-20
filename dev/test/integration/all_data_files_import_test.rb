@@ -96,8 +96,9 @@ module ProductTaxonomy
         real_disclosure = Disclosure.find_by(public_id: public_id)
 
         refute_nil real_disclosure, "Disclosure #{public_id} not found"
-        assert_equal public_id, real_disclosure.public_id
         assert_equal raw_disclosure.fetch("id"), real_disclosure.id
+        assert_equal "gid://shopify/TaxonomyDisclosure/#{raw_disclosure.fetch("id")}", real_disclosure.gid
+        assert_equal public_id, real_disclosure.public_id
         assert_equal raw_disclosure["parent_public_id"], real_disclosure.parent_public_id
         assert_equal raw_disclosure.fetch("name"), real_disclosure.name
         assert_equal raw_disclosure["jurisdictions"], real_disclosure.jurisdictions
@@ -110,6 +111,14 @@ module ProductTaxonomy
 
       assert ids.all?(Integer), "every disclosure needs an integer id"
       assert_equal ids.uniq, ids
+    end
+
+    test "disclosures.yml round-trips through DataSerializer without losing data" do
+      serialized = Serializers::Disclosure::Data::DataSerializer.serialize_all
+
+      # Any mismatch means a field exists in the data file that the serializer
+      # doesn't carry — running `dump_disclosures` would silently delete it.
+      assert_equal @raw_disclosures_data, serialized
     end
 
     # more fragile, but easier sanity check

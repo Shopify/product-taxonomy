@@ -2,7 +2,7 @@
 
 module ProductTaxonomy
   class SyncEnLocalizationsCommand < Command
-    PERMITTED_TARGETS = ["categories", "attributes", "values", "return_reasons"].freeze
+    PERMITTED_TARGETS = ["categories", "attributes", "values", "return_reasons", "disclosures"].freeze
 
     def initialize(options)
       super
@@ -20,6 +20,7 @@ module ProductTaxonomy
       sync_attributes if @targets.include?("attributes")
       sync_values if @targets.include?("values")
       sync_return_reasons if @targets.include?("return_reasons")
+      sync_disclosures if @targets.include?("disclosures")
     end
 
     private
@@ -48,10 +49,17 @@ module ProductTaxonomy
       write_localizations("return_reasons", localizations)
     end
 
+    def sync_disclosures
+      logger.info("Syncing disclosures...")
+      localizations = Serializers::Disclosure::Data::LocalizationsSerializer.serialize_all
+      write_localizations("disclosures", localizations)
+    end
+
     # Writes localization data to a YAML file with 'context' keys converted to comments.
     # Uses YAML.dump for formatting, then injects context as comments above entry fields.
     def write_localizations(type, localizations)
       file_path = File.expand_path("localizations/#{type}/en.yml", ProductTaxonomy.data_path)
+      FileUtils.mkdir_p(File.dirname(file_path))
 
       context_map = extract_contexts(localizations)
 

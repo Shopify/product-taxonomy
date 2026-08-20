@@ -42,7 +42,7 @@ module ProductTaxonomy
     def generate_dist_files(locale)
       logger.info("Generating files for #{locale}")
       FileUtils.mkdir_p("#{OUTPUT_PATH}/#{locale}")
-      ["categories", "attributes", "taxonomy", "attribute_values", "return_reasons"].each do |type|
+      ["categories", "attributes", "taxonomy", "attribute_values", "return_reasons", "disclosures"].each do |type|
         generate_txt_file(locale:, type:)
         generate_json_file(locale:, type:)
       end
@@ -55,6 +55,7 @@ module ProductTaxonomy
       when "taxonomy" then return
       when "attribute_values" then Serializers::Value::Dist::TxtSerializer.serialize_all(version: @version, locale:)
       when "return_reasons" then Serializers::ReturnReason::Dist::TxtSerializer.serialize_all(version: @version, locale:)
+      when "disclosures" then Serializers::Disclosure::Dist::TxtSerializer.serialize_all(version: @version, locale:)
       end
 
       File.write("#{OUTPUT_PATH}/#{locale}/#{type}.txt", txt_data + "\n")
@@ -78,6 +79,8 @@ module ProductTaxonomy
         Serializers::Value::Dist::JsonSerializer.serialize_all(version: @version, locale:)
       when "return_reasons"
         Serializers::ReturnReason::Dist::JsonSerializer.serialize_all(version: @version, locale:)
+      when "disclosures"
+        Serializers::Disclosure::Dist::JsonSerializer.serialize_all(version: @version, locale:)
       end
 
       File.write("#{OUTPUT_PATH}/#{locale}/#{type}.json", JSON.pretty_generate(json_data) + "\n")
