@@ -2,18 +2,6 @@
 
 module ProductTaxonomy
   class AddReturnReasonsToCategoriesCommand < Command
-    UNKNOWN_RETURN_REASON_FRIENDLY_ID = "unknown"
-    OTHER_RETURN_REASON_FRIENDLY_ID = "other_reason"
-    # Global reasons are always ordered at the end of a category's list, in this exact order.
-    GLOBAL_RETURN_REASON_FRIENDLY_IDS = [
-      "changed_my_mind",
-      "item_not_as_described",
-      "received_the_wrong_item",
-      "damaged_or_defective",
-      UNKNOWN_RETURN_REASON_FRIENDLY_ID,
-      OTHER_RETURN_REASON_FRIENDLY_ID,
-    ].freeze
-
     def initialize(options)
       super
       load_taxonomy
@@ -68,24 +56,20 @@ module ProductTaxonomy
     end
 
     def append_global_return_reasons!(category)
-      global_return_reasons.each do |return_reason|
+      ReturnReason.global.each do |return_reason|
         next if category.return_reasons.include?(return_reason)
 
         category.add_return_reason(return_reason)
       end
     end
 
-    def global_return_reasons
-      @global_return_reasons ||= GLOBAL_RETURN_REASON_FRIENDLY_IDS.map { |friendly_id| ReturnReason.find_by!(friendly_id:) }
-    end
-
     # Move the global reasons to the end in their defined order, preserving the order of all other reasons.
     def sort_return_reasons!(category)
       global, regular = category.return_reasons.partition do |return_reason|
-        GLOBAL_RETURN_REASON_FRIENDLY_IDS.include?(return_reason.friendly_id)
+        ReturnReason::GLOBAL_FRIENDLY_IDS.include?(return_reason.friendly_id)
       end
 
-      sorted_global = GLOBAL_RETURN_REASON_FRIENDLY_IDS.filter_map do |friendly_id|
+      sorted_global = ReturnReason::GLOBAL_FRIENDLY_IDS.filter_map do |friendly_id|
         global.find { |return_reason| return_reason.friendly_id == friendly_id }
       end
 

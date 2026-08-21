@@ -416,6 +416,65 @@ module ProductTaxonomy
       refute_same Category.find_by(id: "aa").return_reasons, Category.find_by(id: "aa-1").return_reasons
     end
 
+    test "load_from_source falls back to the global return reasons when a category defines an empty list" do
+      add_return_reasons(*ReturnReason::GLOBAL_FRIENDLY_IDS)
+
+      yaml_content = <<~YAML
+        ---
+        - id: aa
+          name: Apparel & Accessories
+          children:
+          - aa-1
+          return_reasons: []
+        - id: aa-1
+          name: Clothing
+          return_reasons: inherit
+      YAML
+
+      Category.load_from_source(YAML.safe_load(yaml_content))
+
+      root = Category.find_by(id: "aa")
+      child = Category.find_by(id: "aa-1")
+
+      assert_equal ReturnReason::GLOBAL_FRIENDLY_IDS, root.return_reasons.map(&:friendly_id)
+      # The inheriting child copies the defaulted list rather than staying empty.
+      assert_equal ReturnReason::GLOBAL_FRIENDLY_IDS, child.return_reasons.map(&:friendly_id)
+    end
+
+    test "load_from_source gives each defaulted category its own copy of the global return reasons" do
+      add_return_reasons(*ReturnReason::GLOBAL_FRIENDLY_IDS)
+
+      yaml_content = <<~YAML
+        ---
+        - id: aa
+          name: Apparel & Accessories
+          return_reasons: []
+        - id: bb
+          name: Baby & Toddler
+          return_reasons: []
+      YAML
+
+      Category.load_from_source(YAML.safe_load(yaml_content))
+
+      refute_same Category.find_by(id: "aa").return_reasons, Category.find_by(id: "bb").return_reasons
+    end
+
+    test "load_from_source keeps explicitly defined return reasons instead of the global ones" do
+      add_return_reasons("size", *ReturnReason::GLOBAL_FRIENDLY_IDS)
+
+      yaml_content = <<~YAML
+        ---
+        - id: aa
+          name: Apparel & Accessories
+          return_reasons:
+          - size
+      YAML
+
+      Category.load_from_source(YAML.safe_load(yaml_content))
+
+      assert_equal ["size"], Category.find_by(id: "aa").return_reasons.map(&:friendly_id)
+    end
+
     test "load_from_source raises validation error if attribute is not found" do
       yaml_content = <<~YAML
         ---

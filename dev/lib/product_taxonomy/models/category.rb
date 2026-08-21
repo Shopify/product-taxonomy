@@ -43,7 +43,9 @@ module ProductTaxonomy
         end
         @verticals.sort_by!(&:name)
 
-        # Fourth pass: resolve inherited return reasons now that ancestry is known.
+        # Fourth pass: fall back to the global reasons where a category defines none, then resolve inheritance so
+        # that inheriting categories copy their ancestor's final list.
+        Category.all.each(&:apply_default_return_reasons)
         Category.all.each(&:resolve_inherited_return_reasons)
       end
 
@@ -162,6 +164,14 @@ module ProductTaxonomy
         @return_reasons = []
       end
       @return_reasons << return_reason
+    end
+
+    # Materialize the global return reasons for a category that defines none of its own, so runtime consumers always
+    # get the baseline set. Inheriting categories are skipped; they copy their ancestor's list once it is final.
+    def apply_default_return_reasons
+      return if inherits_return_reasons || return_reasons.any?
+
+      @return_reasons = ReturnReason.global.dup
     end
 
     # Copy return reasons from the closest ancestor that defines its own, when this category inherits. No-op for

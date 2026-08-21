@@ -88,6 +88,19 @@ module ProductTaxonomy
             assert_equal "inherit", DataSerializer.serialize(child)["return_reasons"]
           end
 
+          test "serialize writes out the global reasons a category fell back to" do
+            ProductTaxonomy::ReturnReason::GLOBAL_FRIENDLY_IDS.each_with_index do |friendly_id, index|
+              ProductTaxonomy::ReturnReason.add(return_reason(index + 1, friendly_id))
+            end
+            category = ProductTaxonomy::Category.new(id: "ee", name: "Empty Root", return_reasons: [])
+            category.apply_default_return_reasons
+
+            assert_equal(
+              ProductTaxonomy::ReturnReason::GLOBAL_FRIENDLY_IDS,
+              DataSerializer.serialize(category)["return_reasons"],
+            )
+          end
+
           test "serialize_all returns all categories in data format" do
             expected = [
               {
