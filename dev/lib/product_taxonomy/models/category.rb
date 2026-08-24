@@ -43,10 +43,9 @@ module ProductTaxonomy
         end
         @verticals.sort_by!(&:name)
 
-        # Fourth pass: fall back to the global reasons where a category defines none, then resolve inheritance so
-        # that inheriting categories copy their ancestor's final list.
-        Category.all.each(&:apply_default_return_reasons)
-        Category.all.each(&:resolve_inherited_return_reasons)
+      # Fourth pass: derive each category's effective return reasons — inherited from the closest defining ancestor,
+      # falling back to the global reasons when nothing is defined.
+        Category.all.each(&:resolve_return_reasons)
       end
 
       # Reset all class-level state
@@ -100,7 +99,13 @@ module ProductTaxonomy
 
     localized_attr_reader :name, keyed_by: :id
 
-    attr_reader :id, :children, :secondary_children, :attributes, :return_reasons, :inherits_return_reasons
+    attr_reader :id,
+      :children,
+      :secondary_children,
+      :attributes,
+      :return_reasons,
+      :defined_return_reasons,
+      :inherits_return_reasons
     attr_accessor :parent, :secondary_parents
 
     # @param id [String] The ID of the category.
@@ -116,7 +121,8 @@ module ProductTaxonomy
       @secondary_children = []
       @attributes = attributes
       @inherits_return_reasons = return_reasons == :inherit
-      @return_reasons = @inherits_return_reasons ? [] : return_reasons
+      @defined_return_reasons = @inherits_return_reasons ? [] : return_reasons.dup
+      @return_reasons = @defined_return_reasons.dup
       @parent = parent
       @secondary_parents = []
     end
@@ -161,26 +167,22 @@ module ProductTaxonomy
     def add_return_reason(return_reason)
       if @inherits_return_reasons
         @inherits_return_reasons = false
-        @return_reasons = []
+        @defined_return_reasons = []
       end
-      @return_reasons << return_reason
-    end
-
-    # Materialize the global return reasons for a category that defines none of its own, so runtime consumers always
-    # get the baseline set. Inheriting categories are skipped; they copy their ancestor's list once it is final.
-    def apply_default_return_reasons
-      return if inherits_return_reasons || return_reasons.any?
-
-      @return_reasons = ReturnReason.global.dup
+      @defined_return_reasons << return_reason
+      resolve_return_reasons
     end
 
     # Copy return reasons from the closest ancestor that defines its own, when this category inherits. No-op for
     # categories that define their own reasons or have no defining ancestor.
-    def resolve_inherited_return_reasons
-      return unless inherits_return_reasons
+    def resolve_return_reasons
+      @return_reasons = if inherits_return_reasons
+        ancestors.find { |ancestor| !ancestor.inherits_return_reasons }&.defined_return_reasons&.dup || []
+      else
+        defined_return_reasons.dup
+      end
 
-      source = ancestors.find { |ancestor| !ancestor.inherits_return_reasons }
-      @return_reasons = source.return_reasons.dup if source
+      @return_reasons = ReturnReason.global.dup if @return_reasons.empty?
     end
 
     #

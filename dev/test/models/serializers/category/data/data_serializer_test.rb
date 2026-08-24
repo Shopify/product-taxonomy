@@ -82,23 +82,46 @@ module ProductTaxonomy
             )
             child = ProductTaxonomy::Category.new(id: "dd-1", name: "Inheriting Child", return_reasons: :inherit)
             root.add_child(child)
-            child.resolve_inherited_return_reasons
+            child.resolve_return_reasons
 
             assert_equal ["color"], child.return_reasons.map(&:friendly_id)
             assert_equal "inherit", DataSerializer.serialize(child)["return_reasons"]
           end
 
-          test "serialize writes out the global reasons a category fell back to" do
+          test "serialize keeps the empty list of a category that fell back to the global reasons" do
+            ProductTaxonomy::ReturnReason::GLOBAL_FRIENDLY_IDS.each_with_index do |friendly_id, index|
+              ProductTaxonomy::ReturnReason.add(return_reason(index + 1, friendly_id))
+            end
+            ProductTaxonomy::Category.reset
+            ProductTaxonomy::Category.load_from_source([
+              { "id" => "ee", "name" => "Empty Root", "children" => [], "attributes" => [], "return_reasons" => [] },
+            ])
+            category = ProductTaxonomy::Category.find_by(id: "ee")
+
+            # The resolved list is the global set, so runtime consumers get the baseline.
+            assert_equal(
+              ProductTaxonomy::ReturnReason::GLOBAL_FRIENDLY_IDS,
+              category.return_reasons.map(&:friendly_id),
+            )
+            # But the data file keeps `[]`, otherwise dumping the taxonomy would freeze today's global reasons into
+            # `data/categories/*.yml` and the category would stop picking up new ones.
+            assert_empty category.defined_return_reasons
+            assert_equal [], DataSerializer.serialize(category)["return_reasons"]
+          end
+
+          test "serialize writes out only the reasons a category defines after falling back to the global ones" do
             ProductTaxonomy::ReturnReason::GLOBAL_FRIENDLY_IDS.each_with_index do |friendly_id, index|
               ProductTaxonomy::ReturnReason.add(return_reason(index + 1, friendly_id))
             end
             category = ProductTaxonomy::Category.new(id: "ee", name: "Empty Root", return_reasons: [])
-            category.apply_default_return_reasons
+            category.resolve_return_reasons
+            category.add_return_reason(return_reason(99, "too_big"))
 
-            assert_equal(
-              ProductTaxonomy::ReturnReason::GLOBAL_FRIENDLY_IDS,
-              DataSerializer.serialize(category)["return_reasons"],
-            )
+            # The global reasons the category only resolved to are not written back as if it defined them.
+            # `AddReturnReasonsToCategoriesCommand` is what appends them explicitly when it defines a list from
+            # scratch, so the category does not silently lose them.
+            assert_equal ["too_big"], category.defined_return_reasons.map(&:friendly_id)
+            assert_equal ["too_big"], DataSerializer.serialize(category)["return_reasons"]
           end
 
           test "serialize_all returns all categories in data format" do

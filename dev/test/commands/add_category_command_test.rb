@@ -59,6 +59,33 @@ module ProductTaxonomy
       new_category = Category.find_by(id: "aa-2")
       assert_equal false, new_category.inherits_return_reasons
       assert_equal [], new_category.return_reasons
+      assert_empty new_category.defined_return_reasons
+    end
+
+    test "execute gives a category that opts out of inheriting the global reasons, keeping `[]` in the data file" do
+      stub_commands
+      ReturnReason::GLOBAL_FRIENDLY_IDS.each_with_index do |friendly_id, index|
+        ReturnReason.add(ReturnReason.new(
+          id: index + 1,
+          name: friendly_id.tr("_", " ").capitalize,
+          description: friendly_id,
+          friendly_id:,
+          handle: friendly_id.tr("_", "-"),
+        ))
+      end
+
+      AddCategoryCommand.new(name: "New Category", parent_id: "aa", inherits_return_reasons: false).execute
+
+      new_category = Category.find_by(id: "aa-2")
+      # The category resolves to the global baseline like one loaded from source...
+      assert_equal ReturnReason::GLOBAL_FRIENDLY_IDS, new_category.return_reasons.map(&:friendly_id)
+      # ...but it defines none of them, so the dumped data file keeps `[]` and a future global reason is picked up
+      # automatically.
+      assert_empty new_category.defined_return_reasons
+      assert_equal(
+        [],
+        Serializers::Category::Data::DataSerializer.serialize(new_category)["return_reasons"],
+      )
     end
 
     test "execute copies inherited reasons from the closest defining ancestor onto the new category" do
@@ -70,13 +97,15 @@ module ProductTaxonomy
         friendly_id: "too_big",
         handle: "too-big",
       )
-      @root_category.return_reasons << return_reason
+      @root_category.add_return_reason(return_reason)
 
       AddCategoryCommand.new(name: "New Category", parent_id: "aa").execute
 
       new_category = Category.find_by(id: "aa-2")
       assert_equal true, new_category.inherits_return_reasons
       assert_equal ["too_big"], new_category.return_reasons.map(&:friendly_id)
+      # The reasons come from the ancestor, so the new category defines none and stays `inherit` in the data file.
+      assert_empty new_category.defined_return_reasons
     end
 
     test "execute raises error when parent category not found" do

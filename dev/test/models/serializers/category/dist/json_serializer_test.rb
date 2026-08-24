@@ -253,6 +253,38 @@ module ProductTaxonomy
 
             assert_equal ["zzz", "aaa"], child_handles
             assert_equal true, child_json["inherits_return_reasons"]
+            # `dist` carries the materialized list even though the child defines none of the reasons itself.
+            assert_empty ProductTaxonomy::Category.find_by(id: "aa-1").defined_return_reasons
+          end
+
+          test "serialize includes the global return reasons for a category that defines an empty list" do
+            ProductTaxonomy::ReturnReason::GLOBAL_FRIENDLY_IDS.each_with_index do |friendly_id, index|
+              ProductTaxonomy::ReturnReason.add(ProductTaxonomy::ReturnReason.new(
+                id: index + 1,
+                name: friendly_id,
+                description: friendly_id,
+                friendly_id:,
+                handle: friendly_id.tr("_", "-"),
+              ))
+            end
+
+            yaml_content = <<~YAML
+              ---
+              - id: aa
+                name: Root
+                children: []
+                attributes: []
+                return_reasons: []
+            YAML
+
+            ProductTaxonomy::Category.load_from_source(YAML.safe_load(yaml_content))
+            json = JsonSerializer.serialize(ProductTaxonomy::Category.find_by(id: "aa"))
+
+            # `dist` carries the materialized baseline even though `data` keeps the empty list.
+            expected_handles = ProductTaxonomy::ReturnReason::GLOBAL_FRIENDLY_IDS.map { _1.tr("_", "-") }
+            assert_equal expected_handles, json["return_reasons"].map { _1["handle"] }
+            assert_equal false, json["inherits_return_reasons"]
+            assert_empty ProductTaxonomy::Category.find_by(id: "aa").defined_return_reasons
           end
 
           test "serialize_all returns the JSON representation of all categories" do

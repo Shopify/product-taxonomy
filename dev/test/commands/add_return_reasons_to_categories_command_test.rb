@@ -117,9 +117,13 @@ module ProductTaxonomy
       assert_includes @clothing.return_reasons, @existing_reason
       assert_includes @clothing.return_reasons, @defective_reason
       assert_includes @clothing.return_reasons, @wrong_size_reason
+      # The category defines every reason it has, so the data file and the artifacts list the same set.
+      assert_equal @clothing.return_reasons, @clothing.defined_return_reasons
 
       assert_empty @root.return_reasons
+      assert_empty @root.defined_return_reasons
       assert_empty @shirts.return_reasons
+      assert_empty @shirts.defined_return_reasons
     end
 
     test "execute appends the global reasons when a category starts from an empty list" do
@@ -148,6 +152,39 @@ module ProductTaxonomy
       )
     end
 
+    test "execute appends the global reasons when a category only resolved to them" do
+      # Mirrors a category loaded from source with `return_reasons: []`: it resolves to the global reasons without
+      # defining any of its own.
+      @clothing.resolve_return_reasons
+      assert_empty @clothing.defined_return_reasons
+      assert_equal ReturnReason::GLOBAL_FRIENDLY_IDS, @clothing.return_reasons.map(&:friendly_id)
+
+      DumpCategoriesCommand.any_instance.expects(:execute).once
+      SyncEnLocalizationsCommand.any_instance.expects(:execute).once
+      GenerateDocsCommand.any_instance.expects(:execute).once
+
+      AddReturnReasonsToCategoriesCommand.new(
+        return_reason_friendly_ids: "wrong_size_or_fit",
+        category_ids: "aa-1",
+        include_descendants: false,
+      ).execute
+
+      # The global reasons are written out explicitly alongside the new one, so the category does not lose them once
+      # its list is no longer empty in the data file.
+      expected = [
+        "wrong_size_or_fit",
+        "changed_my_mind",
+        "item_not_as_described",
+        "received_the_wrong_item",
+        "damaged_or_defective",
+        "unknown",
+        "other_reason",
+      ]
+      assert_equal expected, @clothing.return_reasons.map(&:friendly_id)
+      assert_equal expected, @clothing.defined_return_reasons.map(&:friendly_id)
+      assert_equal expected, Serializers::Category::Data::DataSerializer.serialize(@clothing)["return_reasons"]
+    end
+
     test "execute adds return reasons to categories and their descendants when include_descendants is true" do
       DumpCategoriesCommand.any_instance.expects(:execute).once
       SyncEnLocalizationsCommand.any_instance.expects(:execute).once
@@ -164,11 +201,14 @@ module ProductTaxonomy
 
       assert_equal 2, @clothing.return_reasons.size
       assert_includes @clothing.return_reasons, @defective_reason
+      assert_equal @clothing.return_reasons, @clothing.defined_return_reasons
 
       assert_equal 2, @shirts.return_reasons.size
       assert_includes @shirts.return_reasons, @defective_reason
+      assert_equal @shirts.return_reasons, @shirts.defined_return_reasons
 
       assert_empty @root.return_reasons
+      assert_empty @root.defined_return_reasons
     end
 
     test "execute adds return reasons to multiple categories" do
@@ -187,11 +227,14 @@ module ProductTaxonomy
 
       assert_equal 2, @root.return_reasons.size
       assert_includes @root.return_reasons, @defective_reason
+      assert_equal @root.return_reasons, @root.defined_return_reasons
 
       assert_equal 2, @clothing.return_reasons.size
       assert_includes @clothing.return_reasons, @defective_reason
+      assert_equal @clothing.return_reasons, @clothing.defined_return_reasons
 
       assert_empty @shirts.return_reasons
+      assert_empty @shirts.defined_return_reasons
     end
 
     test "execute skips adding return reasons that are already present" do
@@ -212,6 +255,7 @@ module ProductTaxonomy
       assert_includes @clothing.return_reasons, @wrong_size_reason
 
       assert_equal 1, @clothing.return_reasons.count { |reason| reason == @defective_reason }
+      assert_equal 1, @clothing.defined_return_reasons.count { |reason| reason == @defective_reason }
     end
 
     test "execute keeps non-global reasons in order and moves the global reasons to the end in their defined order" do
@@ -241,6 +285,8 @@ module ProductTaxonomy
         ],
         @clothing.return_reasons.map(&:friendly_id),
       )
+      # The data file is ordered the same way, so a dump/reload round-trips the order.
+      assert_equal @clothing.return_reasons, @clothing.defined_return_reasons
     end
 
     test "execute raises error when return reason is not found" do
@@ -292,9 +338,11 @@ module ProductTaxonomy
 
       assert_equal 2, @clothing.return_reasons.size
       assert_includes @clothing.return_reasons, @defective_reason
+      assert_equal @clothing.return_reasons, @clothing.defined_return_reasons
 
       assert_equal 2, @equipment.return_reasons.size
       assert_includes @equipment.return_reasons, @defective_reason
+      assert_equal @equipment.return_reasons, @equipment.defined_return_reasons
     end
 
     test "execute on a category that inherits its return reasons turns off inheritance and appends the global reasons" do
@@ -303,10 +351,11 @@ module ProductTaxonomy
       shoes = Category.new(id: "aa-2", name: "Shoes", return_reasons: :inherit)
       @root.add_child(shoes)
       Category.add(shoes)
-      shoes.resolve_inherited_return_reasons
+      shoes.resolve_return_reasons
 
       assert shoes.inherits_return_reasons
       assert_equal [@wrong_size_reason], shoes.return_reasons
+      assert_empty shoes.defined_return_reasons
 
       DumpCategoriesCommand.any_instance.expects(:execute).once
       SyncEnLocalizationsCommand.any_instance.expects(:execute).once
@@ -331,6 +380,7 @@ module ProductTaxonomy
         "other_reason",
       ]
       assert_equal expected, shoes.return_reasons.map(&:friendly_id)
+      assert_equal expected, shoes.defined_return_reasons.map(&:friendly_id)
       assert_equal expected, Serializers::Category::Data::DataSerializer.serialize(shoes)["return_reasons"]
     end
 
@@ -340,10 +390,11 @@ module ProductTaxonomy
       shoes = Category.new(id: "aa-2", name: "Shoes", return_reasons: :inherit)
       @root.add_child(shoes)
       Category.add(shoes)
-      shoes.resolve_inherited_return_reasons
+      shoes.resolve_return_reasons
 
       assert shoes.inherits_return_reasons
       assert_equal [@defective_reason], shoes.return_reasons
+      assert_empty shoes.defined_return_reasons
 
       DumpCategoriesCommand.any_instance.expects(:execute).once
       SyncEnLocalizationsCommand.any_instance.expects(:execute).once
@@ -358,6 +409,7 @@ module ProductTaxonomy
       # Even though the reason is present via inheritance, the command still adds it, turning off inheritance.
       refute shoes.inherits_return_reasons
       assert_includes shoes.return_reasons, @defective_reason
+      assert_includes shoes.defined_return_reasons, @defective_reason
     end
 
     test "execute on a category that used to inherit updates its inheriting children's values in the artifacts/docs" do
@@ -369,13 +421,15 @@ module ProductTaxonomy
       parent.add_child(child)
       Category.add(parent)
       Category.add(child)
-      parent.resolve_inherited_return_reasons
-      child.resolve_inherited_return_reasons
+      parent.resolve_return_reasons
+      child.resolve_return_reasons
 
       # Precondition: both inherit `aa`'s single reason.
       assert parent.inherits_return_reasons
       assert child.inherits_return_reasons
       assert_equal [@wrong_size_reason], child.return_reasons
+      assert_empty parent.defined_return_reasons
+      assert_empty child.defined_return_reasons
 
       DumpCategoriesCommand.any_instance.expects(:execute).once
       SyncEnLocalizationsCommand.any_instance.expects(:execute).once
@@ -403,6 +457,7 @@ module ProductTaxonomy
       assert child.inherits_return_reasons
       assert_equal "inherit", Serializers::Category::Data::DataSerializer.serialize(child)["return_reasons"]
       assert_equal expected_friendly_ids, child.return_reasons.map(&:friendly_id)
+      assert_equal [], child.defined_return_reasons.map(&:friendly_id)
 
       expected_handles = expected_friendly_ids.map { |friendly_id| ReturnReason.find_by!(friendly_id:).handle }
       assert_equal(
@@ -432,6 +487,9 @@ module ProductTaxonomy
       assert_equal 3, @shirts.return_reasons.size
       assert_includes @shirts.return_reasons, @defective_reason
       assert_includes @shirts.return_reasons, @wrong_size_reason
+
+      assert_equal @clothing.return_reasons, @clothing.defined_return_reasons
+      assert_equal @shirts.return_reasons, @shirts.defined_return_reasons
     end
   end
 end

@@ -283,8 +283,9 @@ module ProductTaxonomy
 
       Category.load_from_source(YAML.safe_load(yaml_content))
 
-      actual = Category.verticals.first.return_reasons.map(&:friendly_id)
-      assert_equal ["zzz", "aaa"], actual
+      vertical = Category.verticals.first
+      assert_equal ["zzz", "aaa"], vertical.return_reasons.map(&:friendly_id)
+      assert_equal ["zzz", "aaa"], vertical.defined_return_reasons.map(&:friendly_id)
     end
 
     test "inherits_return_reasons is false for a category with an explicit return_reasons list" do
@@ -296,6 +297,7 @@ module ProductTaxonomy
 
       assert_equal true, category.inherits_return_reasons
       assert_equal [], category.return_reasons
+      assert_empty category.defined_return_reasons
     end
 
     test "raises validation error if a root category inherits return reasons" do
@@ -323,10 +325,12 @@ module ProductTaxonomy
       root = Category.new(id: "aa", name: "Root", return_reasons: [size])
       child = Category.new(id: "aa-1", name: "Child", return_reasons: :inherit)
       root.add_child(child)
-      child.resolve_inherited_return_reasons
+      child.resolve_return_reasons
 
       assert child.inherits_return_reasons
       assert_equal [size], child.return_reasons
+      # An inheriting category defines nothing of its own, which is what keeps `inherit` in the data file.
+      assert_empty child.defined_return_reasons
 
       child.add_return_reason(color)
 
@@ -334,6 +338,32 @@ module ProductTaxonomy
       # inherited so only the newly added reason remains.
       refute child.inherits_return_reasons
       assert_equal [color], child.return_reasons
+      assert_equal [color], child.defined_return_reasons
+    end
+
+    test "add_return_reason keeps the effective reasons in sync with the defined ones" do
+      add_return_reasons("size", *ReturnReason::GLOBAL_FRIENDLY_IDS)
+      size = ReturnReason.find_by(friendly_id: "size")
+
+      yaml_content = <<~YAML
+        ---
+        - id: aa
+          name: Apparel & Accessories
+          return_reasons: []
+      YAML
+      Category.load_from_source(YAML.safe_load(yaml_content))
+      category = Category.find_by(id: "aa")
+
+      # Precondition: the category defines nothing and only resolved to the global reasons.
+      assert_empty category.defined_return_reasons
+      assert_equal ReturnReason::GLOBAL_FRIENDLY_IDS, category.return_reasons.map(&:friendly_id)
+
+      category.add_return_reason(size)
+
+      # Once the category defines a list of its own, the effective reasons are that list: the globals it had merely
+      # resolved to are not left behind, otherwise `data` and `dist` would disagree about the category.
+      assert_equal [size], category.defined_return_reasons
+      assert_equal category.defined_return_reasons, category.return_reasons
     end
 
     test "load_from_source copies return reasons into inheriting descendants from the closest defining ancestor" do
@@ -365,6 +395,10 @@ module ProductTaxonomy
       assert_equal true, Category.find_by(id: "aa-1-1").inherits_return_reasons
       assert_equal ["size", "color"], Category.find_by(id: "aa-1").return_reasons.map(&:friendly_id)
       assert_equal ["size", "color"], Category.find_by(id: "aa-1-1").return_reasons.map(&:friendly_id)
+      # Only the defining ancestor holds the reasons; the descendants resolved them without defining any.
+      assert_equal ["size", "color"], Category.find_by(id: "aa").defined_return_reasons.map(&:friendly_id)
+      assert_empty Category.find_by(id: "aa-1").defined_return_reasons
+      assert_empty Category.find_by(id: "aa-1-1").defined_return_reasons
     end
 
     test "load_from_source inherits from the closest ancestor that redefines its own reasons" do
@@ -393,6 +427,8 @@ module ProductTaxonomy
       Category.load_from_source(YAML.safe_load(yaml_content))
 
       assert_equal ["color", "damaged"], Category.find_by(id: "aa-1-1").return_reasons.map(&:friendly_id)
+      assert_equal ["color", "damaged"], Category.find_by(id: "aa-1").defined_return_reasons.map(&:friendly_id)
+      assert_empty Category.find_by(id: "aa-1-1").defined_return_reasons
     end
 
     test "load_from_source gives each inheriting category its own copy of the reasons" do
@@ -414,6 +450,7 @@ module ProductTaxonomy
       Category.load_from_source(YAML.safe_load(yaml_content))
 
       refute_same Category.find_by(id: "aa").return_reasons, Category.find_by(id: "aa-1").return_reasons
+      refute_same Category.find_by(id: "aa").defined_return_reasons, Category.find_by(id: "aa-1").defined_return_reasons
     end
 
     test "load_from_source falls back to the global return reasons when a category defines an empty list" do
@@ -437,8 +474,38 @@ module ProductTaxonomy
       child = Category.find_by(id: "aa-1")
 
       assert_equal ReturnReason::GLOBAL_FRIENDLY_IDS, root.return_reasons.map(&:friendly_id)
+      assert_equal [], root.defined_return_reasons.map(&:friendly_id)
       # The inheriting child copies the defaulted list rather than staying empty.
       assert_equal ReturnReason::GLOBAL_FRIENDLY_IDS, child.return_reasons.map(&:friendly_id)
+      assert_equal [], child.defined_return_reasons.map(&:friendly_id)
+    end
+
+    test "load_from_source resolves return reasons regardless of the order categories appear in the source" do
+      add_return_reasons(*ReturnReason::GLOBAL_FRIENDLY_IDS)
+
+      # The inheriting child is listed before the ancestor it inherits from, which is valid source data.
+      yaml_content = <<~YAML
+        ---
+        - id: aa-1
+          name: Clothing
+          return_reasons: inherit
+        - id: aa
+          name: Apparel & Accessories
+          children:
+          - aa-1
+          return_reasons: []
+      YAML
+
+      Category.load_from_source(YAML.safe_load(yaml_content))
+
+      assert_equal(
+        ReturnReason::GLOBAL_FRIENDLY_IDS,
+        Category.find_by(id: "aa-1").return_reasons.map(&:friendly_id),
+      )
+      assert_equal(
+        [],
+        Category.find_by(id: "aa-1").defined_return_reasons.map(&:friendly_id),
+      )
     end
 
     test "load_from_source gives each defaulted category its own copy of the global return reasons" do
@@ -457,6 +524,7 @@ module ProductTaxonomy
       Category.load_from_source(YAML.safe_load(yaml_content))
 
       refute_same Category.find_by(id: "aa").return_reasons, Category.find_by(id: "bb").return_reasons
+      refute_same Category.find_by(id: "aa").defined_return_reasons, Category.find_by(id: "bb").defined_return_reasons
     end
 
     test "load_from_source keeps explicitly defined return reasons instead of the global ones" do
@@ -473,6 +541,7 @@ module ProductTaxonomy
       Category.load_from_source(YAML.safe_load(yaml_content))
 
       assert_equal ["size"], Category.find_by(id: "aa").return_reasons.map(&:friendly_id)
+      assert_equal ["size"], Category.find_by(id: "aa").defined_return_reasons.map(&:friendly_id)
     end
 
     test "load_from_source raises validation error if attribute is not found" do

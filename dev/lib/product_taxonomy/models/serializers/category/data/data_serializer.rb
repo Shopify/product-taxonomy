@@ -30,7 +30,7 @@ module ProductTaxonomy
             def serialize_return_reasons(category)
               return "inherit" if category.inherits_return_reasons
 
-              return_reason_ids = category.return_reasons.map(&:friendly_id)
+              return_reason_ids = category.defined_return_reasons.map(&:friendly_id)
               has_unknown = return_reason_ids.delete("unknown")
               has_other = return_reason_ids.delete("other_reason")
               return_reason_ids << "unknown" if has_unknown

@@ -25,7 +25,7 @@ module ProductTaxonomy
       @categories.each do |category|
         # A category with no reasons of its own yet — empty, or inheriting from an ancestor — is defined from
         # scratch, so it also gets the global reasons appended (ordered at the end by sort_return_reasons!).
-        from_scratch = category.inherits_return_reasons || category.return_reasons.empty?
+        from_scratch = category.inherits_return_reasons || category.defined_return_reasons.empty?
 
         if category.inherits_return_reasons
           logger.info("Category `#{category.name}` inherited its return reasons - replacing them with the new return reason(s) and the global return reasons")
@@ -49,7 +49,9 @@ module ProductTaxonomy
       # Re-resolve inheritance for descendants so inheriting children reflect their ancestors' updated reasons in
       # the generated artifacts/docs (which read the resolved list, not the literal `inherit`).
       @categories.each do |category|
-        category.descendants.each(&:resolve_inherited_return_reasons)
+        category.descendants.each do |descendant|
+          descendant.resolve_return_reasons if descendant.inherits_return_reasons
+        end
       end
 
       logger.info("Added #{@return_reasons.size} return reason(s) to #{@categories.size} categories")
@@ -57,7 +59,7 @@ module ProductTaxonomy
 
     def append_global_return_reasons!(category)
       ReturnReason.global.each do |return_reason|
-        next if category.return_reasons.include?(return_reason)
+        next if category.defined_return_reasons.include?(return_reason)
 
         category.add_return_reason(return_reason)
       end
@@ -65,7 +67,7 @@ module ProductTaxonomy
 
     # Move the global reasons to the end in their defined order, preserving the order of all other reasons.
     def sort_return_reasons!(category)
-      global, regular = category.return_reasons.partition do |return_reason|
+      global, regular = category.defined_return_reasons.partition do |return_reason|
         ReturnReason::GLOBAL_FRIENDLY_IDS.include?(return_reason.friendly_id)
       end
 
@@ -73,7 +75,8 @@ module ProductTaxonomy
         global.find { |return_reason| return_reason.friendly_id == friendly_id }
       end
 
-      category.return_reasons.replace(regular + sorted_global)
+      category.defined_return_reasons.replace(regular + sorted_global)
+      category.resolve_return_reasons
     end
 
     def update_data_files!

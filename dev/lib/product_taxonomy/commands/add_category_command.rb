@@ -38,7 +38,7 @@ module ProductTaxonomy
       Category.add(@new_category)
       # `load_from_source` resolves inheritance for the full tree; do it here too so the in-process dump/docs below see
       # the inherited reasons for the category we just added.
-      @new_category.resolve_inherited_return_reasons
+      @new_category.resolve_return_reasons
       logger.info("Created category `#{@new_category.name}` with id=`#{@new_category.id}`")
     end
 
