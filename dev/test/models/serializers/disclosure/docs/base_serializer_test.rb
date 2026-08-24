@@ -16,6 +16,11 @@ module ProductTaxonomy
               description: "Cancer warning",
               jurisdictions: ["US-CA"],
               legal_citation: "Cal. Code Regs. tit. 27",
+              title: "Prop 65 Cancer Warning",
+              content: "**WARNING:** Cancer",
+              source: "https://oehha.ca.gov/proposition-65",
+              symbol: "https://cdn.shopify.com/static/product-disclosures/default-warning-yellow.png",
+              display_requirements: "Display the disclosure pre-purchase.",
             )
           end
 
@@ -25,17 +30,33 @@ module ProductTaxonomy
               "public_id" => "us-ca-prop65-cancer",
               "name" => "Cancer",
               "description" => "Cancer warning",
-              "kind" => "display",
               "parent_public_id" => nil,
-              "parent_name" => nil,
               "jurisdictions" => ["US-CA"],
               "legal_citation" => "Cal. Code Regs. tit. 27",
+              "title" => "Prop 65 Cancer Warning",
+              "content" => "**WARNING:** Cancer",
+              "source" => "https://oehha.ca.gov/proposition-65",
+              "symbol" => "https://cdn.shopify.com/static/product-disclosures/default-warning-yellow.png",
+              "display_requirements" => "Display the disclosure pre-purchase.",
+              "children" => [],
             }
 
             assert_equal expected, BaseSerializer.serialize(@disclosure)
           end
 
-          test "serialize marks a disclosure that has children as a grouping node" do
+          test "serialize returns the parent public id of a child disclosure" do
+            child = ProductTaxonomy::Disclosure.new(
+              id: 3,
+              public_id: "us-ca-prop65-birth_defects",
+              name: "Birth defects",
+              internal_label: "Prop 65 birth defects",
+              parent_public_id: "us-ca-prop65",
+            )
+
+            assert_equal "us-ca-prop65", BaseSerializer.serialize(child)["parent_public_id"]
+          end
+
+          test "serialize lists the children of a grouping disclosure" do
             group = ProductTaxonomy::Disclosure.new(
               id: 2,
               public_id: "us-ca-prop65",
@@ -49,10 +70,12 @@ module ProductTaxonomy
               internal_label: "Prop 65 birth defects",
               parent_public_id: "us-ca-prop65",
             )
-            ProductTaxonomy::Disclosure.stubs(:all).returns([group, child])
+            ProductTaxonomy::Disclosure.add(group)
+            ProductTaxonomy::Disclosure.add(child)
 
-            assert_equal "grouping", BaseSerializer.serialize(group)["kind"]
-            assert_equal "display", BaseSerializer.serialize(child)["kind"]
+            expected_children = [{ "public_id" => "us-ca-prop65-birth_defects", "name" => "Birth defects" }]
+            assert_equal expected_children, BaseSerializer.serialize(group)["children"]
+            assert_empty BaseSerializer.serialize(child)["children"]
           end
 
           test "serialize_all returns all disclosures" do

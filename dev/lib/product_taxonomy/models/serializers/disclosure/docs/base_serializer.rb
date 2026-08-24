@@ -13,25 +13,21 @@ module ProductTaxonomy
             # @param [Disclosure] disclosure
             # @return [Hash]
             def serialize(disclosure)
-              parent = disclosure.parent
               {
                 "id" => disclosure.gid,
                 "public_id" => disclosure.public_id,
                 "name" => disclosure.name,
                 "description" => disclosure.description,
-                "kind" => kind(disclosure),
-                "parent_public_id" => parent&.public_id,
-                "parent_name" => parent&.name,
+                "parent_public_id" => disclosure.parent_public_id,
                 "jurisdictions" => disclosure.jurisdictions,
                 "legal_citation" => disclosure.legal_citation,
+                "title" => disclosure.title,
+                "content" => disclosure.content,
+                "source" => disclosure.source,
+                "symbol" => disclosure.symbol,
+                "display_requirements" => disclosure.display_requirements,
+                "children" => disclosure.children.map { { "public_id" => _1.public_id, "name" => _1.name } },
               }
-            end
-
-            private
-
-            # Every leaf must carry display preferences, so a leaf is always displayed.
-            def kind(disclosure)
-              disclosure.leaf? ? "display" : "grouping"
             end
           end
         end

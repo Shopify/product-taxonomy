@@ -29,6 +29,19 @@ const resetToDisclosure = (publicId) => {
   showDisclosureByPublicId(publicId);
 };
 
+const setupNodeClicks = () => {
+  qq('.disclosure-node').forEach((node) => {
+    const showNode = () => resetToDisclosure(node.dataset.publicId);
+    node.addEventListener('click', showNode);
+    node.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        showNode();
+      }
+    });
+  });
+};
+
 const setInitialDisclosure = () => {
   const publicId = getQueryParam(disclosureQueryParamKey);
   if (publicId) {
@@ -49,5 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
       {name: 'disclosure.description', weight: 0.5},
     ],
   );
+  setupNodeClicks();
   setInitialDisclosure();
 });
