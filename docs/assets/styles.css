@@ -229,6 +229,23 @@ a:active {
   display: block;
 }
 
+.disclosure-node {
+  cursor: pointer;
+  width: fit-content;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.5rem;
+}
+
+.disclosure-node:hover,
+.disclosure-node:focus-visible {
+  background-color: rgba(241, 241, 241, 1);
+}
+
+.disclosure-content p {
+  display: inline;
+  margin: 0;
+}
+
 .value-container__id {
   display: flex;
   align-items: center;
@@ -308,7 +325,8 @@ a:active {
     display: grid;
     grid-template-columns: 0.75fr 1.25fr;
   }
-  .return-reason-container {
+  .return-reason-container,
+  .disclosure-container {
     display: grid;
     grid-template-columns: 0.75fr 1.25fr;
   }

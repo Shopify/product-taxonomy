@@ -4,8 +4,15 @@
     <li class="header-links__li header-links__li--first-child"><a href="{{ site.baseurl }}/">⬅︎ back to all releases</a></li>
     <li class="header-links__li"><a href="{{ site.baseurl }}/releases/{{ page.target }}">Categories</a></li>
     <li class="header-links__li"><a href="{{ site.baseurl }}/releases/{{ page.target }}/attributes">Attributes</a></li>
+    {% if site.data[page.target].reversed_values %}
     <li class="header-links__li"><a href="{{ site.baseurl }}/releases/{{ page.target }}/values">Values</a></li>
+    {% endif %}
+    {% if site.data[page.target].reversed_return_reasons %}
     <li class="header-links__li"><a href="{{ site.baseurl }}/releases/{{ page.target }}/return_reasons">Return Reasons</a></li>
+    {% endif %}
+    {% if site.data[page.target].disclosures %}
+    <li class="header-links__li"><a href="{{ site.baseurl }}/releases/{{ page.target }}/disclosures">Disclosures</a></li>
+    {% endif %}
   </ul>
   <p>
     Shopify's public product taxonomy serves as an open-source, standardized, and global classification of products sold

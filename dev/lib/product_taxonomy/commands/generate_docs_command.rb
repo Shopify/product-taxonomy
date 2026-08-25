@@ -77,6 +77,14 @@ module ProductTaxonomy
       return_reason_search_index_json = JSON.fast_generate(Serializers::ReturnReason::Docs::SearchSerializer.serialize_all)
       File.write("#{data_target}/return_reason_search_index.json", return_reason_search_index_json + "\n")
 
+      logger.info("Generating disclosures...")
+      disclosures_yml = YAML.dump(Serializers::Disclosure::Docs::YamlSerializer.serialize_all, line_width: -1)
+      File.write("#{data_target}/disclosures.yml", disclosures_yml)
+
+      logger.info("Generating disclosure search index...")
+      disclosure_search_index_json = JSON.fast_generate(Serializers::Disclosure::Docs::SearchSerializer.serialize_all)
+      File.write("#{data_target}/disclosure_search_index.json", disclosure_search_index_json + "\n")
+
       logger.info("Generating values with categories...")
       reversed_values_yml = YAML.dump(
         Serializers::Value::Docs::ReversedSerializer.serialize_all,
@@ -115,6 +123,13 @@ module ProductTaxonomy
       content.gsub!("TARGET", @version)
       content.gsub!("GH_URL", "https://github.com/Shopify/product-taxonomy/releases/tag/v#{@version}")
       File.write("#{release_path}/return_reasons.html", content)
+
+      logger.info("Generating disclosures.html...")
+      content = File.read(File.expand_path("_releases/_disclosures_template.html", self.class.docs_path))
+      content.gsub!("TITLE", @version.upcase)
+      content.gsub!("TARGET", @version)
+      content.gsub!("GH_URL", "https://github.com/Shopify/product-taxonomy/releases/tag/v#{@version}")
+      File.write("#{release_path}/disclosures.html", content)
 
       logger.info("Generating values.html...")
       content = File.read(File.expand_path("_releases/_values_template.html", self.class.docs_path))

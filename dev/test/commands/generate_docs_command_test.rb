@@ -45,7 +45,18 @@ module ProductTaxonomy
       else
         File.write(
           File.expand_path("docs/_releases/_return_reasons_template.html", @tmp_base_path),
-          "---\nlayout: return_reasons\n\ntitle: TITLE\ntarget: TARGET\npermalink: /releases/TARGET/return_reasons/\ngithub_url: GH_URL\n---"
+          "---\nlayout: return_reasons\n\ntitle: TITLE\ntarget: TARGET\npermalink: /releases/TARGET/return_reasons/\ngithub_url: GH_URL\n---",
+        )
+      end
+      if File.exist?(File.expand_path("docs/_releases/_disclosures_template.html", @real_base_path))
+        FileUtils.cp(
+          File.expand_path("docs/_releases/_disclosures_template.html", @real_base_path),
+          File.expand_path("docs/_releases/_disclosures_template.html", @tmp_base_path),
+        )
+      else
+        File.write(
+          File.expand_path("docs/_releases/_disclosures_template.html", @tmp_base_path),
+          "---\nlayout: disclosures\n\ntitle: TITLE\ntarget: TARGET\npermalink: /releases/TARGET/disclosures/\ngithub_url: GH_URL\n---",
         )
       end
       if File.exist?(File.expand_path("docs/_releases/_values_template.html", @real_base_path))
@@ -56,7 +67,7 @@ module ProductTaxonomy
       else
         File.write(
           File.expand_path("docs/_releases/_values_template.html", @tmp_base_path),
-          "---\nlayout: values\n\ntitle: TITLE\ntarget: TARGET\npermalink: /releases/TARGET/values/\ngithub_url: GH_URL\n---"
+          "---\nlayout: values\n\ntitle: TITLE\ntarget: TARGET\npermalink: /releases/TARGET/values/\ngithub_url: GH_URL\n---",
         )
       end
 
@@ -81,6 +92,8 @@ module ProductTaxonomy
       Serializers::ReturnReason::Docs::BaseSerializer.stubs(:serialize_all).returns({ "return_reasons" => "corge" })
       Serializers::ReturnReason::Docs::ReversedSerializer.stubs(:serialize_all).returns({ "reversed_return_reasons" => "grault" })
       Serializers::ReturnReason::Docs::SearchSerializer.stubs(:serialize_all).returns([{ "return_reason_search" => "garply" }])
+      Serializers::Disclosure::Docs::YamlSerializer.stubs(:serialize_all).returns({ "disclosures" => "plugh" })
+      Serializers::Disclosure::Docs::SearchSerializer.stubs(:serialize_all).returns([{ "disclosure_search" => "xyzzy" }])
       Serializers::Value::Docs::ReversedSerializer.stubs(:serialize_all).returns({ "reversed_values" => "waldo" })
       Serializers::Value::Docs::SearchSerializer.stubs(:serialize_all).returns([{ "value_search" => "fred" }])
     end
@@ -123,6 +136,8 @@ module ProductTaxonomy
         Generating return reasons...
         Generating return reasons with categories...
         Generating return reason search index...
+        Generating disclosures...
+        Generating disclosure search index...
         Generating values with categories...
         Generating value search index...
         Completed in 0.1 seconds
@@ -146,12 +161,15 @@ module ProductTaxonomy
         Generating return reasons...
         Generating return reasons with categories...
         Generating return reason search index...
+        Generating disclosures...
+        Generating disclosure search index...
         Generating values with categories...
         Generating value search index...
         Generating release folder...
         Generating index.html...
         Generating attributes.html...
         Generating return_reasons.html...
+        Generating disclosures.html...
         Generating values.html...
         Updating latest.html redirect...
         Completed in 0.1 seconds
@@ -185,6 +203,8 @@ module ProductTaxonomy
       assert File.exist?("#{data_path}/return_reasons.yml")
       assert File.exist?("#{data_path}/reversed_return_reasons.yml")
       assert File.exist?("#{data_path}/return_reason_search_index.json")
+      assert File.exist?("#{data_path}/disclosures.yml")
+      assert File.exist?("#{data_path}/disclosure_search_index.json")
       assert File.exist?("#{data_path}/reversed_values.yml")
       assert File.exist?("#{data_path}/value_search_index.json")
       assert_equal "---\nsiblings: foo\n", File.read("#{data_path}/sibling_groups.yml")
@@ -195,6 +215,8 @@ module ProductTaxonomy
       assert_equal "---\nreturn_reasons: corge\n", File.read("#{data_path}/return_reasons.yml")
       assert_equal "---\nreversed_return_reasons: grault\n", File.read("#{data_path}/reversed_return_reasons.yml")
       assert_equal '[{"return_reason_search":"garply"}]' + "\n", File.read("#{data_path}/return_reason_search_index.json")
+      assert_equal "---\ndisclosures: plugh\n", File.read("#{data_path}/disclosures.yml")
+      assert_equal '[{"disclosure_search":"xyzzy"}]' + "\n", File.read("#{data_path}/disclosure_search_index.json")
       assert_equal "---\nreversed_values: waldo\n", File.read("#{data_path}/reversed_values.yml")
       assert_equal '[{"value_search":"fred"}]' + "\n", File.read("#{data_path}/value_search_index.json")
 
@@ -217,6 +239,8 @@ module ProductTaxonomy
       assert File.exist?("#{data_path}/return_reasons.yml")
       assert File.exist?("#{data_path}/reversed_return_reasons.yml")
       assert File.exist?("#{data_path}/return_reason_search_index.json")
+      assert File.exist?("#{data_path}/disclosures.yml")
+      assert File.exist?("#{data_path}/disclosure_search_index.json")
       assert File.exist?("#{data_path}/reversed_values.yml")
       assert File.exist?("#{data_path}/value_search_index.json")
       assert_equal "---\nsiblings: foo\n", File.read("#{data_path}/sibling_groups.yml")
@@ -227,6 +251,8 @@ module ProductTaxonomy
       assert_equal "---\nreturn_reasons: corge\n", File.read("#{data_path}/return_reasons.yml")
       assert_equal "---\nreversed_return_reasons: grault\n", File.read("#{data_path}/reversed_return_reasons.yml")
       assert_equal '[{"return_reason_search":"garply"}]' + "\n", File.read("#{data_path}/return_reason_search_index.json")
+      assert_equal "---\ndisclosures: plugh\n", File.read("#{data_path}/disclosures.yml")
+      assert_equal '[{"disclosure_search":"xyzzy"}]' + "\n", File.read("#{data_path}/disclosure_search_index.json")
       assert_equal "---\nreversed_values: waldo\n", File.read("#{data_path}/reversed_values.yml")
       assert_equal '[{"value_search":"fred"}]' + "\n", File.read("#{data_path}/value_search_index.json")
 
@@ -234,6 +260,7 @@ module ProductTaxonomy
       assert File.exist?("#{release_path}/index.html")
       assert File.exist?("#{release_path}/attributes.html")
       assert File.exist?("#{release_path}/return_reasons.html")
+      assert File.exist?("#{release_path}/disclosures.html")
       assert File.exist?("#{release_path}/values.html")
 
       expected_index_content = <<~CONTENT
@@ -272,6 +299,18 @@ module ProductTaxonomy
         ---
       CONTENT
       assert_equal expected_return_reasons_content, File.read("#{release_path}/return_reasons.html")
+
+      expected_disclosures_content = <<~CONTENT
+        ---
+        layout: disclosures
+
+        title: 2024-01
+        target: 2024-01
+        permalink: /releases/2024-01/disclosures/
+        github_url: https://github.com/Shopify/product-taxonomy/releases/tag/v2024-01
+        ---
+      CONTENT
+      assert_equal expected_disclosures_content, File.read("#{release_path}/disclosures.html")
 
       expected_values_content = <<~CONTENT
         ---
