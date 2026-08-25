@@ -65,6 +65,12 @@ module ProductTaxonomy
       assert_equal "gid://shopify/TaxonomyDisclosure/2", disclosure.gid
     end
 
+    test "next_id returns one more than the largest id" do
+      Disclosure.load_from_source(YAML.safe_load(valid_source))
+
+      assert_equal Disclosure.all.map(&:id).max + 1, Disclosure.next_id
+    end
+
     test "taxonomy_loaded validation passes for a well-formed hierarchy" do
       Disclosure.load_from_source(YAML.safe_load(valid_source))
 

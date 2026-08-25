@@ -11,6 +11,7 @@ module ProductTaxonomy
 
       # Create test files
       FileUtils.mkdir_p(File.expand_path("data", @tmp_base_path))
+      ProductTaxonomy.stubs(:data_path).returns(File.expand_path("data", @tmp_base_path))
       FileUtils.mkdir_p(File.expand_path("dist/en/integrations", @tmp_base_path))
       File.write(
         File.expand_path("dist/en/integrations/all_mappings.json", @tmp_base_path),

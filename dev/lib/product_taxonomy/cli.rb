@@ -19,6 +19,7 @@ require_relative "commands/add_attribute_command"
 require_relative "commands/add_attributes_to_categories_command"
 require_relative "commands/add_value_command"
 require_relative "commands/dump_return_reasons_command"
+require_relative "commands/dump_disclosures_command"
 require_relative "commands/add_return_reason_command"
 require_relative "commands/add_return_reasons_to_categories_command"
 
@@ -145,6 +146,11 @@ module ProductTaxonomy
     desc "dump_return_reasons", "Dump return reasons to YAML file"
     def dump_return_reasons
       DumpReturnReasonsCommand.new(options).run
+    end
+
+    desc "dump_disclosures", "Dump disclosures to YAML file"
+    def dump_disclosures
+      DumpDisclosuresCommand.new(options).run
     end
 
     desc "add_return_reasons_to_categories RETURN_REASON_FRIENDLY_IDS CATEGORY_IDS",
