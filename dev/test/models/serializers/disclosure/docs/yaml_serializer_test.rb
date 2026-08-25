@@ -6,7 +6,7 @@ module ProductTaxonomy
   module Serializers
     module Disclosure
       module Docs
-        class BaseSerializerTest < TestCase
+        class YamlSerializerTest < TestCase
           setup do
             @disclosure = ProductTaxonomy::Disclosure.new(
               id: 1,
@@ -41,7 +41,7 @@ module ProductTaxonomy
               "children" => [],
             }
 
-            assert_equal expected, BaseSerializer.serialize(@disclosure)
+            assert_equal expected, YamlSerializer.serialize(@disclosure)
           end
 
           test "serialize returns the parent public id of a child disclosure" do
@@ -53,7 +53,7 @@ module ProductTaxonomy
               parent_public_id: "us-ca-prop65",
             )
 
-            assert_equal "us-ca-prop65", BaseSerializer.serialize(child)["parent_public_id"]
+            assert_equal "us-ca-prop65", YamlSerializer.serialize(child)["parent_public_id"]
           end
 
           test "serialize lists the children of a grouping disclosure" do
@@ -74,14 +74,14 @@ module ProductTaxonomy
             ProductTaxonomy::Disclosure.add(child)
 
             expected_children = [{ "public_id" => "us-ca-prop65-birth_defects", "name" => "Birth defects" }]
-            assert_equal expected_children, BaseSerializer.serialize(group)["children"]
-            assert_empty BaseSerializer.serialize(child)["children"]
+            assert_equal expected_children, YamlSerializer.serialize(group)["children"]
+            assert_empty YamlSerializer.serialize(child)["children"]
           end
 
           test "serialize_all returns all disclosures" do
             ProductTaxonomy::Disclosure.stubs(:all).returns([@disclosure])
 
-            assert_equal [BaseSerializer.serialize(@disclosure)], BaseSerializer.serialize_all
+            assert_equal [YamlSerializer.serialize(@disclosure)], YamlSerializer.serialize_all
           end
         end
       end

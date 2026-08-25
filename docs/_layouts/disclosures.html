@@ -11,10 +11,10 @@ layout: default
   </div>
 </div>
 {% for disclosure in site.data[page.target].disclosures %}
-<div class="return-reason-container hidden" data-public-id="{{ disclosure.public_id }}">
+<div class="disclosure-container hidden" data-public-id="{{ disclosure.public_id }}">
   <div class="column">
-    <div class="return-reasons-wrapper box">
-      <div class="value-container return-reason-values">
+    <div class="box">
+      <div class="value-container">
         <h3>{{ disclosure.name }}</h3>
         <div class="value-container__id">
           <span class="id">{{ disclosure.id }}</span>
@@ -34,8 +34,8 @@ layout: default
     </div>
   </div>
   <div class="column">
-    <div class="return-reason-categories-wrapper box">
-      <div class="categories-container return-reason-categories">
+    <div class="box">
+      <div class="categories-container">
         <h3>Details</h3>
         <div>
           <ul class="values-container__list">

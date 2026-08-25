@@ -78,7 +78,7 @@ module ProductTaxonomy
       File.write("#{data_target}/return_reason_search_index.json", return_reason_search_index_json + "\n")
 
       logger.info("Generating disclosures...")
-      disclosures_yml = YAML.dump(Serializers::Disclosure::Docs::BaseSerializer.serialize_all, line_width: -1)
+      disclosures_yml = YAML.dump(Serializers::Disclosure::Docs::YamlSerializer.serialize_all, line_width: -1)
       File.write("#{data_target}/disclosures.yml", disclosures_yml)
 
       logger.info("Generating disclosure search index...")

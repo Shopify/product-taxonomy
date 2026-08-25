@@ -4,7 +4,7 @@ module ProductTaxonomy
   module Serializers
     module Disclosure
       module Docs
-        module BaseSerializer
+        module YamlSerializer
           class << self
             def serialize_all
               ProductTaxonomy::Disclosure.all.map { serialize(_1) }

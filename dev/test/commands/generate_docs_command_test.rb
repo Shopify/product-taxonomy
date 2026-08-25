@@ -92,7 +92,7 @@ module ProductTaxonomy
       Serializers::ReturnReason::Docs::BaseSerializer.stubs(:serialize_all).returns({ "return_reasons" => "corge" })
       Serializers::ReturnReason::Docs::ReversedSerializer.stubs(:serialize_all).returns({ "reversed_return_reasons" => "grault" })
       Serializers::ReturnReason::Docs::SearchSerializer.stubs(:serialize_all).returns([{ "return_reason_search" => "garply" }])
-      Serializers::Disclosure::Docs::BaseSerializer.stubs(:serialize_all).returns({ "disclosures" => "plugh" })
+      Serializers::Disclosure::Docs::YamlSerializer.stubs(:serialize_all).returns({ "disclosures" => "plugh" })
       Serializers::Disclosure::Docs::SearchSerializer.stubs(:serialize_all).returns([{ "disclosure_search" => "xyzzy" }])
       Serializers::Value::Docs::ReversedSerializer.stubs(:serialize_all).returns({ "reversed_values" => "waldo" })
       Serializers::Value::Docs::SearchSerializer.stubs(:serialize_all).returns([{ "value_search" => "fred" }])

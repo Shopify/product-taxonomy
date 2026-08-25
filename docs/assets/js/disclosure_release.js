@@ -4,7 +4,7 @@ import {qq, getQueryParam} from './util.js';
 const disclosureQueryParamKey = 'disclosureId';
 
 const showDisclosureByPublicId = (publicId) => {
-  const disclosureContainers = qq('.return-reason-container');
+  const disclosureContainers = qq('.disclosure-container');
   disclosureContainers.forEach((container) => {
     if (container.dataset.publicId === publicId) {
       container.classList.remove('hidden');
