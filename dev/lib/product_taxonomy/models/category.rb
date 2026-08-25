@@ -43,8 +43,8 @@ module ProductTaxonomy
         end
         @verticals.sort_by!(&:name)
 
-      # Fourth pass: derive each category's effective return reasons — inherited from the closest defining ancestor,
-      # falling back to the global reasons when nothing is defined.
+        # Fourth pass: derive each category's effective return reasons — inherited from the closest defining ancestor,
+        # falling back to the global reasons when nothing is defined.
         Category.all.each(&:resolve_return_reasons)
       end
 
