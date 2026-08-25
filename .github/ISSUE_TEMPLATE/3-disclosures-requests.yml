@@ -1,0 +1,47 @@
+name: Disclosure requests
+description: File a request to change disclosures
+title: "[Disclosure]: "
+assignees: Shopklaw, billdevine00
+labels:
+  - "disclosure-requests"
+body:
+  - type: dropdown
+    id: change_type
+    attributes:
+      label: Change Type
+      multiple: false
+      options:
+        - Update to existing disclosure
+        - Support additional disclosure
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: Issue
+      description: Provide a brief summary of the disclosure change you're requesting.
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the disclosure, why the change is needed, and how it will improve the taxonomy. Include any relevant jurisdiction, regulation, or source.
+    validations:
+      required: true
+
+  - type: textarea
+    id: video_screenshot
+    attributes:
+      label: Video/Screenshot
+      description: Attach any relevant videos or screenshots to this text area.
+    validations:
+      required: false
+
+  - type: input
+    id: merchant_store
+    attributes:
+      label: Store Public URL
+      description: Please share a link to your store or any other relevant link to help us review and support your request. **This is a public repo; do not include any sensitive info.**
+    validations:
+      required: false
