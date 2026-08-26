@@ -68,6 +68,8 @@
   - paper_size
   - pattern
   return_reasons:
+  - size
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -1752,6 +1754,7 @@
   - color
   - pattern
   return_reasons:
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -6842,57 +6845,6 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: bi-19-8-3
-  name: Procedure Training Simulators & Task Trainers
-  children: []
-  attributes:
-  - material
-  - medical_specialty
-  - procedure
-  - skin_tone
-  return_reasons:
-  - size
-  - incompatible
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: bi-19-8-4
-  name: Simulator Kits & Training Bundles
-  children: []
-  attributes:
-  - material
-  - medical_specialty
-  - procedure
-  - skin_tone
-  return_reasons:
-  - size
-  - assortment
-  - incompatible
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
-- id: bi-19-8-5
-  name: Synthetic Tissue Models & Training Pads
-  children: []
-  attributes:
-  - material
-  - medical_specialty
-  - procedure
-  - skin_tone
-  return_reasons:
-  - incompatible
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
 - id: bi-19-8-2-1
   name: Trainer Replacement Parts & Consumables
   children: []
@@ -6955,6 +6907,57 @@
   - size
   - shade
   - material
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: bi-19-8-3
+  name: Procedure Training Simulators & Task Trainers
+  children: []
+  attributes:
+  - material
+  - medical_specialty
+  - procedure
+  - skin_tone
+  return_reasons:
+  - size
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: bi-19-8-4
+  name: Simulator Kits & Training Bundles
+  children: []
+  attributes:
+  - material
+  - medical_specialty
+  - procedure
+  - skin_tone
+  return_reasons:
+  - size
+  - assortment
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: bi-19-8-5
+  name: Synthetic Tissue Models & Training Pads
+  children: []
+  attributes:
+  - material
+  - medical_specialty
+  - procedure
+  - skin_tone
+  return_reasons:
   - incompatible
   - changed_my_mind
   - item_not_as_described
@@ -8191,6 +8194,7 @@
   - color
   - pattern
   return_reasons:
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -8221,6 +8225,7 @@
   - color
   - pattern
   return_reasons:
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -8299,6 +8304,7 @@
   - color
   - pattern
   return_reasons:
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -8314,6 +8320,7 @@
   - color
   - pattern
   return_reasons:
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -9214,6 +9221,7 @@
   - pattern
   - preservation_type
   return_reasons:
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -10563,10 +10571,4 @@
   - color
   - pattern
   - target_gender
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  return_reasons: inherit

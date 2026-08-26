@@ -29,6 +29,7 @@ module ProductTaxonomy
               }],
               "ancestors" => [],
               "return_reasons" => [],
+              "inherits_return_reasons" => false,
             }
             assert_equal expected_json, JsonSerializer.serialize(@root)
           end
@@ -50,6 +51,7 @@ module ProductTaxonomy
                 "name" => "Root",
               }],
               "return_reasons" => [],
+              "inherits_return_reasons" => false,
             }
             assert_equal expected_json, JsonSerializer.serialize(@child)
           end
@@ -74,6 +76,7 @@ module ProductTaxonomy
                 },
               ],
               "return_reasons" => [],
+              "inherits_return_reasons" => false,
             }
             assert_equal expected_json, JsonSerializer.serialize(@grandchild)
           end
@@ -94,6 +97,7 @@ module ProductTaxonomy
               }],
               "ancestors" => [],
               "return_reasons" => [],
+              "inherits_return_reasons" => false,
             }
             assert_equal expected_json, JsonSerializer.serialize(@root, locale: "fr")
           end
@@ -215,6 +219,74 @@ module ProductTaxonomy
             assert_equal ["zzz", "aaa"], actual_handles
           end
 
+          test "serialize includes the inherited return reasons for inheriting categories" do
+            ["zzz", "aaa"].each_with_index do |friendly_id, index|
+              ProductTaxonomy::ReturnReason.add(ProductTaxonomy::ReturnReason.new(
+                id: index + 1,
+                name: friendly_id,
+                description: friendly_id,
+                friendly_id:,
+                handle: friendly_id,
+              ))
+            end
+
+            yaml_content = <<~YAML
+              ---
+              - id: aa
+                name: Root
+                children:
+                - aa-1
+                attributes: []
+                return_reasons:
+                - zzz
+                - aaa
+              - id: aa-1
+                name: Child
+                children: []
+                attributes: []
+                return_reasons: inherit
+            YAML
+
+            ProductTaxonomy::Category.load_from_source(YAML.safe_load(yaml_content))
+            child_json = JsonSerializer.serialize(ProductTaxonomy::Category.find_by(id: "aa-1"))
+            child_handles = child_json["return_reasons"].map { |reason| reason["handle"] }
+
+            assert_equal ["zzz", "aaa"], child_handles
+            assert_equal true, child_json["inherits_return_reasons"]
+            # `dist` carries the materialized list even though the child defines none of the reasons itself.
+            assert_empty ProductTaxonomy::Category.find_by(id: "aa-1").defined_return_reasons
+          end
+
+          test "serialize includes the global return reasons for a category that defines an empty list" do
+            ProductTaxonomy::ReturnReason::GLOBAL_FRIENDLY_IDS.each_with_index do |friendly_id, index|
+              ProductTaxonomy::ReturnReason.add(ProductTaxonomy::ReturnReason.new(
+                id: index + 1,
+                name: friendly_id,
+                description: friendly_id,
+                friendly_id:,
+                handle: friendly_id.tr("_", "-"),
+              ))
+            end
+
+            yaml_content = <<~YAML
+              ---
+              - id: aa
+                name: Root
+                children: []
+                attributes: []
+                return_reasons: []
+            YAML
+
+            ProductTaxonomy::Category.load_from_source(YAML.safe_load(yaml_content))
+            json = JsonSerializer.serialize(ProductTaxonomy::Category.find_by(id: "aa"))
+
+            # `dist` carries the materialized baseline even though `data` keeps the empty list.
+            expected_handles = ProductTaxonomy::ReturnReason::GLOBAL_FRIENDLY_IDS.map { _1.tr("_", "-") }
+            assert_equal expected_handles, json["return_reasons"].map { _1["handle"] }
+            assert_equal false, json["inherits_return_reasons"]
+            assert_empty ProductTaxonomy::Category.find_by(id: "aa").defined_return_reasons
+          end
+
           test "serialize_all returns the JSON representation of all categories" do
             stub_localizations
             ProductTaxonomy::Category.stubs(:verticals).returns([@root])
@@ -235,6 +307,7 @@ module ProductTaxonomy
                     "children" => [{ "id" => "gid://shopify/TaxonomyCategory/aa-1", "name" => "Child" }],
                     "ancestors" => [],
                     "return_reasons" => [],
+                    "inherits_return_reasons" => false,
                   },
                   {
                     "id" => "gid://shopify/TaxonomyCategory/aa-1",
@@ -246,6 +319,7 @@ module ProductTaxonomy
                     "children" => [{ "id" => "gid://shopify/TaxonomyCategory/aa-1-1", "name" => "Grandchild" }],
                     "ancestors" => [{ "id" => "gid://shopify/TaxonomyCategory/aa", "name" => "Root" }],
                     "return_reasons" => [],
+                    "inherits_return_reasons" => false,
                   },
                   {
                     "id" => "gid://shopify/TaxonomyCategory/aa-1-1",
@@ -260,6 +334,7 @@ module ProductTaxonomy
                       { "id" => "gid://shopify/TaxonomyCategory/aa", "name" => "Root" },
                     ],
                     "return_reasons" => [],
+                    "inherits_return_reasons" => false,
                   },
                 ],
               }],

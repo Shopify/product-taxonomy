@@ -2,13 +2,6 @@
 
 module ProductTaxonomy
   class AddReturnReasonsToCategoriesCommand < Command
-    UNKNOWN_RETURN_REASON_FRIENDLY_ID = "unknown"
-    OTHER_RETURN_REASON_FRIENDLY_ID = "other_reason"
-    SPECIAL_RETURN_REASON_FRIENDLY_IDS = [
-      UNKNOWN_RETURN_REASON_FRIENDLY_ID,
-      OTHER_RETURN_REASON_FRIENDLY_ID,
-    ].freeze
-
     def initialize(options)
       super
       load_taxonomy
@@ -30,40 +23,60 @@ module ProductTaxonomy
       @categories = @categories.flat_map(&:descendants_and_self) if @include_descendants
 
       @categories.each do |category|
+        # A category with no reasons of its own yet — empty, or inheriting from an ancestor — is defined from
+        # scratch, so it also gets the global reasons appended (ordered at the end by sort_return_reasons!).
+        from_scratch = category.inherits_return_reasons || category.defined_return_reasons.empty?
+
+        if category.inherits_return_reasons
+          logger.info("Category `#{category.name}` inherited its return reasons - replacing them with the new return reason(s) and the global return reasons")
+        end
+
         @return_reasons.each do |return_reason|
-          if category.return_reasons.include?(return_reason)
+          # An inheriting category's reasons come from its parent; adding materializes them, so don't treat
+          # inherited reasons as "already present" and skip.
+          if !category.inherits_return_reasons && category.return_reasons.include?(return_reason)
             logger.info("Category `#{category.name}` already has return reason `#{return_reason.friendly_id}` - skipping")
           else
             category.add_return_reason(return_reason)
           end
         end
 
+        append_global_return_reasons!(category) if from_scratch
+
         sort_return_reasons!(category)
+      end
+
+      # Re-resolve inheritance for descendants so inheriting children reflect their ancestors' updated reasons in
+      # the generated artifacts/docs (which read the resolved list, not the literal `inherit`).
+      @categories.each do |category|
+        category.descendants.each do |descendant|
+          descendant.resolve_return_reasons if descendant.inherits_return_reasons
+        end
       end
 
       logger.info("Added #{@return_reasons.size} return reason(s) to #{@categories.size} categories")
     end
 
+    def append_global_return_reasons!(category)
+      ReturnReason.global.each do |return_reason|
+        next if category.defined_return_reasons.include?(return_reason)
+
+        category.add_return_reason(return_reason)
+      end
+    end
+
+    # Move the global reasons to the end in their defined order, preserving the order of all other reasons.
     def sort_return_reasons!(category)
-      special, regular = category.return_reasons.partition do |return_reason|
-        SPECIAL_RETURN_REASON_FRIENDLY_IDS.include?(return_reason.friendly_id)
+      global, regular = category.defined_return_reasons.partition do |return_reason|
+        ReturnReason::GLOBAL_FRIENDLY_IDS.include?(return_reason.friendly_id)
       end
 
-      regular_by_friendly_id = regular.each_with_object({}) do |return_reason, by_friendly_id|
-        by_friendly_id[return_reason.friendly_id] = return_reason
-      end
-      sorted_regular = AlphanumericSorter.sort(regular_by_friendly_id.keys).map do |friendly_id|
-        regular_by_friendly_id[friendly_id]
+      sorted_global = ReturnReason::GLOBAL_FRIENDLY_IDS.filter_map do |friendly_id|
+        global.find { |return_reason| return_reason.friendly_id == friendly_id }
       end
 
-      special_by_friendly_id = special.each_with_object({}) do |return_reason, by_friendly_id|
-        by_friendly_id[return_reason.friendly_id] = return_reason
-      end
-      sorted_special = SPECIAL_RETURN_REASON_FRIENDLY_IDS.filter_map do |friendly_id|
-        special_by_friendly_id[friendly_id]
-      end
-
-      category.return_reasons.replace(sorted_regular + sorted_special)
+      category.defined_return_reasons.replace(regular + sorted_global)
+      category.resolve_return_reasons
     end
 
     def update_data_files!

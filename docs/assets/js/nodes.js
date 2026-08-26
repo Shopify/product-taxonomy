@@ -157,9 +157,14 @@ const toggleVisibleSelectedCategory = () => {
       const selectedNodeTitle =
         element.firstElementChild.firstElementChild.dataset
           .selectedCategoryName;
+      const categoryNode = q(`.category-node[id="${selectedNode}"]`);
+      const inheritsReturnReasons =
+        categoryNode?.dataset.inheritsReturnReasons === 'true';
       selectedCategoryTitle.innerText = selectedNodeTitle;
       categoryAttributesTitle.innerText = `${selectedNodeTitle} attributes`;
-      categoryReturnReasonsTitle.innerText = `${selectedNodeTitle} return reasons`;
+      categoryReturnReasonsTitle.innerText = inheritsReturnReasons
+        ? `${selectedNodeTitle} return reasons (inherited)`
+        : `${selectedNodeTitle} return reasons`;
       classes.replace(className.hidden, className.visible);
     } else {
       classes.replace(className.visible, className.hidden);

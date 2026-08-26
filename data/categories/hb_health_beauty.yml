@@ -2631,13 +2631,7 @@
   - package_type
   - product_form
   - protein_source
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  return_reasons: inherit
 - id: hb-1-9-2-2-2
   name: Protein Shakes
   children: []
@@ -2653,13 +2647,7 @@
   - package_type
   - product_form
   - protein_source
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  return_reasons: inherit
 - id: hb-1-9-2-3
   name: Weight Gainer Shakes
   children: []
@@ -7323,13 +7311,7 @@
   - color
   - material
   - pattern
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  return_reasons: inherit
 - id: hb-1-31-1
   name: Hearing Aid Batteries
   children: []
@@ -7346,13 +7328,7 @@
   - pattern
   - plug_type
   - product_certifications_standards
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  return_reasons: inherit
 - id: hb-1-31-2
   name: Hearing Aid Cleaning & Maintenance
   children: []
@@ -7360,13 +7336,7 @@
   - color
   - material
   - pattern
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  return_reasons: inherit
 - id: hb-1-31-3
   name: Hearing Aid Cases & Storage
   children: []
@@ -7374,13 +7344,7 @@
   - color
   - material
   - pattern
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  return_reasons: inherit
 - id: hb-1-31-4
   name: Hearing Aid Domes, Tips & Wax Guards
   children: []
@@ -7388,13 +7352,7 @@
   - color
   - material
   - pattern
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  return_reasons: inherit
 - id: hb-1-31-5
   name: Hearing Aid Charging Accessories
   children: []
@@ -7403,13 +7361,7 @@
   - connector_gender
   - connector_type
   - pattern
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  return_reasons: inherit
 - id: hb-2
   name: Jewelry Cleaning & Care
   children:
@@ -8027,6 +7979,8 @@
   - safety_certifications
   - target_gender
   return_reasons:
+  - size
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -17688,6 +17642,8 @@
   - product_form
   - treatment_objective
   return_reasons:
+  - size
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -18373,6 +18329,8 @@
   - oral_care_function
   - product_form
   return_reasons:
+  - size
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -19882,6 +19840,8 @@
   - product_form
   - target_gender
   return_reasons:
+  - size
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -21230,6 +21190,8 @@
   - pattern
   - product_form
   return_reasons:
+  - size
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -22076,6 +22038,7 @@
   - product_form
   - product_sterility
   return_reasons:
+  - incompatible
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
@@ -22657,13 +22620,7 @@
   - hb-3-21-2
   - hb-3-21-3
   attributes: []
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  return_reasons: inherit
 - id: hb-3-21-1
   name: Essential Oil Singles
   children: []
@@ -22673,13 +22630,7 @@
   - material
   - pattern
   - product_form
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  return_reasons: inherit
 - id: hb-3-21-2
   name: Essential Oil Blends
   children: []
@@ -22689,13 +22640,7 @@
   - material
   - pattern
   - product_form
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  return_reasons: inherit
 - id: hb-3-21-3
   name: Essential Oil Diffusers
   children: []
@@ -22705,13 +22650,7 @@
   - material
   - pattern
   - product_form
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  return_reasons: inherit
 - id: hb-3-22
   name: Essential Oil Accessories
   children: []
@@ -22721,10 +22660,4 @@
   - material
   - pattern
   - product_form
-  return_reasons:
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  return_reasons: inherit

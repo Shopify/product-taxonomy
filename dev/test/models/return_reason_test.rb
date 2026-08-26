@@ -49,6 +49,35 @@ module ProductTaxonomy
       assert_equal "wrong_item", wrong_item.handle
     end
 
+    test "global returns the global return reasons in their defined order" do
+      add_global_return_reasons
+
+      assert_equal ReturnReason::GLOBAL_FRIENDLY_IDS, ReturnReason.global.map(&:friendly_id)
+    end
+
+    test "global omits global return reasons that have not been loaded" do
+      ReturnReason.add(@return_reason)
+
+      assert_empty ReturnReason.global
+    end
+
+    test "global is memoized" do
+      add_global_return_reasons
+
+      assert_same ReturnReason.global, ReturnReason.global
+    end
+
+    test "reset clears the memoized global return reasons" do
+      add_global_return_reasons
+      memoized = ReturnReason.global
+
+      ReturnReason.reset
+      add_global_return_reasons
+
+      refute_same memoized, ReturnReason.global
+      assert_equal ReturnReason::GLOBAL_FRIENDLY_IDS, ReturnReason.global.map(&:friendly_id)
+    end
+
     test "load_from_source raises an error if the source YAML does not follow the expected schema" do
       yaml_content = <<~YAML
         ---
@@ -195,6 +224,19 @@ module ProductTaxonomy
     end
 
     private
+
+    # Added in reverse so that tests asserting on order are meaningful.
+    def add_global_return_reasons
+      ReturnReason::GLOBAL_FRIENDLY_IDS.reverse.each_with_index do |friendly_id, index|
+        ReturnReason.add(ReturnReason.new(
+          id: index + 1,
+          name: friendly_id.tr("_", " ").capitalize,
+          description: "Description for #{friendly_id}",
+          friendly_id:,
+          handle: friendly_id.tr("_", "-"),
+        ))
+      end
+    end
 
     def stub_localizations
       fr_yaml = <<~YAML

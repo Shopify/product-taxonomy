@@ -30,6 +30,7 @@ module ProductTaxonomy
                 "ancestor_ids" => category.ancestors.map(&:gid).join(","),
                 "attribute_handles" => category.attributes.map(&:handle).join(","),
                 "return_reason_handles" => category.return_reasons.map(&:handle).join(","),
+                "inherits_return_reasons" => category.inherits_return_reasons,
               }
             end
           end
