@@ -44,10 +44,37 @@ module ProductTaxonomy
               "description" => "Defines the primary color or pattern, such as blue or striped",
               "friendly_id" => "color",
               "handle" => "color",
+              "type" => "closed_list",
               "values" => ["color__black"]
             }
 
             assert_equal expected, DataSerializer.serialize(@base_attribute)
+          end
+
+          test "serialize returns the expected data structure for measurement attribute" do
+            measurement_attribute = ProductTaxonomy::Attribute.new(
+              id: 12429,
+              name: "Height",
+              description: "Specifies the vertical measurement from bottom to top.",
+              friendly_id: "height",
+              handle: "height",
+              type: "measurement",
+              measurement_type: "dimension",
+              supported_units: ["cm", "in"]
+            )
+
+            expected = {
+              "id" => 12429,
+              "name" => "Height",
+              "description" => "Specifies the vertical measurement from bottom to top.",
+              "friendly_id" => "height",
+              "handle" => "height",
+              "type" => "measurement",
+              "measurement_type" => "dimension",
+              "supported_units" => ["cm", "in"]
+            }
+
+            assert_equal expected, DataSerializer.serialize(measurement_attribute)
           end
 
           test "serialize returns the expected data structure for extended attribute" do
@@ -70,6 +97,7 @@ module ProductTaxonomy
                 "description" => "Defines the primary color or pattern, such as blue or striped",
                 "friendly_id" => "color",
                 "handle" => "color",
+                "type" => "closed_list",
                 "values" => ["color__black"]
               }],
               "extended_attributes" => [{
@@ -102,6 +130,7 @@ module ProductTaxonomy
               "description" => "Defines the size of the product",
               "friendly_id" => "size",
               "handle" => "size",
+              "type" => "closed_list",
               "sorting" => "custom",
               "values" => ["color__black"]
             }
