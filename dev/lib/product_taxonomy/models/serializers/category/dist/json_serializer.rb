@@ -35,6 +35,7 @@ module ProductTaxonomy
                     "name" => attr.name(locale:),
                     "handle" => attr.handle,
                     "description" => attr.description(locale:),
+                    "type" => attr.type,
                     "extended" => attr.is_a?(ExtendedAttribute),
                   }
                 end,

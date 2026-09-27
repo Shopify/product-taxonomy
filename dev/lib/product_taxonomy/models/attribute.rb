@@ -60,6 +60,9 @@ module ProductTaxonomy
           handle: attribute_data["handle"],
           values: values_by_friendly_id,
           is_manually_sorted: attribute_data["sorting"] == "custom",
+          type: attribute_data["type"],
+          measurement_type: attribute_data["measurement_type"],
+          supported_units: attribute_data["supported_units"],
         )
       end
 
@@ -80,13 +83,17 @@ module ProductTaxonomy
     validates :friendly_id, presence: true, on: :create
     validates :handle, presence: true, on: :create
     validates :description, presence: true, on: :create
-    validates :values, presence: true, if: -> { self.class == Attribute }, on: :create
+    validates :values, presence: true, if: -> { self.class == Attribute && closed_list? }, on: :create
+    validates :type, inclusion: { in: ["closed_list", "measurement"] }, on: :create
+    validates :measurement_type, presence: true, if: :measurement?, on: :create
+    validates :supported_units, presence: true, if: :measurement?, on: :create
     validates_with ProductTaxonomy::Indexed::UniquenessValidator, attributes: [:friendly_id], on: :create
     validate :values_valid?, on: :create
+    validate :measurement_values_absent?, on: :create
 
     localized_attr_reader :name, :description
 
-    attr_reader :id, :friendly_id, :handle, :values, :extended_attributes
+    attr_reader :id, :friendly_id, :handle, :values, :extended_attributes, :type, :measurement_type, :supported_units
 
     # @param id [Integer] The ID of the attribute.
     # @param name [String] The name of the attribute.
@@ -95,15 +102,29 @@ module ProductTaxonomy
     # @param handle [String] The handle of the attribute.
     # @param values [Array<Value, String>] An array of resolved {Value} objects. When resolving fails, use the friendly
     # ID instead.
-    def initialize(id:, name:, description:, friendly_id:, handle:, values:, is_manually_sorted: false)
+    def initialize(
+      id:,
+      name:,
+      description:,
+      friendly_id:,
+      handle:,
+      values: [],
+      is_manually_sorted: false,
+      type: nil,
+      measurement_type: nil,
+      supported_units: nil
+    )
       @id = id
       @name = name
       @description = description
       @friendly_id = friendly_id
       @handle = handle
-      @values = values
+      @values = values || []
       @extended_attributes = []
       @is_manually_sorted = is_manually_sorted
+      @type = type || "closed_list"
+      @measurement_type = measurement_type
+      @supported_units = supported_units
     end
 
     # Add an extended attribute to the attribute.
@@ -141,6 +162,20 @@ module ProductTaxonomy
       @is_manually_sorted
     end
 
+    # Whether the attribute is a closed list of predefined values.
+    #
+    # @return [Boolean]
+    def closed_list?
+      type == "closed_list"
+    end
+
+    # Whether the attribute is a measurement with supported units.
+    #
+    # @return [Boolean]
+    def measurement?
+      type == "measurement"
+    end
+
     # Get the sorted values of the attribute.
     #
     # @param locale [String] The locale to sort by.
@@ -156,6 +191,8 @@ module ProductTaxonomy
     private
 
     def values_valid?
+      return unless closed_list?
+
       values&.each do |value|
         next if value.is_a?(Value)
 
@@ -165,6 +202,17 @@ module ProductTaxonomy
           message: "not found for friendly ID \"#{value}\"",
         )
       end
+    end
+
+    def measurement_values_absent?
+      return unless measurement?
+      return if values.blank?
+
+      errors.add(
+        :values,
+        :present,
+        message: "must be blank for measurement attributes",
+      )
     end
   end
 end

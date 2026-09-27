@@ -29,15 +29,26 @@ module ProductTaxonomy
                   "values_from" => attribute.values_from.friendly_id,
                 }
               else
-                {
+                serialized = {
                   "id" => attribute.id,
                   "name" => attribute.name,
                   "description" => attribute.description,
                   "friendly_id" => attribute.friendly_id,
                   "handle" => attribute.handle,
+                  "type" => attribute.type,
                   "sorting" => attribute.manually_sorted? ? "custom" : nil,
-                  "values" => attribute.sorted_values.map(&:friendly_id),
-                }.compact
+                }
+
+                if attribute.measurement?
+                  serialized.merge!(
+                    "measurement_type" => attribute.measurement_type,
+                    "supported_units" => attribute.supported_units,
+                  )
+                else
+                  serialized["values"] = attribute.sorted_values.map(&:friendly_id)
+                end
+
+                serialized.compact
               end
             end
           end

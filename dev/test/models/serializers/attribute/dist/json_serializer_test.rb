@@ -37,6 +37,7 @@ module ProductTaxonomy
               "name" => "Color",
               "handle" => "color",
               "description" => "Defines the primary color or pattern, such as blue or striped",
+              "type" => "closed_list",
               "extended_attributes" => [
                 {
                   "name" => "Clothing Color",
@@ -54,6 +55,31 @@ module ProductTaxonomy
             assert_equal expected_json, JsonSerializer.serialize(@attribute)
           end
 
+          test "serialize returns the JSON representation of a measurement attribute" do
+            measurement_attribute = ProductTaxonomy::Attribute.new(
+              id: 12429,
+              name: "Height",
+              description: "Specifies the vertical measurement from bottom to top.",
+              friendly_id: "height",
+              handle: "height",
+              type: "measurement",
+              measurement_type: "dimension",
+              supported_units: ["cm", "in"],
+            )
+
+            expected_json = {
+              "id" => "gid://shopify/TaxonomyAttribute/12429",
+              "name" => "Height",
+              "handle" => "height",
+              "description" => "Specifies the vertical measurement from bottom to top.",
+              "extended_attributes" => [],
+              "type" => "measurement",
+              "measurement_type" => "dimension",
+              "supported_units" => ["cm", "in"],
+            }
+            assert_equal expected_json, JsonSerializer.serialize(measurement_attribute)
+          end
+
           test "serialize returns the localized JSON representation of the attribute" do
             stub_localizations
 
@@ -62,6 +88,7 @@ module ProductTaxonomy
               "name" => "Nom en français",
               "handle" => "color",
               "description" => "Description en français",
+              "type" => "closed_list",
               "extended_attributes" => [
                 {
                   "name" => "Nom en français (extended)",
@@ -88,6 +115,7 @@ module ProductTaxonomy
                 "name" => "Color",
                 "handle" => "color",
                 "description" => "Defines the primary color or pattern, such as blue or striped",
+                "type" => "closed_list",
                 "extended_attributes" => [
                   {
                     "name" => "Clothing Color",
@@ -117,6 +145,7 @@ module ProductTaxonomy
                   "name" => "Aaaa",
                   "handle" => "aaaa",
                   "description" => "Aaaa",
+                  "type" => "closed_list",
                   "extended_attributes" => [],
                   "values" => [],
                 },
@@ -125,6 +154,7 @@ module ProductTaxonomy
                   "name" => "Bbbb",
                   "handle" => "bbbb",
                   "description" => "Bbbb",
+                  "type" => "closed_list",
                   "extended_attributes" => [],
                   "values" => [],
                 },
@@ -133,6 +163,7 @@ module ProductTaxonomy
                   "name" => "Cccc",
                   "handle" => "cccc",
                   "description" => "Cccc",
+                  "type" => "closed_list",
                   "extended_attributes" => [],
                   "values" => [],
                 },
@@ -207,6 +238,7 @@ module ProductTaxonomy
               "name" => "Color",
               "handle" => "color",
               "description" => "Defines the primary color or pattern, such as blue or striped",
+              "type" => "closed_list",
               "extended_attributes" => [
                 {
                   "name" => "Aaaa",
