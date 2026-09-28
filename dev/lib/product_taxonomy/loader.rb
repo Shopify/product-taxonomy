@@ -17,10 +17,10 @@ module ProductTaxonomy
         categories_glob = Dir.glob(File.join(data_path, "categories", "*.yml"))
 
         begin
-          ProductTaxonomy::Value.load_from_source(YAML.load_file(values_path))
-          ProductTaxonomy::Attribute.load_from_source(YAML.load_file(attributes_path))
-          ProductTaxonomy::ReturnReason.load_from_source(YAML.load_file(return_reasons_path))
-          ProductTaxonomy::Disclosure.load_from_source(YAML.load_file(disclosures_path))
+          ProductTaxonomy::Value.load_from_source(YAML.safe_load_file(values_path))
+          ProductTaxonomy::Attribute.load_from_source(YAML.safe_load_file(attributes_path))
+          ProductTaxonomy::ReturnReason.load_from_source(YAML.safe_load_file(return_reasons_path))
+          ProductTaxonomy::Disclosure.load_from_source(YAML.safe_load_file(disclosures_path))
 
           categories_source_data = categories_glob.each_with_object([]) do |file, array|
             array.concat(YAML.safe_load_file(file))
