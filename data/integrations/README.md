@@ -38,6 +38,8 @@ dist/{locale}/integrations/
 ### Mappings
 The primary concern of integrations are mappings. Mappings are a set of rules that help us convert to and from the Shopify taxonomy and the taxonomy of that integration.
 
+For a new Shopify category, inherit the Google `product_category_id` from its nearest ancestor with a published mapping, following the [existing mapping policy](https://github.com/Shopify/product-taxonomy/pull/902#pullrequestreview-4281023347). Keep published rules unchanged. If the nearest published ancestor is explicitly unmapped, retain that exclusion for its new descendants instead of mapping through a higher ancestor. This applies to the existing Services and Cannabis scopes.
+
 #### Examples of mapping rules
 
 ```yaml

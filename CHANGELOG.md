@@ -5,6 +5,7 @@
 - Adds 49,686 categories and 4,763 base attributes with closed lists of values. Existing category-attribute and attribute-value associations are preserved. Custom value lists keep their published order, with added sizes placed in order and Other last.
 - Renames the `fb` vertical from `Food, Beverages & Tobacco` to `Food & Beverages`. Tobacco Products remains under `fb-3`; category IDs and parent relationships stay unchanged.
 - Refreshes category, attribute, and value translations in 31 languages, including Hindi. This includes changes to existing translated labels.
+- Adds Google mappings for 49,396 new categories using their nearest published ancestor. Another 290 new categories remain unmapped within the existing Services and Cannabis scopes. Existing mappings are unchanged.
 
 #### 📦 Distribution
 
