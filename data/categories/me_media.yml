@@ -12,8 +12,7 @@
   - me-8
   - me-9
   - me-10
-  attributes:
-  - age_restrictions
+  attributes: []
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -30,7 +29,7 @@
   attributes:
   - genre
   - language_version
-  - media_format
+  - publication_format
   - recommended_age_group
   - target_audience
   return_reasons:
@@ -42,10 +41,13 @@
   - other_reason
 - id: me-1-1
   name: Audiobooks
-  children: []
+  children:
+  - me-1-1-1
+  - me-1-1-2
   attributes:
   - genre
   - language_version
+  - publication_format
   - target_audience
   return_reasons:
   - narration
@@ -55,12 +57,55 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: me-1-2
-  name: E-Books
+- id: me-1-1-1
+  name: Fiction Audiobooks
   children: []
   attributes:
   - genre
   - language_version
+  - publication_format
+  - target_audience
+  return_reasons: inherit
+- id: me-1-1-2
+  name: Nonfiction Audiobooks
+  children: []
+  attributes:
+  - genre
+  - language_version
+  - publication_format
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2
+  name: E-Books
+  children:
+  - me-1-2-1
+  - me-1-2-4
+  - me-1-2-5
+  - me-1-2-6
+  - me-1-2-7
+  - me-1-2-8
+  - me-1-2-9
+  - me-1-2-10
+  - me-1-2-11
+  - me-1-2-12
+  - me-1-2-13
+  - me-1-2-14
+  - me-1-2-15
+  - me-1-2-16
+  - me-1-2-17
+  - me-1-2-18
+  - me-1-2-19
+  - me-1-2-20
+  - me-1-2-21
+  - me-1-2-22
+  - me-1-2-23
+  - me-1-2-24
+  - me-1-2-25
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
   - target_audience
   return_reasons:
   - incompatible
@@ -70,14 +115,281 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: me-1-3
-  name: Print Books
+- id: me-1-2-1
+  name: Novel E-Books
   children: []
   attributes:
-  - book_cover_type
+  - e_book_format
   - genre
   - language_version
+  - license_type
   - target_audience
+  return_reasons: inherit
+- id: me-1-2-4
+  name: Bible E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-5
+  name: History E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-6
+  name: Cookbook E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-7
+  name: Art E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-8
+  name: Law E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-9
+  name: Quran E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-10
+  name: Activity Book E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-11
+  name: Mathematics E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-12
+  name: Graphic Novel E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-13
+  name: Travel E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-14
+  name: Business E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-15
+  name: Music E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-16
+  name: Chemistry E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-17
+  name: Biology E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-18
+  name: Dictionary E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-19
+  name: Physics E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-20
+  name: Fashion E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-21
+  name: Sports & Recreation E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-22
+  name: Computer E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-23
+  name: Psychology E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-24
+  name: Biography E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-2-25
+  name: Children's E-Books
+  children: []
+  attributes:
+  - e_book_format
+  - genre
+  - language_version
+  - license_type
+  - target_audience
+  return_reasons: inherit
+- id: me-1-3
+  name: Print Books
+  children:
+  - me-1-3-3
+  - me-1-3-4
+  - me-1-3-5
+  - me-1-3-6
+  - me-1-3-7
+  - me-1-3-8
+  - me-1-3-9
+  - me-1-3-10
+  - me-1-3-11
+  - me-1-3-12
+  - me-1-3-13
+  - me-1-3-14
+  - me-1-3-15
+  - me-1-3-16
+  - me-1-3-17
+  - me-1-3-18
+  - me-1-3-19
+  - me-1-3-20
+  - me-1-3-21
+  - me-1-3-22
+  - me-1-3-23
+  - me-1-3-24
+  - me-1-3-25
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -85,15 +397,546 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: me-1-3-3
+  name: Bibles
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-4
+  name: History Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-5
+  name: Cookbooks
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-6
+  name: Art Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-7
+  name: Novels
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-8
+  name: Law Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-9
+  name: Qurans
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-10
+  name: Activity Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-11
+  name: Mathematics Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-12
+  name: Graphic Novels
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-13
+  name: Travel Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-14
+  name: Business Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-15
+  name: Music Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-16
+  name: Chemistry Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-17
+  name: Biology Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-18
+  name: Dictionaries
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-19
+  name: Physics Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-20
+  name: Fashion Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-21
+  name: Sports Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-22
+  name: Computer Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-23
+  name: Psychology Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-24
+  name: Biography Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
+- id: me-1-3-25
+  name: Children's Books
+  children: []
+  attributes:
+  - binding
+  - book_cover_type
+  - braille_grade
+  - cover_color
+  - cover_finish
+  - cover_material
+  - difficulty_level
+  - educational_level
+  - genre
+  - instrument
+  - interior_print_color
+  - language_version
+  - page_edge_style
+  - personalization_type
+  - portrait/landscape_orientation
+  - signature_type
+  - target_audience
+  - text_size
+  return_reasons: inherit
 - id: me-2
   name: Magazines & Newspapers
   children:
   - me-2-1
   - me-2-2
   attributes:
+  - genre
   - language_version
   - media_access
-  - media_format
+  - publication_frequency
+  - publication_size
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -108,6 +951,7 @@
   - me-2-1-2
   - me-2-1-3
   attributes:
+  - binding
   - genre
   - language_version
   - media_access
@@ -124,10 +968,13 @@
   name: Consumer Magazines
   children: []
   attributes:
+  - binding
   - language_version
   - media_access
   - media_theme
   - publication_frequency
+  - publication_size
+  - target_gender
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -152,8 +999,11 @@
   - other_reason
 - id: me-2-1-3
   name: Professional Magazines
-  children: []
+  children:
+  - me-2-1-3-1
+  - me-2-1-3-2
   attributes:
+  - binding
   - language_version
   - media_access
   - media_theme
@@ -165,6 +1015,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: me-2-1-3-1
+  name: Trade Magazines
+  children: []
+  attributes:
+  - binding
+  - language_version
+  - media_access
+  - media_theme
+  - publication_frequency
+  return_reasons: inherit
+- id: me-2-1-3-2
+  name: Research Journals
+  children: []
+  attributes:
+  - binding
+  - language_version
+  - media_access
+  - media_theme
+  - publication_frequency
+  return_reasons: inherit
 - id: me-2-2
   name: Newspapers
   children:
@@ -207,6 +1077,7 @@
   - language_version
   - media_access
   - media_section
+  - publication_day
   - publication_frequency
   return_reasons:
   - arrived_late
@@ -220,6 +1091,7 @@
   name: National Newspapers
   children: []
   attributes:
+  - issue_day
   - language_version
   - media_access
   - media_section
@@ -242,8 +1114,9 @@
   - me-3-5
   - me-3-6
   attributes:
-  - media_format
+  - language
   - music_genre
+  - recording_format
   return_reasons:
   - sound_quality
   - changed_my_mind
@@ -254,10 +1127,18 @@
   - other_reason
 - id: me-3-1
   name: Digital Music Downloads
-  children: []
+  children:
+  - me-3-1-1
+  - me-3-1-2
+  - me-3-1-3
   attributes:
+  - download_contents
   - download_format
+  - instrumentation
+  - language
+  - mix
   - music_genre
+  - musical_key
   return_reasons:
   - sound_quality
   - changed_my_mind
@@ -266,10 +1147,51 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: me-3-1-1
+  name: Digital Songs
+  children: []
+  attributes:
+  - download_contents
+  - download_format
+  - instrumentation
+  - language
+  - mix
+  - music_genre
+  - musical_key
+  return_reasons: inherit
+- id: me-3-1-2
+  name: Digital EPs
+  children: []
+  attributes:
+  - download_contents
+  - download_format
+  - instrumentation
+  - language
+  - mix
+  - music_genre
+  - musical_key
+  return_reasons: inherit
+- id: me-3-1-3
+  name: Digital Albums
+  children: []
+  attributes:
+  - download_contents
+  - download_format
+  - instrumentation
+  - language
+  - mix
+  - music_genre
+  - musical_key
+  return_reasons: inherit
 - id: me-3-2
   name: Music Cassette Tapes
-  children: []
+  children:
+  - me-3-2-1
+  - me-3-2-2
+  - me-3-2-3
   attributes:
+  - cassette_type
+  - color
   - music_genre
   return_reasons:
   - sound_quality
@@ -279,10 +1201,40 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: me-3-2-1
+  name: Cassette Albums
+  children: []
+  attributes:
+  - cassette_type
+  - color
+  - music_genre
+  return_reasons: inherit
+- id: me-3-2-2
+  name: Cassette Singles
+  children: []
+  attributes:
+  - cassette_type
+  - color
+  - music_genre
+  return_reasons: inherit
+- id: me-3-2-3
+  name: Cassette EPs
+  children: []
+  attributes:
+  - cassette_type
+  - color
+  - music_genre
+  return_reasons: inherit
 - id: me-3-3
   name: Music CDs
-  children: []
+  children:
+  - me-3-3-1
+  - me-3-3-2
+  - me-3-3-3
+  - me-3-3-4
   attributes:
+  - language
+  - media_case_type
   - music_genre
   return_reasons:
   - sound_quality
@@ -292,11 +1244,47 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: me-3-3-1
+  name: Music Album CDs
+  children: []
+  attributes:
+  - language
+  - media_case_type
+  - music_genre
+  return_reasons: inherit
+- id: me-3-3-2
+  name: EP CDs
+  children: []
+  attributes:
+  - language
+  - media_case_type
+  - music_genre
+  return_reasons: inherit
+- id: me-3-3-3
+  name: CD Singles
+  children: []
+  attributes:
+  - language
+  - media_case_type
+  - music_genre
+  return_reasons: inherit
+- id: me-3-3-4
+  name: Music CD Box Sets
+  children: []
+  attributes:
+  - language
+  - media_case_type
+  - music_genre
+  return_reasons: inherit
 - id: me-3-4
   name: Records & LPs
   children: []
   attributes:
   - music_genre
+  - record_media_condition
+  - release_country
+  - sleeve_condition
+  - vinyl_color
   return_reasons:
   - sound_quality
   - incompatible
@@ -308,8 +1296,13 @@
   - other_reason
 - id: me-3-5
   name: Spoken Word & Field Recordings
-  children: []
+  children:
+  - me-3-5-1
+  - me-3-5-2
   attributes:
+  - age_group
+  - language
+  - media_format
   - music_genre
   return_reasons:
   - sound_quality
@@ -320,11 +1313,40 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: me-3-6
-  name: Vinyl
+- id: me-3-5-1
+  name: Spoken Word Recordings
   children: []
   attributes:
+  - age_group
+  - language
+  - media_format
   - music_genre
+  return_reasons: inherit
+- id: me-3-5-2
+  name: Environmental Sound Recordings
+  children: []
+  attributes:
+  - age_group
+  - language
+  - media_format
+  - music_genre
+  return_reasons: inherit
+- id: me-3-6
+  name: Vinyl
+  children:
+  - me-3-6-1
+  - me-3-6-2
+  - me-3-6-3
+  - me-3-6-4
+  attributes:
+  - audio_channel_configuration
+  - cover_color
+  - language
+  - music_genre
+  - outer_sleeve_style
+  - playback_speed
+  - release_country
+  - vinyl_color
   return_reasons:
   - sound_quality
   - changed_my_mind
@@ -333,6 +1355,58 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: me-3-6-1
+  name: Vinyl Albums
+  children: []
+  attributes:
+  - audio_channel_configuration
+  - cover_color
+  - language
+  - music_genre
+  - outer_sleeve_style
+  - playback_speed
+  - release_country
+  - vinyl_color
+  return_reasons: inherit
+- id: me-3-6-2
+  name: Vinyl Singles
+  children: []
+  attributes:
+  - audio_channel_configuration
+  - cover_color
+  - language
+  - music_genre
+  - outer_sleeve_style
+  - playback_speed
+  - release_country
+  - vinyl_color
+  return_reasons: inherit
+- id: me-3-6-3
+  name: Vinyl EPs
+  children: []
+  attributes:
+  - audio_channel_configuration
+  - cover_color
+  - language
+  - music_genre
+  - outer_sleeve_style
+  - playback_speed
+  - release_country
+  - vinyl_color
+  return_reasons: inherit
+- id: me-3-6-4
+  name: Vinyl Box Sets
+  children: []
+  attributes:
+  - audio_channel_configuration
+  - cover_color
+  - language
+  - music_genre
+  - outer_sleeve_style
+  - playback_speed
+  - release_country
+  - vinyl_color
+  return_reasons: inherit
 - id: me-4
   name: Podcasts & Live Streams
   children:
@@ -342,7 +1416,6 @@
   attributes:
   - genre
   - language
-  - media_format
   - release_schedule
   return_reasons:
   - sound_quality
@@ -388,10 +1461,15 @@
   - other_reason
 - id: me-4-3
   name: Radio Shows
-  children: []
+  children:
+  - me-4-3-1
+  - me-4-3-2
+  - me-4-3-3
+  - me-4-3-4
   attributes:
   - genre
   - language
+  - media_format
   - release_schedule
   return_reasons:
   - sound_quality
@@ -403,11 +1481,54 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: me-5
-  name: Product Manuals
+- id: me-4-3-1
+  name: Talk Radio Shows
   children: []
   attributes:
+  - genre
+  - language
+  - media_format
+  - release_schedule
+  return_reasons: inherit
+- id: me-4-3-2
+  name: Radio Dramas
+  children: []
+  attributes:
+  - genre
+  - language
+  - media_format
+  - release_schedule
+  return_reasons: inherit
+- id: me-4-3-3
+  name: Radio Variety Shows
+  children: []
+  attributes:
+  - genre
+  - language
+  - media_format
+  - release_schedule
+  return_reasons: inherit
+- id: me-4-3-4
+  name: Radio Game Shows
+  children: []
+  attributes:
+  - genre
+  - language
+  - media_format
+  - release_schedule
+  return_reasons: inherit
+- id: me-5
+  name: Product Manuals
+  children:
+  - me-5-1
+  - me-5-2
+  - me-5-3
+  - me-5-4
+  attributes:
+  - binding
   - language_version
+  - manual_type
+  - media_type
   - product_manual_area
   return_reasons:
   - changed_my_mind
@@ -416,14 +1537,65 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: me-6
-  name: Sheet Music
+- id: me-5-1
+  name: User Manuals
   children: []
   attributes:
+  - binding
+  - language_version
+  - manual_type
+  - media_type
+  - product_manual_area
+  return_reasons: inherit
+- id: me-5-2
+  name: Installation Manuals
+  children: []
+  attributes:
+  - binding
+  - language_version
+  - manual_type
+  - media_type
+  - product_manual_area
+  return_reasons: inherit
+- id: me-5-3
+  name: Service Manuals
+  children: []
+  attributes:
+  - binding
+  - language_version
+  - manual_type
+  - media_type
+  - product_manual_area
+  return_reasons: inherit
+- id: me-5-4
+  name: Parts Manuals
+  children: []
+  attributes:
+  - binding
+  - language_version
+  - manual_type
+  - media_type
+  - product_manual_area
+  return_reasons: inherit
+- id: me-6
+  name: Sheet Music
+  children:
+  - me-6-1
+  - me-6-2
+  attributes:
   - book_cover_type
+  - clef
   - compatible_instrument
+  - difficulty_level
+  - included_audio_format
+  - language
   - media_format
   - music_genre
+  - musical_key
+  - notation
+  - sheet_music_format
+  - vocal_range
+  - voicing
   return_reasons:
   - instrument
   - difficulty_level
@@ -433,6 +1605,42 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: me-6-1
+  name: Printed Sheet Music
+  children: []
+  attributes:
+  - book_cover_type
+  - clef
+  - compatible_instrument
+  - difficulty_level
+  - included_audio_format
+  - language
+  - media_format
+  - music_genre
+  - musical_key
+  - notation
+  - sheet_music_format
+  - vocal_range
+  - voicing
+  return_reasons: inherit
+- id: me-6-2
+  name: Digital Sheet Music
+  children: []
+  attributes:
+  - book_cover_type
+  - clef
+  - compatible_instrument
+  - difficulty_level
+  - included_audio_format
+  - language
+  - media_format
+  - music_genre
+  - musical_key
+  - notation
+  - sheet_music_format
+  - vocal_range
+  - voicing
+  return_reasons: inherit
 - id: me-7
   name: Videos
   children:
@@ -441,11 +1649,10 @@
   - me-7-3
   - me-7-4
   attributes:
-  - age_restrictions
+  - aspect_ratio
   - genre
   - language_version
   - media_content_type
-  - media_format
   - mpaa_rating
   - target_audience
   return_reasons:
@@ -458,9 +1665,13 @@
   - other_reason
 - id: me-7-1
   name: Blu-ray
-  children: []
+  children:
+  - me-7-1-1
+  - me-7-1-2
   attributes:
+  - blu_ray_region_code
   - genre
+  - included_media_format
   - language_version
   - media_content_type
   - mpaa_rating
@@ -475,14 +1686,42 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: me-7-1-1
+  name: Movie Blu-rays
+  children: []
+  attributes:
+  - blu_ray_region_code
+  - genre
+  - included_media_format
+  - language_version
+  - media_content_type
+  - mpaa_rating
+  - target_audience
+  return_reasons: inherit
+- id: me-7-1-2
+  name: Television Series Blu-rays
+  children: []
+  attributes:
+  - blu_ray_region_code
+  - genre
+  - included_media_format
+  - language_version
+  - media_content_type
+  - mpaa_rating
+  - target_audience
+  return_reasons: inherit
 - id: me-7-2
   name: Digital Downloads
-  children: []
+  children:
+  - me-7-2-1
+  - me-7-2-2
   attributes:
+  - download_format
   - genre
   - language_version
   - media_content_type
   - mpaa_rating
+  - subtitle_language
   - target_audience
   return_reasons:
   - video_quality
@@ -494,10 +1733,37 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: me-7-2-1
+  name: Movies
+  children: []
+  attributes:
+  - download_format
+  - genre
+  - language_version
+  - media_content_type
+  - mpaa_rating
+  - subtitle_language
+  - target_audience
+  return_reasons: inherit
+- id: me-7-2-2
+  name: Video Series
+  children: []
+  attributes:
+  - download_format
+  - genre
+  - language_version
+  - media_content_type
+  - mpaa_rating
+  - subtitle_language
+  - target_audience
+  return_reasons: inherit
 - id: me-7-3
   name: DVDs
   children: []
   attributes:
+  - content_rating
+  - dvd_format
+  - dvd_region_code
   - genre
   - language_version
   - media_content_type
@@ -515,10 +1781,14 @@
   - other_reason
 - id: me-7-4
   name: VHS Tapes
-  children: []
+  children:
+  - me-7-4-1
+  - me-7-4-2
   attributes:
+  - color
   - genre
   - language_version
+  - media_case_type
   - media_content_type
   - mpaa_rating
   - target_audience
@@ -530,11 +1800,53 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: me-8
-  name: Academic Papers & Studies
+- id: me-7-4-1
+  name: Feature Film VHS Tapes
   children: []
   attributes:
+  - color
+  - genre
+  - language_version
+  - media_case_type
+  - media_content_type
+  - mpaa_rating
+  - target_audience
+  return_reasons: inherit
+- id: me-7-4-2
+  name: Television Series VHS Tapes
+  children: []
+  attributes:
+  - color
+  - genre
+  - language_version
+  - media_case_type
+  - media_content_type
+  - mpaa_rating
+  - target_audience
+  return_reasons: inherit
+- id: me-8
+  name: Academic Papers & Studies
+  children:
+  - me-8-1
+  - me-8-2
+  - me-8-3
+  - me-8-4
+  - me-8-5
+  - me-8-6
+  - me-8-7
+  - me-8-8
+  - me-8-9
+  - me-8-10
+  - me-8-11
+  - me-8-12
+  - me-8-13
+  - me-8-14
+  attributes:
   - academic_level
+  - binding
+  - language
+  - media_format
+  - paper_format
   - publication_type
   - research_focus
   - research_methodology
@@ -548,6 +1860,216 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: me-8-1
+  name: Academic Monographs
+  children: []
+  attributes:
+  - academic_level
+  - binding
+  - language
+  - media_format
+  - paper_format
+  - publication_type
+  - research_focus
+  - research_methodology
+  - subject_area
+  - time_period
+  return_reasons: inherit
+- id: me-8-2
+  name: Theses & Dissertations
+  children: []
+  attributes:
+  - academic_level
+  - binding
+  - language
+  - media_format
+  - paper_format
+  - publication_type
+  - research_focus
+  - research_methodology
+  - subject_area
+  - time_period
+  return_reasons: inherit
+- id: me-8-3
+  name: Research Reports
+  children: []
+  attributes:
+  - academic_level
+  - binding
+  - language
+  - media_format
+  - paper_format
+  - publication_type
+  - research_focus
+  - research_methodology
+  - subject_area
+  - time_period
+  return_reasons: inherit
+- id: me-8-4
+  name: Conference Proceedings
+  children: []
+  attributes:
+  - academic_level
+  - binding
+  - language
+  - media_format
+  - paper_format
+  - publication_type
+  - research_focus
+  - research_methodology
+  - subject_area
+  - time_period
+  return_reasons: inherit
+- id: me-8-5
+  name: Academic Journal Volumes
+  children: []
+  attributes:
+  - academic_level
+  - binding
+  - language
+  - media_format
+  - paper_format
+  - publication_type
+  - research_focus
+  - research_methodology
+  - subject_area
+  - time_period
+  return_reasons: inherit
+- id: me-8-6
+  name: Review Articles
+  children: []
+  attributes:
+  - academic_level
+  - binding
+  - language
+  - media_format
+  - paper_format
+  - publication_type
+  - research_focus
+  - research_methodology
+  - subject_area
+  - time_period
+  return_reasons: inherit
+- id: me-8-7
+  name: Research Letters
+  children: []
+  attributes:
+  - academic_level
+  - binding
+  - language
+  - media_format
+  - paper_format
+  - publication_type
+  - research_focus
+  - research_methodology
+  - subject_area
+  - time_period
+  return_reasons: inherit
+- id: me-8-8
+  name: Technical Notes
+  children: []
+  attributes:
+  - academic_level
+  - binding
+  - language
+  - media_format
+  - paper_format
+  - publication_type
+  - research_focus
+  - research_methodology
+  - subject_area
+  - time_period
+  return_reasons: inherit
+- id: me-8-9
+  name: Commentaries
+  children: []
+  attributes:
+  - academic_level
+  - binding
+  - language
+  - media_format
+  - paper_format
+  - publication_type
+  - research_focus
+  - research_methodology
+  - subject_area
+  - time_period
+  return_reasons: inherit
+- id: me-8-10
+  name: Occasional Papers
+  children: []
+  attributes:
+  - academic_level
+  - binding
+  - language
+  - media_format
+  - paper_format
+  - publication_type
+  - research_focus
+  - research_methodology
+  - subject_area
+  - time_period
+  return_reasons: inherit
+- id: me-8-11
+  name: Seminar Papers
+  children: []
+  attributes:
+  - academic_level
+  - binding
+  - language
+  - media_format
+  - paper_format
+  - publication_type
+  - research_focus
+  - research_methodology
+  - subject_area
+  - time_period
+  return_reasons: inherit
+- id: me-8-12
+  name: Annotated Bibliographies
+  children: []
+  attributes:
+  - academic_level
+  - binding
+  - language
+  - media_format
+  - paper_format
+  - publication_type
+  - research_focus
+  - research_methodology
+  - subject_area
+  - time_period
+  return_reasons: inherit
+- id: me-8-13
+  name: Collected Papers
+  children: []
+  attributes:
+  - academic_level
+  - binding
+  - language
+  - media_format
+  - paper_format
+  - publication_type
+  - research_focus
+  - research_methodology
+  - subject_area
+  - time_period
+  return_reasons: inherit
+- id: me-8-14
+  name: Clinical Practice Guidelines
+  children: []
+  attributes:
+  - academic_level
+  - binding
+  - language
+  - media_format
+  - paper_format
+  - publication_type
+  - research_focus
+  - research_methodology
+  - subject_area
+  - time_period
+  return_reasons: inherit
 - id: me-9
   name: Online Courses
   children: []

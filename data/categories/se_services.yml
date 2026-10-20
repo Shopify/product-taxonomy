@@ -44,7 +44,18 @@
   - other_reason
 - id: se-1-1
   name: Automotive Electrical Services
-  children: []
+  children:
+  - se-1-1-1
+  - se-1-1-2
+  - se-1-1-3
+  - se-1-1-4
+  - se-1-1-5
+  - se-1-1-6
+  - se-1-1-7
+  - se-1-1-8
+  - se-1-1-9
+  - se-1-1-10
+  - se-1-1-11
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -56,6 +67,121 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-1-1-1
+  name: Engine & Powertrain Electrical Services
+  children:
+  - se-1-1-1-1
+  - se-1-1-1-2
+  - se-1-1-1-3
+  - se-1-1-1-4
+  - se-1-1-1-5
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-1-1
+  name: Engine Control Module Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-1-2
+  name: Transmission Control Module Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-1-3
+  name: Glow Plug Control Module Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-1-4
+  name: Ignition Control Module Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-1-5
+  name: Traction Inverter Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-2
+  name: Brake Electrical Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-3
+  name: Airbag Electronics Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-4
+  name: Body Control Electronics Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-5
+  name: Vehicle Power Distribution Module Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-6
+  name: Vehicle Lighting Electrical Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-7
+  name: Climate Control Electronics Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-8
+  name: Instrument Cluster Services
+  children:
+  - se-1-1-8-1
+  - se-1-1-8-2
+  - se-1-1-8-3
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-8-1
+  name: Dashboard Pixel Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-8-2
+  name: Fuel Gauge Electrical Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-8-3
+  name: Speedometer Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-9
+  name: Car Audio & Infotainment Repair Services
+  children:
+  - se-1-1-9-1
+  - se-1-1-9-2
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-9-1
+  name: Car Audio Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-9-2
+  name: Navigation System Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-10
+  name: Power Steering Electrical Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-1-11
+  name: Vehicle Security Electronics Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-1-2
   name: Car Valeting & Detailing
   children: []
@@ -72,7 +198,16 @@
   - other_reason
 - id: se-1-3
   name: Car Repair & Maintenance
-  children: []
+  children:
+  - se-1-3-1
+  - se-1-3-2
+  - se-1-3-3
+  - se-1-3-4
+  - se-1-3-5
+  - se-1-3-6
+  - se-1-3-7
+  - se-1-3-8
+  - se-1-3-9
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -84,9 +219,58 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-1-3-1
+  name: Engine & Fuel System Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-3-2
+  name: Brake System Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-3-3
+  name: Tire Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-3-4
+  name: Transmission & Drivetrain Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-3-5
+  name: Steering System Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-3-6
+  name: Automotive Electrical & Electronics Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-3-7
+  name: Climate Control System Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-3-8
+  name: Exhaust & Emissions System Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-3-9
+  name: Occupant Restraint System Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-1-4
   name: Car Security & Safety
-  children: []
+  children:
+  - se-1-4-1
+  - se-1-4-2
+  - se-1-4-3
+  - se-1-4-4
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -98,9 +282,35 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-1-4-1
+  name: Airbag System Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-4-2
+  name: Seat Belt Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-4-3
+  name: Vehicle Immobilizer Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-4-4
+  name: Rollover Protection System Installation Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-1-5
   name: Tire & Wheel Services
-  children: []
+  children:
+  - se-1-5-1
+  - se-1-5-2
+  - se-1-5-3
+  - se-1-5-4
+  - se-1-5-5
+  - se-1-5-6
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -112,6 +322,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-1-5-1
+  name: Tire Change Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-5-2
+  name: Wheel Alignment Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-5-3
+  name: Tire Rotation Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-5-4
+  name: Wheel Powder-Coating Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-5-5
+  name: Custom Wheel Machining Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-1-5-6
+  name: Tire Disposal Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-1-6
   name: Vehicle Inspection
   children: []
@@ -273,7 +513,17 @@
   - other_reason
 - id: se-3-1
   name: Human Resources & Payroll
-  children: []
+  children:
+  - se-3-1-1
+  - se-3-1-2
+  - se-3-1-3
+  - se-3-1-4
+  - se-3-1-5
+  - se-3-1-6
+  - se-3-1-7
+  - se-3-1-8
+  - se-3-1-9
+  - se-3-1-10
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -285,9 +535,63 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-3-1-1
+  name: Staffing Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-1-2
+  name: Employee Leasing Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-1-3
+  name: Automated Candidate Screening Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-1-4
+  name: Candidate Assessment Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-1-5
+  name: Background Check Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-1-6
+  name: New Hire Documentation Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-1-7
+  name: Payroll Processing Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-1-8
+  name: Salary Survey Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-1-9
+  name: Employee Training Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-1-10
+  name: Labor Law Compliance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-3-2
   name: Logistics & Removals
-  children: []
+  children:
+  - se-3-2-1
+  - se-3-2-2
+  - se-3-2-3
+  - se-3-2-4
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -300,6 +604,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-3-2-1
+  name: Freight Transportation Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-2-2
+  name: Parcel Delivery Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-2-3
+  name: Storage Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-2-4
+  name: Shipment Tracking Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-3-3
   name: Office Services
   children:
@@ -317,8 +641,32 @@
   - other_reason
 - id: se-3-3-1
   name: Printing & Custom Print Services
-  children: []
-  attributes: []
+  children:
+  - se-3-3-1-1
+  - se-3-3-1-2
+  - se-3-3-1-3
+  - se-3-3-1-4
+  - se-3-3-1-5
+  - se-3-3-1-6
+  - se-3-3-1-7
+  - se-3-3-1-8
+  - se-3-3-1-9
+  - se-3-3-1-10
+  - se-3-3-1-11
+  - se-3-3-1-12
+  - se-3-3-1-13
+  - se-3-3-1-14
+  - se-3-3-1-15
+  - se-3-3-1-16
+  - se-3-3-1-17
+  - se-3-3-1-18
+  - se-3-3-1-19
+  - se-3-3-1-20
+  - se-3-3-1-21
+  - se-3-3-1-22
+  - se-3-3-1-23
+  attributes:
+  - paper_finish
   return_reasons:
   - print_quality
   - changed_my_mind
@@ -327,9 +675,270 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-3-3-1-1
+  name: Card Printing Services
+  children:
+  - se-3-3-1-1-1
+  - se-3-3-1-1-2
+  - se-3-3-1-1-3
+  - se-3-3-1-1-4
+  - se-3-3-1-1-5
+  - se-3-3-1-1-6
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-1-1
+  name: Business Card Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-1-2
+  name: Appointment Card Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-1-3
+  name: Gift Card Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-1-4
+  name: Scratch Card Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-1-5
+  name: Memorial Card Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-1-6
+  name: Holiday Card Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-2
+  name: Letterhead Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-3
+  name: Envelope Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-4
+  name: Folder Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-5
+  name: Calendar Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-6
+  name: Certificate Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-7
+  name: Flyer Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-8
+  name: Rack Card Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-9
+  name: Poster Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-10
+  name: Banner Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-11
+  name: Decal Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-12
+  name: Blueprint Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-13
+  name: Publication Printing Services
+  children:
+  - se-3-3-1-13-1
+  - se-3-3-1-13-2
+  - se-3-3-1-13-3
+  - se-3-3-1-13-4
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-13-1
+  name: Book Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-13-2
+  name: Newsletter Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-13-3
+  name: Catalog Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-13-4
+  name: Zine Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-14
+  name: Packaging Printing Services
+  children:
+  - se-3-3-1-14-1
+  - se-3-3-1-14-2
+  - se-3-3-1-14-3
+  - se-3-3-1-14-4
+  - se-3-3-1-14-5
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-14-1
+  name: Product Tag Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-14-2
+  name: Coffee Bag Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-14-3
+  name: Folding Carton Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-14-4
+  name: Tissue Paper Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-14-5
+  name: Product Sleeve Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-15
+  name: Textile Printing Services
+  children:
+  - se-3-3-1-15-1
+  - se-3-3-1-15-2
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-15-1
+  name: Apparel Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-15-2
+  name: Fabric Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-16
+  name: Transfer Sheet Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-17
+  name: Mug Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-18
+  name: Pen Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-19
+  name: Photo Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-20
+  name: Wood Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-21
+  name: Wallpaper Printing Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-22
+  name: Rubber Stamp Production Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
+- id: se-3-3-1-23
+  name: Film Output Services
+  children: []
+  attributes:
+  - paper_finish
+  return_reasons: inherit
 - id: se-3-4
   name: Security Services
-  children: []
+  children:
+  - se-3-4-1
+  - se-3-4-2
+  - se-3-4-3
+  - se-3-4-4
   attributes: []
   return_reasons:
   - provider_unavailable
@@ -341,6 +950,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-3-4-1
+  name: Physical Security Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-4-2
+  name: Background Check Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-4-3
+  name: Security Training Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-4-4
+  name: Brand Protection Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-4
   name: Entertainment & Recreation Services
   children:
@@ -363,8 +992,16 @@
   - other_reason
 - id: se-4-1
   name: Concerts & Entertainment Events
-  children: []
-  attributes: []
+  children:
+  - se-4-1-1
+  - se-4-1-2
+  - se-4-1-3
+  - se-4-1-4
+  - se-4-1-5
+  - se-4-1-6
+  - se-4-1-7
+  attributes:
+  - ticket_type
   return_reasons:
   - scheduling_conflict
   - provider_unavailable
@@ -375,6 +1012,48 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-4-1-1
+  name: Live Music Shows
+  children: []
+  attributes:
+  - ticket_type
+  return_reasons: inherit
+- id: se-4-1-2
+  name: Silent Discos
+  children: []
+  attributes:
+  - ticket_type
+  return_reasons: inherit
+- id: se-4-1-3
+  name: Ice Shows
+  children: []
+  attributes:
+  - ticket_type
+  return_reasons: inherit
+- id: se-4-1-4
+  name: Game Show Experiences
+  children: []
+  attributes:
+  - ticket_type
+  return_reasons: inherit
+- id: se-4-1-5
+  name: Talk Shows
+  children: []
+  attributes:
+  - ticket_type
+  return_reasons: inherit
+- id: se-4-1-6
+  name: Autograph Signings
+  children: []
+  attributes:
+  - ticket_type
+  return_reasons: inherit
+- id: se-4-1-7
+  name: Fairs
+  children: []
+  attributes:
+  - ticket_type
+  return_reasons: inherit
 - id: se-4-3
   name: Event Planning
   children: []
@@ -393,7 +1072,9 @@
   name: Travel & Leisure
   children:
   - se-4-4-1
-  attributes: []
+  attributes:
+  - audience
+  - language
   return_reasons:
   - scheduling_conflict
   - provider_unavailable
@@ -406,7 +1087,10 @@
   - other_reason
 - id: se-4-4-1
   name: Public Transport Tickets & Passes
-  children: []
+  children:
+  - se-4-4-1-1
+  - se-4-4-1-2
+  - se-4-4-1-3
   attributes:
   - age_group
   - journey_type
@@ -424,6 +1108,39 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-4-4-1-1
+  name: Paper Transit Tickets
+  children: []
+  attributes:
+  - age_group
+  - journey_type
+  - pass_duration
+  - seat_reservation
+  - ticket_class
+  - transport_type
+  return_reasons: inherit
+- id: se-4-4-1-2
+  name: Transit Tokens
+  children: []
+  attributes:
+  - age_group
+  - journey_type
+  - pass_duration
+  - seat_reservation
+  - ticket_class
+  - transport_type
+  return_reasons: inherit
+- id: se-4-4-1-3
+  name: Transit Fare Cards
+  children: []
+  attributes:
+  - age_group
+  - journey_type
+  - pass_duration
+  - seat_reservation
+  - ticket_class
+  - transport_type
+  return_reasons: inherit
 - id: se-4-5
   name: Children Activities
   children: []
@@ -440,7 +1157,17 @@
   - other_reason
 - id: se-4-6
   name: Indoor Activities
-  children: []
+  children:
+  - se-4-6-1
+  - se-4-6-2
+  - se-4-6-3
+  - se-4-6-4
+  - se-4-6-5
+  - se-4-6-6
+  - se-4-6-7
+  - se-4-6-8
+  - se-4-6-9
+  - se-4-6-10
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -452,6 +1179,56 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-4-6-1
+  name: Indoor Classes & Workshops
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-4-6-2
+  name: Bowling Alleys
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-4-6-3
+  name: Karaoke Rooms
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-4-6-4
+  name: Splatter Rooms
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-4-6-5
+  name: Sports Simulator Centers
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-4-6-6
+  name: Batting Cages
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-4-6-7
+  name: Pottery Painting Studios
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-4-6-8
+  name: Food Tasting Experiences
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-4-6-9
+  name: Factory Tours
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-4-6-10
+  name: Recording Studio Experiences
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-4-7
   name: Outdoor Activities
   children: []
@@ -488,7 +1265,9 @@
   - other_reason
 - id: se-5-1
   name: Electrical Services
-  children: []
+  children:
+  - se-5-1-1
+  - se-5-1-2
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -501,9 +1280,29 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-5-1-1
+  name: Electrical Installation Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-1-2
+  name: Electrical Maintenance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-5-2
   name: Outdoor Services
-  children: []
+  children:
+  - se-5-2-1
+  - se-5-2-2
+  - se-5-2-3
+  - se-5-2-4
+  - se-5-2-5
+  - se-5-2-6
+  - se-5-2-7
+  - se-5-2-8
+  - se-5-2-9
+  - se-5-2-10
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -516,6 +1315,56 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-5-2-1
+  name: Landscape Planning Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-2-2
+  name: Land Clearing Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-2-3
+  name: Landscape Maintenance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-2-4
+  name: Lawn Care Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-2-5
+  name: Tree Removal Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-2-6
+  name: Tree Pest & Disease Treatment Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-2-7
+  name: Outdoor Pest Control Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-2-8
+  name: Irrigation Maintenance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-2-9
+  name: Fence Installation Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-2-10
+  name: Pet Waste Removal Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-5-3
   name: Plumbing
   children: []
@@ -533,7 +1382,16 @@
   - other_reason
 - id: se-5-4
   name: Specialized Home Services
-  children: []
+  children:
+  - se-5-4-1
+  - se-5-4-2
+  - se-5-4-3
+  - se-5-4-4
+  - se-5-4-5
+  - se-5-4-6
+  - se-5-4-7
+  - se-5-4-8
+  - se-5-4-9
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -546,6 +1404,51 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-5-4-1
+  name: Cabinet Refinishing Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-4-2
+  name: Home Appliance Installation Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-4-3
+  name: Home Automation Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-4-4
+  name: Home Security System Installation Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-4-5
+  name: Home Staging Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-4-6
+  name: Interior Design Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-4-7
+  name: Lead Paint Testing & Abatement Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-4-8
+  name: Residential Pest Control Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-4-9
+  name: Water Quality Testing Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-6
   name: Personal Services
   children:
@@ -569,7 +1472,8 @@
 - id: se-6-1
   name: Beauty & Personal Care
   children: []
-  attributes: []
+  attributes:
+  - treatment_area
   return_reasons:
   - scheduling_conflict
   - provider_unavailable
@@ -583,7 +1487,9 @@
 - id: se-6-2
   name: Educational Services
   children: []
-  attributes: []
+  attributes:
+  - language
+  - participation_method
   return_reasons:
   - scheduling_conflict
   - provider_unavailable
@@ -596,7 +1502,31 @@
   - other_reason
 - id: se-6-3
   name: Healthcare Services
-  children: []
+  children:
+  - se-6-3-1
+  - se-6-3-2
+  - se-6-3-3
+  - se-6-3-4
+  - se-6-3-5
+  - se-6-3-6
+  - se-6-3-7
+  - se-6-3-8
+  - se-6-3-9
+  - se-6-3-10
+  - se-6-3-11
+  - se-6-3-12
+  - se-6-3-13
+  - se-6-3-14
+  - se-6-3-15
+  - se-6-3-16
+  - se-6-3-17
+  - se-6-3-18
+  - se-6-3-19
+  - se-6-3-20
+  - se-6-3-21
+  - se-6-3-22
+  - se-6-3-23
+  - se-6-3-24
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -608,6 +1538,126 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-6-3-1
+  name: Allergy & Immunology Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-2
+  name: Audiology Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-3
+  name: Cardiology Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-4
+  name: Colorectal Care Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-5
+  name: Dental Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-6
+  name: Dermatology Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-7
+  name: Laboratory Medicine & Pathology Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-8
+  name: Mental Health & Addiction Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-9
+  name: Nephrology Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-10
+  name: Neurology Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-11
+  name: Neurosurgery Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-12
+  name: Oncology Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-13
+  name: Ophthalmology Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-14
+  name: Optometry Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-15
+  name: Pharmacy Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-16
+  name: Physical Medicine & Rehabilitation Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-17
+  name: Plastic & Reconstructive Surgery Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-18
+  name: Radiology & Diagnostic Imaging Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-19
+  name: Reproductive Health Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-20
+  name: Urology Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-21
+  name: Vascular Medicine & Surgery Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-22
+  name: Weight Management Medicine Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-23
+  name: Complementary Medicine Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-6-3-24
+  name: Otolaryngology Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-6-4
   name: Lifestyle Services
   children: []
@@ -641,7 +1691,8 @@
 - id: se-6-6-1
   name: Fitness & Workout Programs
   children: []
-  attributes: []
+  attributes:
+  - language
   return_reasons:
   - difficulty_level
   - duration
@@ -704,7 +1755,9 @@
   - other_reason
 - id: se-7-1
   name: Consulting Services
-  children: []
+  children:
+  - se-7-1-1
+  - se-7-1-2
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -716,9 +1769,40 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-7-1-1
+  name: Operations Consulting Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-1-2
+  name: Marketing Consulting Services
+  children:
+  - se-7-1-2-1
+  - se-7-1-2-2
+  attributes: []
+  return_reasons: inherit
+- id: se-7-1-2-1
+  name: Brand Strategy Consulting Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-1-2-2
+  name: Search Engine Optimization Consulting Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-7-2
   name: Finance & Insurance
-  children: []
+  children:
+  - se-7-2-1
+  - se-7-2-2
+  - se-7-2-3
+  - se-7-2-4
+  - se-7-2-5
+  - se-7-2-6
+  - se-7-2-7
+  - se-7-2-8
+  - se-7-2-9
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -730,10 +1814,118 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-7-2-1
+  name: Insurance Services
+  children:
+  - se-7-2-1-1
+  - se-7-2-1-2
+  - se-7-2-1-3
+  - se-7-2-1-4
+  - se-7-2-1-5
+  - se-7-2-1-6
+  - se-7-2-1-7
+  - se-7-2-1-8
+  - se-7-2-1-9
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-1-1
+  name: Motorcycle Insurance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-1-2
+  name: Legal Expense Insurance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-1-3
+  name: Errors & Omissions Insurance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-1-4
+  name: Identity Theft Insurance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-1-5
+  name: Prize Indemnity Insurance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-1-6
+  name: Landlord Insurance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-1-7
+  name: Product Liability Insurance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-1-8
+  name: Health Insurance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-1-9
+  name: Umbrella Insurance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-2
+  name: Credit Card Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-3
+  name: Electronic Funds Transfer Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-4
+  name: Asset Financing Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-5
+  name: Cryptocurrency Custody Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-6
+  name: Money Market Account Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-7
+  name: Options Brokerage Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-8
+  name: Know Your Customer Verification Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-2-9
+  name: Surety Bond Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-7-3
   name: IT & Technology
-  children: []
-  attributes: []
+  children:
+  - se-7-3-1
+  - se-7-3-2
+  - se-7-3-3
+  - se-7-3-4
+  - se-7-3-5
+  - se-7-3-6
+  - se-7-3-7
+  - se-7-3-8
+  attributes:
+  - customer_type
   return_reasons:
   - scheduling_conflict
   - provider_unavailable
@@ -744,6 +1936,173 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-7-3-1
+  name: IT Support & Operations Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-2
+  name: Cybersecurity Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-3
+  name: Software Development Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-4
+  name: Hosting Services
+  children:
+  - se-7-3-4-1
+  - se-7-3-4-2
+  - se-7-3-4-3
+  - se-7-3-4-4
+  - se-7-3-4-5
+  - se-7-3-4-6
+  - se-7-3-4-7
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-4-1
+  name: Web Hosting Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-4-2
+  name: Server Hosting Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-4-3
+  name: Colocation Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-4-4
+  name: Database Hosting Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-4-5
+  name: Email Hosting Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-4-6
+  name: DNS Management Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-4-7
+  name: Content Delivery Network Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-5
+  name: Network & Connectivity Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-6
+  name: IT Installation & Deployment Services
+  children:
+  - se-7-3-6-1
+  - se-7-3-6-2
+  - se-7-3-6-3
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-6-1
+  name: Printer Installation Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-6-2
+  name: Network Installation Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-6-3
+  name: Data Center Installation Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-7
+  name: Device & Equipment Repair Services
+  children:
+  - se-7-3-7-1
+  - se-7-3-7-2
+  - se-7-3-7-3
+  - se-7-3-7-4
+  - se-7-3-7-5
+  - se-7-3-7-6
+  - se-7-3-7-7
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-7-1
+  name: Computer Repair Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-7-2
+  name: Mobile Phone Repair Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-7-3
+  name: Tablet Repair Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-7-4
+  name: Smartwatch Repair Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-7-5
+  name: Printer Repair Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-7-6
+  name: Telecommunications Equipment Repair Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-7-7
+  name: Industrial Control System Repair Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
+- id: se-7-3-8
+  name: IT Training Services
+  children: []
+  attributes:
+  - customer_type
+  return_reasons: inherit
 - id: se-7-4
   name: Legal Services
   children: []
@@ -774,7 +2133,15 @@
   - other_reason
 - id: se-7-6
   name: Real Estate
-  children: []
+  children:
+  - se-7-6-1
+  - se-7-6-2
+  - se-7-6-3
+  - se-7-6-4
+  - se-7-6-5
+  - se-7-6-6
+  - se-7-6-7
+  - se-7-6-8
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -786,6 +2153,46 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-7-6-1
+  name: Property Listing Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-6-2
+  name: Real Estate Lead & Prospecting Data Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-6-3
+  name: Automated Property Valuation Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-6-4
+  name: Real Estate Market Data Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-6-5
+  name: Real Estate Photography Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-6-6
+  name: Property Floor Plan Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-6-7
+  name: Property Staging Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-6-8
+  name: Open House Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-7-8
   name: Property Management
   children: []
@@ -832,7 +2239,18 @@
   - other_reason
 - id: se-8-1
   name: Waste Management Services
-  children: []
+  children:
+  - se-8-1-1
+  - se-8-1-2
+  - se-8-1-3
+  - se-8-1-4
+  - se-8-1-5
+  - se-8-1-6
+  - se-8-1-7
+  - se-8-1-8
+  - se-8-1-9
+  - se-8-1-10
+  - se-8-1-11
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -845,8 +2263,138 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: se-9
-  name: Food & Beverage Services
+- id: se-8-1-1
+  name: Waste Removal Services
   children: []
   attributes: []
+  return_reasons: inherit
+- id: se-8-1-2
+  name: Waste Container Rental Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-8-1-3
+  name: Recycling Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-8-1-4
+  name: Curbside Composting Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-8-1-5
+  name: Grease Trap Waste Collection Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-8-1-6
+  name: Animal Mortality Disposal Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-8-1-7
+  name: Biohazardous Waste Disposal Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-8-1-8
+  name: Explosive Waste Disposal Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-8-1-9
+  name: Radioactive Waste Disposal Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-8-1-10
+  name: Controlled Substance Destruction Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-8-1-11
+  name: Deep-Well Injection Disposal Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-9
+  name: Food & Beverage Services
+  children:
+  - se-9-1
+  - se-9-2
+  - se-9-3
+  - se-9-4
+  - se-9-5
+  - se-9-6
+  - se-9-7
+  - se-9-8
+  attributes:
+  - age_group
+  - dietary_option
+  - included_meal
+  return_reasons: inherit
+- id: se-9-1
+  name: Restaurant Services
+  children: []
+  attributes:
+  - age_group
+  - dietary_option
+  - included_meal
+  return_reasons: inherit
+- id: se-9-2
+  name: Catering Services
+  children: []
+  attributes:
+  - age_group
+  - dietary_option
+  - included_meal
+  return_reasons: inherit
+- id: se-9-3
+  name: Meal Services
+  children: []
+  attributes:
+  - age_group
+  - dietary_option
+  - included_meal
+  return_reasons: inherit
+- id: se-9-4
+  name: Food & Drink Classes
+  children: []
+  attributes:
+  - age_group
+  - dietary_option
+  - included_meal
+  return_reasons: inherit
+- id: se-9-5
+  name: Food & Drink Tours
+  children: []
+  attributes:
+  - age_group
+  - dietary_option
+  - included_meal
+  return_reasons: inherit
+- id: se-9-6
+  name: Water Delivery Services
+  children: []
+  attributes:
+  - age_group
+  - dietary_option
+  - included_meal
+  return_reasons: inherit
+- id: se-9-7
+  name: Recipe Development Services
+  children: []
+  attributes:
+  - age_group
+  - dietary_option
+  - included_meal
+  return_reasons: inherit
+- id: se-9-8
+  name: Office Coffee Services
+  children: []
+  attributes:
+  - age_group
+  - dietary_option
+  - included_meal
   return_reasons: inherit

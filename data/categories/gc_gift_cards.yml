@@ -1,8 +1,17 @@
 ---
 - id: gc
   name: Gift Cards
-  children: []
-  attributes: []
+  children:
+  - gc-1
+  - gc-2
+  attributes:
+  - color
+  - gift_card_format
+  - language
+  - packaging_type
+  - personalization_options
+  - redemption_channel
+  - redemption_country/region
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -10,3 +19,27 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: gc-1
+  name: Open-Loop Gift Cards
+  children: []
+  attributes:
+  - color
+  - gift_card_format
+  - language
+  - packaging_type
+  - personalization_options
+  - redemption_channel
+  - redemption_country/region
+  return_reasons: inherit
+- id: gc-2
+  name: Closed-Loop Gift Cards
+  children: []
+  attributes:
+  - color
+  - gift_card_format
+  - language
+  - packaging_type
+  - personalization_options
+  - redemption_channel
+  - redemption_country/region
+  return_reasons: inherit

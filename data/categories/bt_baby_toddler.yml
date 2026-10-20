@@ -14,7 +14,8 @@
   - bt-10
   - bt-11
   - bt-12
-  attributes: []
+  attributes:
+  - color
   return_reasons:
   - size
   - weight
@@ -31,10 +32,9 @@
   - bt-1-2
   attributes:
   - color
-  - infant_age_group
-  - ingredients
   - material
   - pattern
+  - scent
   return_reasons:
   - size
   - color
@@ -86,7 +86,10 @@
   - other_reason
 - id: bt-1-1-2
   name: Bath Seats
-  children: []
+  children:
+  - bt-1-1-2-1
+  - bt-1-1-2-2
+  - bt-1-1-2-3
   attributes:
   - color
   - infant_age_group
@@ -103,9 +106,44 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-1-1-2-1
+  name: Bath Chairs
+  children: []
+  attributes:
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  - safety_certifications
+  return_reasons: inherit
+- id: bt-1-1-2-2
+  name: Reclining Bath Seats
+  children: []
+  attributes:
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  - safety_certifications
+  return_reasons: inherit
+- id: bt-1-1-2-3
+  name: Convertible Bath Seats
+  children: []
+  attributes:
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  - safety_certifications
+  return_reasons: inherit
 - id: bt-1-1-3
   name: Bath Supports
-  children: []
+  children:
+  - bt-1-1-3-1
+  - bt-1-1-3-2
+  - bt-1-1-3-3
+  - bt-1-1-3-4
+  - bt-1-1-3-5
   attributes:
   - color
   - infant_age_group
@@ -122,9 +160,62 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-1-1-3-1
+  name: Bath Hammocks
+  children: []
+  attributes:
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  - safety_certifications
+  return_reasons: inherit
+- id: bt-1-1-3-2
+  name: Framed Baby Bathers
+  children: []
+  attributes:
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  - safety_certifications
+  return_reasons: inherit
+- id: bt-1-1-3-3
+  name: Molded Bath Supports
+  children: []
+  attributes:
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  - safety_certifications
+  return_reasons: inherit
+- id: bt-1-1-3-4
+  name: Bath Support Pads
+  children: []
+  attributes:
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  - safety_certifications
+  return_reasons: inherit
+- id: bt-1-1-3-5
+  name: Inflatable Bath Supports
+  children: []
+  attributes:
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  - safety_certifications
+  return_reasons: inherit
 - id: bt-1-1-4
   name: Bathtubs
-  children: []
+  children:
+  - bt-1-1-4-1
+  - bt-1-1-4-2
+  - bt-1-1-4-3
   attributes:
   - color
   - infant_age_group
@@ -140,6 +231,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-1-1-4-1
+  name: Reclining Baby Bathtubs
+  children: []
+  attributes:
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  - safety_certifications
+  return_reasons: inherit
+- id: bt-1-1-4-2
+  name: Sit-Up Baby Bathtubs
+  children: []
+  attributes:
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  - safety_certifications
+  return_reasons: inherit
+- id: bt-1-1-4-3
+  name: Convertible Baby Bathtubs
+  children: []
+  attributes:
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  - safety_certifications
+  return_reasons: inherit
 - id: bt-1-1-5
   name: Tummy Tubs
   children: []
@@ -195,16 +316,24 @@
   - other_reason
 - id: bt-2
   name: Baby Gift Sets
-  children: []
+  children:
+  - bt-2-1
+  - bt-2-2
+  - bt-2-3
+  - bt-2-4
+  - bt-2-5
   attributes:
   - baby_gift_items_included
-  - care_instructions
   - color
+  - gift_packaging_color
   - gift_set_format
+  - included_baby_clothing_size
   - infant_age_group
   - material
   - pattern
   - personalization_options
+  - scent
+  - season
   - target_gender
   return_reasons:
   - too_big
@@ -215,6 +344,91 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-2-1
+  name: Baby Gift Baskets
+  children: []
+  attributes:
+  - baby_gift_items_included
+  - color
+  - gift_packaging_color
+  - gift_set_format
+  - included_baby_clothing_size
+  - infant_age_group
+  - material
+  - pattern
+  - personalization_options
+  - scent
+  - season
+  - target_gender
+  return_reasons: inherit
+- id: bt-2-2
+  name: Baby Gift Boxes
+  children: []
+  attributes:
+  - baby_gift_items_included
+  - color
+  - gift_packaging_color
+  - gift_set_format
+  - included_baby_clothing_size
+  - infant_age_group
+  - material
+  - pattern
+  - personalization_options
+  - scent
+  - season
+  - target_gender
+  return_reasons: inherit
+- id: bt-2-3
+  name: Baby Clothing Bouquets
+  children: []
+  attributes:
+  - baby_gift_items_included
+  - color
+  - gift_packaging_color
+  - gift_set_format
+  - included_baby_clothing_size
+  - infant_age_group
+  - material
+  - pattern
+  - personalization_options
+  - scent
+  - season
+  - target_gender
+  return_reasons: inherit
+- id: bt-2-4
+  name: Diaper Cakes
+  children: []
+  attributes:
+  - baby_gift_items_included
+  - color
+  - gift_packaging_color
+  - gift_set_format
+  - included_baby_clothing_size
+  - infant_age_group
+  - material
+  - pattern
+  - personalization_options
+  - scent
+  - season
+  - target_gender
+  return_reasons: inherit
+- id: bt-2-5
+  name: Diaper Wreaths
+  children: []
+  attributes:
+  - baby_gift_items_included
+  - color
+  - gift_packaging_color
+  - gift_set_format
+  - included_baby_clothing_size
+  - infant_age_group
+  - material
+  - pattern
+  - personalization_options
+  - scent
+  - season
+  - target_gender
+  return_reasons: inherit
 - id: bt-3
   name: Baby Health
   children:
@@ -224,7 +438,9 @@
   - bt-3-4
   - bt-3-5
   attributes:
-  - infant_age_group
+  - color
+  - form
+  - material
   return_reasons:
   - size
   - changed_my_mind
@@ -235,7 +451,19 @@
   - other_reason
 - id: bt-3-1
   name: Baby Health & Grooming Kits
-  children: []
+  children:
+  - bt-3-1-1
+  - bt-3-1-2
+  - bt-3-1-3
+  - bt-3-1-4
+  - bt-3-1-5
+  - bt-3-1-6
+  - bt-3-1-7
+  - bt-3-1-8
+  - bt-3-1-9
+  - bt-3-1-10
+  - bt-3-1-11
+  - bt-3-1-12
   attributes:
   - baby_health_items_included
   - color
@@ -251,9 +479,167 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-3-1-1
+  name: Baby First Aid Kits
+  children: []
+  attributes:
+  - baby_health_items_included
+  - color
+  - grooming_kit_format
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-3-1-2
+  name: Baby Sick-Day Kits
+  children: []
+  attributes:
+  - baby_health_items_included
+  - color
+  - grooming_kit_format
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-3-1-3
+  name: Baby Medication Administration Kits
+  children: []
+  attributes:
+  - baby_health_items_included
+  - color
+  - grooming_kit_format
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-3-1-4
+  name: Baby Nasal Care Kits
+  children: []
+  attributes:
+  - baby_health_items_included
+  - color
+  - grooming_kit_format
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-3-1-5
+  name: Baby Ear Care Kits
+  children: []
+  attributes:
+  - baby_health_items_included
+  - color
+  - grooming_kit_format
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-3-1-6
+  name: Baby Oral Care Kits
+  children: []
+  attributes:
+  - baby_health_items_included
+  - color
+  - grooming_kit_format
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-3-1-7
+  name: Baby Nail Care Kits
+  children: []
+  attributes:
+  - baby_health_items_included
+  - color
+  - grooming_kit_format
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-3-1-8
+  name: Baby Scalp Care Kits
+  children:
+  - bt-3-1-8-1
+  - bt-3-1-8-2
+  attributes:
+  - baby_health_items_included
+  - color
+  - grooming_kit_format
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-3-1-8-1
+  name: Baby Hairbrush & Comb Sets
+  children: []
+  attributes:
+  - baby_health_items_included
+  - color
+  - grooming_kit_format
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-3-1-8-2
+  name: Baby Cradle Cap Care Kits
+  children: []
+  attributes:
+  - baby_health_items_included
+  - color
+  - grooming_kit_format
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-3-1-9
+  name: Baby Hair Clipper Kits
+  children: []
+  attributes:
+  - baby_health_items_included
+  - color
+  - grooming_kit_format
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-3-1-10
+  name: Baby Bath Brush & Sponge Sets
+  children: []
+  attributes:
+  - baby_health_items_included
+  - color
+  - grooming_kit_format
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-3-1-11
+  name: Baby Toiletry Kits
+  children: []
+  attributes:
+  - baby_health_items_included
+  - color
+  - grooming_kit_format
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-3-1-12
+  name: Baby Umbilical Cord Care Kits
+  children: []
+  attributes:
+  - baby_health_items_included
+  - color
+  - grooming_kit_format
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
 - id: bt-3-2
   name: Nasal Aspirators
-  children: []
+  children:
+  - bt-3-2-1
+  - bt-3-2-2
   attributes:
   - color
   - infant_age_group
@@ -268,16 +654,42 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: bt-3-3
-  name: Pacifier Clips & Holders
+- id: bt-3-2-1
+  name: Bulb Syringe Nasal Aspirators
   children: []
   attributes:
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-3-2-2
+  name: Electric Nasal Aspirators
+  children: []
+  attributes:
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-3-3
+  name: Pacifier Clips & Holders
+  children:
+  - bt-3-3-1
+  - bt-3-3-2
+  - bt-3-3-3
+  attributes:
+  - bead_color
   - care_instructions
+  - clip_color
+  - clip_material
   - closure_type
   - color
+  - leather_color
   - material
   - pattern
   - product_certifications_standards
+  - ribbon_color
   return_reasons:
   - grip
   - length
@@ -287,6 +699,54 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-3-3-1
+  name: Pacifier Clips
+  children: []
+  attributes:
+  - bead_color
+  - care_instructions
+  - clip_color
+  - clip_material
+  - closure_type
+  - color
+  - leather_color
+  - material
+  - pattern
+  - product_certifications_standards
+  - ribbon_color
+  return_reasons: inherit
+- id: bt-3-3-2
+  name: Pacifier Pouches
+  children: []
+  attributes:
+  - bead_color
+  - care_instructions
+  - clip_color
+  - clip_material
+  - closure_type
+  - color
+  - leather_color
+  - material
+  - pattern
+  - product_certifications_standards
+  - ribbon_color
+  return_reasons: inherit
+- id: bt-3-3-3
+  name: Pacifier Loveys
+  children: []
+  attributes:
+  - bead_color
+  - care_instructions
+  - clip_color
+  - clip_material
+  - closure_type
+  - color
+  - leather_color
+  - material
+  - pattern
+  - product_certifications_standards
+  - ribbon_color
+  return_reasons: inherit
 - id: bt-3-4
   name: Pacifier Wipes
   children: []
@@ -330,8 +790,11 @@
   - infant_age_group
   - jewelry_material
   - material
+  - nipple_material
+  - nipple_shape
   - pacifier/teether_design
   - pattern
+  - teat_size
   return_reasons:
   - baby_refused
   - changed_my_mind
@@ -342,14 +805,21 @@
   - other_reason
 - id: bt-3-5-2
   name: Teethers
-  children: []
+  children:
+  - bt-3-5-2-1
+  - bt-3-5-2-2
+  - bt-3-5-2-3
+  - bt-3-5-2-4
+  - bt-3-5-2-5
   attributes:
   - accessory_size
   - color
+  - firmness
   - infant_age_group
   - material
   - pacifier/teether_design
   - pattern
+  - surface_texture
   return_reasons:
   - baby_refused
   - changed_my_mind
@@ -358,6 +828,71 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-3-5-2-1
+  name: Teething Rings
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - firmness
+  - infant_age_group
+  - material
+  - pacifier/teether_design
+  - pattern
+  - surface_texture
+  return_reasons: inherit
+- id: bt-3-5-2-2
+  name: Teething Keys
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - firmness
+  - infant_age_group
+  - material
+  - pacifier/teether_design
+  - pattern
+  - surface_texture
+  return_reasons: inherit
+- id: bt-3-5-2-3
+  name: Teething Tubes
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - firmness
+  - infant_age_group
+  - material
+  - pacifier/teether_design
+  - pattern
+  - surface_texture
+  return_reasons: inherit
+- id: bt-3-5-2-4
+  name: Teething Balls
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - firmness
+  - infant_age_group
+  - material
+  - pacifier/teether_design
+  - pattern
+  - surface_texture
+  return_reasons: inherit
+- id: bt-3-5-2-5
+  name: Teething Blocks
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - firmness
+  - infant_age_group
+  - material
+  - pacifier/teether_design
+  - pattern
+  - surface_texture
+  return_reasons: inherit
 - id: bt-4
   name: Baby Safety
   children:
@@ -368,9 +903,8 @@
   - bt-4-5
   - bt-4-6
   attributes:
-  - infant_age_group
+  - color
   - material
-  - safety_certifications
   return_reasons:
   - installation
   - incompatible
@@ -403,7 +937,10 @@
   - other_reason
 - id: bt-4-1-1
   name: Door Stoppers
-  children: []
+  children:
+  - bt-4-1-1-1
+  - bt-4-1-1-2
+  - bt-4-1-1-3
   attributes:
   - color
   - door_stopper_design
@@ -418,9 +955,42 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-4-1-1-1
+  name: Door Pinch Guards
+  children: []
+  attributes:
+  - color
+  - door_stopper_design
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-1-1-2
+  name: Weighted Door Stoppers
+  children: []
+  attributes:
+  - color
+  - door_stopper_design
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-1-1-3
+  name: Magnetic Door Holders
+  children: []
+  attributes:
+  - color
+  - door_stopper_design
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
 - id: bt-4-1-2
   name: Extension Kits
-  children: []
+  children:
+  - bt-4-1-2-1
+  - bt-4-1-2-2
+  - bt-4-1-2-3
   attributes:
   - color
   - material
@@ -436,6 +1006,33 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-4-1-2-1
+  name: Gate Extension Panel Kits
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-1-2-2
+  name: Gate Spindle Rod Extension Kits
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-1-2-3
+  name: Retractable Gate Extension Kits
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
 - id: bt-4-1-3
   name: Locking Mechanisms
   children: []
@@ -457,7 +1054,9 @@
   - other_reason
 - id: bt-4-1-4
   name: Mounting Kits
-  children: []
+  children:
+  - bt-4-1-4-1
+  - bt-4-1-4-2
   attributes:
   - color
   - material
@@ -472,6 +1071,24 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-4-1-4-1
+  name: Wall Gate Mounting Kits
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-1-4-2
+  name: Railing Gate Mounting Kits
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
 - id: bt-4-1-5
   name: Wall Cups
   children: []
@@ -496,6 +1113,7 @@
   - bt-4-2-2
   - bt-4-2-3
   attributes:
+  - color
   - material
   return_reasons:
   - width
@@ -529,7 +1147,9 @@
   - other_reason
 - id: bt-4-2-2
   name: Swing Gates
-  children: []
+  children:
+  - bt-4-2-2-1
+  - bt-4-2-2-2
   attributes:
   - color
   - gate_mounting_type
@@ -548,6 +1168,30 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-4-2-2-1
+  name: Hardware-Mounted Swing Gates
+  children: []
+  attributes:
+  - color
+  - gate_mounting_type
+  - locking_mechanism
+  - material
+  - opening_direction
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-2-2-2
+  name: Pressure-Mounted Swing Gates
+  children: []
+  attributes:
+  - color
+  - gate_mounting_type
+  - locking_mechanism
+  - material
+  - opening_direction
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
 - id: bt-4-2-3
   name: Walk Through Gates
   children: []
@@ -555,6 +1199,7 @@
   - color
   - gate_mounting_type
   - locking_mechanism
+  - material
   - opening_mechanism
   - pattern
   - safety_device_installation
@@ -576,6 +1221,8 @@
   - bt-4-3-3
   attributes:
   - baby_monitor_features
+  - charger_plug_type
+  - color
   - connectivity_technology
   - display_color_mode
   - range_type
@@ -594,8 +1241,10 @@
   children: []
   attributes:
   - baby_monitor_features
+  - color
   - connectivity_technology
   - display_color_mode
+  - national_plug_standard
   - range_type
   return_reasons:
   - range
@@ -629,9 +1278,11 @@
   children: []
   attributes:
   - baby_monitor_features
+  - color
   - connectivity_technology
   - display_color_mode
   - range_type
+  - wall_plug_type
   return_reasons:
   - range
   - video_quality
@@ -648,6 +1299,7 @@
   - bt-4-4-2
   - bt-4-4-3
   attributes:
+  - color
   - material
   return_reasons:
   - too_big
@@ -662,13 +1314,19 @@
   - other_reason
 - id: bt-4-4-1
   name: Harnesses
-  children: []
+  children:
+  - bt-4-4-1-1
+  - bt-4-4-1-2
+  - bt-4-4-1-3
+  - bt-4-4-1-4
   attributes:
   - closure_type
   - color
   - infant_age_group
+  - joint_type
   - material
   - pattern
+  - size
   return_reasons:
   - too_big
   - too_small
@@ -679,9 +1337,59 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-4-4-1-1
+  name: Child Walking Harnesses
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - infant_age_group
+  - joint_type
+  - material
+  - pattern
+  - size
+  return_reasons: inherit
+- id: bt-4-4-1-2
+  name: Pediatric Positioning Harnesses
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - infant_age_group
+  - joint_type
+  - material
+  - pattern
+  - size
+  return_reasons: inherit
+- id: bt-4-4-1-3
+  name: Child Aviation Restraint Harnesses
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - infant_age_group
+  - joint_type
+  - material
+  - pattern
+  - size
+  return_reasons: inherit
+- id: bt-4-4-1-4
+  name: Child Vehicle Restraint Vests
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - infant_age_group
+  - joint_type
+  - material
+  - pattern
+  - size
+  return_reasons: inherit
 - id: bt-4-4-2
   name: Leashes
-  children: []
+  children:
+  - bt-4-4-2-1
+  - bt-4-4-2-2
   attributes:
   - closure_type
   - color
@@ -696,6 +1404,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-4-4-2-1
+  name: Toddler Backpack Leashes
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-4-4-2-2
+  name: Child Waist-Belt Leashes
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
 - id: bt-4-4-3
   name: Wristbands
   children: []
@@ -703,6 +1431,7 @@
   - closure_type
   - color
   - infant_age_group
+  - joint_type
   - material
   - pattern
   return_reasons:
@@ -739,7 +1468,12 @@
   - other_reason
 - id: bt-4-5-1
   name: Cabinet Locks
-  children: []
+  children:
+  - bt-4-5-1-1
+  - bt-4-5-1-2
+  - bt-4-5-1-3
+  - bt-4-5-1-4
+  - bt-4-5-1-5
   attributes:
   - color
   - locking_mechanism
@@ -757,8 +1491,8 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: bt-4-5-2
-  name: Corner Guards
+- id: bt-4-5-1-1
+  name: U-Shaped Cabinet Locks
   children: []
   attributes:
   - color
@@ -766,6 +1500,60 @@
   - material
   - pattern
   - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-5-1-2
+  name: Cabinet Safety Latches
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-5-1-3
+  name: Flexible Cabinet Locks
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-5-1-4
+  name: Clip-On Cabinet Locks
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-5-1-5
+  name: Magnetic Cabinet Locks
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-5-2
+  name: Corner Guards
+  children:
+  - bt-4-5-2-1
+  - bt-4-5-2-2
+  - bt-4-5-2-3
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  - shape
   return_reasons:
   - size
   - changed_my_mind
@@ -774,9 +1562,46 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-4-5-2-1
+  name: Corner Caps
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  - shape
+  return_reasons: inherit
+- id: bt-4-5-2-2
+  name: Corner Guard Strips
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  - shape
+  return_reasons: inherit
+- id: bt-4-5-2-3
+  name: Corner & Edge Guard Kits
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  - shape
+  return_reasons: inherit
 - id: bt-4-5-3
   name: Door Locks
-  children: []
+  children:
+  - bt-4-5-3-1
+  - bt-4-5-3-2
+  - bt-4-5-3-3
+  - bt-4-5-3-4
   attributes:
   - color
   - locking_mechanism
@@ -793,9 +1618,54 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-4-5-3-1
+  name: Door Knob Covers
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-5-3-2
+  name: Door Lever Locks
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-5-3-3
+  name: Deadbolt Guards
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-5-3-4
+  name: Top-of-Door Locks
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
 - id: bt-4-5-4
   name: Drawer Locks
-  children: []
+  children:
+  - bt-4-5-4-1
+  - bt-4-5-4-2
+  - bt-4-5-4-3
+  - bt-4-5-4-4
+  - bt-4-5-4-5
   attributes:
   - color
   - locking_mechanism
@@ -810,9 +1680,61 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-4-5-4-1
+  name: Magnetic Drawer Locks
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-5-4-2
+  name: Swivel Drawer Locks
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-5-4-3
+  name: Spring-Action Drawer Locks
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-5-4-4
+  name: Strap Drawer Locks
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-5-4-5
+  name: Clip-On Drawer Locks
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
 - id: bt-4-5-5
   name: Outlet Covers
-  children: []
+  children:
+  - bt-4-5-5-1
+  - bt-4-5-5-2
   attributes:
   - color
   - locking_mechanism
@@ -829,6 +1751,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-4-5-5-1
+  name: Childproof Outlet Cover Boxes
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
+- id: bt-4-5-5-2
+  name: Replacement Outlet Safety Covers
+  children: []
+  attributes:
+  - color
+  - locking_mechanism
+  - material
+  - pattern
+  - safety_device_installation
+  return_reasons: inherit
 - id: bt-4-6
   name: Baby Safety Rails
   children:
@@ -868,7 +1810,9 @@
   - other_reason
 - id: bt-4-6-2
   name: Stair Safety Rails
-  children: []
+  children:
+  - bt-4-6-2-1
+  - bt-4-6-2-2
   attributes:
   - color
   - material
@@ -884,6 +1828,24 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-4-6-2-1
+  name: Stair Gates
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - safety_rail_installation
+  return_reasons: inherit
+- id: bt-4-6-2-2
+  name: Banister Guards
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - safety_rail_installation
+  return_reasons: inherit
 - id: bt-5
   name: Baby Toys & Activity Equipment
   children:
@@ -901,12 +1863,9 @@
   - bt-5-12
   attributes:
   - baby/toddler_equipment_safety_features
-  - care_instructions
   - color
-  - infant_age_group
   - material
   - pattern
-  - safety_certifications
   return_reasons:
   - size
   - color
@@ -926,6 +1885,7 @@
   - bt-5-1-5
   attributes:
   - color
+  - language
   - pattern
   - toy/game_material
   return_reasons:
@@ -960,6 +1920,7 @@
   name: Alphabet Books
   children: []
   attributes:
+  - book_format
   - color
   - developmental_features
   - infant_age_group
@@ -994,7 +1955,14 @@
   - other_reason
 - id: bt-5-1-4
   name: Alphabet Electric Toys
-  children: []
+  children:
+  - bt-5-1-4-1
+  - bt-5-1-4-2
+  - bt-5-1-4-3
+  - bt-5-1-4-4
+  - bt-5-1-4-5
+  - bt-5-1-4-6
+  - bt-5-1-4-7
   attributes:
   - color
   - developmental_features
@@ -1013,16 +1981,106 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: bt-5-1-5
-  name: Alphabet Puzzles
+- id: bt-5-1-4-1
+  name: Electronic Alphabet Learning Laptops
   children: []
   attributes:
-  - battery_size
-  - battery_type
   - color
   - developmental_features
   - infant_age_group
   - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-1-4-2
+  name: Electronic Alphabet Learning Tablets
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-1-4-3
+  name: Electronic Alphabet Learning Pen Sets
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-1-4-4
+  name: Electronic Alphabet Activity Tables
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-1-4-5
+  name: Electronic Alphabet Wall Charts
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-1-4-6
+  name: Alphabet Robot Toys
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-1-4-7
+  name: Electronic Alphabet Ride-On Toys
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-1-5
+  name: Alphabet Puzzles
+  children:
+  - bt-5-1-5-1
+  - bt-5-1-5-2
+  - bt-5-1-5-3
+  attributes:
+  - battery_size
+  - battery_type
+  - board_color
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - letter_color
+  - letter_color_scheme
   - pattern
   - product_certifications_standards
   - toy/game_material
@@ -1034,6 +2092,57 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-5-1-5-1
+  name: Alphabet Board Puzzles
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - board_color
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - letter_color
+  - letter_color_scheme
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-1-5-2
+  name: Alphabet Puzzle Cards
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - board_color
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - letter_color
+  - letter_color_scheme
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-1-5-3
+  name: Spelling Board Puzzles
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - board_color
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - letter_color
+  - letter_color_scheme
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
 - id: bt-5-2
   name: Baby Activity Toys
   children:
@@ -1045,6 +2154,8 @@
   - color
   - infant_age_group
   - pattern
+  - power_source
+  - shape
   - toy/game_material
   return_reasons:
   - size
@@ -1057,7 +2168,15 @@
   - other_reason
 - id: bt-5-2-1
   name: Activity Centers
-  children: []
+  children:
+  - bt-5-2-1-1
+  - bt-5-2-1-2
+  - bt-5-2-1-3
+  - bt-5-2-1-4
+  - bt-5-2-1-5
+  - bt-5-2-1-6
+  - bt-5-2-1-7
+  - bt-5-2-1-8
   attributes:
   - color
   - developmental_features
@@ -1074,15 +2193,123 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-5-2-1-1
+  name: Activity Tables
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-1-2
+  name: Activity Boards
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-1-3
+  name: Activity Cubes
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-1-4
+  name: Activity Pyramids
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-1-5
+  name: Activity Triangles
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-1-6
+  name: Seated Activity Centers
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-1-7
+  name: Doorway Jumper Activity Centers
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-1-8
+  name: Push-Along Activity Centers
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
 - id: bt-5-2-2
   name: Musical Toys
-  children: []
+  children:
+  - bt-5-2-2-1
+  - bt-5-2-2-2
+  - bt-5-2-2-3
+  - bt-5-2-2-4
+  - bt-5-2-2-5
+  - bt-5-2-2-6
+  - bt-5-2-2-7
+  - bt-5-2-2-8
+  - bt-5-2-2-9
+  - bt-5-2-2-10
+  - bt-5-2-2-11
+  - bt-5-2-2-12
+  - bt-5-2-2-13
+  - bt-5-2-2-14
+  - bt-5-2-2-15
+  - bt-5-2-2-16
+  - bt-5-2-2-17
+  - bt-5-2-2-18
+  - bt-5-2-2-19
   attributes:
   - battery_size
   - battery_type
   - color
   - developmental_features
   - infant_age_group
+  - language
   - pattern
   - product_certifications_standards
   - toy/game_material
@@ -1096,9 +2323,449 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-5-2-2-1
+  name: Baby Drums & Percussion Instruments
+  children:
+  - bt-5-2-2-1-1
+  - bt-5-2-2-1-2
+  - bt-5-2-2-1-3
+  - bt-5-2-2-1-4
+  - bt-5-2-2-1-5
+  - bt-5-2-2-1-6
+  - bt-5-2-2-1-7
+  - bt-5-2-2-1-8
+  - bt-5-2-2-1-9
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-1-1
+  name: Baby Drums
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-1-2
+  name: Baby Tambourines
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-1-3
+  name: Baby Maracas
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-1-4
+  name: Baby Hand Bells
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-1-5
+  name: Baby Chime Toys
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-1-6
+  name: Baby Rainmakers
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-1-7
+  name: Baby Rhythm Sticks
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-1-8
+  name: Baby Xylophones
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-1-9
+  name: Baby Glockenspiels
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-2
+  name: Baby Pianos & Keyboards
+  children:
+  - bt-5-2-2-2-1
+  - bt-5-2-2-2-2
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-2-1
+  name: Baby Pianos
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-2-2
+  name: Baby Keyboards
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-3
+  name: Baby String Instruments
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-4
+  name: Baby Trumpets
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-5
+  name: Baby Saxophone Toys
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-6
+  name: Baby Whistles
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-7
+  name: Baby Microphones
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-8
+  name: Baby Musical Instrument Sets
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-9
+  name: Baby Musical Books
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-10
+  name: Musical Mobiles
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-11
+  name: Musical Plush Toys
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-12
+  name: Baby Musical Activity Cubes
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-13
+  name: Baby Musical Activity Tables
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-14
+  name: Baby Musical Play Gyms
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-15
+  name: Baby Musical Play Mats
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-16
+  name: Musical Puzzles
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-17
+  name: Musical Pop-Up Toys
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-18
+  name: Musical Pounding Toys
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-2-19
+  name: Musical Toy Phones
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - language
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
 - id: bt-5-2-3
   name: Rattles
-  children: []
+  children:
+  - bt-5-2-3-1
+  - bt-5-2-3-2
+  - bt-5-2-3-3
+  - bt-5-2-3-4
+  - bt-5-2-3-5
+  - bt-5-2-3-6
+  - bt-5-2-3-7
+  - bt-5-2-3-8
+  - bt-5-2-3-9
   attributes:
   - battery_size
   - battery_type
@@ -1107,6 +2774,7 @@
   - infant_age_group
   - material
   - pattern
+  - personalization_type
   - product_certifications_standards
   - recommended_age_group
   - toy/game_material
@@ -1119,8 +2787,8 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: bt-5-2-4
-  name: Teething Toys
+- id: bt-5-2-3-1
+  name: Ball Rattles
   children: []
   attributes:
   - battery_size
@@ -1130,7 +2798,163 @@
   - infant_age_group
   - material
   - pattern
+  - personalization_type
   - product_certifications_standards
+  - recommended_age_group
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-3-2
+  name: Barbell Rattles
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - personalization_type
+  - product_certifications_standards
+  - recommended_age_group
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-3-3
+  name: Cage Rattles
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - personalization_type
+  - product_certifications_standards
+  - recommended_age_group
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-3-4
+  name: Cube Rattles
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - personalization_type
+  - product_certifications_standards
+  - recommended_age_group
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-3-5
+  name: Cylinder Rattles
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - personalization_type
+  - product_certifications_standards
+  - recommended_age_group
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-3-6
+  name: Disc Rattles
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - personalization_type
+  - product_certifications_standards
+  - recommended_age_group
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-3-7
+  name: Key Rattles
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - personalization_type
+  - product_certifications_standards
+  - recommended_age_group
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-3-8
+  name: Ring Rattles
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - personalization_type
+  - product_certifications_standards
+  - recommended_age_group
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-3-9
+  name: Stick Rattles
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - personalization_type
+  - product_certifications_standards
+  - recommended_age_group
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-4
+  name: Teething Toys
+  children:
+  - bt-5-2-4-1
+  - bt-5-2-4-2
+  - bt-5-2-4-3
+  - bt-5-2-4-4
+  - bt-5-2-4-5
+  - bt-5-2-4-6
+  - bt-5-2-4-7
+  - bt-5-2-4-8
+  - bt-5-2-4-9
+  - bt-5-2-4-10
+  - bt-5-2-4-11
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - product_certifications_standards
+  - shape
   - toy/game_material
   return_reasons:
   - too_big
@@ -1142,6 +2966,171 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-5-2-4-1
+  name: Teething Links
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-4-2
+  name: Teething Wheels
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-4-3
+  name: Pacifier Teethers
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-4-4
+  name: Palm Teethers
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-4-5
+  name: Feeder Teethers
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-4-6
+  name: Teething Mitts
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-4-7
+  name: Teething Jewelry
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-4-8
+  name: Plush Teethers
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-4-9
+  name: Teething Books
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-4-10
+  name: Clip-On Teethers
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-2-4-11
+  name: Suction-Cup Teethers
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - material
+  - pattern
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
 - id: bt-5-3
   name: Baby Bouncers & Rockers
   children:
@@ -1162,7 +3151,9 @@
   - other_reason
 - id: bt-5-3-1
   name: Baby Bouncers
-  children: []
+  children:
+  - bt-5-3-1-1
+  - bt-5-3-1-2
   attributes:
   - baby_equipment_safety_features
   - color
@@ -1172,6 +3163,7 @@
   - pattern
   - portability
   - product_certifications_standards
+  - seat_pad_color
   - toy/game_material
   return_reasons:
   - head_support
@@ -1181,8 +3173,8 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: bt-5-3-2
-  name: Baby Rockers
+- id: bt-5-3-1-1
+  name: Manual Baby Bouncers
   children: []
   attributes:
   - baby_equipment_safety_features
@@ -1193,6 +3185,41 @@
   - pattern
   - portability
   - product_certifications_standards
+  - seat_pad_color
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-3-1-2
+  name: Automatic Baby Bouncers
+  children: []
+  attributes:
+  - baby_equipment_safety_features
+  - color
+  - developmental_features
+  - infant_age_group
+  - motion
+  - pattern
+  - portability
+  - product_certifications_standards
+  - seat_pad_color
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-3-2
+  name: Baby Rockers
+  children:
+  - bt-5-3-2-1
+  - bt-5-3-2-2
+  attributes:
+  - baby_equipment_safety_features
+  - color
+  - developmental_features
+  - frame_material
+  - infant_age_group
+  - motion
+  - pattern
+  - plug_type
+  - portability
+  - product_certifications_standards
+  - seat_pad_color
   - toy/game_material
   return_reasons:
   - color
@@ -1203,6 +3230,40 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-5-3-2-1
+  name: Manual Baby Rockers
+  children: []
+  attributes:
+  - baby_equipment_safety_features
+  - color
+  - developmental_features
+  - frame_material
+  - infant_age_group
+  - motion
+  - pattern
+  - plug_type
+  - portability
+  - product_certifications_standards
+  - seat_pad_color
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-3-2-2
+  name: Self-Rocking Baby Rockers
+  children: []
+  attributes:
+  - baby_equipment_safety_features
+  - color
+  - developmental_features
+  - frame_material
+  - infant_age_group
+  - motion
+  - pattern
+  - plug_type
+  - portability
+  - product_certifications_standards
+  - seat_pad_color
+  - toy/game_material
+  return_reasons: inherit
 - id: bt-5-4
   name: Baby Jumpers & Swings
   children:
@@ -1210,6 +3271,7 @@
   - bt-5-4-2
   attributes:
   - color
+  - frame_color
   - pattern
   - toy/game_material
   return_reasons:
@@ -1222,7 +3284,10 @@
   - other_reason
 - id: bt-5-4-1
   name: Baby Jumpers
-  children: []
+  children:
+  - bt-5-4-1-1
+  - bt-5-4-1-2
+  - bt-5-4-1-3
   attributes:
   - color
   - developmental_features
@@ -1241,9 +3306,50 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-5-4-1-1
+  name: Freestanding Baby Jumpers
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - motion
+  - pattern
+  - portability
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-4-1-2
+  name: Doorway Baby Jumpers
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - motion
+  - pattern
+  - portability
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-4-1-3
+  name: Ceiling-Mounted Baby Jumpers
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - motion
+  - pattern
+  - portability
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
 - id: bt-5-4-2
   name: Baby Swings
-  children: []
+  children:
+  - bt-5-4-2-1
+  - bt-5-4-2-2
   attributes:
   - battery_size
   - battery_type
@@ -1265,6 +3371,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-5-4-2-1
+  name: Stationary Baby Swings
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - motion
+  - pattern
+  - portability
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-4-2-2
+  name: Portable Baby Swings
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - infant_age_group
+  - motion
+  - pattern
+  - portability
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
 - id: bt-5-5
   name: Baby Mobile Accessories
   children:
@@ -1272,6 +3408,7 @@
   - bt-5-5-2
   - bt-5-5-3
   attributes:
+  - color
   - toy/game_material
   return_reasons:
   - installation
@@ -1285,7 +3422,10 @@
   - other_reason
 - id: bt-5-5-1
   name: Mobile Arms
-  children: []
+  children:
+  - bt-5-5-1-1
+  - bt-5-5-1-2
+  - bt-5-5-1-3
   attributes:
   - color
   - developmental_features
@@ -1302,6 +3442,39 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-5-5-1-1
+  name: Furniture-Mounted Mobile Arms
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - mobile_mounting_type
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-5-1-2
+  name: Wall-Mounted Mobile Arms
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - mobile_mounting_type
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-5-1-3
+  name: Floor-Standing Mobile Arms
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - mobile_mounting_type
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
 - id: bt-5-5-2
   name: Mobile Attachments
   children: []
@@ -1324,7 +3497,10 @@
   - other_reason
 - id: bt-5-5-3
   name: Mobile Holders
-  children: []
+  children:
+  - bt-5-5-3-1
+  - bt-5-5-3-2
+  - bt-5-5-3-3
   attributes:
   - battery_size
   - battery_type
@@ -1343,6 +3519,45 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-5-5-3-1
+  name: Clamp-On Baby Mobile Holders
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - mobile_mounting_type
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-5-3-2
+  name: Baby Mobile Stands
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - mobile_mounting_type
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-5-3-3
+  name: Baby Mobile Mounting Kits
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - color
+  - developmental_features
+  - mobile_mounting_type
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
 - id: bt-5-6
   name: Baby Mobiles
   children:
@@ -1350,6 +3565,7 @@
   - bt-5-6-2
   - bt-5-6-3
   attributes:
+  - color
   - toy/game_material
   return_reasons:
   - color
@@ -1386,15 +3602,19 @@
   - other_reason
 - id: bt-5-6-2
   name: Crib Mobiles
-  children: []
+  children:
+  - bt-5-6-2-1
+  - bt-5-6-2-2
   attributes:
   - attachment_method
   - color
   - developmental_features
+  - frame_shape
   - infant_age_group
   - mobile_movement
   - nursery_theme
   - pattern
+  - personalization_type
   - product_certifications_standards
   - toy/game_material
   return_reasons:
@@ -1407,6 +3627,38 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-5-6-2-1
+  name: Battery-Operated Crib Mobiles
+  children: []
+  attributes:
+  - attachment_method
+  - color
+  - developmental_features
+  - frame_shape
+  - infant_age_group
+  - mobile_movement
+  - nursery_theme
+  - pattern
+  - personalization_type
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-6-2-2
+  name: Wind-Up Crib Mobiles
+  children: []
+  attributes:
+  - attachment_method
+  - color
+  - developmental_features
+  - frame_shape
+  - infant_age_group
+  - mobile_movement
+  - nursery_theme
+  - pattern
+  - personalization_type
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
 - id: bt-5-6-3
   name: Stroller Mobiles
   children: []
@@ -1448,18 +3700,23 @@
   - other_reason
 - id: bt-5-7-1
   name: Night Lights
-  children: []
+  children:
+  - bt-5-7-1-1
+  - bt-5-7-1-2
   attributes:
   - attachment_method
   - battery_size
   - battery_type
   - color
   - infant_age_group
+  - light_color
   - light_options
   - lighting_features
   - pattern
+  - plug_type
   - power_source
   - product_certifications_standards
+  - shape
   - soothing_sounds
   - toy/game_material
   return_reasons:
@@ -1470,23 +3727,73 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: bt-5-7-2
-  name: Plush Toys
+- id: bt-5-7-1-1
+  name: Plug-In Night Lights
   children: []
   attributes:
   - attachment_method
   - battery_size
   - battery_type
   - color
+  - infant_age_group
+  - light_color
+  - light_options
+  - lighting_features
+  - pattern
+  - plug_type
+  - power_source
+  - product_certifications_standards
+  - shape
+  - soothing_sounds
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-7-1-2
+  name: Cordless Night Lights
+  children: []
+  attributes:
+  - attachment_method
+  - battery_size
+  - battery_type
+  - color
+  - infant_age_group
+  - light_color
+  - light_options
+  - lighting_features
+  - pattern
+  - plug_type
+  - power_source
+  - product_certifications_standards
+  - shape
+  - soothing_sounds
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-7-2
+  name: Plush Toys
+  children:
+  - bt-5-7-2-1
+  - bt-5-7-2-2
+  - bt-5-7-2-3
+  - bt-5-7-2-4
+  - bt-5-7-2-5
+  attributes:
+  - attachment_method
+  - backing_color
+  - battery_size
+  - battery_type
+  - blanket_color
+  - color
   - construction
   - developmental_features
   - embellishment/trim_material
   - infant_age_group
   - jewelry_material
+  - language
   - light_options
   - pattern
+  - personalization_type
   - power_source
   - product_certifications_standards
+  - scent
   - soothing_sounds
   - toy/game_material
   return_reasons:
@@ -1499,6 +3806,131 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-5-7-2-1
+  name: Baby Comforters
+  children: []
+  attributes:
+  - attachment_method
+  - backing_color
+  - battery_size
+  - battery_type
+  - blanket_color
+  - color
+  - construction
+  - developmental_features
+  - embellishment/trim_material
+  - infant_age_group
+  - jewelry_material
+  - language
+  - light_options
+  - pattern
+  - personalization_type
+  - power_source
+  - product_certifications_standards
+  - scent
+  - soothing_sounds
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-7-2-2
+  name: Convertible Plush Blankets
+  children: []
+  attributes:
+  - attachment_method
+  - backing_color
+  - battery_size
+  - battery_type
+  - blanket_color
+  - color
+  - construction
+  - developmental_features
+  - embellishment/trim_material
+  - infant_age_group
+  - jewelry_material
+  - language
+  - light_options
+  - pattern
+  - personalization_type
+  - power_source
+  - product_certifications_standards
+  - scent
+  - soothing_sounds
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-7-2-3
+  name: Plush Cuddle Pillows
+  children: []
+  attributes:
+  - attachment_method
+  - backing_color
+  - battery_size
+  - battery_type
+  - blanket_color
+  - color
+  - construction
+  - developmental_features
+  - embellishment/trim_material
+  - infant_age_group
+  - jewelry_material
+  - language
+  - light_options
+  - pattern
+  - personalization_type
+  - power_source
+  - product_certifications_standards
+  - scent
+  - soothing_sounds
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-7-2-4
+  name: Plush Pacifiers
+  children: []
+  attributes:
+  - attachment_method
+  - backing_color
+  - battery_size
+  - battery_type
+  - blanket_color
+  - color
+  - construction
+  - developmental_features
+  - embellishment/trim_material
+  - infant_age_group
+  - jewelry_material
+  - language
+  - light_options
+  - pattern
+  - personalization_type
+  - power_source
+  - product_certifications_standards
+  - scent
+  - soothing_sounds
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-7-2-5
+  name: Plush Rattles
+  children: []
+  attributes:
+  - attachment_method
+  - backing_color
+  - battery_size
+  - battery_type
+  - blanket_color
+  - color
+  - construction
+  - developmental_features
+  - embellishment/trim_material
+  - infant_age_group
+  - jewelry_material
+  - language
+  - light_options
+  - pattern
+  - personalization_type
+  - power_source
+  - product_certifications_standards
+  - scent
+  - soothing_sounds
+  - toy/game_material
+  return_reasons: inherit
 - id: bt-5-7-3
   name: Sound Machines
   children: []
@@ -1511,6 +3943,7 @@
   - infant_age_group
   - light_options
   - pattern
+  - power_input_type
   - power_source
   - product_certifications_standards
   - soothing_sounds
@@ -1531,6 +3964,7 @@
   - bt-5-8-1
   - bt-5-8-2
   attributes:
+  - color
   - toy/game_material
   return_reasons:
   - height
@@ -1542,7 +3976,11 @@
   - other_reason
 - id: bt-5-8-1
   name: Baby Walkers
-  children: []
+  children:
+  - bt-5-8-1-1
+  - bt-5-8-1-2
+  - bt-5-8-1-3
+  - bt-5-8-1-4
   attributes:
   - color
   - developmental_features
@@ -1559,6 +3997,54 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-5-8-1-1
+  name: Push Baby Walkers
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - portability
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-8-1-2
+  name: Seated Baby Walkers
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - portability
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-8-1-3
+  name: Ride-On Baby Walkers
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - portability
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-8-1-4
+  name: Convertible Baby Walkers
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - portability
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
 - id: bt-5-8-2
   name: Jumperoos
   children: []
@@ -1604,11 +4090,14 @@
   attributes:
   - color
   - developmental_features
+  - frame_color
   - pattern
   - play_equipment_items_included
   - portability
   - product_certifications_standards
+  - shape
   - toy/game_material
+  - toy_color
   return_reasons:
   - size
   - padding
@@ -1623,13 +4112,18 @@
   name: Play Mats
   children: []
   attributes:
+  - back_color
   - color
   - developmental_features
+  - door_color
   - infant_age_group
+  - language
   - pattern
   - play_equipment_items_included
   - portability
   - product_certifications_standards
+  - shape
+  - suit_pieces
   - toy/game_material
   return_reasons:
   - size
@@ -1644,7 +4138,9 @@
   - other_reason
 - id: bt-5-10
   name: Play Yards
-  children: []
+  children:
+  - bt-5-10-1
+  - bt-5-10-2
   attributes:
   - color
   - developmental_features
@@ -1654,6 +4150,7 @@
   - play_yard_design_features
   - portability
   - product_certifications_standards
+  - shape
   - toy/game_material
   return_reasons:
   - size
@@ -1664,9 +4161,42 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-5-10-1
+  name: Panel Play Yards
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - play_equipment_items_included
+  - play_yard_design_features
+  - portability
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-10-2
+  name: Soft-Sided Play Yards
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - play_equipment_items_included
+  - play_yard_design_features
+  - portability
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
 - id: bt-5-11
   name: Push & Pull Toys
-  children: []
+  children:
+  - bt-5-11-1
+  - bt-5-11-2
+  - bt-5-11-3
   attributes:
   - color
   - developmental_features
@@ -1683,8 +4213,8 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: bt-5-12
-  name: Sorting & Stacking Toys
+- id: bt-5-11-1
+  name: Push Toys
   children: []
   attributes:
   - color
@@ -1692,6 +4222,47 @@
   - infant_age_group
   - pattern
   - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-11-2
+  name: Pull Toys
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-11-3
+  name: Push-and-Go Toys
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - product_certifications_standards
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-12
+  name: Sorting & Stacking Toys
+  children:
+  - bt-5-12-1
+  - bt-5-12-2
+  - bt-5-12-3
+  - bt-5-12-4
+  - bt-5-12-5
+  - bt-5-12-6
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - personalization_options
+  - product_certifications_standards
+  - shape
   - toy/game_material
   return_reasons:
   - size
@@ -1702,6 +4273,84 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-5-12-1
+  name: Shape Sorters
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - personalization_options
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-12-2
+  name: Posting Boxes
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - personalization_options
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-12-3
+  name: Peg Stackers
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - personalization_options
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-12-4
+  name: Stacking Cups
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - personalization_options
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-12-5
+  name: Stacking Blocks
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - personalization_options
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
+- id: bt-5-12-6
+  name: Balance Stackers
+  children: []
+  attributes:
+  - color
+  - developmental_features
+  - infant_age_group
+  - pattern
+  - personalization_options
+  - product_certifications_standards
+  - shape
+  - toy/game_material
+  return_reasons: inherit
 - id: bt-6
   name: Baby Transport
   children:
@@ -1710,12 +4359,8 @@
   - bt-6-3
   attributes:
   - assembly_required
-  - care_instructions
   - color
-  - infant_age_group
-  - material
   - pattern
-  - safety_certifications
   return_reasons:
   - size
   - color
@@ -1750,7 +4395,10 @@
   - other_reason
 - id: bt-6-1-1
   name: Booster Seats
-  children: []
+  children:
+  - bt-6-1-1-1
+  - bt-6-1-1-2
+  - bt-6-1-1-3
   attributes:
   - baby/toddler_car_seat_features
   - car_seat_installation
@@ -1767,9 +4415,43 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-6-1-1-1
+  name: Backless Booster Car Seats
+  children: []
+  attributes:
+  - baby/toddler_car_seat_features
+  - car_seat_installation
+  - car_seat_orientation
+  - color
+  - infant_age_group
+  - pattern
+  return_reasons: inherit
+- id: bt-6-1-1-2
+  name: High-Back Booster Car Seats
+  children: []
+  attributes:
+  - baby/toddler_car_seat_features
+  - car_seat_installation
+  - car_seat_orientation
+  - color
+  - infant_age_group
+  - pattern
+  return_reasons: inherit
+- id: bt-6-1-1-3
+  name: Harnessed Booster Car Seats
+  children: []
+  attributes:
+  - baby/toddler_car_seat_features
+  - car_seat_installation
+  - car_seat_orientation
+  - color
+  - infant_age_group
+  - pattern
+  return_reasons: inherit
 - id: bt-6-1-2
   name: Car Seat Strollers
-  children: []
+  children:
+  - bt-6-1-2-1
   attributes:
   - car_seat_installation
   - car_seat_orientation
@@ -1790,6 +4472,19 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-6-1-2-1
+  name: Integrated Car Seat Strollers
+  children: []
+  attributes:
+  - car_seat_installation
+  - car_seat_orientation
+  - color
+  - folding_mechanism
+  - infant_age_group
+  - pattern
+  - stroller_features
+  - stroller_wheel_type
+  return_reasons: inherit
 - id: bt-6-1-3
   name: Convertible Car Seats
   children: []
@@ -1802,6 +4497,7 @@
   - color
   - infant_age_group
   - pattern
+  - shell_color
   return_reasons:
   - size
   - vehicle_fit
@@ -1845,6 +4541,7 @@
   - bt-6-2-5
   attributes:
   - color
+  - material
   - pattern
   return_reasons:
   - size
@@ -1858,7 +4555,11 @@
   - other_reason
 - id: bt-6-2-1
   name: Backpack Carriers
-  children: []
+  children:
+  - bt-6-2-1-1
+  - bt-6-2-1-2
+  - bt-6-2-1-3
+  - bt-6-2-1-4
   attributes:
   - carrying_positions
   - closure_type
@@ -1876,9 +4577,55 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-6-2-1-1
+  name: Framed Child Carrier Backpacks
+  children: []
+  attributes:
+  - carrying_positions
+  - closure_type
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-6-2-1-2
+  name: Onbuhimo Carriers
+  children: []
+  attributes:
+  - carrying_positions
+  - closure_type
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-6-2-1-3
+  name: Podaegi Carriers
+  children: []
+  attributes:
+  - carrying_positions
+  - closure_type
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-6-2-1-4
+  name: Hmong Back Carriers
+  children: []
+  attributes:
+  - carrying_positions
+  - closure_type
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
 - id: bt-6-2-2
   name: Mei Tai Carriers
-  children: []
+  children:
+  - bt-6-2-2-1
+  - bt-6-2-2-2
   attributes:
   - carrying_positions
   - closure_type
@@ -1896,8 +4643,57 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-6-2-2-1
+  name: Traditional Tie-On Mei Tai Carriers
+  children: []
+  attributes:
+  - carrying_positions
+  - closure_type
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-6-2-2-2
+  name: Hybrid Mei Tai Carriers
+  children: []
+  attributes:
+  - carrying_positions
+  - closure_type
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
 - id: bt-6-2-3
   name: Ring Slings & Hip Carriers
+  children:
+  - bt-6-2-3-1
+  - bt-6-2-3-2
+  attributes:
+  - carrying_positions
+  - closure_type
+  - color
+  - construction
+  - embellishment/trim_material
+  - infant_age_group
+  - jewelry_material
+  - material
+  - pattern
+  - primary_shoulder
+  return_reasons:
+  - size
+  - color
+  - comfort
+  - difficult_to_adjust
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: bt-6-2-3-1
+  name: Ring Slings
   children: []
   attributes:
   - carrying_positions
@@ -1909,21 +4705,29 @@
   - jewelry_material
   - material
   - pattern
-  return_reasons:
-  - size
+  - primary_shoulder
+  return_reasons: inherit
+- id: bt-6-2-3-2
+  name: Hip Carriers
+  children: []
+  attributes:
+  - carrying_positions
+  - closure_type
   - color
-  - comfort
-  - difficult_to_adjust
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  - construction
+  - embellishment/trim_material
+  - infant_age_group
+  - jewelry_material
+  - material
+  - pattern
+  - primary_shoulder
+  return_reasons: inherit
 - id: bt-6-2-4
   name: Soft-Structured Carriers
   children: []
   attributes:
+  - baby_carrier_strap_length_category
+  - carrier_size
   - carrying_positions
   - closure_type
   - color
@@ -1942,7 +4746,9 @@
   - other_reason
 - id: bt-6-2-5
   name: Wrap Carriers
-  children: []
+  children:
+  - bt-6-2-5-1
+  - bt-6-2-5-2
   attributes:
   - carrying_positions
   - closure_type
@@ -1962,6 +4768,28 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-6-2-5-1
+  name: Stretchy Wrap Carriers
+  children: []
+  attributes:
+  - carrying_positions
+  - closure_type
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-6-2-5-2
+  name: Woven Wrap Carriers
+  children: []
+  attributes:
+  - carrying_positions
+  - closure_type
+  - color
+  - infant_age_group
+  - material
+  - pattern
+  return_reasons: inherit
 - id: bt-6-3
   name: Baby Strollers
   children:
@@ -1973,6 +4801,8 @@
   - bt-6-3-6
   attributes:
   - color
+  - fabric_color
+  - frame_color
   - pattern
   return_reasons:
   - weight
@@ -1986,11 +4816,16 @@
   name: Convertible Strollers
   children: []
   attributes:
+  - canopy_color
   - color
+  - fabric_color
   - folding_mechanism
+  - frame_color
   - infant_age_group
   - pattern
+  - seat_color
   - stroller_features
+  - stroller_seat_count_configuration
   - stroller_wheel_type
   return_reasons:
   - weight
@@ -2004,11 +4839,14 @@
   - other_reason
 - id: bt-6-3-2
   name: Double Strollers
-  children: []
+  children:
+  - bt-6-3-2-1
+  - bt-6-3-2-2
   attributes:
   - color
   - double_stroller_configuration
   - folding_mechanism
+  - frame_color
   - infant_age_group
   - pattern
   - stroller_features
@@ -2023,12 +4861,40 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-6-3-2-1
+  name: Side-by-Side Double Strollers
+  children: []
+  attributes:
+  - color
+  - double_stroller_configuration
+  - folding_mechanism
+  - frame_color
+  - infant_age_group
+  - pattern
+  - stroller_features
+  - stroller_wheel_type
+  return_reasons: inherit
+- id: bt-6-3-2-2
+  name: Tandem Double Strollers
+  children: []
+  attributes:
+  - color
+  - double_stroller_configuration
+  - folding_mechanism
+  - frame_color
+  - infant_age_group
+  - pattern
+  - stroller_features
+  - stroller_wheel_type
+  return_reasons: inherit
 - id: bt-6-3-3
   name: Full-Sized Strollers
   children: []
   attributes:
   - color
+  - fabric_color
   - folding_mechanism
+  - frame_color
   - infant_age_group
   - pattern
   - stroller_features
@@ -2046,12 +4912,16 @@
   - other_reason
 - id: bt-6-3-4
   name: Jogging Strollers
-  children: []
+  children:
+  - bt-6-3-4-1
+  - bt-6-3-4-2
   attributes:
   - color
   - folding_mechanism
+  - frame_color
   - infant_age_group
   - pattern
+  - seating_capacity_type
   - stroller_features
   - stroller_wheel_type
   return_reasons:
@@ -2065,12 +4935,43 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: bt-6-3-5
-  name: Travel Systems
+- id: bt-6-3-4-1
+  name: Single Jogging Strollers
   children: []
   attributes:
   - color
   - folding_mechanism
+  - frame_color
+  - infant_age_group
+  - pattern
+  - seating_capacity_type
+  - stroller_features
+  - stroller_wheel_type
+  return_reasons: inherit
+- id: bt-6-3-4-2
+  name: Double Jogging Strollers
+  children: []
+  attributes:
+  - color
+  - folding_mechanism
+  - frame_color
+  - infant_age_group
+  - pattern
+  - seating_capacity_type
+  - stroller_features
+  - stroller_wheel_type
+  return_reasons: inherit
+- id: bt-6-3-5
+  name: Travel Systems
+  children: []
+  attributes:
+  - canopy_color
+  - car_seat_color
+  - carrycot_color
+  - color
+  - folding_mechanism
+  - frame_color
+  - handle_color
   - infant_age_group
   - pattern
   - stroller_features
@@ -2091,6 +4992,7 @@
   attributes:
   - color
   - folding_mechanism
+  - frame_color
   - infant_age_group
   - pattern
   - stroller_features
@@ -2112,10 +5014,7 @@
   - bt-7-4
   - bt-7-5
   attributes:
-  - care_instructions
   - color
-  - infant_age_group
-  - material
   - pattern
   return_reasons:
   - size
@@ -2139,6 +5038,7 @@
   - bt-7-1-6
   attributes:
   - color
+  - material
   - pattern
   return_reasons:
   - color
@@ -2151,7 +5051,9 @@
   - other_reason
 - id: bt-7-1-1
   name: Car Seat Canopies
-  children: []
+  children:
+  - bt-7-1-1-1
+  - bt-7-1-1-2
   attributes:
   - care_instructions
   - color
@@ -2169,14 +5071,42 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-7-1-1-1
+  name: Draped Car Seat Canopies
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_seat_type
+  - cover_features
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-7-1-1-2
+  name: Fitted Car Seat Canopies
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_seat_type
+  - cover_features
+  - fabric
+  - pattern
+  return_reasons: inherit
 - id: bt-7-1-2
   name: Car Seat Covers
-  children: []
+  children:
+  - bt-7-1-2-1
+  - bt-7-1-2-2
+  - bt-7-1-2-3
+  - bt-7-1-2-4
+  - bt-7-1-2-5
   attributes:
   - battery_size
   - battery_type
   - care_instructions
   - color
+  - compatible_harness_system
   - compatible_seat_type
   - cover_features
   - fabric
@@ -2190,9 +5120,81 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-7-1-2-1
+  name: Fitted Car Seat Covers
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - care_instructions
+  - color
+  - compatible_harness_system
+  - compatible_seat_type
+  - cover_features
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-7-1-2-2
+  name: Car Seat Liners
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - care_instructions
+  - color
+  - compatible_harness_system
+  - compatible_seat_type
+  - cover_features
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-7-1-2-3
+  name: Car Seat Blanket Covers
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - care_instructions
+  - color
+  - compatible_harness_system
+  - compatible_seat_type
+  - cover_features
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-7-1-2-4
+  name: Car Seat Rain Covers
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - care_instructions
+  - color
+  - compatible_harness_system
+  - compatible_seat_type
+  - cover_features
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-7-1-2-5
+  name: Insect-Proof Car Seat Covers
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - care_instructions
+  - color
+  - compatible_harness_system
+  - compatible_seat_type
+  - cover_features
+  - fabric
+  - pattern
+  return_reasons: inherit
 - id: bt-7-1-3
   name: Car Seat Mirrors
-  children: []
+  children:
+  - bt-7-1-3-1
+  - bt-7-1-3-2
   attributes:
   - battery_size
   - battery_type
@@ -2200,7 +5202,9 @@
   - color
   - compatible_seat_type
   - material
+  - mounting_method
   - pattern
+  - shape
   return_reasons:
   - field_of_view
   - changed_my_mind
@@ -2209,9 +5213,38 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-7-1-3-1
+  name: Seat-Back-Mounted Car Seat Mirrors
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - care_instructions
+  - color
+  - compatible_seat_type
+  - material
+  - mounting_method
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: bt-7-1-3-2
+  name: Rearview-Mirror-Mounted Car Seat Mirrors
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - care_instructions
+  - color
+  - compatible_seat_type
+  - material
+  - mounting_method
+  - pattern
+  - shape
+  return_reasons: inherit
 - id: bt-7-1-4
   name: Car Seat Organizers
-  children: []
+  children:
+  - bt-7-1-4-1
   attributes:
   - care_instructions
   - color
@@ -2228,9 +5261,21 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-7-1-4-1
+  name: Car Seat Storage Nets
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_seat_type
+  - material
+  - pattern
+  return_reasons: inherit
 - id: bt-7-1-5
   name: Car Seat Protectors
-  children: []
+  children:
+  - bt-7-1-5-1
+  - bt-7-1-5-2
   attributes:
   - care_instructions
   - color
@@ -2246,9 +5291,33 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-7-1-5-1
+  name: Car Seat Protector Mats
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_seat_type
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-7-1-5-2
+  name: Car Seat Kick Mats
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_seat_type
+  - material
+  - pattern
+  return_reasons: inherit
 - id: bt-7-1-6
   name: Car Seat Travel Bags
-  children: []
+  children:
+  - bt-7-1-6-1
+  - bt-7-1-6-2
+  - bt-7-1-6-3
+  - bt-7-1-6-4
   attributes:
   - bag/case_closure
   - bag/case_features
@@ -2268,6 +5337,62 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-7-1-6-1
+  name: Car Seat Travel Backpacks
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - compatible_seat_type
+  - pattern
+  return_reasons: inherit
+- id: bt-7-1-6-2
+  name: Rolling Car Seat Travel Bags
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - compatible_seat_type
+  - pattern
+  return_reasons: inherit
+- id: bt-7-1-6-3
+  name: Car Seat Travel Tote Bags
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - compatible_seat_type
+  - pattern
+  return_reasons: inherit
+- id: bt-7-1-6-4
+  name: Convertible-Carry Car Seat Travel Bags
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - compatible_seat_type
+  - pattern
+  return_reasons: inherit
 - id: bt-7-2
   name: Baby Carrier Accessories
   children:
@@ -2279,6 +5404,7 @@
   - bt-7-2-6
   attributes:
   - color
+  - material
   - pattern
   return_reasons:
   - incompatible
@@ -2397,6 +5523,7 @@
   - compatible_baby_carrier_type
   - fabric
   - pattern
+  - waistband_extender_size
   return_reasons:
   - color
   - length
@@ -2419,6 +5546,7 @@
   - bt-7-3-7
   attributes:
   - color
+  - material
   - pattern
   return_reasons:
   - incompatible
@@ -2430,7 +5558,9 @@
   - other_reason
 - id: bt-7-3-1
   name: Stroller Cup Holders
-  children: []
+  children:
+  - bt-7-3-1-1
+  - bt-7-3-1-2
   attributes:
   - care_instructions
   - color
@@ -2446,6 +5576,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-7-3-1-1
+  name: Universal Stroller Cup Holders
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_stroller_type
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-7-3-1-2
+  name: Model-Specific Stroller Cup Holders
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_stroller_type
+  - material
+  - pattern
+  return_reasons: inherit
 - id: bt-7-3-2
   name: Stroller Footmuffs
   children: []
@@ -2454,6 +5604,7 @@
   - color
   - compatible_stroller_type
   - fabric
+  - fur_color
   - pattern
   return_reasons:
   - too_small
@@ -2484,7 +5635,10 @@
   - other_reason
 - id: bt-7-3-4
   name: Stroller Organizers
-  children: []
+  children:
+  - bt-7-3-4-1
+  - bt-7-3-4-2
+  - bt-7-3-4-3
   attributes:
   - care_instructions
   - color
@@ -2500,9 +5654,41 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-7-3-4-1
+  name: Handlebar Stroller Organizers
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_stroller_type
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-7-3-4-2
+  name: Side Stroller Organizers
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_stroller_type
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-7-3-4-3
+  name: Stroller Basket Organizers
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_stroller_type
+  - material
+  - pattern
+  return_reasons: inherit
 - id: bt-7-3-5
   name: Stroller Rain Covers
-  children: []
+  children:
+  - bt-7-3-5-1
+  - bt-7-3-5-2
   attributes:
   - care_instructions
   - color
@@ -2519,12 +5705,39 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: bt-7-3-6
-  name: Stroller Sunshades
+- id: bt-7-3-5-1
+  name: Universal Stroller Rain Covers
   children: []
   attributes:
   - care_instructions
   - color
+  - compatible_stroller_type
+  - cover_features
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-7-3-5-2
+  name: Custom-Fit Stroller Rain Covers
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_stroller_type
+  - cover_features
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-7-3-6
+  name: Stroller Sunshades
+  children:
+  - bt-7-3-6-1
+  - bt-7-3-6-2
+  - bt-7-3-6-3
+  - bt-7-3-6-4
+  attributes:
+  - care_instructions
+  - color
+  - compatible_harness_system
   - compatible_stroller_type
   - fabric
   - pattern
@@ -2537,6 +5750,50 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-7-3-6-1
+  name: Stroller Parasols
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_harness_system
+  - compatible_stroller_type
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-7-3-6-2
+  name: Stroller Sun Sails
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_harness_system
+  - compatible_stroller_type
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-7-3-6-3
+  name: Stroller Shade Nets
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_harness_system
+  - compatible_stroller_type
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-7-3-6-4
+  name: Stroller Sun Hoods
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_harness_system
+  - compatible_stroller_type
+  - fabric
+  - pattern
+  return_reasons: inherit
 - id: bt-7-3-7
   name: Stroller Travel Bags
   children: []
@@ -2562,7 +5819,9 @@
   - other_reason
 - id: bt-7-4
   name: Baby Transport Liners & Sacks
-  children: []
+  children:
+  - bt-7-4-1
+  - bt-7-4-2
   attributes:
   - care_instructions
   - color
@@ -2570,6 +5829,7 @@
   - fabric
   - liner_features
   - pattern
+  - season
   return_reasons:
   - warmth
   - incompatible
@@ -2579,9 +5839,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-7-4-1
+  name: Baby Transport Liners
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_baby_transport_type
+  - fabric
+  - liner_features
+  - pattern
+  - season
+  return_reasons: inherit
+- id: bt-7-4-2
+  name: Baby Transport Footmuffs & Bunting Bags
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_baby_transport_type
+  - fabric
+  - liner_features
+  - pattern
+  - season
+  return_reasons: inherit
 - id: bt-7-5
   name: Shopping Cart & High Chair Covers
-  children: []
+  children:
+  - bt-7-5-1
+  - bt-7-5-2
+  - bt-7-5-3
   attributes:
   - care_instructions
   - color
@@ -2597,13 +5884,58 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-7-5-1
+  name: Shopping Cart Covers
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_baby_chair_type
+  - cover_features
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-7-5-2
+  name: High Chair Covers
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_baby_chair_type
+  - cover_features
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-7-5-3
+  name: Universal Shopping Cart & High Chair Covers
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - compatible_baby_chair_type
+  - cover_features
+  - fabric
+  - pattern
+  return_reasons: inherit
 - id: bt-8
   name: Baby Transport Replacement Parts
-  children: []
+  children:
+  - bt-8-1
+  - bt-8-2
+  - bt-8-3
+  - bt-8-4
+  - bt-8-5
+  - bt-8-6
+  - bt-8-7
+  - bt-8-8
+  - bt-8-9
+  - bt-8-10
   attributes:
   - color
   - material
+  - part_position
   - pattern
+  - side
   return_reasons:
   - color
   - incompatible
@@ -2613,6 +5945,722 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-8-1
+  name: Baby Transport Wheel & Running Gear Parts
+  children:
+  - bt-8-1-1
+  - bt-8-1-2
+  - bt-8-1-3
+  - bt-8-1-4
+  - bt-8-1-5
+  - bt-8-1-6
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-1-1
+  name: Stroller Wheels & Casters
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-1-2
+  name: Stroller Tires
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-1-3
+  name: Stroller Inner Tubes
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-1-4
+  name: Stroller Axles & Bearings
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-1-5
+  name: Stroller Wheel Caps & Hubcaps
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-1-6
+  name: Stroller Wagon Wheels
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-2
+  name: Stroller Brake Parts
+  children:
+  - bt-8-2-1
+  - bt-8-2-2
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-2-1
+  name: Stroller Brake Cables
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-2-2
+  name: Stroller Brake Pedals
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-3
+  name: Baby Transport Frame & Folding Parts
+  children:
+  - bt-8-3-1
+  - bt-8-3-2
+  - bt-8-3-3
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-3-1
+  name: Stroller Locks & Latches
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-3-2
+  name: Stroller Wagon Frames
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-3-3
+  name: Carrycot Frames
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-4
+  name: Baby Transport Seating & Body Support Parts
+  children:
+  - bt-8-4-1
+  - bt-8-4-2
+  - bt-8-4-3
+  - bt-8-4-4
+  - bt-8-4-5
+  - bt-8-4-6
+  - bt-8-4-7
+  - bt-8-4-8
+  - bt-8-4-9
+  - bt-8-4-10
+  - bt-8-4-11
+  - bt-8-4-12
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-4-1
+  name: Stroller Seat Frames
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-4-2
+  name: Stroller Seat Covers & Fabrics
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-4-3
+  name: Stroller Seat Cushions & Pads
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-4-4
+  name: Stroller Seat Liners
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-4-5
+  name: Stroller Infant Inserts
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-4-6
+  name: Stroller Backrests
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-4-7
+  name: Stroller Headrests & Head Supports
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-4-8
+  name: Stroller Footrests & Calf Supports
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-4-9
+  name: Car Seat Cushions & Pads
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-4-10
+  name: Car Seat Body Support Inserts
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-4-11
+  name: Baby Carrier Infant Inserts
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-4-12
+  name: Carrycot Mattresses & Pads
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-5
+  name: Baby Transport Restraint & Safety Parts
+  children:
+  - bt-8-5-1
+  - bt-8-5-2
+  - bt-8-5-3
+  - bt-8-5-4
+  - bt-8-5-5
+  - bt-8-5-6
+  - bt-8-5-7
+  - bt-8-5-8
+  - bt-8-5-9
+  - bt-8-5-10
+  - bt-8-5-11
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-5-1
+  name: Stroller Harness Pads & Covers
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-5-2
+  name: Stroller Crotch Straps & Covers
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-5-3
+  name: Stroller Wagon Harnesses
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-5-4
+  name: Car Seat Harness Pads & Covers
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-5-5
+  name: Car Seat Chest Clips
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-5-6
+  name: Car Seat Crotch Buckles & Straps
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-5-7
+  name: Car Seat Tether Straps
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-5-8
+  name: Car Seat Anti-Rebound Bars
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-5-9
+  name: Baby Carrier Buckles & Clips
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-5-10
+  name: Baby Carrier Shoulder Straps
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-5-11
+  name: Baby Carrier Chest Strap Parts
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-6
+  name: Baby Transport Handle, Bar & Carry Parts
+  children:
+  - bt-8-6-1
+  - bt-8-6-2
+  - bt-8-6-3
+  - bt-8-6-4
+  - bt-8-6-5
+  - bt-8-6-6
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-6-1
+  name: Stroller Handle Grips & Covers
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-6-2
+  name: Stroller Handle Adjusters
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-6-3
+  name: Stroller Bumper Bars
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-6-4
+  name: Stroller Bumper Bar Covers
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-6-5
+  name: Stroller Wagon Push & Pull Handles
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-6-6
+  name: Stroller Carry Straps
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-7
+  name: Baby Transport Canopy & Enclosure Parts
+  children:
+  - bt-8-7-1
+  - bt-8-7-2
+  - bt-8-7-3
+  - bt-8-7-4
+  - bt-8-7-5
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-7-1
+  name: Stroller Canopy Fabrics & Covers
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-7-2
+  name: Stroller Canopy Frames & Supports
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-7-3
+  name: Stroller Canopy Clips & Connectors
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-7-4
+  name: Stroller Wagon Canopies & Canopy Fabrics
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-7-5
+  name: Carrycot Aprons
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-8
+  name: Baby Transport Mounting & Installation Parts
+  children:
+  - bt-8-8-1
+  - bt-8-8-2
+  - bt-8-8-3
+  - bt-8-8-4
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-8-1
+  name: Stroller Bassinet Adapters
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-8-2
+  name: Car Seat-to-Stroller Adapters
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-8-3
+  name: Car Seat Bases
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-8-4
+  name: Car Seat ISOFIX Connectors
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-9
+  name: Baby Transport Storage & Tray Parts
+  children:
+  - bt-8-9-1
+  - bt-8-9-2
+  - bt-8-9-3
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-9-1
+  name: Stroller Trays
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-9-2
+  name: Car Seat Cup Holders
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-9-3
+  name: Stroller Wagon Storage Baskets
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-10
+  name: Baby Transport Replacement Part Kits
+  children:
+  - bt-8-10-1
+  - bt-8-10-2
+  - bt-8-10-3
+  - bt-8-10-4
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-10-1
+  name: Stroller Brake Repair Kits
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-10-2
+  name: Stroller Harness Kits
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-10-3
+  name: Car Seat Harness Kits
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
+- id: bt-8-10-4
+  name: Stroller Textile Sets
+  children: []
+  attributes:
+  - color
+  - material
+  - part_position
+  - pattern
+  - side
+  return_reasons: inherit
 - id: bt-9
   name: Diapering
   children:
@@ -2629,10 +6677,7 @@
   - bt-9-11
   - bt-9-12
   attributes:
-  - care_instructions
-  - infant_age_group
-  - ingredients
-  - material
+  - color
   return_reasons:
   - size
   - absorbency
@@ -2662,7 +6707,10 @@
   - other_reason
 - id: bt-9-1-1
   name: Baby Wipe Dispensers
-  children: []
+  children:
+  - bt-9-1-1-1
+  - bt-9-1-1-2
+  - bt-9-1-1-3
   attributes:
   - color
   - pattern
@@ -2676,6 +6724,33 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-9-1-1-1
+  name: Countertop Baby Wipe Dispensers
+  children: []
+  attributes:
+  - color
+  - pattern
+  - power_source
+  - wipe_dispenser_features
+  return_reasons: inherit
+- id: bt-9-1-1-2
+  name: Wall-Mounted Baby Wipe Dispensers
+  children: []
+  attributes:
+  - color
+  - pattern
+  - power_source
+  - wipe_dispenser_features
+  return_reasons: inherit
+- id: bt-9-1-1-3
+  name: Hanging Baby Wipe Dispensers
+  children: []
+  attributes:
+  - color
+  - pattern
+  - power_source
+  - wipe_dispenser_features
+  return_reasons: inherit
 - id: bt-9-1-2
   name: Baby Wipe Warmers
   children: []
@@ -2695,7 +6770,9 @@
   - other_reason
 - id: bt-9-1-3
   name: Portable Wipe Dispensers
-  children: []
+  children:
+  - bt-9-1-3-1
+  - bt-9-1-3-2
   attributes:
   - color
   - pattern
@@ -2709,6 +6786,24 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-9-1-3-1
+  name: Travel Wipe Pouches
+  children: []
+  attributes:
+  - color
+  - pattern
+  - power_source
+  - wipe_dispenser_features
+  return_reasons: inherit
+- id: bt-9-1-3-2
+  name: Clamshell Wipe Cases
+  children: []
+  attributes:
+  - color
+  - pattern
+  - power_source
+  - wipe_dispenser_features
+  return_reasons: inherit
 - id: bt-9-2
   name: Baby Wipes
   children:
@@ -2717,7 +6812,9 @@
   - bt-9-2-3
   attributes:
   - color
+  - material
   - pattern
+  - scent
   return_reasons:
   - scent
   - thickness
@@ -2735,6 +6832,7 @@
   - color
   - material
   - pattern
+  - trim_color
   - wipe_fragrance
   - wipe_packaging
   return_reasons:
@@ -2793,6 +6891,7 @@
   - bt-9-3-3
   attributes:
   - color
+  - material
   - pattern
   return_reasons:
   - size
@@ -2807,7 +6906,9 @@
   - other_reason
 - id: bt-9-3-1
   name: Changing Mat Covers
-  children: []
+  children:
+  - bt-9-3-1-1
+  - bt-9-3-1-2
   attributes:
   - care_instructions
   - color
@@ -2823,6 +6924,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-9-3-1-1
+  name: Reusable Changing Mat Covers
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - cover_features
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-9-3-1-2
+  name: Disposable Changing Mat Covers
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - cover_features
+  - fabric
+  - pattern
+  return_reasons: inherit
 - id: bt-9-3-2
   name: Changing Tray Covers
   children: []
@@ -2845,7 +6966,9 @@
   - other_reason
 - id: bt-9-3-3
   name: Diaper Changing Pad Covers
-  children: []
+  children:
+  - bt-9-3-3-1
+  - bt-9-3-3-2
   attributes:
   - care_instructions
   - color
@@ -2863,6 +6986,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-9-3-3-1
+  name: Reusable Diaper Changing Pad Covers
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - cover_features
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-9-3-3-2
+  name: Disposable Diaper Changing Pad Covers
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - cover_features
+  - fabric
+  - pattern
+  return_reasons: inherit
 - id: bt-9-4
   name: Changing Mats & Trays
   children:
@@ -2872,6 +7015,7 @@
   attributes:
   - changing_mat/tray_features
   - color
+  - material
   - pattern
   return_reasons:
   - size
@@ -2884,41 +7028,95 @@
   - other_reason
 - id: bt-9-4-1
   name: Changing Mats
+  children:
+  - bt-9-4-1-1
+  - bt-9-4-1-2
+  attributes:
+  - changing_mat_features
+  - color
+  - material
+  - pattern
+  return_reasons:
+  - size
+  - color
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: bt-9-4-1-1
+  name: Disposable Changing Mats
   children: []
   attributes:
   - changing_mat_features
   - color
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-9-4-1-2
+  name: Reusable Changing Mats
+  children: []
+  attributes:
+  - changing_mat_features
+  - color
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-9-4-2
+  name: Changing Trays
+  children:
+  - bt-9-4-2-1
+  - bt-9-4-2-2
+  - bt-9-4-2-3
+  attributes:
+  - changing_tray_features
+  - color
+  - material
   - pattern
   return_reasons:
   - size
-  - color
   - changed_my_mind
   - item_not_as_described
   - received_the_wrong_item
   - damaged_or_defective
   - unknown
   - other_reason
-- id: bt-9-4-2
-  name: Changing Trays
+- id: bt-9-4-2-1
+  name: Changing Baskets
   children: []
   attributes:
   - changing_tray_features
   - color
+  - material
   - pattern
-  return_reasons:
-  - size
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  return_reasons: inherit
+- id: bt-9-4-2-2
+  name: Cot-Top Changing Trays
+  children: []
+  attributes:
+  - changing_tray_features
+  - color
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-9-4-2-3
+  name: Changing Table Toppers
+  children: []
+  attributes:
+  - changing_tray_features
+  - color
+  - material
+  - pattern
+  return_reasons: inherit
 - id: bt-9-4-3
   name: Diaper Changing Pads
-  children: []
+  children:
+  - bt-9-4-3-1
   attributes:
   - care_instructions
   - color
+  - material
   - pattern
   return_reasons:
   - size
@@ -2929,6 +7127,15 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-9-4-3-1
+  name: Reusable Diaper Changing Pads
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - material
+  - pattern
+  return_reasons: inherit
 - id: bt-9-5
   name: Diaper Kits
   children:
@@ -2937,6 +7144,7 @@
   - bt-9-5-3
   attributes:
   - color
+  - material
   - pattern
   return_reasons:
   - size
@@ -3009,6 +7217,7 @@
   - bt-9-6-3
   attributes:
   - color
+  - material
   - pattern
   return_reasons:
   - size
@@ -3021,8 +7230,11 @@
   - other_reason
 - id: bt-9-6-1
   name: Cloth Diaper Liners
-  children: []
+  children:
+  - bt-9-6-1-1
+  - bt-9-6-1-2
   attributes:
+  - absorbency_level
   - care_instructions
   - color
   - liner_features
@@ -3038,6 +7250,28 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-9-6-1-1
+  name: Cloth Diaper Inserts
+  children: []
+  attributes:
+  - absorbency_level
+  - care_instructions
+  - color
+  - liner_features
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-9-6-1-2
+  name: Cloth Diaper Liner Sheets
+  children: []
+  attributes:
+  - absorbency_level
+  - care_instructions
+  - color
+  - liner_features
+  - material
+  - pattern
+  return_reasons: inherit
 - id: bt-9-6-2
   name: Disposable Diaper Liners
   children: []
@@ -3081,6 +7315,7 @@
   - bt-9-7-4
   attributes:
   - color
+  - material
   - pattern
   return_reasons:
   - size
@@ -3094,7 +7329,11 @@
   - other_reason
 - id: bt-9-7-1
   name: Diaper Bag Organizers
-  children: []
+  children:
+  - bt-9-7-1-1
+  - bt-9-7-1-2
+  - bt-9-7-1-3
+  - bt-9-7-1-4
   attributes:
   - color
   - diaper_organizer_features
@@ -3110,6 +7349,62 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-9-7-1-1
+  name: Diaper Bag Inserts
+  children: []
+  attributes:
+  - color
+  - diaper_organizer_features
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-9-7-1-2
+  name: Diaper Bag Packing Cubes
+  children: []
+  attributes:
+  - color
+  - diaper_organizer_features
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-9-7-1-3
+  name: Changing Pouches
+  children:
+  - bt-9-7-1-3-1
+  - bt-9-7-1-3-2
+  attributes:
+  - color
+  - diaper_organizer_features
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-9-7-1-3-1
+  name: Diaper Wallets
+  children: []
+  attributes:
+  - color
+  - diaper_organizer_features
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-9-7-1-3-2
+  name: Diaper Pods
+  children: []
+  attributes:
+  - color
+  - diaper_organizer_features
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-9-7-1-4
+  name: Hard-Shell Organizer Cases
+  children: []
+  attributes:
+  - color
+  - diaper_organizer_features
+  - material
+  - pattern
+  return_reasons: inherit
 - id: bt-9-7-2
   name: Diaper Caddies
   children: []
@@ -3118,6 +7413,7 @@
   - diaper_organizer_features
   - material
   - pattern
+  - wood_color
   return_reasons:
   - capacity
   - changed_my_mind
@@ -3197,7 +7493,11 @@
   - other_reason
 - id: bt-9-8-2
   name: Diaper Pail Deodorizers
-  children: []
+  children:
+  - bt-9-8-2-1
+  - bt-9-8-2-2
+  - bt-9-8-2-3
+  - bt-9-8-2-4
   attributes:
   - color
   - pattern
@@ -3211,9 +7511,55 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-9-8-2-1
+  name: Fitted Diaper Pail Deodorizer Inserts
+  children:
+  - bt-9-8-2-1-1
+  - bt-9-8-2-1-2
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: bt-9-8-2-1-1
+  name: Diaper Pail Deodorizer Filters
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: bt-9-8-2-1-2
+  name: Diaper Pail Deodorizer Cartridges
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: bt-9-8-2-2
+  name: Diaper Pail Deodorizer Discs
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: bt-9-8-2-3
+  name: Diaper Pail Deodorizer Powders
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: bt-9-8-2-4
+  name: Diaper Pail Deodorizer Sprays
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
 - id: bt-9-8-3
   name: Diaper Pail Liners
-  children: []
+  children:
+  - bt-9-8-3-1
+  - bt-9-8-3-2
   attributes:
   - care_instructions
   - color
@@ -3231,13 +7577,37 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-9-8-3-1
+  name: Diaper Pail Liner Refills
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - fabric
+  - liner_features
+  - pattern
+  - usage_type
+  return_reasons: inherit
+- id: bt-9-8-3-2
+  name: Reusable Diaper Pail Liners
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - fabric
+  - liner_features
+  - pattern
+  - usage_type
+  return_reasons: inherit
 - id: bt-9-8-4
   name: Diaper Pail Refills
-  children: []
+  children:
+  - bt-9-8-4-1
   attributes:
   - color
   - disposable_bag_features
   - pattern
+  - scent
   - waste_bag_material
   return_reasons:
   - capacity
@@ -3249,6 +7619,16 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-9-8-4-1
+  name: Diaper Pail Refill Cassettes
+  children: []
+  attributes:
+  - color
+  - disposable_bag_features
+  - pattern
+  - scent
+  - waste_bag_material
+  return_reasons: inherit
 - id: bt-9-9
   name: Diaper Pails
   children:
@@ -3285,7 +7665,9 @@
   - other_reason
 - id: bt-9-9-3
   name: Diaper Trash Cans
-  children: []
+  children:
+  - bt-9-9-3-1
+  - bt-9-9-3-2
   attributes:
   - color
   - material
@@ -3300,6 +7682,24 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-9-9-3-1
+  name: Airlock Diaper Pails
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - trash_can_features
+  return_reasons: inherit
+- id: bt-9-9-3-2
+  name: Twist-and-Seal Diaper Pails
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - trash_can_features
+  return_reasons: inherit
 - id: bt-9-10
   name: Diaper Rash Treatments
   children:
@@ -3331,6 +7731,7 @@
   - fragrance_level
   - ingredients
   - product_certifications_standards
+  - scent
   - skin_care_features
   - treatment_texture
   return_reasons:
@@ -3391,6 +7792,7 @@
   - fragrance_level
   - ingredients
   - product_certifications_standards
+  - scent
   - skin_care_features
   - treatment_texture
   return_reasons:
@@ -3435,6 +7837,7 @@
   - color
   - diaper_bag_material
   - pattern
+  - size
   - wet_bag_features
   return_reasons:
   - water_resistance
@@ -3479,6 +7882,8 @@
   - bt-9-12-4
   - bt-9-12-5
   attributes:
+  - absorbency_level
+  - color
   - diaper_size
   return_reasons:
   - too_big
@@ -3492,12 +7897,24 @@
   - other_reason
 - id: bt-9-12-1
   name: Cloth Diapers
-  children: []
+  children:
+  - bt-9-12-1-1
+  - bt-9-12-1-2
+  - bt-9-12-1-3
+  - bt-9-12-1-4
+  - bt-9-12-1-5
+  - bt-9-12-1-6
+  - bt-9-12-1-7
+  - bt-9-12-1-8
   attributes:
   - care_instructions
+  - closure_type
   - color
   - diaper_features
   - diaper_size
+  - diaper_type
+  - insert_material
+  - lining_material
   - material
   - pattern
   return_reasons:
@@ -3511,13 +7928,135 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-9-12-1-1
+  name: All-in-One Cloth Diapers
+  children: []
+  attributes:
+  - care_instructions
+  - closure_type
+  - color
+  - diaper_features
+  - diaper_size
+  - diaper_type
+  - insert_material
+  - lining_material
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-9-12-1-2
+  name: Pocket Cloth Diapers
+  children: []
+  attributes:
+  - care_instructions
+  - closure_type
+  - color
+  - diaper_features
+  - diaper_size
+  - diaper_type
+  - insert_material
+  - lining_material
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-9-12-1-3
+  name: Hybrid Cloth Diapers
+  children: []
+  attributes:
+  - care_instructions
+  - closure_type
+  - color
+  - diaper_features
+  - diaper_size
+  - diaper_type
+  - insert_material
+  - lining_material
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-9-12-1-4
+  name: Flat Cloth Diapers
+  children: []
+  attributes:
+  - care_instructions
+  - closure_type
+  - color
+  - diaper_features
+  - diaper_size
+  - diaper_type
+  - insert_material
+  - lining_material
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-9-12-1-5
+  name: Prefold Cloth Diapers
+  children: []
+  attributes:
+  - care_instructions
+  - closure_type
+  - color
+  - diaper_features
+  - diaper_size
+  - diaper_type
+  - insert_material
+  - lining_material
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-9-12-1-6
+  name: Preflat Cloth Diapers
+  children: []
+  attributes:
+  - care_instructions
+  - closure_type
+  - color
+  - diaper_features
+  - diaper_size
+  - diaper_type
+  - insert_material
+  - lining_material
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-9-12-1-7
+  name: Fitted Cloth Diapers
+  children: []
+  attributes:
+  - care_instructions
+  - closure_type
+  - color
+  - diaper_features
+  - diaper_size
+  - diaper_type
+  - insert_material
+  - lining_material
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-9-12-1-8
+  name: Langot Cloth Diapers
+  children: []
+  attributes:
+  - care_instructions
+  - closure_type
+  - color
+  - diaper_features
+  - diaper_size
+  - diaper_type
+  - insert_material
+  - lining_material
+  - material
+  - pattern
+  return_reasons: inherit
 - id: bt-9-12-2
   name: Disposable Diapers
   children: []
   attributes:
+  - absorbency_level
   - color
   - diaper_features
   - diaper_size
+  - diaper_type
   - pattern
   return_reasons:
   - too_big
@@ -3532,7 +8071,9 @@
   - other_reason
 - id: bt-9-12-3
   name: Overnight Diapers
-  children: []
+  children:
+  - bt-9-12-3-1
+  - bt-9-12-3-2
   attributes:
   - care_instructions
   - color
@@ -3550,6 +8091,28 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-9-12-3-1
+  name: Disposable Overnight Diapers
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - diaper_features
+  - diaper_size
+  - pattern
+  - usage_type
+  return_reasons: inherit
+- id: bt-9-12-3-2
+  name: Reusable Overnight Diapers
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - diaper_features
+  - diaper_size
+  - pattern
+  - usage_type
+  return_reasons: inherit
 - id: bt-9-12-4
   name: Pull-Up Diapers
   children: []
@@ -3558,7 +8121,9 @@
   - color
   - diaper_features
   - diaper_size
+  - gender
   - pattern
+  - scent
   - usage_type
   return_reasons:
   - too_big
@@ -3572,13 +8137,17 @@
   - other_reason
 - id: bt-9-12-5
   name: Swim Diapers
-  children: []
+  children:
+  - bt-9-12-5-1
+  - bt-9-12-5-2
   attributes:
   - care_instructions
   - color
   - diaper_features
   - diaper_size
+  - material
   - pattern
+  - target_gender
   - usage_type
   return_reasons:
   - too_big
@@ -3590,6 +8159,32 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-9-12-5-1
+  name: Disposable Swim Diapers
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - diaper_features
+  - diaper_size
+  - material
+  - pattern
+  - target_gender
+  - usage_type
+  return_reasons: inherit
+- id: bt-9-12-5-2
+  name: Reusable Swim Diapers
+  children: []
+  attributes:
+  - care_instructions
+  - color
+  - diaper_features
+  - diaper_size
+  - material
+  - pattern
+  - target_gender
+  - usage_type
+  return_reasons: inherit
 - id: bt-10
   name: Nursing & Feeding
   children:
@@ -3606,11 +8201,7 @@
   - bt-10-14
   - bt-10-16
   attributes:
-  - allergen_information
-  - care_instructions
   - color
-  - infant_age_group
-  - ingredients
   - material
   - pattern
   return_reasons:
@@ -3631,7 +8222,8 @@
   - bt-10-1-4
   - bt-10-1-5
   - bt-10-1-6
-  attributes: []
+  attributes:
+  - flavor
   return_reasons:
   - taste
   - texture
@@ -3644,9 +8236,18 @@
   - other_reason
 - id: bt-10-1-1
   name: Baby Cereals
-  children: []
+  children:
+  - bt-10-1-1-1
+  - bt-10-1-1-2
+  - bt-10-1-1-3
+  - bt-10-1-1-4
+  - bt-10-1-1-5
+  - bt-10-1-1-6
+  - bt-10-1-1-7
   attributes:
   - dietary_preferences
+  - feeding_stage
+  - flavor
   - flour/grain_type
   - infant_age_group
   return_reasons:
@@ -3658,12 +8259,83 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-1-1-1
+  name: Baby Rice Cereals
+  children: []
+  attributes:
+  - dietary_preferences
+  - feeding_stage
+  - flavor
+  - flour/grain_type
+  - infant_age_group
+  return_reasons: inherit
+- id: bt-10-1-1-2
+  name: Baby Oat Cereals
+  children: []
+  attributes:
+  - dietary_preferences
+  - feeding_stage
+  - flavor
+  - flour/grain_type
+  - infant_age_group
+  return_reasons: inherit
+- id: bt-10-1-1-3
+  name: Baby Wheat Cereals
+  children: []
+  attributes:
+  - dietary_preferences
+  - feeding_stage
+  - flavor
+  - flour/grain_type
+  - infant_age_group
+  return_reasons: inherit
+- id: bt-10-1-1-4
+  name: Baby Corn Cereals
+  children: []
+  attributes:
+  - dietary_preferences
+  - feeding_stage
+  - flavor
+  - flour/grain_type
+  - infant_age_group
+  return_reasons: inherit
+- id: bt-10-1-1-5
+  name: Baby Millet Cereals
+  children: []
+  attributes:
+  - dietary_preferences
+  - feeding_stage
+  - flavor
+  - flour/grain_type
+  - infant_age_group
+  return_reasons: inherit
+- id: bt-10-1-1-6
+  name: Baby Quinoa Cereals
+  children: []
+  attributes:
+  - dietary_preferences
+  - feeding_stage
+  - flavor
+  - flour/grain_type
+  - infant_age_group
+  return_reasons: inherit
+- id: bt-10-1-1-7
+  name: Baby Buckwheat Cereals
+  children: []
+  attributes:
+  - dietary_preferences
+  - feeding_stage
+  - flavor
+  - flour/grain_type
+  - infant_age_group
+  return_reasons: inherit
 - id: bt-10-1-2
   name: Baby Drinks
   children:
   - bt-10-1-2-1
   - bt-10-1-2-2
   attributes:
+  - flavor
   - infant_age_group
   return_reasons:
   - taste
@@ -3696,7 +8368,8 @@
   - other_reason
 - id: bt-10-1-2-2
   name: Powdered Drinks
-  children: []
+  children:
+  - bt-10-1-2-2-1
   attributes:
   - baby_drink_packaging
   - baby_food_flavor
@@ -3711,12 +8384,23 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-1-2-2-1
+  name: Powdered Infant Formulas
+  children: []
+  attributes:
+  - baby_drink_packaging
+  - baby_food_flavor
+  - infant_age_group
+  return_reasons: inherit
 - id: bt-10-1-3
   name: Baby Food
-  children: []
+  children:
+  - bt-10-1-3-1
+  - bt-10-1-3-2
   attributes:
   - baby_food_flavor
   - infant_age_group
+  - package_type
   return_reasons:
   - taste
   - texture
@@ -3727,6 +8411,22 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-1-3-1
+  name: Single-Ingredient Baby Foods
+  children: []
+  attributes:
+  - baby_food_flavor
+  - infant_age_group
+  - package_type
+  return_reasons: inherit
+- id: bt-10-1-3-2
+  name: Combination Baby Foods
+  children: []
+  attributes:
+  - baby_food_flavor
+  - infant_age_group
+  - package_type
+  return_reasons: inherit
 - id: bt-10-1-4
   name: Baby Formula
   children:
@@ -3736,6 +8436,7 @@
   - bt-10-1-4-4
   attributes:
   - formula_level
+  - packaging_type
   return_reasons:
   - taste
   - consistency
@@ -3748,10 +8449,15 @@
   - other_reason
 - id: bt-10-1-4-1
   name: Dairy Formula
-  children: []
+  children:
+  - bt-10-1-4-1-1
+  - bt-10-1-4-1-2
+  - bt-10-1-4-1-3
   attributes:
   - baby_formula_format
+  - flavor
   - formula_level
+  - packaging_type
   return_reasons:
   - taste
   - dietary_requirements
@@ -3762,11 +8468,43 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-1-4-1-1
+  name: Powdered Dairy Formulas
+  children: []
+  attributes:
+  - baby_formula_format
+  - flavor
+  - formula_level
+  - packaging_type
+  return_reasons: inherit
+- id: bt-10-1-4-1-2
+  name: Concentrated Liquid Dairy Formulas
+  children: []
+  attributes:
+  - baby_formula_format
+  - flavor
+  - formula_level
+  - packaging_type
+  return_reasons: inherit
+- id: bt-10-1-4-1-3
+  name: Ready-to-Feed Dairy Formulas
+  children: []
+  attributes:
+  - baby_formula_format
+  - flavor
+  - formula_level
+  - packaging_type
+  return_reasons: inherit
 - id: bt-10-1-4-2
   name: Hypoallergenic Formula
-  children: []
+  children:
+  - bt-10-1-4-2-1
+  - bt-10-1-4-2-2
+  - bt-10-1-4-2-3
+  - bt-10-1-4-2-4
   attributes:
   - baby_formula_format
+  - flavor
   - formula_level
   return_reasons:
   - taste
@@ -3778,6 +8516,38 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-1-4-2-1
+  name: Partially Hydrolyzed Formulas
+  children: []
+  attributes:
+  - baby_formula_format
+  - flavor
+  - formula_level
+  return_reasons: inherit
+- id: bt-10-1-4-2-2
+  name: Extensively Hydrolyzed Formulas
+  children: []
+  attributes:
+  - baby_formula_format
+  - flavor
+  - formula_level
+  return_reasons: inherit
+- id: bt-10-1-4-2-3
+  name: Amino Acid-Based Formulas
+  children: []
+  attributes:
+  - baby_formula_format
+  - flavor
+  - formula_level
+  return_reasons: inherit
+- id: bt-10-1-4-2-4
+  name: Hydrolyzed Rice Protein Formulas
+  children: []
+  attributes:
+  - baby_formula_format
+  - flavor
+  - formula_level
+  return_reasons: inherit
 - id: bt-10-1-4-3
   name: Lactose-Free Formula
   children: []
@@ -3799,6 +8569,7 @@
   children: []
   attributes:
   - baby_formula_format
+  - flavor
   - formula_level
   return_reasons:
   - taste
@@ -3812,7 +8583,11 @@
   - other_reason
 - id: bt-10-1-5
   name: Baby Snacks
-  children: []
+  children:
+  - bt-10-1-5-1
+  - bt-10-1-5-2
+  - bt-10-1-5-3
+  - bt-10-1-5-4
   attributes:
   - baby_snack_flavor
   - baby_snack_texture
@@ -3828,9 +8603,48 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-1-5-1
+  name: Baby Puffed Snacks
+  children: []
+  attributes:
+  - baby_snack_flavor
+  - baby_snack_texture
+  - dietary_preferences
+  - infant_age_group
+  return_reasons: inherit
+- id: bt-10-1-5-2
+  name: Baby Biscuits
+  children: []
+  attributes:
+  - baby_snack_flavor
+  - baby_snack_texture
+  - dietary_preferences
+  - infant_age_group
+  return_reasons: inherit
+- id: bt-10-1-5-3
+  name: Baby Snack Bars
+  children: []
+  attributes:
+  - baby_snack_flavor
+  - baby_snack_texture
+  - dietary_preferences
+  - infant_age_group
+  return_reasons: inherit
+- id: bt-10-1-5-4
+  name: Baby Melts
+  children: []
+  attributes:
+  - baby_snack_flavor
+  - baby_snack_texture
+  - dietary_preferences
+  - infant_age_group
+  return_reasons: inherit
 - id: bt-10-1-6
   name: Toddler Nutrition Drinks & Shakes
-  children: []
+  children:
+  - bt-10-1-6-1
+  - bt-10-1-6-2
+  - bt-10-1-6-3
   attributes:
   - baby_food_flavor
   - dietary_preferences
@@ -3846,6 +8660,30 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-1-6-1
+  name: Powdered Toddler Formulas
+  children: []
+  attributes:
+  - baby_food_flavor
+  - dietary_preferences
+  - infant_age_group
+  return_reasons: inherit
+- id: bt-10-1-6-2
+  name: Ready-to-Feed Toddler Formulas
+  children: []
+  attributes:
+  - baby_food_flavor
+  - dietary_preferences
+  - infant_age_group
+  return_reasons: inherit
+- id: bt-10-1-6-3
+  name: Toddler Nutritional Smoothies
+  children: []
+  attributes:
+  - baby_food_flavor
+  - dietary_preferences
+  - infant_age_group
+  return_reasons: inherit
 - id: bt-10-4
   name: Baby Care Timers
   children:
@@ -3914,6 +8752,8 @@
   - bt-10-6-2
   attributes:
   - bottle_warmer/sterilizer_features
+  - color
+  - plug_type
   return_reasons:
   - size
   - capacity
@@ -3954,6 +8794,7 @@
   - compatible_baby_bottle_design
   - heating_method
   - heating_speed
+  - national_plug_standard
   - pattern
   - temperature_control
   return_reasons:
@@ -3979,6 +8820,7 @@
   - compatible_baby_bottle_design
   - heating_method
   - heating_speed
+  - material
   - pattern
   - temperature_control
   return_reasons:
@@ -3998,7 +8840,8 @@
   - bt-10-6-2-1
   - bt-10-6-2-2
   - bt-10-6-2-3
-  attributes: []
+  attributes:
+  - color
   return_reasons:
   - capacity
   - speed
@@ -4011,12 +8854,16 @@
   - other_reason
 - id: bt-10-6-2-1
   name: Electric Steam Sterilizers
-  children: []
+  children:
+  - bt-10-6-2-1-1
+  - bt-10-6-2-1-2
+  - bt-10-6-2-1-3
   attributes:
   - bottle_sterilizer_features
   - cleaning_instructions
   - color
   - pattern
+  - plug_type
   - sterilization_cycle_time
   - sterilization_method
   return_reasons:
@@ -4029,9 +8876,48 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-6-2-1-1
+  name: Electric Steam Sterilizer-Dryers
+  children: []
+  attributes:
+  - bottle_sterilizer_features
+  - cleaning_instructions
+  - color
+  - pattern
+  - plug_type
+  - sterilization_cycle_time
+  - sterilization_method
+  return_reasons: inherit
+- id: bt-10-6-2-1-2
+  name: Electric Steam Washer-Sterilizers
+  children: []
+  attributes:
+  - bottle_sterilizer_features
+  - cleaning_instructions
+  - color
+  - pattern
+  - plug_type
+  - sterilization_cycle_time
+  - sterilization_method
+  return_reasons: inherit
+- id: bt-10-6-2-1-3
+  name: Electric Steam Warmer-Sterilizers
+  children: []
+  attributes:
+  - bottle_sterilizer_features
+  - cleaning_instructions
+  - color
+  - pattern
+  - plug_type
+  - sterilization_cycle_time
+  - sterilization_method
+  return_reasons: inherit
 - id: bt-10-6-2-2
   name: Microwave Sterilizers
-  children: []
+  children:
+  - bt-10-6-2-2-1
+  - bt-10-6-2-2-2
+  - bt-10-6-2-2-3
   attributes:
   - bottle_sterilizer_features
   - cleaning_instructions
@@ -4049,9 +8935,44 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-6-2-2-1
+  name: Microwave Sterilizer Boxes
+  children: []
+  attributes:
+  - bottle_sterilizer_features
+  - cleaning_instructions
+  - color
+  - pattern
+  - sterilization_cycle_time
+  - sterilization_method
+  return_reasons: inherit
+- id: bt-10-6-2-2-2
+  name: Microwave Sterilizing Bags
+  children: []
+  attributes:
+  - bottle_sterilizer_features
+  - cleaning_instructions
+  - color
+  - pattern
+  - sterilization_cycle_time
+  - sterilization_method
+  return_reasons: inherit
+- id: bt-10-6-2-2-3
+  name: Collapsible Microwave Sterilizers
+  children: []
+  attributes:
+  - bottle_sterilizer_features
+  - cleaning_instructions
+  - color
+  - pattern
+  - sterilization_cycle_time
+  - sterilization_method
+  return_reasons: inherit
 - id: bt-10-6-2-3
   name: UV Sterilizers
-  children: []
+  children:
+  - bt-10-6-2-3-1
+  - bt-10-6-2-3-2
   attributes:
   - bottle_sterilizer_features
   - cleaning_instructions
@@ -4068,9 +8989,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-6-2-3-1
+  name: Countertop UV Sterilizers
+  children: []
+  attributes:
+  - bottle_sterilizer_features
+  - cleaning_instructions
+  - color
+  - pattern
+  - sterilization_cycle_time
+  - sterilization_method
+  return_reasons: inherit
+- id: bt-10-6-2-3-2
+  name: Portable UV Sterilizers
+  children: []
+  attributes:
+  - bottle_sterilizer_features
+  - cleaning_instructions
+  - color
+  - pattern
+  - sterilization_cycle_time
+  - sterilization_method
+  return_reasons: inherit
 - id: bt-10-7
   name: Breast Milk Storage Containers
-  children: []
+  children:
+  - bt-10-7-1
+  - bt-10-7-2
+  - bt-10-7-3
+  - bt-10-7-4
+  - bt-10-7-5
   attributes:
   - closure_type
   - color
@@ -4088,6 +9036,61 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-7-1
+  name: Breast Milk Storage Bags
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - material
+  - pattern
+  - sterilization_instructions
+  - usage_type
+  return_reasons: inherit
+- id: bt-10-7-2
+  name: Breast Milk Storage Bottles
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - material
+  - pattern
+  - sterilization_instructions
+  - usage_type
+  return_reasons: inherit
+- id: bt-10-7-3
+  name: Breast Milk Freezer Trays
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - material
+  - pattern
+  - sterilization_instructions
+  - usage_type
+  return_reasons: inherit
+- id: bt-10-7-4
+  name: Breast Milk Storage Pitchers
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - material
+  - pattern
+  - sterilization_instructions
+  - usage_type
+  return_reasons: inherit
+- id: bt-10-7-5
+  name: Breast Milk Chillers
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - material
+  - pattern
+  - sterilization_instructions
+  - usage_type
+  return_reasons: inherit
 - id: bt-10-8
   name: Breast Pump Accessories
   children:
@@ -4111,7 +9114,10 @@
   - other_reason
 - id: bt-10-8-2
   name: Carrying Bags & Totes
-  children: []
+  children:
+  - bt-10-8-2-1
+  - bt-10-8-2-2
+  - bt-10-8-2-3
   attributes:
   - bag/case_material
   - color
@@ -4129,13 +9135,46 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-8-2-1
+  name: Breast Pump Backpacks
+  children: []
+  attributes:
+  - bag/case_material
+  - color
+  - lumber/wood_type
+  - pattern
+  - wood_finish
+  return_reasons: inherit
+- id: bt-10-8-2-2
+  name: Breast Pump Tote Bags
+  children: []
+  attributes:
+  - bag/case_material
+  - color
+  - lumber/wood_type
+  - pattern
+  - wood_finish
+  return_reasons: inherit
+- id: bt-10-8-2-3
+  name: Breast Pump Clutch Bags
+  children: []
+  attributes:
+  - bag/case_material
+  - color
+  - lumber/wood_type
+  - pattern
+  - wood_finish
+  return_reasons: inherit
 - id: bt-10-8-3
   name: Cleaning Brushes & Wipes
-  children: []
+  children:
+  - bt-10-8-3-1
+  - bt-10-8-3-2
   attributes:
   - brush_material
   - color
   - pattern
+  - scent
   return_reasons:
   - size
   - texture
@@ -4146,9 +9185,31 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-8-3-1
+  name: Breast Pump Cleaning Brushes
+  children: []
+  attributes:
+  - brush_material
+  - color
+  - pattern
+  - scent
+  return_reasons: inherit
+- id: bt-10-8-3-2
+  name: Breast Pump Cleaning Wipes
+  children: []
+  attributes:
+  - brush_material
+  - color
+  - pattern
+  - scent
+  return_reasons: inherit
 - id: bt-10-8-4
   name: Connectors & Adapters
-  children: []
+  children:
+  - bt-10-8-4-1
+  - bt-10-8-4-2
+  - bt-10-8-4-3
+  - bt-10-8-4-4
   attributes:
   - color
   - material
@@ -4163,13 +9224,70 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: bt-10-8-5
-  name: Hands Free Pumping Bras
+- id: bt-10-8-4-1
+  name: Pump-to-Bottle Adapters
+  children:
+  - bt-10-8-4-1-1
+  - bt-10-8-4-1-2
+  attributes:
+  - color
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-10-8-4-1-1
+  name: Standard-Neck Bottle Adapters
   children: []
   attributes:
   - color
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-10-8-4-1-2
+  name: Wide-Neck Bottle Adapters
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-10-8-4-2
+  name: Breast Milk Storage Bag Adapters
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-10-8-4-3
+  name: Colostrum Collection Adapters
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-10-8-4-4
+  name: Breast Pump Bottle Adapter Kits
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-10-8-5
+  name: Hands Free Pumping Bras
+  children:
+  - bt-10-8-5-1
+  - bt-10-8-5-2
+  - bt-10-8-5-3
+  - bt-10-8-5-4
+  attributes:
+  - bust_fit
+  - color
+  - cup_size
   - fabric
   - pattern
+  - sports_bra_padding_type
   return_reasons:
   - size
   - color
@@ -4182,6 +9300,50 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-8-5-1
+  name: Pumping Bustiers
+  children: []
+  attributes:
+  - bust_fit
+  - color
+  - cup_size
+  - fabric
+  - pattern
+  - sports_bra_padding_type
+  return_reasons: inherit
+- id: bt-10-8-5-2
+  name: Pumping Sports Bras
+  children: []
+  attributes:
+  - bust_fit
+  - color
+  - cup_size
+  - fabric
+  - pattern
+  - sports_bra_padding_type
+  return_reasons: inherit
+- id: bt-10-8-5-3
+  name: Pumping Lounge Bras
+  children: []
+  attributes:
+  - bust_fit
+  - color
+  - cup_size
+  - fabric
+  - pattern
+  - sports_bra_padding_type
+  return_reasons: inherit
+- id: bt-10-8-5-4
+  name: Pumping T-Shirt Bras
+  children: []
+  attributes:
+  - bust_fit
+  - color
+  - cup_size
+  - fabric
+  - pattern
+  - sports_bra_padding_type
+  return_reasons: inherit
 - id: bt-10-8-6
   name: Tubing
   children: []
@@ -4201,7 +9363,10 @@
   - other_reason
 - id: bt-10-8-7
   name: Valves & Membranes
-  children: []
+  children:
+  - bt-10-8-7-1
+  - bt-10-8-7-2
+  - bt-10-8-7-3
   attributes:
   - color
   - material
@@ -4215,6 +9380,30 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-8-7-1
+  name: Breast Pump Valves
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-10-8-7-2
+  name: Breast Pump Membranes
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  return_reasons: inherit
+- id: bt-10-8-7-3
+  name: Breast Pump Valve Kits
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  return_reasons: inherit
 - id: bt-10-9
   name: Breast Pumps
   children:
@@ -4237,7 +9426,9 @@
   - other_reason
 - id: bt-10-9-1
   name: Double Electric Breast Pumps
-  children: []
+  children:
+  - bt-10-9-1-1
+  - bt-10-9-1-2
   attributes:
   - cleaning_instructions
   - color
@@ -4258,9 +9449,37 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-9-1-1
+  name: Wearable Double Electric Breast Pumps
+  children: []
+  attributes:
+  - cleaning_instructions
+  - color
+  - pattern
+  - portability
+  - power_source
+  - pump_accessories
+  - pump_speed_settings
+  - suction_levels
+  return_reasons: inherit
+- id: bt-10-9-1-2
+  name: External-Motor Double Electric Breast Pumps
+  children: []
+  attributes:
+  - cleaning_instructions
+  - color
+  - pattern
+  - portability
+  - power_source
+  - pump_accessories
+  - pump_speed_settings
+  - suction_levels
+  return_reasons: inherit
 - id: bt-10-9-2
   name: Electric Breast Pumps
-  children: []
+  children:
+  - bt-10-9-2-1
+  - bt-10-9-2-2
   attributes:
   - battery_size
   - battery_type
@@ -4283,6 +9502,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-9-2-1
+  name: Hands-Free Electric Breast Pumps
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - cleaning_instructions
+  - color
+  - pattern
+  - portability
+  - power_source
+  - pump_accessories
+  - pump_speed_settings
+  - suction_levels
+  return_reasons: inherit
+- id: bt-10-9-2-2
+  name: Traditional Electric Breast Pumps
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - cleaning_instructions
+  - color
+  - pattern
+  - portability
+  - power_source
+  - pump_accessories
+  - pump_speed_settings
+  - suction_levels
+  return_reasons: inherit
 - id: bt-10-9-3
   name: Manual Breast Pumps
   children: []
@@ -4305,11 +9554,14 @@
   name: Burp Cloths
   children: []
   attributes:
+  - backing_material
   - care_instructions
   - closure_type
   - color
+  - edge_trim_style
   - material
   - pattern
+  - trim_color
   return_reasons:
   - size
   - color
@@ -4323,7 +9575,10 @@
   - other_reason
 - id: bt-10-11
   name: Nursing Covers
-  children: []
+  children:
+  - bt-10-11-1
+  - bt-10-11-2
+  - bt-10-11-3
   attributes:
   - closure_type
   - color
@@ -4340,6 +9595,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-11-1
+  name: Apron Nursing Covers
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - fabric
+  - nursing_cover_coverage
+  - pattern
+  return_reasons: inherit
+- id: bt-10-11-2
+  name: Poncho Nursing Covers
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - fabric
+  - nursing_cover_coverage
+  - pattern
+  return_reasons: inherit
+- id: bt-10-11-3
+  name: Shawl Nursing Covers
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - fabric
+  - nursing_cover_coverage
+  - pattern
+  return_reasons: inherit
 - id: bt-10-12
   name: Nursing Pads & Shields
   children:
@@ -4347,6 +9632,7 @@
   - bt-10-12-2
   - bt-10-12-3
   attributes:
+  - color
   - material
   - nursing_pad_design
   return_reasons:
@@ -4380,6 +9666,8 @@
   name: Reusable Nursing Pads
   children: []
   attributes:
+  - absorbency_level
+  - color
   - material
   - nursing_pad_design
   return_reasons:
@@ -4393,11 +9681,15 @@
   - other_reason
 - id: bt-10-12-3
   name: Breast Shields
-  children: []
+  children:
+  - bt-10-12-3-1
+  - bt-10-12-3-2
   attributes:
+  - base_shape
   - color
   - material
   - pattern
+  - teat_shape
   return_reasons:
   - size
   - comfort
@@ -4408,9 +9700,32 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-12-3-1
+  name: Nipple Shields
+  children: []
+  attributes:
+  - base_shape
+  - color
+  - material
+  - pattern
+  - teat_shape
+  return_reasons: inherit
+- id: bt-10-12-3-2
+  name: Breast Shells
+  children: []
+  attributes:
+  - base_shape
+  - color
+  - material
+  - pattern
+  - teat_shape
+  return_reasons: inherit
 - id: bt-10-13
   name: Nursing Pillow Covers
-  children: []
+  children:
+  - bt-10-13-1
+  - bt-10-13-2
+  - bt-10-13-3
   attributes:
   - color
   - cover_closure_design
@@ -4427,11 +9742,41 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: bt-10-14
-  name: Nursing Pillows
+- id: bt-10-13-1
+  name: C-Shaped Nursing Pillow Covers
   children: []
   attributes:
   - color
+  - cover_closure_design
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-10-13-2
+  name: V-Shaped Nursing Pillow Covers
+  children: []
+  attributes:
+  - color
+  - cover_closure_design
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-10-13-3
+  name: Twin Nursing Pillow Covers
+  children: []
+  attributes:
+  - color
+  - cover_closure_design
+  - fabric
+  - pattern
+  return_reasons: inherit
+- id: bt-10-14
+  name: Nursing Pillows
+  children:
+  - bt-10-14-1
+  - bt-10-14-2
+  attributes:
+  - color
+  - fill_material
   - firmness
   - material
   - nursing_pillow_shape
@@ -4447,6 +9792,28 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-14-1
+  name: Arm Nursing Pillows
+  children: []
+  attributes:
+  - color
+  - fill_material
+  - firmness
+  - material
+  - nursing_pillow_shape
+  - pattern
+  return_reasons: inherit
+- id: bt-10-14-2
+  name: Wraparound Nursing Pillows
+  children: []
+  attributes:
+  - color
+  - fill_material
+  - firmness
+  - material
+  - nursing_pillow_shape
+  - pattern
+  return_reasons: inherit
 - id: bt-10-16
   name: Feeding Essentials
   children:
@@ -4464,6 +9831,7 @@
   - material
   - pattern
   - product_certifications_standards
+  - shape
   return_reasons:
   - size
   - color
@@ -4482,6 +9850,7 @@
   - material
   - pattern
   - product_certifications_standards
+  - shape
   return_reasons:
   - color
   - capacity
@@ -4515,14 +9884,18 @@
   - other_reason
 - id: bt-10-16-3
   name: Feeding Plates
-  children: []
+  children:
+  - bt-10-16-3-1
+  - bt-10-16-3-2
   attributes:
   - cleaning_instructions
   - color
+  - compartment_configuration
   - lumber/wood_type
   - material
   - pattern
   - product_certifications_standards
+  - shape
   - wood_finish
   return_reasons:
   - size
@@ -4535,9 +9908,41 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-16-3-1
+  name: Flat Feeding Plates
+  children: []
+  attributes:
+  - cleaning_instructions
+  - color
+  - compartment_configuration
+  - lumber/wood_type
+  - material
+  - pattern
+  - product_certifications_standards
+  - shape
+  - wood_finish
+  return_reasons: inherit
+- id: bt-10-16-3-2
+  name: Divided Feeding Plates
+  children: []
+  attributes:
+  - cleaning_instructions
+  - color
+  - compartment_configuration
+  - lumber/wood_type
+  - material
+  - pattern
+  - product_certifications_standards
+  - shape
+  - wood_finish
+  return_reasons: inherit
 - id: bt-10-16-4
   name: Flatware Sets
-  children: []
+  children:
+  - bt-10-16-4-1
+  - bt-10-16-4-2
+  - bt-10-16-4-3
+  - bt-10-16-4-4
   attributes:
   - cleaning_instructions
   - color
@@ -4555,12 +9960,53 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-16-4-1
+  name: Fork & Spoon Sets
+  children: []
+  attributes:
+  - cleaning_instructions
+  - color
+  - material
+  - pattern
+  - product_certifications_standards
+  return_reasons: inherit
+- id: bt-10-16-4-2
+  name: Fork, Spoon & Knife Sets
+  children: []
+  attributes:
+  - cleaning_instructions
+  - color
+  - material
+  - pattern
+  - product_certifications_standards
+  return_reasons: inherit
+- id: bt-10-16-4-3
+  name: Fork, Spoon & Chopstick Sets
+  children: []
+  attributes:
+  - cleaning_instructions
+  - color
+  - material
+  - pattern
+  - product_certifications_standards
+  return_reasons: inherit
+- id: bt-10-16-4-4
+  name: Spoon & Chopstick Sets
+  children: []
+  attributes:
+  - cleaning_instructions
+  - color
+  - material
+  - pattern
+  - product_certifications_standards
+  return_reasons: inherit
 - id: bt-10-16-5
   name: Baby Bottle Nipples & Liners
   children:
   - bt-10-16-5-1
   - bt-10-16-5-2
   attributes:
+  - color
   - material
   return_reasons:
   - size
@@ -4598,8 +10044,10 @@
   - bt-10-16-5-2-2
   - bt-10-16-5-2-3
   attributes:
+  - age_group
   - color
   - material
+  - nipple_flow_stage
   - pattern
   return_reasons:
   - size
@@ -4657,10 +10105,12 @@
   name: Wide Neck Nipples
   children: []
   attributes:
+  - age_group
   - color
   - compatible_baby_bottle_design
   - flow_rate_type
   - material
+  - nipple_opening_type
   - nipple_shape
   - pattern
   - stage
@@ -4679,7 +10129,12 @@
   - bt-10-16-6-1
   - bt-10-16-6-2
   - bt-10-16-6-3
-  attributes: []
+  attributes:
+  - bottle_material
+  - cap_color
+  - color
+  - nipple_flow_stage
+  - nipple_material
   return_reasons:
   - capacity
   - flow_rate
@@ -4692,13 +10147,16 @@
   - other_reason
 - id: bt-10-16-6-1
   name: Anti Colic Bottles
-  children: []
+  children:
+  - bt-10-16-6-1-1
+  - bt-10-16-6-1-2
   attributes:
   - bottle_design
   - bottle_material
   - color
   - flow_rate_type
   - nipple_material
+  - nipple_size
   - nipple_type
   - pattern
   - product_certifications_standards
@@ -4712,6 +10170,34 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-16-6-1-1
+  name: Pouch Anti-Colic Bottles
+  children: []
+  attributes:
+  - bottle_design
+  - bottle_material
+  - color
+  - flow_rate_type
+  - nipple_material
+  - nipple_size
+  - nipple_type
+  - pattern
+  - product_certifications_standards
+  return_reasons: inherit
+- id: bt-10-16-6-1-2
+  name: Integrated-Vent Anti-Colic Bottles
+  children: []
+  attributes:
+  - bottle_design
+  - bottle_material
+  - color
+  - flow_rate_type
+  - nipple_material
+  - nipple_size
+  - nipple_type
+  - pattern
+  - product_certifications_standards
+  return_reasons: inherit
 - id: bt-10-16-6-2
   name: Standard Bottles
   children: []
@@ -4721,6 +10207,7 @@
   - color
   - flow_rate_type
   - nipple_material
+  - nipple_size
   - nipple_type
   - pattern
   - product_certifications_standards
@@ -4758,15 +10245,22 @@
   - other_reason
 - id: bt-10-16-7
   name: Bibs
-  children: []
+  children:
+  - bt-10-16-7-1
+  - bt-10-16-7-2
   attributes:
+  - backing_material
   - bib_design
   - care_instructions
   - closure_type
   - color
   - cover_features
+  - door_color
   - material
   - pattern
+  - personalization_type
+  - size
+  - target_gender
   return_reasons:
   - size
   - color
@@ -4777,12 +10271,52 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-16-7-1
+  name: Bandana Bibs
+  children: []
+  attributes:
+  - backing_material
+  - bib_design
+  - care_instructions
+  - closure_type
+  - color
+  - cover_features
+  - door_color
+  - material
+  - pattern
+  - personalization_type
+  - size
+  - target_gender
+  return_reasons: inherit
+- id: bt-10-16-7-2
+  name: Full-Coverage Bibs
+  children: []
+  attributes:
+  - backing_material
+  - bib_design
+  - care_instructions
+  - closure_type
+  - color
+  - cover_features
+  - door_color
+  - material
+  - pattern
+  - personalization_type
+  - size
+  - target_gender
+  return_reasons: inherit
 - id: bt-10-16-8
   name: Sippy Cups
-  children: []
+  children:
+  - bt-10-16-8-1
+  - bt-10-16-8-2
+  - bt-10-16-8-3
   attributes:
   - cleaning_instructions
   - color
+  - cup_color
+  - drinkware_sleeve_color
+  - lid_color
   - lid_type
   - material
   - pattern
@@ -4799,6 +10333,51 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-10-16-8-1
+  name: Spout Sippy Cups
+  children: []
+  attributes:
+  - cleaning_instructions
+  - color
+  - cup_color
+  - drinkware_sleeve_color
+  - lid_color
+  - lid_type
+  - material
+  - pattern
+  - product_certifications_standards
+  - spout_type
+  return_reasons: inherit
+- id: bt-10-16-8-2
+  name: Straw Sippy Cups
+  children: []
+  attributes:
+  - cleaning_instructions
+  - color
+  - cup_color
+  - drinkware_sleeve_color
+  - lid_color
+  - lid_type
+  - material
+  - pattern
+  - product_certifications_standards
+  - spout_type
+  return_reasons: inherit
+- id: bt-10-16-8-3
+  name: 360-Degree Sippy Cups
+  children: []
+  attributes:
+  - cleaning_instructions
+  - color
+  - cup_color
+  - drinkware_sleeve_color
+  - lid_color
+  - lid_type
+  - material
+  - pattern
+  - product_certifications_standards
+  - spout_type
+  return_reasons: inherit
 - id: bt-11
   name: Potty Training
   children:
@@ -4806,9 +10385,8 @@
   - bt-11-2
   - bt-11-3
   attributes:
-  - infant_age_group
+  - color
   - material
-  - safety_certifications
   return_reasons:
   - size
   - comfort
@@ -4820,12 +10398,16 @@
   - other_reason
 - id: bt-11-1
   name: Potties
-  children: []
+  children:
+  - bt-11-1-1
+  - bt-11-1-2
+  - bt-11-1-3
   attributes:
   - color
   - material
   - pattern
   - potty/toilet_seat_design
+  - target_gender
   return_reasons:
   - size
   - color
@@ -4836,9 +10418,43 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-11-1-1
+  name: Potty Chairs
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - potty/toilet_seat_design
+  - target_gender
+  return_reasons: inherit
+- id: bt-11-1-2
+  name: Training Urinals
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - potty/toilet_seat_design
+  - target_gender
+  return_reasons: inherit
+- id: bt-11-1-3
+  name: Top-Hat Potties
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - potty/toilet_seat_design
+  - target_gender
+  return_reasons: inherit
 - id: bt-11-2
   name: Potty Training Kits
-  children: []
+  children:
+  - bt-11-2-1
+  - bt-11-2-2
+  - bt-11-2-3
+  - bt-11-2-4
   attributes:
   - color
   - material
@@ -4854,14 +10470,55 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: bt-11-3
-  name: Toilet Seats & Step Stools
+- id: bt-11-2-1
+  name: Potty Chair & Toilet Training Seat Sets
   children: []
   attributes:
   - color
   - material
   - pattern
+  - potty_training_kit_components
+  return_reasons: inherit
+- id: bt-11-2-2
+  name: Potty Chair & Step Stool Sets
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - potty_training_kit_components
+  return_reasons: inherit
+- id: bt-11-2-3
+  name: Toilet Training Seat & Step Stool Sets
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - potty_training_kit_components
+  return_reasons: inherit
+- id: bt-11-2-4
+  name: Three-In-One Potty Training Kits
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - potty_training_kit_components
+  return_reasons: inherit
+- id: bt-11-3
+  name: Toilet Seats & Step Stools
+  children:
+  - bt-11-3-1
+  - bt-11-3-2
+  - bt-11-3-3
+  - bt-11-3-4
+  attributes:
+  - color
+  - material
+  - pattern
   - potty/toilet_seat_design
+  - shape
   return_reasons:
   - size
   - height
@@ -4872,15 +10529,54 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-11-3-1
+  name: Potty Training Toilet Seat Reducers
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - potty/toilet_seat_design
+  - shape
+  return_reasons: inherit
+- id: bt-11-3-2
+  name: Potty Training Step Stools
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - potty/toilet_seat_design
+  - shape
+  return_reasons: inherit
+- id: bt-11-3-3
+  name: Toilet Training Ladders
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - potty/toilet_seat_design
+  - shape
+  return_reasons: inherit
+- id: bt-11-3-4
+  name: Convertible Toilet Trainers
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - potty/toilet_seat_design
+  - shape
+  return_reasons: inherit
 - id: bt-12
   name: Swaddling & Receiving Blankets
   children:
   - bt-12-1
   - bt-12-2
   attributes:
-  - care_instructions
+  - backing_color
   - color
-  - infant_age_group
   - material
   - pattern
   return_reasons:
@@ -4896,11 +10592,24 @@
   - other_reason
 - id: bt-12-1
   name: Receiving Blankets
-  children: []
+  children:
+  - bt-12-1-1
+  - bt-12-1-2
+  - bt-12-1-3
+  - bt-12-1-4
+  - bt-12-1-5
+  - bt-12-1-6
+  - bt-12-1-7
   attributes:
+  - back_color
+  - border_color
   - color
+  - edge_trim_style
+  - lining_material
   - material
   - pattern
+  - suitable_season
+  - target_gender
   return_reasons:
   - size
   - color
@@ -4912,22 +10621,146 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: bt-12-1-1
+  name: Gauze Receiving Blankets
+  children: []
+  attributes:
+  - back_color
+  - border_color
+  - color
+  - edge_trim_style
+  - lining_material
+  - material
+  - pattern
+  - suitable_season
+  - target_gender
+  return_reasons: inherit
+- id: bt-12-1-2
+  name: Flannel Receiving Blankets
+  children: []
+  attributes:
+  - back_color
+  - border_color
+  - color
+  - edge_trim_style
+  - lining_material
+  - material
+  - pattern
+  - suitable_season
+  - target_gender
+  return_reasons: inherit
+- id: bt-12-1-3
+  name: Fleece Receiving Blankets
+  children: []
+  attributes:
+  - back_color
+  - border_color
+  - color
+  - edge_trim_style
+  - lining_material
+  - material
+  - pattern
+  - suitable_season
+  - target_gender
+  return_reasons: inherit
+- id: bt-12-1-4
+  name: Minky Receiving Blankets
+  children: []
+  attributes:
+  - back_color
+  - border_color
+  - color
+  - edge_trim_style
+  - lining_material
+  - material
+  - pattern
+  - suitable_season
+  - target_gender
+  return_reasons: inherit
+- id: bt-12-1-5
+  name: Knitted Receiving Blankets
+  children: []
+  attributes:
+  - back_color
+  - border_color
+  - color
+  - edge_trim_style
+  - lining_material
+  - material
+  - pattern
+  - suitable_season
+  - target_gender
+  return_reasons: inherit
+- id: bt-12-1-6
+  name: Crocheted Receiving Blankets
+  children: []
+  attributes:
+  - back_color
+  - border_color
+  - color
+  - edge_trim_style
+  - lining_material
+  - material
+  - pattern
+  - suitable_season
+  - target_gender
+  return_reasons: inherit
+- id: bt-12-1-7
+  name: Quilted Receiving Blankets
+  children: []
+  attributes:
+  - back_color
+  - border_color
+  - color
+  - edge_trim_style
+  - lining_material
+  - material
+  - pattern
+  - suitable_season
+  - target_gender
+  return_reasons: inherit
 - id: bt-12-2
   name: Swaddling Blankets
+  children:
+  - bt-12-2-1
+  - bt-12-2-2
+  attributes:
+  - closure_type
+  - color
+  - material
+  - pattern
+  - season
+  - target_gender
+  return_reasons:
+  - size
+  - color
+  - pattern
+  - material
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: bt-12-2-1
+  name: Traditional Flat Swaddling Blankets
   children: []
   attributes:
   - closure_type
   - color
   - material
   - pattern
-  return_reasons:
-  - size
+  - season
+  - target_gender
+  return_reasons: inherit
+- id: bt-12-2-2
+  name: Swaddle Wraps
+  children: []
+  attributes:
+  - closure_type
   - color
-  - pattern
   - material
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  - pattern
+  - season
+  - target_gender
+  return_reasons: inherit
