@@ -6,6 +6,7 @@
 - Adds the 6+, 15+ and 16+ options to Age restrictions.
 - Keeps return reasons for all existing categories unchanged. New categories inherit the return reasons of their nearest ancestor; for example, the new Fish category under Live Animals offers the size and color reasons.
 - Renames the `fb` vertical from `Food, Beverages & Tobacco` to `Food & Beverages`. Tobacco Products remains under `fb-3`; category IDs and parent relationships stay unchanged.
+- Removes the trailing period from the English name of the `dairy_heat_treatment` attribute (`Dairy heat treatment.` becomes `Dairy heat treatment`).
 - Refreshes category, attribute, and value translations in 31 languages, including Hindi. This includes changes to existing translated labels.
 - Adds Google mappings for 49,396 new categories using their nearest published ancestor. Another 290 new categories remain unmapped within the existing Services and Cannabis scopes. Existing mappings are unchanged.
 
