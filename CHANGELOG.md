@@ -2,9 +2,8 @@
 
 #### 📚 Taxonomy Tree
 
-- Adds 49,686 categories and 4,763 base attributes with closed lists of values. Removes Assembly required and Organic certification from the exported closed-list attributes, along with 242 retired or unreferenced values and their obsolete assignments. Updated value lists and category assignments follow the current source; removed associations are not retained for compatibility. Surviving custom-list entries keep their published relative order, with Other last.
-- Removes Age restrictions from Beverages, Video Game Consoles, Media, Videos, and Toys & Games; Event Tickets retains it. Removes the published 7+ option (value ID `82434`).
-- Removes all numeric US/EU Ring size options (88 values), 98 numeric Shoe size options including half sizes, and 34 numeric Size options from `000` through `60`. Removes 14 Safety certifications options, including CE, UL, FCC, CPSC, RoHS, and OEKO-TEX.
+- Adds 49,686 categories and 4,763 base attributes with closed lists of values. All published attributes, values and category assignments are kept, including Assembly required, Organic certification, the Safety certifications options, the Age restrictions 7+ option and the numeric Ring size, Shoe size and Size options. Existing custom-list entries keep their published relative order, with Other last.
+- Adds the 6+, 15+ and 16+ options to Age restrictions.
 - Keeps return reasons for all existing categories unchanged. New categories inherit the return reasons of their nearest ancestor; for example, the new Fish category under Live Animals offers the size and color reasons.
 - Renames the `fb` vertical from `Food, Beverages & Tobacco` to `Food & Beverages`. Tobacco Products remains under `fb-3`; category IDs and parent relationships stay unchanged.
 - Refreshes category, attribute, and value translations in 31 languages, including Hindi. This includes changes to existing translated labels.
