@@ -12,7 +12,8 @@
   - me-8
   - me-9
   - me-10
-  attributes: []
+  attributes:
+  - age_restrictions
   return_reasons:
   - changed_my_mind
   - item_not_as_described
@@ -29,6 +30,7 @@
   attributes:
   - genre
   - language_version
+  - media_format
   - publication_format
   - recommended_age_group
   - target_audience
@@ -935,6 +937,7 @@
   - genre
   - language_version
   - media_access
+  - media_format
   - publication_frequency
   - publication_size
   return_reasons:
@@ -1115,6 +1118,7 @@
   - me-3-6
   attributes:
   - language
+  - media_format
   - music_genre
   - recording_format
   return_reasons:
@@ -1416,6 +1420,7 @@
   attributes:
   - genre
   - language
+  - media_format
   - release_schedule
   return_reasons:
   - sound_quality
@@ -1649,10 +1654,12 @@
   - me-7-3
   - me-7-4
   attributes:
+  - age_restrictions
   - aspect_ratio
   - genre
   - language_version
   - media_content_type
+  - media_format
   - mpaa_rating
   - target_audience
   return_reasons:
