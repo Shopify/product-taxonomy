@@ -1,5 +1,11 @@
 ## Unreleased
 
+#### 📚 Taxonomy Tree
+
+- Adds 49,686 categories and 4,763 base attributes with closed lists of values.
+- Renames the `fb` vertical from `Food, Beverages & Tobacco` to `Food & Beverages`. Tobacco Products remains under `fb-3`; category IDs and parent relationships stay unchanged.
+- Refreshes category, attribute, and value translations in 31 languages, including Hindi. This includes changes to existing translated labels.
+
 #### 📦 Distribution
 
 - Distribution files are now published as gzip-compressed GitHub release assets. Download stable files from `https://github.com/Shopify/product-taxonomy/releases/latest/download/<asset>` (or pin a version with `releases/download/v<version>/<asset>`) and main-tracking files from `releases/download/unstable/<asset>`, then decompress (for example `curl -L <url> | gunzip`). Assets are named `<basename>.<locale>.<format>.gz`, with nested paths flattened using dots (for example `categories.en.json.gz`, `integrations.all_mappings.en.json.gz`). The committed `dist/` directory is deprecated and will be removed from `main` on October 31, 2026.
