@@ -7,6 +7,7 @@
   - so-3
   - so-4
   attributes:
+  - language
   - software_features
   return_reasons:
   - incompatible
@@ -37,6 +38,7 @@
   attributes:
   - license_type
   - operating_system
+  - software_delivery_format
   - software_features
   - supported_language
   - user_type
@@ -50,9 +52,32 @@
   - other_reason
 - id: so-1-1
   name: Antivirus & Security Software
-  children: []
+  children:
+  - so-1-1-1
+  - so-1-1-2
+  - so-1-1-3
+  - so-1-1-4
+  - so-1-1-5
+  - so-1-1-6
+  - so-1-1-7
+  - so-1-1-8
+  - so-1-1-9
+  - so-1-1-10
+  - so-1-1-11
+  - so-1-1-12
+  - so-1-1-13
+  - so-1-1-14
+  - so-1-1-15
+  - so-1-1-16
+  - so-1-1-17
+  - so-1-1-18
+  - so-1-1-19
+  - so-1-1-20
+  - so-1-1-21
+  - so-1-1-22
   attributes:
   - additional_security_software_features
+  - license_region
   - license_type
   - operating_system
   - software_features
@@ -66,6 +91,998 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-1-1-1
+  name: Endpoint Security Software
+  children:
+  - so-1-1-1-1
+  - so-1-1-1-2
+  - so-1-1-1-3
+  - so-1-1-1-4
+  - so-1-1-1-5
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-1-1
+  name: Antivirus Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-1-2
+  name: Endpoint Detection & Response Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-1-3
+  name: Mobile Threat Defense Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-1-4
+  name: Application Control Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-1-5
+  name: Mobile Device Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-2
+  name: Security Software Suites
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-3
+  name: Identity & Access Management Software
+  children:
+  - so-1-1-3-1
+  - so-1-1-3-2
+  - so-1-1-3-3
+  - so-1-1-3-4
+  - so-1-1-3-5
+  - so-1-1-3-6
+  - so-1-1-3-7
+  - so-1-1-3-8
+  - so-1-1-3-9
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-3-1
+  name: Single Sign-On Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-3-2
+  name: Multi-Factor Authentication Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-3-3
+  name: Biometric Authentication Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-3-4
+  name: Password Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-3-5
+  name: Secrets Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-3-6
+  name: Privileged Access Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-3-7
+  name: Identity Governance & Administration Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-3-8
+  name: Public Key Infrastructure Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-3-9
+  name: Identity Verification Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-4
+  name: Data Security Software
+  children:
+  - so-1-1-4-1
+  - so-1-1-4-2
+  - so-1-1-4-3
+  - so-1-1-4-4
+  - so-1-1-4-5
+  - so-1-1-4-6
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-4-1
+  name: Encryption Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-4-2
+  name: Data Loss Prevention Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-4-3
+  name: Information Rights Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-4-4
+  name: Digital Rights Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-4-5
+  name: Data Sanitization Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-4-6
+  name: Secure File Transfer & Sharing Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-5
+  name: Network Security Software
+  children:
+  - so-1-1-5-1
+  - so-1-1-5-2
+  - so-1-1-5-3
+  - so-1-1-5-4
+  - so-1-1-5-5
+  - so-1-1-5-6
+  - so-1-1-5-7
+  - so-1-1-5-8
+  - so-1-1-5-9
+  - so-1-1-5-10
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-5-1
+  name: Firewall Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-5-2
+  name: Firewall Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-5-3
+  name: Network Detection & Response Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-5-4
+  name: Network Access Control Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-5-5
+  name: Secure Web Gateway Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-5-6
+  name: Secure Remote Access Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-5-7
+  name: Secure Access Service Edge Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-5-8
+  name: Cloud Access Security Broker Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-5-9
+  name: Distributed Denial-of-Service Protection Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-5-10
+  name: Router Security Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-6
+  name: Email Security Software
+  children:
+  - so-1-1-6-1
+  - so-1-1-6-2
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-6-1
+  name: Email Filtering Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-6-2
+  name: DMARC Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-7
+  name: Content Filtering Software
+  children:
+  - so-1-1-7-1
+  - so-1-1-7-2
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-7-1
+  name: Web Filtering Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-7-2
+  name: Browser Security Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-8
+  name: Web Application Security Software
+  children:
+  - so-1-1-8-1
+  - so-1-1-8-2
+  - so-1-1-8-3
+  - so-1-1-8-4
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-8-1
+  name: Web Application Firewall Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-8-2
+  name: Website Security Plugins
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-8-3
+  name: API Security Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-8-4
+  name: Bot Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-9
+  name: Cloud-Native Application Protection Platforms
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-10
+  name: Cloud Workload Protection Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-11
+  name: Security Posture Management Software
+  children:
+  - so-1-1-11-1
+  - so-1-1-11-2
+  - so-1-1-11-3
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-11-1
+  name: Cloud Security Posture Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-11-2
+  name: SaaS Security Posture Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-11-3
+  name: Data Security Posture Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-12
+  name: Vulnerability Management Software
+  children:
+  - so-1-1-12-1
+  - so-1-1-12-2
+  - so-1-1-12-3
+  - so-1-1-12-4
+  - so-1-1-12-5
+  - so-1-1-12-6
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-12-1
+  name: Vulnerability Scanning Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-12-2
+  name: Penetration Testing Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-12-3
+  name: Application Security Testing Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-12-4
+  name: Patch Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-12-5
+  name: Attack Surface & Exposure Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-12-6
+  name: Security Ratings Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-13
+  name: Security Analytics Software
+  children:
+  - so-1-1-13-1
+  - so-1-1-13-2
+  - so-1-1-13-3
+  - so-1-1-13-4
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-13-1
+  name: Security Information & Event Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-13-2
+  name: Security Log Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-13-3
+  name: File Integrity Monitoring Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-13-4
+  name: Insider Threat & User Activity Monitoring Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-14
+  name: Malware Analysis Software
+  children:
+  - so-1-1-14-1
+  - so-1-1-14-2
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-14-1
+  name: Malware Sandboxing Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-14-2
+  name: Binary Analysis Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-15
+  name: Incident Response Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-16
+  name: Threat Intelligence Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-17
+  name: Digital Forensics Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-18
+  name: Fraud Detection Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-19
+  name: Privacy Management Software
+  children:
+  - so-1-1-19-1
+  - so-1-1-19-2
+  - so-1-1-19-3
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-19-1
+  name: Anti-Tracking Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-19-2
+  name: Webcam Security Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-19-3
+  name: Identity Theft Protection Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-20
+  name: Brand Protection Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-21
+  name: Security Awareness Training Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-1-22
+  name: Security Policy Management Software
+  children: []
+  attributes:
+  - additional_security_software_features
+  - license_region
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
 - id: so-1-2
   name: Business & Productivity Software
   children:
@@ -78,6 +1095,7 @@
   attributes:
   - customer_support_channels
   - license_type
+  - media_type
   - operating_system
   - software_features
   - supported_language
@@ -92,7 +1110,13 @@
   - other_reason
 - id: so-1-2-1
   name: Database Management Software
-  children: []
+  children:
+  - so-1-2-1-1
+  - so-1-2-1-2
+  - so-1-2-1-3
+  - so-1-2-1-4
+  - so-1-2-1-5
+  - so-1-2-1-6
   attributes:
   - customer_support_channels
   - license_type
@@ -108,6 +1132,72 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-1-2-1-1
+  name: Cloud Data Warehouses
+  children: []
+  attributes:
+  - customer_support_channels
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-2-1-2
+  name: Process Historians
+  children: []
+  attributes:
+  - customer_support_channels
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-2-1-3
+  name: Database Backup & Recovery Tools
+  children: []
+  attributes:
+  - customer_support_channels
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-2-1-4
+  name: Database Migration Tools
+  children: []
+  attributes:
+  - customer_support_channels
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-2-1-5
+  name: Database Schema Design Tools
+  children: []
+  attributes:
+  - customer_support_channels
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-2-1-6
+  name: Database Observability Platforms
+  children: []
+  attributes:
+  - customer_support_channels
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
 - id: so-1-2-8
   name: Project Management Software
   children: []
@@ -115,6 +1205,8 @@
   - customer_support_channels
   - license_type
   - operating_system
+  - organization_type
+  - software_delivery_format
   - software_features
   - supported_language
   - user_type
@@ -131,6 +1223,8 @@
   children: []
   attributes:
   - customer_support_channels
+  - distribution_format
+  - hosting_type
   - license_type
   - operating_system
   - software_features
@@ -166,6 +1260,7 @@
   name: Data Analysis & Visualization Software
   children: []
   attributes:
+  - customer_segment
   - customer_support_channels
   - license_type
   - operating_system
@@ -220,7 +1315,26 @@
   - other_reason
 - id: so-1-3-1
   name: Software Development Tools
-  children: []
+  children:
+  - so-1-3-1-1
+  - so-1-3-1-2
+  - so-1-3-1-3
+  - so-1-3-1-4
+  - so-1-3-1-5
+  - so-1-3-1-6
+  - so-1-3-1-7
+  - so-1-3-1-8
+  - so-1-3-1-9
+  - so-1-3-1-10
+  - so-1-3-1-11
+  - so-1-3-1-12
+  - so-1-3-1-13
+  - so-1-3-1-14
+  - so-1-3-1-15
+  - so-1-3-1-16
+  - so-1-3-1-17
+  - so-1-3-1-18
+  - so-1-3-1-19
   attributes:
   - compatible_programming_languages
   - license_type
@@ -237,9 +1351,259 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-1-3-1-1
+  name: Integrated Development Environments
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-2
+  name: Code Generation Tools
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-3
+  name: Code Search Tools
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-4
+  name: User Interface Component Libraries
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-5
+  name: Version Control Software
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-6
+  name: Code Review Tools
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-7
+  name: Bug Tracking Software
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-8
+  name: Application Lifecycle Management Software
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-9
+  name: CI/CD Tools
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-10
+  name: Software Testing Tools
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-11
+  name: Security Testing Tools
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-12
+  name: Code Quality Tools
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-13
+  name: Binary Analysis Tools
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-14
+  name: API Lifecycle Management Tools
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-15
+  name: API Documentation Tools
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-16
+  name: Regular Expression Tools
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-17
+  name: No-Code Development Platforms
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-18
+  name: Protocol Debugging Tools
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-3-1-19
+  name: Database Debuggers
+  children: []
+  attributes:
+  - compatible_programming_languages
+  - license_type
+  - operating_system
+  - software_features
+  - software_tool_type
+  - supported_language
+  - user_type
+  return_reasons: inherit
 - id: so-1-4
   name: Computer Utilities & Maintenance Software
-  children: []
+  children:
+  - so-1-4-1
+  - so-1-4-2
+  - so-1-4-3
+  - so-1-4-4
+  - so-1-4-5
+  - so-1-4-6
+  - so-1-4-7
+  - so-1-4-8
+  - so-1-4-9
+  - so-1-4-10
+  - so-1-4-11
+  - so-1-4-12
+  - so-1-4-13
+  - so-1-4-14
+  - so-1-4-15
+  - so-1-4-16
+  - so-1-4-17
+  - so-1-4-18
+  - so-1-4-19
+  - so-1-4-20
+  - so-1-4-21
+  - so-1-4-22
   attributes:
   - license_type
   - operating_system
@@ -255,9 +1619,435 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-1-4-1
+  name: System Utility Suites
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-2
+  name: Computer Cleaners
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-3
+  name: Uninstaller Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-4
+  name: System Repair Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-5
+  name: File Repair Utilities
+  children:
+  - so-1-4-5-1
+  - so-1-4-5-2
+  - so-1-4-5-3
+  - so-1-4-5-4
+  - so-1-4-5-5
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-5-1
+  name: Document Repair Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-5-2
+  name: Photo Repair Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-5-3
+  name: Video Repair Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-5-4
+  name: Mailbox Repair Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-5-5
+  name: Database Repair Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-6
+  name: Backup Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-7
+  name: Data Recovery Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-8
+  name: Disk Management Utilities
+  children:
+  - so-1-4-8-1
+  - so-1-4-8-2
+  - so-1-4-8-3
+  - so-1-4-8-4
+  - so-1-4-8-5
+  - so-1-4-8-6
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-8-1
+  name: Partition Managers
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-8-2
+  name: Disk Defragmenters
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-8-3
+  name: RAID Management Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-8-4
+  name: RAM Disk Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-8-5
+  name: Disk Cloning Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-8-6
+  name: Drive Health Monitors
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-9
+  name: File Transfer Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-10
+  name: File Synchronization Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-11
+  name: File Compression Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-12
+  name: File Organization Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-13
+  name: Device Management Utilities
+  children:
+  - so-1-4-13-1
+  - so-1-4-13-2
+  - so-1-4-13-3
+  - so-1-4-13-4
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-13-1
+  name: Driver Management Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-13-2
+  name: USB Device Management Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-13-3
+  name: Hardware Inventory Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-13-4
+  name: Printer Reset Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-14
+  name: Password Recovery Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-15
+  name: System Benchmarking Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-16
+  name: System Log Analyzers
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-17
+  name: Checksum Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-18
+  name: Update Monitoring Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-19
+  name: Power Management Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-20
+  name: Configuration Management Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-21
+  name: Software Deployment Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
+- id: so-1-4-22
+  name: Remote Maintenance Utilities
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  - utility/maintenance_task_type
+  return_reasons: inherit
 - id: so-1-5
   name: Dictionary & Translation Software
-  children: []
+  children:
+  - so-1-5-1
+  - so-1-5-2
+  - so-1-5-3
+  - so-1-5-4
   attributes:
   - license_type
   - operating_system
@@ -272,14 +2062,57 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-1-5-1
+  name: Dictionary Applications
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-5-2
+  name: Translation Applications
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-5-3
+  name: Thesaurus Applications
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-5-4
+  name: Terminology Management Systems
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
 - id: so-1-6
   name: Educational Software
   children: []
   attributes:
+  - distribution_medium
   - education_level
+  - license_scope
   - license_type
   - operating_system
   - software_features
+  - subject_area
   - supported_language
   - user_type
   return_reasons:
@@ -292,7 +2125,26 @@
   - other_reason
 - id: so-1-7
   name: Financial, Tax & Accounting Software
-  children: []
+  children:
+  - so-1-7-1
+  - so-1-7-2
+  - so-1-7-3
+  - so-1-7-4
+  - so-1-7-5
+  - so-1-7-6
+  - so-1-7-7
+  - so-1-7-8
+  - so-1-7-9
+  - so-1-7-10
+  - so-1-7-11
+  - so-1-7-12
+  - so-1-7-13
+  - so-1-7-14
+  - so-1-7-15
+  - so-1-7-16
+  - so-1-7-17
+  - so-1-7-18
+  - so-1-7-19
   attributes:
   - additional_financial_software_features
   - license_type
@@ -308,15 +2160,229 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-1-7-1
+  name: Accounting Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-2
+  name: Billing & Invoicing Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-3
+  name: Tax Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-4
+  name: Payroll Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-5
+  name: Payment Processing Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-6
+  name: Currency Conversion Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-7
+  name: Currency Exchange Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-8
+  name: Financial Planning Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-9
+  name: Financial Calculator Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-10
+  name: Financial Analysis Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-11
+  name: Personal Finance Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-12
+  name: Loan Management Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-13
+  name: Debt Management Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-14
+  name: Portfolio Management Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-15
+  name: Investment Research Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-16
+  name: Trading Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-17
+  name: Financial Risk Management Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-18
+  name: Financial Fraud Detection Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-7-19
+  name: Anti-Money Laundering Software
+  children: []
+  attributes:
+  - additional_financial_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
 - id: so-1-8
   name: GPS Map Data & Software
-  children: []
+  children:
+  - so-1-8-1
+  - so-1-8-2
+  - so-1-8-3
   attributes:
   - coverage_area
   - coverage_region
+  - distribution_medium
   - gps_compatible_device
   - gps_map_type
   - gps_software_focus
+  - license_or_update_type
   - license_type
   - operating_system
   - software_features
@@ -331,6 +2397,60 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-1-8-1
+  name: Digital Maps
+  children: []
+  attributes:
+  - coverage_area
+  - coverage_region
+  - distribution_medium
+  - gps_compatible_device
+  - gps_map_type
+  - gps_software_focus
+  - license_or_update_type
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - update_frequency
+  - user_type
+  return_reasons: inherit
+- id: so-1-8-2
+  name: GPS Route Files
+  children: []
+  attributes:
+  - coverage_area
+  - coverage_region
+  - distribution_medium
+  - gps_compatible_device
+  - gps_map_type
+  - gps_software_focus
+  - license_or_update_type
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - update_frequency
+  - user_type
+  return_reasons: inherit
+- id: so-1-8-3
+  name: Waypoint Files
+  children: []
+  attributes:
+  - coverage_area
+  - coverage_region
+  - distribution_medium
+  - gps_compatible_device
+  - gps_map_type
+  - gps_software_focus
+  - license_or_update_type
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - update_frequency
+  - user_type
+  return_reasons: inherit
 - id: so-1-9
   name: Handheld & PDA Software
   children: []
@@ -377,7 +2497,11 @@
   - other_reason
 - id: so-1-10-1
   name: 3D Modeling Software
-  children: []
+  children:
+  - so-1-10-1-1
+  - so-1-10-1-2
+  - so-1-10-1-3
+  - so-1-10-1-4
   attributes:
   - license_type
   - operating_system
@@ -392,6 +2516,46 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-1-10-1-1
+  name: 3D Content Creation Suites
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-1-2
+  name: 3D CAD Programs
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-1-3
+  name: Digital Sculpting Programs
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-1-4
+  name: 3D Reconstruction Programs
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
 - id: so-1-10-2
   name: Animation Editing Software
   children: []
@@ -430,7 +2594,12 @@
   - other_reason
 - id: so-1-10-4
   name: Home & Interior Design Software
-  children: []
+  children:
+  - so-1-10-4-1
+  - so-1-10-4-2
+  - so-1-10-4-3
+  - so-1-10-4-4
+  - so-1-10-4-5
   attributes:
   - additional_design_software_type
   - license_type
@@ -446,9 +2615,73 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-1-10-4-1
+  name: Residential Architectural Design Software
+  children: []
+  attributes:
+  - additional_design_software_type
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-4-2
+  name: Interior Decorating Software
+  children: []
+  attributes:
+  - additional_design_software_type
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-4-3
+  name: Residential Landscape Design Software
+  children: []
+  attributes:
+  - additional_design_software_type
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-4-4
+  name: Interior Rendering Software
+  children: []
+  attributes:
+  - additional_design_software_type
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-4-5
+  name: Interior Acoustics Design Software
+  children: []
+  attributes:
+  - additional_design_software_type
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
 - id: so-1-10-5
   name: Home Publishing Software
-  children: []
+  children:
+  - so-1-10-5-1
+  - so-1-10-5-2
+  - so-1-10-5-3
+  - so-1-10-5-4
+  - so-1-10-5-5
+  - so-1-10-5-6
+  - so-1-10-5-7
+  - so-1-10-5-8
+  - so-1-10-5-9
   attributes:
   - additional_publishing_software_features
   - license_type
@@ -464,9 +2697,181 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-1-10-5-1
+  name: Card Design Software
+  children:
+  - so-1-10-5-1-1
+  - so-1-10-5-1-2
+  - so-1-10-5-1-3
+  attributes:
+  - additional_publishing_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-5-1-1
+  name: Greeting Card Design Software
+  children: []
+  attributes:
+  - additional_publishing_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-5-1-2
+  name: Invitation Design Software
+  children: []
+  attributes:
+  - additional_publishing_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-5-1-3
+  name: Business Card Design Software
+  children: []
+  attributes:
+  - additional_publishing_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-5-2
+  name: Label Design & Printing Software
+  children:
+  - so-1-10-5-2-1
+  - so-1-10-5-2-2
+  attributes:
+  - additional_publishing_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-5-2-1
+  name: Sticker Design & Printing Software
+  children: []
+  attributes:
+  - additional_publishing_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-5-2-2
+  name: Disc Label Design Software
+  children: []
+  attributes:
+  - additional_publishing_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-5-3
+  name: Book Publishing Software
+  children: []
+  attributes:
+  - additional_publishing_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-5-4
+  name: Poster Design Software
+  children: []
+  attributes:
+  - additional_publishing_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-5-5
+  name: Menu Design Software
+  children: []
+  attributes:
+  - additional_publishing_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-5-6
+  name: Calendar Design Software
+  children: []
+  attributes:
+  - additional_publishing_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-5-7
+  name: Scrapbooking Software
+  children: []
+  attributes:
+  - additional_publishing_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-5-8
+  name: Form Design Software
+  children: []
+  attributes:
+  - additional_publishing_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-5-9
+  name: Funeral Program Design Software
+  children: []
+  attributes:
+  - additional_publishing_software_features
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
 - id: so-1-10-6
   name: Media Viewing Software
-  children: []
+  children:
+  - so-1-10-6-1
+  - so-1-10-6-2
+  - so-1-10-6-3
+  - so-1-10-6-4
+  - so-1-10-6-5
+  - so-1-10-6-6
+  - so-1-10-6-7
+  - so-1-10-6-8
+  - so-1-10-6-9
+  - so-1-10-6-10
+  - so-1-10-6-11
+  - so-1-10-6-12
+  - so-1-10-6-13
   attributes:
   - license_type
   - operating_system
@@ -481,9 +2886,151 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-1-10-6-1
+  name: Media Organizer Software
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-6-2
+  name: Video Player Software
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-6-3
+  name: Karaoke Player Software
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-6-4
+  name: Media Inspection Software
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-6-5
+  name: Video Surveillance Viewer Software
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-6-6
+  name: Digital Signage Player Software
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-6-7
+  name: Image Viewer Software
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-6-8
+  name: Screensaver Software
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-6-9
+  name: Media Center Software
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-6-10
+  name: Digital Jukebox Software
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-6-11
+  name: Audio Visualization Software
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-6-12
+  name: CAD Viewer Software
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-6-13
+  name: Flipbook Viewer Software
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
 - id: so-1-10-7
   name: Music Composition Software
-  children: []
+  children:
+  - so-1-10-7-1
+  - so-1-10-7-2
+  - so-1-10-7-3
+  - so-1-10-7-4
+  - so-1-10-7-5
+  - so-1-10-7-6
+  - so-1-10-7-7
+  - so-1-10-7-8
+  - so-1-10-7-9
+  - so-1-10-7-10
+  - so-1-10-7-11
+  - so-1-10-7-12
   attributes:
   - license_type
   - operating_system
@@ -498,6 +3045,126 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-1-10-7-1
+  name: Digital Audio Workstations
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-7-2
+  name: Music Notation Software
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-7-3
+  name: Music Sequencers
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-7-4
+  name: AI Music Generators
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-7-5
+  name: Lyric Writing Software
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-7-6
+  name: Music Transcription Software
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-7-7
+  name: Virtual Instruments
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-7-8
+  name: Audio Sample Packs
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-7-9
+  name: MIDI Libraries
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-7-10
+  name: Impulse Response Libraries
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-7-11
+  name: Orchestral Templates
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-7-12
+  name: Audio Plug-In Bundles
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
 - id: so-1-10-8
   name: Sound Editing Software
   children: []
@@ -524,6 +3191,7 @@
   - software_features
   - supported_language
   - user_type
+  - video_resolution_supported
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -534,7 +3202,18 @@
   - other_reason
 - id: so-1-10-10
   name: Web Design Software
-  children: []
+  children:
+  - so-1-10-10-1
+  - so-1-10-10-2
+  - so-1-10-10-3
+  - so-1-10-10-4
+  - so-1-10-10-5
+  - so-1-10-10-6
+  - so-1-10-10-7
+  - so-1-10-10-8
+  - so-1-10-10-9
+  - so-1-10-10-10
+  - so-1-10-10-11
   attributes:
   - license_type
   - operating_system
@@ -549,6 +3228,116 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-1-10-10-1
+  name: Website Builders
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-10-2
+  name: Web Authoring Suites
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-10-3
+  name: HTML Editors
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-10-4
+  name: Forum Builders
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-10-5
+  name: Landing Page Builders
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-10-6
+  name: Web Form Builders
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-10-7
+  name: Navigation Menu Builders
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-10-8
+  name: Web UX Design Tools
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-10-9
+  name: Website Maintenance Tools
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-10-10
+  name: Website Localization Tools
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-10-10-11
+  name: Page Builder Plugins
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
 - id: so-1-11
   name: Network Software
   children: []
@@ -568,10 +3357,17 @@
   - other_reason
 - id: so-1-12
   name: Office Application Software
-  children: []
+  children:
+  - so-1-12-1
+  - so-1-12-2
+  - so-1-12-3
+  - so-1-12-4
+  - so-1-12-5
   attributes:
   - license_type
   - operating_system
+  - software_activation_method
+  - software_delivery_format
   - software_features
   - supported_language
   - user_type
@@ -583,12 +3379,77 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-1-12-1
+  name: Office Suites
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_activation_method
+  - software_delivery_format
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-12-2
+  name: Word Processors
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_activation_method
+  - software_delivery_format
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-12-3
+  name: Spreadsheet Applications
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_activation_method
+  - software_delivery_format
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-12-4
+  name: Presentation Applications
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_activation_method
+  - software_delivery_format
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-12-5
+  name: Email Clients
+  children: []
+  attributes:
+  - license_type
+  - operating_system
+  - software_activation_method
+  - software_delivery_format
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
 - id: so-1-13
   name: Operating Systems
-  children: []
+  children:
+  - so-1-13-1
+  - so-1-13-2
+  - so-1-13-3
   attributes:
+  - license_region
   - license_type
   - operating_system
+  - software_activation_method
   - software_features
   - supported_language
   - user_type
@@ -600,6 +3461,42 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-1-13-1
+  name: Desktop Operating Systems
+  children: []
+  attributes:
+  - license_region
+  - license_type
+  - operating_system
+  - software_activation_method
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-13-2
+  name: Server Operating Systems
+  children: []
+  attributes:
+  - license_region
+  - license_type
+  - operating_system
+  - software_activation_method
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
+- id: so-1-13-3
+  name: Embedded Operating Systems
+  children: []
+  attributes:
+  - license_region
+  - license_type
+  - operating_system
+  - software_activation_method
+  - software_features
+  - supported_language
+  - user_type
+  return_reasons: inherit
 - id: so-1-14
   name: Restore Disks
   children: []
@@ -626,6 +3523,7 @@
   - ai_application
   - compatible_programming_languages
   - deployment_type
+  - features
   - industry_focus
   - license_type
   - performance_metrics
@@ -669,6 +3567,9 @@
   - so-2-8
   - so-2-9
   attributes:
+  - availability_region
+  - language
+  - license_type
   - operating_system
   - software_features
   return_reasons:
@@ -683,8 +3584,10 @@
   name: Computer Icons
   children: []
   attributes:
+  - color
   - file_format_type
   - icon_type
+  - license_type
   - operating_system
   - software_features
   return_reasons:
@@ -699,8 +3602,11 @@
   - other_reason
 - id: so-2-2
   name: Desktop Wallpapers
-  children: []
+  children:
+  - so-2-2-1
+  - so-2-2-2
   attributes:
+  - color
   - file_format_type
   - operating_system
   - software_features
@@ -715,14 +3621,42 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-2-2-1
+  name: Static Wallpapers
+  children: []
+  attributes:
+  - color
+  - file_format_type
+  - operating_system
+  - software_features
+  - wallpaper_theme
+  return_reasons: inherit
+- id: so-2-2-2
+  name: Animated Wallpapers
+  children: []
+  attributes:
+  - color
+  - file_format_type
+  - operating_system
+  - software_features
+  - wallpaper_theme
+  return_reasons: inherit
 - id: so-2-3
   name: Digital Artwork
   children: []
   attributes:
+  - art_style
   - artwork_type
+  - background_type
+  - color
   - file_format_type
+  - frame_ratio
+  - language
+  - license_type
   - operating_system
+  - portrait/landscape_orientation
   - software_features
+  - theme
   return_reasons:
   - style
   - resolution
@@ -735,11 +3669,26 @@
   - other_reason
 - id: so-2-4
   name: Document Templates
-  children: []
+  children:
+  - so-2-4-1
+  - so-2-4-2
+  - so-2-4-3
+  - so-2-4-4
+  - so-2-4-5
+  - so-2-4-6
+  - so-2-4-7
+  - so-2-4-8
+  - so-2-4-9
+  - so-2-4-10
   attributes:
+  - color
   - compatible_software_platform
   - file_format_type
+  - language
+  - license_type
   - operating_system
+  - paper_format
+  - portrait/landscape_orientation
   - software_features
   - template_type
   return_reasons:
@@ -751,12 +3700,168 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-2-4-1
+  name: Brochure Templates
+  children: []
+  attributes:
+  - color
+  - compatible_software_platform
+  - file_format_type
+  - language
+  - license_type
+  - operating_system
+  - paper_format
+  - portrait/landscape_orientation
+  - software_features
+  - template_type
+  return_reasons: inherit
+- id: so-2-4-2
+  name: Business Card Templates
+  children: []
+  attributes:
+  - color
+  - compatible_software_platform
+  - file_format_type
+  - language
+  - license_type
+  - operating_system
+  - paper_format
+  - portrait/landscape_orientation
+  - software_features
+  - template_type
+  return_reasons: inherit
+- id: so-2-4-3
+  name: Certificate Templates
+  children: []
+  attributes:
+  - color
+  - compatible_software_platform
+  - file_format_type
+  - language
+  - license_type
+  - operating_system
+  - paper_format
+  - portrait/landscape_orientation
+  - software_features
+  - template_type
+  return_reasons: inherit
+- id: so-2-4-4
+  name: Cover Letter Templates
+  children: []
+  attributes:
+  - color
+  - compatible_software_platform
+  - file_format_type
+  - language
+  - license_type
+  - operating_system
+  - paper_format
+  - portrait/landscape_orientation
+  - software_features
+  - template_type
+  return_reasons: inherit
+- id: so-2-4-5
+  name: Flyer Templates
+  children: []
+  attributes:
+  - color
+  - compatible_software_platform
+  - file_format_type
+  - language
+  - license_type
+  - operating_system
+  - paper_format
+  - portrait/landscape_orientation
+  - software_features
+  - template_type
+  return_reasons: inherit
+- id: so-2-4-6
+  name: Invoice Templates
+  children: []
+  attributes:
+  - color
+  - compatible_software_platform
+  - file_format_type
+  - language
+  - license_type
+  - operating_system
+  - paper_format
+  - portrait/landscape_orientation
+  - software_features
+  - template_type
+  return_reasons: inherit
+- id: so-2-4-7
+  name: Newsletter Templates
+  children: []
+  attributes:
+  - color
+  - compatible_software_platform
+  - file_format_type
+  - language
+  - license_type
+  - operating_system
+  - paper_format
+  - portrait/landscape_orientation
+  - software_features
+  - template_type
+  return_reasons: inherit
+- id: so-2-4-8
+  name: Presentation Templates
+  children: []
+  attributes:
+  - color
+  - compatible_software_platform
+  - file_format_type
+  - language
+  - license_type
+  - operating_system
+  - paper_format
+  - portrait/landscape_orientation
+  - software_features
+  - template_type
+  return_reasons: inherit
+- id: so-2-4-9
+  name: Resume Templates
+  children: []
+  attributes:
+  - color
+  - compatible_software_platform
+  - file_format_type
+  - language
+  - license_type
+  - operating_system
+  - paper_format
+  - portrait/landscape_orientation
+  - software_features
+  - template_type
+  return_reasons: inherit
+- id: so-2-4-10
+  name: Invitation Templates
+  children: []
+  attributes:
+  - color
+  - compatible_software_platform
+  - file_format_type
+  - language
+  - license_type
+  - operating_system
+  - paper_format
+  - portrait/landscape_orientation
+  - software_features
+  - template_type
+  return_reasons: inherit
 - id: so-2-5
   name: Fonts
-  children: []
+  children:
+  - so-2-5-1
+  - so-2-5-2
+  - so-2-5-3
+  - so-2-5-4
+  - so-2-5-5
   attributes:
   - file_format_type
   - font_style
+  - font_weight
   - operating_system
   - software_features
   return_reasons:
@@ -768,14 +3873,71 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: so-2-6
-  name: Stock Photographs & Video Footage
+- id: so-2-5-1
+  name: Serif Fonts
   children: []
   attributes:
   - file_format_type
-  - footage_type
+  - font_style
+  - font_weight
   - operating_system
   - software_features
+  return_reasons: inherit
+- id: so-2-5-2
+  name: Sans Serif Fonts
+  children: []
+  attributes:
+  - file_format_type
+  - font_style
+  - font_weight
+  - operating_system
+  - software_features
+  return_reasons: inherit
+- id: so-2-5-3
+  name: Script Fonts
+  children: []
+  attributes:
+  - file_format_type
+  - font_style
+  - font_weight
+  - operating_system
+  - software_features
+  return_reasons: inherit
+- id: so-2-5-4
+  name: Blackletter Fonts
+  children: []
+  attributes:
+  - file_format_type
+  - font_style
+  - font_weight
+  - operating_system
+  - software_features
+  return_reasons: inherit
+- id: so-2-5-5
+  name: Dingbat Fonts
+  children: []
+  attributes:
+  - file_format_type
+  - font_style
+  - font_weight
+  - operating_system
+  - software_features
+  return_reasons: inherit
+- id: so-2-6
+  name: Stock Photographs & Video Footage
+  children:
+  - so-2-6-1
+  - so-2-6-2
+  attributes:
+  - color
+  - depicted_person_gender
+  - file_format_type
+  - footage_type
+  - license_type
+  - operating_system
+  - portrait/landscape_orientation
+  - software_features
+  - theme
   return_reasons:
   - resolution
   - incompatible
@@ -785,10 +3947,42 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: so-2-7
-  name: Virtual Currency
+- id: so-2-6-1
+  name: Stock Photographs
   children: []
   attributes:
+  - color
+  - depicted_person_gender
+  - file_format_type
+  - footage_type
+  - license_type
+  - operating_system
+  - portrait/landscape_orientation
+  - software_features
+  - theme
+  return_reasons: inherit
+- id: so-2-6-2
+  name: Stock Video Footage
+  children: []
+  attributes:
+  - color
+  - depicted_person_gender
+  - file_format_type
+  - footage_type
+  - license_type
+  - operating_system
+  - portrait/landscape_orientation
+  - software_features
+  - theme
+  return_reasons: inherit
+- id: so-2-7
+  name: Virtual Currency
+  children:
+  - so-2-7-1
+  - so-2-7-2
+  attributes:
+  - platform
+  - redemption_region
   - software_features
   return_reasons:
   - incompatible
@@ -798,6 +3992,22 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-2-7-1
+  name: Virtual Credits
+  children: []
+  attributes:
+  - platform
+  - redemption_region
+  - software_features
+  return_reasons: inherit
+- id: so-2-7-2
+  name: Non-Fungible Tokens
+  children: []
+  attributes:
+  - platform
+  - redemption_region
+  - software_features
+  return_reasons: inherit
 - id: so-2-8
   name: SVG & Cut Files
   children: []
@@ -838,6 +4048,7 @@
   - so-3-2
   attributes:
   - esrb_rating
+  - language
   - national/regional_rating
   - pegi_rating
   - region_code
@@ -859,6 +4070,7 @@
   children: []
   attributes:
   - esrb_rating
+  - language
   - national/regional_rating
   - pegi_rating
   - region_code
@@ -880,7 +4092,9 @@
   children: []
   attributes:
   - esrb_rating
+  - language
   - national/regional_rating
+  - packaging_language
   - pegi_rating
   - region_code
   - video_game_content_features
@@ -897,10 +4111,16 @@
   - other_reason
 - id: so-4
   name: Cloud Services
-  children: []
+  children:
+  - so-4-1
+  - so-4-2
+  - so-4-3
   attributes:
+  - compatible_operating_system
   - compatible_programming_languages
+  - compatible_software_platform
   - compliance_certifications
+  - customer_segment
   - primary_region
   - service_type
   return_reasons:
@@ -913,3 +4133,39 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: so-4-1
+  name: Cloud Infrastructure Services
+  children: []
+  attributes:
+  - compatible_operating_system
+  - compatible_programming_languages
+  - compatible_software_platform
+  - compliance_certifications
+  - customer_segment
+  - primary_region
+  - service_type
+  return_reasons: inherit
+- id: so-4-2
+  name: Cloud Platform Services
+  children: []
+  attributes:
+  - compatible_operating_system
+  - compatible_programming_languages
+  - compatible_software_platform
+  - compliance_certifications
+  - customer_segment
+  - primary_region
+  - service_type
+  return_reasons: inherit
+- id: so-4-3
+  name: Cloud Application Services
+  children: []
+  attributes:
+  - compatible_operating_system
+  - compatible_programming_languages
+  - compatible_software_platform
+  - compliance_certifications
+  - customer_segment
+  - primary_region
+  - service_type
+  return_reasons: inherit

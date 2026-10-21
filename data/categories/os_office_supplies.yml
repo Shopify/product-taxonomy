@@ -16,7 +16,8 @@
   - os-12
   - os-13
   - os-14
-  attributes: []
+  attributes:
+  - material
   return_reasons:
   - size
   - color
@@ -47,12 +48,20 @@
   - other_reason
 - id: os-1-1
   name: Book Covers
-  children: []
+  children:
+  - os-1-1-1
+  - os-1-1-2
+  - os-1-1-3
+  - os-1-1-4
+  - os-1-1-5
   attributes:
   - book_cover_material
   - closure_type
   - color
+  - compatible_book_format
+  - hardware_finish
   - pattern
+  - sheen
   return_reasons:
   - size
   - color
@@ -62,9 +71,71 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-1-1-1
+  name: Book Sleeves
+  children: []
+  attributes:
+  - book_cover_material
+  - closure_type
+  - color
+  - compatible_book_format
+  - hardware_finish
+  - pattern
+  - sheen
+  return_reasons: inherit
+- id: os-1-1-2
+  name: Book Slipcases
+  children: []
+  attributes:
+  - book_cover_material
+  - closure_type
+  - color
+  - compatible_book_format
+  - hardware_finish
+  - pattern
+  - sheen
+  return_reasons: inherit
+- id: os-1-1-3
+  name: Book Jackets
+  children: []
+  attributes:
+  - book_cover_material
+  - closure_type
+  - color
+  - compatible_book_format
+  - hardware_finish
+  - pattern
+  - sheen
+  return_reasons: inherit
+- id: os-1-1-4
+  name: Book Cover Films
+  children: []
+  attributes:
+  - book_cover_material
+  - closure_type
+  - color
+  - compatible_book_format
+  - hardware_finish
+  - pattern
+  - sheen
+  return_reasons: inherit
+- id: os-1-1-5
+  name: Slip-On Book Covers
+  children: []
+  attributes:
+  - book_cover_material
+  - closure_type
+  - color
+  - compatible_book_format
+  - hardware_finish
+  - pattern
+  - sheen
+  return_reasons: inherit
 - id: os-1-2
   name: Book Lights
-  children: []
+  children:
+  - os-1-2-1
+  - os-1-2-2
   attributes:
   - brightness_levels
   - light_attachment_type
@@ -81,12 +152,39 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-1-3
-  name: Book Stands & Rests
+- id: os-1-2-1
+  name: Clip-On Book Lights
   children: []
   attributes:
+  - brightness_levels
+  - light_attachment_type
+  - light_temperature
+  - material
+  - power_source
+  return_reasons: inherit
+- id: os-1-2-2
+  name: Bookmark Book Lights
+  children: []
+  attributes:
+  - brightness_levels
+  - light_attachment_type
+  - light_temperature
+  - material
+  - power_source
+  return_reasons: inherit
+- id: os-1-3
+  name: Book Stands & Rests
+  children:
+  - os-1-3-1
+  - os-1-3-2
+  - os-1-3-3
+  - os-1-3-4
+  - os-1-3-5
+  attributes:
+  - color
   - material
   - mount/stand_features
+  - pattern
   return_reasons:
   - size
   - color
@@ -98,13 +196,68 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-1-3-1
+  name: Easel Book Stands
+  children: []
+  attributes:
+  - color
+  - material
+  - mount/stand_features
+  - pattern
+  return_reasons: inherit
+- id: os-1-3-2
+  name: X-Frame Book Stands
+  children: []
+  attributes:
+  - color
+  - material
+  - mount/stand_features
+  - pattern
+  return_reasons: inherit
+- id: os-1-3-3
+  name: V-Shaped Book Cradles
+  children: []
+  attributes:
+  - color
+  - material
+  - mount/stand_features
+  - pattern
+  return_reasons: inherit
+- id: os-1-3-4
+  name: Book Support Wedges
+  children: []
+  attributes:
+  - color
+  - material
+  - mount/stand_features
+  - pattern
+  return_reasons: inherit
+- id: os-1-3-5
+  name: Beanbag Book Holders
+  children: []
+  attributes:
+  - color
+  - material
+  - mount/stand_features
+  - pattern
+  return_reasons: inherit
 - id: os-1-4
   name: Bookmarks
-  children: []
+  children:
+  - os-1-4-1
+  - os-1-4-2
+  - os-1-4-3
+  - os-1-4-4
+  - os-1-4-5
+  - os-1-4-6
+  - os-1-4-7
+  - os-1-4-8
   attributes:
   - bookmark_design
   - bookmark_shape
   - color
+  - foil_color
+  - language
   - material
   - pattern
   return_reasons:
@@ -117,15 +270,119 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-2
-  name: Desk Pads & Blotters
+- id: os-1-4-1
+  name: Bookmark Cards
   children: []
   attributes:
+  - bookmark_design
+  - bookmark_shape
   - color
+  - foil_color
+  - language
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-1-4-2
+  name: Elastic Bookmarks
+  children: []
+  attributes:
+  - bookmark_design
+  - bookmark_shape
+  - color
+  - foil_color
+  - language
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-1-4-3
+  name: Cord Bookmarks
+  children: []
+  attributes:
+  - bookmark_design
+  - bookmark_shape
+  - color
+  - foil_color
+  - language
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-1-4-4
+  name: Clip-On Bookmarks
+  children: []
+  attributes:
+  - bookmark_design
+  - bookmark_shape
+  - color
+  - foil_color
+  - language
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-1-4-5
+  name: Corner Bookmarks
+  children: []
+  attributes:
+  - bookmark_design
+  - bookmark_shape
+  - color
+  - foil_color
+  - language
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-1-4-6
+  name: Magnetic Bookmarks
+  children: []
+  attributes:
+  - bookmark_design
+  - bookmark_shape
+  - color
+  - foil_color
+  - language
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-1-4-7
+  name: Page Flag Bookmarks
+  children: []
+  attributes:
+  - bookmark_design
+  - bookmark_shape
+  - color
+  - foil_color
+  - language
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-1-4-8
+  name: Planner Bookmarks
+  children: []
+  attributes:
+  - bookmark_design
+  - bookmark_shape
+  - color
+  - foil_color
+  - language
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-2
+  name: Desk Pads & Blotters
+  children:
+  - os-2-1
+  - os-2-2
+  - os-2-3
+  attributes:
+  - backing
+  - color
+  - edge_stitching
+  - language
+  - leather_edge_finish
   - material
   - office_supply_material
   - pattern
   - shape
+  - surface_texture
   return_reasons:
   - size
   - color
@@ -137,6 +394,48 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-2-1
+  name: Desk Mats
+  children: []
+  attributes:
+  - backing
+  - color
+  - edge_stitching
+  - language
+  - leather_edge_finish
+  - office_supply_material
+  - pattern
+  - shape
+  - surface_texture
+  return_reasons: inherit
+- id: os-2-2
+  name: Planner Desk Pads
+  children: []
+  attributes:
+  - backing
+  - color
+  - edge_stitching
+  - language
+  - leather_edge_finish
+  - office_supply_material
+  - pattern
+  - shape
+  - surface_texture
+  return_reasons: inherit
+- id: os-2-3
+  name: Desk Notepads
+  children: []
+  attributes:
+  - backing
+  - color
+  - edge_stitching
+  - language
+  - leather_edge_finish
+  - office_supply_material
+  - pattern
+  - shape
+  - surface_texture
+  return_reasons: inherit
 - id: os-3
   name: Filing & Organization
   children:
@@ -158,7 +457,9 @@
   - os-3-16
   - os-3-17
   - os-3-18
-  attributes: []
+  attributes:
+  - color
+  - material
   return_reasons:
   - size
   - color
@@ -171,8 +472,12 @@
   - other_reason
 - id: os-3-1
   name: Address Books
-  children: []
+  children:
+  - os-3-1-1
+  - os-3-1-2
+  - os-3-1-3
   attributes:
+  - address_book_cover_type
   - book_cover_material
   - color
   - page_layout
@@ -188,6 +493,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-1-1
+  name: Bound Address Books
+  children: []
+  attributes:
+  - address_book_cover_type
+  - book_cover_material
+  - color
+  - page_layout
+  - pattern
+  return_reasons: inherit
+- id: os-3-1-2
+  name: Refillable Address Books
+  children: []
+  attributes:
+  - address_book_cover_type
+  - book_cover_material
+  - color
+  - page_layout
+  - pattern
+  return_reasons: inherit
+- id: os-3-1-3
+  name: Card-File Address Books
+  children: []
+  attributes:
+  - address_book_cover_type
+  - book_cover_material
+  - color
+  - page_layout
+  - pattern
+  return_reasons: inherit
 - id: os-3-2
   name: Binding Supplies
   children:
@@ -195,7 +530,8 @@
   - os-3-2-2
   - os-3-2-3
   - os-3-2-4
-  attributes: []
+  attributes:
+  - color
   return_reasons:
   - size
   - color
@@ -215,6 +551,8 @@
   - os-3-2-1-3
   attributes:
   - color
+  - compatible_binder_type
+  - hole_punch_pattern
   - material
   - pattern
   return_reasons:
@@ -232,6 +570,7 @@
   children: []
   attributes:
   - binder_ring_shape
+  - color
   - office_supply_material
   return_reasons:
   - size
@@ -244,10 +583,22 @@
   - other_reason
 - id: os-3-2-1-2
   name: Index Dividers
-  children: []
+  children:
+  - os-3-2-1-2-1
+  - os-3-2-1-2-2
+  - os-3-2-1-2-3
+  - os-3-2-1-2-4
+  - os-3-2-1-2-5
+  - os-3-2-1-2-6
   attributes:
+  - color
+  - foil_color
+  - hole_punch_configuration
+  - lamination_finish
+  - language
   - office_supply_material
   - paper_size
+  - tab_position
   - tab_style
   return_reasons:
   - size
@@ -259,12 +610,101 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-3-2-1-3
-  name: Sheet Protectors
+- id: os-3-2-1-2-1
+  name: Alphabetical Index Dividers
   children: []
   attributes:
+  - color
+  - foil_color
+  - hole_punch_configuration
+  - lamination_finish
+  - language
   - office_supply_material
   - paper_size
+  - tab_position
+  - tab_style
+  return_reasons: inherit
+- id: os-3-2-1-2-2
+  name: Numbered Index Dividers
+  children: []
+  attributes:
+  - color
+  - foil_color
+  - hole_punch_configuration
+  - lamination_finish
+  - language
+  - office_supply_material
+  - paper_size
+  - tab_position
+  - tab_style
+  return_reasons: inherit
+- id: os-3-2-1-2-3
+  name: Subject Index Dividers
+  children: []
+  attributes:
+  - color
+  - foil_color
+  - hole_punch_configuration
+  - lamination_finish
+  - language
+  - office_supply_material
+  - paper_size
+  - tab_position
+  - tab_style
+  return_reasons: inherit
+- id: os-3-2-1-2-4
+  name: Monthly Index Dividers
+  children: []
+  attributes:
+  - color
+  - foil_color
+  - hole_punch_configuration
+  - lamination_finish
+  - language
+  - office_supply_material
+  - paper_size
+  - tab_position
+  - tab_style
+  return_reasons: inherit
+- id: os-3-2-1-2-5
+  name: Quarterly Index Dividers
+  children: []
+  attributes:
+  - color
+  - foil_color
+  - hole_punch_configuration
+  - lamination_finish
+  - language
+  - office_supply_material
+  - paper_size
+  - tab_position
+  - tab_style
+  return_reasons: inherit
+- id: os-3-2-1-2-6
+  name: Blank-Tab Index Dividers
+  children: []
+  attributes:
+  - color
+  - foil_color
+  - hole_punch_configuration
+  - lamination_finish
+  - language
+  - office_supply_material
+  - paper_size
+  - tab_position
+  - tab_style
+  return_reasons: inherit
+- id: os-3-2-1-3
+  name: Sheet Protectors
+  children:
+  - os-3-2-1-3-1
+  - os-3-2-1-3-2
+  attributes:
+  - color
+  - office_supply_material
+  - opening_side
+  - paper_size
+  - portrait/landscape_orientation
   return_reasons:
   - size
   - thickness
@@ -276,12 +716,37 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-3-2-2
-  name: Binders
+- id: os-3-2-1-3-1
+  name: Full-Page Sheet Protectors
   children: []
   attributes:
-  - binder_ring_shape
   - color
+  - office_supply_material
+  - opening_side
+  - paper_size
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-3-2-1-3-2
+  name: Multi-Pocket Sheet Protectors
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - opening_side
+  - paper_size
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-3-2-2
+  name: Binders
+  children:
+  - os-3-2-2-1
+  - os-3-2-2-2
+  attributes:
+  - binder_mechanism_type
+  - binder_ring_shape
+  - closure_type
+  - color
+  - hole_punch_pattern
   - office_supply_material
   - paper_size
   - pattern
@@ -295,10 +760,44 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-3-2-3
-  name: Binding Combs & Spines
+- id: os-3-2-2-1
+  name: D-Ring Binders
   children: []
   attributes:
+  - binder_mechanism_type
+  - binder_ring_shape
+  - closure_type
+  - color
+  - hole_punch_pattern
+  - office_supply_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-2-2-2
+  name: Round-Ring Binders
+  children: []
+  attributes:
+  - binder_mechanism_type
+  - binder_ring_shape
+  - closure_type
+  - color
+  - hole_punch_pattern
+  - office_supply_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-2-3
+  name: Binding Combs & Spines
+  children:
+  - os-3-2-3-1
+  - os-3-2-3-2
+  - os-3-2-3-3
+  - os-3-2-3-4
+  - os-3-2-3-5
+  - os-3-2-3-6
+  - os-3-2-3-7
+  attributes:
+  - binding_pitch
   - color
   - office_supply_material
   - pattern
@@ -312,6 +811,69 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-2-3-1
+  name: Plastic Binding Combs
+  children: []
+  attributes:
+  - binding_pitch
+  - color
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
+- id: os-3-2-3-2
+  name: Binding Wires
+  children: []
+  attributes:
+  - binding_pitch
+  - color
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
+- id: os-3-2-3-3
+  name: Spiral Binding Coils
+  children: []
+  attributes:
+  - binding_pitch
+  - color
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
+- id: os-3-2-3-4
+  name: Strip Binding Spines
+  children: []
+  attributes:
+  - binding_pitch
+  - color
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
+- id: os-3-2-3-5
+  name: Adhesive Binding Strips
+  children: []
+  attributes:
+  - binding_pitch
+  - color
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
+- id: os-3-2-3-6
+  name: Reclosable Binding Spines
+  children: []
+  attributes:
+  - binding_pitch
+  - color
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
+- id: os-3-2-3-7
+  name: Clamp Binding Spines
+  children: []
+  attributes:
+  - binding_pitch
+  - color
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
 - id: os-3-2-4
   name: Binding Machines
   children:
@@ -319,6 +881,7 @@
   - os-3-2-4-2
   attributes:
   - binding_style
+  - color
   return_reasons:
   - size
   - capacity
@@ -331,9 +894,17 @@
   - other_reason
 - id: os-3-2-4-1
   name: Electric Binding Machines
-  children: []
+  children:
+  - os-3-2-4-1-1
+  - os-3-2-4-1-2
+  - os-3-2-4-1-3
+  - os-3-2-4-1-4
+  - os-3-2-4-1-5
+  - os-3-2-4-1-6
   attributes:
+  - binding_pitch
   - binding_style
+  - color
   return_reasons:
   - size
   - capacity
@@ -344,11 +915,67 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-2-4-1-1
+  name: Electric Comb Binding Machines
+  children: []
+  attributes:
+  - binding_pitch
+  - binding_style
+  - color
+  return_reasons: inherit
+- id: os-3-2-4-1-2
+  name: Electric Coil Binding Machines
+  children: []
+  attributes:
+  - binding_pitch
+  - binding_style
+  - color
+  return_reasons: inherit
+- id: os-3-2-4-1-3
+  name: Electric Wire Binding Machines
+  children: []
+  attributes:
+  - binding_pitch
+  - binding_style
+  - color
+  return_reasons: inherit
+- id: os-3-2-4-1-4
+  name: Electric Glue Binding Machines
+  children: []
+  attributes:
+  - binding_pitch
+  - binding_style
+  - color
+  return_reasons: inherit
+- id: os-3-2-4-1-5
+  name: Electric Stitching Machines
+  children: []
+  attributes:
+  - binding_pitch
+  - binding_style
+  - color
+  return_reasons: inherit
+- id: os-3-2-4-1-6
+  name: Electric Tape Binding Machines
+  children: []
+  attributes:
+  - binding_pitch
+  - binding_style
+  - color
+  return_reasons: inherit
 - id: os-3-2-4-2
   name: Manual Binding Machines
-  children: []
+  children:
+  - os-3-2-4-2-1
+  - os-3-2-4-2-2
+  - os-3-2-4-2-3
+  - os-3-2-4-2-4
+  - os-3-2-4-2-5
+  - os-3-2-4-2-6
   attributes:
+  - binding_pitch
   - binding_style
+  - color
   return_reasons:
   - size
   - capacity
@@ -359,9 +986,59 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-2-4-2-1
+  name: Manual Comb Binding Machines
+  children: []
+  attributes:
+  - binding_pitch
+  - binding_style
+  - color
+  return_reasons: inherit
+- id: os-3-2-4-2-2
+  name: Manual Coil Binding Machines
+  children: []
+  attributes:
+  - binding_pitch
+  - binding_style
+  - color
+  return_reasons: inherit
+- id: os-3-2-4-2-3
+  name: Manual Wire Binding Machines
+  children: []
+  attributes:
+  - binding_pitch
+  - binding_style
+  - color
+  return_reasons: inherit
+- id: os-3-2-4-2-4
+  name: Manual Strip Binding Machines
+  children: []
+  attributes:
+  - binding_pitch
+  - binding_style
+  - color
+  return_reasons: inherit
+- id: os-3-2-4-2-5
+  name: Manual Click Binding Machines
+  children: []
+  attributes:
+  - binding_pitch
+  - binding_style
+  - color
+  return_reasons: inherit
+- id: os-3-2-4-2-6
+  name: Manual Ring Binding Machines
+  children: []
+  attributes:
+  - binding_pitch
+  - binding_style
+  - color
+  return_reasons: inherit
 - id: os-3-3
   name: Business Card Books
-  children: []
+  children:
+  - os-3-3-1
+  - os-3-3-2
   attributes:
   - color
   - office_supply_material
@@ -377,14 +1054,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-3-4
-  name: Business Card Stands
+- id: os-3-3-1
+  name: Business Card Binders
   children: []
   attributes:
   - color
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
+- id: os-3-3-2
+  name: Fixed-Page Business Card Books
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
+- id: os-3-4
+  name: Business Card Stands
+  children:
+  - os-3-4-1
+  - os-3-4-2
+  attributes:
+  - color
+  - finish
   - material
   - mount/stand_features
+  - number_of_compartments
   - pattern
+  - place_card_orientation
+  - shape
   return_reasons:
   - size
   - color
@@ -396,6 +1095,32 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-4-1
+  name: Desktop Business Card Stands
+  children: []
+  attributes:
+  - color
+  - finish
+  - material
+  - mount/stand_features
+  - number_of_compartments
+  - pattern
+  - place_card_orientation
+  - shape
+  return_reasons: inherit
+- id: os-3-4-2
+  name: Mounted Business Card Stands
+  children: []
+  attributes:
+  - color
+  - finish
+  - material
+  - mount/stand_features
+  - number_of_compartments
+  - pattern
+  - place_card_orientation
+  - shape
+  return_reasons: inherit
 - id: os-3-5
   name: Calendars, Organizers & Planners
   children:
@@ -405,7 +1130,13 @@
   - os-3-5-4
   attributes:
   - color
+  - lamination
+  - language
+  - page_binding_type
   - pattern
+  - portrait/landscape_orientation
+  - starting_month
+  - week_start_day
   return_reasons:
   - size
   - color
@@ -419,12 +1150,26 @@
   - other_reason
 - id: os-3-5-1
   name: Desk Calendars
-  children: []
+  children:
+  - os-3-5-1-1
+  - os-3-5-1-2
+  - os-3-5-1-3
+  - os-3-5-1-4
+  - os-3-5-1-5
+  - os-3-5-1-6
+  - os-3-5-1-7
   attributes:
   - calendar/organizer_features
   - calendar_format
+  - calendar_system
   - color
+  - language
+  - material
+  - paper_finish
   - pattern
+  - portrait/landscape_orientation
+  - stationery_binding_type
+  - theme
   return_reasons:
   - size
   - color
@@ -435,6 +1180,152 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-5-1-1
+  name: Desk Pad Calendars
+  children: []
+  attributes:
+  - calendar/organizer_features
+  - calendar_format
+  - calendar_system
+  - color
+  - language
+  - material
+  - paper_finish
+  - pattern
+  - portrait/landscape_orientation
+  - stationery_binding_type
+  - theme
+  return_reasons: inherit
+- id: os-3-5-1-2
+  name: Mouse Pad Calendars
+  children: []
+  attributes:
+  - calendar/organizer_features
+  - calendar_format
+  - calendar_system
+  - color
+  - language
+  - material
+  - paper_finish
+  - pattern
+  - portrait/landscape_orientation
+  - stationery_binding_type
+  - theme
+  return_reasons: inherit
+- id: os-3-5-1-3
+  name: Easel Desk Calendars
+  children: []
+  attributes:
+  - calendar/organizer_features
+  - calendar_format
+  - calendar_system
+  - color
+  - language
+  - material
+  - paper_finish
+  - pattern
+  - portrait/landscape_orientation
+  - stationery_binding_type
+  - theme
+  return_reasons: inherit
+- id: os-3-5-1-4
+  name: Card-Stand Desk Calendars
+  children: []
+  attributes:
+  - calendar/organizer_features
+  - calendar_format
+  - calendar_system
+  - color
+  - language
+  - material
+  - paper_finish
+  - pattern
+  - portrait/landscape_orientation
+  - stationery_binding_type
+  - theme
+  return_reasons: inherit
+- id: os-3-5-1-5
+  name: Boxed Desk Calendars
+  children: []
+  attributes:
+  - calendar/organizer_features
+  - calendar_format
+  - calendar_system
+  - color
+  - language
+  - material
+  - paper_finish
+  - pattern
+  - portrait/landscape_orientation
+  - stationery_binding_type
+  - theme
+  return_reasons: inherit
+- id: os-3-5-1-6
+  name: Photo Frame Desk Calendars
+  children: []
+  attributes:
+  - calendar/organizer_features
+  - calendar_format
+  - calendar_system
+  - color
+  - language
+  - material
+  - paper_finish
+  - pattern
+  - portrait/landscape_orientation
+  - stationery_binding_type
+  - theme
+  return_reasons: inherit
+- id: os-3-5-1-7
+  name: Three-Dimensional Desk Calendars
+  children:
+  - os-3-5-1-7-1
+  - os-3-5-1-7-2
+  attributes:
+  - calendar/organizer_features
+  - calendar_format
+  - calendar_system
+  - color
+  - language
+  - material
+  - paper_finish
+  - pattern
+  - portrait/landscape_orientation
+  - stationery_binding_type
+  - theme
+  return_reasons: inherit
+- id: os-3-5-1-7-1
+  name: Cube Desk Calendars
+  children: []
+  attributes:
+  - calendar/organizer_features
+  - calendar_format
+  - calendar_system
+  - color
+  - language
+  - material
+  - paper_finish
+  - pattern
+  - portrait/landscape_orientation
+  - stationery_binding_type
+  - theme
+  return_reasons: inherit
+- id: os-3-5-1-7-2
+  name: Pop-Up Desk Calendars
+  children: []
+  attributes:
+  - calendar/organizer_features
+  - calendar_format
+  - calendar_system
+  - color
+  - language
+  - material
+  - paper_finish
+  - pattern
+  - portrait/landscape_orientation
+  - stationery_binding_type
+  - theme
+  return_reasons: inherit
 - id: os-3-5-2
   name: Organizers
   children: []
@@ -442,7 +1333,17 @@
   - calendar/organizer_features
   - calendar_format
   - color
+  - foil_color
+  - hole_punch_type
+  - language
+  - material
+  - page_binding_type
+  - page_ruling
+  - paper_finish
   - pattern
+  - portrait/landscape_orientation
+  - ring_type
+  - start_month
   return_reasons:
   - size
   - color
@@ -455,12 +1356,29 @@
   - other_reason
 - id: os-3-5-3
   name: Planners
-  children: []
+  children:
+  - os-3-5-3-1
+  - os-3-5-3-2
   attributes:
   - calendar/organizer_features
   - calendar_format
   - color
+  - cover_finish
+  - coverage_period
+  - foil_color
+  - hole_punch_format
+  - holiday_region
+  - language
+  - mounting_type
+  - page_layout
+  - page_ruling
   - pattern
+  - portrait/landscape_orientation
+  - product_format
+  - start_month
+  - stationery_binding_type
+  - text_size
+  - week_start_day
   return_reasons:
   - size
   - color
@@ -471,6 +1389,54 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-5-3-1
+  name: Dated Planners
+  children: []
+  attributes:
+  - calendar/organizer_features
+  - calendar_format
+  - color
+  - cover_finish
+  - coverage_period
+  - foil_color
+  - hole_punch_format
+  - holiday_region
+  - language
+  - mounting_type
+  - page_layout
+  - page_ruling
+  - pattern
+  - portrait/landscape_orientation
+  - product_format
+  - start_month
+  - stationery_binding_type
+  - text_size
+  - week_start_day
+  return_reasons: inherit
+- id: os-3-5-3-2
+  name: Undated Planners
+  children: []
+  attributes:
+  - calendar/organizer_features
+  - calendar_format
+  - color
+  - cover_finish
+  - coverage_period
+  - foil_color
+  - hole_punch_format
+  - holiday_region
+  - language
+  - mounting_type
+  - page_layout
+  - page_ruling
+  - pattern
+  - portrait/landscape_orientation
+  - product_format
+  - start_month
+  - stationery_binding_type
+  - text_size
+  - week_start_day
+  return_reasons: inherit
 - id: os-3-5-4
   name: Wall Calendars
   children: []
@@ -478,7 +1444,15 @@
   - calendar/organizer_features
   - calendar_format
   - color
+  - language
+  - material
+  - page_binding_type
+  - paper_finish
   - pattern
+  - portrait/landscape_orientation
+  - start_month
+  - week_starts_on
+  - writing_surface_type
   return_reasons:
   - size
   - color
@@ -491,11 +1465,21 @@
   - other_reason
 - id: os-3-6
   name: Card Files
-  children: []
+  children:
+  - os-3-6-1
+  - os-3-6-2
+  - os-3-6-3
+  - os-3-6-4
+  - os-3-6-5
+  - os-3-6-6
+  - os-3-6-7
+  - os-3-6-8
   attributes:
   - color
+  - finish
   - material
   - pattern
+  - portrait/landscape_orientation
   return_reasons:
   - size
   - color
@@ -506,9 +1490,91 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-6-1
+  name: Card File Boxes
+  children: []
+  attributes:
+  - color
+  - finish
+  - material
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-3-6-2
+  name: Card File Binders
+  children: []
+  attributes:
+  - color
+  - finish
+  - material
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-3-6-3
+  name: Card File Cabinets
+  children: []
+  attributes:
+  - color
+  - finish
+  - material
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-3-6-4
+  name: Rotary Card Files
+  children: []
+  attributes:
+  - color
+  - finish
+  - material
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-3-6-5
+  name: Visible Card Files
+  children: []
+  attributes:
+  - color
+  - finish
+  - material
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-3-6-6
+  name: Card Racks
+  children: []
+  attributes:
+  - color
+  - finish
+  - material
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-3-6-7
+  name: Business Card Dispensers
+  children: []
+  attributes:
+  - color
+  - finish
+  - material
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-3-6-8
+  name: Index Card Sleeves
+  children: []
+  attributes:
+  - color
+  - finish
+  - material
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
 - id: os-3-7
   name: Card Sleeves
-  children: []
+  children:
+  - os-3-7-1
+  - os-3-7-2
   attributes:
   - color
   - office_supply_material
@@ -523,9 +1589,27 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-7-1
+  name: Top-Loading Card Sleeves
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
+- id: os-3-7-2
+  name: Side-Loading Card Sleeves
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
 - id: os-3-8
   name: Cash Boxes
-  children: []
+  children:
+  - os-3-8-1
+  - os-3-8-2
   attributes:
   - color
   - office_supply_material
@@ -541,9 +1625,34 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-8-1
+  name: Compartmented Cash Boxes
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
+- id: os-3-8-2
+  name: Cash Drop Boxes
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
 - id: os-3-9
   name: CD/DVD Cases & Organizers
-  children: []
+  children:
+  - os-3-9-1
+  - os-3-9-2
+  - os-3-9-3
+  - os-3-9-4
+  - os-3-9-5
+  - os-3-9-6
+  - os-3-9-7
+  - os-3-9-8
+  - os-3-9-9
   attributes:
   - bag/case_closure
   - bag/case_features
@@ -564,6 +1673,123 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-9-1
+  name: Jewel Cases
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-3-9-2
+  name: Keep Cases
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-3-9-3
+  name: Disc Sleeves
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-3-9-4
+  name: Disc Wallets
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-3-9-5
+  name: Disc Storage Totes
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-3-9-6
+  name: Disc Storage Boxes
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-3-9-7
+  name: Disc Spindle Cases
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-3-9-8
+  name: Disc Slipcover Protectors
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-3-9-9
+  name: CD Visor Organizers
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  return_reasons: inherit
 - id: os-3-10
   name: Desk Organizers
   children:
@@ -588,10 +1814,19 @@
   - other_reason
 - id: os-3-10-1
   name: Desktop Organizers
-  children: []
+  children:
+  - os-3-10-1-1
+  - os-3-10-1-2
+  - os-3-10-1-3
+  - os-3-10-1-4
+  - os-3-10-1-5
+  - os-3-10-1-6
+  - os-3-10-1-7
+  - os-3-10-1-8
   attributes:
   - color
   - desk_organizer_features
+  - furniture_finish
   - material
   - pattern
   return_reasons:
@@ -605,13 +1840,97 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-3-10-2
-  name: Drawer Organizers
+- id: os-3-10-1-1
+  name: Desktop Caddies
   children: []
   attributes:
   - color
   - desk_organizer_features
+  - furniture_finish
   - material
+  - pattern
+  return_reasons: inherit
+- id: os-3-10-1-2
+  name: Desktop Storage Boxes
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - furniture_finish
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-3-10-1-3
+  name: Desktop Drawer Units
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - furniture_finish
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-3-10-1-4
+  name: Paper Trays
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - furniture_finish
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-3-10-1-5
+  name: Desk Accessory Trays
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - furniture_finish
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-3-10-1-6
+  name: Desktop File Holders
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - furniture_finish
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-3-10-1-7
+  name: Desktop Pegboard Organizers
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - furniture_finish
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-3-10-1-8
+  name: Desktop Organizer Pouches
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - furniture_finish
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-3-10-2
+  name: Drawer Organizers
+  children:
+  - os-3-10-2-1
+  - os-3-10-2-2
+  - os-3-10-2-3
+  attributes:
+  - color
+  - desk_organizer_features
+  - material
+  - number_of_compartments
   - pattern
   return_reasons:
   - size
@@ -624,14 +1943,48 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-10-2-1
+  name: Drawer Trays
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - material
+  - number_of_compartments
+  - pattern
+  return_reasons: inherit
+- id: os-3-10-2-2
+  name: Drawer Dividers
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - material
+  - number_of_compartments
+  - pattern
+  return_reasons: inherit
+- id: os-3-10-2-3
+  name: Hanging File Drawer Frames
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - material
+  - number_of_compartments
+  - pattern
+  return_reasons: inherit
 - id: os-3-10-3
   name: File Sorters
-  children: []
+  children:
+  - os-3-10-3-1
+  - os-3-10-3-2
   attributes:
   - color
   - desk_organizer_features
   - material
+  - number_of_compartments
   - pattern
+  - portrait/landscape_orientation
   return_reasons:
   - size
   - color
@@ -643,14 +1996,51 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-10-3-1
+  name: Vertical File Sorters
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - material
+  - number_of_compartments
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-3-10-3-2
+  name: Horizontal File Sorters
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - material
+  - number_of_compartments
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
 - id: os-3-10-4
   name: Pen Holders
-  children: []
+  children:
+  - os-3-10-4-1
+  - os-3-10-4-2
+  - os-3-10-4-3
+  - os-3-10-4-4
+  - os-3-10-4-5
+  - os-3-10-4-6
+  - os-3-10-4-7
+  - os-3-10-4-8
+  - os-3-10-4-9
+  - os-3-10-4-10
+  - os-3-10-4-11
+  - os-3-10-4-12
   attributes:
   - color
   - desk_organizer_features
+  - finish
   - material
+  - number_of_compartments
   - pattern
+  - shape
   return_reasons:
   - size
   - color
@@ -661,9 +2051,157 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-10-4-1
+  name: Pen Cups
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - finish
+  - material
+  - number_of_compartments
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-3-10-4-2
+  name: Block Pen Holders
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - finish
+  - material
+  - number_of_compartments
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-3-10-4-3
+  name: Pen Carousels
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - finish
+  - material
+  - number_of_compartments
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-3-10-4-4
+  name: Pen Trays
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - finish
+  - material
+  - number_of_compartments
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-3-10-4-5
+  name: Pen Rests
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - finish
+  - material
+  - number_of_compartments
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-3-10-4-6
+  name: Pen Storage Drawers
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - finish
+  - material
+  - number_of_compartments
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-3-10-4-7
+  name: Pencil Baskets
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - finish
+  - material
+  - number_of_compartments
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-3-10-4-8
+  name: Pencil Boxes
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - finish
+  - material
+  - number_of_compartments
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-3-10-4-9
+  name: Standing Pencil Cases
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - finish
+  - material
+  - number_of_compartments
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-3-10-4-10
+  name: Pen Display Cases
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - finish
+  - material
+  - number_of_compartments
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-3-10-4-11
+  name: Pen Display Stands
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - finish
+  - material
+  - number_of_compartments
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-3-10-4-12
+  name: Inkwell Pen Stands
+  children: []
+  attributes:
+  - color
+  - desk_organizer_features
+  - finish
+  - material
+  - number_of_compartments
+  - pattern
+  - shape
+  return_reasons: inherit
 - id: os-3-11
   name: File Boxes
-  children: []
+  children:
+  - os-3-11-1
+  - os-3-11-2
+  - os-3-11-3
+  - os-3-11-4
   attributes:
   - color
   - office_supply_material
@@ -679,14 +2217,59 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-3-12
-  name: File Folders
+- id: os-3-11-1
+  name: Hanging File Boxes
   children: []
   attributes:
   - color
   - office_supply_material
   - paper_size
   - pattern
+  return_reasons: inherit
+- id: os-3-11-2
+  name: Flat File Boxes
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-11-3
+  name: Expanding File Boxes
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-11-4
+  name: Magazine File Boxes
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-12
+  name: File Folders
+  children:
+  - os-3-12-1
+  - os-3-12-2
+  - os-3-12-3
+  - os-3-12-4
+  - os-3-12-5
+  - os-3-12-6
+  - os-3-12-7
+  attributes:
+  - color
+  - fastener_position
+  - office_supply_material
+  - paper_size
+  - pattern
+  - portrait/landscape_orientation
   return_reasons:
   - size
   - color
@@ -697,6 +2280,83 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-12-1
+  name: Hanging File Folders
+  children: []
+  attributes:
+  - color
+  - fastener_position
+  - office_supply_material
+  - paper_size
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-3-12-2
+  name: Accordion Files
+  children: []
+  attributes:
+  - color
+  - fastener_position
+  - office_supply_material
+  - paper_size
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-3-12-3
+  name: File Pockets
+  children: []
+  attributes:
+  - color
+  - fastener_position
+  - office_supply_material
+  - paper_size
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-3-12-4
+  name: Document Wallets
+  children: []
+  attributes:
+  - color
+  - fastener_position
+  - office_supply_material
+  - paper_size
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-3-12-5
+  name: Box Files
+  children: []
+  attributes:
+  - color
+  - fastener_position
+  - office_supply_material
+  - paper_size
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-3-12-6
+  name: Clip File Folders
+  children: []
+  attributes:
+  - color
+  - fastener_position
+  - office_supply_material
+  - paper_size
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-3-12-7
+  name: Fastener File Folders
+  children: []
+  attributes:
+  - color
+  - fastener_position
+  - office_supply_material
+  - paper_size
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
 - id: os-3-13
   name: Folders & Report Covers
   children:
@@ -707,6 +2367,7 @@
   - folder/report_cover_material
   - paper_size
   - pattern
+  - sheen
   return_reasons:
   - size
   - color
@@ -721,10 +2382,14 @@
   name: Pocket Folders
   children: []
   attributes:
+  - business_card_slit_position
   - color
+  - fold_type
   - folder/report_cover_material
   - paper_size
   - pattern
+  - print_finish
+  - printed_sides
   return_reasons:
   - size
   - color
@@ -737,8 +2402,16 @@
   - other_reason
 - id: os-3-13-2
   name: Report Covers
-  children: []
+  children:
+  - os-3-13-2-1
+  - os-3-13-2-2
+  - os-3-13-2-3
+  - os-3-13-2-4
+  - os-3-13-2-5
+  - os-3-13-2-6
+  - os-3-13-2-7
   attributes:
+  - binding_mechanism
   - color
   - folder/report_cover_material
   - paper_size
@@ -753,9 +2426,82 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-13-2-1
+  name: Prong-Fastener Report Covers
+  children: []
+  attributes:
+  - binding_mechanism
+  - color
+  - folder/report_cover_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-13-2-2
+  name: Clip Report Covers
+  children: []
+  attributes:
+  - binding_mechanism
+  - color
+  - folder/report_cover_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-13-2-3
+  name: Flat-Bar Report Covers
+  children: []
+  attributes:
+  - binding_mechanism
+  - color
+  - folder/report_cover_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-13-2-4
+  name: Springback Report Covers
+  children: []
+  attributes:
+  - binding_mechanism
+  - color
+  - folder/report_cover_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-13-2-5
+  name: Channel-Binding Report Covers
+  children: []
+  attributes:
+  - binding_mechanism
+  - color
+  - folder/report_cover_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-13-2-6
+  name: Thermal-Binding Report Covers
+  children: []
+  attributes:
+  - binding_mechanism
+  - color
+  - folder/report_cover_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-13-2-7
+  name: Binding Cover Sheets
+  children: []
+  attributes:
+  - binding_mechanism
+  - color
+  - folder/report_cover_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
 - id: os-3-14
   name: Greeting Card Organizers
-  children: []
+  children:
+  - os-3-14-1
+  - os-3-14-2
+  - os-3-14-3
   attributes:
   - color
   - office_supply_material
@@ -770,12 +2516,41 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-3-15
-  name: Mail Sorters
+- id: os-3-14-1
+  name: Greeting Card Storage Boxes
   children: []
   attributes:
   - color
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
+- id: os-3-14-2
+  name: Greeting Card Organizer Books
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
+- id: os-3-14-3
+  name: Greeting Card Display Racks
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
+- id: os-3-15
+  name: Mail Sorters
+  children:
+  - os-3-15-1
+  - os-3-15-2
+  - os-3-15-3
+  - os-3-15-4
+  attributes:
+  - color
   - material
+  - number_of_compartments
   - pattern
   return_reasons:
   - size
@@ -788,9 +2563,51 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-15-1
+  name: Letter Racks
+  children: []
+  attributes:
+  - color
+  - material
+  - number_of_compartments
+  - pattern
+  return_reasons: inherit
+- id: os-3-15-2
+  name: Letter Trays
+  children: []
+  attributes:
+  - color
+  - material
+  - number_of_compartments
+  - pattern
+  return_reasons: inherit
+- id: os-3-15-3
+  name: Pigeonhole Mail Sorters
+  children: []
+  attributes:
+  - color
+  - material
+  - number_of_compartments
+  - pattern
+  return_reasons: inherit
+- id: os-3-15-4
+  name: Mail Sorting Workstations
+  children: []
+  attributes:
+  - color
+  - material
+  - number_of_compartments
+  - pattern
+  return_reasons: inherit
 - id: os-3-16
   name: Pen & Pencil Cases
-  children: []
+  children:
+  - os-3-16-1
+  - os-3-16-2
+  - os-3-16-3
+  - os-3-16-4
+  - os-3-16-5
+  - os-3-16-6
   attributes:
   - bag/case_closure
   - bag/case_features
@@ -800,6 +2617,7 @@
   - carry_options
   - color
   - pattern
+  - shape
   return_reasons:
   - size
   - color
@@ -811,6 +2629,90 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-16-1
+  name: Pencil Pouches
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-3-16-2
+  name: Pen & Pencil Boxes
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-3-16-3
+  name: Pen Sleeves
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-3-16-4
+  name: Pen Rolls
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-3-16-5
+  name: Pencil Tubes
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-3-16-6
+  name: Pocket Protectors
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - shape
+  return_reasons: inherit
 - id: os-3-17
   name: Portfolios & Padfolios
   children:
@@ -819,6 +2721,7 @@
   attributes:
   - color
   - office_supply_material
+  - paper_size
   - pattern
   return_reasons:
   - size
@@ -832,10 +2735,14 @@
   - other_reason
 - id: os-3-17-1
   name: Padfolios
-  children: []
+  children:
+  - os-3-17-1-1
+  - os-3-17-1-2
   attributes:
   - color
+  - handedness
   - office_supply_material
+  - page_ruling
   - paper_size
   - pattern
   return_reasons:
@@ -849,10 +2756,40 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-17-1-1
+  name: Hardcover Padfolios
+  children: []
+  attributes:
+  - color
+  - handedness
+  - office_supply_material
+  - page_ruling
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-17-1-2
+  name: Softcover Padfolios
+  children: []
+  attributes:
+  - color
+  - handedness
+  - office_supply_material
+  - page_ruling
+  - paper_size
+  - pattern
+  return_reasons: inherit
 - id: os-3-17-2
   name: Portfolios
-  children: []
+  children:
+  - os-3-17-2-1
+  - os-3-17-2-2
+  - os-3-17-2-3
+  - os-3-17-2-4
+  - os-3-17-2-5
+  - os-3-17-2-6
+  - os-3-17-2-7
   attributes:
+  - closure_type
   - color
   - office_supply_material
   - paper_size
@@ -868,6 +2805,76 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-3-17-2-1
+  name: Expanding Portfolios
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - office_supply_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-17-2-2
+  name: Clip Portfolios
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - office_supply_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-17-2-3
+  name: Box Portfolios
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - office_supply_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-17-2-4
+  name: Portfolio Binders
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - office_supply_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-17-2-5
+  name: Portfolio Books
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - office_supply_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-17-2-6
+  name: Portfolio Bags
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - office_supply_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
+- id: os-3-17-2-7
+  name: Envelope Portfolios
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - office_supply_material
+  - paper_size
+  - pattern
+  return_reasons: inherit
 - id: os-3-18
   name: Recipe Card Boxes
   children: []
@@ -902,6 +2909,7 @@
   - os-4-11
   - os-4-12
   attributes:
+  - color
   - material
   return_reasons:
   - size
@@ -933,6 +2941,7 @@
   - os-4-2-2
   - os-4-2-3
   attributes:
+  - color
   - corrector_features
   return_reasons:
   - coverage
@@ -946,6 +2955,7 @@
   name: Correction Fluids
   children: []
   attributes:
+  - color
   - corrector_features
   return_reasons:
   - applicator
@@ -960,6 +2970,7 @@
   name: Correction Pens
   children: []
   attributes:
+  - color
   - corrector_features
   return_reasons:
   - tip_size
@@ -972,8 +2983,13 @@
   - other_reason
 - id: os-4-2-3
   name: Correction Tapes
-  children: []
+  children:
+  - os-4-2-3-1
+  - os-4-2-3-2
+  - os-4-2-3-3
+  - os-4-2-3-4
   attributes:
+  - color
   - corrector_features
   return_reasons:
   - width
@@ -984,6 +3000,34 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-2-3-1
+  name: Correction Tape Rollers
+  children: []
+  attributes:
+  - color
+  - corrector_features
+  return_reasons: inherit
+- id: os-4-2-3-2
+  name: Correction Tape Sets
+  children: []
+  attributes:
+  - color
+  - corrector_features
+  return_reasons: inherit
+- id: os-4-2-3-3
+  name: Removable Cover-Up Tapes
+  children: []
+  attributes:
+  - color
+  - corrector_features
+  return_reasons: inherit
+- id: os-4-2-3-4
+  name: Typewriter Cover-Up Tapes
+  children: []
+  attributes:
+  - color
+  - corrector_features
+  return_reasons: inherit
 - id: os-4-3
   name: Erasers
   children:
@@ -1018,11 +3062,14 @@
   - other_reason
 - id: os-4-3-2
   name: Mechanical Erasers
-  children: []
+  children:
+  - os-4-3-2-1
+  - os-4-3-2-2
   attributes:
   - color
   - material
   - pattern
+  - tip_shape
   return_reasons:
   - size
   - incompatible
@@ -1032,13 +3079,34 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-4-3-3
-  name: Standard Erasers
+- id: os-4-3-2-1
+  name: Round-Tip Mechanical Erasers
   children: []
   attributes:
   - color
   - material
   - pattern
+  - tip_shape
+  return_reasons: inherit
+- id: os-4-3-2-2
+  name: Rectangular-Tip Mechanical Erasers
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - tip_shape
+  return_reasons: inherit
+- id: os-4-3-3
+  name: Standard Erasers
+  children:
+  - os-4-3-3-1
+  - os-4-3-3-2
+  attributes:
+  - color
+  - material
+  - pattern
+  - scent
   - shape
   return_reasons:
   - size
@@ -1049,6 +3117,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-3-3-1
+  name: Block Erasers
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - scent
+  - shape
+  return_reasons: inherit
+- id: os-4-3-3-2
+  name: Pencil Cap Erasers
+  children: []
+  attributes:
+  - color
+  - material
+  - pattern
+  - scent
+  - shape
+  return_reasons: inherit
 - id: os-4-4
   name: Labels & Tags
   children:
@@ -1059,9 +3147,14 @@
   - os-4-4-5
   - os-4-4-6
   attributes:
+  - attachment_method
   - color
+  - corner_style
+  - language
   - office_supply_material
   - pattern
+  - print_finish
+  - shape
   return_reasons:
   - size
   - adhesive
@@ -1075,11 +3168,15 @@
   - other_reason
 - id: os-4-4-1
   name: Address Labels
-  children: []
+  children:
+  - os-4-4-1-1
+  - os-4-4-1-2
   attributes:
   - color
+  - finish
   - office_supply_material
   - pattern
+  - shape
   - usage_type
   return_reasons:
   - size
@@ -1090,13 +3187,38 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-4-1-1
+  name: Blank Address Labels
+  children: []
+  attributes:
+  - color
+  - finish
+  - office_supply_material
+  - pattern
+  - shape
+  - usage_type
+  return_reasons: inherit
+- id: os-4-4-1-2
+  name: Preprinted Address Labels
+  children: []
+  attributes:
+  - color
+  - finish
+  - office_supply_material
+  - pattern
+  - shape
+  - usage_type
+  return_reasons: inherit
 - id: os-4-4-2
   name: Folder Tabs
-  children: []
+  children:
+  - os-4-4-2-1
+  - os-4-4-2-2
   attributes:
   - color
   - office_supply_material
   - pattern
+  - shape
   - usage_type
   return_reasons:
   - size
@@ -1108,6 +3230,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-4-2-1
+  name: Adhesive Folder Tabs
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  - shape
+  - usage_type
+  return_reasons: inherit
+- id: os-4-4-2-2
+  name: Slide-On Folder Tabs
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  - shape
+  - usage_type
+  return_reasons: inherit
 - id: os-4-4-3
   name: Label Clips
   children: []
@@ -1128,10 +3270,19 @@
   - other_reason
 - id: os-4-4-4
   name: Label Tapes & Refill Rolls
-  children: []
+  children:
+  - os-4-4-4-1
+  - os-4-4-4-2
+  - os-4-4-4-3
+  - os-4-4-4-4
+  - os-4-4-4-5
   attributes:
+  - adhesive_type
   - color
+  - compatible_printer_type
+  - finish
   - pattern
+  - shape
   - tape_material
   - usage_type
   return_reasons:
@@ -1144,13 +3295,82 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-4-4-1
+  name: Direct Thermal Label Rolls
+  children: []
+  attributes:
+  - adhesive_type
+  - color
+  - compatible_printer_type
+  - finish
+  - pattern
+  - shape
+  - tape_material
+  - usage_type
+  return_reasons: inherit
+- id: os-4-4-4-2
+  name: Thermal Transfer Label Rolls
+  children: []
+  attributes:
+  - adhesive_type
+  - color
+  - compatible_printer_type
+  - finish
+  - pattern
+  - shape
+  - tape_material
+  - usage_type
+  return_reasons: inherit
+- id: os-4-4-4-3
+  name: Inkjet Label Rolls
+  children: []
+  attributes:
+  - adhesive_type
+  - color
+  - compatible_printer_type
+  - finish
+  - pattern
+  - shape
+  - tape_material
+  - usage_type
+  return_reasons: inherit
+- id: os-4-4-4-4
+  name: Embossing Label Tapes
+  children: []
+  attributes:
+  - adhesive_type
+  - color
+  - compatible_printer_type
+  - finish
+  - pattern
+  - shape
+  - tape_material
+  - usage_type
+  return_reasons: inherit
+- id: os-4-4-4-5
+  name: Stencil Label Tapes
+  children: []
+  attributes:
+  - adhesive_type
+  - color
+  - compatible_printer_type
+  - finish
+  - pattern
+  - shape
+  - tape_material
+  - usage_type
+  return_reasons: inherit
 - id: os-4-4-5
   name: Shipping Labels
-  children: []
+  children:
+  - os-4-4-5-1
+  - os-4-4-5-2
   attributes:
   - color
+  - finish
   - office_supply_material
   - pattern
+  - shape
   - usage_type
   return_reasons:
   - size
@@ -1161,13 +3381,40 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-4-5-1
+  name: Blank Shipping Labels
+  children: []
+  attributes:
+  - color
+  - finish
+  - office_supply_material
+  - pattern
+  - shape
+  - usage_type
+  return_reasons: inherit
+- id: os-4-4-5-2
+  name: Preprinted Shipping Labels
+  children: []
+  attributes:
+  - color
+  - finish
+  - office_supply_material
+  - pattern
+  - shape
+  - usage_type
+  return_reasons: inherit
 - id: os-4-4-6
   name: Shipping Tags
-  children: []
+  children:
+  - os-4-4-6-1
+  - os-4-4-6-2
+  - os-4-4-6-3
+  - os-4-4-6-4
   attributes:
   - color
   - office_supply_material
   - pattern
+  - shape
   - usage_type
   return_reasons:
   - size
@@ -1178,6 +3425,46 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-4-6-1
+  name: Strung Shipping Tags
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  - shape
+  - usage_type
+  return_reasons: inherit
+- id: os-4-4-6-2
+  name: Wired Shipping Tags
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  - shape
+  - usage_type
+  return_reasons: inherit
+- id: os-4-4-6-3
+  name: Self-Locking Shipping Tags
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  - shape
+  - usage_type
+  return_reasons: inherit
+- id: os-4-4-6-4
+  name: Unstrung Shipping Tags
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  - shape
+  - usage_type
+  return_reasons: inherit
 - id: os-4-5
   name: Laminating Film, Pouches & Sheets
   children:
@@ -1199,9 +3486,12 @@
   - other_reason
 - id: os-4-5-1
   name: Laminating Film Rolls
-  children: []
+  children:
+  - os-4-5-1-1
+  - os-4-5-1-2
   attributes:
   - finish
+  - lamination_method
   - paper_size
   return_reasons:
   - size
@@ -1214,9 +3504,27 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-5-1-1
+  name: Thermal Laminating Film Rolls
+  children: []
+  attributes:
+  - finish
+  - lamination_method
+  - paper_size
+  return_reasons: inherit
+- id: os-4-5-1-2
+  name: Cold Laminating Film Rolls
+  children: []
+  attributes:
+  - finish
+  - lamination_method
+  - paper_size
+  return_reasons: inherit
 - id: os-4-5-2
   name: Laminating Pouches
-  children: []
+  children:
+  - os-4-5-2-1
+  - os-4-5-2-2
   attributes:
   - finish
   - paper_size
@@ -1231,11 +3539,29 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-5-2-1
+  name: Thermal Laminating Pouches
+  children: []
+  attributes:
+  - finish
+  - paper_size
+  return_reasons: inherit
+- id: os-4-5-2-2
+  name: Self-Sealing Laminating Pouches
+  children: []
+  attributes:
+  - finish
+  - paper_size
+  return_reasons: inherit
 - id: os-4-5-3
   name: Laminating Sheets
-  children: []
+  children:
+  - os-4-5-3-1
+  - os-4-5-3-2
   attributes:
+  - color
   - finish
+  - laminating_method
   - paper_size
   return_reasons:
   - size
@@ -1248,6 +3574,24 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-5-3-1
+  name: Cold Laminating Sheets
+  children: []
+  attributes:
+  - color
+  - finish
+  - laminating_method
+  - paper_size
+  return_reasons: inherit
+- id: os-4-5-3-2
+  name: Thermal Laminating Sheets
+  children: []
+  attributes:
+  - color
+  - finish
+  - laminating_method
+  - paper_size
+  return_reasons: inherit
 - id: os-4-6
   name: Mounting Putty
   children: []
@@ -1268,7 +3612,9 @@
   children:
   - os-4-7-1
   - os-4-7-2
-  attributes: []
+  attributes:
+  - color
+  - material
   return_reasons:
   - adhesive
   - width
@@ -1280,7 +3626,9 @@
   - other_reason
 - id: os-4-7-1
   name: Invisible Tape
-  children: []
+  children:
+  - os-4-7-1-1
+  - os-4-7-1-2
   attributes:
   - color
   - pattern
@@ -1292,9 +3640,25 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-7-1-1
+  name: Permanent Invisible Tapes
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-4-7-1-2
+  name: Removable Invisible Tapes
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
 - id: os-4-7-2
   name: Transparent Tape
-  children: []
+  children:
+  - os-4-7-2-1
+  - os-4-7-2-2
   attributes:
   - color
   - pattern
@@ -1306,6 +3670,20 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-7-2-1
+  name: Removable Transparent Tapes
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-4-7-2-2
+  name: Permanent Transparent Tapes
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
 - id: os-4-8
   name: Paper Clips & Clamps
   children:
@@ -1340,11 +3718,18 @@
   - other_reason
 - id: os-4-8-2
   name: Paper Clips
-  children: []
+  children:
+  - os-4-8-2-1
+  - os-4-8-2-2
+  - os-4-8-2-3
+  - os-4-8-2-4
+  - os-4-8-2-5
+  - os-4-8-2-6
   attributes:
   - color
   - office_supply_material
   - pattern
+  - shape
   return_reasons:
   - size
   - color
@@ -1354,6 +3739,60 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-8-2-1
+  name: Gem Paper Clips
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-4-8-2-2
+  name: Shaped Paper Clips
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-4-8-2-3
+  name: Corner Paper Clips
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-4-8-2-4
+  name: Tabbed Paper Clips
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-4-8-2-5
+  name: Embellished Paper Clips
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-4-8-2-6
+  name: Magnetic Paper Clips
+  children: []
+  attributes:
+  - color
+  - office_supply_material
+  - pattern
+  - shape
+  return_reasons: inherit
 - id: os-4-9
   name: Paper Products
   children:
@@ -1373,7 +3812,11 @@
   - os-4-9-14
   attributes:
   - color
+  - page_ruling
+  - paper_finish
   - pattern
+  - shape
+  - surface_texture
   return_reasons:
   - size
   - color
@@ -1387,11 +3830,24 @@
   - other_reason
 - id: os-4-9-1
   name: Binder Paper
-  children: []
+  children:
+  - os-4-9-1-1
+  - os-4-9-1-2
+  - os-4-9-1-3
+  - os-4-9-1-4
+  - os-4-9-1-5
+  - os-4-9-1-6
+  - os-4-9-1-7
+  - os-4-9-1-8
+  - os-4-9-1-9
+  - os-4-9-1-10
+  - os-4-9-1-11
+  - os-4-9-1-12
   attributes:
   - color
   - paper_size
   - pattern
+  - ruling
   return_reasons:
   - size
   - thickness
@@ -1401,12 +3857,125 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-9-1-1
+  name: Blank Binder Paper
+  children: []
+  attributes:
+  - color
+  - paper_size
+  - pattern
+  - ruling
+  return_reasons: inherit
+- id: os-4-9-1-2
+  name: Ruled Binder Paper
+  children: []
+  attributes:
+  - color
+  - paper_size
+  - pattern
+  - ruling
+  return_reasons: inherit
+- id: os-4-9-1-3
+  name: Graph Binder Paper
+  children: []
+  attributes:
+  - color
+  - paper_size
+  - pattern
+  - ruling
+  return_reasons: inherit
+- id: os-4-9-1-4
+  name: Dot-Grid Binder Paper
+  children: []
+  attributes:
+  - color
+  - paper_size
+  - pattern
+  - ruling
+  return_reasons: inherit
+- id: os-4-9-1-5
+  name: Cornell Notes Binder Paper
+  children: []
+  attributes:
+  - color
+  - paper_size
+  - pattern
+  - ruling
+  return_reasons: inherit
+- id: os-4-9-1-6
+  name: Accounting Binder Paper
+  children: []
+  attributes:
+  - color
+  - paper_size
+  - pattern
+  - ruling
+  return_reasons: inherit
+- id: os-4-9-1-7
+  name: Music Manuscript Binder Paper
+  children: []
+  attributes:
+  - color
+  - paper_size
+  - pattern
+  - ruling
+  return_reasons: inherit
+- id: os-4-9-1-8
+  name: Planner Refill Pages
+  children: []
+  attributes:
+  - color
+  - paper_size
+  - pattern
+  - ruling
+  return_reasons: inherit
+- id: os-4-9-1-9
+  name: Recipe Binder Refill Pages
+  children: []
+  attributes:
+  - color
+  - paper_size
+  - pattern
+  - ruling
+  return_reasons: inherit
+- id: os-4-9-1-10
+  name: Address Book Refill Pages
+  children: []
+  attributes:
+  - color
+  - paper_size
+  - pattern
+  - ruling
+  return_reasons: inherit
+- id: os-4-9-1-11
+  name: Password Log Refill Pages
+  children: []
+  attributes:
+  - color
+  - paper_size
+  - pattern
+  - ruling
+  return_reasons: inherit
+- id: os-4-9-1-12
+  name: Medical Log Refill Pages
+  children: []
+  attributes:
+  - color
+  - paper_size
+  - pattern
+  - ruling
+  return_reasons: inherit
 - id: os-4-9-2
   name: Blank ID Cards
   children: []
   attributes:
   - color
+  - corner_style
+  - magnetic_stripe_type
   - pattern
+  - shape
+  - slot_punch_orientation
+  - surface_finish
   return_reasons:
   - size
   - color
@@ -1422,8 +3991,16 @@
   name: Business Cards
   children: []
   attributes:
+  - card_edge_style
   - color
+  - corner_style
+  - finish
+  - foil_color
   - pattern
+  - portrait/landscape_orientation
+  - printing_method
+  - raised_spot_uv_side
+  - shape
   return_reasons:
   - size
   - color
@@ -1437,10 +4014,17 @@
   - other_reason
 - id: os-4-9-4
   name: Business Forms & Receipts
-  children: []
+  children:
+  - os-4-9-4-1
+  - os-4-9-4-2
+  - os-4-9-4-3
+  - os-4-9-4-4
   attributes:
   - color
+  - language
   - pattern
+  - portrait/landscape_orientation
+  - stationery_binding_type
   return_reasons:
   - size
   - color
@@ -1451,10 +4035,53 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-9-4-1
+  name: Business Form Books
+  children: []
+  attributes:
+  - color
+  - language
+  - pattern
+  - portrait/landscape_orientation
+  - stationery_binding_type
+  return_reasons: inherit
+- id: os-4-9-4-2
+  name: Cut-Sheet Business Forms
+  children: []
+  attributes:
+  - color
+  - language
+  - pattern
+  - portrait/landscape_orientation
+  - stationery_binding_type
+  return_reasons: inherit
+- id: os-4-9-4-3
+  name: Unit Set Business Forms
+  children: []
+  attributes:
+  - color
+  - language
+  - pattern
+  - portrait/landscape_orientation
+  - stationery_binding_type
+  return_reasons: inherit
+- id: os-4-9-4-4
+  name: Continuous Business Forms
+  children: []
+  attributes:
+  - color
+  - language
+  - pattern
+  - portrait/landscape_orientation
+  - stationery_binding_type
+  return_reasons: inherit
 - id: os-4-9-5
   name: Checks
-  children: []
+  children:
+  - os-4-9-5-1
+  - os-4-9-5-2
   attributes:
+  - check_position
   - color
   - pattern
   return_reasons:
@@ -1467,12 +4094,32 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-9-5-1
+  name: Computer Checks
+  children: []
+  attributes:
+  - check_position
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-4-9-5-2
+  name: Manual Checks
+  children: []
+  attributes:
+  - check_position
+  - color
+  - pattern
+  return_reasons: inherit
 - id: os-4-9-6
   name: Cover Paper
-  children: []
+  children:
+  - os-4-9-6-1
+  - os-4-9-6-2
+  - os-4-9-6-3
   attributes:
   - color
   - pattern
+  - sheen
   return_reasons:
   - size
   - color
@@ -1484,13 +4131,49 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-9-6-1
+  name: Uncoated Cover Papers
+  children: []
+  attributes:
+  - color
+  - pattern
+  - sheen
+  return_reasons: inherit
+- id: os-4-9-6-2
+  name: Gloss-Coated Cover Papers
+  children: []
+  attributes:
+  - color
+  - pattern
+  - sheen
+  return_reasons: inherit
+- id: os-4-9-6-3
+  name: Soft-Touch Cover Papers
+  children: []
+  attributes:
+  - color
+  - pattern
+  - sheen
+  return_reasons: inherit
 - id: os-4-9-7
   name: Envelopes
-  children: []
+  children:
+  - os-4-9-7-1
+  - os-4-9-7-2
+  - os-4-9-7-3
+  - os-4-9-7-4
+  - os-4-9-7-5
+  - os-4-9-7-6
+  - os-4-9-7-7
+  - os-4-9-7-8
+  - os-4-9-7-9
   attributes:
   - color
+  - corner_shape
   - envelope_features
+  - flap_style
   - pattern
+  - portrait/landscape_orientation
   return_reasons:
   - size
   - color
@@ -1502,12 +4185,120 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-4-9-8
-  name: Index Cards
+- id: os-4-9-7-1
+  name: Gummed Envelopes
   children: []
   attributes:
   - color
+  - corner_shape
+  - envelope_features
+  - flap_style
   - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-4-9-7-2
+  name: Ungummed Envelopes
+  children: []
+  attributes:
+  - color
+  - corner_shape
+  - envelope_features
+  - flap_style
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-4-9-7-3
+  name: Peel-and-Seal Envelopes
+  children: []
+  attributes:
+  - color
+  - corner_shape
+  - envelope_features
+  - flap_style
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-4-9-7-4
+  name: Heat-Seal Envelopes
+  children: []
+  attributes:
+  - color
+  - corner_shape
+  - envelope_features
+  - flap_style
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-4-9-7-5
+  name: Clasp Envelopes
+  children: []
+  attributes:
+  - color
+  - corner_shape
+  - envelope_features
+  - flap_style
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-4-9-7-6
+  name: Button Envelopes
+  children: []
+  attributes:
+  - color
+  - corner_shape
+  - envelope_features
+  - flap_style
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-4-9-7-7
+  name: Snap Envelopes
+  children: []
+  attributes:
+  - color
+  - corner_shape
+  - envelope_features
+  - flap_style
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-4-9-7-8
+  name: Hook-and-Loop Envelopes
+  children: []
+  attributes:
+  - color
+  - corner_shape
+  - envelope_features
+  - flap_style
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-4-9-7-9
+  name: Zipper Envelopes
+  children: []
+  attributes:
+  - color
+  - corner_shape
+  - envelope_features
+  - flap_style
+  - pattern
+  - portrait/landscape_orientation
+  return_reasons: inherit
+- id: os-4-9-8
+  name: Index Cards
+  children:
+  - os-4-9-8-1
+  - os-4-9-8-2
+  - os-4-9-8-3
+  - os-4-9-8-4
+  - os-4-9-8-5
+  attributes:
+  - binding_type
+  - color
+  - finish
+  - pattern
+  - printed_sides
+  - ruling
   return_reasons:
   - size
   - color
@@ -1518,6 +4309,61 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-9-8-1
+  name: Blank Index Cards
+  children: []
+  attributes:
+  - binding_type
+  - color
+  - finish
+  - pattern
+  - printed_sides
+  - ruling
+  return_reasons: inherit
+- id: os-4-9-8-2
+  name: Ruled Index Cards
+  children: []
+  attributes:
+  - binding_type
+  - color
+  - finish
+  - pattern
+  - printed_sides
+  - ruling
+  return_reasons: inherit
+- id: os-4-9-8-3
+  name: Graph-Ruled Index Cards
+  children: []
+  attributes:
+  - binding_type
+  - color
+  - finish
+  - pattern
+  - printed_sides
+  - ruling
+  return_reasons: inherit
+- id: os-4-9-8-4
+  name: Dot-Grid Index Cards
+  children: []
+  attributes:
+  - binding_type
+  - color
+  - finish
+  - pattern
+  - printed_sides
+  - ruling
+  return_reasons: inherit
+- id: os-4-9-8-5
+  name: Checklist Index Cards
+  children: []
+  attributes:
+  - binding_type
+  - color
+  - finish
+  - pattern
+  - printed_sides
+  - ruling
+  return_reasons: inherit
 - id: os-4-9-9
   name: Notebooks & Notepads
   children:
@@ -1526,11 +4372,21 @@
   - os-4-9-9-5
   - os-4-9-9-6
   attributes:
+  - closure_type
   - color
+  - corner_style
+  - cover_finish
+  - cover_material
+  - language
+  - page_binding_type
   - paper_type
   - pattern
+  - personalization_type
+  - portrait/landscape_orientation
   - sheet_color
   - sheet_pattern
+  - spiral_position
+  - writing_handedness
   return_reasons:
   - size
   - color
@@ -1542,9 +4398,21 @@
   - other_reason
 - id: os-4-9-9-3
   name: Journals
-  children: []
+  children:
+  - os-4-9-9-3-1
+  - os-4-9-9-3-2
+  - os-4-9-9-3-3
+  - os-4-9-9-3-4
   attributes:
+  - closure_type
   - color
+  - cover_material
+  - lamination
+  - language
+  - leather_finish
+  - page_binding_type
+  - page_layout
+  - paper_texture
   - paper_type
   - pattern
   - sheet_color
@@ -1559,11 +4427,88 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-9-9-3-1
+  name: Blank Journals
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - cover_material
+  - lamination
+  - language
+  - leather_finish
+  - page_binding_type
+  - page_layout
+  - paper_texture
+  - paper_type
+  - pattern
+  - sheet_color
+  - sheet_pattern
+  - target_audience
+  return_reasons: inherit
+- id: os-4-9-9-3-2
+  name: Lined Journals
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - cover_material
+  - lamination
+  - language
+  - leather_finish
+  - page_binding_type
+  - page_layout
+  - paper_texture
+  - paper_type
+  - pattern
+  - sheet_color
+  - sheet_pattern
+  - target_audience
+  return_reasons: inherit
+- id: os-4-9-9-3-3
+  name: Graph-Paper Journals
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - cover_material
+  - lamination
+  - language
+  - leather_finish
+  - page_binding_type
+  - page_layout
+  - paper_texture
+  - paper_type
+  - pattern
+  - sheet_color
+  - sheet_pattern
+  - target_audience
+  return_reasons: inherit
+- id: os-4-9-9-3-4
+  name: Dot-Grid Journals
+  children: []
+  attributes:
+  - closure_type
+  - color
+  - cover_material
+  - lamination
+  - language
+  - leather_finish
+  - page_binding_type
+  - page_layout
+  - paper_texture
+  - paper_type
+  - pattern
+  - sheet_color
+  - sheet_pattern
+  - target_audience
+  return_reasons: inherit
 - id: os-4-9-9-4
   name: Memo Pads
   children: []
   attributes:
   - color
+  - hole_punch_type
   - paper_type
   - pattern
   - sheet_color
@@ -1579,13 +4524,38 @@
   - other_reason
 - id: os-4-9-9-5
   name: Notepads
-  children: []
+  children:
+  - os-4-9-9-5-1
+  - os-4-9-9-5-2
+  - os-4-9-9-5-3
+  - os-4-9-9-5-4
+  - os-4-9-9-5-5
+  - os-4-9-9-5-6
+  - os-4-9-9-5-7
+  - os-4-9-9-5-8
+  - os-4-9-9-5-9
+  - os-4-9-9-5-10
+  - os-4-9-9-5-11
+  - os-4-9-9-5-12
+  - os-4-9-9-5-13
+  - os-4-9-9-5-14
+  - os-4-9-9-5-15
+  - os-4-9-9-5-16
+  - os-4-9-9-5-17
+  - os-4-9-9-5-18
+  - os-4-9-9-5-19
   attributes:
   - color
+  - cover_material
+  - language
   - notepad_cover_type
   - notepad_design
   - paper_type
   - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
   - sheet_color
   - sheet_pattern
   return_reasons:
@@ -1597,11 +4567,357 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-4-9-9-6
-  name: Pocket Notebooks
+- id: os-4-9-9-5-1
+  name: Planner Pads
   children: []
   attributes:
   - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-2
+  name: Telephone Message Pads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-3
+  name: Order Pads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-4
+  name: Columnar Pads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-5
+  name: Handwriting Practice Pads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-6
+  name: Graph Pads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-7
+  name: Isometric Grid Pads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-8
+  name: Hexagonal Grid Pads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-9
+  name: Legal Pads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-10
+  name: Steno Pads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-11
+  name: Scratch Pads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-12
+  name: Memo Cubes
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-13
+  name: Flashcard Pads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-14
+  name: Music Manuscript Pads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-15
+  name: Storyboard Pads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-16
+  name: Mouse Pad Notepads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-17
+  name: Cornell Notepads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-18
+  name: Prescription Pads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-5-19
+  name: Letter Pads
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - language
+  - notepad_cover_type
+  - notepad_design
+  - paper_type
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - ruling
+  - scent
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-6
+  name: Pocket Notebooks
+  children:
+  - os-4-9-9-6-1
+  - os-4-9-9-6-2
+  attributes:
+  - color
+  - cover_material
+  - page_binding_type
   - paper_type
   - pattern
   - sheet_color
@@ -1615,12 +4931,47 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-4-9-10
-  name: Post Cards
+- id: os-4-9-9-6-1
+  name: Hardcover Pocket Notebooks
   children: []
   attributes:
   - color
+  - cover_material
+  - page_binding_type
+  - paper_type
   - pattern
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-9-6-2
+  name: Softcover Pocket Notebooks
+  children: []
+  attributes:
+  - color
+  - cover_material
+  - page_binding_type
+  - paper_type
+  - pattern
+  - sheet_color
+  - sheet_pattern
+  return_reasons: inherit
+- id: os-4-9-10
+  name: Post Cards
+  children:
+  - os-4-9-10-1
+  - os-4-9-10-2
+  attributes:
+  - color
+  - corner_style
+  - foil_color
+  - lamination
+  - language
+  - paper_finish
+  - paper_texture
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - printed_sides
   - theme
   return_reasons:
   - size
@@ -1633,12 +4984,50 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-4-9-11
-  name: Printer & Copier Paper
+- id: os-4-9-10-1
+  name: Picture Postcards
   children: []
   attributes:
   - color
+  - corner_style
+  - foil_color
+  - lamination
+  - language
+  - paper_finish
+  - paper_texture
   - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - printed_sides
+  - theme
+  return_reasons: inherit
+- id: os-4-9-10-2
+  name: Blank Postcards
+  children: []
+  attributes:
+  - color
+  - corner_style
+  - foil_color
+  - lamination
+  - language
+  - paper_finish
+  - paper_texture
+  - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - printed_sides
+  - theme
+  return_reasons: inherit
+- id: os-4-9-11
+  name: Printer & Copier Paper
+  children:
+  - os-4-9-11-1
+  - os-4-9-11-2
+  - os-4-9-11-3
+  attributes:
+  - color
+  - pattern
+  - printable_sides
   return_reasons:
   - size
   - color
@@ -1649,9 +5038,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-9-11-1
+  name: Cut-Sheet Printer Papers
+  children: []
+  attributes:
+  - color
+  - pattern
+  - printable_sides
+  return_reasons: inherit
+- id: os-4-9-11-2
+  name: Roll-Fed Printer Papers
+  children: []
+  attributes:
+  - color
+  - pattern
+  - printable_sides
+  return_reasons: inherit
+- id: os-4-9-11-3
+  name: Fanfold Printer Papers
+  children: []
+  attributes:
+  - color
+  - pattern
+  - printable_sides
+  return_reasons: inherit
 - id: os-4-9-12
   name: Receipt & Adding Machine Paper Rolls
-  children: []
+  children:
+  - os-4-9-12-1
+  - os-4-9-12-2
+  - os-4-9-12-3
   attributes:
   - color
   - pattern
@@ -1666,12 +5082,64 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-4-9-13
-  name: Stationery
+- id: os-4-9-12-1
+  name: Thermal Paper Rolls
   children: []
   attributes:
   - color
   - pattern
+  - receipt_paper_features
+  return_reasons: inherit
+- id: os-4-9-12-2
+  name: Bond Paper Rolls
+  children: []
+  attributes:
+  - color
+  - pattern
+  - receipt_paper_features
+  return_reasons: inherit
+- id: os-4-9-12-3
+  name: Carbonless Paper Rolls
+  children: []
+  attributes:
+  - color
+  - pattern
+  - receipt_paper_features
+  return_reasons: inherit
+- id: os-4-9-13
+  name: Stationery
+  children:
+  - os-4-9-13-1
+  - os-4-9-13-2
+  - os-4-9-13-3
+  - os-4-9-13-4
+  - os-4-9-13-5
+  - os-4-9-13-6
+  - os-4-9-13-7
+  - os-4-9-13-8
+  - os-4-9-13-9
+  - os-4-9-13-10
+  - os-4-9-13-11
+  - os-4-9-13-12
+  - os-4-9-13-13
+  - os-4-9-13-14
+  - os-4-9-13-15
+  - os-4-9-13-16
+  - os-4-9-13-17
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
   return_reasons:
   - size
   - color
@@ -1683,11 +5151,326 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-4-9-14
-  name: Sticky Notes
+- id: os-4-9-13-1
+  name: Writing Paper
   children: []
   attributes:
   - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-13-2
+  name: Correspondence Cards
+  children: []
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-13-3
+  name: Announcement Cards
+  children: []
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-13-4
+  name: Invitation Enclosure Cards
+  children: []
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-13-5
+  name: Gift Enclosure Cards
+  children: []
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-13-6
+  name: Menu Cards
+  children: []
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-13-7
+  name: Order-of-Service Cards
+  children: []
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-13-8
+  name: Escort Cards
+  children: []
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-13-9
+  name: Memorial Cards
+  children: []
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-13-10
+  name: Guest Books
+  children: []
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-13-11
+  name: Vow Books
+  children: []
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-13-12
+  name: Recipe Cards
+  children: []
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-13-13
+  name: Social Calling Cards
+  children: []
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-13-14
+  name: Compliment Slips
+  children: []
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-13-15
+  name: Aerograms
+  children: []
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-13-16
+  name: Inland Letter Cards
+  children: []
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-13-17
+  name: Invitation Suites
+  children: []
+  attributes:
+  - color
+  - finish
+  - foil_color
+  - hole_punch_format
+  - language
+  - material
+  - paper_texture
+  - pattern
+  - portrait/landscape_orientation
+  - printed_sides
+  - printing_method
+  - ruling
+  - shape
+  return_reasons: inherit
+- id: os-4-9-14
+  name: Sticky Notes
+  children:
+  - os-4-9-14-1
+  - os-4-9-14-2
+  - os-4-9-14-3
+  - os-4-9-14-4
+  - os-4-9-14-5
+  attributes:
+  - color
+  - language
+  - layout
+  - material
+  - page_ruling
   - pattern
   - shape
   return_reasons:
@@ -1700,12 +5483,73 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-9-14-1
+  name: Page Flags
+  children: []
+  attributes:
+  - color
+  - language
+  - layout
+  - material
+  - page_ruling
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-4-9-14-2
+  name: Pop-Up Sticky Notes
+  children: []
+  attributes:
+  - color
+  - language
+  - layout
+  - material
+  - page_ruling
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-4-9-14-3
+  name: Sticky Note Cubes
+  children: []
+  attributes:
+  - color
+  - language
+  - layout
+  - material
+  - page_ruling
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-4-9-14-4
+  name: Sticky Note Booklets
+  children: []
+  attributes:
+  - color
+  - language
+  - layout
+  - material
+  - page_ruling
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: os-4-9-14-5
+  name: Sticky Note Rolls
+  children: []
+  attributes:
+  - color
+  - language
+  - layout
+  - material
+  - page_ruling
+  - pattern
+  - shape
+  return_reasons: inherit
 - id: os-4-10
   name: Rubber Bands
   children: []
   attributes:
   - band_strength
   - color
+  - material
   - pattern
   return_reasons:
   - size
@@ -1718,8 +5562,13 @@
   - other_reason
 - id: os-4-11
   name: Staples
-  children: []
+  children:
+  - os-4-11-1
+  - os-4-11-2
   attributes:
+  - color
+  - material
+  - staple_size
   - staple_wire_gauge
   return_reasons:
   - size
@@ -1730,9 +5579,33 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-11-1
+  name: Strip Staples
+  children: []
+  attributes:
+  - color
+  - material
+  - staple_size
+  - staple_wire_gauge
+  return_reasons: inherit
+- id: os-4-11-2
+  name: Staple Cartridges
+  children: []
+  attributes:
+  - color
+  - material
+  - staple_size
+  - staple_wire_gauge
+  return_reasons: inherit
 - id: os-4-12
   name: Tacks & Pushpins
-  children: []
+  children:
+  - os-4-12-1
+  - os-4-12-2
+  - os-4-12-3
+  - os-4-12-4
+  - os-4-12-5
+  - os-4-12-6
   attributes:
   - accessory_size
   - color
@@ -1749,12 +5622,79 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-4-12-1
+  name: Flat-Head Tacks
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - office_supply_material
+  - pattern
+  - point_design
+  - tack/pushpin_head_design
+  return_reasons: inherit
+- id: os-4-12-2
+  name: Ball-Head Pushpins
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - office_supply_material
+  - pattern
+  - point_design
+  - tack/pushpin_head_design
+  return_reasons: inherit
+- id: os-4-12-3
+  name: Dome-Head Thumbtacks
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - office_supply_material
+  - pattern
+  - point_design
+  - tack/pushpin_head_design
+  return_reasons: inherit
+- id: os-4-12-4
+  name: Flag Pushpins
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - office_supply_material
+  - pattern
+  - point_design
+  - tack/pushpin_head_design
+  return_reasons: inherit
+- id: os-4-12-5
+  name: Pushpin Hooks
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - office_supply_material
+  - pattern
+  - point_design
+  - tack/pushpin_head_design
+  return_reasons: inherit
+- id: os-4-12-6
+  name: Pushpin Clips
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - office_supply_material
+  - pattern
+  - point_design
+  - tack/pushpin_head_design
+  return_reasons: inherit
 - id: os-5
   name: Impulse Sealers
   children:
   - os-5-1
   - os-5-2
   attributes:
+  - color
   - cutter_options
   return_reasons:
   - size
@@ -1770,7 +5710,10 @@
   name: Handheld Impulse Sealers
   children: []
   attributes:
+  - color
   - cutter_options
+  - plug_type
+  - power_source
   return_reasons:
   - size
   - speed
@@ -1783,9 +5726,14 @@
   - other_reason
 - id: os-5-2
   name: Tabletop Impulse Sealers
-  children: []
+  children:
+  - os-5-2-1
+  - os-5-2-2
   attributes:
+  - color
   - cutter_options
+  - material
+  - plug_type
   return_reasons:
   - size
   - speed
@@ -1796,11 +5744,35 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-6
-  name: Lap Desks
+- id: os-5-2-1
+  name: Tabletop I-Bar Impulse Sealers
   children: []
   attributes:
   - color
+  - cutter_options
+  - material
+  - plug_type
+  return_reasons: inherit
+- id: os-5-2-2
+  name: Tabletop L-Bar Impulse Sealers
+  children: []
+  attributes:
+  - color
+  - cutter_options
+  - material
+  - plug_type
+  return_reasons: inherit
+- id: os-6
+  name: Lap Desks
+  children:
+  - os-6-1
+  - os-6-2
+  - os-6-3
+  - os-6-4
+  attributes:
+  - color
+  - finish
+  - handedness
   - material
   - pattern
   return_reasons:
@@ -1813,6 +5785,46 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-6-1
+  name: Cushioned Lap Desks
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-6-2
+  name: Folding-Leg Lap Desks
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-6-3
+  name: Armrest Lap Desks
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-6-4
+  name: Pilot Kneeboards
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - material
+  - pattern
+  return_reasons: inherit
 - id: os-7
   name: Name Plates
   children:
@@ -1820,7 +5832,14 @@
   - os-7-2
   attributes:
   - color
+  - corner_style
+  - finish
+  - frame_color
+  - frame_finish
+  - letter_material
+  - mounting_option
   - office_supply_material
+  - shape
   return_reasons:
   - size
   - color
@@ -1833,10 +5852,16 @@
   - other_reason
 - id: os-7-1
   name: Desk Name Plates
-  children: []
+  children:
+  - os-7-1-1
+  - os-7-1-2
   attributes:
+  - frame_color
+  - led_light_color
   - office_supply_material
   - personalization_design
+  - portrait/landscape_orientation
+  - shape
   return_reasons:
   - size
   - color
@@ -1847,12 +5872,37 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-7-1-1
+  name: Freestanding Desk Name Plates
+  children: []
+  attributes:
+  - frame_color
+  - led_light_color
+  - office_supply_material
+  - personalization_design
+  - portrait/landscape_orientation
+  - shape
+  return_reasons: inherit
+- id: os-7-1-2
+  name: Flat Desk Name Plate Strips
+  children: []
+  attributes:
+  - frame_color
+  - led_light_color
+  - office_supply_material
+  - personalization_design
+  - portrait/landscape_orientation
+  - shape
+  return_reasons: inherit
 - id: os-7-2
   name: Door Name Plates
   children: []
   attributes:
+  - color
+  - mounting_method
   - office_supply_material
   - personalization_design
+  - shape
   return_reasons:
   - size
   - color
@@ -1884,10 +5934,16 @@
   - other_reason
 - id: os-8-1
   name: Anti-Fatigue Mats
-  children: []
+  children:
+  - os-8-1-1
+  - os-8-1-2
   attributes:
+  - color
   - mat_features
   - rug/mat_material
+  - shape
+  - tile_piece_type
+  - top_surface_texture
   return_reasons:
   - size
   - color
@@ -1899,12 +5955,40 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-8-1-1
+  name: Solid-Top Anti-Fatigue Mats
+  children: []
+  attributes:
+  - color
+  - mat_features
+  - rug/mat_material
+  - shape
+  - tile_piece_type
+  - top_surface_texture
+  return_reasons: inherit
+- id: os-8-1-2
+  name: Drainage Anti-Fatigue Mats
+  children: []
+  attributes:
+  - color
+  - mat_features
+  - rug/mat_material
+  - shape
+  - tile_piece_type
+  - top_surface_texture
+  return_reasons: inherit
 - id: os-8-2
   name: Chair Mats
-  children: []
+  children:
+  - os-8-2-1
+  - os-8-2-2
   attributes:
+  - color
   - mat_features
+  - quilting_ruler_transparency
   - rug/mat_material
+  - shape
+  - suitable_for_floor_type
   return_reasons:
   - size
   - color
@@ -1915,10 +5999,38 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-8-2-1
+  name: Carpet Chair Mats
+  children: []
+  attributes:
+  - color
+  - mat_features
+  - quilting_ruler_transparency
+  - rug/mat_material
+  - shape
+  - suitable_for_floor_type
+  return_reasons: inherit
+- id: os-8-2-2
+  name: Hard-Floor Chair Mats
+  children: []
+  attributes:
+  - color
+  - mat_features
+  - quilting_ruler_transparency
+  - rug/mat_material
+  - shape
+  - suitable_for_floor_type
+  return_reasons: inherit
 - id: os-8-3
   name: Office Mats
-  children: []
+  children:
+  - os-8-3-1
+  - os-8-3-2
+  - os-8-3-3
+  - os-8-3-4
+  - os-8-3-5
   attributes:
+  - color
   - mat_features
   - rug/mat_material
   return_reasons:
@@ -1931,6 +6043,46 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-8-3-1
+  name: Office Entrance Mats
+  children: []
+  attributes:
+  - color
+  - mat_features
+  - rug/mat_material
+  return_reasons: inherit
+- id: os-8-3-2
+  name: Acoustic Floor Mats
+  children: []
+  attributes:
+  - color
+  - mat_features
+  - rug/mat_material
+  return_reasons: inherit
+- id: os-8-3-3
+  name: Anti-Static Floor Mats
+  children: []
+  attributes:
+  - color
+  - mat_features
+  - rug/mat_material
+  return_reasons: inherit
+- id: os-8-3-4
+  name: Water Cooler Floor Mats
+  children: []
+  attributes:
+  - color
+  - mat_features
+  - rug/mat_material
+  return_reasons: inherit
+- id: os-8-3-5
+  name: Temporary Floor Protection Mats
+  children: []
+  attributes:
+  - color
+  - mat_features
+  - rug/mat_material
+  return_reasons: inherit
 - id: os-9
   name: Office Carts
   children:
@@ -1940,6 +6092,7 @@
   - os-9-4
   - os-9-5
   attributes:
+  - color
   - material
   return_reasons:
   - size
@@ -1954,8 +6107,15 @@
   - other_reason
 - id: os-9-1
   name: AV Carts
-  children: []
+  children:
+  - os-9-1-1
+  - os-9-1-2
+  - os-9-1-3
+  - os-9-1-4
   attributes:
+  - color
+  - door_color
+  - leg_color
   - material
   - office_cart_features
   return_reasons:
@@ -1969,10 +6129,55 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-9-1-1
+  name: Display Carts
+  children: []
+  attributes:
+  - color
+  - door_color
+  - leg_color
+  - material
+  - office_cart_features
+  return_reasons: inherit
+- id: os-9-1-2
+  name: Projector Carts
+  children: []
+  attributes:
+  - color
+  - door_color
+  - leg_color
+  - material
+  - office_cart_features
+  return_reasons: inherit
+- id: os-9-1-3
+  name: Charging & Storage Carts
+  children: []
+  attributes:
+  - color
+  - door_color
+  - leg_color
+  - material
+  - office_cart_features
+  return_reasons: inherit
+- id: os-9-1-4
+  name: Audio Equipment Carts
+  children: []
+  attributes:
+  - color
+  - door_color
+  - leg_color
+  - material
+  - office_cart_features
+  return_reasons: inherit
 - id: os-9-2
   name: Book Carts
-  children: []
+  children:
+  - os-9-2-1
+  - os-9-2-2
+  - os-9-2-3
+  - os-9-2-4
   attributes:
+  - color
   - material
   - office_cart_features
   return_reasons:
@@ -1986,10 +6191,49 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-9-2-1
+  name: Book Tub Carts
+  children: []
+  attributes:
+  - color
+  - material
+  - office_cart_features
+  return_reasons: inherit
+- id: os-9-2-2
+  name: Book Trough Carts
+  children: []
+  attributes:
+  - color
+  - material
+  - office_cart_features
+  return_reasons: inherit
+- id: os-9-2-3
+  name: Flat-Shelf Book Carts
+  children: []
+  attributes:
+  - color
+  - material
+  - office_cart_features
+  return_reasons: inherit
+- id: os-9-2-4
+  name: Sloped-Shelf Book Carts
+  children: []
+  attributes:
+  - color
+  - material
+  - office_cart_features
+  return_reasons: inherit
 - id: os-9-3
   name: File Carts
-  children: []
+  children:
+  - os-9-3-1
+  - os-9-3-2
+  - os-9-3-3
+  - os-9-3-4
+  - os-9-3-5
+  - os-9-3-6
   attributes:
+  - color
   - material
   - office_cart_features
   return_reasons:
@@ -2003,10 +6247,62 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-9-3-1
+  name: Hanging File Carts
+  children: []
+  attributes:
+  - color
+  - material
+  - office_cart_features
+  return_reasons: inherit
+- id: os-9-3-2
+  name: File Shelf Carts
+  children: []
+  attributes:
+  - color
+  - material
+  - office_cart_features
+  return_reasons: inherit
+- id: os-9-3-3
+  name: Rolling File Cases
+  children: []
+  attributes:
+  - color
+  - material
+  - office_cart_features
+  return_reasons: inherit
+- id: os-9-3-4
+  name: Rolling Filing Cabinets
+  children: []
+  attributes:
+  - color
+  - material
+  - office_cart_features
+  return_reasons: inherit
+- id: os-9-3-5
+  name: File Sorting Carts
+  children: []
+  attributes:
+  - color
+  - material
+  - office_cart_features
+  return_reasons: inherit
+- id: os-9-3-6
+  name: Blueprint File Carts
+  children: []
+  attributes:
+  - color
+  - material
+  - office_cart_features
+  return_reasons: inherit
 - id: os-9-4
   name: Mail Carts
-  children: []
+  children:
+  - os-9-4-1
+  - os-9-4-2
+  - os-9-4-3
   attributes:
+  - color
   - material
   - office_cart_features
   return_reasons:
@@ -2020,10 +6316,37 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-9-4-1
+  name: Basket Mail Carts
+  children: []
+  attributes:
+  - color
+  - material
+  - office_cart_features
+  return_reasons: inherit
+- id: os-9-4-2
+  name: Shelf Mail Carts
+  children: []
+  attributes:
+  - color
+  - material
+  - office_cart_features
+  return_reasons: inherit
+- id: os-9-4-3
+  name: Mobile Mail Centers
+  children: []
+  attributes:
+  - color
+  - material
+  - office_cart_features
+  return_reasons: inherit
 - id: os-9-5
   name: Utility Carts
   children: []
   attributes:
+  - color
+  - frame_color
+  - handrail_direction
   - material
   - office_cart_features
   return_reasons:
@@ -2050,7 +6373,9 @@
   - os-10-8
   - os-10-9
   - os-10-10
-  attributes: []
+  attributes:
+  - color
+  - material
   return_reasons:
   - size
   - color
@@ -2063,7 +6388,14 @@
   - other_reason
 - id: os-10-1
   name: Calculator Accessories
-  children: []
+  children:
+  - os-10-1-1
+  - os-10-1-2
+  - os-10-1-3
+  - os-10-1-4
+  - os-10-1-5
+  - os-10-1-6
+  - os-10-1-7
   attributes:
   - calculator_accessory_type
   - color
@@ -2078,6 +6410,233 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-10-1-1
+  name: Calculator Protection & Carrying Accessories
+  children:
+  - os-10-1-1-1
+  - os-10-1-1-2
+  - os-10-1-1-3
+  - os-10-1-1-4
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-1-1
+  name: Calculator Cases
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-1-2
+  name: Calculator Covers
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-1-3
+  name: Calculator Holsters
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-1-4
+  name: Calculator Screen Protectors
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-2
+  name: Calculator Power & Charging Accessories
+  children:
+  - os-10-1-2-1
+  - os-10-1-2-2
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-2-1
+  name: Calculator Power Adapters
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-2-2
+  name: Calculator Charging Docks
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-3
+  name: Calculator Cables & Presentation Interfaces
+  children:
+  - os-10-1-3-1
+  - os-10-1-3-2
+  - os-10-1-3-3
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-3-1
+  name: Calculator Charging Cables
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-3-2
+  name: Calculator Data Transfer Cables
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-3-3
+  name: Calculator Presentation Adapters
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-4
+  name: Printing Calculator Supplies & Parts
+  children:
+  - os-10-1-4-1
+  - os-10-1-4-2
+  - os-10-1-4-3
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-4-1
+  name: Calculator Printer Rollers
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-4-2
+  name: Calculator Ink Ribbons
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-4-3
+  name: Printing Calculator Paper Rolls
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-5
+  name: Calculator Storage & Positioning Accessories
+  children:
+  - os-10-1-5-1
+  - os-10-1-5-2
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-5-1
+  name: Calculator Stands
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-5-2
+  name: Calculator Storage Organizers
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-6
+  name: Calculator Body & Input Parts
+  children:
+  - os-10-1-6-1
+  - os-10-1-6-2
+  - os-10-1-6-3
+  - os-10-1-6-4
+  - os-10-1-6-5
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-6-1
+  name: Calculator Battery Covers
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-6-2
+  name: Calculator Rubber Feet
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-6-3
+  name: Calculator Keycaps
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-6-4
+  name: Calculator Keypads
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-6-5
+  name: Calculator Keypad Overlays
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-10-1-7
+  name: Calculator Accessory Kits
+  children: []
+  attributes:
+  - calculator_accessory_type
+  - color
+  - pattern
+  return_reasons: inherit
 - id: os-10-2
   name: Calculators
   children:
@@ -2086,7 +6645,8 @@
   - os-10-2-3
   - os-10-2-4
   - os-10-2-5
-  attributes: []
+  attributes:
+  - color
   return_reasons:
   - size
   - incompatible
@@ -2098,11 +6658,15 @@
   - other_reason
 - id: os-10-2-1
   name: Basic Calculators
-  children: []
+  children:
+  - os-10-2-1-1
+  - os-10-2-1-2
   attributes:
   - battery_size
   - battery_type
   - calculator_features
+  - color
+  - material
   return_reasons:
   - size
   - color
@@ -2112,11 +6676,39 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-10-2-2
-  name: Construction Calculators
+- id: os-10-2-1-1
+  name: Desktop Calculators
   children: []
   attributes:
+  - battery_size
+  - battery_type
   - calculator_features
+  - color
+  - material
+  return_reasons: inherit
+- id: os-10-2-1-2
+  name: Handheld Calculators
+  children: []
+  attributes:
+  - battery_size
+  - battery_type
+  - calculator_features
+  - color
+  - material
+  return_reasons: inherit
+- id: os-10-2-2
+  name: Construction Calculators
+  children:
+  - os-10-2-2-1
+  - os-10-2-2-2
+  - os-10-2-2-3
+  - os-10-2-2-4
+  - os-10-2-2-5
+  - os-10-2-2-6
+  - os-10-2-2-7
+  attributes:
+  - calculator_features
+  - color
   return_reasons:
   - size
   - changed_my_mind
@@ -2125,11 +6717,61 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-10-2-2-1
+  name: Construction Measurement Calculators
+  children: []
+  attributes:
+  - calculator_features
+  - color
+  return_reasons: inherit
+- id: os-10-2-2-2
+  name: Plan Takeoff Calculators
+  children: []
+  attributes:
+  - calculator_features
+  - color
+  return_reasons: inherit
+- id: os-10-2-2-3
+  name: Material Estimating Calculators
+  children: []
+  attributes:
+  - calculator_features
+  - color
+  return_reasons: inherit
+- id: os-10-2-2-4
+  name: Construction Project Estimating Calculators
+  children: []
+  attributes:
+  - calculator_features
+  - color
+  return_reasons: inherit
+- id: os-10-2-2-5
+  name: Pipe Trades Calculators
+  children: []
+  attributes:
+  - calculator_features
+  - color
+  return_reasons: inherit
+- id: os-10-2-2-6
+  name: Electrical Code Calculators
+  children: []
+  attributes:
+  - calculator_features
+  - color
+  return_reasons: inherit
+- id: os-10-2-2-7
+  name: HVAC Calculators
+  children: []
+  attributes:
+  - calculator_features
+  - color
+  return_reasons: inherit
 - id: os-10-2-3
   name: Financial Calculators
   children: []
   attributes:
   - calculator_features
+  - color
   return_reasons:
   - size
   - changed_my_mind
@@ -2140,9 +6782,13 @@
   - other_reason
 - id: os-10-2-4
   name: Graphing Calculators
-  children: []
+  children:
+  - os-10-2-4-1
+  - os-10-2-4-2
   attributes:
   - calculator_features
+  - color
+  - user_guide_language
   return_reasons:
   - size
   - changed_my_mind
@@ -2151,11 +6797,30 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-10-2-4-1
+  name: Computer Algebra System Graphing Calculators
+  children: []
+  attributes:
+  - calculator_features
+  - color
+  - user_guide_language
+  return_reasons: inherit
+- id: os-10-2-4-2
+  name: CAS-Free Graphing Calculators
+  children: []
+  attributes:
+  - calculator_features
+  - color
+  - user_guide_language
+  return_reasons: inherit
 - id: os-10-2-5
   name: Scientific Calculators
-  children: []
+  children:
+  - os-10-2-5-1
+  - os-10-2-5-2
   attributes:
   - calculator_features
+  - color
   return_reasons:
   - size
   - changed_my_mind
@@ -2164,10 +6829,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-10-3
-  name: Electronic Dictionaries & Translators
+- id: os-10-2-5-1
+  name: Programmable Scientific Calculators
   children: []
   attributes:
+  - calculator_features
+  - color
+  return_reasons: inherit
+- id: os-10-2-5-2
+  name: Non-Programmable Scientific Calculators
+  children: []
+  attributes:
+  - calculator_features
+  - color
+  return_reasons: inherit
+- id: os-10-3
+  name: Electronic Dictionaries & Translators
+  children:
+  - os-10-3-1
+  - os-10-3-2
+  - os-10-3-3
+  - os-10-3-4
+  - os-10-3-5
+  - os-10-3-6
+  - os-10-3-7
+  - os-10-3-8
+  - os-10-3-9
+  - os-10-3-10
+  - os-10-3-11
+  attributes:
+  - housing_color
   - supported_language
   return_reasons:
   - incompatible
@@ -2177,10 +6868,91 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-10-4
-  name: Label Makers
+- id: os-10-3-1
+  name: Handheld Electronic Dictionaries
   children: []
   attributes:
+  - housing_color
+  - supported_language
+  return_reasons: inherit
+- id: os-10-3-2
+  name: Electronic Spell Checkers
+  children: []
+  attributes:
+  - housing_color
+  - supported_language
+  return_reasons: inherit
+- id: os-10-3-3
+  name: Electronic Phrasebooks
+  children: []
+  attributes:
+  - housing_color
+  - supported_language
+  return_reasons: inherit
+- id: os-10-3-4
+  name: Electronic Crossword Solvers
+  children: []
+  attributes:
+  - housing_color
+  - supported_language
+  return_reasons: inherit
+- id: os-10-3-5
+  name: Electronic Dictionary Bookmarks
+  children: []
+  attributes:
+  - housing_color
+  - supported_language
+  return_reasons: inherit
+- id: os-10-3-6
+  name: Handheld Translators
+  children: []
+  attributes:
+  - housing_color
+  - supported_language
+  return_reasons: inherit
+- id: os-10-3-7
+  name: Translation Pens
+  children: []
+  attributes:
+  - housing_color
+  - supported_language
+  return_reasons: inherit
+- id: os-10-3-8
+  name: Translator Headsets
+  children: []
+  attributes:
+  - housing_color
+  - supported_language
+  return_reasons: inherit
+- id: os-10-3-9
+  name: Translation Glasses
+  children: []
+  attributes:
+  - housing_color
+  - supported_language
+  return_reasons: inherit
+- id: os-10-3-10
+  name: Translation Recorders
+  children: []
+  attributes:
+  - housing_color
+  - supported_language
+  return_reasons: inherit
+- id: os-10-3-11
+  name: Group Conversation Translators
+  children: []
+  attributes:
+  - housing_color
+  - supported_language
+  return_reasons: inherit
+- id: os-10-4
+  name: Label Makers
+  children:
+  - os-10-4-1
+  - os-10-4-2
+  attributes:
+  - color
+  - control_method
   - portability
   return_reasons:
   - size
@@ -2191,10 +6963,30 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-10-5
-  name: Laminators
+- id: os-10-4-1
+  name: Manual Label Makers
   children: []
   attributes:
+  - color
+  - control_method
+  - portability
+  return_reasons: inherit
+- id: os-10-4-2
+  name: Electronic Label Makers
+  children: []
+  attributes:
+  - color
+  - control_method
+  - portability
+  return_reasons: inherit
+- id: os-10-5
+  name: Laminators
+  children:
+  - os-10-5-1
+  - os-10-5-2
+  - os-10-5-3
+  attributes:
+  - color
   - lamination_mode
   - paper_size
   - portability
@@ -2209,10 +7001,43 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-10-5-1
+  name: Pouch Laminators
+  children: []
+  attributes:
+  - color
+  - lamination_mode
+  - paper_size
+  - portability
+  return_reasons: inherit
+- id: os-10-5-2
+  name: Roll Laminators
+  children: []
+  attributes:
+  - color
+  - lamination_mode
+  - paper_size
+  - portability
+  return_reasons: inherit
+- id: os-10-5-3
+  name: Cartridge Laminators
+  children: []
+  attributes:
+  - color
+  - lamination_mode
+  - paper_size
+  - portability
+  return_reasons: inherit
 - id: os-10-6
   name: Office Shredders
-  children: []
-  attributes: []
+  children:
+  - os-10-6-1
+  - os-10-6-2
+  - os-10-6-3
+  attributes:
+  - color
+  - plug_type
+  - shredder_security_level
   return_reasons:
   - size
   - speed
@@ -2223,9 +7048,35 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-10-6-1
+  name: Strip-Cut Shredders
+  children: []
+  attributes:
+  - color
+  - plug_type
+  - shredder_security_level
+  return_reasons: inherit
+- id: os-10-6-2
+  name: Cross-Cut Shredders
+  children: []
+  attributes:
+  - color
+  - plug_type
+  - shredder_security_level
+  return_reasons: inherit
+- id: os-10-6-3
+  name: Micro-Cut Shredders
+  children: []
+  attributes:
+  - color
+  - plug_type
+  - shredder_security_level
+  return_reasons: inherit
 - id: os-10-7
   name: Postage Meters
-  children: []
+  children:
+  - os-10-7-1
+  - os-10-7-2
   attributes:
   - connectivity_technology
   return_reasons:
@@ -2238,13 +7089,29 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-10-8
-  name: Time & Attendance Clocks
+- id: os-10-7-1
+  name: Standalone Postage Meters
   children: []
   attributes:
+  - connectivity_technology
+  return_reasons: inherit
+- id: os-10-7-2
+  name: Integrated Mailing-System Postage Meters
+  children: []
+  attributes:
+  - connectivity_technology
+  return_reasons: inherit
+- id: os-10-8
+  name: Time & Attendance Clocks
+  children:
+  - os-10-8-1
+  - os-10-8-2
+  attributes:
   - authentication_technology
+  - color
   - connectivity_technology
   - display_technology
+  - plug_type
   - power_source
   return_reasons:
   - incompatible
@@ -2254,11 +7121,42 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-10-9
-  name: Transcribers & Dictation Systems
+- id: os-10-8-1
+  name: Punch Clocks
   children: []
   attributes:
+  - authentication_technology
+  - color
+  - connectivity_technology
+  - display_technology
+  - plug_type
+  - power_source
+  return_reasons: inherit
+- id: os-10-8-2
+  name: Attendance Terminals
+  children: []
+  attributes:
+  - authentication_technology
+  - color
+  - connectivity_technology
+  - display_technology
+  - plug_type
+  - power_source
+  return_reasons: inherit
+- id: os-10-9
+  name: Transcribers & Dictation Systems
+  children:
+  - os-10-9-1
+  - os-10-9-2
+  - os-10-9-3
+  - os-10-9-4
+  - os-10-9-5
+  - os-10-9-6
+  - os-10-9-7
+  - os-10-9-8
+  attributes:
   - audio_codecs/formats_supported
+  - color
   - connectivity_technology
   - recording_quality
   - transcriber/dictation_system_features
@@ -2271,10 +7169,94 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-10-10
-  name: Typewriters
+- id: os-10-9-1
+  name: Dictation Recorders
   children: []
   attributes:
+  - audio_codecs/formats_supported
+  - color
+  - connectivity_technology
+  - recording_quality
+  - transcriber/dictation_system_features
+  return_reasons: inherit
+- id: os-10-9-2
+  name: Transcription Machines
+  children: []
+  attributes:
+  - audio_codecs/formats_supported
+  - color
+  - connectivity_technology
+  - recording_quality
+  - transcriber/dictation_system_features
+  return_reasons: inherit
+- id: os-10-9-3
+  name: Stenotype Machines
+  children: []
+  attributes:
+  - audio_codecs/formats_supported
+  - color
+  - connectivity_technology
+  - recording_quality
+  - transcriber/dictation_system_features
+  return_reasons: inherit
+- id: os-10-9-4
+  name: Wearable Transcription Devices
+  children: []
+  attributes:
+  - audio_codecs/formats_supported
+  - color
+  - connectivity_technology
+  - recording_quality
+  - transcriber/dictation_system_features
+  return_reasons: inherit
+- id: os-10-9-5
+  name: Dictation Kits
+  children: []
+  attributes:
+  - audio_codecs/formats_supported
+  - color
+  - connectivity_technology
+  - recording_quality
+  - transcriber/dictation_system_features
+  return_reasons: inherit
+- id: os-10-9-6
+  name: Transcription Kits
+  children: []
+  attributes:
+  - audio_codecs/formats_supported
+  - color
+  - connectivity_technology
+  - recording_quality
+  - transcriber/dictation_system_features
+  return_reasons: inherit
+- id: os-10-9-7
+  name: Manual Transcription Software
+  children: []
+  attributes:
+  - audio_codecs/formats_supported
+  - color
+  - connectivity_technology
+  - recording_quality
+  - transcriber/dictation_system_features
+  return_reasons: inherit
+- id: os-10-9-8
+  name: Captioning Software
+  children: []
+  attributes:
+  - audio_codecs/formats_supported
+  - color
+  - connectivity_technology
+  - recording_quality
+  - transcriber/dictation_system_features
+  return_reasons: inherit
+- id: os-10-10
+  name: Typewriters
+  children:
+  - os-10-10-1
+  - os-10-10-2
+  - os-10-10-3
+  attributes:
+  - color
   - compatible_paper_size
   - keyboard_layout
   - line_spacing_options
@@ -2288,6 +7270,33 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-10-10-1
+  name: Manual Typewriters
+  children: []
+  attributes:
+  - color
+  - compatible_paper_size
+  - keyboard_layout
+  - line_spacing_options
+  return_reasons: inherit
+- id: os-10-10-2
+  name: Electric Typewriters
+  children: []
+  attributes:
+  - color
+  - compatible_paper_size
+  - keyboard_layout
+  - line_spacing_options
+  return_reasons: inherit
+- id: os-10-10-3
+  name: Electronic Typewriters
+  children: []
+  attributes:
+  - color
+  - compatible_paper_size
+  - keyboard_layout
+  - line_spacing_options
+  return_reasons: inherit
 - id: os-11
   name: Office Instruments
   children:
@@ -2302,7 +7311,9 @@
   - os-11-9
   - os-11-10
   - os-11-11
-  attributes: []
+  attributes:
+  - color
+  - material
   return_reasons:
   - size
   - color
@@ -2317,6 +7328,7 @@
   children: []
   attributes:
   - color
+  - finish
   - office_instrument_material
   - pattern
   return_reasons:
@@ -2335,7 +7347,9 @@
   - clip_type
   - color
   - office_instrument_material
+  - paper_size
   - pattern
+  - portrait/landscape_orientation
   return_reasons:
   - size
   - color
@@ -2347,7 +7361,9 @@
   - other_reason
 - id: os-11-3
   name: Letter Openers
-  children: []
+  children:
+  - os-11-3-1
+  - os-11-3-2
   attributes:
   - blade_material
   - handle_color
@@ -2361,14 +7377,42 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-11-4
-  name: Magnifiers
+- id: os-11-3-1
+  name: Manual Letter Openers
   children: []
   attributes:
+  - blade_material
+  - handle_color
+  - handle_material
+  - handle_pattern
+  return_reasons: inherit
+- id: os-11-3-2
+  name: Electric Letter Openers
+  children: []
+  attributes:
+  - blade_material
+  - handle_color
+  - handle_material
+  - handle_pattern
+  return_reasons: inherit
+- id: os-11-4
+  name: Magnifiers
+  children:
+  - os-11-4-1
+  - os-11-4-2
+  - os-11-4-3
+  - os-11-4-4
+  attributes:
+  - battery_replaceability
   - color
+  - frame_color
   - handle_material
   - lens_configuration
+  - lens_material
+  - magnification
   - pattern
+  - plug_standard
+  - power_input_type
   return_reasons:
   - size
   - weight
@@ -2379,6 +7423,66 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-4-1
+  name: Handheld Magnifiers
+  children: []
+  attributes:
+  - battery_replaceability
+  - color
+  - frame_color
+  - handle_material
+  - lens_configuration
+  - lens_material
+  - magnification
+  - pattern
+  - plug_standard
+  - power_input_type
+  return_reasons: inherit
+- id: os-11-4-2
+  name: Stand Magnifiers
+  children: []
+  attributes:
+  - battery_replaceability
+  - color
+  - frame_color
+  - handle_material
+  - lens_configuration
+  - lens_material
+  - magnification
+  - pattern
+  - plug_standard
+  - power_input_type
+  return_reasons: inherit
+- id: os-11-4-3
+  name: Wearable Magnifiers
+  children: []
+  attributes:
+  - battery_replaceability
+  - color
+  - frame_color
+  - handle_material
+  - lens_configuration
+  - lens_material
+  - magnification
+  - pattern
+  - plug_standard
+  - power_input_type
+  return_reasons: inherit
+- id: os-11-4-4
+  name: Clamp-On Magnifying Lamps
+  children: []
+  attributes:
+  - battery_replaceability
+  - color
+  - frame_color
+  - handle_material
+  - lens_configuration
+  - lens_material
+  - magnification
+  - pattern
+  - plug_standard
+  - power_input_type
+  return_reasons: inherit
 - id: os-11-5
   name: Office Stamps
   children:
@@ -2395,7 +7499,10 @@
   - customization
   - ink_color
   - ink_pattern
+  - material
+  - number_of_digits
   - pattern
+  - shape
   - stamp_type
   - text_plate_material
   return_reasons:
@@ -2410,13 +7517,16 @@
   - other_reason
 - id: os-11-5-1
   name: Address Stamps
-  children: []
+  children:
+  - os-11-5-1-1
+  - os-11-5-1-2
   attributes:
   - color
   - customization
   - ink_color
   - ink_pattern
   - pattern
+  - shape
   - stamp_type
   - text_plate_material
   return_reasons:
@@ -2429,9 +7539,38 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-5-1-1
+  name: Self-Inking Address Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - shape
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-1-2
+  name: Traditional Rubber Address Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - shape
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
 - id: os-11-5-2
   name: Date Stamps
-  children: []
+  children:
+  - os-11-5-2-1
+  - os-11-5-2-2
+  - os-11-5-2-3
   attributes:
   - color
   - customization
@@ -2449,12 +7588,51 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-11-5-3
-  name: Embossing Stamps
+- id: os-11-5-2-1
+  name: Date-Only Stamps
   children: []
   attributes:
   - color
   - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-2-2
+  name: Text & Date Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-2-3
+  name: Time & Date Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-3
+  name: Embossing Stamps
+  children:
+  - os-11-5-3-1
+  - os-11-5-3-2
+  attributes:
+  - color
+  - customization
+  - embossing_position_on_page
   - ink_color
   - ink_pattern
   - pattern
@@ -2470,9 +7648,68 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-5-3-1
+  name: Manual Embossers
+  children:
+  - os-11-5-3-1-1
+  - os-11-5-3-1-2
+  attributes:
+  - color
+  - customization
+  - embossing_position_on_page
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-3-1-1
+  name: Handheld Embossers
+  children: []
+  attributes:
+  - color
+  - customization
+  - embossing_position_on_page
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-3-1-2
+  name: Desk Embossers
+  children: []
+  attributes:
+  - color
+  - customization
+  - embossing_position_on_page
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-3-2
+  name: Electric Embossers
+  children: []
+  attributes:
+  - color
+  - customization
+  - embossing_position_on_page
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
 - id: os-11-5-4
   name: Notary Stamps
-  children: []
+  children:
+  - os-11-5-4-1
+  - os-11-5-4-2
+  - os-11-5-4-3
+  - os-11-5-4-4
+  - os-11-5-4-5
   attributes:
   - color
   - customization
@@ -2481,6 +7718,7 @@
   - pattern
   - stamp_type
   - text_plate_material
+  - u_s_state
   return_reasons:
   - size
   - color
@@ -2490,6 +7728,71 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-5-4-1
+  name: Notary Commission-Expiration Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  - u_s_state
+  return_reasons: inherit
+- id: os-11-5-4-2
+  name: Notary Acknowledgment Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  - u_s_state
+  return_reasons: inherit
+- id: os-11-5-4-3
+  name: Notary Jurat Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  - u_s_state
+  return_reasons: inherit
+- id: os-11-5-4-4
+  name: Notary Acknowledgment & Jurat Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  - u_s_state
+  return_reasons: inherit
+- id: os-11-5-4-5
+  name: Notary Fact-Certification Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  - u_s_state
+  return_reasons: inherit
 - id: os-11-5-5
   name: Passport Stamps
   children: []
@@ -2513,7 +7816,17 @@
   - other_reason
 - id: os-11-5-6
   name: Postage Stamps
-  children: []
+  children:
+  - os-11-5-6-1
+  - os-11-5-6-2
+  - os-11-5-6-3
+  - os-11-5-6-4
+  - os-11-5-6-5
+  - os-11-5-6-6
+  - os-11-5-6-7
+  - os-11-5-6-8
+  - os-11-5-6-9
+  - os-11-5-6-10
   attributes:
   - color
   - customization
@@ -2532,9 +7845,131 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-5-6-1
+  name: First-Class Postage Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-6-2
+  name: Second-Class Postage Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-6-3
+  name: Postcard Postage Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-6-4
+  name: Priority Mail Postage Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-6-5
+  name: Worldwide-Rate Postage Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-6-6
+  name: Airmail Postage Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-6-7
+  name: Additional Postage Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-6-8
+  name: Nonmachinable-Surcharge Postage Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-6-9
+  name: Nonprofit Postage Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-6-10
+  name: Special-Delivery Postage Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
 - id: os-11-5-7
   name: Signature Stamps
-  children: []
+  children:
+  - os-11-5-7-1
+  - os-11-5-7-2
   attributes:
   - color
   - customization
@@ -2552,9 +7987,35 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-5-7-1
+  name: Self-Inking Signature Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-7-2
+  name: Pre-Inked Signature Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
 - id: os-11-5-8
   name: Vintage Stamps
-  children: []
+  children:
+  - os-11-5-8-1
+  - os-11-5-8-2
   attributes:
   - color
   - customization
@@ -2573,6 +8034,30 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-5-8-1
+  name: Vintage Pre-Inked Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
+- id: os-11-5-8-2
+  name: Vintage Traditional Stamps
+  children: []
+  attributes:
+  - color
+  - customization
+  - ink_color
+  - ink_pattern
+  - pattern
+  - stamp_type
+  - text_plate_material
+  return_reasons: inherit
 - id: os-11-6
   name: Pencil Sharpeners
   children:
@@ -2596,7 +8081,9 @@
   - other_reason
 - id: os-11-6-1
   name: Bladeless Sharpeners
-  children: []
+  children:
+  - os-11-6-1-1
+  - os-11-6-1-2
   attributes:
   - color
   - office_instrument_material
@@ -2610,6 +8097,24 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-6-1-1
+  name: Rotary Lead Pointers
+  children: []
+  attributes:
+  - color
+  - office_instrument_material
+  - pattern
+  - pencil_sharpener_design
+  return_reasons: inherit
+- id: os-11-6-1-2
+  name: Sandpaper Lead Pointers
+  children: []
+  attributes:
+  - color
+  - office_instrument_material
+  - pattern
+  - pencil_sharpener_design
+  return_reasons: inherit
 - id: os-11-6-2
   name: Carpenter Sharpeners
   children: []
@@ -2634,6 +8139,7 @@
   - office_instrument_material
   - pattern
   - pencil_sharpener_design
+  - shape
   return_reasons:
   - incompatible
   - changed_my_mind
@@ -2662,7 +8168,9 @@
   - other_reason
 - id: os-11-6-5
   name: Mechanical Sharpeners
-  children: []
+  children:
+  - os-11-6-5-1
+  - os-11-6-5-2
   attributes:
   - color
   - office_instrument_material
@@ -2676,11 +8184,33 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-6-5-1
+  name: Wood-Cased Pencil Sharpeners
+  children: []
+  attributes:
+  - color
+  - office_instrument_material
+  - pattern
+  - pencil_sharpener_design
+  return_reasons: inherit
+- id: os-11-6-5-2
+  name: Lead Holder Sharpeners
+  children: []
+  attributes:
+  - color
+  - office_instrument_material
+  - pattern
+  - pencil_sharpener_design
+  return_reasons: inherit
 - id: os-11-6-6
   name: Standard Sharpeners
-  children: []
+  children:
+  - os-11-6-6-1
+  - os-11-6-6-2
+  - os-11-6-6-3
   attributes:
   - color
+  - hand_orientation
   - office_instrument_material
   - pattern
   - pencil_sharpener_design
@@ -2692,9 +8222,42 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-6-6-1
+  name: Wedge Pencil Sharpeners
+  children: []
+  attributes:
+  - color
+  - hand_orientation
+  - office_instrument_material
+  - pattern
+  - pencil_sharpener_design
+  return_reasons: inherit
+- id: os-11-6-6-2
+  name: Barrel Pencil Sharpeners
+  children: []
+  attributes:
+  - color
+  - hand_orientation
+  - office_instrument_material
+  - pattern
+  - pencil_sharpener_design
+  return_reasons: inherit
+- id: os-11-6-6-3
+  name: Figural Pencil Sharpeners
+  children: []
+  attributes:
+  - color
+  - hand_orientation
+  - office_instrument_material
+  - pattern
+  - pencil_sharpener_design
+  return_reasons: inherit
 - id: os-11-7
   name: Staple Removers
-  children: []
+  children:
+  - os-11-7-1
+  - os-11-7-2
+  - os-11-7-3
   attributes:
   - color
   - office_instrument_material
@@ -2706,6 +8269,30 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-7-1
+  name: Jaw-Style Staple Removers
+  children: []
+  attributes:
+  - color
+  - office_instrument_material
+  - pattern
+  return_reasons: inherit
+- id: os-11-7-2
+  name: Blade-Style Staple Removers
+  children: []
+  attributes:
+  - color
+  - office_instrument_material
+  - pattern
+  return_reasons: inherit
+- id: os-11-7-3
+  name: Lever Staple Removers
+  children: []
+  attributes:
+  - color
+  - office_instrument_material
+  - pattern
+  return_reasons: inherit
 - id: os-11-8
   name: Staplers
   children:
@@ -2718,7 +8305,9 @@
   - os-11-8-7
   - os-11-8-8
   - os-11-8-9
-  attributes: []
+  attributes:
+  - color
+  - material
   return_reasons:
   - size
   - capacity
@@ -2730,7 +8319,9 @@
   - other_reason
 - id: os-11-8-1
   name: Bookbinding Staplers
-  children: []
+  children:
+  - os-11-8-1-1
+  - os-11-8-1-2
   attributes:
   - color
   - office_instrument_material
@@ -2745,6 +8336,24 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-8-1-1
+  name: Flatbed Bookbinding Staplers
+  children: []
+  attributes:
+  - color
+  - office_instrument_material
+  - pattern
+  - stapler_features
+  return_reasons: inherit
+- id: os-11-8-1-2
+  name: Combination Saddle & Flatbed Staplers
+  children: []
+  attributes:
+  - color
+  - office_instrument_material
+  - pattern
+  - stapler_features
+  return_reasons: inherit
 - id: os-11-8-2
   name: Electric Staplers
   children: []
@@ -2753,6 +8362,7 @@
   - office_instrument_material
   - pattern
   - stapler_features
+  - stapler_strip_type
   return_reasons:
   - size
   - capacity
@@ -2849,7 +8459,10 @@
   - other_reason
 - id: os-11-8-8
   name: Plier Staplers
-  children: []
+  children:
+  - os-11-8-8-1
+  - os-11-8-8-2
+  - os-11-8-8-3
   attributes:
   - color
   - office_instrument_material
@@ -2864,6 +8477,33 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-8-8-1
+  name: Document Plier Staplers
+  children: []
+  attributes:
+  - color
+  - office_instrument_material
+  - pattern
+  - stapler_features
+  return_reasons: inherit
+- id: os-11-8-8-2
+  name: Carton-Closing Plier Staplers
+  children: []
+  attributes:
+  - color
+  - office_instrument_material
+  - pattern
+  - stapler_features
+  return_reasons: inherit
+- id: os-11-8-8-3
+  name: Bag-Closing Plier Staplers
+  children: []
+  attributes:
+  - color
+  - office_instrument_material
+  - pattern
+  - stapler_features
+  return_reasons: inherit
 - id: os-11-8-9
   name: Saddle Staplers
   children: []
@@ -2883,7 +8523,9 @@
   - other_reason
 - id: os-11-9
   name: Tape Dispensers
-  children: []
+  children:
+  - os-11-9-1
+  - os-11-9-2
   attributes:
   - color
   - office_instrument_material
@@ -2897,6 +8539,22 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-9-1
+  name: Pressure-Sensitive Tape Dispensers
+  children: []
+  attributes:
+  - color
+  - office_instrument_material
+  - pattern
+  return_reasons: inherit
+- id: os-11-9-2
+  name: Gummed Tape Dispensers
+  children: []
+  attributes:
+  - color
+  - office_instrument_material
+  - pattern
+  return_reasons: inherit
 - id: os-11-10
   name: Writing & Drawing Instrument Accessories
   children:
@@ -2905,6 +8563,8 @@
   - os-11-10-3
   attributes:
   - color
+  - ink_color
+  - nib_material
   - pattern
   return_reasons:
   - color
@@ -2949,7 +8609,9 @@
   - other_reason
 - id: os-11-10-1-2
   name: Marker Refills
-  children: []
+  children:
+  - os-11-10-1-2-1
+  - os-11-10-1-2-2
   attributes:
   - color
   - pattern
@@ -2962,26 +8624,110 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-10-1-2-1
+  name: Marker Refill Ink Bottles
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-11-10-1-2-2
+  name: Marker Ink Refill Cartridges
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
 - id: os-11-10-2
   name: Pen Ink & Refills
+  children:
+  - os-11-10-2-1
+  - os-11-10-2-2
+  - os-11-10-2-3
+  - os-11-10-2-4
+  - os-11-10-2-5
+  attributes:
+  - alcohol/solvent_content
+  - color
+  - compatible_pen_type
+  - pattern
+  - pen_tip_design
+  - refill_type
+  return_reasons:
+  - color
+  - incompatible
+  - changed_my_mind
+  - item_not_as_described
+  - received_the_wrong_item
+  - damaged_or_defective
+  - unknown
+  - other_reason
+- id: os-11-10-2-1
+  name: Ballpoint Pen Refills
   children: []
   attributes:
   - alcohol/solvent_content
   - color
+  - compatible_pen_type
   - pattern
   - pen_tip_design
-  return_reasons:
+  - refill_type
+  return_reasons: inherit
+- id: os-11-10-2-2
+  name: Gel Pen Refills
+  children: []
+  attributes:
+  - alcohol/solvent_content
   - color
-  - incompatible
-  - changed_my_mind
-  - item_not_as_described
-  - received_the_wrong_item
-  - damaged_or_defective
-  - unknown
-  - other_reason
+  - compatible_pen_type
+  - pattern
+  - pen_tip_design
+  - refill_type
+  return_reasons: inherit
+- id: os-11-10-2-3
+  name: Rollerball Pen Refills
+  children: []
+  attributes:
+  - alcohol/solvent_content
+  - color
+  - compatible_pen_type
+  - pattern
+  - pen_tip_design
+  - refill_type
+  return_reasons: inherit
+- id: os-11-10-2-4
+  name: Fountain Pen Inks
+  children: []
+  attributes:
+  - alcohol/solvent_content
+  - color
+  - compatible_pen_type
+  - pattern
+  - pen_tip_design
+  - refill_type
+  return_reasons: inherit
+- id: os-11-10-2-5
+  name: Fiber-Tip Pen Refills
+  children: []
+  attributes:
+  - alcohol/solvent_content
+  - color
+  - compatible_pen_type
+  - pattern
+  - pen_tip_design
+  - refill_type
+  return_reasons: inherit
 - id: os-11-10-3
   name: Pencil Lead & Refills
-  children: []
+  children:
+  - os-11-10-3-1
+  - os-11-10-3-2
+  - os-11-10-3-3
+  - os-11-10-3-4
+  - os-11-10-3-5
+  - os-11-10-3-6
+  - os-11-10-3-7
+  - os-11-10-3-8
   attributes:
   - color
   - lead_grade
@@ -2995,6 +8741,70 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-10-3-1
+  name: Graphite Pencil Leads
+  children: []
+  attributes:
+  - color
+  - lead_grade
+  - pattern
+  return_reasons: inherit
+- id: os-11-10-3-2
+  name: Colored Pencil Leads
+  children: []
+  attributes:
+  - color
+  - lead_grade
+  - pattern
+  return_reasons: inherit
+- id: os-11-10-3-3
+  name: Charcoal Pencil Leads
+  children: []
+  attributes:
+  - color
+  - lead_grade
+  - pattern
+  return_reasons: inherit
+- id: os-11-10-3-4
+  name: Carbon Pencil Leads
+  children: []
+  attributes:
+  - color
+  - lead_grade
+  - pattern
+  return_reasons: inherit
+- id: os-11-10-3-5
+  name: Chalk Pencil Leads
+  children: []
+  attributes:
+  - color
+  - lead_grade
+  - pattern
+  return_reasons: inherit
+- id: os-11-10-3-6
+  name: Wax Pencil Leads
+  children: []
+  attributes:
+  - color
+  - lead_grade
+  - pattern
+  return_reasons: inherit
+- id: os-11-10-3-7
+  name: Silverpoint Pencil Refills
+  children: []
+  attributes:
+  - color
+  - lead_grade
+  - pattern
+  return_reasons: inherit
+- id: os-11-10-3-8
+  name: Inkless Pencil Refills
+  children: []
+  attributes:
+  - color
+  - lead_grade
+  - pattern
+  return_reasons: inherit
 - id: os-11-11
   name: Writing & Drawing Instruments
   children:
@@ -3005,7 +8815,8 @@
   - os-11-11-5
   - os-11-11-6
   - os-11-11-7
-  attributes: []
+  attributes:
+  - material
   return_reasons:
   - size
   - color
@@ -3029,6 +8840,7 @@
   - os-11-11-1-9
   attributes:
   - color
+  - hardness_grade
   - pattern
   return_reasons:
   - size
@@ -3042,7 +8854,10 @@
   - other_reason
 - id: os-11-11-1-1
   name: Charcoal Pencils
-  children: []
+  children:
+  - os-11-11-1-1-1
+  - os-11-11-1-1-2
+  - os-11-11-1-1-3
   attributes:
   - color
   - hardness
@@ -3056,6 +8871,30 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-1-1-1
+  name: Compressed Charcoal Pencils
+  children: []
+  attributes:
+  - color
+  - hardness
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-1-1-2
+  name: Natural Charcoal Pencils
+  children: []
+  attributes:
+  - color
+  - hardness
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-1-1-3
+  name: Carbon Pencils
+  children: []
+  attributes:
+  - color
+  - hardness
+  - pattern
+  return_reasons: inherit
 - id: os-11-11-1-2
   name: Compressed Charcoals
   children: []
@@ -3092,7 +8931,11 @@
   - other_reason
 - id: os-11-11-1-4
   name: Graphite Charcoals
-  children: []
+  children:
+  - os-11-11-1-4-1
+  - os-11-11-1-4-2
+  - os-11-11-1-4-3
+  - os-11-11-1-4-4
   attributes:
   - color
   - hardness
@@ -3107,9 +8950,44 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-1-4-1
+  name: Graphite Sticks
+  children: []
+  attributes:
+  - color
+  - hardness
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-1-4-2
+  name: Graphite Blocks
+  children: []
+  attributes:
+  - color
+  - hardness
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-1-4-3
+  name: Solid Graphite Pencils
+  children: []
+  attributes:
+  - color
+  - hardness
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-1-4-4
+  name: Graphite Discs
+  children: []
+  attributes:
+  - color
+  - hardness
+  - pattern
+  return_reasons: inherit
 - id: os-11-11-1-5
   name: Nitram Charcoals
-  children: []
+  children:
+  - os-11-11-1-5-1
+  - os-11-11-1-5-2
+  - os-11-11-1-5-3
   attributes:
   - color
   - hardness
@@ -3124,9 +9002,35 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-1-5-1
+  name: Charcoal Sticks
+  children: []
+  attributes:
+  - color
+  - hardness
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-1-5-2
+  name: Charcoal Blocks
+  children: []
+  attributes:
+  - color
+  - hardness
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-1-5-3
+  name: Liquid Charcoals
+  children: []
+  attributes:
+  - color
+  - hardness
+  - pattern
+  return_reasons: inherit
 - id: os-11-11-1-6
   name: Pastel Charcoals
-  children: []
+  children:
+  - os-11-11-1-6-1
+  - os-11-11-1-6-2
   attributes:
   - color
   - hardness
@@ -3141,6 +9045,22 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-1-6-1
+  name: Charcoal Sticks
+  children: []
+  attributes:
+  - color
+  - hardness
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-1-6-2
+  name: Charcoal Blocks
+  children: []
+  attributes:
+  - color
+  - hardness
+  - pattern
+  return_reasons: inherit
 - id: os-11-11-1-7
   name: Powdered Charcoals
   children: []
@@ -3194,7 +9114,9 @@
   - other_reason
 - id: os-11-11-2
   name: Chalk
-  children: []
+  children:
+  - os-11-11-2-1
+  - os-11-11-2-2
   attributes:
   - color
   - pattern
@@ -3206,6 +9128,20 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-2-1
+  name: Blackboard Chalk
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-2-2
+  name: Sidewalk Chalk
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
 - id: os-11-11-3
   name: Crayons
   children:
@@ -3246,7 +9182,12 @@
   - other_reason
 - id: os-11-11-3-2
   name: Jumbo Crayons
-  children: []
+  children:
+  - os-11-11-3-2-1
+  - os-11-11-3-2-2
+  - os-11-11-3-2-3
+  - os-11-11-3-2-4
+  - os-11-11-3-2-5
   attributes:
   - color
   - pattern
@@ -3259,6 +9200,41 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-3-2-1
+  name: Round Jumbo Crayons
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-3-2-2
+  name: Triangular Jumbo Crayons
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-3-2-3
+  name: Jumbo Crayon Blocks
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-3-2-4
+  name: Egg-Shaped Jumbo Crayons
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-3-2-5
+  name: Rock-Shaped Jumbo Crayons
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
 - id: os-11-11-3-3
   name: Metallic Crayons
   children: []
@@ -3291,7 +9267,11 @@
   - other_reason
 - id: os-11-11-3-5
   name: Regular Crayons
-  children: []
+  children:
+  - os-11-11-3-5-1
+  - os-11-11-3-5-2
+  - os-11-11-3-5-3
+  - os-11-11-3-5-4
   attributes:
   - color
   - pattern
@@ -3304,6 +9284,34 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-3-5-1
+  name: Round Crayons
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-3-5-2
+  name: Square Crayons
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-3-5-3
+  name: Triangular Crayons
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-3-5-4
+  name: Hexagonal Crayons
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
 - id: os-11-11-3-6
   name: Scented Crayons
   children: []
@@ -3368,12 +9376,16 @@
   - other_reason
 - id: os-11-11-4-1
   name: Highlighters
-  children: []
+  children:
+  - os-11-11-4-1-1
+  - os-11-11-4-1-2
+  - os-11-11-4-1-3
   attributes:
   - alcohol/solvent_content
   - color
   - marker_tip_design
   - pattern
+  - scent
   return_reasons:
   - color
   - tip_size
@@ -3383,13 +9395,51 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-4-1-1
+  name: Highlighter Markers
+  children: []
+  attributes:
+  - alcohol/solvent_content
+  - color
+  - marker_tip_design
+  - pattern
+  - scent
+  return_reasons: inherit
+- id: os-11-11-4-1-2
+  name: Solid Highlighters
+  children: []
+  attributes:
+  - alcohol/solvent_content
+  - color
+  - marker_tip_design
+  - pattern
+  - scent
+  return_reasons: inherit
+- id: os-11-11-4-1-3
+  name: Tape Highlighters
+  children: []
+  attributes:
+  - alcohol/solvent_content
+  - color
+  - marker_tip_design
+  - pattern
+  - scent
+  return_reasons: inherit
 - id: os-11-11-4-2
   name: Markers
-  children: []
+  children:
+  - os-11-11-4-2-1
+  - os-11-11-4-2-2
+  - os-11-11-4-2-3
+  - os-11-11-4-2-4
+  - os-11-11-4-2-5
+  - os-11-11-4-2-6
+  - os-11-11-4-2-7
   attributes:
   - alcohol/solvent_content
   - color
   - marker_tip_design
+  - marker_tip_size
   - pattern
   return_reasons:
   - color
@@ -3400,11 +9450,85 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-4-2-1
+  name: Permanent Markers
+  children: []
+  attributes:
+  - alcohol/solvent_content
+  - color
+  - marker_tip_design
+  - marker_tip_size
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-4-2-2
+  name: Dry-Erase Markers
+  children: []
+  attributes:
+  - alcohol/solvent_content
+  - color
+  - marker_tip_design
+  - marker_tip_size
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-4-2-3
+  name: Wet-Erase Markers
+  children: []
+  attributes:
+  - alcohol/solvent_content
+  - color
+  - marker_tip_design
+  - marker_tip_size
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-4-2-4
+  name: Washable Markers
+  children: []
+  attributes:
+  - alcohol/solvent_content
+  - color
+  - marker_tip_design
+  - marker_tip_size
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-4-2-5
+  name: Air-Erasable Markers
+  children: []
+  attributes:
+  - alcohol/solvent_content
+  - color
+  - marker_tip_design
+  - marker_tip_size
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-4-2-6
+  name: Heat-Erasable Markers
+  children: []
+  attributes:
+  - alcohol/solvent_content
+  - color
+  - marker_tip_design
+  - marker_tip_size
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-4-2-7
+  name: Water-Erasable Markers
+  children: []
+  attributes:
+  - alcohol/solvent_content
+  - color
+  - marker_tip_design
+  - marker_tip_size
+  - pattern
+  return_reasons: inherit
 - id: os-11-11-5
   name: Multifunction Writing Instruments
   children: []
   attributes:
   - color
+  - finish
+  - ink_color
+  - material
+  - nib_type
   - pattern
   - pen/pencil_features
   - pen_type
@@ -3520,7 +9644,10 @@
   - other_reason
 - id: os-11-11-6-6
   name: Soft Pastels
-  children: []
+  children:
+  - os-11-11-6-6-1
+  - os-11-11-6-6-2
+  - os-11-11-6-6-3
   attributes:
   - color
   - pattern
@@ -3534,6 +9661,27 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-6-6-1
+  name: Round Soft Pastels
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-6-6-2
+  name: Square Soft Pastels
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-11-11-6-6-3
+  name: Soft Pastel Blocks
+  children: []
+  attributes:
+  - color
+  - pattern
+  return_reasons: inherit
 - id: os-11-11-7
   name: Pens & Pencils
   children:
@@ -3542,7 +9690,9 @@
   - os-11-11-7-3
   attributes:
   - color
+  - material
   - pattern
+  - personalization_type
   return_reasons:
   - size
   - color
@@ -3554,9 +9704,16 @@
   - other_reason
 - id: os-11-11-7-1
   name: Pen & Pencil Sets
-  children: []
+  children:
+  - os-11-11-7-1-1
+  - os-11-11-7-1-2
   attributes:
   - color
+  - finish
+  - handedness
+  - ink_color
+  - material
+  - nib_size
   - pattern
   - pen/pencil_features
   - pen_type
@@ -3570,6 +9727,244 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-7-1-1
+  name: Pen Sets
+  children:
+  - os-11-11-7-1-1-1
+  - os-11-11-7-1-1-2
+  - os-11-11-7-1-1-3
+  - os-11-11-7-1-1-4
+  - os-11-11-7-1-1-5
+  - os-11-11-7-1-1-6
+  attributes:
+  - color
+  - finish
+  - handedness
+  - ink_color
+  - material
+  - nib_size
+  - pattern
+  - pen/pencil_features
+  - pen_type
+  - pencil_type
+  return_reasons: inherit
+- id: os-11-11-7-1-1-1
+  name: Ballpoint Pen Sets
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - ink_color
+  - material
+  - nib_size
+  - pattern
+  - pen/pencil_features
+  - pen_type
+  - pencil_type
+  return_reasons: inherit
+- id: os-11-11-7-1-1-2
+  name: Fountain Pen Sets
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - ink_color
+  - material
+  - nib_size
+  - pattern
+  - pen/pencil_features
+  - pen_type
+  - pencil_type
+  return_reasons: inherit
+- id: os-11-11-7-1-1-3
+  name: Gel Pen Sets
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - ink_color
+  - material
+  - nib_size
+  - pattern
+  - pen/pencil_features
+  - pen_type
+  - pencil_type
+  return_reasons: inherit
+- id: os-11-11-7-1-1-4
+  name: Dip Pen Sets
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - ink_color
+  - material
+  - nib_size
+  - pattern
+  - pen/pencil_features
+  - pen_type
+  - pencil_type
+  return_reasons: inherit
+- id: os-11-11-7-1-1-5
+  name: Brush Pen Sets
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - ink_color
+  - material
+  - nib_size
+  - pattern
+  - pen/pencil_features
+  - pen_type
+  - pencil_type
+  return_reasons: inherit
+- id: os-11-11-7-1-1-6
+  name: Fineliner Pen Sets
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - ink_color
+  - material
+  - nib_size
+  - pattern
+  - pen/pencil_features
+  - pen_type
+  - pencil_type
+  return_reasons: inherit
+- id: os-11-11-7-1-2
+  name: Pencil Sets
+  children:
+  - os-11-11-7-1-2-1
+  - os-11-11-7-1-2-2
+  - os-11-11-7-1-2-3
+  - os-11-11-7-1-2-4
+  - os-11-11-7-1-2-5
+  - os-11-11-7-1-2-6
+  - os-11-11-7-1-2-7
+  attributes:
+  - color
+  - finish
+  - handedness
+  - ink_color
+  - material
+  - nib_size
+  - pattern
+  - pen/pencil_features
+  - pen_type
+  - pencil_type
+  return_reasons: inherit
+- id: os-11-11-7-1-2-1
+  name: Mechanical Pencil Sets
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - ink_color
+  - material
+  - nib_size
+  - pattern
+  - pen/pencil_features
+  - pen_type
+  - pencil_type
+  return_reasons: inherit
+- id: os-11-11-7-1-2-2
+  name: Graphite Pencil Sets
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - ink_color
+  - material
+  - nib_size
+  - pattern
+  - pen/pencil_features
+  - pen_type
+  - pencil_type
+  return_reasons: inherit
+- id: os-11-11-7-1-2-3
+  name: Colored Pencil Sets
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - ink_color
+  - material
+  - nib_size
+  - pattern
+  - pen/pencil_features
+  - pen_type
+  - pencil_type
+  return_reasons: inherit
+- id: os-11-11-7-1-2-4
+  name: Pastel Pencil Sets
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - ink_color
+  - material
+  - nib_size
+  - pattern
+  - pen/pencil_features
+  - pen_type
+  - pencil_type
+  return_reasons: inherit
+- id: os-11-11-7-1-2-5
+  name: Charcoal Pencil Sets
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - ink_color
+  - material
+  - nib_size
+  - pattern
+  - pen/pencil_features
+  - pen_type
+  - pencil_type
+  return_reasons: inherit
+- id: os-11-11-7-1-2-6
+  name: Grease Pencil Sets
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - ink_color
+  - material
+  - nib_size
+  - pattern
+  - pen/pencil_features
+  - pen_type
+  - pencil_type
+  return_reasons: inherit
+- id: os-11-11-7-1-2-7
+  name: Slate Pencil Sets
+  children: []
+  attributes:
+  - color
+  - finish
+  - handedness
+  - ink_color
+  - material
+  - nib_size
+  - pattern
+  - pen/pencil_features
+  - pen_type
+  - pencil_type
+  return_reasons: inherit
 - id: os-11-11-7-2
   name: Pencils
   children:
@@ -3577,6 +9972,7 @@
   - os-11-11-7-2-2
   attributes:
   - color
+  - lead_hardness
   - lumber/wood_type
   - pattern
   - pencil_features
@@ -3592,11 +9988,16 @@
   - other_reason
 - id: os-11-11-7-2-1
   name: Art Pencils
-  children: []
+  children:
+  - os-11-11-7-2-1-1
+  - os-11-11-7-2-1-2
+  - os-11-11-7-2-1-3
   attributes:
   - color
   - lead_grade
   - lumber/wood_type
+  - material
+  - package_type
   - pattern
   - pencil_features
   - wood_finish
@@ -3609,12 +10010,53 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-7-2-1-1
+  name: Graphite Pencils
+  children: []
+  attributes:
+  - color
+  - lead_grade
+  - lumber/wood_type
+  - material
+  - package_type
+  - pattern
+  - pencil_features
+  - wood_finish
+  return_reasons: inherit
+- id: os-11-11-7-2-1-2
+  name: Colored Pencils
+  children: []
+  attributes:
+  - color
+  - lead_grade
+  - lumber/wood_type
+  - material
+  - package_type
+  - pattern
+  - pencil_features
+  - wood_finish
+  return_reasons: inherit
+- id: os-11-11-7-2-1-3
+  name: Blender Pencils
+  children: []
+  attributes:
+  - color
+  - lead_grade
+  - lumber/wood_type
+  - material
+  - package_type
+  - pattern
+  - pencil_features
+  - wood_finish
+  return_reasons: inherit
 - id: os-11-11-7-2-2
   name: Writing Pencils
   children:
   - os-11-11-7-2-2-1
   - os-11-11-7-2-2-2
   attributes:
+  - lead_hardness
+  - material
   - pencil_features
   return_reasons:
   - color
@@ -3627,12 +10069,24 @@
   - other_reason
 - id: os-11-11-7-2-2-1
   name: Mechanical Pencils
-  children: []
+  children:
+  - os-11-11-7-2-2-1-1
+  - os-11-11-7-2-2-1-2
+  - os-11-11-7-2-2-1-3
+  - os-11-11-7-2-2-1-4
+  - os-11-11-7-2-2-1-5
+  - os-11-11-7-2-2-1-6
   attributes:
+  - body_material
   - color
+  - finish
+  - grip_texture
+  - handedness
+  - lead_hardness
   - lumber/wood_type
   - pattern
   - pencil_features
+  - scent
   - wood_finish
   return_reasons:
   - size
@@ -3643,15 +10097,118 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-11-11-7-2-2-2
-  name: Wooden Pencils
+- id: os-11-11-7-2-2-1-1
+  name: Automatic Mechanical Pencils
   children: []
   attributes:
+  - body_material
   - color
+  - finish
+  - grip_texture
+  - handedness
+  - lead_hardness
+  - lumber/wood_type
+  - pattern
+  - pencil_features
+  - scent
+  - wood_finish
+  return_reasons: inherit
+- id: os-11-11-7-2-2-1-2
+  name: Push-Button Mechanical Pencils
+  children: []
+  attributes:
+  - body_material
+  - color
+  - finish
+  - grip_texture
+  - handedness
+  - lead_hardness
+  - lumber/wood_type
+  - pattern
+  - pencil_features
+  - scent
+  - wood_finish
+  return_reasons: inherit
+- id: os-11-11-7-2-2-1-3
+  name: Side-Click Mechanical Pencils
+  children: []
+  attributes:
+  - body_material
+  - color
+  - finish
+  - grip_texture
+  - handedness
+  - lead_hardness
+  - lumber/wood_type
+  - pattern
+  - pencil_features
+  - scent
+  - wood_finish
+  return_reasons: inherit
+- id: os-11-11-7-2-2-1-4
+  name: Shaker Mechanical Pencils
+  children: []
+  attributes:
+  - body_material
+  - color
+  - finish
+  - grip_texture
+  - handedness
+  - lead_hardness
+  - lumber/wood_type
+  - pattern
+  - pencil_features
+  - scent
+  - wood_finish
+  return_reasons: inherit
+- id: os-11-11-7-2-2-1-5
+  name: Body-Knock Mechanical Pencils
+  children: []
+  attributes:
+  - body_material
+  - color
+  - finish
+  - grip_texture
+  - handedness
+  - lead_hardness
+  - lumber/wood_type
+  - pattern
+  - pencil_features
+  - scent
+  - wood_finish
+  return_reasons: inherit
+- id: os-11-11-7-2-2-1-6
+  name: Clutch Pencils
+  children: []
+  attributes:
+  - body_material
+  - color
+  - finish
+  - grip_texture
+  - handedness
+  - lead_hardness
+  - lumber/wood_type
+  - pattern
+  - pencil_features
+  - scent
+  - wood_finish
+  return_reasons: inherit
+- id: os-11-11-7-2-2-2
+  name: Wooden Pencils
+  children:
+  - os-11-11-7-2-2-2-1
+  - os-11-11-7-2-2-2-2
+  - os-11-11-7-2-2-2-3
+  - os-11-11-7-2-2-2-4
+  attributes:
+  - barrel_shape
+  - color
+  - handedness
   - lead_grade
   - lumber/wood_type
   - pattern
   - pencil_features
+  - scent
   - wood_finish
   return_reasons:
   - color
@@ -3662,6 +10219,62 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-7-2-2-2-1
+  name: Round Pencils
+  children: []
+  attributes:
+  - barrel_shape
+  - color
+  - handedness
+  - lead_grade
+  - lumber/wood_type
+  - pattern
+  - pencil_features
+  - scent
+  - wood_finish
+  return_reasons: inherit
+- id: os-11-11-7-2-2-2-2
+  name: Hexagonal Pencils
+  children: []
+  attributes:
+  - barrel_shape
+  - color
+  - handedness
+  - lead_grade
+  - lumber/wood_type
+  - pattern
+  - pencil_features
+  - scent
+  - wood_finish
+  return_reasons: inherit
+- id: os-11-11-7-2-2-2-3
+  name: Triangular Pencils
+  children: []
+  attributes:
+  - barrel_shape
+  - color
+  - handedness
+  - lead_grade
+  - lumber/wood_type
+  - pattern
+  - pencil_features
+  - scent
+  - wood_finish
+  return_reasons: inherit
+- id: os-11-11-7-2-2-2-4
+  name: Oval Pencils
+  children: []
+  attributes:
+  - barrel_shape
+  - color
+  - handedness
+  - lead_grade
+  - lumber/wood_type
+  - pattern
+  - pencil_features
+  - scent
+  - wood_finish
+  return_reasons: inherit
 - id: os-11-11-7-3
   name: Pens
   children:
@@ -3671,9 +10284,12 @@
   - os-11-11-7-3-4
   - os-11-11-7-3-5
   attributes:
+  - barrel_finish
+  - engraving_location
   - ink_color
   - ink_pattern
   - lumber/wood_type
+  - trim_finish
   - wood_finish
   return_reasons:
   - color
@@ -3686,15 +10302,22 @@
   - other_reason
 - id: os-11-11-7-3-1
   name: Ballpoint Pens
-  children: []
+  children:
+  - os-11-11-7-3-1-1
+  - os-11-11-7-3-1-2
   attributes:
+  - clip_color
+  - clip_finish
+  - imprint_method
   - ink_color
   - ink_pattern
   - lumber/wood_type
   - pen_color
   - pen_features
+  - pen_mechanism
   - pen_pattern
   - pen_tip_design
+  - trim_finish
   - wood_finish
   return_reasons:
   - color
@@ -3705,9 +10328,50 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-7-3-1-1
+  name: Capped Ballpoint Pens
+  children: []
+  attributes:
+  - clip_color
+  - clip_finish
+  - imprint_method
+  - ink_color
+  - ink_pattern
+  - lumber/wood_type
+  - pen_color
+  - pen_features
+  - pen_mechanism
+  - pen_pattern
+  - pen_tip_design
+  - trim_finish
+  - wood_finish
+  return_reasons: inherit
+- id: os-11-11-7-3-1-2
+  name: Retractable Ballpoint Pens
+  children: []
+  attributes:
+  - clip_color
+  - clip_finish
+  - imprint_method
+  - ink_color
+  - ink_pattern
+  - lumber/wood_type
+  - pen_color
+  - pen_features
+  - pen_mechanism
+  - pen_pattern
+  - pen_tip_design
+  - trim_finish
+  - wood_finish
+  return_reasons: inherit
 - id: os-11-11-7-3-2
   name: Felt Tips
-  children: []
+  children:
+  - os-11-11-7-3-2-1
+  - os-11-11-7-3-2-2
+  - os-11-11-7-3-2-3
+  - os-11-11-7-3-2-4
+  - os-11-11-7-3-2-5
   attributes:
   - felt_tip_design
   - ink_color
@@ -3724,17 +10388,79 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-7-3-2-1
+  name: Brush Pens
+  children: []
+  attributes:
+  - felt_tip_design
+  - ink_color
+  - ink_pattern
+  - pen_color
+  - pen_features
+  - pen_pattern
+  return_reasons: inherit
+- id: os-11-11-7-3-2-2
+  name: Fineliner Pens
+  children: []
+  attributes:
+  - felt_tip_design
+  - ink_color
+  - ink_pattern
+  - pen_color
+  - pen_features
+  - pen_pattern
+  return_reasons: inherit
+- id: os-11-11-7-3-2-3
+  name: Chisel-Tip Felt-Tip Pens
+  children: []
+  attributes:
+  - felt_tip_design
+  - ink_color
+  - ink_pattern
+  - pen_color
+  - pen_features
+  - pen_pattern
+  return_reasons: inherit
+- id: os-11-11-7-3-2-4
+  name: Dot Pens
+  children: []
+  attributes:
+  - felt_tip_design
+  - ink_color
+  - ink_pattern
+  - pen_color
+  - pen_features
+  - pen_pattern
+  return_reasons: inherit
+- id: os-11-11-7-3-2-5
+  name: Stamp Pens
+  children: []
+  attributes:
+  - felt_tip_design
+  - ink_color
+  - ink_pattern
+  - pen_color
+  - pen_features
+  - pen_pattern
+  return_reasons: inherit
 - id: os-11-11-7-3-3
   name: Fountain Pens
   children: []
   attributes:
+  - clip_color
+  - filling_system
+  - handedness
   - ink_color
   - ink_pattern
   - lumber/wood_type
+  - nib_material
+  - nib_number
   - pen_color
   - pen_features
+  - pen_finish
   - pen_pattern
   - pen_tip_design
+  - trim_finish
   - wood_finish
   return_reasons:
   - color
@@ -3748,14 +10474,21 @@
   - other_reason
 - id: os-11-11-7-3-4
   name: Gel Pens
-  children: []
+  children:
+  - os-11-11-7-3-4-1
+  - os-11-11-7-3-4-2
   attributes:
+  - clip_color
+  - grip_texture
   - ink_color
   - ink_pattern
   - pen_color
   - pen_features
+  - pen_finish
+  - pen_material
   - pen_pattern
   - pen_tip_design
+  - scent
   return_reasons:
   - color
   - tip_size
@@ -3765,16 +10498,54 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-7-3-4-1
+  name: Capped Gel Pens
+  children: []
+  attributes:
+  - clip_color
+  - grip_texture
+  - ink_color
+  - ink_pattern
+  - pen_color
+  - pen_features
+  - pen_finish
+  - pen_material
+  - pen_pattern
+  - pen_tip_design
+  - scent
+  return_reasons: inherit
+- id: os-11-11-7-3-4-2
+  name: Retractable Gel Pens
+  children: []
+  attributes:
+  - clip_color
+  - grip_texture
+  - ink_color
+  - ink_pattern
+  - pen_color
+  - pen_features
+  - pen_finish
+  - pen_material
+  - pen_pattern
+  - pen_tip_design
+  - scent
+  return_reasons: inherit
 - id: os-11-11-7-3-5
   name: Rollerball Pens
-  children: []
+  children:
+  - os-11-11-7-3-5-1
+  - os-11-11-7-3-5-2
   attributes:
+  - body_material
+  - finish
+  - handedness
   - ink_color
   - ink_pattern
   - pen_color
   - pen_features
   - pen_pattern
   - pen_tip_design
+  - trim_finish
   return_reasons:
   - color
   - tip_size
@@ -3784,6 +10555,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-11-11-7-3-5-1
+  name: Capped Rollerball Pens
+  children: []
+  attributes:
+  - body_material
+  - finish
+  - handedness
+  - ink_color
+  - ink_pattern
+  - pen_color
+  - pen_features
+  - pen_pattern
+  - pen_tip_design
+  - trim_finish
+  return_reasons: inherit
+- id: os-11-11-7-3-5-2
+  name: Retractable Rollerball Pens
+  children: []
+  attributes:
+  - body_material
+  - finish
+  - handedness
+  - ink_color
+  - ink_pattern
+  - pen_color
+  - pen_features
+  - pen_pattern
+  - pen_tip_design
+  - trim_finish
+  return_reasons: inherit
 - id: os-12
   name: Paper Handling
   children:
@@ -3793,7 +10594,9 @@
   - os-12-4
   - os-12-5
   - os-12-6
-  attributes: []
+  attributes:
+  - color
+  - material
   return_reasons:
   - size
   - color
@@ -3823,8 +10626,14 @@
   - other_reason
 - id: os-12-2
   name: Hole Punches
-  children: []
-  attributes: []
+  children:
+  - os-12-2-1
+  - os-12-2-2
+  - os-12-2-3
+  - os-12-2-4
+  attributes:
+  - color
+  - material
   return_reasons:
   - capacity
   - incompatible
@@ -3834,9 +10643,72 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-12-2-1
+  name: Ring-Binder Hole Punches
+  children: []
+  attributes:
+  - color
+  - material
+  return_reasons: inherit
+- id: os-12-2-2
+  name: Binding Hole Punches
+  children:
+  - os-12-2-2-1
+  - os-12-2-2-2
+  - os-12-2-2-3
+  - os-12-2-2-4
+  attributes:
+  - color
+  - material
+  return_reasons: inherit
+- id: os-12-2-2-1
+  name: Comb-Binding Punches
+  children: []
+  attributes:
+  - color
+  - material
+  return_reasons: inherit
+- id: os-12-2-2-2
+  name: Spiral-Binding Punches
+  children: []
+  attributes:
+  - color
+  - material
+  return_reasons: inherit
+- id: os-12-2-2-3
+  name: Disc-Binding Punches
+  children: []
+  attributes:
+  - color
+  - material
+  return_reasons: inherit
+- id: os-12-2-2-4
+  name: Bookbinding Hole Punches
+  children: []
+  attributes:
+  - color
+  - material
+  return_reasons: inherit
+- id: os-12-2-3
+  name: Decorative Paper Punches
+  children: []
+  attributes:
+  - color
+  - material
+  return_reasons: inherit
+- id: os-12-2-4
+  name: Slot Punches
+  children: []
+  attributes:
+  - color
+  - material
+  return_reasons: inherit
 - id: os-12-3
   name: Paper Folding Machines
-  children: []
+  children:
+  - os-12-3-1
+  - os-12-3-2
+  - os-12-3-3
   attributes:
   - feed_system
   - fold_type
@@ -3852,9 +10724,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-12-3-1
+  name: Standalone Paper Folding Machines
+  children: []
+  attributes:
+  - feed_system
+  - fold_type
+  - paper_size
+  return_reasons: inherit
+- id: os-12-3-2
+  name: Folder Inserters
+  children: []
+  attributes:
+  - feed_system
+  - fold_type
+  - paper_size
+  return_reasons: inherit
+- id: os-12-3-3
+  name: Self-Mailer Folding Machines
+  children: []
+  attributes:
+  - feed_system
+  - fold_type
+  - paper_size
+  return_reasons: inherit
 - id: os-12-4
   name: Paper Joggers
-  children: []
+  children:
+  - os-12-4-1
+  - os-12-4-2
+  - os-12-4-3
   attributes:
   - accessory_size
   - paper_size
@@ -3867,10 +10766,32 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-12-4-1
+  name: Bin Paper Joggers
+  children: []
+  attributes:
+  - accessory_size
+  - paper_size
+  return_reasons: inherit
+- id: os-12-4-2
+  name: Rack Paper Joggers
+  children: []
+  attributes:
+  - accessory_size
+  - paper_size
+  return_reasons: inherit
+- id: os-12-4-3
+  name: Paper Jogging Tables
+  children: []
+  attributes:
+  - accessory_size
+  - paper_size
+  return_reasons: inherit
 - id: os-12-5
   name: Paperweights
   children: []
   attributes:
+  - color
   - material
   - paperweight_design
   - shape
@@ -3888,6 +10809,7 @@
   name: Pencil Boards
   children: []
   attributes:
+  - color
   - material
   - paper_size
   - thickness_type
@@ -3914,7 +10836,9 @@
   - os-13-8
   - os-13-9
   - os-13-10
-  attributes: []
+  attributes:
+  - color
+  - material
   return_reasons:
   - size
   - color
@@ -3927,13 +10851,19 @@
   - other_reason
 - id: os-13-1
   name: Chalkboards
-  children: []
+  children:
+  - os-13-1-1
+  - os-13-1-2
+  - os-13-1-3
   attributes:
   - board_material
   - board_mounting_type
   - chalkboard_surface
+  - frame_color
   - frame_design
+  - portrait/landscape_orientation
   - presentation_supply_features
+  - shape
   return_reasons:
   - size
   - color
@@ -3944,6 +10874,45 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-13-1-1
+  name: Wall-Mounted Chalkboards
+  children: []
+  attributes:
+  - board_material
+  - board_mounting_type
+  - chalkboard_surface
+  - frame_color
+  - frame_design
+  - portrait/landscape_orientation
+  - presentation_supply_features
+  - shape
+  return_reasons: inherit
+- id: os-13-1-2
+  name: Freestanding Chalkboards
+  children: []
+  attributes:
+  - board_material
+  - board_mounting_type
+  - chalkboard_surface
+  - frame_color
+  - frame_design
+  - portrait/landscape_orientation
+  - presentation_supply_features
+  - shape
+  return_reasons: inherit
+- id: os-13-1-3
+  name: Adhesive Chalkboards
+  children: []
+  attributes:
+  - board_material
+  - board_mounting_type
+  - chalkboard_surface
+  - frame_color
+  - frame_design
+  - portrait/landscape_orientation
+  - presentation_supply_features
+  - shape
+  return_reasons: inherit
 - id: os-13-2
   name: Display Boards
   children:
@@ -3956,6 +10925,7 @@
   - board_material
   - board_mounting_type
   - board_surface
+  - color
   - display_board_features
   - frame_design
   return_reasons:
@@ -3974,6 +10944,8 @@
   - os-13-2-1-1
   - os-13-2-1-2
   attributes:
+  - color
+  - language
   - office_supply_material
   return_reasons:
   - size
@@ -3987,7 +10959,10 @@
   - other_reason
 - id: os-13-2-1-1
   name: Bulletin Board Trim
-  children: []
+  children:
+  - os-13-2-1-1-1
+  - os-13-2-1-1-2
+  - os-13-2-1-1-3
   attributes:
   - color
   - display_board_features
@@ -4003,9 +10978,38 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-13-2-1-1-1
+  name: Straight Borders
+  children: []
+  attributes:
+  - color
+  - display_board_features
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
+- id: os-13-2-1-1-2
+  name: Die-Cut Borders
+  children: []
+  attributes:
+  - color
+  - display_board_features
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
+- id: os-13-2-1-1-3
+  name: Fringe Borders
+  children: []
+  attributes:
+  - color
+  - display_board_features
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
 - id: os-13-2-1-2
   name: Bulletin Board Trim Sets
-  children: []
+  children:
+  - os-13-2-1-2-1
+  - os-13-2-1-2-2
   attributes:
   - color
   - display_board_features
@@ -4021,15 +11025,42 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-13-2-1-2-1
+  name: Straight-Edge Bulletin Board Trim Sets
+  children: []
+  attributes:
+  - color
+  - display_board_features
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
+- id: os-13-2-1-2-2
+  name: Shaped Bulletin Board Trim Sets
+  children: []
+  attributes:
+  - color
+  - display_board_features
+  - office_supply_material
+  - pattern
+  return_reasons: inherit
 - id: os-13-2-2
   name: Bulletin Boards
-  children: []
+  children:
+  - os-13-2-2-1
+  - os-13-2-2-2
   attributes:
   - board_material
   - board_mounting_type
+  - bulletin_board_edge_profile
   - display_board_features
+  - fire_rating_class
+  - frame_color
   - frame_design
+  - frame_finish
   - lumber/wood_type
+  - mounting_method
+  - portrait/landscape_orientation
+  - shape
   - wood_finish
   return_reasons:
   - size
@@ -4040,12 +11071,54 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-13-2-3
-  name: Foam Boards
+- id: os-13-2-2-1
+  name: Wall-Mounted Bulletin Boards
   children: []
   attributes:
+  - board_material
   - board_mounting_type
+  - bulletin_board_edge_profile
   - display_board_features
+  - fire_rating_class
+  - frame_color
+  - frame_design
+  - frame_finish
+  - lumber/wood_type
+  - mounting_method
+  - portrait/landscape_orientation
+  - shape
+  - wood_finish
+  return_reasons: inherit
+- id: os-13-2-2-2
+  name: Freestanding Bulletin Boards
+  children: []
+  attributes:
+  - board_material
+  - board_mounting_type
+  - bulletin_board_edge_profile
+  - display_board_features
+  - fire_rating_class
+  - frame_color
+  - frame_design
+  - frame_finish
+  - lumber/wood_type
+  - mounting_method
+  - portrait/landscape_orientation
+  - shape
+  - wood_finish
+  return_reasons: inherit
+- id: os-13-2-3
+  name: Foam Boards
+  children:
+  - os-13-2-3-1
+  - os-13-2-3-2
+  - os-13-2-3-3
+  - os-13-2-3-4
+  attributes:
+  - board_mounting_type
+  - color
+  - display_board_features
+  - printed_sides
   return_reasons:
   - size
   - color
@@ -4056,11 +11129,48 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-13-2-3-1
+  name: Paper-Faced Foam Boards
+  children: []
+  attributes:
+  - board_mounting_type
+  - color
+  - display_board_features
+  - printed_sides
+  return_reasons: inherit
+- id: os-13-2-3-2
+  name: Wood-Fiber-Faced Foam Boards
+  children: []
+  attributes:
+  - board_mounting_type
+  - color
+  - display_board_features
+  - printed_sides
+  return_reasons: inherit
+- id: os-13-2-3-3
+  name: Aluminum-Reinforced Foam Boards
+  children: []
+  attributes:
+  - board_mounting_type
+  - color
+  - display_board_features
+  - printed_sides
+  return_reasons: inherit
+- id: os-13-2-3-4
+  name: Expanded PVC Foam Boards
+  children: []
+  attributes:
+  - board_mounting_type
+  - color
+  - display_board_features
+  - printed_sides
+  return_reasons: inherit
 - id: os-13-2-4
   name: Mounting Boards
   children: []
   attributes:
   - board_mounting_type
+  - color
   - display_board_features
   - lumber/wood_type
   - wood_finish
@@ -4076,9 +11186,15 @@
   - other_reason
 - id: os-13-2-5
   name: Poster Boards
-  children: []
+  children:
+  - os-13-2-5-1
+  - os-13-2-5-2
   attributes:
+  - board_type
   - color
+  - finish
+  - grain_direction
+  - material
   - pattern
   return_reasons:
   - size
@@ -4090,9 +11206,33 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-13-2-5-1
+  name: Folding Poster Boards
+  children: []
+  attributes:
+  - board_type
+  - color
+  - finish
+  - grain_direction
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-13-2-5-2
+  name: Easel-Back Poster Boards
+  children: []
+  attributes:
+  - board_type
+  - color
+  - finish
+  - grain_direction
+  - material
+  - pattern
+  return_reasons: inherit
 - id: os-13-3
   name: Document Cameras
-  children: []
+  children:
+  - os-13-3-1
+  - os-13-3-2
   attributes:
   - color
   - connectivity_technology
@@ -4107,14 +11247,42 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-13-4
-  name: Dry-Erase Boards
+- id: os-13-3-1
+  name: Portable Document Cameras
   children: []
   attributes:
+  - color
+  - connectivity_technology
+  - pattern
+  - zoom_type
+  return_reasons: inherit
+- id: os-13-3-2
+  name: Ceiling-Mounted Document Cameras
+  children: []
+  attributes:
+  - color
+  - connectivity_technology
+  - pattern
+  - zoom_type
+  return_reasons: inherit
+- id: os-13-4
+  name: Dry-Erase Boards
+  children:
+  - os-13-4-1
+  - os-13-4-2
+  - os-13-4-3
+  - os-13-4-4
+  attributes:
+  - board_finish
+  - board_layout
   - board_material
   - board_mounting_type
+  - frame_color
   - frame_design
+  - language
+  - portrait/landscape_orientation
   - presentation_supply_features
+  - shape
   return_reasons:
   - size
   - color
@@ -4125,10 +11293,75 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-13-5
-  name: Easel Pads
+- id: os-13-4-1
+  name: Wall-Mounted Dry-Erase Boards
   children: []
   attributes:
+  - board_finish
+  - board_layout
+  - board_material
+  - board_mounting_type
+  - frame_color
+  - frame_design
+  - language
+  - portrait/landscape_orientation
+  - presentation_supply_features
+  - shape
+  return_reasons: inherit
+- id: os-13-4-2
+  name: Freestanding Dry-Erase Boards
+  children: []
+  attributes:
+  - board_finish
+  - board_layout
+  - board_material
+  - board_mounting_type
+  - frame_color
+  - frame_design
+  - language
+  - portrait/landscape_orientation
+  - presentation_supply_features
+  - shape
+  return_reasons: inherit
+- id: os-13-4-3
+  name: Tabletop Dry-Erase Boards
+  children: []
+  attributes:
+  - board_finish
+  - board_layout
+  - board_material
+  - board_mounting_type
+  - frame_color
+  - frame_design
+  - language
+  - portrait/landscape_orientation
+  - presentation_supply_features
+  - shape
+  return_reasons: inherit
+- id: os-13-4-4
+  name: Dry-Erase Writing Slates
+  children: []
+  attributes:
+  - board_finish
+  - board_layout
+  - board_material
+  - board_mounting_type
+  - frame_color
+  - frame_design
+  - language
+  - portrait/landscape_orientation
+  - presentation_supply_features
+  - shape
+  return_reasons: inherit
+- id: os-13-5
+  name: Easel Pads
+  children:
+  - os-13-5-1
+  - os-13-5-2
+  - os-13-5-3
+  - os-13-5-4
+  attributes:
+  - color
   - paper_type
   - presentation_supply_features
   return_reasons:
@@ -4141,10 +11374,50 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-13-6
-  name: Easels
+- id: os-13-5-1
+  name: Plain Easel Pads
   children: []
   attributes:
+  - color
+  - paper_type
+  - presentation_supply_features
+  return_reasons: inherit
+- id: os-13-5-2
+  name: Ruled Easel Pads
+  children: []
+  attributes:
+  - color
+  - paper_type
+  - presentation_supply_features
+  return_reasons: inherit
+- id: os-13-5-3
+  name: Graph Easel Pads
+  children: []
+  attributes:
+  - color
+  - paper_type
+  - presentation_supply_features
+  return_reasons: inherit
+- id: os-13-5-4
+  name: Dot-Grid Easel Pads
+  children: []
+  attributes:
+  - color
+  - paper_type
+  - presentation_supply_features
+  return_reasons: inherit
+- id: os-13-6
+  name: Easels
+  children:
+  - os-13-6-1
+  - os-13-6-2
+  - os-13-6-3
+  - os-13-6-4
+  - os-13-6-5
+  attributes:
+  - color
+  - easel_type
+  - frame_color
   - material
   - presentation_supply_features
   return_reasons:
@@ -4157,11 +11430,63 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-13-7
-  name: Laser Pointers
+- id: os-13-6-1
+  name: Flip Chart Easels
   children: []
   attributes:
+  - color
+  - easel_type
+  - frame_color
+  - material
+  - presentation_supply_features
+  return_reasons: inherit
+- id: os-13-6-2
+  name: Writing Board Easels
+  children: []
+  attributes:
+  - color
+  - easel_type
+  - frame_color
+  - material
+  - presentation_supply_features
+  return_reasons: inherit
+- id: os-13-6-3
+  name: Art Easels
+  children: []
+  attributes:
+  - color
+  - easel_type
+  - frame_color
+  - material
+  - presentation_supply_features
+  return_reasons: inherit
+- id: os-13-6-4
+  name: Display Easels
+  children: []
+  attributes:
+  - color
+  - easel_type
+  - frame_color
+  - material
+  - presentation_supply_features
+  return_reasons: inherit
+- id: os-13-6-5
+  name: Document Easels
+  children: []
+  attributes:
+  - color
+  - easel_type
+  - frame_color
+  - material
+  - presentation_supply_features
+  return_reasons: inherit
+- id: os-13-7
+  name: Laser Pointers
+  children:
+  - os-13-7-1
+  attributes:
   - battery_size
+  - charger_plug_type
   - color
   - laser_color
   - laser_light_source
@@ -4178,11 +11503,28 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-13-8
-  name: Lecterns
+- id: os-13-7-1
+  name: Standalone Laser Pointers
   children: []
   attributes:
+  - battery_size
+  - charger_plug_type
   - color
+  - laser_color
+  - laser_light_source
+  - laser_pattern
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-13-8
+  name: Lecterns
+  children:
+  - os-13-8-1
+  - os-13-8-2
+  attributes:
+  - color
+  - frame_color
+  - furniture_finish
   - lectern_mounting_type
   - material
   - pattern
@@ -4197,10 +11539,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-13-9
-  name: Transparencies
+- id: os-13-8-1
+  name: Floor Lecterns
   children: []
   attributes:
+  - color
+  - frame_color
+  - furniture_finish
+  - lectern_mounting_type
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-13-8-2
+  name: Tabletop Lecterns
+  children: []
+  attributes:
+  - color
+  - frame_color
+  - furniture_finish
+  - lectern_mounting_type
+  - material
+  - pattern
+  return_reasons: inherit
+- id: os-13-9
+  name: Transparencies
+  children:
+  - os-13-9-1
+  - os-13-9-2
+  - os-13-9-3
+  attributes:
+  - color
   - paper_size
   return_reasons:
   - size
@@ -4212,13 +11580,38 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: os-13-10
-  name: Wireless Presenters
+- id: os-13-9-1
+  name: Inkjet Transparencies
   children: []
   attributes:
+  - color
+  - paper_size
+  return_reasons: inherit
+- id: os-13-9-2
+  name: Laser Printer & Copier Transparencies
+  children: []
+  attributes:
+  - color
+  - paper_size
+  return_reasons: inherit
+- id: os-13-9-3
+  name: Universal Printer Transparencies
+  children: []
+  attributes:
+  - color
+  - paper_size
+  return_reasons: inherit
+- id: os-13-10
+  name: Wireless Presenters
+  children:
+  - os-13-10-1
+  - os-13-10-2
+  attributes:
   - battery_size
+  - color
   - connectivity_technology
   - material
+  - receiver_plug_type
   return_reasons:
   - color
   - range
@@ -4229,6 +11622,26 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-13-10-1
+  name: Laser Wireless Presenters
+  children: []
+  attributes:
+  - battery_size
+  - color
+  - connectivity_technology
+  - material
+  - receiver_plug_type
+  return_reasons: inherit
+- id: os-13-10-2
+  name: Digital-Pointer Wireless Presenters
+  children: []
+  attributes:
+  - battery_size
+  - color
+  - connectivity_technology
+  - material
+  - receiver_plug_type
+  return_reasons: inherit
 - id: os-14
   name: Shipping Supplies
   children:
@@ -4250,8 +11663,12 @@
   - other_reason
 - id: os-14-1
   name: Moving & Shipping Boxes
-  children: []
+  children:
+  - os-14-1-1
+  - os-14-1-2
+  - os-14-1-3
   attributes:
+  - board_grade
   - color
   - moving/shipping_box_material
   - pattern
@@ -4263,6 +11680,33 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-14-1-1
+  name: Slotted Shipping Boxes
+  children: []
+  attributes:
+  - board_grade
+  - color
+  - moving/shipping_box_material
+  - pattern
+  return_reasons: inherit
+- id: os-14-1-2
+  name: Mailer Boxes
+  children: []
+  attributes:
+  - board_grade
+  - color
+  - moving/shipping_box_material
+  - pattern
+  return_reasons: inherit
+- id: os-14-1-3
+  name: Telescoping Shipping Boxes
+  children: []
+  attributes:
+  - board_grade
+  - color
+  - moving/shipping_box_material
+  - pattern
+  return_reasons: inherit
 - id: os-14-2
   name: Packing Materials
   children: []
@@ -4270,6 +11714,7 @@
   - color
   - packing_materials_included
   - pattern
+  - strength_grade
   return_reasons:
   - size
   - changed_my_mind
@@ -4280,8 +11725,12 @@
   - other_reason
 - id: os-14-3
   name: Packing Tape
-  children: []
+  children:
+  - os-14-3-1
+  - os-14-3-2
   attributes:
+  - adhesive_formulation
+  - backing_material
   - color
   - pattern
   return_reasons:
@@ -4293,3 +11742,21 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: os-14-3-1
+  name: Pressure-Sensitive Packing Tapes
+  children: []
+  attributes:
+  - adhesive_formulation
+  - backing_material
+  - color
+  - pattern
+  return_reasons: inherit
+- id: os-14-3-2
+  name: Water-Activated Packing Tapes
+  children: []
+  attributes:
+  - adhesive_formulation
+  - backing_material
+  - color
+  - pattern
+  return_reasons: inherit

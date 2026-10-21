@@ -22,6 +22,8 @@
   - care_instructions
   - carry_options
   - color
+  - handle_color
+  - material
   - pattern
   return_reasons:
   - size
@@ -50,7 +52,9 @@
   - carry_options
   - color
   - luggage/bag_closure
+  - number_of_compartments
   - pattern
+  - personalization_type
   - target_gender
   return_reasons:
   - size
@@ -66,15 +70,21 @@
   name: School Backpacks
   children: []
   attributes:
+  - age_group
   - bag/case_closure
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bulletproof_level
   - care_instructions
   - carry_options
   - color
+  - gender
   - luggage/bag_closure
+  - number_of_compartments
   - pattern
+  - personalization_type
+  - size
   return_reasons:
   - size
   - color
@@ -87,8 +97,11 @@
   - other_reason
 - id: lb-1-15
   name: Hiking Backpacks
-  children: []
+  children:
+  - lb-1-15-1
+  - lb-1-15-2
   attributes:
+  - backpack_torso_size
   - bag/case_closure
   - bag/case_features
   - bag/case_material
@@ -96,8 +109,12 @@
   - care_instructions
   - carry_options
   - color
+  - hip_belt_size
   - luggage/bag_closure
   - pattern
+  - shoulder_strap_size
+  - shoulder_strap_style
+  - target_gender
   return_reasons:
   - size
   - color
@@ -109,10 +126,11 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: lb-1-16
-  name: Laptop Backpacks
+- id: lb-1-15-1
+  name: Framed Hiking Backpacks
   children: []
   attributes:
+  - backpack_torso_size
   - bag/case_closure
   - bag/case_features
   - bag/case_material
@@ -120,8 +138,48 @@
   - care_instructions
   - carry_options
   - color
+  - hip_belt_size
   - luggage/bag_closure
   - pattern
+  - shoulder_strap_size
+  - shoulder_strap_style
+  - target_gender
+  return_reasons: inherit
+- id: lb-1-15-2
+  name: Frameless Hiking Backpacks
+  children: []
+  attributes:
+  - backpack_torso_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - hip_belt_size
+  - luggage/bag_closure
+  - pattern
+  - shoulder_strap_size
+  - shoulder_strap_style
+  - target_gender
+  return_reasons: inherit
+- id: lb-1-16
+  name: Laptop Backpacks
+  children: []
+  attributes:
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - bulletproof_level
+  - care_instructions
+  - carry_options
+  - color
+  - luggage/bag_closure
+  - pattern
+  - target_gender
   return_reasons:
   - size
   - color
@@ -135,8 +193,11 @@
   - other_reason
 - id: lb-1-17
   name: Military Backpacks
-  children: []
+  children:
+  - lb-1-17-1
+  - lb-1-17-2
   attributes:
+  - backpack_torso_size
   - bag/case_closure
   - bag/case_features
   - bag/case_material
@@ -144,8 +205,11 @@
   - care_instructions
   - carry_options
   - color
+  - hip_belt_size
   - luggage/bag_closure
   - pattern
+  - shoulder_strap_padding
+  - target_gender
   return_reasons:
   - size
   - color
@@ -156,9 +220,48 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-1-17-1
+  name: Assault Packs
+  children: []
+  attributes:
+  - backpack_torso_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - hip_belt_size
+  - luggage/bag_closure
+  - pattern
+  - shoulder_strap_padding
+  - target_gender
+  return_reasons: inherit
+- id: lb-1-17-2
+  name: Field Packs
+  children: []
+  attributes:
+  - backpack_torso_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - hip_belt_size
+  - luggage/bag_closure
+  - pattern
+  - shoulder_strap_padding
+  - target_gender
+  return_reasons: inherit
 - id: lb-2
   name: Briefcases
-  children: []
+  children:
+  - lb-2-1
+  - lb-2-2
+  - lb-2-3
   attributes:
   - bag/case_closure
   - bag/case_features
@@ -167,8 +270,10 @@
   - care_instructions
   - carry_options
   - color
+  - hardware_finish
   - luggage/bag_closure
   - pattern
+  - surface_texture
   - target_gender
   return_reasons:
   - size
@@ -181,6 +286,57 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-2-1
+  name: Clamshell Briefcases
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - hardware_finish
+  - luggage/bag_closure
+  - pattern
+  - surface_texture
+  - target_gender
+  return_reasons: inherit
+- id: lb-2-2
+  name: Flap-Over Briefcases
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - hardware_finish
+  - luggage/bag_closure
+  - pattern
+  - surface_texture
+  - target_gender
+  return_reasons: inherit
+- id: lb-2-3
+  name: Top-Zip Briefcases
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - hardware_finish
+  - luggage/bag_closure
+  - pattern
+  - surface_texture
+  - target_gender
+  return_reasons: inherit
 - id: lb-3
   name: Cosmetic & Toiletry Bags
   children:
@@ -195,6 +351,7 @@
   - care_instructions
   - carry_options
   - color
+  - hardware_finish
   - luggage/bag_closure
   - pattern
   - target_gender
@@ -210,17 +367,25 @@
   - other_reason
 - id: lb-3-3
   name: Makeup Bags
-  children: []
+  children:
+  - lb-3-3-1
+  - lb-3-3-2
+  - lb-3-3-3
   attributes:
   - bag/case_closure
   - bag/case_features
   - bag/case_material
   - bag/case_storage_features
+  - bottom_construction
   - care_instructions
   - carry_options
   - color
+  - lining_material
   - luggage/bag_closure
   - pattern
+  - shape
+  - target_gender
+  - trim_material
   return_reasons:
   - size
   - color
@@ -231,6 +396,63 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-3-3-1
+  name: Makeup Pouches
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - bottom_construction
+  - care_instructions
+  - carry_options
+  - color
+  - lining_material
+  - luggage/bag_closure
+  - pattern
+  - shape
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-3-3-2
+  name: Soft-Sided Makeup Cases
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - bottom_construction
+  - care_instructions
+  - carry_options
+  - color
+  - lining_material
+  - luggage/bag_closure
+  - pattern
+  - shape
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-3-3-3
+  name: Hard-Shell Makeup Cases
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - bottom_construction
+  - care_instructions
+  - carry_options
+  - color
+  - lining_material
+  - luggage/bag_closure
+  - pattern
+  - shape
+  - target_gender
+  - trim_material
+  return_reasons: inherit
 - id: lb-3-4
   name: Toiletry Bags
   children: []
@@ -242,8 +464,10 @@
   - care_instructions
   - carry_options
   - color
+  - hardware_finish
   - luggage/bag_closure
   - pattern
+  - target_gender
   return_reasons:
   - size
   - color
@@ -256,7 +480,10 @@
   - other_reason
 - id: lb-3-5
   name: Travel Organizer Bags
-  children: []
+  children:
+  - lb-3-5-1
+  - lb-3-5-2
+  - lb-3-5-3
   attributes:
   - bag/case_closure
   - bag/case_features
@@ -265,8 +492,11 @@
   - care_instructions
   - carry_options
   - color
+  - lining_material
   - luggage/bag_closure
   - pattern
+  - shape
+  - target_gender
   return_reasons:
   - size
   - color
@@ -277,9 +507,65 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-3-5-1
+  name: Roll-Up Toiletry Bags
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lining_material
+  - luggage/bag_closure
+  - pattern
+  - shape
+  - target_gender
+  return_reasons: inherit
+- id: lb-3-5-2
+  name: Tri-Fold Toiletry Bags
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lining_material
+  - luggage/bag_closure
+  - pattern
+  - shape
+  - target_gender
+  return_reasons: inherit
+- id: lb-3-5-3
+  name: Clamshell Toiletry Bags
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lining_material
+  - luggage/bag_closure
+  - pattern
+  - shape
+  - target_gender
+  return_reasons: inherit
 - id: lb-4
   name: Diaper Bags
-  children: []
+  children:
+  - lb-4-1
+  - lb-4-2
+  - lb-4-3
+  - lb-4-4
+  - lb-4-5
   attributes:
   - bag/case_closure
   - bag/case_features
@@ -291,6 +577,7 @@
   - diaper_bag_material
   - diaper_bag_style
   - pattern
+  - personalization_type
   - target_gender
   return_reasons:
   - size
@@ -303,9 +590,111 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-4-1
+  name: Diaper Backpacks
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - diaper_bag_additional_features
+  - diaper_bag_material
+  - diaper_bag_style
+  - pattern
+  - personalization_type
+  - target_gender
+  return_reasons: inherit
+- id: lb-4-2
+  name: Diaper Totes
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - diaper_bag_additional_features
+  - diaper_bag_material
+  - diaper_bag_style
+  - pattern
+  - personalization_type
+  - target_gender
+  return_reasons: inherit
+- id: lb-4-3
+  name: Hobo Diaper Bags
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - diaper_bag_additional_features
+  - diaper_bag_material
+  - diaper_bag_style
+  - pattern
+  - personalization_type
+  - target_gender
+  return_reasons: inherit
+- id: lb-4-4
+  name: Diaper Bowling Bags
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - diaper_bag_additional_features
+  - diaper_bag_material
+  - diaper_bag_style
+  - pattern
+  - personalization_type
+  - target_gender
+  return_reasons: inherit
+- id: lb-4-5
+  name: Diaper Bucket Bags
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - diaper_bag_additional_features
+  - diaper_bag_material
+  - diaper_bag_style
+  - pattern
+  - personalization_type
+  - target_gender
+  return_reasons: inherit
 - id: lb-5
   name: Dry Boxes
-  children: []
+  children:
+  - lb-5-1
+  - lb-5-2
+  - lb-5-3
+  - lb-5-4
+  - lb-5-5
+  - lb-5-6
+  - lb-5-7
+  - lb-5-8
+  - lb-5-9
+  - lb-5-10
+  - lb-5-11
+  - lb-5-12
+  - lb-5-13
+  - lb-5-14
+  - lb-5-15
+  - lb-5-16
+  - lb-5-17
   attributes:
   - accessory_size
   - bag/case_closure
@@ -315,6 +704,7 @@
   - care_instructions
   - carry_options
   - color
+  - lid_opening_type
   - pattern
   return_reasons:
   - size
@@ -326,6 +716,261 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-5-1
+  name: Waterproof Communications Equipment Cases
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
+- id: lb-5-2
+  name: Ammunition Dry Boxes
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
+- id: lb-5-3
+  name: Waterproof Laptop Cases
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
+- id: lb-5-4
+  name: Waterproof Camera Cases
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
+- id: lb-5-5
+  name: Time Capsule Containers
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
+- id: lb-5-6
+  name: Waterproof Memory Card Cases
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
+- id: lb-5-7
+  name: Waterproof Tackle Boxes
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
+- id: lb-5-8
+  name: Waterproof Match Cases
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
+- id: lb-5-9
+  name: Document Dry Boxes
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
+- id: lb-5-10
+  name: Waterproof Instrument Cases
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
+- id: lb-5-11
+  name: Waterproof Battery Cases
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
+- id: lb-5-12
+  name: Waterproof Drone Cases
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
+- id: lb-5-13
+  name: Waterproof Rack Cases
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
+- id: lb-5-14
+  name: Waterproof Hard Drive Cases
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
+- id: lb-5-15
+  name: Waterproof Firearm Cases
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
+- id: lb-5-16
+  name: Waterproof Tool Cases
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
+- id: lb-5-17
+  name: Waterproof First Aid Cases
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - lid_opening_type
+  - pattern
+  return_reasons: inherit
 - id: lb-6
   name: Duffel Bags
   children:
@@ -340,8 +985,10 @@
   - care_instructions
   - carry_options
   - color
+  - handle_color
   - pattern
   - target_gender
+  - trim_material
   return_reasons:
   - size
   - color
@@ -354,9 +1001,29 @@
   - other_reason
 - id: lb-6-1
   name: Gym Duffel Bags
-  children: []
+  children:
+  - lb-6-1-1
+  - lb-6-1-2
+  - lb-6-1-3
+  - lb-6-1-4
+  - lb-6-1-5
+  - lb-6-1-6
+  - lb-6-1-7
+  - lb-6-1-8
+  - lb-6-1-9
+  - lb-6-1-10
+  - lb-6-1-11
+  - lb-6-1-12
+  - lb-6-1-13
+  - lb-6-1-14
+  - lb-6-1-15
+  - lb-6-1-16
+  - lb-6-1-17
+  - lb-6-1-18
+  - lb-6-1-19
   attributes:
   - accessory_size
+  - age_group
   - bag/case_closure
   - bag/case_features
   - bag/case_material
@@ -365,6 +1032,9 @@
   - carry_options
   - color
   - pattern
+  - sport
+  - target_gender
+  - trim_material
   return_reasons:
   - size
   - color
@@ -375,8 +1045,8 @@
   - damaged_or_defective
   - unknown
   - other_reason
-- id: lb-7
-  name: Fanny Packs
+- id: lb-6-1-1
+  name: Racquet Sports Duffel Bags
   children: []
   attributes:
   - accessory_size
@@ -389,6 +1059,352 @@
   - carry_options
   - color
   - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-2
+  name: Dance Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-3
+  name: Bowling Equipment Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-4
+  name: Baseball & Softball Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-5
+  name: Motorsports Gear Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-6
+  name: Cycling Gear Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-7
+  name: Field Hockey Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-8
+  name: Figure-Skating Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-9
+  name: Martial Arts Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-10
+  name: Ice Hockey & Ringette Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-11
+  name: Golf Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-12
+  name: Cheerleading Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-13
+  name: Lacrosse Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-14
+  name: Soccer Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-15
+  name: Rugby Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-16
+  name: Netball Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-17
+  name: Gaelic Games Kit Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-18
+  name: Cricket Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-6-1-19
+  name: Volleyball Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - sport
+  - target_gender
+  - trim_material
+  return_reasons: inherit
+- id: lb-7
+  name: Fanny Packs
+  children: []
+  attributes:
+  - accessory_size
+  - age_group
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - buckle_type
+  - care_instructions
+  - carry_options
+  - color
+  - hardware_finish
+  - pattern
+  - strap_length_category
+  - strap_material
   - target_gender
   return_reasons:
   - size
@@ -402,7 +1418,11 @@
   - other_reason
 - id: lb-8
   name: Garment Bags
-  children: []
+  children:
+  - lb-8-1
+  - lb-8-2
+  - lb-8-3
+  - lb-8-4
   attributes:
   - accessory_size
   - bag/case_material
@@ -421,6 +1441,46 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-8-1
+  name: Backpack Garment Bags
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_material
+  - color
+  - luggage/bag_closure
+  - pattern
+  return_reasons: inherit
+- id: lb-8-2
+  name: Rolling Garment Bags
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_material
+  - color
+  - luggage/bag_closure
+  - pattern
+  return_reasons: inherit
+- id: lb-8-3
+  name: Garment Duffel Bags
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_material
+  - color
+  - luggage/bag_closure
+  - pattern
+  return_reasons: inherit
+- id: lb-8-4
+  name: Travel Garment Sleeves
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_material
+  - color
+  - luggage/bag_closure
+  - pattern
+  return_reasons: inherit
 - id: lb-9
   name: Luggage Accessories
   children:
@@ -436,6 +1496,7 @@
   - bag/case_material
   - care_instructions
   - color
+  - material
   - pattern
   return_reasons:
   - size
@@ -449,7 +1510,10 @@
   - other_reason
 - id: lb-9-1
   name: Dry Box Liners & Inserts
-  children: []
+  children:
+  - lb-9-1-1
+  - lb-9-1-2
+  - lb-9-1-3
   attributes:
   - bag/case_closure
   - bag/case_features
@@ -457,8 +1521,13 @@
   - care_instructions
   - carry_options
   - color
+  - compatible_crate_size
+  - divider_set_type
   - fabric
+  - lid_accessory_type
+  - lid_foam_type
   - pattern
+  - side
   - thickness_type
   return_reasons:
   - size
@@ -469,9 +1538,69 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-9-1-1
+  name: Dry Box Foam Inserts
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - compatible_crate_size
+  - divider_set_type
+  - fabric
+  - lid_accessory_type
+  - lid_foam_type
+  - pattern
+  - side
+  - thickness_type
+  return_reasons: inherit
+- id: lb-9-1-2
+  name: Dry Box Divider Inserts
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - compatible_crate_size
+  - divider_set_type
+  - fabric
+  - lid_accessory_type
+  - lid_foam_type
+  - pattern
+  - side
+  - thickness_type
+  return_reasons: inherit
+- id: lb-9-1-3
+  name: Dry Box Lid Organizers
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - compatible_crate_size
+  - divider_set_type
+  - fabric
+  - lid_accessory_type
+  - lid_foam_type
+  - pattern
+  - side
+  - thickness_type
+  return_reasons: inherit
 - id: lb-9-2
   name: Luggage Covers
-  children: []
+  children:
+  - lb-9-2-1
+  - lb-9-2-2
+  - lb-9-2-3
   attributes:
   - accessory_size
   - color
@@ -489,9 +1618,44 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-9-2-1
+  name: Suitcase Covers
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - cover_features
+  - cover_material
+  - luggage/bag_closure
+  - pattern
+  return_reasons: inherit
+- id: lb-9-2-2
+  name: Backpack Covers
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - cover_features
+  - cover_material
+  - luggage/bag_closure
+  - pattern
+  return_reasons: inherit
+- id: lb-9-2-3
+  name: Travel Trunk Covers
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - cover_features
+  - cover_material
+  - luggage/bag_closure
+  - pattern
+  return_reasons: inherit
 - id: lb-9-3
   name: Luggage Racks & Stands
-  children: []
+  children:
+  - lb-9-3-1
+  - lb-9-3-2
   attributes:
   - accessory_size
   - color
@@ -505,12 +1669,33 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-9-3-1
+  name: Sling Luggage Stands
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - furniture/fixture_material
+  - pattern
+  return_reasons: inherit
+- id: lb-9-3-2
+  name: Platform Luggage Stands
+  children: []
+  attributes:
+  - accessory_size
+  - color
+  - furniture/fixture_material
+  - pattern
+  return_reasons: inherit
 - id: lb-9-4
   name: Luggage Straps
-  children: []
+  children:
+  - lb-9-4-1
+  - lb-9-4-2
   attributes:
   - color
   - fabric
+  - hardware_finish
   - luggage/bag_closure
   - pattern
   return_reasons:
@@ -521,13 +1706,35 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-9-4-1
+  name: Quick-Release Luggage Straps
+  children: []
+  attributes:
+  - color
+  - fabric
+  - hardware_finish
+  - luggage/bag_closure
+  - pattern
+  return_reasons: inherit
+- id: lb-9-4-2
+  name: Locking Luggage Straps
+  children: []
+  attributes:
+  - color
+  - fabric
+  - hardware_finish
+  - luggage/bag_closure
+  - pattern
+  return_reasons: inherit
 - id: lb-9-5
   name: Luggage Tags
   children: []
   attributes:
   - color
+  - hardware_finish
   - material
   - pattern
+  - portrait/landscape_orientation
   - shape
   - tag_fastening
   return_reasons:
@@ -541,12 +1748,20 @@
   - other_reason
 - id: lb-9-6
   name: Packing Organizers
-  children: []
+  children:
+  - lb-9-6-1
+  - lb-9-6-2
+  - lb-9-6-3
+  - lb-9-6-4
+  - lb-9-6-5
+  - lb-9-6-6
+  - lb-9-6-7
   attributes:
   - color
   - fabric
   - luggage/bag_closure
   - pattern
+  - storage_bag_included_pump_type
   return_reasons:
   - size
   - color
@@ -557,14 +1772,88 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-9-6-1
+  name: Packing Cubes
+  children: []
+  attributes:
+  - color
+  - fabric
+  - luggage/bag_closure
+  - pattern
+  - storage_bag_included_pump_type
+  return_reasons: inherit
+- id: lb-9-6-2
+  name: Travel Compression Bags
+  children: []
+  attributes:
+  - color
+  - fabric
+  - luggage/bag_closure
+  - pattern
+  - storage_bag_included_pump_type
+  return_reasons: inherit
+- id: lb-9-6-3
+  name: Garment Folders
+  children: []
+  attributes:
+  - color
+  - fabric
+  - luggage/bag_closure
+  - pattern
+  - storage_bag_included_pump_type
+  return_reasons: inherit
+- id: lb-9-6-4
+  name: Stuff Sacks
+  children: []
+  attributes:
+  - color
+  - fabric
+  - luggage/bag_closure
+  - pattern
+  - storage_bag_included_pump_type
+  return_reasons: inherit
+- id: lb-9-6-5
+  name: Roll-Up Travel Organizers
+  children: []
+  attributes:
+  - color
+  - fabric
+  - luggage/bag_closure
+  - pattern
+  - storage_bag_included_pump_type
+  return_reasons: inherit
+- id: lb-9-6-6
+  name: Hanging Suitcase Organizers
+  children: []
+  attributes:
+  - color
+  - fabric
+  - luggage/bag_closure
+  - pattern
+  - storage_bag_included_pump_type
+  return_reasons: inherit
+- id: lb-9-6-7
+  name: Luggage Organizer Inserts
+  children: []
+  attributes:
+  - color
+  - fabric
+  - luggage/bag_closure
+  - pattern
+  - storage_bag_included_pump_type
+  return_reasons: inherit
 - id: lb-9-7
   name: Travel Bottles & Containers
-  children: []
+  children:
+  - lb-9-7-1
+  - lb-9-7-2
+  - lb-9-7-3
   attributes:
   - bottle/container_closure
   - color
   - material
   - pattern
+  - shape
   return_reasons:
   - size
   - changed_my_mind
@@ -573,9 +1862,43 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-9-7-1
+  name: Travel Bottles
+  children: []
+  attributes:
+  - bottle/container_closure
+  - color
+  - material
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: lb-9-7-2
+  name: Travel Jars
+  children: []
+  attributes:
+  - bottle/container_closure
+  - color
+  - material
+  - pattern
+  - shape
+  return_reasons: inherit
+- id: lb-9-7-3
+  name: Travel Tubes
+  children: []
+  attributes:
+  - bottle/container_closure
+  - color
+  - material
+  - pattern
+  - shape
+  return_reasons: inherit
 - id: lb-9-8
   name: Travel Pouches
-  children: []
+  children:
+  - lb-9-8-1
+  - lb-9-8-2
+  - lb-9-8-3
+  - lb-9-8-4
   attributes:
   - accessory_size
   - bag/case_closure
@@ -585,7 +1908,10 @@
   - care_instructions
   - carry_options
   - color
+  - front_panel_construction
+  - lining_material
   - luggage/bag_closure
+  - number_of_compartments
   - pattern
   - target_gender
   return_reasons:
@@ -598,11 +1924,88 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-9-8-1
+  name: Electronics Organizer Pouches
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - front_panel_construction
+  - lining_material
+  - luggage/bag_closure
+  - number_of_compartments
+  - pattern
+  - target_gender
+  return_reasons: inherit
+- id: lb-9-8-2
+  name: Travel Document Pouches
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - front_panel_construction
+  - lining_material
+  - luggage/bag_closure
+  - number_of_compartments
+  - pattern
+  - target_gender
+  return_reasons: inherit
+- id: lb-9-8-3
+  name: Travel Shoe Bags
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - front_panel_construction
+  - lining_material
+  - luggage/bag_closure
+  - number_of_compartments
+  - pattern
+  - target_gender
+  return_reasons: inherit
+- id: lb-9-8-4
+  name: Travel Laundry Bags
+  children: []
+  attributes:
+  - accessory_size
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - front_panel_construction
+  - lining_material
+  - luggage/bag_closure
+  - number_of_compartments
+  - pattern
+  - target_gender
+  return_reasons: inherit
 - id: lb-10
   name: Messenger Bags
   children: []
   attributes:
   - accessory_size
+  - age_group
   - bag/case_closure
   - bag/case_features
   - bag/case_material
@@ -613,6 +2016,9 @@
   - color
   - luggage/bag_closure
   - pattern
+  - shoulder_side
+  - strap_material
+  - target_gender
   return_reasons:
   - size
   - color
@@ -633,10 +2039,14 @@
   - care_instructions
   - carry_options
   - color
+  - features
+  - handle_material
+  - hardware_finish
   - luggage/bag_closure
   - pattern
   - safety_certifications
   - target_gender
+  - tote_handle_construction
   - tote_handle_type
   return_reasons:
   - size
@@ -663,6 +2073,7 @@
   - care_instructions
   - carry_options
   - color
+  - lock_type
   - pattern
   - spinner_type
   - suitcase_handle_type
@@ -680,7 +2091,9 @@
   - other_reason
 - id: lb-12-2
   name: Carry-On Suitcases
-  children: []
+  children:
+  - lb-12-2-1
+  - lb-12-2-2
   attributes:
   - bag/case_closure
   - bag/case_features
@@ -689,9 +2102,12 @@
   - care_instructions
   - carry_options
   - color
+  - frame_color
+  - interior_insert_type
   - pattern
   - spinner_type
   - suitcase_handle_type
+  - surface_texture
   return_reasons:
   - size
   - color
@@ -702,9 +2118,47 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-12-2-1
+  name: Hardside Carry-On Suitcases
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - frame_color
+  - interior_insert_type
+  - pattern
+  - spinner_type
+  - suitcase_handle_type
+  - surface_texture
+  return_reasons: inherit
+- id: lb-12-2-2
+  name: Softside Carry-On Suitcases
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - frame_color
+  - interior_insert_type
+  - pattern
+  - spinner_type
+  - suitcase_handle_type
+  - surface_texture
+  return_reasons: inherit
 - id: lb-12-3
   name: Checked Suitcases
-  children: []
+  children:
+  - lb-12-3-1
+  - lb-12-3-2
   attributes:
   - bag/case_closure
   - bag/case_features
@@ -713,9 +2167,11 @@
   - care_instructions
   - carry_options
   - color
+  - outer_shell_type
   - pattern
   - spinner_type
   - suitcase_handle_type
+  - surface_texture
   return_reasons:
   - size
   - color
@@ -726,9 +2182,45 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-12-3-1
+  name: Hardside Checked Suitcases
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - outer_shell_type
+  - pattern
+  - spinner_type
+  - suitcase_handle_type
+  - surface_texture
+  return_reasons: inherit
+- id: lb-12-3-2
+  name: Softside Checked Suitcases
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - outer_shell_type
+  - pattern
+  - spinner_type
+  - suitcase_handle_type
+  - surface_texture
+  return_reasons: inherit
 - id: lb-12-5
   name: Kids' Suitcases
-  children: []
+  children:
+  - lb-12-5-1
+  - lb-12-5-2
   attributes:
   - bag/case_closure
   - bag/case_features
@@ -738,8 +2230,10 @@
   - carry_options
   - color
   - pattern
+  - size
   - spinner_type
   - suitcase_handle_type
+  - target_gender
   return_reasons:
   - size
   - color
@@ -750,9 +2244,45 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-12-5-1
+  name: Kids' Hardside Suitcases
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - size
+  - spinner_type
+  - suitcase_handle_type
+  - target_gender
+  return_reasons: inherit
+- id: lb-12-5-2
+  name: Kids' Softside Suitcases
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - size
+  - spinner_type
+  - suitcase_handle_type
+  - target_gender
+  return_reasons: inherit
 - id: lb-12-9
   name: Suitcase Travel Sets
-  children: []
+  children:
+  - lb-12-9-1
+  - lb-12-9-2
   attributes:
   - bag/case_closure
   - bag/case_features
@@ -774,6 +2304,36 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: lb-12-9-1
+  name: Hardside Suitcase Sets
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - spinner_type
+  - suitcase_handle_type
+  return_reasons: inherit
+- id: lb-12-9-2
+  name: Softside Suitcase Sets
+  children: []
+  attributes:
+  - bag/case_closure
+  - bag/case_features
+  - bag/case_material
+  - bag/case_storage_features
+  - care_instructions
+  - carry_options
+  - color
+  - pattern
+  - spinner_type
+  - suitcase_handle_type
+  return_reasons: inherit
 - id: lb-13
   name: Tote Bags
   children: []
@@ -787,7 +2347,16 @@
   - care_instructions
   - carry_options
   - color
+  - embellishment
+  - handle_color
+  - handle_material
+  - hardware_finish
+  - lining_material
   - pattern
+  - personalization_type
+  - portrait/landscape_orientation
+  - print_placement
+  - shape
   - target_gender
   - tote_handle_type
   return_reasons:
@@ -812,6 +2381,7 @@
   - care_instructions
   - carry_options
   - color
+  - frame_color
   - luggage/bag_closure
   - pattern
   return_reasons:
@@ -836,8 +2406,11 @@
   - care_instructions
   - carry_options
   - color
+  - hardware_finish
   - luggage/bag_closure
   - pattern
+  - portrait/landscape_orientation
+  - target_gender
   return_reasons:
   - size
   - color
@@ -850,9 +2423,30 @@
   - other_reason
 - id: lb-16
   name: Dry Bags
+  children:
+  - lb-16-1
+  - lb-16-2
+  attributes:
+  - carry_options
+  - color
+  - material
+  - pattern
+  return_reasons: inherit
+- id: lb-16-1
+  name: Roll-Top Dry Bags
   children: []
   attributes:
   - carry_options
   - color
+  - material
+  - pattern
+  return_reasons: inherit
+- id: lb-16-2
+  name: Zippered Dry Bags
+  children: []
+  attributes:
+  - carry_options
+  - color
+  - material
   - pattern
   return_reasons: inherit
