@@ -60,12 +60,8 @@
   - color
   - compatible_book_format
   - hardware_finish
-  - interior_color
   - pattern
   - sheen
-  - spine_color
-  - stitching_color
-  - strap_color
   return_reasons:
   - size
   - color
@@ -84,12 +80,8 @@
   - color
   - compatible_book_format
   - hardware_finish
-  - interior_color
   - pattern
   - sheen
-  - spine_color
-  - stitching_color
-  - strap_color
   return_reasons: inherit
 - id: os-1-1-2
   name: Book Slipcases
@@ -100,12 +92,8 @@
   - color
   - compatible_book_format
   - hardware_finish
-  - interior_color
   - pattern
   - sheen
-  - spine_color
-  - stitching_color
-  - strap_color
   return_reasons: inherit
 - id: os-1-1-3
   name: Book Jackets
@@ -116,12 +104,8 @@
   - color
   - compatible_book_format
   - hardware_finish
-  - interior_color
   - pattern
   - sheen
-  - spine_color
-  - stitching_color
-  - strap_color
   return_reasons: inherit
 - id: os-1-1-4
   name: Book Cover Films
@@ -132,12 +116,8 @@
   - color
   - compatible_book_format
   - hardware_finish
-  - interior_color
   - pattern
   - sheen
-  - spine_color
-  - stitching_color
-  - strap_color
   return_reasons: inherit
 - id: os-1-1-5
   name: Slip-On Book Covers
@@ -148,12 +128,8 @@
   - color
   - compatible_book_format
   - hardware_finish
-  - interior_color
   - pattern
   - sheen
-  - spine_color
-  - stitching_color
-  - strap_color
   return_reasons: inherit
 - id: os-1-2
   name: Book Lights
@@ -161,7 +137,6 @@
   - os-1-2-1
   - os-1-2-2
   attributes:
-  - book_lights_color
   - brightness_levels
   - light_attachment_type
   - light_temperature
@@ -181,7 +156,6 @@
   name: Clip-On Book Lights
   children: []
   attributes:
-  - book_lights_color
   - brightness_levels
   - light_attachment_type
   - light_temperature
@@ -192,7 +166,6 @@
   name: Bookmark Book Lights
   children: []
   attributes:
-  - book_lights_color
   - brightness_levels
   - light_attachment_type
   - light_temperature
@@ -212,7 +185,6 @@
   - material
   - mount/stand_features
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -232,7 +204,6 @@
   - material
   - mount/stand_features
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: os-1-3-2
   name: X-Frame Book Stands
@@ -242,7 +213,6 @@
   - material
   - mount/stand_features
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: os-1-3-3
   name: V-Shaped Book Cradles
@@ -252,7 +222,6 @@
   - material
   - mount/stand_features
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: os-1-3-4
   name: Book Support Wedges
@@ -262,7 +231,6 @@
   - material
   - mount/stand_features
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: os-1-3-5
   name: Beanbag Book Holders
@@ -272,7 +240,6 @@
   - material
   - mount/stand_features
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: os-1-4
   name: Bookmarks
@@ -286,18 +253,13 @@
   - os-1-4-7
   - os-1-4-8
   attributes:
-  - background_color
   - bookmark_design
   - bookmark_shape
-  - charm_color
   - color
   - foil_color
   - language
   - material
-  - paper_clip_color
   - pattern
-  - ribbon_color
-  - tassel_color
   return_reasons:
   - size
   - color
@@ -312,137 +274,97 @@
   name: Bookmark Cards
   children: []
   attributes:
-  - background_color
   - bookmark_design
   - bookmark_shape
-  - charm_color
   - color
   - foil_color
   - language
   - material
-  - paper_clip_color
   - pattern
-  - ribbon_color
-  - tassel_color
   return_reasons: inherit
 - id: os-1-4-2
   name: Elastic Bookmarks
   children: []
   attributes:
-  - background_color
   - bookmark_design
   - bookmark_shape
-  - charm_color
   - color
   - foil_color
   - language
   - material
-  - paper_clip_color
   - pattern
-  - ribbon_color
-  - tassel_color
   return_reasons: inherit
 - id: os-1-4-3
   name: Cord Bookmarks
   children: []
   attributes:
-  - background_color
   - bookmark_design
   - bookmark_shape
-  - charm_color
   - color
   - foil_color
   - language
   - material
-  - paper_clip_color
   - pattern
-  - ribbon_color
-  - tassel_color
   return_reasons: inherit
 - id: os-1-4-4
   name: Clip-On Bookmarks
   children: []
   attributes:
-  - background_color
   - bookmark_design
   - bookmark_shape
-  - charm_color
   - color
   - foil_color
   - language
   - material
-  - paper_clip_color
   - pattern
-  - ribbon_color
-  - tassel_color
   return_reasons: inherit
 - id: os-1-4-5
   name: Corner Bookmarks
   children: []
   attributes:
-  - background_color
   - bookmark_design
   - bookmark_shape
-  - charm_color
   - color
   - foil_color
   - language
   - material
-  - paper_clip_color
   - pattern
-  - ribbon_color
-  - tassel_color
   return_reasons: inherit
 - id: os-1-4-6
   name: Magnetic Bookmarks
   children: []
   attributes:
-  - background_color
   - bookmark_design
   - bookmark_shape
-  - charm_color
   - color
   - foil_color
   - language
   - material
-  - paper_clip_color
   - pattern
-  - ribbon_color
-  - tassel_color
   return_reasons: inherit
 - id: os-1-4-7
   name: Page Flag Bookmarks
   children: []
   attributes:
-  - background_color
   - bookmark_design
   - bookmark_shape
-  - charm_color
   - color
   - foil_color
   - language
   - material
-  - paper_clip_color
   - pattern
-  - ribbon_color
-  - tassel_color
   return_reasons: inherit
 - id: os-1-4-8
   name: Planner Bookmarks
   children: []
   attributes:
-  - background_color
   - bookmark_design
   - bookmark_shape
-  - charm_color
   - color
   - foil_color
   - language
   - material
-  - paper_clip_color
   - pattern
-  - ribbon_color
-  - tassel_color
   return_reasons: inherit
 - id: os-2
   name: Desk Pads & Blotters
@@ -676,7 +598,6 @@
   - language
   - office_supply_material
   - paper_size
-  - tab_color
   - tab_position
   - tab_style
   return_reasons:
@@ -700,7 +621,6 @@
   - language
   - office_supply_material
   - paper_size
-  - tab_color
   - tab_position
   - tab_style
   return_reasons: inherit
@@ -715,7 +635,6 @@
   - language
   - office_supply_material
   - paper_size
-  - tab_color
   - tab_position
   - tab_style
   return_reasons: inherit
@@ -730,7 +649,6 @@
   - language
   - office_supply_material
   - paper_size
-  - tab_color
   - tab_position
   - tab_style
   return_reasons: inherit
@@ -745,7 +663,6 @@
   - language
   - office_supply_material
   - paper_size
-  - tab_color
   - tab_position
   - tab_style
   return_reasons: inherit
@@ -760,7 +677,6 @@
   - language
   - office_supply_material
   - paper_size
-  - tab_color
   - tab_position
   - tab_style
   return_reasons: inherit
@@ -775,7 +691,6 @@
   - language
   - office_supply_material
   - paper_size
-  - tab_color
   - tab_position
   - tab_style
   return_reasons: inherit
@@ -831,7 +746,6 @@
   - binder_ring_shape
   - closure_type
   - color
-  - hardware_color
   - hole_punch_pattern
   - office_supply_material
   - paper_size
@@ -854,7 +768,6 @@
   - binder_ring_shape
   - closure_type
   - color
-  - hardware_color
   - hole_punch_pattern
   - office_supply_material
   - paper_size
@@ -868,7 +781,6 @@
   - binder_ring_shape
   - closure_type
   - color
-  - hardware_color
   - hole_punch_pattern
   - office_supply_material
   - paper_size
@@ -1256,7 +1168,6 @@
   - paper_finish
   - pattern
   - portrait/landscape_orientation
-  - stand_color
   - stationery_binding_type
   - theme
   return_reasons:
@@ -1282,7 +1193,6 @@
   - paper_finish
   - pattern
   - portrait/landscape_orientation
-  - stand_color
   - stationery_binding_type
   - theme
   return_reasons: inherit
@@ -1299,7 +1209,6 @@
   - paper_finish
   - pattern
   - portrait/landscape_orientation
-  - stand_color
   - stationery_binding_type
   - theme
   return_reasons: inherit
@@ -1316,7 +1225,6 @@
   - paper_finish
   - pattern
   - portrait/landscape_orientation
-  - stand_color
   - stationery_binding_type
   - theme
   return_reasons: inherit
@@ -1333,7 +1241,6 @@
   - paper_finish
   - pattern
   - portrait/landscape_orientation
-  - stand_color
   - stationery_binding_type
   - theme
   return_reasons: inherit
@@ -1350,7 +1257,6 @@
   - paper_finish
   - pattern
   - portrait/landscape_orientation
-  - stand_color
   - stationery_binding_type
   - theme
   return_reasons: inherit
@@ -1367,7 +1273,6 @@
   - paper_finish
   - pattern
   - portrait/landscape_orientation
-  - stand_color
   - stationery_binding_type
   - theme
   return_reasons: inherit
@@ -1386,7 +1291,6 @@
   - paper_finish
   - pattern
   - portrait/landscape_orientation
-  - stand_color
   - stationery_binding_type
   - theme
   return_reasons: inherit
@@ -1403,7 +1307,6 @@
   - paper_finish
   - pattern
   - portrait/landscape_orientation
-  - stand_color
   - stationery_binding_type
   - theme
   return_reasons: inherit
@@ -1420,7 +1323,6 @@
   - paper_finish
   - pattern
   - portrait/landscape_orientation
-  - stand_color
   - stationery_binding_type
   - theme
   return_reasons: inherit
@@ -1432,7 +1334,6 @@
   - calendar_format
   - color
   - foil_color
-  - hardware_color
   - hole_punch_type
   - language
   - material
@@ -1459,7 +1360,6 @@
   - os-3-5-3-1
   - os-3-5-3-2
   attributes:
-  - binding_hardware_color
   - calendar/organizer_features
   - calendar_format
   - color
@@ -1470,13 +1370,11 @@
   - holiday_region
   - language
   - mounting_type
-  - page_color
   - page_layout
   - page_ruling
   - pattern
   - portrait/landscape_orientation
   - product_format
-  - spine_color
   - start_month
   - stationery_binding_type
   - text_size
@@ -1495,7 +1393,6 @@
   name: Dated Planners
   children: []
   attributes:
-  - binding_hardware_color
   - calendar/organizer_features
   - calendar_format
   - color
@@ -1506,13 +1403,11 @@
   - holiday_region
   - language
   - mounting_type
-  - page_color
   - page_layout
   - page_ruling
   - pattern
   - portrait/landscape_orientation
   - product_format
-  - spine_color
   - start_month
   - stationery_binding_type
   - text_size
@@ -1522,7 +1417,6 @@
   name: Undated Planners
   children: []
   attributes:
-  - binding_hardware_color
   - calendar/organizer_features
   - calendar_format
   - color
@@ -1533,13 +1427,11 @@
   - holiday_region
   - language
   - mounting_type
-  - page_color
   - page_layout
   - page_ruling
   - pattern
   - portrait/landscape_orientation
   - product_format
-  - spine_color
   - start_month
   - stationery_binding_type
   - text_size
@@ -1910,7 +1802,6 @@
   - desk_organizer_features
   - material
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -2727,7 +2618,6 @@
   - color
   - pattern
   - shape
-  - zipper_color
   return_reasons:
   - size
   - color
@@ -2752,7 +2642,6 @@
   - color
   - pattern
   - shape
-  - zipper_color
   return_reasons: inherit
 - id: os-3-16-2
   name: Pen & Pencil Boxes
@@ -2767,7 +2656,6 @@
   - color
   - pattern
   - shape
-  - zipper_color
   return_reasons: inherit
 - id: os-3-16-3
   name: Pen Sleeves
@@ -2782,7 +2670,6 @@
   - color
   - pattern
   - shape
-  - zipper_color
   return_reasons: inherit
 - id: os-3-16-4
   name: Pen Rolls
@@ -2797,7 +2684,6 @@
   - color
   - pattern
   - shape
-  - zipper_color
   return_reasons: inherit
 - id: os-3-16-5
   name: Pencil Tubes
@@ -2812,7 +2698,6 @@
   - color
   - pattern
   - shape
-  - zipper_color
   return_reasons: inherit
 - id: os-3-16-6
   name: Pocket Protectors
@@ -2827,7 +2712,6 @@
   - color
   - pattern
   - shape
-  - zipper_color
   return_reasons: inherit
 - id: os-3-17
   name: Portfolios & Padfolios
@@ -3398,7 +3282,6 @@
   - compatible_printer_type
   - finish
   - pattern
-  - print_color
   - shape
   - tape_material
   - usage_type
@@ -3421,7 +3304,6 @@
   - compatible_printer_type
   - finish
   - pattern
-  - print_color
   - shape
   - tape_material
   - usage_type
@@ -3435,7 +3317,6 @@
   - compatible_printer_type
   - finish
   - pattern
-  - print_color
   - shape
   - tape_material
   - usage_type
@@ -3449,7 +3330,6 @@
   - compatible_printer_type
   - finish
   - pattern
-  - print_color
   - shape
   - tape_material
   - usage_type
@@ -3463,7 +3343,6 @@
   - compatible_printer_type
   - finish
   - pattern
-  - print_color
   - shape
   - tape_material
   - usage_type
@@ -3477,7 +3356,6 @@
   - compatible_printer_type
   - finish
   - pattern
-  - print_color
   - shape
   - tape_material
   - usage_type
@@ -4113,16 +3991,13 @@
   name: Business Cards
   children: []
   attributes:
-  - border_color
   - card_edge_style
   - color
   - corner_style
-  - edge_color
   - finish
   - foil_color
   - pattern
   - portrait/landscape_orientation
-  - print_color_mode
   - printing_method
   - raised_spot_uv_side
   - shape
@@ -4149,8 +4024,6 @@
   - language
   - pattern
   - portrait/landscape_orientation
-  - print_color
-  - print_color_mode
   - stationery_binding_type
   return_reasons:
   - size
@@ -4170,8 +4043,6 @@
   - language
   - pattern
   - portrait/landscape_orientation
-  - print_color
-  - print_color_mode
   - stationery_binding_type
   return_reasons: inherit
 - id: os-4-9-4-2
@@ -4182,8 +4053,6 @@
   - language
   - pattern
   - portrait/landscape_orientation
-  - print_color
-  - print_color_mode
   - stationery_binding_type
   return_reasons: inherit
 - id: os-4-9-4-3
@@ -4194,8 +4063,6 @@
   - language
   - pattern
   - portrait/landscape_orientation
-  - print_color
-  - print_color_mode
   - stationery_binding_type
   return_reasons: inherit
 - id: os-4-9-4-4
@@ -4206,8 +4073,6 @@
   - language
   - pattern
   - portrait/landscape_orientation
-  - print_color
-  - print_color_mode
   - stationery_binding_type
   return_reasons: inherit
 - id: os-4-9-5
@@ -4507,7 +4372,6 @@
   - os-4-9-9-5
   - os-4-9-9-6
   attributes:
-  - binding_hardware_color
   - closure_type
   - color
   - corner_style
@@ -4540,11 +4404,9 @@
   - os-4-9-9-3-3
   - os-4-9-9-3-4
   attributes:
-  - binding_hardware_color
   - closure_type
   - color
   - cover_material
-  - hardware_color
   - lamination
   - language
   - leather_finish
@@ -4553,10 +4415,8 @@
   - paper_texture
   - paper_type
   - pattern
-  - ribbon_color
   - sheet_color
   - sheet_pattern
-  - strap_color
   - target_audience
   return_reasons:
   - size
@@ -4571,11 +4431,9 @@
   name: Blank Journals
   children: []
   attributes:
-  - binding_hardware_color
   - closure_type
   - color
   - cover_material
-  - hardware_color
   - lamination
   - language
   - leather_finish
@@ -4584,21 +4442,17 @@
   - paper_texture
   - paper_type
   - pattern
-  - ribbon_color
   - sheet_color
   - sheet_pattern
-  - strap_color
   - target_audience
   return_reasons: inherit
 - id: os-4-9-9-3-2
   name: Lined Journals
   children: []
   attributes:
-  - binding_hardware_color
   - closure_type
   - color
   - cover_material
-  - hardware_color
   - lamination
   - language
   - leather_finish
@@ -4607,21 +4461,17 @@
   - paper_texture
   - paper_type
   - pattern
-  - ribbon_color
   - sheet_color
   - sheet_pattern
-  - strap_color
   - target_audience
   return_reasons: inherit
 - id: os-4-9-9-3-3
   name: Graph-Paper Journals
   children: []
   attributes:
-  - binding_hardware_color
   - closure_type
   - color
   - cover_material
-  - hardware_color
   - lamination
   - language
   - leather_finish
@@ -4630,21 +4480,17 @@
   - paper_texture
   - paper_type
   - pattern
-  - ribbon_color
   - sheet_color
   - sheet_pattern
-  - strap_color
   - target_audience
   return_reasons: inherit
 - id: os-4-9-9-3-4
   name: Dot-Grid Journals
   children: []
   attributes:
-  - binding_hardware_color
   - closure_type
   - color
   - cover_material
-  - hardware_color
   - lamination
   - language
   - leather_finish
@@ -4653,10 +4499,8 @@
   - paper_texture
   - paper_type
   - pattern
-  - ribbon_color
   - sheet_color
   - sheet_pattern
-  - strap_color
   - target_audience
   return_reasons: inherit
 - id: os-4-9-9-4
@@ -4665,7 +4509,6 @@
   attributes:
   - color
   - hole_punch_type
-  - memo_pads_binding_type
   - paper_type
   - pattern
   - sheet_color
@@ -4704,7 +4547,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -4731,7 +4573,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -4750,7 +4591,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -4769,7 +4609,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -4788,7 +4627,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -4807,7 +4645,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -4826,7 +4663,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -4845,7 +4681,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -4864,7 +4699,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -4883,7 +4717,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -4902,7 +4735,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -4921,7 +4753,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -4940,7 +4771,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -4959,7 +4789,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -4978,7 +4807,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -4997,7 +4825,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -5016,7 +4843,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -5035,7 +4861,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -5054,7 +4879,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -5073,7 +4897,6 @@
   attributes:
   - color
   - cover_material
-  - interior_print_color
   - language
   - notepad_cover_type
   - notepad_design
@@ -5305,17 +5128,14 @@
   - os-4-9-13-17
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5336,17 +5156,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5357,17 +5174,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5378,17 +5192,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5399,17 +5210,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5420,17 +5228,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5441,17 +5246,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5462,17 +5264,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5483,17 +5282,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5504,17 +5300,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5525,17 +5318,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5546,17 +5336,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5567,17 +5354,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5588,17 +5372,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5609,17 +5390,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5630,17 +5408,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5651,17 +5426,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -5672,17 +5444,14 @@
   children: []
   attributes:
   - color
-  - embossing_color
   - finish
   - foil_color
   - hole_punch_format
   - language
   - material
-  - paper_color
   - paper_texture
   - pattern
   - portrait/landscape_orientation
-  - print_color_configuration
   - printed_sides
   - printing_method
   - ruling
@@ -6062,7 +5831,6 @@
   - os-7-1
   - os-7-2
   attributes:
-  - border_color
   - color
   - corner_style
   - finish
@@ -6071,7 +5839,6 @@
   - letter_material
   - mounting_option
   - office_supply_material
-  - plate_color
   - shape
   return_reasons:
   - size
@@ -6089,12 +5856,10 @@
   - os-7-1-1
   - os-7-1-2
   attributes:
-  - base_color
   - frame_color
   - led_light_color
   - office_supply_material
   - personalization_design
-  - plate_color
   - portrait/landscape_orientation
   - shape
   return_reasons:
@@ -6111,12 +5876,10 @@
   name: Freestanding Desk Name Plates
   children: []
   attributes:
-  - base_color
   - frame_color
   - led_light_color
   - office_supply_material
   - personalization_design
-  - plate_color
   - portrait/landscape_orientation
   - shape
   return_reasons: inherit
@@ -6124,12 +5887,10 @@
   name: Flat Desk Name Plate Strips
   children: []
   attributes:
-  - base_color
   - frame_color
   - led_light_color
   - office_supply_material
   - personalization_design
-  - plate_color
   - portrait/landscape_orientation
   - shape
   return_reasons: inherit
@@ -6138,12 +5899,9 @@
   children: []
   attributes:
   - color
-  - holder_color
-  - insert_color
   - mounting_method
   - office_supply_material
   - personalization_design
-  - plate_color
   - shape
   return_reasons:
   - size
@@ -6357,7 +6115,6 @@
   attributes:
   - color
   - door_color
-  - laminate_color
   - leg_color
   - material
   - office_cart_features
@@ -6378,7 +6135,6 @@
   attributes:
   - color
   - door_color
-  - laminate_color
   - leg_color
   - material
   - office_cart_features
@@ -6389,7 +6145,6 @@
   attributes:
   - color
   - door_color
-  - laminate_color
   - leg_color
   - material
   - office_cart_features
@@ -6400,7 +6155,6 @@
   attributes:
   - color
   - door_color
-  - laminate_color
   - leg_color
   - material
   - office_cart_features
@@ -6411,7 +6165,6 @@
   attributes:
   - color
   - door_color
-  - laminate_color
   - leg_color
   - material
   - office_cart_features
@@ -6596,7 +6349,6 @@
   - handrail_direction
   - material
   - office_cart_features
-  - tray_color
   return_reasons:
   - size
   - style
@@ -8458,7 +8210,6 @@
   - os-11-6-6-3
   attributes:
   - color
-  - container_color
   - hand_orientation
   - office_instrument_material
   - pattern
@@ -8476,7 +8227,6 @@
   children: []
   attributes:
   - color
-  - container_color
   - hand_orientation
   - office_instrument_material
   - pattern
@@ -8487,7 +8237,6 @@
   children: []
   attributes:
   - color
-  - container_color
   - hand_orientation
   - office_instrument_material
   - pattern
@@ -8498,7 +8247,6 @@
   children: []
   attributes:
   - color
-  - container_color
   - hand_orientation
   - office_instrument_material
   - pattern
@@ -9689,7 +9437,6 @@
   - os-11-11-4-2-7
   attributes:
   - alcohol/solvent_content
-  - barrel_color
   - color
   - marker_tip_design
   - marker_tip_size
@@ -9708,7 +9455,6 @@
   children: []
   attributes:
   - alcohol/solvent_content
-  - barrel_color
   - color
   - marker_tip_design
   - marker_tip_size
@@ -9719,7 +9465,6 @@
   children: []
   attributes:
   - alcohol/solvent_content
-  - barrel_color
   - color
   - marker_tip_design
   - marker_tip_size
@@ -9730,7 +9475,6 @@
   children: []
   attributes:
   - alcohol/solvent_content
-  - barrel_color
   - color
   - marker_tip_design
   - marker_tip_size
@@ -9741,7 +9485,6 @@
   children: []
   attributes:
   - alcohol/solvent_content
-  - barrel_color
   - color
   - marker_tip_design
   - marker_tip_size
@@ -9752,7 +9495,6 @@
   children: []
   attributes:
   - alcohol/solvent_content
-  - barrel_color
   - color
   - marker_tip_design
   - marker_tip_size
@@ -9763,7 +9505,6 @@
   children: []
   attributes:
   - alcohol/solvent_content
-  - barrel_color
   - color
   - marker_tip_design
   - marker_tip_size
@@ -9774,7 +9515,6 @@
   children: []
   attributes:
   - alcohol/solvent_content
-  - barrel_color
   - color
   - marker_tip_design
   - marker_tip_size
@@ -9953,7 +9693,6 @@
   - material
   - pattern
   - personalization_type
-  - trim_color
   return_reasons:
   - size
   - color
@@ -9973,7 +9712,6 @@
   - finish
   - handedness
   - ink_color
-  - marking_color
   - material
   - nib_size
   - pattern
@@ -10003,7 +9741,6 @@
   - finish
   - handedness
   - ink_color
-  - marking_color
   - material
   - nib_size
   - pattern
@@ -10019,7 +9756,6 @@
   - finish
   - handedness
   - ink_color
-  - marking_color
   - material
   - nib_size
   - pattern
@@ -10035,7 +9771,6 @@
   - finish
   - handedness
   - ink_color
-  - marking_color
   - material
   - nib_size
   - pattern
@@ -10051,7 +9786,6 @@
   - finish
   - handedness
   - ink_color
-  - marking_color
   - material
   - nib_size
   - pattern
@@ -10067,7 +9801,6 @@
   - finish
   - handedness
   - ink_color
-  - marking_color
   - material
   - nib_size
   - pattern
@@ -10083,7 +9816,6 @@
   - finish
   - handedness
   - ink_color
-  - marking_color
   - material
   - nib_size
   - pattern
@@ -10099,7 +9831,6 @@
   - finish
   - handedness
   - ink_color
-  - marking_color
   - material
   - nib_size
   - pattern
@@ -10122,7 +9853,6 @@
   - finish
   - handedness
   - ink_color
-  - marking_color
   - material
   - nib_size
   - pattern
@@ -10138,7 +9868,6 @@
   - finish
   - handedness
   - ink_color
-  - marking_color
   - material
   - nib_size
   - pattern
@@ -10154,7 +9883,6 @@
   - finish
   - handedness
   - ink_color
-  - marking_color
   - material
   - nib_size
   - pattern
@@ -10170,7 +9898,6 @@
   - finish
   - handedness
   - ink_color
-  - marking_color
   - material
   - nib_size
   - pattern
@@ -10186,7 +9913,6 @@
   - finish
   - handedness
   - ink_color
-  - marking_color
   - material
   - nib_size
   - pattern
@@ -10202,7 +9928,6 @@
   - finish
   - handedness
   - ink_color
-  - marking_color
   - material
   - nib_size
   - pattern
@@ -10218,7 +9943,6 @@
   - finish
   - handedness
   - ink_color
-  - marking_color
   - material
   - nib_size
   - pattern
@@ -10234,7 +9958,6 @@
   - finish
   - handedness
   - ink_color
-  - marking_color
   - material
   - nib_size
   - pattern
@@ -10251,7 +9974,6 @@
   - color
   - lead_hardness
   - lumber/wood_type
-  - marking_color
   - pattern
   - pencil_features
   - wood_finish
@@ -10274,7 +9996,6 @@
   - color
   - lead_grade
   - lumber/wood_type
-  - marking_color
   - material
   - package_type
   - pattern
@@ -10296,7 +10017,6 @@
   - color
   - lead_grade
   - lumber/wood_type
-  - marking_color
   - material
   - package_type
   - pattern
@@ -10310,7 +10030,6 @@
   - color
   - lead_grade
   - lumber/wood_type
-  - marking_color
   - material
   - package_type
   - pattern
@@ -10324,7 +10043,6 @@
   - color
   - lead_grade
   - lumber/wood_type
-  - marking_color
   - material
   - package_type
   - pattern
@@ -10337,9 +10055,7 @@
   - os-11-11-7-2-2-1
   - os-11-11-7-2-2-2
   attributes:
-  - barrel_color
   - lead_hardness
-  - marking_color
   - material
   - pencil_features
   return_reasons:
@@ -10368,11 +10084,9 @@
   - handedness
   - lead_hardness
   - lumber/wood_type
-  - marking_color
   - pattern
   - pencil_features
   - scent
-  - trim_color
   - wood_finish
   return_reasons:
   - size
@@ -10394,11 +10108,9 @@
   - handedness
   - lead_hardness
   - lumber/wood_type
-  - marking_color
   - pattern
   - pencil_features
   - scent
-  - trim_color
   - wood_finish
   return_reasons: inherit
 - id: os-11-11-7-2-2-1-2
@@ -10412,11 +10124,9 @@
   - handedness
   - lead_hardness
   - lumber/wood_type
-  - marking_color
   - pattern
   - pencil_features
   - scent
-  - trim_color
   - wood_finish
   return_reasons: inherit
 - id: os-11-11-7-2-2-1-3
@@ -10430,11 +10140,9 @@
   - handedness
   - lead_hardness
   - lumber/wood_type
-  - marking_color
   - pattern
   - pencil_features
   - scent
-  - trim_color
   - wood_finish
   return_reasons: inherit
 - id: os-11-11-7-2-2-1-4
@@ -10448,11 +10156,9 @@
   - handedness
   - lead_hardness
   - lumber/wood_type
-  - marking_color
   - pattern
   - pencil_features
   - scent
-  - trim_color
   - wood_finish
   return_reasons: inherit
 - id: os-11-11-7-2-2-1-5
@@ -10466,11 +10172,9 @@
   - handedness
   - lead_hardness
   - lumber/wood_type
-  - marking_color
   - pattern
   - pencil_features
   - scent
-  - trim_color
   - wood_finish
   return_reasons: inherit
 - id: os-11-11-7-2-2-1-6
@@ -10484,11 +10188,9 @@
   - handedness
   - lead_hardness
   - lumber/wood_type
-  - marking_color
   - pattern
   - pencil_features
   - scent
-  - trim_color
   - wood_finish
   return_reasons: inherit
 - id: os-11-11-7-2-2-2
@@ -10501,11 +10203,9 @@
   attributes:
   - barrel_shape
   - color
-  - eraser_color
   - handedness
   - lead_grade
   - lumber/wood_type
-  - marking_color
   - pattern
   - pencil_features
   - scent
@@ -10525,11 +10225,9 @@
   attributes:
   - barrel_shape
   - color
-  - eraser_color
   - handedness
   - lead_grade
   - lumber/wood_type
-  - marking_color
   - pattern
   - pencil_features
   - scent
@@ -10541,11 +10239,9 @@
   attributes:
   - barrel_shape
   - color
-  - eraser_color
   - handedness
   - lead_grade
   - lumber/wood_type
-  - marking_color
   - pattern
   - pencil_features
   - scent
@@ -10557,11 +10253,9 @@
   attributes:
   - barrel_shape
   - color
-  - eraser_color
   - handedness
   - lead_grade
   - lumber/wood_type
-  - marking_color
   - pattern
   - pencil_features
   - scent
@@ -10573,11 +10267,9 @@
   attributes:
   - barrel_shape
   - color
-  - eraser_color
   - handedness
   - lead_grade
   - lumber/wood_type
-  - marking_color
   - pattern
   - pencil_features
   - scent
@@ -10592,14 +10284,11 @@
   - os-11-11-7-3-4
   - os-11-11-7-3-5
   attributes:
-  - barrel_color
   - barrel_finish
   - engraving_location
-  - grip_color
   - ink_color
   - ink_pattern
   - lumber/wood_type
-  - trim_color
   - trim_finish
   - wood_finish
   return_reasons:
@@ -10617,10 +10306,8 @@
   - os-11-11-7-3-1-1
   - os-11-11-7-3-1-2
   attributes:
-  - cap_color
   - clip_color
   - clip_finish
-  - grip_color
   - imprint_method
   - ink_color
   - ink_pattern
@@ -10630,7 +10317,6 @@
   - pen_mechanism
   - pen_pattern
   - pen_tip_design
-  - trim_color
   - trim_finish
   - wood_finish
   return_reasons:
@@ -10646,10 +10332,8 @@
   name: Capped Ballpoint Pens
   children: []
   attributes:
-  - cap_color
   - clip_color
   - clip_finish
-  - grip_color
   - imprint_method
   - ink_color
   - ink_pattern
@@ -10659,7 +10343,6 @@
   - pen_mechanism
   - pen_pattern
   - pen_tip_design
-  - trim_color
   - trim_finish
   - wood_finish
   return_reasons: inherit
@@ -10667,10 +10350,8 @@
   name: Retractable Ballpoint Pens
   children: []
   attributes:
-  - cap_color
   - clip_color
   - clip_finish
-  - grip_color
   - imprint_method
   - ink_color
   - ink_pattern
@@ -10680,7 +10361,6 @@
   - pen_mechanism
   - pen_pattern
   - pen_tip_design
-  - trim_color
   - trim_finish
   - wood_finish
   return_reasons: inherit
@@ -10767,15 +10447,12 @@
   name: Fountain Pens
   children: []
   attributes:
-  - barrel_color
-  - cap_color
   - clip_color
   - filling_system
   - handedness
   - ink_color
   - ink_pattern
   - lumber/wood_type
-  - nib_color
   - nib_material
   - nib_number
   - pen_color
@@ -10860,9 +10537,7 @@
   - os-11-11-7-3-5-2
   attributes:
   - body_material
-  - cap_color
   - finish
-  - grip_color
   - handedness
   - ink_color
   - ink_pattern
@@ -10870,7 +10545,6 @@
   - pen_features
   - pen_pattern
   - pen_tip_design
-  - trim_color
   - trim_finish
   return_reasons:
   - color
@@ -10886,9 +10560,7 @@
   children: []
   attributes:
   - body_material
-  - cap_color
   - finish
-  - grip_color
   - handedness
   - ink_color
   - ink_pattern
@@ -10896,7 +10568,6 @@
   - pen_features
   - pen_pattern
   - pen_tip_design
-  - trim_color
   - trim_finish
   return_reasons: inherit
 - id: os-11-11-7-3-5-2
@@ -10904,9 +10575,7 @@
   children: []
   attributes:
   - body_material
-  - cap_color
   - finish
-  - grip_color
   - handedness
   - ink_color
   - ink_pattern
@@ -10914,7 +10583,6 @@
   - pen_features
   - pen_pattern
   - pen_tip_design
-  - trim_color
   - trim_finish
   return_reasons: inherit
 - id: os-12
@@ -11188,7 +10856,6 @@
   - os-13-1-2
   - os-13-1-3
   attributes:
-  - board_color
   - board_material
   - board_mounting_type
   - chalkboard_surface
@@ -11211,7 +10878,6 @@
   name: Wall-Mounted Chalkboards
   children: []
   attributes:
-  - board_color
   - board_material
   - board_mounting_type
   - chalkboard_surface
@@ -11225,7 +10891,6 @@
   name: Freestanding Chalkboards
   children: []
   attributes:
-  - board_color
   - board_material
   - board_mounting_type
   - chalkboard_surface
@@ -11239,7 +10904,6 @@
   name: Adhesive Chalkboards
   children: []
   attributes:
-  - board_color
   - board_material
   - board_mounting_type
   - chalkboard_surface
@@ -11397,7 +11061,6 @@
   - mounting_method
   - portrait/landscape_orientation
   - shape
-  - surface_color
   - wood_finish
   return_reasons:
   - size
@@ -11424,7 +11087,6 @@
   - mounting_method
   - portrait/landscape_orientation
   - shape
-  - surface_color
   - wood_finish
   return_reasons: inherit
 - id: os-13-2-2-2
@@ -11443,7 +11105,6 @@
   - mounting_method
   - portrait/landscape_orientation
   - shape
-  - surface_color
   - wood_finish
   return_reasons: inherit
 - id: os-13-2-3
@@ -11612,7 +11273,6 @@
   - os-13-4-3
   - os-13-4-4
   attributes:
-  - board_color
   - board_finish
   - board_layout
   - board_material
@@ -11623,7 +11283,6 @@
   - portrait/landscape_orientation
   - presentation_supply_features
   - shape
-  - tackboard_color
   return_reasons:
   - size
   - color
@@ -11638,7 +11297,6 @@
   name: Wall-Mounted Dry-Erase Boards
   children: []
   attributes:
-  - board_color
   - board_finish
   - board_layout
   - board_material
@@ -11649,13 +11307,11 @@
   - portrait/landscape_orientation
   - presentation_supply_features
   - shape
-  - tackboard_color
   return_reasons: inherit
 - id: os-13-4-2
   name: Freestanding Dry-Erase Boards
   children: []
   attributes:
-  - board_color
   - board_finish
   - board_layout
   - board_material
@@ -11666,13 +11322,11 @@
   - portrait/landscape_orientation
   - presentation_supply_features
   - shape
-  - tackboard_color
   return_reasons: inherit
 - id: os-13-4-3
   name: Tabletop Dry-Erase Boards
   children: []
   attributes:
-  - board_color
   - board_finish
   - board_layout
   - board_material
@@ -11683,13 +11337,11 @@
   - portrait/landscape_orientation
   - presentation_supply_features
   - shape
-  - tackboard_color
   return_reasons: inherit
 - id: os-13-4-4
   name: Dry-Erase Writing Slates
   children: []
   attributes:
-  - board_color
   - board_finish
   - board_layout
   - board_material
@@ -11700,7 +11352,6 @@
   - portrait/landscape_orientation
   - presentation_supply_features
   - shape
-  - tackboard_color
   return_reasons: inherit
 - id: os-13-5
   name: Easel Pads

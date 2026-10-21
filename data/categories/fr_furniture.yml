@@ -62,7 +62,6 @@
   - assembly_required
   - care_instructions
   - color
-  - fabric_color
   - furniture/fixture_material
   - pattern
   return_reasons:
@@ -86,8 +85,8 @@
   attributes:
   - baby/toddler_furniture_items_included
   - color
-  - cot_color
   - dresser_color
+  - dresser_pattern
   - furniture/fixture_features
   - furniture/fixture_material
   - furniture_finish
@@ -109,8 +108,8 @@
   attributes:
   - baby/toddler_furniture_items_included
   - color
-  - cot_color
   - dresser_color
+  - dresser_pattern
   - furniture/fixture_features
   - furniture/fixture_material
   - furniture_finish
@@ -123,8 +122,8 @@
   attributes:
   - baby/toddler_furniture_items_included
   - color
-  - cot_color
   - dresser_color
+  - dresser_pattern
   - furniture/fixture_features
   - furniture/fixture_material
   - furniture_finish
@@ -137,8 +136,8 @@
   attributes:
   - baby/toddler_furniture_items_included
   - color
-  - cot_color
   - dresser_color
+  - dresser_pattern
   - furniture/fixture_features
   - furniture/fixture_material
   - furniture_finish
@@ -151,8 +150,8 @@
   attributes:
   - baby/toddler_furniture_items_included
   - color
-  - cot_color
   - dresser_color
+  - dresser_pattern
   - furniture/fixture_features
   - furniture/fixture_material
   - furniture_finish
@@ -452,7 +451,6 @@
   - fabric_material
   - furniture/fixture_material
   - pattern
-  - stand_color
   return_reasons:
   - size
   - color
@@ -578,7 +576,6 @@
   - color
   - furniture/fixture_material
   - pattern
-  - stand_color
   return_reasons:
   - size
   - color
@@ -672,12 +669,10 @@
   attributes:
   - age_group
   - baby/toddler_furniture_features
-  - base_color
   - color
   - furniture/fixture_material
   - pattern
   - tabletop_color
-  - wood_color
   return_reasons:
   - size
   - color
@@ -694,12 +689,10 @@
   attributes:
   - age_group
   - baby/toddler_furniture_features
-  - base_color
   - color
   - furniture/fixture_material
   - pattern
   - tabletop_color
-  - wood_color
   return_reasons: inherit
 - id: fr-1-4-2
   name: Wall-Mounted Changing Tables
@@ -707,12 +700,10 @@
   attributes:
   - age_group
   - baby/toddler_furniture_features
-  - base_color
   - color
   - furniture/fixture_material
   - pattern
   - tabletop_color
-  - wood_color
   return_reasons: inherit
 - id: fr-1-4-3
   name: Countertop Changing Tables
@@ -720,12 +711,10 @@
   attributes:
   - age_group
   - baby/toddler_furniture_features
-  - base_color
   - color
   - furniture/fixture_material
   - pattern
   - tabletop_color
-  - wood_color
   return_reasons: inherit
 - id: fr-1-4-4
   name: Crib-Attached Changing Tables
@@ -733,12 +722,10 @@
   attributes:
   - age_group
   - baby/toddler_furniture_features
-  - base_color
   - color
   - furniture/fixture_material
   - pattern
   - tabletop_color
-  - wood_color
   return_reasons: inherit
 - id: fr-1-5
   name: Crib & Toddler Bed Accessories
@@ -1372,12 +1359,9 @@
   name: Standard Cribs
   children: []
   attributes:
-  - accent_color
-  - base_color
   - color
   - crib_end_panel_type
   - crib_features
-  - fabric_color
   - finish
   - furniture/fixture_material
   - pattern
@@ -1636,7 +1620,6 @@
   - material
   - pattern
   - upholstery_material
-  - wood_color
   return_reasons:
   - size
   - color
@@ -1657,7 +1640,6 @@
   - material
   - pattern
   - upholstery_material
-  - wood_color
   return_reasons: inherit
 - id: fr-1-8-2-2
   name: Dining Chair Booster Cushions
@@ -1668,7 +1650,6 @@
   - material
   - pattern
   - upholstery_material
-  - wood_color
   return_reasons: inherit
 - id: fr-1-8-2-3
   name: Inflatable Feeding Booster Seats
@@ -1679,7 +1660,6 @@
   - material
   - pattern
   - upholstery_material
-  - wood_color
   return_reasons: inherit
 - id: fr-1-8-3
   name: Convertible High Chairs
@@ -1692,7 +1672,6 @@
   - material
   - pattern
   - seat_color
-  - seat_pad_color
   - upholstery_material
   return_reasons:
   - size
@@ -1716,8 +1695,6 @@
   - frame_material
   - pattern
   - seat_color
-  - seat_pad_color
-  - tray_color
   - upholstery_material
   return_reasons:
   - size
@@ -1788,8 +1765,6 @@
   attributes:
   - assembly_status
   - color
-  - cushion_color
-  - mattress_color
   - pattern
   - upholstery_material
   return_reasons:
@@ -1807,11 +1782,9 @@
   name: Kids Tables & Chair Sets
   children: []
   attributes:
-  - chair_color
   - color
   - furniture/fixture_material
   - pattern
-  - table_color
   - table_shape
   - tabletop_color
   return_reasons: inherit
@@ -1972,7 +1945,6 @@
   - color
   - material
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -2211,7 +2183,6 @@
   - footboard_height_class
   - frame_color
   - furniture/fixture_material
-  - headboard_color
   - headboard_style
   - mattress_placement
   - pattern
@@ -2303,8 +2274,8 @@
   - pattern
   - slatted_base_type
   - tent_color
+  - tent_pattern
   - under_bed_features
-  - wood_color
   return_reasons:
   - size
   - color
@@ -2330,8 +2301,8 @@
   - pattern
   - slatted_base_type
   - tent_color
+  - tent_pattern
   - under_bed_features
-  - wood_color
   return_reasons: inherit
 - id: fr-2-2-3-2
   name: Mid-Sleeper Cabin Beds
@@ -2348,8 +2319,8 @@
   - pattern
   - slatted_base_type
   - tent_color
+  - tent_pattern
   - under_bed_features
-  - wood_color
   return_reasons: inherit
 - id: fr-2-2-4
   name: Canopy Beds & Bed Frames
@@ -2574,7 +2545,6 @@
   - bedding_size
   - color
   - compatible_mattress_size
-  - fabric_color
   - footboard_style
   - furniture/fixture_material
   - headboard_style
@@ -2607,7 +2577,6 @@
   - bedding_size
   - color
   - compatible_mattress_size
-  - fabric_color
   - footboard_style
   - furniture/fixture_material
   - headboard_style
@@ -2629,7 +2598,6 @@
   - bedding_size
   - color
   - compatible_mattress_size
-  - fabric_color
   - footboard_style
   - furniture/fixture_material
   - headboard_style
@@ -2704,14 +2672,12 @@
   - footboard_style
   - frame_color
   - furniture/fixture_material
-  - headboard_color
   - headboard_material
   - headboard_style
   - leg_color
   - lift_mechanism_type
   - lumber/wood_type
   - mattress_placement
-  - metal_color
   - pattern
   - slat_material
   - storage_opening_direction
@@ -2719,7 +2685,6 @@
   - underbed_configuration
   - upholstery_color
   - upholstery_material
-  - wood_color
   - wood_finish
   return_reasons:
   - size
@@ -2748,7 +2713,6 @@
   - headboard_style
   - pattern
   - slat_material
-  - wood_color
   return_reasons:
   - size
   - color
@@ -2773,7 +2737,6 @@
   - headboard_style
   - pattern
   - slat_material
-  - wood_color
   return_reasons: inherit
 - id: fr-2-2-12-2
   name: Wingback Slat Beds
@@ -2789,7 +2752,6 @@
   - headboard_style
   - pattern
   - slat_material
-  - wood_color
   return_reasons: inherit
 - id: fr-2-2-12-3
   name: Headboardless Slat Beds
@@ -2805,7 +2767,6 @@
   - headboard_style
   - pattern
   - slat_material
-  - wood_color
   return_reasons: inherit
 - id: fr-2-2-13
   name: Sleigh Beds & Bed Frames
@@ -2821,7 +2782,6 @@
   - furniture/fixture_material
   - headboard_style
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -2851,7 +2811,6 @@
   - trundle_mechanism
   - underbed_configuration
   - upholstery_material
-  - wood_color
   return_reasons:
   - size
   - color
@@ -2879,7 +2838,6 @@
   - trundle_mechanism
   - underbed_configuration
   - upholstery_material
-  - wood_color
   return_reasons: inherit
 - id: fr-2-2-14-2
   name: Pop-Up Trundle Beds
@@ -2898,7 +2856,6 @@
   - trundle_mechanism
   - underbed_configuration
   - upholstery_material
-  - wood_color
   return_reasons: inherit
 - id: fr-2-2-15
   name: Wall Beds & Bed Frames
@@ -2918,7 +2875,6 @@
   - integrated_furniture_function
   - lift_mechanism_type
   - pattern
-  - sofa_color
   return_reasons:
   - size
   - color
@@ -2945,7 +2901,6 @@
   - integrated_furniture_function
   - lift_mechanism_type
   - pattern
-  - sofa_color
   return_reasons: inherit
 - id: fr-2-2-15-2
   name: Horizontal Wall Beds
@@ -2963,7 +2918,6 @@
   - integrated_furniture_function
   - lift_mechanism_type
   - pattern
-  - sofa_color
   return_reasons: inherit
 - id: fr-2-2-16
   name: Water Beds
@@ -3002,7 +2956,6 @@
   - footboard_mounting_type
   - footboard_style
   - furniture/fixture_material
-  - wood_color
   return_reasons:
   - size
   - color
@@ -3022,7 +2975,6 @@
   - footboard_mounting_type
   - footboard_style
   - furniture/fixture_material
-  - wood_color
   return_reasons: inherit
 - id: fr-2-3-2
   name: Sleigh Footboards
@@ -3032,7 +2984,6 @@
   - footboard_mounting_type
   - footboard_style
   - furniture/fixture_material
-  - wood_color
   return_reasons: inherit
 - id: fr-2-3-3
   name: Poster Footboards
@@ -3042,7 +2993,6 @@
   - footboard_mounting_type
   - footboard_style
   - furniture/fixture_material
-  - wood_color
   return_reasons: inherit
 - id: fr-2-3-4
   name: Louvered Footboards
@@ -3052,7 +3002,6 @@
   - footboard_mounting_type
   - footboard_style
   - furniture/fixture_material
-  - wood_color
   return_reasons: inherit
 - id: fr-2-4
   name: Headboards
@@ -3063,7 +3012,6 @@
   - fr-2-4-4
   - fr-2-4-5
   attributes:
-  - accent_color
   - color
   - frame_color
   - frame_material
@@ -3077,7 +3025,6 @@
   - sheen
   - upholstery_fill_material
   - upholstery_material
-  - wood_color
   return_reasons:
   - size
   - color
@@ -3093,7 +3040,6 @@
   name: Wall-Mounted Headboards
   children: []
   attributes:
-  - accent_color
   - color
   - frame_color
   - frame_material
@@ -3107,13 +3053,11 @@
   - sheen
   - upholstery_fill_material
   - upholstery_material
-  - wood_color
   return_reasons: inherit
 - id: fr-2-4-2
   name: Floor-Standing Headboards
   children: []
   attributes:
-  - accent_color
   - color
   - frame_color
   - frame_material
@@ -3127,13 +3071,11 @@
   - sheen
   - upholstery_fill_material
   - upholstery_material
-  - wood_color
   return_reasons: inherit
 - id: fr-2-4-3
   name: Strutted Headboards
   children: []
   attributes:
-  - accent_color
   - color
   - frame_color
   - frame_material
@@ -3147,13 +3089,11 @@
   - sheen
   - upholstery_fill_material
   - upholstery_material
-  - wood_color
   return_reasons: inherit
 - id: fr-2-4-4
   name: Bolt-On Headboards
   children: []
   attributes:
-  - accent_color
   - color
   - frame_color
   - frame_material
@@ -3167,13 +3107,11 @@
   - sheen
   - upholstery_fill_material
   - upholstery_material
-  - wood_color
   return_reasons: inherit
 - id: fr-2-4-5
   name: Peel-and-Stick Headboards
   children: []
   attributes:
-  - accent_color
   - color
   - frame_color
   - frame_material
@@ -3187,7 +3125,6 @@
   - sheen
   - upholstery_fill_material
   - upholstery_material
-  - wood_color
   return_reasons: inherit
 - id: fr-2-5
   name: Mattress Foundations
@@ -4050,8 +3987,6 @@
   - fr-3-4
   attributes:
   - assembly_required
-  - bench_back_color
-  - benches_seat_upholstery_color
   - chair_seat_material
   - color
   - frame_color
@@ -4853,7 +4788,6 @@
   - fr-3-2-14
   attributes:
   - color
-  - cushion_color
   - frame_color
   - furniture/fixture_material
   - furniture_finish
@@ -4877,10 +4811,8 @@
   children: []
   attributes:
   - color
-  - cushion_color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -5026,11 +4958,9 @@
   - fr-3-2-5-1
   - fr-3-2-5-2
   attributes:
-  - bench_back_color
   - bench_base_type
   - color
   - cover_material
-  - cushion_color
   - frame_color
   - frame_finish
   - frame_material
@@ -5058,11 +4988,9 @@
   name: Backed Entryway Benches
   children: []
   attributes:
-  - bench_back_color
   - bench_base_type
   - color
   - cover_material
-  - cushion_color
   - frame_color
   - frame_finish
   - frame_material
@@ -5080,11 +5008,9 @@
   name: Backless Entryway Benches
   children: []
   attributes:
-  - bench_back_color
   - bench_base_type
   - color
   - cover_material
-  - cushion_color
   - frame_color
   - frame_finish
   - frame_material
@@ -5102,7 +5028,6 @@
   name: Hall Trees
   children: []
   attributes:
-  - base_color
   - color
   - frame_color
   - furniture/fixture_material
@@ -5125,7 +5050,6 @@
   attributes:
   - color
   - furniture/fixture_material
-  - hook_color
   - pattern
   return_reasons:
   - size
@@ -5143,7 +5067,6 @@
   children: []
   attributes:
   - color
-  - cushion_color
   - furniture/fixture_material
   - pattern
   return_reasons:
@@ -5163,10 +5086,8 @@
   children: []
   attributes:
   - color
-  - cushion_color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -5188,6 +5109,7 @@
   - furniture/fixture_material
   - locker_bench_configuration
   - locker_color
+  - locker_pattern
   - pattern
   - seat_color
   return_reasons:
@@ -5418,7 +5340,6 @@
   - color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -5477,7 +5398,6 @@
   - color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -5514,7 +5434,6 @@
   - fr-4-1-3-1
   - fr-4-1-3-2
   attributes:
-  - cabinet_body_color
   - color
   - furniture/fixture_material
   - lumber/wood_type
@@ -5536,7 +5455,6 @@
   name: Diagonal Corner Wardrobes
   children: []
   attributes:
-  - cabinet_body_color
   - color
   - furniture/fixture_material
   - lumber/wood_type
@@ -5548,7 +5466,6 @@
   name: L-Shaped Corner Wardrobes
   children: []
   attributes:
-  - cabinet_body_color
   - color
   - furniture/fixture_material
   - lumber/wood_type
@@ -5564,9 +5481,7 @@
   - clothes_rail_side
   - color
   - furniture/fixture_material
-  - interior_color
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -5585,7 +5500,6 @@
   - fr-4-1-5-2
   attributes:
   - assembly_status
-  - carcass_color
   - color
   - door_color
   - door_opening_side
@@ -5609,7 +5523,6 @@
   children: []
   attributes:
   - assembly_status
-  - carcass_color
   - color
   - door_color
   - door_opening_side
@@ -5623,7 +5536,6 @@
   children: []
   attributes:
   - assembly_status
-  - carcass_color
   - color
   - door_color
   - door_opening_side
@@ -5637,12 +5549,10 @@
   children: []
   attributes:
   - assembly_state
-  - carcass_color
   - color
   - door_color
   - frame_color
   - furniture/fixture_material
-  - glass_color
   - handle_color
   - pattern
   return_reasons:
@@ -5774,7 +5684,6 @@
   - furniture/fixture_material
   - hanging_rail_position
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -5882,13 +5791,13 @@
   attributes:
   - color
   - curtain_color
+  - curtain_pattern
   - door_color
   - door_opening_direction
   - frame_color
   - furniture/fixture_material
   - hardware_finish
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -5907,7 +5816,6 @@
   - fr-4-1-15-2
   - fr-4-1-15-3
   attributes:
-  - carcass_color
   - color
   - door_color
   - frame_color
@@ -5931,7 +5839,6 @@
   name: Glass-Front Sliding Door Wardrobes
   children: []
   attributes:
-  - carcass_color
   - color
   - door_color
   - frame_color
@@ -5945,7 +5852,6 @@
   name: Wood-Panel Sliding Door Wardrobes
   children: []
   attributes:
-  - carcass_color
   - color
   - door_color
   - frame_color
@@ -5959,7 +5865,6 @@
   name: Louvered Sliding Door Wardrobes
   children: []
   attributes:
-  - carcass_color
   - color
   - door_color
   - frame_color
@@ -5974,7 +5879,6 @@
   children: []
   attributes:
   - assembly_status
-  - carcass_color
   - clothes_rail_side
   - color
   - door_color
@@ -6023,7 +5927,6 @@
   children: []
   attributes:
   - assembly_status
-  - base_color
   - base_type
   - color
   - door_color
@@ -6076,7 +5979,6 @@
   - frame_color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -6095,7 +5997,6 @@
   - frame_color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -6149,7 +6050,6 @@
   name: Corner Display Cabinets
   children: []
   attributes:
-  - back_panel_color
   - back_panel_type
   - color
   - furniture/fixture_material
@@ -6226,13 +6126,11 @@
   name: Display Hutches
   children: []
   attributes:
-  - base_color
   - color
   - door_material
   - frame_color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -6349,7 +6247,6 @@
   - pattern
   - shape
   - sheen
-  - tall_display_cabinets_door_style
   return_reasons:
   - size
   - color
@@ -6375,7 +6272,6 @@
   - pattern
   - shape
   - sheen
-  - tall_display_cabinets_door_style
   return_reasons: inherit
 - id: fr-4-3-13-2
   name: Wall-Mounted Display Cabinets
@@ -6392,7 +6288,6 @@
   - pattern
   - shape
   - sheen
-  - tall_display_cabinets_door_style
   return_reasons: inherit
 - id: fr-4-3-14
   name: Wall-Mounted Hutches
@@ -6443,7 +6338,6 @@
   - furniture/fixture_features
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -6608,7 +6502,6 @@
   - color
   - door_color
   - door_material
-  - drawer_color
   - drawer_side
   - finished_side
   - frame_color
@@ -6643,7 +6536,6 @@
   - color
   - door_color
   - door_material
-  - drawer_color
   - drawer_side
   - finished_side
   - frame_color
@@ -6664,7 +6556,6 @@
   - color
   - door_color
   - door_material
-  - drawer_color
   - drawer_side
   - finished_side
   - frame_color
@@ -6685,7 +6576,6 @@
   - color
   - door_color
   - door_material
-  - drawer_color
   - drawer_side
   - finished_side
   - frame_color
@@ -6706,7 +6596,6 @@
   - color
   - door_color
   - door_material
-  - drawer_color
   - drawer_side
   - finished_side
   - frame_color
@@ -6727,7 +6616,6 @@
   - color
   - door_color
   - door_material
-  - drawer_color
   - drawer_side
   - finished_side
   - frame_color
@@ -6748,7 +6636,6 @@
   - color
   - door_color
   - door_material
-  - drawer_color
   - drawer_side
   - finished_side
   - frame_color
@@ -6769,7 +6656,6 @@
   - color
   - door_color
   - door_material
-  - drawer_color
   - drawer_side
   - finished_side
   - frame_color
@@ -6790,7 +6676,6 @@
   - color
   - door_color
   - door_material
-  - drawer_color
   - drawer_side
   - finished_side
   - frame_color
@@ -6811,7 +6696,6 @@
   - color
   - door_color
   - door_material
-  - drawer_color
   - drawer_side
   - finished_side
   - frame_color
@@ -6832,7 +6716,6 @@
   - color
   - door_color
   - door_material
-  - drawer_color
   - drawer_side
   - finished_side
   - frame_color
@@ -6902,7 +6785,6 @@
   attributes:
   - assembly_type
   - cabinet_and_appliance_handle_type
-  - cabinet_body_color
   - cabinet_door_style
   - color
   - door_color
@@ -6927,7 +6809,6 @@
   - fr-4-8-1-2
   attributes:
   - assembly_type
-  - cabinet_body_color
   - cabinet_box_material
   - cabinet_door_style
   - color
@@ -6954,7 +6835,6 @@
   - fr-4-8-1-1-2
   attributes:
   - assembly_type
-  - cabinet_body_color
   - cabinet_box_material
   - cabinet_door_style
   - color
@@ -6970,7 +6850,6 @@
   children: []
   attributes:
   - assembly_type
-  - cabinet_body_color
   - cabinet_box_material
   - cabinet_door_style
   - color
@@ -6986,7 +6865,6 @@
   children: []
   attributes:
   - assembly_type
-  - cabinet_body_color
   - cabinet_box_material
   - cabinet_door_style
   - color
@@ -7002,7 +6880,6 @@
   children: []
   attributes:
   - assembly_type
-  - cabinet_body_color
   - cabinet_box_material
   - cabinet_door_style
   - color
@@ -7150,7 +7027,6 @@
   - fr-4-8-4-2
   attributes:
   - assembly
-  - cabinet_body_color
   - cabinet_box_material
   - cabinet_door_hinge_side
   - cabinet_door_style
@@ -7179,7 +7055,6 @@
   children: []
   attributes:
   - assembly
-  - cabinet_body_color
   - cabinet_box_material
   - cabinet_door_hinge_side
   - cabinet_door_style
@@ -7199,7 +7074,6 @@
   children: []
   attributes:
   - assembly
-  - cabinet_body_color
   - cabinet_box_material
   - cabinet_door_hinge_side
   - cabinet_door_style
@@ -7275,7 +7149,6 @@
   children: []
   attributes:
   - color
-  - countertop_color
   - finish
   - furniture/fixture_material
   - pattern
@@ -7730,7 +7603,6 @@
   - fr-4-8-15-2
   attributes:
   - assembly_type
-  - cabinet_body_color
   - cabinet_box_material
   - cabinet_door_hinge_side
   - cabinet_door_style_or_presence
@@ -7755,7 +7627,6 @@
   children: []
   attributes:
   - assembly_type
-  - cabinet_body_color
   - cabinet_box_material
   - cabinet_door_hinge_side
   - cabinet_door_style_or_presence
@@ -7771,7 +7642,6 @@
   children: []
   attributes:
   - assembly_type
-  - cabinet_body_color
   - cabinet_box_material
   - cabinet_door_hinge_side
   - cabinet_door_style_or_presence
@@ -7792,7 +7662,6 @@
   attributes:
   - assembly_state
   - cabinet_and_appliance_handle_type
-  - cabinet_body_color
   - cabinet_box_material
   - cabinet_door_style
   - color
@@ -7820,7 +7689,6 @@
   attributes:
   - assembly_state
   - cabinet_and_appliance_handle_type
-  - cabinet_body_color
   - cabinet_box_material
   - cabinet_door_style
   - color
@@ -7839,7 +7707,6 @@
   attributes:
   - assembly_state
   - cabinet_and_appliance_handle_type
-  - cabinet_body_color
   - cabinet_box_material
   - cabinet_door_style
   - color
@@ -7858,7 +7725,6 @@
   attributes:
   - assembly_state
   - cabinet_and_appliance_handle_type
-  - cabinet_body_color
   - cabinet_box_material
   - cabinet_door_style
   - color
@@ -7877,7 +7743,6 @@
   attributes:
   - assembly_state
   - cabinet_and_appliance_handle_type
-  - cabinet_body_color
   - cabinet_box_material
   - cabinet_door_style
   - color
@@ -7961,13 +7826,11 @@
   - base_type
   - color
   - door_color
-  - drawer_color
   - frame_color
   - furniture/fixture_material
   - mounting_type
   - pattern
   - shelf_color
-  - wood_color
   return_reasons:
   - size
   - color
@@ -7990,7 +7853,6 @@
   - color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-4-10-1-1
   name: Turntable Cabinets
@@ -8000,7 +7862,6 @@
   - color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-4-10-1-2
   name: Turntable Shelving Units
@@ -8010,7 +7871,6 @@
   - color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-4-10-1-3
   name: Wall-Mounted Turntable Shelves
@@ -8020,7 +7880,6 @@
   - color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-4-10-2
   name: Record Storage Crates
@@ -8029,7 +7888,6 @@
   - color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-4-11
   name: Sideboards
@@ -8039,13 +7897,11 @@
   - door_color
   - door_material
   - door_pattern
-  - door_resin_color
   - door_type
   - frame_color
   - frame_material
   - frame_pattern
   - furniture/fixture_features
-  - glass_color
   - handle_color
   - hardware_finish
   - inlay_material
@@ -8053,7 +7909,6 @@
   - leg_material
   - leg_pattern
   - material
-  - panel_color
   - shelf_material
   - top_color
   - top_material
@@ -8083,6 +7938,7 @@
   - door_material
   - door_opening_side
   - feet_color
+  - feet_pattern
   - furniture/fixture_material
   - handle_color
   - handle_finish
@@ -8112,7 +7968,6 @@
   - fr-4-12-1-3
   attributes:
   - assembly_type
-  - base_color
   - body_color
   - cabinet_door_style
   - caster_type
@@ -8120,22 +7975,20 @@
   - door_color
   - door_hinge_side
   - feet_color
+  - feet_pattern
   - frame_color
   - furniture/fixture_material
   - handle_color
   - handle_type
   - leg_color
   - lock_type
-  - panel_color
   - pattern
-  - tabletop_edge_band_color
   return_reasons: inherit
 - id: fr-4-12-1-1
   name: Freestanding Storage Cabinets
   children: []
   attributes:
   - assembly_type
-  - base_color
   - body_color
   - cabinet_door_style
   - caster_type
@@ -8143,22 +7996,20 @@
   - door_color
   - door_hinge_side
   - feet_color
+  - feet_pattern
   - frame_color
   - furniture/fixture_material
   - handle_color
   - handle_type
   - leg_color
   - lock_type
-  - panel_color
   - pattern
-  - tabletop_edge_band_color
   return_reasons: inherit
 - id: fr-4-12-1-2
   name: Wall-Mounted Storage Cabinets
   children: []
   attributes:
   - assembly_type
-  - base_color
   - body_color
   - cabinet_door_style
   - caster_type
@@ -8166,22 +8017,20 @@
   - door_color
   - door_hinge_side
   - feet_color
+  - feet_pattern
   - frame_color
   - furniture/fixture_material
   - handle_color
   - handle_type
   - leg_color
   - lock_type
-  - panel_color
   - pattern
-  - tabletop_edge_band_color
   return_reasons: inherit
 - id: fr-4-12-1-3
   name: Countertop Cabinets
   children: []
   attributes:
   - assembly_type
-  - base_color
   - body_color
   - cabinet_door_style
   - caster_type
@@ -8189,15 +8038,14 @@
   - door_color
   - door_hinge_side
   - feet_color
+  - feet_pattern
   - frame_color
   - furniture/fixture_material
   - handle_color
   - handle_type
   - leg_color
   - lock_type
-  - panel_color
   - pattern
-  - tabletop_edge_band_color
   return_reasons: inherit
 - id: fr-4-12-2
   name: Lockers
@@ -8206,7 +8054,6 @@
   - fr-4-12-2-2
   - fr-4-12-2-3
   attributes:
-  - cabinet_body_color
   - color
   - door_color
   - door_opening_side
@@ -8219,7 +8066,6 @@
   name: Freestanding Lockers
   children: []
   attributes:
-  - cabinet_body_color
   - color
   - door_color
   - door_opening_side
@@ -8232,7 +8078,6 @@
   name: Recessed Lockers
   children: []
   attributes:
-  - cabinet_body_color
   - color
   - door_color
   - door_opening_side
@@ -8245,7 +8090,6 @@
   name: Surface-Mounted Lockers
   children: []
   attributes:
-  - cabinet_body_color
   - color
   - door_color
   - door_opening_side
@@ -8350,7 +8194,6 @@
   - leg_material
   - lid_hinge_mechanism
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -8369,7 +8212,6 @@
   - color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -8454,7 +8296,6 @@
   - color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-4-13-4-1
   name: Blanket Chest Benches
@@ -8463,7 +8304,6 @@
   - color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-4-13-4-2
   name: Mule Chests
@@ -8472,7 +8312,6 @@
   - color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-4-13-4-3
   name: Trunk-Style Blanket Chests
@@ -8481,7 +8320,6 @@
   - color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-4-13-4-4
   name: Bandaji Chests
@@ -8490,7 +8328,6 @@
   - color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-4-14
   name: Vanities
@@ -8530,9 +8367,7 @@
   - fr-4-14-1-11
   attributes:
   - base_type
-  - basin_color
   - color
-  - countertop_color
   - door_hinge_side
   - door_material
   - faucet_hole_position
@@ -8560,14 +8395,12 @@
   - fr-4-14-1-1-2
   attributes:
   - assembly_status
-  - cabinet_body_color
   - cabinet_door_hinge_side
   - color
   - door_opening_style
   - furniture/fixture_material
   - handle_finish
   - handle_form
-  - interior_color
   - mounting_type
   - pattern
   return_reasons:
@@ -8655,10 +8488,8 @@
   - fr-4-14-1-2-1
   - fr-4-14-1-2-2
   attributes:
-  - basin_color
   - basin_handing
   - color
-  - countertop_color
   - door_hinge_side
   - drawer_side
   - finished_side
@@ -8683,10 +8514,8 @@
   name: Wall-Mounted Bathroom Vanity Sets
   children: []
   attributes:
-  - basin_color
   - basin_handing
   - color
-  - countertop_color
   - door_hinge_side
   - drawer_side
   - finished_side
@@ -8700,10 +8529,8 @@
   name: Freestanding Bathroom Vanity Sets
   children: []
   attributes:
-  - basin_color
   - basin_handing
   - color
-  - countertop_color
   - door_hinge_side
   - drawer_side
   - finished_side
@@ -8763,7 +8590,6 @@
   - fr-4-14-1-4-2
   attributes:
   - base_support_configuration
-  - basin_color
   - color
   - drawer_style
   - faucet_finish
@@ -8790,7 +8616,6 @@
   children: []
   attributes:
   - base_support_configuration
-  - basin_color
   - color
   - drawer_style
   - faucet_finish
@@ -8806,7 +8631,6 @@
   children: []
   attributes:
   - base_support_configuration
-  - basin_color
   - color
   - drawer_style
   - faucet_finish
@@ -8821,7 +8645,6 @@
   name: Floating Vanities
   children: []
   attributes:
-  - basin_color
   - basin_material
   - cabinet_handle_and_opening_style
   - color
@@ -8853,7 +8676,6 @@
   children: []
   attributes:
   - base_type
-  - basin_color
   - basin_material
   - color
   - door_hinge_side
@@ -8906,7 +8728,6 @@
   attributes:
   - assembly_type
   - base_style
-  - basin_color
   - color
   - countertop_material
   - countertop_surface_finish
@@ -8921,7 +8742,6 @@
   - lumber/wood_type
   - mounting_type
   - pattern
-  - single_sink_vanities_drawer_side
   - sink_finish
   - sink_material
   - sink_position
@@ -8945,7 +8765,6 @@
   attributes:
   - assembly_type
   - base_style
-  - basin_color
   - color
   - countertop_material
   - countertop_surface_finish
@@ -8960,7 +8779,6 @@
   - lumber/wood_type
   - mounting_type
   - pattern
-  - single_sink_vanities_drawer_side
   - sink_finish
   - sink_material
   - sink_position
@@ -8973,7 +8791,6 @@
   attributes:
   - assembly_type
   - base_style
-  - basin_color
   - color
   - countertop_material
   - countertop_surface_finish
@@ -8988,7 +8805,6 @@
   - lumber/wood_type
   - mounting_type
   - pattern
-  - single_sink_vanities_drawer_side
   - sink_finish
   - sink_material
   - sink_position
@@ -9001,7 +8817,6 @@
   attributes:
   - assembly_type
   - base_style
-  - basin_color
   - color
   - countertop_material
   - countertop_surface_finish
@@ -9016,7 +8831,6 @@
   - lumber/wood_type
   - mounting_type
   - pattern
-  - single_sink_vanities_drawer_side
   - sink_finish
   - sink_material
   - sink_position
@@ -9052,7 +8866,6 @@
   - fr-4-14-1-10-5
   attributes:
   - color
-  - countertop_color
   - faucet_hole_configuration
   - furniture/fixture_material
   - pattern
@@ -9075,7 +8888,6 @@
   children: []
   attributes:
   - color
-  - countertop_color
   - faucet_hole_configuration
   - furniture/fixture_material
   - pattern
@@ -9087,7 +8899,6 @@
   children: []
   attributes:
   - color
-  - countertop_color
   - faucet_hole_configuration
   - furniture/fixture_material
   - pattern
@@ -9099,7 +8910,6 @@
   children: []
   attributes:
   - color
-  - countertop_color
   - faucet_hole_configuration
   - furniture/fixture_material
   - pattern
@@ -9111,7 +8921,6 @@
   children: []
   attributes:
   - color
-  - countertop_color
   - faucet_hole_configuration
   - furniture/fixture_material
   - pattern
@@ -9123,7 +8932,6 @@
   children: []
   attributes:
   - color
-  - countertop_color
   - faucet_hole_configuration
   - furniture/fixture_material
   - pattern
@@ -9203,7 +9011,6 @@
   - fr-4-14-2-8
   attributes:
   - color
-  - desk_top_color
   - furniture/fixture_material
   - pattern
   return_reasons:
@@ -9221,7 +9028,6 @@
   children: []
   attributes:
   - bedroom_vanity_items_included
-  - chair_color
   - color
   - furniture/fixture_material
   - mirror_shape
@@ -9349,6 +9155,7 @@
   - pattern
   - vanity_top_color
   - vanity_top_material
+  - vanity_top_pattern
   return_reasons:
   - size
   - color
@@ -9371,6 +9178,7 @@
   - pattern
   - vanity_top_color
   - vanity_top_material
+  - vanity_top_pattern
   return_reasons: inherit
 - id: fr-4-14-2-5-2
   name: Freestanding Lighted Vanities
@@ -9383,6 +9191,7 @@
   - pattern
   - vanity_top_color
   - vanity_top_material
+  - vanity_top_pattern
   return_reasons: inherit
 - id: fr-4-14-2-6
   name: Makeup Vanities
@@ -9508,7 +9317,6 @@
   - fr-4-15-7
   - fr-4-15-8
   attributes:
-  - cabinet_body_color
   - color
   - door_color
   - door_hinge_side
@@ -9516,7 +9324,6 @@
   - frame_color
   - furniture/fixture_material
   - furniture_finish
-  - interior_light_color
   - pattern
   - shelf_type
   - temperature_zones
@@ -9535,7 +9342,6 @@
   name: Bar Credenzas
   children: []
   attributes:
-  - cabinet_body_color
   - color
   - door_color
   - door_hinge_side
@@ -9543,7 +9349,6 @@
   - frame_color
   - furniture/fixture_material
   - furniture_finish
-  - interior_light_color
   - pattern
   - shelf_type
   - temperature_zones
@@ -9552,7 +9357,6 @@
   name: Bar Hutches
   children: []
   attributes:
-  - cabinet_body_color
   - color
   - door_color
   - door_hinge_side
@@ -9560,7 +9364,6 @@
   - frame_color
   - furniture/fixture_material
   - furniture_finish
-  - interior_light_color
   - pattern
   - shelf_type
   - temperature_zones
@@ -9569,7 +9372,6 @@
   name: Liquor Armoires
   children: []
   attributes:
-  - cabinet_body_color
   - color
   - door_color
   - door_hinge_side
@@ -9577,7 +9379,6 @@
   - frame_color
   - furniture/fixture_material
   - furniture_finish
-  - interior_light_color
   - pattern
   - shelf_type
   - temperature_zones
@@ -9586,7 +9387,6 @@
   name: Cellarettes
   children: []
   attributes:
-  - cabinet_body_color
   - color
   - door_color
   - door_hinge_side
@@ -9594,7 +9394,6 @@
   - frame_color
   - furniture/fixture_material
   - furniture_finish
-  - interior_light_color
   - pattern
   - shelf_type
   - temperature_zones
@@ -9603,7 +9402,6 @@
   name: Globe Bar Cabinets
   children: []
   attributes:
-  - cabinet_body_color
   - color
   - door_color
   - door_hinge_side
@@ -9611,7 +9409,6 @@
   - frame_color
   - furniture/fixture_material
   - furniture_finish
-  - interior_light_color
   - pattern
   - shelf_type
   - temperature_zones
@@ -9620,7 +9417,6 @@
   name: Trunk Bar Cabinets
   children: []
   attributes:
-  - cabinet_body_color
   - color
   - door_color
   - door_hinge_side
@@ -9628,7 +9424,6 @@
   - frame_color
   - furniture/fixture_material
   - furniture_finish
-  - interior_light_color
   - pattern
   - shelf_type
   - temperature_zones
@@ -9637,7 +9432,6 @@
   name: Barrel Bar Cabinets
   children: []
   attributes:
-  - cabinet_body_color
   - color
   - door_color
   - door_hinge_side
@@ -9645,7 +9439,6 @@
   - frame_color
   - furniture/fixture_material
   - furniture_finish
-  - interior_light_color
   - pattern
   - shelf_type
   - temperature_zones
@@ -9654,7 +9447,6 @@
   name: Tantalus Cabinets
   children: []
   attributes:
-  - cabinet_body_color
   - color
   - door_color
   - door_hinge_side
@@ -9662,7 +9454,6 @@
   - frame_color
   - furniture/fixture_material
   - furniture_finish
-  - interior_light_color
   - pattern
   - shelf_type
   - temperature_zones
@@ -10033,7 +9824,6 @@
   - furniture/fixture_features
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -10054,7 +9844,6 @@
   - furniture/fixture_features
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-4-17-4-2
   name: Closet Drawer Boxes
@@ -10064,7 +9853,6 @@
   - furniture/fixture_features
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-4-17-5
   name: Closet Rods
@@ -10266,7 +10054,6 @@
   - fr-5-2
   attributes:
   - assembly_required
-  - base_color
   - color
   - furniture/fixture_material
   - pattern
@@ -10294,12 +10081,10 @@
   - frame_color
   - frame_material
   - furniture/fixture_material
-  - panel_color
   - pattern
   - shape
   - storage_type
   - top_color
-  - tray_color
   return_reasons:
   - size
   - color
@@ -10317,7 +10102,6 @@
   - fr-5-1-1-1
   - fr-5-1-1-2
   attributes:
-  - base_color
   - base_material
   - caster_type
   - color
@@ -10329,7 +10113,6 @@
   name: Open-Shelf Bar Carts
   children: []
   attributes:
-  - base_color
   - base_material
   - caster_type
   - color
@@ -10341,7 +10124,6 @@
   name: Cabinet Bar Carts
   children: []
   attributes:
-  - base_color
   - base_material
   - caster_type
   - color
@@ -10357,7 +10139,6 @@
   - color
   - furniture/fixture_material
   - pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-5-1-3
   name: Utility & Storage Carts
@@ -10434,16 +10215,13 @@
   - fr-5-2-1
   - fr-5-2-2
   attributes:
-  - base_color
   - cabinet_door_style
   - color
-  - countertop_color
   - frame_color
   - furniture/fixture_material
   - leg_color
   - pattern
   - top_material
-  - wood_color
   return_reasons:
   - size
   - color
@@ -10459,31 +10237,25 @@
   name: Mobile Kitchen Islands
   children: []
   attributes:
-  - base_color
   - cabinet_door_style
   - color
-  - countertop_color
   - frame_color
   - furniture/fixture_material
   - leg_color
   - pattern
   - top_material
-  - wood_color
   return_reasons: inherit
 - id: fr-5-2-2
   name: Stationary Kitchen Islands
   children: []
   attributes:
-  - base_color
   - cabinet_door_style
   - color
-  - countertop_color
   - frame_color
   - furniture/fixture_material
   - leg_color
   - pattern
   - top_material
-  - wood_color
   return_reasons: inherit
 - id: fr-6
   name: Chair Accessories
@@ -11460,7 +11232,6 @@
   - base_type
   - care_instructions
   - chair_features
-  - chair_shell_color
   - color
   - cushion_fill_material
   - frame_finish
@@ -11488,7 +11259,6 @@
   - fr-7-1-3
   attributes:
   - backrest_type
-  - base_color
   - chair_features
   - color
   - frame_color
@@ -11514,11 +11284,9 @@
   attributes:
   - arm_height
   - arm_style
-  - armrest_color
   - armrest_material
   - armrest_orientation
   - back_cushion_style
-  - backrest_color
   - backrest_style
   - backrest_type
   - base_material
@@ -11534,19 +11302,14 @@
   - leg_style
   - lumber/wood_type
   - pattern
-  - seat_cushion_color
   - seat_fill_material
   - seat_firmness
   - seat_material
-  - seat_shell_color
   - seat_type
   - seat_upholstery_color
   - seat_upholstery_material
-  - stitching_color
-  - strap_color
   - upholstery_color
   - upholstery_material
-  - weave_color
   - wood_finish
   return_reasons:
   - size
@@ -11573,7 +11336,6 @@
   - chair_features
   - color
   - cover_material
-  - cushion_color
   - firmness
   - frame_color
   - leg_color
@@ -11610,7 +11372,6 @@
   - chair_features
   - color
   - cover_material
-  - cushion_color
   - firmness
   - frame_color
   - leg_color
@@ -11637,7 +11398,6 @@
   - chair_features
   - color
   - cover_material
-  - cushion_color
   - firmness
   - frame_color
   - leg_color
@@ -11934,7 +11694,6 @@
   - backrest_type
   - chair_features
   - color
-  - cushion_color
   - frame_color
   - frame_finish
   - pattern
@@ -12101,7 +11860,6 @@
   - chair_features
   - chaise_orientation
   - color
-  - cushion_color
   - frame_color
   - pattern
   - seat_type
@@ -12125,7 +11883,6 @@
   - chair_features
   - chaise_orientation
   - color
-  - cushion_color
   - frame_color
   - pattern
   - seat_type
@@ -12139,7 +11896,6 @@
   - chair_features
   - chaise_orientation
   - color
-  - cushion_color
   - frame_color
   - pattern
   - seat_type
@@ -12421,20 +12177,16 @@
   name: Folding Chairs
   children: []
   attributes:
-  - backrest_color
   - backrest_type
   - chair_features
-  - chair_shell_color
   - color
   - frame_color
   - frame_material
   - lumber/wood_type
   - material
-  - mesh_color
   - pattern
   - seat_color
   - seat_material
-  - seat_pad_color
   - seat_type
   - seat_upholstery_color
   - tablet_arm_side
@@ -12548,11 +12300,11 @@
   - fr-7-7-3
   - fr-7-7-4
   attributes:
-  - accent_color
   - armrest_adjustability
   - backrest_type
   - base_material
   - caster_color
+  - caster_pattern
   - caster_type
   - chair_features
   - color
@@ -12582,11 +12334,11 @@
   name: Racing-Style Gaming Chairs
   children: []
   attributes:
-  - accent_color
   - armrest_adjustability
   - backrest_type
   - base_material
   - caster_color
+  - caster_pattern
   - caster_type
   - chair_features
   - color
@@ -12606,11 +12358,11 @@
   name: Office-Style Gaming Chairs
   children: []
   attributes:
-  - accent_color
   - armrest_adjustability
   - backrest_type
   - base_material
   - caster_color
+  - caster_pattern
   - caster_type
   - chair_features
   - color
@@ -12630,11 +12382,11 @@
   name: Simulator Gaming Chairs
   children: []
   attributes:
-  - accent_color
   - armrest_adjustability
   - backrest_type
   - base_material
   - caster_color
+  - caster_pattern
   - caster_type
   - chair_features
   - color
@@ -12654,11 +12406,11 @@
   name: Inflatable Gaming Chairs
   children: []
   attributes:
-  - accent_color
   - armrest_adjustability
   - backrest_type
   - base_material
   - caster_color
+  - caster_pattern
   - caster_type
   - chair_features
   - color
@@ -12685,8 +12437,6 @@
   - hanging_chair_design
   - material
   - pattern
-  - rope_color
-  - seat_cushion_color
   - suitable_space
   - upholstery_material
   return_reasons:
@@ -12710,8 +12460,6 @@
   - hanging_chair_design
   - material
   - pattern
-  - rope_color
-  - seat_cushion_color
   - suitable_space
   - upholstery_material
   return_reasons: inherit
@@ -12724,7 +12472,6 @@
   - backrest_material
   - backrest_type
   - chair_features
-  - chair_shell_color
   - chair_shell_material
   - chair_type
   - color
@@ -12761,13 +12508,11 @@
   attributes:
   - armrest_type
   - back_height_type
-  - backrest_color
   - backrest_material
   - backrest_type
   - base_material
   - base_type
   - chair_features
-  - chair_shell_color
   - chair_shell_material
   - chair_type
   - color
@@ -12776,11 +12521,9 @@
   - frame_color
   - frame_material
   - material
-  - metal_color
   - pattern
   - seat_height_category
   - seat_material
-  - seat_shell_color
   - seat_type
   - seat_upholstery_color
   - upholstery_material
@@ -12792,13 +12535,11 @@
   attributes:
   - armrest_type
   - back_height_type
-  - backrest_color
   - backrest_material
   - backrest_type
   - base_material
   - base_type
   - chair_features
-  - chair_shell_color
   - chair_shell_material
   - chair_type
   - color
@@ -12807,11 +12548,9 @@
   - frame_color
   - frame_material
   - material
-  - metal_color
   - pattern
   - seat_height_category
   - seat_material
-  - seat_shell_color
   - seat_type
   - seat_upholstery_color
   - upholstery_material
@@ -12823,13 +12562,11 @@
   attributes:
   - armrest_type
   - back_height_type
-  - backrest_color
   - backrest_material
   - backrest_type
   - base_material
   - base_type
   - chair_features
-  - chair_shell_color
   - chair_shell_material
   - chair_type
   - color
@@ -12838,11 +12575,9 @@
   - frame_color
   - frame_material
   - material
-  - metal_color
   - pattern
   - seat_height_category
   - seat_material
-  - seat_shell_color
   - seat_type
   - seat_upholstery_color
   - upholstery_material
@@ -12856,12 +12591,10 @@
   - fr-7-10-5
   attributes:
   - chair_features
-  - chair_shell_color
   - color
   - frame_color
   - frame_finish
   - pattern
-  - seat_pad_color
   - seat_type
   - seat_upholstery_color
   - suitable_space
@@ -12886,7 +12619,6 @@
   attributes:
   - chair_features
   - color
-  - cushion_color
   - cushion_upholstery_material
   - frame_color
   - frame_finish
@@ -12915,7 +12647,6 @@
   attributes:
   - chair_features
   - color
-  - cushion_color
   - cushion_upholstery_material
   - frame_color
   - frame_finish
@@ -12934,7 +12665,6 @@
   attributes:
   - chair_features
   - color
-  - cushion_color
   - cushion_upholstery_material
   - frame_color
   - frame_finish
@@ -12953,7 +12683,6 @@
   attributes:
   - chair_features
   - color
-  - cushion_color
   - cushion_upholstery_material
   - frame_color
   - frame_finish
@@ -12972,7 +12701,6 @@
   attributes:
   - backrest_type
   - chair_features
-  - chair_shell_color
   - color
   - frame_color
   - pattern
@@ -13001,7 +12729,6 @@
   - base_type
   - chair_features
   - color
-  - cushion_color
   - frame_color
   - leg_color
   - lumber/wood_type
@@ -13031,7 +12758,6 @@
   - base_type
   - chair_features
   - color
-  - cushion_color
   - frame_color
   - leg_color
   - lumber/wood_type
@@ -13051,7 +12777,6 @@
   - base_type
   - chair_features
   - color
-  - cushion_color
   - frame_color
   - leg_color
   - lumber/wood_type
@@ -13074,7 +12799,6 @@
   - frame_finish
   - pattern
   - seat_type
-  - trim_color
   - upholstery_color
   - upholstery_material
   return_reasons:
@@ -13096,10 +12820,8 @@
   - fr-7-12-3
   attributes:
   - back_type
-  - backrest_color
   - base_type
   - chair_features
-  - chair_shell_color
   - color
   - feet_type
   - footrest_material
@@ -13131,7 +12853,6 @@
   - fr-7-12-1-2
   attributes:
   - back_type
-  - backrest_color
   - base_material
   - base_shape
   - base_type
@@ -13145,9 +12866,7 @@
   - seat_color
   - seat_height_category
   - seat_material
-  - seat_shell_color
   - seat_type
-  - wood_color
   - wood_finish
   return_reasons:
   - size
@@ -13165,7 +12884,6 @@
   children: []
   attributes:
   - back_type
-  - backrest_color
   - base_material
   - base_shape
   - base_type
@@ -13179,9 +12897,7 @@
   - seat_color
   - seat_height_category
   - seat_material
-  - seat_shell_color
   - seat_type
-  - wood_color
   - wood_finish
   return_reasons: inherit
 - id: fr-7-12-1-2
@@ -13189,7 +12905,6 @@
   children: []
   attributes:
   - back_type
-  - backrest_color
   - base_material
   - base_shape
   - base_type
@@ -13203,9 +12918,7 @@
   - seat_color
   - seat_height_category
   - seat_material
-  - seat_shell_color
   - seat_type
-  - wood_color
   - wood_finish
   return_reasons: inherit
 - id: fr-7-12-2
@@ -13214,9 +12927,7 @@
   - fr-7-12-2-1
   - fr-7-12-2-2
   attributes:
-  - accent_color
   - back_type
-  - backrest_color
   - backrest_type
   - base_type
   - chair_features
@@ -13234,14 +12945,11 @@
   - seat_cushion_fill_material
   - seat_height_category
   - seat_material
-  - seat_pad_color
   - seat_shape
   - seat_type
   - seat_upholstery_color
   - seat_upholstery_material
   - slat_color
-  - sling_color
-  - weave_color
   - wood_finish
   return_reasons:
   - size
@@ -13258,9 +12966,7 @@
   name: Backless Bar Stools
   children: []
   attributes:
-  - accent_color
   - back_type
-  - backrest_color
   - backrest_type
   - base_type
   - chair_features
@@ -13278,23 +12984,18 @@
   - seat_cushion_fill_material
   - seat_height_category
   - seat_material
-  - seat_pad_color
   - seat_shape
   - seat_type
   - seat_upholstery_color
   - seat_upholstery_material
   - slat_color
-  - sling_color
-  - weave_color
   - wood_finish
   return_reasons: inherit
 - id: fr-7-12-2-2
   name: Bar Stools with Backs
   children: []
   attributes:
-  - accent_color
   - back_type
-  - backrest_color
   - backrest_type
   - base_type
   - chair_features
@@ -13312,14 +13013,11 @@
   - seat_cushion_fill_material
   - seat_height_category
   - seat_material
-  - seat_pad_color
   - seat_shape
   - seat_type
   - seat_upholstery_color
   - seat_upholstery_material
   - slat_color
-  - sling_color
-  - weave_color
   - wood_finish
   return_reasons: inherit
 - id: fr-7-12-3
@@ -13339,11 +13037,9 @@
   - lumber/wood_type
   - pattern
   - seat_height_category
-  - seat_shell_color
   - seat_type
   - upholstery_color
   - upholstery_material
-  - wood_color
   - wood_finish
   return_reasons: inherit
 - id: fr-7-12-3-1
@@ -13361,11 +13057,9 @@
   - lumber/wood_type
   - pattern
   - seat_height_category
-  - seat_shell_color
   - seat_type
   - upholstery_color
   - upholstery_material
-  - wood_color
   - wood_finish
   return_reasons: inherit
 - id: fr-7-12-3-2
@@ -13383,11 +13077,9 @@
   - lumber/wood_type
   - pattern
   - seat_height_category
-  - seat_shell_color
   - seat_type
   - upholstery_color
   - upholstery_material
-  - wood_color
   - wood_finish
   return_reasons: inherit
 - id: fr-7-13
@@ -13398,7 +13090,6 @@
   - backrest_type
   - chair_features
   - color
-  - cushion_color
   - feet_type
   - finish
   - material
@@ -13418,7 +13109,6 @@
   - furniture/fixture_material
   - left/right_orientation
   - leg_material
-  - mattress_color
   - mattress_fill_material
   - pattern
   - underbed_configuration
@@ -13444,7 +13134,6 @@
   - furniture/fixture_material
   - left/right_orientation
   - leg_material
-  - mattress_color
   - mattress_fill_material
   - pattern
   - underbed_configuration
@@ -13460,7 +13149,6 @@
   - furniture/fixture_material
   - left/right_orientation
   - leg_material
-  - mattress_color
   - mattress_fill_material
   - pattern
   - underbed_configuration
@@ -13476,7 +13164,6 @@
   - furniture/fixture_material
   - left/right_orientation
   - leg_material
-  - mattress_color
   - mattress_fill_material
   - pattern
   - underbed_configuration
@@ -13490,13 +13177,9 @@
   - assembly_level
   - assembly_required
   - base_type
-  - cabinet_body_color
   - color
   - door_color
   - door_pattern
-  - drawer_color
-  - entertainment_centers_tv_stands_door_style
-  - entertainment_centers_tv_stands_glass_type
   - frame_color
   - frame_material
   - frame_pattern
@@ -13608,12 +13291,10 @@
   - bed_style
   - bedroom_furniture_items_included
   - color
-  - fabric_color
   - furniture/fixture_material
   - headboard_style
   - mounting_type
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -13630,13 +13311,10 @@
   - fr-10-3-1
   - fr-10-3-2
   attributes:
-  - bench_color
   - chair_arm_style
   - chair_back_style
-  - chair_color
   - chair_seat_material
   - color
-  - cushion_color
   - frame_color
   - frame_finish
   - furniture/fixture_features
@@ -13645,9 +13323,7 @@
   - pattern
   - seat_color
   - suit_pieces
-  - table_base_color
   - table_base_type
-  - table_color
   - table_finish
   - table_height_type
   - tabletop_color
@@ -13718,12 +13394,9 @@
   - kitchen/dining_furniture_items_included
   - material
   - pattern
-  - seating_color
-  - table_color
   - tabletop_color
   - tabletop_material
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-10-3-2-1
   name: Bar Table & Stool Sets
@@ -13734,12 +13407,9 @@
   - kitchen/dining_furniture_items_included
   - material
   - pattern
-  - seating_color
-  - table_color
   - tabletop_color
   - tabletop_material
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-10-3-2-2
   name: Bar Table & Bench Sets
@@ -13750,12 +13420,9 @@
   - kitchen/dining_furniture_items_included
   - material
   - pattern
-  - seating_color
-  - table_color
   - tabletop_color
   - tabletop_material
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-10-4
   name: Living Room Furniture Sets
@@ -13769,7 +13436,6 @@
   - backrest_type
   - backrest_upholstery_color
   - backrest_upholstery_material
-  - cushion_color
   - firmness
   - frame_color
   - frame_material
@@ -13787,7 +13453,6 @@
   - upholstery_color
   - upholstery_material
   - upholstery_pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -13805,7 +13470,6 @@
   - backrest_type
   - backrest_upholstery_color
   - backrest_upholstery_material
-  - cushion_color
   - firmness
   - frame_color
   - frame_material
@@ -13823,7 +13487,6 @@
   - upholstery_color
   - upholstery_material
   - upholstery_pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-10-4-2
   name: Living Room Table Sets
@@ -13832,7 +13495,6 @@
   - backrest_type
   - backrest_upholstery_color
   - backrest_upholstery_material
-  - cushion_color
   - firmness
   - frame_color
   - frame_material
@@ -13850,7 +13512,6 @@
   - upholstery_color
   - upholstery_material
   - upholstery_pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-10-4-3
   name: Living Room Wall Unit Sets
@@ -13859,7 +13520,6 @@
   - backrest_type
   - backrest_upholstery_color
   - backrest_upholstery_material
-  - cushion_color
   - firmness
   - frame_color
   - frame_material
@@ -13877,7 +13537,6 @@
   - upholstery_color
   - upholstery_material
   - upholstery_pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-10-4-4
   name: Living Room Display Cabinet Sets
@@ -13886,7 +13545,6 @@
   - backrest_type
   - backrest_upholstery_color
   - backrest_upholstery_material
-  - cushion_color
   - firmness
   - frame_color
   - frame_material
@@ -13904,7 +13562,6 @@
   - upholstery_color
   - upholstery_material
   - upholstery_pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-10-4-5
   name: Living Room Bookcase Sets
@@ -13913,7 +13570,6 @@
   - backrest_type
   - backrest_upholstery_color
   - backrest_upholstery_material
-  - cushion_color
   - firmness
   - frame_color
   - frame_material
@@ -13931,7 +13587,6 @@
   - upholstery_color
   - upholstery_material
   - upholstery_pattern
-  - wood_color
   return_reasons: inherit
 - id: fr-11
   name: Futons
@@ -14089,7 +13744,6 @@
   - material
   - pattern
   - safety_certifications
-  - wood_color
   return_reasons:
   - size
   - color
@@ -14119,9 +13773,7 @@
   - color
   - desk_return_side
   - door_side
-  - drawer_color
   - drawer_side
-  - edge_band_color
   - feet_type
   - frame_color
   - frame_finish
@@ -14417,7 +14069,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-12-1-3-1
   name: Writing Tables
@@ -14440,7 +14091,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-12-1-3-2
   name: Pedestal Writing Desks
@@ -14463,7 +14113,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-12-1-3-3
   name: Credenza Writing Desks
@@ -14486,7 +14135,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-12-1-3-4
   name: Hutch Writing Desks
@@ -14509,7 +14157,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-12-1-3-5
   name: Fall-Front Writing Desks
@@ -14532,7 +14179,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-12-1-3-6
   name: Roll-Top Writing Desks
@@ -14555,7 +14201,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-12-1-3-7
   name: Armoire Writing Desks
@@ -14578,7 +14223,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-12-1-3-8
   name: Davenport Desks
@@ -14601,7 +14245,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-12-1-3-9
   name: Floating Writing Desks
@@ -14624,7 +14267,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-12-1-3-10
   name: Ladder Writing Desks
@@ -14647,7 +14289,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-12-1-3-11
   name: Partner Desks
@@ -14670,14 +14311,12 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-12-1-4
   name: Kids' Desks
   children: []
   attributes:
   - color
-  - edge_band_color
   - frame_color
   - frame_material
   - frame_pattern
@@ -14797,7 +14436,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-12-1-6-1
   name: Straight Computer Desks
@@ -14822,7 +14460,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-12-1-6-2
   name: Corner Computer Desks
@@ -14847,7 +14484,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-12-1-6-3
   name: U-Shaped Computer Desks
@@ -14872,7 +14508,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   return_reasons: inherit
 - id: fr-12-1-7
   name: Reception Desks
@@ -15025,17 +14660,14 @@
   children: []
   attributes:
   - arm_pad_material
-  - armrest_color
   - armrest_type
   - back_height_type
-  - backrest_color
   - backrest_material
   - backrest_type
   - base_material
   - base_support_configuration
   - base_type
   - chair_features
-  - chair_shell_color
   - chair_shell_material
   - color
   - cushion_fill_material
@@ -15049,7 +14681,6 @@
   - headrest_type
   - mechanism_type
   - pattern
-  - seat_and_back_color
   - seat_shape
   - seat_upholstery_color
   - tablet_arm_side
@@ -15072,10 +14703,8 @@
   children: []
   attributes:
   - chair_back_height
-  - chair_color
   - chair_leg_finish
   - color
-  - desk_color
   - frame_color
   - office_furniture_items_included
   - pattern
@@ -15100,7 +14729,6 @@
   - fr-12-4-2
   attributes:
   - color
-  - edge_band_color
   - furniture/fixture_features
   - furniture/fixture_material
   - left/right_orientation
@@ -15124,7 +14752,6 @@
   - frame_material
   - frame_pattern
   - tabletop_color
-  - tabletop_edge_band_color
   - tabletop_material
   - tabletop_pattern
   return_reasons:
@@ -15153,7 +14780,6 @@
   - base_style
   - cable_management_type
   - color
-  - edge_band_color
   - finish
   - frame_finish
   - frame_material
@@ -15161,6 +14787,7 @@
   - furniture/fixture_material
   - pattern
   - power_module_color
+  - power_module_pattern
   - tabletop_material
   - tabletop_shape
   return_reasons:
@@ -15180,7 +14807,6 @@
   - base_style
   - cable_management_type
   - color
-  - edge_band_color
   - finish
   - frame_finish
   - frame_material
@@ -15188,6 +14814,7 @@
   - furniture/fixture_material
   - pattern
   - power_module_color
+  - power_module_pattern
   - tabletop_material
   - tabletop_shape
   return_reasons: inherit
@@ -15198,7 +14825,6 @@
   - base_style
   - cable_management_type
   - color
-  - edge_band_color
   - finish
   - frame_finish
   - frame_material
@@ -15206,6 +14832,7 @@
   - furniture/fixture_material
   - pattern
   - power_module_color
+  - power_module_pattern
   - tabletop_material
   - tabletop_shape
   return_reasons: inherit
@@ -15216,7 +14843,6 @@
   - base_style
   - cable_management_type
   - color
-  - edge_band_color
   - finish
   - frame_finish
   - frame_material
@@ -15224,6 +14850,7 @@
   - furniture/fixture_material
   - pattern
   - power_module_color
+  - power_module_pattern
   - tabletop_material
   - tabletop_shape
   return_reasons: inherit
@@ -15234,7 +14861,6 @@
   - base_style
   - cable_management_type
   - color
-  - edge_band_color
   - finish
   - frame_finish
   - frame_material
@@ -15242,6 +14868,7 @@
   - furniture/fixture_material
   - pattern
   - power_module_color
+  - power_module_pattern
   - tabletop_material
   - tabletop_shape
   return_reasons: inherit
@@ -15252,7 +14879,6 @@
   - base_style
   - cable_management_type
   - color
-  - edge_band_color
   - finish
   - frame_finish
   - frame_material
@@ -15260,6 +14886,7 @@
   - furniture/fixture_material
   - pattern
   - power_module_color
+  - power_module_pattern
   - tabletop_material
   - tabletop_shape
   return_reasons: inherit
@@ -15270,7 +14897,6 @@
   - base_style
   - cable_management_type
   - color
-  - edge_band_color
   - finish
   - frame_finish
   - frame_material
@@ -15278,6 +14904,7 @@
   - furniture/fixture_material
   - pattern
   - power_module_color
+  - power_module_pattern
   - tabletop_material
   - tabletop_shape
   return_reasons: inherit
@@ -15288,7 +14915,6 @@
   - base_style
   - cable_management_type
   - color
-  - edge_band_color
   - finish
   - frame_finish
   - frame_material
@@ -15296,6 +14922,7 @@
   - furniture/fixture_material
   - pattern
   - power_module_color
+  - power_module_pattern
   - tabletop_material
   - tabletop_shape
   return_reasons: inherit
@@ -15306,7 +14933,6 @@
   - base_style
   - cable_management_type
   - color
-  - edge_band_color
   - finish
   - frame_finish
   - frame_material
@@ -15314,6 +14940,7 @@
   - furniture/fixture_material
   - pattern
   - power_module_color
+  - power_module_pattern
   - tabletop_material
   - tabletop_shape
   return_reasons: inherit
@@ -15324,7 +14951,6 @@
   - base_style
   - cable_management_type
   - color
-  - edge_band_color
   - finish
   - frame_finish
   - frame_material
@@ -15332,6 +14958,7 @@
   - furniture/fixture_material
   - pattern
   - power_module_color
+  - power_module_pattern
   - tabletop_material
   - tabletop_shape
   return_reasons: inherit
@@ -15343,10 +14970,8 @@
   - fr-12-5-3
   attributes:
   - color
-  - edge_band_color
   - frame_color
   - furniture/fixture_material
-  - panel_color
   - pattern
   - privacy_or_acoustic_feature
   - return_side
@@ -15461,7 +15086,6 @@
   - door_orientation
   - frame_color
   - furniture/fixture_material
-  - interior_color
   - pattern
   - privacy_or_acoustic_feature
   return_reasons: inherit
@@ -15474,7 +15098,6 @@
   - door_orientation
   - frame_color
   - furniture/fixture_material
-  - interior_color
   - pattern
   - privacy_or_acoustic_feature
   return_reasons: inherit
@@ -15487,7 +15110,6 @@
   - door_orientation
   - frame_color
   - furniture/fixture_material
-  - interior_color
   - pattern
   - privacy_or_acoustic_feature
   return_reasons: inherit
@@ -15557,7 +15179,6 @@
   - fr-13-1-9
   - fr-13-1-10
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15583,7 +15204,6 @@
   - fr-13-1-1-4
   - fr-13-1-1-5
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15594,7 +15214,6 @@
   name: Desk Cable Trays
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15605,7 +15224,6 @@
   name: Desk Cable Guides
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15616,7 +15234,6 @@
   name: Desk Cable Nets
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15627,7 +15244,6 @@
   name: Desk Cable Sleeves
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15638,7 +15254,6 @@
   name: Desk Cable Spines
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15652,7 +15267,6 @@
   - fr-13-1-2-2
   - fr-13-1-2-3
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15663,7 +15277,6 @@
   name: Desk Power Modules
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15674,7 +15287,6 @@
   name: Desk Data Modules
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15685,7 +15297,6 @@
   name: Under-Desk Power Strip Mounts
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15706,7 +15317,6 @@
   - fr-13-1-3-9
   - fr-13-1-3-10
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15717,7 +15327,6 @@
   name: Desk Frames
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15728,7 +15337,6 @@
   name: Desk Legs
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15739,7 +15347,6 @@
   name: Desk Feet
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15750,7 +15357,6 @@
   name: Desk Casters
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15761,7 +15367,6 @@
   name: Desk Support Beams
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15772,7 +15377,6 @@
   name: Desk Support Brackets
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15783,7 +15387,6 @@
   name: Desk Lift Columns
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15794,7 +15397,6 @@
   name: Desk Control Boxes
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15805,7 +15407,6 @@
   name: Desk Crank Handles
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15816,7 +15417,6 @@
   name: Desk Gas Springs
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15833,7 +15433,6 @@
   - fr-13-1-4-5
   - fr-13-1-4-6
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15844,7 +15443,6 @@
   name: Desk Overhead Cabinets
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15855,7 +15453,6 @@
   name: Desk Shelves
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15866,7 +15463,6 @@
   name: Desk Hutch Tackboards
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15877,7 +15473,6 @@
   name: Desk Drawers
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15888,7 +15483,6 @@
   name: Desk Locks
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15899,7 +15493,6 @@
   name: Desk Utility Hooks
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15914,7 +15507,6 @@
   - fr-13-1-5-3
   - fr-13-1-5-4
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15925,7 +15517,6 @@
   name: Desk Tops
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15936,7 +15527,6 @@
   name: Desk Extension Leaves
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15947,7 +15537,6 @@
   name: Desk Returns
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15958,7 +15547,6 @@
   name: Desk Bridges
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15971,7 +15559,6 @@
   - fr-13-1-6-1
   - fr-13-1-6-2
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15982,7 +15569,6 @@
   name: Under-Desk Foot Hammocks
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -15993,7 +15579,6 @@
   name: Desk-Mounted Forearm Supports
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16009,7 +15594,6 @@
   - fr-13-1-7-4
   - fr-13-1-7-5
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16020,7 +15604,6 @@
   name: Desk Modesty Panels
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16031,7 +15614,6 @@
   name: Desk End Panels
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16042,7 +15624,6 @@
   name: Desk Privacy Hoods
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16053,7 +15634,6 @@
   name: Desk Protective Shields
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16064,7 +15644,6 @@
   name: Desk Panel Mounting Hardware
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16078,7 +15657,6 @@
   - fr-13-1-8-2
   - fr-13-1-8-3
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16089,7 +15667,6 @@
   name: Glass Desk Top Protectors
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16100,7 +15677,6 @@
   name: Desk Corner Guards
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16111,7 +15687,6 @@
   name: Desk Top Bumpers
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16127,7 +15702,6 @@
   - fr-13-1-9-4
   - fr-13-1-9-5
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16138,7 +15712,6 @@
   name: Drop-Front Desk Hinges
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16149,7 +15722,6 @@
   name: Desk Lid Supports
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16160,7 +15732,6 @@
   name: Desk Connector Plates
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16171,7 +15742,6 @@
   name: Desk Leg Mounting Plates
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16182,7 +15752,6 @@
   name: Desk Accessory Clamps
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16193,7 +15762,6 @@
   name: Desk Accessory Kits
   children: []
   attributes:
-  - base_color
   - color
   - furniture_leg_type
   - pattern
@@ -16669,7 +16237,6 @@
   - color
   - material
   - pattern
-  - wood_color
   return_reasons:
   - size
   - color
@@ -16786,7 +16353,6 @@
   - fr-13-3-2-2
   - fr-13-3-2-3
   attributes:
-  - clamp_color
   - clamp_style
   - color
   - frame_color
@@ -16798,7 +16364,6 @@
   name: Desk-Mounted Screens
   children: []
   attributes:
-  - clamp_color
   - clamp_style
   - color
   - frame_color
@@ -16810,7 +16375,6 @@
   name: Freestanding Desk Screens
   children: []
   attributes:
-  - clamp_color
   - clamp_style
   - color
   - frame_color
@@ -16822,7 +16386,6 @@
   name: Cubicle Privacy Screens
   children: []
   attributes:
-  - clamp_color
   - clamp_style
   - color
   - frame_color
@@ -16938,12 +16501,10 @@
   - pattern
   - seat_upholstery_color
   - shape
-  - side_upholstery_color
   - tabletop_color
   - tabletop_surface_type
   - trim_style
   - upholstery_material
-  - weave_color
   - wood_finish
   return_reasons:
   - size
@@ -16971,12 +16532,10 @@
   - pattern
   - seat_upholstery_color
   - shape
-  - side_upholstery_color
   - tabletop_color
   - tabletop_surface_type
   - trim_style
   - upholstery_material
-  - weave_color
   - wood_finish
   return_reasons: inherit
 - id: fr-14-2
@@ -16994,12 +16553,10 @@
   - pattern
   - seat_upholstery_color
   - shape
-  - side_upholstery_color
   - tabletop_color
   - tabletop_surface_type
   - trim_style
   - upholstery_material
-  - weave_color
   - wood_finish
   return_reasons: inherit
 - id: fr-14-3
@@ -17017,12 +16574,10 @@
   - pattern
   - seat_upholstery_color
   - shape
-  - side_upholstery_color
   - tabletop_color
   - tabletop_surface_type
   - trim_style
   - upholstery_material
-  - weave_color
   - wood_finish
   return_reasons: inherit
 - id: fr-14-4
@@ -17040,12 +16595,10 @@
   - pattern
   - seat_upholstery_color
   - shape
-  - side_upholstery_color
   - tabletop_color
   - tabletop_surface_type
   - trim_style
   - upholstery_material
-  - weave_color
   - wood_finish
   return_reasons: inherit
 - id: fr-14-5
@@ -17063,12 +16616,10 @@
   - pattern
   - seat_upholstery_color
   - shape
-  - side_upholstery_color
   - tabletop_color
   - tabletop_surface_type
   - trim_style
   - upholstery_material
-  - weave_color
   - wood_finish
   return_reasons: inherit
 - id: fr-15
@@ -17111,7 +16662,6 @@
   attributes:
   - bedding_size
   - color
-  - cushion_color
   - finish
   - firmness
   - frame_color
@@ -17207,7 +16757,6 @@
   attributes:
   - bedding_size
   - color
-  - fabric_color
   - firmness
   - frame_color
   - material
@@ -17231,7 +16780,6 @@
   attributes:
   - bedding_size
   - color
-  - fabric_color
   - firmness
   - frame_color
   - material
@@ -17245,7 +16793,6 @@
   attributes:
   - bedding_size
   - color
-  - fabric_color
   - firmness
   - frame_color
   - material
@@ -17259,7 +16806,6 @@
   attributes:
   - bedding_size
   - color
-  - fabric_color
   - firmness
   - frame_color
   - material
@@ -17273,7 +16819,6 @@
   attributes:
   - bedding_size
   - color
-  - fabric_color
   - firmness
   - frame_color
   - material
@@ -17468,7 +17013,6 @@
   attributes:
   - bedding_size
   - color
-  - cushion_color
   - firmness
   - frame_color
   - frame_material
@@ -17476,9 +17020,6 @@
   - mounting_type
   - outdoor_equipment_features
   - pattern
-  - rope_color
-  - seating_surface_color
-  - weave_color
   return_reasons:
   - size
   - color
@@ -17496,7 +17037,6 @@
   attributes:
   - bedding_size
   - color
-  - cushion_color
   - firmness
   - frame_color
   - frame_material
@@ -17504,9 +17044,6 @@
   - mounting_type
   - outdoor_equipment_features
   - pattern
-  - rope_color
-  - seating_surface_color
-  - weave_color
   return_reasons: inherit
 - id: fr-15-1-8-2
   name: Slatted Sunbeds
@@ -17514,7 +17051,6 @@
   attributes:
   - bedding_size
   - color
-  - cushion_color
   - firmness
   - frame_color
   - frame_material
@@ -17522,9 +17058,6 @@
   - mounting_type
   - outdoor_equipment_features
   - pattern
-  - rope_color
-  - seating_surface_color
-  - weave_color
   return_reasons: inherit
 - id: fr-15-1-8-3
   name: Rope Sunbeds
@@ -17532,7 +17065,6 @@
   attributes:
   - bedding_size
   - color
-  - cushion_color
   - firmness
   - frame_color
   - frame_material
@@ -17540,9 +17072,6 @@
   - mounting_type
   - outdoor_equipment_features
   - pattern
-  - rope_color
-  - seating_surface_color
-  - weave_color
   return_reasons: inherit
 - id: fr-15-1-8-4
   name: Wicker Sunbeds
@@ -17550,7 +17079,6 @@
   attributes:
   - bedding_size
   - color
-  - cushion_color
   - firmness
   - frame_color
   - frame_material
@@ -17558,9 +17086,6 @@
   - mounting_type
   - outdoor_equipment_features
   - pattern
-  - rope_color
-  - seating_surface_color
-  - weave_color
   return_reasons: inherit
 - id: fr-15-1-9
   name: Swings
@@ -17570,7 +17095,6 @@
   attributes:
   - bedding_size
   - color
-  - cushion_color
   - firmness
   - hanging_suspension_method
   - lumber/wood_type
@@ -17596,7 +17120,6 @@
   attributes:
   - bedding_size
   - color
-  - cushion_color
   - firmness
   - hanging_suspension_method
   - lumber/wood_type
@@ -17612,7 +17135,6 @@
   attributes:
   - bedding_size
   - color
-  - cushion_color
   - firmness
   - hanging_suspension_method
   - lumber/wood_type
@@ -17628,7 +17150,6 @@
   - fr-15-2-1
   - fr-15-2-2
   attributes:
-  - chair_color
   - color
   - corner_orientation
   - frame_color
@@ -17636,20 +17157,13 @@
   - furniture/fixture_material
   - outdoor_furniture_items_included
   - pattern
-  - rope_color
   - slat_color
-  - sling_color
-  - sofa_color
-  - table_color
   - table_height_type
-  - table_leg_color
   - table_shape
   - tabletop_color
   - tabletop_material
-  - umbrella_color
   - upholstery_color
   - upholstery_material
-  - weave_color
   return_reasons:
   - size
   - color
@@ -17665,7 +17179,6 @@
   name: Outdoor Dining Sets
   children: []
   attributes:
-  - chair_color
   - color
   - corner_orientation
   - frame_color
@@ -17673,26 +17186,18 @@
   - furniture/fixture_material
   - outdoor_furniture_items_included
   - pattern
-  - rope_color
   - slat_color
-  - sling_color
-  - sofa_color
-  - table_color
   - table_height_type
-  - table_leg_color
   - table_shape
   - tabletop_color
   - tabletop_material
-  - umbrella_color
   - upholstery_color
   - upholstery_material
-  - weave_color
   return_reasons: inherit
 - id: fr-15-2-2
   name: Outdoor Lounge Sets
   children: []
   attributes:
-  - chair_color
   - color
   - corner_orientation
   - frame_color
@@ -17700,20 +17205,13 @@
   - furniture/fixture_material
   - outdoor_furniture_items_included
   - pattern
-  - rope_color
   - slat_color
-  - sling_color
-  - sofa_color
-  - table_color
   - table_height_type
-  - table_leg_color
   - table_shape
   - tabletop_color
   - tabletop_material
-  - umbrella_color
   - upholstery_color
   - upholstery_material
-  - weave_color
   return_reasons: inherit
 - id: fr-15-3
   name: Outdoor Ottomans
@@ -17740,7 +17238,6 @@
   - pattern
   - upholstery_color
   - upholstery_material
-  - weave_color
   return_reasons:
   - size
   - color
@@ -17776,7 +17273,6 @@
   - frame_color
   - material
   - pattern
-  - sling_color
   - upholstery_material
   return_reasons:
   - size
@@ -17930,7 +17426,6 @@
   - color
   - frame_color
   - pattern
-  - rope_color
   - shape
   - upholstery_color
   - upholstery_material
@@ -17955,7 +17450,6 @@
   - pattern
   - upholstery_color
   - upholstery_material
-  - weave_color
   return_reasons:
   - size
   - color
@@ -18063,12 +17557,9 @@
   children: []
   attributes:
   - color
-  - cushion_color
   - frame_finish
   - frame_material
   - pattern
-  - rope_color
-  - square_ottomans_fill_material
   - upholstery_material
   return_reasons:
   - size
@@ -18175,7 +17666,6 @@
   - armrest_configuration
   - bench_back_configuration
   - color
-  - cushion_color
   - frame_color
   - frame_material
   - furniture/fixture_material
@@ -18262,7 +17752,6 @@
   - movement_mechanism
   - outdoor_equipment_features
   - pattern
-  - seat_cushion_color
   - seat_structure
   - wood_finish
   return_reasons:
@@ -18289,7 +17778,6 @@
   - movement_mechanism
   - outdoor_equipment_features
   - pattern
-  - seat_cushion_color
   - seat_structure
   - wood_finish
   return_reasons: inherit
@@ -18306,7 +17794,6 @@
   - movement_mechanism
   - outdoor_equipment_features
   - pattern
-  - seat_cushion_color
   - seat_structure
   - wood_finish
   return_reasons: inherit
@@ -18339,13 +17826,11 @@
   - base_type
   - chair_features
   - color
-  - cushion_color
   - frame_color
   - furniture/fixture_material
   - leg_material
   - lumber/wood_type
   - pattern
-  - rope_color
   - seat_color
   - seat_material
   - seat_structure
@@ -18353,7 +17838,6 @@
   - seat_upholstery_material
   - surface_finish
   - upholstery_material
-  - weave_color
   - wood_finish
   return_reasons:
   - size
@@ -18383,7 +17867,6 @@
   - slat_color
   - surface_texture
   - upholstery_color
-  - weave_color
   - wood_finish
   return_reasons:
   - size
@@ -18467,7 +17950,6 @@
   - fr-15-4-2-15-2
   - fr-15-4-2-15-3
   attributes:
-  - armrest_color
   - armrest_material
   - backrest_type
   - chair_features
@@ -18475,14 +17957,10 @@
   - frame_finish
   - furniture/fixture_material
   - pattern
-  - resin_color
-  - rope_color
   - seat_color
   - seat_structure
   - seat_type
   - slat_color
-  - strap_color
-  - weave_color
   return_reasons:
   - size
   - color
@@ -18498,7 +17976,6 @@
   name: Outdoor Glider Chairs
   children: []
   attributes:
-  - armrest_color
   - armrest_material
   - backrest_type
   - chair_features
@@ -18506,20 +17983,15 @@
   - frame_finish
   - furniture/fixture_material
   - pattern
-  - resin_color
-  - rope_color
   - seat_color
   - seat_structure
   - seat_type
   - slat_color
-  - strap_color
-  - weave_color
   return_reasons: inherit
 - id: fr-15-4-2-15-2
   name: Cantilever Rocking Chairs
   children: []
   attributes:
-  - armrest_color
   - armrest_material
   - backrest_type
   - chair_features
@@ -18527,20 +17999,15 @@
   - frame_finish
   - furniture/fixture_material
   - pattern
-  - resin_color
-  - rope_color
   - seat_color
   - seat_structure
   - seat_type
   - slat_color
-  - strap_color
-  - weave_color
   return_reasons: inherit
 - id: fr-15-4-2-15-3
   name: Platform Rocking Chairs
   children: []
   attributes:
-  - armrest_color
   - armrest_material
   - backrest_type
   - chair_features
@@ -18548,14 +18015,10 @@
   - frame_finish
   - furniture/fixture_material
   - pattern
-  - resin_color
-  - rope_color
   - seat_color
   - seat_structure
   - seat_type
   - slat_color
-  - strap_color
-  - weave_color
   return_reasons: inherit
 - id: fr-15-4-2-16
   name: Sling Chairs
@@ -18564,7 +18027,6 @@
   - fr-15-4-2-16-2
   attributes:
   - backrest_type
-  - chair_arm_color
   - chair_features
   - chair_storage_design
   - color
@@ -18573,7 +18035,6 @@
   - pattern
   - seat_structure
   - seat_type
-  - sling_color
   return_reasons:
   - size
   - color
@@ -18590,7 +18051,6 @@
   children: []
   attributes:
   - backrest_type
-  - chair_arm_color
   - chair_features
   - chair_storage_design
   - color
@@ -18599,14 +18059,12 @@
   - pattern
   - seat_structure
   - seat_type
-  - sling_color
   return_reasons: inherit
 - id: fr-15-4-2-16-2
   name: Armless Sling Chairs
   children: []
   attributes:
   - backrest_type
-  - chair_arm_color
   - chair_features
   - chair_storage_design
   - color
@@ -18615,7 +18073,6 @@
   - pattern
   - seat_structure
   - seat_type
-  - sling_color
   return_reasons: inherit
 - id: fr-15-4-2-18
   name: Swing Chairs
@@ -18634,11 +18091,9 @@
   - hanging_support_type
   - lumber/wood_type
   - pattern
-  - seat_cushion_color
   - seat_structure
   - seat_type
   - wood_finish
-  - woven_basket_color
   return_reasons:
   - size
   - color
@@ -18662,11 +18117,9 @@
   - hanging_support_type
   - lumber/wood_type
   - pattern
-  - seat_cushion_color
   - seat_structure
   - seat_type
   - wood_finish
-  - woven_basket_color
   return_reasons: inherit
 - id: fr-15-4-2-18-2
   name: Hammock Chairs
@@ -18680,11 +18133,9 @@
   - hanging_support_type
   - lumber/wood_type
   - pattern
-  - seat_cushion_color
   - seat_structure
   - seat_type
   - wood_finish
-  - woven_basket_color
   return_reasons: inherit
 - id: fr-15-4-2-18-3
   name: Hanging Ball Chairs
@@ -18698,11 +18149,9 @@
   - hanging_support_type
   - lumber/wood_type
   - pattern
-  - seat_cushion_color
   - seat_structure
   - seat_type
   - wood_finish
-  - woven_basket_color
   return_reasons: inherit
 - id: fr-15-4-2-18-4
   name: Hanging Tent Chairs
@@ -18716,11 +18165,9 @@
   - hanging_support_type
   - lumber/wood_type
   - pattern
-  - seat_cushion_color
   - seat_structure
   - seat_type
   - wood_finish
-  - woven_basket_color
   return_reasons: inherit
 - id: fr-15-4-2-18-5
   name: Hanging Chaise Lounges
@@ -18734,11 +18181,9 @@
   - hanging_support_type
   - lumber/wood_type
   - pattern
-  - seat_cushion_color
   - seat_structure
   - seat_type
   - wood_finish
-  - woven_basket_color
   return_reasons: inherit
 - id: fr-15-4-2-19
   name: Outdoor Bar & Counter Chairs
@@ -18755,11 +18200,8 @@
   - lumber/wood_type
   - pattern
   - seat_height_category
-  - seat_shell_color
   - seat_structure
   - seat_type
-  - sling_color
-  - weave_color
   - wood_finish
   return_reasons: inherit
 - id: fr-15-4-2-19-1
@@ -18774,11 +18216,8 @@
   - lumber/wood_type
   - pattern
   - seat_height_category
-  - seat_shell_color
   - seat_structure
   - seat_type
-  - sling_color
-  - weave_color
   - wood_finish
   return_reasons: inherit
 - id: fr-15-4-2-19-2
@@ -18793,11 +18232,8 @@
   - lumber/wood_type
   - pattern
   - seat_height_category
-  - seat_shell_color
   - seat_structure
   - seat_type
-  - sling_color
-  - weave_color
   - wood_finish
   return_reasons: inherit
 - id: fr-15-4-2-19-3
@@ -18812,11 +18248,8 @@
   - lumber/wood_type
   - pattern
   - seat_height_category
-  - seat_shell_color
   - seat_structure
   - seat_type
-  - sling_color
-  - weave_color
   - wood_finish
   return_reasons: inherit
 - id: fr-15-4-2-20
@@ -18827,7 +18260,6 @@
   - chair_features
   - chair_height
   - color
-  - cushion_color
   - frame_color
   - furniture/fixture_material
   - lumber/wood_type
@@ -18846,22 +18278,17 @@
   - backrest_type
   - chair_features
   - color
-  - finish_color
   - frame_color
   - furniture/fixture_material
   - lumber/wood_type
   - pattern
-  - rope_color
   - seat_color
   - seat_height_category
   - seat_material
-  - seat_shell_color
   - seat_structure
   - seat_type
   - slat_color
-  - sling_color
   - upholstery_color
-  - weave_color
   - wood_finish
   return_reasons: inherit
 - id: fr-15-4-2-21-1
@@ -18872,22 +18299,17 @@
   - backrest_type
   - chair_features
   - color
-  - finish_color
   - frame_color
   - furniture/fixture_material
   - lumber/wood_type
   - pattern
-  - rope_color
   - seat_color
   - seat_height_category
   - seat_material
-  - seat_shell_color
   - seat_structure
   - seat_type
   - slat_color
-  - sling_color
   - upholstery_color
-  - weave_color
   - wood_finish
   return_reasons: inherit
 - id: fr-15-4-2-21-2
@@ -18898,22 +18320,17 @@
   - backrest_type
   - chair_features
   - color
-  - finish_color
   - frame_color
   - furniture/fixture_material
   - lumber/wood_type
   - pattern
-  - rope_color
   - seat_color
   - seat_height_category
   - seat_material
-  - seat_shell_color
   - seat_structure
   - seat_type
   - slat_color
-  - sling_color
   - upholstery_color
-  - weave_color
   - wood_finish
   return_reasons: inherit
 - id: fr-15-4-3
@@ -18926,11 +18343,9 @@
   attributes:
   - arm_style
   - color
-  - cushion_color
   - frame_color
   - leg_color
   - pattern
-  - rope_color
   - sectional_configuration
   - sectional_facing
   - suit_pieces
@@ -18953,11 +18368,9 @@
   attributes:
   - arm_style
   - color
-  - cushion_color
   - frame_color
   - leg_color
   - pattern
-  - rope_color
   - sectional_configuration
   - sectional_facing
   - suit_pieces
@@ -18970,11 +18383,9 @@
   attributes:
   - arm_style
   - color
-  - cushion_color
   - frame_color
   - leg_color
   - pattern
-  - rope_color
   - sectional_configuration
   - sectional_facing
   - suit_pieces
@@ -18987,11 +18398,9 @@
   attributes:
   - arm_style
   - color
-  - cushion_color
   - frame_color
   - leg_color
   - pattern
-  - rope_color
   - sectional_configuration
   - sectional_facing
   - suit_pieces
@@ -19004,11 +18413,9 @@
   attributes:
   - arm_style
   - color
-  - cushion_color
   - frame_color
   - leg_color
   - pattern
-  - rope_color
   - sectional_configuration
   - sectional_facing
   - suit_pieces
@@ -19030,11 +18437,7 @@
   - light_color
   - outdoor_sofa_back_style
   - pattern
-  - rope_color
-  - sling_color
   - upholstery_material
-  - weave_color
-  - wood_color
   - wood_finish
   return_reasons:
   - size
@@ -19052,14 +18455,12 @@
   children: []
   attributes:
   - color
-  - cushion_color
   - frame_finish
   - frame_material
   - left/right_orientation
   - leg_color
   - outdoor_sofa_back_style
   - pattern
-  - rope_color
   - upholstery_material
   return_reasons:
   - size
@@ -19081,15 +18482,11 @@
   attributes:
   - arm_style
   - color
-  - cushion_color
   - cushion_fill_material
   - frame_color
   - left/right_orientation
   - material
   - pattern
-  - polywood_color
-  - resin_color
-  - rope_color
   - sectional_configuration
   return_reasons:
   - size
@@ -19111,15 +18508,11 @@
   attributes:
   - arm_style
   - color
-  - cushion_color
   - cushion_fill_material
   - frame_color
   - left/right_orientation
   - material
   - pattern
-  - polywood_color
-  - resin_color
-  - rope_color
   - sectional_configuration
   return_reasons: inherit
 - id: fr-15-4-4-2-1-1
@@ -19128,15 +18521,11 @@
   attributes:
   - arm_style
   - color
-  - cushion_color
   - cushion_fill_material
   - frame_color
   - left/right_orientation
   - material
   - pattern
-  - polywood_color
-  - resin_color
-  - rope_color
   - sectional_configuration
   return_reasons: inherit
 - id: fr-15-4-4-2-1-2
@@ -19145,15 +18534,11 @@
   attributes:
   - arm_style
   - color
-  - cushion_color
   - cushion_fill_material
   - frame_color
   - left/right_orientation
   - material
   - pattern
-  - polywood_color
-  - resin_color
-  - rope_color
   - sectional_configuration
   return_reasons: inherit
 - id: fr-15-4-4-2-1-3
@@ -19162,15 +18547,11 @@
   attributes:
   - arm_style
   - color
-  - cushion_color
   - cushion_fill_material
   - frame_color
   - left/right_orientation
   - material
   - pattern
-  - polywood_color
-  - resin_color
-  - rope_color
   - sectional_configuration
   return_reasons: inherit
 - id: fr-15-4-4-2-2
@@ -19179,15 +18560,11 @@
   attributes:
   - arm_style
   - color
-  - cushion_color
   - cushion_fill_material
   - frame_color
   - left/right_orientation
   - material
   - pattern
-  - polywood_color
-  - resin_color
-  - rope_color
   - sectional_configuration
   return_reasons: inherit
 - id: fr-15-4-4-2-3
@@ -19196,15 +18573,11 @@
   attributes:
   - arm_style
   - color
-  - cushion_color
   - cushion_fill_material
   - frame_color
   - left/right_orientation
   - material
   - pattern
-  - polywood_color
-  - resin_color
-  - rope_color
   - sectional_configuration
   return_reasons: inherit
 - id: fr-15-4-5
@@ -19226,9 +18599,7 @@
   - material
   - pattern
   - portability_features
-  - seating_surface_color
   - seating_surface_material
-  - wood_color
   return_reasons:
   - size
   - color
@@ -19252,9 +18623,7 @@
   - material
   - pattern
   - portability_features
-  - seating_surface_color
   - seating_surface_material
-  - wood_color
   return_reasons: inherit
 - id: fr-15-4-5-2
   name: Steamer Chairs
@@ -19268,9 +18637,7 @@
   - material
   - pattern
   - portability_features
-  - seating_surface_color
   - seating_surface_material
-  - wood_color
   return_reasons: inherit
 - id: fr-15-4-5-3
   name: Adirondack Chaise Lounges
@@ -19284,9 +18651,7 @@
   - material
   - pattern
   - portability_features
-  - seating_surface_color
   - seating_surface_material
-  - wood_color
   return_reasons: inherit
 - id: fr-15-4-5-4
   name: Cot-Style Sunloungers
@@ -19300,9 +18665,7 @@
   - material
   - pattern
   - portability_features
-  - seating_surface_color
   - seating_surface_material
-  - wood_color
   return_reasons: inherit
 - id: fr-15-4-5-5
   name: Bean Bag Sunloungers
@@ -19316,9 +18679,7 @@
   - material
   - pattern
   - portability_features
-  - seating_surface_color
   - seating_surface_material
-  - wood_color
   return_reasons: inherit
 - id: fr-15-4-5-6
   name: Zero-Gravity Sunloungers
@@ -19332,9 +18693,7 @@
   - material
   - pattern
   - portability_features
-  - seating_surface_color
   - seating_surface_material
-  - wood_color
   return_reasons: inherit
 - id: fr-15-4-5-7
   name: Rocking Sunloungers
@@ -19348,20 +18707,15 @@
   - material
   - pattern
   - portability_features
-  - seating_surface_color
   - seating_surface_material
-  - wood_color
   return_reasons: inherit
 - id: fr-15-4-6
   name: Outdoor Stools
   children: []
   attributes:
   - color
-  - cushion_color
   - frame_color
   - pattern
-  - polywood_color
-  - resin_color
   - seat_height_category
   return_reasons: inherit
 - id: fr-15-5
@@ -19920,11 +19274,9 @@
   - fr-15-6-7-2-3
   - fr-15-6-7-2-4
   attributes:
-  - base_color
   - burner_finish
   - burner_type
   - color
-  - fire_glass_color
   - fire_pit_accessories_included
   - frame_color
   - fuel_type
@@ -19939,11 +19291,9 @@
   name: Gas Fire Pit Tables
   children: []
   attributes:
-  - base_color
   - burner_finish
   - burner_type
   - color
-  - fire_glass_color
   - fire_pit_accessories_included
   - frame_color
   - fuel_type
@@ -19958,11 +19308,9 @@
   name: Wood-Burning Fire Pit Tables
   children: []
   attributes:
-  - base_color
   - burner_finish
   - burner_type
   - color
-  - fire_glass_color
   - fire_pit_accessories_included
   - frame_color
   - fuel_type
@@ -19977,11 +19325,9 @@
   name: Bioethanol Fire Pit Tables
   children: []
   attributes:
-  - base_color
   - burner_finish
   - burner_type
   - color
-  - fire_glass_color
   - fire_pit_accessories_included
   - frame_color
   - fuel_type
@@ -19996,11 +19342,9 @@
   name: Dual-Fuel Fire Pit Tables
   children: []
   attributes:
-  - base_color
   - burner_finish
   - burner_type
   - color
-  - fire_glass_color
   - fire_pit_accessories_included
   - frame_color
   - fuel_type
@@ -21436,15 +20780,12 @@
   - fr-18-3
   attributes:
   - assembly_required
-  - base_color
   - color
   - foldability
   - frame_color
-  - hinge_color
   - material
   - mounting_bracket_type
   - mounting_type
-  - panel_color
   - panel_surface_type
   - pattern
   - shape
@@ -21464,15 +20805,12 @@
   name: Folding Room Dividers
   children: []
   attributes:
-  - base_color
   - color
   - foldability
   - frame_color
-  - hinge_color
   - material
   - mounting_bracket_type
   - mounting_type
-  - panel_color
   - panel_surface_type
   - pattern
   - shape
@@ -21482,15 +20820,12 @@
   name: Curtain Room Dividers
   children: []
   attributes:
-  - base_color
   - color
   - foldability
   - frame_color
-  - hinge_color
   - material
   - mounting_bracket_type
   - mounting_type
-  - panel_color
   - panel_surface_type
   - pattern
   - shape
@@ -21500,15 +20835,12 @@
   name: Sliding Room Dividers
   children: []
   attributes:
-  - base_color
   - color
   - foldability
   - frame_color
-  - hinge_color
   - material
   - mounting_bracket_type
   - mounting_type
-  - panel_color
   - panel_surface_type
   - pattern
   - shape
@@ -21681,10 +21013,8 @@
   - frame_finish
   - frame_material
   - furniture/fixture_material
-  - glass_color
   - mounting_type
   - number_of_compartments
-  - panel_color
   - pattern
   - portrait/landscape_orientation
   - shape
@@ -21711,6 +21041,7 @@
   - door_material
   - door_orientation
   - feet_color
+  - feet_pattern
   - frame_finish
   - frame_material
   - furniture/fixture_material
@@ -21770,7 +21101,6 @@
   - fr-19-2-5
   - fr-19-2-6
   attributes:
-  - bracket_color
   - color
   - furniture/fixture_material
   - mounting_method
@@ -21887,7 +21217,6 @@
   - fr-19-2-2-3
   - fr-19-2-2-4
   attributes:
-  - bar_color
   - color
   - finished_side
   - frame_color
@@ -21895,7 +21224,6 @@
   - installation_method
   - left/right_orientation
   - lumber/wood_type
-  - metal_color
   - mounting_type
   - pattern
   - shape
@@ -21920,7 +21248,6 @@
   - fr-19-2-2-1-1
   - fr-19-2-2-1-2
   attributes:
-  - bar_color
   - color
   - finished_side
   - frame_color
@@ -21928,7 +21255,6 @@
   - installation_method
   - left/right_orientation
   - lumber/wood_type
-  - metal_color
   - mounting_type
   - pattern
   - shape
@@ -21941,7 +21267,6 @@
   name: Floating Cube Shelves
   children: []
   attributes:
-  - bar_color
   - color
   - finished_side
   - frame_color
@@ -21949,7 +21274,6 @@
   - installation_method
   - left/right_orientation
   - lumber/wood_type
-  - metal_color
   - mounting_type
   - pattern
   - shape
@@ -21962,7 +21286,6 @@
   name: Floating Hexagonal Shelves
   children: []
   attributes:
-  - bar_color
   - color
   - finished_side
   - frame_color
@@ -21970,7 +21293,6 @@
   - installation_method
   - left/right_orientation
   - lumber/wood_type
-  - metal_color
   - mounting_type
   - pattern
   - shape
@@ -21985,7 +21307,6 @@
   - fr-19-2-2-2-1
   - fr-19-2-2-2-2
   attributes:
-  - bar_color
   - color
   - finished_side
   - frame_color
@@ -21993,7 +21314,6 @@
   - installation_method
   - left/right_orientation
   - lumber/wood_type
-  - metal_color
   - mounting_type
   - pattern
   - shape
@@ -22006,7 +21326,6 @@
   name: S-Shaped Floating Shelves
   children: []
   attributes:
-  - bar_color
   - color
   - finished_side
   - frame_color
@@ -22014,7 +21333,6 @@
   - installation_method
   - left/right_orientation
   - lumber/wood_type
-  - metal_color
   - mounting_type
   - pattern
   - shape
@@ -22027,7 +21345,6 @@
   name: Semicircular Floating Shelves
   children: []
   attributes:
-  - bar_color
   - color
   - finished_side
   - frame_color
@@ -22035,7 +21352,6 @@
   - installation_method
   - left/right_orientation
   - lumber/wood_type
-  - metal_color
   - mounting_type
   - pattern
   - shape
@@ -22048,7 +21364,6 @@
   name: Floating U-Shaped Shelves
   children: []
   attributes:
-  - bar_color
   - color
   - finished_side
   - frame_color
@@ -22056,7 +21371,6 @@
   - installation_method
   - left/right_orientation
   - lumber/wood_type
-  - metal_color
   - mounting_type
   - pattern
   - shape
@@ -22069,7 +21383,6 @@
   name: Tiered Floating Shelves
   children: []
   attributes:
-  - bar_color
   - color
   - finished_side
   - frame_color
@@ -22077,7 +21390,6 @@
   - installation_method
   - left/right_orientation
   - lumber/wood_type
-  - metal_color
   - mounting_type
   - pattern
   - shape
@@ -22143,7 +21455,6 @@
   - frame_finish
   - furniture/fixture_material
   - mounting_type
-  - panel_color
   - pattern
   - shape
   - shelf_color
@@ -22168,7 +21479,6 @@
   - frame_finish
   - furniture/fixture_material
   - mounting_type
-  - panel_color
   - pattern
   - shape
   - shelf_color
@@ -22184,7 +21494,6 @@
   - frame_finish
   - furniture/fixture_material
   - mounting_type
-  - panel_color
   - pattern
   - shape
   - shelf_color
@@ -22200,7 +21509,6 @@
   - frame_finish
   - furniture/fixture_material
   - mounting_type
-  - panel_color
   - pattern
   - shape
   - shelf_color
@@ -22214,7 +21522,6 @@
   - color
   - frame_color
   - furniture/fixture_material
-  - hardware_color
   - hardware_finish
   - lumber/wood_type
   - mounting_type
@@ -23135,7 +22442,6 @@
   - color
   - compatible_seating_capacity
   - cover_material
-  - cushion_color
   - cushion_fill_material
   - firmness
   - frame_color
@@ -23165,7 +22471,6 @@
   - color
   - compatible_seating_capacity
   - cover_material
-  - cushion_color
   - cushion_fill_material
   - firmness
   - frame_color
@@ -23185,7 +22490,6 @@
   - color
   - compatible_seating_capacity
   - cover_material
-  - cushion_color
   - cushion_fill_material
   - firmness
   - frame_color
@@ -23205,7 +22509,6 @@
   - color
   - compatible_seating_capacity
   - cover_material
-  - cushion_color
   - cushion_fill_material
   - firmness
   - frame_color
@@ -23225,7 +22528,6 @@
   - color
   - compatible_seating_capacity
   - cover_material
-  - cushion_color
   - cushion_fill_material
   - firmness
   - frame_color
@@ -23245,7 +22547,6 @@
   - color
   - compatible_seating_capacity
   - cover_material
-  - cushion_color
   - cushion_fill_material
   - firmness
   - frame_color
@@ -23265,7 +22566,6 @@
   - color
   - compatible_seating_capacity
   - cover_material
-  - cushion_color
   - cushion_fill_material
   - firmness
   - frame_color
@@ -23285,7 +22585,6 @@
   - color
   - compatible_seating_capacity
   - cover_material
-  - cushion_color
   - cushion_fill_material
   - firmness
   - frame_color
@@ -23382,7 +22681,6 @@
   - seat_upholstery_material
   - seat_upholstery_pattern
   - sofa_features
-  - stitching_color
   - upholstery_color
   - upholstery_material
   return_reasons:
@@ -23413,7 +22711,6 @@
   - seat_upholstery_material
   - seat_upholstery_pattern
   - sofa_features
-  - stitching_color
   - upholstery_color
   - upholstery_material
   return_reasons: inherit
@@ -23434,7 +22731,6 @@
   - seat_upholstery_material
   - seat_upholstery_pattern
   - sofa_features
-  - stitching_color
   - upholstery_color
   - upholstery_material
   return_reasons: inherit
@@ -23455,7 +22751,6 @@
   - seat_upholstery_pattern
   - sofa_back_style
   - sofa_features
-  - stitching_color
   - upholstery_color
   - upholstery_cover_type
   - upholstery_texture
@@ -23498,7 +22793,6 @@
   - seat_upholstery_pattern
   - sofa_back_style
   - sofa_features
-  - stitching_color
   - upholstery_color
   - wood_finish
   return_reasons:
@@ -23538,7 +22832,6 @@
   - seat_upholstery_pattern
   - sofa_back_style
   - sofa_features
-  - stitching_color
   - upholstery_color
   - wood_finish
   return_reasons: inherit
@@ -23568,7 +22861,6 @@
   - seat_upholstery_pattern
   - sofa_back_style
   - sofa_features
-  - stitching_color
   - upholstery_color
   - wood_finish
   return_reasons: inherit
@@ -23603,7 +22895,6 @@
   - sectional_shape
   - sofa_bed_type
   - sofa_features
-  - stitching_color
   - upholstery_color
   - upholstery_cover_type
   - upholstery_texture
@@ -23647,7 +22938,6 @@
   - sectional_shape
   - sofa_bed_type
   - sofa_features
-  - stitching_color
   - upholstery_color
   - upholstery_cover_type
   - upholstery_texture
@@ -23681,7 +22971,6 @@
   - sectional_shape
   - sofa_bed_type
   - sofa_features
-  - stitching_color
   - upholstery_color
   - upholstery_cover_type
   - upholstery_texture
@@ -23701,7 +22990,6 @@
   - backrest_upholstery_pattern
   - bed_base_type
   - chaise_or_sectional_orientation
-  - cushion_color
   - firmness
   - frame_finish
   - seat_fill_material
@@ -23731,7 +23019,6 @@
   - backrest_upholstery_pattern
   - bed_base_type
   - chaise_or_sectional_orientation
-  - cushion_color
   - firmness
   - frame_finish
   - seat_fill_material
@@ -23751,7 +23038,6 @@
   - backrest_upholstery_pattern
   - bed_base_type
   - chaise_or_sectional_orientation
-  - cushion_color
   - firmness
   - frame_finish
   - seat_fill_material
@@ -23771,7 +23057,6 @@
   - backrest_upholstery_pattern
   - bed_base_type
   - chaise_or_sectional_orientation
-  - cushion_color
   - firmness
   - frame_finish
   - seat_fill_material
@@ -23791,7 +23076,6 @@
   - backrest_upholstery_pattern
   - bed_base_type
   - chaise_or_sectional_orientation
-  - cushion_color
   - firmness
   - frame_finish
   - seat_fill_material
@@ -23811,7 +23095,6 @@
   - backrest_upholstery_pattern
   - bed_base_type
   - chaise_or_sectional_orientation
-  - cushion_color
   - firmness
   - frame_finish
   - seat_fill_material
@@ -23948,10 +23231,8 @@
   - fr-23-2-6
   attributes:
   - color
-  - edge_band_color
   - furniture/fixture_material
   - pattern
-  - resin_color
   - side
   - tabletop_edge_profile
   return_reasons:
@@ -23970,10 +23251,8 @@
   children: []
   attributes:
   - color
-  - edge_band_color
   - furniture/fixture_material
   - pattern
-  - resin_color
   - side
   - tabletop_edge_profile
   return_reasons: inherit
@@ -23982,10 +23261,8 @@
   children: []
   attributes:
   - color
-  - edge_band_color
   - furniture/fixture_material
   - pattern
-  - resin_color
   - side
   - tabletop_edge_profile
   return_reasons: inherit
@@ -23994,10 +23271,8 @@
   children: []
   attributes:
   - color
-  - edge_band_color
   - furniture/fixture_material
   - pattern
-  - resin_color
   - side
   - tabletop_edge_profile
   return_reasons: inherit
@@ -24006,10 +23281,8 @@
   children: []
   attributes:
   - color
-  - edge_band_color
   - furniture/fixture_material
   - pattern
-  - resin_color
   - side
   - tabletop_edge_profile
   return_reasons: inherit
@@ -24018,10 +23291,8 @@
   children: []
   attributes:
   - color
-  - edge_band_color
   - furniture/fixture_material
   - pattern
-  - resin_color
   - side
   - tabletop_edge_profile
   return_reasons: inherit
@@ -24030,10 +23301,8 @@
   children: []
   attributes:
   - color
-  - edge_band_color
   - furniture/fixture_material
   - pattern
-  - resin_color
   - side
   - tabletop_edge_profile
   return_reasons: inherit
@@ -24311,7 +23580,6 @@
   - leg_material
   - leg_pattern
   - material
-  - table_base_color
   - table_base_material
   - table_base_type
   - tabletop_color
@@ -24342,11 +23610,9 @@
   - fr-24-1-1-8
   attributes:
   - color
-  - drawer_color
   - frame_color
   - indoor_outdoor_use
   - inlay_material
-  - integrated_light_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24363,7 +23629,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   - wood_finish
   return_reasons:
   - size
@@ -24380,11 +23645,9 @@
   children: []
   attributes:
   - color
-  - drawer_color
   - frame_color
   - indoor_outdoor_use
   - inlay_material
-  - integrated_light_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24401,7 +23664,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   - wood_finish
   return_reasons: inherit
 - id: fr-24-1-1-2
@@ -24409,11 +23671,9 @@
   children: []
   attributes:
   - color
-  - drawer_color
   - frame_color
   - indoor_outdoor_use
   - inlay_material
-  - integrated_light_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24430,7 +23690,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   - wood_finish
   return_reasons: inherit
 - id: fr-24-1-1-3
@@ -24438,11 +23697,9 @@
   children: []
   attributes:
   - color
-  - drawer_color
   - frame_color
   - indoor_outdoor_use
   - inlay_material
-  - integrated_light_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24459,7 +23716,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   - wood_finish
   return_reasons: inherit
 - id: fr-24-1-1-4
@@ -24467,11 +23723,9 @@
   children: []
   attributes:
   - color
-  - drawer_color
   - frame_color
   - indoor_outdoor_use
   - inlay_material
-  - integrated_light_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24488,7 +23742,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   - wood_finish
   return_reasons: inherit
 - id: fr-24-1-1-5
@@ -24496,11 +23749,9 @@
   children: []
   attributes:
   - color
-  - drawer_color
   - frame_color
   - indoor_outdoor_use
   - inlay_material
-  - integrated_light_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24517,7 +23768,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   - wood_finish
   return_reasons: inherit
 - id: fr-24-1-1-6
@@ -24525,11 +23775,9 @@
   children: []
   attributes:
   - color
-  - drawer_color
   - frame_color
   - indoor_outdoor_use
   - inlay_material
-  - integrated_light_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24546,7 +23794,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   - wood_finish
   return_reasons: inherit
 - id: fr-24-1-1-7
@@ -24554,11 +23801,9 @@
   children: []
   attributes:
   - color
-  - drawer_color
   - frame_color
   - indoor_outdoor_use
   - inlay_material
-  - integrated_light_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24575,7 +23820,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   - wood_finish
   return_reasons: inherit
 - id: fr-24-1-1-8
@@ -24583,11 +23827,9 @@
   children: []
   attributes:
   - color
-  - drawer_color
   - frame_color
   - indoor_outdoor_use
   - inlay_material
-  - integrated_light_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24604,7 +23846,6 @@
   - tabletop_material
   - tabletop_pattern
   - tabletop_shape
-  - wood_color
   - wood_finish
   return_reasons: inherit
 - id: fr-24-1-2
@@ -24762,8 +24003,6 @@
   - fr-24-2-13
   - fr-24-2-14
   attributes:
-  - edge_band_color
-  - finish_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24791,8 +24030,6 @@
   name: Rectangular Activity Tables
   children: []
   attributes:
-  - edge_band_color
-  - finish_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24811,8 +24048,6 @@
   name: Square Activity Tables
   children: []
   attributes:
-  - edge_band_color
-  - finish_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24831,8 +24066,6 @@
   name: Round Activity Tables
   children: []
   attributes:
-  - edge_band_color
-  - finish_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24851,8 +24084,6 @@
   name: Oval Activity Tables
   children: []
   attributes:
-  - edge_band_color
-  - finish_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24871,8 +24102,6 @@
   name: Triangular Activity Tables
   children: []
   attributes:
-  - edge_band_color
-  - finish_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24891,8 +24120,6 @@
   name: Hexagonal Activity Tables
   children: []
   attributes:
-  - edge_band_color
-  - finish_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24911,8 +24138,6 @@
   name: Octagonal Activity Tables
   children: []
   attributes:
-  - edge_band_color
-  - finish_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24931,8 +24156,6 @@
   name: Trapezoid Activity Tables
   children: []
   attributes:
-  - edge_band_color
-  - finish_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24951,8 +24174,6 @@
   name: Half-Round Activity Tables
   children: []
   attributes:
-  - edge_band_color
-  - finish_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24971,8 +24192,6 @@
   name: Kidney-Shaped Activity Tables
   children: []
   attributes:
-  - edge_band_color
-  - finish_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -24991,8 +24210,6 @@
   name: Horseshoe Activity Tables
   children: []
   attributes:
-  - edge_band_color
-  - finish_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -25011,8 +24228,6 @@
   name: Crescent Activity Tables
   children: []
   attributes:
-  - edge_band_color
-  - finish_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -25031,8 +24246,6 @@
   name: Flower Activity Tables
   children: []
   attributes:
-  - edge_band_color
-  - finish_color
   - leg_color
   - leg_material
   - leg_pattern
@@ -25051,8 +24264,6 @@
   name: Wave Activity Tables
   children: []
   attributes:
-  - edge_band_color
-  - finish_color
   - leg_color
   - leg_material
   - leg_pattern

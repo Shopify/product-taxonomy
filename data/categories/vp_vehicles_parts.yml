@@ -4281,7 +4281,6 @@
   - vp-1-3-9
   - vp-1-3-10
   attributes:
-  - button_color
   - color
   - compatible_operating_system
   - compatible_throttle_control_type
@@ -5024,6 +5023,7 @@
   - power_source
   - speaker_mount_location
   - speaker_ring_color
+  - speaker_ring_pattern
   - vehicle_side
   return_reasons:
   - size
@@ -6402,7 +6402,6 @@
   - compatible_brake_service_system
   - compatible_vehicle_drive_orientation
   - compatible_vehicle_drivetrain
-  - fitting_color
   - fitting_material
   - fitting_style
   - front_line_length_type
@@ -6434,7 +6433,6 @@
   - compatible_brake_service_system
   - compatible_vehicle_drive_orientation
   - compatible_vehicle_drivetrain
-  - fitting_color
   - fitting_material
   - fitting_style
   - front_line_length_type
@@ -6868,20 +6866,17 @@
   attributes:
   - brake_fluid_dot_specification
   - brake_position
-  - button_color
   - color
   - compatible_brake_service_system
   - compatible_engine_induction_type
   - compatible_oem_brake_disc_type
   - compatible_vehicle_drivetrain
-  - disc_color
   - driving_use
   - item_condition
   - manufacturer_type
   - material
   - pattern
   - rotor_finish
-  - rotor_hat_color
   - rotor_hat_finish
   - vehicle_braking_features
   return_reasons:
@@ -6899,20 +6894,17 @@
   attributes:
   - brake_fluid_dot_specification
   - brake_position
-  - button_color
   - color
   - compatible_brake_service_system
   - compatible_engine_induction_type
   - compatible_oem_brake_disc_type
   - compatible_vehicle_drivetrain
-  - disc_color
   - driving_use
   - item_condition
   - manufacturer_type
   - material
   - pattern
   - rotor_finish
-  - rotor_hat_color
   - rotor_hat_finish
   - vehicle_braking_features
   return_reasons: inherit
@@ -6922,20 +6914,17 @@
   attributes:
   - brake_fluid_dot_specification
   - brake_position
-  - button_color
   - color
   - compatible_brake_service_system
   - compatible_engine_induction_type
   - compatible_oem_brake_disc_type
   - compatible_vehicle_drivetrain
-  - disc_color
   - driving_use
   - item_condition
   - manufacturer_type
   - material
   - pattern
   - rotor_finish
-  - rotor_hat_color
   - rotor_hat_finish
   - vehicle_braking_features
   return_reasons: inherit
@@ -7386,7 +7375,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - trim_color
   return_reasons:
   - size
   - color
@@ -7413,7 +7401,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - trim_color
   return_reasons: inherit
 - id: vp-1-4-2-1-2
   name: Universal Cargo Liners
@@ -7430,7 +7417,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - trim_color
   return_reasons: inherit
 - id: vp-1-4-2-2
   name: Carpet Kits
@@ -7579,8 +7565,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - side_color
-  - stitching_color
   - top_color
   return_reasons:
   - color
@@ -7606,8 +7590,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - side_color
-  - stitching_color
   - top_color
   return_reasons: inherit
 - id: vp-1-4-2-3-2
@@ -7624,8 +7606,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - side_color
-  - stitching_color
   - top_color
   return_reasons: inherit
 - id: vp-1-4-2-3-3
@@ -7642,8 +7622,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - side_color
-  - stitching_color
   - top_color
   return_reasons: inherit
 - id: vp-1-4-2-4
@@ -7662,8 +7640,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - stitching_color
-  - trim_color
   return_reasons:
   - size
   - color
@@ -7689,8 +7665,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - stitching_color
-  - trim_color
   return_reasons: inherit
 - id: vp-1-4-2-4-2
   name: Dashboard Overlays
@@ -7706,8 +7680,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - stitching_color
-  - trim_color
   return_reasons: inherit
 - id: vp-1-4-2-5
   name: Door Panels
@@ -7724,8 +7696,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - stitching_color
-  - suede_color
   return_reasons:
   - size
   - color
@@ -7753,8 +7723,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - stitching_color
-  - suede_color
   return_reasons: inherit
 - id: vp-1-4-2-5-1-1
   name: Front Left Door Panels
@@ -7769,8 +7737,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - stitching_color
-  - suede_color
   return_reasons: inherit
 - id: vp-1-4-2-5-1-2
   name: Front Right Door Panels
@@ -7785,8 +7751,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - stitching_color
-  - suede_color
   return_reasons: inherit
 - id: vp-1-4-2-5-2
   name: Rear Door Panels
@@ -7803,8 +7767,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - stitching_color
-  - suede_color
   return_reasons: inherit
 - id: vp-1-4-2-5-2-1
   name: Rear Left Door Panels
@@ -7819,8 +7781,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - stitching_color
-  - suede_color
   return_reasons: inherit
 - id: vp-1-4-2-5-2-2
   name: Rear Right Door Panels
@@ -7835,8 +7795,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - stitching_color
-  - suede_color
   return_reasons: inherit
 - id: vp-1-4-2-6
   name: Headliners
@@ -7945,8 +7903,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - stitching_color
-  - trim_color
   return_reasons:
   - size
   - color
@@ -7970,8 +7926,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - stitching_color
-  - trim_color
   return_reasons: inherit
 - id: vp-1-4-2-7-2
   name: Cargo Trays
@@ -7985,8 +7939,6 @@
   - item_condition
   - manufacturer_type
   - pattern
-  - stitching_color
-  - trim_color
   return_reasons: inherit
 - id: vp-1-4-2-8
   name: Upholstery Fabric
@@ -8928,7 +8880,6 @@
   - vp-1-4-4-9
   - vp-1-4-4-10
   attributes:
-  - button_light_color
   - color
   - compatible_vehicle_steering_position
   - control_lever_type
@@ -8970,14 +8921,11 @@
   - handbrake_orientation
   - item_condition
   - item_material
-  - knob_color
-  - lever_color
   - lever_length_class
   - manufacturer_type
   - master_cylinder_type
   - mounting_position
   - pattern
-  - stitching_color
   return_reasons:
   - length
   - incompatible
@@ -8997,14 +8945,11 @@
   - handbrake_orientation
   - item_condition
   - item_material
-  - knob_color
-  - lever_color
   - lever_length_class
   - manufacturer_type
   - master_cylinder_type
   - mounting_position
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-4-1-2
   name: Parking Brake Pedal Assemblies
@@ -9016,14 +8961,11 @@
   - handbrake_orientation
   - item_condition
   - item_material
-  - knob_color
-  - lever_color
   - lever_length_class
   - manufacturer_type
   - master_cylinder_type
   - mounting_position
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-4-1-3
   name: Parking Brake Cables
@@ -9035,14 +8977,11 @@
   - handbrake_orientation
   - item_condition
   - item_material
-  - knob_color
-  - lever_color
   - lever_length_class
   - manufacturer_type
   - master_cylinder_type
   - mounting_position
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-4-1-4
   name: Parking Brake Equalizers
@@ -9054,14 +8993,11 @@
   - handbrake_orientation
   - item_condition
   - item_material
-  - knob_color
-  - lever_color
   - lever_length_class
   - manufacturer_type
   - master_cylinder_type
   - mounting_position
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-4-1-5
   name: Electronic Parking Brake Controls
@@ -9073,14 +9009,11 @@
   - handbrake_orientation
   - item_condition
   - item_material
-  - knob_color
-  - lever_color
   - lever_length_class
   - manufacturer_type
   - master_cylinder_type
   - mounting_position
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-4-1-6
   name: Parking Brake Line Locks
@@ -9092,14 +9025,11 @@
   - handbrake_orientation
   - item_condition
   - item_material
-  - knob_color
-  - lever_color
   - lever_length_class
   - manufacturer_type
   - master_cylinder_type
   - mounting_position
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-4-2
   name: Pedals
@@ -9613,34 +9543,25 @@
   - vp-1-4-4-6-3
   - vp-1-4-4-6-4
   attributes:
-  - 12_oclock_marker_color
-  - button_color
   - carbon_fiber_finish
   - carbon_fiber_style
   - color
   - compatible_steering_wheel_airbag
   - compatible_steering_wheel_control_button
   - compatible_vehicle_drive_orientation
-  - emblem_color
   - finish
-  - horn_button_color
-  - insert_color
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
   - shape
   - side_grip_material
-  - spoke_color
   - spoke_finish
   - steering_wheel_bolt_pattern
   - steering_wheel_control_button_configuration
-  - steering_wheel_rim_color
   - steering_wheel_rim_material_grip_surface
-  - steering_wheel_ring_color
   - steering_wheel_style
   - steering_wheel_type
-  - stitching_color
   - top_and_bottom_rim_material
   return_reasons:
   - size
@@ -9655,136 +9576,100 @@
   name: Round Steering Wheels
   children: []
   attributes:
-  - 12_oclock_marker_color
-  - button_color
   - carbon_fiber_finish
   - carbon_fiber_style
   - color
   - compatible_steering_wheel_airbag
   - compatible_steering_wheel_control_button
   - compatible_vehicle_drive_orientation
-  - emblem_color
   - finish
-  - horn_button_color
-  - insert_color
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
   - shape
   - side_grip_material
-  - spoke_color
   - spoke_finish
   - steering_wheel_bolt_pattern
   - steering_wheel_control_button_configuration
-  - steering_wheel_rim_color
   - steering_wheel_rim_material_grip_surface
-  - steering_wheel_ring_color
   - steering_wheel_style
   - steering_wheel_type
-  - stitching_color
   - top_and_bottom_rim_material
   return_reasons: inherit
 - id: vp-1-4-4-6-2
   name: D-Shaped Steering Wheels
   children: []
   attributes:
-  - 12_oclock_marker_color
-  - button_color
   - carbon_fiber_finish
   - carbon_fiber_style
   - color
   - compatible_steering_wheel_airbag
   - compatible_steering_wheel_control_button
   - compatible_vehicle_drive_orientation
-  - emblem_color
   - finish
-  - horn_button_color
-  - insert_color
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
   - shape
   - side_grip_material
-  - spoke_color
   - spoke_finish
   - steering_wheel_bolt_pattern
   - steering_wheel_control_button_configuration
-  - steering_wheel_rim_color
   - steering_wheel_rim_material_grip_surface
-  - steering_wheel_ring_color
   - steering_wheel_style
   - steering_wheel_type
-  - stitching_color
   - top_and_bottom_rim_material
   return_reasons: inherit
 - id: vp-1-4-4-6-3
   name: Flat-Top Steering Wheels
   children: []
   attributes:
-  - 12_oclock_marker_color
-  - button_color
   - carbon_fiber_finish
   - carbon_fiber_style
   - color
   - compatible_steering_wheel_airbag
   - compatible_steering_wheel_control_button
   - compatible_vehicle_drive_orientation
-  - emblem_color
   - finish
-  - horn_button_color
-  - insert_color
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
   - shape
   - side_grip_material
-  - spoke_color
   - spoke_finish
   - steering_wheel_bolt_pattern
   - steering_wheel_control_button_configuration
-  - steering_wheel_rim_color
   - steering_wheel_rim_material_grip_surface
-  - steering_wheel_ring_color
   - steering_wheel_style
   - steering_wheel_type
-  - stitching_color
   - top_and_bottom_rim_material
   return_reasons: inherit
 - id: vp-1-4-4-6-4
   name: Yoke Steering Wheels
   children: []
   attributes:
-  - 12_oclock_marker_color
-  - button_color
   - carbon_fiber_finish
   - carbon_fiber_style
   - color
   - compatible_steering_wheel_airbag
   - compatible_steering_wheel_control_button
   - compatible_vehicle_drive_orientation
-  - emblem_color
   - finish
-  - horn_button_color
-  - insert_color
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
   - shape
   - side_grip_material
-  - spoke_color
   - spoke_finish
   - steering_wheel_bolt_pattern
   - steering_wheel_control_button_configuration
-  - steering_wheel_rim_color
   - steering_wheel_rim_material_grip_surface
-  - steering_wheel_ring_color
   - steering_wheel_style
   - steering_wheel_type
-  - stitching_color
   - top_and_bottom_rim_material
   return_reasons: inherit
 - id: vp-1-4-4-7
@@ -10161,7 +10046,6 @@
   - cap_seal_type
   - color
   - finish
-  - insert_color
   - item_condition
   - item_material
   - manufacturer_type
@@ -10187,7 +10071,6 @@
   - cap_seal_type
   - color
   - finish
-  - insert_color
   - item_condition
   - item_material
   - manufacturer_type
@@ -10206,7 +10089,6 @@
   - cap_seal_type
   - color
   - finish
-  - insert_color
   - item_condition
   - item_material
   - manufacturer_type
@@ -10225,7 +10107,6 @@
   - cap_seal_type
   - color
   - finish
-  - insert_color
   - item_condition
   - item_material
   - manufacturer_type
@@ -10577,7 +10458,6 @@
   attributes:
   - color
   - fitting_angle
-  - fitting_color
   - item_condition
   - item_material
   - manufacturer_type
@@ -10591,7 +10471,6 @@
   attributes:
   - color
   - fitting_angle
-  - fitting_color
   - item_condition
   - item_material
   - manufacturer_type
@@ -10605,7 +10484,6 @@
   attributes:
   - color
   - fitting_angle
-  - fitting_color
   - item_condition
   - item_material
   - manufacturer_type
@@ -11127,8 +11005,6 @@
   attributes:
   - compatible_distributor_type
   - heat_protection_type
-  - ignition_lead_boot_color
-  - ignition_lead_color
   - ignition_lead_compliance_standard
   - ignition_lead_insulation_material
   - ignition_lead_set_type
@@ -11136,7 +11012,6 @@
   - item_condition
   - item_material
   - manufacturer_type
-  - protective_sleeve_color
   - spark_plug_boot_angle
   - vehicle_engine/part_features
   - wire_core_type
@@ -11154,8 +11029,6 @@
   attributes:
   - compatible_distributor_type
   - heat_protection_type
-  - ignition_lead_boot_color
-  - ignition_lead_color
   - ignition_lead_compliance_standard
   - ignition_lead_insulation_material
   - ignition_lead_set_type
@@ -11163,7 +11036,6 @@
   - item_condition
   - item_material
   - manufacturer_type
-  - protective_sleeve_color
   - spark_plug_boot_angle
   - vehicle_engine/part_features
   - wire_core_type
@@ -11174,8 +11046,6 @@
   attributes:
   - compatible_distributor_type
   - heat_protection_type
-  - ignition_lead_boot_color
-  - ignition_lead_color
   - ignition_lead_compliance_standard
   - ignition_lead_insulation_material
   - ignition_lead_set_type
@@ -11183,7 +11053,6 @@
   - item_condition
   - item_material
   - manufacturer_type
-  - protective_sleeve_color
   - spark_plug_boot_angle
   - vehicle_engine/part_features
   - wire_core_type
@@ -11194,8 +11063,6 @@
   attributes:
   - compatible_distributor_type
   - heat_protection_type
-  - ignition_lead_boot_color
-  - ignition_lead_color
   - ignition_lead_compliance_standard
   - ignition_lead_insulation_material
   - ignition_lead_set_type
@@ -11203,7 +11070,6 @@
   - item_condition
   - item_material
   - manufacturer_type
-  - protective_sleeve_color
   - spark_plug_boot_angle
   - vehicle_engine/part_features
   - wire_core_type
@@ -12317,8 +12183,8 @@
   - vp-1-4-7-3-1
   - vp-1-4-7-3-2
   attributes:
-  - bushing_color
   - bushing_housing_color
+  - bushing_housing_pattern
   - bushing_material
   - color
   - compatible_vehicle_drivetrain
@@ -12346,8 +12212,8 @@
   name: Direct-Fit Engine Mounts
   children: []
   attributes:
-  - bushing_color
   - bushing_housing_color
+  - bushing_housing_pattern
   - bushing_material
   - color
   - compatible_vehicle_drivetrain
@@ -12368,8 +12234,8 @@
   name: Universal Engine Mounts
   children: []
   attributes:
-  - bushing_color
   - bushing_housing_color
+  - bushing_housing_pattern
   - bushing_material
   - color
   - compatible_vehicle_drivetrain
@@ -13405,7 +13271,6 @@
   - manufacturer_type
   - pattern
   - primary_component_material
-  - rocker_cover_color
   - valvetrain_configuration
   - vehicle_engine_features
   return_reasons:
@@ -13431,7 +13296,6 @@
   - manufacturer_type
   - pattern
   - primary_component_material
-  - rocker_cover_color
   - valvetrain_configuration
   - vehicle_engine_features
   return_reasons: inherit
@@ -13448,7 +13312,6 @@
   - manufacturer_type
   - pattern
   - primary_component_material
-  - rocker_cover_color
   - valvetrain_configuration
   - vehicle_engine_features
   return_reasons: inherit
@@ -14716,12 +14579,10 @@
   - exhaust_outlet_configuration
   - exhaust_pipe_shape
   - exhaust_tip_coating
-  - exhaust_tip_color
   - exhaust_tip_configuration
   - exhaust_tip_material
   - exhaust_valve_configuration
   - fit_type
-  - heat_shield_color
   - heat_shielding_configuration
   - item_condition
   - item_material
@@ -14753,12 +14614,10 @@
   - exhaust_outlet_configuration
   - exhaust_pipe_shape
   - exhaust_tip_coating
-  - exhaust_tip_color
   - exhaust_tip_configuration
   - exhaust_tip_material
   - exhaust_valve_configuration
   - fit_type
-  - heat_shield_color
   - heat_shielding_configuration
   - item_condition
   - item_material
@@ -14790,12 +14649,10 @@
   - exhaust_outlet_configuration
   - exhaust_pipe_shape
   - exhaust_tip_coating
-  - exhaust_tip_color
   - exhaust_tip_configuration
   - exhaust_tip_material
   - exhaust_valve_configuration
   - fit_type
-  - heat_shield_color
   - heat_shielding_configuration
   - item_condition
   - item_material
@@ -14821,12 +14678,9 @@
   - compatible_vehicle_drivetrain
   - exhaust_installation_position
   - exhaust_outlet_configuration
-  - exhaust_pipe_color
-  - exhaust_tip_color
   - exhaust_tip_cut
   - exhaust_tip_material
   - finish
-  - heat_shield_color
   - inlet/outlet_configuration
   - item_condition
   - item_material
@@ -14849,12 +14703,9 @@
   - compatible_vehicle_drivetrain
   - exhaust_installation_position
   - exhaust_outlet_configuration
-  - exhaust_pipe_color
-  - exhaust_tip_color
   - exhaust_tip_cut
   - exhaust_tip_material
   - finish
-  - heat_shield_color
   - inlet/outlet_configuration
   - item_condition
   - item_material
@@ -14877,12 +14728,9 @@
   - compatible_vehicle_drivetrain
   - exhaust_installation_position
   - exhaust_outlet_configuration
-  - exhaust_pipe_color
-  - exhaust_tip_color
   - exhaust_tip_cut
   - exhaust_tip_material
   - finish
-  - heat_shield_color
   - inlet/outlet_configuration
   - item_condition
   - item_material
@@ -14943,7 +14791,6 @@
   - vp-1-4-9-1-1
   - vp-1-4-9-1-2
   attributes:
-  - accent_color
   - assembly_type
   - bumper_finish
   - bumper_guard_finish
@@ -14951,7 +14798,6 @@
   - bumper_sensor_cutouts
   - bumper_width_configuration
   - bumper_wing_style
-  - center_section_color
   - center_section_material
   - color
   - compatible_exhaust_configuration
@@ -14959,11 +14805,7 @@
   - compatible_vehicle_drive_side
   - compatible_vehicle_drivetrain
   - compatible_vehicle_facelift_status
-  - crash_bar_color
-  - diffuser_color
   - face_plate_style
-  - hitch_receiver_color
-  - inlay_color
   - item_condition
   - item_material
   - lip_material
@@ -14971,14 +14813,10 @@
   - mounting_style
   - pattern
   - plastic_finish
-  - recovery_point_color
   - skid_plate_finish
   - skid_plate_material
-  - tread_plate_color
-  - trim_color
   - vehicle_frame/body_features
   - winch_configuration
-  - winch_cover_color
   return_reasons:
   - size
   - color
@@ -14993,7 +14831,6 @@
   name: Front Bumpers
   children: []
   attributes:
-  - accent_color
   - assembly_type
   - bumper_finish
   - bumper_guard_finish
@@ -15001,7 +14838,6 @@
   - bumper_sensor_cutouts
   - bumper_width_configuration
   - bumper_wing_style
-  - center_section_color
   - center_section_material
   - color
   - compatible_exhaust_configuration
@@ -15009,11 +14845,7 @@
   - compatible_vehicle_drive_side
   - compatible_vehicle_drivetrain
   - compatible_vehicle_facelift_status
-  - crash_bar_color
-  - diffuser_color
   - face_plate_style
-  - hitch_receiver_color
-  - inlay_color
   - item_condition
   - item_material
   - lip_material
@@ -15021,20 +14853,15 @@
   - mounting_style
   - pattern
   - plastic_finish
-  - recovery_point_color
   - skid_plate_finish
   - skid_plate_material
-  - tread_plate_color
-  - trim_color
   - vehicle_frame/body_features
   - winch_configuration
-  - winch_cover_color
   return_reasons: inherit
 - id: vp-1-4-9-1-2
   name: Rear Bumpers
   children: []
   attributes:
-  - accent_color
   - assembly_type
   - bumper_finish
   - bumper_guard_finish
@@ -15042,7 +14869,6 @@
   - bumper_sensor_cutouts
   - bumper_width_configuration
   - bumper_wing_style
-  - center_section_color
   - center_section_material
   - color
   - compatible_exhaust_configuration
@@ -15050,11 +14876,7 @@
   - compatible_vehicle_drive_side
   - compatible_vehicle_drivetrain
   - compatible_vehicle_facelift_status
-  - crash_bar_color
-  - diffuser_color
   - face_plate_style
-  - hitch_receiver_color
-  - inlay_color
   - item_condition
   - item_material
   - lip_material
@@ -15062,14 +14884,10 @@
   - mounting_style
   - pattern
   - plastic_finish
-  - recovery_point_color
   - skid_plate_finish
   - skid_plate_material
-  - tread_plate_color
-  - trim_color
   - vehicle_frame/body_features
   - winch_configuration
-  - winch_cover_color
   return_reasons: inherit
 - id: vp-1-4-9-2
   name: Doors
@@ -15274,7 +15092,6 @@
   - vp-1-4-9-3-6
   - vp-1-4-9-3-7
   attributes:
-  - accent_color
   - bead_roll_design
   - chassis_mounting_type
   - color
@@ -15283,13 +15100,11 @@
   - compatible_vehicle_facelift_status
   - fender_finish_state
   - fender_flare_style
-  - fender_trim_color
   - item_condition
   - item_material
   - license_plate_location
   - manufacturer_type
   - material_gauge
-  - mesh_color
   - pattern
   - vehicle_corner_position
   - vehicle_end
@@ -15309,7 +15124,6 @@
   name: Passenger Car Fenders
   children: []
   attributes:
-  - accent_color
   - bead_roll_design
   - chassis_mounting_type
   - color
@@ -15318,13 +15132,11 @@
   - compatible_vehicle_facelift_status
   - fender_finish_state
   - fender_flare_style
-  - fender_trim_color
   - item_condition
   - item_material
   - license_plate_location
   - manufacturer_type
   - material_gauge
-  - mesh_color
   - pattern
   - vehicle_corner_position
   - vehicle_end
@@ -15335,7 +15147,6 @@
   name: Van Fenders
   children: []
   attributes:
-  - accent_color
   - bead_roll_design
   - chassis_mounting_type
   - color
@@ -15344,13 +15155,11 @@
   - compatible_vehicle_facelift_status
   - fender_finish_state
   - fender_flare_style
-  - fender_trim_color
   - item_condition
   - item_material
   - license_plate_location
   - manufacturer_type
   - material_gauge
-  - mesh_color
   - pattern
   - vehicle_corner_position
   - vehicle_end
@@ -15363,7 +15172,6 @@
   - vp-1-4-9-3-3-1
   - vp-1-4-9-3-3-2
   attributes:
-  - accent_color
   - bead_roll_design
   - chassis_mounting_type
   - color
@@ -15372,13 +15180,11 @@
   - compatible_vehicle_facelift_status
   - fender_finish_state
   - fender_flare_style
-  - fender_trim_color
   - item_condition
   - item_material
   - license_plate_location
   - manufacturer_type
   - material_gauge
-  - mesh_color
   - pattern
   - vehicle_corner_position
   - vehicle_end
@@ -15389,7 +15195,6 @@
   name: Pickup Truck Fenders
   children: []
   attributes:
-  - accent_color
   - bead_roll_design
   - chassis_mounting_type
   - color
@@ -15398,13 +15203,11 @@
   - compatible_vehicle_facelift_status
   - fender_finish_state
   - fender_flare_style
-  - fender_trim_color
   - item_condition
   - item_material
   - license_plate_location
   - manufacturer_type
   - material_gauge
-  - mesh_color
   - pattern
   - vehicle_corner_position
   - vehicle_end
@@ -15415,7 +15218,6 @@
   name: Commercial Truck Fenders
   children: []
   attributes:
-  - accent_color
   - bead_roll_design
   - chassis_mounting_type
   - color
@@ -15424,13 +15226,11 @@
   - compatible_vehicle_facelift_status
   - fender_finish_state
   - fender_flare_style
-  - fender_trim_color
   - item_condition
   - item_material
   - license_plate_location
   - manufacturer_type
   - material_gauge
-  - mesh_color
   - pattern
   - vehicle_corner_position
   - vehicle_end
@@ -15446,7 +15246,6 @@
   - vp-1-4-9-3-4-4
   - vp-1-4-9-3-4-5
   attributes:
-  - accent_color
   - bead_roll_design
   - chassis_mounting_type
   - color
@@ -15455,13 +15254,11 @@
   - compatible_vehicle_facelift_status
   - fender_finish_state
   - fender_flare_style
-  - fender_trim_color
   - item_condition
   - item_material
   - license_plate_location
   - manufacturer_type
   - material_gauge
-  - mesh_color
   - pattern
   - vehicle_corner_position
   - vehicle_end
@@ -15472,7 +15269,6 @@
   name: Motorcycle Fenders
   children: []
   attributes:
-  - accent_color
   - bead_roll_design
   - chassis_mounting_type
   - color
@@ -15481,13 +15277,11 @@
   - compatible_vehicle_facelift_status
   - fender_finish_state
   - fender_flare_style
-  - fender_trim_color
   - item_condition
   - item_material
   - license_plate_location
   - manufacturer_type
   - material_gauge
-  - mesh_color
   - pattern
   - vehicle_corner_position
   - vehicle_end
@@ -15498,7 +15292,6 @@
   name: Moped Fenders
   children: []
   attributes:
-  - accent_color
   - bead_roll_design
   - chassis_mounting_type
   - color
@@ -15507,13 +15300,11 @@
   - compatible_vehicle_facelift_status
   - fender_finish_state
   - fender_flare_style
-  - fender_trim_color
   - item_condition
   - item_material
   - license_plate_location
   - manufacturer_type
   - material_gauge
-  - mesh_color
   - pattern
   - vehicle_corner_position
   - vehicle_end
@@ -15524,7 +15315,6 @@
   name: ATV Fenders
   children: []
   attributes:
-  - accent_color
   - bead_roll_design
   - chassis_mounting_type
   - color
@@ -15533,13 +15323,11 @@
   - compatible_vehicle_facelift_status
   - fender_finish_state
   - fender_flare_style
-  - fender_trim_color
   - item_condition
   - item_material
   - license_plate_location
   - manufacturer_type
   - material_gauge
-  - mesh_color
   - pattern
   - vehicle_corner_position
   - vehicle_end
@@ -15550,7 +15338,6 @@
   name: UTV Fenders
   children: []
   attributes:
-  - accent_color
   - bead_roll_design
   - chassis_mounting_type
   - color
@@ -15559,13 +15346,11 @@
   - compatible_vehicle_facelift_status
   - fender_finish_state
   - fender_flare_style
-  - fender_trim_color
   - item_condition
   - item_material
   - license_plate_location
   - manufacturer_type
   - material_gauge
-  - mesh_color
   - pattern
   - vehicle_corner_position
   - vehicle_end
@@ -15576,7 +15361,6 @@
   name: Go-Kart Fenders
   children: []
   attributes:
-  - accent_color
   - bead_roll_design
   - chassis_mounting_type
   - color
@@ -15585,13 +15369,11 @@
   - compatible_vehicle_facelift_status
   - fender_finish_state
   - fender_flare_style
-  - fender_trim_color
   - item_condition
   - item_material
   - license_plate_location
   - manufacturer_type
   - material_gauge
-  - mesh_color
   - pattern
   - vehicle_corner_position
   - vehicle_end
@@ -15602,7 +15384,6 @@
   name: Golf Cart Fenders
   children: []
   attributes:
-  - accent_color
   - bead_roll_design
   - chassis_mounting_type
   - color
@@ -15611,13 +15392,11 @@
   - compatible_vehicle_facelift_status
   - fender_finish_state
   - fender_flare_style
-  - fender_trim_color
   - item_condition
   - item_material
   - license_plate_location
   - manufacturer_type
   - material_gauge
-  - mesh_color
   - pattern
   - vehicle_corner_position
   - vehicle_end
@@ -15628,7 +15407,6 @@
   name: Trailer Fenders
   children: []
   attributes:
-  - accent_color
   - bead_roll_design
   - chassis_mounting_type
   - color
@@ -15637,13 +15415,11 @@
   - compatible_vehicle_facelift_status
   - fender_finish_state
   - fender_flare_style
-  - fender_trim_color
   - item_condition
   - item_material
   - license_plate_location
   - manufacturer_type
   - material_gauge
-  - mesh_color
   - pattern
   - vehicle_corner_position
   - vehicle_end
@@ -15654,7 +15430,6 @@
   name: Heavy Equipment Fenders
   children: []
   attributes:
-  - accent_color
   - bead_roll_design
   - chassis_mounting_type
   - color
@@ -15663,13 +15438,11 @@
   - compatible_vehicle_facelift_status
   - fender_finish_state
   - fender_flare_style
-  - fender_trim_color
   - item_condition
   - item_material
   - license_plate_location
   - manufacturer_type
   - material_gauge
-  - mesh_color
   - pattern
   - vehicle_corner_position
   - vehicle_end
@@ -15683,28 +15456,19 @@
   - vp-1-4-9-4-2
   - vp-1-4-9-4-3
   attributes:
-  - accent_light_color
-  - backing_plate_color
-  - backlight_color
   - color
   - compatible_vehicle_body_style
   - compatible_vehicle_drive_side
   - compatible_vehicle_facelift_status
-  - emblem_color
   - finish
   - grille_emblem_provision
   - grille_mounting_method
   - grille_style
-  - insert_color
   - item_condition
   - item_material
-  - light_lens_color
   - manufacturer_type
-  - marker_light_color
-  - mesh_color
   - pattern
   - placement_on_vehicle
-  - primary_light_color
   - vehicle_frame/body_features
   return_reasons:
   - size
@@ -15720,84 +15484,57 @@
   name: Bumper Grilles
   children: []
   attributes:
-  - accent_light_color
-  - backing_plate_color
-  - backlight_color
   - color
   - compatible_vehicle_body_style
   - compatible_vehicle_drive_side
   - compatible_vehicle_facelift_status
-  - emblem_color
   - finish
   - grille_emblem_provision
   - grille_mounting_method
   - grille_style
-  - insert_color
   - item_condition
   - item_material
-  - light_lens_color
   - manufacturer_type
-  - marker_light_color
-  - mesh_color
   - pattern
   - placement_on_vehicle
-  - primary_light_color
   - vehicle_frame/body_features
   return_reasons: inherit
 - id: vp-1-4-9-4-2
   name: Hood Grilles
   children: []
   attributes:
-  - accent_light_color
-  - backing_plate_color
-  - backlight_color
   - color
   - compatible_vehicle_body_style
   - compatible_vehicle_drive_side
   - compatible_vehicle_facelift_status
-  - emblem_color
   - finish
   - grille_emblem_provision
   - grille_mounting_method
   - grille_style
-  - insert_color
   - item_condition
   - item_material
-  - light_lens_color
   - manufacturer_type
-  - marker_light_color
-  - mesh_color
   - pattern
   - placement_on_vehicle
-  - primary_light_color
   - vehicle_frame/body_features
   return_reasons: inherit
 - id: vp-1-4-9-4-3
   name: Side Grilles
   children: []
   attributes:
-  - accent_light_color
-  - backing_plate_color
-  - backlight_color
   - color
   - compatible_vehicle_body_style
   - compatible_vehicle_drive_side
   - compatible_vehicle_facelift_status
-  - emblem_color
   - finish
   - grille_emblem_provision
   - grille_mounting_method
   - grille_style
-  - insert_color
   - item_condition
   - item_material
-  - light_lens_color
   - manufacturer_type
-  - marker_light_color
-  - mesh_color
   - pattern
   - placement_on_vehicle
-  - primary_light_color
   - vehicle_frame/body_features
   return_reasons: inherit
 - id: vp-1-4-9-5
@@ -16083,8 +15820,6 @@
   - vp-1-4-9-7-2
   - vp-1-4-9-7-3
   attributes:
-  - base_spoiler_color
-  - brake_light_lens_color
   - color
   - compatible_exhaust_configuration
   - compatible_roof_section_style
@@ -16100,6 +15835,7 @@
   - spoiler_foot_style
   - spoiler_mount_style
   - spoiler_riser_color
+  - spoiler_riser_pattern
   - stand_material
   - vehicle_frame/body_features
   - vehicle_side
@@ -16118,8 +15854,6 @@
   name: Front Spoilers
   children: []
   attributes:
-  - base_spoiler_color
-  - brake_light_lens_color
   - color
   - compatible_exhaust_configuration
   - compatible_roof_section_style
@@ -16135,6 +15869,7 @@
   - spoiler_foot_style
   - spoiler_mount_style
   - spoiler_riser_color
+  - spoiler_riser_pattern
   - stand_material
   - vehicle_frame/body_features
   - vehicle_side
@@ -16146,8 +15881,6 @@
   name: Side Skirt Spoilers
   children: []
   attributes:
-  - base_spoiler_color
-  - brake_light_lens_color
   - color
   - compatible_exhaust_configuration
   - compatible_roof_section_style
@@ -16163,6 +15896,7 @@
   - spoiler_foot_style
   - spoiler_mount_style
   - spoiler_riser_color
+  - spoiler_riser_pattern
   - stand_material
   - vehicle_frame/body_features
   - vehicle_side
@@ -16174,8 +15908,6 @@
   name: Rear Spoilers
   children: []
   attributes:
-  - base_spoiler_color
-  - brake_light_lens_color
   - color
   - compatible_exhaust_configuration
   - compatible_roof_section_style
@@ -16191,6 +15923,7 @@
   - spoiler_foot_style
   - spoiler_mount_style
   - spoiler_riser_color
+  - spoiler_riser_pattern
   - stand_material
   - vehicle_frame/body_features
   - vehicle_side
@@ -16484,11 +16217,9 @@
   - finish
   - item_condition
   - item_material
-  - leather_color
   - manufacturer_type
   - pattern
   - placement_on_vehicle
-  - stitching_color
   - vehicle_frame/body_features
   return_reasons:
   - color
@@ -16511,11 +16242,9 @@
   - finish
   - item_condition
   - item_material
-  - leather_color
   - manufacturer_type
   - pattern
   - placement_on_vehicle
-  - stitching_color
   - vehicle_frame/body_features
   return_reasons: inherit
 - id: vp-1-4-9-11-2
@@ -16529,11 +16258,9 @@
   - finish
   - item_condition
   - item_material
-  - leather_color
   - manufacturer_type
   - pattern
   - placement_on_vehicle
-  - stitching_color
   - vehicle_frame/body_features
   return_reasons: inherit
 - id: vp-1-4-9-11-3
@@ -16547,11 +16274,9 @@
   - finish
   - item_condition
   - item_material
-  - leather_color
   - manufacturer_type
   - pattern
   - placement_on_vehicle
-  - stitching_color
   - vehicle_frame/body_features
   return_reasons: inherit
 - id: vp-1-4-9-12
@@ -16581,7 +16306,6 @@
   - panel_location
   - pattern
   - side_panel_installation_state
-  - trim_color
   - vehicle_frame/body_features
   - vehicle_position
   - vehicle_side
@@ -16610,7 +16334,6 @@
   - panel_location
   - pattern
   - side_panel_installation_state
-  - trim_color
   - vehicle_frame/body_features
   - vehicle_position
   - vehicle_side
@@ -16630,7 +16353,6 @@
   - panel_location
   - pattern
   - side_panel_installation_state
-  - trim_color
   - vehicle_frame/body_features
   - vehicle_position
   - vehicle_side
@@ -16650,7 +16372,6 @@
   - panel_location
   - pattern
   - side_panel_installation_state
-  - trim_color
   - vehicle_frame/body_features
   - vehicle_position
   - vehicle_side
@@ -16670,7 +16391,6 @@
   - panel_location
   - pattern
   - side_panel_installation_state
-  - trim_color
   - vehicle_frame/body_features
   - vehicle_position
   - vehicle_side
@@ -16690,7 +16410,6 @@
   - panel_location
   - pattern
   - side_panel_installation_state
-  - trim_color
   - vehicle_frame/body_features
   - vehicle_position
   - vehicle_side
@@ -16710,7 +16429,6 @@
   - panel_location
   - pattern
   - side_panel_installation_state
-  - trim_color
   - vehicle_frame/body_features
   - vehicle_position
   - vehicle_side
@@ -16730,7 +16448,6 @@
   - panel_location
   - pattern
   - side_panel_installation_state
-  - trim_color
   - vehicle_frame/body_features
   - vehicle_position
   - vehicle_side
@@ -16750,7 +16467,6 @@
   - panel_location
   - pattern
   - side_panel_installation_state
-  - trim_color
   - vehicle_frame/body_features
   - vehicle_position
   - vehicle_side
@@ -16770,7 +16486,6 @@
   - panel_location
   - pattern
   - side_panel_installation_state
-  - trim_color
   - vehicle_frame/body_features
   - vehicle_position
   - vehicle_side
@@ -16790,7 +16505,6 @@
   - panel_location
   - pattern
   - side_panel_installation_state
-  - trim_color
   - vehicle_frame/body_features
   - vehicle_position
   - vehicle_side
@@ -16810,7 +16524,6 @@
   - panel_location
   - pattern
   - side_panel_installation_state
-  - trim_color
   - vehicle_frame/body_features
   - vehicle_position
   - vehicle_side
@@ -16830,7 +16543,6 @@
   - panel_location
   - pattern
   - side_panel_installation_state
-  - trim_color
   - vehicle_frame/body_features
   - vehicle_position
   - vehicle_side
@@ -17027,6 +16739,7 @@
   - fuel_cap_gasket_seal_material
   - fuel_cap_locking_mechanism
   - fuel_cap_ring_color
+  - fuel_cap_ring_pattern
   - fuel_cap_type
   - fuel_cap_venting
   - item_condition
@@ -17055,6 +16768,7 @@
   - fuel_cap_gasket_seal_material
   - fuel_cap_locking_mechanism
   - fuel_cap_ring_color
+  - fuel_cap_ring_pattern
   - fuel_cap_type
   - fuel_cap_venting
   - item_condition
@@ -17075,6 +16789,7 @@
   - fuel_cap_gasket_seal_material
   - fuel_cap_locking_mechanism
   - fuel_cap_ring_color
+  - fuel_cap_ring_pattern
   - fuel_cap_type
   - fuel_cap_venting
   - item_condition
@@ -17271,7 +16986,6 @@
   - fitting_angle
   - fuel_line_segment
   - fuel_rail_feed_position
-  - hose_end_color
   - hose_sleeve_material
   - inlet_an_size
   - item_condition
@@ -17304,7 +17018,6 @@
   - fitting_angle
   - fuel_line_segment
   - fuel_rail_feed_position
-  - hose_end_color
   - hose_sleeve_material
   - inlet_an_size
   - item_condition
@@ -17330,7 +17043,6 @@
   - fitting_angle
   - fuel_line_segment
   - fuel_rail_feed_position
-  - hose_end_color
   - hose_sleeve_material
   - inlet_an_size
   - item_condition
@@ -17356,7 +17068,6 @@
   - fitting_angle
   - fuel_line_segment
   - fuel_rail_feed_position
-  - hose_end_color
   - hose_sleeve_material
   - inlet_an_size
   - item_condition
@@ -17382,7 +17093,6 @@
   - fitting_angle
   - fuel_line_segment
   - fuel_rail_feed_position
-  - hose_end_color
   - hose_sleeve_material
   - inlet_an_size
   - item_condition
@@ -17408,7 +17118,6 @@
   - fitting_angle
   - fuel_line_segment
   - fuel_rail_feed_position
-  - hose_end_color
   - hose_sleeve_material
   - inlet_an_size
   - item_condition
@@ -17743,7 +17452,6 @@
   - vp-1-4-10-8-2
   - vp-1-4-10-8-3
   attributes:
-  - cap_color
   - color
   - compatible_truck_bed_size
   - compatible_vehicle_fuel_type
@@ -17772,7 +17480,6 @@
   name: Main Fuel Tanks
   children: []
   attributes:
-  - cap_color
   - color
   - compatible_truck_bed_size
   - compatible_vehicle_fuel_type
@@ -17793,7 +17500,6 @@
   name: Auxiliary Fuel Tanks
   children: []
   attributes:
-  - cap_color
   - color
   - compatible_truck_bed_size
   - compatible_vehicle_fuel_type
@@ -17814,7 +17520,6 @@
   name: Fuel Surge Tanks
   children: []
   attributes:
-  - cap_color
   - color
   - compatible_truck_bed_size
   - compatible_vehicle_fuel_type
@@ -17926,7 +17631,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-1
@@ -17948,7 +17652,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-1-1
@@ -17965,7 +17668,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-1-2
@@ -17982,7 +17684,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-1-3
@@ -17999,7 +17700,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-1-4
@@ -18016,7 +17716,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-1-5
@@ -18033,7 +17732,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-2
@@ -18057,7 +17755,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-2-1
@@ -18074,7 +17771,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-2-2
@@ -18091,7 +17787,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-2-3
@@ -18108,7 +17803,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-2-4
@@ -18125,7 +17819,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-2-5
@@ -18142,7 +17835,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-2-6
@@ -18159,7 +17851,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-2-7
@@ -18176,7 +17867,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-3
@@ -18198,7 +17888,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-3-1
@@ -18215,7 +17904,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-3-2
@@ -18232,7 +17920,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-3-3
@@ -18249,7 +17936,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-3-4
@@ -18266,7 +17952,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-3-5
@@ -18283,7 +17968,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-4
@@ -18303,7 +17987,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-4-1
@@ -18320,7 +18003,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-4-2
@@ -18337,7 +18019,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-4-3
@@ -18354,7 +18035,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-5
@@ -18378,7 +18058,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-5-1
@@ -18395,7 +18074,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-5-2
@@ -18412,7 +18090,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-5-3
@@ -18429,7 +18106,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-5-4
@@ -18446,7 +18122,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-5-5
@@ -18463,7 +18138,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-5-6
@@ -18480,7 +18154,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-5-7
@@ -18497,7 +18170,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-6
@@ -18518,7 +18190,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-6-1
@@ -18535,7 +18206,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-6-2
@@ -18552,7 +18222,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-6-3
@@ -18569,7 +18238,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-6-4
@@ -18586,7 +18254,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-7
@@ -18610,7 +18277,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-7-1
@@ -18627,7 +18293,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-7-2
@@ -18644,7 +18309,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-7-3
@@ -18661,7 +18325,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-7-4
@@ -18678,7 +18341,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-7-5
@@ -18695,7 +18357,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-7-6
@@ -18712,7 +18373,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-10-7-7
@@ -18729,7 +18389,6 @@
   - manufacturer_type
   - pattern
   - port_injection_type
-  - rail_color
   - tank_color
   return_reasons: inherit
 - id: vp-1-4-10-11
@@ -18831,7 +18490,6 @@
   - shape
   - speedometer_unit
   - stitch_pattern
-  - stitching_color
   - vehicle_interior_part
   - vehicle_side
   - vehicle_type
@@ -18972,7 +18630,6 @@
   - motor_vehicle_type
   - mounting_method
   - pattern
-  - stitching_color
   return_reasons:
   - size
   - color
@@ -19000,7 +18657,6 @@
   - motor_vehicle_type
   - mounting_method
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-11-2-2
   name: Seat Gap Organizers
@@ -19018,7 +18674,6 @@
   - motor_vehicle_type
   - mounting_method
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-11-2-3
   name: Seatback Organizers
@@ -19036,7 +18691,6 @@
   - motor_vehicle_type
   - mounting_method
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-11-2-4
   name: Under-Seat Organizers
@@ -19054,7 +18708,6 @@
   - motor_vehicle_type
   - mounting_method
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-11-2-5
   name: Car Door Organizers
@@ -19072,7 +18725,6 @@
   - motor_vehicle_type
   - mounting_method
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-11-2-6
   name: Dashboard Organizers
@@ -19090,7 +18742,6 @@
   - motor_vehicle_type
   - mounting_method
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-11-2-7
   name: Sun Visor Organizers
@@ -19108,7 +18759,6 @@
   - motor_vehicle_type
   - mounting_method
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-11-2-8
   name: Cargo Area Organizers
@@ -19126,7 +18776,6 @@
   - motor_vehicle_type
   - mounting_method
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-11-3
   name: Floor Mats
@@ -19152,12 +18801,9 @@
   - heel_pad_configuration
   - installation_position
   - item_condition
-  - logo_color
   - manufacturer_type
   - motor_vehicle_type
   - pattern
-  - stitching_color
-  - trim_color
   return_reasons:
   - size
   - color
@@ -19191,12 +18837,9 @@
   - heel_pad_configuration
   - installation_position
   - item_condition
-  - logo_color
   - manufacturer_type
   - motor_vehicle_type
   - pattern
-  - stitching_color
-  - trim_color
   return_reasons: inherit
 - id: vp-1-4-11-3-2
   name: Universal-Fit Floor Mats
@@ -19220,12 +18863,9 @@
   - heel_pad_configuration
   - installation_position
   - item_condition
-  - logo_color
   - manufacturer_type
   - motor_vehicle_type
   - pattern
-  - stitching_color
-  - trim_color
   return_reasons: inherit
 - id: vp-1-4-11-4
   name: Pedal Sets
@@ -19290,7 +18930,6 @@
   - vp-1-4-11-5-1
   - vp-1-4-11-5-2
   attributes:
-  - border_color
   - color
   - compatible_front_row_seat_configuration
   - compatible_headrest_type
@@ -19304,21 +18943,16 @@
   - compatible_vehicle_steering_position
   - cover_material
   - fit_type
-  - insert_color
   - item_condition
   - manufacturer_type
   - motor_vehicle_type
   - pattern
   - power_input_type
-  - rib_color
   - seat_cover_placement
   - seat_cover_section_linking_method
   - seat_cover_securement_method
   - seat_cover_set_contents
   - seat_section_covered
-  - side_color
-  - stitching_color
-  - stripe_color
   - suitable_season
   - support_region
   return_reasons:
@@ -19336,7 +18970,6 @@
   name: Custom-Fit Seat Covers
   children: []
   attributes:
-  - border_color
   - color
   - compatible_front_row_seat_configuration
   - compatible_headrest_type
@@ -19350,21 +18983,16 @@
   - compatible_vehicle_steering_position
   - cover_material
   - fit_type
-  - insert_color
   - item_condition
   - manufacturer_type
   - motor_vehicle_type
   - pattern
   - power_input_type
-  - rib_color
   - seat_cover_placement
   - seat_cover_section_linking_method
   - seat_cover_securement_method
   - seat_cover_set_contents
   - seat_section_covered
-  - side_color
-  - stitching_color
-  - stripe_color
   - suitable_season
   - support_region
   return_reasons: inherit
@@ -19372,7 +19000,6 @@
   name: Universal-Fit Seat Covers
   children: []
   attributes:
-  - border_color
   - color
   - compatible_front_row_seat_configuration
   - compatible_headrest_type
@@ -19386,21 +19013,16 @@
   - compatible_vehicle_steering_position
   - cover_material
   - fit_type
-  - insert_color
   - item_condition
   - manufacturer_type
   - motor_vehicle_type
   - pattern
   - power_input_type
-  - rib_color
   - seat_cover_placement
   - seat_cover_section_linking_method
   - seat_cover_securement_method
   - seat_cover_set_contents
   - seat_section_covered
-  - side_color
-  - stitching_color
-  - stripe_color
   - suitable_season
   - support_region
   return_reasons: inherit
@@ -19423,7 +19045,6 @@
   - manufacturer_type
   - motor_vehicle_type
   - pattern
-  - stitching_color
   return_reasons:
   - size
   - color
@@ -19451,7 +19072,6 @@
   - manufacturer_type
   - motor_vehicle_type
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-11-6-2
   name: Stitch-On Steering Wheel Covers
@@ -19468,7 +19088,6 @@
   - manufacturer_type
   - motor_vehicle_type
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-11-6-3
   name: Snap-On Steering Wheel Covers
@@ -19485,7 +19104,6 @@
   - manufacturer_type
   - motor_vehicle_type
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-11-6-4
   name: Self-Adhesive Steering Wheel Covers
@@ -19502,7 +19120,6 @@
   - manufacturer_type
   - motor_vehicle_type
   - pattern
-  - stitching_color
   return_reasons: inherit
 - id: vp-1-4-11-7
   name: Sun Shades
@@ -19524,7 +19141,6 @@
   - pattern
   - sun_shade_attachment_method
   - sun_shade_style
-  - trim_color
   return_reasons:
   - size
   - color
@@ -19551,7 +19167,6 @@
   - pattern
   - sun_shade_attachment_method
   - sun_shade_style
-  - trim_color
   return_reasons: inherit
 - id: vp-1-4-11-7-2
   name: Side Window Sun Shades
@@ -19569,7 +19184,6 @@
   - pattern
   - sun_shade_attachment_method
   - sun_shade_style
-  - trim_color
   return_reasons: inherit
 - id: vp-1-4-11-7-3
   name: Rear Window Sun Shades
@@ -19587,7 +19201,6 @@
   - pattern
   - sun_shade_attachment_method
   - sun_shade_style
-  - trim_color
   return_reasons: inherit
 - id: vp-1-4-11-7-4
   name: Sunroof Sun Shades
@@ -19605,7 +19218,6 @@
   - pattern
   - sun_shade_attachment_method
   - sun_shade_style
-  - trim_color
   return_reasons: inherit
 - id: vp-1-4-12
   name: Motor Vehicle Lighting
@@ -19619,11 +19231,9 @@
   - vp-1-4-12-7
   - vp-1-4-12-8
   attributes:
-  - backlight_color
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - bulb_fitment
   - case_color
   - color
@@ -19632,7 +19242,6 @@
   - control_method
   - finish
   - fit_type
-  - flash_color
   - item_condition
   - lens_color
   - lens_tint_level
@@ -19644,7 +19253,6 @@
   - manufacturer_type
   - material
   - pattern
-  - reflector_color
   - shape
   - vehicle_application_area
   - vehicle_end
@@ -19665,7 +19273,6 @@
   - vp-1-4-12-1-1
   - vp-1-4-12-1-2
   attributes:
-  - backlight_color
   - beam_pattern
   - bulb_socket_type
   - case_color
@@ -19682,7 +19289,6 @@
   - mount_orientation
   - pattern
   - shape
-  - trim_color
   - vehicle_side
   return_reasons:
   - size
@@ -19699,7 +19305,6 @@
   name: Front Fog Lights
   children: []
   attributes:
-  - backlight_color
   - beam_pattern
   - bulb_socket_type
   - case_color
@@ -19716,14 +19321,12 @@
   - mount_orientation
   - pattern
   - shape
-  - trim_color
   - vehicle_side
   return_reasons: inherit
 - id: vp-1-4-12-1-2
   name: Rear Fog Lights
   children: []
   attributes:
-  - backlight_color
   - beam_pattern
   - bulb_socket_type
   - case_color
@@ -19740,7 +19343,6 @@
   - mount_orientation
   - pattern
   - shape
-  - trim_color
   - vehicle_side
   return_reasons: inherit
 - id: vp-1-4-12-2
@@ -19751,9 +19353,6 @@
   - vp-1-4-12-2-3
   - vp-1-4-12-2-4
   attributes:
-  - accent_color
-  - accent_light_color
-  - backlight_color
   - beam_pattern
   - bezel_finish
   - bulb_base_type
@@ -19765,7 +19364,6 @@
   - compatible_vehicle_market
   - daytime_running_light_source
   - fit_type
-  - halo_light_color
   - halo_shape
   - headlight_connector_type
   - headlight_side
@@ -19775,14 +19373,10 @@
   - light_function
   - light_source
   - lighting_features
-  - lower_lamp_bulb_color
   - manufacturer_type
   - material
   - pattern
   - pigtail_connector_gender
-  - projector_shroud_color
-  - reflector_color
-  - side_marker_reflector_color
   - turn_signal_lens_color
   return_reasons:
   - color
@@ -19798,9 +19392,6 @@
   name: Halogen Headlights
   children: []
   attributes:
-  - accent_color
-  - accent_light_color
-  - backlight_color
   - beam_pattern
   - bezel_finish
   - bulb_base_type
@@ -19812,7 +19403,6 @@
   - compatible_vehicle_market
   - daytime_running_light_source
   - fit_type
-  - halo_light_color
   - halo_shape
   - headlight_connector_type
   - headlight_side
@@ -19822,23 +19412,16 @@
   - light_function
   - light_source
   - lighting_features
-  - lower_lamp_bulb_color
   - manufacturer_type
   - material
   - pattern
   - pigtail_connector_gender
-  - projector_shroud_color
-  - reflector_color
-  - side_marker_reflector_color
   - turn_signal_lens_color
   return_reasons: inherit
 - id: vp-1-4-12-2-2
   name: LED Headlights
   children: []
   attributes:
-  - accent_color
-  - accent_light_color
-  - backlight_color
   - beam_pattern
   - bezel_finish
   - bulb_base_type
@@ -19850,7 +19433,6 @@
   - compatible_vehicle_market
   - daytime_running_light_source
   - fit_type
-  - halo_light_color
   - halo_shape
   - headlight_connector_type
   - headlight_side
@@ -19860,23 +19442,16 @@
   - light_function
   - light_source
   - lighting_features
-  - lower_lamp_bulb_color
   - manufacturer_type
   - material
   - pattern
   - pigtail_connector_gender
-  - projector_shroud_color
-  - reflector_color
-  - side_marker_reflector_color
   - turn_signal_lens_color
   return_reasons: inherit
 - id: vp-1-4-12-2-3
   name: Xenon Headlights
   children: []
   attributes:
-  - accent_color
-  - accent_light_color
-  - backlight_color
   - beam_pattern
   - bezel_finish
   - bulb_base_type
@@ -19888,7 +19463,6 @@
   - compatible_vehicle_market
   - daytime_running_light_source
   - fit_type
-  - halo_light_color
   - halo_shape
   - headlight_connector_type
   - headlight_side
@@ -19898,23 +19472,16 @@
   - light_function
   - light_source
   - lighting_features
-  - lower_lamp_bulb_color
   - manufacturer_type
   - material
   - pattern
   - pigtail_connector_gender
-  - projector_shroud_color
-  - reflector_color
-  - side_marker_reflector_color
   - turn_signal_lens_color
   return_reasons: inherit
 - id: vp-1-4-12-2-4
   name: Laser Headlights
   children: []
   attributes:
-  - accent_color
-  - accent_light_color
-  - backlight_color
   - beam_pattern
   - bezel_finish
   - bulb_base_type
@@ -19926,7 +19493,6 @@
   - compatible_vehicle_market
   - daytime_running_light_source
   - fit_type
-  - halo_light_color
   - halo_shape
   - headlight_connector_type
   - headlight_side
@@ -19936,14 +19502,10 @@
   - light_function
   - light_source
   - lighting_features
-  - lower_lamp_bulb_color
   - manufacturer_type
   - material
   - pattern
   - pigtail_connector_gender
-  - projector_shroud_color
-  - reflector_color
-  - side_marker_reflector_color
   - turn_signal_lens_color
   return_reasons: inherit
 - id: vp-1-4-12-3
@@ -19952,11 +19514,9 @@
   - vp-1-4-12-3-1
   - vp-1-4-12-3-2
   attributes:
-  - accent_light_color
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - bezel_finish
   - bottom_pod_beam_pattern
   - color
@@ -19966,10 +19526,8 @@
   - fit_type
   - housing_finish
   - item_condition
-  - led_and_lens_color_configuration
   - led_configuration
   - lens_color
-  - lens_cover_color
   - light_bar_housing_material
   - light_bar_lens_material
   - light_bar_mounting_location
@@ -19983,8 +19541,6 @@
   - manufacturer_type
   - pattern
   - power_supply_configuration
-  - primary_light_color
-  - secondary_light_color
   - top_pod_beam_pattern
   - wiring_harness_configuration
   - wiring_type
@@ -20002,11 +19558,9 @@
   name: Straight Light Bars
   children: []
   attributes:
-  - accent_light_color
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - bezel_finish
   - bottom_pod_beam_pattern
   - color
@@ -20016,10 +19570,8 @@
   - fit_type
   - housing_finish
   - item_condition
-  - led_and_lens_color_configuration
   - led_configuration
   - lens_color
-  - lens_cover_color
   - light_bar_housing_material
   - light_bar_lens_material
   - light_bar_mounting_location
@@ -20033,8 +19585,6 @@
   - manufacturer_type
   - pattern
   - power_supply_configuration
-  - primary_light_color
-  - secondary_light_color
   - top_pod_beam_pattern
   - wiring_harness_configuration
   - wiring_type
@@ -20043,11 +19593,9 @@
   name: Curved Light Bars
   children: []
   attributes:
-  - accent_light_color
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - bezel_finish
   - bottom_pod_beam_pattern
   - color
@@ -20057,10 +19605,8 @@
   - fit_type
   - housing_finish
   - item_condition
-  - led_and_lens_color_configuration
   - led_configuration
   - lens_color
-  - lens_cover_color
   - light_bar_housing_material
   - light_bar_lens_material
   - light_bar_mounting_location
@@ -20074,8 +19620,6 @@
   - manufacturer_type
   - pattern
   - power_supply_configuration
-  - primary_light_color
-  - secondary_light_color
   - top_pod_beam_pattern
   - wiring_harness_configuration
   - wiring_type
@@ -20213,14 +19757,12 @@
   - item_condition
   - led_light_color
   - light_cover_tint
-  - light_ring_color
   - light_source
   - manufacturer_type
   - material
   - pattern
   - placement_on_vehicle
   - shape
-  - signal_color
   return_reasons:
   - color
   - brightness
@@ -20246,14 +19788,12 @@
   - item_condition
   - led_light_color
   - light_cover_tint
-  - light_ring_color
   - light_source
   - manufacturer_type
   - material
   - pattern
   - placement_on_vehicle
   - shape
-  - signal_color
   return_reasons: inherit
 - id: vp-1-4-12-5-2
   name: Daytime Running Light Covers
@@ -20270,14 +19810,12 @@
   - item_condition
   - led_light_color
   - light_cover_tint
-  - light_ring_color
   - light_source
   - manufacturer_type
   - material
   - pattern
   - placement_on_vehicle
   - shape
-  - signal_color
   return_reasons: inherit
 - id: vp-1-4-12-5-3
   name: Cornering Light Covers
@@ -20294,14 +19832,12 @@
   - item_condition
   - led_light_color
   - light_cover_tint
-  - light_ring_color
   - light_source
   - manufacturer_type
   - material
   - pattern
   - placement_on_vehicle
   - shape
-  - signal_color
   return_reasons: inherit
 - id: vp-1-4-12-5-4
   name: Fog Light Covers
@@ -20318,14 +19854,12 @@
   - item_condition
   - led_light_color
   - light_cover_tint
-  - light_ring_color
   - light_source
   - manufacturer_type
   - material
   - pattern
   - placement_on_vehicle
   - shape
-  - signal_color
   return_reasons: inherit
 - id: vp-1-4-12-5-5
   name: Rear Light Covers
@@ -20342,14 +19876,12 @@
   - item_condition
   - led_light_color
   - light_cover_tint
-  - light_ring_color
   - light_source
   - manufacturer_type
   - material
   - pattern
   - placement_on_vehicle
   - shape
-  - signal_color
   return_reasons: inherit
 - id: vp-1-4-12-5-6
   name: Signal & Marker Light Covers
@@ -20366,14 +19898,12 @@
   - item_condition
   - led_light_color
   - light_cover_tint
-  - light_ring_color
   - light_source
   - manufacturer_type
   - material
   - pattern
   - placement_on_vehicle
   - shape
-  - signal_color
   return_reasons: inherit
 - id: vp-1-4-12-5-7
   name: License Plate Light Covers
@@ -20390,14 +19920,12 @@
   - item_condition
   - led_light_color
   - light_cover_tint
-  - light_ring_color
   - light_source
   - manufacturer_type
   - material
   - pattern
   - placement_on_vehicle
   - shape
-  - signal_color
   return_reasons: inherit
 - id: vp-1-4-12-5-8
   name: Auxiliary Light Covers
@@ -20414,14 +19942,12 @@
   - item_condition
   - led_light_color
   - light_cover_tint
-  - light_ring_color
   - light_source
   - manufacturer_type
   - material
   - pattern
   - placement_on_vehicle
   - shape
-  - signal_color
   return_reasons: inherit
 - id: vp-1-4-12-5-9
   name: Warning Light Covers
@@ -20438,14 +19964,12 @@
   - item_condition
   - led_light_color
   - light_cover_tint
-  - light_ring_color
   - light_source
   - manufacturer_type
   - material
   - pattern
   - placement_on_vehicle
   - shape
-  - signal_color
   return_reasons: inherit
 - id: vp-1-4-12-5-10
   name: Interior Light Covers
@@ -20462,14 +19986,12 @@
   - item_condition
   - led_light_color
   - light_cover_tint
-  - light_ring_color
   - light_source
   - manufacturer_type
   - material
   - pattern
   - placement_on_vehicle
   - shape
-  - signal_color
   return_reasons: inherit
 - id: vp-1-4-12-6
   name: Light Switches
@@ -20493,7 +20015,6 @@
   - vp-1-4-12-6-17
   - vp-1-4-12-6-18
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20524,7 +20045,6 @@
   name: Headlight Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20547,7 +20067,6 @@
   name: Fog Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20570,7 +20089,6 @@
   name: Driving Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20593,7 +20111,6 @@
   name: Daytime Running Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20616,7 +20133,6 @@
   name: Marker Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20639,7 +20155,6 @@
   name: Turn Signal Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20662,7 +20177,6 @@
   name: Hazard Warning Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20685,7 +20199,6 @@
   name: Reverse Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20708,7 +20221,6 @@
   name: Beacon Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20731,7 +20243,6 @@
   name: Instrument Panel Light Dimmer Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20759,7 +20270,6 @@
   - vp-1-4-12-6-11-4
   - vp-1-4-12-6-11-5
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20782,7 +20292,6 @@
   name: Courtesy Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20805,7 +20314,6 @@
   name: Dome Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20828,7 +20336,6 @@
   name: Map Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20851,7 +20358,6 @@
   name: Footwell Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20874,7 +20380,6 @@
   name: Step Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20899,7 +20404,6 @@
   - vp-1-4-12-6-12-1
   - vp-1-4-12-6-12-2
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20922,7 +20426,6 @@
   name: Cargo Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20945,7 +20448,6 @@
   name: Glove Compartment Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20968,7 +20470,6 @@
   name: Underhood Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -20991,7 +20492,6 @@
   name: Work Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -21014,7 +20514,6 @@
   name: Light Bar Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -21037,7 +20536,6 @@
   name: Rock Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -21060,7 +20558,6 @@
   name: Underglow Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -21083,7 +20580,6 @@
   name: Whip Light Switches
   children: []
   attributes:
-  - backlight_color
   - color
   - connector_type
   - control_method
@@ -21128,17 +20624,13 @@
   - led_light_color
   - light_color
   - light_function
-  - light_ring_color
   - light_source
-  - light_tube_color
   - lighting_features
   - manufacturer_type
   - mounting_method
   - pattern
-  - reflector_color
   - regional_standard
   - shape
-  - trim_color
   - vehicle_side
   return_reasons:
   - color
@@ -21163,17 +20655,13 @@
   - led_light_color
   - light_color
   - light_function
-  - light_ring_color
   - light_source
-  - light_tube_color
   - lighting_features
   - manufacturer_type
   - mounting_method
   - pattern
-  - reflector_color
   - regional_standard
   - shape
-  - trim_color
   - vehicle_side
   return_reasons: inherit
 - id: vp-1-4-12-7-2
@@ -21189,17 +20677,13 @@
   - led_light_color
   - light_color
   - light_function
-  - light_ring_color
   - light_source
-  - light_tube_color
   - lighting_features
   - manufacturer_type
   - mounting_method
   - pattern
-  - reflector_color
   - regional_standard
   - shape
-  - trim_color
   - vehicle_side
   return_reasons: inherit
 - id: vp-1-4-12-7-3
@@ -21215,17 +20699,13 @@
   - led_light_color
   - light_color
   - light_function
-  - light_ring_color
   - light_source
-  - light_tube_color
   - lighting_features
   - manufacturer_type
   - mounting_method
   - pattern
-  - reflector_color
   - regional_standard
   - shape
-  - trim_color
   - vehicle_side
   return_reasons: inherit
 - id: vp-1-4-12-7-4
@@ -21241,17 +20721,13 @@
   - led_light_color
   - light_color
   - light_function
-  - light_ring_color
   - light_source
-  - light_tube_color
   - lighting_features
   - manufacturer_type
   - mounting_method
   - pattern
-  - reflector_color
   - regional_standard
   - shape
-  - trim_color
   - vehicle_side
   return_reasons: inherit
 - id: vp-1-4-12-7-5
@@ -21267,17 +20743,13 @@
   - led_light_color
   - light_color
   - light_function
-  - light_ring_color
   - light_source
-  - light_tube_color
   - lighting_features
   - manufacturer_type
   - mounting_method
   - pattern
-  - reflector_color
   - regional_standard
   - shape
-  - trim_color
   - vehicle_side
   return_reasons: inherit
 - id: vp-1-4-12-7-6
@@ -21293,17 +20765,13 @@
   - led_light_color
   - light_color
   - light_function
-  - light_ring_color
   - light_source
-  - light_tube_color
   - lighting_features
   - manufacturer_type
   - mounting_method
   - pattern
-  - reflector_color
   - regional_standard
   - shape
-  - trim_color
   - vehicle_side
   return_reasons: inherit
 - id: vp-1-4-12-7-7
@@ -21319,17 +20787,13 @@
   - led_light_color
   - light_color
   - light_function
-  - light_ring_color
   - light_source
-  - light_tube_color
   - lighting_features
   - manufacturer_type
   - mounting_method
   - pattern
-  - reflector_color
   - regional_standard
   - shape
-  - trim_color
   - vehicle_side
   return_reasons: inherit
 - id: vp-1-4-12-7-8
@@ -21345,17 +20809,13 @@
   - led_light_color
   - light_color
   - light_function
-  - light_ring_color
   - light_source
-  - light_tube_color
   - lighting_features
   - manufacturer_type
   - mounting_method
   - pattern
-  - reflector_color
   - regional_standard
   - shape
-  - trim_color
   - vehicle_side
   return_reasons: inherit
 - id: vp-1-4-12-7-9
@@ -21371,17 +20831,13 @@
   - led_light_color
   - light_color
   - light_function
-  - light_ring_color
   - light_source
-  - light_tube_color
   - lighting_features
   - manufacturer_type
   - mounting_method
   - pattern
-  - reflector_color
   - regional_standard
   - shape
-  - trim_color
   - vehicle_side
   return_reasons: inherit
 - id: vp-1-4-12-7-10
@@ -21397,17 +20853,13 @@
   - led_light_color
   - light_color
   - light_function
-  - light_ring_color
   - light_source
-  - light_tube_color
   - lighting_features
   - manufacturer_type
   - mounting_method
   - pattern
-  - reflector_color
   - regional_standard
   - shape
-  - trim_color
   - vehicle_side
   return_reasons: inherit
 - id: vp-1-4-12-7-11
@@ -21423,17 +20875,13 @@
   - led_light_color
   - light_color
   - light_function
-  - light_ring_color
   - light_source
-  - light_tube_color
   - lighting_features
   - manufacturer_type
   - mounting_method
   - pattern
-  - reflector_color
   - regional_standard
   - shape
-  - trim_color
   - vehicle_side
   return_reasons: inherit
 - id: vp-1-4-12-7-12
@@ -21449,17 +20897,13 @@
   - led_light_color
   - light_color
   - light_function
-  - light_ring_color
   - light_source
-  - light_tube_color
   - lighting_features
   - manufacturer_type
   - mounting_method
   - pattern
-  - reflector_color
   - regional_standard
   - shape
-  - trim_color
   - vehicle_side
   return_reasons: inherit
 - id: vp-1-4-12-7-13
@@ -21475,17 +20919,13 @@
   - led_light_color
   - light_color
   - light_function
-  - light_ring_color
   - light_source
-  - light_tube_color
   - lighting_features
   - manufacturer_type
   - mounting_method
   - pattern
-  - reflector_color
   - regional_standard
   - shape
-  - trim_color
   - vehicle_side
   return_reasons: inherit
 - id: vp-1-4-12-8
@@ -21494,7 +20934,6 @@
   - vp-1-4-12-8-1
   - vp-1-4-12-8-2
   attributes:
-  - accent_light_color
   - bulb_fitment
   - color
   - compatible_vehicle_drive_side
@@ -21527,7 +20966,6 @@
   name: LED Turn Signals
   children: []
   attributes:
-  - accent_light_color
   - bulb_fitment
   - color
   - compatible_vehicle_drive_side
@@ -21551,7 +20989,6 @@
   name: Incandescent Turn Signals
   children: []
   attributes:
-  - accent_light_color
   - bulb_fitment
   - color
   - compatible_vehicle_drive_side
@@ -21575,7 +21012,6 @@
   name: Motor Vehicle Mirrors
   children: []
   attributes:
-  - accent_light_color
   - color
   - compatible_steering_position
   - compatible_vehicle_body_style
@@ -21590,10 +21026,8 @@
   - mount_thread_direction
   - pattern
   - shape
-  - signal_color
   - stem_length_category
   - stem_type
-  - trim_color
   - vehicle_mirror_adjustment_type
   - vehicle_mirror_design
   - vehicle_mirror_features
@@ -25830,9 +25264,7 @@
   - vp-1-4-15-2
   attributes:
   - armrest_configuration
-  - backrest_color
   - backrest_pad_size
-  - border_color
   - color
   - compatible_seat_mount_type
   - fabric
@@ -25840,15 +25272,12 @@
   - frame_material
   - item_condition
   - manufacturer_type
-  - padding_color
   - pattern
   - seat_back_covering
   - seat_pad_size
   - seat_profile
   - seat_shell_finish
   - seat_shell_material
-  - stitching_color
-  - trim_color
   - vehicle_seating_features
   - vehicle_side
   return_reasons:
@@ -25874,10 +25303,8 @@
   - cushion_profile
   - fabric
   - front_seat_position
-  - front_seats_armrest_configuration
   - item_condition
   - manufacturer_type
-  - mesh_color
   - occupant_classification_sensor_support
   - pattern
   - seat_adjustment_power_type
@@ -25886,7 +25313,6 @@
   - seat_belt_integration
   - seat_mounting_type
   - seat_shell_material
-  - stitching_color
   - trim_material
   - vehicle_seating_features
   return_reasons:
@@ -25909,10 +25335,8 @@
   - cushion_profile
   - fabric
   - front_seat_position
-  - front_seats_armrest_configuration
   - item_condition
   - manufacturer_type
-  - mesh_color
   - occupant_classification_sensor_support
   - pattern
   - seat_adjustment_power_type
@@ -25921,7 +25345,6 @@
   - seat_belt_integration
   - seat_mounting_type
   - seat_shell_material
-  - stitching_color
   - trim_material
   - vehicle_seating_features
   return_reasons: inherit
@@ -25934,10 +25357,8 @@
   - cushion_profile
   - fabric
   - front_seat_position
-  - front_seats_armrest_configuration
   - item_condition
   - manufacturer_type
-  - mesh_color
   - occupant_classification_sensor_support
   - pattern
   - seat_adjustment_power_type
@@ -25946,7 +25367,6 @@
   - seat_belt_integration
   - seat_mounting_type
   - seat_shell_material
-  - stitching_color
   - trim_material
   - vehicle_seating_features
   return_reasons: inherit
@@ -25959,10 +25379,8 @@
   - cushion_profile
   - fabric
   - front_seat_position
-  - front_seats_armrest_configuration
   - item_condition
   - manufacturer_type
-  - mesh_color
   - occupant_classification_sensor_support
   - pattern
   - seat_adjustment_power_type
@@ -25971,7 +25389,6 @@
   - seat_belt_integration
   - seat_mounting_type
   - seat_shell_material
-  - stitching_color
   - trim_material
   - vehicle_seating_features
   return_reasons: inherit
@@ -25990,7 +25407,6 @@
   - pattern
   - rear_seat_configuration
   - seat_belt_provision
-  - stitching_color
   - vehicle_seat_row
   - vehicle_seating_features
   return_reasons:
@@ -26017,7 +25433,6 @@
   - pattern
   - rear_seat_configuration
   - seat_belt_provision
-  - stitching_color
   - vehicle_seat_row
   - vehicle_seating_features
   return_reasons: inherit
@@ -26034,7 +25449,6 @@
   - pattern
   - rear_seat_configuration
   - seat_belt_provision
-  - stitching_color
   - vehicle_seat_row
   - vehicle_seating_features
   return_reasons: inherit
@@ -26669,15 +26083,14 @@
   - vp-1-4-16-6-1
   - vp-1-4-16-6-2
   attributes:
-  - bezel/rim_color
   - color
-  - gauge_face_color
   - gauge_type
   - item_condition
   - led_color_options
   - manufacturer_type
   - pattern
   - pointer_color
+  - pointer_pattern
   - sensor_or_gauge_mounting_location
   - speedometer_backlight_type
   - speedometer_display_type
@@ -26695,15 +26108,14 @@
   name: Instrument Cluster Speedometers
   children: []
   attributes:
-  - bezel/rim_color
   - color
-  - gauge_face_color
   - gauge_type
   - item_condition
   - led_color_options
   - manufacturer_type
   - pattern
   - pointer_color
+  - pointer_pattern
   - sensor_or_gauge_mounting_location
   - speedometer_backlight_type
   - speedometer_display_type
@@ -26713,15 +26125,14 @@
   name: Standalone Speedometers
   children: []
   attributes:
-  - bezel/rim_color
   - color
-  - gauge_face_color
   - gauge_type
   - item_condition
   - led_color_options
   - manufacturer_type
   - pattern
   - pointer_color
+  - pointer_pattern
   - sensor_or_gauge_mounting_location
   - speedometer_backlight_type
   - speedometer_display_type
@@ -26733,15 +26144,14 @@
   - vp-1-4-16-7-1
   - vp-1-4-16-7-2
   attributes:
-  - bezel_color
   - color
-  - gauge_face_color
   - gauge_type
   - item_condition
   - led_color_options
   - manufacturer_type
   - pattern
   - pointer_color
+  - pointer_pattern
   - sensor_or_gauge_mounting_location
   - tachometer_drive_type
   return_reasons:
@@ -26757,15 +26167,14 @@
   name: Universal Tachometers
   children: []
   attributes:
-  - bezel_color
   - color
-  - gauge_face_color
   - gauge_type
   - item_condition
   - led_color_options
   - manufacturer_type
   - pattern
   - pointer_color
+  - pointer_pattern
   - sensor_or_gauge_mounting_location
   - tachometer_drive_type
   return_reasons: inherit
@@ -26773,15 +26182,14 @@
   name: Direct-Fit Tachometers
   children: []
   attributes:
-  - bezel_color
   - color
-  - gauge_face_color
   - gauge_type
   - item_condition
   - led_color_options
   - manufacturer_type
   - pattern
   - pointer_color
+  - pointer_pattern
   - sensor_or_gauge_mounting_location
   - tachometer_drive_type
   return_reasons: inherit
@@ -28128,8 +27536,8 @@
   - shock_absorber_style
   - shock_body_color
   - shock_body_material
+  - shock_body_pattern
   - shock_travel_type
-  - spring_color
   - top_hose_fitting_orientation
   - valving_setup
   - vehicle_suspension_features
@@ -28178,8 +27586,8 @@
   - shock_absorber_style
   - shock_body_color
   - shock_body_material
+  - shock_body_pattern
   - shock_travel_type
-  - spring_color
   - top_hose_fitting_orientation
   - valving_setup
   - vehicle_suspension_features
@@ -28219,8 +27627,8 @@
   - shock_absorber_style
   - shock_body_color
   - shock_body_material
+  - shock_body_pattern
   - shock_travel_type
-  - spring_color
   - top_hose_fitting_orientation
   - valving_setup
   - vehicle_suspension_features
@@ -28260,8 +27668,8 @@
   - shock_absorber_style
   - shock_body_color
   - shock_body_material
+  - shock_body_pattern
   - shock_travel_type
-  - spring_color
   - top_hose_fitting_orientation
   - valving_setup
   - vehicle_suspension_features
@@ -28299,7 +27707,6 @@
   - shock_absorber_fill_type
   - shock_body_material
   - shock_reservoir_configuration
-  - spring_color
   - strut_placement
   - strut_travel_type
   - suspension_ride_height
@@ -28344,7 +27751,6 @@
   - shock_absorber_fill_type
   - shock_body_material
   - shock_reservoir_configuration
-  - spring_color
   - strut_placement
   - strut_travel_type
   - suspension_ride_height
@@ -28380,7 +27786,6 @@
   - shock_absorber_fill_type
   - shock_body_material
   - shock_reservoir_configuration
-  - spring_color
   - strut_placement
   - strut_travel_type
   - suspension_ride_height
@@ -28416,7 +27821,6 @@
   - shock_absorber_fill_type
   - shock_body_material
   - shock_reservoir_configuration
-  - spring_color
   - strut_placement
   - strut_travel_type
   - suspension_ride_height
@@ -28452,7 +27856,6 @@
   - shock_absorber_fill_type
   - shock_body_material
   - shock_reservoir_configuration
-  - spring_color
   - strut_placement
   - strut_travel_type
   - suspension_ride_height
@@ -29197,7 +28600,6 @@
   - compatible_vehicle_drive_side
   - compatible_vehicle_drivetrain
   - disconnect_actuation_method
-  - end_link_color
   - end_link_joint_type
   - item_condition
   - manufacturer_type
@@ -29227,7 +28629,6 @@
   - compatible_vehicle_drive_side
   - compatible_vehicle_drivetrain
   - disconnect_actuation_method
-  - end_link_color
   - end_link_joint_type
   - item_condition
   - manufacturer_type
@@ -29249,7 +28650,6 @@
   - compatible_vehicle_drive_side
   - compatible_vehicle_drivetrain
   - disconnect_actuation_method
-  - end_link_color
   - end_link_joint_type
   - item_condition
   - manufacturer_type
@@ -30270,7 +29670,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons:
   - size
@@ -30297,7 +29696,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons: inherit
 - id: vp-1-4-18-8-2
@@ -30321,7 +29719,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons: inherit
 - id: vp-1-4-18-8-2-1
@@ -30339,7 +29736,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons: inherit
 - id: vp-1-4-18-8-2-2
@@ -30357,7 +29753,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons: inherit
 - id: vp-1-4-18-8-2-3
@@ -30375,7 +29770,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons: inherit
 - id: vp-1-4-18-8-2-4
@@ -30393,7 +29787,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons: inherit
 - id: vp-1-4-18-8-2-5
@@ -30411,7 +29804,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons: inherit
 - id: vp-1-4-18-8-2-6
@@ -30429,7 +29821,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons: inherit
 - id: vp-1-4-18-8-3
@@ -30449,7 +29840,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons: inherit
 - id: vp-1-4-18-8-3-1
@@ -30467,7 +29857,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons: inherit
 - id: vp-1-4-18-8-3-2
@@ -30485,7 +29874,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons: inherit
 - id: vp-1-4-18-8-4
@@ -30506,7 +29894,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons: inherit
 - id: vp-1-4-18-8-4-1
@@ -30524,7 +29911,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons: inherit
 - id: vp-1-4-18-8-4-2
@@ -30542,7 +29928,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons: inherit
 - id: vp-1-4-18-8-4-3
@@ -30560,7 +29945,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons: inherit
 - id: vp-1-4-18-8-5
@@ -30578,7 +29962,6 @@
   - trailer_wiring_connector_type
   - vehicle_drive/handling_features
   - vehicle_side_connector_type
-  - wire_color
   - wire_gauge_awg
   return_reasons: inherit
 - id: vp-1-4-19
@@ -32311,10 +31694,8 @@
   name: Automotive Rims & Wheels
   children: []
   attributes:
-  - accent_color
   - barrel_finish
   - beadlock_ring_finish
-  - center_cap_color
   - color
   - compatible_tpms_sensor_type
   - compatible_vehicle_drivetrain
@@ -32358,15 +31739,11 @@
   - chain_side
   - color
   - compatible_tpms_sensor_type
-  - hub_color
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
   - rim/wheel_design
-  - rim_color
-  - spoke_color
-  - spoke_nipple_color
   - surface_finish
   - tire_speed_rating
   - vehicle_drive/handling_features
@@ -32391,15 +31768,11 @@
   - chain_side
   - color
   - compatible_tpms_sensor_type
-  - hub_color
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
   - rim/wheel_design
-  - rim_color
-  - spoke_color
-  - spoke_nipple_color
   - surface_finish
   - tire_speed_rating
   - vehicle_drive/handling_features
@@ -32414,15 +31787,11 @@
   - chain_side
   - color
   - compatible_tpms_sensor_type
-  - hub_color
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
   - rim/wheel_design
-  - rim_color
-  - spoke_color
-  - spoke_nipple_color
   - surface_finish
   - tire_speed_rating
   - vehicle_drive/handling_features
@@ -32437,15 +31806,11 @@
   - chain_side
   - color
   - compatible_tpms_sensor_type
-  - hub_color
   - item_condition
   - item_material
   - manufacturer_type
   - pattern
   - rim/wheel_design
-  - rim_color
-  - spoke_color
-  - spoke_nipple_color
   - surface_finish
   - tire_speed_rating
   - vehicle_drive/handling_features
@@ -32459,7 +31824,6 @@
   - vp-1-4-20-1-3-1
   - vp-1-4-20-1-3-2
   attributes:
-  - beadlock_ring_color
   - beadlock_ring_finish
   - beadlock_ring_material
   - beadlock_type
@@ -32493,7 +31857,6 @@
   name: Beadlock Rims & Wheels
   children: []
   attributes:
-  - beadlock_ring_color
   - beadlock_ring_finish
   - beadlock_ring_material
   - beadlock_type
@@ -32517,7 +31880,6 @@
   name: Non-Beadlock Rims & Wheels
   children: []
   attributes:
-  - beadlock_ring_color
   - beadlock_ring_finish
   - beadlock_ring_material
   - beadlock_type
@@ -37497,7 +36859,6 @@
   - item_condition
   - item_material
   - manufacturer_type
-  - motor_vehicle_cooling_systems_end_connection_type
   - motor_vehicle_type
   return_reasons:
   - incompatible
@@ -38451,10 +37812,7 @@
   - fit_type
   - installation_side
   - intake_direction
-  - intake_hose_color
-  - intake_manifold_color
   - intake_port_style
-  - intake_tube_color
   - item_condition
   - item_material
   - lid_opening_type
@@ -38467,7 +37825,6 @@
   - pattern
   - performance_stage
   - pipe_material
-  - resonator_delete_cap_color
   - sensor_mounting_type
   - throttle_body_inlet_style
   - turbo_configuration
@@ -40021,7 +39378,6 @@
   - compatible_truck_cab_type
   - cover_features
   - cover_material
-  - exterior_color_style
   - hardtop_finish_type
   - hardtop_shell_material
   - hardtop_window_configuration
@@ -40050,7 +39406,6 @@
   - compatible_truck_cab_type
   - cover_features
   - cover_material
-  - exterior_color_style
   - hardtop_finish_type
   - hardtop_shell_material
   - hardtop_window_configuration
@@ -40069,7 +39424,6 @@
   - compatible_truck_cab_type
   - cover_features
   - cover_material
-  - exterior_color_style
   - hardtop_finish_type
   - hardtop_shell_material
   - hardtop_window_configuration
@@ -40088,7 +39442,6 @@
   - compatible_truck_cab_type
   - cover_features
   - cover_material
-  - exterior_color_style
   - hardtop_finish_type
   - hardtop_shell_material
   - hardtop_window_configuration
@@ -40107,7 +39460,6 @@
   - compatible_truck_cab_type
   - cover_features
   - cover_material
-  - exterior_color_style
   - hardtop_finish_type
   - hardtop_shell_material
   - hardtop_window_configuration
@@ -40126,7 +39478,6 @@
   - compatible_truck_cab_type
   - cover_features
   - cover_material
-  - exterior_color_style
   - hardtop_finish_type
   - hardtop_shell_material
   - hardtop_window_configuration
@@ -40276,7 +39627,6 @@
   - vp-1-5-3-6-1-1
   - vp-1-5-3-6-1-2
   attributes:
-  - border_color
   - color
   - compatible_vehicle_body_style
   - cover_features
@@ -40284,7 +39634,6 @@
   - cover_type
   - inner_lining_type
   - pattern
-  - side_panel_color
   - vehicle_application_area
   - vehicle_type
   return_reasons:
@@ -40302,7 +39651,6 @@
   name: Full-Body Automotive Storage Covers
   children: []
   attributes:
-  - border_color
   - color
   - compatible_vehicle_body_style
   - cover_features
@@ -40310,7 +39658,6 @@
   - cover_type
   - inner_lining_type
   - pattern
-  - side_panel_color
   - vehicle_application_area
   - vehicle_type
   return_reasons: inherit
@@ -40318,7 +39665,6 @@
   name: Half-Body Automotive Storage Covers
   children: []
   attributes:
-  - border_color
   - color
   - compatible_vehicle_body_style
   - cover_features
@@ -40326,7 +39672,6 @@
   - cover_type
   - inner_lining_type
   - pattern
-  - side_panel_color
   - vehicle_application_area
   - vehicle_type
   return_reasons: inherit
@@ -40910,7 +40255,6 @@
   - finish
   - installation_attachment_type
   - jewelry_material
-  - logo_color
   - pattern
   - shape
   - vehicle_application_area
@@ -42468,7 +41812,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -42481,11 +41824,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -42529,7 +41868,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -42542,11 +41880,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -42561,7 +41895,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -42574,11 +41907,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -42593,7 +41922,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -42606,11 +41934,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -42625,7 +41949,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -42638,11 +41961,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -42657,7 +41976,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -42670,11 +41988,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -42689,7 +42003,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -42702,11 +42015,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -42721,7 +42030,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -42734,11 +42042,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -42753,7 +42057,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -42766,11 +42069,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -42785,7 +42084,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -42798,11 +42096,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -42817,7 +42111,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -42830,11 +42123,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -42849,7 +42138,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -42862,11 +42150,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -42881,7 +42165,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -42894,11 +42177,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -42913,7 +42192,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -42926,11 +42204,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -42945,7 +42219,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -42958,11 +42231,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -42977,7 +42246,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -42990,11 +42258,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43009,7 +42273,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43022,11 +42285,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43041,7 +42300,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43054,11 +42312,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43073,7 +42327,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43086,11 +42339,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43105,7 +42354,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43118,11 +42366,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43137,7 +42381,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43150,11 +42393,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43172,7 +42411,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43185,11 +42423,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43204,7 +42438,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43217,11 +42450,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43236,7 +42465,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43249,11 +42477,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43268,7 +42492,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43281,11 +42504,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43304,7 +42523,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43317,11 +42535,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43336,7 +42550,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43349,11 +42562,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43368,7 +42577,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43381,11 +42589,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43400,7 +42604,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43413,11 +42616,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43432,7 +42631,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43445,11 +42643,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43466,7 +42660,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43479,11 +42672,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43498,7 +42687,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43511,11 +42699,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43530,7 +42714,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43543,11 +42726,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43564,7 +42743,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43577,11 +42755,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43596,7 +42770,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43609,11 +42782,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43628,7 +42797,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43641,11 +42809,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43660,7 +42824,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43673,11 +42836,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43692,7 +42851,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43705,11 +42863,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43724,7 +42878,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43737,11 +42890,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43756,7 +42905,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43769,11 +42917,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43788,7 +42932,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43801,11 +42944,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43820,7 +42959,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43833,11 +42971,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43852,7 +42986,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43865,11 +42998,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43884,7 +43013,6 @@
   attributes:
   - accessory_size
   - alcohol/solvent_content
-  - background_color_or_transparency
   - color
   - compatible_truck_cab_type
   - compatible_vehicle_body_style
@@ -43897,11 +43025,7 @@
   - decoration_material
   - facing_direction
   - finish
-  - inner_stripe_color
   - language
-  - letter_color
-  - outer_pin_stripe_color
-  - outer_stripe_color
   - pattern
   - stripe_configuration
   - theme
@@ -43932,7 +43056,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -43975,7 +43098,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -43995,7 +43117,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44015,7 +43136,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44035,7 +43155,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44055,7 +43174,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44075,7 +43193,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44095,7 +43212,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44115,7 +43231,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44135,7 +43250,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44155,7 +43269,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44175,7 +43288,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44195,7 +43307,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44215,7 +43326,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44235,7 +43345,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44255,7 +43364,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44281,7 +43389,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44301,7 +43408,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44321,7 +43427,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44341,7 +43446,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44361,7 +43465,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44381,7 +43484,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44401,7 +43503,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44421,7 +43522,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44441,7 +43541,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44461,7 +43560,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44481,7 +43579,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44501,7 +43598,6 @@
   - led_light_color
   - pattern
   - shape
-  - stitching_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_decor_set_items_included
@@ -44627,7 +43723,6 @@
   - accessory_size
   - backer_finish
   - badge_background_finish
-  - badge_foreground_color
   - color
   - compatible_grille_style
   - compatible_vehicle_body_style
@@ -44660,7 +43755,6 @@
   - accessory_size
   - backer_finish
   - badge_background_finish
-  - badge_foreground_color
   - color
   - compatible_grille_style
   - compatible_vehicle_body_style
@@ -44683,7 +43777,6 @@
   - accessory_size
   - backer_finish
   - badge_background_finish
-  - badge_foreground_color
   - color
   - compatible_grille_style
   - compatible_vehicle_body_style
@@ -44902,7 +43995,6 @@
   - decoration_material
   - finish
   - pattern
-  - rhinestone_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_license_plate_frame_anti_theft_design
@@ -44946,9 +44038,9 @@
   - mount_material
   - mounting_location
   - pattern
-  - plate_light_color
   - plate_light_configuration
   - plate_light_lens_color
+  - plate_light_lens_pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -44979,9 +44071,9 @@
   - mount_material
   - mounting_location
   - pattern
-  - plate_light_color
   - plate_light_configuration
   - plate_light_lens_color
+  - plate_light_lens_pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45004,9 +44096,9 @@
   - mount_material
   - mounting_location
   - pattern
-  - plate_light_color
   - plate_light_configuration
   - plate_light_lens_color
+  - plate_light_lens_pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45029,9 +44121,9 @@
   - mount_material
   - mounting_location
   - pattern
-  - plate_light_color
   - plate_light_configuration
   - plate_light_lens_color
+  - plate_light_lens_pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45054,9 +44146,9 @@
   - mount_material
   - mounting_location
   - pattern
-  - plate_light_color
   - plate_light_configuration
   - plate_light_lens_color
+  - plate_light_lens_pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45079,9 +44171,9 @@
   - mount_material
   - mounting_location
   - pattern
-  - plate_light_color
   - plate_light_configuration
   - plate_light_lens_color
+  - plate_light_lens_pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45104,9 +44196,9 @@
   - mount_material
   - mounting_location
   - pattern
-  - plate_light_color
   - plate_light_configuration
   - plate_light_lens_color
+  - plate_light_lens_pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45129,9 +44221,9 @@
   - mount_material
   - mounting_location
   - pattern
-  - plate_light_color
   - plate_light_configuration
   - plate_light_lens_color
+  - plate_light_lens_pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45154,9 +44246,9 @@
   - mount_material
   - mounting_location
   - pattern
-  - plate_light_color
   - plate_light_configuration
   - plate_light_lens_color
+  - plate_light_lens_pattern
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45175,10 +44267,8 @@
   - license_plate_personalization_type
   - license_plate_position
   - license_plate_type
-  - logo_color
   - pattern
   - state_or_territory
-  - text_outline_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_license_plate_finish
@@ -45211,10 +44301,8 @@
   - license_plate_personalization_type
   - license_plate_position
   - license_plate_type
-  - logo_color
   - pattern
   - state_or_territory
-  - text_outline_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_license_plate_finish
@@ -45238,10 +44326,8 @@
   - license_plate_personalization_type
   - license_plate_position
   - license_plate_type
-  - logo_color
   - pattern
   - state_or_territory
-  - text_outline_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_license_plate_finish
@@ -45660,8 +44746,6 @@
   - pattern
   - shift_boot_attachment_method
   - shift_boot_installation_hardware_included
-  - stitching_color
-  - trim_ring_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45690,8 +44774,6 @@
   - pattern
   - shift_boot_attachment_method
   - shift_boot_installation_hardware_included
-  - stitching_color
-  - trim_ring_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45710,8 +44792,6 @@
   - pattern
   - shift_boot_attachment_method
   - shift_boot_installation_hardware_included
-  - stitching_color
-  - trim_ring_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45730,8 +44810,6 @@
   - pattern
   - shift_boot_attachment_method
   - shift_boot_installation_hardware_included
-  - stitching_color
-  - trim_ring_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45750,8 +44828,6 @@
   - pattern
   - shift_boot_attachment_method
   - shift_boot_installation_hardware_included
-  - stitching_color
-  - trim_ring_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45768,7 +44844,6 @@
   - vp-1-5-4-17-7
   attributes:
   - accessory_size
-  - cap_color
   - color
   - compatible_gate_style
   - compatible_vehicle_steering_position
@@ -45776,20 +44851,13 @@
   - decoration_material
   - finish
   - grip_texture
-  - leather_color
   - led_light_color
   - pattern
-  - reverse_lockout_color
-  - shell_color
   - shift_boot_material
-  - shift_knob_body_color
   - shift_knob_illumination
   - shift_knob_installation_method
   - shift_knob_shape
-  - shift_pattern_color
   - shift_pattern_type
-  - stitching_color
-  - trim_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45809,7 +44877,6 @@
   children: []
   attributes:
   - accessory_size
-  - cap_color
   - color
   - compatible_gate_style
   - compatible_vehicle_steering_position
@@ -45817,20 +44884,13 @@
   - decoration_material
   - finish
   - grip_texture
-  - leather_color
   - led_light_color
   - pattern
-  - reverse_lockout_color
-  - shell_color
   - shift_boot_material
-  - shift_knob_body_color
   - shift_knob_illumination
   - shift_knob_installation_method
   - shift_knob_shape
-  - shift_pattern_color
   - shift_pattern_type
-  - stitching_color
-  - trim_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45840,7 +44900,6 @@
   children: []
   attributes:
   - accessory_size
-  - cap_color
   - color
   - compatible_gate_style
   - compatible_vehicle_steering_position
@@ -45848,20 +44907,13 @@
   - decoration_material
   - finish
   - grip_texture
-  - leather_color
   - led_light_color
   - pattern
-  - reverse_lockout_color
-  - shell_color
   - shift_boot_material
-  - shift_knob_body_color
   - shift_knob_illumination
   - shift_knob_installation_method
   - shift_knob_shape
-  - shift_pattern_color
   - shift_pattern_type
-  - stitching_color
-  - trim_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45871,7 +44923,6 @@
   children: []
   attributes:
   - accessory_size
-  - cap_color
   - color
   - compatible_gate_style
   - compatible_vehicle_steering_position
@@ -45879,20 +44930,13 @@
   - decoration_material
   - finish
   - grip_texture
-  - leather_color
   - led_light_color
   - pattern
-  - reverse_lockout_color
-  - shell_color
   - shift_boot_material
-  - shift_knob_body_color
   - shift_knob_illumination
   - shift_knob_installation_method
   - shift_knob_shape
-  - shift_pattern_color
   - shift_pattern_type
-  - stitching_color
-  - trim_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45902,7 +44946,6 @@
   children: []
   attributes:
   - accessory_size
-  - cap_color
   - color
   - compatible_gate_style
   - compatible_vehicle_steering_position
@@ -45910,20 +44953,13 @@
   - decoration_material
   - finish
   - grip_texture
-  - leather_color
   - led_light_color
   - pattern
-  - reverse_lockout_color
-  - shell_color
   - shift_boot_material
-  - shift_knob_body_color
   - shift_knob_illumination
   - shift_knob_installation_method
   - shift_knob_shape
-  - shift_pattern_color
   - shift_pattern_type
-  - stitching_color
-  - trim_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45933,7 +44969,6 @@
   children: []
   attributes:
   - accessory_size
-  - cap_color
   - color
   - compatible_gate_style
   - compatible_vehicle_steering_position
@@ -45941,20 +44976,13 @@
   - decoration_material
   - finish
   - grip_texture
-  - leather_color
   - led_light_color
   - pattern
-  - reverse_lockout_color
-  - shell_color
   - shift_boot_material
-  - shift_knob_body_color
   - shift_knob_illumination
   - shift_knob_installation_method
   - shift_knob_shape
-  - shift_pattern_color
   - shift_pattern_type
-  - stitching_color
-  - trim_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45964,7 +44992,6 @@
   children: []
   attributes:
   - accessory_size
-  - cap_color
   - color
   - compatible_gate_style
   - compatible_vehicle_steering_position
@@ -45972,20 +44999,13 @@
   - decoration_material
   - finish
   - grip_texture
-  - leather_color
   - led_light_color
   - pattern
-  - reverse_lockout_color
-  - shell_color
   - shift_boot_material
-  - shift_knob_body_color
   - shift_knob_illumination
   - shift_knob_installation_method
   - shift_knob_shape
-  - shift_pattern_color
   - shift_pattern_type
-  - stitching_color
-  - trim_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -45995,7 +45015,6 @@
   children: []
   attributes:
   - accessory_size
-  - cap_color
   - color
   - compatible_gate_style
   - compatible_vehicle_steering_position
@@ -46003,20 +45022,13 @@
   - decoration_material
   - finish
   - grip_texture
-  - leather_color
   - led_light_color
   - pattern
-  - reverse_lockout_color
-  - shell_color
   - shift_boot_material
-  - shift_knob_body_color
   - shift_knob_illumination
   - shift_knob_installation_method
   - shift_knob_shape
-  - shift_pattern_color
   - shift_pattern_type
-  - stitching_color
-  - trim_color
   - vehicle_application_area
   - vehicle_decor_features
   - vehicle_type
@@ -46025,7 +45037,6 @@
   name: Vehicle Steering Wheel Covers
   children: []
   attributes:
-  - 12_oclock_marker_color
   - accessory_size
   - color
   - compatible_steering_wheel_shape
@@ -46034,7 +45045,6 @@
   - finish
   - pattern
   - steering_wheel_cover_installation_type
-  - stitching_color
   - vehicle_application_area
   - vehicle_type
   - wool_length
@@ -47963,7 +46973,6 @@
   - power_source
   - supported_battery_type
   - vehicle_battery_charger_features
-  - vehicle_battery_chargers_power_connector_type
   - vehicle_type
   return_reasons:
   - incompatible
@@ -47983,7 +46992,6 @@
   - power_source
   - supported_battery_type
   - vehicle_battery_charger_features
-  - vehicle_battery_chargers_power_connector_type
   - vehicle_type
   return_reasons: inherit
 - id: vp-1-5-7-3-2
@@ -47996,7 +47004,6 @@
   - power_source
   - supported_battery_type
   - vehicle_battery_charger_features
-  - vehicle_battery_chargers_power_connector_type
   - vehicle_type
   return_reasons: inherit
 - id: vp-1-5-7-4
@@ -49627,7 +48634,6 @@
   - lens_pattern
   - motorcycle_protective_gear_size_system
   - protective_gear_features
-  - strap_color
   - target_gender
   - vehicle_type
   return_reasons:
@@ -49658,9 +48664,9 @@
   - hand_guard_set_configuration
   - hand_guard_weather_protection
   - motorcycle_protective_gear_size_system
-  - mount_color
   - protective_gear_features
   - shield_color
+  - shield_pattern
   - target_gender
   - vehicle_type
   return_reasons:
@@ -49687,9 +48693,9 @@
   - hand_guard_set_configuration
   - hand_guard_weather_protection
   - motorcycle_protective_gear_size_system
-  - mount_color
   - protective_gear_features
   - shield_color
+  - shield_pattern
   - target_gender
   - vehicle_type
   return_reasons: inherit
@@ -49708,9 +48714,9 @@
   - hand_guard_set_configuration
   - hand_guard_weather_protection
   - motorcycle_protective_gear_size_system
-  - mount_color
   - protective_gear_features
   - shield_color
+  - shield_pattern
   - target_gender
   - vehicle_type
   return_reasons: inherit
@@ -49729,9 +48735,9 @@
   - hand_guard_set_configuration
   - hand_guard_weather_protection
   - motorcycle_protective_gear_size_system
-  - mount_color
   - protective_gear_features
   - shield_color
+  - shield_pattern
   - target_gender
   - vehicle_type
   return_reasons: inherit
@@ -49762,7 +48768,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -49799,7 +48804,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -49823,7 +48827,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -49847,7 +48850,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -49871,7 +48873,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -49895,7 +48896,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -49919,7 +48919,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -49943,7 +48942,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -49971,7 +48969,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -49995,7 +48992,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50019,7 +49015,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50043,7 +49038,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50067,7 +49061,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50093,7 +49086,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50117,7 +49109,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50141,7 +49132,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50171,7 +49161,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50195,7 +49184,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50219,7 +49207,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50243,7 +49230,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50267,7 +49253,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50291,7 +49276,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50315,7 +49299,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50344,7 +49327,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50368,7 +49350,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50392,7 +49373,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50416,7 +49396,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50440,7 +49419,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50464,7 +49442,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50488,7 +49465,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50512,7 +49488,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50540,7 +49515,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50564,7 +49538,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50588,7 +49561,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50612,7 +49584,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50636,7 +49607,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50662,7 +49632,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50686,7 +49655,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50710,7 +49678,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50737,7 +49704,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50761,7 +49727,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50785,7 +49750,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50809,7 +49773,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50836,7 +49799,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50860,7 +49822,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50884,7 +49845,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50908,7 +49868,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50932,7 +49891,6 @@
   - gear_material
   - head_shape
   - lens_color
-  - lens_mirror_color
   - motorcycle_protective_gear_size_system
   - pad_thickness
   - pattern
@@ -50971,7 +49929,6 @@
   - protective_gear_features
   - target_gender
   - vehicle_type
-  - visor_color
   return_reasons:
   - too_big
   - too_small
@@ -51011,7 +49968,6 @@
   - sheen
   - target_gender
   - vehicle_type
-  - visor_color
   return_reasons:
   - too_big
   - too_small
@@ -51049,7 +50005,6 @@
   - sheen
   - target_gender
   - vehicle_type
-  - visor_color
   return_reasons: inherit
 - id: vp-1-6-1-7-1-2
   name: Sport Touring Full Face Helmets
@@ -51076,7 +50031,6 @@
   - sheen
   - target_gender
   - vehicle_type
-  - visor_color
   return_reasons: inherit
 - id: vp-1-6-1-7-2
   name: Half Helmets
@@ -51102,7 +50056,6 @@
   - sheen
   - target_gender
   - vehicle_type
-  - visor_color
   return_reasons:
   - too_big
   - too_small
@@ -51137,7 +50090,6 @@
   - sheen
   - target_gender
   - vehicle_type
-  - visor_color
   return_reasons: inherit
 - id: vp-1-6-1-7-2-2
   name: Cap-Style Half Helmets
@@ -51161,7 +50113,6 @@
   - sheen
   - target_gender
   - vehicle_type
-  - visor_color
   return_reasons: inherit
 - id: vp-1-6-1-7-3
   name: Modular Helmets
@@ -51189,7 +50140,6 @@
   - sheen
   - target_gender
   - vehicle_type
-  - visor_color
   return_reasons:
   - too_big
   - too_small
@@ -51229,7 +50179,6 @@
   - target_gender
   - vehicle_type
   - ventilation_configuration
-  - visor_color
   return_reasons:
   - too_big
   - too_small
@@ -51268,7 +50217,6 @@
   - target_gender
   - vehicle_type
   - ventilation_configuration
-  - visor_color
   return_reasons: inherit
 - id: vp-1-6-1-7-4-2
   name: Motorcycle Trials Helmets
@@ -51296,7 +50244,6 @@
   - target_gender
   - vehicle_type
   - ventilation_configuration
-  - visor_color
   return_reasons: inherit
 - id: vp-1-6-1-7-5
   name: Open Face Helmets
@@ -51321,7 +50268,6 @@
   - sheen
   - target_gender
   - vehicle_type
-  - visor_color
   return_reasons:
   - too_big
   - too_small
@@ -52897,7 +51843,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -52923,7 +51868,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -52937,7 +51881,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -52951,7 +51894,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -52965,7 +51907,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -52979,7 +51920,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -52997,7 +51937,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53011,7 +51950,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53025,7 +51963,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53039,7 +51976,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53053,7 +51989,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53070,7 +52005,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53084,7 +52018,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53098,7 +52031,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53112,7 +52044,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53126,7 +52057,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53143,7 +52073,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53157,7 +52086,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53171,7 +52099,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53185,7 +52112,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53202,7 +52128,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53216,7 +52141,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53230,7 +52154,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53244,7 +52167,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53261,7 +52183,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53275,7 +52196,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53289,7 +52209,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53303,7 +52222,6 @@
   - compatible_airbag_system_type
   - product_certifications_standards
   - safety_equipment_material
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53440,7 +52358,6 @@
   - cover_material
   - product_certifications_standards
   - seat_belt_cover_placement
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53462,7 +52379,6 @@
   - cover_material
   - product_certifications_standards
   - seat_belt_cover_placement
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53476,7 +52392,6 @@
   - cover_material
   - product_certifications_standards
   - seat_belt_cover_placement
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53490,7 +52405,6 @@
   - cover_material
   - product_certifications_standards
   - seat_belt_cover_placement
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53504,7 +52418,6 @@
   - cover_material
   - product_certifications_standards
   - seat_belt_cover_placement
-  - stitching_color
   - vehicle_safety_equipment_position
   - vehicle_safety_equipment_visibility_features
   - vehicle_type
@@ -53541,7 +52454,6 @@
   - vp-1-6-4-8-4
   - vp-1-6-4-8-5
   attributes:
-  - belt_color
   - belt_type
   - closure_type
   - compatible_vehicle_body_style
@@ -53570,7 +52482,6 @@
   name: Lap Seat Belts
   children: []
   attributes:
-  - belt_color
   - belt_type
   - closure_type
   - compatible_vehicle_body_style
@@ -53591,7 +52502,6 @@
   name: Lap & Shoulder Seat Belts
   children: []
   attributes:
-  - belt_color
   - belt_type
   - closure_type
   - compatible_vehicle_body_style
@@ -53612,7 +52522,6 @@
   name: Sash Seat Belts
   children: []
   attributes:
-  - belt_color
   - belt_type
   - closure_type
   - compatible_vehicle_body_style
@@ -53633,7 +52542,6 @@
   name: Seat Belt Harnesses
   children: []
   attributes:
-  - belt_color
   - belt_type
   - closure_type
   - compatible_vehicle_body_style
@@ -53654,7 +52562,6 @@
   name: Vehicle Restraint Vests
   children: []
   attributes:
-  - belt_color
   - belt_type
   - closure_type
   - compatible_vehicle_body_style
@@ -53677,7 +52584,6 @@
   - vp-1-6-4-9-1
   - vp-1-6-4-9-2
   attributes:
-  - base_color
   - color
   - light_color
   - lighting_mode
@@ -53700,7 +52606,6 @@
   name: Lighted Warning Whips
   children: []
   attributes:
-  - base_color
   - color
   - light_color
   - lighting_mode
@@ -53715,7 +52620,6 @@
   name: Unlighted Warning Whips
   children: []
   attributes:
-  - base_color
   - color
   - light_color
   - lighting_mode
@@ -55008,13 +53912,11 @@
   - compatible_racing_discipline
   - gear_material
   - helmet_type
-  - interior_color
   - pattern
   - protective_gear_certification_standard
   - protective_gear_features
   - racing_helmet_certification_standard
   - target_gender
-  - visor_color
   - visor_configuration
   return_reasons:
   - too_big
@@ -55038,13 +53940,11 @@
   - compatible_racing_discipline
   - gear_material
   - helmet_type
-  - interior_color
   - pattern
   - protective_gear_certification_standard
   - protective_gear_features
   - racing_helmet_certification_standard
   - target_gender
-  - visor_color
   - visor_configuration
   return_reasons: inherit
 - id: vp-1-6-7-9-2
@@ -55058,13 +53958,11 @@
   - compatible_racing_discipline
   - gear_material
   - helmet_type
-  - interior_color
   - pattern
   - protective_gear_certification_standard
   - protective_gear_features
   - racing_helmet_certification_standard
   - target_gender
-  - visor_color
   - visor_configuration
   return_reasons: inherit
 - id: vp-1-6-7-9-3
@@ -55078,13 +53976,11 @@
   - compatible_racing_discipline
   - gear_material
   - helmet_type
-  - interior_color
   - pattern
   - protective_gear_certification_standard
   - protective_gear_features
   - racing_helmet_certification_standard
   - target_gender
-  - visor_color
   - visor_configuration
   return_reasons: inherit
 - id: vp-1-6-7-10
@@ -60953,7 +59849,6 @@
   - item_condition
   - item_material
   - ladder_type
-  - step_color
   - step_surface_texture
   - watercraft_type
   return_reasons:
@@ -60978,7 +59873,6 @@
   - item_condition
   - item_material
   - ladder_type
-  - step_color
   - step_surface_texture
   - watercraft_type
   return_reasons: inherit
@@ -60994,7 +59888,6 @@
   - item_condition
   - item_material
   - ladder_type
-  - step_color
   - step_surface_texture
   - watercraft_type
   return_reasons: inherit
@@ -61010,7 +59903,6 @@
   - item_condition
   - item_material
   - ladder_type
-  - step_color
   - step_surface_texture
   - watercraft_type
   return_reasons: inherit
@@ -61026,7 +59918,6 @@
   - item_condition
   - item_material
   - ladder_type
-  - step_color
   - step_surface_texture
   - watercraft_type
   return_reasons: inherit
@@ -61188,7 +60079,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons:
@@ -61224,7 +60114,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61236,7 +60125,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61248,7 +60136,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61260,7 +60147,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61272,7 +60158,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61284,7 +60169,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61296,7 +60180,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61308,7 +60191,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61320,7 +60202,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61332,7 +60213,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61344,7 +60224,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61356,7 +60235,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61368,7 +60246,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61380,7 +60257,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61392,7 +60268,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61404,7 +60279,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61416,7 +60290,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61435,7 +60308,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61447,7 +60319,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61459,7 +60330,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61471,7 +60341,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61483,7 +60352,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61495,7 +60363,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61507,7 +60374,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61519,7 +60385,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61535,7 +60400,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61547,7 +60411,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61559,7 +60422,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61571,7 +60433,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61583,7 +60444,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61600,7 +60460,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61612,7 +60471,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61624,7 +60482,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61636,7 +60493,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61648,7 +60504,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61660,7 +60515,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61680,7 +60534,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61692,7 +60545,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61704,7 +60556,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61716,7 +60567,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61728,7 +60578,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61740,7 +60589,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61752,7 +60600,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61764,7 +60611,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61776,7 +60622,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61796,7 +60641,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61808,7 +60652,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61820,7 +60663,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61832,7 +60674,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61844,7 +60685,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61856,7 +60696,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61868,7 +60707,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61880,7 +60718,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61892,7 +60729,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61908,7 +60744,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61920,7 +60755,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61932,7 +60766,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61944,7 +60777,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61956,7 +60788,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61977,7 +60808,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -61989,7 +60819,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62001,7 +60830,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62013,7 +60841,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62025,7 +60852,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62037,7 +60863,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62049,7 +60874,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62061,7 +60885,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62073,7 +60896,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62085,7 +60907,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62111,7 +60932,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62123,7 +60943,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62135,7 +60954,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62147,7 +60965,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62159,7 +60976,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62171,7 +60987,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62183,7 +60998,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62195,7 +61009,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62207,7 +61020,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62219,7 +61031,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62231,7 +61042,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62243,7 +61053,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62255,7 +61064,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62267,7 +61075,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62279,7 +61086,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62309,7 +61115,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62321,7 +61126,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62333,7 +61137,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62345,7 +61148,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62357,7 +61159,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62369,7 +61170,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62381,7 +61181,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62393,7 +61192,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62405,7 +61203,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62417,7 +61214,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62429,7 +61225,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62441,7 +61236,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62453,7 +61247,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62465,7 +61258,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62477,7 +61269,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62489,7 +61280,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62501,7 +61291,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62513,7 +61302,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62525,7 +61313,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62540,7 +61327,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62552,7 +61338,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62564,7 +61349,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62576,7 +61360,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62594,7 +61377,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62606,7 +61388,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62618,7 +61399,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62630,7 +61410,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62642,7 +61421,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62654,7 +61432,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62666,7 +61443,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62683,7 +61459,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62695,7 +61470,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62707,7 +61481,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62719,7 +61492,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62731,7 +61503,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -62743,7 +61514,6 @@
   - item_condition
   - item_material
   - lumber/wood_type
-  - sailboat_parts_side
   - watercraft_type
   - wood_finish
   return_reasons: inherit
@@ -66624,7 +65394,6 @@
   - item_material
   - meter_rim_style
   - meter_type
-  - trim_color
   - watercraft_type
   return_reasons:
   - incompatible
@@ -66645,7 +65414,6 @@
   - item_material
   - meter_rim_style
   - meter_type
-  - trim_color
   - watercraft_type
   return_reasons: inherit
 - id: vp-1-8-7-2-2
@@ -66659,7 +65427,6 @@
   - item_material
   - meter_rim_style
   - meter_type
-  - trim_color
   - watercraft_type
   return_reasons: inherit
 - id: vp-1-8-7-3
@@ -66909,7 +65676,6 @@
   - vp-1-8-7-4-11
   - vp-1-8-7-4-12
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -66929,7 +65695,6 @@
   name: Watercraft Fuel Tanks
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -66945,7 +65710,6 @@
   - vp-1-8-7-4-2-2
   - vp-1-8-7-4-2-3
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -66958,7 +65722,6 @@
   name: Fuel Tank Fitting Kits
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -66971,7 +65734,6 @@
   name: Fuel Tank Mounting Kits
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -66984,7 +65746,6 @@
   name: Fuel Sender Mounting Kits
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -66997,7 +65758,6 @@
   name: Watercraft Fuel Tank Caps
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67014,7 +65774,6 @@
   - vp-1-8-7-4-4-3
   - vp-1-8-7-4-4-4
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67027,7 +65786,6 @@
   name: Marine Fuel Deck Fills
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67040,7 +65798,6 @@
   name: Marine Fuel Fill Spill Guards
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67053,7 +65810,6 @@
   name: Fuel Fill Hoses
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67066,7 +65822,6 @@
   name: Fuel Fill Limit Valves
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67083,7 +65838,6 @@
   - vp-1-8-7-4-5-3
   - vp-1-8-7-4-5-4
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67096,7 +65850,6 @@
   name: Marine Fuel Tank Adapters
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67109,7 +65862,6 @@
   name: Marine Fuel Tank Bulkhead Fittings
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67122,7 +65874,6 @@
   name: Marine Fuel Tank Outlet Fittings
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67135,7 +65886,6 @@
   name: Marine Fuel Tank Quick-Connect Fittings
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67153,7 +65903,6 @@
   - vp-1-8-7-4-6-4
   - vp-1-8-7-4-6-5
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67169,7 +65918,6 @@
   - vp-1-8-7-4-6-1-2
   - vp-1-8-7-4-6-1-3
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67182,7 +65930,6 @@
   name: Fuel Vents
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67195,7 +65942,6 @@
   name: Fuel Vent P-Traps
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67208,7 +65954,6 @@
   name: Fuel Vent Flame Arrestors
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67221,7 +65966,6 @@
   name: Marine Fuel Vent Hoses
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67234,7 +65978,6 @@
   name: Marine Fuel Vent Filters
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67247,7 +65990,6 @@
   name: Marine Fuel-Air Separators
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67260,7 +66002,6 @@
   name: Marine Fuel Vapor Canisters
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67277,7 +66018,6 @@
   - vp-1-8-7-4-7-3
   - vp-1-8-7-4-7-4
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67290,7 +66030,6 @@
   name: Watercraft Fuel Tank Sending Units
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67303,7 +66042,6 @@
   name: Marine Fuel Tank Pickup Assemblies
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67316,7 +66054,6 @@
   name: Marine Fuel Tank Pickup Tubes
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67329,7 +66066,6 @@
   name: Marine Fuel Tank Leak Sensors
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67346,7 +66082,6 @@
   - vp-1-8-7-4-8-3
   - vp-1-8-7-4-8-4
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67359,7 +66094,6 @@
   name: Marine Fuel Tank Anti-Siphon Valves
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67372,7 +66106,6 @@
   name: Marine Fuel Tank Selector Valves
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67385,7 +66118,6 @@
   name: Marine Fuel Tank Crossover Valves
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67398,7 +66130,6 @@
   name: Marine Fuel Tank Vent Valves
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67413,7 +66144,6 @@
   - vp-1-8-7-4-9-1
   - vp-1-8-7-4-9-2
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67426,7 +66156,6 @@
   name: Marine Fuel Tank Mounting Saddles
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67439,7 +66168,6 @@
   name: Marine Fuel Tank Mounting Pads
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67452,7 +66180,6 @@
   name: Portable Fuel Tank Carry Straps
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67465,7 +66192,6 @@
   name: Marine Fuel Tank Covers
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67481,7 +66207,6 @@
   - vp-1-8-7-4-12-2
   - vp-1-8-7-4-12-3
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67494,7 +66219,6 @@
   name: Marine Fuel Tank Gaskets & Seals
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67507,7 +66231,6 @@
   name: Marine Fuel Tank Inspection Plates
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67520,7 +66243,6 @@
   name: Marine Fuel Tank Baffles
   children: []
   attributes:
-  - cap_color
   - color
   - fuel_tank_orientation
   - item_condition
@@ -67896,7 +66618,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -67939,7 +66660,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -67967,7 +66687,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -67995,7 +66714,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68023,7 +66741,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68051,7 +66768,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68079,7 +66795,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68107,7 +66822,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68135,7 +66849,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68166,7 +66879,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68194,7 +66906,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68222,7 +66933,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68250,7 +66960,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68287,7 +66996,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68315,7 +67023,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68343,7 +67050,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68371,7 +67077,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68399,7 +67104,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68427,7 +67131,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68455,7 +67158,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68483,7 +67185,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68511,7 +67212,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68539,7 +67239,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68570,7 +67269,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68598,7 +67296,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68626,7 +67323,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68654,7 +67350,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68686,7 +67381,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68714,7 +67408,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68742,7 +67435,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68770,7 +67462,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68798,7 +67489,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68826,7 +67516,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68854,7 +67543,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68882,7 +67570,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68917,7 +67604,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68945,7 +67631,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -68973,7 +67658,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -69001,7 +67685,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -69029,7 +67712,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -69057,7 +67739,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -69085,7 +67766,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -69113,7 +67793,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -69141,7 +67820,6 @@
   - battery_size
   - battery_type
   - beam_pattern
-  - bezel_color
   - case_color
   - color
   - finish
@@ -69247,7 +67925,6 @@
   children: []
   attributes:
   - color
-  - grip_color
   - item_condition
   - item_material
   - steering_wheel_grip_material
@@ -71129,7 +69806,6 @@
   - upholstery_pattern
   - vehicle_features
   - vehicle_wheel_type
-  - wheel_color
   return_reasons:
   - range
   - performance
@@ -71164,7 +69840,6 @@
   - upholstery_pattern
   - vehicle_features
   - vehicle_wheel_type
-  - wheel_color
   return_reasons: inherit
 - id: vp-2-2-3-1-2
   name: Seated Electric Motor Scooters
@@ -71191,7 +69866,6 @@
   - upholstery_pattern
   - vehicle_features
   - vehicle_wheel_type
-  - wheel_color
   return_reasons: inherit
 - id: vp-2-2-3-2
   name: Non-Electric Motorcycles & Scooters
@@ -72669,7 +71343,6 @@
   - body_color
   - body_pattern
   - compatible_outboard_shaft_length
-  - floor_color
   - floor_type
   - fuel_supply
   - item_condition
@@ -72694,7 +71367,6 @@
   - body_color
   - body_pattern
   - compatible_outboard_shaft_length
-  - floor_color
   - floor_type
   - fuel_supply
   - item_condition
@@ -72711,7 +71383,6 @@
   - body_color
   - body_pattern
   - compatible_outboard_shaft_length
-  - floor_color
   - floor_type
   - fuel_supply
   - item_condition

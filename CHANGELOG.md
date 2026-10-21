@@ -2,13 +2,428 @@
 
 #### 📚 Taxonomy Tree
 
-- Adds 49,686 categories and 4,763 base attributes with closed lists of values. All published attributes, values and category assignments are kept, including Assembly required, Organic certification, the Safety certifications options, the Age restrictions 7+ option and the numeric Ring size, Shoe size and Size options. Existing custom-list entries keep their published relative order, with Other last.
-- Adds the 6+, 15+ and 16+ options to Age restrictions.
-- Keeps return reasons for all existing categories unchanged. New categories inherit the return reasons of their nearest ancestor; for example, the new Fish category under Live Animals offers the size and color reasons.
+Expands the taxonomy with 49,686 new categories and 4,101 new base attributes with closed lists of values.
+
+##### Apparel & Accessories
+
+- Adds 1,881 categories in this vertical.
+- In the Watch Parts & Components area, adds 148 categories, including `Gear Train, Escapement & Regulation Parts`, `Winding, Setting & Automatic-Winding Parts`, `Watch Power & Electronic Parts`, `Watch Band & Bracelet Hardware` and `Complication Movement Parts`. Adds the attributes `AR coating type`, `Buckle type`, `Case back type` and `Crown position` to products in this area.
+- In the Costume Accessories area, adds 98 categories, including `Costume Props`, `Costume Garment & Body Accessories`, `Costume Headpieces`, `Costume Special Effects` and `Costume Jewelry, Neckwear & Adornments`.
+- In the Watch Tools area, adds 78 categories, including `General Watchmaker Bench Tools`, `Watch Cleaning, Polishing & Lubrication Tools`, `Watch Hand, Dial, Crown & Stem Tools`, `Watch Tool Kits` and `Watch Case Assembly Tools`.
+- In the Security Uniform Accessories area, adds 45 categories, including `Uniform Insignia`, `Uniform Headwear & Fittings`, `Duty Belt Systems`, `Uniform Dress & Fit Accessories` and `Duty Equipment Holders & Mounts`.
+- In the Wig Accessories area, adds 42 categories, including `Wig Wearing & Installation Accessories`, `Wig Care & Styling Accessories`, `Wig Storage & Work Supports`, `Wig Construction Materials & Hand Tools` and `Wig Accessory Kits`. Adds the attributes `Hair texture`, `Parting position` and `Wig cap size` to products in this area.
+- In the Clergy Uniforms area, adds 39 categories, including `Liturgical Vestments`, `Clergy Robes`, `Clergy Cloaks`, `Clergy Shirts` and `Religious Habits`.
+- In the Kilt & Highland Wear Accessories area, adds 39 categories, including `Belt, Waist & Garment-Support Accessories`, `Kilt Hose & Footwear Accessories`, `Highland Bonnets & Accessories`, `Highland Neckwear` and `Plaids, Sashes & Wraps`.
+- In the Leis area, adds 31 categories, including `Flower Leis`, `Shell Leis`, `Foliage Leis`, `Beaded Leis` and `Money Leis`. Adds the attribute `Lei style` to products in this area.
+- In the Jewelry Sets area, adds 21 categories, including `Body Jewelry Sets`, `Bracelet & Ring Sets`, `Bracelet Sets`, `Brooch Sets` and `Earring & Bracelet Sets`. Adds the attributes `Birth month`, `Bracelet clasp type`, `Bracelet material` and `Chain material` to products in this area.
+- In the Military Coats & Jackets area, adds 20 categories, including `Battledress Blouses`, `Deck Jackets`, `Dispatch Rider Jackets`, `Eisenhower Jackets` and `Field Jackets`. Adds the attribute `Garment length category` to products in this area.
+- In the Kufis & Topis area, adds 18 categories, including `Balochi Caps`, `Chechias`, `East African Kofia Caps`, `Fila Caps` and `Hausa Hula Caps`.
+- Adds another 1,302 categories across 305 smaller areas in this vertical.
+- Adds 1,438 attribute assignments across 418 existing categories in this vertical.
+
+##### Arts & Entertainment
+
+- Adds 4,658 categories in this vertical.
+- In the Sewing Machine Replacement Parts area, adds 151 categories, including `Electrical & Control Parts`, `Thread Supply & Tension Parts`, `Drive & Motion Parts`, `Housing & Support Parts` and `Needle & Presser Parts`. Adds the attribute `Side` to products in this area.
+- In the Model Train Accessories area, adds 138 categories, including `Model Train Rolling Stock Parts`, `Power, Control & Automation`, `Tools, Cleaning & Maintenance`, `Model Train Scenery` and `Structures & Trackside Infrastructure`. Adds the attribute `Rail code` to products in this area.
+- In the Scale Model Accessories area, adds 135 categories, including `Scale Model Detail & Upgrade Parts`, `Scale Model Painting & Finishing Supplies`, `Scale Model Tools & Workbench Equipment`, `Scale Model Assembly & Scratch-Building Supplies` and `Scale Model Diorama Structures & Scene Details`.
+- In the Guitar Fittings & Parts area, adds 114 categories, including `String Support, Anchoring & Vibrato Parts`, `Body & Luthiery Parts`, `Pickups & Transducers`, `External Plates, Covers & Interface Hardware` and `Mounting, Setup & Playing Hardware`. Adds the attributes `Aging level`, `Audio channel type`, `Control layout` and `Floyd rout type` to products in this area.
+- In the Jewelry Findings area, adds 111 categories, including `Closing & Adjustment Findings`, `Joining & Linking Findings`, `Customizable Jewelry Bases`, `Wear Attachment Findings` and `Strand & End Finishing Findings`. Adds the attributes `Earring backing type`, `Loop orientation` and `Setting style` to products in this area.
+- In the Crochet Patterns area, adds 91 categories, including `Home Decor Crochet Patterns`, `Bag Crochet Patterns`, `Fashion Accessory Crochet Patterns`, `Apparel Crochet Patterns` and `Toy Crochet Patterns`. Adds the attribute `Crochet terminology` to products in this area.
+- In the Sewing Notions & Fasteners area, adds 73 categories, including `Sewing Tools & Aids`, `Garment Trims & Bindings`, `Garment Fasteners & Closures`, `Garment Elastic, Cord & Strap Components` and `Garment Structure & Shaping Supplies`.
+- In the Party Favors area, adds 72 categories, including `Toy Favors`, `Self-Care Favors`, `Stationery Favors`, `Home Decor Favors` and `Costume Accessory Favors`.
+- In the Brass Instrument Replacement Parts area, adds 66 categories, including `Valve Mechanism Parts`, `Bell, Brace & Tubing Parts`, `Slide Parts`, `Mouthpiece & Interface Parts` and `Seals & Cushions`.
+- In the Scale Model Kits area, adds 63 categories, including `Ship Model Kits`, `Building Model Kits`, `Automotive Model Kits`, `Military Vehicle Model Kits` and `Diorama Model Kits`. Adds the attributes `Instruction language`, `Kit completeness` and `Paint status` to products in this area.
+- In the First Day Covers area, adds 62 categories, including `European First Day Covers`, `Asian First Day Covers`, `African First Day Covers`, `Americas First Day Covers` and `Oceania & Pacific Islands First Day Covers`.
+- In the Home Decor Sewing Patterns area, adds 59 categories, including `Kitchen Accessory Sewing Patterns`, `Pillow Sewing Patterns`, `Bedding Sewing Patterns`, `Hanging Organizer Sewing Patterns` and `Window Treatment Sewing Patterns`. Adds the attribute `Printable page size` to products in this area.
+- In the Pins area, adds 57 categories, including `Winter Sports Pins`, `Martial Arts Pins`, `Motorsports Pins`, `Cycling Pins` and `Roller Sports Pins`.
+- In the Ships area, adds 52 categories, including `Warship Models`, `Workboat Models`, `Cargo Ship Models`, `Naval Auxiliary Ship Models` and `Passenger Ship Models`. Adds the attribute `Hull configuration` to products in this area.
+- In the Cabochons area, adds 50 categories, including `Glass Cabochons`, `Natural Stone Cabochons`, `Fossil Cabochons`, `Shell Cabochons` and `Plastic Cabochons`. Adds the attribute `Drilling` to products in this area.
+- In the Knitting Patterns area, adds 42 categories, including `Accessory Knitting Patterns`, `Home & Living Knitting Patterns`, `Garment Knitting Patterns` and `Toy Knitting Patterns`.
+- In the Bottling & Packaging Supplies area, adds 39 categories, including `Beverage Container Closures & Sealing Supplies`, `Labeling & Package Finishing Supplies`, `Filling & Transfer Supplies`, `Beverage Container Carriers & Boxes` and `Beverage Containers`.
+- In the Fruit Wine Making Supplies area, adds 39 categories, including `Fermentation Supplies`, `Fruit Processing Supplies`, `Testing & Adjustment Supplies`, `Finishing & Filtration Supplies` and `Cleaning & Sanitation Supplies`.
+- In the Accessory Sewing Patterns area, adds 39 categories, including `Neckwear Sewing Patterns`, `Headwear Sewing Patterns`, `Fitted Case & Cover Sewing Patterns`, `Bag Sewing Patterns` and `Arm Warmer Sewing Patterns`. Adds the attribute `Printable page size` to products in this area.
+- In the Autographs area, adds 36 categories, including `Autographed Sports Equipment`, `Autographed Audio Recordings`, `Autographed Books`, `Autographed Dolls` and `Autographed Figures`.
+- In the Fermentation Equipment area, adds 36 categories, including `Fermentation Testing & Monitoring Equipment`, `Fermentation Transfer, Sampling & Filtration Equipment`, `Fermentation Vessels`, `Fermentation Venting & Pressure Control Equipment` and `Fermentation Ingredient Handling Equipment`. Adds the attribute `Power plug region` to products in this area.
+- In the Top Fiber area, adds 35 categories, including `Plant Fiber Tops`, `Blended Fiber Tops`, `Animal Fiber Tops`, `Regenerated Cellulose Fiber Tops` and `Synthetic Fiber Tops`.
+- In the Wooden Toy Craft Kits area, adds 34 categories, including `Wooden Vehicle Craft Kits`, `Wooden Toy Figure Craft Kits`, `Wooden Game Craft Kits`, `Wooden Boomerang Craft Kits` and `Wooden Carousel Craft Kits`.
+- In the Craft Foam & Styrofoam area, adds 34 categories, including `Foam Craft Shapes`, `Floral Foam`, `Craft Foam Blocks`, `Craft Foam Sheets` and `Foam Rods`.
+- In the Rocks area, adds 32 categories, including `Sedimentary Rocks`, `Metamorphic Rocks`, `Impact Rocks`, `Meteorites` and `Igneous Rocks`.
+- In the Saxophone Small Parts area, adds 32 categories, including `Saxophone Fastening & Adjustment Parts`, `Saxophone Keywork & Finger-Control Parts`, `Saxophone Fit, Cushioning & Travel-Control Parts`, `Saxophone Protection & Structural-Support Parts` and `Saxophone Hand-Support Parts`.
+- In the Magic & Novelties area, adds 25 categories, including `Ball Magic Tricks`, `Balloon Magic Tricks`, `Calculator Magic Tricks`, `Candle Magic Props` and `Card Magic Tricks`. Adds the attribute `Dominant hand` to products in this area.
+- Adds another 2,941 categories across 611 smaller areas in this vertical.
+- Adds 1,415 attribute assignments across 778 existing categories in this vertical.
+
+##### Animals & Pet Supplies
+
+- Adds 1,230 categories in this vertical.
+- In the Small Animal Habitat Accessories area, adds 62 categories, including `Small Animal Climbing Structures`, `Small Animal Passage & Burrowing Structures`, `Small Animal Feeding & Watering Accessories`, `Small Animal Manipulation & Foraging Toys` and `Small Animal Protective Covers & Guards`.
+- In the Reptile & Amphibian Habitat Accessories area, adds 60 categories, including `Terrarium Hardscape & Activity Structures`, `Terrarium Climate & Humidity Equipment`, `Terrarium Enclosure Hardware`, `Reptile & Amphibian Feeding & Watering Accessories` and `Terrarium Accessory Kits`. Adds the attribute `Suitable habitat type` to products in this area.
+- In the Dog Kennel & Run Accessories area, adds 29 categories, including `Dog Kennel Climate & Shelter Accessories`, `Dog Kennel Hardware & Protection Accessories`, `Dog Kennel Panels & Access Components`, `Dog Kennel & Run Accessory Kits` and `Dog Kennel Flooring & Comfort Accessories`.
+- In the Reptile & Amphibian Habitat Heating & Lighting area, adds 27 categories, including `Reptile & Amphibian Habitat Heaters`, `Habitat Controls & Monitors`, `Habitat Heating & Lighting Kits`, `Terrarium Lamp Fixtures` and `Terrarium Lights`. Adds the attributes `Bulb fitting type` and `Switch type` to products in this area.
+- In the Pet Door Accessories area, adds 25 categories, including `Pet Door Accessory Kits`, `Pet Door Electronic Power & Drive Parts`, `Pet Door Security & Access Control Accessories`, `Pet Door Flap & Weather Protection Accessories` and `Pet Door Installation & Fit Accessories`. Adds the attributes `Compatible pet door type` and `Flap location` to products in this area.
+- In the Live Animals area, adds 24 categories, including `Crustaceans`, `Corals`, `Fish`, `Birds` and `Clams`. Adds the attributes `Animal origin`, `Culture stage`, `Life stage` and `Sex` to products in this area.
+- In the Pain Relievers area, adds 24 categories, including `NSAID Pain Relievers`, `Opioid Analgesics`, `Gabapentinoid Analgesics`, `Local Anesthetic Pain Relievers` and `Monoclonal Antibody Analgesics`.
+- In the Pet Carrier & Crate Accessories area, adds 22 categories, including `Pet Carrier & Crate Enclosure Structure Components`, `Pet Carrier & Crate Accessory Kits`, `Pet Carrier & Crate Comfort & Protection Accessories`, `Pet Carrier & Crate Feeding & Ventilation Accessories` and `Pet Carrier & Crate Mobility & Securement Accessories`.
+- Adds another 957 categories across 216 smaller areas in this vertical.
+- Adds 560 attribute assignments across 262 existing categories in this vertical.
+
+##### Business & Industrial
+
+- Adds 1,376 categories in this vertical.
+- In the Mining & Quarrying Supplies area, adds 78 categories, including `Drilling, Exploration & Testing Supplies`, `Blasting Supplies`, `Conveying & Material Transfer Supplies`, `Mine Safety & Communications Supplies` and `Equipment Service & Slurry Handling Supplies`. Adds the attribute `Shank taper` to products in this area.
+- In the Automation Control Modules area, adds 58 categories, including `Communication & Data Integration Modules`, `Field I/O Modules`, `Process Measurement Modules`, `Safety Control Modules` and `System Monitoring & Timing Modules`. Adds the attributes `Input type` and `Output type` to products in this area.
+- In the Emergency & Exit Signs area, adds 51 categories, including `Emergency Equipment Signs`, `Exit Signs`, `Emergency Procedure Signs`, `Emergency Door Operation Signs` and `Emergency Call Point Signs`. Adds the attributes `Alert mode`, `Arrow direction`, `Portrait/landscape orientation` and `Reflective sheeting grade` to products in this area.
+- In the Surgical Supplies area, adds 51 categories, including `Surgical Instruments`, `Surgical Instrument Reprocessing Supplies`, `Surgical Implants`, `Surgical Instrument Sets` and `Absorbable Hemostatic Sponges`.
+- In the Raw Structural Components area, adds 37 categories, including `Structural Bars`, `Structural Channels`, `Structural Plates`, `Structural Tubes` and `Structural Beams`. Adds the attributes `Connection system`, `Hole pattern`, `Material gauge` and `Pipe schedule` to products in this area.
+- In the Diagnostic Equipment area, adds 37 categories, including `Physical Examination Instruments`, `Veterinary Diagnostic Test Kits`, `Patient Monitors`, `Diagnostic Analyzers` and `Diagnostic Imaging Systems`.
+- In the Retail Display Props & Models area, adds 25 categories, including `Scenic Display Props`, `Body Display Forms`, `Retail Display Replicas`, `Display Arches` and `Display Barrels`. Adds the attributes `Base style` and `Portrait/landscape orientation` to products in this area.
+- In the Medical Bedding area, adds 23 categories, including `Medical Mattresses`, `Medical Mattress Overlays`, `Medical Blankets`, `Exam Table Sheets` and `Hospital Bedspreads`.
+- Adds another 1,016 categories across 254 smaller areas in this vertical.
+- Adds 929 attribute assignments across 337 existing categories in this vertical.
+
+##### Baby & Toddler
+
+- Adds 448 categories in this vertical.
+- In the Baby Transport Replacement Parts area, adds 66 categories, including `Baby Transport Seating & Body Support Parts`, `Baby Transport Restraint & Safety Parts`, `Baby Transport Handle, Bar & Carry Parts`, `Baby Transport Wheel & Running Gear Parts` and `Baby Transport Canopy & Enclosure Parts`. Adds the attributes `Part position` and `Side` to products in this area.
+- In the Musical Toys area, adds 30 categories, including `Baby Drums & Percussion Instruments`, `Baby Pianos & Keyboards`, `Baby Microphones`, `Baby Musical Activity Cubes` and `Baby Musical Activity Tables`.
+- In the Baby Health & Grooming Kits area, adds 14 categories, including `Baby Scalp Care Kits`, `Baby Bath Brush & Sponge Sets`, `Baby Ear Care Kits`, `Baby First Aid Kits` and `Baby Hair Clipper Kits`.
+- Adds another 338 categories across 105 smaller areas in this vertical.
+- Adds 176 attribute assignments across 111 existing categories in this vertical.
+
+##### Cameras & Optics
+
+- Adds 1,056 categories in this vertical.
+- In the Telescope Accessories area, adds 103 categories, including `Optical Train & Focusing Accessories`, `Mount, Support & Tracking Accessories`, `Finding, Alignment & Field Accessories`, `Imaging & Guiding Accessories` and `Power, Control & Connectivity Accessories`. Adds the attribute `Power supply type` to products in this area.
+- In the Camera Stabilizers & Supports area, adds 54 categories, including `Camera Support Kits`, `Camera Mounting Systems`, `Static Camera Supports`, `Camera Movement Systems` and `Camera Stabilization Systems`. Adds the attributes `Battery mount type` and `Compatible phone model` to products in this area.
+- In the Studio Stand & Mount Accessories area, adds 50 categories, including `Mounting & Interface Accessories`, `Installed & Rail Mounting Accessories`, `Clamping & Surface Anchoring Accessories`, `Backdrop & Panel Support Accessories` and `Positioning Arms & Extensions`.
+- In the Surveillance Camera Accessories area, adds 46 categories, including `Housing & Physical Protection Accessories`, `Camera Electronics & Recording Accessories`, `Mounting & Installation Accessories`, `Power & Charging Accessories` and `Signal & Network Accessories`. Adds the attribute `Compatible camera type` to products in this area.
+- In the Underwater Camera Housing Accessories area, adds 46 categories, including `Underwater Camera Housing Lighting & Connectivity Accessories`, `Underwater Camera Housing Rigging & Handling Accessories`, `Underwater Camera Housing Optical Accessories`, `Underwater Camera Housing Body Parts & Protectors` and `Underwater Camera Housing Control & Viewing Accessories`. Adds the attributes `Flat port length` and `Port mount type` to products in this area.
+- In the Camera Accessory Sets area, adds 42 categories, including `Camera Lens & Optical Accessory Sets`, `Camera Care & Repair Sets`, `Camera Power Accessory Sets`, `Camera Production Signal & Connectivity Sets` and `Camera Flash & Lighting Accessory Sets`. Adds the attributes `Compatible phone model` and `Compatible sensor format` to products in this area.
+- In the Studio Light & Flash Accessories area, adds 42 categories, including `Light Modifiers`, `Light Modifier Kits`, `Power Accessories`, `Cases & Protective Accessories` and `Replacement Light Components`.
+- Adds another 673 categories across 114 smaller areas in this vertical.
+- Adds 137 attribute assignments across 71 existing categories in this vertical.
+
+##### Electronics
+
+- Adds 5,036 categories in this vertical.
+- In the Breakout Boards area, adds 95 categories, including `Connector Breakout Boards`, `Sensor Breakout Boards`, `Communication Breakout Boards`, `IC Package Adapter Boards` and `Power Management Breakout Boards`. Adds the attribute `Assembly level` to products in this area.
+- In the Sensors area, adds 84 categories, including `Gas & Air Quality Sensors`, `Motion & Orientation Sensors`, `Biometric Sensors`, `Moisture & Humidity Sensors` and `Optical & Vision Sensors`.
+- In the 3D Printer Replacement Parts area, adds 82 categories, including `3D Printer Motion & Drive Parts`, `3D Printer Electronics, Controls & Wiring Parts`, `3D Printer Material Delivery & Deposition Parts`, `3D Printer Build Platform Parts` and `3D Printer Resin Handling & Exposure Parts`. Adds the attributes `Printer axis position` and `Side` to products in this area.
+- In the Trusses & Rigging Hardware area, adds 77 categories, including `Slings & Suspension Hardware`, `Ground Support & Stability`, `Equipment Mounts & Supports`, `Structural Trusses` and `Truss Connectors`.
+- In the Home Game Console Replacement Parts area, adds 73 categories, including `Home Game Console Controller Parts`, `Home Game Console Enclosure Parts`, `Home Game Console Optical Drive Parts`, `Home Game Console Port & Connector Parts` and `Home Game Console Power & System Control Parts`.
+- In the Water Cooling Components area, adds 61 categories, including `Connections, Flow Control & Service Components`, `Mounting & Protective Components`, `Tubing & Tubing Support Components`, `Water Blocks` and `Coolant Routing & Distribution Components`.
+- In the Audio Replacement Parts area, adds 57 categories, including `Media Drive, Transport & Tracking Parts`, `Controls & Display Parts`, `Acoustic Transduction & Speaker Parts`, `Housing, Mounting & Closure Parts` and `Audio Repair Kits`.
+- In the Portable Game Console Replacement Parts area, adds 55 categories, including `Controls & Input Parts`, `Housing & Mechanical Parts`, `Portable Console Repair Kits`, `Display & Screen Parts` and `Ports, Slots & Readers`. Adds the attribute `Side` to products in this area.
+- In the Optoelectronic Components area, adds 51 categories, including `Optical Sensors`, `Display Components`, `Light-Emitting Components`, `Optical Detectors` and `Optical Communication Components`.
+- In the Printer Replacement Cables area, adds 51 categories, including `Printer Paper Handling Cables`, `Printer Laser Imaging Cables`, `Printer Control & Electronics Cables`, `Printer Printhead & Carriage Cables` and `Printer Finisher Cables`.
+- In the General Purpose Batteries area, adds 49 categories, including `Button Cell Batteries`, `Cylindrical Batteries`, `Lantern Batteries`, `2CR5 Batteries` and `9V Batteries`. Adds the attribute `Battery tab configuration` to products in this area.
+- In the Fiber Optic Components area, adds 48 categories, including `Fiber Pathway & Cable Management Components`, `Fiber Distribution & Enclosure Components`, `Fiber Interconnect & Termination Components`, `Passive Optical Signal Components` and `Fiber Splicing & Protection Components`. Adds the attribute `Connector polish type` to products in this area.
+- In the Video Conferencing Accessories area, adds 46 categories, including `Connectivity & Signal Accessories`, `Mounting & Positioning Accessories`, `Room Control & Scheduling Accessories`, `Video Conferencing Kits` and `Conference Audio Accessories`.
+- In the Laptop Replacement Cables area, adds 45 categories, including `Port & I/O Cables`, `Input & Control Cables`, `Power Subsystem Cables`, `Reader Cables` and `Audio Cables`.
+- In the Mobile Phone Buttons & Flex Cables area, adds 44 categories, including `Button & Keypad Parts`, `Audio & Haptic Flex Cables`, `Antenna Flex Cables`, `Board & Mechanism Interconnects` and `Power & Charging Flex Cables`. Adds the attributes `Compatible phone brand` and `Compatible phone model` to products in this area.
+- In the Port & Dust Plugs area, adds 42 categories, including `RF Connector Dust Caps`, `Fiber-Optic Port Dust Caps`, `D-Sub Port Dust Covers`, `USB Port Dust Plugs` and `Optical Transceiver Cage Dust Plugs`. Adds the attribute `Compatible port type` to products in this area.
+- In the Voltage Regulators & Power Management ICs area, adds 39 categories, including `Battery Management ICs`, `Gate Driver ICs`, `Switching Voltage Regulator ICs`, `LED Driver ICs` and `Power Switch ICs`.
+- In the Tablet Computer Accessories area, adds 39 categories, including `Tablet Computer Carrying & Handling Accessories`, `Tablet Computer Cases & Covers`, `Tablet Computer Charging & Connectivity Accessories`, `Tablet Computer Input & Control Accessories` and `Tablet Computer Kiosk & Security Hardware`.
+- In the Virtual Reality Headset Accessories area, adds 37 categories, including `VR Headset Exterior Protection Accessories`, `VR Headset Power & Charging Accessories`, `VR Headset Cables & Connectivity Accessories`, `VR Headset Facial Interface & Head Support Accessories` and `VR Headset Cleaning & Sanitizing Accessories`.
+- In the Antenna Grounding & Installation Hardware area, adds 37 categories, including `Grounding & Bonding Hardware`, `Antenna Guying & Tower Support Hardware`, `Antenna Installation Kits`, `Antenna Feedline Support Hardware` and `Antenna Weatherproofing & Cable Entry Hardware`.
+- In the Battery Terminals & Connectors area, adds 37 categories, including `Plug-In Battery Connectors`, `Battery Contacts`, `Battery Post & Cable Termination`, `Battery & Cell Interconnects` and `Battery Power Distribution Hardware`. Adds the attributes `Battery mount type`, `Cable connector type` and `Polarity` to products in this area.
+- In the Jukebox Parts & Accessories area, adds 36 categories, including `Jukebox Mechanism & Motion Parts`, `Jukebox Audio, Power & Electronic Parts`, `Jukebox Lighting & Visual-Effect Parts`, `Jukebox Playback & Media-Handling Parts` and `Jukebox Selection & Control Parts`.
+- In the Logic Gate & Decoder ICs area, adds 34 categories, including `Logic Gate ICs`, `Encoding, Decoding & Code Conversion ICs`, `Arithmetic & Comparator Logic ICs`, `Logic Buffer & Bus Interface ICs` and `Flip-Flop & Latch ICs`.
+- In the Computer Accessory Sets area, adds 33 categories, including `Computer Connectivity Kits`, `PC Building & Repair Kits`, `Storage Drive Installation & Migration Kits`, `Computer Audio & Video Accessory Sets` and `Computer Cable Kits`.
+- In the Printer Rollers area, adds 31 categories, including `Media Transport Rollers`, `Media Grip & Support Rollers`, `Output & Finishing Rollers`, `Alignment & Guidance Rollers` and `Cleaning Rollers`.
+- In the Headphone Replacement Parts area, adds 31 categories, including `Headphone Structural & Fit Parts`, `Headphone Signal Cables & Connectors`, `Headphone Speaker & Acoustic Parts`, `Headphone Power & Charging Parts` and `Headphone Controls & Circuit Parts`. Adds the attributes `Headphone connector type` and `Side` to products in this area.
+- In the Dust Covers area, adds 30 categories, including `Audio Playback & Capture Equipment Dust Covers`, `Music Production & Performance Equipment Dust Covers`, `Printer & Office Machine Dust Covers`, `Security & Network Equipment Dust Covers` and `Gaming & Simulation Equipment Dust Covers`. Adds the attributes `Compatible phone model` and `Compatible port type` to products in this area.
+- In the Cable Tray Accessories area, adds 30 categories, including `Cable Tray Supports & Mounting`, `Cable Tray Grounding & Bonding`, `Cable Tray Run Fittings`, `Cable Routing & Separation Accessories` and `Cable Tray Protection & Closure`.
+- In the Flash Memory Cards area, adds 30 categories, including `CFexpress Cards`, `Memory Stick Cards`, `MultiMediaCards`, `PCMCIA Flash Cards` and `SD Cards`. Adds the attribute `Video speed class` to products in this area.
+- Adds another 3,632 categories across 745 smaller areas in this vertical.
+- Adds 653 attribute assignments across 354 existing categories in this vertical.
+
+##### Food & Beverages
+
+- Adds 3,547 categories in this vertical.
 - Renames the `fb` vertical from `Food, Beverages & Tobacco` to `Food & Beverages`. Tobacco Products remains under `fb-3`; category IDs and parent relationships stay unchanged.
-- Removes the trailing period from the English name of the `dairy_heat_treatment` attribute (`Dairy heat treatment.` becomes `Dairy heat treatment`).
-- Refreshes category, attribute, and value translations in 31 languages, including Hindi. This includes changes to existing translated labels.
-- Adds Google mappings for 49,396 new categories using their nearest published ancestor. Another 290 new categories remain unmapped within the existing Services and Cannabis scopes. Existing mappings are unchanged.
+- In the Flour area, adds 69 categories, including `Legume Flours`, `Grain Flours`, `Nut Flours`, `Root & Tuber Flours` and `Seed Flours`. Adds the attribute `Flour type` to products in this area.
+- In the Chips area, adds 66 categories, including `Vegetable Chips`, `Fruit Chips`, `Grain Chips`, `Legume Chips` and `Bread Chips`. Adds the attribute `Edible oil type` to products in this area.
+- In the Prepared Desserts & Sweets area, adds 64 categories, including `Custard Desserts`, `Sponge Puddings`, `Dessert Jellies`, `Sweet Fritters` and `Sweet Pancakes`. Adds the attribute `Tray size` to products in this area.
+- In the Cooking Pastes & Purees area, adds 63 categories, including `Aromatic Pastes`, `Stock Pastes`, `Nut Pastes`, `Seafood Pastes` and `Vegetable Purees`.
+- In the Baking Mixes area, adds 57 categories, including `Bread Mixes`, `Cake Mixes`, `Cookie Mixes`, `Baked Pudding Mixes` and `Dessert Bar Mixes`.
+- In the Beef area, adds 52 categories, including `Beef Steaks`, `Beef Offal`, `Beef Roasts`, `Beef Bones` and `Beef Briskets`. Adds the attributes `Aging method`, `Beef grade`, `Country of origin` and `Fat trim` to products in this area.
+- In the Fresh & Frozen Seafood area, adds 46 categories, including `Fish`, `Mollusks`, `Crustaceans` and `Echinoderms`. Adds the attributes `Country of origin` and `Preparation method` to products in this area.
+- In the Freeze-Dried Fruit Snacks area, adds 46 categories, including `Freeze-Dried Berry Snacks`, `Freeze-Dried Citrus Snacks`, `Freeze-Dried Cherry Snacks`, `Freeze-Dried Melon Snacks` and `Freeze-Dried Apple Snacks`.
+- In the Fruit Pulps & Purées area, adds 44 categories, including `Berry Pulps & Purées`, `Citrus Fruit Pulps & Purées`, `Orchard Stone Fruit Pulps & Purées`, `Apple Pulps & Purées` and `Banana Pulps & Purées`.
+- In the Food Acids & pH Regulators area, adds 42 categories, including `Phosphate Salts`, `Organic Food Acids`, `Food-Grade Carbonates`, `Food-Grade Hydroxides` and `Acetate Salts`. Adds the attribute `Form` to products in this area.
+- In the Prepared Dumplings & Buns area, adds 40 categories, including `Prepared Dumplings`, `Filled Pastries` and `Prepared Buns`.
+- In the Pork area, adds 39 categories, including `Pork Offal`, `Pork Bones`, `Pork Shoulders`, `Ground Pork` and `Pork Bellies`. Adds the attribute `Country of origin` to products in this area.
+- In the Mushrooms area, adds 38 categories, including `Oyster Mushrooms`, `Chanterelle Mushrooms`, `Shimeji Mushrooms`, `Boletes` and `Bear's Head Mushrooms`. Adds the attributes `Mushroom size` and `Vegetable grade` to products in this area.
+- In the Canned Seafood area, adds 38 categories, including `Canned Fish` and `Canned Shellfish`. Adds the attribute `Country of origin` to products in this area.
+- In the Bison area, adds 38 categories, including `Bison Steaks`, `Bison Roasts`, `Bison Organ Meats`, `Bison Ribs` and `Bison Briskets`.
+- In the Bakery Assortments area, adds 37 categories, including `Pastry Assortments`, `Cookie Assortments`, `Cake Assortments`, `Bread Assortments` and `Cracker Assortments`.
+- In the Juices area, adds 35 categories, including `Fruit Juices`, `Vegetable Juices` and `Fruit & Vegetable Juice Blends`. Adds the attributes `Consistency level` and `Country of origin` to products in this area.
+- In the Smoked Seafood area, adds 35 categories, including `Smoked Fish`, `Smoked Mollusks` and `Smoked Crustaceans`.
+- In the Chicken area, adds 34 categories, including `Chicken Offal`, `Chicken Kebabs`, `Chicken Wings`, `Chicken Backs` and `Chicken Breasts`.
+- In the Dried Tropical Fruits area, adds 33 categories, including `Dried Tropical Berries`, `Dried Tropical Citrus Fruits`, `Dried Avocados`, `Dried Bananas` and `Dried Coconuts`.
+- In the Medical Cannabis area, adds 32 categories, including `Medical Cannabis Topicals`, `Medical Cannabis Concentrates`, `Medical Cannabis Tablets`, `Medical Cannabis Sprays` and `Medical Cannabis Chewing Gums`.
+- Adds another 2,599 categories across 443 smaller areas in this vertical.
+- Adds 653 attribute assignments across 391 existing categories in this vertical.
+
+##### Furniture
+
+- Adds 1,079 categories in this vertical.
+- In the Chair Replacement Parts area, adds 58 categories, including `Seating & Back Support Parts`, `Motion, Lift & Recline Parts`, `Body Support & Convenience Parts`, `Power & Control Parts` and `Frame & Base Parts`. Adds the attribute `Left/right orientation` to products in this area.
+- In the Desk Parts & Accessories area, adds 53 categories, including `Desk Structural Components`, `Desk Storage & Organization`, `Desk Assembly & Mounting Hardware`, `Desk Cable Management` and `Desk Panels & Privacy Screens`. Adds the attribute `Furniture leg type` to products in this area.
+- In the Outdoor Furniture Replacement Parts area, adds 42 categories, including `Outdoor Furniture Connection Hardware`, `Outdoor Furniture Motion & Adjustment Parts`, `Outdoor Tabletop Parts`, `Outdoor Furniture Structural Parts` and `Outdoor Furniture Seat Support Parts`.
+- In the Outdoor Furniture Care & Maintenance area, adds 30 categories, including `Outdoor Furniture Repair Hardware & Components`, `Outdoor Furniture Surface Treatments`, `Outdoor Chair Seat Repair Supplies`, `Outdoor Furniture Maintenance Kits` and `Outdoor Furniture Cleaners`.
+- In the Office Chair Accessories area, adds 27 categories, including `Office Chair Base, Mobility & Control Parts`, `Office Chair Seat, Back & Arm Parts`, `Office Chair Covers`, `Chair-Mounted Work Accessories` and `Office Chair Comfort & Climate Accessories`. Adds the attributes `Compatible arm type`, `Fill material`, `Side` and `Suitable for floor type` to products in this area.
+- In the Room Divider Accessories area, adds 16 categories, including `Room Divider Panel & Finishing Accessories`, `Room Divider Mounting & Connection Hardware`, `Room Divider Stabilizers & Supports`, `Room Divider Track & Hanging Hardware` and `Room Divider Installation Kits`.
+- In the Outdoor Furniture Covers area, adds 16 categories, including `Outdoor Seating Furniture Covers`, `Hammock Covers`, `Outdoor Bar Covers`, `Outdoor Furniture Set Covers` and `Outdoor Kitchen Cabinet Covers`. Adds the attribute `Corner orientation` to products in this area.
+- Adds another 837 categories across 236 smaller areas in this vertical.
+- Adds 1,422 attribute assignments across 329 existing categories in this vertical.
+
+##### Gift Cards
+
+- Adds 2 categories in this vertical.
+- In the Gift Cards area, adds 2 categories, including `Closed-Loop Gift Cards` and `Open-Loop Gift Cards`. Adds the attributes `Gift card format`, `Redemption channel` and `Redemption country/region` to products in this area.
+- Adds 7 attribute assignments across 1 existing category in this vertical.
+
+##### Hardware
+
+- Adds 4,666 categories in this vertical.
+- In the Welding Accessories area, adds 189 categories, including `Welding Safety & Worksite Protection`, `Welding Torch & Gun Components`, `Welding Gas-Supply Components`, `Welding Workholding & Joint Setup Equipment` and `Specialized Welding-Process Tooling`. Adds the attributes `Burner tip type`, `Contact tip style`, `Contact tip thread size` and `DINSE connector size` to products in this area.
+- In the Fence & Gate Accessories area, adds 136 categories, including `Gate Automation & Barrier Components`, `Electric Fence Components`, `Fence Post, Rail & Panel Hardware`, `Fence Add-Ons & Retrofits` and `Fence Wire, Mesh & Cable Hardware`. Adds the attributes `Compatible fence type`, `Compatible post type`, `Handing` and `Material gauge` to products in this area.
+- In the Generator Accessories area, adds 130 categories, including `Generator Accessory Kits`, `Generator Fuel & Intake Accessories`, `Generator Controls & Monitoring Accessories`, `Generator Alternator & Electrical Generation Parts` and `Generator Starting & Ignition Parts`.
+- In the Airbrush Accessories area, adds 91 categories, including `Paint Feed Components`, `Air Line & Pressure Components`, `Needle & Trigger Components`, `Airbrush Accessory Kits` and `Cleaning & Maintenance Accessories`. Adds the attribute `Spray system` to products in this area.
+- In the Gas Detector Accessories area, adds 69 categories, including `Replacement Gas Sensors`, `Gas Sampling Components`, `Calibration Delivery Components`, `Gas Detector Accessory Kits` and `Gas Detector Carriers`.
+- In the Flashlight Accessories area, adds 62 categories, including `Mounting & Positioning Accessories`, `Light Source & Front Optics Components`, `Body & Sealing Components`, `Carry, Retention & Storage Accessories` and `Beam Modification Attachments`. Adds the attributes `Bulb base type` and `Mount side` to products in this area.
+- In the Table Saw Accessories area, adds 61 categories, including `Table Saw Repair Parts`, `Table Saw Cutting Guides & Jigs`, `Table Saw Safety & Workpiece Control Accessories`, `Table Saw Cutting & Blade Accessories` and `Table Saw Fence Accessories`.
+- In the Well Supplies area, adds 60 categories, including `Well Construction & Wellheads`, `Well Water Storage & Pressure Equipment`, `Pump Installation & Well Service Equipment`, `Pump Power & Controls` and `Water Extraction Equipment`. Adds the attribute `Tank orientation` to products in this area.
+- In the Measuring Scale Accessories area, adds 58 categories, including `Scale Installation & Support Accessories`, `Scale Controls & Displays`, `Scale Load Handling Accessories`, `Scale Sensing & Signal Accessories` and `Scale Accessory Kits`. Adds the attribute `Measurement system` to products in this area.
+- In the Miter Saw Accessories area, adds 56 categories, including `Miter Saw Motor, Drive & Electrical Components`, `Miter Saw Mounting, Support & Transport Accessories`, `Miter Saw Angle Control & Indexing Components`, `Miter Saw Blade & Cutting Interface Accessories` and `Miter Saw Structural & Motion Components`.
+- In the Gutter Accessories area, adds 53 categories, including `Gutter & Downspout Flow Fittings`, `Gutter Mounting & Protection`, `Gutter Debris & Pest Control`, `Downspout Discharge Accessories` and `Gutter Accessory Kits`. Adds the attributes `Compatible gutter style` and `Side` to products in this area.
+- In the Band Saw Accessories area, adds 52 categories, including `Band Saw Drive, Wheel & Control Parts`, `Band Saw Blade Care & Coolant Equipment`, `Band Saw Blade Guidance & Tensioning Parts`, `Band Saw Blades` and `Band Saw Tables, Mounts & Capacity Upgrades`.
+- In the Vents & Flues area, adds 47 categories, including `Duct Fittings`, `Flue & Chimney Components`, `Building Vents`, `HVAC Dampers` and `Room Air Outlets`. Adds the attributes `Air valve type`, `Grille type`, `Material gauge` and `Supported fuel type` to products in this area.
+- In the Driver Accessories area, adds 43 categories, including `Accessory Kits`, `Powered Task Attachments`, `Driver & Bit Storage`, `Driving Interfaces` and `Reach & Angle`. Adds the attribute `Shank shape` to products in this area.
+- In the Cutter Blades area, adds 42 categories, including `Digital Cutter Blades`, `Slitter Blades`, `Utility Knife Blades`, `Cable Cutter Blades` and `Rod Cutter Blades`.
+- In the Air Hammer Accessories area, adds 41 categories, including `Material Removal & Surface Preparation Air Hammer Attachments`, `Separation & Extraction Air Hammer Attachments`, `Driving & Installation Air Hammer Attachments`, `Riveting & Metal Forming Air Hammer Attachments` and `Air Hammer Internal Repair Parts`.
+- In the Handheld Circular Saw Accessories area, adds 40 categories, including `Cutting Guidance Accessories`, `Saw Repair & Maintenance Components`, `Blade Mounting Components`, `Dust-Control Accessories` and `Cutting System Components`.
+- In the Marking Tools area, adds 35 categories, including `Marking Gauges`, `Engraving Tools`, `Marking Chalks`, `Branding Irons` and `Center & Transfer Punches`. Adds the attribute `Lead hardness` to products in this area.
+- In the Concrete Molds area, adds 35 categories, including `Garden Ornament Molds`, `Concrete Test Specimen Molds`, `Concrete Countertop Molds`, `Plaque Molds` and `Baluster Molds`.
+- In the Mount Brackets area, adds 35 categories, including `Electrical Component, DIN-Rail & Rack Mounts`, `Enclosure, Panel & Switchgear Mounts`, `Electrical Box & Device Mounting Hardware`, `Raceway, Conduit & Busway Mounting Hardware` and `Solar Equipment Mounting Hardware`. Adds the attributes `Compatible railing shape`, `Mounting orientation` and `Mounting surface type` to products in this area.
+- In the Brick Tools area, adds 34 categories, including `Bricklaying Layout & Alignment Tools`, `Mortar Mixing & Staging Tools`, `Mortar Removal Tools`, `Brick Cutting Tools` and `Mortar Application & Joint Finishing Tools`.
+- In the Oil area, adds 33 categories, including `Metalworking Oils`, `Compressor Oils`, `Hydraulic Oils`, `Pump Oils` and `Bearing Oils`. Adds the attribute `Viscosity grade` to products in this area.
+- In the Tool Keys area, adds 31 categories, including `Valve Keys`, `Spline Keys`, `Utility Keys`, `Chuck Keys` and `Security Screw Keys`. Adds the attributes `Country of origin` and `Measurement system` to products in this area.
+- In the Countertops area, adds 31 categories, including `Natural Stone Countertops`, `Metal Countertops`, `Ceramic Countertops`, `Laminate Countertops` and `Wood Countertops`. Adds the attribute `Corner style` to products in this area.
+- In the Multimeter Accessories area, adds 31 categories, including `Multimeter Test Connection Accessories`, `Multimeter Storage & Support Accessories`, `Multimeter Measurement Attachments`, `Multimeter Data & Channel Expansion Accessories` and `Multimeter Repair Parts`.
+- In the Screwdriver Bits area, adds 28 categories, including `Cross-Head Screwdriver Bits`, `Spline Screwdriver Bits`, `Torx Screwdriver Bits`, `Clutch-Head Screwdriver Bits` and `ECX Screwdriver Bits`. Adds the attributes `Screwdriver bit tip type` and `Shank shape` to products in this area.
+- In the Softwood Lumber area, adds 27 categories, including `Pine Lumber`, `Cedar Lumber`, `Cypress Lumber`, `Hemlock Lumber` and `Fir Lumber`.
+- Adds another 3,116 categories across 656 smaller areas in this vertical.
+- Adds 1,812 attribute assignments across 682 existing categories in this vertical.
+
+##### Health & Beauty
+
+- Adds 2,663 categories in this vertical.
+- In the Wheelchair Accessories area, adds 113 categories, including `Wheelchair Seating & Positioning Components`, `Power Wheelchair Electrical & Drive Components`, `Wheelchair Wheel, Frame & Hardware Parts`, `Wheelchair Braking, Stability & Visibility Accessories` and `Wheelchair Propulsion & Terrain Accessories`. Adds the attribute `Cushion type` to products in this area.
+- In the Mobility Scooter Accessories area, adds 80 categories, including `Mobility Scooter Storage, Holders & Cargo Accessories`, `Mobility Scooter Power & Electrical Components`, `Mobility Scooter Drive, Brake & Running Gear Components`, `Mobility Scooter Seating & Rider Support Accessories` and `Mobility Scooter Controls & Steering Components`.
+- In the Hair Coloring Accessories area, adds 46 categories, including `Hair Highlighting & Sectioning Accessories`, `Hair Coloring Protection & Cleanup Accessories`, `Hair Color Application & Dispensing Accessories`, `Hair Color Mixing & Measuring Accessories` and `Hair Coloring Accessory Kits`.
+- In the Resuscitation & Airway Management Supplies area, adds 37 categories, including `Airway Management Kits`, `Advanced Airway Supplies`, `Airway Suction Supplies`, `Manual Ventilation Supplies` and `Basic Airway Adjuncts`. Adds the attribute `Patient age group` to products in this area.
+- In the Prebiotics & Fiber area, adds 37 categories, including `Oligosaccharide Prebiotic Supplements`, `Beta-Glucan Fiber Supplements`, `Inulin Supplements`, `Pectin Supplements` and `Acacia Fiber Supplements`.
+- In the Massage Chair Parts & Accessories area, adds 36 categories, including `Massage Chair Controls & Electrical Parts`, `Massage Chair Mechanism Parts`, `Massage Chair Covers & Cases`, `Massage Chair Structural & Mounting Parts` and `Massage Chair Comfort & Positioning Parts`.
+- In the Essential Oil Accessories area, adds 35 categories, including `Wearable & Attachable Essential Oil Diffusers`, `Blending & Bottling Supplies`, `Personal Aromatherapy Inhalation`, `Storage & Organization` and `Bottles & Applicators`.
+- In the Prosthetic & Orthotic Accessories area, adds 33 categories, including `Device Covers & Protectors`, `Interface & Fit Accessories`, `Orthotic Brace Components`, `Suspension & Attachment Accessories` and `Device Storage & Drying Accessories`.
+- In the Mask Accessories area, adds 31 categories, including `Mask Retention Accessories`, `Mask Cleaning & Care Accessories`, `Mask Fit & Comfort Accessories`, `Mask Filtration & Airflow Accessories` and `Mask Storage & Dispensing Accessories`.
+- In the Moxibustion Supplies area, adds 30 categories, including `Moxibustion Treatment Equipment`, `Moxa Consumables`, `Moxibustion Safety & Handling Tools` and `Moxibustion Kits`.
+- In the Single Amino Acid Supplements area, adds 30 categories, including `Carnitine Supplements`, `Phenylalanine Supplements`, `5-HTP Supplements`, `Arginine Supplements` and `Aspartic Acid Supplements`.
+- In the Hand Therapy & Exercise Tools area, adds 29 categories, including `Hand & Finger Exercisers`, `Assisted-Motion & Motor-Recovery Devices`, `Hand Sensory Testing & Retraining Tools`, `Wrist & Forearm Exercisers` and `Fine-Motor Training Tools`. Adds the attribute `Hand` to products in this area.
+- In the Eye Wash Accessories area, adds 29 categories, including `Eye Wash Flow Control Accessories`, `Eye Wash Storage & Protection Accessories`, `Eye Wash Accessory Kits`, `Eye Wash Spray Delivery Accessories` and `Eye Wash Drainage & Wastewater Accessories`.
+- In the Hair Extension Tools & Accessories area, adds 29 categories, including `Hair Extension Attachment & Finishing Supplies`, `Hair Extension Tools & Equipment`, `Hair Extension Storage, Display & Workflow Accessories`, `Hair Extension Protection & Sectioning Aids` and `Hair Extension Removal & Cleanup Supplies`. Adds the attribute `Clamp type` to products in this area.
+- In the Oxygen Tanks Accessories area, adds 28 categories, including `Oxygen Connections & Transfer Accessories`, `Oxygen Cylinder Handling & Storage Accessories`, `Oxygen Cylinder Protection & Service Accessories`, `Oxygen Pressure & Flow Control Accessories` and `Oxygen Patient Delivery Interfaces`.
+- In the Nail Drill Accessories area, adds 28 categories, including `Drive & Control Components`, `Storage & Maintenance Accessories`, `Working Attachments`, `Mounting Hardware` and `Nail Drill Accessory Kits`. Adds the attributes `Dominant hand` and `Grit` to products in this area.
+- Adds another 2,012 categories across 438 smaller areas in this vertical.
+- Adds 846 attribute assignments across 472 existing categories in this vertical.
+
+##### Home & Garden
+
+- Adds 7,331 categories in this vertical.
+- In the Dishwasher Parts area, adds 141 categories, including `Dishwasher Controls & Electrical Parts`, `Dishwasher Heating, Drying & Water-Treatment Parts`, `Dishwasher Fill, Drain & Plumbing Parts`, `Dishwasher Spray & Circulation Parts` and `Dishwasher Dispenser & Dosing Parts`.
+- In the Hydroponic Accessories & Hardware area, adds 95 categories, including `Ventilation & Climate Equipment`, `Monitoring, Dosing & Automation Equipment`, `Hydroponic Growing-Site Components`, `Aeration, Misting & CO2 Equipment` and `Fluid Distribution & Drainage Components`.
+- In the Fountain & Pond Accessories area, adds 93 categories, including `Water Treatments & Testing`, `Filtration & Intake Components`, `Fountain & Pond Kits`, `Plumbing & Water Control Components` and `Water Effects & Display Components`. Adds the attributes `Filter density`, `Filter feed type`, `Fountain kit size` and `Fountain spray pattern` to products in this area.
+- In the Artificial Food area, adds 92 categories, including `Vegetable Replicas`, `Fruit Replicas`, `Prepared Dish Replicas`, `Bakery Display Replicas` and `Meat Replicas`.
+- In the Food Mixer Accessories area, adds 85 categories, including `Food Mixer Working Attachments`, `Food Mixer Drive & Motor Parts`, `Food Mixer Body & Bowl-Mounting Parts`, `Food Mixer Controls & Electrical Parts` and `Food Mixer Bowls & Bowl Accessories`.
+- In the Tiller & Cultivator Accessories area, adds 78 categories, including `Drivetrain Parts`, `Engine & Fuel-System Parts`, `Ground-Working Implements & Parts`, `Controls & Handles` and `Mobility, Depth & Stability Parts`.
+- In the Pool Cleaners & Chemicals area, adds 75 categories, including `Pool Cleaning Tools & Equipment`, `Pool & Spa Sanitizers`, `Pool & Spa Water Balancers`, `Pool & Spa Surface & Equipment Cleaning Chemicals` and `Pool & Spa Clarification & Organic-Control Treatments`. Adds the attribute `Suitable for pool surface` to products in this area.
+- In the Coffee Grinder Replacement Parts area, adds 72 categories, including `Drive & Motor Parts`, `Controls, Displays & Sensors`, `Bean Hopper & Feed Parts`, `Grind Adjustment Parts` and `Grinding Mechanism & Chamber Parts`.
+- In the Furnace & Boiler Fixing Kits area, adds 63 categories, including `Control, Sensor & Electrical Repair Kits`, `Boiler Water-Circuit Repair Kits`, `Heat-Transfer & Combustion-Chamber Repair Kits`, `Burner & Fuel-System Repair Kits` and `Airflow & Venting Repair Kits`.
+- In the Potted Houseplants area, adds 52 categories, including `Succulents`, `Cacti`, `Aroids`, `Begonia Plants` and `Bromeliads`. Adds the attributes `Plant form`, `Plant size`, `Pot shape` and `Soil cover material` to products in this area.
+- In the Coffee Grinder Accessories area, adds 52 categories, including `Grounds Handling & Dosing Accessories`, `Grinding & Adjustment Components`, `Bean Feed Components`, `Coffee Grinder Cleaning Accessories` and `Enclosure & Sealing Components`.
+- In the Seed Starting Accessories area, adds 43 categories, including `Sowing & Seedling Tools`, `Propagation Climate & Protection`, `Seed Starting Containers`, `Seed Starting Media` and `Seed Starting Kits`.
+- In the Bonsai Trees area, adds 43 categories, including `Elm Bonsai Trees`, `Ficus Bonsai Trees`, `Maple Bonsai Trees`, `Pine Bonsai Trees` and `Juniper Bonsai Trees`. Adds the attribute `Soil cover material` to products in this area.
+- In the Seasonal Village Buildings area, adds 43 categories, including `Village Shops`, `Village Civic Buildings`, `Village Landmark Buildings`, `Village Industrial Buildings` and `Village Entertainment Buildings`.
+- In the Coffee Making Kits area, adds 43 categories, including `Coffee Repair & Rebuild Kits`, `Coffee Preparation Tool Kits`, `Coffee Brewing Kits`, `Coffee Upgrade & Conversion Kits` and `Coffee Cleaning & Maintenance Kits`.
+- In the Space Heater Accessories area, adds 42 categories, including `Fuel & Combustion Components`, `Heat Generation & Airflow Components`, `Controls, Power & Safety Components`, `Mounting, Support & Mobility Accessories` and `Housing, Protection & Storage Accessories`.
+- In the Rice Cooker Accessories area, adds 39 categories, including `Rice Cooker Heating, Control & Safety Parts`, `Rice Cooker Lid & Steam Parts`, `Rice Cooker Body & Mechanical Parts`, `Rice Cooker Cooking Vessels & Inserts` and `Rice Cooker Power Connection Parts`.
+- In the Evaporative Cooler Accessories area, adds 38 categories, including `Evaporative Cooler Water System Parts`, `Evaporative Cooler Motor & Drive Parts`, `Evaporative Cooler Enclosure & Installation Accessories`, `Evaporative Cooler Air-Moving Parts` and `Evaporative Cooler Care & Maintenance Supplies`.
+- In the Seasonal Village Landscaping & Trees area, adds 36 categories, including `Village Water Features`, `Village Terrain & Ground Cover`, `Village Roads, Paths & Paving`, `Village Trees & Greenery` and `Village Boundaries`.
+- In the Advent Calendars area, adds 35 categories, including `Beauty Advent Calendars`, `Toy Advent Calendars`, `Craft Advent Calendars`, `Game Advent Calendars` and `Fill-Your-Own Advent Calendars`. Adds the attributes `Advent calendar backing type`, `Design dimensionality` and `Portrait/landscape orientation` to products in this area.
+- In the Vines & Climbing Plants area, adds 34 categories, including `Climbing Aroids`, `Trailing Gesneriads`, `Vining Succulents`, `Bignonia Vines` and `Bougainvilleas`. Adds the attribute `Plant supplied form` to products in this area.
+- In the Fruit Trees area, adds 34 categories, including `Citrus Trees`, `Nut Trees`, `Stone Fruit Trees` and `Fruit Palm Trees`. Adds the attributes `Best planting season`, `Graft type`, `Training form` and `Tree size class` to products in this area.
+- In the Grow Light Accessories area, adds 33 categories, including `Grow Light Power & Connection Accessories`, `Grow Light Mounting & Movement Accessories`, `Grow Light Control & Switching Accessories`, `Grow Light Output Management & Protection Accessories` and `Grow Light Lamp & Fixture Operating Components`.
+- In the Auger Accessories area, adds 32 categories, including `Auger Drive & Transmission Components`, `Auger Cutting & Wear Parts`, `Auger Mounting & Connection Components`, `Auger Storage & Transport Accessories` and `Auger Bits`. Adds the attribute `Tool attachment type` to products in this area.
+- In the Living Mulch area, adds 32 categories, including `Clovers`, `Vetches`, `Lespedezas`, `Succulent Living Mulches` and `Creeping Thymes`.
+- In the Pole Saw Accessories area, adds 30 categories, including `Pole Saw Cutting System Parts`, `Pole Saw Engine & Fuel System Parts`, `Pole Saw Reach, Support & Shaft Parts`, `Pole Saw Storage & Protection Accessories` and `Pole Saw Electrical Power & Control Parts`.
+- In the Vents area, adds 29 categories, including `Blower & Fan Components`, `Airflow Control Components`, `Duct Fittings`, `Vent Terminations & Covers` and `Ductless Recirculation Components`.
+- In the Fan Mounting Kits & Brackets area, adds 28 categories, including `Whole-Fan Mounts`, `Fan Housing & Opening Interfaces`, `Fan Motor Mounts`, `Fan Vibration Isolation Mounts` and `Fan Blade Mounts`.
+- In the Milk Systems area, adds 28 categories, including `Automatic Milk Frothing & Dispensing Parts`, `Steam Supply & Control Parts`, `Milk Container & Cooling Parts`, `Steam Wand Parts & Assemblies` and `Milk System Seals`.
+- In the Log Splitter Accessories area, adds 27 categories, including `Log Splitter Chassis & Transport Parts`, `Log Splitter Engine & Fuel System Parts`, `Log Splitter Hydraulic System Parts & Fluids`, `Log Splitter Splitting & Log-Handling Attachments` and `Log Splitter Protection & Safety Accessories`.
+- Adds another 5,764 categories across 1,295 smaller areas in this vertical.
+- Adds 2,505 attribute assignments across 1,107 existing categories in this vertical.
+
+##### Luggage & Bags
+
+- Adds 92 categories in this vertical.
+- In the Gym Duffel Bags area, adds 19 categories, including `Baseball & Softball Duffel Bags`, `Bowling Equipment Duffel Bags`, `Cheerleading Duffel Bags`, `Cricket Duffel Bags` and `Cycling Gear Duffel Bags`. Adds the attribute `Trim material` to products in this area.
+- In the Dry Boxes area, adds 17 categories, including `Ammunition Dry Boxes`, `Document Dry Boxes`, `Time Capsule Containers`, `Waterproof Battery Cases` and `Waterproof Camera Cases`. Adds the attribute `Lid opening type` to products in this area.
+- In the Packing Organizers area, adds 7 categories, including `Garment Folders`, `Hanging Suitcase Organizers`, `Luggage Organizer Inserts`, `Packing Cubes` and `Roll-Up Travel Organizers`. Adds the attribute `Storage bag included pump type` to products in this area.
+- Adds another 49 categories across 18 smaller areas in this vertical.
+- Adds 91 attribute assignments across 33 existing categories in this vertical.
+
+##### Mature
+
+- Adds 195 categories in this vertical.
+- In the Staff & Stick Weapons area, adds 38 categories, including `Polearms`, `Clubs`, `Batons`, `Staff Weapons` and `Cane Weapons`.
+- In the Swords area, adds 35 categories, including `European Swords`, `Chinese Swords`, `Japanese Swords`, `South Asian Swords` and `Southeast Asian Swords`.
+- In the Clubs & Batons area, adds 21 categories, including `War Clubs`, `Maces`, `Combat Canes`, `Expandable Batons` and `Kubotans`.
+- Adds another 101 categories across 16 smaller areas in this vertical.
+- Adds 163 attribute assignments across 35 existing categories in this vertical.
+
+##### Media
+
+- Adds 96 categories in this vertical.
+- In the E-Books area, adds 23 categories, including `Activity Book E-Books`, `Art E-Books`, `Bible E-Books`, `Biography E-Books` and `Biology E-Books`. Adds the attribute `E-book format` to products in this area.
+- In the Print Books area, adds 23 categories, including `Activity Books`, `Art Books`, `Bibles`, `Biography Books` and `Biology Books`. Adds the attributes `Binding`, `Braille grade`, `Cover finish` and `Educational level` to products in this area.
+- In the Academic Papers & Studies area, adds 14 categories, including `Academic Journal Volumes`, `Academic Monographs`, `Annotated Bibliographies`, `Clinical Practice Guidelines` and `Collected Papers`. Adds the attribute `Binding` to products in this area.
+- Adds another 36 categories across 13 smaller areas in this vertical.
+- Adds 77 attribute assignments across 26 existing categories in this vertical.
+
+##### Office Supplies
+
+- Adds 599 categories in this vertical.
+- In the Calculator Accessories area, adds 26 categories, including `Calculator Body & Input Parts`, `Calculator Protection & Carrying Accessories`, `Calculator Cables & Presentation Interfaces`, `Printing Calculator Supplies & Parts` and `Calculator Power & Charging Accessories`.
+- In the Notepads area, adds 19 categories, including `Columnar Pads`, `Cornell Notepads`, `Flashcard Pads`, `Graph Pads` and `Handwriting Practice Pads`. Adds the attributes `Portrait/landscape orientation` and `Ruling` to products in this area.
+- In the Stationery area, adds 17 categories, including `Aerograms`, `Announcement Cards`, `Compliment Slips`, `Correspondence Cards` and `Escort Cards`. Adds the attributes `Hole punch format`, `Portrait/landscape orientation` and `Ruling` to products in this area.
+- In the Pen & Pencil Sets area, adds 15 categories, including `Pencil Sets` and `Pen Sets`. Adds the attributes `Handedness` and `Nib size` to products in this area.
+- Adds another 522 categories across 137 smaller areas in this vertical.
+- Adds 415 attribute assignments across 157 existing categories in this vertical.
+
+##### Religious & Ceremonial
+
+- Adds 39 categories in this vertical.
+- In the Religious Veils area, adds 10 categories, including `Liturgical Veils` and `Personal Religious Veils`.
+- In the Religious Altars area, adds 8 categories, including `Altar Boxes`, `Altar Cabinets`, `Altar Niches`, `Altar Shelves` and `Altar Stones`. Adds the attributes `Element`, `Luna style` and `Sanctum style` to products in this area.
+- In the Tarot Cards area, adds 6 categories, including `Etteilla Tarot Decks`, `Golden Dawn Tarot Decks`, `Marseille Tarot Decks`, `Minchiate Tarot Decks` and `Rider-Waite-Smith Tarot Decks`. Adds the attribute `Deck size` to products in this area.
+- Adds another 15 categories across 4 smaller areas in this vertical.
+- Adds 50 attribute assignments across 13 existing categories in this vertical.
+
+##### Services
+
+- Adds 237 categories in this vertical.
+- In the Printing & Custom Print Services area, adds 40 categories, including `Card Printing Services`, `Packaging Printing Services`, `Publication Printing Services`, `Textile Printing Services` and `Banner Printing Services`.
+- In the IT & Technology area, adds 25 categories, including `Device & Equipment Repair Services`, `Hosting Services`, `IT Installation & Deployment Services`, `Cybersecurity Services` and `IT Support & Operations Services`. Adds the attribute `Customer type` to products in this area.
+- In the Healthcare Services area, adds 24 categories, including `Allergy & Immunology Services`, `Audiology Services`, `Cardiology Services`, `Colorectal Care Services` and `Complementary Medicine Services`.
+- Adds another 148 categories across 18 smaller areas in this vertical.
+- Adds 12 attribute assignments across 8 existing categories in this vertical.
+
+##### Sporting Goods
+
+- Adds 7,737 categories in this vertical.
+- In the Stable Supplies area, adds 103 categories, including `Feeding, Watering & Hay Handling`, `Bedding & Stall Sanitation`, `Stall Construction & Protection`, `Tack & Gear Storage` and `Stall Display & Show Dressing`.
+- In the Elliptical Trainer Replacement Parts area, adds 83 categories, including `Elliptical Trainer Power Parts`, `Elliptical Trainer Pedal, Crank & Linkage Parts`, `Elliptical Trainer Resistance, Incline & Stride-Adjustment Parts`, `Elliptical Trainer Console & Control Parts` and `Elliptical Trainer Covers, Guards & Trim`.
+- In the Farrier Supplies area, adds 78 categories, including `Hoof Treatment & Repair Supplies`, `Horseshoe Fitting & Removal Tools`, `Farrier Storage & Work Gear`, `Farrier Tool Parts & Maintenance Supplies` and `Forge & Anvil Equipment`. Adds the attributes `Horse leg position` and `Horseshoe size` to products in this area.
+- In the Fishing Spear Accessories area, adds 73 categories, including `Speargun Body & Firing Parts`, `Loading, Handling & Maintenance Accessories`, `Shooting Line & Rigging Parts`, `Tip & Shaft Parts` and `Propulsion System Parts`.
+- In the Gymnastics Accessories & Gifts area, adds 69 categories, including `Gymnastics Bags & Cases`, `Gymnastics Room & Gym Decor`, `Gymnastics Equipment Parts & Hardware`, `Gymnastics Stationery` and `Gymnastics Awards`.
+- In the Fishing Rig Accessories area, adds 62 categories, including `Rig Connection & Change Components`, `Rig Presentation & Positioning Components`, `Bait Mounting & Delivery Accessories`, `Rigging Tools` and `Rig Attractors & Teasers`. Adds the attribute `Rig type` to products in this area.
+- In the Power Rack Attachments area, adds 56 categories, including `Exercise Station Attachments`, `Bar Support & Safety Attachments`, `Power Rack Storage Attachments`, `Cable Training Attachments` and `Power Rack Attachment Kits`.
+- In the Bicycle Fork Parts & Accessories area, adds 52 categories, including `Bicycle Fork Suspension Spring & Travel Parts`, `Bicycle Fork Damping & Control Parts`, `Bicycle Fork Sealing, Lubrication & Guide Parts`, `Bicycle Fork Structural Parts` and `Bicycle Fork Wheel Interface Parts`. Adds the attribute `Side` to products in this area.
+- In the Stair Climber & Stepper Replacement Parts area, adds 51 categories, including `Stair Climber & Stepper Drive & Resistance Parts`, `Stair Climber & Stepper Step & Pedal Mechanism Parts`, `Stair Climber & Stepper Console, Sensor & Control Parts`, `Stair Climber & Stepper Power & Wiring Parts` and `Stair Climber & Stepper Frame, Cover & Mobility Parts`.
+- In the Rodeo & Roping Equipment area, adds 50 categories, including `Rodeo Riding Tack & Rigging`, `Rodeo Arena & Course Equipment`, `Rodeo Protective Wear`, `Rodeo Ropes & Rope Components` and `Rodeo Gear Storage & Transport`.
+- In the Bridle Accessories area, adds 50 categories, including `Bit & Curb Accessories`, `Bridle Parts & Fasteners`, `Bridle Ornaments`, `Bridle Storage, Transport & Preparation Accessories` and `Fly & Sensory Bridle Accessories`. Adds the attribute `Rein attachment style` to products in this area.
+- In the Buoyancy Compensator Accessories area, adds 48 categories, including `Inflator & Air-Control Components`, `Cylinder Mounting & Rigging Components`, `Harness & Fit Components`, `Backplate Components` and `Buoyancy Wings`. Adds the attribute `Inflator fitting type` to products in this area.
+- In the Sled Accessories area, adds 46 categories, including `Running Gear & Traction Components`, `Towing, Pulling & Anchoring Gear`, `Off-Snow Handling & Service Equipment`, `Cargo & Equipment Carrying Accessories` and `Seating & Rider Control Accessories`.
+- In the Disc Golf Accessories area, adds 46 categories, including `Disc Carrying & Transport Equipment`, `Disc Golf Course & Basket Equipment`, `Disc Golf Training Equipment`, `Disc Care Supplies` and `Disc Recovery Equipment`.
+- In the Bicycle Cleaning & Maintenance Supplies area, adds 45 categories, including `Bicycle Cleaning Supplies`, `Bicycle Maintenance Kits`, `Bicycle Assembly & Installation Supplies`, `Bicycle Lubricants & Service Fluids` and `Bicycle Surface Finish & Protection Supplies`. Adds the attribute `Dispensing format` to products in this area.
+- In the Bicycle Derailleur Parts & Pulleys area, adds 44 categories, including `Derailleur Cable Routing & Anchoring Parts`, `Front Derailleur Cage & Mounting Parts`, `Rear Derailleur Mounting Parts`, `Bicycle Derailleur Kits` and `Derailleur Adjustment Parts`. Adds the attribute `Included derailleur cage components` to products in this area.
+- In the Rowing Machine Replacement Parts area, adds 43 categories, including `Console & Electrical Parts`, `Drive & Handle Parts`, `Resistance System Parts`, `Mechanical Support & Mounting Parts` and `Frame, Mobility & Enclosure Parts`.
+- In the Sim Racing Equipment area, adds 41 categories, including `Sim Racing Rig Accessories`, `Sim Racing Motion & Feedback Equipment`, `Sim Racing Seats & Restraints`, `Sim Racing Visual Displays & Lighting` and `Sim Racing Display Mounts`.
+- In the Fishing Rod Building Components area, adds 41 categories, including `Fishing Rod Handle Components`, `Fishing Rod Reel Mounting Components`, `Fishing Rod Butt & End Components`, `Fishing Rod Surface & Finishing Supplies` and `Fishing Rod Building Kits`. Adds the attributes `Guide ring type`, `Insert material`, `Rod butt type` and `Rod section` to products in this area.
+- In the Pickleball Accessories & Training Aids area, adds 40 categories, including `Pickleball Court Setup & Match Management Accessories`, `Pickleball Paddle Care & Customization Accessories`, `Pickleball Training & Coaching Aids`, `Pickleball Ball Handling & Identification Accessories` and `Pickleball Gear Carrying & Storage Accessories`.
+- In the Tent Repair & Maintenance Supplies area, adds 40 categories, including `Tent Repair & Maintenance Kits`, `Tent Fitting & Attachment Repair Parts`, `Tent Fabric Care Treatments`, `Tent Pole & Frame Repair Supplies` and `Tent Fabric & Seam Repair Supplies`.
+- In the Replacement Parts & Hardware area, adds 39 categories, including `Motion & Guidance Components`, `Padding & Upholstery Components`, `Cable & Drive Components`, `Weight Stack Components` and `Frame & Guard Components`.
+- In the Frames & Body Parts area, adds 39 categories, including `E-Scooter Exterior Bodywork`, `E-Scooter Battery & Electronics Housings`, `E-Scooter Deck & Foot Support Parts`, `E-Scooter Frame & Steering Structure` and `E-Scooter Fender & Mudguard Parts`. Adds the attribute `Installation position` to products in this area.
+- In the Animal Trap Accessories area, adds 38 categories, including `Trap Anchoring & Positioning Accessories`, `Animal Trap Setting & Site Preparation Tools`, `Snare Building Accessories`, `Trap Maintenance Treatments` and `Trap Replacement & Trigger Components`.
+- In the Machine & Bench Attachments area, adds 37 categories, including `Exercise Station Modules`, `Cable Exercise Attachments`, `Resistance & Loading Attachments`, `Body Positioning & Support Attachments` and `Attachment Kits`.
+- In the Fishing Reel Gears & Drive Components area, adds 37 categories, including `Fishing Reel Retrieve Gearing & Shafting Components`, `Fishing Reel Line-Lay & Oscillation Components`, `Fishing Reel Clutch & Engagement Components`, `Fishing Reel Bearing & Alignment Components` and `Fishing Reel Anti-Reverse Components`.
+- In the Game Processing & Field Dressing Equipment area, adds 37 categories, including `Field Dressing & Butchering Equipment`, `Game Processing Kits`, `Game & Meat Handling Equipment`, `Hide & Pelt Preparation Equipment` and `Meat Preparation Equipment`.
+- In the Golf Club Repair & Maintenance Tools area, adds 35 categories, including `Golf Club Measurement & Analysis Tools`, `Golf Club Cleaning Tools`, `Golf Club Cutting & Surface Preparation Tools`, `Golf Club Fastening & Adjustment Tools` and `Golf Club Installation Tools`.
+- In the Soft Plastic Craws & Creature Baits area, adds 35 categories, including `Bug Baits`, `Crustacean Baits`, `Bat Baits`, `Beaver Baits` and `Cuttlefish Baits`.
+- In the Drysuit Accessories area, adds 33 categories, including `Thermal & Wear Accessories`, `Repair & Care Accessories`, `Air Management Components`, `Seal & Closure Components` and `Drysuit Repair Kits`.
+- Adds another 6,246 categories across 1,523 smaller areas in this vertical.
+- Adds 1,999 attribute assignments across 1,146 existing categories in this vertical.
+
+##### Software
+
+- Adds 257 categories in this vertical.
+- In the Antivirus & Security Software area, adds 78 categories, including `Network Security Software`, `Identity & Access Management Software`, `Data Security Software`, `Vulnerability Management Software` and `Endpoint Security Software`. Adds the attribute `License region` to products in this area.
+- In the Computer Utilities & Maintenance Software area, adds 37 categories, including `Disk Management Utilities`, `File Repair Utilities`, `Device Management Utilities`, `Backup Utilities` and `Checksum Utilities`.
+- In the Financial, Tax & Accounting Software area, adds 19 categories, including `Accounting Software`, `Anti-Money Laundering Software`, `Billing & Invoicing Software`, `Currency Conversion Software` and `Currency Exchange Software`.
+- Adds another 123 categories across 18 smaller areas in this vertical.
+- Adds 54 attribute assignments across 25 existing categories in this vertical.
+
+##### Toys & Games
+
+- Adds 2,248 categories in this vertical.
+- In the Remote Control Toy Accessories area, adds 177 categories, including `RC Chassis, Suspension & Steering`, `RC Aircraft & Drone Airframe Parts`, `RC Workshop Tools & Maintenance Supplies`, `RC Bodies, Finishes & Scale Details` and `RC Engines, Fuel & Starting`. Adds the attributes `Battery chemistry`, `CAN protocol`, `Compatible servo size` and `Compatible transmitter protocol` to products in this area.
+- In the Flying Toy Accessories area, adds 138 categories, including `Airframe & Structural Components`, `Flight Control, Radio & Telemetry`, `Propulsion & Fuel Systems`, `Launch Equipment` and `Maintenance, Repair & Setup`. Adds the attributes `CAN protocol` and `Propeller rotation direction` to products in this area.
+- In the Dollhouse Accessories area, adds 120 categories, including `Dollhouse Furniture`, `Dollhouse Building & Renovation Components`, `Dollhouse Household Goods`, `Dollhouse Landscaping Accessories` and `Dollhouse Decorative Accessories`.
+- In the Play Vehicle Accessories area, adds 99 categories, including `Layout & Scene Accessories`, `Running Gear & Propulsion Components`, `Track & Roadway Accessories`, `Power, Electronics & Controls` and `Vehicle Bodies & Fittings`. Adds the attribute `Compatible play vehicle position` to products in this area.
+- In the Riding Toy Accessories area, adds 88 categories, including `Power & Electrical Accessories`, `Wheel, Tire & Axle Accessories`, `Hobby Horse Tack & Play Accessories`, `Riding Toy Kits` and `Body & Exterior Accessories`. Adds the attribute `Vehicle position` to products in this area.
+- In the Doll & Action Figure Accessories area, adds 72 categories, including `Doll & Figure Accessory Kits`, `Figure Props & Role-Play Equipment`, `Figure Apparel & Personal Accessories`, `Figure Repair & Customization Parts` and `Doll Furniture & Sleep Accessories`. Adds the attributes `Assembly status`, `Body skin tone` and `Side` to products in this area.
+- In the Card Game Accessories area, adds 62 categories, including `Card Handling & Table Equipment`, `Card Storage & Transport`, `Card Protection`, `Card Game Accessory Kits` and `Card Game Tokens & Trackers`.
+- In the Play Food area, adds 61 categories, including `Toy Vegetables`, `Toy Fruits`, `Toy Baked Goods`, `Toy Condiments` and `Toy Meats`.
+- In the Toy Weapon & Gadget Accessories area, adds 56 categories, including `Toy Weapon Replacement & Upgrade Parts`, `Toy Weapon Carrying & Storage Accessories`, `Toy Weapon Ammunition`, `Toy Weapon Attachments` and `Toy Blaster Loading & Feed Accessories`. Adds the attributes `Hand orientation` and `Lightsaber core type` to products in this area.
+- In the Pretend Professions & Role Playing area, adds 54 categories, including `Hospitality Role Play Sets`, `Public Safety Role Play Sets`, `Animal Care Role Play Sets`, `Beauty Role Play Sets` and `Workshop Role Play Sets`.
+- In the Drums & Percussion Instruments area, adds 51 categories, including `Toy Drums`, `Toy Bell Instruments`, `Toy Shaker Instruments`, `Toy Cymbals` and `Toy Scraper Instruments`.
+- In the Swing Set & Playset Accessories area, adds 44 categories, including `Interactive Play Accessories`, `Climbing & Traversal Accessories`, `Swings & Swing Seats`, `Playset Hardware` and `Playset Kits`.
+- In the Trampoline Accessories area, adds 42 categories, including `Trampoline Frame & Stability Components`, `Trampoline Training & Fitness Accessories`, `Trampoline Safety & Enclosure Accessories`, `Trampoline Play Add-Ons` and `Trampoline Access & Support Accessories`. Adds the attributes `Compatible pole type` and `Compatible trampoline frame type` to products in this area.
+- Adds another 1,184 categories across 160 smaller areas in this vertical.
+- Adds 247 attribute assignments across 107 existing categories in this vertical.
+
+##### Vehicles & Parts
+
+- Adds 3,213 categories in this vertical.
+- In the Aircraft Parts & Accessories area, adds 145 categories, including `Aircraft Engines, Propulsion & Rotor Systems`, `Aircraft Airframe, Flight Controls & Hardware`, `Aircraft Avionics, Instruments & Communications`, `Aircraft Electrical Power & Lighting` and `Aircraft Fuel, Fluid & Environmental Systems`. Adds the attributes `Installation side` and `Propeller rotation direction` to products in this area.
+- In the Motor Vehicle Tire Accessories area, adds 129 categories, including `Tire Inflation, Pressure & TPMS Equipment`, `Tire Repair & Retreading Supplies`, `Tire Changing & Wheel Service Equipment`, `Tire Tread & Performance Setup Equipment` and `Tire Accessory Kits`. Adds the attributes `Compatible bolt pattern`, `Tire carrier side`, `Wheel mount length` and `Wheel mounting orientation` to products in this area.
+- In the Sailboat Parts area, adds 120 categories, including `Sailboat Spars & Spar Components`, `Sailboat Sails & Sail Components`, `Sail Control & Guidance Components`, `Standing Rigging Components` and `Line-Holding & Winching Components`.
+- In the Relays area, adds 74 categories, including `Lighting, Signaling & Visibility Relays`, `Starting & Engine Control Relays`, `Body, Comfort & Security Relays`, `Battery, Charging & Electric-Drive Relays` and `Braking, Suspension & Drivetrain Relays`. Adds the attributes `Chassis connector style`, `Relay package type` and `Terminal connection type` to products in this area.
+- In the Vehicle Cargo Rack Accessories area, adds 74 categories, including `Cargo Rack Equipment Mounts & Utility Accessories`, `Rack Structural & Expansion Components`, `Cargo Enclosure & Protection Accessories`, `Rack Installation & Fit Components` and `Cargo Rack Accessory Kits`. Adds the attributes `Compatible truck bed size`, `T-nut style` and `Vehicle side` to products in this area.
+- In the Vehicle Dashboard Accessories area, adds 70 categories, including `Dashboard Trim & Styling`, `Dashboard Instruments & Displays`, `Dashboard Signs & Display Holders`, `Dashboard Installation Components` and `Dashboard Storage & Holders`. Adds the attribute `Compatible vehicle drive orientation` to products in this area.
+- In the Alternator Parts area, adds 52 categories, including `Alternator Charging & Regulation Parts`, `Alternator Wiring & Connection Parts`, `Alternator Cooling & Protection Parts`, `Alternator Parts Kits` and `Alternator Drive Parts`.
+- In the Wiring Harnesses area, adds 48 categories, including `Body & Chassis Wiring Harnesses`, `Engine & Powertrain Wiring Harnesses`, `Accessory & Installation Wiring Harnesses`, `Control, Data & Diagnostic Wiring Harnesses` and `Lighting & Visibility Wiring Harnesses`. Adds the attributes `Bulkhead configuration`, `Circuit protection type`, `Compatible bulb base type` and `Compatible control box type` to products in this area.
+- In the Motorcycle Helmet Parts & Accessories area, adds 47 categories, including `Motorcycle Helmet Airflow & Weather Accessories`, `Motorcycle Helmet Visor & Visibility Accessories`, `Motorcycle Helmet Structural & Retention Parts`, `Motorcycle Helmet Care & Maintenance Products` and `Motorcycle Helmet Interior Fit & Comfort Parts`. Adds the attribute `Head shape` to products in this area.
+- In the Fuel System Kits area, adds 45 categories, including `Fuel Control & Monitoring Kits`, `Fuel Injection System Kits`, `Fuel Storage & Refueling Kits`, `Carburetor Fuel System Kits` and `Fuel Pump System Kits`. Adds the attributes `AN size`, `Fuel delivery system` and `Port injection type` to products in this area.
+- In the Watercraft Fuel Tanks & Parts area, adds 44 categories, including `Fuel Tank Venting & Vapor Control Components`, `Fuel Filling Components`, `Fuel Tank Sensors & Pickups`, `Fuel Tank Valves` and `Watercraft Fuel Tank Fittings`.
+- In the Watercraft Lighting area, adds 43 categories, including `Deck Lights`, `Watercraft Lighting Components`, `Watercraft Navigation Lights`, `Underwater Boat Lights` and `Boat Interior Lights`. Adds the attributes `Lens cover type`, `Light source type`, `Navigation light position` and `Switch type` to products in this area.
+- In the Vehicle Decals area, adds 43 categories, including `Vehicle Body Decals`, `Interior Vehicle Decals`, `Vehicle Window Decals`, `Vehicle Light Decals` and `Wheel Decals`. Adds the attributes `Compatible truck cab type`, `Compatible vehicle body style`, `Compatible vehicle roof height` and `Decal cut type` to products in this area.
+- In the Distributor Parts area, adds 42 categories, including `High-Voltage Distribution Parts`, `Distributor Parts Kits`, `Distributor Trigger & Switching Parts`, `Distributor Housing, Mounting & Sealing Parts` and `Distributor Shaft & Drive Parts`.
+- In the Engine Timing Components area, adds 40 categories, including `Engine Timing Kits`, `Timing Tensioning Components`, `Timing Gears, Sprockets & Pulleys`, `Timing Guides, Idlers & Dampers` and `Variable Valve Timing Components`.
+- In the Motor Vehicle Exhaust Hardware area, adds 40 categories, including `Exhaust Fastening Hardware`, `Exhaust Hardware Kits`, `Exhaust Mounting & Support Hardware`, `Exhaust Joining & Connection Hardware` and `Exhaust Port & Outlet Hardware`. Adds the attributes `Compatible vehicle body style`, `Compatible vehicle drivetrain`, `Gasket type` and `Turbine housing outlet flange type` to products in this area.
+- In the Watercraft Carburetors & Parts area, adds 40 categories, including `Throttle, Choke & Enrichment Parts`, `Carburetor Body, Mounting & Sealing Parts`, `Fuel Metering & Tuning Parts`, `Float Bowl & Fuel Inlet Parts` and `Pump & Diaphragm Parts`.
+- In the Watercraft Ignition Parts area, adds 39 categories, including `Spark Generation & Trigger Components`, `Distributor Ignition Components`, `Electronic Ignition Control & Timing Components`, `Spark Delivery & Preheat Components` and `Starting Controls & Power Switching Components`.
+- In the Motor Vehicle Brake Service Kits area, adds 38 categories, including `Brake Component Repair & Rebuild Kits`, `Brake Mechanical Service Tool Kits`, `Brake Friction & Hardware Replacement Kits`, `Brake Line & Hose Repair Kits` and `Brake Fluid Testing & Bleeding Kits`. Adds the attribute `Supported brake fluid type` to products in this area.
+- Adds another 2,040 categories across 415 smaller areas in this vertical.
+- Adds 1,507 attribute assignments across 386 existing categories in this vertical.
+
+#### 🌐 Localization
+
+- Adds Hindi and refreshes category, attribute and value translations across 31 non-English languages.
 
 #### 📦 Distribution
 
