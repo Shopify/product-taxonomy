@@ -10,8 +10,10 @@ same way. Run commands from `dev/` unless noted.
 
 ## 1. Scope
 
-- Start from the latest `main`. The last release is the latest GitHub release
-  (`gh release view --json tagName --jq .tagName`).
+- Start from the latest `main`. Find the last GitHub release with
+  `gh release view --json tagName --jq .tagName`, then check for later patch
+  tags with `git tag --list 'v*' --sort=-version:refname`. Use the latest
+  applicable published tag as the changelog base, including patches.
 - Change only taxonomy data, localizations, mappings and the changelog. Do not
   edit `data/integrations/README.md` or other docs unless the release changes
   what they describe.
@@ -28,8 +30,8 @@ Check every new attribute before the data PR is ready:
 | Rule | Example |
 |---|---|
 | Every base attribute except Color has an Other value, `<friendly_id>__other`, listed last | `Assembly required`: `No`, `Yes`, `Other` |
-| An attribute about color is an extended attribute of Color (`values_from: color`), not a new base attribute | `D ring color` |
-| Every `X color` extension has an `X pattern` extension (`values_from: pattern`) on the same categories | `D ring pattern` |
+| A new attribute for a part or component's color extends Color (`values_from: color`), rather than adding a new base attribute | `D ring color` |
+| Every new `X color` extension has an `X pattern` extension (`values_from: pattern`) on the same categories | `D ring pattern` |
 | Names use sentence case and do not repeat the category name | `Garment length type`, not `Capes Garment length type` |
 | Attributes are not gendered or tied to one brand or model | Not `Her size` or `Compatible Samsung The Frame TV model year` |
 
@@ -38,9 +40,12 @@ Check every new attribute before the data PR is ready:
 - Existing categories keep their return reasons exactly as on `main`.
 - New categories use `return_reasons: inherit` unless the release intends
   otherwise.
-- Verify with the generated `dist/en/categories.json`, not by reading
-  `inherit` chains in YAML by hand: compare each existing category's return
-  reasons between the last release tag and the release branch.
+- Generate `dist/en/categories.json` separately from clean `origin/main` and
+  the release branch (run `bin/product_taxonomy dist --locales en` from `dev/`
+  in each checkout). Compare the ordered return-reason IDs for every category
+  present on `main`; the JSON contains the effective inherited reasons. Do not
+  compare committed `dist/` files, which can be stale or absent, or use only the
+  last release tag as the baseline.
 
 ## 4. Mappings
 
@@ -69,21 +74,24 @@ bundle exec rake schema:vet
 1. Generate a draft from the last release tag and the release branch:
 
    ```sh
-   git worktree add /tmp/taxonomy-base <last-release-tag>
-   git worktree add /tmp/taxonomy-head <release-branch>
+   git worktree add --detach /tmp/taxonomy-base <last-published-tag>
+   git worktree add --detach /tmp/taxonomy-head <release-branch>
    bin/generate_changelog --base /tmp/taxonomy-base --head /tmp/taxonomy-head \
-     --notes /tmp/changelog-notes.yml --output /tmp/changelog-draft.md
+     --output /tmp/changelog-draft.md
    ```
 
-   See `dev/CHANGELOG_GENERATOR.md` for the notes file.
+   See `dev/CHANGELOG_GENERATOR.md` for optional reviewed manual notes.
 2. List every PR merged since the last tag and add notes for changes the draft
    cannot infer, such as disclosures, return reasons and removals:
 
    ```sh
-   git log --first-parent --oneline <last-release-tag>..origin/main
+   git log --first-parent --oneline <last-published-tag>..origin/main
    ```
 
-3. Put the result in the `Unreleased` section of `CHANGELOG.md`.
+3. Put the draft in the `Unreleased` section of `CHANGELOG.md`. Before cutting
+   the release, turn that section into `## <version>` and add a fresh
+   `## Unreleased` heading for subsequent changes; the release command does not
+   edit the changelog.
 
 ## 8. Release
 
