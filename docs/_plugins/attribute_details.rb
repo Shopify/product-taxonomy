@@ -4,6 +4,7 @@ require "json"
 
 module AttributeDetailsShards
   def self.shard(handle)
+    # Keep this hash in sync with shardFor in docs/assets/js/attribute_details.js.
     handle.bytes.reduce(2_166_136_261) do |hash, byte|
       ((hash ^ byte) * 16_777_619) & 0xffff_ffff
     end % 256
@@ -17,11 +18,12 @@ module AttributeDetailsShards
 
     version_data.fetch("reversed_attributes").fetch("attributes").each do |attribute|
       handle = attribute.fetch("handle")
-      shards[shard(handle)][handle] = {
+      entry = shards[shard(handle)][handle] ||= {
         "category_values" => category_values.fetch(handle),
         "values" => attribute.fetch("values"),
-        "categories" => attribute.fetch("categories"),
+        "categories" => [],
       }
+      entry["categories"] |= attribute.fetch("categories")
     end
 
     FileUtils.mkdir_p(target_dir)

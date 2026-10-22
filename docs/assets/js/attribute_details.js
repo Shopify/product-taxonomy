@@ -2,6 +2,7 @@ const requests = new Map();
 const pendingElements = new WeakMap();
 
 const shardFor = (handle) => {
+  // Keep this hash in sync with AttributeDetailsShards.shard in docs/_plugins/attribute_details.rb.
   let hash = 2166136261;
   for (const byte of new TextEncoder().encode(handle)) {
     hash = Math.imul(hash ^ byte, 16777619) >>> 0;
@@ -46,27 +47,36 @@ const renderItems = (list, items, showIds) => {
   list.replaceChildren(fragment);
 };
 
+const renderStatus = (list, message) => {
+  const item = document.createElement('li');
+  item.className = 'values-container__list-item';
+  item.textContent = message;
+  list.replaceChildren(item);
+};
+
 export const populateAttributeDetails = (element, directory, includeCategories = false) => {
   if (element.dataset.detailsLoaded === 'true') return Promise.resolve();
   if (pendingElements.has(element)) return pendingElements.get(element);
 
   const handle = element.dataset.handle;
   const url = `${directory}/attribute_details_${shardFor(handle)}.json`;
+  const valuesList = element.querySelector('.attribute-values-list');
+  const categoriesList = includeCategories ? element.querySelector('.attribute-categories-list') : null;
+  renderStatus(valuesList, 'Loading…');
+  if (categoriesList) renderStatus(categoriesList, 'Loading…');
   const request = loadAttributes(url)
     .then((attributes) => {
       const attribute = attributes[handle];
       if (!attribute) throw new Error(`Attribute not found: ${handle}`);
       const values = includeCategories ? attribute.values : attribute.category_values;
-      renderItems(element.querySelector('.attribute-values-list'), values, true);
-      if (includeCategories) {
-        renderItems(element.querySelector('.attribute-categories-list'), attribute.categories, false);
-      }
+      renderItems(valuesList, values, true);
+      if (categoriesList) renderItems(categoriesList, attribute.categories, false);
       element.dataset.detailsLoaded = 'true';
     })
     .catch((error) => {
       console.error(error);
-      const list = element.querySelector('.attribute-values-list');
-      list.textContent = 'Unable to load attribute details. Please try again.';
+      renderStatus(valuesList, 'Unable to load attribute details. Please try again.');
+      if (categoriesList) renderStatus(categoriesList, 'Unable to load attribute details. Please try again.');
     })
     .finally(() => pendingElements.delete(element));
 
