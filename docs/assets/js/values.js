@@ -1,11 +1,12 @@
-import {qq} from './util.js';
+import {q, getQueryParam} from './util.js';
+import {fetchRecord, createElement} from './release_data.js';
 
 const valueQueryParamKey = 'valueHandle';
 const className = {
   hidden: 'hidden',
   visible: 'visible',
 };
-let cachedElements = {};
+const valueDataDir = '../value_data';
 
 const yieldToMain = () => {
   return new Promise((resolve) => {
@@ -21,29 +22,35 @@ const executeTasksWithYieldToMain = async (tasks) => {
   }
 };
 
-const readValueEntryElements = () => {
-  if (cachedElements.valueEntryElements) {
-    return cachedElements.valueEntryElements;
-  } else {
-    return (cachedElements.valueEntryElements = qq('.value-page-entry'));
-  }
-};
-
 export const setValue = (valueHandle) => {
   setValueQueryParam(valueHandle);
   renderPage();
 };
 
-const toggleSelectedValue = () => {
-  const valueElements = readValueEntryElements();
-  const selectedValue = new URLSearchParams(window.location.search).get(valueQueryParamKey);
-  valueElements.forEach((element) => {
-    if (element.dataset.handle === selectedValue) {
-      element.classList.remove(className.hidden);
-    } else {
-      element.classList.add(className.hidden);
-    }
-  });
+const renderSelectedValue = async () => {
+  const container = q('#value-detail');
+  const selectedValue = getQueryParam(valueQueryParamKey);
+  container.classList.add(className.hidden);
+  if (!selectedValue) return;
+
+  const value = await fetchRecord(valueDataDir, selectedValue);
+  // Skip stale responses when another value was selected while loading.
+  if (!value || getQueryParam(valueQueryParamKey) !== selectedValue) return;
+
+  q('.value-detail__name', container).textContent = value.name;
+  q('.value-detail__id', container).textContent = value.id;
+  q('.value-detail__handle', container).textContent = value.handle;
+
+  const attribute = q('.value-detail__attribute', container);
+  if (value.attribute) {
+    const link = createElement('a', null, value.attribute.name);
+    link.href = `${container.dataset.attributesUrl}?attributeHandle=${encodeURIComponent(value.attribute.handle)}`;
+    attribute.replaceChildren(link);
+  } else {
+    attribute.replaceChildren('No attribute associated.');
+  }
+  container.dataset.handle = value.handle;
+  container.classList.remove(className.hidden);
 };
 
 const setValueQueryParam = (valueHandle) => {
@@ -57,12 +64,12 @@ const setValueQueryParam = (valueHandle) => {
 };
 
 const renderWithYieldToMain = () => {
-  const tasks = [toggleSelectedValue];
+  const tasks = [renderSelectedValue];
   executeTasksWithYieldToMain(tasks);
 };
 
 const renderWithScheduler = () => {
-  scheduler.postTask(toggleSelectedValue, {priority: 'user-blocking'});
+  scheduler.postTask(renderSelectedValue, {priority: 'user-blocking'});
 };
 
 let scheduleRenderPage = undefined;
