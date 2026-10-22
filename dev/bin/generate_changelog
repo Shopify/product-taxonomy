@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "optparse"
+require "yaml"
+require_relative "../lib/product_taxonomy/changelog_generator"
+
+options = {}
+parser = OptionParser.new do |opts|
+  opts.banner = "Usage: bin/generate_changelog --base PATH --head PATH [options]"
+
+  opts.on("--base PATH", "Taxonomy checkout before the release") { |path| options[:base_path] = path }
+  opts.on("--head PATH", "Taxonomy checkout after the release") { |path| options[:head_path] = path }
+  opts.on("--output PATH", "Write the draft to a file instead of stdout") { |path| options[:output_path] = path }
+  opts.on("--notes PATH", "YAML file containing reviewed manual notes") { |path| options[:notes_path] = path }
+end
+parser.parse!
+
+unless options[:base_path] && options[:head_path]
+  warn parser
+  exit 1
+end
+
+notes = options[:notes_path] ? YAML.safe_load_file(options[:notes_path]) || {} : {}
+generator = ProductTaxonomy::ChangelogGenerator.new(
+  base_path: options.fetch(:base_path),
+  head_path: options.fetch(:head_path),
+  vertical_notes: notes.fetch("vertical_notes", {}),
+  additional_sections: notes.fetch("additional_sections", {}),
+)
+output = generator.generate
+
+if options[:output_path]
+  File.write(options[:output_path], output)
+  puts "Wrote #{File.expand_path(options[:output_path])}"
+else
+  puts output
+end
