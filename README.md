@@ -112,6 +112,7 @@ bundle install
 bin/product_taxonomy dist     # build the dist files
 bin/product_taxonomy docs     # build the documentation files
 bin/product_taxonomy release  # generate a release
+bin/generate_changelog --base /path/to/base --head /path/to/head  # draft a changelog
 
 # Development tasks (via Rake)
 bundle exec rake test              # run all tests
