@@ -1,4 +1,5 @@
 import {q, qq, getQueryParam} from './util.js';
+import {populateAttributeDetails} from './attribute_details.js';
 
 const nodeQueryParamKey = 'categoryId';
 const className = {
@@ -11,7 +12,6 @@ let cachedElements = {
   mappingElements: undefined,
   categoryLevelElements: undefined,
   categoryNodeElements: undefined,
-  selectedCategoryContainerElements: undefined,
   attributeValuesElement: undefined,
   returnReasonValuesElement: undefined,
   selectedCategoryTitle: undefined,
@@ -54,14 +54,6 @@ const readCategoryNodeElements = () => {
     return cachedElements.categoryNodeElements;
   } else {
     return (cachedElements.categoryNodeElements = qq('.category-node'));
-  }
-};
-
-const readSelectedCategoryContainerElements = () => {
-  if (cachedElements.selectedCategoryContainerElements) {
-    return cachedElements.selectedCategoryContainerElements;
-  } else {
-    return qq('.selected-category');
   }
 };
 
@@ -143,33 +135,27 @@ const toggleSelectedCategory = () => {
 };
 
 const toggleVisibleSelectedCategory = () => {
-  const selectedCategoryContainerElements =
-    readSelectedCategoryContainerElements();
+  const selectedCategoryContainer = q('.selected-category');
   const selectedCategoryTitle = readSelectedCategoryTitle();
   const categoryAttributesTitle = readCategoryAttributesTitle();
   const categoryReturnReasonsTitle = readCategoryReturnReasonsTitle();
+  const categoryNode = q(`.category-node[id="${selectedNode}"]`);
 
-  selectedCategoryContainerElements.forEach((element) => {
-    const nodeId = element.id;
-    const classes = element.classList;
+  if (!categoryNode) {
+    selectedCategoryContainer.classList.replace(className.visible, className.hidden);
+    return;
+  }
 
-    if (selectedNode === nodeId) {
-      const selectedNodeTitle =
-        element.firstElementChild.firstElementChild.dataset
-          .selectedCategoryName;
-      const categoryNode = q(`.category-node[id="${selectedNode}"]`);
-      const inheritsReturnReasons =
-        categoryNode?.dataset.inheritsReturnReasons === 'true';
-      selectedCategoryTitle.innerText = selectedNodeTitle;
-      categoryAttributesTitle.innerText = `${selectedNodeTitle} attributes`;
-      categoryReturnReasonsTitle.innerText = inheritsReturnReasons
-        ? `${selectedNodeTitle} return reasons (inherited)`
-        : `${selectedNodeTitle} return reasons`;
-      classes.replace(className.hidden, className.visible);
-    } else {
-      classes.replace(className.visible, className.hidden);
-    }
-  });
+  const selectedNodeTitle = categoryNode.textContent.trim();
+  const inheritsReturnReasons = categoryNode.dataset.inheritsReturnReasons === 'true';
+  selectedCategoryTitle.textContent = selectedNodeTitle;
+  categoryAttributesTitle.textContent = `${selectedNodeTitle} attributes`;
+  categoryReturnReasonsTitle.textContent = inheritsReturnReasons
+    ? `${selectedNodeTitle} return reasons (inherited)`
+    : `${selectedNodeTitle} return reasons`;
+  q('.selected-category--id', selectedCategoryContainer).textContent = selectedNode;
+  q('.selected-category--path', selectedCategoryContainer).textContent = categoryNode.dataset.categoryPath;
+  selectedCategoryContainer.classList.replace(className.hidden, className.visible);
 };
 
 const toggleVisibleAttributes = () => {
@@ -262,6 +248,9 @@ const toggleMappedCategories = () => {
 const toggleAttributeSelectedClass = (event) => {
   const element = event.target.closest('.attribute-values');
   element.classList.toggle('selected');
+  if (element.classList.contains('selected')) {
+    populateAttributeDetails(element, '.');
+  }
 };
 
 const toggleReturnReasonSelectedClass = (event) => {
