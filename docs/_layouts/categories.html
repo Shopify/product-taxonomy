@@ -27,6 +27,7 @@ layout: default
                 data-attribute-handles="{{ category.attribute_handles }}"
                 data-return-reason-handles="{{ category.return_reason_handles }}"
                 data-inherits-return-reasons="{{ category.inherits_return_reasons }}"
+                data-category-path="{{ category.fully_qualified_type | escape }}"
               >
                 {{ category.name }}
               </li>
@@ -39,22 +40,16 @@ layout: default
   <div class="column">
     <div class="selected-category-wrapper">
       <h2 id="selected-category-title">Selected Shopify Category</h2>
-      {% for sibling_group in site.data[page.target].sibling_groups %}
-        {% for categories in sibling_group[1] %}
-          {% for category in categories[1] %}
-            <div class="selected-category hidden" id="{{category.id}}">
-              <div class="box">
-                <h3 data-selected-category-name="{{ category.name }}">Category ID</h3>
-                <span class="id selected-category--id">{{ category.id }}</span>
-              </div>
-              <div class="box">
-                <h3>Category breadcrumb</h3>
-                <p>{{ category.fully_qualified_type }}</p>
-              </div>
-            </div>
-          {% endfor %}
-        {% endfor %}
-      {% endfor %}
+      <div class="selected-category hidden">
+        <div class="box">
+          <h3>Category ID</h3>
+          <span class="id selected-category--id"></span>
+        </div>
+        <div class="box">
+          <h3>Category breadcrumb</h3>
+          <p class="selected-category--path"></p>
+        </div>
+      </div>
     </div>
     <div class="values-wrapper box">
       <h3 id="category-attributes-title">Category Attributes</h3>
@@ -74,16 +69,7 @@ layout: default
             </div>
           </h4>
           <div class="values-container">
-            <ul class="values-container__list">
-              {% for value in attribute.values %}
-                <li class="values-container__list-item">
-                  <div class="values-container__list-item-content">
-                    {{ value.name }}
-                    <div class="id">{{ value.id }}</div>
-                  </div>
-                </li>
-              {% endfor %}
-            </ul>
+            <ul class="values-container__list attribute-values-list"></ul>
           </div>
         </div>
       {% endfor %}
