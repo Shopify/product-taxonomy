@@ -15,11 +15,9 @@ const shardFor = (key) => {
 };
 
 // Fetches a JSON file once; failed requests are dropped from the cache so they can be retried.
-// With `missingValue`, a 404 resolves to that value instead of failing.
-export const fetchJson = (url, missingValue) => {
+export const fetchJson = (url) => {
   if (!jsonCache.has(url)) {
     const request = fetch(url).then((response) => {
-      if (response.status === 404 && missingValue !== undefined) return missingValue;
       if (!response.ok) throw new Error(`Failed to load ${url}: ${response.status}`);
       return response.json();
     });
@@ -30,10 +28,10 @@ export const fetchJson = (url, missingValue) => {
 };
 
 // Returns the record stored under `key` in the sharded directory `dir`, or undefined.
-// Only non-empty shards are written, so a missing shard file means the key does not exist.
+// Every shard file is written, even when empty, so any failed request is an error.
 export const fetchRecord = async (dir, key) => {
-  const shard = await fetchJson(`${dir}/${shardFor(String(key))}.json`, {});
-  return shard[key];
+  const shard = await fetchJson(`${dir}/${shardFor(String(key))}.json`);
+  return Object.hasOwn(shard, key) ? shard[key] : undefined;
 };
 
 export const createElement = (tagName, className, text) => {

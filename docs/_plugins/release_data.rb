@@ -92,17 +92,17 @@ module ReleaseData
       write_shards(File.join(target_dir, "disclosure_data"), records.map { |record| [record["public_id"], record] })
     end
 
-    # Writes one JSON object per non-empty shard, mapping key -> record. `entries` are [key, record] pairs.
+    # Writes all SHARD_COUNT shard files, mapping key -> record; empty shards are `{}` so the page
+    # can treat any failed request as an error. `entries` are [key, record] pairs.
     def write_shards(dir, entries)
       FileUtils.rm_rf(dir)
       FileUtils.mkdir_p(dir)
       duplicates = entries.map(&:first).tally.select { |_, count| count > 1 }.keys
       Jekyll.logger.warn("ReleaseData:", "duplicate keys in #{dir}, first one wins: #{duplicates.first(5).join(", ")}") if duplicates.any?
 
-      entries.group_by { |key, _| shard_for(key) }.each do |shard, shard_entries|
-        records = shard_entries.each_with_object({}) { |(key, record), shard_records| shard_records[key.to_s] ||= record }
-        write_json(File.join(dir, "#{shard}.json"), records)
-      end
+      shards = Array.new(SHARD_COUNT) { |index| [format("%02x", index), {}] }.to_h
+      entries.each { |key, record| shards[shard_for(key)][key.to_s] ||= record }
+      shards.each { |shard, records| write_json(File.join(dir, "#{shard}.json"), records) }
     end
 
     def write_json(path, payload)
