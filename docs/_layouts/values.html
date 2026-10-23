@@ -10,15 +10,15 @@ layout: default
     <ul class="search-container__ul" id="value-search-results"></ul>
   </div>
 </div>
-{% for value in site.data[page.target].reversed_values.values %}
-<div class="value-page-entry hidden" data-handle="{{ value.handle }}">
+{% comment %} Filled by values.js from value_data/ (see _plugins/release_data.rb) {% endcomment %}
+<div class="value-page-entry hidden" id="value-detail" data-attributes-url="{{ site.baseurl }}/releases/{{ page.target }}/attributes">
   <div class="column">
     <div class="value-wrapper box">
       <div class="value-container value-detail">
-        <h3>{{ value.name }}</h3>
+        <h3 class="value-detail__name"></h3>
         <div class="value-container__id">
-          <span class="id">{{ value.id }}</span>
-          <span class="id">{{ value.handle }}</span>
+          <span class="id value-detail__id"></span>
+          <span class="id value-detail__handle"></span>
         </div>
       </div>
     </div>
@@ -27,18 +27,9 @@ layout: default
     <div class="value-attribute-wrapper box">
       <div class="value-container value-attribute">
         <h3>Attribute</h3>
-        {% if value.attribute %}
-          <p>
-            <a href="{{ site.baseurl }}/releases/{{ page.target }}/attributes?attributeHandle={{ value.attribute.handle }}">
-              {{ value.attribute.name }}
-            </a>
-          </p>
-        {% else %}
-          <p>No attribute associated.</p>
-        {% endif %}
+        <p class="value-detail__attribute"></p>
       </div>
     </div>
   </div>
 </div>
-{% endfor %}
 <script type="module" src="{{ site.baseurl }}/assets/js/value_release.js"></script>
