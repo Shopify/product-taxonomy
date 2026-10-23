@@ -1,6 +1,6 @@
 import {setupSearch} from './search.js';
 import {q, getQueryParam} from './util.js';
-import {fetchRecord, createElement, replaceChildrenWith} from './release_data.js';
+import {fetchRecord, createElement, replaceChildrenWith, setLoadError} from './release_data.js';
 
 const disclosureQueryParamKey = 'disclosureId';
 const disclosureDataDir = '../disclosure_data';
@@ -59,8 +59,18 @@ const buildDetails = (disclosure) => {
 const showDisclosureByPublicId = async (publicId) => {
   const container = q('#disclosure-detail');
   container.classList.add('hidden');
+  setLoadError(container);
 
-  const disclosure = await fetchRecord(disclosureDataDir, publicId);
+  let disclosure;
+  try {
+    disclosure = await fetchRecord(disclosureDataDir, publicId);
+  } catch (error) {
+    console.error(error);
+    if (getQueryParam(disclosureQueryParamKey) === publicId) {
+      setLoadError(container, () => showDisclosureByPublicId(publicId));
+    }
+    return;
+  }
   // Skip stale responses when another disclosure was selected while loading.
   if (!disclosure || getQueryParam(disclosureQueryParamKey) !== publicId) return;
 

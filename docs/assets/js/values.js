@@ -1,5 +1,5 @@
 import {q, getQueryParam} from './util.js';
-import {fetchRecord, createElement} from './release_data.js';
+import {fetchRecord, createElement, setLoadError} from './release_data.js';
 
 const valueQueryParamKey = 'valueHandle';
 const className = {
@@ -31,9 +31,17 @@ const renderSelectedValue = async () => {
   const container = q('#value-detail');
   const selectedValue = getQueryParam(valueQueryParamKey);
   container.classList.add(className.hidden);
+  setLoadError(container);
   if (!selectedValue) return;
 
-  const value = await fetchRecord(valueDataDir, selectedValue);
+  let value;
+  try {
+    value = await fetchRecord(valueDataDir, selectedValue);
+  } catch (error) {
+    console.error(error);
+    if (getQueryParam(valueQueryParamKey) === selectedValue) setLoadError(container, renderSelectedValue);
+    return;
+  }
   // Skip stale responses when another value was selected while loading.
   if (!value || getQueryParam(valueQueryParamKey) !== selectedValue) return;
 

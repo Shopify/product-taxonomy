@@ -52,6 +52,21 @@ export const createListItem = (text, id) => {
   return item;
 };
 
+// Shows a load error with a retry button just before `container`, or clears it when `retry` is omitted.
+export const setLoadError = (container, retry) => {
+  const existing = container.previousElementSibling;
+  if (existing?.classList.contains('release-data-error')) existing.remove();
+  if (!retry) return;
+
+  const button = createElement('button', null, 'Try again');
+  button.type = 'button';
+  button.addEventListener('click', retry);
+  const error = createElement('p', 'release-data-error', 'Unable to load details. Please try again. ');
+  error.setAttribute('role', 'alert');
+  error.append(button);
+  container.before(error);
+};
+
 // Replaces the children of `parent` with `children`; avoids spreading very long arrays into one call.
 export const replaceChildrenWith = (parent, children) => {
   const fragment = document.createDocumentFragment();

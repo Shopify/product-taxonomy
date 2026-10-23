@@ -1,6 +1,6 @@
 import {setupSearch} from './search.js';
 import {q, getQueryParam} from './util.js';
-import {fetchRecord, createListItem, replaceChildrenWith} from './release_data.js';
+import {fetchRecord, createListItem, replaceChildrenWith, setLoadError} from './release_data.js';
 
 const returnReasonQueryParamKey = 'returnReasonHandle';
 const returnReasonDataDir = '../return_reason_data';
@@ -8,8 +8,18 @@ const returnReasonDataDir = '../return_reason_data';
 const showReturnReasonByHandle = async (returnReasonHandle) => {
   const container = q('#return-reason-detail');
   container.classList.add('hidden');
+  setLoadError(container);
 
-  const returnReason = await fetchRecord(returnReasonDataDir, returnReasonHandle);
+  let returnReason;
+  try {
+    returnReason = await fetchRecord(returnReasonDataDir, returnReasonHandle);
+  } catch (error) {
+    console.error(error);
+    if (getQueryParam(returnReasonQueryParamKey) === returnReasonHandle) {
+      setLoadError(container, () => showReturnReasonByHandle(returnReasonHandle));
+    }
+    return;
+  }
   // Skip stale responses when another return reason was selected while loading.
   if (!returnReason || getQueryParam(returnReasonQueryParamKey) !== returnReasonHandle) return;
 
