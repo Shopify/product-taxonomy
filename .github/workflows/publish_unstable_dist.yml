@@ -21,8 +21,7 @@ jobs:
     permissions:
       contents: write # Required to create the rolling prerelease and replace its assets.
     runs-on: ubuntu-latest
-    # Successful runs take ~12 minutes (checkout ~4m, all-locale dist generation ~6m).
-    timeout-minutes: 20
+    timeout-minutes: 60
     steps:
       - name: Refuse to publish from non-main refs
         if: github.event_name == 'workflow_dispatch'
@@ -148,8 +147,7 @@ jobs:
     name: Notify Slack on failure
     needs: [publish]
     # always() is required: without it this job is skipped when publish fails.
-    # Gate on == 'failure' (not != 'success') so cancelled runs don't alert.
-    if: ${{ always() && needs.publish.result == 'failure' }}
+    if: ${{ always() && needs.publish.result != 'success' }}
     permissions: {}
     runs-on: ubuntu-latest
     timeout-minutes: 5
