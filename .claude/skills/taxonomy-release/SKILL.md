@@ -115,10 +115,11 @@ bundle exec rake schema:vet
    reviewed manual notes; create a release-specific YAML file before passing
    it with `--notes`.
 2. List every PR merged since the last tag and add notes for changes the draft
-   cannot infer, such as disclosures, return reasons and removals:
+   cannot infer, such as disclosures, return reasons and removals. In the same
+   shell, reuse `base_commit` from step 1 rather than a local tag:
 
    ```sh
-   git log --first-parent --oneline <last-published-tag>..origin/main
+   git log --first-parent --oneline "$base_commit"..origin/main
    ```
 
 3. Put the draft in the `Unreleased` section of `CHANGELOG.md`. Before cutting
