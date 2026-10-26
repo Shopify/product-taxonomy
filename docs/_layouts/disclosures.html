@@ -10,26 +10,18 @@ layout: default
     <ul class="search-container__ul" id="disclosure-search-results"></ul>
   </div>
 </div>
-{% for disclosure in site.data[page.target].disclosures %}
-<div class="disclosure-container hidden" data-public-id="{{ disclosure.public_id }}">
+{% comment %} Filled by disclosure_release.js from disclosure_data/ (see _plugins/release_data.rb) {% endcomment %}
+<div class="disclosure-container hidden" id="disclosure-detail">
   <div class="column">
     <div class="box">
       <div class="value-container">
-        <h3>{{ disclosure.name }}</h3>
+        <h3 class="disclosure-detail__name"></h3>
         <div class="value-container__id">
-          <span class="id">{{ disclosure.id }}</span>
+          <span class="id disclosure-detail__id"></span>
         </div>
-        {% if disclosure.children.size > 0 %}
-        <div>
-          <ul class="values-container__list">
-            {% for child in disclosure.children %}
-            <li class="values-container__list-item">
-              <div class="values-container__list-item-content disclosure-node" tabindex="0" data-public-id="{{ child.public_id }}">{{ child.name }}</div>
-            </li>
-            {% endfor %}
-          </ul>
+        <div class="disclosure-detail__children">
+          <ul class="values-container__list"></ul>
         </div>
-        {% endif %}
       </div>
     </div>
   </div>
@@ -38,60 +30,10 @@ layout: default
       <div class="categories-container">
         <h3>Details</h3>
         <div>
-          <ul class="values-container__list">
-            <li class="values-container__list-item">
-              <div class="values-container__list-item-content">Public id: {{ disclosure.public_id }}</div>
-            </li>
-            {% if disclosure.description %}
-            <li class="values-container__list-item">
-              <div class="values-container__list-item-content">Description: {{ disclosure.description }}</div>
-            </li>
-            {% endif %}
-            {% if disclosure.parent_public_id %}
-            <li class="values-container__list-item">
-              <div class="values-container__list-item-content">Parent: <span class="disclosure-node" tabindex="0" data-public-id="{{ disclosure.parent_public_id }}">{{ disclosure.parent_public_id }}</span></div>
-            </li>
-            {% endif %}
-            {% if disclosure.jurisdictions %}
-            <li class="values-container__list-item">
-              <div class="values-container__list-item-content">Jurisdictions: {{ disclosure.jurisdictions | join: ", " }}</div>
-            </li>
-            {% endif %}
-            {% if disclosure.legal_citation %}
-            <li class="values-container__list-item">
-              <div class="values-container__list-item-content">Legal citation: {{ disclosure.legal_citation }}</div>
-            </li>
-            {% endif %}
-            {% if disclosure.symbol %}
-            <li class="values-container__list-item">
-              <div class="values-container__list-item-content">Symbol: <a href="{{ disclosure.symbol }}">{{ disclosure.symbol }}</a></div>
-            </li>
-            {% endif %}
-            {% if disclosure.display_requirements %}
-            <li class="values-container__list-item">
-              <div class="values-container__list-item-content">Display requirements: {{ disclosure.display_requirements }}</div>
-            </li>
-            {% endif %}
-            {% if disclosure.source %}
-            <li class="values-container__list-item">
-              <div class="values-container__list-item-content">Source: <a href="{{ disclosure.source }}">{{ disclosure.source }}</a></div>
-            </li>
-            {% endif %}
-            {% if disclosure.title %}
-            <li class="values-container__list-item">
-              <div class="values-container__list-item-content">Title: {{ disclosure.title }}</div>
-            </li>
-            {% endif %}
-            {% if disclosure.content %}
-            <li class="values-container__list-item">
-              <div class="values-container__list-item-content disclosure-content">Content: {{ disclosure.content | markdownify }}</div>
-            </li>
-            {% endif %}
-          </ul>
+          <ul class="values-container__list disclosure-detail__details"></ul>
         </div>
       </div>
     </div>
   </div>
 </div>
-{% endfor %}
 <script type="module" src="{{ site.baseurl }}/assets/js/disclosure_release.js"></script>
