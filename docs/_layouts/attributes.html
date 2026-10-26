@@ -26,16 +26,7 @@ layout: default
           <span class="id">{{ attribute.id }}</span>
         </div>
         <div>
-          <ul class="values-container__list">
-            {% for value in attribute.values %}
-            <li class="values-container__list-item">
-              <div class="values-container__list-item-content">
-                {{ value.name }}
-                <div class="id">{{ value.id }}</div>
-              </div>
-            </li>
-            {% endfor %}
-          </ul>
+          <ul class="values-container__list attribute-values-list"></ul>
         </div>
       </div>
     </div>
@@ -47,15 +38,7 @@ layout: default
           Categories
         </h3>
         <div>
-          <ul class="values-container__list">
-            {% for category in attribute.categories %}
-            <li class="values-container__list-item">
-              <div class="values-container__list-item-content">
-                {{ category.full_name }}
-              </div>
-            </li>
-            {% endfor %}
-          </ul>
+          <ul class="values-container__list attribute-categories-list"></ul>
         </div>
       </div>
     </div>
