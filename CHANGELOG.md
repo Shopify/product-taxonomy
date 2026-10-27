@@ -9,6 +9,7 @@ Expands the taxonomy with 49,686 new categories and 4,101 new base attributes wi
 ##### Apparel & Accessories
 
 - Adds 1,881 categories in this vertical.
+- Removes seven unassigned regional shoe-size attributes and their 1,263 values: `EU shoe size`, `UK children's shoe size`, `UK men's shoe size`, `UK women's shoe size`, `US children's shoe size`, `US men's shoe size` and `US women's shoe size`.
 - In the Watch Parts & Components area, adds 148 categories, including `Gear Train, Escapement & Regulation Parts`, `Winding, Setting & Automatic-Winding Parts`, `Watch Power & Electronic Parts`, `Watch Band & Bracelet Hardware` and `Complication Movement Parts`. Adds the attributes `AR coating type`, `Buckle type`, `Case back type` and `Crown position` to products in this area.
 - In the Costume Accessories area, adds 98 categories, including `Costume Props`, `Costume Garment & Body Accessories`, `Costume Headpieces`, `Costume Special Effects` and `Costume Jewelry, Neckwear & Adornments`.
 - In the Watch Tools area, adds 78 categories, including `General Watchmaker Bench Tools`, `Watch Cleaning, Polishing & Lubrication Tools`, `Watch Hand, Dial, Crown & Stem Tools`, `Watch Tool Kits` and `Watch Case Assembly Tools`.
@@ -93,6 +94,10 @@ Expands the taxonomy with 49,686 new categories and 4,101 new base attributes wi
 - Adds another 338 categories across 105 smaller areas in this vertical.
 - Adds 176 attribute assignments across 111 existing categories in this vertical.
 
+##### Bundles
+
+- Adds 8 attribute assignments across 1 existing category in this vertical.
+
 ##### Cameras & Optics
 
 - Adds 1,056 categories in this vertical.
@@ -145,6 +150,7 @@ Expands the taxonomy with 49,686 new categories and 4,101 new base attributes wi
 
 - Adds 3,547 categories in this vertical.
 - Renames the `fb` vertical from `Food, Beverages & Tobacco` to `Food & Beverages`. Tobacco Products remains under `fb-3`; category IDs and parent relationships stay unchanged.
+- Removes the trailing period from the English name of the `dairy_heat_treatment` attribute (`Dairy heat treatment.` becomes `Dairy heat treatment`).
 - In the Flour area, adds 69 categories, including `Legume Flours`, `Grain Flours`, `Nut Flours`, `Root & Tuber Flours` and `Seed Flours`. Adds the attribute `Flour type` to products in this area.
 - In the Chips area, adds 66 categories, including `Vegetable Chips`, `Fruit Chips`, `Grain Chips`, `Legume Chips` and `Bread Chips`. Adds the attribute `Edible oil type` to products in this area.
 - In the Prepared Desserts & Sweets area, adds 64 categories, including `Custard Desserts`, `Sponge Puddings`, `Dessert Jellies`, `Sweet Fritters` and `Sweet Pancakes`. Adds the attribute `Tray size` to products in this area.
@@ -316,6 +322,10 @@ Expands the taxonomy with 49,686 new categories and 4,101 new base attributes wi
 - Adds another 522 categories across 137 smaller areas in this vertical.
 - Adds 415 attribute assignments across 157 existing categories in this vertical.
 
+##### Product Add-Ons
+
+- Adds 1 attribute assignment across 1 existing category in this vertical.
+
 ##### Religious & Ceremonial
 
 - Adds 39 categories in this vertical.
@@ -426,6 +436,10 @@ Expands the taxonomy with 49,686 new categories and 4,101 new base attributes wi
 #### 🌐 Localization
 
 - Adds Hindi and refreshes category, attribute and value translations across 31 non-English languages.
+
+#### 🔄 Return Reasons
+
+- Keeps return reasons for all existing categories unchanged. New categories inherit the return reasons of their nearest ancestor; for example, the new Fish category under Live Animals offers the size and color reasons.
 
 #### 📦 Distribution
 
