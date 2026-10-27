@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 2026-10
+
 #### 📚 Taxonomy Tree
 
 Expands the taxonomy with 49,686 new categories and 4,101 new base attributes with closed lists of values.
