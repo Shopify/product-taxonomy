@@ -1,0 +1,1540 @@
+---
+et:
+  return_reasons:
+    type_too_big:
+      description: Fondi või tähemärkide suurus on soovitust suurem.
+      name: Liiga suur kiri
+    bust_too_tight:
+      description: Rõivaese pigistab ebamugavalt rinna ümbert.
+      name: Büstiosa liiga kitsas
+    speed:
+      name: Kiirus
+      description: Toode töötab või liigub kliendi vajaduste jaoks liiga kiiresti
+        või liiga aeglaselt.
+    not_suitable_for_terrain:
+      name: Ei sobi maastikule
+      description: Üksus ei toimi piisavalt hästi pinnasel, millel klient kavatses
+        seda kasutada.
+    operating_noise:
+      description: Seadme kasutamisega kaasnev müra on liiga vali või häiriv.
+      name: Töömüra
+    bristles_too_soft:
+      name: Liiga pehmed harjased
+      description: Hari on kavandatud otstarbe jaoks liiga pehme.
+    draw_length:
+      description: Vibu tõmbepikkus ei vasta vibulaskja käte ulatusele.
+      name: Tõmbepikkus
+    adhesive:
+      name: Liim
+      description: Toote liimimisomadused ei sobi kavandatud kasutuseks.
+    flow_rate:
+      description: Vedelik või õhk liigub läbi toote kliendi vajaduste jaoks liiga
+        kiiresti või liiga aeglaselt.
+      name: Voolukiirus
+    sound_quality:
+      description: Heli selgus, tõetruudus või kõla ei vasta kliendi ootustele.
+      name: Helikvaliteet
+    sensitivity:
+      description: Toode reageerib ärritajale liiga kergesti või mitte piisavalt kergesti.
+      name: Tundlikkus
+    light_spectrum:
+      name: Valgusspekter
+      description: Kiiratava valguse lainepikkused ei vasta kliendi nõuetele.
+    method:
+      name: Meetod
+      description: Toote kasutamiseks vajalik tehnika ei sobi kliendile.
+    difficult_to_clean:
+      name: Raske puhastada
+      description: Toote disain või materjal raskendab puhastamist ka õige meetodi
+        kasutamisel.
+    sleeves_too_short:
+      name: Liiga lühikesed varrukad
+      description: Rõivaeseme varrukad on kliendile liiga lühikesed.
+    finish:
+      description: Toote pinna välimus või viimistluskiht ei sobi kliendi kavandatud
+        kasutusviisi või -keskkonnaga.
+      name: Viimistlus
+    sample_type:
+      name: Proovi tüüp
+      description: Pakutava või nõutava proovi tüüp ei vasta kliendi soovile.
+    polarization:
+      description: Läätsel puudub pimestamist vähendav omadus või on see soovimatu.
+      name: Polarisatsioon
+    inseam_too_long:
+      description: Rõivaeseme sääre sisepikkus on kliendi jala jaoks liiga suur.
+      name: Sisesäär liiga pikk
+    received_the_wrong_item:
+      description: Klient sai tellitust või oodatust erineva toote.
+      name: Saadud vale üksus
+    video_quality:
+      name: Videokvaliteet
+      description: Pildi selgus, liikumine või värvide tõetruudus ei vasta ootustele.
+    material_too_see_through:
+      description: Rõivaeseme kangas paistab oodatust rohkem läbi.
+      name: Materjal liiga läbipaistev
+    age:
+      name: Vanus
+      description: Toote vanus, aastakäik või tootmiskuupäev ei vasta ootustele.
+    pigmentation:
+      name: Pigmentatsioon
+      description: Kosmeetikatoote värvi intensiivsus või pigmendisisaldus ei vasta
+        ootustele.
+    taste:
+      name: Maitse
+      description: Tarbimiseks mõeldud toote maitse ei vasta kliendi maitse-eelistustele.
+    assembly:
+      name: Kokkupanek
+      description: Toode tuleb kokku panna, kuigi klient eeldas, et see on juba kokku
+        pandud.
+    mileage:
+      description: Sõiduki kütusekulu või kasutusajalugu ei vasta ootustele.
+      name: Läbisõit
+    cups_gaping:
+      description: Rinnahoidja korvid ei liibu kehale ja jäävad seetõttu eemale hoidma.
+      name: Korvid hoiavad kehast eemale
+    spout:
+      name: Valamistila
+      description: Valamismehhanismi ehitus põhjustab soovimatut tilkumist, nirisemist
+        või vedeliku mahaloksumist.
+    band_too_thin:
+      description: Pael on mugavuse või piisava toe tagamiseks liiga kitsas.
+      name: Pael liiga õhuke
+    absorbency:
+      name: Imavus
+      description: Materjali võime vedelikku imada ja endas hoida on ebapiisav või
+        ülemäärane.
+    scent:
+      description: Toote lõhn on ebameeldiv või ei vasta ootustele.
+      name: Lõhn
+    delivery_issue:
+      name: Tarneprobleem
+      description: Saadetist ei õnnestunud kohale toimetada.
+    difficult_to_fasten:
+      name: Raske kinnitada
+      description: Kinnitusmehhanismi sulgemine nõuab liiga palju jõudu või osavust.
+    programming:
+      description: Elektroonikamooduli seadistamine konkreetse süsteemi jaoks on liiga
+        keeruline.
+      name: Programmeerimine
+    side_effects:
+      name: Kõrvaltoimed
+      description: Toode avaldas organismile ettenägematut ja soovimatut mõju.
+    cups_too_big:
+      description: Rõivaeseme korvid on kliendi rindade jaoks liiga mahukad.
+      name: Korvid liiga suured
+    noise_reduction:
+      name: Mürasummutus
+      description: Toode ei tõkesta ega summuta heli nii tõhusalt, kui klient ootas.
+    tip_style:
+      description: Aplikaatori või kirjutusotsa kuju või ehitus ei vasta kliendi vajadustele.
+      name: Otsaku kuju
+    straps_too_short:
+      name: Liiga lühikesed õlapaelad
+      description: Õlapaelte pikkus ei võimalda neid sobivaks reguleerida või rõivast
+        mugavalt kanda.
+    balance:
+      name: Tasakaal
+      description: Toote raskuse jaotus raskendab selle käsitsemist või vähendab stabiilsust.
+    print_quality:
+      description: Prinditud tulemusel on visuaalsed või struktuursed puudused, näiteks
+        vähene teravus, ebatäpsed värvid, pinnavead või kihtide halb nakkumine.
+      name: Trükikvaliteet
+    pattern:
+      name: Muster
+      description: Toote korduv dekoratiivne muster või motiiv ei vasta kliendi esteetilistele
+        eelistustele.
+    band_too_loose:
+      description: Paela ümbermõõt on kindlalt paigal püsimiseks liiga suur.
+      name: Liiga lõtv pael
+    caused_allergic_reaction:
+      name: Põhjustas allergilise reaktsiooni
+      description: Toode põhjustas selge ja tugeva allergilise reaktsiooni, näiteks
+        nõgestõve, turse või tugeva lööbe.
+    theme:
+      description: Toote teema või stiil ei vasta kliendi soovile.
+      name: Teema
+    vision_clarity:
+      name: Nägemisselgus
+      description: Läätsest läbi vaadates ei näe kasutaja selgelt.
+    scheduling_conflict:
+      description: Pakutavad vastuvõtuajad ei sobi kliendi ajakavaga.
+      name: Aeg ei sobi
+    too_bulky:
+      name: Liiga kogukas
+      description: Toode võtab liiga palju ruumi või on kohmakas käsitseda.
+    too_tight:
+      description: Toode pigistab või liibub kliendi jaoks ebamugavalt tihedalt.
+      name: Liiga kitsas
+    footbed_too_shallow:
+      name: Liiga madal jalasäng
+      description: Jalale mõeldud süvend ei ole piisavalt sügav.
+    difficult_to_fold:
+      description: Toote kokkupanemine või -voltimine on oodatust raskem või tülikam.
+      name: Raske kokku voltida
+    incompatible:
+      description: Toode ei ühildu kliendi olemasolevate seadmete või süsteemiga või
+        ei saa seda nende külge kinnitada.
+      name: Ühildumatu
+    responsiveness:
+      name: Reageerimisvõime
+      description: Kasutaja otsesele sisendile reageeritakse märgatava viivitusega
+        või ei reageerita üldse.
+    compliance:
+      description: Toode ei vasta kliendi nõutud õigusnormidele või organisatsiooni
+        standarditele.
+      name: Nõuetele vastavus
+    prescription:
+      name: Retsept
+      description: Läätse või toote optiline tugevus ei vasta kliendi nägemisvajadustele.
+    drying:
+      name: Kuivatav toime
+      description: Toode kuivatab soovimatult nahka, juukseid või muud pinda.
+    too_loose:
+      name: Liiga lõtv
+      description: Toode ei püsi kindlalt paigal või pole piisavalt pingul.
+    refraction:
+      name: Valguse murdumine
+      description: Valguse murdumine optikaseadmes ei anna soovitud visuaalset efekti.
+    weight:
+      description: Toode on kliendi kavandatud kasutuseks liiga raske või liiga kerge.
+      name: Kaal
+    diameter:
+      name: Läbimõõt
+      description: Ümmarguse ristlõike läbimõõt ei sobi ettenähtud kasutuseks või
+        ei vasta ühilduvusnõuetele.
+    too_coarse:
+      description: Abrasiivne pind on vajalikust karedam või lihvib liiga tugevalt.
+      name: Liiga kare
+    odor_control:
+      name: Lõhnatõrje
+      description: Üksus ei hoia lõhnu kinni ega neutraliseeri neid kliendi vajaduste
+        jaoks piisavalt.
+    protection:
+      description: Toode ei paku piisavat kaitset löökide või ilmastikuolude eest.
+      name: Kaitse
+    movement:
+      name: Liikumine
+      description: Toote automaatne või passiivne liikumine on liiga kiire, liiga
+        aeglane või muul viisil ebarahuldav.
+    ordered_multiple:
+      name: Tellitud mitu
+      description: Klient ostis mitu varianti kavatsusega jätta alles vaid üks.
+    trial_period_ending:
+      name: Prooviperiood lõpeb
+      description: Klient tagastab toote enne tellimuse või prooviperioodi lõppu.
+    fitment:
+      name: Paigaldussobivus
+      description: Üksus ei sobitu õigesti mudeli või osaga, mille külge see kinnitatakse.
+    shedding:
+      description: Tootest eraldub kasutamisel liiga palju kiude või osakesi.
+      name: Ajab karvu või kiude
+    adjustability:
+      description: Toodet või selle suurust ei saa piisavalt kohandada, et see vastaks
+        kliendi vajadustele.
+      name: Reguleeritavus
+    lifting_capacity:
+      name: Tõstevõime
+      description: Seadme maksimaalne tõstevõime ei ole piisav.
+    dye_transferred:
+      description: Toode andis teistele pindadele või rõivastele värvi.
+      name: Andis värvi
+    too_loud:
+      description: Toote tekitatud heli on kavandatud kasutuskeskkonna jaoks liiga
+        vali või häiriv.
+      name: Liiga vali
+    dispenser:
+      name: Dosaator
+      description: Toote doseerimismehhanism ei vasta ootustele.
+    sharpness:
+      name: Teravus
+      description: Tööriista lõikeserv või ots ei ole piisavalt terav.
+    power_output:
+      description: Seadme väljundvõimsus on kavandatud töö jaoks liiga väike või liiga
+        suur.
+      name: Väljundvõimsus
+    duplicate_order:
+      name: Topelttellimus
+      description: Klient tellis toote kogemata mitu korda.
+    roast_level:
+      name: Röstimisaste
+      description: Kohviubade röstimisaste ei vasta kliendi maitse-eelistustele.
+    too_simple:
+      description: Toode pole nii keerukas või sellel puuduvad omadused, mida klient
+        soovis.
+      name: Liiga lihtne
+    damaged_packaging:
+      description: Välispakend saabus kahjustatuna.
+      name: Kahjustatud pakend
+    uncomfortable:
+      description: Toote kasutamine tekitab üldist füüsilist ebamugavust.
+      name: Ebamugav
+    hard_to_inflate:
+      name: Raske täis puhuda
+      description: Ventiil või mehhanism raskendab toote õhuga täitmist.
+    padding:
+      name: Polsterdus
+      description: Pehme kaitsematerjali kogus või paigutus ei vasta ootustele.
+    light_temperature:
+      name: Valguse värvustemperatuur
+      description: Kiiratava valguse värvustemperatuur (soe või külm) ei vasta kliendi
+        eelistustele.
+    temperature_regulation:
+      name: Temperatuuri reguleerimine
+      description: Materjal hoiab liiga palju kehasoojust kinni, mistõttu kasutajal
+        hakkab liiga palav.
+    difficult_to_assemble:
+      name: Raske kokku panna
+      description: Toote kokkupanek on liiga raske või keeruline või on juhised ebaselged.
+    stained:
+      description: Tootel on värvimuutusi või plekke, mis mõjutavad selle välimust.
+      name: Plekkidega
+    base_curve:
+      name: Baaskõverus
+      description: Läätse kumerus ei vasta kliendi silma kujule või retsepti nõuetele.
+    service_unavailable:
+      name: Teenus pole saadaval
+      description: Soovitud teenust ei pakuta või seda ei saa kliendi piirkonnas või
+        olukorras osutada.
+    frame_color:
+      description: Raami värv ei vasta kliendi esteetilistele eelistustele.
+      name: Raami värv
+    waist_too_big:
+      name: Vöökohast liiga lai
+      description: Vööümbermõõt on kliendi jaoks liiga suur.
+    unstable:
+      description: Toode nihkub, vibreerib liigselt või kaotab töötamise või kasutamise
+        ajal tasakaalu.
+      name: Ebastabiilne
+    cold_duration:
+      name: Külma säilimise kestus
+      description: Üksus ei püsi külm nii kaua, kui klient vajab.
+    realism:
+      name: Tõetruudus
+      description: Välimus või toimimine ei jäljenda tegelikkust piisavalt veenvalt.
+    too_firm:
+      description: Toode on oodatust kõvem või vähem vetruv.
+      name: Liiga kõva
+    style:
+      name: Stiil
+      description: Toote disain, lõige või välimus ei vasta kliendi maitsele.
+    applicator:
+      name: Aplikaator
+      description: Kaasasolev vahend jaotab toodet ebaühtlaselt või kontrollimatult.
+    volume:
+      description: Seadme tekitatud heli on liiga vaikne või liiga vali.
+      name: Maht
+    presentation:
+      description: Toote või selle sisu paigutus ja esitlus ei ole rahuldav.
+      name: Esitlus
+    wind_resistance:
+      description: Toote tuulepidavus ei sobi kavandatud tingimuste või tegevuse jaoks.
+      name: Tuulekindlus
+    waist_too_high:
+      description: Rõivaeseme vöökoht asub kehal liiga kõrgel.
+      name: Vöökoht liiga kõrgel
+    color:
+      description: Toote värv, toon või välimus ei vasta kliendi eelistustele või
+        ootustele.
+      name: Värv
+    cups_too_thick:
+      name: Liiga paksud korvid
+      description: Korvide polster või materjal on liiga paks.
+    barrel_size:
+      description: Lokitangi või tööriista läbimõõt ei sobi soovitud tulemuse saavutamiseks.
+      name: Kurika löögiosa suurus
+    detail:
+      description: Toote kujundus või sellega saadav tulemus ei ole piisavalt detailne
+        või täpne.
+      name: Detail
+    fails_to_detect_threats:
+      name: Ei tuvasta ohte
+      description: Turva- või ohutusseade ei tuvasta ohte ootuspäraselt.
+    opacity:
+      name: Läbipaistmatus
+      description: Läbipaistvuse või läbikumavuse aste ei vasta kliendi eelistustele.
+    scratched:
+      description: Toote pinnal on kriimustusi või hõõrdumisjälgi, mis mõjutavad selle
+        välimust.
+      name: Kriimustatud
+    closure:
+      name: Kinnitus
+      description: Üksuse avamis- või sulgemismehhanismi on raske kasutada või see
+        ei püsi kindlalt kinni.
+    weight_capacity:
+      name: Kandevõime
+      description: Toote maksimaalne kandevõime on kliendi kavandatud kasutuseks liiga
+        väike.
+    strength:
+      description: Toote keemilise toime tugevus või füüsiline jõud ei vasta ootustele.
+      name: Tugevus
+    plate_type:
+      name: Plaadi tüüp
+      description: Plaadi materjal või pinnakate ei vasta kliendi eelistustele.
+    drainage:
+      name: Äravool
+      description: Üksus ei võimalda vedelikul korralikult ära voolata.
+    size:
+      description: Toote mõõtmed ei vastanud kliendi ootustele.
+      name: Suurus
+    sole_too_thin:
+      description: Jalatsi tald ei paku piisavat pehmendust või kaitset.
+      name: Tald liiga õhuke
+    cups_too_tight:
+      name: Liiga kitsad korvid
+      description: Korvid suruvad või pigistavad rindu ebamugavalt.
+    too_short:
+      description: Toode on soovitud istuvuse, ettenähtud ruumi või kasutusviisi jaoks
+        liiga lühike.
+      name: Liiga lühike
+    difficult_to_use:
+      description: Toote kasutamine nõuab oodatust rohkem oskusi või pingutust.
+      name: Raske kasutada
+    doesnt_fit_bed_frame:
+      description: Madratsi või voodipesu mõõtmed ei sobi konkreetse voodiraami suurusega.
+      name: Ei sobi voodiraamiga
+    cuff_too_big:
+      name: Liiga suur mansett
+      description: Randme või käsivarre ümber olev ava on liiga avar.
+    unknown:
+      name: Teadmata
+      description: Tagastuse põhjust pole täpsustatud või seda ei õnnestunud kindlaks
+        teha.
+    product_leaks:
+      name: Toode lekib
+      description: Mahuti või toode ei hoia sisu korralikult sees.
+    charging_speed:
+      name: Laadimiskiirus
+      description: Seadme aku laadimine võtab liiga kaua aega.
+    weather:
+      description: Keskkonnatingimused takistavad teenuse osutamist või tegevuse toimumist.
+      name: Ilm
+    application:
+      description: Toote pealekandmine ei jäta eksimisruumi, on liiga keeruline või
+        võib kergesti valesti minna.
+      name: Pealekandmine
+    difficulty_level:
+      name: Raskusaste
+      description: Toote raskusaste ei vasta kasutaja oskustele.
+    results_time:
+      name: Tulemuste saamise aeg
+      description: Tulemuse saamiseks kulub oodatust rohkem või vähem aega.
+    not_suitable_for_skin_type:
+      name: Ei sobi nahatüübile
+      description: Toode ärritab kasutaja nahka või ei avalda sellele soovitud mõju.
+    wrong_hand:
+      name: Vale käe jaoks
+      description: Üksus on mõeldud vastupidise käelisusega kasutajale (vasaku- või
+        paremakäelisele), kui klient vajab.
+    installation:
+      name: Paigaldamine
+      description: Toote paigaldamine või kinnitamine on oodatust raskem või keerulisem.
+    blade_type:
+      description: Tera tüüp või lõikeserv ei sobi kliendi kasutusotstarbeks.
+      name: Tera tüüp
+    flex:
+      description: Toote painduvus ja vetruvus ei sobi kasutaja vajaduste või stiiliga.
+      name: Painduvus
+    loose_around_thighs:
+      description: Rõivaese ei istu reite ümber piisavalt kindlalt.
+      name: Reite ümbert lai
+    animal_refused:
+      name: Loom keeldus
+      description: Loom keeldus toodet kasutamast või tarbimast.
+    battery_life:
+      description: Seadme tööaeg ühe laadimisega ei vasta kliendi ootustele.
+      name: Aku kestus
+    too_stiff:
+      name: Liiga jäik
+      description: Üksus või selle komponendid on liiga jäigad, et ettenähtud kasutuseks
+        vajalikul määral painduda, vetruda või kuju võtta.
+    longevity:
+      name: Kasutusiga
+      description: Toote mõju kestab oodatust lühemat või pikemat aega.
+    heel_too_high:
+      name: Liiga kõrge konts
+      description: Konts on mugavuse või isiklike eelistuste seisukohast liiga kõrge.
+    laptop_fit:
+      description: Sahtli või ümbrise mõõtmed ei sobi kliendi sülearvutiga.
+      name: Sülearvuti mahutavus
+    logo_peeling:
+      name: Logo koorub
+      description: Tootele trükitud või kinnitatud brändimärgistus tuleb lahti.
+    terrain:
+      description: Pinnase tüüp või olud ei sobi toote kasutusvõimalustega.
+      name: Maastik
+    ingredients:
+      name: Koostisosad
+      description: Toode sisaldab koostisosi, mida klient soovib vältida.
+    washability:
+      name: Pestavus
+      description: Nõutav puhastusviis ei ole vastuvõetav.
+    readability:
+      description: Tootel olevat teksti või kuval esitatavat teavet on raske näha
+        või mõista.
+      name: Loetavus
+    thickness:
+      description: Toode on oodatust paksem või õhem.
+      name: Paksus
+    product_overheats:
+      name: Toode kuumeneb üle
+      description: Seade kuumeneb töötamise ajal ohtliku või ebamugava temperatuurini.
+    damaged_after_wear:
+      description: Tootel ilmnevad pärast kandmist kahjustused.
+      name: Pärast kandmist kahjustunud
+    pockets_too_shallow:
+      description: Taskud on liiga madalad, et esemed neis kindlalt püsiksid.
+      name: Taskud liiga madalad
+    bounce:
+      name: Põrkevõime
+      description: Põrkevõime on tegevuse jaoks liiga suur või liiga väike.
+    item_not_as_described:
+      description: Toode ei vasta kirjes esitatud kirjeldusele, piltidele või tehnilistele
+        andmetele.
+      name: Üksus ei vasta kirjeldusele
+    type_too_small:
+      description: Fondi või tähemärkide suurus on mugavaks lugemiseks liiga väike.
+      name: Kiri liiga väike
+    artificial_tasting:
+      description: Maitse tundub ebaloomulik või kunstlik.
+      name: Kunstliku maitsega
+    straps_too_long:
+      name: Liiga pikad õlapaelad
+      description: Liiga pikkade rihmade tõttu ei istu toode õigesti või ei saa seda
+        sobivaks reguleerida.
+    bust_too_loose:
+      description: Rõivaese ei istu rinna ümber piisavalt kindlalt.
+      name: Rinnaosa liiga avar
+    budget:
+      description: Teenuse maksumus ületab kliendi rahalisi võimalusi.
+      name: Eelarve
+    language:
+      name: Keel
+      description: Tekst või heli ei ole kliendile vajalikus keeles.
+    embellishment_fell_off:
+      name: Kaunistus tuli küljest ära
+      description: Kaunistused tulid üksuse küljest lahti.
+    material:
+      description: Toote materjal või kangas ei vasta kliendi eelistustele puutetunde,
+        vastupidavuse või koostise poolest.
+      name: Materjal
+    collar_too_loose:
+      description: Krae ei istu kaela ümber piisavalt kindlalt.
+      name: Krae liiga lai
+    skin_tone:
+      name: Nahatoon
+      description: Värv ei sobi kliendi nahatooniga.
+    too_small:
+      name: Liiga väike
+      description: Toote mõõtmed on kliendile sobiva istuvuse või olemasoleva ruumi
+        jaoks liiga väikesed.
+    height:
+      description: Toote kõrgus ei sobi kliendi ruumi või ergonoomiliste vajadustega.
+      name: Kõrgus
+    amperage:
+      name: Voolutugevus
+      description: Nimivoolutugevus ei vasta kliendi seadme või süsteemi nõuetele.
+    too_big:
+      name: Liiga suur
+      description: Toote mõõtmed on kliendile sobiva istuvuse või olemasoleva ruumi
+        jaoks liiga suured.
+    not_suitable_for_hair_type:
+      name: Ei sobi juuksetüübile
+      description: Toode ei mõju kasutaja juustele või annab soovimatu tulemuse.
+    water_resistance:
+      name: Veekindlus
+      description: Toote vee- või niiskushülgavus ei ole kavandatud kasutustingimustes
+        piisav.
+    adhesive_strength:
+      description: Liimi nakke tugevus on kavandatud koormuse või pinge jaoks liiga
+        väike või liiga suur.
+      name: Nakketugevus
+    warmth:
+      name: Soojus
+      description: Üksuse soojendav toime või soojapidavus ei sobi ettenähtud tingimuste
+        või tegevuse jaoks.
+    prescription_processed_incorrectly:
+      description: Toote retseptipõhised parameetrid ei vasta kliendi tellimuses määratud
+        andmetele.
+      name: Retsept valesti täidetud
+    grip:
+      name: Haarduvus
+      description: Üksuse pinnatekstuur ei taga kliendile vajalikku kontrolli või
+        stabiilsust.
+    color_too_bright:
+      name: Liiga ere värv
+      description: Värv on kliendi maitse jaoks liiga intensiivne või erk.
+    stuffing:
+      description: Täitematerjali on liiga vähe või selle tüüp tekitab ebamugavust.
+      name: Täidis
+    burn_rate:
+      description: Toode põleb ära oodatust kiiremini või aeglasemalt.
+      name: Põlemiskiirus
+    recoil:
+      name: Tagasilöök
+      description: Seadme tagasiliikumine või tagasilöök on kliendi jaoks ebamugavalt
+        tugev.
+    eye_strain:
+      name: Silmade väsimus
+      description: Toote kasutamine väsitab silmi või tekitab silmades ebamugavust.
+    content:
+      description: Tootes sisalduv teave või materjal ei vasta kliendi ootustele.
+      name: Sisu
+    adhesion:
+      description: Toode ei nakku ettenähtud pinnaga algusest peale piisavalt kindlalt.
+      name: Nakkuvus
+    inseam_too_short:
+      description: Rõivaeseme sääre sisepikkus on kliendi jala jaoks liiga väike.
+      name: Liiga väike sääre sisepikkus
+    packaging_not_sealed:
+      name: Pakend pole pitseeritud
+      description: Toode saabus avatud või avamisjälgedega pakendis.
+    firmness:
+      description: Toote kõvadus või vetruvus ei vasta ootustele.
+      name: Jäikus
+    cleaning:
+      name: Puhastamine
+      description: Toode ei saa nii kergesti puhtaks, kui oodati.
+    viscosity:
+      name: Viskoossus
+      description: Vedeliku paksus või voolavus ei sobi kavandatud kasutuseks.
+    pockets_too_deep:
+      description: Taskud on nii sügavad, et esemeid on raske kätte saada.
+      name: Taskud liiga sügavad
+    uncomfortable_in_ear:
+      description: Kõrvaosa istuvus või kuju põhjustab ärritust või valu.
+      name: Kõrvas ebamugav
+    pressure:
+      description: Tootest väljuva voolu rõhk on liiga kõrge või liiga madal.
+      name: Rõhk
+    magnification_too_strong:
+      description: Suurendus on liiga tugev ning põhjustab moonutusi või ebamugavust.
+      name: Liiga suur suurendus
+    caffeine_level:
+      name: Kofeiinisisaldus
+      description: Toote kofeiinisisaldus on kasutaja jaoks liiga suur või liiga väike.
+    duration:
+      description: Teenuse, ürituse või juurdepääsuperioodi kestus on oodatust lühem
+        või pikem.
+      name: Kestus
+    softness:
+      name: Pehmus
+      description: Toote pehmus või kohevus ei vasta kliendi eelistustele.
+    too_bitter:
+      name: Liiga mõru
+      description: Tootel on ebameeldivalt terav või mõrkjas maitse.
+    maneuverability:
+      description: Toodet ei saa nii kergesti liigutada, juhtida või käsitseda, kui
+        klient vajab.
+      name: Manööverdusvõime
+    provider_unavailable:
+      name: Teenusepakkuja pole saadaval
+      description: Teenusepakkuja ei saa taotlust soovitud ajal või kohas täita.
+    field_of_view:
+      description: Optilise seadme vaateväli ei sobi kavandatud kasutusotstarbeks.
+      name: Vaateväli
+    ripeness:
+      name: Küpsus
+      description: Saaduste küpsusaste ei ole tarbimiseks sobiv.
+    fit:
+      description: Toode ei sobitu õigesti kehale, keha sisse või vastu keha ega muude
+        seadmetega
+      name: Istuvus
+    piece_size:
+      name: Tüki suurus
+      description: Komplekti üksikud komponendid on ettenähtud kasutuseks liiga suured
+        või liiga väikesed.
+    legs_too_tight:
+      description: Rõivaeseme sääreosad piiravad liikumist või pigistavad ebamugavalt.
+      name: Sääreosad liiga kitsad
+    shade:
+      name: Toon
+      description: Värvi nüanss, toon või sügavus ei vasta ootustele.
+    efficiency:
+      name: Tõhusus
+      description: Toode tarbib töötamiseks oodatust rohkem kütust või energiat.
+    organization:
+      name: Korrastus
+      description: Hoiukohtade või funktsioonide paigutus ei võimalda neid hõlpsalt
+        kasutada või neile ligi pääseda.
+    dietary_requirements:
+      description: Toode sisaldab koostisosi, mis ei sobi kliendi tervisest tulenevate
+        vajaduste või elustiilivalikutega.
+      name: Toitumisnõuded
+    wear:
+      name: Kulumine
+      description: Kosmeetika- või kehahooldustoote mõju ei püsi nii kaua kui oodatud.
+    frame_too_small:
+      description: Prilliraami mõõtmed ei sobi kliendi näoga.
+      name: Raam liiga väike
+    configuration:
+      name: Konfiguratsioon
+      description: Toote moodulkomponentide paigutamise või ühendamise võimalused
+        ei sobi kavandatud kasutuseks.
+    difficult_to_blend:
+      name: Raske hajutada
+      description: Toode ei segune ühtlaselt teiste ainetega ega sulandu hästi pindadega.
+    not_pet_friendly:
+      description: Toote koostisosad või omadused on lemmikloomadele kahjulikud või
+        sobimatud.
+      name: Ei sobi lemmikloomadele
+    too_sticky:
+      description: Toode kleepub liiga tugevalt või jätab soovimatuid kleepuvaid jääke.
+      name: Liiga kleepuv
+    arrived_late:
+      description: Tarne toimus oodatud kuupäevast või nõutud ajast hiljem.
+      name: Saabus hilinemisega
+    lens_scratched:
+      description: Optilisel pinnal on nähtavaid jälgi, mis mõjutavad nägemist või
+        välimust.
+      name: Lääts kriimustatud
+    damaged_after_use:
+      description: Toode on pärast tavapärast kasutamist kahjustunud või purunenud.
+      name: Pärast kasutamist kahjustunud
+    clarity:
+      description: Toote läbipaistvus ei vasta kliendi nõuetele.
+      name: Selgus
+    temperature_rating:
+      name: Temperatuuriklass
+      description: Toote ettenähtud töötemperatuurivahemik ei sobi kliendi keskkonnatingimustega.
+    printing:
+      description: Tootele trükitud tekst, pilt või kujundus on vigane, valesti joondatud
+        või puudulik.
+      name: Trükk
+    legs_too_loose:
+      description: Rõivaeseme sääreosad ei liibu piisavalt jalgadele.
+      name: Sääreosad liiga avarad
+    not_enough_support:
+      name: Ebapiisav tugi
+      description: Toote konstruktsioon ei ole piisavalt toestatud.
+    sourcing:
+      description: Toote materjalide päritolu või nende hankimise eetilisus ei ole
+        rahuldav.
+      name: Päritolu
+    band_rolls_up:
+      description: Kummipael või kangast pael ei püsi paigal ja libiseb kehal ülespoole.
+      name: Pael rullub üles
+    surface_damage:
+      name: Pinnakahjustused
+      description: Toote välispinnal on iluvigu, näiteks kriimustusi, mõlke, täkkeid
+        või muid defekte.
+    too_strong:
+      name: Liiga tugev
+      description: Üksuse jõud, väljund või mõju on liiga tugev.
+    baby_refused:
+      name: Beebi keeldus
+      description: Imik ei tahtnud üksust kasutada ega võtnud seda omaks.
+    padding_not_removable:
+      name: Polsterdus pole eemaldatav
+      description: Polster on püsivalt kinnitatud, kuigi klient soovis eemaldatavaid
+        polstreid.
+    material_not_breathable:
+      name: Materjal ei hinga
+      description: Kangas ei lase piisavalt õhku läbi.
+    restrictive:
+      description: Toode piirab liikumist või painduvust soovitust rohkem.
+      name: Piirab liikumist
+    flavor:
+      description: Toote sildil märgitud maitsevariant ei ole see, mida klient soovis.
+      name: Maitse
+    too_much_support:
+      name: Liiga tugev tugi
+      description: Toestus on liiga tugev või jäik, et kliendil oleks mugav.
+    tight_around_thighs:
+      name: Reite ümbert kitsas
+      description: Rõivas pigistab ebamugavalt reite ümbert.
+    suction_strength:
+      name: Imemisjõud
+      description: Vaakumkinnituse jõud on ettenähtud kasutuseks liiga nõrk või liiga
+        tugev.
+    difficult_to_refill:
+      name: Raske uuesti täita
+      description: Toote uuesti täitmine on määriv või keeruline.
+    resistance:
+      description: Treeningvahendi vastupanu on liiga suur või liiga väike.
+      name: Takistus
+    animal_didnt_like:
+      description: Loom keeldus toodet tarbimast või sellega tegelemast.
+      name: Loomale ei meeldinud
+    no_pockets:
+      name: Taskud puuduvad
+      description: Üksusel puuduvad kliendi oodatud hoiutaskud või -lahtrid.
+    inscription:
+      description: Toote kohandatud tekst või graveering on vale või halvasti teostatud.
+      name: Pealiskiri
+    stains_easily:
+      description: Materjalile tekivad kergesti püsivad plekid või värvimuutused.
+      name: Võtab kergesti plekke külge
+    sample_method:
+      name: Proovivõtumeetod
+      description: Vajaliku proovi võtmine on tülikas, ebamugav või keeruline.
+    range:
+      name: Ulatus
+      description: Seadme tööulatus või läbitav vahemaa ei vasta kliendi nõuetele.
+    texture:
+      name: Tekstuur
+      description: Toote tekstuur või koostis ei vasta kliendi eelistustele.
+    power_source:
+      description: Seadme toiteviis on kliendile ebamugav või sobimatu.
+      name: Toiteallikas
+    too_thin:
+      description: Toode on kavandatud kasutuseks liiga õhuke või õbluke.
+      name: Liiga õhuke
+    shaft_length:
+      name: Varre pikkus
+      description: Üksuse põhivarre või korpuse pikkus ei sobi ettenähtud seadmele
+        või kasutajale.
+    collar_too_tight:
+      name: Liiga kitsas krae
+      description: Krae pigistab ebamugavalt kaela ümbert.
+    straps_too_thick:
+      description: Õlapaelad on liiga laiad või kogukad.
+      name: Liiga paksud õlapaelad
+    intensity:
+      name: Intensiivsus
+      description: Seadme väljundi või tajutava mõju tugevus ei vasta kasutaja eelistustele.
+    nozzle:
+      name: Düüs
+      description: Toote doseerimismehhanism ei vasta ootustele.
+    retention:
+      name: Paigalpüsimine
+      description: Üksus ei hoia eset kindlalt paigal ootuspärasel viisil.
+    quantity:
+      name: Kogus
+      description: Toote kogus on kliendi oodatust väiksem või suurem.
+    heel_too_thick:
+      description: Konts on liiga lai või kogukas.
+      name: Konts liiga jäme
+    too_quiet:
+      name: Liiga vaikne
+      description: Üksuse tekitatav heli on liiga vaikne, et seda ettenähtud keskkonnas
+        selgelt kuulda.
+    rubbing:
+      description: Toode hõõrub korduva liikumise tõttu vastu nahka või põhjustab
+        hõõrdumiskahjustusi.
+      name: Hõõrdumine
+    bristles_too_coarse:
+      name: Liiga karedad harjased
+      description: Hari on kavandatud otstarbe jaoks liiga kare või kriipiv.
+    stone_setting:
+      description: Dekoratiivkivide või vääriskivide kinnitus on puudulik või ebakindel.
+      name: Kivikinnitus
+    loose_seams:
+      description: Õmblused ei ole tugevad, mis viitab kehvale valmistuskvaliteedile.
+      name: Lahtised õmblused
+    ventilation:
+      description: Toode ei taga piisavat õhuringlust või hingavust.
+      name: Ventilatsioon
+    lacks_security_features:
+      name: Turvafunktsioonid puuduvad
+      description: Tootel puuduvad oodatud ohutus- või vargusvastased mehhanismid.
+    text_size:
+      description: Trükitud või kuvatud teksti fondisuurus raskendab lugemist.
+      name: Teksti suurus
+    wrong_amount:
+      description: Saadud toote kogus erineb tellitust või oodatust.
+      name: Vale kogus
+    too_subtle:
+      name: Liiga tagasihoidlik
+      description: Üksuse mõju iseloom, detailid või nüansid on soovitust vähem märgatavad.
+    frequency:
+      description: Võnke- või signaali edastussagedus ei sobi kliendi seadmete või
+        eelistustega.
+      name: Sagedus
+    seams_splitting:
+      description: Õmblused hargnevad või on näha märke nende lagunemisest.
+      name: Õmblused hargnevad
+    stability:
+      name: Stabiilsus
+      description: Toode kõigub või ei püsi paigale asetatuna või kasutamisel kindlalt.
+    carbonation:
+      name: Gaseeritus
+      description: Jook on liiga tugevalt või liiga nõrgalt gaseeritud.
+    reaction:
+      description: Toode põhjustas soovimatu nahareaktsiooni või nahaärrituse.
+      name: Reaktsioon
+    too_drying:
+      name: Liiga kuivatav
+      description: Toode eemaldab liiga palju niiskust, muutes naha või juuksed kuivaks.
+    band_too_big:
+      description: Paela ümbermõõt on liiga suur, mistõttu see ei püsi kindlalt keha
+        ümber.
+      name: Rinnaalune ümbermõõt liiga suur
+    doesnt_fit_mattress:
+      description: Voodipesu mõõtmed ei vasta madratsi suurusele.
+      name: Ei sobi madratsiga
+    seal:
+      name: Tihend
+      description: Üksuse tihend ei taga nõutud õhu- või veekindlust.
+    lock:
+      description: Sisseehitatud võtme- või koodlukk on defektne või ei tööta ootuspäraselt.
+      name: Lukk
+    lubrication:
+      name: Määrimine
+      description: Toode on korralikuks toimimiseks liiga kuiv või liiga libe.
+    breaks_easily:
+      name: Puruneb kergesti
+      description: Üksus tundub habras või ei pea tavapärasel kasutamisel vastu.
+    missing_desired_features:
+      description: Tootel puuduvad kliendi oodatud funktsioonid või omadused.
+      name: Soovitud funktsioonid puuduvad
+    caused_irritation:
+      name: Põhjustas ärritust
+      description: Toode põhjustas nahaärritust või kehalist ebamugavust.
+    field_of_view_too_narrow:
+      description: Optikaseadme või maski vaateväli on liiga kitsas.
+      name: Vaateväli liiga kitsas
+    buttons_not_accessible:
+      name: Nuppudele ei pääse ligi
+      description: Ümbris või kate varjab seadme juhtnupud, takistades nende kasutamist.
+    rod_power:
+      description: Õngeridva jäikus või tõstevõime on kavandatud kasutuse jaoks liiga
+        väike või liiga suur.
+      name: Õngeridva jäikus
+    bitterness:
+      description: Tootel on ebameeldivalt terav või mõrkjas maitse.
+      name: Kibedus
+    test_method:
+      description: Testikomplekti kasutamiseks vajalik protseduur ei vasta kliendi
+        eelistustele.
+      name: Testimismeetod
+    too_weak:
+      name: Liiga nõrk
+      description: Üksuse jõud, väljund või mõju on ebapiisav või vaevumärgatav.
+    compartments:
+      name: Lahtrid
+      description: Hoiulahtrite arv või paigutus ei vasta kliendi vajadustele asjade
+        korrastamisel.
+    closeness:
+      description: Vahend ei raseeri ega lõika karvu nahale nii lähedalt kui soovitud.
+      name: Raseerimise nahalähedus
+    drying_speed:
+      name: Kuivamiskiirus
+      description: Toode kuivab või tardub liiga aeglaselt või liiga kiiresti.
+    lacks_required_certification:
+      description: Tootel puuduvad nõutavad ametlikud heakskiidud või see ei vasta
+        standarditele.
+      name: Nõutud sertifikaat puudub
+    pilling:
+      name: Topilisus
+      description: Kangas läheb kasutamisel või pesemisel liiga kiiresti topiliseks
+        või karvaseks.
+    shelf_life:
+      name: Säilivusaeg
+      description: Toode püsib kasutuskõlblik või värske oodatust lühemat aega.
+    lock_type:
+      description: Toote lukustusmehhanism ei vasta kliendi ootustele mugavuse või
+        turvalisuse osas.
+      name: Luku tüüp
+    chest_too_small:
+      description: Rõiva rinnaümbermõõt on kliendi jaoks liiga väike.
+      name: Rinnaosa liiga väike
+    footbed_too_wide:
+      name: Sisetald liiga lai
+      description: Jalapõhja toetav pind on liiga lai, mistõttu jalg ei püsi kindlalt
+        paigal.
+    age_range:
+      description: Toote soovituslik vanuserühm ei vasta kavandatud kasutaja vanusele.
+      name: Vanusevahemik
+    inverter_type:
+      description: Kasutatav elektrivoolu muundamise tehnoloogia ei vasta kliendi
+        nõuetele.
+      name: Inverteri tüüp
+    flange_size:
+      name: Rinnalehtri suurus
+      description: Rinnapumba lehtri ava läbimõõt ei sobi kasutajale, mis mõjutab
+        mugavust või piima väljapumpamist.
+    other_reason:
+      description: Tagastuse põhjus ei kuulu ühtegi etteantud kategooriasse.
+      name: Muu
+    effectiveness:
+      name: Tõhusus
+      description: Toode ei täida oma põhiülesannet ega paku lubatud kasu oodatud
+        tasemel.
+    board_volume:
+      name: Laua maht
+      description: Laua mahust tulenev ujuvus on kasutaja kaalu jaoks liiga väike
+        või liiga suur.
+    squeaks:
+      description: Toode tekitab kasutamisel soovimatuid kõrgeid helisid.
+      name: Kriuksub
+    articulation:
+      description: Toote liigendite liikumisulatus või liikumise sujuvus ei vasta
+        kliendi vajadustele.
+      name: Liigendite liikuvus
+    doesnt_blend_well:
+      description: Toode ei segune ühtlaselt teiste ainetega ega sulandu hästi pindadega.
+      name: Ei haju hästi
+    narration:
+      description: Ettelugeja hääl, toon või lugemisstiil ei meeldi kliendile.
+      name: Ettelugemine
+    color_too_muted:
+      description: Värv ei ole kliendi eelistuste jaoks piisavalt ergas või intensiivne.
+      name: Värv liiga tuhm
+    odor:
+      name: Lõhn
+      description: Toode eritab ebameeldivat või ootamatut lõhna.
+    transparency:
+      name: Läbipaistvus
+      description: Materjal on kliendi eelistuste jaoks liiga läbipaistev või ei paista
+        piisavalt läbi.
+    sound_level:
+      description: Tekitatav heli ei vasta määratud detsibellitasemele või seadme
+        otstarbest tulenevatele nõuetele.
+      name: Helitase
+    coverage:
+      name: Katvus
+      description: Toote katvus, kaitseulatus või pinnale kandmise ulatus ei vasta
+        kliendi vajadustele.
+    breathability:
+      name: Hingavus
+      description: Materjal ei lase niiskust läbi, mistõttu hakkab liiga palav või
+        tekib ebameeldiv niiske tunne.
+    touch_response:
+      name: Puutetundlikkus
+      description: Puuteliidese tundlikkus on liiga suur või liiga väike.
+    temperature:
+      name: Temperatuur
+      description: Üksuse tekitatav või hoitav soojus- või külmatase ei vasta kliendi
+        eelistustele.
+    length:
+      name: Pikkus
+      description: Üksus on kliendi vajaduste jaoks liiga pikk või liiga lühike.
+    service_area:
+      description: Kliendi aadress ei kuulu teeninduspiirkonda.
+      name: Teeninduspiirkond
+    sole_too_thick:
+      description: Jalatsi tald on liiga paks.
+      name: Tald liiga paks
+    night_vision:
+      name: Öönägemine
+      description: Seadme infrapuna- või pimedas töötamise režiimi pilt on ebaselge
+        või ei võimalda piisavalt näha.
+    comfort:
+      description: Toote kasutusmugavus või ergonoomilisus ei vasta ootustele.
+      name: Mugavus
+    gauge:
+      description: Toote ettenähtud paksus või läbimõõt ei sobi kavandatud kasutuseks.
+      name: Jämedus
+    loose_around_ankle:
+      description: Rõivas ei istu pahkluu ümber kindlalt.
+      name: Pahkluu ümbert lai
+    assortment:
+      name: Valik
+      description: Pakendis olevate üksuste valik ei vasta kliendi soovile.
+    razor_type:
+      name: Raseerija tüüp
+      description: Terade paigutus või tüüp ei vasta kliendi raseerimiseelistustele.
+    tooth_spacing:
+      description: Kammi või lõiketera hammaste vahekaugus ei vasta kliendi vajadustele.
+      name: Hammaste vahekaugus
+    head_support:
+      description: Toode ei paku peale ja kaelale piisavalt tuge, õiget asendit või
+        mugavust.
+      name: Peatugi
+    too_narrow:
+      name: Liiga kitsas
+      description: Toode on sobiva istuvuse, olemasoleva ruumi või kavandatud kasutuse
+        jaoks liiga kitsas.
+    too_wide:
+      name: Liiga lai
+      description: Toode on sobiva istuvuse, olemasoleva ruumi või kavandatud kasutuse
+        jaoks liiga lai.
+    capacity:
+      name: Mahutavus
+      description: Maht või kogus, mida toode suudab mahutada või töödelda, ei vasta
+        kliendi nõuetele.
+    low_light_performance:
+      description: Seade teeb hämaras halva kvaliteediga pilte või videoid.
+      name: Pildikvaliteet hämaras
+    whitening_results:
+      name: Valgendamise tulemus
+      description: Saavutatud värvimuutus on oodatust väiksem.
+    lens_color:
+      name: Läätse värv
+      description: Prilliläätse toon või värvus ei sobi ettenähtud nähtavustingimuste
+        või tegevuse jaoks.
+    grit:
+      name: Teralisus
+      description: Abrasiivpinna teralisus ei vasta kliendi vajadustele.
+    detection_range:
+      name: Tuvastuskaugus
+      description: Seadme tuvastuskaugus või -ala ei sobi ettenähtud kasutuseks.
+    band_too_small:
+      description: Paela ümbermõõt on liiga väike, mistõttu see pigistab keha.
+      name: Pael liiga väike
+    difficult_to_install:
+      name: Raske paigaldada
+      description: Paigaldamine nõuab rohkem vaeva või oskusi, kui klient ootas.
+    format:
+      description: Toote paigutus või füüsiline vorm ei vasta kasutaja vajadustele.
+      name: Formaat
+    smudges:
+      description: Toode määrib teisi pindu või jäävad sellele puudutamisel kergesti
+        jäljed.
+      name: Määrdumisjäljed
+    wrong_format:
+      description: Meediatüüp või füüsiline kuju ei sobi kliendi seadme või eelistustega.
+      name: Vale vorming
+    nicotine_strength:
+      description: Toote nikotiinisisaldus on kliendi jaoks liiga suur või liiga väike.
+      name: Nikotiinisisaldus
+    timer:
+      description: Taimeri funktsioon või kestuse seadistus ei vasta ootustele.
+      name: Taimer
+    vehicle_fit:
+      description: Toodet ei saa kliendi sõidukile korralikult kinnitada või see ei
+        mahu sõidukisse.
+      name: Sobivus sõidukiga
+    draw_weight:
+      description: Vibunööri tõmbamiseks vajalik jõud on vibulaskuri jaoks liiga suur
+        või liiga väike.
+      name: Tõmbejõud
+    magnification_too_weak:
+      name: Liiga väike suurendus
+      description: Suurendus ei ole kliendi nägemisvajaduste jaoks piisav.
+    band_too_thick:
+      description: Pael on kliendi eelistuste jaoks liiga lai.
+      name: Pael liiga paks
+    cups_too_loose:
+      name: Korvid liiga lõdvad
+      description: Korvid ei istu piisavalt kindlalt ega paku piisavalt tuge.
+    compression:
+      description: Rõiva avaldatav surve on liiga tugev või liiga nõrk.
+      name: Kompressioon
+    doesnt_fit_phone:
+      description: Tarviku mõõtmed ei sobi selle telefonimudeliga.
+      name: Ei sobi telefoniga
+    pressure_rating:
+      name: Nimirõhk
+      description: Maksimaalne rõhk, mida üksus talub või tekitab, ei sobi ettenähtud
+        kasutuseks.
+    ordered_wrong_item:
+      name: Tellisin vale toote
+      description: Klient ostis ekslikult vale toote.
+    material_not_durable:
+      description: Kangas või materjal ei ole oodatud vastupidavuse või kulumiskindlusega.
+      name: Materjal ei ole vastupidav
+    bubble_output:
+      description: Tekitatavate mullide kogus või suurus ei vasta ootustele.
+      name: Mullide tekitamine
+    underwire:
+      name: Tugikaar
+      description: Rõivaeseme metallist või plastist tugikaar tekitab ebamugavust
+        või ei järgi keha kuju.
+    caliber:
+      name: Kaliiber
+      description: Mürsu või relvaraua ettenähtud läbimõõt ei ühildu kliendi varustusega.
+    band_rolls_down:
+      description: Rõivas ei püsi paigal ja libiseb kehal allapoole.
+      name: Pael rullub alla
+    tip_size:
+      name: Otsiku suurus
+      description: Kirjutus- või aplikaatoriotsaku suurus ei võimalda soovitud täpsust.
+    storage_capacity:
+      description: Digitaalsete andmete salvestamiseks pole piisavalt ruumi.
+      name: Salvestusmaht
+    frame_needs_adjustments:
+      description: Toode vajab õigesti istumiseks spetsialisti tehtud kohandamist
+        või muutmist.
+      name: Raam vajab kohendamist
+    pressure_points:
+      description: Toode avaldab teatud kehapiirkondadele ebamugavat punktkoormust.
+      name: Survekohad
+    too_sweet:
+      description: Suhkrusisaldus või maitse magusus on kliendi eelistuste jaoks liiga
+        suur.
+      name: Liiga magus
+    cups_too_thin:
+      description: Korvidel pole piisavalt polstrit või katvust.
+      name: Rinnakorvid liiga õhukesed
+    instrument:
+      name: Pill
+      description: Pill, mille jaoks toode on mõeldud, ei vasta kliendi varustusele.
+    damaged_or_defective:
+      name: Kahjustatud või defektne
+      description: Üksus saabus füüsiliste kahjustuste või tootmisvigadega või ei
+        toimi ettenähtud viisil.
+    fat_content:
+      name: Rasvasisaldus
+      description: Toidutoote rasvasisaldus ei vasta kliendi toitumiseelistustele.
+    material_too_stretchy:
+      name: Materjal liiga veniv
+      description: Kangas venib liiga palju ega säilita soovitud vormi.
+    horsepower:
+      description: Mootori tegelik võimsus ei vasta nimivõimsusest tulenevatele ootustele.
+      name: Võimsus hobujõududes
+    flight_distance:
+      name: Lennukaugus
+      description: Toote lennukaugus ei sobi kavandatud tegevuse või tingimustega.
+    spray_pattern:
+      description: Pihustuse jaotus või kuju ei vasta kliendi vajadustele.
+      name: Pihustusmuster
+    region:
+      name: Piirkond
+      description: Teenust või toodet saab kasutada ainult geograafilises piirkonnas,
+        mis ei hõlma kliendi asukohta.
+    pulls_in_fabric:
+      name: Väljatõmmatud niidid kangas
+      description: Materjal takerdub kasutamisel kergesti millegi külge või sellest
+        tõmbuvad niidid välja.
+    angle:
+      name: Nurk
+      description: Kalde- või paindenurk ei vasta kliendi nõuetele.
+    pet_didnt_like:
+      description: Loomale toode selgelt ei meeldi või ta kasutab seda vastumeelselt.
+      name: Lemmikloomale ei meeldinud
+    pitch:
+      name: Helikõrgus
+      description: Tekitatava heli toon või sagedus ei ole sobiv.
+    lather:
+      description: Toode tekitab kliendi eelistuste jaoks liiga vähe vahtu.
+      name: Vahutavus
+    painful:
+      description: Toote kasutamine põhjustab üldist või teravat füüsilist valu.
+      name: Tekitab valu
+    too_long:
+      description: Toode on sobiva istuvuse, olemasoleva ruumi või kavandatud kasutuse
+        jaoks liiga pikk.
+      name: Liiga pikk
+    absorption:
+      description: Toode ei imendu pinda või organismi ootuspäraselt.
+      name: Imavus
+    piece_count:
+      name: Tükkide arv
+      description: Komplektis olevate üksuste arv erineb kliendi oodatust.
+    age_restriction:
+      name: Vanusepiirang
+      description: Toote kasutamisele kehtivad vanuse alam- või ülempiirist tulenevad
+        piirangud.
+    cups_too_small:
+      name: Korvid liiga väikesed
+      description: Rõiva rinnakorvid on kliendi rindade jaoks liiga väikesed.
+    condition:
+      description: Toote seisukord, sealhulgas väikesed kulumisjäljed või puudused,
+        ei vasta reklaamitud seisukorraklassile või kirjeldusele.
+      name: Seisukord
+    doesnt_fit_tv:
+      description: Toote mõõtmed või kinnitus ei sobi kliendi teleriga.
+      name: Ei sobi teleriga
+    rod_action:
+      name: Ridva aktsioon
+      description: Koht, kust õngeritv koormuse all paindub, ei vasta kliendi eelistustele.
+    bust_too_big:
+      name: Rinnaosa liiga suur
+      description: Rõiva rinnaosa on kliendile liiga suur.
+    sleeves_too_tight:
+      name: Varrukad liiga kitsad
+      description: Varrukad piiravad käte liikumist või pigistavad ebamugavalt.
+    grind_size:
+      description: Toote jahvatusaste ei sobi kavandatud valmistusviisiga.
+      name: Jahvatusaste
+    sleeves_too_loose:
+      name: Varrukad liiga avarad
+      description: Varrukad ei istu tihedalt käte ümber.
+    footbed_too_narrow:
+      name: Sisetald liiga kitsas
+      description: Sisetald on kliendi jala jaoks liiga kitsas.
+    tarnished:
+      description: Metallpind on kaotanud läike või muutnud värvi.
+      name: Tuhmunud
+    scale:
+      name: Mõõtkava
+      description: Toote proportsioonid või suurussuhted ei vasta ootustele.
+    material_too_stiff:
+      description: Kangas ei ole piisavalt painduv või pehme.
+      name: Materjal liiga jäik
+    low_resolution:
+      description: Pilt ei ole piisavalt detailne või selge.
+      name: Madal eraldusvõime
+    wrong_dosage:
+      name: Vale annus
+      description: Toimeaine tugevus või kontsentratsioon ei vasta vajadusele.
+    chest_too_big:
+      name: Rinnaümbermõõt liiga suur
+      description: Rõivaeseme rinnaümbermõõt on kliendile liiga suur.
+    too_complex:
+      description: Toote kasutamine on funktsioonide, seadistuste või vajalike toimingute
+        rohkuse tõttu liiga keeruline.
+      name: Liiga keeruline
+    head_size:
+      name: Pea suurus
+      description: Üksuse pea suurus ei sobi ettenähtud kohale või olemasolevasse
+        ruumi.
+    test_format:
+      description: Testi või selle tulemuste vorm ei vasta kliendi eelistustele.
+      name: Testi vorm
+    metrics_supported:
+      name: Toetatud mõõdikud
+      description: Seade ei jälgi ega kuva kliendile vajalikke andmepunkte.
+    tangles_easily:
+      description: Toode läheb kasutamisel oodatust kergemini sõlme või sassi.
+      name: Läheb kergesti sassi
+    accuracy:
+      description: Seadme mõõtmistulemused või andmed ei ole piisavalt täpsed.
+      name: Täpsus
+    loose_threads:
+      name: Lahtised niidid
+      description: Üksusel on näha hargnemist või niidiotsi, mis viitavad kehvale
+        valmistuskvaliteedile.
+    cooling:
+      description: Seadme jahutusvõime on ebapiisav.
+      name: Jahutus
+    frame_crooked:
+      name: Raam viltune
+      description: Üksuse raam on paindunud või viltu.
+    academic_level:
+      name: Õppetase
+      description: Sisu keerukus või põhjalikkus ei vasta kliendi õpivajadustele.
+    fabric:
+      name: Kangas
+      description: Kanga koostis, omadused või tekstuur ei vasta kliendi eelistustele.
+    changed_my_mind:
+      name: Muutsin meelt
+      description: Klient ei soovi üksust pärast ostmist enam alles jätta, olenemata
+        toote kvaliteedist või vastavusest tellitule.
+    heat_resistance:
+      description: Toode ei talu nõutaval määral kõrget temperatuuri.
+      name: Kuumakindlus
+    fuel_capacity:
+      description: Seadme kütusepaagi maht ei ole kliendi vajaduste jaoks piisav.
+      name: Kütusepaagi maht
+    waist_too_loose:
+      description: Vööosa ei istu kindlalt ümber vöökoha.
+      name: Vöökohast liiga lai
+    voltage:
+      name: Pinge
+      description: Seadme nimipinge ei vasta ettenähtud toiteallika pingele.
+    consistency:
+      name: Konsistents
+      description: Vedela või pooltahke toote paksus, konsistents või voolavus ei
+        vasta ootustele.
+    doesnt_dissolve_well:
+      name: Lahustub halvasti
+      description: Toode ei segune vedelikuga ühtlaselt, vaid jätab jääke või tükke.
+    wheels_stick:
+      description: Veeremismehhanism ei liigu sujuvalt.
+      name: Rattad kiiluvad kinni
+    stride_length:
+      name: Sammupikkus
+      description: Elliptilise trenažööri või muu treeningseadme sammupikkus ei sobi
+        kasutaja keha liikumisega.
+    temperature_range:
+      name: Temperatuurivahemik
+      description: Üksuse töötemperatuuri vahemik on kasutaja vajaduste jaoks liiga
+        kitsas.
+    heel_too_thin:
+      name: Konts liiga peenike
+      description: Konts on liiga peenike ega paku piisavalt stabiilsust või tuge.
+    flexibility:
+      description: Toote võime painduda või surve all järele anda ei vasta ootustele.
+      name: Painduvus
+    performance:
+      name: Tulemuslikkus
+      description: Üksuse üldine juhitavus või reageerimisvõime kasutamise ajal ei
+        vasta ootustele.
+    buoyancy:
+      description: Toote võime veepinnal püsida või vees raskust kanda ei vasta kliendi
+        vajadustele.
+      name: Ujuvus
+    shape:
+      name: Kuju
+      description: Väliskuju, kontuur või geomeetria ei vasta ettenähtud otstarbele
+        või soovitud esteetikale.
+    results_display:
+      description: Tulemused kuvatakse seadmel ebaselgelt või raskesti loetavalt.
+      name: Tulemuste kuvamine
+    edition:
+      name: Väljaanne
+      description: Toote versioon või väljaanne ei ole see, mida klient soovis.
+    band_too_tight:
+      name: Pael liiga pingul
+      description: Pael pigistab ebamugavalt keha ümbert.
+    connectivity:
+      name: Ühenduvus
+      description: Seadme ühendus võrkude või teiste seadmetega on ebastabiilne või
+        ebapiisav.
+    doesnt_stay_closed:
+      name: Ei püsi kinni
+      description: Riiv või kinnitusmehhanism ei püsi kindlalt kinni.
+    vibration:
+      name: Vibratsioon
+      description: Seadme tekitatav vibratsioon on liiga tugev või ebamugav.
+    too_soft:
+      description: Üksus on oodatust pehmem või hoiab oodatust halvemini vormi.
+      name: Liiga pehme
+    residue:
+      name: Jäägid
+      description: Toode jätab kasutamise järel soovimatu kihi või ainejäägid.
+    heat:
+      description: Toidutoote vürtsikus või pikantsus ei vasta ootustele.
+      name: Vürtsikus
+    tight_around_ankles:
+      description: Rõivaese pigistab ebamugavalt pahkluude ümbert.
+      name: Pahkluude ümbert kitsas
+    too_thick:
+      name: Liiga paks
+      description: Üksus on ettenähtud kasutuse jaoks liiga paks või kogukas.
+    waist_too_tight:
+      name: Vöökohast liiga kitsas
+      description: Värvel pigistab ebamugavalt vöökoha ümbert.
+    energy_efficiency:
+      name: Energiatõhusus
+      description: Üksus tarbib saavutatud tulemuse kohta liiga palju energiat.
+    width:
+      description: Üksuse laius ei sobi kliendile või olemasolevasse ruumi.
+      name: Laius
+    fuel_efficiency:
+      name: Kütusesäästlikkus
+      description: Seadme kütusekulu on soovitust suurem.
+    slippery:
+      description: Pind ei taga piisavat haarduvust või pidamist.
+      name: Libe
+    cook_time:
+      name: Valmistusaeg
+      description: Toidutoote valmistamiseks kuluv aeg ei ole sobiv või ei vasta ootustele.
+    results:
+      name: Tulemused
+      description: Toode ei andnud pärast soovitatud kasutusaja möödumist oodatud
+        muutust või tulemust.
+    lens_popped_out_of_frame:
+      description: Optiline lääts tuli raamist lahti.
+      name: Prilliklaas tuli raamist välja
+    not_dishwasher_safe:
+      name: Ei sobi nõudepesumasinas pesemiseks
+      description: Üksust tuleb pesta käsitsi, mis on kliendile ebamugav.
+    resolution:
+      name: Eraldusvõime
+      description: Kuvatava pildi detailsus või selgus ei vasta kliendi ootustele.
+    depth:
+      name: Sügavus
+      description: Mõõt eest taha või ülevalt alla ei sobi kliendile või olemasolevasse
+        ruumi.
+    too_sharp:
+      description: Serv või ots on ohtlikult terav või tekitab ebamugavust.
+      name: Liiga terav
+    mixing_performance:
+      name: Segamistulemus
+      description: Seade ei sega koostisosi ootuspäraselt.
+    mounting_difficulty:
+      name: Kinnitamine keeruline
+      description: Üksuse kinnitamine seinale või muule pinnale on liiga raske või
+        keeruline või on juhised ebaselged.
+    sleeves_too_long:
+      name: Varrukad liiga pikad
+      description: Rõivaeseme varrukad ulatuvad kliendi kätest kaugemale.
+    waist_too_low:
+      name: Vöökoht liiga madal
+      description: Rõivaeseme vöökoht asub puusadel liiga madalal.
+    cushioning:
+      description: Materjali pehmus või löögisummutus ei vasta ettenähtud kasutuse
+        puhul ootustele.
+      name: Pehmendus
+    spin_time:
+      description: Üksus püsib liikumises oodatust lühemat aega.
+      name: Pöörlemisaeg
+    tread_type:
+      description: Üksuse välistalla või pinna muster või kujundus ei sobi ettenähtud
+        maastiku või tingimustega.
+      name: Turvisemustri tüüp
+    suction:
+      name: Imemisjõud
+      description: Üksuse tekitatava vaakumi tugevus ei sobi ettenähtud kasutuseks.
+    difficult_to_adjust:
+      name: Raske reguleerida
+      description: Üksuse istuvuse või seadete muutmise mehhanisme on raske kasutada.
+    optic_didnt_fit:
+      name: Optikatarvik ei sobinud
+      description: Optikatarvik ei kinnitu seadme külge õigesti.
+    pet_refused:
+      description: Loom keeldub toodet söömast või kasutamast ega taha sellega tegeleda.
+      name: Lemmikloom keeldus
+    ordered_wrong_format:
+      name: Tellitud vale vorming
+      description: Klient valis vale tootevariandi või konfiguratsiooni.
+    too_rich:
+      name: Liiga rammus
+      description: Maitse või konsistents on kliendi jaoks liiga intensiivne või raske.
+    doesnt_apply_evenly:
+      name: Ei kandu ühtlaselt peale
+      description: Toode jääb pealekandmisel laiguline või triibuline.
+    heel_too_low:
+      description: Konts on kliendi eelistuste jaoks liiga madal.
+      name: Konts liiga madal
+    quality:
+      name: Kvaliteet
+      description: Üksuse üldine kvaliteet või valmistuskvaliteet ei vasta ootustele.
+    waist_too_small:
+      name: Vööümbermõõt liiga väike
+      description: Vööümbermõõt on kliendi keha jaoks liiga väike.
+    footbed_too_deep:
+      description: Jalale mõeldud süvend on liiga sügav.
+      name: Jalatsipesa liiga sügav
+    damaged_after_washing:
+      description: Üksus sai puhastamise käigus kahjustada.
+      name: Pärast pesemist kahjustatud
+    dried_out:
+      description: Toode on enneaegselt kuivanud, mis halvendab selle kasutatavust.
+      name: Kuivanud
+    straps_too_thin:
+      description: Õlapaelad on liiga kitsad, et tagada mugavus või piisav tugi.
+      name: Õlapaelad liiga kitsad
+    messy:
+      description: Toote kasutamine tekitab soovimatut segadust või jätab soovimatuid
+        jääke.
+      name: Määriv
+    hardness:
+      name: Kõvadus
+      description: Materjali vastupanuvõime kokkusurumisele või pinnale avalduvale
+        survele ei vasta ootustele.
+    sturdiness:
+      description: Üksus ei ole oodatud tugevusega ning tundub logisev, nõrk või tavapärasel
+        kasutamisel kergesti painduv.
+      name: Tugevus
+    fastening:
+      description: Üksust on raske kinnitada või sulgeda või ei ole kinnitus kindel.
+      name: Kinnitus
+    burn_time:
+      name: Põlemisaeg
+      description: Põlemisaeg on oodatust lühem või pikem.
+    support:
+      description: Üksus ei toeta ega toesta keha piisavalt.
+      name: Toestus
+    filtration_class:
+      description: Filtri osakeste kinnipidamise klass või standard ei vasta nõuetele.
+      name: Filtreerimisklass
+    bust_too_small:
+      description: Rõivaeseme büstiosa on kliendi keha jaoks liiga väike.
+      name: Rinnaosa liiga väike
+    cuff_too_small:
+      description: Randme- või käeava on liiga kitsas.
+      name: Mansett liiga väike
+    sweetness:
+      description: Toote suhkrusisaldus või magusus ei vasta kliendi maitsele.
+      name: Magusus
+    portion_size:
+      description: Ühes portsjonis on toitu liiga vähe või liiga palju.
+      name: Portsjoni suurus
+    mesh_size:
+      name: Võrgusilma suurus
+      description: Võrgu või sõela avad on liiga suured või liiga väikesed.
+    brightness:
+      name: Heledus
+      description: Kiiratava või peegelduva valguse tugevus ei vasta kliendi eelistustele.
+    poor_stitching:
+      name: Kehvad õmblused
+      description: Õmblused on silmanähtavalt ebakvaliteetsed, ebaühtlased või viltused,
+        mis viitab tootmisveale.
+    smears:
+      name: Läheb laiali
+      description: Toode läheb kandmise või kasutamise ajal laiali, muutub häguseks
+        või kandub ettenähtud kohast mujale.
+    magnification:
+      name: Suurendus
+      description: Suurendusaste ei vasta kliendi vajadustele.
+    too_fine:
+      description: Abrasiivne pind on vajalikust siledam või lihvib liiga nõrgalt.
+      name: Liiga peen
+    calibration:
+      name: Kalibreerimine
+      description: Seadme seadistamine või reguleerimine kindla standardi järgi on
+        keeruline või ei toimi ootuspäraselt.
