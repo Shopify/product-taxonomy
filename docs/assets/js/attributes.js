@@ -1,4 +1,5 @@
 import {qq} from './util.js';
+import {populateAttributeDetails} from './attribute_details.js';
 
 const attributeQueryParamKey = 'attributeHandle';
 const className = {
@@ -42,6 +43,7 @@ const toggleSelectedAttribute = () => {
   attributeElements.forEach((element) => {
     if (element.dataset.handle === selectedAttribute) {
       element.classList.remove(className.hidden);
+      populateAttributeDetails(element, '..', true);
     } else {
       element.classList.add(className.hidden);
     }

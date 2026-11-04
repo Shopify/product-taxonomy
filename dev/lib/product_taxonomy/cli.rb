@@ -115,6 +115,10 @@ module ProductTaxonomy
 
     desc "add_category NAME PARENT_ID", "Add a new category to the taxonomy with NAME, as a child of PARENT_ID"
     option :id, type: :string, desc: "Override the created category's ID"
+    option :inherits_return_reasons,
+      type: :boolean,
+      default: true,
+      desc: "Whether the created category inherits its ancestors' return reasons (default: true)"
     def add_category(name, parent_id)
       AddCategoryCommand.new(options.merge(name:, parent_id:)).run
     end

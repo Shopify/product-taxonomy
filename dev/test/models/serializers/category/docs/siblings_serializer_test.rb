@@ -48,6 +48,7 @@ module ProductTaxonomy
               "ancestor_ids" => "gid://shopify/TaxonomyCategory/1",
               "attribute_handles" => "test_handle",
               "return_reason_handles" => "",
+              "inherits_return_reasons" => false,
             }
 
             assert_equal expected, SiblingsSerializer.serialize(@category)
@@ -69,6 +70,7 @@ module ProductTaxonomy
               "ancestor_ids" => "",
               "attribute_handles" => "",
               "return_reason_handles" => "",
+              "inherits_return_reasons" => false,
             }
 
             assert_equal expected, SiblingsSerializer.serialize(root_category)
@@ -90,6 +92,7 @@ module ProductTaxonomy
                     "ancestor_ids" => "",
                     "attribute_handles" => "",
                     "return_reason_handles" => "",
+                    "inherits_return_reasons" => false,
                   },
                 ],
               },
@@ -105,6 +108,7 @@ module ProductTaxonomy
                     "ancestor_ids" => "gid://shopify/TaxonomyCategory/1",
                     "attribute_handles" => "test_handle",
                     "return_reason_handles" => "",
+                    "inherits_return_reasons" => false,
                   },
                 ],
               },
@@ -138,6 +142,7 @@ module ProductTaxonomy
               "ancestor_ids" => "",
               "attribute_handles" => "",
               "return_reason_handles" => "test_return_reason_handle",
+              "inherits_return_reasons" => false,
             }
 
             assert_equal expected, SiblingsSerializer.serialize(category)
@@ -176,9 +181,20 @@ module ProductTaxonomy
               "ancestor_ids" => "",
               "attribute_handles" => "",
               "return_reason_handles" => "return_reason_one,return_reason_two",
+              "inherits_return_reasons" => false,
             }
 
             assert_equal expected, SiblingsSerializer.serialize(category)
+          end
+
+          test "serialize category that inherits return reasons sets inherits_return_reasons to true" do
+            category = ProductTaxonomy::Category.new(
+              id: "te-1",
+              name: "Test Category",
+              return_reasons: :inherit,
+            )
+
+            assert_equal true, SiblingsSerializer.serialize(category)["inherits_return_reasons"]
           end
         end
       end

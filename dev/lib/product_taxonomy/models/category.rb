@@ -22,7 +22,7 @@ module ProductTaxonomy
             id: item["id"],
             name: item["name"],
             attributes: Array(item["attributes"]).map { Attribute.find_by(friendly_id: _1) || _1 },
-            return_reasons: Array(item["return_reasons"]).map { ReturnReason.find_by(friendly_id: _1) || _1 },
+            return_reasons: parse_return_reasons(item["return_reasons"]),
           )
         end
 
@@ -42,6 +42,10 @@ module ProductTaxonomy
           root_nodes << node if node.root?
         end
         @verticals.sort_by!(&:name)
+
+        # Fourth pass: derive each category's effective return reasons — inherited from the closest defining ancestor,
+        # falling back to the global reasons when nothing is defined.
+        Category.all.each(&:resolve_return_reasons)
       end
 
       # Reset all class-level state
@@ -59,6 +63,13 @@ module ProductTaxonomy
       end
 
       private
+
+      # `return_reasons: inherit` in the data marks a category as inheriting; anything else is an explicit list.
+      def parse_return_reasons(value)
+        return :inherit if value == "inherit"
+
+        Array(value).map { |friendly_id| ReturnReason.find_by(friendly_id:) || friendly_id }
+      end
 
       def add_children(type:, item:, parent:)
         item[type]&.each do |child_id|
@@ -84,16 +95,24 @@ module ProductTaxonomy
     validate :id_starts_with_parent_id, unless: :root?, on: :category_tree_loaded
     validate :children_found?, on: :category_tree_loaded
     validate :secondary_children_found?, on: :category_tree_loaded
+    validate :root_does_not_inherit_return_reasons, if: :root?, on: :category_tree_loaded
 
     localized_attr_reader :name, keyed_by: :id
 
-    attr_reader :id, :children, :secondary_children, :attributes, :return_reasons
+    attr_reader :id,
+      :children,
+      :secondary_children,
+      :attributes,
+      :return_reasons,
+      :defined_return_reasons,
+      :inherits_return_reasons
     attr_accessor :parent, :secondary_parents
 
     # @param id [String] The ID of the category.
     # @param name [String] The name of the category.
     # @param attributes [Array<Attribute>] The attributes of the category.
-    # @param return_reasons [Array<ReturnReason>] The return reasons for the category.
+    # @param return_reasons [Array<ReturnReason>, :inherit] The return reasons for the category, or `:inherit` to copy
+    #   them from the closest ancestor that defines its own.
     # @param parent [Category] The parent category of the category.
     def initialize(id:, name:, attributes: [], return_reasons: [], parent: nil)
       @id = id
@@ -101,7 +120,9 @@ module ProductTaxonomy
       @children = []
       @secondary_children = []
       @attributes = attributes
-      @return_reasons = return_reasons
+      @inherits_return_reasons = return_reasons == :inherit
+      @defined_return_reasons = @inherits_return_reasons ? [] : return_reasons.dup
+      @return_reasons = @defined_return_reasons.dup
       @parent = parent
       @secondary_parents = []
     end
@@ -139,11 +160,29 @@ module ProductTaxonomy
       @attributes << attribute
     end
 
-    # Add a return reason to the category
+    # Add a return reason to the category. Explicitly adding a reason means the category defines its own reasons
+    # rather than inheriting them, so the first add on an inheriting category drops the inherited reasons.
     #
     # @param [ReturnReason] return_reason
     def add_return_reason(return_reason)
-      @return_reasons << return_reason
+      if @inherits_return_reasons
+        @inherits_return_reasons = false
+        @defined_return_reasons = []
+      end
+      @defined_return_reasons << return_reason
+      resolve_return_reasons
+    end
+
+    # Copy return reasons from the closest ancestor that defines its own, when this category inherits. No-op for
+    # categories that define their own reasons or have no defining ancestor.
+    def resolve_return_reasons
+      @return_reasons = if inherits_return_reasons
+        ancestors.find { |ancestor| !ancestor.inherits_return_reasons }&.defined_return_reasons&.dup || []
+      else
+        defined_return_reasons.dup
+      end
+
+      @return_reasons = ReturnReason.global.dup if @return_reasons.empty?
     end
 
     #
@@ -308,6 +347,13 @@ module ProductTaxonomy
           message: "not found for friendly ID \"#{return_reason}\"",
         )
       end
+    end
+
+    def root_does_not_inherit_return_reasons
+      return unless inherits_return_reasons
+
+      # A root category has no ancestor to inherit from, so `inherit` cannot be resolved.
+      errors.add(:return_reasons, :root_cannot_inherit, message: "cannot be inherited by a root category")
     end
 
     def children_found?

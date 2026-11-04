@@ -1,7 +1,7 @@
 <p align="center"><img src="./docs/assets/img/header.png" /></p>
 
 <!-- omit in toc -->
-<h1 align="center">Shopify's Standard Product Taxonomy <a href="./VERSION"><img src="https://img.shields.io/badge/Version-2026--08-blue.svg" alt="Version"></a></h1>
+<h1 align="center">Shopify's Standard Product Taxonomy <a href="./VERSION"><img src="https://img.shields.io/badge/Version-2026--10-blue.svg" alt="Version"></a></h1>
 
 **🌍 Global Standard**: Our open-source, standardized product taxonomy establishes a universal language for product classification. Comprehensive and already empowering merchants on Shopify.
 
@@ -112,6 +112,7 @@ bundle install
 bin/product_taxonomy dist     # build the dist files
 bin/product_taxonomy docs     # build the documentation files
 bin/product_taxonomy release  # generate a release
+bin/generate_changelog --base /path/to/base --head /path/to/head  # draft a changelog
 
 # Development tasks (via Rake)
 bundle exec rake test              # run all tests

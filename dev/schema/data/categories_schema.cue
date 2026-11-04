@@ -5,5 +5,7 @@
 	name!: string
 	children!: [...string]
 	attributes!: [...string]
-	return_reasons!: [...string]
+	// Either an explicit list of return reason friendly IDs, or the literal "inherit" to copy them from the closest
+	// ancestor that defines its own.
+	return_reasons!: [...string] | "inherit"
 }]

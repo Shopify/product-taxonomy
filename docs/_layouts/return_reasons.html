@@ -10,17 +10,17 @@ layout: default
     <ul class="search-container__ul" id="return-reason-search-results"></ul>
   </div>
 </div>
-{% for return_reason in site.data[page.target].reversed_return_reasons.return_reasons %}
-<div class="return-reason-container hidden" data-handle="{{ return_reason.handle }}" >
+{% comment %} Filled by return_reason_release.js from return_reason_data/ (see _plugins/release_data.rb) {% endcomment %}
+<div class="return-reason-container hidden" id="return-reason-detail">
   <div class="column">
     <div class="return-reasons-wrapper box">
       <div class="value-container return-reason-values">
-        <h3>{{ return_reason.name }}</h3>
+        <h3 class="return-reason-detail__name"></h3>
         <div class="value-container__id">
-          <span class="id">{{ return_reason.id }}</span>
+          <span class="id return-reason-detail__id"></span>
         </div>
         <div class="return-reason-description-wrapper">
-          <p class="return-reason-description">{{ return_reason.description }}</p>
+          <p class="return-reason-description"></p>
         </div>
       </div>
     </div>
@@ -32,19 +32,10 @@ layout: default
           Categories
         </h3>
         <div>
-          <ul class="values-container__list">
-            {% for category in return_reason.categories %}
-            <li class="values-container__list-item">
-              <div class="values-container__list-item-content">
-                {{ category.full_name }}
-              </div>
-            </li>
-            {% endfor %}
-          </ul>
+          <ul class="values-container__list return-reason-detail__categories"></ul>
         </div>
       </div>
     </div>
   </div>
 </div>
-{% endfor %}
 <script type="module" src="{{ site.baseurl }}/assets/js/return_reason_release.js"></script>

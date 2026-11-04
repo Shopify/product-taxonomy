@@ -130,7 +130,7 @@ module ProductTaxonomy
       assert_equal ["Snowskates", "Splitboards"], snowboard.children.map(&:name).sort
 
       real_attribute_friendly_ids = snowboard.attributes.map(&:friendly_id)
-      assert_equal 10, real_attribute_friendly_ids.size
+      assert_equal 11, real_attribute_friendly_ids.size
       assert_includes real_attribute_friendly_ids, "age_group"
       assert_includes real_attribute_friendly_ids, "color"
       assert_includes real_attribute_friendly_ids, "pattern"
@@ -141,6 +141,7 @@ module ProductTaxonomy
       assert_includes real_attribute_friendly_ids, "snowboard_construction"
       assert_includes real_attribute_friendly_ids, "snowboard_base_material"
       assert_includes real_attribute_friendly_ids, "snowboard_width_class"
+      assert_includes real_attribute_friendly_ids, "topsheet_finish"
     end
 
     # more fragile, but easier sanity check

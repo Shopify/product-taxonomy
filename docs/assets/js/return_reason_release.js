@@ -1,17 +1,37 @@
 import {setupSearch} from './search.js';
-import {q, qq, getQueryParam} from './util.js';
+import {q, getQueryParam} from './util.js';
+import {fetchRecord, createListItem, replaceChildrenWith, setLoadError} from './release_data.js';
 
 const returnReasonQueryParamKey = 'returnReasonHandle';
+const returnReasonDataDir = '../return_reason_data';
 
-const showReturnReasonByHandle = (returnReasonHandle) => {
-  const returnReasonContainers = qq('.return-reason-container');
-  returnReasonContainers.forEach((container) => {
-    if (container.dataset.handle === returnReasonHandle) {
-      container.classList.remove('hidden');
-    } else {
-      container.classList.add('hidden');
+const showReturnReasonByHandle = async (returnReasonHandle) => {
+  const container = q('#return-reason-detail');
+  container.classList.add('hidden');
+  setLoadError(container);
+
+  let returnReason;
+  try {
+    returnReason = await fetchRecord(returnReasonDataDir, returnReasonHandle);
+  } catch (error) {
+    console.error(error);
+    if (getQueryParam(returnReasonQueryParamKey) === returnReasonHandle) {
+      setLoadError(container, () => showReturnReasonByHandle(returnReasonHandle));
     }
-  });
+    return;
+  }
+  // Skip stale responses when another return reason was selected while loading.
+  if (!returnReason || getQueryParam(returnReasonQueryParamKey) !== returnReasonHandle) return;
+
+  q('.return-reason-detail__name', container).textContent = returnReason.name;
+  q('.return-reason-detail__id', container).textContent = returnReason.id;
+  q('.return-reason-description', container).textContent = returnReason.description;
+  replaceChildrenWith(
+    q('.return-reason-detail__categories', container),
+    returnReason.categories.map((fullName) => createListItem(fullName)),
+  );
+  container.dataset.handle = returnReason.handle;
+  container.classList.remove('hidden');
 };
 
 const setReturnReasonQueryParam = (returnReasonHandle) => {

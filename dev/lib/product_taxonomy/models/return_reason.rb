@@ -7,6 +7,17 @@ module ProductTaxonomy
     extend Localized
     extend Indexed
 
+    # Reasons that apply to every category, in the order they are always listed in. They sit at the end of a
+    # category's list, and stand in for categories that define no reasons of their own.
+    GLOBAL_FRIENDLY_IDS = [
+      "changed_my_mind",
+      "item_not_as_described",
+      "received_the_wrong_item",
+      "damaged_or_defective",
+      "unknown",
+      "other_reason",
+    ].freeze
+
     class << self
       # Override to match folder name convention (return_reasons vs returnreasons)
       def localizations_humanized_model_name
@@ -33,6 +44,15 @@ module ProductTaxonomy
       def reset
         @localizations = nil
         @hashed_models = nil
+        @global = nil
+      end
+
+      # The global return reasons, in their defined order. Reasons that are not loaded are skipped, so callers get
+      # whatever subset the current source data defines. Frozen because the memoized array is shared by all callers.
+      #
+      # @return [Array<ReturnReason>]
+      def global
+        @global ||= GLOBAL_FRIENDLY_IDS.filter_map { |friendly_id| find_by(friendly_id:) }.freeze
       end
 
       # Get the next ID for a newly created return reason.
