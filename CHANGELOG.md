@@ -1,5 +1,10 @@
 ## Unreleased
 
+#### 📚 Taxonomy Tree
+
+- Restores the pre-2026-10 values for selected attributes, removing the expanded lists introduced in that release. This keeps attribute selection manageable while we complete further performance and usability validation of the expanded lists.
+- `Color` returns to its 19 base values from 2026-08 (`Beige`, `Black`, `Blue`, `Bronze`, `Brown`, `Clear`, `Gold`, `Gray`, `Green`, `Multicolor`, `Navy`, `Orange`, `Pink`, `Purple`, `Red`, `Rose gold`, `Silver`, `White`, `Yellow`). The 22,347 values added in 2026-10 are removed, including their translations.
+
 ## 2026-10
 
 #### 📚 Taxonomy Tree
