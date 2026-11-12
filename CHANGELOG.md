@@ -1,4 +1,8 @@
-## Unreleased
+## 2026-11
+
+#### 📚 Taxonomy Tree
+
+- Restores the pre-2026-10 values for selected attributes, removing the expanded lists introduced in that release. This keeps attribute selection manageable while we complete further performance and usability validation of the expanded lists.
 
 ## 2026-10
 
