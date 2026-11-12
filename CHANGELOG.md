@@ -3,9 +3,11 @@
 #### 📚 Taxonomy Tree
 
 - Restores the pre-2026-10 values for selected attributes, removing the expanded lists introduced in that release. This keeps attribute selection manageable while we complete further performance and usability validation of the expanded lists.
-- `Color` returns to its 19 base values from 2026-08 (`Beige`, `Black`, `Blue`, `Bronze`, `Brown`, `Clear`, `Gold`, `Gray`, `Green`, `Multicolor`, `Navy`, `Orange`, `Pink`, `Purple`, `Red`, `Rose gold`, `Silver`, `White`, `Yellow`). The 22,347 values added in 2026-10 are removed, including their translations.
-- The 97 extended attributes that take their values from `Color` (for example `Clasp color` and `Tag color`) also return to these 19 values. 43 of them were added in 2026-10 and previously offered the full expanded list.
-- **Breaking change:** the removed values and their IDs are no longer part of the taxonomy. Integrations that stored any of them should map them to one of the 19 values above.
+- 45 attributes return to their 2026-08 value lists, removing 67,643 values added in 2026-10, including their translations. These are the attributes that existed before 2026-10 and either have the word "color" or "shade" in their name or had 500 or more values in 2026-10: `Bedding size`, `Bow hair color`, `Car freshener fragrance`, `Clip color`, `Color finish`, `Color`, `Denture teeth color`, `Display color mode`, `E-liquid flavor`, `Eggshell color`, `Embossing pen ink color`, `Fabric`, `Finish`, `Flare color`, `Flavor`, `Foil color`, `Foliage color`, `Fragrance`, `Frame finish`, `Furniture/Fixture material`, `Gemstone type`, `Guava flesh color`, `Hair color`, `Hardware finish`, `Jewelry material`, `LED color options`, `LED indicator color`, `LED light color`, `Lamp shade shape`, `Lens color/tint`, `Makeup shade`, `Material`, `Paintball fill color`, `Paper size`, `Pattern`, `Pet food flavor`, `Plant name`, `Printing color`, `Sand color`, `Shape`, `Size`, `Text color`, `Theme`, `Turn signal lens color` and `Window glass tint color`.
+- `Color` returns to its 19 base values (`Beige`, `Black`, `Blue`, `Bronze`, `Brown`, `Clear`, `Gold`, `Gray`, `Green`, `Multicolor`, `Navy`, `Orange`, `Pink`, `Purple`, `Red`, `Rose gold`, `Silver`, `White`, `Yellow`).
+- The 211 extended attributes that take their values from these attributes return to the same lists. For example, the 97 that extend `Color`, such as `Clasp color` and `Tag color`, now offer the 19 base colors.
+- Removes the `Compatible phone model` attribute, which was added in 2026-10 and had no values before that release, from the 512 categories that used it.
+- **Breaking change:** the removed values, the `Compatible phone model` attribute and their IDs are no longer part of the taxonomy. Integrations that stored any of them should map removed values to a remaining value of the same attribute.
 
 ## 2026-10
 
