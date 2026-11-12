@@ -7,7 +7,7 @@
 - `Color` returns to its 19 base values (`Beige`, `Black`, `Blue`, `Bronze`, `Brown`, `Clear`, `Gold`, `Gray`, `Green`, `Multicolor`, `Navy`, `Orange`, `Pink`, `Purple`, `Red`, `Rose gold`, `Silver`, `White`, `Yellow`).
 - The 211 extended attributes that take their values from these attributes return to the same lists. For example, the 97 that extend `Color`, such as `Clasp color` and `Tag color`, now offer the 19 base colors.
 - Removes the `Compatible phone model` attribute, which was added in 2026-10 and had no values before that release, from the 512 categories that used it.
-- **Breaking change:** the removed values, the `Compatible phone model` attribute and their IDs are no longer part of the taxonomy. Integrations that stored any of them should map removed values to a remaining value of the same attribute.
+- **Breaking change:** the removed values, the `Compatible phone model` attribute and their IDs are no longer part of the taxonomy. Integrations that stored any of them should map removed values to a remaining value of the same attribute, and drop stored `Compatible phone model` values.
 
 ## 2026-10
 
