@@ -4,6 +4,8 @@
 
 - Restores the pre-2026-10 values for selected attributes, removing the expanded lists introduced in that release. This keeps attribute selection manageable while we complete further performance and usability validation of the expanded lists.
 - `Color` returns to its 19 base values from 2026-08 (`Beige`, `Black`, `Blue`, `Bronze`, `Brown`, `Clear`, `Gold`, `Gray`, `Green`, `Multicolor`, `Navy`, `Orange`, `Pink`, `Purple`, `Red`, `Rose gold`, `Silver`, `White`, `Yellow`). The 22,347 values added in 2026-10 are removed, including their translations.
+- The 97 extended attributes that take their values from `Color` (for example `Clasp color` and `Tag color`) also return to these 19 values. 43 of them were added in 2026-10 and previously offered the full expanded list.
+- **Breaking change:** the removed values and their IDs are no longer part of the taxonomy. Integrations that stored any of them should map them to one of the 19 values above.
 
 ## 2026-10
 
