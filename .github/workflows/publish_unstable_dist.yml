@@ -20,7 +20,7 @@ jobs:
     name: Generate and publish unstable assets
     permissions:
       contents: write # Required to create the rolling prerelease and replace its assets.
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     steps:
       - name: Refuse to publish from non-main refs
