@@ -11,6 +11,10 @@
   - se-7
   - se-8
   - se-9
+  - se-10
+  - se-11
+  - se-12
+  - se-13
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -592,6 +596,8 @@
   - se-3-2-2
   - se-3-2-3
   - se-3-2-4
+  - se-3-2-5
+  - se-3-2-6
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -621,6 +627,16 @@
   return_reasons: inherit
 - id: se-3-2-4
   name: Shipment Tracking Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-2-5
+  name: Moving & Relocation Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-3-2-6
+  name: Local Courier & Delivery Services
   children: []
   attributes: []
   return_reasons: inherit
@@ -1251,6 +1267,10 @@
   - se-5-2
   - se-5-3
   - se-5-4
+  - se-5-5
+  - se-5-6
+  - se-5-7
+  - se-5-8
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -1367,7 +1387,9 @@
   return_reasons: inherit
 - id: se-5-3
   name: Plumbing
-  children: []
+  children:
+  - se-5-3-1
+  - se-5-3-2
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -1380,6 +1402,16 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-5-3-1
+  name: Plumbing Repair & Maintenance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-3-2
+  name: Plumbing Installation & Capital Improvement Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-5-4
   name: Specialized Home Services
   children:
@@ -1449,6 +1481,38 @@
   children: []
   attributes: []
   return_reasons: inherit
+- id: se-5-5
+  name: HVAC Services
+  children:
+  - se-5-5-1
+  - se-5-5-2
+  attributes: []
+  return_reasons: inherit
+- id: se-5-5-1
+  name: HVAC Repair & Maintenance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-5-2
+  name: HVAC Installation Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-6
+  name: Painting & Drywall Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-7
+  name: Flooring Installation & Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-5-8
+  name: General Handyman & Home Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-6
   name: Personal Services
   children:
@@ -1471,7 +1535,13 @@
   - other_reason
 - id: se-6-1
   name: Beauty & Personal Care
-  children: []
+  children:
+  - se-6-1-1
+  - se-6-1-2
+  - se-6-1-3
+  - se-6-1-4
+  - se-6-1-5
+  - se-6-1-6
   attributes:
   - treatment_area
   return_reasons:
@@ -1484,9 +1554,48 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-6-1-1
+  name: Hair Salon & Barber Services
+  children: []
+  attributes:
+  - treatment_area
+  return_reasons: inherit
+- id: se-6-1-2
+  name: Nail Salon Services
+  children: []
+  attributes:
+  - treatment_area
+  return_reasons: inherit
+- id: se-6-1-3
+  name: Spa & Massage Services
+  children: []
+  attributes:
+  - treatment_area
+  return_reasons: inherit
+- id: se-6-1-4
+  name: Tattoo Services
+  children: []
+  attributes:
+  - treatment_area
+  return_reasons: inherit
+- id: se-6-1-5
+  name: Body Piercing Services
+  children: []
+  attributes:
+  - treatment_area
+  return_reasons: inherit
+- id: se-6-1-6
+  name: Aesthetic & Med-Spa Services
+  children: []
+  attributes:
+  - treatment_area
+  return_reasons: inherit
 - id: se-6-2
   name: Educational Services
-  children: []
+  children:
+  - se-6-2-1
+  - se-6-2-2
+  - se-6-2-3
   attributes:
   - language
   - participation_method
@@ -1500,6 +1609,27 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-6-2-1
+  name: Private Tutoring & Academic Instruction Services
+  children: []
+  attributes:
+  - language
+  - participation_method
+  return_reasons: inherit
+- id: se-6-2-2
+  name: Sports & Recreation Lessons
+  children: []
+  attributes:
+  - language
+  - participation_method
+  return_reasons: inherit
+- id: se-6-2-3
+  name: Music, Art & Hobby Lessons
+  children: []
+  attributes:
+  - language
+  - participation_method
+  return_reasons: inherit
 - id: se-6-3
   name: Healthcare Services
   children:
@@ -1677,6 +1807,7 @@
   children:
   - se-6-6-1
   - se-6-6-2
+  - se-6-6-3
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -1717,6 +1848,11 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-6-6-3
+  name: Gym & Fitness Club Memberships
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-6-7
   name: Clothing Alterations
   children: []
@@ -1742,6 +1878,7 @@
   - se-7-6
   - se-7-8
   - se-7-9
+  - se-7-10
   attributes: []
   return_reasons:
   - scheduling_conflict
@@ -2221,6 +2358,35 @@
   - damaged_or_defective
   - unknown
   - other_reason
+- id: se-7-10
+  name: Creative & Media Services
+  children:
+  - se-7-10-1
+  - se-7-10-2
+  - se-7-10-3
+  - se-7-10-4
+  attributes: []
+  return_reasons: inherit
+- id: se-7-10-1
+  name: Photography Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-10-2
+  name: Videography & Video Production Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-10-3
+  name: Graphic Design & Illustration Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-7-10-4
+  name: Custom Framing, Engraving & Fabrication Services
+  children: []
+  attributes: []
+  return_reasons: inherit
 - id: se-8
   name: Environmental Services
   children:
@@ -2397,4 +2563,192 @@
   - age_group
   - dietary_option
   - included_meal
+  return_reasons: inherit
+- id: se-10
+  name: Goods Repair & Maintenance Services
+  children:
+  - se-10-1
+  - se-10-2
+  - se-10-3
+  - se-10-4
+  - se-10-5
+  - se-10-6
+  - se-10-7
+  - se-10-8
+  - se-10-9
+  - se-10-10
+  - se-10-11
+  attributes: []
+  return_reasons: inherit
+- id: se-10-1
+  name: Knife, Tool & Blade Sharpening Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-10-2
+  name: Bicycle Repair & Maintenance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-10-3
+  name: Ski, Snowboard & Winter Sports Maintenance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-10-4
+  name: Sporting & Outdoor Equipment Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-10-5
+  name: Appliance Repair & Maintenance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-10-6
+  name: Furniture & Upholstery Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-10-7
+  name: Shoe, Leather & Luggage Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-10-8
+  name: Watch & Jewelry Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-10-9
+  name: Sewing, Quilting & Craft Machine Repair Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-10-10
+  name: Musical Instrument Repair & Tuning Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-10-11
+  name: General Tangible Goods Repair & Maintenance Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-11
+  name: Equipment & Goods Rental Services
+  children:
+  - se-11-1
+  - se-11-2
+  - se-11-3
+  - se-11-4
+  - se-11-5
+  - se-11-6
+  attributes: []
+  return_reasons: inherit
+- id: se-11-1
+  name: Sporting & Outdoor Equipment Rental Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-11-2
+  name: Tool & Machinery Rental Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-11-3
+  name: Party & Event Equipment Rental Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-11-4
+  name: Apparel & Formalwear Rental Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-11-5
+  name: Vehicle & Mobility Rental Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-11-6
+  name: General Tangible Goods Rental Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-12
+  name: Cleaning & Laundry Services
+  children:
+  - se-12-1
+  - se-12-2
+  - se-12-3
+  - se-12-4
+  - se-12-5
+  - se-12-6
+  attributes: []
+  return_reasons: inherit
+- id: se-12-1
+  name: Dry Cleaning Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-12-2
+  name: Laundry & Garment Care Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-12-3
+  name: Residential Cleaning Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-12-4
+  name: Commercial & Janitorial Cleaning Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-12-5
+  name: Carpet, Rug & Upholstery Cleaning Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-12-6
+  name: Window & Exterior Pressure Washing Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-13
+  name: Pet & Animal Services
+  children:
+  - se-13-1
+  - se-13-2
+  - se-13-3
+  - se-13-4
+  - se-13-5
+  attributes: []
+  return_reasons: inherit
+- id: se-13-1
+  name: Pet Grooming Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-13-2
+  name: Veterinary Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-13-3
+  name: Pet Boarding & Daycare Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-13-4
+  name: Pet Training Services
+  children: []
+  attributes: []
+  return_reasons: inherit
+- id: se-13-5
+  name: Dog Walking & Pet Sitting Services
+  children: []
+  attributes: []
   return_reasons: inherit
